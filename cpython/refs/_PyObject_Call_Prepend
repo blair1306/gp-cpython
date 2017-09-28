@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/abstract.h' l='258' type='PyObject * _PyObject_Call_Prepend(PyObject * callable, PyObject * obj, PyObject * args, PyObject * kwargs)'/>
+<def f='codebrowser/Objects/call.c' l='870' ll='906' type='PyObject * _PyObject_Call_Prepend(PyObject * callable, PyObject * obj, PyObject * args, PyObject * kwargs)'/>
+<doc f='codebrowser/Objects/call.c' l='869'>/* Call callable(obj, *args, **kwargs). */</doc>
+<use f='codebrowser/Objects/classobject.c' l='317' u='c' c='method_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='6257' u='c' c='slot_tp_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='6491' u='c' c='slot_tp_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='6520' u='c' c='slot_tp_new'/>

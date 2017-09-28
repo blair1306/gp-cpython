@@ -1,0 +1,4 @@
+<dec f='include/readline/readline.h' l='773' type='int'/>
+<use f='codebrowser/Modules/readline.c' l='1008' u='w' c='on_completion'/>
+<doc f='include/readline/readline.h' l='771'>/* Non-zero means to suppress normal filename completion after the
+   user-specified completion function has been called. */</doc>

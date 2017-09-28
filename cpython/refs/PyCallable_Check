@@ -1,0 +1,40 @@
+<dec f='codebrowser/Include/object.h' l='557' type='int PyCallable_Check(PyObject * )'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2172' u='c' c='defdict_init'/>
+<use f='codebrowser/Modules/_csv.c' l='1404' u='c' c='csv_writer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2310' u='c' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3037' u='c' c='PyCFuncPtr_set_errcheck'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3065' u='c' c='PyCFuncPtr_set_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3487' u='c' c='PyCFuncPtr_new'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='50' u='c' c='partial_new'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='194' u='c' c='partial_call'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='334' u='c' c='partial_setstate'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1002' u='c' c='lru_cache_new'/>
+<use f='codebrowser/Modules/_pickle.c' l='314' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Modules/_pickle.c' l='3502' u='c' c='save_reduce'/>
+<use f='codebrowser/Modules/_pickle.c' l='4483' u='c' c='Pickler_set_persid'/>
+<use f='codebrowser/Modules/_pickle.c' l='6959' u='c' c='Unpickler_set_persload'/>
+<use f='codebrowser/Modules/_sre.c' l='1025' u='c' c='pattern_subx'/>
+<use f='codebrowser/Modules/_sre.c' l='1059' u='c' c='pattern_subx'/>
+<use f='codebrowser/Modules/_ssl.c' l='3268' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3866' u='c' c='_ssl__SSLContext_set_servername_callback'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2262' u='c' c='test_thread_state'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1039' u='c' c='thread_PyThread_start_new_thread'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='154' u='c' c='atexit_register'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5341' u='c' c='check_null_or_callable'/>
+<use f='codebrowser/Modules/readline.c' l='344' u='c' c='set_hook'/>
+<use f='codebrowser/Modules/signalmodule.c' l='458' u='c' c='signal_signal_impl'/>
+<use f='codebrowser/Objects/call.c' l='15' u='c' c='_PyObject_HasFastCall'/>
+<use f='codebrowser/Objects/call.c' l='1015' u='c' c='callmethod'/>
+<use f='codebrowser/Objects/classobject.c' l='177' u='c' c='method_new'/>
+<use f='codebrowser/Objects/classobject.c' l='599' u='c' c='instancemethod_new'/>
+<def f='codebrowser/Objects/object.c' l='1353' ll='1359' type='int PyCallable_Check(PyObject * x)'/>
+<doc f='codebrowser/Objects/object.c' l='1351'>/* Test whether an object can be called */</doc>
+<use f='codebrowser/Objects/weakrefobject.c' l='824' u='c' c='PyWeakref_NewProxy'/>
+<use f='codebrowser/Python/_warnings.c' l='394' u='c' c='call_show_warning'/>
+<use f='codebrowser/Python/bltinmodule.c' l='415' u='c' c='builtin_callable'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1441' u='c' c='builtin_iter'/>
+<use f='codebrowser/Python/codecs.c' l='41' u='c' c='PyCodec_Register'/>
+<use f='codebrowser/Python/codecs.c' l='635' u='c' c='PyCodec_RegisterError'/>
+<use f='codebrowser/Python/sysmodule.c' l='643' u='c' c='sys_set_coroutine_wrapper'/>
+<use f='codebrowser/Python/sysmodule.c' l='717' u='c' c='sys_set_asyncgen_hooks'/>
+<use f='codebrowser/Python/sysmodule.c' l='730' u='c' c='sys_set_asyncgen_hooks'/>

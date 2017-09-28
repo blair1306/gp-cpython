@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/abstract.h' l='479' type='int PyObject_CheckReadBuffer(PyObject * obj)'/>
+<doc f='codebrowser/Include/abstract.h' l='475'>/* Checks whether an arbitrary object supports the (character, single segment)
+   buffer interface.
+
+   Returns 1 on success, 0 on failure. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='258' ll='273' type='int PyObject_CheckReadBuffer(PyObject * obj)'/>
+<doc f='codebrowser/Objects/abstract.c' l='255'>/* We release the buffer right after use of this function which could
+   cause issues later on.  Don&apos;t use these functions in new code.
+ */</doc>

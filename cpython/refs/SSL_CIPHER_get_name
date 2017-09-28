@@ -1,0 +1,3 @@
+<dec f='include/openssl/ssl.h' l='2145' type='const char * SSL_CIPHER_get_name(const SSL_CIPHER * c)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1541' u='c' c='cipher_to_tuple'/>
+<use f='codebrowser/Modules/_ssl.c' l='1590' u='c' c='cipher_to_dict'/>

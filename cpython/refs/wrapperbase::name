@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/descrobject.h' l='27' type='const char *'/>
+<offset>0</offset>
+<use f='codebrowser/Objects/descrobject.c' l='495' u='r' c='wrapperdescr_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='501' u='r' c='wrapperdescr_get_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='780' u='r' c='PyDescr_NewWrapper'/>
+<use f='codebrowser/Objects/descrobject.c' l='1095' u='r' c='wrapper_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='1134' u='r' c='wrapper_name'/>
+<use f='codebrowser/Objects/descrobject.c' l='1142' u='r' c='wrapper_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='1148' u='r' c='wrapper_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='1180' u='r' c='wrapper_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='7047' u='r' c='init_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7049' u='r' c='init_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7050' u='r' c='init_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7061' u='r' c='clear_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7088' u='r' c='update_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='7115' u='r' c='fixup_slot_dispatchers'/>
+<use f='codebrowser/Objects/typeobject.c' l='7125' u='r' c='update_all_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='7280' u='r' c='add_operators'/>

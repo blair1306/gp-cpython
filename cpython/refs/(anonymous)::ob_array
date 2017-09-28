@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/memoryobject.h' l='65' type='Py_ssize_t [1]'/>
+<offset>1280</offset>
+<doc f='codebrowser/Include/memoryobject.h' l='65'>/* shape, strides, suboffsets */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='632' u='r' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='633' u='r' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='634' u='r' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1184' u='r' c='cast_to_1D'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1185' u='r' c='cast_to_1D'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1186' u='r' c='cast_to_1D'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1283' u='r' c='cast_to_ND'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1284' u='r' c='cast_to_ND'/>

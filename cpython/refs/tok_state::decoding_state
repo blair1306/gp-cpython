@@ -1,0 +1,13 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='55' type='enum decoding_state'/>
+<offset>7328</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='54'>/* Stuff for PEP 0263 */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='142' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='323' u='r' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='330' u='w' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='360' u='w' c='check_bom'/>
+<use f='codebrowser/Parser/tokenizer.c' l='597' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='602' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='613' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='651' u='r' c='decoding_feof'/>
+<use f='codebrowser/Parser/tokenizer.c' l='842' u='w' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='885' u='w' c='PyTokenizer_FromFile'/>

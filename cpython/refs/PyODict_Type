@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/odictobject.h' l='14' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2404' u='a' c='PyInit__collections'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2405' u='a' c='PyInit__collections'/>
+<use f='codebrowser/Objects/object.c' l='1698' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Objects/odictobject.c' l='1027' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1110' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1259' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1266' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1490' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1583' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1583' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1594' macro='1' u='a'/>
+<use f='codebrowser/Objects/odictobject.c' l='1594' macro='1' u='a'/>
+<def f='codebrowser/Objects/odictobject.c' l='1672' ll='1712' type='PyTypeObject'/>
+<use f='codebrowser/Objects/odictobject.c' l='1721' u='a' c='PyODict_New'/>
+<doc f='codebrowser/Objects/odictobject.c' l='1670'>/* PyODict_Type */</doc>

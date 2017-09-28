@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='423' type='unsigned int'/>
+<offset>3200</offset>
+<doc f='codebrowser/Include/object.h' l='422'>/* Type attribute cache version tag. Added in version 2.6 */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='331' u='w' c='assign_version_tag'/>
+<use f='codebrowser/Objects/typeobject.c' l='334' u='r' c='assign_version_tag'/>
+<use f='codebrowser/Objects/typeobject.c' l='30' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='2954' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='30' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='3005' u='r' c='_PyType_Lookup'/>

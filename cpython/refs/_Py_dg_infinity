@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/dtoa.h' l='12' type='double _Py_dg_infinity(int sign)'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='94' u='c' c='m_inf'/>
+<use f='codebrowser/Modules/mathmodule.c' l='242' u='c' c='m_inf'/>
+<use f='codebrowser/Objects/floatobject.c' l='2434' u='c' c='_PyFloat_Unpack2'/>
+<def f='codebrowser/Python/dtoa.c' l='1424' ll='1431' type='double _Py_dg_infinity(int sign)'/>
+<doc f='codebrowser/Python/dtoa.c' l='1421'>/* Return positive or negative infinity, according to the given sign (0 for
+ * positive infinity, 1 for negative infinity). */</doc>
+<use f='codebrowser/Python/pystrtod.c' l='46' u='c' c='_Py_parse_inf_or_nan'/>

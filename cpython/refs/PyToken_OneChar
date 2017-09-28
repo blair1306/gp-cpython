@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/token.h' l='86' type='int PyToken_OneChar(int )'/>
+<use f='codebrowser/Parser/grammar.c' l='231' u='c' c='translabel'/>
+<def f='codebrowser/Parser/tokenizer.c' l='1120' ll='1149' type='int PyToken_OneChar(int c)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1896' u='c' c='tok_get'/>
+<doc f='codebrowser/Parser/tokenizer.c' l='1118'>/* Return the token corresponding to a single character */</doc>

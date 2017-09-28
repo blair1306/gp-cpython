@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/objimpl.h' l='246' type='PyVarObject * _PyObject_GC_Resize(PyVarObject * , Py_ssize_t )'/>
+<def f='codebrowser/Modules/gcmodule.c' l='1801' ll='1814' type='PyVarObject * _PyObject_GC_Resize(PyVarObject * op, Py_ssize_t nitems)'/>
+<use f='codebrowser/Objects/frameobject.c' l='680' macro='1' u='c'/>
+<use f='codebrowser/Objects/tupleobject.c' l='914' macro='1' u='c'/>

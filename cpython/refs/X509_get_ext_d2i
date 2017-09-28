@@ -1,0 +1,4 @@
+<dec f='include/openssl/x509.h' l='1071' type='void * X509_get_ext_d2i(X509 * x, int nid, int * crit, int * idx)'/>
+<use f='codebrowser/Modules/_ssl.c' l='959' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1153' u='c' c='_get_aia_uri'/>
+<use f='codebrowser/Modules/_ssl.c' l='1210' u='c' c='_get_crl_dp'/>

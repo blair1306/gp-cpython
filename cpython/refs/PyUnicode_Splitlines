@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1920' type='PyObject * PyUnicode_Splitlines(PyObject * s, int keepends)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1915'>/* Dito, but split at line breaks.
+
+   CRLF is considered to be one line break. Line breaks are not
+   included in the resulting list. */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1451' u='c' c='_multibytecodec_MultibyteStreamReader_readlines_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='10198' ll='10232' type='PyObject * PyUnicode_Splitlines(PyObject * string, int keepends)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13139' u='c' c='unicode_splitlines_impl'/>

@@ -1,0 +1,37 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='124' type='struct fielddesc * _ctypes_get_fielddesc(const char * fmt)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='977' u='c' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1491' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1495' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1575' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1602' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1611' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1639' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1666' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1675' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1708' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1726' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1743' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1916' u='c' c='PyCSimpleType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1979' u='c' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2144' u='c' c='PyCSimpleType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2282' u='c' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4359' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4384' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5047' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5068' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='274' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='908' u='c' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='123' u='c' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='124' u='c' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='129' u='c' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='130' u='c' c='PyCField_FromDesc'/>
+<def f='codebrowser/Modules/_ctypes/cfield.c' l='1565' ll='1588' type='struct fielddesc * _ctypes_get_fielddesc(const char * fmt)'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1575' u='c' c='_ctypes_get_fielddesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1577' u='c' c='_ctypes_get_fielddesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1579' u='c' c='_ctypes_get_fielddesc'/>
+<doc f='codebrowser/Modules/_ctypes/cfield.c' l='1560'>/*
+  Ideas: Implement VARIANT in this table, using &apos;V&apos; code.
+  Use &apos;?&apos; as code for BOOL.
+*/</doc>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='487' u='c' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='489' u='c' c='PyCStructUnionType_update_stgdict'/>

@@ -1,0 +1,2 @@
+<dec f='include/openssl/rand.h' l='104' type='void RAND_add(const void * buf, int num, double entropy)'/>
+<use f='codebrowser/Modules/_ssl.c' l='4503' u='c' c='_ssl_RAND_add_impl'/>

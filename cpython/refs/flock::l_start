@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl.h' l='43' type='__off64_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/fcntl.h' l='43'>/* Offset where the lock begins.  */</doc>
+<use f='codebrowser/Modules/fcntlmodule.c' l='386' u='w' c='fcntl_lockf_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='389' u='w' c='fcntl_lockf_impl'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/grammar.h' l='45' type='int'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/grammar.h' l='45'>/* Nonzero for accepting state */</doc>
+<use f='codebrowser/Parser/acceler.c' l='70' u='w' c='fixstate'/>
+<use f='codebrowser/Parser/acceler.c' l='104' u='w' c='fixstate'/>
+<use f='codebrowser/Parser/grammar.c' l='82' u='w' c='_Py_addstate'/>
+<use f='codebrowser/Parser/parser.c' l='278' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='302' u='r' c='PyParser_AddToken'/>

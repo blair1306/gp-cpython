@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1652' type='PyObject * _PyUnicode_EncodeCharmap(PyObject * unicode, PyObject * mapping, const char * errors)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='958' u='c' c='_codecs_charmap_encode_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='8528' ll='8597' type='PyObject * _PyUnicode_EncodeCharmap(PyObject * unicode, PyObject * mapping, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8610' u='c' c='PyUnicode_EncodeCharmap'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8623' u='c' c='PyUnicode_AsCharmapString'/>

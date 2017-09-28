@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/iterobject.h' l='19' type='PyObject * PyCallIter_New(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_sre.c' l='862' u='c' c='_sre_SRE_Pattern_finditer_impl'/>
+<def f='codebrowser/Objects/iterobject.c' l='177' ll='190' type='PyObject * PyCallIter_New(PyObject * callable, PyObject * sentinel)'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1446' u='c' c='builtin_iter'/>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_math.c source code [codebrowser/Modules/_math.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_math.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='_math.c.html'>_math.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Definitions of some C99 math library functions, for those platforms</i></td></tr>
+<tr><th id="2">2</th><td><i>   that don't implement these functions already. */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include &lt;float.h&gt;</u></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="_math.h.html">"_math.h"</a></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* The following copyright notice applies to the original</i></td></tr>
+<tr><th id="9">9</th><td><i>   implementations of acosh, asinh and atanh. */</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><i>/*</i></td></tr>
+<tr><th id="12">12</th><td><i> * ====================================================</i></td></tr>
+<tr><th id="13">13</th><td><i> * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.</i></td></tr>
+<tr><th id="14">14</th><td><i> *</i></td></tr>
+<tr><th id="15">15</th><td><i> * Developed at SunPro, a Sun Microsystems, Inc. business.</i></td></tr>
+<tr><th id="16">16</th><td><i> * Permission to use, copy, modify, and distribute this</i></td></tr>
+<tr><th id="17">17</th><td><i> * software is freely granted, provided that this notice</i></td></tr>
+<tr><th id="18">18</th><td><i> * is preserved.</i></td></tr>
+<tr><th id="19">19</th><td><i> * ====================================================</i></td></tr>
+<tr><th id="20">20</th><td><i> */</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="22">if</span> !defined(<a class="macro" href="../pyconfig.h.html#48" data-ref="_M/HAVE_ACOSH">HAVE_ACOSH</a>) || !defined(<a class="macro" href="../pyconfig.h.html#66" data-ref="_M/HAVE_ASINH">HAVE_ASINH</a>)</u></td></tr>
+<tr><th id="23">23</th><td><em>static</em> <em>const</em> <em>double</em> ln2 = <var>6.93147180559945286227E-01</var>;</td></tr>
+<tr><th id="24">24</th><td><em>static</em> <em>const</em> <em>double</em> two_pow_p28 = <var>268435456.0</var>; <i>/* 2**28 */</i></td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="22">endif</span></u></td></tr>
+<tr><th id="26">26</th><td><u>#<span data-ppcond="26">if</span> !defined(<a class="macro" href="../pyconfig.h.html#66" data-ref="_M/HAVE_ASINH">HAVE_ASINH</a>) || !defined(<a class="macro" href="../pyconfig.h.html#72" data-ref="_M/HAVE_ATANH">HAVE_ATANH</a>)</u></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <em>const</em> <em>double</em> two_pow_m28 = <var>3.7252902984619141E-09</var>; <i>/* 2**-28 */</i></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="26">endif</span></u></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">if</span> !defined(<a class="macro" href="../pyconfig.h.html#72" data-ref="_M/HAVE_ATANH">HAVE_ATANH</a>) &amp;&amp; !defined(<a class="macro" href="../Include/pymath.h.html#160" data-ref="_M/Py_NAN">Py_NAN</a>)</u></td></tr>
+<tr><th id="30">30</th><td><em>static</em> <em>const</em> <em>double</em> zero = <var>0.0</var>;</td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="34">ifndef</span> <a class="macro" href="../pyconfig.h.html#48" data-ref="_M/HAVE_ACOSH">HAVE_ACOSH</a></u></td></tr>
+<tr><th id="35">35</th><td><i>/* acosh(x)</i></td></tr>
+<tr><th id="36">36</th><td><i> * Method :</i></td></tr>
+<tr><th id="37">37</th><td><i> *      Based on</i></td></tr>
+<tr><th id="38">38</th><td><i> *            acosh(x) = log [ x + sqrt(x*x-1) ]</i></td></tr>
+<tr><th id="39">39</th><td><i> *      we have</i></td></tr>
+<tr><th id="40">40</th><td><i> *            acosh(x) := log(x)+ln2, if x is large; else</i></td></tr>
+<tr><th id="41">41</th><td><i> *            acosh(x) := log(2x-1/(sqrt(x*x-1)+x)) if x&gt;2; else</i></td></tr>
+<tr><th id="42">42</th><td><i> *            acosh(x) := log1p(t+sqrt(2.0*t+t*t)); where t=x-1.</i></td></tr>
+<tr><th id="43">43</th><td><i> *</i></td></tr>
+<tr><th id="44">44</th><td><i> * Special cases:</i></td></tr>
+<tr><th id="45">45</th><td><i> *      acosh(x) is NaN with signal if x&lt;1.</i></td></tr>
+<tr><th id="46">46</th><td><i> *      acosh(NaN) is NaN without signal.</i></td></tr>
+<tr><th id="47">47</th><td><i> */</i></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><em>double</em></td></tr>
+<tr><th id="50">50</th><td>_Py_acosh(<em>double</em> x)</td></tr>
+<tr><th id="51">51</th><td>{</td></tr>
+<tr><th id="52">52</th><td>    <b>if</b> (Py_IS_NAN(x)) {</td></tr>
+<tr><th id="53">53</th><td>        <b>return</b> x+x;</td></tr>
+<tr><th id="54">54</th><td>    }</td></tr>
+<tr><th id="55">55</th><td>    <b>if</b> (x &lt; <var>1.</var>) {                       <i>/* x &lt; 1;  return a signaling NaN */</i></td></tr>
+<tr><th id="56">56</th><td>        errno = EDOM;</td></tr>
+<tr><th id="57">57</th><td><u>#ifdef Py_NAN</u></td></tr>
+<tr><th id="58">58</th><td>        <b>return</b> Py_NAN;</td></tr>
+<tr><th id="59">59</th><td><u>#else</u></td></tr>
+<tr><th id="60">60</th><td>        <b>return</b> (x-x)/(x-x);</td></tr>
+<tr><th id="61">61</th><td><u>#endif</u></td></tr>
+<tr><th id="62">62</th><td>    }</td></tr>
+<tr><th id="63">63</th><td>    <b>else</b> <b>if</b> (x &gt;= two_pow_p28) {        <i>/* x &gt; 2**28 */</i></td></tr>
+<tr><th id="64">64</th><td>        <b>if</b> (Py_IS_INFINITY(x)) {</td></tr>
+<tr><th id="65">65</th><td>            <b>return</b> x+x;</td></tr>
+<tr><th id="66">66</th><td>        }</td></tr>
+<tr><th id="67">67</th><td>        <b>else</b> {</td></tr>
+<tr><th id="68">68</th><td>            <b>return</b> log(x) + ln2;          <i>/* acosh(huge)=log(2x) */</i></td></tr>
+<tr><th id="69">69</th><td>        }</td></tr>
+<tr><th id="70">70</th><td>    }</td></tr>
+<tr><th id="71">71</th><td>    <b>else</b> <b>if</b> (x == <var>1.</var>) {</td></tr>
+<tr><th id="72">72</th><td>        <b>return</b> <var>0.0</var>;                     <i>/* acosh(1) = 0 */</i></td></tr>
+<tr><th id="73">73</th><td>    }</td></tr>
+<tr><th id="74">74</th><td>    <b>else</b> <b>if</b> (x &gt; <var>2.</var>) {                  <i>/* 2 &lt; x &lt; 2**28 */</i></td></tr>
+<tr><th id="75">75</th><td>        <em>double</em> t = x * x;</td></tr>
+<tr><th id="76">76</th><td>        <b>return</b> log(<var>2.0</var> * x - <var>1.0</var> / (x + sqrt(t - <var>1.0</var>)));</td></tr>
+<tr><th id="77">77</th><td>    }</td></tr>
+<tr><th id="78">78</th><td>    <b>else</b> {                              <i>/* 1 &lt; x &lt;= 2 */</i></td></tr>
+<tr><th id="79">79</th><td>        <em>double</em> t = x - <var>1.0</var>;</td></tr>
+<tr><th id="80">80</th><td>        <b>return</b> m_log1p(t + sqrt(<var>2.0</var> * t + t * t));</td></tr>
+<tr><th id="81">81</th><td>    }</td></tr>
+<tr><th id="82">82</th><td>}</td></tr>
+<tr><th id="83">83</th><td><u>#<span data-ppcond="34">endif</span>   /* HAVE_ACOSH */</u></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><u>#<span data-ppcond="86">ifndef</span> <a class="macro" href="../pyconfig.h.html#66" data-ref="_M/HAVE_ASINH">HAVE_ASINH</a></u></td></tr>
+<tr><th id="87">87</th><td><i>/* asinh(x)</i></td></tr>
+<tr><th id="88">88</th><td><i> * Method :</i></td></tr>
+<tr><th id="89">89</th><td><i> *      Based on</i></td></tr>
+<tr><th id="90">90</th><td><i> *              asinh(x) = sign(x) * log [ |x| + sqrt(x*x+1) ]</i></td></tr>
+<tr><th id="91">91</th><td><i> *      we have</i></td></tr>
+<tr><th id="92">92</th><td><i> *      asinh(x) := x  if  1+x*x=1,</i></td></tr>
+<tr><th id="93">93</th><td><i> *               := sign(x)*(log(x)+ln2)) for large |x|, else</i></td></tr>
+<tr><th id="94">94</th><td><i> *               := sign(x)*log(2|x|+1/(|x|+sqrt(x*x+1))) if|x|&gt;2, else</i></td></tr>
+<tr><th id="95">95</th><td><i> *               := sign(x)*log1p(|x| + x^2/(1 + sqrt(1+x^2)))</i></td></tr>
+<tr><th id="96">96</th><td><i> */</i></td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><em>double</em></td></tr>
+<tr><th id="99">99</th><td>_Py_asinh(<em>double</em> x)</td></tr>
+<tr><th id="100">100</th><td>{</td></tr>
+<tr><th id="101">101</th><td>    <em>double</em> w;</td></tr>
+<tr><th id="102">102</th><td>    <em>double</em> absx = fabs(x);</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>    <b>if</b> (Py_IS_NAN(x) || Py_IS_INFINITY(x)) {</td></tr>
+<tr><th id="105">105</th><td>        <b>return</b> x+x;</td></tr>
+<tr><th id="106">106</th><td>    }</td></tr>
+<tr><th id="107">107</th><td>    <b>if</b> (absx &lt; two_pow_m28) {           <i>/* |x| &lt; 2**-28 */</i></td></tr>
+<tr><th id="108">108</th><td>        <b>return</b> x;                       <i>/* return x inexact except 0 */</i></td></tr>
+<tr><th id="109">109</th><td>    }</td></tr>
+<tr><th id="110">110</th><td>    <b>if</b> (absx &gt; two_pow_p28) {           <i>/* |x| &gt; 2**28 */</i></td></tr>
+<tr><th id="111">111</th><td>        w = log(absx) + ln2;</td></tr>
+<tr><th id="112">112</th><td>    }</td></tr>
+<tr><th id="113">113</th><td>    <b>else</b> <b>if</b> (absx &gt; <var>2.0</var>) {              <i>/* 2 &lt; |x| &lt; 2**28 */</i></td></tr>
+<tr><th id="114">114</th><td>        w = log(<var>2.0</var> * absx + <var>1.0</var> / (sqrt(x * x + <var>1.0</var>) + absx));</td></tr>
+<tr><th id="115">115</th><td>    }</td></tr>
+<tr><th id="116">116</th><td>    <b>else</b> {                              <i>/* 2**-28 &lt;= |x| &lt; 2= */</i></td></tr>
+<tr><th id="117">117</th><td>        <em>double</em> t = x*x;</td></tr>
+<tr><th id="118">118</th><td>        w = m_log1p(absx + t / (<var>1.0</var> + sqrt(<var>1.0</var> + t)));</td></tr>
+<tr><th id="119">119</th><td>    }</td></tr>
+<tr><th id="120">120</th><td>    <b>return</b> copysign(w, x);</td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td>}</td></tr>
+<tr><th id="123">123</th><td><u>#<span data-ppcond="86">endif</span>   /* HAVE_ASINH */</u></td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="126">ifndef</span> <a class="macro" href="../pyconfig.h.html#72" data-ref="_M/HAVE_ATANH">HAVE_ATANH</a></u></td></tr>
+<tr><th id="127">127</th><td><i>/* atanh(x)</i></td></tr>
+<tr><th id="128">128</th><td><i> * Method :</i></td></tr>
+<tr><th id="129">129</th><td><i> *    1.Reduced x to positive by atanh(-x) = -atanh(x)</i></td></tr>
+<tr><th id="130">130</th><td><i> *    2.For x&gt;=0.5</i></td></tr>
+<tr><th id="131">131</th><td><i> *                  1              2x                          x</i></td></tr>
+<tr><th id="132">132</th><td><i> *      atanh(x) = --- * log(1 + -------) = 0.5 * log1p(2 * -------)</i></td></tr>
+<tr><th id="133">133</th><td><i> *                  2             1 - x                      1 - x</i></td></tr>
+<tr><th id="134">134</th><td><i> *</i></td></tr>
+<tr><th id="135">135</th><td><i> *      For x&lt;0.5</i></td></tr>
+<tr><th id="136">136</th><td><i> *      atanh(x) = 0.5*log1p(2x+2x*x/(1-x))</i></td></tr>
+<tr><th id="137">137</th><td><i> *</i></td></tr>
+<tr><th id="138">138</th><td><i> * Special cases:</i></td></tr>
+<tr><th id="139">139</th><td><i> *      atanh(x) is NaN if |x| &gt;= 1 with signal;</i></td></tr>
+<tr><th id="140">140</th><td><i> *      atanh(NaN) is that NaN with no signal;</i></td></tr>
+<tr><th id="141">141</th><td><i> *</i></td></tr>
+<tr><th id="142">142</th><td><i> */</i></td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><em>double</em></td></tr>
+<tr><th id="145">145</th><td>_Py_atanh(<em>double</em> x)</td></tr>
+<tr><th id="146">146</th><td>{</td></tr>
+<tr><th id="147">147</th><td>    <em>double</em> absx;</td></tr>
+<tr><th id="148">148</th><td>    <em>double</em> t;</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>    <b>if</b> (Py_IS_NAN(x)) {</td></tr>
+<tr><th id="151">151</th><td>        <b>return</b> x+x;</td></tr>
+<tr><th id="152">152</th><td>    }</td></tr>
+<tr><th id="153">153</th><td>    absx = fabs(x);</td></tr>
+<tr><th id="154">154</th><td>    <b>if</b> (absx &gt;= <var>1.</var>) {                   <i>/* |x| &gt;= 1 */</i></td></tr>
+<tr><th id="155">155</th><td>        errno = EDOM;</td></tr>
+<tr><th id="156">156</th><td><u>#ifdef Py_NAN</u></td></tr>
+<tr><th id="157">157</th><td>        <b>return</b> Py_NAN;</td></tr>
+<tr><th id="158">158</th><td><u>#else</u></td></tr>
+<tr><th id="159">159</th><td>        <b>return</b> x / zero;</td></tr>
+<tr><th id="160">160</th><td><u>#endif</u></td></tr>
+<tr><th id="161">161</th><td>    }</td></tr>
+<tr><th id="162">162</th><td>    <b>if</b> (absx &lt; two_pow_m28) {           <i>/* |x| &lt; 2**-28 */</i></td></tr>
+<tr><th id="163">163</th><td>        <b>return</b> x;</td></tr>
+<tr><th id="164">164</th><td>    }</td></tr>
+<tr><th id="165">165</th><td>    <b>if</b> (absx &lt; <var>0.5</var>) {                   <i>/* |x| &lt; 0.5 */</i></td></tr>
+<tr><th id="166">166</th><td>        t = absx+absx;</td></tr>
+<tr><th id="167">167</th><td>        t = <var>0.5</var> * m_log1p(t + t*absx / (<var>1.0</var> - absx));</td></tr>
+<tr><th id="168">168</th><td>    }</td></tr>
+<tr><th id="169">169</th><td>    <b>else</b> {                              <i>/* 0.5 &lt;= |x| &lt;= 1.0 */</i></td></tr>
+<tr><th id="170">170</th><td>        t = <var>0.5</var> * m_log1p((absx + absx) / (<var>1.0</var> - absx));</td></tr>
+<tr><th id="171">171</th><td>    }</td></tr>
+<tr><th id="172">172</th><td>    <b>return</b> copysign(t, x);</td></tr>
+<tr><th id="173">173</th><td>}</td></tr>
+<tr><th id="174">174</th><td><u>#<span data-ppcond="126">endif</span>   /* HAVE_ATANH */</u></td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><u>#<span data-ppcond="177">ifndef</span> <a class="macro" href="../pyconfig.h.html#265" data-ref="_M/HAVE_EXPM1">HAVE_EXPM1</a></u></td></tr>
+<tr><th id="178">178</th><td><i>/* Mathematically, expm1(x) = exp(x) - 1.  The expm1 function is designed</i></td></tr>
+<tr><th id="179">179</th><td><i>   to avoid the significant loss of precision that arises from direct</i></td></tr>
+<tr><th id="180">180</th><td><i>   evaluation of the expression exp(x) - 1, for x near 0. */</i></td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><em>double</em></td></tr>
+<tr><th id="183">183</th><td>_Py_expm1(<em>double</em> x)</td></tr>
+<tr><th id="184">184</th><td>{</td></tr>
+<tr><th id="185">185</th><td>    <i>/* For abs(x) &gt;= log(2), it's safe to evaluate exp(x) - 1 directly; this</i></td></tr>
+<tr><th id="186">186</th><td><i>       also works fine for infinities and nans.</i></td></tr>
+<tr><th id="187">187</th><td><i></i></td></tr>
+<tr><th id="188">188</th><td><i>       For smaller x, we can use a method due to Kahan that achieves close to</i></td></tr>
+<tr><th id="189">189</th><td><i>       full accuracy.</i></td></tr>
+<tr><th id="190">190</th><td><i>    */</i></td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td>    <b>if</b> (fabs(x) &lt; <var>0.7</var>) {</td></tr>
+<tr><th id="193">193</th><td>        <em>double</em> u;</td></tr>
+<tr><th id="194">194</th><td>        u = exp(x);</td></tr>
+<tr><th id="195">195</th><td>        <b>if</b> (u == <var>1.0</var>)</td></tr>
+<tr><th id="196">196</th><td>            <b>return</b> x;</td></tr>
+<tr><th id="197">197</th><td>        <b>else</b></td></tr>
+<tr><th id="198">198</th><td>            <b>return</b> (u - <var>1.0</var>) * x / log(u);</td></tr>
+<tr><th id="199">199</th><td>    }</td></tr>
+<tr><th id="200">200</th><td>    <b>else</b></td></tr>
+<tr><th id="201">201</th><td>        <b>return</b> exp(x) - <var>1.0</var>;</td></tr>
+<tr><th id="202">202</th><td>}</td></tr>
+<tr><th id="203">203</th><td><u>#<span data-ppcond="177">endif</span>   /* HAVE_EXPM1 */</u></td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><i>/* log1p(x) = log(1+x).  The log1p function is designed to avoid the</i></td></tr>
+<tr><th id="207">207</th><td><i>   significant loss of precision that arises from direct evaluation when x is</i></td></tr>
+<tr><th id="208">208</th><td><i>   small. */</i></td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td><em>double</em></td></tr>
+<tr><th id="211">211</th><td><dfn class="decl def" id="_Py_log1p" title='_Py_log1p' data-ref="_Py_log1p">_Py_log1p</dfn>(<em>double</em> <dfn class="local col2 decl" id="2x" title='x' data-type='double' data-ref="2x">x</dfn>)</td></tr>
+<tr><th id="212">212</th><td>{</td></tr>
+<tr><th id="213">213</th><td><u>#<span data-ppcond="213">ifdef</span> <a class="macro" href="../pyconfig.h.html#582" data-ref="_M/HAVE_LOG1P">HAVE_LOG1P</a></u></td></tr>
+<tr><th id="214">214</th><td>    <i>/* Some platforms supply a log1p function but don't respect the sign of</i></td></tr>
+<tr><th id="215">215</th><td><i>       zero:  log1p(-0.0) gives 0.0 instead of the correct result of -0.0.</i></td></tr>
+<tr><th id="216">216</th><td><i></i></td></tr>
+<tr><th id="217">217</th><td><i>       To save fiddling with configure tests and platform checks, we handle the</i></td></tr>
+<tr><th id="218">218</th><td><i>       special case of zero input directly on all platforms.</i></td></tr>
+<tr><th id="219">219</th><td><i>    */</i></td></tr>
+<tr><th id="220">220</th><td>    <b>if</b> (<a class="local col2 ref" href="#2x" title='x' data-ref="2x">x</a> == <var>0.0</var>) {</td></tr>
+<tr><th id="221">221</th><td>        <b>return</b> <a class="local col2 ref" href="#2x" title='x' data-ref="2x">x</a>;</td></tr>
+<tr><th id="222">222</th><td>    }</td></tr>
+<tr><th id="223">223</th><td>    <b>else</b> {</td></tr>
+<tr><th id="224">224</th><td>        <b>return</b> <a class="ref" href="../../include/x86_64-linux-gnu/bits/mathcalls.h.html#131" title='log1p' data-ref="log1p">log1p</a>(<a class="local col2 ref" href="#2x" title='x' data-ref="2x">x</a>);</td></tr>
+<tr><th id="225">225</th><td>    }</td></tr>
+<tr><th id="226">226</th><td><u>#<span data-ppcond="213">else</span></u></td></tr>
+<tr><th id="227">227</th><td>    <i>/* For x small, we use the following approach.  Let y be the nearest float</i></td></tr>
+<tr><th id="228">228</th><td><i>       to 1+x, then</i></td></tr>
+<tr><th id="229">229</th><td><i></i></td></tr>
+<tr><th id="230">230</th><td><i>         1+x = y * (1 - (y-1-x)/y)</i></td></tr>
+<tr><th id="231">231</th><td><i></i></td></tr>
+<tr><th id="232">232</th><td><i>       so log(1+x) = log(y) + log(1-(y-1-x)/y).  Since (y-1-x)/y is tiny, the</i></td></tr>
+<tr><th id="233">233</th><td><i>       second term is well approximated by (y-1-x)/y.  If abs(x) &gt;=</i></td></tr>
+<tr><th id="234">234</th><td><i>       DBL_EPSILON/2 or the rounding-mode is some form of round-to-nearest</i></td></tr>
+<tr><th id="235">235</th><td><i>       then y-1-x will be exactly representable, and is computed exactly by</i></td></tr>
+<tr><th id="236">236</th><td><i>       (y-1)-x.</i></td></tr>
+<tr><th id="237">237</th><td><i></i></td></tr>
+<tr><th id="238">238</th><td><i>       If abs(x) &lt; DBL_EPSILON/2 and the rounding mode is not known to be</i></td></tr>
+<tr><th id="239">239</th><td><i>       round-to-nearest then this method is slightly dangerous: 1+x could be</i></td></tr>
+<tr><th id="240">240</th><td><i>       rounded up to 1+DBL_EPSILON instead of down to 1, and in that case</i></td></tr>
+<tr><th id="241">241</th><td><i>       y-1-x will not be exactly representable any more and the result can be</i></td></tr>
+<tr><th id="242">242</th><td><i>       off by many ulps.  But this is easily fixed: for a floating-point</i></td></tr>
+<tr><th id="243">243</th><td><i>       number |x| &lt; DBL_EPSILON/2., the closest floating-point number to</i></td></tr>
+<tr><th id="244">244</th><td><i>       log(1+x) is exactly x.</i></td></tr>
+<tr><th id="245">245</th><td><i>    */</i></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td>    <em>double</em> y;</td></tr>
+<tr><th id="248">248</th><td>    <b>if</b> (fabs(x) &lt; DBL_EPSILON / <var>2.</var>) {</td></tr>
+<tr><th id="249">249</th><td>        <b>return</b> x;</td></tr>
+<tr><th id="250">250</th><td>    }</td></tr>
+<tr><th id="251">251</th><td>    <b>else</b> <b>if</b> (-<var>0.5</var> &lt;= x &amp;&amp; x &lt;= <var>1.</var>) {</td></tr>
+<tr><th id="252">252</th><td>        <i>/* WARNING: it's possible that an overeager compiler</i></td></tr>
+<tr><th id="253">253</th><td><i>           will incorrectly optimize the following two lines</i></td></tr>
+<tr><th id="254">254</th><td><i>           to the equivalent of "return log(1.+x)". If this</i></td></tr>
+<tr><th id="255">255</th><td><i>           happens, then results from log1p will be inaccurate</i></td></tr>
+<tr><th id="256">256</th><td><i>           for small x. */</i></td></tr>
+<tr><th id="257">257</th><td>        y = <var>1.</var>+x;</td></tr>
+<tr><th id="258">258</th><td>        <b>return</b> log(y) - ((y - <var>1.</var>) - x) / y;</td></tr>
+<tr><th id="259">259</th><td>    }</td></tr>
+<tr><th id="260">260</th><td>    <b>else</b> {</td></tr>
+<tr><th id="261">261</th><td>        <i>/* NaNs and infinities should end up here */</i></td></tr>
+<tr><th id="262">262</th><td>        <b>return</b> log(<var>1.</var>+x);</td></tr>
+<tr><th id="263">263</th><td>    }</td></tr>
+<tr><th id="264">264</th><td><u>#<span data-ppcond="213">endif</span> /* ifdef HAVE_LOG1P */</u></td></tr>
+<tr><th id="265">265</th><td>}</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

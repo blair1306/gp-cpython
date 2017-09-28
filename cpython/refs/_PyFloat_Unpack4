@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/floatobject.h' l='109' type='double _PyFloat_Unpack4(const unsigned char * p, int le)'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1098' u='c' c='f_get_sw'/>
+<use f='codebrowser/Modules/_struct.c' l='309' u='c' c='unpack_float'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2036' u='c' c='array__array_reconstructor_impl'/>
+<def f='codebrowser/Objects/floatobject.c' l='2460' ll='2536' type='double _PyFloat_Unpack4(const unsigned char * p, int le)'/>

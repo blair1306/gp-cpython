@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/listobject.h' l='54' type='PyObject * PyList_GetItem(PyObject * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='384' u='c' c='list_as_flags'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1547' u='c' c='array_array_fromlist'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4887' u='c' c='parse_envlist'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4888' u='c' c='parse_envlist'/>
+<use f='codebrowser/Modules/syslogmodule.c' l='89' u='c' c='syslog_get_argv'/>
+<use f='codebrowser/Modules/termios.c' l='159' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='160' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='161' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='162' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='163' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='164' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='165' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='177' u='c' c='termios_tcsetattr'/>
+<def f='codebrowser/Objects/listobject.c' l='200' ll='218' type='PyObject * PyList_GetItem(PyObject * op, Py_ssize_t i)'/>
+<use f='codebrowser/Python/_warnings.c' l='724' u='c' c='setup_context'/>
+<use f='codebrowser/Python/_warnings.c' l='895' u='c' c='warnings_warn_explicit'/>
+<use f='codebrowser/Python/codecs.c' l='151' u='c' c='_PyCodec_Lookup'/>
+<use f='codebrowser/Python/import.c' l='984' u='c' c='get_path_importer'/>
+<use f='codebrowser/Python/traceback.c' l='221' u='c' c='_Py_FindSourceFile'/>

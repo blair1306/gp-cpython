@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pyerrors.h' l='114' type='int PyErr_GivenExceptionMatches(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2062' u='c' c='task_step_impl'/>
+<doc f='codebrowser/Include/pyerrors.h' l='113'>/* Error testing and normalization */</doc>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='514' u='c' c='PyNumber_AsOff_t'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='676' u='c' c='_buffered_check_blocking_error'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='100' u='c' c='atexit_callfuncs'/>
+<use f='codebrowser/Objects/abstract.c' l='1294' u='c' c='PyNumber_AsSsize_t'/>
+<use f='codebrowser/Objects/genobject.c' l='425' u='c' c='_gen_throw'/>
+<use f='codebrowser/Python/ceval.c' l='4984' u='c' c='cmp_outcome'/>
+<def f='codebrowser/Python/errors.c' l='169' ll='198' type='int PyErr_GivenExceptionMatches(PyObject * err, PyObject * exc)'/>
+<use f='codebrowser/Python/errors.c' l='181' u='c' c='PyErr_GivenExceptionMatches'/>
+<use f='codebrowser/Python/errors.c' l='204' u='c' c='PyErr_ExceptionMatches'/>

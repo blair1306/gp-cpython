@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/intrcheck.h' l='11' type='void PyOS_BeforeFork()'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='670' u='c' c='subprocess_fork_exec'/>
+<def f='codebrowser/Modules/posixmodule.c' l='432' ll='438' type='void PyOS_BeforeFork()'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5445' u='c' c='os_fork_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6040' u='c' c='os_forkpty_impl'/>

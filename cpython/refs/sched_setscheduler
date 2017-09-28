@@ -1,0 +1,3 @@
+<dec f='include/sched.h' l='58' type='int sched_setscheduler(__pid_t __pid, int __policy, const struct sched_param * __param)'/>
+<doc f='include/sched.h' l='57'>/* Set scheduling algorithm and/or parameters for a process.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='5618' u='c' c='os_sched_setscheduler_impl'/>

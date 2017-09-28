@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='520' type='void mpd_qadd_ssize(mpd_t * result, const mpd_t * a, mpd_ssize_t b, const mpd_context_t * ctx, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3451' ll='3462' type='void mpd_qadd_ssize(mpd_t * result, const mpd_t * a, mpd_ssize_t b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3511' u='c' c='mpd_qadd_i32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3528' u='c' c='mpd_qadd_i64'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3450'>/* Add decimal and mpd_ssize_t. */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/frameobject.h' l='93' type='int PyFrame_GetLineNumber(PyFrameObject * )'/>
+<doc f='codebrowser/Include/frameobject.h' l='92'>/* Return the line of code the frame is currently executing. */</doc>
+<use f='codebrowser/Modules/_tracemalloc.c' l='364' u='c' c='tracemalloc_get_frame'/>
+<def f='codebrowser/Objects/frameobject.c' l='30' ll='37' type='int PyFrame_GetLineNumber(PyFrameObject * f)'/>
+<use f='codebrowser/Objects/frameobject.c' l='42' u='c' c='frame_getlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='345' u='c' c='frame_settrace'/>
+<use f='codebrowser/Python/_warnings.c' l='653' u='c' c='setup_context'/>
+<use f='codebrowser/Python/ceval.c' l='3546' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/traceback.c' l='126' u='c' c='newtracebackobject'/>

@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/datetime.h' l='39' type='int'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='98' u='w' c='new_delta_ex'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='new_timezone'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='call_tzinfo_method'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='format_utcoffset'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_to_microseconds'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_add'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_add'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_negative'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_positive'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_abs'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_subtract'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_subtract'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_cmp'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_cmp'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_bool'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_repr'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_repr'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_str'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='delta_getstate'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='timezone_str'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='timezone_str'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='time_richcompare'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='time_richcompare'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='add_datetime_timedelta'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='94' u='r' c='datetime_richcompare'/>
+<offset>352</offset>
+<doc f='codebrowser/Include/datetime.h' l='39'>/* 0 &lt;= seconds &lt; 24*3600 is invariant */</doc>

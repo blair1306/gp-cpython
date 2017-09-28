@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='293' type='ssizeobjargproc'/>
+<offset>320</offset>
+<use f='codebrowser/Objects/abstract.c' l='194' u='r' c='PyObject_SetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='226' u='r' c='PyObject_DelItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1694' u='r' c='PySequence_SetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1705' u='r' c='PySequence_SetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1723' u='r' c='PySequence_DelItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1734' u='r' c='PySequence_DelItem'/>
+<use f='codebrowser/Objects/typeobject.c' l='4902' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4902' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4902' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4902' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4902' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4902' u='r' c='inherit_slots'/>

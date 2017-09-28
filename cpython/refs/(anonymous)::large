@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/accu.h' l='22' type='PyObject *'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/accu.h' l='22'>/* A list of previously accumulated large strings */</doc>
+<use f='codebrowser/Objects/accu.c' l='21' u='w' c='_PyAccu_Init'/>
+<use f='codebrowser/Objects/accu.c' l='35' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='36' u='w' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='37' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='47' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='84' u='r' c='_PyAccu_FinishAsList'/>
+<use f='codebrowser/Objects/accu.c' l='84' u='w' c='_PyAccu_FinishAsList'/>
+<use f='codebrowser/Objects/accu.c' l='87' u='r' c='_PyAccu_FinishAsList'/>
+<use f='codebrowser/Objects/accu.c' l='88' u='w' c='_PyAccu_FinishAsList'/>
+<use f='codebrowser/Objects/accu.c' l='96' u='r' c='_PyAccu_Finish'/>
+<use f='codebrowser/Objects/accu.c' l='114' u='r' c='_PyAccu_Destroy'/>
+<use f='codebrowser/Objects/accu.c' l='114' u='w' c='_PyAccu_Destroy'/>

@@ -1,0 +1,12 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='187' type='double fmod(double __x, double __y)'/>
+<use f='codebrowser/Modules/mathmodule.c' l='86' u='c' c='sinpi'/>
+<use f='codebrowser/Modules/mathmodule.c' l='621' u='c' c='m_remainder'/>
+<use f='codebrowser/Modules/mathmodule.c' l='679' u='c' c='m_remainder'/>
+<use f='codebrowser/Modules/mathmodule.c' l='2021' u='c' c='math_fmod_impl'/>
+<use f='codebrowser/Modules/mathmodule.c' l='2112' u='c' c='math_pow_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='141' u='c' c='timeval_from_double'/>
+<use f='codebrowser/Objects/floatobject.c' l='602' u='c' c='float_rem'/>
+<use f='codebrowser/Objects/floatobject.c' l='631' u='c' c='float_divmod'/>
+<use f='codebrowser/Objects/floatobject.c' l='683' u='c' c='float_pow'/>
+<use f='codebrowser/Objects/floatobject.c' l='683' u='c' c='float_pow'/>
+<use f='codebrowser/Objects/floatobject.c' l='683' u='c' c='float_pow'/>

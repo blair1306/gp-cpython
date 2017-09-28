@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/import.h' l='40' type='PyObject * PyImport_GetModuleDict()'/>
+<use f='codebrowser/Python/_warnings.c' l='67' u='c' c='get_warnings_attr'/>
+<use f='codebrowser/Python/ceval.c' l='5057' u='c' c='import_from'/>
+<def f='codebrowser/Python/import.c' l='303' ll='310' type='PyObject * PyImport_GetModuleDict()'/>
+<use f='codebrowser/Python/import.c' l='546' u='c' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='623' u='c' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='630' u='c' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='662' u='c' c='PyImport_AddModuleObject'/>
+<use f='codebrowser/Python/import.c' l='701' u='c' c='remove_module'/>
+<use f='codebrowser/Python/import.c' l='815' u='c' c='exec_code_in_module'/>
+<use f='codebrowser/Python/import.c' l='1669' u='c' c='PyImport_ReloadModule'/>
+<use f='codebrowser/Python/import.c' l='1760' u='c' c='PyImport_Import'/>
+<doc f='codebrowser/Python/import.c' l='301'>/* Helper for sys */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='296' u='c' c='initimport'/>

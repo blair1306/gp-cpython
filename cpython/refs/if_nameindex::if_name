@@ -1,0 +1,4 @@
+<dec f='include/net/if.h' l='36' type='char *'/>
+<offset>64</offset>
+<doc f='include/net/if.h' l='36'>/* null terminated name: &quot;eth0&quot;, ... */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='6176' u='r' c='socket_if_nameindex'/>

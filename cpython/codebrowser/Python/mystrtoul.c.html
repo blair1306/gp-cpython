@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>mystrtoul.c source code [codebrowser/Python/mystrtoul.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/mystrtoul.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='mystrtoul.c.html'>mystrtoul.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">if</span> defined(<span class="macro" data-ref="_M/__sgi">__sgi</span>) &amp;&amp; defined(<a class="macro" href="../pyconfig.h.html#1396" data-ref="_M/WITH_THREAD">WITH_THREAD</a>) &amp;&amp; !defined(<span class="macro" data-ref="_M/_SGI_MP_SOURCE">_SGI_MP_SOURCE</span>)</u></td></tr>
+<tr><th id="5">5</th><td><u>#define _SGI_MP_SOURCE</u></td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="4">endif</span></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* strtol and strtoul, renamed to avoid conflicts */</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="12">12</th><td><u>#<span data-ppcond="12">ifdef</span> <a class="macro" href="../pyconfig.h.html#259" data-ref="_M/HAVE_ERRNO_H">HAVE_ERRNO_H</a></u></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="14">14</th><td><u>#<span data-ppcond="12">endif</span></u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="smallmax">/* Static overflow check values for bases 2 through 36.</i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="smallmax"> * smallmax[base] is the largest unsigned long i such that</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="smallmax"> * i * base doesn't overflow unsigned long.</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="smallmax"> */</i></td></tr>
+<tr><th id="20">20</th><td><em>static</em> <em>const</em> <em>unsigned</em> <em>long</em> <dfn class="tu decl def" id="smallmax" title='smallmax' data-type='const unsigned long [37]' data-ref="smallmax">smallmax</dfn>[] = {</td></tr>
+<tr><th id="21">21</th><td>    <var>0</var>, <i>/* bases 0 and 1 are invalid */</i></td></tr>
+<tr><th id="22">22</th><td>    <var>0</var>,</td></tr>
+<tr><th id="23">23</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>2</var>,</td></tr>
+<tr><th id="24">24</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>3</var>,</td></tr>
+<tr><th id="25">25</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>4</var>,</td></tr>
+<tr><th id="26">26</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>5</var>,</td></tr>
+<tr><th id="27">27</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>6</var>,</td></tr>
+<tr><th id="28">28</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>7</var>,</td></tr>
+<tr><th id="29">29</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>8</var>,</td></tr>
+<tr><th id="30">30</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>9</var>,</td></tr>
+<tr><th id="31">31</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>10</var>,</td></tr>
+<tr><th id="32">32</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>11</var>,</td></tr>
+<tr><th id="33">33</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>12</var>,</td></tr>
+<tr><th id="34">34</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>13</var>,</td></tr>
+<tr><th id="35">35</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>14</var>,</td></tr>
+<tr><th id="36">36</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>15</var>,</td></tr>
+<tr><th id="37">37</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>16</var>,</td></tr>
+<tr><th id="38">38</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>17</var>,</td></tr>
+<tr><th id="39">39</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>18</var>,</td></tr>
+<tr><th id="40">40</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>19</var>,</td></tr>
+<tr><th id="41">41</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>20</var>,</td></tr>
+<tr><th id="42">42</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>21</var>,</td></tr>
+<tr><th id="43">43</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>22</var>,</td></tr>
+<tr><th id="44">44</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>23</var>,</td></tr>
+<tr><th id="45">45</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>24</var>,</td></tr>
+<tr><th id="46">46</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>25</var>,</td></tr>
+<tr><th id="47">47</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>26</var>,</td></tr>
+<tr><th id="48">48</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>27</var>,</td></tr>
+<tr><th id="49">49</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>28</var>,</td></tr>
+<tr><th id="50">50</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>29</var>,</td></tr>
+<tr><th id="51">51</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>30</var>,</td></tr>
+<tr><th id="52">52</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>31</var>,</td></tr>
+<tr><th id="53">53</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>32</var>,</td></tr>
+<tr><th id="54">54</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>33</var>,</td></tr>
+<tr><th id="55">55</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>34</var>,</td></tr>
+<tr><th id="56">56</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>35</var>,</td></tr>
+<tr><th id="57">57</th><td>    <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> / <var>36</var>,</td></tr>
+<tr><th id="58">58</th><td>};</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><i>/* maximum digits that can't ever overflow for bases 2 through 36,</i></td></tr>
+<tr><th id="61">61</th><td><i> * calculated by [int(math.floor(math.log(2**32, i))) for i in range(2, 37)].</i></td></tr>
+<tr><th id="62">62</th><td><i> * Note that this is pessimistic if sizeof(long) &gt; 4.</i></td></tr>
+<tr><th id="63">63</th><td><i> */</i></td></tr>
+<tr><th id="64">64</th><td><u>#<span data-ppcond="64">if</span> <a class="macro" href="../pyconfig.h.html#1286" title="8" data-ref="_M/SIZEOF_LONG">SIZEOF_LONG</a> == 4</u></td></tr>
+<tr><th id="65">65</th><td><em>static</em> <em>const</em> <em>int</em> digitlimit[] = {</td></tr>
+<tr><th id="66">66</th><td>    <var>0</var>,  <var>0</var>, <var>32</var>, <var>20</var>, <var>16</var>, <var>13</var>, <var>12</var>, <var>11</var>, <var>10</var>, <var>10</var>,  <i>/*  0 -  9 */</i></td></tr>
+<tr><th id="67">67</th><td>    <var>9</var>,  <var>9</var>,  <var>8</var>,  <var>8</var>,  <var>8</var>,  <var>8</var>,  <var>8</var>,  <var>7</var>,  <var>7</var>,  <var>7</var>,  <i>/* 10 - 19 */</i></td></tr>
+<tr><th id="68">68</th><td>    <var>7</var>,  <var>7</var>,  <var>7</var>,  <var>7</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <i>/* 20 - 29 */</i></td></tr>
+<tr><th id="69">69</th><td>    <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>,  <var>6</var>};             <i>/* 30 - 36 */</i></td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="64">elif</span> <a class="macro" href="../pyconfig.h.html#1286" title="8" data-ref="_M/SIZEOF_LONG">SIZEOF_LONG</a> == 8</u></td></tr>
+<tr><th id="71">71</th><td><i  data-doc="digitlimit">/* [int(math.floor(math.log(2**64, i))) for i in range(2, 37)] */</i></td></tr>
+<tr><th id="72">72</th><td><em>static</em> <em>const</em> <em>int</em> <dfn class="tu decl def" id="digitlimit" title='digitlimit' data-type='const int [37]' data-ref="digitlimit">digitlimit</dfn>[] = {</td></tr>
+<tr><th id="73">73</th><td>         <var>0</var>,   <var>0</var>, <var>64</var>, <var>40</var>, <var>32</var>, <var>27</var>, <var>24</var>, <var>22</var>, <var>21</var>, <var>20</var>,  <i>/*  0 -  9 */</i></td></tr>
+<tr><th id="74">74</th><td>    <var>19</var>,  <var>18</var>, <var>17</var>, <var>17</var>, <var>16</var>, <var>16</var>, <var>16</var>, <var>15</var>, <var>15</var>, <var>15</var>,  <i>/* 10 - 19 */</i></td></tr>
+<tr><th id="75">75</th><td>    <var>14</var>,  <var>14</var>, <var>14</var>, <var>14</var>, <var>13</var>, <var>13</var>, <var>13</var>, <var>13</var>, <var>13</var>, <var>13</var>,  <i>/* 20 - 29 */</i></td></tr>
+<tr><th id="76">76</th><td>    <var>13</var>,  <var>12</var>, <var>12</var>, <var>12</var>, <var>12</var>, <var>12</var>, <var>12</var>};             <i>/* 30 - 36 */</i></td></tr>
+<tr><th id="77">77</th><td><u>#<span data-ppcond="64">else</span></u></td></tr>
+<tr><th id="78">78</th><td><u>#error "Need table for SIZEOF_LONG"</u></td></tr>
+<tr><th id="79">79</th><td><u>#<span data-ppcond="64">endif</span></u></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><i>/*</i></td></tr>
+<tr><th id="82">82</th><td><i>**      strtoul</i></td></tr>
+<tr><th id="83">83</th><td><i>**              This is a general purpose routine for converting</i></td></tr>
+<tr><th id="84">84</th><td><i>**              an ascii string to an integer in an arbitrary base.</i></td></tr>
+<tr><th id="85">85</th><td><i>**              Leading white space is ignored.  If 'base' is zero</i></td></tr>
+<tr><th id="86">86</th><td><i>**              it looks for a leading 0b, 0o or 0x to tell which</i></td></tr>
+<tr><th id="87">87</th><td><i>**              base.  If these are absent it defaults to 10.</i></td></tr>
+<tr><th id="88">88</th><td><i>**              Base must be 0 or between 2 and 36 (inclusive).</i></td></tr>
+<tr><th id="89">89</th><td><i>**              If 'ptr' is non-NULL it will contain a pointer to</i></td></tr>
+<tr><th id="90">90</th><td><i>**              the end of the scan.</i></td></tr>
+<tr><th id="91">91</th><td><i>**              Errors due to bad pointers will probably result in</i></td></tr>
+<tr><th id="92">92</th><td><i>**              exceptions - we don't check for them.</i></td></tr>
+<tr><th id="93">93</th><td><i>*/</i></td></tr>
+<tr><th id="94">94</th><td><em>unsigned</em> <em>long</em></td></tr>
+<tr><th id="95">95</th><td><dfn class="decl def" id="PyOS_strtoul" title='PyOS_strtoul' data-ref="PyOS_strtoul">PyOS_strtoul</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1str" title='str' data-type='const char *' data-ref="1str">str</dfn>, <em>char</em> **<dfn class="local col2 decl" id="2ptr" title='ptr' data-type='char **' data-ref="2ptr">ptr</dfn>, <em>int</em> <dfn class="local col3 decl" id="3base" title='base' data-type='int' data-ref="3base">base</dfn>)</td></tr>
+<tr><th id="96">96</th><td>{</td></tr>
+<tr><th id="97">97</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col4 decl" id="4result" title='result' data-type='unsigned long' data-ref="4result">result</dfn> = <var>0</var>; <i>/* return value of the function */</i></td></tr>
+<tr><th id="98">98</th><td>    <em>int</em> <dfn class="local col5 decl" id="5c" title='c' data-type='int' data-ref="5c">c</dfn>;             <i>/* current input character */</i></td></tr>
+<tr><th id="99">99</th><td>    <em>int</em> <dfn class="local col6 decl" id="6ovlimit" title='ovlimit' data-type='int' data-ref="6ovlimit">ovlimit</dfn>;       <i>/* required digits to overflow */</i></td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td>    <i>/* skip leading white space */</i></td></tr>
+<tr><th id="102">102</th><td>    <b>while</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#24" title="(_Py_ctype_table[((unsigned char)((((unsigned char)((*str) &amp; 0xff))) &amp; 0xff))] &amp; 0x08)" data-ref="_M/Py_ISSPACE">Py_ISSPACE</a>(<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*str) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>)))</td></tr>
+<tr><th id="103">103</th><td>        ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td>    <i>/* check for leading 0b, 0o or 0x for auto-base or base 16 */</i></td></tr>
+<tr><th id="106">106</th><td>    <b>switch</b> (<a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a>) {</td></tr>
+<tr><th id="107">107</th><td>    <b>case</b> <var>0</var>:             <i>/* look for leading 0b, 0o or 0x */</i></td></tr>
+<tr><th id="108">108</th><td>        <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'0'</kbd>) {</td></tr>
+<tr><th id="109">109</th><td>            ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="110">110</th><td>            <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'x'</kbd> || *<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'X'</kbd>) {</td></tr>
+<tr><th id="111">111</th><td>                <i>/* there must be at least one digit after 0x */</i></td></tr>
+<tr><th id="112">112</th><td>                <b>if</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((str[1]) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>[<var>1</var>])] &gt;= <var>16</var>) {</td></tr>
+<tr><th id="113">113</th><td>                    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="114">114</th><td>                        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="115">115</th><td>                    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="116">116</th><td>                }</td></tr>
+<tr><th id="117">117</th><td>                ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="118">118</th><td>                <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> = <var>16</var>;</td></tr>
+<tr><th id="119">119</th><td>            } <b>else</b> <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'o'</kbd> || *<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'O'</kbd>) {</td></tr>
+<tr><th id="120">120</th><td>                <i>/* there must be at least one digit after 0o */</i></td></tr>
+<tr><th id="121">121</th><td>                <b>if</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((str[1]) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>[<var>1</var>])] &gt;= <var>8</var>) {</td></tr>
+<tr><th id="122">122</th><td>                    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="123">123</th><td>                        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="124">124</th><td>                    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="125">125</th><td>                }</td></tr>
+<tr><th id="126">126</th><td>                ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="127">127</th><td>                <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> = <var>8</var>;</td></tr>
+<tr><th id="128">128</th><td>            } <b>else</b> <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'b'</kbd> || *<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'B'</kbd>) {</td></tr>
+<tr><th id="129">129</th><td>                <i>/* there must be at least one digit after 0b */</i></td></tr>
+<tr><th id="130">130</th><td>                <b>if</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((str[1]) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>[<var>1</var>])] &gt;= <var>2</var>) {</td></tr>
+<tr><th id="131">131</th><td>                    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="132">132</th><td>                        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="133">133</th><td>                    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="134">134</th><td>                }</td></tr>
+<tr><th id="135">135</th><td>                ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="136">136</th><td>                <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> = <var>2</var>;</td></tr>
+<tr><th id="137">137</th><td>            } <b>else</b> {</td></tr>
+<tr><th id="138">138</th><td>                <i>/* skip all zeroes... */</i></td></tr>
+<tr><th id="139">139</th><td>                <b>while</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'0'</kbd>)</td></tr>
+<tr><th id="140">140</th><td>                    ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="141">141</th><td>                <b>while</b> (<a class="macro" href="../Include/pyctype.h.html#24" title="(_Py_ctype_table[((unsigned char)((((unsigned char)((*str) &amp; 0xff))) &amp; 0xff))] &amp; 0x08)" data-ref="_M/Py_ISSPACE">Py_ISSPACE</a>(<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*str) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>)))</td></tr>
+<tr><th id="142">142</th><td>                    ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="143">143</th><td>                <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="144">144</th><td>                    *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="145">145</th><td>                <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="146">146</th><td>            }</td></tr>
+<tr><th id="147">147</th><td>        }</td></tr>
+<tr><th id="148">148</th><td>        <b>else</b></td></tr>
+<tr><th id="149">149</th><td>            <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> = <var>10</var>;</td></tr>
+<tr><th id="150">150</th><td>        <b>break</b>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td>    <i>/* even with explicit base, skip leading 0? prefix */</i></td></tr>
+<tr><th id="153">153</th><td>    <b>case</b> <var>16</var>:</td></tr>
+<tr><th id="154">154</th><td>        <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'0'</kbd>) {</td></tr>
+<tr><th id="155">155</th><td>            ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="156">156</th><td>            <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'x'</kbd> || *<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'X'</kbd>) {</td></tr>
+<tr><th id="157">157</th><td>                <i>/* there must be at least one digit after 0x */</i></td></tr>
+<tr><th id="158">158</th><td>                <b>if</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((str[1]) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>[<var>1</var>])] &gt;= <var>16</var>) {</td></tr>
+<tr><th id="159">159</th><td>                    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="160">160</th><td>                        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="161">161</th><td>                    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="162">162</th><td>                }</td></tr>
+<tr><th id="163">163</th><td>                ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="164">164</th><td>            }</td></tr>
+<tr><th id="165">165</th><td>        }</td></tr>
+<tr><th id="166">166</th><td>        <b>break</b>;</td></tr>
+<tr><th id="167">167</th><td>    <b>case</b> <var>8</var>:</td></tr>
+<tr><th id="168">168</th><td>        <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'0'</kbd>) {</td></tr>
+<tr><th id="169">169</th><td>            ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="170">170</th><td>            <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'o'</kbd> || *<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'O'</kbd>) {</td></tr>
+<tr><th id="171">171</th><td>                <i>/* there must be at least one digit after 0o */</i></td></tr>
+<tr><th id="172">172</th><td>                <b>if</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((str[1]) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>[<var>1</var>])] &gt;= <var>8</var>) {</td></tr>
+<tr><th id="173">173</th><td>                    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="174">174</th><td>                        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="175">175</th><td>                    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="176">176</th><td>                }</td></tr>
+<tr><th id="177">177</th><td>                ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="178">178</th><td>            }</td></tr>
+<tr><th id="179">179</th><td>        }</td></tr>
+<tr><th id="180">180</th><td>        <b>break</b>;</td></tr>
+<tr><th id="181">181</th><td>    <b>case</b> <var>2</var>:</td></tr>
+<tr><th id="182">182</th><td>        <b>if</b>(*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'0'</kbd>) {</td></tr>
+<tr><th id="183">183</th><td>            ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="184">184</th><td>            <b>if</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'b'</kbd> || *<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'B'</kbd>) {</td></tr>
+<tr><th id="185">185</th><td>                <i>/* there must be at least one digit after 0b */</i></td></tr>
+<tr><th id="186">186</th><td>                <b>if</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((str[1]) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>[<var>1</var>])] &gt;= <var>2</var>) {</td></tr>
+<tr><th id="187">187</th><td>                    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="188">188</th><td>                        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="189">189</th><td>                    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="190">190</th><td>                }</td></tr>
+<tr><th id="191">191</th><td>                ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="192">192</th><td>            }</td></tr>
+<tr><th id="193">193</th><td>        }</td></tr>
+<tr><th id="194">194</th><td>        <b>break</b>;</td></tr>
+<tr><th id="195">195</th><td>    }</td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td>    <i>/* catch silly bases */</i></td></tr>
+<tr><th id="198">198</th><td>    <b>if</b> (<a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> &lt; <var>2</var> || <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> &gt; <var>36</var>) {</td></tr>
+<tr><th id="199">199</th><td>        <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="200">200</th><td>            *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="201">201</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="202">202</th><td>    }</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td>    <i>/* skip leading zeroes */</i></td></tr>
+<tr><th id="205">205</th><td>    <b>while</b> (*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a> == <kbd>'0'</kbd>)</td></tr>
+<tr><th id="206">206</th><td>        ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td>    <i>/* base is guaranteed to be in [2, 36] at this point */</i></td></tr>
+<tr><th id="209">209</th><td>    <a class="local col6 ref" href="#6ovlimit" title='ovlimit' data-ref="6ovlimit">ovlimit</a> = <a class="tu ref" href="#digitlimit" title='digitlimit' data-use='r' data-ref="digitlimit">digitlimit</a>[<a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a>];</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td>    <i>/* do the conversion until non-digit character encountered */</i></td></tr>
+<tr><th id="212">212</th><td>    <b>while</b> ((<a class="local col5 ref" href="#5c" title='c' data-ref="5c">c</a> = <a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*str) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>)]) &lt; <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a>) {</td></tr>
+<tr><th id="213">213</th><td>        <b>if</b> (<a class="local col6 ref" href="#6ovlimit" title='ovlimit' data-ref="6ovlimit">ovlimit</a> &gt; <var>0</var>) <i>/* no overflow check required */</i></td></tr>
+<tr><th id="214">214</th><td>            <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> = <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> * <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a> + <a class="local col5 ref" href="#5c" title='c' data-ref="5c">c</a>;</td></tr>
+<tr><th id="215">215</th><td>        <b>else</b> { <i>/* requires overflow check */</i></td></tr>
+<tr><th id="216">216</th><td>            <em>unsigned</em> <em>long</em> <dfn class="local col7 decl" id="7temp_result" title='temp_result' data-type='unsigned long' data-ref="7temp_result">temp_result</dfn>;</td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td>            <b>if</b> (<a class="local col6 ref" href="#6ovlimit" title='ovlimit' data-ref="6ovlimit">ovlimit</a> &lt; <var>0</var>) <i>/* guaranteed overflow */</i></td></tr>
+<tr><th id="219">219</th><td>                <b>goto</b> <a class="lbl" href="#8overflowed" data-ref="8overflowed">overflowed</a>;</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td>            <i>/* there could be an overflow */</i></td></tr>
+<tr><th id="222">222</th><td>            <i>/* check overflow just from shifting */</i></td></tr>
+<tr><th id="223">223</th><td>            <b>if</b> (<a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> &gt; <a class="tu ref" href="#smallmax" title='smallmax' data-use='r' data-ref="smallmax">smallmax</a>[<a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a>])</td></tr>
+<tr><th id="224">224</th><td>                <b>goto</b> <a class="lbl" href="#8overflowed" data-ref="8overflowed">overflowed</a>;</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td>            <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> *= <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a>;</td></tr>
+<tr><th id="227">227</th><td></td></tr>
+<tr><th id="228">228</th><td>            <i>/* check overflow from the digit's value */</i></td></tr>
+<tr><th id="229">229</th><td>            <a class="local col7 ref" href="#7temp_result" title='temp_result' data-ref="7temp_result">temp_result</a> = <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> + <a class="local col5 ref" href="#5c" title='c' data-ref="5c">c</a>;</td></tr>
+<tr><th id="230">230</th><td>            <b>if</b> (<a class="local col7 ref" href="#7temp_result" title='temp_result' data-ref="7temp_result">temp_result</a> &lt; <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a>)</td></tr>
+<tr><th id="231">231</th><td>                <b>goto</b> <a class="lbl" href="#8overflowed" data-ref="8overflowed">overflowed</a>;</td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td>            <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> = <a class="local col7 ref" href="#7temp_result" title='temp_result' data-ref="7temp_result">temp_result</a>;</td></tr>
+<tr><th id="234">234</th><td>        }</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td>        ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="237">237</th><td>        --<a class="local col6 ref" href="#6ovlimit" title='ovlimit' data-ref="6ovlimit">ovlimit</a>;</td></tr>
+<tr><th id="238">238</th><td>    }</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td>    <i>/* set pointer to point to the last character scanned */</i></td></tr>
+<tr><th id="241">241</th><td>    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>)</td></tr>
+<tr><th id="242">242</th><td>        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="243">243</th><td></td></tr>
+<tr><th id="244">244</th><td>    <b>return</b> <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a>;</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><dfn class="lbl" id="8overflowed" data-ref="8overflowed">overflowed</dfn>:</td></tr>
+<tr><th id="247">247</th><td>    <b>if</b> (<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>) {</td></tr>
+<tr><th id="248">248</th><td>        <i>/* spool through remaining digit characters */</i></td></tr>
+<tr><th id="249">249</th><td>        <b>while</b> (<a class="ref" href="../Include/longobject.h.html#_PyLong_DigitValue" title='_PyLong_DigitValue' data-ref="_PyLong_DigitValue">_PyLong_DigitValue</a>[<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*str) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>)] &lt; <a class="local col3 ref" href="#3base" title='base' data-ref="3base">base</a>)</td></tr>
+<tr><th id="250">250</th><td>            ++<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="251">251</th><td>        *<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> = (<em>char</em> *)<a class="local col1 ref" href="#1str" title='str' data-ref="1str">str</a>;</td></tr>
+<tr><th id="252">252</th><td>    }</td></tr>
+<tr><th id="253">253</th><td>    <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="macro" href="../../include/asm-generic/errno-base.h.html#37" title="34" data-ref="_M/ERANGE">ERANGE</a>;</td></tr>
+<tr><th id="254">254</th><td>    <b>return</b> (<em>unsigned</em> <em>long</em>)-<var>1</var>;</td></tr>
+<tr><th id="255">255</th><td>}</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td><i>/* Checking for overflow in PyOS_strtol is a PITA; see comments</i></td></tr>
+<tr><th id="258">258</th><td><i> * about PY_ABS_LONG_MIN in longobject.c.</i></td></tr>
+<tr><th id="259">259</th><td><i> */</i></td></tr>
+<tr><th id="260">260</th><td><u>#define <dfn class="macro" id="_M/PY_ABS_LONG_MIN" data-ref="_M/PY_ABS_LONG_MIN">PY_ABS_LONG_MIN</dfn>         (0-(unsigned long)LONG_MIN)</u></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><em>long</em></td></tr>
+<tr><th id="263">263</th><td><dfn class="decl def" id="PyOS_strtol" title='PyOS_strtol' data-ref="PyOS_strtol">PyOS_strtol</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="9str" title='str' data-type='const char *' data-ref="9str">str</dfn>, <em>char</em> **<dfn class="local col0 decl" id="10ptr" title='ptr' data-type='char **' data-ref="10ptr">ptr</dfn>, <em>int</em> <dfn class="local col1 decl" id="11base" title='base' data-type='int' data-ref="11base">base</dfn>)</td></tr>
+<tr><th id="264">264</th><td>{</td></tr>
+<tr><th id="265">265</th><td>    <em>long</em> <dfn class="local col2 decl" id="12result" title='result' data-type='long' data-ref="12result">result</dfn>;</td></tr>
+<tr><th id="266">266</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col3 decl" id="13uresult" title='uresult' data-type='unsigned long' data-ref="13uresult">uresult</dfn>;</td></tr>
+<tr><th id="267">267</th><td>    <em>char</em> <dfn class="local col4 decl" id="14sign" title='sign' data-type='char' data-ref="14sign">sign</dfn>;</td></tr>
+<tr><th id="268">268</th><td></td></tr>
+<tr><th id="269">269</th><td>    <b>while</b> (*<a class="local col9 ref" href="#9str" title='str' data-ref="9str">str</a> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#24" title="(_Py_ctype_table[((unsigned char)((((unsigned char)((*str) &amp; 0xff))) &amp; 0xff))] &amp; 0x08)" data-ref="_M/Py_ISSPACE">Py_ISSPACE</a>(<a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*str) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col9 ref" href="#9str" title='str' data-ref="9str">str</a>)))</td></tr>
+<tr><th id="270">270</th><td>        <a class="local col9 ref" href="#9str" title='str' data-ref="9str">str</a>++;</td></tr>
+<tr><th id="271">271</th><td></td></tr>
+<tr><th id="272">272</th><td>    <a class="local col4 ref" href="#14sign" title='sign' data-ref="14sign">sign</a> = *<a class="local col9 ref" href="#9str" title='str' data-ref="9str">str</a>;</td></tr>
+<tr><th id="273">273</th><td>    <b>if</b> (<a class="local col4 ref" href="#14sign" title='sign' data-ref="14sign">sign</a> == <kbd>'+'</kbd> || <a class="local col4 ref" href="#14sign" title='sign' data-ref="14sign">sign</a> == <kbd>'-'</kbd>)</td></tr>
+<tr><th id="274">274</th><td>        <a class="local col9 ref" href="#9str" title='str' data-ref="9str">str</a>++;</td></tr>
+<tr><th id="275">275</th><td></td></tr>
+<tr><th id="276">276</th><td>    <a class="local col3 ref" href="#13uresult" title='uresult' data-ref="13uresult">uresult</a> = <a class="ref" href="#PyOS_strtoul" title='PyOS_strtoul' data-ref="PyOS_strtoul">PyOS_strtoul</a>(<a class="local col9 ref" href="#9str" title='str' data-ref="9str">str</a>, <a class="local col0 ref" href="#10ptr" title='ptr' data-ref="10ptr">ptr</a>, <a class="local col1 ref" href="#11base" title='base' data-ref="11base">base</a>);</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td>    <b>if</b> (<a class="local col3 ref" href="#13uresult" title='uresult' data-ref="13uresult">uresult</a> &lt;= (<em>unsigned</em> <em>long</em>)<span class="macro" title="9223372036854775807L" data-ref="_M/LONG_MAX">LONG_MAX</span>) {</td></tr>
+<tr><th id="279">279</th><td>        <a class="local col2 ref" href="#12result" title='result' data-ref="12result">result</a> = (<em>long</em>)<a class="local col3 ref" href="#13uresult" title='uresult' data-ref="13uresult">uresult</a>;</td></tr>
+<tr><th id="280">280</th><td>        <b>if</b> (<a class="local col4 ref" href="#14sign" title='sign' data-ref="14sign">sign</a> == <kbd>'-'</kbd>)</td></tr>
+<tr><th id="281">281</th><td>            <a class="local col2 ref" href="#12result" title='result' data-ref="12result">result</a> = -<a class="local col2 ref" href="#12result" title='result' data-ref="12result">result</a>;</td></tr>
+<tr><th id="282">282</th><td>    }</td></tr>
+<tr><th id="283">283</th><td>    <b>else</b> <b>if</b> (<a class="local col4 ref" href="#14sign" title='sign' data-ref="14sign">sign</a> == <kbd>'-'</kbd> &amp;&amp; <a class="local col3 ref" href="#13uresult" title='uresult' data-ref="13uresult">uresult</a> == <a class="macro" href="#260" title="(0-(unsigned long)(-9223372036854775807L -1L))" data-ref="_M/PY_ABS_LONG_MIN">PY_ABS_LONG_MIN</a>) {</td></tr>
+<tr><th id="284">284</th><td>        <a class="local col2 ref" href="#12result" title='result' data-ref="12result">result</a> = <span class="macro" title="(-9223372036854775807L -1L)" data-ref="_M/LONG_MIN">LONG_MIN</span>;</td></tr>
+<tr><th id="285">285</th><td>    }</td></tr>
+<tr><th id="286">286</th><td>    <b>else</b> {</td></tr>
+<tr><th id="287">287</th><td>        <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="macro" href="../../include/asm-generic/errno-base.h.html#37" title="34" data-ref="_M/ERANGE">ERANGE</a>;</td></tr>
+<tr><th id="288">288</th><td>        <a class="local col2 ref" href="#12result" title='result' data-ref="12result">result</a> = <span class="macro" title="9223372036854775807L" data-ref="_M/LONG_MAX">LONG_MAX</span>;</td></tr>
+<tr><th id="289">289</th><td>    }</td></tr>
+<tr><th id="290">290</th><td>    <b>return</b> <a class="local col2 ref" href="#12result" title='result' data-ref="12result">result</a>;</td></tr>
+<tr><th id="291">291</th><td>}</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

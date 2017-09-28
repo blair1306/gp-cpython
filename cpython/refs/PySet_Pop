@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/setobject.h' l='88' type='PyObject * PySet_Pop(PyObject * set)'/>
+<def f='codebrowser/Objects/setobject.c' l='2366' ll='2374' type='PyObject * PySet_Pop(PyObject * set)'/>
+<use f='codebrowser/Objects/setobject.c' l='2443' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2498' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2505' u='c' c='test_c_api'/>

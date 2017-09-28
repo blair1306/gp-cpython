@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='518' type='void mpd_qreduce(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4104' u='c' c='dec_mpd_qreduce'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5042' u='c' c='ctx_mpd_qreduce'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6864' ll='6899' type='void mpd_qreduce(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>

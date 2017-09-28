@@ -1,0 +1,5 @@
+<dec f='include/netpacket/packet.h' l='29' type='unsigned char'/>
+<offset>88</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1326' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1825' u='w' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1828' u='w' c='getsockaddrarg'/>

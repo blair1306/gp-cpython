@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='566' type='XML_Bool'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='w' c='PyExpat_XML_SetReturnNSTriplet'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='671' u='r' c='storeAtts'/>
+<offset>3720</offset>

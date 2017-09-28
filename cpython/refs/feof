@@ -1,0 +1,5 @@
+<dec f='include/stdio.h' l='828' type='int feof(FILE * __stream)'/>
+<doc f='include/stdio.h' l='827'>/* Return the EOF indicator for STREAM.  */</doc>
+<use f='codebrowser/Modules/getpath.c' l='269' u='c' c='find_env_config_value'/>
+<use f='codebrowser/Parser/myreadline.c' l='73' u='c' c='my_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='652' u='c' c='decoding_feof'/>

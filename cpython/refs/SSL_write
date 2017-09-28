@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2336' type='int SSL_write(SSL * ssl, const void * buf, int num)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1997' u='c' c='_ssl__SSLSocket_write_impl'/>

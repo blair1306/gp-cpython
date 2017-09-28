@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_iomodule.c.h source code [codebrowser/Modules/_io/clinic/_iomodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_io/clinic/_iomodule.c.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_io</a>/<a href='./'>clinic</a>/<a href='_iomodule.c.h.html'>_iomodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_open__doc__[] = &quot;open($module, /, file, mode=\&apos;r\&apos;, buffering=-1, encoding=None,\n&quot;&quot;     errors=None, newline=None, closefd=True, opener=None)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Open file and return a stream.  Raise OSError upon failure.\n&quot;&quot;\n&quot;&quot;file is either a text or byte string giving the name (and the path\n&quot;&quot;if the file isn\&apos;t in the current working directory) of the file to\n&quot;&quot;be opened or an integer file descriptor of the file to be\n&quot;&quot;wrapped. (If a file descriptor is given, it is closed when the\n&quot;&quot;returned I/O object is closed, unless closefd is set to False.)\n&quot;&quot;\n&quot;&quot;mode is an optional string that specifies the mode in which the file\n&quot;&quot;is opened. It defaults to \&apos;r\&apos; which means open for reading in text\n&quot;&quot;mode.  Other common values are \&apos;w\&apos; for writing (truncating the file if\n&quot;&quot;it already exists), \&apos;x\&apos; for creating and writing to a new file, and\n&quot;&quot;\&apos;a\&apos; for appending (which on some Unix systems, means that all writes\n&quot;&quot;append to the end of the file regardless of the current seek position).\n&quot;&quot;In text mode, if encoding is not specified the encoding used is platform\n&quot;&quot;dependent: locale.getpreferredencoding(False) is called to get the\n&quot;&quot;current locale encoding. (For reading and writing raw bytes use binary\n&quot;&quot;mode and leave encoding unspecified.) The available modes are:\n&quot;&quot;\n&quot;&quot;========= ===============================================================\n&quot;&quot;Character Meaning\n&quot;&quot;--------- ---------------------------------------------------------------\n&quot;&quot;\&apos;r\&apos;       open for reading (default)\n&quot;&quot;\&apos;w\&apos;       open for writing, truncating the file first\n&quot;&quot;\&apos;x\&apos;       create a new file and open it for writing\n&quot;&quot;\&apos;a\&apos;       open for writing, appending to the end of the file if it exists\n&quot;&quot;\&apos;b\&apos;       binary mode\n&quot;&quot;\&apos;t\&apos;       text mode (default)\n&quot;&quot;\&apos;+\&apos;       open a disk file for updating (reading and writing)\n&quot;&quot;\&apos;U\&apos;       universal newline mode (deprecated)\n&quot;&quot;========= ===============================================================\n&quot;&quot;\n&quot;&quot;The default mode is \&apos;rt\&apos; (open for reading text). For binary random\n&quot;&quot;access, the mode \&apos;w+b\&apos; opens and truncates the file to 0 bytes, while\n&quot;&quot;\&apos;r+b\&apos; opens the file without truncation. The \&apos;x\&apos; mode implies \&apos;w\&apos; and\n&quot;&quot;raises an `FileExistsError` if the file already exists.\n&quot;&quot;\n&quot;&quot;Python distinguishes between files opened in binary and text modes,\n&quot;&quot;even when the underlying operating system doesn\&apos;t. Files opened in\n&quot;&quot;binary mode (appending \&apos;b\&apos; to the mode argument) return contents as\n&quot;&quot;bytes objects without any decoding. In text mode (the default, or when\n&quot;&quot;\&apos;t\&apos; is appended to the mode argument), the contents of the file are\n&quot;&quot;returned as strings, the bytes having been first decoded using a\n&quot;&quot;platform-dependent encoding or using the specified encoding if given.\n&quot;&quot;\n&quot;&quot;\&apos;U\&apos; mode is deprecated and will raise an exception in future versions\n&quot;&quot;of Python.  It has no effect in Python 3.  Use newline to control\n&quot;&quot;universal newlines mode.\n&quot;&quot;\n&quot;&quot;buffering is an optional integer used to set the buffering policy.\n&quot;&quot;Pass 0 to switch buffering off (only allowed in binary mode), 1 to select\n&quot;&quot;line buffering (only usable in text mode), and an integer &gt; 1 to indicate\n&quot;&quot;the size of a fixed-size chunk buffer.  When no buffering argument is\n&quot;&quot;given, the default buffering policy works as follows:\n&quot;&quot;\n&quot;&quot;* Binary files are buffered in fixed-size chunks; the size of the buffer\n&quot;&quot;  is chosen using a heuristic trying to determine the underlying device\&apos;s\n&quot;&quot;  \&quot;block size\&quot; and falling back on `io.DEFAULT_BUFFER_SIZE`.\n&quot;&quot;  On many systems, the buffer will typically be 4096 or 8192 bytes long.\n&quot;&quot;\n&quot;&quot;* \&quot;Interactive\&quot; text files (files for which isatty() returns True)\n&quot;&quot;  use line buffering.  Other text files use the policy described above\n&quot;&quot;  for binary files.\n&quot;&quot;\n&quot;&quot;encoding is the name of the encoding used to decode or encode the\n&quot;&quot;file. This should only be used in text mode. The default encoding is\n&quot;&quot;platform dependent, but any encoding supported by Python can be\n&quot;&quot;passed.  See the codecs module for the list of supported encodings.\n&quot;&quot;\n&quot;&quot;errors is an optional string that specifies how encoding errors are to\n&quot;&quot;be handled---this argument should not be used in binary mode. Pass\n&quot;&quot;\&apos;strict\&apos; to raise a ValueError exception if there is an encoding error\n&quot;&quot;(the default of None has the same effect), or pass \&apos;ignore\&apos; to ignore\n&quot;&quot;errors. (Note that ignoring encoding errors can lead to data loss.)\n&quot;&quot;See the documentation for codecs.register or run \&apos;help(codecs.Codec)\&apos;\n&quot;&quot;for a list of the permitted encoding error strings.\n&quot;&quot;\n&quot;&quot;newline controls how universal newlines works (it only applies to text\n&quot;&quot;mode). It can be None, \&apos;\&apos;, \&apos;\\n\&apos;, \&apos;\\r\&apos;, and \&apos;\\r\\n\&apos;.  It works as\n&quot;&quot;follows:\n&quot;&quot;\n&quot;&quot;* On input, if newline is None, universal newlines mode is\n&quot;&quot;  enabled. Lines in the input can end in \&apos;\\n\&apos;, \&apos;\\r\&apos;, or \&apos;\\r\\n\&apos;, and\n&quot;&quot;  these are translated into \&apos;\\n\&apos; before being returned to the\n&quot;&quot;  caller. If it is \&apos;\&apos;, universal newline mode is enabled, but line\n&quot;&quot;  endings are returned to the caller untranslated. If it has any of\n&quot;&quot;  the other legal values, input lines are only terminated by the given\n&quot;&quot;  string, and the line ending is returned to the caller untranslated.\n&quot;&quot;\n&quot;&quot;* On output, if newline is None, any \&apos;\\n\&apos; characters written are\n&quot;&quot;  translated to the system default line separator, os.linesep. If\n&quot;&quot;  newline is \&apos;\&apos; or \&apos;\\n\&apos;, no translation takes place. If newline is any\n&quot;&quot;  of the other legal values, any \&apos;\\n\&apos; characters written are translated\n&quot;&quot;  to the given string.\n&quot;&quot;\n&quot;&quot;If closefd is False, the underlying file descriptor will be kept open\n&quot;&quot;when the file is closed. This does not work when a file name is given\n&quot;&quot;and must be True in that case.\n&quot;&quot;\n&quot;&quot;A custom opener can be used by passing a callable as *opener*. The\n&quot;&quot;underlying file descriptor for the file object is then obtained by\n&quot;&quot;calling *opener* with (*file*, *flags*). *opener* must return an open\n&quot;&quot;file descriptor (passing os.open as *opener* results in functionality\n&quot;&quot;similar to passing None).\n&quot;&quot;\n&quot;&quot;open() returns a file object whose type depends on the mode, and\n&quot;&quot;through which the standard file operations such as reading and writing\n&quot;&quot;are performed. When open() is used to open a file in a text mode (\&apos;w\&apos;,\n&quot;&quot;\&apos;r\&apos;, \&apos;wt\&apos;, \&apos;rt\&apos;, etc.), it returns a TextIOWrapper. When used to open\n&quot;&quot;a file in a binary mode, the returned class varies: in read binary\n&quot;&quot;mode, it returns a BufferedReader; in write binary and append binary\n&quot;&quot;modes, it returns a BufferedWriter, and in read/write mode, it returns\n&quot;&quot;a BufferedRandom.\n&quot;&quot;\n&quot;&quot;It is also possible to use a string or bytearray as a file for both\n&quot;&quot;reading and writing. For strings StringIO can be used like a file\n&quot;&quot;opened in a text mode, and for bytes a BytesIO can be used like a file\n&quot;&quot;opened in a binary mode.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_open__doc__" title='_io_open__doc__' data-ref="_io_open__doc__">_io_open__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"open($module, /, file, mode=\'r\', buffering=-1, encoding=None,\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"     errors=None, newline=None, closefd=True, opener=None)\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"--\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"Open file and return a stream.  Raise OSError upon failure.\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"file is either a text or byte string giving the name (and the path\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"if the file isn\'t in the current working directory) of the file to\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"be opened or an integer file descriptor of the file to be\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"wrapped. (If a file descriptor is given, it is closed when the\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"returned I/O object is closed, unless closefd is set to False.)\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"mode is an optional string that specifies the mode in which the file\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"is opened. It defaults to \'r\' which means open for reading in text\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"mode.  Other common values are \'w\' for writing (truncating the file if\n"</q></td></tr>
+<tr><th id="21">21</th><td><q>"it already exists), \'x\' for creating and writing to a new file, and\n"</q></td></tr>
+<tr><th id="22">22</th><td><q>"\'a\' for appending (which on some Unix systems, means that all writes\n"</q></td></tr>
+<tr><th id="23">23</th><td><q>"append to the end of the file regardless of the current seek position).\n"</q></td></tr>
+<tr><th id="24">24</th><td><q>"In text mode, if encoding is not specified the encoding used is platform\n"</q></td></tr>
+<tr><th id="25">25</th><td><q>"dependent: locale.getpreferredencoding(False) is called to get the\n"</q></td></tr>
+<tr><th id="26">26</th><td><q>"current locale encoding. (For reading and writing raw bytes use binary\n"</q></td></tr>
+<tr><th id="27">27</th><td><q>"mode and leave encoding unspecified.) The available modes are:\n"</q></td></tr>
+<tr><th id="28">28</th><td><q>"\n"</q></td></tr>
+<tr><th id="29">29</th><td><q>"========= ===============================================================\n"</q></td></tr>
+<tr><th id="30">30</th><td><q>"Character Meaning\n"</q></td></tr>
+<tr><th id="31">31</th><td><q>"--------- ---------------------------------------------------------------\n"</q></td></tr>
+<tr><th id="32">32</th><td><q>"\'r\'       open for reading (default)\n"</q></td></tr>
+<tr><th id="33">33</th><td><q>"\'w\'       open for writing, truncating the file first\n"</q></td></tr>
+<tr><th id="34">34</th><td><q>"\'x\'       create a new file and open it for writing\n"</q></td></tr>
+<tr><th id="35">35</th><td><q>"\'a\'       open for writing, appending to the end of the file if it exists\n"</q></td></tr>
+<tr><th id="36">36</th><td><q>"\'b\'       binary mode\n"</q></td></tr>
+<tr><th id="37">37</th><td><q>"\'t\'       text mode (default)\n"</q></td></tr>
+<tr><th id="38">38</th><td><q>"\'+\'       open a disk file for updating (reading and writing)\n"</q></td></tr>
+<tr><th id="39">39</th><td><q>"\'U\'       universal newline mode (deprecated)\n"</q></td></tr>
+<tr><th id="40">40</th><td><q>"========= ===============================================================\n"</q></td></tr>
+<tr><th id="41">41</th><td><q>"\n"</q></td></tr>
+<tr><th id="42">42</th><td><q>"The default mode is \'rt\' (open for reading text). For binary random\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"access, the mode \'w+b\' opens and truncates the file to 0 bytes, while\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"\'r+b\' opens the file without truncation. The \'x\' mode implies \'w\' and\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"raises an `FileExistsError` if the file already exists.\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"Python distinguishes between files opened in binary and text modes,\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"even when the underlying operating system doesn\'t. Files opened in\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"binary mode (appending \'b\' to the mode argument) return contents as\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"bytes objects without any decoding. In text mode (the default, or when\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"\'t\' is appended to the mode argument), the contents of the file are\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"returned as strings, the bytes having been first decoded using a\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"platform-dependent encoding or using the specified encoding if given.\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"\'U\' mode is deprecated and will raise an exception in future versions\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"of Python.  It has no effect in Python 3.  Use newline to control\n"</q></td></tr>
+<tr><th id="57">57</th><td><q>"universal newlines mode.\n"</q></td></tr>
+<tr><th id="58">58</th><td><q>"\n"</q></td></tr>
+<tr><th id="59">59</th><td><q>"buffering is an optional integer used to set the buffering policy.\n"</q></td></tr>
+<tr><th id="60">60</th><td><q>"Pass 0 to switch buffering off (only allowed in binary mode), 1 to select\n"</q></td></tr>
+<tr><th id="61">61</th><td><q>"line buffering (only usable in text mode), and an integer &gt; 1 to indicate\n"</q></td></tr>
+<tr><th id="62">62</th><td><q>"the size of a fixed-size chunk buffer.  When no buffering argument is\n"</q></td></tr>
+<tr><th id="63">63</th><td><q>"given, the default buffering policy works as follows:\n"</q></td></tr>
+<tr><th id="64">64</th><td><q>"\n"</q></td></tr>
+<tr><th id="65">65</th><td><q>"* Binary files are buffered in fixed-size chunks; the size of the buffer\n"</q></td></tr>
+<tr><th id="66">66</th><td><q>"  is chosen using a heuristic trying to determine the underlying device\'s\n"</q></td></tr>
+<tr><th id="67">67</th><td><q>"  \"block size\" and falling back on `io.DEFAULT_BUFFER_SIZE`.\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"  On many systems, the buffer will typically be 4096 or 8192 bytes long.\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"* \"Interactive\" text files (files for which isatty() returns True)\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"  use line buffering.  Other text files use the policy described above\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"  for binary files.\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"encoding is the name of the encoding used to decode or encode the\n"</q></td></tr>
+<tr><th id="75">75</th><td><q>"file. This should only be used in text mode. The default encoding is\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"platform dependent, but any encoding supported by Python can be\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"passed.  See the codecs module for the list of supported encodings.\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"\n"</q></td></tr>
+<tr><th id="79">79</th><td><q>"errors is an optional string that specifies how encoding errors are to\n"</q></td></tr>
+<tr><th id="80">80</th><td><q>"be handled---this argument should not be used in binary mode. Pass\n"</q></td></tr>
+<tr><th id="81">81</th><td><q>"\'strict\' to raise a ValueError exception if there is an encoding error\n"</q></td></tr>
+<tr><th id="82">82</th><td><q>"(the default of None has the same effect), or pass \'ignore\' to ignore\n"</q></td></tr>
+<tr><th id="83">83</th><td><q>"errors. (Note that ignoring encoding errors can lead to data loss.)\n"</q></td></tr>
+<tr><th id="84">84</th><td><q>"See the documentation for codecs.register or run \'help(codecs.Codec)\'\n"</q></td></tr>
+<tr><th id="85">85</th><td><q>"for a list of the permitted encoding error strings.\n"</q></td></tr>
+<tr><th id="86">86</th><td><q>"\n"</q></td></tr>
+<tr><th id="87">87</th><td><q>"newline controls how universal newlines works (it only applies to text\n"</q></td></tr>
+<tr><th id="88">88</th><td><q>"mode). It can be None, \'\', \'\\n\', \'\\r\', and \'\\r\\n\'.  It works as\n"</q></td></tr>
+<tr><th id="89">89</th><td><q>"follows:\n"</q></td></tr>
+<tr><th id="90">90</th><td><q>"\n"</q></td></tr>
+<tr><th id="91">91</th><td><q>"* On input, if newline is None, universal newlines mode is\n"</q></td></tr>
+<tr><th id="92">92</th><td><q>"  enabled. Lines in the input can end in \'\\n\', \'\\r\', or \'\\r\\n\', and\n"</q></td></tr>
+<tr><th id="93">93</th><td><q>"  these are translated into \'\\n\' before being returned to the\n"</q></td></tr>
+<tr><th id="94">94</th><td><q>"  caller. If it is \'\', universal newline mode is enabled, but line\n"</q></td></tr>
+<tr><th id="95">95</th><td><q>"  endings are returned to the caller untranslated. If it has any of\n"</q></td></tr>
+<tr><th id="96">96</th><td><q>"  the other legal values, input lines are only terminated by the given\n"</q></td></tr>
+<tr><th id="97">97</th><td><q>"  string, and the line ending is returned to the caller untranslated.\n"</q></td></tr>
+<tr><th id="98">98</th><td><q>"\n"</q></td></tr>
+<tr><th id="99">99</th><td><q>"* On output, if newline is None, any \'\\n\' characters written are\n"</q></td></tr>
+<tr><th id="100">100</th><td><q>"  translated to the system default line separator, os.linesep. If\n"</q></td></tr>
+<tr><th id="101">101</th><td><q>"  newline is \'\' or \'\\n\', no translation takes place. If newline is any\n"</q></td></tr>
+<tr><th id="102">102</th><td><q>"  of the other legal values, any \'\\n\' characters written are translated\n"</q></td></tr>
+<tr><th id="103">103</th><td><q>"  to the given string.\n"</q></td></tr>
+<tr><th id="104">104</th><td><q>"\n"</q></td></tr>
+<tr><th id="105">105</th><td><q>"If closefd is False, the underlying file descriptor will be kept open\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"when the file is closed. This does not work when a file name is given\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"and must be True in that case.\n"</q></td></tr>
+<tr><th id="108">108</th><td><q>"\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"A custom opener can be used by passing a callable as *opener*. The\n"</q></td></tr>
+<tr><th id="110">110</th><td><q>"underlying file descriptor for the file object is then obtained by\n"</q></td></tr>
+<tr><th id="111">111</th><td><q>"calling *opener* with (*file*, *flags*). *opener* must return an open\n"</q></td></tr>
+<tr><th id="112">112</th><td><q>"file descriptor (passing os.open as *opener* results in functionality\n"</q></td></tr>
+<tr><th id="113">113</th><td><q>"similar to passing None).\n"</q></td></tr>
+<tr><th id="114">114</th><td><q>"\n"</q></td></tr>
+<tr><th id="115">115</th><td><q>"open() returns a file object whose type depends on the mode, and\n"</q></td></tr>
+<tr><th id="116">116</th><td><q>"through which the standard file operations such as reading and writing\n"</q></td></tr>
+<tr><th id="117">117</th><td><q>"are performed. When open() is used to open a file in a text mode (\'w\',\n"</q></td></tr>
+<tr><th id="118">118</th><td><q>"\'r\', \'wt\', \'rt\', etc.), it returns a TextIOWrapper. When used to open\n"</q></td></tr>
+<tr><th id="119">119</th><td><q>"a file in a binary mode, the returned class varies: in read binary\n"</q></td></tr>
+<tr><th id="120">120</th><td><q>"mode, it returns a BufferedReader; in write binary and append binary\n"</q></td></tr>
+<tr><th id="121">121</th><td><q>"modes, it returns a BufferedWriter, and in read/write mode, it returns\n"</q></td></tr>
+<tr><th id="122">122</th><td><q>"a BufferedRandom.\n"</q></td></tr>
+<tr><th id="123">123</th><td><q>"\n"</q></td></tr>
+<tr><th id="124">124</th><td><q>"It is also possible to use a string or bytearray as a file for both\n"</q></td></tr>
+<tr><th id="125">125</th><td><q>"reading and writing. For strings StringIO can be used like a file\n"</q></td></tr>
+<tr><th id="126">126</th><td><q>"opened in a text mode, and for bytes a BytesIO can be used like a file\n"</q></td></tr>
+<tr><th id="127">127</th><td><q>"opened in a binary mode."</q>);</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><u>#define <dfn class="macro" id="_M/_IO_OPEN_METHODDEF" data-ref="_M/_IO_OPEN_METHODDEF">_IO_OPEN_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="130">130</th><td><u>    {"open", (PyCFunction)_io_open, METH_FASTCALL|METH_KEYWORDS, _io_open__doc__},</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="133">133</th><td><a class="decl" href="../_iomodule.c.html#_io_open_impl" title='_io_open_impl' data-ref="_io_open_impl" id="_io_open_impl">_io_open_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="84module" title='module' data-type='PyObject *' data-ref="84module">module</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="85file" title='file' data-type='PyObject *' data-ref="85file">file</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="86mode" title='mode' data-type='const char *' data-ref="86mode">mode</dfn>,</td></tr>
+<tr><th id="134">134</th><td>              <em>int</em> <dfn class="local col7 decl" id="87buffering" title='buffering' data-type='int' data-ref="87buffering">buffering</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="88encoding" title='encoding' data-type='const char *' data-ref="88encoding">encoding</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="89errors" title='errors' data-type='const char *' data-ref="89errors">errors</dfn>,</td></tr>
+<tr><th id="135">135</th><td>              <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="90newline" title='newline' data-type='const char *' data-ref="90newline">newline</dfn>, <em>int</em> <dfn class="local col1 decl" id="91closefd" title='closefd' data-type='int' data-ref="91closefd">closefd</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="92opener" title='opener' data-type='PyObject *' data-ref="92opener">opener</dfn>);</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="138">138</th><td><dfn class="decl def" id="_io_open" title='_io_open' data-ref="_io_open">_io_open</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="93module" title='module' data-type='PyObject *' data-ref="93module">module</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="94args" title='args' data-type='PyObject **' data-ref="94args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="95nargs" title='nargs' data-type='Py_ssize_t' data-ref="95nargs">nargs</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="96kwnames" title='kwnames' data-type='PyObject *' data-ref="96kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="139">139</th><td>{</td></tr>
+<tr><th id="140">140</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="97return_value" title='return_value' data-type='PyObject *' data-ref="97return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="141">141</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col8 decl" id="98_keywords" title='_keywords' data-type='const char *const [9]' data-ref="98_keywords">_keywords</dfn>[] = {<q>"file"</q>, <q>"mode"</q>, <q>"buffering"</q>, <q>"encoding"</q>, <q>"errors"</q>, <q>"newline"</q>, <q>"closefd"</q>, <q>"opener"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="142">142</th><td>    <em>static</em> <a class="typedef" href="../../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col9 decl" id="99_parser" title='_parser' data-type='_PyArg_Parser' data-ref="99_parser">_parser</dfn> = {<q>"O|sizzziO:open"</q>, <a class="local col8 ref" href="#98_keywords" title='_keywords' data-ref="98_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="143">143</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="100file" title='file' data-type='PyObject *' data-ref="100file">file</dfn>;</td></tr>
+<tr><th id="144">144</th><td>    <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="101mode" title='mode' data-type='const char *' data-ref="101mode">mode</dfn> = <q>"r"</q>;</td></tr>
+<tr><th id="145">145</th><td>    <em>int</em> <dfn class="local col2 decl" id="102buffering" title='buffering' data-type='int' data-ref="102buffering">buffering</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="146">146</th><td>    <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="103encoding" title='encoding' data-type='const char *' data-ref="103encoding">encoding</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="147">147</th><td>    <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="104errors" title='errors' data-type='const char *' data-ref="104errors">errors</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="148">148</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="105newline" title='newline' data-type='const char *' data-ref="105newline">newline</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="149">149</th><td>    <em>int</em> <dfn class="local col6 decl" id="106closefd" title='closefd' data-type='int' data-ref="106closefd">closefd</dfn> = <var>1</var>;</td></tr>
+<tr><th id="150">150</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="107opener" title='opener' data-type='PyObject *' data-ref="107opener">opener</dfn> = <a class="macro" href="../../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col4 ref" href="#94args" title='args' data-ref="94args">args</a>, <a class="local col5 ref" href="#95nargs" title='nargs' data-ref="95nargs">nargs</a>, <a class="local col6 ref" href="#96kwnames" title='kwnames' data-ref="96kwnames">kwnames</a>, &amp;<a class="local col9 ref" href="#99_parser" title='_parser' data-ref="99_parser">_parser</a>,</td></tr>
+<tr><th id="153">153</th><td>        &amp;<a class="local col0 ref" href="#100file" title='file' data-ref="100file">file</a>, &amp;<a class="local col1 ref" href="#101mode" title='mode' data-ref="101mode">mode</a>, &amp;<a class="local col2 ref" href="#102buffering" title='buffering' data-ref="102buffering">buffering</a>, &amp;<a class="local col3 ref" href="#103encoding" title='encoding' data-ref="103encoding">encoding</a>, &amp;<a class="local col4 ref" href="#104errors" title='errors' data-ref="104errors">errors</a>, &amp;<a class="local col5 ref" href="#105newline" title='newline' data-ref="105newline">newline</a>, &amp;<a class="local col6 ref" href="#106closefd" title='closefd' data-ref="106closefd">closefd</a>, &amp;<a class="local col7 ref" href="#107opener" title='opener' data-ref="107opener">opener</a>)) {</td></tr>
+<tr><th id="154">154</th><td>        <b>goto</b> <a class="lbl" href="#108exit" data-ref="108exit">exit</a>;</td></tr>
+<tr><th id="155">155</th><td>    }</td></tr>
+<tr><th id="156">156</th><td>    <a class="local col7 ref" href="#97return_value" title='return_value' data-ref="97return_value">return_value</a> = <a class="ref" href="../_iomodule.c.html#_io_open_impl" title='_io_open_impl' data-ref="_io_open_impl">_io_open_impl</a>(<a class="local col3 ref" href="#93module" title='module' data-ref="93module">module</a>, <a class="local col0 ref" href="#100file" title='file' data-ref="100file">file</a>, <a class="local col1 ref" href="#101mode" title='mode' data-ref="101mode">mode</a>, <a class="local col2 ref" href="#102buffering" title='buffering' data-ref="102buffering">buffering</a>, <a class="local col3 ref" href="#103encoding" title='encoding' data-ref="103encoding">encoding</a>, <a class="local col4 ref" href="#104errors" title='errors' data-ref="104errors">errors</a>, <a class="local col5 ref" href="#105newline" title='newline' data-ref="105newline">newline</a>, <a class="local col6 ref" href="#106closefd" title='closefd' data-ref="106closefd">closefd</a>, <a class="local col7 ref" href="#107opener" title='opener' data-ref="107opener">opener</a>);</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td><dfn class="lbl" id="108exit" data-ref="108exit">exit</dfn>:</td></tr>
+<tr><th id="159">159</th><td>    <b>return</b> <a class="local col7 ref" href="#97return_value" title='return_value' data-ref="97return_value">return_value</a>;</td></tr>
+<tr><th id="160">160</th><td>}</td></tr>
+<tr><th id="161">161</th><td><i>/*[clinic end generated code: output=7e0ab289d8465580 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="162">162</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../_iomodule.c.html'>codebrowser/Modules/_io/_iomodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='73' type='struct _object *'/>
+<offset>64</offset>
+<use f='codebrowser/Objects/object.c' l='78' u='r' c='_Py_AddToAllObjects'/>
+<use f='codebrowser/Objects/object.c' l='81' u='r' c='_Py_AddToAllObjects'/>
+<use f='codebrowser/Objects/object.c' l='83' u='w' c='_Py_AddToAllObjects'/>
+<use f='codebrowser/Objects/object.c' l='84' u='w' c='_Py_AddToAllObjects'/>
+<use f='codebrowser/Objects/object.c' l='1846' u='r' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1846' u='r' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1850' u='r' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1852' u='r' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1863' u='w' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1863' u='r' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1864' u='r' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1865' u='w' c='_Py_ForgetReference'/>

@@ -1,0 +1,37 @@
+<def f='codebrowser/Modules/expat/xmltok_impl.c' l='1439' macro='1' type='int normal_getAtts(const ENCODING * enc, const char * ptr, int attsMax, ATTRIBUTE * atts)'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<doc f='codebrowser/Modules/expat/xmltok_impl.c' l='1433'>/* This must only be called for a well-formed start-tag or empty
+   element tag.  Returns the number of attributes.  Pointers to the
+   first attsMax attributes are stored in atts.
+*/</doc>

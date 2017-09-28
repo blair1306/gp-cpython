@@ -1,0 +1,47 @@
+<dec f='codebrowser/Include/pymem.h' l='134'/>
+<doc f='codebrowser/Include/pymem.h' l='124'>/*
+ * Type-oriented memory interface
+ * ==============================
+ *
+ * Allocate memory for n objects of the given type.  Returns a new pointer
+ * or NULL if the request was too large or memory allocation failed.  Use
+ * these macros rather than doing the multiplication yourself so that proper
+ * overflow checking is always done.
+ */</doc>
+<use f='codebrowser/Modules/_csv.c' l='561' u='c'/>
+<use f='codebrowser/Modules/_csv.c' l='1102' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4395' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5078' u='c'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='407' u='c'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='427' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2302' u='c'/>
+<use f='codebrowser/Modules/_localemodule.c' l='263' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='403' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='854' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1813' u='c'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='339' u='c'/>
+<use f='codebrowser/Modules/getpath.c' l='738' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2062' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2407' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2747' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3088' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3089' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6160' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6268' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8038' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8044' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11815' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='964' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1203' u='c'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1543' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3650' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3651' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3974' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3981' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4075' u='c'/>
+<use f='codebrowser/Modules/zipimport.c' l='259' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2416' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2427' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2469' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3766' u='c'/>
+<use f='codebrowser/Python/peephole.c' l='371' u='c'/>

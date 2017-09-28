@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>symtablemodule.c.h source code [codebrowser/Modules/clinic/symtablemodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/symtablemodule.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='symtablemodule.c.h.html'>symtablemodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char _symtable_symtable__doc__[] = &quot;symtable($module, str, filename, startstr, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return symbol and scope dictionaries used internally by compiler.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_symtable_symtable__doc__" title='_symtable_symtable__doc__' data-ref="_symtable_symtable__doc__">_symtable_symtable__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"symtable($module, str, filename, startstr, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return symbol and scope dictionaries used internally by compiler."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/_SYMTABLE_SYMTABLE_METHODDEF" data-ref="_M/_SYMTABLE_SYMTABLE_METHODDEF">_SYMTABLE_SYMTABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"symtable", (PyCFunction)_symtable_symtable, METH_FASTCALL, _symtable_symtable__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../symtablemodule.c.html#_symtable_symtable_impl" title='_symtable_symtable_impl' data-ref="_symtable_symtable_impl" id="_symtable_symtable_impl">_symtable_symtable_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7module" title='module' data-type='PyObject *' data-ref="7module">module</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="8str" title='str' data-type='const char *' data-ref="8str">str</dfn>,</td></tr>
+<tr><th id="16">16</th><td>                        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9filename" title='filename' data-type='PyObject *' data-ref="9filename">filename</dfn>, <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="10startstr" title='startstr' data-type='const char *' data-ref="10startstr">startstr</dfn>);</td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="19">19</th><td><dfn class="decl def" id="_symtable_symtable" title='_symtable_symtable' data-ref="_symtable_symtable">_symtable_symtable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11module" title='module' data-type='PyObject *' data-ref="11module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="12args" title='args' data-type='PyObject **' data-ref="12args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="13nargs" title='nargs' data-type='Py_ssize_t' data-ref="13nargs">nargs</dfn>)</td></tr>
+<tr><th id="20">20</th><td>{</td></tr>
+<tr><th id="21">21</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14return_value" title='return_value' data-type='PyObject *' data-ref="14return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="22">22</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="15str" title='str' data-type='const char *' data-ref="15str">str</dfn>;</td></tr>
+<tr><th id="23">23</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16filename" title='filename' data-type='PyObject *' data-ref="16filename">filename</dfn>;</td></tr>
+<tr><th id="24">24</th><td>    <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="17startstr" title='startstr' data-type='const char *' data-ref="17startstr">startstr</dfn>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col2 ref" href="#12args" title='args' data-ref="12args">args</a>, <a class="local col3 ref" href="#13nargs" title='nargs' data-ref="13nargs">nargs</a>, <q>"sO&amp;s:symtable"</q>,</td></tr>
+<tr><th id="27">27</th><td>        &amp;<a class="local col5 ref" href="#15str" title='str' data-ref="15str">str</a>, <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_FSDecoder" title='PyUnicode_FSDecoder' data-ref="PyUnicode_FSDecoder">PyUnicode_FSDecoder</a>, &amp;<a class="local col6 ref" href="#16filename" title='filename' data-ref="16filename">filename</a>, &amp;<a class="local col7 ref" href="#17startstr" title='startstr' data-ref="17startstr">startstr</a>)) {</td></tr>
+<tr><th id="28">28</th><td>        <b>goto</b> <a class="lbl" href="#18exit" data-ref="18exit">exit</a>;</td></tr>
+<tr><th id="29">29</th><td>    }</td></tr>
+<tr><th id="30">30</th><td>    <a class="local col4 ref" href="#14return_value" title='return_value' data-ref="14return_value">return_value</a> = <a class="ref" href="../symtablemodule.c.html#_symtable_symtable_impl" title='_symtable_symtable_impl' data-ref="_symtable_symtable_impl">_symtable_symtable_impl</a>(<a class="local col1 ref" href="#11module" title='module' data-ref="11module">module</a>, <a class="local col5 ref" href="#15str" title='str' data-ref="15str">str</a>, <a class="local col6 ref" href="#16filename" title='filename' data-ref="16filename">filename</a>, <a class="local col7 ref" href="#17startstr" title='startstr' data-ref="17startstr">startstr</a>);</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><dfn class="lbl" id="18exit" data-ref="18exit">exit</dfn>:</td></tr>
+<tr><th id="33">33</th><td>    <b>return</b> <a class="local col4 ref" href="#14return_value" title='return_value' data-ref="14return_value">return_value</a>;</td></tr>
+<tr><th id="34">34</th><td>}</td></tr>
+<tr><th id="35">35</th><td><i>/*[clinic end generated code: output=ef379e514fde8477 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../symtablemodule.c.html'>codebrowser/Modules/symtablemodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

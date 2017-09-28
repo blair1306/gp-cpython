@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='338' type='PyThreadState * PyInterpreterState_ThreadHead(PyInterpreterState * )'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='784' u='c' c='local_clear'/>
+<def f='codebrowser/Python/pystate.c' l='695' ll='698' type='PyThreadState * PyInterpreterState_ThreadHead(PyInterpreterState * interp)'/>
+<use f='codebrowser/Python/traceback.c' l='798' u='c' c='_Py_DumpTracebackThreads'/>
+<use f='codebrowser/Python/traceback.c' l='803' u='c' c='_Py_DumpTracebackThreads'/>

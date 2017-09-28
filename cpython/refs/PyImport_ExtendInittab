@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/import.h' l='114' type='int PyImport_ExtendInittab(struct _inittab * newtab)'/>
+<def f='codebrowser/Python/import.c' l='2085' ll='2113' type='int PyImport_ExtendInittab(struct _inittab * newtab)'/>
+<use f='codebrowser/Python/import.c' l='2127' u='c' c='PyImport_AppendInittab'/>
+<doc f='codebrowser/Python/import.c' l='2078'>/* API for embedding applications that want to add their own entries
+   to the table of built-in modules.  This should normally be called
+   *before* Py_Initialize().  When the table resize fails, -1 is
+   returned and the existing table is unchanged.
+
+   After a similar function by Just van Rossum. */</doc>

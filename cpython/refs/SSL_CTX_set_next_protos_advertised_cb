@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='1272' type='void SSL_CTX_set_next_protos_advertised_cb(SSL_CTX * s, int (*)(SSL *, const unsigned char **, unsigned int *, void *) cb, void * arg)'/>
+<use f='codebrowser/Modules/_ssl.c' l='2940' u='c' c='_ssl__SSLContext__set_npn_protocols_impl'/>

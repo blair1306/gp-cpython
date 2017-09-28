@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>parser.h source code [codebrowser/Parser/parser.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Parser/parser.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Parser</a>/<a href='parser.h.html'>parser.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_PARSER_H">Py_PARSER_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_PARSER_H" data-ref="_M/Py_PARSER_H">Py_PARSER_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* Parser interface */</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/MAXSTACK" data-ref="_M/MAXSTACK">MAXSTACK</dfn> 1500</u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="13">13</th><td>	<em>int</em>		 <dfn class="decl" id="(anonymous)::s_state" title='(anonymous struct)::s_state' data-ref="(anonymous)::s_state">s_state</dfn>;	<i>/* State in current DFA */</i></td></tr>
+<tr><th id="14">14</th><td>	<a class="typedef" href="../Include/grammar.h.html#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a>		*<dfn class="decl" id="(anonymous)::s_dfa" title='(anonymous struct)::s_dfa' data-ref="(anonymous)::s_dfa">s_dfa</dfn>;		<i>/* Current DFA */</i></td></tr>
+<tr><th id="15">15</th><td>	<b>struct</b> <a class="type" href="../Include/node.h.html#_node" title='_node' data-ref="_node">_node</a>	*<dfn class="decl" id="(anonymous)::s_parent" title='(anonymous struct)::s_parent' data-ref="(anonymous)::s_parent">s_parent</dfn>;	<i>/* Where to add next node */</i></td></tr>
+<tr><th id="16">16</th><td>} <dfn class="typedef" id="stackentry" title='stackentry' data-type='struct stackentry' data-ref="stackentry">stackentry</dfn>;</td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="19">19</th><td>	<a class="typedef" href="#stackentry" title='stackentry' data-type='struct stackentry' data-ref="stackentry">stackentry</a>	*<dfn class="decl" id="(anonymous)::s_top" title='(anonymous struct)::s_top' data-ref="(anonymous)::s_top">s_top</dfn>;		<i>/* Top entry */</i></td></tr>
+<tr><th id="20">20</th><td>	<a class="typedef" href="#stackentry" title='stackentry' data-type='struct stackentry' data-ref="stackentry">stackentry</a>	 <dfn class="decl" id="(anonymous)::s_base" title='(anonymous struct)::s_base' data-ref="(anonymous)::s_base">s_base</dfn>[<a class="macro" href="#10" title="1500" data-ref="_M/MAXSTACK">MAXSTACK</a>];<i>/* Array of stack entries */</i></td></tr>
+<tr><th id="21">21</th><td>					<i>/* NB The stack grows down */</i></td></tr>
+<tr><th id="22">22</th><td>} <dfn class="typedef" id="stack" title='stack' data-type='struct stack' data-ref="stack">stack</dfn>;</td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="25">25</th><td>	<a class="typedef" href="#stack" title='stack' data-type='struct stack' data-ref="stack">stack</a>	 	<dfn class="decl" id="(anonymous)::p_stack" title='(anonymous struct)::p_stack' data-ref="(anonymous)::p_stack">p_stack</dfn>;	<i>/* Stack of parser states */</i></td></tr>
+<tr><th id="26">26</th><td>	<a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a>		*<dfn class="decl" id="(anonymous)::p_grammar" title='(anonymous struct)::p_grammar' data-ref="(anonymous)::p_grammar">p_grammar</dfn>;	<i>/* Grammar to use */</i></td></tr>
+<tr><th id="27">27</th><td>	<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a>		*<dfn class="decl" id="(anonymous)::p_tree" title='(anonymous struct)::p_tree' data-ref="(anonymous)::p_tree">p_tree</dfn>;	<i>/* Top of parse tree */</i></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="28">ifdef</span> <a class="macro" href="../Include/code.h.html#93" data-ref="_M/PY_PARSER_REQUIRES_FUTURE_KEYWORD">PY_PARSER_REQUIRES_FUTURE_KEYWORD</a></u></td></tr>
+<tr><th id="29">29</th><td>	<em>unsigned</em> <em>long</em>	<dfn class="decl" id="(anonymous)::p_flags" title='(anonymous struct)::p_flags' data-ref="(anonymous)::p_flags">p_flags</dfn>;	<i>/* see co_flags in Include/code.h */</i></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="28">endif</span></u></td></tr>
+<tr><th id="31">31</th><td>} <dfn class="typedef" id="parser_state" title='parser_state' data-type='struct parser_state' data-ref="parser_state">parser_state</dfn>;</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><a class="typedef" href="#parser_state" title='parser_state' data-type='struct parser_state' data-ref="parser_state">parser_state</a> *<dfn class="decl" id="PyParser_New" title='PyParser_New' data-ref="PyParser_New">PyParser_New</dfn>(<a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col3 decl" id="3g" title='g' data-type='grammar *' data-ref="3g">g</dfn>, <em>int</em> <dfn class="local col4 decl" id="4start" title='start' data-type='int' data-ref="4start">start</dfn>);</td></tr>
+<tr><th id="34">34</th><td><em>void</em> <dfn class="decl" id="PyParser_Delete" title='PyParser_Delete' data-ref="PyParser_Delete">PyParser_Delete</dfn>(<a class="typedef" href="#parser_state" title='parser_state' data-type='struct parser_state' data-ref="parser_state">parser_state</a> *<dfn class="local col5 decl" id="5ps" title='ps' data-type='parser_state *' data-ref="5ps">ps</dfn>);</td></tr>
+<tr><th id="35">35</th><td><em>int</em> <dfn class="decl" id="PyParser_AddToken" title='PyParser_AddToken' data-ref="PyParser_AddToken">PyParser_AddToken</dfn>(<a class="typedef" href="#parser_state" title='parser_state' data-type='struct parser_state' data-ref="parser_state">parser_state</a> *<dfn class="local col6 decl" id="6ps" title='ps' data-type='parser_state *' data-ref="6ps">ps</dfn>, <em>int</em> <dfn class="local col7 decl" id="7type" title='type' data-type='int' data-ref="7type">type</dfn>, <em>char</em> *<dfn class="local col8 decl" id="8str" title='str' data-type='char *' data-ref="8str">str</dfn>, <em>int</em> <dfn class="local col9 decl" id="9lineno" title='lineno' data-type='int' data-ref="9lineno">lineno</dfn>, <em>int</em> <dfn class="local col0 decl" id="10col_offset" title='col_offset' data-type='int' data-ref="10col_offset">col_offset</dfn>,</td></tr>
+<tr><th id="36">36</th><td>                      <em>int</em> *<dfn class="local col1 decl" id="11expected_ret" title='expected_ret' data-type='int *' data-ref="11expected_ret">expected_ret</dfn>);</td></tr>
+<tr><th id="37">37</th><td><em>void</em> <a class="decl" href="acceler.c.html#PyGrammar_AddAccelerators" title='PyGrammar_AddAccelerators' data-ref="PyGrammar_AddAccelerators" id="PyGrammar_AddAccelerators">PyGrammar_AddAccelerators</a>(<a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col2 decl" id="12g" title='g' data-type='grammar *' data-ref="12g">g</dfn>);</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="39">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="40">40</th><td>}</td></tr>
+<tr><th id="41">41</th><td><u>#<span data-ppcond="39">endif</span></u></td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="1">endif</span> /* !Py_PARSER_H */</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='acceler.c.html'>codebrowser/Parser/acceler.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

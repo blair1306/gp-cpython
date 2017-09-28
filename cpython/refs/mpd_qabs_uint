@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='454' type='mpd_uint_t mpd_qabs_uint(const mpd_t * dec, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1332' ll='1336' type='mpd_uint_t mpd_qabs_uint(const mpd_t * a, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1345' u='c' c='mpd_qget_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2962' u='c' c='mpd_qscaleb'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6225' u='c' c='_mpd_qpow_int'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1331'>/* Same as above, but gets the absolute value, i.e. the sign is ignored. */</doc>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='162' type='PyObject *'/>
+<def f='codebrowser/Modules/_io/_iomodule.c' l='34' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='739' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='739' macro='1' u='w'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='472' u='r' c='buffered_simple_flush'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='524' u='r' c='buffered_close'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='556' u='r' c='buffered_detach'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='211' u='r' c='_io__IOBase_close_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1161' u='r' c='_io_TextIOWrapper_reconfigure_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1289' u='r' c='_io_TextIOWrapper_detach_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1419' u='r' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2223' u='r' c='_io_TextIOWrapper_seek_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2556' u='r' c='_io_TextIOWrapper_truncate_impl'/>

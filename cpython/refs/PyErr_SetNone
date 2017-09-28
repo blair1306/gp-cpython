@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/pyerrors.h' l='77' type='void PyErr_SetNone(PyObject * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='75'>/* Error handling definitions */</doc>
+<use f='codebrowser/Modules/_elementtree.c' l='2152' u='c' c='elementiter_next'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='967' u='c' c='rawiobase_readinto'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='974' u='c' c='rawiobase_write'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='979' u='c' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1041' u='c' c='decompress'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='900' u='c' c='raise_error'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3881' u='c' c='return_result_with_error'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1097' u='c' c='thread_PyThread_exit_thread'/>
+<use f='codebrowser/Modules/signalmodule.c' l='184' u='c' c='signal_default_int_handler'/>
+<use f='codebrowser/Objects/genobject.c' l='152' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='155' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='204' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='207' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='389' u='c' c='gen_close'/>
+<use f='codebrowser/Objects/genobject.c' l='1538' u='c' c='async_gen_unwrap_value'/>
+<use f='codebrowser/Objects/genobject.c' l='1593' u='c' c='async_gen_asend_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1628' u='c' c='async_gen_asend_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='1862' u='c' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1868' u='c' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1948' u='c' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1954' u='c' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1971' u='c' c='async_gen_athrow_throw'/>
+<use f='codebrowser/Objects/typeobject.c' l='5674' u='c' c='wrap_next'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1328' u='c' c='builtin_next'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1979' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1985' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/ceval.c' l='1130' u='c' c='_PyEval_EvalFrameDefault'/>
+<def f='codebrowser/Python/errors.c' l='146' ll='150' type='void PyErr_SetNone(PyObject * exception)'/>
+<use f='codebrowser/Python/errors.c' l='452' u='c' c='PyErr_NoMemory'/>
+<use f='codebrowser/Python/pythonrun.c' l='1309' u='c' c='err_input'/>

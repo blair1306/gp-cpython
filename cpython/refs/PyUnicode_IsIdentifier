@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2128' type='int PyUnicode_IsIdentifier(PyObject * s)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2126'>/* Checks whether argument is a valid identifier. */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='2234' u='c' c='valid_identifier'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='12138' ll='12173' type='int PyUnicode_IsIdentifier(PyObject * self)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12188' u='c' c='unicode_isidentifier_impl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1333' u='c' c='verify_identifier'/>

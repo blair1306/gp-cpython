@@ -1,0 +1,10 @@
+<dec f='include/stdio.h' l='715' type='size_t fwrite(const void *restrict __ptr, size_t __size, size_t __n, FILE *restrict __s)'/>
+<doc f='include/stdio.h' l='711'>/* Write chunks of generic data to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2307' u='c' c='PyCurses_GetWin'/>
+<use f='codebrowser/Objects/object.c' l='384' u='c' c='PyObject_Print'/>
+<use f='codebrowser/Objects/object.c' l='393' u='c' c='PyObject_Print'/>
+<use f='codebrowser/Python/marshal.c' l='92' u='c' c='w_flush'/>
+<use f='codebrowser/Python/marshal.c' l='145' u='c' c='w_string'/>

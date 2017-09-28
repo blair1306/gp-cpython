@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/modsupport.h' l='99' type='int _PyArg_ParseTupleAndKeywordsFast(PyObject * , PyObject * , struct _PyArg_Parser * )'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='33' u='c' c='_asyncio_Future___init__'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='249' u='c' c='_asyncio_Task___init__'/>
+<use f='codebrowser/Modules/_blake2/clinic/blake2b_impl.c.h' l='40' u='c' c='py_blake2b_new'/>
+<use f='codebrowser/Modules/_blake2/clinic/blake2s_impl.c.h' l='40' u='c' c='py_blake2s_new'/>
+<use f='codebrowser/Modules/_io/clinic/bytesio.c.h' l='438' u='c' c='_io_BytesIO___init__'/>
+<use f='codebrowser/Modules/clinic/_pickle.c.h' l='102' u='c' c='_pickle_Pickler___init__'/>
+<use f='codebrowser/Modules/clinic/_pickle.c.h' l='296' u='c' c='_pickle_Unpickler___init__'/>
+<use f='codebrowser/Modules/_sha3/clinic/sha3module.c.h' l='22' u='c' c='py_sha3_new'/>
+<use f='codebrowser/Objects/clinic/complexobject.c.h' l='25' u='c' c='complex_new'/>
+<use f='codebrowser/Objects/clinic/descrobject.c.h' l='16' u='c' c='mappingproxy_new'/>
+<use f='codebrowser/Objects/clinic/descrobject.c.h' l='78' u='c' c='property_init'/>
+<use f='codebrowser/Objects/clinic/enumobject.c.h' l='32' u='c' c='enum_new'/>
+<use f='codebrowser/Objects/clinic/funcobject.c.h' l='38' u='c' c='func_new'/>
+<use f='codebrowser/Objects/clinic/longobject.c.h' l='17' u='c' c='long_new'/>
+<use f='codebrowser/Objects/clinic/moduleobject.c.h' l='25' u='c' c='module___init__'/>
+<use f='codebrowser/Objects/clinic/structseq.c.h' l='17' u='c' c='structseq_new'/>
+<dec f='codebrowser/Python/getargs.c' l='21' type='int _PyArg_ParseTupleAndKeywordsFast(PyObject * , PyObject * , struct _PyArg_Parser * )'/>
+<def f='codebrowser/Python/getargs.c' l='1497' ll='1508' type='int _PyArg_ParseTupleAndKeywordsFast(PyObject * args, PyObject * keywords, struct _PyArg_Parser * parser)'/>

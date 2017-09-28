@@ -1,0 +1,10 @@
+<dec f='include/zlib.h' l='91' type='uInt'/>
+<offset>256</offset>
+<doc f='include/zlib.h' l='91'>/* remaining free space at next_out */</doc>
+<use f='codebrowser/Modules/zlibmodule.c' l='180' u='w' c='arrange_output_buffer_with_maximum'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='267' u='r' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='402' u='r' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='687' u='r' c='zlib_Compress_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='827' u='r' c='zlib_Decompress_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='906' u='r' c='zlib_Compress_flush_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1115' u='r' c='zlib_Decompress_flush_impl'/>

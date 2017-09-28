@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/frameobject.h' l='19' type='struct _frame *'/>
+<offset>320</offset>
+<doc f='codebrowser/Include/frameobject.h' l='19'>/* previous frame, or NULL */</doc>
+<use f='codebrowser/Modules/_tracemalloc.c' l='470' u='r' c='traceback_get_frames'/>
+<use f='codebrowser/Objects/frameobject.c' l='433' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='447' u='w' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='463' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='463' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='678' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='703' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='989' u='r' c='PyFrame_ClearFreeList'/>
+<use f='codebrowser/Objects/genobject.c' l='185' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='186' u='w' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='195' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='196' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='196' u='w' c='gen_send_ex'/>
+<use f='codebrowser/Python/_warnings.c' l='618' u='r' c='next_external_frame'/>
+<use f='codebrowser/Python/_warnings.c' l='638' u='r' c='setup_context'/>
+<use f='codebrowser/Python/ceval.c' l='3743' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4147' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4147' u='w' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/sysmodule.c' l='1209' u='r' c='sys_getframe'/>
+<use f='codebrowser/Python/traceback.c' l='704' u='r' c='dump_traceback'/>

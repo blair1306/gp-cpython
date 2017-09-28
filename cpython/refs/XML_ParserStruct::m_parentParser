@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='614' type='XML_Parser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='961' u='r' c='get_hash_secret_salt'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='962' u='r' c='get_hash_secret_salt'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='PyExpat_XML_ParserReset'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='PyExpat_XML_ParserFree'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1867' u='r' c='PyExpat_XML_SetHashSalt'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1868' u='r' c='PyExpat_XML_SetHashSalt'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='cdataSectionProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='722' u='r' c='internalEntityProcessor'/>
+<offset>7232</offset>

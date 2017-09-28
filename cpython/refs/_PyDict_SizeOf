@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/dictobject.h' l='118' type='Py_ssize_t _PyDict_SizeOf(PyDictObject * )'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='56' u='c' c='PyCStgDict_sizeof'/>
+<def f='codebrowser/Objects/dictobject.c' l='2919' ll='2938' type='Py_ssize_t _PyDict_SizeOf(PyDictObject * mp)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2952' u='c' c='dict_sizeof'/>
+<use f='codebrowser/Objects/odictobject.c' l='947' u='c' c='odict_sizeof'/>

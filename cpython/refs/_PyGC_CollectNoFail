@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/objimpl.h' l='235' type='Py_ssize_t _PyGC_CollectNoFail()'/>
+<def f='codebrowser/Modules/gcmodule.c' l='1638' ll='1657' type='Py_ssize_t _PyGC_CollectNoFail()'/>
+<use f='codebrowser/Python/import.c' l='419' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='472' u='c' c='PyImport_Cleanup'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1566' type='PyObject * PyUnicode_DecodeLatin1(const char * string, Py_ssize_t length, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1560'>/* --- Latin-1 Codecs -----------------------------------------------------
+
+   Note: Latin-1 corresponds to the first 256 Unicode ordinals.
+
+*/</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='565' u='c' c='_codecs_latin_1_decode_impl'/>
+<use f='codebrowser/Modules/_pickle.c' l='2034' u='c' c='save_bytes'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2031' u='c' c='_common_reduce'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3209' u='c' c='PyUnicode_Decode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='6601' ll='6608' type='PyObject * PyUnicode_DecodeLatin1(const char * s, Py_ssize_t size, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8020' u='c' c='PyUnicode_DecodeCharmap'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='6599'>/* --- Latin-1 Codec ------------------------------------------------------ */</doc>

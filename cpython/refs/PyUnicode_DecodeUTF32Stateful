@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1365' type='PyObject * PyUnicode_DecodeUTF32Stateful(const char * string, Py_ssize_t length, const char * errors, int * byteorder, Py_ssize_t * consumed)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='439' u='c' c='_codecs_utf_32_decode_impl'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='461' u='c' c='_codecs_utf_32_le_decode_impl'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='483' u='c' c='_codecs_utf_32_be_decode_impl'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='511' u='c' c='_codecs_utf_32_ex_decode_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5227' u='c' c='PyUnicode_DecodeUTF32'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='5230' ll='5373' type='PyObject * PyUnicode_DecodeUTF32Stateful(const char * s, Py_ssize_t size, const char * errors, int * byteorder, Py_ssize_t * consumed)'/>

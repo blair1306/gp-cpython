@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2334' type='int _PyUnicode_EQ(PyObject * , PyObject * )'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2332'>/* Fast equality check when the inputs are known to be exact unicode types
+   and where the hash values are equal (i.e. a very probable match) */</doc>
+<use f='codebrowser/Objects/setobject.c' l='73' u='c' c='set_lookkey'/>
+<use f='codebrowser/Objects/setobject.c' l='100' u='c' c='set_lookkey'/>
+<use f='codebrowser/Objects/setobject.c' l='165' u='c' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='197' u='c' c='set_add_entry'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='11227' ll='11231' type='int _PyUnicode_EQ(PyObject * aa, PyObject * bb)'/>
+<use f='codebrowser/Python/getargs.c' l='2011' u='c' c='find_keyword'/>

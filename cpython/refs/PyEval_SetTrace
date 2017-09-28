@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/ceval.h' l='33' type='void PyEval_SetTrace(Py_tracefunc , PyObject * )'/>
+<def f='codebrowser/Python/ceval.c' l='4611' ll='4628' type='void PyEval_SetTrace(Py_tracefunc func, PyObject * arg)'/>
+<use f='codebrowser/Python/sysmodule.c' l='435' u='c' c='trace_trampoline'/>
+<use f='codebrowser/Python/sysmodule.c' l='454' u='c' c='sys_settrace'/>
+<use f='codebrowser/Python/sysmodule.c' l='456' u='c' c='sys_settrace'/>

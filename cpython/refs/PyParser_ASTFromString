@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pythonrun.h' l='36' type='struct _mod * PyParser_ASTFromString(const char * s, const char * filename, int start, PyCompilerFlags * flags, PyArena * arena)'/>
+<use f='codebrowser/Python/ast.c' l='4318' u='c' c='fstring_compile_expr'/>
+<def f='codebrowser/Python/pythonrun.c' l='1137' ll='1149' type='struct _mod * PyParser_ASTFromString(const char * s, const char * filename_str, int start, PyCompilerFlags * flags, PyArena * arena)'/>

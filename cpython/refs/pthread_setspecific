@@ -1,0 +1,4 @@
+<dec f='include/pthread.h' l='1122' type='int pthread_setspecific(pthread_key_t __key, const void * __pointer)'/>
+<doc f='include/pthread.h' l='1121'>/* Store POINTER in the thread-specific data slot identified by KEY. */</doc>
+<use f='codebrowser/Python/thread_pthread.h' l='637' u='c' c='PyThread_delete_key_value'/>
+<use f='codebrowser/Python/thread_pthread.h' l='644' u='c' c='PyThread_set_key_value'/>

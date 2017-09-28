@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='319' type='PyObject * PyCData_get(PyObject * type, GETFUNC getfunc, PyObject * src, Py_ssize_t index, Py_ssize_t size, char * ptr)'/>
+<def f='codebrowser/Modules/_ctypes/_ctypes.c' l='2849' ll='2861' type='PyObject * PyCData_get(PyObject * type, GETFUNC getfunc, PyObject * src, Py_ssize_t index, Py_ssize_t size, char * adr)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4323' u='c' c='Array_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4835' u='c' c='Pointer_item'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='238' u='c' c='PyCField_get'/>

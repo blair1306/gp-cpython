@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/funcobject.h' l='27' type='PyObject *'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/funcobject.h' l='27'>/* NULL or a tuple of cell objects */</doc>
+<use f='codebrowser/Objects/call.c' l='362' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='420' macro='1' u='r'/>
+<use f='codebrowser/Objects/funcobject.c' l='34' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='172' u='r' c='PyFunction_GetClosure'/>
+<use f='codebrowser/Objects/funcobject.c' l='193' u='r' c='PyFunction_SetClosure'/>
+<use f='codebrowser/Objects/funcobject.c' l='193' u='w' c='PyFunction_SetClosure'/>
+<use f='codebrowser/Objects/funcobject.c' l='262' u='r' c='func_set_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='263' u='r' c='func_set_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='263' u='r' c='func_set_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='518' u='w' c='func_new_impl'/>
+<use f='codebrowser/Objects/funcobject.c' l='538' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='562' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='562' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/bltinmodule.c' l='162' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='3437' u='w' c='_PyEval_EvalFrameDefault'/>

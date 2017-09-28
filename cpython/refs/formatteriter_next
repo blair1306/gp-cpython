@@ -1,0 +1,11 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='992' ll='1056' type='PyObject * formatteriter_next(formatteriterobject * it)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1090'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1090'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='984'>/* returns a tuple:
+   (literal, field_name, format_spec, conversion)
+
+   literal is any literal text to output.  might be zero length
+   field_name is the string before the &apos;:&apos;.  might be None
+   format_spec is the string after the &apos;:&apos;.  mibht be None
+   conversion is either None, or the string after the &apos;!&apos;
+*/</doc>

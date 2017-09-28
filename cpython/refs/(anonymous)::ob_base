@@ -1,0 +1,66 @@
+<dec f='codebrowser/Include/object.h' l='113' type='PyObject'/>
+<dec f='codebrowser/Include/bytearrayobject.h' l='24' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Include/bytesobject.h' l='32' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Include/unicodeobject.h' l='275' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/floatobject.h' l='16' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/complexobject.h' l='34' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/memoryobject.h' l='43' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/memoryobject.h' l='58' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Include/tupleobject.h' l='26' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Include/listobject.h' l='24' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Include/dictobject.h' l='24' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/dictobject.h' l='44' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/setobject.h' l='43' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/methodobject.h' l='94' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/funcobject.h' l='22' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/classobject.h' l='13' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/classobject.h' l='38' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/sliceobject.h' l='23' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/cellobject.h' l='10' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/genobject.h' l='32' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/genobject.h' l='52' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/genobject.h' l='69' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/descrobject.h' l='42' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='17' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='21' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='31' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='38' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='47' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='52' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/pyerrors.h' l='64' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/code.h' l='22' macro='1' type='PyObject'/>
+<offset>0</offset>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='58' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='75' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='172' macro='1' type='PyObject'/>
+<offset>0</offset>
+<dec f='codebrowser/Include/py_curses.h' l='77' macro='1' type='PyObject'/>
+<offset>0</offset>
+<dec f='codebrowser/Include/datetime.h' l='36' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='45' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='63' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='78' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='83' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='96' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='106' macro='1' type='PyObject'/>
+<dec f='codebrowser/Include/datetime.h' l='111' macro='1' type='PyObject'/>
+<offset>0</offset>
+<dec f='codebrowser/Modules/sre.h' l='28' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Modules/sre.h' l='45' macro='1' type='PyVarObject'/>
+<dec f='codebrowser/Modules/sre.h' l='91' macro='1' type='PyObject'/>
+<offset>0</offset>
+<dec f='codebrowser/Modules/socketmodule.h' l='203' macro='1' type='PyObject'/>
+<offset>0</offset>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='61' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='73' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='81' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='90' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='94' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='98' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='102' macro='1' type='PyObject'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='107' macro='1' type='PyObject'/>
+<offset>0</offset>
+<use f='codebrowser/Objects/structseq.c' l='342' u='m' c='PyStructSequence_InitType2'/>
+<dec f='codebrowser/Objects/stringlib/unicode_format.h' l='972' macro='1' type='PyObject'/>
+<dec f='codebrowser/Objects/stringlib/unicode_format.h' l='1136' macro='1' type='PyObject'/>
+<offset>0</offset>

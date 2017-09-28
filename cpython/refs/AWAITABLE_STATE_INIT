@@ -1,0 +1,7 @@
+<dec f='codebrowser/Objects/genobject.c' l='1241' type='0'/>
+<use f='codebrowser/Objects/genobject.c' l='1597' u='r' c='async_gen_asend_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1730' u='r' c='async_gen_asend_new'/>
+<use f='codebrowser/Objects/genobject.c' l='1866' u='r' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1965' u='r' c='async_gen_athrow_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='2073' u='r' c='async_gen_athrow_new'/>
+<doc f='codebrowser/Objects/genobject.c' l='1241'>/* new awaitable, has not yet been iterated */</doc>

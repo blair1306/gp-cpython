@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='773' type='char * ttyname(int __fd)'/>
+<doc f='include/unistd.h' l='771'>/* Return the pathname of the terminal FD is open on, or NULL on errors.
+   The returned storage is good only until the next call to this function.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='2663' u='c' c='os_ttyname_impl'/>

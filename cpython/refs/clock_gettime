@@ -1,0 +1,5 @@
+<dec f='include/time.h' l='342' type='int clock_gettime(clockid_t __clock_id, struct timespec * __tp)'/>
+<use f='codebrowser/Modules/timemodule.c' l='151' u='c' c='time_clock_gettime'/>
+<use f='codebrowser/Modules/timemodule.c' l='1003' u='c' c='py_process_time'/>
+<use f='codebrowser/Python/pytime.c' l='567' u='c' c='pygettimeofday'/>
+<use f='codebrowser/Python/pytime.c' l='728' u='c' c='pymonotonic'/>

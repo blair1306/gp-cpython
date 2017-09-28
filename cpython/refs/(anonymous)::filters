@@ -1,0 +1,28 @@
+<dec f='include/lzma/block.h' l='195' type='lzma_filter *'/>
+<offset>256</offset>
+<doc f='include/lzma/block.h' l='169'>/**
+	 * \brief       Array of filters
+	 *
+	 * There can be 1-4 filters. The end of the array is marked with
+	 * .id = LZMA_VLI_UNKNOWN.
+	 *
+	 * Read by:
+	 *  - lzma_block_header_size()
+	 *  - lzma_block_header_encode()
+	 *  - lzma_block_encoder()
+	 *  - lzma_block_decoder()
+	 *  - lzma_block_buffer_encode()
+	 *  - lzma_block_buffer_decode()
+	 *
+	 * Written by:
+	 *  - lzma_block_header_decode(): Note that this does NOT free()
+	 *    the old filter options structures. All unused filters[] will
+	 *    have .id == LZMA_VLI_UNKNOWN and .options == NULL. If
+	 *    decoding fails, all filters[] are guaranteed to be
+	 *    LZMA_VLI_UNKNOWN and NULL.
+	 *
+	 * \note        Because of the array is terminated with
+	 *              .id = LZMA_VLI_UNKNOWN, the actual array must
+	 *              have LZMA_FILTERS_MAX + 1 members or the Block
+	 *              Header decoder will overflow the buffer.
+	 */</doc>

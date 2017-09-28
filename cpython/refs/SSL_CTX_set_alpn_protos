@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='1300' type='int SSL_CTX_set_alpn_protos(SSL_CTX * ctx, const unsigned char * protos, unsigned int protos_len)'/>
+<use f='codebrowser/Modules/_ssl.c' l='2994' u='c' c='_ssl__SSLContext__set_alpn_protocols_impl'/>

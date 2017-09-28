@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pystate.h' l='237' type='PyThreadState * _PyThreadState_UncheckedGet()'/>
+<doc f='codebrowser/Include/pystate.h' l='235'>/* Similar to PyThreadState_Get(), but don&apos;t issue a fatal error
+ * if it is NULL. */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='209' u='c' c='get_thread_state'/>
+<def f='codebrowser/Python/pystate.c' l='565' ll='569' type='PyThreadState * _PyThreadState_UncheckedGet()'/>
+<use f='codebrowser/Python/sysmodule.c' l='1567' u='c' c='PySys_AddXOption'/>

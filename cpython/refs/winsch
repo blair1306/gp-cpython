@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='832' type='int winsch(WINDOW * , chtype )'/>
+<doc f='include/curses.h' l='832'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1361' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1363' u='c' c='PyCursesWindow_InsCh'/>

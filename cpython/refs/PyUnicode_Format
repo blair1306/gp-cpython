@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2110' type='PyObject * PyUnicode_Format(PyObject * format, PyObject * args)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2107'>/* Apply an argument tuple or dictionary to a format string and return
+   the resulting Unicode string. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='13975' u='c' c='unicode_mod'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='14951' ll='15032' type='PyObject * PyUnicode_Format(PyObject * format, PyObject * args)'/>
+<use f='codebrowser/Python/ceval.c' l='1389' u='c' c='_PyEval_EvalFrameDefault'/>

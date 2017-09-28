@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1054' type='Py_ssize_t PyUnicode_AsWideChar(PyObject * unicode, wchar_t * w, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1042'>/* Copies the Unicode Object contents into the wchar_t buffer w.  At
+   most size wchar_t characters are copied.
+
+   Note that the resulting wchar_t string may or may not be
+   0-terminated.  It is the responsibility of the caller to make sure
+   that the wchar_t string is 0-terminated in case this is required by
+   the application.
+
+   Returns the number of wchar_t characters copied (excluding a
+   possibly trailing 0-termination character) or -1 in case of an
+   error. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1291' u='c' c='WCharArray_set_value'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1184' u='c' c='u_set'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1257' u='c' c='U_set'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1817' u='c' c='unicode_aswidechar'/>
+<use f='codebrowser/Modules/getpath.c' l='288' u='c' c='find_env_config_value'/>
+<use f='codebrowser/Modules/getpath.c' l='420' u='c' c='search_for_exec_prefix'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2965' ll='2991' type='Py_ssize_t PyUnicode_AsWideChar(PyObject * unicode, wchar_t * w, Py_ssize_t size)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='2957'>/* Convert a Unicode object to a wide character string.
+
+   - If w is NULL: return the number of wide characters (including the null
+     character) required to convert the unicode object. Ignore size argument.
+
+   - Otherwise: return the number of wide characters (excluding the null
+     character) written into w. Write at most size wide characters (including
+     the null character). */</doc>

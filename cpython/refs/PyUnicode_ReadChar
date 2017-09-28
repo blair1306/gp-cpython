@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='804' type='Py_UCS4 PyUnicode_ReadChar(PyObject * unicode, Py_ssize_t index)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='802'>/* Read a character from the string. */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='1910' u='c' c='UnicodeEncodeError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='2125' u='c' c='UnicodeTranslateError_str'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4181' ll='4198' type='Py_UCS4 PyUnicode_ReadChar(PyObject * unicode, Py_ssize_t index)'/>

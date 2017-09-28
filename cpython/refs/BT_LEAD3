@@ -1,0 +1,369 @@
+<dec f='codebrowser/Modules/expat/xmltok_impl.h' l='13' type='6'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='122' macro='1' c='normal_scanComment'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='246' macro='1' c='normal_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='253' macro='1' c='normal_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='262' macro='1' c='normal_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='355' macro='1' c='normal_cdataSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='370' macro='1' c='normal_cdataSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='397' macro='1' c='normal_scanEndTag'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='404' macro='1' c='normal_scanEndTag'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='509' macro='1' c='normal_scanRef'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='518' macro='1' c='normal_scanRef'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='541' macro='1' c='normal_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='552' macro='1' c='normal_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='610' macro='1' c='normal_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='649' macro='1' c='normal_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='693' macro='1' c='normal_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='720' macro='1' c='normal_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='731' macro='1' c='normal_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='743' macro='1' c='normal_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='827' macro='1' c='normal_contentTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='842' macro='1' c='normal_contentTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='886' macro='1' c='normal_scanPercent'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='896' macro='1' c='normal_scanPercent'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='914' macro='1' c='normal_scanPoundName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='921' macro='1' c='normal_scanPoundName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='942' macro='1' c='normal_scanLit'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1000' c='normal_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1105' macro='1' c='normal_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1139' macro='1' c='normal_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1153' macro='1' c='normal_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1214' macro='1' c='normal_attributeValueTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1280' macro='1' c='normal_entityValueTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1339' macro='1' c='normal_ignoreSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1459' macro='1' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1646' macro='1' c='normal_sameName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1681' c='normal_sameName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1729' macro='1' c='normal_nameLength'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1776' macro='1' c='normal_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='404' c='utf8_toUtf16'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='30'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='31'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='32'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/utf8tab.h' l='33'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='122' macro='1' c='little2_scanComment'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='246' macro='1' c='little2_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='253' macro='1' c='little2_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='262' macro='1' c='little2_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='355' macro='1' c='little2_cdataSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='370' macro='1' c='little2_cdataSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='397' macro='1' c='little2_scanEndTag'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='404' macro='1' c='little2_scanEndTag'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='509' macro='1' c='little2_scanRef'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='518' macro='1' c='little2_scanRef'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='541' macro='1' c='little2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='552' macro='1' c='little2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='610' macro='1' c='little2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='649' macro='1' c='little2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='693' macro='1' c='little2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='720' macro='1' c='little2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='731' macro='1' c='little2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='743' macro='1' c='little2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='827' macro='1' c='little2_contentTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='842' macro='1' c='little2_contentTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='886' macro='1' c='little2_scanPercent'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='896' macro='1' c='little2_scanPercent'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='914' macro='1' c='little2_scanPoundName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='921' macro='1' c='little2_scanPoundName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='942' macro='1' c='little2_scanLit'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1000' c='little2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1105' macro='1' c='little2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1139' macro='1' c='little2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1153' macro='1' c='little2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1214' macro='1' c='little2_attributeValueTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1280' macro='1' c='little2_entityValueTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1339' macro='1' c='little2_ignoreSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1459' macro='1' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1646' macro='1' c='little2_sameName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1681' c='little2_sameName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1729' macro='1' c='little2_nameLength'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1776' macro='1' c='little2_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='122' macro='1' c='big2_scanComment'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='246' macro='1' c='big2_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='253' macro='1' c='big2_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='262' macro='1' c='big2_scanPi'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='355' macro='1' c='big2_cdataSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='370' macro='1' c='big2_cdataSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='397' macro='1' c='big2_scanEndTag'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='404' macro='1' c='big2_scanEndTag'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='509' macro='1' c='big2_scanRef'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='518' macro='1' c='big2_scanRef'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='541' macro='1' c='big2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='552' macro='1' c='big2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='610' macro='1' c='big2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='649' macro='1' c='big2_scanAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='693' macro='1' c='big2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='720' macro='1' c='big2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='731' macro='1' c='big2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='743' macro='1' c='big2_scanLt'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='827' macro='1' c='big2_contentTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='842' macro='1' c='big2_contentTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='886' macro='1' c='big2_scanPercent'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='896' macro='1' c='big2_scanPercent'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='914' macro='1' c='big2_scanPoundName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='921' macro='1' c='big2_scanPoundName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='942' macro='1' c='big2_scanLit'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1000' c='big2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1105' macro='1' c='big2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1139' macro='1' c='big2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1153' macro='1' c='big2_prologTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1214' macro='1' c='big2_attributeValueTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1280' macro='1' c='big2_entityValueTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1339' macro='1' c='big2_ignoreSectionTok'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1459' macro='1' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1646' macro='1' c='big2_sameName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1681' c='big2_sameName'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1729' macro='1' c='big2_nameLength'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1776' macro='1' c='big2_updatePosition'/>

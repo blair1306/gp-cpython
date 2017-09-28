@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/constants.h' l='75' type='const mpd_size_t []'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/constants.c' l='49' ll='63' type='const mpd_size_t [64]'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/constants.c' l='48'>/* transpose.c */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6131' u='r' c='_mpd_qpow_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='107' u='r' c='swap_halfrows_pow2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='130' u='r' c='swap_halfrows_pow2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='139' u='r' c='swap_halfrows_pow2'/>

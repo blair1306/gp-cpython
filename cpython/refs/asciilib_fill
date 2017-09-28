@@ -1,0 +1,5 @@
+<def f='codebrowser/Objects/stringlib/localeutil.h' l='49' macro='1' type='void asciilib_fill(Py_UCS1 ** digits_end, Py_UCS1 ** buffer_end, Py_ssize_t n_chars, Py_ssize_t n_zeros, Py_UCS1 * thousands_sep, Py_ssize_t thousands_sep_len)'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='147' macro='1' u='c'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='174' macro='1' u='c'/>
+<doc f='codebrowser/Objects/stringlib/localeutil.h' l='46'>/* Fill in some digits, leading zeros, and thousands separator. All
+   are optional, depending on when we&apos;re called. */</doc>

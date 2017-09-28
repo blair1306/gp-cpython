@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pymem.h' l='56' type='PyObject * _PyTraceMalloc_GetTraceback(unsigned int domain, uintptr_t ptr)'/>
+<doc f='codebrowser/Include/pymem.h' l='48'>/* Get the traceback where a memory block was allocated.
+
+   Return a tuple of (filename: str, lineno: int) tuples.
+
+   Return None if the tracemalloc module is disabled or if the memory block
+   is not tracked by tracemalloc.
+
+   Raise an exception and return NULL on error. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4140' u='c' c='tracemalloc_get_traceback'/>
+<def f='codebrowser/Modules/_tracemalloc.c' l='1832' ll='1842' type='PyObject * _PyTraceMalloc_GetTraceback(unsigned int domain, uintptr_t ptr)'/>

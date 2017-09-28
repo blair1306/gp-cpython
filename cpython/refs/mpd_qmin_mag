@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='509' type='void mpd_qmin_mag(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4113' u='c' c='dec_mpd_qmin_mag'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5056' u='c' c='ctx_mpd_qmin_mag'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5213' ll='5243' type='void mpd_qmin_mag(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5209'>/*
+ * Minimum magnitude: Same as mpd_min(), but compares the operands with their
+ * sign ignored.
+ */</doc>

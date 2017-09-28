@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2448' type='SSL_CTX * SSL_set_SSL_CTX(SSL * ssl, SSL_CTX * ctx)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1783' u='c' c='PySSL_set_context'/>

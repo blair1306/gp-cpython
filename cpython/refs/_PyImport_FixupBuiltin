@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='103' type='int _PyImport_FixupBuiltin(PyObject * mod, const char * name)'/>
+<def f='codebrowser/Python/import.c' l='577' ll='588' type='int _PyImport_FixupBuiltin(PyObject * mod, const char * name)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='664' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='680' u='c' c='_Py_InitializeCore'/>

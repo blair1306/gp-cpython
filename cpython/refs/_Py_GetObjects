@@ -1,0 +1,7 @@
+<def f='codebrowser/Objects/object.c' l='1906' ll='1933' type='PyObject * _Py_GetObjects(PyObject * self, PyObject * args)'/>
+<dec f='codebrowser/Python/sysmodule.c' l='1318' type='PyObject * _Py_GetObjects(PyObject * , PyObject * )'/>
+<use f='codebrowser/Python/sysmodule.c' l='1397'/>
+<use f='codebrowser/Python/sysmodule.c' l='1397'/>
+<use f='codebrowser/Python/sysmodule.c' l='1397'/>
+<use f='codebrowser/Python/sysmodule.c' l='1397'/>
+<doc f='codebrowser/Python/sysmodule.c' l='1317'>/* Defined in objects.c because it uses static globals if that file */</doc>

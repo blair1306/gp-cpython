@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='42' type='void Py_EndInterpreter(PyThreadState * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2995' u='c' c='run_in_subinterp'/>
+<use f='codebrowser/Programs/_testembed.c' l='66' u='c' c='test_repeated_init_and_subinterpreters'/>
+<def f='codebrowser/Python/pylifecycle.c' l='1258' ll='1277' type='void Py_EndInterpreter(PyThreadState * tstate)'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='1246'>/* Delete an interpreter and its last thread.  This requires that the
+   given thread state is current, that the thread has no remaining
+   frames, and that it is its interpreter&apos;s only remaining thread.
+   It is a fatal error to violate these constraints.
+
+   (Py_FinalizeEx() doesn&apos;t have these constraints -- it zaps
+   everything, regardless.)
+
+   Locking: as above.
+
+*/</doc>

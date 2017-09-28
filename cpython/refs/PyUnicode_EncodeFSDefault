@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1865' type='PyObject * PyUnicode_EncodeFSDefault(PyObject * unicode)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1858'>/* Encode a Unicode object to Py_FileSystemDefaultEncoding with the
+   &quot;surrogateescape&quot; error handler, and return bytes.
+
+   If Py_FileSystemDefaultEncoding is not set, fall back to the locale
+   encoding.
+*/</doc>
+<use f='codebrowser/Modules/gcmodule.c' l='1681' u='c' c='_PyGC_DumpShutdownStats'/>
+<use f='codebrowser/Modules/grpmodule.c' l='152' u='c' c='grp_getgrnam_impl'/>
+<use f='codebrowser/Modules/main.c' l='328' u='c' c='run_file'/>
+<use f='codebrowser/Modules/nismodule.c' l='170' u='c' c='nis_match'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='159' u='c' c='pwd_getpwnam_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1524' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/spwdmodule.c' l='135' u='c' c='spwd_getspnam_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3524' ll='3549' type='PyObject * PyUnicode_EncodeFSDefault(PyObject * unicode)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3878' u='c' c='PyUnicode_FSConverter'/>
+<use f='codebrowser/Python/fileutils.c' l='729' u='c' c='_Py_stat'/>
+<use f='codebrowser/Python/importdl.c' l='121' u='c' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/traceback.c' l='200' u='c' c='_Py_FindSourceFile'/>
+<use f='codebrowser/Python/traceback.c' l='228' u='c' c='_Py_FindSourceFile'/>

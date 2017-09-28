@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='29' type='KeccakWidth1600_SpongeInstance'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='27' u='a' c='_PySHA3_Keccak_HashInitialize'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='40' u='a' c='_PySHA3_Keccak_HashUpdate'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='42' u='a' c='_PySHA3_Keccak_HashUpdate'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='56' u='a' c='_PySHA3_Keccak_HashUpdate'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='68' u='a' c='_PySHA3_Keccak_HashFinal'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='70' u='a' c='_PySHA3_Keccak_HashFinal'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='81' u='a' c='_PySHA3_Keccak_HashSqueeze'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='422' u='m' c='SHA3_get_block_size'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='470' u='m' c='SHA3_get_capacity_bits'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='478' u='m' c='SHA3_get_rate_bits'/>
+<offset>0</offset>

@@ -1,0 +1,8 @@
+<def f='codebrowser/Modules/_posixsubprocess.c' l='249' ll='255'/>
+<size>280</size>
+<doc f='codebrowser/Modules/_posixsubprocess.c' l='243'>/* It doesn&apos;t matter if d_name has room for NAME_MAX chars; we&apos;re using this
+ * only to read a directory of short file descriptor number names.  The kernel
+ * will return an error if we didn&apos;t give it enough space.  Highly Unlikely.
+ * This structure is very old and stable: It will not change unless the kernel
+ * chooses to break compatibility with all existing binaries.  Highly Unlikely.
+ */</doc>

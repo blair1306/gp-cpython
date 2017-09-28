@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/modsupport.h' l='125' type='int PyModule_SetDocString(PyObject * , const char * )'/>
+<doc f='codebrowser/Include/modsupport.h' l='124'>/* New in 3.5 */</doc>
+<use f='codebrowser/Objects/moduleobject.c' l='217' u='c' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='335' u='c' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<def f='codebrowser/Objects/moduleobject.c' l='429' ll='442' type='int PyModule_SetDocString(PyObject * m, const char * doc)'/>

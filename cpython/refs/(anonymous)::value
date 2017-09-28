@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/pyerrors.h' l='65' type='PyObject *'/>
+<offset>640</offset>
+<dec f='codebrowser/Modules/expat/expat.h' l='1039' type='long'/>
+<offset>128</offset>
+<dec f='include/openssl/conf.h' l='77' type='char *'/>
+<offset>128</offset>
+<use f='codebrowser/Modules/pyexpat.c' l='1744' u='r' c='PyInit_pyexpat'/>
+<use f='codebrowser/Objects/exceptions.c' l='490' u='r' c='StopIteration_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='490' u='w' c='StopIteration_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='496' u='w' c='StopIteration_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='503' u='r' c='StopIteration_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='503' u='w' c='StopIteration_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='518' u='r' c='StopIteration_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='518' u='r' c='StopIteration_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='621' u='r' c='_PyGen_FetchStopIterationValue'/>
+<use f='codebrowser/Objects/genobject.c' l='641' u='r' c='_PyGen_FetchStopIterationValue'/>

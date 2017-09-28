@@ -1,0 +1,5 @@
+<dec f='include/netinet/in.h' l='257' type='in_port_t'/>
+<offset>16</offset>
+<doc f='include/netinet/in.h' l='257'>/* Transport layer port # */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1240' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1670' u='w' c='getsockaddrarg'/>

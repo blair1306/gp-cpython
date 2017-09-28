@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='99' macro='1' type='HashReturn _PySHA3_Keccak_HashFinal(Keccak_HashInstance * hashInstance, BitSequence * hashval)'/>
+<def f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='66' macro='1' type='HashReturn _PySHA3_Keccak_HashFinal(Keccak_HashInstance * instance, BitSequence * hashval)'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='69' u='c' c='_sha3_sha3_224_digest_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='69' u='c' c='_sha3_sha3_224_hexdigest_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='69' u='c' c='_SHAKE_digest'/>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='87'>/**
+  * Function to call after all input blocks have been input and to get
+  * output bits if the length was specified when calling Keccak_HashInitialize().
+  * @param  hashInstance    Pointer to the hash instance initialized by Keccak_HashInitialize().
+  * If @a hashbitlen was not 0 in the call to Keccak_HashInitialize(), the number of
+  *     output bits is equal to @a hashbitlen.
+  * If @a hashbitlen was 0 in the call to Keccak_HashInitialize(), the output bits
+  *     must be extracted using the Keccak_HashSqueeze() function.
+  * @param  state       Pointer to the state of the sponge function initialized by Init().
+  * @param  hashval     Pointer to the buffer where to store the output data.
+  * @return SUCCESS if successful, FAIL otherwise.
+  */</doc>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='64'>/* ---------------------------------------------------------------- */</doc>

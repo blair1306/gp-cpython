@@ -1,0 +1,7 @@
+<dec f='include/grp.h' l='68' type='void endgrent()'/>
+<use f='codebrowser/Modules/grpmodule.c' l='192' u='c' c='grp_getgrall_impl'/>
+<use f='codebrowser/Modules/grpmodule.c' l='197' u='c' c='grp_getgrall_impl'/>
+<doc f='include/grp.h' l='64'>/* Close the group-file stream.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>

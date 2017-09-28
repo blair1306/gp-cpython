@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='207' type='int'/>
+<offset>352</offset>
+<doc f='codebrowser/Modules/socketmodule.h' l='207'>/* Protocol type, usually 0 */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='900' u='w' c='init_sockobject'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1889' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2446' u='r' c='sock_accept'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2961' u='r' c='sock_getsockname'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2990' u='r' c='sock_getpeername'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3268' u='r' c='sock_recvfrom_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3509' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4643' u='r' c='sock_repr'/>

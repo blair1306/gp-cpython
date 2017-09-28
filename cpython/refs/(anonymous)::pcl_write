@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='59' type='ffi_closure *'/>
+<offset>320</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='59'>/* the C callable, writeable */</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='20' u='r' c='CThunkObject_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='21' u='r' c='CThunkObject_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='316' u='w' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='349' u='w' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='351' u='r' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='399' u='r' c='_ctypes_alloc_callback'/>

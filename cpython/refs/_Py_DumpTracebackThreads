@@ -1,0 +1,34 @@
+<dec f='codebrowser/Include/traceback.h' l='79' type='const char * _Py_DumpTracebackThreads(int fd, PyInterpreterState * interp, PyThreadState * current_tstate)'/>
+<doc f='codebrowser/Include/traceback.h' l='56'>/* Write the traceback of all threads into the file &apos;fd&apos;. current_thread can be
+   NULL.
+
+   Return NULL on success, or an error message on error.
+
+   This function is written for debug purpose only. It calls
+   _Py_DumpTraceback() for each thread, and so has the same limitations. It
+   only write the traceback of the first 100 threads: write &quot;...&quot; if there are
+   more threads.
+
+   If current_tstate is NULL, the function tries to get the Python thread state
+   of the current thread. It is not an error if the function is unable to get
+   the current Python thread state.
+
+   If interp is NULL, the function tries to get the interpreter state from
+   the current Python thread state, or from
+   _PyGILState_GetInterpreterStateUnsafe() in last resort.
+
+   It is better to pass NULL to interp and current_tstate, the function tries
+   different options to retrieve these informations.
+
+   This function is signal safe. */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='246' u='c' c='faulthandler_dump_traceback'/>
+<use f='codebrowser/Modules/faulthandler.c' l='281' u='c' c='faulthandler_dump_traceback_py'/>
+<use f='codebrowser/Modules/faulthandler.c' l='569' u='c' c='faulthandler_thread'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1728' u='c' c='_Py_FatalError_DumpTracebacks'/>
+<def f='codebrowser/Python/traceback.c' l='745' ll='822' type='const char * _Py_DumpTracebackThreads(int fd, PyInterpreterState * interp, PyThreadState * current_tstate)'/>
+<doc f='codebrowser/Python/traceback.c' l='739'>/* Dump the traceback of all Python threads into fd. Use write() to write the
+   traceback and retry if write() is interrupted by a signal (failed with
+   EINTR), but don&apos;t call the Python signal handler.
+
+   The caller is responsible to call PyErr_CheckSignals() to call Python signal
+   handlers if signals were received. */</doc>

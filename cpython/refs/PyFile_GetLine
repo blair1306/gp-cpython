@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/fileobject.h' l='14' type='PyObject * PyFile_GetLine(PyObject * , int )'/>
+<def f='codebrowser/Objects/fileobject.c' l='49' ll='110' type='PyObject * PyFile_GetLine(PyObject * f, int n)'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2030' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/traceback.c' l='336' u='c' c='_Py_DisplaySourceLine'/>

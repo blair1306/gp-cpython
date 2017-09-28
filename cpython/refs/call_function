@@ -1,0 +1,6 @@
+<dec f='codebrowser/Python/ceval.c' l='39' type='PyObject * call_function(PyObject *** , Py_ssize_t , PyObject * )'/>
+<use f='codebrowser/Python/ceval.c' l='3313' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3330' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3344' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3359' u='c' c='_PyEval_EvalFrameDefault'/>
+<def f='codebrowser/Python/ceval.c' l='4805' ll='4876' macro='1' type='PyObject * call_function(PyObject *** pp_stack, Py_ssize_t oparg, PyObject * kwnames)'/>

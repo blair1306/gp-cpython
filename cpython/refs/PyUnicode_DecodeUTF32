@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1356' type='PyObject * PyUnicode_DecodeUTF32(const char * string, Py_ssize_t length, const char * errors, int * byteorder)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1333'>/* Decodes length bytes from a UTF-32 encoded buffer string and returns
+   the corresponding Unicode object.
+
+   errors (if non-NULL) defines the error handling. It defaults
+   to &quot;strict&quot;.
+
+   If byteorder is non-NULL, the decoder starts decoding using the
+   given byte order:
+
+    *byteorder == -1: little endian
+    *byteorder == 0:  native order
+    *byteorder == 1:  big endian
+
+   In native mode, the first four bytes of the stream are checked for a
+   BOM mark. If found, the BOM mark is analysed, the byte order
+   adjusted and the BOM skipped.  In the other modes, no BOM mark
+   interpretation is done. After completion, *byteorder is set to the
+   current byte order at the end of input data.
+
+   If byteorder is NULL, the codec starts in native order mode.
+
+*/</doc>
+<use f='codebrowser/Modules/arraymodule.c' l='2080' u='c' c='array__array_reconstructor_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3192' u='c' c='PyUnicode_Decode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='5221' ll='5228' type='PyObject * PyUnicode_DecodeUTF32(const char * s, Py_ssize_t size, const char * errors, int * byteorder)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='5219'>/* --- UTF-32 Codec ------------------------------------------------------- */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='735' type='Py_UCS4 _PyUnicode_FindMaxChar(PyObject * unicode, Py_ssize_t start, Py_ssize_t end)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='733'>/* Compute the maximum character of the substring unicode[start:end].
+   Return 127 for an empty string. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='2287' ll='2322' type='Py_UCS4 _PyUnicode_FindMaxChar(PyObject * unicode, Py_ssize_t start, Py_ssize_t end)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2543' u='c' c='unicode_fromformat_write_str'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13699' u='c' c='_PyUnicodeWriter_WriteSubstring'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14826' u='c' c='unicode_format_arg_output'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='816' u='c' c='format_string_internal'/>

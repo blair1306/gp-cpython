@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='120' type='const char *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3286' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3295' u='r' c='storeAtts'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1470' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1484' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1505' u='r' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1470' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1484' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1505' u='r' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1470' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1484' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1505' u='r' c='big2_getAtts'/>

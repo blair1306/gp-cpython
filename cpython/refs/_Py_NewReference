@@ -1,0 +1,39 @@
+<dec f='codebrowser/Include/object.h' l='756' type='void _Py_NewReference(PyObject * )'/>
+<doc f='codebrowser/Include/object.h' l='755'>/* Py_TRACE_REFS is such major surgery that we call external routines. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='632' macro='1' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='647' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3101' u='c' c='slot_tp_del'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1780' macro='1' u='c'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1797' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='86' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='164' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1508' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2978' u='c' c='_PyBytes_Resize'/>
+<use f='codebrowser/Objects/classobject.c' l='56' macro='1' u='c'/>
+<use f='codebrowser/Objects/complexobject.c' l='231' macro='1' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='580' u='c' c='new_dict'/>
+<use f='codebrowser/Objects/exceptions.c' l='2263' u='c' c='MemoryError_new'/>
+<use f='codebrowser/Objects/floatobject.c' l='128' macro='1' u='c'/>
+<use f='codebrowser/Objects/frameobject.c' l='657' u='c' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='688' u='c' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/genobject.c' l='1716' u='c' c='async_gen_asend_new'/>
+<use f='codebrowser/Objects/genobject.c' l='1816' u='c' c='_PyAsyncGenValueWrapperNew'/>
+<use f='codebrowser/Objects/listobject.c' l='160' u='c' c='PyList_New'/>
+<use f='codebrowser/Objects/longobject.c' l='214' macro='1' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='5505' u='c' c='_PyLong_Init'/>
+<use f='codebrowser/Objects/longobject.c' l='5514' macro='1' u='c'/>
+<use f='codebrowser/Objects/methodobject.c' l='32' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='246' u='c' c='PyObject_Init'/>
+<use f='codebrowser/Objects/object.c' l='258' u='c' c='PyObject_InitVar'/>
+<use f='codebrowser/Objects/object.c' l='269' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='280' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='327' u='c' c='PyObject_CallFinalizerFromDealloc'/>
+<def f='codebrowser/Objects/object.c' l='1828' ll='1835' type='void _Py_NewReference(PyObject * op)'/>
+<use f='codebrowser/Objects/sliceobject.c' l='120' u='c' c='PySlice_New'/>
+<use f='codebrowser/Objects/tupleobject.c' l='111' u='c' c='PyTuple_New'/>
+<use f='codebrowser/Objects/tupleobject.c' l='920' u='c' c='_PyTuple_Resize'/>
+<use f='codebrowser/Objects/typeobject.c' l='975' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='977' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='934' u='c' c='resize_compact'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='939' u='c' c='resize_compact'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1299' macro='1' u='c'/>

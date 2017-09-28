@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/traceback.h' l='99' type='void _Py_DumpDecimal(int fd, unsigned long value)'/>
+<doc f='codebrowser/Include/traceback.h' l='96'>/* Format an integer as decimal into the file descriptor fd.
+
+   This function is signal safe. */</doc>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1503' u='c' c='_PyMem_DumpFrame'/>
+<def f='codebrowser/Python/traceback.c' l='518' ll='538' type='void _Py_DumpDecimal(int fd, unsigned long value)'/>
+<use f='codebrowser/Python/traceback.c' l='664' u='c' c='dump_frame'/>
+<doc f='codebrowser/Python/traceback.c' l='514'>/* Reverse a string. For example, &quot;abcd&quot; becomes &quot;dcba&quot;.
+
+   This function is signal safe. */</doc>

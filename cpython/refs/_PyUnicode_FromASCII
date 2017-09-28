@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='720' type='PyObject * _PyUnicode_FromASCII(const char * buffer, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='718'>/* Create a new string from a buffer of ASCII characters.
+   WARNING: Don&apos;t check if the string contains any non-ASCII character. */</doc>
+<use f='codebrowser/Objects/floatobject.c' l='329' u='c' c='float_repr'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2144' ll='2161' type='PyObject * _PyUnicode_FromASCII(const char * buffer, Py_ssize_t size)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12384' u='c' c='PyUnicode_Substring'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13725' u='c' c='_PyUnicodeWriter_WriteASCIIString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14154' u='c' c='formatfloat'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14294' u='c' c='_PyUnicode_FormatLong'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='2142'>/* Internal function, doesn&apos;t check maximum character */</doc>
+<use f='codebrowser/Python/formatter_unicode.c' l='1109' u='c' c='format_float_internal'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1273' u='c' c='format_complex_internal'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1278' u='c' c='format_complex_internal'/>

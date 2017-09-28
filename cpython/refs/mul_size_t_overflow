@@ -1,0 +1,6 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='636' ll='644' type='mpd_size_t mul_size_t_overflow(mpd_size_t a, mpd_size_t b, mpd_size_t * overflow)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='67' u='c' c='mpd_callocfunc_em'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='90' u='c' c='mpd_alloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='104' u='c' c='mpd_calloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='119' u='c' c='mpd_realloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='140' u='c' c='mpd_sh_alloc'/>

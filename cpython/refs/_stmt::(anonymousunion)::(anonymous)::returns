@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/Python-ast.h' l='83' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='92' type='expr_ty'/>
+<offset>256</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1291' u='w' c='_Py_FunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1322' u='w' c='_Py_AsyncFunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='2687' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2722' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='387' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='388' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='510' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='511' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='1801' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='1811' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/symtable.c' l='1144' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1357' u='r' c='symtable_visit_stmt'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='128' type='PyObject * PyCField_FromDesc(PyObject * desc, Py_ssize_t index, Py_ssize_t * pfield_size, int bitsize, int * pbitofs, Py_ssize_t * psize, Py_ssize_t * poffset, Py_ssize_t * palign, int pack, int is_big_endian)'/>
+<def f='codebrowser/Modules/_ctypes/cfield.c' l='45' ll='201' type='PyObject * PyCField_FromDesc(PyObject * desc, Py_ssize_t index, Py_ssize_t * pfield_size, int bitsize, int * pbitofs, Py_ssize_t * psize, Py_ssize_t * poffset, Py_ssize_t * palign, int pack, int big_endian)'/>
+<doc f='codebrowser/Modules/_ctypes/cfield.c' l='39'>/*
+ * bitfields extension:
+ * bitsize != 0: this is a bit field.
+ * pbitofs points to the current bit offset, this will be updated.
+ * prev_desc points to the type of the previous bitfield, if any.
+ */</doc>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='550' u='c' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='558' u='c' c='PyCStructUnionType_update_stgdict'/>

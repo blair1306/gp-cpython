@@ -1,0 +1,3 @@
+<dec f='include/netdb.h' l='671' type='const char * gai_strerror(int __ecode)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='575' u='c' c='set_gaierror'/>
+<doc f='include/netdb.h' l='670'>/* Convert error return from getaddrinfo() to a string.  */</doc>

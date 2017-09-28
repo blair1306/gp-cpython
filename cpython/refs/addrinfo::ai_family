@@ -1,0 +1,10 @@
+<dec f='include/netdb.h' l='570' type='int'/>
+<use f='codebrowser/Modules/socketmodule.c' l='964' u='w' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='980' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1074' u='w' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5959' u='w' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5982' u='r' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6049' u='w' c='socket_getnameinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6066' u='r' c='socket_getnameinfo'/>
+<offset>32</offset>
+<doc f='include/netdb.h' l='570'>/* Protocol family for socket.  */</doc>

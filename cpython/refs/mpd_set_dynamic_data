@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='778' type='void mpd_set_dynamic_data(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='232' u='c' c='mpd_switch_to_dyn'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='258' u='c' c='mpd_switch_to_dyn_zero'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='662' ll='666' macro='1' type='void mpd_set_dynamic_data(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5810' u='c' c='_mpd_qmul'/>

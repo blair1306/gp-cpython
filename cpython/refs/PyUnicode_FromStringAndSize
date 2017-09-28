@@ -1,0 +1,43 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='699' type='PyObject * PyUnicode_FromStringAndSize(const char * u, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='698'>/* Similar to PyUnicode_FromUnicode(), but u points to UTF-8 encoded bytes */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2502' u='c' c='unique_key'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1154' u='c' c='make_Zreplacement'/>
+<use f='codebrowser/Modules/_elementtree.c' l='138' u='c' c='list_join'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='763' u='c' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1453' u='c' c='textiowrapper_get_decoded_chars'/>
+<use f='codebrowser/Modules/_json.c' l='72' u='c' c='join_list_unicode'/>
+<use f='codebrowser/Modules/_json.c' l='550' u='c' c='scanstring_unicode'/>
+<use f='codebrowser/Modules/_ssl.c' l='804' u='c' c='_create_tuple_for_attribute'/>
+<use f='codebrowser/Modules/_ssl.c' l='1027' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1056' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1100' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1106' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1174' u='c' c='_get_aia_uri'/>
+<use f='codebrowser/Modules/_ssl.c' l='1237' u='c' c='_get_crl_dp'/>
+<use f='codebrowser/Modules/_ssl.c' l='1320' u='c' c='_decode_certificate'/>
+<use f='codebrowser/Modules/_ssl.c' l='1337' u='c' c='_decode_certificate'/>
+<use f='codebrowser/Modules/_ssl.c' l='1354' u='c' c='_decode_certificate'/>
+<use f='codebrowser/Modules/_ssl.c' l='1717' u='c' c='_ssl__SSLSocket_selected_npn_protocol_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1737' u='c' c='_ssl__SSLSocket_selected_alpn_protocol_impl'/>
+<use f='codebrowser/Modules/_stat.c' l='407' u='c' c='stat_filemode'/>
+<use f='codebrowser/Modules/_struct.c' l='1956' u='c' c='s_get_format'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2383' u='c' c='test_unicode_compare_with_ascii'/>
+<use f='codebrowser/Modules/md5module.c' l='439' u='c' c='MD5_get_name'/>
+<use f='codebrowser/Modules/nismodule.c' l='149' u='c' c='nis_get_default_domain'/>
+<use f='codebrowser/Modules/sha1module.c' l='416' u='c' c='SHA1_get_name'/>
+<use f='codebrowser/Modules/sha256module.c' l='507' u='c' c='SHA256_get_name'/>
+<use f='codebrowser/Modules/sha256module.c' l='509' u='c' c='SHA256_get_name'/>
+<use f='codebrowser/Modules/sha512module.c' l='572' u='c' c='SHA512_get_name'/>
+<use f='codebrowser/Modules/sha512module.c' l='574' u='c' c='SHA512_get_name'/>
+<use f='codebrowser/Modules/unicodedata.c' l='448' u='c' c='unicodedata_UCD_decomposition_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='761' u='c' c='zipimport_zipimporter_get_source_impl'/>
+<use f='codebrowser/Objects/accu.c' l='11' u='c' c='join_list_unicode'/>
+<use f='codebrowser/Objects/longobject.c' l='2455' u='c' c='PyLong_FromString'/>
+<use f='codebrowser/Objects/typeobject.c' l='191' u='c' c='_PyType_GetTextSignatureFromInternalDoc'/>
+<use f='codebrowser/Objects/typeobject.c' l='491' u='c' c='type_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='2898' u='c' c='PyType_FromSpecWithBases'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2087' ll='2099' type='PyObject * PyUnicode_FromStringAndSize(const char * u, Py_ssize_t size)'/>
+<use f='codebrowser/Python/ast.c' l='4994' u='c' c='FstringParser_Finish'/>
+<use f='codebrowser/Python/errors.c' l='857' u='c' c='PyErr_NewException'/>
+<use f='codebrowser/Python/modsupport.c' l='412' u='c' c='do_mkvalue'/>
+<use f='codebrowser/Python/structmember.c' l='63' u='c' c='PyMember_GetOne'/>

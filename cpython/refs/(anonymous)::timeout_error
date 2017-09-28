@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='269' type='PyObject *'/>
+<use f='codebrowser/Modules/_ssl.c' l='763' u='r' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1982' u='r' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2016' u='r' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2164' u='r' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2275' u='r' c='_ssl__SSLSocket_shutdown_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2278' u='r' c='_ssl__SSLSocket_shutdown_impl'/>
+<offset>128</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='6521' u='w' c='PyInit__socket'/>

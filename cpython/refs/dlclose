@@ -1,0 +1,4 @@
+<dec f='include/dlfcn.h' l='60' type='int dlclose(void * __handle)'/>
+<doc f='include/dlfcn.h' l='58'>/* Unmap and close a shared object opened by `dlopen&apos;.
+   The handle cannot be used again after calling `dlclose&apos;.  */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1365' u='c' c='py_dl_close'/>

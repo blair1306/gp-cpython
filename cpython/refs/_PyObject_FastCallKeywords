@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/abstract.h' l='246' type='PyObject * _PyObject_FastCallKeywords(PyObject * callable, PyObject ** args, Py_ssize_t nargs, PyObject * kwnames)'/>
+<doc f='codebrowser/Include/abstract.h' l='231'>/* Call the callable object &apos;callable&apos; with the &quot;fast call&quot; calling convention:
+   args is a C array for positional arguments followed by values of
+   keyword arguments. Keys of keyword arguments are stored as a tuple
+   of strings in kwnames. nargs is the number of positional parameters at
+   the beginning of stack. The size of kwnames gives the number of keyword
+   values in the stack after positional arguments.
+
+   kwnames must only contains str strings, no subclass, and all keys must
+   be unique.
+
+   If nargs is equal to zero and there is no keyword argument (kwnames is
+   NULL or its size is zero), args can be NULL.
+
+   Return the result on success. Raise an exception and return NULL on
+   error. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4276' u='c' c='test_pyobject_fastcallkeywords'/>
+<def f='codebrowser/Objects/call.c' l='135' ll='208' type='PyObject * _PyObject_FastCallKeywords(PyObject * callable, PyObject ** stack, Py_ssize_t nargs, PyObject * kwnames)'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2147' u='c' c='builtin_sorted'/>
+<use f='codebrowser/Python/ceval.c' l='4862' u='c' c='call_function'/>

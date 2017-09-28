@@ -1,0 +1,7 @@
+<def f='include/x86_64-linux-gnu/ffi.h' l='112' ll='118'/>
+<size>24</size>
+<doc f='include/x86_64-linux-gnu/ffi.h' l='110'>/* can hold a pointer.							*/</doc>
+<mbr r='_ffi_type::size' o='0' t='size_t'/>
+<mbr r='_ffi_type::alignment' o='64' t='unsigned short'/>
+<mbr r='_ffi_type::type' o='80' t='unsigned short'/>
+<mbr r='_ffi_type::elements' o='128' t='struct _ffi_type **'/>

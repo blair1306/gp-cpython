@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/siginfo.h' l='101' type='int'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/siginfo.h' l='101'>/* Exit value or signal.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='7015' macro='1' u='r'/>
+<use f='codebrowser/Modules/signalmodule.c' l='979' macro='1' u='r'/>

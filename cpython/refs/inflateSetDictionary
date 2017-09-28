@@ -1,0 +1,2 @@
+<dec f='include/zlib.h' l='819' type='int inflateSetDictionary(z_streamp strm, const Bytef * dictionary, uInt dictLength)'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='533' u='c' c='set_inflate_zdict'/>

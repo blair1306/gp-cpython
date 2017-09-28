@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pytime.h' l='115' type='int _PyTime_AsTimeval_noraise(_PyTime_t t, struct timeval * tv, _PyTime_round_t round)'/>
+<doc f='codebrowser/Include/pytime.h' l='114'>/* Similar to _PyTime_AsTimeval(), but don&apos;t raise an exception on error. */</doc>
+<use f='codebrowser/Modules/selectmodule.c' l='285' u='c' c='select_select'/>
+<def f='codebrowser/Python/pytime.c' l='475' ll='479' type='int _PyTime_AsTimeval_noraise(_PyTime_t t, struct timeval * tv, _PyTime_round_t round)'/>

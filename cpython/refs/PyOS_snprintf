@@ -1,0 +1,80 @@
+<dec f='codebrowser/Include/pyerrors.h' l='497' type='int PyOS_snprintf(char * str, size_t size, const char * format)'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1136' u='c' c='format_utcoffset'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1141' u='c' c='format_utcoffset'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1145' u='c' c='format_utcoffset'/>
+<use f='codebrowser/Modules/_pickle.c' l='1474' u='c' c='memo_get'/>
+<use f='codebrowser/Modules/_pickle.c' l='1531' u='c' c='memo_put'/>
+<use f='codebrowser/Modules/faulthandler.c' l='616' u='c' c='format_timeout'/>
+<use f='codebrowser/Modules/faulthandler.c' l='620' u='c' c='format_timeout'/>
+<use f='codebrowser/Modules/getbuildinfo.c' l='45' u='c' c='Py_GetBuildInfo'/>
+<use f='codebrowser/Modules/readline.c' l='338' u='c' c='set_hook'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5935' u='c' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6047' u='c' c='socket_getnameinfo'/>
+<use f='codebrowser/Modules/unicodedata.c' l='444' u='c' c='unicodedata_UCD_decomposition_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='959' u='c' c='double_round'/>
+<use f='codebrowser/Objects/object.c' l='218' u='c' c='_Py_NegativeRefcount'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2212' u='c' c='_PyDebugAllocatorStats'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2215' u='c' c='_PyDebugAllocatorStats'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2365' u='c' c='_PyObject_DebugMallocStats'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2375' u='c' c='_PyObject_DebugMallocStats'/>
+<use f='codebrowser/Objects/tupleobject.c' l='73' u='c' c='_PyTuple_DebugMallocStats'/>
+<use f='codebrowser/Objects/typeobject.c' l='1648' u='c' c='set_mro_error'/>
+<use f='codebrowser/Objects/typeobject.c' l='1660' u='c' c='set_mro_error'/>
+<use f='codebrowser/Parser/grammar1.c' l='42' u='c' c='PyGrammar_LabelRepr'/>
+<use f='codebrowser/Parser/grammar1.c' l='52' u='c' c='PyGrammar_LabelRepr'/>
+<use f='codebrowser/Python/_warnings.c' l='312' u='c' c='show_warning'/>
+<use f='codebrowser/Python/ast.c' l='1097' u='c' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='2134' u='c' c='ast_for_atom'/>
+<use f='codebrowser/Python/ast.c' l='2137' u='c' c='ast_for_atom'/>
+<use f='codebrowser/Python/compile.c' l='1506' u='c' c='get_ref_type'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='67' u='c' c='_PyImport_FindSharedFuncptr'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='71' u='c' c='_PyImport_FindSharedFuncptr'/>
+<use f='codebrowser/Python/getargs.c' l='447' u='c' c='seterror'/>
+<use f='codebrowser/Python/getargs.c' l='451' u='c' c='seterror'/>
+<use f='codebrowser/Python/getargs.c' l='456' u='c' c='seterror'/>
+<use f='codebrowser/Python/getargs.c' l='463' u='c' c='seterror'/>
+<use f='codebrowser/Python/getargs.c' l='466' u='c' c='seterror'/>
+<use f='codebrowser/Python/getargs.c' l='527' u='c' c='converttuple'/>
+<use f='codebrowser/Python/getargs.c' l='539' u='c' c='converttuple'/>
+<use f='codebrowser/Python/getargs.c' l='544' u='c' c='converttuple'/>
+<use f='codebrowser/Python/getargs.c' l='616' u='c' c='converterr'/>
+<use f='codebrowser/Python/getargs.c' l='620' u='c' c='converterr'/>
+<use f='codebrowser/Python/getversion.c' l='12' u='c' c='Py_GetVersion'/>
+<def f='codebrowser/Python/mysnprintf.c' l='40' ll='50' type='int PyOS_snprintf(char * str, size_t size, const char * format)'/>
+<doc f='codebrowser/Python/mysnprintf.c' l='3'>/* snprintf() wrappers.  If the platform has vsnprintf, we use it, else we
+   emulate it in a half-hearted way.  Even if the platform has it, we wrap
+   it because platforms differ in what vsnprintf does in case the buffer
+   is too small:  C99 behavior is to return the number of characters that
+   would have been written had the buffer not been too small, and to set
+   the last byte of the buffer to \0.  At least MS _vsnprintf returns a
+   negative value instead, and fills the entire buffer with non-\0 data.
+
+   The wrappers ensure that str[size-1] is always \0 upon return.
+
+   PyOS_snprintf and PyOS_vsnprintf never write more than size bytes
+   (including the trailing &apos;\0&apos;) into str.
+
+   If the platform doesn&apos;t have vsnprintf, and the buffer size needed to
+   avoid truncation exceeds size by more than 512, Python aborts with a
+   Py_FatalError.
+
+   Return value (rv):
+
+    When 0 &lt;= rv &lt; size, the output conversion was unexceptional, and
+    rv characters were written to str (excluding a trailing \0 byte at
+    str[rv]).
+
+    When rv &gt;= size, output conversion was truncated, and a buffer of
+    size rv+1 would have been needed to avoid truncation.  str[size-1]
+    is \0 in this case.
+
+    When rv &lt; 0, &quot;something bad happened&quot;.  str[size-1] is \0 in this
+    case too, but the rest of str is unreliable.  It could be that
+    an error in format codes was detected by libc, or on platforms
+    with a non-C99 vsnprintf simply that the buffer wasn&apos;t big enough
+    to avoid truncation, or on platforms without any vsnprintf that
+    PyMem_Malloc couldn&apos;t obtain space for a temp buffer.
+
+   CAUTION:  Unlike C99, str != NULL and size &gt; 0 are required.
+*/</doc>
+<use f='codebrowser/Python/symtable.c' l='1093' u='c' c='symtable_new_tmpname'/>

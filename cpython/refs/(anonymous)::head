@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/hashtable.h' l='13' type='_Py_slist_item_t *'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/hashtable.c' l='84' u='w' c='_Py_slist_init'/>
+<use f='codebrowser/Modules/hashtable.c' l='91' u='r' c='_Py_slist_prepend'/>
+<use f='codebrowser/Modules/hashtable.c' l='92' u='w' c='_Py_slist_prepend'/>
+<use f='codebrowser/Modules/hashtable.c' l='103' u='w' c='_Py_slist_remove'/>
+<use f='codebrowser/Modules/hashtable.c' l='229' macro='1' u='r'/>
+<use f='codebrowser/Modules/hashtable.c' l='265' macro='1' u='r'/>
+<use f='codebrowser/Modules/hashtable.c' l='288' macro='1' u='r'/>
+<use f='codebrowser/Modules/hashtable.c' l='402' macro='1' u='r'/>
+<use f='codebrowser/Modules/hashtable.c' l='440' macro='1' u='r'/>
+<use f='codebrowser/Modules/hashtable.c' l='463' macro='1' u='r'/>
+<use f='codebrowser/Modules/hashtable.c' l='480' u='r' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='512' macro='1' u='r'/>

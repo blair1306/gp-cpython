@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>frozenmain.c source code [codebrowser/Python/frozenmain.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/frozenmain.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='frozenmain.c.html'>frozenmain.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Python interpreter main program for frozen scripts */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../../include/locale.h.html">&lt;locale.h&gt;</a></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="8">8</th><td><b>extern</b> <em>void</em> PyWinFreeze_ExeInit(<em>void</em>);</td></tr>
+<tr><th id="9">9</th><td><b>extern</b> <em>void</em> PyWinFreeze_ExeTerm(<em>void</em>);</td></tr>
+<tr><th id="10">10</th><td><b>extern</b> <em>int</em> PyInitFrozenExtensions(<em>void</em>);</td></tr>
+<tr><th id="11">11</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i>/* Main program */</i></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><em>int</em></td></tr>
+<tr><th id="16">16</th><td><dfn class="decl def" id="Py_FrozenMain" title='Py_FrozenMain' data-ref="Py_FrozenMain">Py_FrozenMain</dfn>(<em>int</em> <dfn class="local col1 decl" id="1argc" title='argc' data-type='int' data-ref="1argc">argc</dfn>, <em>char</em> **<dfn class="local col2 decl" id="2argv" title='argv' data-type='char **' data-ref="2argv">argv</dfn>)</td></tr>
+<tr><th id="17">17</th><td>{</td></tr>
+<tr><th id="18">18</th><td>    <em>char</em> *<dfn class="local col3 decl" id="3p" title='p' data-type='char *' data-ref="3p">p</dfn>;</td></tr>
+<tr><th id="19">19</th><td>    <em>int</em> <dfn class="local col4 decl" id="4i" title='i' data-type='int' data-ref="4i">i</dfn>, <dfn class="local col5 decl" id="5n" title='n' data-type='int' data-ref="5n">n</dfn>, <dfn class="local col6 decl" id="6sts" title='sts' data-type='int' data-ref="6sts">sts</dfn> = <var>1</var>;</td></tr>
+<tr><th id="20">20</th><td>    <em>int</em> <dfn class="local col7 decl" id="7inspect" title='inspect' data-type='int' data-ref="7inspect">inspect</dfn> = <var>0</var>;</td></tr>
+<tr><th id="21">21</th><td>    <em>int</em> <dfn class="local col8 decl" id="8unbuffered" title='unbuffered' data-type='int' data-ref="8unbuffered">unbuffered</dfn> = <var>0</var>;</td></tr>
+<tr><th id="22">22</th><td>    <em>char</em> *<dfn class="local col9 decl" id="9oldloc" title='oldloc' data-type='char *' data-ref="9oldloc">oldloc</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="23">23</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **<dfn class="local col0 decl" id="10argv_copy" title='argv_copy' data-type='wchar_t **' data-ref="10argv_copy">argv_copy</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="24">24</th><td>    <i>/* We need a second copies, as Python might modify the first one. */</i></td></tr>
+<tr><th id="25">25</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **<dfn class="local col1 decl" id="11argv_copy2" title='argv_copy2' data-type='wchar_t **' data-ref="11argv_copy2">argv_copy2</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td>    <b>if</b> (<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a> &gt; <var>0</var>) {</td></tr>
+<tr><th id="28">28</th><td>        <a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a> = <a class="ref" href="../Include/pymem.h.html#PyMem_RawMalloc" title='PyMem_RawMalloc' data-ref="PyMem_RawMalloc">PyMem_RawMalloc</a>(<b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>*) * <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>);</td></tr>
+<tr><th id="29">29</th><td>        <a class="local col1 ref" href="#11argv_copy2" title='argv_copy2' data-ref="11argv_copy2">argv_copy2</a> = <a class="ref" href="../Include/pymem.h.html#PyMem_RawMalloc" title='PyMem_RawMalloc' data-ref="PyMem_RawMalloc">PyMem_RawMalloc</a>(<b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>*) * <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>);</td></tr>
+<tr><th id="30">30</th><td>        <b>if</b> (!<a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a> || !<a class="local col1 ref" href="#11argv_copy2" title='argv_copy2' data-ref="11argv_copy2">argv_copy2</a>) {</td></tr>
+<tr><th id="31">31</th><td>            <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"out of memory\n"</q>);</td></tr>
+<tr><th id="32">32</th><td>            <b>goto</b> <a class="lbl" href="#12error" data-ref="12error">error</a>;</td></tr>
+<tr><th id="33">33</th><td>        }</td></tr>
+<tr><th id="34">34</th><td>    }</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td>    <a class="ref" href="../Include/pydebug.h.html#Py_FrozenFlag" title='Py_FrozenFlag' data-ref="Py_FrozenFlag">Py_FrozenFlag</a> = <var>1</var>; <i>/* Suppress errors from getpath.c */</i></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>    <b>if</b> ((<a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a> = <a class="macro" href="../Include/pydebug.h.html#34" title="(Py_IgnoreEnvironmentFlag ? ((void*)0) : getenv(&quot;PYTHONINSPECT&quot;))" data-ref="_M/Py_GETENV">Py_GETENV</a>(<q>"PYTHONINSPECT"</q>)) &amp;&amp; *<a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a> != <kbd>'\0'</kbd>)</td></tr>
+<tr><th id="39">39</th><td>        <a class="local col7 ref" href="#7inspect" title='inspect' data-ref="7inspect">inspect</a> = <var>1</var>;</td></tr>
+<tr><th id="40">40</th><td>    <b>if</b> ((<a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a> = <a class="macro" href="../Include/pydebug.h.html#34" title="(Py_IgnoreEnvironmentFlag ? ((void*)0) : getenv(&quot;PYTHONUNBUFFERED&quot;))" data-ref="_M/Py_GETENV">Py_GETENV</a>(<q>"PYTHONUNBUFFERED"</q>)) &amp;&amp; *<a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a> != <kbd>'\0'</kbd>)</td></tr>
+<tr><th id="41">41</th><td>        <a class="local col8 ref" href="#8unbuffered" title='unbuffered' data-ref="8unbuffered">unbuffered</a> = <var>1</var>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td>    <b>if</b> (<a class="local col8 ref" href="#8unbuffered" title='unbuffered' data-ref="8unbuffered">unbuffered</a>) {</td></tr>
+<tr><th id="44">44</th><td>        <a class="ref" href="../../include/stdio.h.html#setbuf" title='setbuf' data-ref="setbuf">setbuf</a>(<a class="macro" href="../../include/stdio.h.html#172" title="stdin" data-ref="_M/stdin">stdin</a>, (<em>char</em> *)<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="45">45</th><td>        <a class="ref" href="../../include/stdio.h.html#setbuf" title='setbuf' data-ref="setbuf">setbuf</a>(<a class="macro" href="../../include/stdio.h.html#173" title="stdout" data-ref="_M/stdout">stdout</a>, (<em>char</em> *)<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="46">46</th><td>        <a class="ref" href="../../include/stdio.h.html#setbuf" title='setbuf' data-ref="setbuf">setbuf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, (<em>char</em> *)<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="47">47</th><td>    }</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td>    <a class="local col9 ref" href="#9oldloc" title='oldloc' data-ref="9oldloc">oldloc</a> = <a class="ref" href="../Include/pymem.h.html#_PyMem_RawStrdup" title='_PyMem_RawStrdup' data-ref="_PyMem_RawStrdup">_PyMem_RawStrdup</a>(<a class="ref" href="../../include/locale.h.html#setlocale" title='setlocale' data-ref="setlocale">setlocale</a>(<a class="macro" href="../../include/locale.h.html#41" title="6" data-ref="_M/LC_ALL">LC_ALL</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>));</td></tr>
+<tr><th id="50">50</th><td>    <b>if</b> (!<a class="local col9 ref" href="#9oldloc" title='oldloc' data-ref="9oldloc">oldloc</a>) {</td></tr>
+<tr><th id="51">51</th><td>        <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"out of memory\n"</q>);</td></tr>
+<tr><th id="52">52</th><td>        <b>goto</b> <a class="lbl" href="#12error" data-ref="12error">error</a>;</td></tr>
+<tr><th id="53">53</th><td>    }</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td>    <a class="ref" href="../../include/locale.h.html#setlocale" title='setlocale' data-ref="setlocale">setlocale</a>(<a class="macro" href="../../include/locale.h.html#41" title="6" data-ref="_M/LC_ALL">LC_ALL</a>, <q>""</q>);</td></tr>
+<tr><th id="56">56</th><td>    <b>for</b> (<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> = <var>0</var>; <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> &lt; <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>; <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>++) {</td></tr>
+<tr><th id="57">57</th><td>        <a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a>[<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>] = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<a class="local col2 ref" href="#2argv" title='argv' data-ref="2argv">argv</a>[<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>], <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="58">58</th><td>        <a class="local col1 ref" href="#11argv_copy2" title='argv_copy2' data-ref="11argv_copy2">argv_copy2</a>[<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>] = <a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a>[<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>];</td></tr>
+<tr><th id="59">59</th><td>        <b>if</b> (!<a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a>[<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>]) {</td></tr>
+<tr><th id="60">60</th><td>            <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"Unable to decode the command line argument #%i\n"</q>,</td></tr>
+<tr><th id="61">61</th><td>                            <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> + <var>1</var>);</td></tr>
+<tr><th id="62">62</th><td>            <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a> = <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>;</td></tr>
+<tr><th id="63">63</th><td>            <b>goto</b> <a class="lbl" href="#12error" data-ref="12error">error</a>;</td></tr>
+<tr><th id="64">64</th><td>        }</td></tr>
+<tr><th id="65">65</th><td>    }</td></tr>
+<tr><th id="66">66</th><td>    <a class="ref" href="../../include/locale.h.html#setlocale" title='setlocale' data-ref="setlocale">setlocale</a>(<a class="macro" href="../../include/locale.h.html#41" title="6" data-ref="_M/LC_ALL">LC_ALL</a>, <a class="local col9 ref" href="#9oldloc" title='oldloc' data-ref="9oldloc">oldloc</a>);</td></tr>
+<tr><th id="67">67</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col9 ref" href="#9oldloc" title='oldloc' data-ref="9oldloc">oldloc</a>);</td></tr>
+<tr><th id="68">68</th><td>    <a class="local col9 ref" href="#9oldloc" title='oldloc' data-ref="9oldloc">oldloc</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="70">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="71">71</th><td>    PyInitFrozenExtensions();</td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="70">endif</span> /* MS_WINDOWS */</u></td></tr>
+<tr><th id="73">73</th><td>    <b>if</b> (<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a> &gt;= <var>1</var>)</td></tr>
+<tr><th id="74">74</th><td>        <a class="ref" href="../Include/pylifecycle.h.html#Py_SetProgramName" title='Py_SetProgramName' data-ref="Py_SetProgramName">Py_SetProgramName</a>(<a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a>[<var>0</var>]);</td></tr>
+<tr><th id="75">75</th><td>    <a class="ref" href="../Include/pylifecycle.h.html#Py_Initialize" title='Py_Initialize' data-ref="Py_Initialize">Py_Initialize</a>();</td></tr>
+<tr><th id="76">76</th><td><u>#<span data-ppcond="76">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="77">77</th><td>    PyWinFreeze_ExeInit();</td></tr>
+<tr><th id="78">78</th><td><u>#<span data-ppcond="76">endif</span></u></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td>    <b>if</b> (<a class="ref" href="../Include/pydebug.h.html#Py_VerboseFlag" title='Py_VerboseFlag' data-ref="Py_VerboseFlag">Py_VerboseFlag</a>)</td></tr>
+<tr><th id="81">81</th><td>        <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"Python %s\n%s\n"</q>,</td></tr>
+<tr><th id="82">82</th><td>            <a class="ref" href="../Include/pylifecycle.h.html#Py_GetVersion" title='Py_GetVersion' data-ref="Py_GetVersion">Py_GetVersion</a>(), <a class="ref" href="../Include/pylifecycle.h.html#Py_GetCopyright" title='Py_GetCopyright' data-ref="Py_GetCopyright">Py_GetCopyright</a>());</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td>    <a class="ref" href="../Include/sysmodule.h.html#PySys_SetArgv" title='PySys_SetArgv' data-ref="PySys_SetArgv">PySys_SetArgv</a>(<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>, <a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a>);</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>    <a class="local col5 ref" href="#5n" title='n' data-ref="5n">n</a> = <a class="ref" href="../Include/import.h.html#PyImport_ImportFrozenModule" title='PyImport_ImportFrozenModule' data-ref="PyImport_ImportFrozenModule">PyImport_ImportFrozenModule</a>(<q>"__main__"</q>);</td></tr>
+<tr><th id="87">87</th><td>    <b>if</b> (<a class="local col5 ref" href="#5n" title='n' data-ref="5n">n</a> == <var>0</var>)</td></tr>
+<tr><th id="88">88</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"__main__ not frozen"</q>);</td></tr>
+<tr><th id="89">89</th><td>    <b>if</b> (<a class="local col5 ref" href="#5n" title='n' data-ref="5n">n</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="90">90</th><td>        <a class="ref" href="../Include/pythonrun.h.html#PyErr_Print" title='PyErr_Print' data-ref="PyErr_Print">PyErr_Print</a>();</td></tr>
+<tr><th id="91">91</th><td>        <a class="local col6 ref" href="#6sts" title='sts' data-ref="6sts">sts</a> = <var>1</var>;</td></tr>
+<tr><th id="92">92</th><td>    }</td></tr>
+<tr><th id="93">93</th><td>    <b>else</b></td></tr>
+<tr><th id="94">94</th><td>        <a class="local col6 ref" href="#6sts" title='sts' data-ref="6sts">sts</a> = <var>0</var>;</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td>    <b>if</b> (<a class="local col7 ref" href="#7inspect" title='inspect' data-ref="7inspect">inspect</a> &amp;&amp; <a class="ref" href="../../include/unistd.h.html#isatty" title='isatty' data-ref="isatty">isatty</a>((<em>int</em>)<a class="ref" href="../../include/stdio.h.html#fileno" title='fileno' data-ref="fileno">fileno</a>(<a class="macro" href="../../include/stdio.h.html#172" title="stdin" data-ref="_M/stdin">stdin</a>)))</td></tr>
+<tr><th id="97">97</th><td>        <a class="local col6 ref" href="#6sts" title='sts' data-ref="6sts">sts</a> = <a class="macro" href="../Include/pythonrun.h.html#135" title="PyRun_AnyFileExFlags(stdin, &quot;&lt;stdin&gt;&quot;, 0, ((void*)0))" data-ref="_M/PyRun_AnyFile">PyRun_AnyFile</a>(<a class="macro" href="../../include/stdio.h.html#172" title="stdin" data-ref="_M/stdin">stdin</a>, <q>"&lt;stdin&gt;"</q>) != <var>0</var>;</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><u>#<span data-ppcond="99">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="100">100</th><td>    PyWinFreeze_ExeTerm();</td></tr>
+<tr><th id="101">101</th><td><u>#<span data-ppcond="99">endif</span></u></td></tr>
+<tr><th id="102">102</th><td>    <b>if</b> (<a class="ref" href="../Include/pylifecycle.h.html#Py_FinalizeEx" title='Py_FinalizeEx' data-ref="Py_FinalizeEx">Py_FinalizeEx</a>() &lt; <var>0</var>) {</td></tr>
+<tr><th id="103">103</th><td>        <a class="local col6 ref" href="#6sts" title='sts' data-ref="6sts">sts</a> = <var>120</var>;</td></tr>
+<tr><th id="104">104</th><td>    }</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><dfn class="lbl" id="12error" data-ref="12error">error</dfn>:</td></tr>
+<tr><th id="107">107</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col0 ref" href="#10argv_copy" title='argv_copy' data-ref="10argv_copy">argv_copy</a>);</td></tr>
+<tr><th id="108">108</th><td>    <b>if</b> (<a class="local col1 ref" href="#11argv_copy2" title='argv_copy2' data-ref="11argv_copy2">argv_copy2</a>) {</td></tr>
+<tr><th id="109">109</th><td>        <b>for</b> (<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> = <var>0</var>; <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a> &lt; <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>; <a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>++)</td></tr>
+<tr><th id="110">110</th><td>            <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col1 ref" href="#11argv_copy2" title='argv_copy2' data-ref="11argv_copy2">argv_copy2</a>[<a class="local col4 ref" href="#4i" title='i' data-ref="4i">i</a>]);</td></tr>
+<tr><th id="111">111</th><td>        <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col1 ref" href="#11argv_copy2" title='argv_copy2' data-ref="11argv_copy2">argv_copy2</a>);</td></tr>
+<tr><th id="112">112</th><td>    }</td></tr>
+<tr><th id="113">113</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col9 ref" href="#9oldloc" title='oldloc' data-ref="9oldloc">oldloc</a>);</td></tr>
+<tr><th id="114">114</th><td>    <b>return</b> <a class="local col6 ref" href="#6sts" title='sts' data-ref="6sts">sts</a>;</td></tr>
+<tr><th id="115">115</th><td>}</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

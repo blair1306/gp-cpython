@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/moduleobject.h' l='34' type='struct PyModuleDef * PyModule_GetDef(PyObject * )'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='128' u='c' c='call_state_registration_func'/>
+<def f='codebrowser/Objects/moduleobject.c' l='524' ll='532' type='struct PyModuleDef * PyModule_GetDef(PyObject * m)'/>
+<use f='codebrowser/Python/import.c' l='541' u='c' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='1077' u='c' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/import.c' l='1917' u='c' c='exec_builtin_or_dynamic'/>
+<use f='codebrowser/Python/importdl.c' l='203' u='c' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/pystate.c' l='428' u='c' c='_PyState_ClearModules'/>

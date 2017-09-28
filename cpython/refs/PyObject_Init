@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/objimpl.h' l='130' type='PyObject * PyObject_Init(PyObject * , PyTypeObject * )'/>
+<doc f='codebrowser/Include/objimpl.h' l='129'>/* Functions */</doc>
+<use f='codebrowser/Modules/_curses_panel.c' l='205' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='545' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='2517' macro='1' u='c'/>
+<use f='codebrowser/Objects/capsule.c' l='53' macro='1' u='c'/>
+<use f='codebrowser/Objects/codeobject.c' l='175' macro='1' u='c'/>
+<def f='codebrowser/Objects/object.c' l='239' ll='248' type='PyObject * PyObject_Init(PyObject * op, PyTypeObject * tp)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8198' u='c' c='PyUnicode_BuildEncodingMap'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='597' type='BINDING *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='r' c='moveToFreeBindingList'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='w' c='moveToFreeBindingList'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='r' c='PyExpat_XML_ParserFree'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='w' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='r' c='freeBindings'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='w' c='freeBindings'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='r' c='addBinding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='r' c='addBinding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='706' u='w' c='addBinding'/>
+<offset>5760</offset>

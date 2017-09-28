@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='515' type='void mpd_qquantize(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3648' u='c' c='PyDec_Round'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4374' u='c' c='dec_mpd_qquantize'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5059' u='c' c='ctx_mpd_qquantize'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6790' ll='6862' type='void mpd_qquantize(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/object.h' l='571' type='int _PyObject_GenericSetAttrWithDict(PyObject * , PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='866' u='c' c='local_setattro'/>
+<def f='codebrowser/Objects/object.c' l='1212' ll='1277' type='int _PyObject_GenericSetAttrWithDict(PyObject * obj, PyObject * name, PyObject * value, PyObject * dict)'/>
+<use f='codebrowser/Objects/object.c' l='1282' u='c' c='PyObject_GenericSetAttr'/>
+<use f='codebrowser/Objects/typeobject.c' l='3148' u='c' c='type_setattro'/>

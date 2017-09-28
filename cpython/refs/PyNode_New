@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/node.h' l='19' type='node * PyNode_New(int type)'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1032' u='c' c='build_node_tree'/>
+<def f='codebrowser/Parser/node.c' l='7' ll='19' type='node * PyNode_New(int type)'/>
+<use f='codebrowser/Parser/parser.c' l='85' u='c' c='PyParser_New'/>
+<use f='codebrowser/Parser/parsetok.c' l='336' u='c' c='parsetok'/>

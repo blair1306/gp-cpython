@@ -1,0 +1,11 @@
+<def f='codebrowser/Include/modsupport.h' l='82' ll='92'/>
+<size>64</size>
+<mbr r='_PyArg_Parser::format' o='0' t='const char *'/>
+<mbr r='_PyArg_Parser::keywords' o='64' t='const char *const *'/>
+<mbr r='_PyArg_Parser::fname' o='128' t='const char *'/>
+<mbr r='_PyArg_Parser::custom_msg' o='192' t='const char *'/>
+<mbr r='_PyArg_Parser::pos' o='256' t='int'/>
+<mbr r='_PyArg_Parser::min' o='288' t='int'/>
+<mbr r='_PyArg_Parser::max' o='320' t='int'/>
+<mbr r='_PyArg_Parser::kwtuple' o='384' t='PyObject *'/>
+<mbr r='_PyArg_Parser::next' o='448' t='struct _PyArg_Parser *'/>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/Modules/parsermodule.c' l='45' type='grammar'/>
+<use f='codebrowser/Modules/parsermodule.c' l='610' u='a' c='parser_do_parse'/>
+<use f='codebrowser/Modules/parsermodule.c' l='684' u='m' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='688' u='m' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='698' u='m' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='699' u='m' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='716' u='m' c='validate_node'/>
+<doc f='codebrowser/Modules/parsermodule.c' l='45'>/* From graminit.c */</doc>
+<dec f='codebrowser/Python/graminit.c' l='5' type='grammar'/>
+<def f='codebrowser/Python/graminit.c' l='2258' ll='2263' type='grammar'/>
+<dec f='codebrowser/Python/pylifecycle.c' l='51' type='grammar'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1089' u='a' c='Py_FinalizeEx'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='51'>/* From graminit.c */</doc>
+<dec f='codebrowser/Python/pythonrun.c' l='57' type='grammar'/>
+<use f='codebrowser/Python/pythonrun.c' l='1118' u='a' c='PyParser_ASTFromStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1163' u='a' c='PyParser_ASTFromFileObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1208' u='a' c='PyParser_SimpleParseFileFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='1223' u='a' c='PyParser_SimpleParseStringFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='1237' u='a' c='PyParser_SimpleParseStringFlagsFilename'/>
+<doc f='codebrowser/Python/pythonrun.c' l='57'>/* From graminit.c */</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='747' type='Py_UCS4 * PyUnicode_AsUCS4(PyObject * unicode, Py_UCS4 * buffer, Py_ssize_t buflen, int copy_null)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='742'>/* Copy the string into a UCS4 buffer including the null character if copy_null
+   is set. Return NULL and raise an exception on error. Raise a SystemError if
+   the buffer is smaller than the string. Return buffer on success.
+
+   buflen is the length of the buffer in (Py_UCS4) characters. */</doc>
+<use f='codebrowser/Modules/_io/stringio.c' l='164' u='c' c='realize'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='249' u='c' c='write_str'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1876' u='c' c='unicode_asucs4'/>
+<use f='codebrowser/Modules/zipimport.c' l='265' u='c' c='make_filename'/>
+<use f='codebrowser/Modules/zipimport.c' l='271' u='c' c='make_filename'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2501' ll='2510' type='Py_UCS4 * PyUnicode_AsUCS4(PyObject * string, Py_UCS4 * target, Py_ssize_t targetsize, int copy_null)'/>

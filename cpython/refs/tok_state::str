@@ -1,0 +1,8 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='66' type='const char *'/>
+<offset>7808</offset>
+<use f='codebrowser/Parser/tokenizer.c' l='672' u='w' c='buf_getc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='679' u='w' c='buf_ungetc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='680' u='r' c='buf_ungetc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='764' u='w' c='decode_str'/>
+<use f='codebrowser/Parser/tokenizer.c' l='767' u='r' c='decode_str'/>
+<use f='codebrowser/Parser/tokenizer.c' l='845' u='w' c='PyTokenizer_FromUTF8'/>

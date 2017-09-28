@@ -1,0 +1,9 @@
+<def f='codebrowser/Modules/_ctypes/ctypes.h' l='162' ll='169'/>
+<size>48</size>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='161'>/* a table entry describing a predefined ctypes type */</doc>
+<mbr r='fielddesc::code' o='0' t='char'/>
+<mbr r='fielddesc::setfunc' o='64' t='SETFUNC'/>
+<mbr r='fielddesc::getfunc' o='128' t='GETFUNC'/>
+<mbr r='fielddesc::pffi_type' o='192' t='ffi_type *'/>
+<mbr r='fielddesc::setfunc_swapped' o='256' t='SETFUNC'/>
+<mbr r='fielddesc::getfunc_swapped' o='320' t='GETFUNC'/>

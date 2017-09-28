@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/fileobject.h' l='15' type='int PyFile_WriteObject(PyObject * , PyObject * , int )'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1009' u='c' c='t_bootstrap'/>
+<def f='codebrowser/Objects/fileobject.c' l='114' ll='143' type='int PyFile_WriteObject(PyObject * v, PyObject * f, int flags)'/>
+<use f='codebrowser/Objects/fileobject.c' l='160' u='c' c='PyFile_WriteString'/>
+<doc f='codebrowser/Objects/fileobject.c' l='112'>/* Interfaces to write objects/strings to file-like objects */</doc>
+<use f='codebrowser/Python/_warnings.c' l='325' u='c' c='show_warning'/>
+<use f='codebrowser/Python/_warnings.c' l='329' u='c' c='show_warning'/>
+<use f='codebrowser/Python/_warnings.c' l='333' u='c' c='show_warning'/>
+<use f='codebrowser/Python/_warnings.c' l='363' u='c' c='show_warning'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1788' u='c' c='builtin_print'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1793' u='c' c='builtin_print'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1801' u='c' c='builtin_print'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2022' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/errors.c' l='938' u='c' c='PyErr_WriteUnraisable'/>
+<use f='codebrowser/Python/errors.c' l='970' u='c' c='PyErr_WriteUnraisable'/>
+<use f='codebrowser/Python/errors.c' l='988' u='c' c='PyErr_WriteUnraisable'/>
+<use f='codebrowser/Python/pythonrun.c' l='588' u='c' c='handle_system_exit'/>
+<use f='codebrowser/Python/pythonrun.c' l='719' u='c' c='print_exception'/>
+<use f='codebrowser/Python/pythonrun.c' l='758' u='c' c='print_exception'/>
+<use f='codebrowser/Python/pythonrun.c' l='784' u='c' c='print_exception'/>
+<use f='codebrowser/Python/sysmodule.c' l='142' u='c' c='sys_displayhook_unencodable'/>
+<use f='codebrowser/Python/sysmodule.c' l='187' u='c' c='sys_displayhook'/>
+<use f='codebrowser/Python/sysmodule.c' l='205' u='c' c='sys_displayhook'/>
+<use f='codebrowser/Python/traceback.c' l='387' u='c' c='_Py_DisplaySourceLine'/>
+<use f='codebrowser/Python/traceback.c' l='406' u='c' c='tb_displayline'/>
+<use f='codebrowser/Python/traceback.c' l='443' u='c' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='465' u='c' c='tb_printinternal'/>

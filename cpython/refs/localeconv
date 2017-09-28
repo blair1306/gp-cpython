@@ -1,0 +1,5 @@
+<dec f='include/locale.h' l='127' type='struct lconv * localeconv()'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='876' u='c' c='mpd_parse_fmt_str'/>
+<doc f='include/locale.h' l='126'>/* Return the numeric/monetary information for the current locale.  */</doc>
+<use f='codebrowser/Modules/_localemodule.c' l='146' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='710' u='c' c='get_locale_info'/>

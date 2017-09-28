@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/bytesobject.h' l='164' type='char [512]'/>
+<offset>288</offset>
+<use f='codebrowser/Objects/bytesobject.c' l='3170' u='r' c='_PyBytesWriter_Init'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3170' u='r' c='_PyBytesWriter_Init'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3185' u='r' c='_PyBytesWriter_AsString'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3292' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3298' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3298' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3351' u='r' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3365' u='w' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3369' u='r' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3388' u='r' c='_PyBytesWriter_Finish'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3391' u='r' c='_PyBytesWriter_Finish'/>

@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='1616' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2256' u='r' c='PyCurses_GetMouse'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2268' u='a' c='PyCurses_UngetMouse'/>

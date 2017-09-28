@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='51' type='void _mpd_basesubfrom(mpd_uint_t * w, const mpd_uint_t * u, mpd_size_t n)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='192' ll='213' type='void _mpd_basesubfrom(mpd_uint_t * w, const mpd_uint_t * u, mpd_size_t n)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='188'>/*
+ * Subtract the contents of u from w. w is larger than u. Borrows are
+ * propagated further, but eventually w can absorb the final borrow.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5343' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5350' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5650' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5659' u='c' c='_karatsuba_rec_fnt'/>

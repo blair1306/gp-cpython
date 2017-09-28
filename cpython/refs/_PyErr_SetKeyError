@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pyerrors.h' l='80' type='void _PyErr_SetKeyError(PyObject * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='254' u='c' c='dict_getitem_knownhash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1495' u='c' c='_PyDict_DelItem_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1538' u='c' c='_PyDict_DelItemIf'/>
+<use f='codebrowser/Objects/dictobject.c' l='1691' u='c' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1702' u='c' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1742' u='c' c='_PyDict_Pop'/>
+<use f='codebrowser/Objects/dictobject.c' l='1995' u='c' c='dict_subscript'/>
+<use f='codebrowser/Objects/dictobject.c' l='2375' u='c' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='2416' u='c' c='dict_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='1931' u='c' c='set_remove'/>
+<def f='codebrowser/Python/errors.c' l='135' ll='144' type='void _PyErr_SetKeyError(PyObject * arg)'/>
+<doc f='codebrowser/Python/errors.c' l='132'>/* Set a key error with the specified argument, wrapping it in a
+ * tuple automatically so that tuple keys are not unpacked as the
+ * exception arguments. */</doc>

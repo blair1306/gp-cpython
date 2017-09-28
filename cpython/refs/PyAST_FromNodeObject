@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/ast.h' l='13' type='mod_ty PyAST_FromNodeObject(const node * n, PyCompilerFlags * flags, PyObject * filename, PyArena * arena)'/>
+<use f='codebrowser/Modules/parsermodule.c' l='512' u='c' c='parser_compilest'/>
+<def f='codebrowser/Python/ast.c' l='768' ll='880' type='mod_ty PyAST_FromNodeObject(const node * n, PyCompilerFlags * flags, PyObject * filename, PyArena * arena)'/>
+<use f='codebrowser/Python/ast.c' l='891' u='c' c='PyAST_FromNode'/>
+<doc f='codebrowser/Python/ast.c' l='765'>/* Transform the CST rooted at node * to the appropriate AST
+*/</doc>
+<use f='codebrowser/Python/pythonrun.c' l='1126' u='c' c='PyParser_ASTFromStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1171' u='c' c='PyParser_ASTFromFileObject'/>

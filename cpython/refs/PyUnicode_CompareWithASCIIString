@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2073' type='int PyUnicode_CompareWithASCIIString(PyObject * left, const char * right)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2067'>/* Compare a Unicode object with C string and return -1, 0, 1 for less than,
+   equal, and greater than, respectively.  It is best to pass only
+   ASCII-encoded strings, but the function interprets the input string as
+   ISO-8859-1 if it contains non-ASCII characters.
+   This function does not raise exceptions. */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1121' u='c' c='context_getattr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1126' u='c' c='context_getattr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1146' u='c' c='context_setattr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1149' u='c' c='context_setattr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2452' u='c' c='dectuple_as_str'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2456' u='c' c='dectuple_as_str'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2459' u='c' c='dectuple_as_str'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2387' u='c' c='test_unicode_compare_with_ascii'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='11016' ll='11075' type='int PyUnicode_CompareWithASCIIString(PyObject * uni, const char * str)'/>

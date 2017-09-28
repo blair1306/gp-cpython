@@ -1,0 +1,5 @@
+<dec f='include/rpc/types.h' l='66'/>
+<doc f='include/rpc/types.h' l='62'>/*
+ * XXX: This must not use the second argument, or code in xdr_array.c needs
+ * to be modified.
+ */</doc>

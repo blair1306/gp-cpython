@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/floatobject.h' l='87' type='int _PyFloat_Pack2(double x, unsigned char * p, int le)'/>
+<doc f='codebrowser/Include/floatobject.h' l='77'>/* The pack routines write 2, 4 or 8 bytes, starting at p.  le is a bool
+ * argument, true if you want the string in little-endian format (exponent
+ * last, at p+1, p+3 or p+7), false if you want big-endian format (exponent
+ * first, at p).
+ * Return value:  0 if all is OK, -1 if error (and an exception is
+ * set, most likely OverflowError).
+ * There are two problems on non-IEEE platforms:
+ * 1):  What this does is undefined if x is a NaN or infinity.
+ * 2):  -0.0 and +0.0 produce the same string.
+ */</doc>
+<use f='codebrowser/Modules/_struct.c' l='300' u='c' c='pack_halffloat'/>
+<def f='codebrowser/Objects/floatobject.c' l='2052' ll='2154' type='int _PyFloat_Pack2(double x, unsigned char * p, int le)'/>
+<doc f='codebrowser/Objects/floatobject.c' l='2041'>/*----------------------------------------------------------------------------
+ * _PyFloat_{Pack,Unpack}{2,4,8}.  See floatobject.h.
+ * To match the NPY_HALF_ROUND_TIES_TO_EVEN behavior in:
+ * https://github.com/numpy/numpy/blob/master/numpy/core/src/npymath/halffloat.c
+ * We use:
+ *       bits = (unsigned short)f;    Note the truncation
+ *       if ((f - bits &gt; 0.5) || (f - bits == 0.5 &amp;&amp; bits % 2)) {
+ *           bits++;
+ *       }
+ */</doc>

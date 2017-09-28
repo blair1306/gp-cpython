@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/import.h' l='42' type='PyObject * PyImport_AddModuleObject(PyObject * name)'/>
+<use f='codebrowser/Modules/zipimport.c' l='527' u='c' c='zipimport_zipimporter_load_module_impl'/>
+<use f='codebrowser/Python/import.c' l='608' u='c' c='_PyImport_FindExtensionObject'/>
+<def f='codebrowser/Python/import.c' l='659' ll='682' type='PyObject * PyImport_AddModuleObject(PyObject * name)'/>
+<use f='codebrowser/Python/import.c' l='691' u='c' c='PyImport_AddModule'/>
+<use f='codebrowser/Python/import.c' l='795' u='c' c='module_dict_for_exec'/>
+<use f='codebrowser/Python/import.c' l='1202' u='c' c='PyImport_ImportFrozenModuleObject'/>
+<use f='codebrowser/Python/import.c' l='1835' u='c' c='_imp_init_frozen_impl'/>
+<doc f='codebrowser/Python/import.c' l='653'>/* Get the module object corresponding to a module name.
+   First check the modules dictionary if there&apos;s one there,
+   if not, create a new one and insert it in the modules dictionary.
+   Because the former action is most common, THIS DOES NOT RETURN A
+   &apos;NEW&apos; REFERENCE! */</doc>
+<use f='codebrowser/Python/pythonrun.c' l='229' u='c' c='PyRun_InteractiveOneObject'/>

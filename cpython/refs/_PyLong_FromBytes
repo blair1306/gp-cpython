@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/longobject.h' l='99' type='PyObject * _PyLong_FromBytes(const char * , Py_ssize_t , int )'/>
+<use f='codebrowser/Objects/abstract.c' l='1389' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='1393' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='1405' u='c' c='PyNumber_Long'/>
+<def f='codebrowser/Objects/longobject.c' l='2471' ll='2489' type='PyObject * _PyLong_FromBytes(const char * s, Py_ssize_t len, int base)'/>
+<use f='codebrowser/Objects/longobject.c' l='4856' u='c' c='long_new_impl'/>
+<doc f='codebrowser/Objects/longobject.c' l='2466'>/* Since PyLong_FromString doesn&apos;t have a length parameter,
+ * check here for possible NULs in the string.
+ *
+ * Reports an invalid literal as a bytes object.
+ */</doc>

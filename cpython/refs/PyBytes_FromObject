@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/bytesobject.h' l='53' type='PyObject * PyBytes_FromObject(PyObject * )'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1055' u='c' c='path_converter'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2625' u='c' c='bytes_new'/>
+<def f='codebrowser/Objects/bytesobject.c' l='2759' ll='2797' type='PyObject * PyBytes_FromObject(PyObject * x)'/>
+<use f='codebrowser/Objects/object.c' l='614' u='c' c='PyObject_Bytes'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3939' u='c' c='PyUnicode_FSDecoder'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='36' type='PyObject * _PyIOBase_check_seekable(PyObject * self, PyObject * args)'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1263' u='c' c='_io__Buffered_seek_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2302' u='c' c='_io_BufferedRandom___init___impl'/>
+<def f='codebrowser/Modules/_io/iobase.c' l='343' ll='358' type='PyObject * _PyIOBase_check_seekable(PyObject * self, PyObject * args)'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='766'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='766'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='766'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='766'/>

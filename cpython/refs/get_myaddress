@@ -1,0 +1,5 @@
+<dec f='include/rpc/clnt.h' l='411' type='void get_myaddress(struct sockaddr_in * )'/>
+<doc f='include/rpc/clnt.h' l='407'>/*
+ * get the local host&apos;s IP address without consulting
+ * name service library functions
+ */</doc>

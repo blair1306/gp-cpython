@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='151' type='PyObject *'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2062' u='r' c='task_step_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1404' u='r' c='buffered_repr'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2587' u='r' c='textiowrapper_repr'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2603' u='r' c='textiowrapper_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='1545' u='r' c='property_init_impl'/>
+<def f='codebrowser/Objects/exceptions.c' l='454' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2509' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2581' macro='1' u='r'/>
+<use f='codebrowser/Python/errors.c' l='850' u='r' c='PyErr_NewException'/>

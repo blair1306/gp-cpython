@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/bytesobject.h' l='33' type='Py_hash_t'/>
+<offset>320</offset>
+<use f='codebrowser/Objects/bytesobject.c' l='87' u='w' c='_PyBytes_FromSize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='165' u='w' c='PyBytes_FromString'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1509' u='w' c='bytes_repeat'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1657' u='r' c='bytes_hash'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1659' u='w' c='bytes_hash'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1661' u='r' c='bytes_hash'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2815' u='w' c='bytes_subtype_new'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2816' u='r' c='bytes_subtype_new'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2982' u='w' c='_PyBytes_Resize'/>

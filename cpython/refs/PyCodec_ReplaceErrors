@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/codecs.h' l='220' type='PyObject * PyCodec_ReplaceErrors(PyObject * exc)'/>
+<doc f='codebrowser/Include/codecs.h' l='219'>/* replace the unicode encode error with ? or U+FFFD */</doc>
+<def f='codebrowser/Python/codecs.c' l='705' ll='758' type='PyObject * PyCodec_ReplaceErrors(PyObject * exc)'/>
+<use f='codebrowser/Python/codecs.c' l='1384' u='c' c='replace_errors'/>

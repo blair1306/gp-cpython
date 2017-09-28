@@ -1,0 +1,6 @@
+<def f='codebrowser/Python/thread_pthread.h' l='570' ll='607' type='int _pythread_pthread_set_stacksize(size_t size)'/>
+<use f='codebrowser/Python/thread.c' l='111' macro='1' u='c'/>
+<doc f='codebrowser/Python/thread_pthread.h' l='566'>/* set the thread stack size.
+ * Return 0 if size is valid, -1 if size is invalid,
+ * -2 if setting stack size is not supported.
+ */</doc>

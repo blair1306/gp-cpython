@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/moduleobject.h' l='78' type='Py_ssize_t'/>
+<offset>576</offset>
+<use f='codebrowser/Objects/moduleobject.c' l='200' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='201' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='207' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='252' u='r' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='310' u='r' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='362' u='r' c='PyModule_ExecDef'/>
+<use f='codebrowser/Objects/moduleobject.c' l='367' u='r' c='PyModule_ExecDef'/>
+<use f='codebrowser/Objects/moduleobject.c' l='372' u='r' c='PyModule_ExecDef'/>
+<use f='codebrowser/Python/import.c' l='553' u='r' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='604' u='r' c='_PyImport_FindExtensionObject'/>

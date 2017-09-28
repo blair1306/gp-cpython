@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/pystrtod.h' l='15' type='char * PyOS_double_to_string(double val, char format_code, int precision, int flags, int * type)'/>
+<doc f='codebrowser/Include/pystrtod.h' l='13'>/* The caller is responsible for calling PyMem_Free to free the buffer
+   that&apos;s is returned. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='1989' u='c' c='save_float'/>
+<use f='codebrowser/Objects/bytesobject.c' l='429' u='c' c='formatfloat'/>
+<use f='codebrowser/Objects/complexobject.c' l='374' u='c' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='383' u='c' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='391' u='c' c='complex_repr'/>
+<use f='codebrowser/Objects/floatobject.c' l='323' u='c' c='float_repr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14143' u='c' c='formatfloat'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1082' u='c' c='format_float_internal'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1259' u='c' c='format_complex_internal'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1263' u='c' c='format_complex_internal'/>
+<use f='codebrowser/Python/marshal.c' l='379' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/marshal.c' l='412' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/marshal.c' l='422' u='c' c='w_complex_object'/>
+<def f='codebrowser/Python/pystrtod.c' l='1240' ll='1303' macro='1' type='char * PyOS_double_to_string(double val, char format_code, int precision, int flags, int * type)'/>

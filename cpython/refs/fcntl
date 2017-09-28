@@ -1,0 +1,15 @@
+<dec f='include/fcntl.h' l='146' type='int fcntl(int __fd, int __cmd)'/>
+<doc f='include/fcntl.h' l='141'>/* Do the file control operation described by CMD on FD.
+   The remaining arguments are interpreted depending on CMD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/Modules/fcntlmodule.c' l='79' u='c' c='fcntl_fcntl_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='99' u='c' c='fcntl_fcntl_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='411' u='c' c='fcntl_lockf_impl'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='129' u='c' c='newossobject'/>
+<use f='codebrowser/Python/fileutils.c' l='772' u='c' c='get_inheritable'/>
+<use f='codebrowser/Python/fileutils.c' l='881' u='c' c='set_inheritable'/>
+<use f='codebrowser/Python/fileutils.c' l='900' u='c' c='set_inheritable'/>
+<use f='codebrowser/Python/fileutils.c' l='1512' u='c' c='_Py_dup'/>
+<use f='codebrowser/Python/fileutils.c' l='1550' u='c' c='_Py_get_blocking'/>

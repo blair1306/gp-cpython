@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='108' type='int PyCStructUnionType_update_stgdict(PyObject * fields, PyObject * type, int isStruct)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='802' u='c' c='PyCStructType_setattro'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='816' u='c' c='UnionType_setattro'/>
+<def f='codebrowser/Modules/_ctypes/stgdict.c' l='327' ll='613' type='int PyCStructUnionType_update_stgdict(PyObject * type, PyObject * fields, int isStruct)'/>
+<doc f='codebrowser/Modules/_ctypes/stgdict.c' l='323'>/*
+  Retrive the (optional) _pack_ attribute from a type, the _fields_ attribute,
+  and create an StgDictObject.  Used for Structure and Union subclasses.
+*/</doc>

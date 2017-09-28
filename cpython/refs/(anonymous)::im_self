@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/classobject.h' l='15' type='PyObject *'/>
+<offset>320</offset>
+<doc f='codebrowser/Include/classobject.h' l='15'>/* The instance it is bound to */</doc>
+<use f='codebrowser/Objects/classobject.c' l='37' u='r' c='PyMethod_Self'/>
+<use f='codebrowser/Objects/classobject.c' l='55' u='r' c='PyMethod_New'/>
+<use f='codebrowser/Objects/classobject.c' l='68' u='w' c='PyMethod_New'/>
+<use f='codebrowser/Objects/classobject.c' l='76' macro='1' u='r'/>
+<use f='codebrowser/Objects/classobject.c' l='198' u='r' c='method_dealloc'/>
+<use f='codebrowser/Objects/classobject.c' l='200' u='w' c='method_dealloc'/>
+<use f='codebrowser/Objects/classobject.c' l='226' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='226' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='227' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='227' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='229' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='229' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='245' u='r' c='method_repr'/>
+<use f='codebrowser/Objects/classobject.c' l='281' u='r' c='method_hash'/>
+<use f='codebrowser/Objects/classobject.c' l='284' u='r' c='method_hash'/>
+<use f='codebrowser/Objects/classobject.c' l='300' u='r' c='method_traverse'/>
+<use f='codebrowser/Objects/classobject.c' l='300' u='r' c='method_traverse'/>
+<use f='codebrowser/Objects/classobject.c' l='309' macro='1' u='r'/>
+<use f='codebrowser/Objects/classobject.c' l='325' macro='1' u='r'/>
+<use f='codebrowser/Objects/classobject.c' l='384' u='r' c='PyMethod_ClearFreeList'/>
+<use f='codebrowser/Python/ceval.c' l='4840' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='4846' macro='1' u='r'/>

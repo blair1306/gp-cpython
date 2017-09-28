@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/bytesobject.h' l='156' type='int'/>
+<offset>192</offset>
+<doc f='codebrowser/Include/bytesobject.h' l='155'>/* If non-zero, use a bytearray instead of a bytes object for buffer. */</doc>
+<use f='codebrowser/Objects/bytesobject.c' l='608' u='w' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2362' u='w' c='_PyBytes_FromHex'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3187' u='r' c='_PyBytesWriter_AsString'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3218' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3225' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3260' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3278' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3287' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3381' u='r' c='_PyBytesWriter_Finish'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3387' u='r' c='_PyBytesWriter_Finish'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3399' u='r' c='_PyBytesWriter_Finish'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='118' type='void _PyType_Fini()'/>
+<def f='codebrowser/Objects/typeobject.c' l='223' ll='228' type='void _PyType_Fini()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1021' u='c' c='Py_FinalizeEx'/>

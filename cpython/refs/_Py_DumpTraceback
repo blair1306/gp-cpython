@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/traceback.h' l='52' type='void _Py_DumpTraceback(int fd, PyThreadState * tstate)'/>
+<doc f='codebrowser/Include/traceback.h' l='35'>/* Write the Python traceback into the file &apos;fd&apos;. For example:
+
+       Traceback (most recent call first):
+         File &quot;xxx&quot;, line xxx in &lt;xxx&gt;
+         File &quot;xxx&quot;, line xxx in &lt;xxx&gt;
+         ...
+         File &quot;xxx&quot;, line xxx in &lt;xxx&gt;
+
+   This function is written for debug purpose only, to dump the traceback in
+   the worst case: after a segmentation fault, at fatal error, etc. That&apos;s why,
+   it is very limited. Strings are truncated to 100 characters and encoded to
+   ASCII with backslashreplace. It doesn&apos;t write the source code, only the
+   function name, filename and line number of each frame. Write only the first
+   100 frames: if the traceback is truncated, write the line &quot; ...&quot;.
+
+   This function is signal safe. */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='250' u='c' c='faulthandler_dump_traceback'/>
+<use f='codebrowser/Modules/faulthandler.c' l='288' u='c' c='faulthandler_dump_traceback_py'/>
+<def f='codebrowser/Python/traceback.c' l='715' ll='719' type='void _Py_DumpTraceback(int fd, PyThreadState * tstate)'/>
+<doc f='codebrowser/Python/traceback.c' l='709'>/* Dump the traceback of a Python thread into fd. Use write() to write the
+   traceback and retry if write() is interrupted by a signal (failed with
+   EINTR), but don&apos;t call the Python signal handler.
+
+   The caller is responsible to call PyErr_CheckSignals() to call Python signal
+   handlers if signals were received. */</doc>

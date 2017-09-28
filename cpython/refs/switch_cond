@@ -1,0 +1,7 @@
+<def f='codebrowser/Python/ceval_gil.h' l='125' type='pthread_cond_t'/>
+<use f='codebrowser/Python/ceval_gil.h' l='143' u='a' c='create_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='158' u='a' c='destroy_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='200' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='248' u='a' c='take_gil'/>
+<doc f='codebrowser/Python/ceval_gil.h' l='123'>/* This condition variable helps the GIL-releasing thread wait for
+   a GIL-awaiting thread to be scheduled and take the GIL. */</doc>

@@ -1,0 +1,5 @@
+<dec f='include/rpc/svc.h' l='278' type='struct pollfd *'/>
+<doc f='include/rpc/svc.h' l='273'>/*
+ * Global keeper of rpc service descriptors in use
+ * dynamic; must be inspected before each call to select
+ */</doc>

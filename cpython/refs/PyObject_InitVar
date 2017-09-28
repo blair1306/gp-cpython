@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/objimpl.h' l='131' type='PyVarObject * PyObject_InitVar(PyVarObject * , PyTypeObject * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_sre.c' l='1382' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='2372' macro='1' u='c'/>
+<def f='codebrowser/Objects/object.c' l='250' ll='260' type='PyVarObject * PyObject_InitVar(PyVarObject * op, PyTypeObject * tp, Py_ssize_t size)'/>

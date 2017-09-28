@@ -1,0 +1,5 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='667' ll='753' type='int MarkupIterator_next(MarkupIterator * self, SubString * literal, int * field_present, SubString * field_name, SubString * format_spec, Py_UCS4 * conversion, int * format_spec_needs_expanding)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='874' u='c' c='do_markup'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1001' u='c' c='formatteriter_next'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='665'>/* returns 0 on error, 1 on non-error termination, and 2 if it got a
+   string (or something to be expanded) */</doc>

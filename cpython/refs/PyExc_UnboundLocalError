@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pyerrors.h' l='188' type='PyObject *'/>
+<def f='codebrowser/Objects/exceptions.c' l='1298' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2524' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2601' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='1206' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2380' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='5215' u='r' c='format_exc_unbound'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1315' type='PyObject * PyUnicode_AsUTF8String(PyObject * unicode)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3172' u='c' c='dotsep_as_utf8'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3248' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3254' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3260' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_pickle.c' l='3305' u='r' c='save_global'/>
+<use f='codebrowser/Modules/main.c' l='298' u='c' c='run_command'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='5213' ll='5217' type='PyObject * PyUnicode_AsUTF8String(PyObject * unicode)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='701' u='c' c='translate_into_utf8'/>

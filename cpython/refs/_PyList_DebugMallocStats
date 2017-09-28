@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/listobject.h' l='67' type='void _PyList_DebugMallocStats(FILE * out)'/>
+<def f='codebrowser/Objects/listobject.c' l='133' ll='139' type='void _PyList_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/listobject.c' l='132'>/* Print summary info about the state of the optimized allocator */</doc>
+<use f='codebrowser/Objects/object.c' l='1949' u='c' c='_PyObject_DebugTypeStats'/>

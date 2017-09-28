@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/object.h' l='1039' type='void _PyTrash_deposit_object(PyObject * )'/>
+<doc f='codebrowser/Include/object.h' l='1037'>/* This is the old private API, invoked by the macros before 3.2.4.
+   Kept for binary compatibility of extensions using the stable ABI. */</doc>
+<def f='codebrowser/Objects/object.c' l='2043' ll='2051' type='void _PyTrash_deposit_object(PyObject * op)'/>
+<doc f='codebrowser/Objects/object.c' l='2039'>/* Add op to the _PyTrash_delete_later list.  Called when the current
+ * call-stack depth gets large.  op must be a currently untracked gc&apos;ed
+ * object, with refcount 0.  Py_DECREF must already have been called on it.
+ */</doc>

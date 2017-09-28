@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/expat/xmltok.c' l='1530' type='-1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='1581' u='r' c='getEncodingIndex'/>
+<use f='codebrowser/Modules/expat/xmltok_ns.c' l='60' u='r' c='PyExpat_XmlInitEncoding'/>
+<use f='codebrowser/Modules/expat/xmltok_ns.c' l='85' u='r' c='findEncoding'/>
+<use f='codebrowser/Modules/expat/xmltok_ns.c' l='60' u='r' c='PyExpat_XmlInitEncodingNS'/>
+<use f='codebrowser/Modules/expat/xmltok_ns.c' l='85' u='r' c='findEncodingNS'/>

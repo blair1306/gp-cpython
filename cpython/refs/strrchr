@@ -1,0 +1,13 @@
+<dec f='include/string.h' l='258' type='char * strrchr(const char * __s, int __c)'/>
+<use f='codebrowser/Objects/exceptions.c' l='121' u='c' c='BaseException_repr'/>
+<use f='codebrowser/Objects/moduleobject.c' l='191' u='c' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/odictobject.c' l='1476' u='c' c='odict_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='98' u='c' c='find_signature'/>
+<use f='codebrowser/Objects/typeobject.c' l='402' u='c' c='type_name'/>
+<use f='codebrowser/Objects/typeobject.c' l='489' u='c' c='type_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='2788' u='c' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2895' u='c' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Python/errors.c' l='843' u='c' c='PyErr_NewException'/>
+<use f='codebrowser/Python/errors.c' l='957' u='c' c='PyErr_WriteUnraisable'/>
+<use f='codebrowser/Python/pythonrun.c' l='744' u='c' c='print_exception'/>
+<use f='codebrowser/Python/traceback.c' l='208' u='c' c='_Py_FindSourceFile'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/funcobject.h' l='62' type='PyObject * _PyFunction_FastCallDict(PyObject * func, PyObject ** args, Py_ssize_t nargs, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/call.c' l='97' u='c' c='_PyObject_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='225' u='c' c='PyObject_Call'/>
+<def f='codebrowser/Objects/call.c' l='297' ll='382' type='PyObject * _PyFunction_FastCallDict(PyObject * func, PyObject ** args, Py_ssize_t nargs, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/funcobject.c' l='576' u='c' c='function_call'/>

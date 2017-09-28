@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pystate.h' l='241' type='PyObject * PyThreadState_GetDict()'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='132' u='c' c='_ctypes_get_errobj'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1589' u='c' c='current_context_from_dict'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1685' u='c' c='PyDec_SetCurrentContext'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='665' u='c' c='_local_create_dummy'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='815' u='c' c='_ldict'/>
+<use f='codebrowser/Objects/object.c' l='1973' u='c' c='Py_ReprEnter'/>
+<use f='codebrowser/Objects/object.c' l='2007' u='c' c='Py_ReprLeave'/>
+<def f='codebrowser/Python/pystate.c' l='614' ll='628' type='PyObject * PyThreadState_GetDict()'/>
+<doc f='codebrowser/Python/pystate.c' l='608'>/* An extension mechanism to store arbitrary additional per-thread state.
+   PyThreadState_GetDict() returns a dictionary that can be used to hold such
+   state; the caller should pick a unique key and store its state there.  If
+   PyThreadState_GetDict() returns NULL, an exception has *not* been raised
+   and the caller should assume no per-thread state is available. */</doc>

@@ -1,0 +1,41 @@
+<dec f='codebrowser/Include/abstract.h' l='718' type='PyObject * PyNumber_Index(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='716'>/* Returns the object &apos;o&apos; converted to a Python int, or NULL with an exception
+   raised on failure. */</doc>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='504' u='c' c='PyNumber_AsOff_t'/>
+<use f='codebrowser/Modules/_operator.c' l='681' u='c' c='_operator_index'/>
+<use f='codebrowser/Modules/_struct.c' l='113' u='c' c='get_pylong'/>
+<use f='codebrowser/Modules/mathmodule.c' l='822' u='c' c='math_gcd_impl'/>
+<use f='codebrowser/Modules/mathmodule.c' l='825' u='c' c='math_gcd_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='534' u='c' c='_Py_Uid_Converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='640' u='c' c='_Py_Gid_Converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='774' u='c' c='_fd_converter'/>
+<def f='codebrowser/Objects/abstract.c' l='1237' ll='1275' type='PyObject * PyNumber_Index(PyObject * item)'/>
+<use f='codebrowser/Objects/abstract.c' l='1284' u='c' c='PyNumber_AsSsize_t'/>
+<use f='codebrowser/Objects/abstract.c' l='1467' u='c' c='PyNumber_ToBase'/>
+<doc f='codebrowser/Objects/abstract.c' l='1233'>/* Return a Python int from the object item.
+   Raise TypeError if the result is not an int
+   or if the object cannot be interpreted as an index.
+*/</doc>
+<use f='codebrowser/Objects/bytearrayobject.c' l='40' u='c' c='_getbytevalue'/>
+<use f='codebrowser/Objects/bytesobject.c' l='463' u='c' c='formatlong'/>
+<use f='codebrowser/Objects/bytesobject.c' l='506' u='c' c='byte_converter'/>
+<use f='codebrowser/Objects/enumobject.c' l='49' u='c' c='enum_new_impl'/>
+<use f='codebrowser/Objects/longobject.c' l='5059' u='c' c='long_round'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1548' u='c' c='pylong_as_ld'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1563' u='c' c='pylong_as_lu'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1578' u='c' c='pylong_as_lld'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1593' u='c' c='pylong_as_llu'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1608' u='c' c='pylong_as_zd'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1623' u='c' c='pylong_as_zu'/>
+<use f='codebrowser/Objects/rangeobject.c' l='31' u='c' c='validate_step'/>
+<use f='codebrowser/Objects/rangeobject.c' l='83' u='c' c='range_new'/>
+<use f='codebrowser/Objects/rangeobject.c' l='97' u='c' c='range_new'/>
+<use f='codebrowser/Objects/rangeobject.c' l='100' u='c' c='range_new'/>
+<use f='codebrowser/Objects/rangeobject.c' l='605' u='c' c='range_subscript'/>
+<use f='codebrowser/Objects/sliceobject.c' l='354' u='c' c='evaluate_slice_index'/>
+<use f='codebrowser/Objects/sliceobject.c' l='519' u='c' c='slice_indices'/>
+<use f='codebrowser/Objects/typeobject.c' l='5929' u='c' c='slot_sq_length'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14324' u='c' c='mainformatlong'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14424' u='c' c='formatchar'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='527' u='c' c='proxy_index'/>
+<use f='codebrowser/Python/getargs.c' l='798' u='c' c='convertsimple'/>

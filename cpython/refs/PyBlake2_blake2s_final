@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='126' macro='1' type='int PyBlake2_blake2s_final(blake2s_state * S, uint8_t * out, uint8_t outlen)'/>
+<def f='codebrowser/Modules/_blake2/impl/blake2s.c' l='335' macro='1' type='int PyBlake2_blake2s_final(blake2s_state * S, uint8_t * out, uint8_t outlen)'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='392' macro='1' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='331' macro='1' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='352' macro='1' u='c'/>
+<doc f='codebrowser/Modules/_blake2/impl/blake2s.c' l='334'>/* Is this correct? */</doc>

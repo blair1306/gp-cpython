@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='64' type='int'/>
+<offset>704</offset>
+<use f='codebrowser/Modules/zipimport.c' l='1032' u='r' c='read_directory'/>
+<use f='codebrowser/Python/codecs.c' l='1536' u='w' c='_PyCodecRegistry_Init'/>
+<use f='codebrowser/Python/pystate.c' l='109' u='w' c='PyInterpreterState_New'/>

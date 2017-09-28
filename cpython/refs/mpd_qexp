@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='546' type='void mpd_qexp(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4099' u='c' c='dec_mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5035' u='c' c='ctx_mpd_qexp'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4321' ll='4417' type='void mpd_qexp(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6529' u='c' c='_mpd_qpow_real'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4320'>/* exp(a) */</doc>

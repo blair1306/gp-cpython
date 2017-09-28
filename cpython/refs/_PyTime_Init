@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pytime.h' l='185' type='int _PyTime_Init()'/>
+<doc f='codebrowser/Include/pytime.h' l='183'>/* Initialize time.
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='776' u='c' c='_Py_InitializeMainInterpreter'/>
+<def f='codebrowser/Python/pytime.c' l='774' ll='788' type='int _PyTime_Init()'/>

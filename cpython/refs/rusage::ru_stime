@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/resource.h' l='192' type='struct timeval'/>
+<offset>128</offset>
+<doc f='include/x86_64-linux-gnu/bits/resource.h' l='191'>/* Total amount of system time used.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='6868' u='m' c='wait_helper'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6868' u='m' c='wait_helper'/>
+<use f='codebrowser/Modules/resource.c' l='104' u='m' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/resource.c' l='104' u='m' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/timemodule.c' l='1022' u='m' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1022' u='m' c='py_process_time'/>

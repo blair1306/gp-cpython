@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='110' macro='1' type='HashReturn _PySHA3_Keccak_HashSqueeze(Keccak_HashInstance * hashInstance, BitSequence * data, DataLength databitlen)'/>
+<def f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='77' macro='1' type='HashReturn _PySHA3_Keccak_HashSqueeze(Keccak_HashInstance * instance, BitSequence * data, DataLength databitlen)'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='71' u='c' c='_SHAKE_digest'/>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='101'>/**
+  * Function to squeeze output data.
+  * @param  hashInstance    Pointer to the hash instance initialized by Keccak_HashInitialize().
+  * @param  data        Pointer to the buffer where to store the output data.
+  * @param  databitlen  The number of output bits desired (must be a multiple of 8).
+  * @pre    Keccak_HashFinal() must have been already called.
+  * @pre    @a databitlen is a multiple of 8.
+  * @return SUCCESS if successful, FAIL otherwise.
+  */</doc>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='75'>/* ---------------------------------------------------------------- */</doc>

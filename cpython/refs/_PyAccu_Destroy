@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/accu.h' l='30' type='void _PyAccu_Destroy(_PyAccu * acc)'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='574' u='c' c='_io_StringIO_close_impl'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='604' u='c' c='stringio_dealloc'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='689' u='c' c='_io_StringIO___init___impl'/>
+<use f='codebrowser/Modules/_json.c' l='1355' u='c' c='encoder_call'/>
+<def f='codebrowser/Objects/accu.c' l='110' ll='115' type='void _PyAccu_Destroy(_PyAccu * acc)'/>

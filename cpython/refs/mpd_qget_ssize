@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='452' type='mpd_ssize_t mpd_qget_ssize(const mpd_t * dec, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4588' u='c' c='_dec_hash'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='451'>/* quietly get a C integer type from an mpd_t */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1339' ll='1360' type='mpd_ssize_t mpd_qget_ssize(const mpd_t * a, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1459' u='c' c='mpd_qget_i64'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1483' u='c' c='mpd_qget_i32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2882' u='c' c='mpd_qrotate'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3057' u='c' c='mpd_qshift'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6300' u='c' c='_qcheck_pow_one'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1338'>/* quietly get an mpd_ssize_t from a decimal */</doc>

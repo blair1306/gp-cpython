@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/grammar.h' l='63' type='dfa *'/>
+<use f='codebrowser/Modules/parsermodule.c' l='688' u='r' c='validate_node'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/grammar.h' l='63'>/* Array of DFAs */</doc>
+<use f='codebrowser/Parser/acceler.c' l='28' u='r' c='PyGrammar_AddAccelerators'/>
+<use f='codebrowser/Parser/acceler.c' l='40' u='r' c='PyGrammar_RemoveAccelerators'/>
+<use f='codebrowser/Parser/firstsets.c' l='22' u='r' c='_Py_addfirstsets'/>
+<use f='codebrowser/Parser/grammar.c' l='23' u='w' c='_Py_newgrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='36' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='37' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='38' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='39' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='41' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='53' u='w' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='53' u='r' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='55' u='r' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='57' u='r' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='177' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='182' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='183' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar1.c' l='17' u='r' c='PyGrammar_FindDFA'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/Python-ast.h' l='270' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1994' u='w' c='_Py_DictComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='3237' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='264' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='4112' u='r' c='compiler_dictcomp'/>
+<use f='codebrowser/Python/symtable.c' l='1787' u='r' c='symtable_visit_dictcomp'/>

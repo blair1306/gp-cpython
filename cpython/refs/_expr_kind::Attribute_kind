@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/Python-ast.h' l='218' type='25'/>
+<use f='codebrowser/Python/Python-ast.c' l='2286' u='r' c='_Py_Attribute'/>
+<use f='codebrowser/Python/Python-ast.c' l='3416' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='188' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='330' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1009' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='2931' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2978' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/compile.c' l='3466' u='r' c='maybe_optimize_method_call'/>
+<use f='codebrowser/Python/compile.c' l='4444' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4530' c='compiler_augassign'/>
+<use f='codebrowser/Python/compile.c' l='4679' c='compiler_annassign'/>
+<use f='codebrowser/Python/symtable.c' l='1489' c='symtable_visit_expr'/>

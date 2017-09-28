@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='879' type='PyObject * PyUnicode_FromFormatV(const char * format, struct __va_list_tag * vargs)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1922' u='c' c='task_set_error_soon'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='934' u='c' c='_ctypes_extend_error'/>
+<use f='codebrowser/Objects/exceptions.c' l='2828' u='c' c='_PyErr_TrySetFromCause'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2882' ll='2937' type='PyObject * PyUnicode_FromFormatV(const char * format, struct __va_list_tag * vargs)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2950' u='c' c='PyUnicode_FromFormat'/>
+<use f='codebrowser/Python/_warnings.c' l='948' u='c' c='_PyErr_WarnFormatV'/>
+<use f='codebrowser/Python/_warnings.c' l='1086' u='c' c='PyErr_WarnExplicitFormat'/>
+<use f='codebrowser/Python/errors.c' l='811' u='c' c='PyErr_FormatV'/>
+<use f='codebrowser/Python/sysmodule.c' l='2478' u='c' c='sys_format'/>

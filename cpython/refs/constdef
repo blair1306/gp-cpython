@@ -1,0 +1,13 @@
+<def f='codebrowser/Modules/posixmodule.c' l='9497' ll='9500'/>
+<size>16</size>
+<doc f='codebrowser/Modules/posixmodule.c' l='9486'>/* This is used for fpathconf(), pathconf(), confstr() and sysconf().
+ * It maps strings representing configuration variable names to
+ * integer values, allowing those functions to be called with the
+ * magic names instead of polluting the module&apos;s namespace with tons of
+ * rarely-used constants.  There are three separate tables that use
+ * these definitions.
+ *
+ * This code is always included, even if none of the interfaces that
+ * need it are included.  The #if hackery needed to avoid it would be
+ * sufficiently pervasive that it&apos;s not worth the loss of readability.
+ */</doc>

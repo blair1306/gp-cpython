@@ -1,0 +1,52 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='261' type='StgDictObject * PyType_stgdict(PyObject * obj)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='463' u='c' c='StructUnionType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='529' u='c' c='CDataType_from_buffer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='600' u='c' c='CDataType_from_buffer_copy'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='709' u='c' c='CDataType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='778' u='c' c='CDataType_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='787' u='c' c='CDataType_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='930' u='c' c='PyCPointerType_SetProto'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='990' u='c' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1038' u='c' c='PyCPointerType_set_type'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1067' u='c' c='PyCPointerType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1437' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1601' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1665' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2083' u='c' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2133' u='c' c='PyCSimpleType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2310' u='c' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2775' u='c' c='PyCData_FromBaseObj'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2817' u='c' c='PyCData_AtAddress'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2857' u='c' c='PyCData_get'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2877' u='c' c='_PyCData_set'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2937' u='c' c='_PyCData_set'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3006' u='c' c='GenericPyCData_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3065' u='c' c='PyCFuncPtr_set_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3200' u='c' c='_check_outarg_type'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3226' u='c' c='_validate_paramflags'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3506' u='c' c='PyCFuncPtr_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3712' u='c' c='_build_callargs'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4112' u='c' c='_init_pos_args'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4120' u='c' c='_init_pos_args'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4355' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4828' u='c' c='Pointer_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4866' u='c' c='Pointer_ass_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4965' u='c' c='Pointer_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5045' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5308' u='c' c='cast_check_pointertype'/>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='260'>/* May return NULL, but does not set an exception! */</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='163' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='372' u='c' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='710' u='c' c='_ctypes_get_ffi_type'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='898' u='c' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1467' u='c' c='sizeof_func'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1488' u='c' c='align_func'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1761' u='c' c='buffer_info'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='67' u='c' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='113' u='c' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='116' u='c' c='PyCField_FromDesc'/>
+<def f='codebrowser/Modules/_ctypes/stgdict.c' l='172' ll='183' type='StgDictObject * PyType_stgdict(PyObject * obj)'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='380' u='c' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='400' u='c' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='463' u='c' c='PyCStructUnionType_update_stgdict'/>
+<doc f='codebrowser/Modules/_ctypes/stgdict.c' l='171'>/* May return NULL, but does not set an exception! */</doc>

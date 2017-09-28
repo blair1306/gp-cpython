@@ -1,0 +1,7 @@
+<def f='codebrowser/Python/compile.c' l='4894' ll='4903'/>
+<size>48</size>
+<doc f='codebrowser/Python/compile.c' l='4888'>/* do depth-first search of basic block graph, starting with block.
+   post records the block indices in post-order.
+
+   XXX must handle implicit jumps from one block to next
+*/</doc>

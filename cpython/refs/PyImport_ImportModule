@@ -1,0 +1,44 @@
+<dec f='codebrowser/Include/import.h' l='49' type='PyObject * PyImport_ImportModule(const char * name)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2399' u='c' c='module_init'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2399' u='c' c='module_init'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2399' u='c' c='module_init'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2399' u='c' c='module_init'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2399' u='c' c='module_init'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2399' u='c' c='module_init'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5704' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5717' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3990' u='c' c='PyInit__elementtree'/>
+<use f='codebrowser/Modules/_elementtree.c' l='4000' u='c' c='PyInit__elementtree'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='571' u='c' c='_PyIO_get_locale_module'/>
+<use f='codebrowser/Modules/_json.c' l='326' u='c' c='raise_errmsg'/>
+<use f='codebrowser/Modules/_operator.c' l='1643' u='c' c='methodcaller_reduce'/>
+<use f='codebrowser/Modules/_pickle.c' l='217' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Modules/_pickle.c' l='261' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Modules/_pickle.c' l='307' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Modules/_pickle.c' l='322' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='589' u='c' c='subprocess_fork_exec'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2848' u='c' c='PyInit__testbuffer'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2557' u='c' c='test_capsule'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2184' u='c' c='array_array___reduce_ex__'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1295' u='c' c='faulthandler_env_options'/>
+<use f='codebrowser/Modules/main.c' l='158' u='c' c='RunInteractiveHook'/>
+<use f='codebrowser/Modules/main.c' l='185' u='c' c='RunModule'/>
+<use f='codebrowser/Modules/main.c' l='831' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1586' u='c' c='PyOS_InitInterrupts'/>
+<use f='codebrowser/Objects/capsule.c' l='220' u='c' c='PyCapsule_Import'/>
+<use f='codebrowser/Objects/fileobject.c' l='35' u='c' c='PyFile_FromFd'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1925' u='c' c='struct_get_unpacker'/>
+<use f='codebrowser/Python/import.c' l='104' u='c' c='_PyImportZip_Init'/>
+<def f='codebrowser/Python/import.c' l='1247' ll='1259' type='PyObject * PyImport_ImportModule(const char * name)'/>
+<use f='codebrowser/Python/import.c' l='1273' u='c' c='PyImport_ImportModuleNoBlock'/>
+<use f='codebrowser/Python/import.c' l='1672' u='c' c='PyImport_ReloadModule'/>
+<doc f='codebrowser/Python/import.c' l='1244'>/* Import a module, either built-in, frozen, or external, and return
+   its module object WITH INCREMENTED REFERENCE COUNT */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='113' u='c' c='PyModule_GetWarningsModule'/>
+<use f='codebrowser/Python/pylifecycle.c' l='808' u='c' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1341' u='c' c='initmain'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1418' u='c' c='initsite'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1590' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1595' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1600' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1604' u='c' c='initstdio'/>

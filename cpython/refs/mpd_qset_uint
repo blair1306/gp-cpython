@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='438' type='void mpd_qset_uint(mpd_t * result, mpd_uint_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2320' u='c' c='PyDecType_FromFloatExact'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1142' ll='1148' type='void mpd_qset_uint(mpd_t * result, mpd_uint_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1163' u='c' c='mpd_qset_u32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1247' u='c' c='mpd_qset_u64'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1141'>/* quietly set a decimal from an mpd_uint_t */</doc>

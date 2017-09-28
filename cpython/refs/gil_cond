@@ -1,0 +1,8 @@
+<def f='codebrowser/Python/ceval_gil.h' l='119' type='pthread_cond_t'/>
+<use f='codebrowser/Python/ceval_gil.h' l='141' u='a' c='create_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='155' u='a' c='destroy_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='187' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='224' u='a' c='take_gil'/>
+<doc f='codebrowser/Python/ceval_gil.h' l='116'>/* This condition variable allows one or several threads to wait until
+   the GIL is released. In addition, the mutex also protects the above
+   variables. */</doc>

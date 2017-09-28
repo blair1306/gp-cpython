@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/numbertheory.h' l='50' type='mpd_uint_t _mpd_getkernel(mpd_uint_t n, int sign, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='165' u='c' c='four_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='232' u='c' c='inv_four_step_fnt'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='47' ll='65' type='mpd_uint_t _mpd_getkernel(mpd_uint_t n, int sign, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='97' u='c' c='_mpd_init_fnt_params'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='125' u='c' c='_mpd_init_w3table'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='40'>/*
+ * Return the nth root of unity in F(p). This corresponds to e**((2*pi*i)/n)
+ * in the Fourier transform. We have w**n == 1 (mod p).
+ *    n := transform length.
+ *    sign := -1 for forward transform, 1 for backward transform.
+ *    modnum := one of {P1, P2, P3}.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='91' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='173' u='c' c='inv_six_step_fnt'/>

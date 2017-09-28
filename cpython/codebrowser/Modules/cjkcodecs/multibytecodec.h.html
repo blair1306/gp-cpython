@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>multibytecodec.h source code [codebrowser/Modules/cjkcodecs/multibytecodec.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/cjkcodecs/multibytecodec.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>cjkcodecs</a>/<a href='multibytecodec.h.html'>multibytecodec.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * multibytecodec.h: Common Multibyte Codec Implementation</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Written by Hye-Shik Chang &lt;perky@FreeBSD.org&gt;</i></td></tr>
+<tr><th id="5">5</th><td><i> */</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/_PYTHON_MULTIBYTECODEC_H_">_PYTHON_MULTIBYTECODEC_H_</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/_PYTHON_MULTIBYTECODEC_H_" data-ref="_M/_PYTHON_MULTIBYTECODEC_H_">_PYTHON_MULTIBYTECODEC_H_</dfn></u></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="9">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="10">10</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="11">11</th><td><u>#<span data-ppcond="9">endif</span></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#<span data-ppcond="13">ifdef</span> <span class="macro" data-ref="_M/uint16_t">uint16_t</span></u></td></tr>
+<tr><th id="14">14</th><td><b>typedef</b> uint16_t ucs2_t, DBCHAR;</td></tr>
+<tr><th id="15">15</th><td><u>#<span data-ppcond="13">else</span></u></td></tr>
+<tr><th id="16">16</th><td><b>typedef</b> <em>unsigned</em> <em>short</em> <dfn class="typedef" id="ucs2_t" title='ucs2_t' data-type='unsigned short' data-ref="ucs2_t">ucs2_t</dfn>, <dfn class="typedef" id="DBCHAR" title='DBCHAR' data-type='unsigned short' data-ref="DBCHAR">DBCHAR</dfn>;</td></tr>
+<tr><th id="17">17</th><td><u>#<span data-ppcond="13">endif</span></u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><b>typedef</b> <b>union</b> {</td></tr>
+<tr><th id="20">20</th><td>    <em>void</em> *<dfn class="decl" id="(anonymous)::p" title='(anonymous union)::p' data-ref="(anonymous)::p">p</dfn>;</td></tr>
+<tr><th id="21">21</th><td>    <em>int</em> <dfn class="decl" id="(anonymous)::i" title='(anonymous union)::i' data-ref="(anonymous)::i">i</dfn>;</td></tr>
+<tr><th id="22">22</th><td>    <em>unsigned</em> <em>char</em> <dfn class="decl" id="(anonymous)::c" title='(anonymous union)::c' data-ref="(anonymous)::c">c</dfn>[<var>8</var>];</td></tr>
+<tr><th id="23">23</th><td>    <a class="typedef" href="#ucs2_t" title='ucs2_t' data-type='unsigned short' data-ref="ucs2_t">ucs2_t</a> <dfn class="decl" id="(anonymous)::u2" title='(anonymous union)::u2' data-ref="(anonymous)::u2">u2</dfn>[<var>4</var>];</td></tr>
+<tr><th id="24">24</th><td>    <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="decl" id="(anonymous)::u4" title='(anonymous union)::u4' data-ref="(anonymous)::u4">u4</dfn>[<var>2</var>];</td></tr>
+<tr><th id="25">25</th><td>} <dfn class="typedef" id="MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</dfn>;</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><b>typedef</b> <em>int</em> (*<dfn class="typedef" id="mbcodec_init" title='mbcodec_init' data-type='int (*)(const void *)' data-ref="mbcodec_init">mbcodec_init</dfn>)(<em>const</em> <em>void</em> *<dfn class="local col1 decl" id="1config" title='config' data-type='const void *' data-ref="1config">config</dfn>);</td></tr>
+<tr><th id="28">28</th><td><b>typedef</b> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> (*<dfn class="typedef" id="mbencode_func" title='mbencode_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *, int, void *, Py_ssize_t *, Py_ssize_t, unsigned char **, Py_ssize_t, int)' data-ref="mbencode_func">mbencode_func</dfn>)(<a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> *<dfn class="local col2 decl" id="2state" title='state' data-type='MultibyteCodec_State *' data-ref="2state">state</dfn>,</td></tr>
+<tr><th id="29">29</th><td>                        <em>const</em> <em>void</em> *<dfn class="local col3 decl" id="3config" title='config' data-type='const void *' data-ref="3config">config</dfn>,</td></tr>
+<tr><th id="30">30</th><td>                        <em>int</em> <dfn class="local col4 decl" id="4kind" title='kind' data-type='int' data-ref="4kind">kind</dfn>, <em>void</em> *<dfn class="local col5 decl" id="5data" title='data' data-type='void *' data-ref="5data">data</dfn>,</td></tr>
+<tr><th id="31">31</th><td>                        <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> *<dfn class="local col6 decl" id="6inpos" title='inpos' data-type='Py_ssize_t *' data-ref="6inpos">inpos</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="7inlen" title='inlen' data-type='Py_ssize_t' data-ref="7inlen">inlen</dfn>,</td></tr>
+<tr><th id="32">32</th><td>                        <em>unsigned</em> <em>char</em> **<dfn class="local col8 decl" id="8outbuf" title='outbuf' data-type='unsigned char **' data-ref="8outbuf">outbuf</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="9outleft" title='outleft' data-type='Py_ssize_t' data-ref="9outleft">outleft</dfn>,</td></tr>
+<tr><th id="33">33</th><td>                        <em>int</em> <dfn class="local col0 decl" id="10flags" title='flags' data-type='int' data-ref="10flags">flags</dfn>);</td></tr>
+<tr><th id="34">34</th><td><b>typedef</b> <em>int</em> (*<dfn class="typedef" id="mbencodeinit_func" title='mbencodeinit_func' data-type='int (*)(MultibyteCodec_State *, const void *)' data-ref="mbencodeinit_func">mbencodeinit_func</dfn>)(<a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> *<dfn class="local col1 decl" id="11state" title='state' data-type='MultibyteCodec_State *' data-ref="11state">state</dfn>,</td></tr>
+<tr><th id="35">35</th><td>                                 <em>const</em> <em>void</em> *<dfn class="local col2 decl" id="12config" title='config' data-type='const void *' data-ref="12config">config</dfn>);</td></tr>
+<tr><th id="36">36</th><td><b>typedef</b> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> (*<dfn class="typedef" id="mbencodereset_func" title='mbencodereset_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *, unsigned char **, Py_ssize_t)' data-ref="mbencodereset_func">mbencodereset_func</dfn>)(<a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> *<dfn class="local col3 decl" id="13state" title='state' data-type='MultibyteCodec_State *' data-ref="13state">state</dfn>,</td></tr>
+<tr><th id="37">37</th><td>                        <em>const</em> <em>void</em> *<dfn class="local col4 decl" id="14config" title='config' data-type='const void *' data-ref="14config">config</dfn>,</td></tr>
+<tr><th id="38">38</th><td>                        <em>unsigned</em> <em>char</em> **<dfn class="local col5 decl" id="15outbuf" title='outbuf' data-type='unsigned char **' data-ref="15outbuf">outbuf</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="16outleft" title='outleft' data-type='Py_ssize_t' data-ref="16outleft">outleft</dfn>);</td></tr>
+<tr><th id="39">39</th><td><b>typedef</b> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> (*<dfn class="typedef" id="mbdecode_func" title='mbdecode_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *, const unsigned char **, Py_ssize_t, _PyUnicodeWriter *)' data-ref="mbdecode_func">mbdecode_func</dfn>)(<a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> *<dfn class="local col7 decl" id="17state" title='state' data-type='MultibyteCodec_State *' data-ref="17state">state</dfn>,</td></tr>
+<tr><th id="40">40</th><td>                        <em>const</em> <em>void</em> *<dfn class="local col8 decl" id="18config" title='config' data-type='const void *' data-ref="18config">config</dfn>,</td></tr>
+<tr><th id="41">41</th><td>                        <em>const</em> <em>unsigned</em> <em>char</em> **<dfn class="local col9 decl" id="19inbuf" title='inbuf' data-type='const unsigned char **' data-ref="19inbuf">inbuf</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="20inleft" title='inleft' data-type='Py_ssize_t' data-ref="20inleft">inleft</dfn>,</td></tr>
+<tr><th id="42">42</th><td>                        <a class="typedef" href="../../Include/unicodeobject.h.html#_PyUnicodeWriter" title='_PyUnicodeWriter' data-type='struct _PyUnicodeWriter' data-ref="_PyUnicodeWriter">_PyUnicodeWriter</a> *<dfn class="local col1 decl" id="21writer" title='writer' data-type='_PyUnicodeWriter *' data-ref="21writer">writer</dfn>);</td></tr>
+<tr><th id="43">43</th><td><b>typedef</b> <em>int</em> (*<dfn class="typedef" id="mbdecodeinit_func" title='mbdecodeinit_func' data-type='int (*)(MultibyteCodec_State *, const void *)' data-ref="mbdecodeinit_func">mbdecodeinit_func</dfn>)(<a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> *<dfn class="local col2 decl" id="22state" title='state' data-type='MultibyteCodec_State *' data-ref="22state">state</dfn>,</td></tr>
+<tr><th id="44">44</th><td>                                 <em>const</em> <em>void</em> *<dfn class="local col3 decl" id="23config" title='config' data-type='const void *' data-ref="23config">config</dfn>);</td></tr>
+<tr><th id="45">45</th><td><b>typedef</b> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> (*<dfn class="typedef" id="mbdecodereset_func" title='mbdecodereset_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *)' data-ref="mbdecodereset_func">mbdecodereset_func</dfn>)(<a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> *<dfn class="local col4 decl" id="24state" title='state' data-type='MultibyteCodec_State *' data-ref="24state">state</dfn>,</td></tr>
+<tr><th id="46">46</th><td>                                         <em>const</em> <em>void</em> *<dfn class="local col5 decl" id="25config" title='config' data-type='const void *' data-ref="25config">config</dfn>);</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="49">49</th><td>    <em>const</em> <em>char</em> *<dfn class="decl" id="(anonymous)::encoding" title='(anonymous struct)::encoding' data-ref="(anonymous)::encoding">encoding</dfn>;</td></tr>
+<tr><th id="50">50</th><td>    <em>const</em> <em>void</em> *<dfn class="decl" id="(anonymous)::config" title='(anonymous struct)::config' data-ref="(anonymous)::config">config</dfn>;</td></tr>
+<tr><th id="51">51</th><td>    <a class="typedef" href="#mbcodec_init" title='mbcodec_init' data-type='int (*)(const void *)' data-ref="mbcodec_init">mbcodec_init</a> <dfn class="decl" id="(anonymous)::codecinit" title='(anonymous struct)::codecinit' data-ref="(anonymous)::codecinit">codecinit</dfn>;</td></tr>
+<tr><th id="52">52</th><td>    <a class="typedef" href="#mbencode_func" title='mbencode_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *, int, void *, Py_ssize_t *, Py_ssize_t, unsigned char **, Py_ssize_t, int)' data-ref="mbencode_func">mbencode_func</a> <dfn class="decl" id="(anonymous)::encode" title='(anonymous struct)::encode' data-ref="(anonymous)::encode">encode</dfn>;</td></tr>
+<tr><th id="53">53</th><td>    <a class="typedef" href="#mbencodeinit_func" title='mbencodeinit_func' data-type='int (*)(MultibyteCodec_State *, const void *)' data-ref="mbencodeinit_func">mbencodeinit_func</a> <dfn class="decl" id="(anonymous)::encinit" title='(anonymous struct)::encinit' data-ref="(anonymous)::encinit">encinit</dfn>;</td></tr>
+<tr><th id="54">54</th><td>    <a class="typedef" href="#mbencodereset_func" title='mbencodereset_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *, unsigned char **, Py_ssize_t)' data-ref="mbencodereset_func">mbencodereset_func</a> <dfn class="decl" id="(anonymous)::encreset" title='(anonymous struct)::encreset' data-ref="(anonymous)::encreset">encreset</dfn>;</td></tr>
+<tr><th id="55">55</th><td>    <a class="typedef" href="#mbdecode_func" title='mbdecode_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *, const unsigned char **, Py_ssize_t, _PyUnicodeWriter *)' data-ref="mbdecode_func">mbdecode_func</a> <dfn class="decl" id="(anonymous)::decode" title='(anonymous struct)::decode' data-ref="(anonymous)::decode">decode</dfn>;</td></tr>
+<tr><th id="56">56</th><td>    <a class="typedef" href="#mbdecodeinit_func" title='mbdecodeinit_func' data-type='int (*)(MultibyteCodec_State *, const void *)' data-ref="mbdecodeinit_func">mbdecodeinit_func</a> <dfn class="decl" id="(anonymous)::decinit" title='(anonymous struct)::decinit' data-ref="(anonymous)::decinit">decinit</dfn>;</td></tr>
+<tr><th id="57">57</th><td>    <a class="typedef" href="#mbdecodereset_func" title='mbdecodereset_func' data-type='Py_ssize_t (*)(MultibyteCodec_State *, const void *)' data-ref="mbdecodereset_func">mbdecodereset_func</a> <dfn class="decl" id="(anonymous)::decreset" title='(anonymous struct)::decreset' data-ref="(anonymous)::decreset">decreset</dfn>;</td></tr>
+<tr><th id="58">58</th><td>} <dfn class="typedef" id="MultibyteCodec" title='MultibyteCodec' data-type='struct MultibyteCodec' data-ref="MultibyteCodec">MultibyteCodec</dfn>;</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="61">61</th><td>    <a class="macro" href="../../Include/object.h.html#83" title="PyObject ob_base;" data-ref="_M/PyObject_HEAD">PyObject_HEAD</a></td></tr>
+<tr><th id="62">62</th><td>    <a class="typedef" href="#MultibyteCodec" title='MultibyteCodec' data-type='struct MultibyteCodec' data-ref="MultibyteCodec">MultibyteCodec</a> *<dfn class="decl" id="(anonymous)::codec" title='(anonymous struct)::codec' data-ref="(anonymous)::codec">codec</dfn>;</td></tr>
+<tr><th id="63">63</th><td>} <dfn class="typedef" id="MultibyteCodecObject" title='MultibyteCodecObject' data-type='struct MultibyteCodecObject' data-ref="MultibyteCodecObject">MultibyteCodecObject</dfn>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/MultibyteCodec_Check" data-ref="_M/MultibyteCodec_Check">MultibyteCodec_Check</dfn>(op) ((op)-&gt;ob_type == &amp;MultibyteCodec_Type)</u></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/_MultibyteStatefulCodec_HEAD" data-ref="_M/_MultibyteStatefulCodec_HEAD">_MultibyteStatefulCodec_HEAD</dfn>            \</u></td></tr>
+<tr><th id="68">68</th><td><u>    PyObject_HEAD                               \</u></td></tr>
+<tr><th id="69">69</th><td><u>    <a class="typedef" href="#MultibyteCodec" title='MultibyteCodec' data-type='struct MultibyteCodec' data-ref="MultibyteCodec">MultibyteCodec</a> *<dfn class="decl" id="(anonymous)::codec" title='(anonymous struct)::codec' data-ref="(anonymous)::codec">codec</dfn>;                      \</u></td></tr>
+<tr><th id="70">70</th><td><u>    <a class="typedef" href="#MultibyteCodec_State" title='MultibyteCodec_State' data-type='union MultibyteCodec_State' data-ref="MultibyteCodec_State">MultibyteCodec_State</a> <dfn class="decl" id="(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</dfn>;                 \</u></td></tr>
+<tr><th id="71">71</th><td><u>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::errors" title='(anonymous struct)::errors' data-ref="(anonymous)::errors">errors</dfn>;</u></td></tr>
+<tr><th id="72">72</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="73">73</th><td>    <a class="macro" href="#67" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors;" data-ref="_M/_MultibyteStatefulCodec_HEAD">_MultibyteStatefulCodec_HEAD</a></td></tr>
+<tr><th id="74">74</th><td>} <dfn class="typedef" id="MultibyteStatefulCodecContext" title='MultibyteStatefulCodecContext' data-type='struct MultibyteStatefulCodecContext' data-ref="MultibyteStatefulCodecContext">MultibyteStatefulCodecContext</dfn>;</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/MAXENCPENDING" data-ref="_M/MAXENCPENDING">MAXENCPENDING</dfn>   2</u></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/_MultibyteStatefulEncoder_HEAD" data-ref="_M/_MultibyteStatefulEncoder_HEAD">_MultibyteStatefulEncoder_HEAD</dfn>          \</u></td></tr>
+<tr><th id="78">78</th><td><u>    _MultibyteStatefulCodec_HEAD                \</u></td></tr>
+<tr><th id="79">79</th><td><u>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::pending" title='(anonymous struct)::pending' data-ref="(anonymous)::pending">pending</dfn>;</u></td></tr>
+<tr><th id="80">80</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="81">81</th><td>    <a class="macro" href="#77" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors; PyObject *pending;" data-ref="_M/_MultibyteStatefulEncoder_HEAD">_MultibyteStatefulEncoder_HEAD</a></td></tr>
+<tr><th id="82">82</th><td>} <dfn class="typedef" id="MultibyteStatefulEncoderContext" title='MultibyteStatefulEncoderContext' data-type='struct MultibyteStatefulEncoderContext' data-ref="MultibyteStatefulEncoderContext">MultibyteStatefulEncoderContext</dfn>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/MAXDECPENDING" data-ref="_M/MAXDECPENDING">MAXDECPENDING</dfn>   8</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/_MultibyteStatefulDecoder_HEAD" data-ref="_M/_MultibyteStatefulDecoder_HEAD">_MultibyteStatefulDecoder_HEAD</dfn>          \</u></td></tr>
+<tr><th id="86">86</th><td><u>    _MultibyteStatefulCodec_HEAD                \</u></td></tr>
+<tr><th id="87">87</th><td><u>    unsigned char <dfn class="decl" id="(anonymous)::pending" title='(anonymous struct)::pending' data-ref="(anonymous)::pending">pending</dfn>[MAXDECPENDING];       \</u></td></tr>
+<tr><th id="88">88</th><td><u>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="decl" id="(anonymous)::pendingsize" title='(anonymous struct)::pendingsize' data-ref="(anonymous)::pendingsize">pendingsize</dfn>;</u></td></tr>
+<tr><th id="89">89</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="90">90</th><td>    <a class="macro" href="#85" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors; unsigned char pending[8]; Py_ssize_t pendingsize;" data-ref="_M/_MultibyteStatefulDecoder_HEAD">_MultibyteStatefulDecoder_HEAD</a></td></tr>
+<tr><th id="91">91</th><td>} <dfn class="typedef" id="MultibyteStatefulDecoderContext" title='MultibyteStatefulDecoderContext' data-type='struct MultibyteStatefulDecoderContext' data-ref="MultibyteStatefulDecoderContext">MultibyteStatefulDecoderContext</dfn>;</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="94">94</th><td>    <a class="macro" href="#77" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors; PyObject *pending;" data-ref="_M/_MultibyteStatefulEncoder_HEAD">_MultibyteStatefulEncoder_HEAD</a></td></tr>
+<tr><th id="95">95</th><td>} <dfn class="typedef" id="MultibyteIncrementalEncoderObject" title='MultibyteIncrementalEncoderObject' data-type='struct MultibyteIncrementalEncoderObject' data-ref="MultibyteIncrementalEncoderObject">MultibyteIncrementalEncoderObject</dfn>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="98">98</th><td>    <a class="macro" href="#85" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors; unsigned char pending[8]; Py_ssize_t pendingsize;" data-ref="_M/_MultibyteStatefulDecoder_HEAD">_MultibyteStatefulDecoder_HEAD</a></td></tr>
+<tr><th id="99">99</th><td>} <dfn class="typedef" id="MultibyteIncrementalDecoderObject" title='MultibyteIncrementalDecoderObject' data-type='struct MultibyteIncrementalDecoderObject' data-ref="MultibyteIncrementalDecoderObject">MultibyteIncrementalDecoderObject</dfn>;</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="102">102</th><td>    <a class="macro" href="#85" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors; unsigned char pending[8]; Py_ssize_t pendingsize;" data-ref="_M/_MultibyteStatefulDecoder_HEAD">_MultibyteStatefulDecoder_HEAD</a></td></tr>
+<tr><th id="103">103</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::stream" title='(anonymous struct)::stream' data-ref="(anonymous)::stream">stream</dfn>;</td></tr>
+<tr><th id="104">104</th><td>} <dfn class="typedef" id="MultibyteStreamReaderObject" title='MultibyteStreamReaderObject' data-type='struct MultibyteStreamReaderObject' data-ref="MultibyteStreamReaderObject">MultibyteStreamReaderObject</dfn>;</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="107">107</th><td>    <a class="macro" href="#77" title="PyObject ob_base; MultibyteCodec *codec; MultibyteCodec_State state; PyObject *errors; PyObject *pending;" data-ref="_M/_MultibyteStatefulEncoder_HEAD">_MultibyteStatefulEncoder_HEAD</a></td></tr>
+<tr><th id="108">108</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::stream" title='(anonymous struct)::stream' data-ref="(anonymous)::stream">stream</dfn>;</td></tr>
+<tr><th id="109">109</th><td>} <dfn class="typedef" id="MultibyteStreamWriterObject" title='MultibyteStreamWriterObject' data-type='struct MultibyteStreamWriterObject' data-ref="MultibyteStreamWriterObject">MultibyteStreamWriterObject</dfn>;</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><i>/* positive values for illegal sequences */</i></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/MBERR_TOOSMALL" data-ref="_M/MBERR_TOOSMALL">MBERR_TOOSMALL</dfn>          (-1) /* insufficient output buffer space */</u></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/MBERR_TOOFEW" data-ref="_M/MBERR_TOOFEW">MBERR_TOOFEW</dfn>            (-2) /* incomplete input buffer */</u></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/MBERR_INTERNAL" data-ref="_M/MBERR_INTERNAL">MBERR_INTERNAL</dfn>          (-3) /* internal runtime error */</u></td></tr>
+<tr><th id="115">115</th><td><u>#define <dfn class="macro" id="_M/MBERR_EXCEPTION" data-ref="_M/MBERR_EXCEPTION">MBERR_EXCEPTION</dfn>         (-4) /* an exception has been raised */</u></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><u>#define <dfn class="macro" id="_M/ERROR_STRICT" data-ref="_M/ERROR_STRICT">ERROR_STRICT</dfn>            (PyObject *)(1)</u></td></tr>
+<tr><th id="118">118</th><td><u>#define <dfn class="macro" id="_M/ERROR_IGNORE" data-ref="_M/ERROR_IGNORE">ERROR_IGNORE</dfn>            (PyObject *)(2)</u></td></tr>
+<tr><th id="119">119</th><td><u>#define <dfn class="macro" id="_M/ERROR_REPLACE" data-ref="_M/ERROR_REPLACE">ERROR_REPLACE</dfn>           (PyObject *)(3)</u></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/ERROR_ISCUSTOM" data-ref="_M/ERROR_ISCUSTOM">ERROR_ISCUSTOM</dfn>(p)       ((p) &lt; ERROR_STRICT || ERROR_REPLACE &lt; (p))</u></td></tr>
+<tr><th id="121">121</th><td><u>#define <dfn class="macro" id="_M/ERROR_DECREF" data-ref="_M/ERROR_DECREF">ERROR_DECREF</dfn>(p)                             \</u></td></tr>
+<tr><th id="122">122</th><td><u>    do {                                            \</u></td></tr>
+<tr><th id="123">123</th><td><u>        if (p != NULL &amp;&amp; ERROR_ISCUSTOM(p))         \</u></td></tr>
+<tr><th id="124">124</th><td><u>            Py_DECREF(p);                           \</u></td></tr>
+<tr><th id="125">125</th><td><u>    } while (0);</u></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><u>#define <dfn class="macro" id="_M/MBENC_FLUSH" data-ref="_M/MBENC_FLUSH">MBENC_FLUSH</dfn>             0x0001 /* encode all characters encodable */</u></td></tr>
+<tr><th id="128">128</th><td><u>#define <dfn class="macro" id="_M/MBENC_MAX" data-ref="_M/MBENC_MAX">MBENC_MAX</dfn>               MBENC_FLUSH</u></td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/PyMultibyteCodec_CAPSULE_NAME" data-ref="_M/PyMultibyteCodec_CAPSULE_NAME">PyMultibyteCodec_CAPSULE_NAME</dfn> "multibytecodec.__map_*"</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><u>#<span data-ppcond="133">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="134">134</th><td>}</td></tr>
+<tr><th id="135">135</th><td><u>#<span data-ppcond="133">endif</span></u></td></tr>
+<tr><th id="136">136</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='_codecs_cn.c.html'>codebrowser/Modules/cjkcodecs/_codecs_cn.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

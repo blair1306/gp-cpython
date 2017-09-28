@@ -1,0 +1,17 @@
+<def f='codebrowser/Modules/_ctypes/ctypes.h' l='27' ll='36'/>
+<size>16</size>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='20'>/* A default buffer in CDataObject, which can be used for small C types.  If
+this buffer is too small, PyMem_Malloc will be called to create a larger one,
+and this one is not used.
+
+Making CDataObject a variable size object would be a better solution, but more
+difficult in the presence of PyCFuncPtrObject.  Maybe later.
+*/</doc>
+<mbr r='value::c' o='0' t='char [16]'/>
+<mbr r='value::s' o='0' t='short'/>
+<mbr r='value::i' o='0' t='int'/>
+<mbr r='value::l' o='0' t='long'/>
+<mbr r='value::f' o='0' t='float'/>
+<mbr r='value::d' o='0' t='double'/>
+<mbr r='value::ll' o='0' t='long long'/>
+<mbr r='value::D' o='0' t='long double'/>

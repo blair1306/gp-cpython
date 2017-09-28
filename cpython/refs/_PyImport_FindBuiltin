@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='99' type='PyObject * _PyImport_FindBuiltin(const char * name)'/>
+<def f='codebrowser/Python/import.c' l='641' ll='651' type='PyObject * _PyImport_FindBuiltin(const char * name)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1183' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1194' u='c' c='Py_NewInterpreter'/>

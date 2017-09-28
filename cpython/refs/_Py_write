@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/fileutils.h' l='81' type='Py_ssize_t _Py_write(int fd, const void * buf, size_t count)'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='847' u='c' c='_io_FileIO_write_impl'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='442' u='c' c='oss_write'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='497' u='c' c='oss_writeall'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8213' u='c' c='os_write_impl'/>
+<use f='codebrowser/Objects/fileobject.c' l='383' u='c' c='stdprinter_write'/>
+<def f='codebrowser/Python/fileutils.c' l='1318' ll='1331' type='Py_ssize_t _Py_write(int fd, const void * buf, size_t count)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1308'>/* Write count bytes of buf into fd.
+
+   On success, return the number of written bytes, it can be lower than count
+   including 0. On error, raise an exception, set errno and return -1.
+
+   When interrupted by a signal (write() fails with EINTR), retry the syscall.
+   If the Python signal handler raises an exception, the function returns -1
+   (the syscall is not retried).
+
+   Release the GIL to call write(). The caller must hold the GIL. */</doc>

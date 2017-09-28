@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/methodobject.h' l='120' type='void _PyMethod_DebugMallocStats(FILE * out)'/>
+<def f='codebrowser/Objects/classobject.c' l='399' ll='405' type='void _PyMethod_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/classobject.c' l='398'>/* Print summary info about the state of the optimized allocator */</doc>
+<use f='codebrowser/Objects/object.c' l='1950' u='c' c='_PyObject_DebugTypeStats'/>

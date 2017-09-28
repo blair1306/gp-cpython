@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='511' type='void (*)(void *)'/>
+<offset>8320</offset>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4069' u='w' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4075' u='r' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4076' u='r' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4087' u='r' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4092' u='r' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4093' u='r' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1153' u='w' c='PyUnknownEncodingHandler'/>

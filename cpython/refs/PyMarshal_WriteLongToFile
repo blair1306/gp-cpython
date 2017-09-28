@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/marshal.h' l='12' type='void PyMarshal_WriteLongToFile(long , FILE * , int )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3734' u='c' c='pymarshal_write_long_to_file'/>
+<def f='codebrowser/Python/marshal.c' l='613' ll='626' type='void PyMarshal_WriteLongToFile(long x, FILE * fp, int version)'/>
+<doc f='codebrowser/Python/marshal.c' l='612'>/* version currently has no effect for writing ints. */</doc>

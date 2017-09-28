@@ -1,0 +1,46 @@
+<dec f='codebrowser/Include/modsupport.h' l='62' type='int _PyArg_NoKeywords(const char * funcname, PyObject * kwargs)'/>
+<use f='codebrowser/Modules/_io/clinic/bufferedio.c.h' l='434' macro='1' u='c'/>
+<use f='codebrowser/Modules/_operator.c' l='952' macro='1' u='c'/>
+<use f='codebrowser/Modules/_operator.c' l='996' macro='1' u='c'/>
+<use f='codebrowser/Modules/_operator.c' l='1127' macro='1' u='c'/>
+<use f='codebrowser/Modules/_operator.c' l='1286' macro='1' u='c'/>
+<use f='codebrowser/Modules/_operator.c' l='1530' macro='1' u='c'/>
+<use f='codebrowser/Modules/_randommodule.c' l='438' macro='1' u='c'/>
+<use f='codebrowser/Modules/clinic/_ssl.c.h' l='342' macro='1' u='c'/>
+<use f='codebrowser/Modules/clinic/_ssl.c.h' l='739' macro='1' u='c'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2622' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='874' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1075' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1243' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1411' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1665' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1823' macro='1' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3772' macro='1' u='c'/>
+<use f='codebrowser/Modules/clinic/zipimport.c.h' l='36' macro='1' u='c'/>
+<use f='codebrowser/Objects/boolobject.c' l='48' macro='1' u='c'/>
+<use f='codebrowser/Objects/classobject.c' l='172' macro='1' u='c'/>
+<use f='codebrowser/Objects/classobject.c' l='595' macro='1' u='c'/>
+<use f='codebrowser/Objects/clinic/enumobject.c.h' l='58' macro='1' u='c'/>
+<use f='codebrowser/Objects/exceptions.c' l='62' macro='1' u='c'/>
+<use f='codebrowser/Objects/exceptions.c' l='952' macro='1' u='c'/>
+<use f='codebrowser/Objects/exceptions.c' l='1020' macro='1' u='c'/>
+<use f='codebrowser/Objects/clinic/floatobject.c.h' l='173' macro='1' u='c'/>
+<use f='codebrowser/Objects/funcobject.c' l='705' macro='1' u='c'/>
+<use f='codebrowser/Objects/funcobject.c' l='886' macro='1' u='c'/>
+<use f='codebrowser/Objects/clinic/listobject.c.h' l='239' macro='1' u='c'/>
+<use f='codebrowser/Objects/rangeobject.c' l='77' macro='1' u='c'/>
+<use f='codebrowser/Objects/setobject.c' l='1089' macro='1' u='c'/>
+<use f='codebrowser/Objects/setobject.c' l='2012' macro='1' u='c'/>
+<use f='codebrowser/Objects/sliceobject.c' l='300' macro='1' u='c'/>
+<use f='codebrowser/Objects/clinic/tupleobject.c.h' l='68' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='7534' macro='1' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='335' macro='1' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='432' macro='1' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1123' macro='1' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2440' macro='1' u='c'/>
+<def f='codebrowser/Python/getargs.c' l='2499' ll='2516' type='int _PyArg_NoKeywords(const char * funcname, PyObject * kwargs)'/>
+<doc f='codebrowser/Python/getargs.c' l='2494'>/* For type constructors that don&apos;t take keyword args
+ *
+ * Sets a TypeError and returns 0 if the args/kwargs is
+ * not empty, returns 1 otherwise
+ */</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pystate.h' l='145' type='PyObject *'/>
+<offset>1152</offset>
+<doc f='codebrowser/Include/pystate.h' l='145'>/* Asynchronous exception to raise */</doc>
+<use f='codebrowser/Python/ceval_gil.h' l='254' u='r' c='take_gil'/>
+<use f='codebrowser/Python/ceval.c' l='1126' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1127' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1128' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/pystate.c' l='256' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='452' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='452' u='w' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='661' u='r' c='PyThreadState_SetAsyncExc'/>
+<use f='codebrowser/Python/pystate.c' l='663' u='w' c='PyThreadState_SetAsyncExc'/>

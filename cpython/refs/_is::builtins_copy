@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pystate.h' l='73' type='PyObject *'/>
+<offset>1024</offset>
+<use f='codebrowser/Python/import.c' l='50' u='w' c='_PyImport_Init'/>
+<use f='codebrowser/Python/import.c' l='51' u='r' c='_PyImport_Init'/>
+<use f='codebrowser/Python/import.c' l='413' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/pystate.c' l='104' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='165' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='165' u='w' c='PyInterpreterState_Clear'/>

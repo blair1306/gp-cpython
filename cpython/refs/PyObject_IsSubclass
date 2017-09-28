@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/abstract.h' l='1083' type='int PyObject_IsSubclass(PyObject * object, PyObject * typeorclass)'/>
+<doc f='codebrowser/Include/abstract.h' l='1082'>/* issubclass(object, typeorclass) */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1093' u='c' c='PyCPointerType_from_param'/>
+<def f='codebrowser/Objects/abstract.c' l='2421' ll='2475' type='int PyObject_IsSubclass(PyObject * derived, PyObject * cls)'/>
+<use f='codebrowser/Objects/abstract.c' l='2445' u='c' c='PyObject_IsSubclass'/>
+<use f='codebrowser/Python/_warnings.c' l='181' u='c' c='get_filter'/>
+<use f='codebrowser/Python/_warnings.c' l='777' u='c' c='get_category'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2417' u='c' c='builtin_issubclass_impl'/>
+<use f='codebrowser/Python/errors.c' l='245' u='c' c='PyErr_NormalizeException'/>
+<use f='codebrowser/Python/errors.c' l='732' u='c' c='PyErr_SetImportErrorSubclass'/>

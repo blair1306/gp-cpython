@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='47' type='int'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2571' u='r' c='PyCData_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2751' u='w' c='PyCData_MallocBuffer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2761' u='w' c='PyCData_MallocBuffer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2792' u='w' c='PyCData_FromBaseObj'/>
+<offset>320</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='47'>/* need _we_ free the memory? */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1616' u='r' c='resize'/>

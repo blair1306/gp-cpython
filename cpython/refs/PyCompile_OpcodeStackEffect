@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/compile.h' l='76' type='int PyCompile_OpcodeStackEffect(int opcode, int oparg)'/>
+<use f='codebrowser/Modules/_opcode.c' l='43' u='c' c='_opcode_stack_effect_impl'/>
+<def f='codebrowser/Python/compile.c' l='856' ll='1082' type='int PyCompile_OpcodeStackEffect(int opcode, int oparg)'/>
+<use f='codebrowser/Python/compile.c' l='4935' u='c' c='stackdepth_walk'/>

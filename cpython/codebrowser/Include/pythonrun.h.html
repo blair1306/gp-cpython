@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pythonrun.h source code [codebrowser/Include/pythonrun.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/pythonrun.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='pythonrun.h.html'>pythonrun.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Interfaces to parse and execute pieces of python code */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/Py_PYTHONRUN_H">Py_PYTHONRUN_H</span></u></td></tr>
+<tr><th id="5">5</th><td><u>#define <dfn class="macro" id="_M/Py_PYTHONRUN_H" data-ref="_M/Py_PYTHONRUN_H">Py_PYTHONRUN_H</dfn></u></td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="6">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="7">7</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="6">endif</span></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#<span data-ppcond="10">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="11">11</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_SimpleStringFlags" title='PyRun_SimpleStringFlags' data-ref="PyRun_SimpleStringFlags">PyRun_SimpleStringFlags</dfn>(<em>const</em> <em>char</em> *, <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *);</td></tr>
+<tr><th id="12">12</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_AnyFileFlags" title='PyRun_AnyFileFlags' data-ref="PyRun_AnyFileFlags">PyRun_AnyFileFlags</dfn>(<a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <em>const</em> <em>char</em> *, <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *);</td></tr>
+<tr><th id="13">13</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_AnyFileExFlags" title='PyRun_AnyFileExFlags' data-ref="PyRun_AnyFileExFlags">PyRun_AnyFileExFlags</dfn>(</td></tr>
+<tr><th id="14">14</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col0 decl" id="2870fp" title='fp' data-type='FILE *' data-ref="2870fp">fp</dfn>,</td></tr>
+<tr><th id="15">15</th><td>    <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="2871filename" title='filename' data-type='const char *' data-ref="2871filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="16">16</th><td>    <em>int</em> <dfn class="local col2 decl" id="2872closeit" title='closeit' data-type='int' data-ref="2872closeit">closeit</dfn>,</td></tr>
+<tr><th id="17">17</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col3 decl" id="2873flags" title='flags' data-type='PyCompilerFlags *' data-ref="2873flags">flags</dfn>);</td></tr>
+<tr><th id="18">18</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_SimpleFileExFlags" title='PyRun_SimpleFileExFlags' data-ref="PyRun_SimpleFileExFlags">PyRun_SimpleFileExFlags</dfn>(</td></tr>
+<tr><th id="19">19</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col4 decl" id="2874fp" title='fp' data-type='FILE *' data-ref="2874fp">fp</dfn>,</td></tr>
+<tr><th id="20">20</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="2875filename" title='filename' data-type='const char *' data-ref="2875filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="21">21</th><td>    <em>int</em> <dfn class="local col6 decl" id="2876closeit" title='closeit' data-type='int' data-ref="2876closeit">closeit</dfn>,</td></tr>
+<tr><th id="22">22</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col7 decl" id="2877flags" title='flags' data-type='PyCompilerFlags *' data-ref="2877flags">flags</dfn>);</td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_InteractiveOneFlags" title='PyRun_InteractiveOneFlags' data-ref="PyRun_InteractiveOneFlags">PyRun_InteractiveOneFlags</dfn>(</td></tr>
+<tr><th id="24">24</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col8 decl" id="2878fp" title='fp' data-type='FILE *' data-ref="2878fp">fp</dfn>,</td></tr>
+<tr><th id="25">25</th><td>    <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="2879filename" title='filename' data-type='const char *' data-ref="2879filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="26">26</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col0 decl" id="2880flags" title='flags' data-type='PyCompilerFlags *' data-ref="2880flags">flags</dfn>);</td></tr>
+<tr><th id="27">27</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_InteractiveOneObject" title='PyRun_InteractiveOneObject' data-ref="PyRun_InteractiveOneObject">PyRun_InteractiveOneObject</dfn>(</td></tr>
+<tr><th id="28">28</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col1 decl" id="2881fp" title='fp' data-type='FILE *' data-ref="2881fp">fp</dfn>,</td></tr>
+<tr><th id="29">29</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2882filename" title='filename' data-type='PyObject *' data-ref="2882filename">filename</dfn>,</td></tr>
+<tr><th id="30">30</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col3 decl" id="2883flags" title='flags' data-type='PyCompilerFlags *' data-ref="2883flags">flags</dfn>);</td></tr>
+<tr><th id="31">31</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyRun_InteractiveLoopFlags" title='PyRun_InteractiveLoopFlags' data-ref="PyRun_InteractiveLoopFlags">PyRun_InteractiveLoopFlags</dfn>(</td></tr>
+<tr><th id="32">32</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col4 decl" id="2884fp" title='fp' data-type='FILE *' data-ref="2884fp">fp</dfn>,</td></tr>
+<tr><th id="33">33</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="2885filename" title='filename' data-type='const char *' data-ref="2885filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="34">34</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col6 decl" id="2886flags" title='flags' data-type='PyCompilerFlags *' data-ref="2886flags">flags</dfn>);</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><a class="macro" href="pyport.h.html#676" title="struct _mod *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_mod" title='_mod' data-ref="_mod">_mod</a> *) <dfn class="decl" id="PyParser_ASTFromString" title='PyParser_ASTFromString' data-ref="PyParser_ASTFromString">PyParser_ASTFromString</dfn>(</td></tr>
+<tr><th id="37">37</th><td>    <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="2887s" title='s' data-type='const char *' data-ref="2887s">s</dfn>,</td></tr>
+<tr><th id="38">38</th><td>    <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="2888filename" title='filename' data-type='const char *' data-ref="2888filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="39">39</th><td>    <em>int</em> <dfn class="local col9 decl" id="2889start" title='start' data-type='int' data-ref="2889start">start</dfn>,</td></tr>
+<tr><th id="40">40</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col0 decl" id="2890flags" title='flags' data-type='PyCompilerFlags *' data-ref="2890flags">flags</dfn>,</td></tr>
+<tr><th id="41">41</th><td>    <a class="typedef" href="pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col1 decl" id="2891arena" title='arena' data-type='PyArena *' data-ref="2891arena">arena</dfn>);</td></tr>
+<tr><th id="42">42</th><td><a class="macro" href="pyport.h.html#676" title="struct _mod *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_mod" title='_mod' data-ref="_mod">_mod</a> *) <dfn class="decl" id="PyParser_ASTFromStringObject" title='PyParser_ASTFromStringObject' data-ref="PyParser_ASTFromStringObject">PyParser_ASTFromStringObject</dfn>(</td></tr>
+<tr><th id="43">43</th><td>    <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2892s" title='s' data-type='const char *' data-ref="2892s">s</dfn>,</td></tr>
+<tr><th id="44">44</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="2893filename" title='filename' data-type='PyObject *' data-ref="2893filename">filename</dfn>,</td></tr>
+<tr><th id="45">45</th><td>    <em>int</em> <dfn class="local col4 decl" id="2894start" title='start' data-type='int' data-ref="2894start">start</dfn>,</td></tr>
+<tr><th id="46">46</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col5 decl" id="2895flags" title='flags' data-type='PyCompilerFlags *' data-ref="2895flags">flags</dfn>,</td></tr>
+<tr><th id="47">47</th><td>    <a class="typedef" href="pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col6 decl" id="2896arena" title='arena' data-type='PyArena *' data-ref="2896arena">arena</dfn>);</td></tr>
+<tr><th id="48">48</th><td><a class="macro" href="pyport.h.html#676" title="struct _mod *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_mod" title='_mod' data-ref="_mod">_mod</a> *) <dfn class="decl" id="PyParser_ASTFromFile" title='PyParser_ASTFromFile' data-ref="PyParser_ASTFromFile">PyParser_ASTFromFile</dfn>(</td></tr>
+<tr><th id="49">49</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col7 decl" id="2897fp" title='fp' data-type='FILE *' data-ref="2897fp">fp</dfn>,</td></tr>
+<tr><th id="50">50</th><td>    <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="2898filename" title='filename' data-type='const char *' data-ref="2898filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="51">51</th><td>    <em>const</em> <em>char</em>* <dfn class="local col9 decl" id="2899enc" title='enc' data-type='const char *' data-ref="2899enc">enc</dfn>,</td></tr>
+<tr><th id="52">52</th><td>    <em>int</em> <dfn class="local col0 decl" id="2900start" title='start' data-type='int' data-ref="2900start">start</dfn>,</td></tr>
+<tr><th id="53">53</th><td>    <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="2901ps1" title='ps1' data-type='const char *' data-ref="2901ps1">ps1</dfn>,</td></tr>
+<tr><th id="54">54</th><td>    <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2902ps2" title='ps2' data-type='const char *' data-ref="2902ps2">ps2</dfn>,</td></tr>
+<tr><th id="55">55</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col3 decl" id="2903flags" title='flags' data-type='PyCompilerFlags *' data-ref="2903flags">flags</dfn>,</td></tr>
+<tr><th id="56">56</th><td>    <em>int</em> *<dfn class="local col4 decl" id="2904errcode" title='errcode' data-type='int *' data-ref="2904errcode">errcode</dfn>,</td></tr>
+<tr><th id="57">57</th><td>    <a class="typedef" href="pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col5 decl" id="2905arena" title='arena' data-type='PyArena *' data-ref="2905arena">arena</dfn>);</td></tr>
+<tr><th id="58">58</th><td><a class="macro" href="pyport.h.html#676" title="struct _mod *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_mod" title='_mod' data-ref="_mod">_mod</a> *) <dfn class="decl" id="PyParser_ASTFromFileObject" title='PyParser_ASTFromFileObject' data-ref="PyParser_ASTFromFileObject">PyParser_ASTFromFileObject</dfn>(</td></tr>
+<tr><th id="59">59</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col6 decl" id="2906fp" title='fp' data-type='FILE *' data-ref="2906fp">fp</dfn>,</td></tr>
+<tr><th id="60">60</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="2907filename" title='filename' data-type='PyObject *' data-ref="2907filename">filename</dfn>,</td></tr>
+<tr><th id="61">61</th><td>    <em>const</em> <em>char</em>* <dfn class="local col8 decl" id="2908enc" title='enc' data-type='const char *' data-ref="2908enc">enc</dfn>,</td></tr>
+<tr><th id="62">62</th><td>    <em>int</em> <dfn class="local col9 decl" id="2909start" title='start' data-type='int' data-ref="2909start">start</dfn>,</td></tr>
+<tr><th id="63">63</th><td>    <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="2910ps1" title='ps1' data-type='const char *' data-ref="2910ps1">ps1</dfn>,</td></tr>
+<tr><th id="64">64</th><td>    <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="2911ps2" title='ps2' data-type='const char *' data-ref="2911ps2">ps2</dfn>,</td></tr>
+<tr><th id="65">65</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col2 decl" id="2912flags" title='flags' data-type='PyCompilerFlags *' data-ref="2912flags">flags</dfn>,</td></tr>
+<tr><th id="66">66</th><td>    <em>int</em> *<dfn class="local col3 decl" id="2913errcode" title='errcode' data-type='int *' data-ref="2913errcode">errcode</dfn>,</td></tr>
+<tr><th id="67">67</th><td>    <a class="typedef" href="pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col4 decl" id="2914arena" title='arena' data-type='PyArena *' data-ref="2914arena">arena</dfn>);</td></tr>
+<tr><th id="68">68</th><td><u>#<span data-ppcond="10">endif</span></u></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="70">ifndef</span> <span class="macro" data-ref="_M/PyParser_SimpleParseString">PyParser_SimpleParseString</span></u></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/PyParser_SimpleParseString" data-ref="_M/PyParser_SimpleParseString">PyParser_SimpleParseString</dfn>(S, B) \</u></td></tr>
+<tr><th id="72">72</th><td><u>    PyParser_SimpleParseStringFlags(S, B, 0)</u></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/PyParser_SimpleParseFile" data-ref="_M/PyParser_SimpleParseFile">PyParser_SimpleParseFile</dfn>(FP, S, B) \</u></td></tr>
+<tr><th id="74">74</th><td><u>    PyParser_SimpleParseFileFlags(FP, S, B, 0)</u></td></tr>
+<tr><th id="75">75</th><td><u>#<span data-ppcond="70">endif</span></u></td></tr>
+<tr><th id="76">76</th><td><a class="macro" href="pyport.h.html#676" title="struct _node *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_node" title='_node' data-ref="_node">_node</a> *) <dfn class="decl" id="PyParser_SimpleParseStringFlags" title='PyParser_SimpleParseStringFlags' data-ref="PyParser_SimpleParseStringFlags">PyParser_SimpleParseStringFlags</dfn>(<em>const</em> <em>char</em> *, <em>int</em>,</td></tr>
+<tr><th id="77">77</th><td>                                                           <em>int</em>);</td></tr>
+<tr><th id="78">78</th><td><u>#<span data-ppcond="78">if</span> !defined(<span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span>) || Py_LIMITED_API+0 &gt;= 0x03030000</u></td></tr>
+<tr><th id="79">79</th><td><a class="macro" href="pyport.h.html#676" title="struct _node *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_node" title='_node' data-ref="_node">_node</a> *) <dfn class="decl" id="PyParser_SimpleParseStringFlagsFilename" title='PyParser_SimpleParseStringFlagsFilename' data-ref="PyParser_SimpleParseStringFlagsFilename">PyParser_SimpleParseStringFlagsFilename</dfn>(<em>const</em> <em>char</em> *,</td></tr>
+<tr><th id="80">80</th><td>                                                                   <em>const</em> <em>char</em> *,</td></tr>
+<tr><th id="81">81</th><td>                                                                   <em>int</em>, <em>int</em>);</td></tr>
+<tr><th id="82">82</th><td><u>#<span data-ppcond="78">endif</span></u></td></tr>
+<tr><th id="83">83</th><td><a class="macro" href="pyport.h.html#676" title="struct _node *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="compile.h.html#_node" title='_node' data-ref="_node">_node</a> *) <dfn class="decl" id="PyParser_SimpleParseFileFlags" title='PyParser_SimpleParseFileFlags' data-ref="PyParser_SimpleParseFileFlags">PyParser_SimpleParseFileFlags</dfn>(<a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <em>const</em> <em>char</em> *,</td></tr>
+<tr><th id="84">84</th><td>                                                         <em>int</em>, <em>int</em>);</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><u>#<span data-ppcond="86">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="87">87</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="PyRun_StringFlags" title='PyRun_StringFlags' data-ref="PyRun_StringFlags">PyRun_StringFlags</dfn>(<em>const</em> <em>char</em> *, <em>int</em>, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *,</td></tr>
+<tr><th id="88">88</th><td>                                         <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *, <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *);</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="PyRun_FileExFlags" title='PyRun_FileExFlags' data-ref="PyRun_FileExFlags">PyRun_FileExFlags</dfn>(</td></tr>
+<tr><th id="91">91</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col5 decl" id="2915fp" title='fp' data-type='FILE *' data-ref="2915fp">fp</dfn>,</td></tr>
+<tr><th id="92">92</th><td>    <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="2916filename" title='filename' data-type='const char *' data-ref="2916filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="93">93</th><td>    <em>int</em> <dfn class="local col7 decl" id="2917start" title='start' data-type='int' data-ref="2917start">start</dfn>,</td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="2918globals" title='globals' data-type='PyObject *' data-ref="2918globals">globals</dfn>,</td></tr>
+<tr><th id="95">95</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="2919locals" title='locals' data-type='PyObject *' data-ref="2919locals">locals</dfn>,</td></tr>
+<tr><th id="96">96</th><td>    <em>int</em> <dfn class="local col0 decl" id="2920closeit" title='closeit' data-type='int' data-ref="2920closeit">closeit</dfn>,</td></tr>
+<tr><th id="97">97</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col1 decl" id="2921flags" title='flags' data-type='PyCompilerFlags *' data-ref="2921flags">flags</dfn>);</td></tr>
+<tr><th id="98">98</th><td><u>#<span data-ppcond="86">endif</span></u></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><u>#<span data-ppcond="100">ifdef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="101">101</th><td>PyAPI_FUNC(PyObject *) Py_CompileString(<em>const</em> <em>char</em> *, <em>const</em> <em>char</em> *, <em>int</em>);</td></tr>
+<tr><th id="102">102</th><td><u>#<span data-ppcond="100">else</span></u></td></tr>
+<tr><th id="103">103</th><td><u>#define <dfn class="macro" id="_M/Py_CompileString" data-ref="_M/Py_CompileString">Py_CompileString</dfn>(str, p, s) Py_CompileStringExFlags(str, p, s, NULL, -1)</u></td></tr>
+<tr><th id="104">104</th><td><u>#define <dfn class="macro" id="_M/Py_CompileStringFlags" data-ref="_M/Py_CompileStringFlags">Py_CompileStringFlags</dfn>(str, p, s, f) Py_CompileStringExFlags(str, p, s, f, -1)</u></td></tr>
+<tr><th id="105">105</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="Py_CompileStringExFlags" title='Py_CompileStringExFlags' data-ref="Py_CompileStringExFlags">Py_CompileStringExFlags</dfn>(</td></tr>
+<tr><th id="106">106</th><td>    <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2922str" title='str' data-type='const char *' data-ref="2922str">str</dfn>,</td></tr>
+<tr><th id="107">107</th><td>    <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="2923filename" title='filename' data-type='const char *' data-ref="2923filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="108">108</th><td>    <em>int</em> <dfn class="local col4 decl" id="2924start" title='start' data-type='int' data-ref="2924start">start</dfn>,</td></tr>
+<tr><th id="109">109</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col5 decl" id="2925flags" title='flags' data-type='PyCompilerFlags *' data-ref="2925flags">flags</dfn>,</td></tr>
+<tr><th id="110">110</th><td>    <em>int</em> <dfn class="local col6 decl" id="2926optimize" title='optimize' data-type='int' data-ref="2926optimize">optimize</dfn>);</td></tr>
+<tr><th id="111">111</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="Py_CompileStringObject" title='Py_CompileStringObject' data-ref="Py_CompileStringObject">Py_CompileStringObject</dfn>(</td></tr>
+<tr><th id="112">112</th><td>    <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="2927str" title='str' data-type='const char *' data-ref="2927str">str</dfn>,</td></tr>
+<tr><th id="113">113</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="2928filename" title='filename' data-type='PyObject *' data-ref="2928filename">filename</dfn>, <em>int</em> <dfn class="local col9 decl" id="2929start" title='start' data-type='int' data-ref="2929start">start</dfn>,</td></tr>
+<tr><th id="114">114</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col0 decl" id="2930flags" title='flags' data-type='PyCompilerFlags *' data-ref="2930flags">flags</dfn>,</td></tr>
+<tr><th id="115">115</th><td>    <em>int</em> <dfn class="local col1 decl" id="2931optimize" title='optimize' data-type='int' data-ref="2931optimize">optimize</dfn>);</td></tr>
+<tr><th id="116">116</th><td><u>#<span data-ppcond="100">endif</span></u></td></tr>
+<tr><th id="117">117</th><td><a class="macro" href="pyport.h.html#676" title="struct symtable *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <dfn class="type" id="symtable" title='symtable' data-ref="symtable"><a class="type" href="#117" title='symtable' data-ref="symtable">symtable</a></dfn> *) <dfn class="decl" id="Py_SymtableString" title='Py_SymtableString' data-ref="Py_SymtableString">Py_SymtableString</dfn>(</td></tr>
+<tr><th id="118">118</th><td>    <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2932str" title='str' data-type='const char *' data-ref="2932str">str</dfn>,</td></tr>
+<tr><th id="119">119</th><td>    <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="2933filename" title='filename' data-type='const char *' data-ref="2933filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="120">120</th><td>    <em>int</em> <dfn class="local col4 decl" id="2934start" title='start' data-type='int' data-ref="2934start">start</dfn>);</td></tr>
+<tr><th id="121">121</th><td><u>#<span data-ppcond="121">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="122">122</th><td><a class="macro" href="pyport.h.html#676" title="struct symtable *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<b>struct</b> <a class="type" href="#117" title='symtable' data-ref="symtable">symtable</a> *) <dfn class="decl" id="Py_SymtableStringObject" title='Py_SymtableStringObject' data-ref="Py_SymtableStringObject">Py_SymtableStringObject</dfn>(</td></tr>
+<tr><th id="123">123</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="2935str" title='str' data-type='const char *' data-ref="2935str">str</dfn>,</td></tr>
+<tr><th id="124">124</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="2936filename" title='filename' data-type='PyObject *' data-ref="2936filename">filename</dfn>,</td></tr>
+<tr><th id="125">125</th><td>    <em>int</em> <dfn class="local col7 decl" id="2937start" title='start' data-type='int' data-ref="2937start">start</dfn>);</td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="121">endif</span></u></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="PyErr_Print" title='PyErr_Print' data-ref="PyErr_Print">PyErr_Print</dfn>(<em>void</em>);</td></tr>
+<tr><th id="129">129</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="PyErr_PrintEx" title='PyErr_PrintEx' data-ref="PyErr_PrintEx">PyErr_PrintEx</dfn>(<em>int</em>);</td></tr>
+<tr><th id="130">130</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="PyErr_Display" title='PyErr_Display' data-ref="PyErr_Display">PyErr_Display</dfn>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *);</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><u>#<span data-ppcond="132">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="133">133</th><td><i>/* Use macros for a bunch of old variants */</i></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/PyRun_String" data-ref="_M/PyRun_String">PyRun_String</dfn>(str, s, g, l) PyRun_StringFlags(str, s, g, l, NULL)</u></td></tr>
+<tr><th id="135">135</th><td><u>#define <dfn class="macro" id="_M/PyRun_AnyFile" data-ref="_M/PyRun_AnyFile">PyRun_AnyFile</dfn>(fp, name) PyRun_AnyFileExFlags(fp, name, 0, NULL)</u></td></tr>
+<tr><th id="136">136</th><td><u>#define <dfn class="macro" id="_M/PyRun_AnyFileEx" data-ref="_M/PyRun_AnyFileEx">PyRun_AnyFileEx</dfn>(fp, name, closeit) \</u></td></tr>
+<tr><th id="137">137</th><td><u>    PyRun_AnyFileExFlags(fp, name, closeit, NULL)</u></td></tr>
+<tr><th id="138">138</th><td><u>#define <dfn class="macro" id="_M/PyRun_AnyFileFlags" data-ref="_M/PyRun_AnyFileFlags">PyRun_AnyFileFlags</dfn>(fp, name, flags) \</u></td></tr>
+<tr><th id="139">139</th><td><u>    PyRun_AnyFileExFlags(fp, name, 0, flags)</u></td></tr>
+<tr><th id="140">140</th><td><u>#define <dfn class="macro" id="_M/PyRun_SimpleString" data-ref="_M/PyRun_SimpleString">PyRun_SimpleString</dfn>(s) PyRun_SimpleStringFlags(s, NULL)</u></td></tr>
+<tr><th id="141">141</th><td><u>#define <dfn class="macro" id="_M/PyRun_SimpleFile" data-ref="_M/PyRun_SimpleFile">PyRun_SimpleFile</dfn>(f, p) PyRun_SimpleFileExFlags(f, p, 0, NULL)</u></td></tr>
+<tr><th id="142">142</th><td><u>#define <dfn class="macro" id="_M/PyRun_SimpleFileEx" data-ref="_M/PyRun_SimpleFileEx">PyRun_SimpleFileEx</dfn>(f, p, c) PyRun_SimpleFileExFlags(f, p, c, NULL)</u></td></tr>
+<tr><th id="143">143</th><td><u>#define <dfn class="macro" id="_M/PyRun_InteractiveOne" data-ref="_M/PyRun_InteractiveOne">PyRun_InteractiveOne</dfn>(f, p) PyRun_InteractiveOneFlags(f, p, NULL)</u></td></tr>
+<tr><th id="144">144</th><td><u>#define <dfn class="macro" id="_M/PyRun_InteractiveLoop" data-ref="_M/PyRun_InteractiveLoop">PyRun_InteractiveLoop</dfn>(f, p) PyRun_InteractiveLoopFlags(f, p, NULL)</u></td></tr>
+<tr><th id="145">145</th><td><u>#define <dfn class="macro" id="_M/PyRun_File" data-ref="_M/PyRun_File">PyRun_File</dfn>(fp, p, s, g, l) \</u></td></tr>
+<tr><th id="146">146</th><td><u>    PyRun_FileExFlags(fp, p, s, g, l, 0, NULL)</u></td></tr>
+<tr><th id="147">147</th><td><u>#define <dfn class="macro" id="_M/PyRun_FileEx" data-ref="_M/PyRun_FileEx">PyRun_FileEx</dfn>(fp, p, s, g, l, c) \</u></td></tr>
+<tr><th id="148">148</th><td><u>    PyRun_FileExFlags(fp, p, s, g, l, c, NULL)</u></td></tr>
+<tr><th id="149">149</th><td><u>#define <dfn class="macro" id="_M/PyRun_FileFlags" data-ref="_M/PyRun_FileFlags">PyRun_FileFlags</dfn>(fp, p, s, g, l, flags) \</u></td></tr>
+<tr><th id="150">150</th><td><u>    PyRun_FileExFlags(fp, p, s, g, l, 0, flags)</u></td></tr>
+<tr><th id="151">151</th><td><u>#<span data-ppcond="132">endif</span></u></td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><i>/* Stuff with no proper home (yet) */</i></td></tr>
+<tr><th id="154">154</th><td><u>#<span data-ppcond="154">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="155">155</th><td><a class="macro" href="pyport.h.html#676" title="char *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>char</em> *) <dfn class="decl" id="PyOS_Readline" title='PyOS_Readline' data-ref="PyOS_Readline">PyOS_Readline</dfn>(<a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <em>const</em> <em>char</em> *);</td></tr>
+<tr><th id="156">156</th><td><u>#<span data-ppcond="154">endif</span></u></td></tr>
+<tr><th id="157">157</th><td><a class="macro" href="pyport.h.html#679" title="extern int" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>int</em>) (*<dfn class="decl" id="PyOS_InputHook" title='PyOS_InputHook' data-ref="PyOS_InputHook">PyOS_InputHook</dfn>)(<em>void</em>);</td></tr>
+<tr><th id="158">158</th><td><a class="macro" href="pyport.h.html#679" title="extern char" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>char</em>) *(*<dfn class="decl" id="PyOS_ReadlineFunctionPointer" title='PyOS_ReadlineFunctionPointer' data-ref="PyOS_ReadlineFunctionPointer">PyOS_ReadlineFunctionPointer</dfn>)(<a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <em>const</em> <em>char</em> *);</td></tr>
+<tr><th id="159">159</th><td><u>#<span data-ppcond="159">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="160">160</th><td><a class="macro" href="pyport.h.html#679" title="extern PyThreadState*" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<a class="typedef" href="pystate.h.html#PyThreadState" title='PyThreadState' data-type='struct _ts' data-ref="PyThreadState">PyThreadState</a>*) <dfn class="decl" id="_PyOS_ReadlineTState" title='_PyOS_ReadlineTState' data-ref="_PyOS_ReadlineTState">_PyOS_ReadlineTState</dfn>;</td></tr>
+<tr><th id="161">161</th><td><u>#<span data-ppcond="159">endif</span></u></td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><i>/* Stack size, in "pointers" (so we get extra safety margins</i></td></tr>
+<tr><th id="164">164</th><td><i>   on 64-bit platforms).  On a 32-bit platform, this translates</i></td></tr>
+<tr><th id="165">165</th><td><i>   to an 8k margin. */</i></td></tr>
+<tr><th id="166">166</th><td><u>#define <dfn class="macro" id="_M/PYOS_STACK_MARGIN" data-ref="_M/PYOS_STACK_MARGIN">PYOS_STACK_MARGIN</dfn> 2048</u></td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="168">if</span> defined(<span class="macro" data-ref="_M/WIN32">WIN32</span>) &amp;&amp; !defined(<span class="macro" data-ref="_M/MS_WIN64">MS_WIN64</span>) &amp;&amp; defined(<span class="macro" data-ref="_M/_MSC_VER">_MSC_VER</span>) &amp;&amp; _MSC_VER &gt;= 1300</u></td></tr>
+<tr><th id="169">169</th><td><i>/* Enable stack checking under Microsoft C */</i></td></tr>
+<tr><th id="170">170</th><td><u>#define USE_STACKCHECK</u></td></tr>
+<tr><th id="171">171</th><td><u>#<span data-ppcond="168">endif</span></u></td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td><u>#<span data-ppcond="173">ifdef</span> <span class="macro" data-ref="_M/USE_STACKCHECK">USE_STACKCHECK</span></u></td></tr>
+<tr><th id="174">174</th><td><i>/* Check that we aren't overflowing our stack */</i></td></tr>
+<tr><th id="175">175</th><td>PyAPI_FUNC(<em>int</em>) PyOS_CheckStack(<em>void</em>);</td></tr>
+<tr><th id="176">176</th><td><u>#<span data-ppcond="173">endif</span></u></td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><u>#<span data-ppcond="178">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="179">179</th><td>}</td></tr>
+<tr><th id="180">180</th><td><u>#<span data-ppcond="178">endif</span></u></td></tr>
+<tr><th id="181">181</th><td><u>#<span data-ppcond="4">endif</span> /* !Py_PYTHONRUN_H */</u></td></tr>
+<tr><th id="182">182</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_asynciomodule.c.html'>codebrowser/Modules/_asynciomodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

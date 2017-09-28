@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/abstract.h' l='270' type='PyObject * _Py_CheckFunctionResult(PyObject * callable, PyObject * result, const char * where)'/>
+<def f='codebrowser/Objects/call.c' l='31' ll='77' type='PyObject * _Py_CheckFunctionResult(PyObject * callable, PyObject * result, const char * where)'/>
+<use f='codebrowser/Objects/call.c' l='129' u='c' c='_PyObject_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='205' u='c' c='_PyObject_FastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='248' u='c' c='PyObject_Call'/>
+<use f='codebrowser/Objects/call.c' l='582' u='c' c='_PyCFunction_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='728' u='c' c='_PyCFunction_FastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='768' u='c' c='cfunction_call_varargs'/>
+<use f='codebrowser/Objects/descrobject.c' l='251' u='c' c='methoddescr_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='289' u='c' c='_PyMethodDescr_FastCallKeywords'/>
+<use f='codebrowser/Objects/typeobject.c' l='922' u='c' c='type_call'/>
+<use f='codebrowser/Python/ceval.c' l='3745' u='c' c='_PyEval_EvalFrameDefault'/>

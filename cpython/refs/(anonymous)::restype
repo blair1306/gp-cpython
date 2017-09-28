@@ -1,0 +1,34 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='65' type='PyObject *'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='94' type='PyObject *'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='207' type='PyObject *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2316' u='w' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3061' u='r' c='PyCFuncPtr_set_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3061' u='w' c='PyCFuncPtr_set_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3071' u='r' c='PyCFuncPtr_set_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3071' u='w' c='PyCFuncPtr_set_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3082' u='r' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3083' u='r' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3084' u='r' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3088' u='r' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3089' u='r' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3090' u='r' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3517' u='r' c='PyCFuncPtr_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3865' u='r' c='PyCFuncPtr_call'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3865' u='r' c='PyCFuncPtr_call'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3865' u='r' c='PyCFuncPtr_call'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3980' u='r' c='PyCFuncPtr_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3980' u='r' c='PyCFuncPtr_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3994' u='r' c='PyCFuncPtr_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3994' u='w' c='PyCFuncPtr_clear'/>
+<offset>1280</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='207'>/* CDataObject or NULL */</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='19' u='r' c='CThunkObject_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='31' u='r' c='CThunkObject_traverse'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='31' u='r' c='CThunkObject_traverse'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='41' u='r' c='CThunkObject_clear'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='41' u='w' c='CThunkObject_clear'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='322' u='w' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='367' u='w' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='36' u='r' c='PyCStgDict_clear'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='36' u='w' c='PyCStgDict_clear'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='89' u='r' c='PyCStgDict_clone'/>

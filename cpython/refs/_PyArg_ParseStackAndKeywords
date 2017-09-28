@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/modsupport.h' l='106' type='int _PyArg_ParseStackAndKeywords(PyObject ** args, Py_ssize_t nargs, PyObject * kwnames, struct _PyArg_Parser * )'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='283' u='c' c='_asyncio_Task_current_task'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='315' u='c' c='_asyncio_Task_all_tasks'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='415' u='c' c='_asyncio_Task_get_stack'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='453' u='c' c='_asyncio_Task_print_stack'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='482' u='c' c='_asyncio_Task__step'/>
+<use f='codebrowser/Modules/clinic/_asynciomodule.c.h' l='511' u='c' c='_asyncio_Task__wakeup'/>
+<use f='codebrowser/Modules/clinic/_datetimemodule.c.h' l='30' u='c' c='datetime_datetime_now'/>
+<use f='codebrowser/Modules/clinic/_pickle.c.h' l='404' u='c' c='_pickle_dump'/>
+<use f='codebrowser/Modules/clinic/_pickle.c.h' l='449' u='c' c='_pickle_dumps'/>
+<use f='codebrowser/Modules/clinic/_pickle.c.h' l='506' u='c' c='_pickle_load'/>
+<use f='codebrowser/Modules/clinic/_pickle.c.h' l='554' u='c' c='_pickle_loads'/>
+<use f='codebrowser/Modules/_sha3/clinic/sha3module.c.h' l='115' u='c' c='_sha3_shake_128_digest'/>
+<use f='codebrowser/Modules/_sha3/clinic/sha3module.c.h' l='145' u='c' c='_sha3_shake_128_hexdigest'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='872' u='c' c='cmath_isclose'/>
+<use f='codebrowser/Modules/clinic/gcmodule.c.h' l='96' u='c' c='gc_collect'/>
+<use f='codebrowser/Modules/clinic/grpmodule.c.h' l='27' u='c' c='grp_getgrgid'/>
+<use f='codebrowser/Modules/clinic/grpmodule.c.h' l='59' u='c' c='grp_getgrnam'/>
+<use f='codebrowser/Modules/clinic/mathmodule.c.h' l='506' u='c' c='math_isclose'/>
+<use f='codebrowser/Modules/clinic/md5module.c.h' l='88' u='c' c='_md5_md5'/>
+<use f='codebrowser/Modules/clinic/pyexpat.c.h' l='252' u='c' c='pyexpat_ParserCreate'/>
+<use f='codebrowser/Modules/clinic/sha1module.c.h' l='88' u='c' c='_sha1_sha1'/>
+<use f='codebrowser/Modules/clinic/sha256module.c.h' l='88' u='c' c='_sha256_sha256'/>
+<use f='codebrowser/Modules/clinic/sha256module.c.h' l='118' u='c' c='_sha256_sha224'/>
+<use f='codebrowser/Modules/clinic/sha512module.c.h' l='88' u='c' c='_sha512_sha512'/>
+<use f='codebrowser/Modules/clinic/sha512module.c.h' l='118' u='c' c='_sha512_sha384'/>
+<use f='codebrowser/Objects/clinic/listobject.c.h' l='139' u='c' c='list_sort'/>
+<use f='codebrowser/Objects/clinic/longobject.c.h' l='158' u='c' c='int_to_bytes'/>
+<use f='codebrowser/Objects/clinic/longobject.c.h' l='205' u='c' c='int_from_bytes'/>
+<use f='codebrowser/Objects/clinic/odictobject.c.h' l='26' u='c' c='OrderedDict_fromkeys'/>
+<use f='codebrowser/Objects/clinic/odictobject.c.h' l='60' u='c' c='OrderedDict_setdefault'/>
+<use f='codebrowser/Objects/clinic/odictobject.c.h' l='92' u='c' c='OrderedDict_popitem'/>
+<use f='codebrowser/Objects/clinic/odictobject.c.h' l='125' u='c' c='OrderedDict_move_to_end'/>
+<use f='codebrowser/Python/clinic/_warnings.c.h' l='29' u='c' c='warnings_warn'/>
+<use f='codebrowser/Python/clinic/bltinmodule.c.h' l='173' u='c' c='builtin_compile'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1747' u='c' c='builtin_print'/>
+<def f='codebrowser/Python/getargs.c' l='1523' ll='1534' type='int _PyArg_ParseStackAndKeywords(PyObject ** args, Py_ssize_t nargs, PyObject * kwnames, struct _PyArg_Parser * parser)'/>

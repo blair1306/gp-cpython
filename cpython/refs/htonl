@@ -1,0 +1,4 @@
+<dec f='include/netinet/in.h' l='379' type='uint32_t htonl(uint32_t __hostlong)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1671' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5667' u='c' c='socket_htonl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6081' u='c' c='socket_getnameinfo'/>

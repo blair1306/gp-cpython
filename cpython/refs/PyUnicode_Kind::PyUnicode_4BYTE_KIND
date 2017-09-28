@@ -1,0 +1,183 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='447' type='4'/>
+<use f='codebrowser/Modules/_csv.c' l='531' u='r' c='parse_save_field'/>
+<use f='codebrowser/Modules/_csv.c' l='1257' u='r' c='csv_writerow'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='283' u='r' c='_io_StringIO_getvalue_impl'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='341' u='r' c='_io_StringIO_read_impl'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='364' u='r' c='_stringio_readline'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='371' u='r' c='_stringio_readline'/>
+<use f='codebrowser/Modules/_io/textio.c' l='343' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/textio.c' l='468' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/textio.c' l='470' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/textio.c' l='481' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/textio.c' l='486' macro='1' u='r'/>
+<use f='codebrowser/Modules/_json.c' l='308' u='r' c='escape_unicode'/>
+<use f='codebrowser/Modules/_json.c' l='540' u='r' c='scanstring_unicode'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1881' u='r' c='unicode_asucs4'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='167' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='167' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='168' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='168' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='169' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='169' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='170' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='170' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_iso2022.c' l='531' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_iso2022.c' l='531' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='311' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='311' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='698' macro='1' u='r'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='698' macro='1' u='r'/>
+<use f='codebrowser/Modules/unicodedata.c' l='581' u='r' c='nfd_nfkd'/>
+<use f='codebrowser/Modules/unicodedata.c' l='603' macro='1' u='r'/>
+<use f='codebrowser/Modules/unicodedata.c' l='605' macro='1' u='r'/>
+<use f='codebrowser/Modules/unicodedata.c' l='763' u='r' c='nfc_nfkc'/>
+<use f='codebrowser/Modules/zipimport.c' l='279' u='r' c='make_filename'/>
+<use f='codebrowser/Objects/longobject.c' l='1742' u='r' c='long_to_decimal_string_internal'/>
+<use f='codebrowser/Objects/longobject.c' l='1920' u='r' c='long_format_binary'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='397' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='420' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='437' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='766' c='make_bloom_mask'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='865' c='findchar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='956' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1011' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1159' c='unicode_kind_name'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1174' c='unicode_kind_name'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1277' u='r' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1468' u='r' c='_copy_characters'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1478' u='r' c='_copy_characters'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1501' u='r' c='_copy_characters'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1511' u='r' c='_copy_characters'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1535' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1771' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1953' u='r' c='unicode_write_cstr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1998' u='r' c='unicode_char'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2070' c='PyUnicode_FromWideChar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2171' c='kind_maxchar_limit'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2279' c='PyUnicode_FromKindAndData'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2316' c='_PyUnicode_FindMaxChar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2357' u='r' c='unicode_adjust_maxchar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2426' c='_PyUnicode_AsKind'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2493' u='r' c='as_ucs4'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4037' u='r' c='PyUnicode_AsUnicodeAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4218' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5013' u='r' c='PyUnicode_DecodeUTF8Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5065' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5193' c='_PyUnicode_AsUTF8String'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5307' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5319' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5442' u='r' c='_PyUnicode_EncodeUTF32'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5636' u='r' c='PyUnicode_DecodeUTF16Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5741' u='r' c='_PyUnicode_EncodeUTF16'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5793' u='r' c='_PyUnicode_EncodeUTF16'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5957' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5974' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5975' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5976' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5977' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5979' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5980' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5981' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5982' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5984' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5986' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5998' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6045' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6079' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6092' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6093' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6331' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6346' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6347' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6371' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6966' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6989' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6991' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9091' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9153' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9289' c='any_find_slice'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9307' c='any_find_slice'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9378' c='_PyUnicode_InsertThousandsGrouping'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9457' c='PyUnicode_Count'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9876' c='case_operation'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10099' c='_PyUnicode_FastFill'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10099' c='pad'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10099' c='pad'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10222' c='PyUnicode_Splitlines'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10268' c='split'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10314' c='split'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10360' c='rsplit'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10406' c='rsplit'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10430' c='anylib_find'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10449' c='anylib_count'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10474' u='r' c='replace_1char_inplace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10904' c='unicode_compare'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10923' c='unicode_compare'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10931' c='unicode_compare'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10940' c='unicode_compare'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11280' c='PyUnicode_Contains'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11503' c='unicode_count'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10099' c='unicode_expandtabs_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11617' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12577' u='r' c='unicode_repeat'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12711' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12712' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12724' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12725' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12731' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12732' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12735' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12736' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12739' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12740' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12745' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12746' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12747' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12748' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12753' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12762' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12765' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12766' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12767' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12771' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12772' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12773' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12774' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12775' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12779' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12780' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12781' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12782' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12783' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12784' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12785' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12786' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12787' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12792' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12977' c='PyUnicode_Partition'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13035' c='PyUnicode_RPartition'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13372' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13373' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13621' c='_PyUnicodeWriter_PrepareKindInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13636' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13757' c='_PyUnicodeWriter_WriteASCIIString'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1042' u='r' c='formatteriter_next'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14056' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14839' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14853' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14854' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10099' c='unicode_format_arg_output'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14876' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14882' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14883' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10099' c='unicode_format_arg_output'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15116' u='r' c='unicode_subtype_new'/>
+<use f='codebrowser/Python/codecs.c' l='724' macro='1' u='r'/>
+<use f='codebrowser/Python/codecs.c' l='750' macro='1' u='r'/>
+<use f='codebrowser/Python/compile.c' l='275' macro='1' u='r'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='611' macro='1' u='r'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='624' macro='1' u='r'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='669' macro='1' u='r'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1354' macro='1' u='r'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1374' macro='1' u='r'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1378' macro='1' u='r'/>

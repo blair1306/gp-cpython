@@ -1,0 +1,9 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='1154' ll='1192' type='PyObject * fieldnameiter_next(fieldnameiterobject * it)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1226'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1226'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='1148'>/* returns a tuple:
+   (is_attr, value)
+   is_attr is true if we used attribute syntax (e.g., &apos;.foo&apos;)
+              false if we used index syntax (e.g., &apos;[foo]&apos;)
+   value is an integer or string
+*/</doc>

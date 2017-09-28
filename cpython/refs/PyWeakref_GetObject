@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='62' type='PyObject * PyWeakref_GetObject(PyObject * ref)'/>
+<use f='codebrowser/Modules/_ssl.c' l='394' u='c' c='PySSL_SetError'/>
+<use f='codebrowser/Modules/_ssl.c' l='394' u='c' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1831' u='c' c='PySSL_get_owner'/>
+<use f='codebrowser/Modules/_ssl.c' l='394' u='c' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='394' u='c' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='394' u='c' c='_ssl__SSLSocket_shutdown_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3775' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_ssl.c' l='3777' u='c' c='_servername_callback'/>
+<def f='codebrowser/Objects/weakrefobject.c' l='856' ll='864' type='PyObject * PyWeakref_GetObject(PyObject * ref)'/>

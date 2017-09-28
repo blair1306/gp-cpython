@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/parsetok.h' l='102' type='void PyParser_ClearError(perrdetail * )'/>
+<use f='codebrowser/Modules/parsermodule.c' l='623' u='c' c='parser_do_parse'/>
+<def f='codebrowser/Python/pythonrun.c' l='1253' ll='1257' type='void PyParser_ClearError(perrdetail * err)'/>
+<doc f='codebrowser/Python/pythonrun.c' l='1250'>/* May want to move a more generalized form of this to parsetok.c or
+   even parser modules. */</doc>

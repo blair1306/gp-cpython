@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='214' type='int _PyObject_HasFastCall(PyObject * callable)'/>
+<doc f='codebrowser/Include/abstract.h' l='212'>/* Return 1 if callable supports FASTCALL calling convention for positional
+   arguments: see _PyObject_FastCallDict() and _PyObject_FastCallKeywords() */</doc>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='108' u='c' c='partial_new'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='366' u='c' c='partial_setstate'/>
+<def f='codebrowser/Objects/call.c' l='5' ll='18' type='int _PyObject_HasFastCall(PyObject * callable)'/>

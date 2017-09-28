@@ -1,0 +1,5 @@
+<def f='include/linux/tipc.h' l='57' ll='61'/>
+<size>12</size>
+<mbr r='tipc_name_seq::type' o='0' t='__u32'/>
+<mbr r='tipc_name_seq::lower' o='32' t='__u32'/>
+<mbr r='tipc_name_seq::upper' o='64' t='__u32'/>

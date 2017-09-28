@@ -1,0 +1,8 @@
+<dec f='include/dirent.h' l='134' type='DIR * opendir(const char * __name)'/>
+<doc f='include/dirent.h' l='129'>/* Open a directory stream on NAME.
+   Return a DIR stream on the directory, or NULL if it could not be opened.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3602' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12248' u='c' c='os_scandir_impl'/>

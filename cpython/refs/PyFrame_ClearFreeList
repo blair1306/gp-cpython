@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/frameobject.h' l='88' type='int PyFrame_ClearFreeList()'/>
+<use f='codebrowser/Modules/gcmodule.c' l='895' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/frameobject.c' l='982' ll='995' type='int PyFrame_ClearFreeList()'/>
+<use f='codebrowser/Objects/frameobject.c' l='1000' u='c' c='PyFrame_Fini'/>
+<doc f='codebrowser/Objects/frameobject.c' l='981'>/* Clear out the free list */</doc>

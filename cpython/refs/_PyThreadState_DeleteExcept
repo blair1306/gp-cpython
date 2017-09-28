@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pystate.h' l='220' type='void _PyThreadState_DeleteExcept(PyThreadState * tstate)'/>
+<use f='codebrowser/Python/ceval.c' l='256' u='c' c='PyEval_ReInitThreads'/>
+<def f='codebrowser/Python/pystate.c' l='535' ll='562' type='void _PyThreadState_DeleteExcept(PyThreadState * tstate)'/>
+<doc f='codebrowser/Python/pystate.c' l='528'>/*
+ * Delete all thread states except the one passed as argument.
+ * Note that, if there is a current thread state, it *must* be the one
+ * passed as argument.  Also, this won&apos;t touch any other interpreters
+ * than the current one, since we don&apos;t know which thread state should
+ * be kept in those other interpreteres.
+ */</doc>

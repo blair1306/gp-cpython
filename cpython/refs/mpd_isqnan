@@ -1,0 +1,20 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='731' type='int mpd_isqnan(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3700' u='c' c='PyDec_AsTuple'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4125' u='c' c='dec_mpd_isqnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5176' u='c' c='ctx_mpd_isqnan'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='476' u='c' c='_mpd_to_string'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='298' ll='302' macro='1' type='int mpd_isqnan(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1569' u='c' c='mpd_qcheck_nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1602' u='c' c='mpd_qcheck_3nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1605' u='c' c='mpd_qcheck_3nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2292' u='c' c='mpd_cmp_total'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2293' u='c' c='mpd_cmp_total'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2670' u='c' c='mpd_class'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5110' u='c' c='mpd_qmax'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5113' u='c' c='mpd_qmax'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5146' u='c' c='mpd_qmax_mag'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5149' u='c' c='mpd_qmax_mag'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5183' u='c' c='mpd_qmin'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5186' u='c' c='mpd_qmin'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5219' u='c' c='mpd_qmin_mag'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5222' u='c' c='mpd_qmin_mag'/>

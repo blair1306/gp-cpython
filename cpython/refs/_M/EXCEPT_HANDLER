@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/opcode.h' l='136'/>
+<doc f='codebrowser/Include/opcode.h' l='132'>/* EXCEPT_HANDLER is a special, implicit block type which is created when
+   entering an except handler. It is not an opcode but we define it here
+   as we want it to be available to both frameobject.c and ceval.c, while
+   remaining private.*/</doc>
+<use f='codebrowser/Python/ceval.c' l='2057' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='2088' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3211' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3600' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3615' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3695' u='c'/>

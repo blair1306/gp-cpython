@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/fileutils.h' l='13' type='char * Py_EncodeLocale(const wchar_t * text, size_t * error_pos)'/>
+<use f='codebrowser/Modules/getpath.c' l='124' u='c' c='_Py_wstat'/>
+<use f='codebrowser/Modules/main.c' l='865' u='c' c='Py_Main'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3445' u='c' c='PyUnicode_EncodeLocale'/>
+<def f='codebrowser/Python/fileutils.c' l='424' ll='526' type='char * Py_EncodeLocale(const wchar_t * text, size_t * error_pos)'/>
+<use f='codebrowser/Python/fileutils.c' l='1040' u='c' c='_Py_wfopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1360' u='c' c='_Py_wreadlink'/>
+<use f='codebrowser/Python/fileutils.c' l='1405' u='c' c='_Py_wrealpath'/>
+<doc f='codebrowser/Python/fileutils.c' l='412'>/* Encode a wide character string to the locale encoding with the
+   surrogateescape error handler: surrogate characters in the range
+   U+DC80..U+DCFF are converted to bytes 0x80..0xFF.
+
+   Return a pointer to a newly allocated byte string, use PyMem_Free() to free
+   the memory. Return NULL on encoding or memory allocation error.
+
+   If error_pos is not NULL, *error_pos is set to the index of the invalid
+   character on encoding error, or set to (size_t)-1 otherwise.
+
+   Use the Py_DecodeLocale() function to decode the bytes string back to a wide
+   character string. */</doc>

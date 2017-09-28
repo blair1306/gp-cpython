@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/pyerrors.h' l='166' type='PyObject *'/>
+<use f='codebrowser/Modules/_elementtree.c' l='4012' u='r' c='PyInit__elementtree'/>
+<use f='codebrowser/Modules/_io/textio.c' l='921' u='r' c='_io_TextIOWrapper___init___impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='1573' u='r' c='PyInit_zipimport'/>
+<use f='codebrowser/Objects/capsule.c' l='222' u='r' c='PyCapsule_Import'/>
+<def f='codebrowser/Objects/exceptions.c' l='747' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2516' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2588' macro='1' u='r'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2553' u='r' c='fix_struct_error_int'/>
+<use f='codebrowser/Python/ceval.c' l='5003' u='r' c='import_name'/>
+<use f='codebrowser/Python/ceval.c' l='5119' u='r' c='import_all_from'/>
+<use f='codebrowser/Python/errors.c' l='732' u='r' c='PyErr_SetImportErrorSubclass'/>
+<use f='codebrowser/Python/errors.c' l='778' u='r' c='PyErr_SetImportError'/>
+<use f='codebrowser/Python/import.c' l='826' u='r' c='exec_code_in_module'/>
+<use f='codebrowser/Python/import.c' l='991' u='r' c='get_path_importer'/>
+<use f='codebrowser/Python/import.c' l='1123' u='r' c='get_frozen_object'/>
+<use f='codebrowser/Python/import.c' l='1129' u='r' c='get_frozen_object'/>
+<use f='codebrowser/Python/import.c' l='1147' u='r' c='is_frozen_package'/>
+<use f='codebrowser/Python/import.c' l='1180' u='r' c='PyImport_ImportFrozenModuleObject'/>
+<use f='codebrowser/Python/import.c' l='1298' u='r' c='remove_importlib_frames'/>
+<use f='codebrowser/Python/import.c' l='1446' u='r' c='resolve_name'/>

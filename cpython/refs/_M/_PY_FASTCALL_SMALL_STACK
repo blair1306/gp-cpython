@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/abstract.h' l='210'/>
+<doc f='codebrowser/Include/abstract.h' l='201'>/* Suggested size (number of positional arguments) for arrays of PyObject*
+   allocated on a C stack to avoid allocating memory on the heap memory. Such
+   array is used to pass positional arguments to call functions of the
+   _PyObject_FastCall() family.
+
+   The size is chosen to not abuse the C stack and so limit the risk of stack
+   overflow. The size is also chosen to allow using the small stack for most
+   function calls of the Python standard library. On 64-bit CPU, it allocates
+   40 bytes on the stack. */</doc>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='131' u='c'/>
+<use f='codebrowser/Objects/call.c' l='839' u='c'/>
+<use f='codebrowser/Objects/call.c' l='874' u='c'/>
+<use f='codebrowser/Objects/call.c' l='915' u='c'/>
+<use f='codebrowser/Objects/call.c' l='1153' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1181' u='c'/>

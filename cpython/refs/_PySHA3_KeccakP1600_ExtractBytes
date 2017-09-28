@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakP-1600-SnP-opt64.h' l='45' macro='1' type='void _PySHA3_KeccakP1600_ExtractBytes(const void * state, unsigned char * data, unsigned int offset, unsigned int length)'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='119' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='131' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='287' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='307' macro='1' u='c'/>
+<def f='codebrowser/Modules/_sha3/kcp/KeccakP-1600-opt64.c' l='373' macro='1' type='void _PySHA3_KeccakP1600_ExtractBytes(const void * state, unsigned char * data, unsigned int offset, unsigned int length)'/>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakP-1600-opt64.c' l='371'>/* ---------------------------------------------------------------- */</doc>

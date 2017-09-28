@@ -1,0 +1,520 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bytesobject.c.h source code [codebrowser/Objects/clinic/bytesobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/bytesobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='bytesobject.c.h.html'>bytesobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_split__doc__[] = &quot;split($self, /, sep=None, maxsplit=-1)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of the sections in the bytes, using sep as the delimiter.\n&quot;&quot;\n&quot;&quot;  sep\n&quot;&quot;    The delimiter according which to split the bytes.\n&quot;&quot;    None (the default value) means split on ASCII whitespace characters\n&quot;&quot;    (space, tab, return, newline, formfeed, vertical tab).\n&quot;&quot;  maxsplit\n&quot;&quot;    Maximum number of splits to do.\n&quot;&quot;    -1 (the default value) means no limit.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_split__doc__" title='bytes_split__doc__' data-ref="bytes_split__doc__">bytes_split__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"split($self, /, sep=None, maxsplit=-1)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return a list of the sections in the bytes, using sep as the delimiter.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"  sep\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"    The delimiter according which to split the bytes.\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"    None (the default value) means split on ASCII whitespace characters\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"    (space, tab, return, newline, formfeed, vertical tab).\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"  maxsplit\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"    Maximum number of splits to do.\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"    -1 (the default value) means no limit."</q>);</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/BYTES_SPLIT_METHODDEF" data-ref="_M/BYTES_SPLIT_METHODDEF">BYTES_SPLIT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="20">20</th><td><u>    {"split", (PyCFunction)bytes_split, METH_FASTCALL|METH_KEYWORDS, bytes_split__doc__},</u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="23">23</th><td><a class="decl" href="../bytesobject.c.html#bytes_split_impl" title='bytes_split_impl' data-ref="bytes_split_impl" id="bytes_split_impl">bytes_split_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='PyBytesObject *' data-ref="1self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2sep" title='sep' data-type='PyObject *' data-ref="2sep">sep</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="3maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="3maxsplit">maxsplit</dfn>);</td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="26">26</th><td><dfn class="decl def" id="bytes_split" title='bytes_split' data-ref="bytes_split">bytes_split</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='PyBytesObject *' data-ref="4self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject **' data-ref="5args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="6nargs" title='nargs' data-type='Py_ssize_t' data-ref="6nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7kwnames" title='kwnames' data-type='PyObject *' data-ref="7kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="8return_value" title='return_value' data-type='PyObject *' data-ref="8return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="29">29</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col9 decl" id="9_keywords" title='_keywords' data-type='const char *const [3]' data-ref="9_keywords">_keywords</dfn>[] = {<q>"sep"</q>, <q>"maxsplit"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="30">30</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col0 decl" id="10_parser" title='_parser' data-type='_PyArg_Parser' data-ref="10_parser">_parser</dfn> = {<q>"|On:split"</q>, <a class="local col9 ref" href="#9_keywords" title='_keywords' data-ref="9_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="31">31</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11sep" title='sep' data-type='PyObject *' data-ref="11sep">sep</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="32">32</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="12maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="12maxsplit">maxsplit</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <a class="local col6 ref" href="#6nargs" title='nargs' data-ref="6nargs">nargs</a>, <a class="local col7 ref" href="#7kwnames" title='kwnames' data-ref="7kwnames">kwnames</a>, &amp;<a class="local col0 ref" href="#10_parser" title='_parser' data-ref="10_parser">_parser</a>,</td></tr>
+<tr><th id="35">35</th><td>        &amp;<a class="local col1 ref" href="#11sep" title='sep' data-ref="11sep">sep</a>, &amp;<a class="local col2 ref" href="#12maxsplit" title='maxsplit' data-ref="12maxsplit">maxsplit</a>)) {</td></tr>
+<tr><th id="36">36</th><td>        <b>goto</b> <a class="lbl" href="#13exit" data-ref="13exit">exit</a>;</td></tr>
+<tr><th id="37">37</th><td>    }</td></tr>
+<tr><th id="38">38</th><td>    <a class="local col8 ref" href="#8return_value" title='return_value' data-ref="8return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_split_impl" title='bytes_split_impl' data-ref="bytes_split_impl">bytes_split_impl</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>, <a class="local col1 ref" href="#11sep" title='sep' data-ref="11sep">sep</a>, <a class="local col2 ref" href="#12maxsplit" title='maxsplit' data-ref="12maxsplit">maxsplit</a>);</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><dfn class="lbl" id="13exit" data-ref="13exit">exit</dfn>:</td></tr>
+<tr><th id="41">41</th><td>    <b>return</b> <a class="local col8 ref" href="#8return_value" title='return_value' data-ref="8return_value">return_value</a>;</td></tr>
+<tr><th id="42">42</th><td>}</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_partition__doc__[] = &quot;partition($self, sep, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Partition the bytes into three parts using the given separator.\n&quot;&quot;\n&quot;&quot;This will search for the separator sep in the bytes. If the separator is found,\n&quot;&quot;returns a 3-tuple containing the part before the separator, the separator\n&quot;&quot;itself, and the part after it.\n&quot;&quot;\n&quot;&quot;If the separator is not found, returns a 3-tuple containing the original bytes\n&quot;&quot;object and two empty bytes objects.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_partition__doc__" title='bytes_partition__doc__' data-ref="bytes_partition__doc__">bytes_partition__doc__</dfn>,</td></tr>
+<tr><th id="45">45</th><td><q>"partition($self, sep, /)\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"--\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"Partition the bytes into three parts using the given separator.\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"This will search for the separator sep in the bytes. If the separator is found,\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"returns a 3-tuple containing the part before the separator, the separator\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"itself, and the part after it.\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"If the separator is not found, returns a 3-tuple containing the original bytes\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"object and two empty bytes objects."</q>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/BYTES_PARTITION_METHODDEF" data-ref="_M/BYTES_PARTITION_METHODDEF">BYTES_PARTITION_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="58">58</th><td><u>    {"partition", (PyCFunction)bytes_partition, METH_O, bytes_partition__doc__},</u></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="61">61</th><td><a class="decl" href="../bytesobject.c.html#bytes_partition_impl" title='bytes_partition_impl' data-ref="bytes_partition_impl" id="bytes_partition_impl">bytes_partition_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col4 decl" id="14self" title='self' data-type='PyBytesObject *' data-ref="14self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col5 decl" id="15sep" title='sep' data-type='Py_buffer *' data-ref="15sep">sep</dfn>);</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="64">64</th><td><dfn class="decl def" id="bytes_partition" title='bytes_partition' data-ref="bytes_partition">bytes_partition</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col6 decl" id="16self" title='self' data-type='PyBytesObject *' data-ref="16self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="17arg" title='arg' data-type='PyObject *' data-ref="17arg">arg</dfn>)</td></tr>
+<tr><th id="65">65</th><td>{</td></tr>
+<tr><th id="66">66</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18return_value" title='return_value' data-type='PyObject *' data-ref="18return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="67">67</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col9 decl" id="19sep" title='sep' data-type='Py_buffer' data-ref="19sep">sep</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col7 ref" href="#17arg" title='arg' data-ref="17arg">arg</a>, <q>"y*:partition"</q>, &amp;<a class="local col9 ref" href="#19sep" title='sep' data-ref="19sep">sep</a>)) {</td></tr>
+<tr><th id="70">70</th><td>        <b>goto</b> <a class="lbl" href="#20exit" data-ref="20exit">exit</a>;</td></tr>
+<tr><th id="71">71</th><td>    }</td></tr>
+<tr><th id="72">72</th><td>    <a class="local col8 ref" href="#18return_value" title='return_value' data-ref="18return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_partition_impl" title='bytes_partition_impl' data-ref="bytes_partition_impl">bytes_partition_impl</a>(<a class="local col6 ref" href="#16self" title='self' data-ref="16self">self</a>, &amp;<a class="local col9 ref" href="#19sep" title='sep' data-ref="19sep">sep</a>);</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><dfn class="lbl" id="20exit" data-ref="20exit">exit</dfn>:</td></tr>
+<tr><th id="75">75</th><td>    <i>/* Cleanup for sep */</i></td></tr>
+<tr><th id="76">76</th><td>    <b>if</b> (<a class="local col9 ref" href="#19sep" title='sep' data-ref="19sep">sep</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="77">77</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col9 ref" href="#19sep" title='sep' data-ref="19sep">sep</a>);</td></tr>
+<tr><th id="78">78</th><td>    }</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td>    <b>return</b> <a class="local col8 ref" href="#18return_value" title='return_value' data-ref="18return_value">return_value</a>;</td></tr>
+<tr><th id="81">81</th><td>}</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_rpartition__doc__[] = &quot;rpartition($self, sep, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Partition the bytes into three parts using the given separator.\n&quot;&quot;\n&quot;&quot;This will search for the separator sep in the bytes, starting and the end. If\n&quot;&quot;the separator is found, returns a 3-tuple containing the part before the\n&quot;&quot;separator, the separator itself, and the part after it.\n&quot;&quot;\n&quot;&quot;If the separator is not found, returns a 3-tuple containing two empty bytes\n&quot;&quot;objects and the original bytes object.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_rpartition__doc__" title='bytes_rpartition__doc__' data-ref="bytes_rpartition__doc__">bytes_rpartition__doc__</dfn>,</td></tr>
+<tr><th id="84">84</th><td><q>"rpartition($self, sep, /)\n"</q></td></tr>
+<tr><th id="85">85</th><td><q>"--\n"</q></td></tr>
+<tr><th id="86">86</th><td><q>"\n"</q></td></tr>
+<tr><th id="87">87</th><td><q>"Partition the bytes into three parts using the given separator.\n"</q></td></tr>
+<tr><th id="88">88</th><td><q>"\n"</q></td></tr>
+<tr><th id="89">89</th><td><q>"This will search for the separator sep in the bytes, starting and the end. If\n"</q></td></tr>
+<tr><th id="90">90</th><td><q>"the separator is found, returns a 3-tuple containing the part before the\n"</q></td></tr>
+<tr><th id="91">91</th><td><q>"separator, the separator itself, and the part after it.\n"</q></td></tr>
+<tr><th id="92">92</th><td><q>"\n"</q></td></tr>
+<tr><th id="93">93</th><td><q>"If the separator is not found, returns a 3-tuple containing two empty bytes\n"</q></td></tr>
+<tr><th id="94">94</th><td><q>"objects and the original bytes object."</q>);</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/BYTES_RPARTITION_METHODDEF" data-ref="_M/BYTES_RPARTITION_METHODDEF">BYTES_RPARTITION_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="97">97</th><td><u>    {"rpartition", (PyCFunction)bytes_rpartition, METH_O, bytes_rpartition__doc__},</u></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="100">100</th><td><a class="decl" href="../bytesobject.c.html#bytes_rpartition_impl" title='bytes_rpartition_impl' data-ref="bytes_rpartition_impl" id="bytes_rpartition_impl">bytes_rpartition_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col1 decl" id="21self" title='self' data-type='PyBytesObject *' data-ref="21self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col2 decl" id="22sep" title='sep' data-type='Py_buffer *' data-ref="22sep">sep</dfn>);</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="103">103</th><td><dfn class="decl def" id="bytes_rpartition" title='bytes_rpartition' data-ref="bytes_rpartition">bytes_rpartition</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col3 decl" id="23self" title='self' data-type='PyBytesObject *' data-ref="23self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24arg" title='arg' data-type='PyObject *' data-ref="24arg">arg</dfn>)</td></tr>
+<tr><th id="104">104</th><td>{</td></tr>
+<tr><th id="105">105</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25return_value" title='return_value' data-type='PyObject *' data-ref="25return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="106">106</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col6 decl" id="26sep" title='sep' data-type='Py_buffer' data-ref="26sep">sep</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col4 ref" href="#24arg" title='arg' data-ref="24arg">arg</a>, <q>"y*:rpartition"</q>, &amp;<a class="local col6 ref" href="#26sep" title='sep' data-ref="26sep">sep</a>)) {</td></tr>
+<tr><th id="109">109</th><td>        <b>goto</b> <a class="lbl" href="#27exit" data-ref="27exit">exit</a>;</td></tr>
+<tr><th id="110">110</th><td>    }</td></tr>
+<tr><th id="111">111</th><td>    <a class="local col5 ref" href="#25return_value" title='return_value' data-ref="25return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_rpartition_impl" title='bytes_rpartition_impl' data-ref="bytes_rpartition_impl">bytes_rpartition_impl</a>(<a class="local col3 ref" href="#23self" title='self' data-ref="23self">self</a>, &amp;<a class="local col6 ref" href="#26sep" title='sep' data-ref="26sep">sep</a>);</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><dfn class="lbl" id="27exit" data-ref="27exit">exit</dfn>:</td></tr>
+<tr><th id="114">114</th><td>    <i>/* Cleanup for sep */</i></td></tr>
+<tr><th id="115">115</th><td>    <b>if</b> (<a class="local col6 ref" href="#26sep" title='sep' data-ref="26sep">sep</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="116">116</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col6 ref" href="#26sep" title='sep' data-ref="26sep">sep</a>);</td></tr>
+<tr><th id="117">117</th><td>    }</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>    <b>return</b> <a class="local col5 ref" href="#25return_value" title='return_value' data-ref="25return_value">return_value</a>;</td></tr>
+<tr><th id="120">120</th><td>}</td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_rsplit__doc__[] = &quot;rsplit($self, /, sep=None, maxsplit=-1)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of the sections in the bytes, using sep as the delimiter.\n&quot;&quot;\n&quot;&quot;  sep\n&quot;&quot;    The delimiter according which to split the bytes.\n&quot;&quot;    None (the default value) means split on ASCII whitespace characters\n&quot;&quot;    (space, tab, return, newline, formfeed, vertical tab).\n&quot;&quot;  maxsplit\n&quot;&quot;    Maximum number of splits to do.\n&quot;&quot;    -1 (the default value) means no limit.\n&quot;&quot;\n&quot;&quot;Splitting is done starting at the end of the bytes and working to the front.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_rsplit__doc__" title='bytes_rsplit__doc__' data-ref="bytes_rsplit__doc__">bytes_rsplit__doc__</dfn>,</td></tr>
+<tr><th id="123">123</th><td><q>"rsplit($self, /, sep=None, maxsplit=-1)\n"</q></td></tr>
+<tr><th id="124">124</th><td><q>"--\n"</q></td></tr>
+<tr><th id="125">125</th><td><q>"\n"</q></td></tr>
+<tr><th id="126">126</th><td><q>"Return a list of the sections in the bytes, using sep as the delimiter.\n"</q></td></tr>
+<tr><th id="127">127</th><td><q>"\n"</q></td></tr>
+<tr><th id="128">128</th><td><q>"  sep\n"</q></td></tr>
+<tr><th id="129">129</th><td><q>"    The delimiter according which to split the bytes.\n"</q></td></tr>
+<tr><th id="130">130</th><td><q>"    None (the default value) means split on ASCII whitespace characters\n"</q></td></tr>
+<tr><th id="131">131</th><td><q>"    (space, tab, return, newline, formfeed, vertical tab).\n"</q></td></tr>
+<tr><th id="132">132</th><td><q>"  maxsplit\n"</q></td></tr>
+<tr><th id="133">133</th><td><q>"    Maximum number of splits to do.\n"</q></td></tr>
+<tr><th id="134">134</th><td><q>"    -1 (the default value) means no limit.\n"</q></td></tr>
+<tr><th id="135">135</th><td><q>"\n"</q></td></tr>
+<tr><th id="136">136</th><td><q>"Splitting is done starting at the end of the bytes and working to the front."</q>);</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><u>#define <dfn class="macro" id="_M/BYTES_RSPLIT_METHODDEF" data-ref="_M/BYTES_RSPLIT_METHODDEF">BYTES_RSPLIT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="139">139</th><td><u>    {"rsplit", (PyCFunction)bytes_rsplit, METH_FASTCALL|METH_KEYWORDS, bytes_rsplit__doc__},</u></td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="142">142</th><td><a class="decl" href="../bytesobject.c.html#bytes_rsplit_impl" title='bytes_rsplit_impl' data-ref="bytes_rsplit_impl" id="bytes_rsplit_impl">bytes_rsplit_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col8 decl" id="28self" title='self' data-type='PyBytesObject *' data-ref="28self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29sep" title='sep' data-type='PyObject *' data-ref="29sep">sep</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="30maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="30maxsplit">maxsplit</dfn>);</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="145">145</th><td><dfn class="decl def" id="bytes_rsplit" title='bytes_rsplit' data-ref="bytes_rsplit">bytes_rsplit</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col1 decl" id="31self" title='self' data-type='PyBytesObject *' data-ref="31self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="32args" title='args' data-type='PyObject **' data-ref="32args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="33nargs" title='nargs' data-type='Py_ssize_t' data-ref="33nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34kwnames" title='kwnames' data-type='PyObject *' data-ref="34kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="146">146</th><td>{</td></tr>
+<tr><th id="147">147</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35return_value" title='return_value' data-type='PyObject *' data-ref="35return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="148">148</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col6 decl" id="36_keywords" title='_keywords' data-type='const char *const [3]' data-ref="36_keywords">_keywords</dfn>[] = {<q>"sep"</q>, <q>"maxsplit"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="149">149</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col7 decl" id="37_parser" title='_parser' data-type='_PyArg_Parser' data-ref="37_parser">_parser</dfn> = {<q>"|On:rsplit"</q>, <a class="local col6 ref" href="#36_keywords" title='_keywords' data-ref="36_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="150">150</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="38sep" title='sep' data-type='PyObject *' data-ref="38sep">sep</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="151">151</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="39maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="39maxsplit">maxsplit</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col2 ref" href="#32args" title='args' data-ref="32args">args</a>, <a class="local col3 ref" href="#33nargs" title='nargs' data-ref="33nargs">nargs</a>, <a class="local col4 ref" href="#34kwnames" title='kwnames' data-ref="34kwnames">kwnames</a>, &amp;<a class="local col7 ref" href="#37_parser" title='_parser' data-ref="37_parser">_parser</a>,</td></tr>
+<tr><th id="154">154</th><td>        &amp;<a class="local col8 ref" href="#38sep" title='sep' data-ref="38sep">sep</a>, &amp;<a class="local col9 ref" href="#39maxsplit" title='maxsplit' data-ref="39maxsplit">maxsplit</a>)) {</td></tr>
+<tr><th id="155">155</th><td>        <b>goto</b> <a class="lbl" href="#40exit" data-ref="40exit">exit</a>;</td></tr>
+<tr><th id="156">156</th><td>    }</td></tr>
+<tr><th id="157">157</th><td>    <a class="local col5 ref" href="#35return_value" title='return_value' data-ref="35return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_rsplit_impl" title='bytes_rsplit_impl' data-ref="bytes_rsplit_impl">bytes_rsplit_impl</a>(<a class="local col1 ref" href="#31self" title='self' data-ref="31self">self</a>, <a class="local col8 ref" href="#38sep" title='sep' data-ref="38sep">sep</a>, <a class="local col9 ref" href="#39maxsplit" title='maxsplit' data-ref="39maxsplit">maxsplit</a>);</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td><dfn class="lbl" id="40exit" data-ref="40exit">exit</dfn>:</td></tr>
+<tr><th id="160">160</th><td>    <b>return</b> <a class="local col5 ref" href="#35return_value" title='return_value' data-ref="35return_value">return_value</a>;</td></tr>
+<tr><th id="161">161</th><td>}</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_join__doc__[] = &quot;join($self, iterable_of_bytes, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Concatenate any number of bytes objects.\n&quot;&quot;\n&quot;&quot;The bytes whose method is called is inserted in between each pair.\n&quot;&quot;\n&quot;&quot;The result is returned as a new bytes object.\n&quot;&quot;\n&quot;&quot;Example: b\&apos;.\&apos;.join([b\&apos;ab\&apos;, b\&apos;pq\&apos;, b\&apos;rs\&apos;]) -&gt; b\&apos;ab.pq.rs\&apos;.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_join__doc__" title='bytes_join__doc__' data-ref="bytes_join__doc__">bytes_join__doc__</dfn>,</td></tr>
+<tr><th id="164">164</th><td><q>"join($self, iterable_of_bytes, /)\n"</q></td></tr>
+<tr><th id="165">165</th><td><q>"--\n"</q></td></tr>
+<tr><th id="166">166</th><td><q>"\n"</q></td></tr>
+<tr><th id="167">167</th><td><q>"Concatenate any number of bytes objects.\n"</q></td></tr>
+<tr><th id="168">168</th><td><q>"\n"</q></td></tr>
+<tr><th id="169">169</th><td><q>"The bytes whose method is called is inserted in between each pair.\n"</q></td></tr>
+<tr><th id="170">170</th><td><q>"\n"</q></td></tr>
+<tr><th id="171">171</th><td><q>"The result is returned as a new bytes object.\n"</q></td></tr>
+<tr><th id="172">172</th><td><q>"\n"</q></td></tr>
+<tr><th id="173">173</th><td><q>"Example: b\'.\'.join([b\'ab\', b\'pq\', b\'rs\']) -&gt; b\'ab.pq.rs\'."</q>);</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><u>#define <dfn class="macro" id="_M/BYTES_JOIN_METHODDEF" data-ref="_M/BYTES_JOIN_METHODDEF">BYTES_JOIN_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="176">176</th><td><u>    {"join", (PyCFunction)bytes_join, METH_O, bytes_join__doc__},</u></td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_strip__doc__[] = &quot;strip($self, bytes=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Strip leading and trailing bytes contained in the argument.\n&quot;&quot;\n&quot;&quot;If the argument is omitted or None, strip leading and trailing ASCII whitespace.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_strip__doc__" title='bytes_strip__doc__' data-ref="bytes_strip__doc__">bytes_strip__doc__</dfn>,</td></tr>
+<tr><th id="179">179</th><td><q>"strip($self, bytes=None, /)\n"</q></td></tr>
+<tr><th id="180">180</th><td><q>"--\n"</q></td></tr>
+<tr><th id="181">181</th><td><q>"\n"</q></td></tr>
+<tr><th id="182">182</th><td><q>"Strip leading and trailing bytes contained in the argument.\n"</q></td></tr>
+<tr><th id="183">183</th><td><q>"\n"</q></td></tr>
+<tr><th id="184">184</th><td><q>"If the argument is omitted or None, strip leading and trailing ASCII whitespace."</q>);</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td><u>#define <dfn class="macro" id="_M/BYTES_STRIP_METHODDEF" data-ref="_M/BYTES_STRIP_METHODDEF">BYTES_STRIP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="187">187</th><td><u>    {"strip", (PyCFunction)bytes_strip, METH_FASTCALL, bytes_strip__doc__},</u></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="190">190</th><td><a class="decl" href="../bytesobject.c.html#bytes_strip_impl" title='bytes_strip_impl' data-ref="bytes_strip_impl" id="bytes_strip_impl">bytes_strip_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col1 decl" id="41self" title='self' data-type='PyBytesObject *' data-ref="41self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="42bytes" title='bytes' data-type='PyObject *' data-ref="42bytes">bytes</dfn>);</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="193">193</th><td><dfn class="decl def" id="bytes_strip" title='bytes_strip' data-ref="bytes_strip">bytes_strip</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col3 decl" id="43self" title='self' data-type='PyBytesObject *' data-ref="43self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="44args" title='args' data-type='PyObject **' data-ref="44args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="45nargs" title='nargs' data-type='Py_ssize_t' data-ref="45nargs">nargs</dfn>)</td></tr>
+<tr><th id="194">194</th><td>{</td></tr>
+<tr><th id="195">195</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46return_value" title='return_value' data-type='PyObject *' data-ref="46return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="196">196</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47bytes" title='bytes' data-type='PyObject *' data-ref="47bytes">bytes</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col4 ref" href="#44args" title='args' data-ref="44args">args</a>, <a class="local col5 ref" href="#45nargs" title='nargs' data-ref="45nargs">nargs</a>, <q>"strip"</q>,</td></tr>
+<tr><th id="199">199</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="200">200</th><td>        &amp;<a class="local col7 ref" href="#47bytes" title='bytes' data-ref="47bytes">bytes</a>)) {</td></tr>
+<tr><th id="201">201</th><td>        <b>goto</b> <a class="lbl" href="#48exit" data-ref="48exit">exit</a>;</td></tr>
+<tr><th id="202">202</th><td>    }</td></tr>
+<tr><th id="203">203</th><td>    <a class="local col6 ref" href="#46return_value" title='return_value' data-ref="46return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_strip_impl" title='bytes_strip_impl' data-ref="bytes_strip_impl">bytes_strip_impl</a>(<a class="local col3 ref" href="#43self" title='self' data-ref="43self">self</a>, <a class="local col7 ref" href="#47bytes" title='bytes' data-ref="47bytes">bytes</a>);</td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td><dfn class="lbl" id="48exit" data-ref="48exit">exit</dfn>:</td></tr>
+<tr><th id="206">206</th><td>    <b>return</b> <a class="local col6 ref" href="#46return_value" title='return_value' data-ref="46return_value">return_value</a>;</td></tr>
+<tr><th id="207">207</th><td>}</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_lstrip__doc__[] = &quot;lstrip($self, bytes=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Strip leading bytes contained in the argument.\n&quot;&quot;\n&quot;&quot;If the argument is omitted or None, strip leading  ASCII whitespace.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_lstrip__doc__" title='bytes_lstrip__doc__' data-ref="bytes_lstrip__doc__">bytes_lstrip__doc__</dfn>,</td></tr>
+<tr><th id="210">210</th><td><q>"lstrip($self, bytes=None, /)\n"</q></td></tr>
+<tr><th id="211">211</th><td><q>"--\n"</q></td></tr>
+<tr><th id="212">212</th><td><q>"\n"</q></td></tr>
+<tr><th id="213">213</th><td><q>"Strip leading bytes contained in the argument.\n"</q></td></tr>
+<tr><th id="214">214</th><td><q>"\n"</q></td></tr>
+<tr><th id="215">215</th><td><q>"If the argument is omitted or None, strip leading  ASCII whitespace."</q>);</td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td><u>#define <dfn class="macro" id="_M/BYTES_LSTRIP_METHODDEF" data-ref="_M/BYTES_LSTRIP_METHODDEF">BYTES_LSTRIP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="218">218</th><td><u>    {"lstrip", (PyCFunction)bytes_lstrip, METH_FASTCALL, bytes_lstrip__doc__},</u></td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="221">221</th><td><a class="decl" href="../bytesobject.c.html#bytes_lstrip_impl" title='bytes_lstrip_impl' data-ref="bytes_lstrip_impl" id="bytes_lstrip_impl">bytes_lstrip_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col9 decl" id="49self" title='self' data-type='PyBytesObject *' data-ref="49self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="50bytes" title='bytes' data-type='PyObject *' data-ref="50bytes">bytes</dfn>);</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="224">224</th><td><dfn class="decl def" id="bytes_lstrip" title='bytes_lstrip' data-ref="bytes_lstrip">bytes_lstrip</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col1 decl" id="51self" title='self' data-type='PyBytesObject *' data-ref="51self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="52args" title='args' data-type='PyObject **' data-ref="52args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="53nargs" title='nargs' data-type='Py_ssize_t' data-ref="53nargs">nargs</dfn>)</td></tr>
+<tr><th id="225">225</th><td>{</td></tr>
+<tr><th id="226">226</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="54return_value" title='return_value' data-type='PyObject *' data-ref="54return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="227">227</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55bytes" title='bytes' data-type='PyObject *' data-ref="55bytes">bytes</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col2 ref" href="#52args" title='args' data-ref="52args">args</a>, <a class="local col3 ref" href="#53nargs" title='nargs' data-ref="53nargs">nargs</a>, <q>"lstrip"</q>,</td></tr>
+<tr><th id="230">230</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="231">231</th><td>        &amp;<a class="local col5 ref" href="#55bytes" title='bytes' data-ref="55bytes">bytes</a>)) {</td></tr>
+<tr><th id="232">232</th><td>        <b>goto</b> <a class="lbl" href="#56exit" data-ref="56exit">exit</a>;</td></tr>
+<tr><th id="233">233</th><td>    }</td></tr>
+<tr><th id="234">234</th><td>    <a class="local col4 ref" href="#54return_value" title='return_value' data-ref="54return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_lstrip_impl" title='bytes_lstrip_impl' data-ref="bytes_lstrip_impl">bytes_lstrip_impl</a>(<a class="local col1 ref" href="#51self" title='self' data-ref="51self">self</a>, <a class="local col5 ref" href="#55bytes" title='bytes' data-ref="55bytes">bytes</a>);</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><dfn class="lbl" id="56exit" data-ref="56exit">exit</dfn>:</td></tr>
+<tr><th id="237">237</th><td>    <b>return</b> <a class="local col4 ref" href="#54return_value" title='return_value' data-ref="54return_value">return_value</a>;</td></tr>
+<tr><th id="238">238</th><td>}</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_rstrip__doc__[] = &quot;rstrip($self, bytes=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Strip trailing bytes contained in the argument.\n&quot;&quot;\n&quot;&quot;If the argument is omitted or None, strip trailing ASCII whitespace.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_rstrip__doc__" title='bytes_rstrip__doc__' data-ref="bytes_rstrip__doc__">bytes_rstrip__doc__</dfn>,</td></tr>
+<tr><th id="241">241</th><td><q>"rstrip($self, bytes=None, /)\n"</q></td></tr>
+<tr><th id="242">242</th><td><q>"--\n"</q></td></tr>
+<tr><th id="243">243</th><td><q>"\n"</q></td></tr>
+<tr><th id="244">244</th><td><q>"Strip trailing bytes contained in the argument.\n"</q></td></tr>
+<tr><th id="245">245</th><td><q>"\n"</q></td></tr>
+<tr><th id="246">246</th><td><q>"If the argument is omitted or None, strip trailing ASCII whitespace."</q>);</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><u>#define <dfn class="macro" id="_M/BYTES_RSTRIP_METHODDEF" data-ref="_M/BYTES_RSTRIP_METHODDEF">BYTES_RSTRIP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="249">249</th><td><u>    {"rstrip", (PyCFunction)bytes_rstrip, METH_FASTCALL, bytes_rstrip__doc__},</u></td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="252">252</th><td><a class="decl" href="../bytesobject.c.html#bytes_rstrip_impl" title='bytes_rstrip_impl' data-ref="bytes_rstrip_impl" id="bytes_rstrip_impl">bytes_rstrip_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col7 decl" id="57self" title='self' data-type='PyBytesObject *' data-ref="57self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58bytes" title='bytes' data-type='PyObject *' data-ref="58bytes">bytes</dfn>);</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="255">255</th><td><dfn class="decl def" id="bytes_rstrip" title='bytes_rstrip' data-ref="bytes_rstrip">bytes_rstrip</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col9 decl" id="59self" title='self' data-type='PyBytesObject *' data-ref="59self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="60args" title='args' data-type='PyObject **' data-ref="60args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="61nargs" title='nargs' data-type='Py_ssize_t' data-ref="61nargs">nargs</dfn>)</td></tr>
+<tr><th id="256">256</th><td>{</td></tr>
+<tr><th id="257">257</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62return_value" title='return_value' data-type='PyObject *' data-ref="62return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="258">258</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="63bytes" title='bytes' data-type='PyObject *' data-ref="63bytes">bytes</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="259">259</th><td></td></tr>
+<tr><th id="260">260</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col0 ref" href="#60args" title='args' data-ref="60args">args</a>, <a class="local col1 ref" href="#61nargs" title='nargs' data-ref="61nargs">nargs</a>, <q>"rstrip"</q>,</td></tr>
+<tr><th id="261">261</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="262">262</th><td>        &amp;<a class="local col3 ref" href="#63bytes" title='bytes' data-ref="63bytes">bytes</a>)) {</td></tr>
+<tr><th id="263">263</th><td>        <b>goto</b> <a class="lbl" href="#64exit" data-ref="64exit">exit</a>;</td></tr>
+<tr><th id="264">264</th><td>    }</td></tr>
+<tr><th id="265">265</th><td>    <a class="local col2 ref" href="#62return_value" title='return_value' data-ref="62return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_rstrip_impl" title='bytes_rstrip_impl' data-ref="bytes_rstrip_impl">bytes_rstrip_impl</a>(<a class="local col9 ref" href="#59self" title='self' data-ref="59self">self</a>, <a class="local col3 ref" href="#63bytes" title='bytes' data-ref="63bytes">bytes</a>);</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><dfn class="lbl" id="64exit" data-ref="64exit">exit</dfn>:</td></tr>
+<tr><th id="268">268</th><td>    <b>return</b> <a class="local col2 ref" href="#62return_value" title='return_value' data-ref="62return_value">return_value</a>;</td></tr>
+<tr><th id="269">269</th><td>}</td></tr>
+<tr><th id="270">270</th><td></td></tr>
+<tr><th id="271">271</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_translate__doc__[] = &quot;translate($self, table, /, delete=b\&apos;\&apos;)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy with each character mapped by the given translation table.\n&quot;&quot;\n&quot;&quot;  table\n&quot;&quot;    Translation table, which must be a bytes object of length 256.\n&quot;&quot;\n&quot;&quot;All characters occurring in the optional argument delete are removed.\n&quot;&quot;The remaining characters are mapped through the given translation table.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_translate__doc__" title='bytes_translate__doc__' data-ref="bytes_translate__doc__">bytes_translate__doc__</dfn>,</td></tr>
+<tr><th id="272">272</th><td><q>"translate($self, table, /, delete=b\'\')\n"</q></td></tr>
+<tr><th id="273">273</th><td><q>"--\n"</q></td></tr>
+<tr><th id="274">274</th><td><q>"\n"</q></td></tr>
+<tr><th id="275">275</th><td><q>"Return a copy with each character mapped by the given translation table.\n"</q></td></tr>
+<tr><th id="276">276</th><td><q>"\n"</q></td></tr>
+<tr><th id="277">277</th><td><q>"  table\n"</q></td></tr>
+<tr><th id="278">278</th><td><q>"    Translation table, which must be a bytes object of length 256.\n"</q></td></tr>
+<tr><th id="279">279</th><td><q>"\n"</q></td></tr>
+<tr><th id="280">280</th><td><q>"All characters occurring in the optional argument delete are removed.\n"</q></td></tr>
+<tr><th id="281">281</th><td><q>"The remaining characters are mapped through the given translation table."</q>);</td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td><u>#define <dfn class="macro" id="_M/BYTES_TRANSLATE_METHODDEF" data-ref="_M/BYTES_TRANSLATE_METHODDEF">BYTES_TRANSLATE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="284">284</th><td><u>    {"translate", (PyCFunction)bytes_translate, METH_FASTCALL|METH_KEYWORDS, bytes_translate__doc__},</u></td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="287">287</th><td><a class="decl" href="../bytesobject.c.html#bytes_translate_impl" title='bytes_translate_impl' data-ref="bytes_translate_impl" id="bytes_translate_impl">bytes_translate_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col5 decl" id="65self" title='self' data-type='PyBytesObject *' data-ref="65self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="66table" title='table' data-type='PyObject *' data-ref="66table">table</dfn>,</td></tr>
+<tr><th id="288">288</th><td>                     <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="67deletechars" title='deletechars' data-type='PyObject *' data-ref="67deletechars">deletechars</dfn>);</td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="291">291</th><td><dfn class="decl def" id="bytes_translate" title='bytes_translate' data-ref="bytes_translate">bytes_translate</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col8 decl" id="68self" title='self' data-type='PyBytesObject *' data-ref="68self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col9 decl" id="69args" title='args' data-type='PyObject **' data-ref="69args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="70nargs" title='nargs' data-type='Py_ssize_t' data-ref="70nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="71kwnames" title='kwnames' data-type='PyObject *' data-ref="71kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="292">292</th><td>{</td></tr>
+<tr><th id="293">293</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="72return_value" title='return_value' data-type='PyObject *' data-ref="72return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="294">294</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col3 decl" id="73_keywords" title='_keywords' data-type='const char *const [3]' data-ref="73_keywords">_keywords</dfn>[] = {<q>""</q>, <q>"delete"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="295">295</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col4 decl" id="74_parser" title='_parser' data-type='_PyArg_Parser' data-ref="74_parser">_parser</dfn> = {<q>"O|O:translate"</q>, <a class="local col3 ref" href="#73_keywords" title='_keywords' data-ref="73_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="296">296</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="75table" title='table' data-type='PyObject *' data-ref="75table">table</dfn>;</td></tr>
+<tr><th id="297">297</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="76deletechars" title='deletechars' data-type='PyObject *' data-ref="76deletechars">deletechars</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col9 ref" href="#69args" title='args' data-ref="69args">args</a>, <a class="local col0 ref" href="#70nargs" title='nargs' data-ref="70nargs">nargs</a>, <a class="local col1 ref" href="#71kwnames" title='kwnames' data-ref="71kwnames">kwnames</a>, &amp;<a class="local col4 ref" href="#74_parser" title='_parser' data-ref="74_parser">_parser</a>,</td></tr>
+<tr><th id="300">300</th><td>        &amp;<a class="local col5 ref" href="#75table" title='table' data-ref="75table">table</a>, &amp;<a class="local col6 ref" href="#76deletechars" title='deletechars' data-ref="76deletechars">deletechars</a>)) {</td></tr>
+<tr><th id="301">301</th><td>        <b>goto</b> <a class="lbl" href="#77exit" data-ref="77exit">exit</a>;</td></tr>
+<tr><th id="302">302</th><td>    }</td></tr>
+<tr><th id="303">303</th><td>    <a class="local col2 ref" href="#72return_value" title='return_value' data-ref="72return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_translate_impl" title='bytes_translate_impl' data-ref="bytes_translate_impl">bytes_translate_impl</a>(<a class="local col8 ref" href="#68self" title='self' data-ref="68self">self</a>, <a class="local col5 ref" href="#75table" title='table' data-ref="75table">table</a>, <a class="local col6 ref" href="#76deletechars" title='deletechars' data-ref="76deletechars">deletechars</a>);</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td><dfn class="lbl" id="77exit" data-ref="77exit">exit</dfn>:</td></tr>
+<tr><th id="306">306</th><td>    <b>return</b> <a class="local col2 ref" href="#72return_value" title='return_value' data-ref="72return_value">return_value</a>;</td></tr>
+<tr><th id="307">307</th><td>}</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_maketrans__doc__[] = &quot;maketrans(frm, to, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a translation table useable for the bytes or bytearray translate method.\n&quot;&quot;\n&quot;&quot;The returned table will be one where each byte in frm is mapped to the byte at\n&quot;&quot;the same position in to.\n&quot;&quot;\n&quot;&quot;The bytes objects frm and to must be of the same length.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_maketrans__doc__" title='bytes_maketrans__doc__' data-ref="bytes_maketrans__doc__">bytes_maketrans__doc__</dfn>,</td></tr>
+<tr><th id="310">310</th><td><q>"maketrans(frm, to, /)\n"</q></td></tr>
+<tr><th id="311">311</th><td><q>"--\n"</q></td></tr>
+<tr><th id="312">312</th><td><q>"\n"</q></td></tr>
+<tr><th id="313">313</th><td><q>"Return a translation table useable for the bytes or bytearray translate method.\n"</q></td></tr>
+<tr><th id="314">314</th><td><q>"\n"</q></td></tr>
+<tr><th id="315">315</th><td><q>"The returned table will be one where each byte in frm is mapped to the byte at\n"</q></td></tr>
+<tr><th id="316">316</th><td><q>"the same position in to.\n"</q></td></tr>
+<tr><th id="317">317</th><td><q>"\n"</q></td></tr>
+<tr><th id="318">318</th><td><q>"The bytes objects frm and to must be of the same length."</q>);</td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td><u>#define <dfn class="macro" id="_M/BYTES_MAKETRANS_METHODDEF" data-ref="_M/BYTES_MAKETRANS_METHODDEF">BYTES_MAKETRANS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="321">321</th><td><u>    {"maketrans", (PyCFunction)bytes_maketrans, METH_FASTCALL|METH_STATIC, bytes_maketrans__doc__},</u></td></tr>
+<tr><th id="322">322</th><td></td></tr>
+<tr><th id="323">323</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="324">324</th><td><a class="decl" href="../bytesobject.c.html#bytes_maketrans_impl" title='bytes_maketrans_impl' data-ref="bytes_maketrans_impl" id="bytes_maketrans_impl">bytes_maketrans_impl</a>(<a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col8 decl" id="78frm" title='frm' data-type='Py_buffer *' data-ref="78frm">frm</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col9 decl" id="79to" title='to' data-type='Py_buffer *' data-ref="79to">to</dfn>);</td></tr>
+<tr><th id="325">325</th><td></td></tr>
+<tr><th id="326">326</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="327">327</th><td><dfn class="decl def" id="bytes_maketrans" title='bytes_maketrans' data-ref="bytes_maketrans">bytes_maketrans</dfn>(<em>void</em> *<dfn class="local col0 decl" id="80null" title='null' data-type='void *' data-ref="80null">null</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="81args" title='args' data-type='PyObject **' data-ref="81args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="82nargs" title='nargs' data-type='Py_ssize_t' data-ref="82nargs">nargs</dfn>)</td></tr>
+<tr><th id="328">328</th><td>{</td></tr>
+<tr><th id="329">329</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="83return_value" title='return_value' data-type='PyObject *' data-ref="83return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="330">330</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col4 decl" id="84frm" title='frm' data-type='Py_buffer' data-ref="84frm">frm</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="331">331</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col5 decl" id="85to" title='to' data-type='Py_buffer' data-ref="85to">to</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col1 ref" href="#81args" title='args' data-ref="81args">args</a>, <a class="local col2 ref" href="#82nargs" title='nargs' data-ref="82nargs">nargs</a>, <q>"y*y*:maketrans"</q>,</td></tr>
+<tr><th id="334">334</th><td>        &amp;<a class="local col4 ref" href="#84frm" title='frm' data-ref="84frm">frm</a>, &amp;<a class="local col5 ref" href="#85to" title='to' data-ref="85to">to</a>)) {</td></tr>
+<tr><th id="335">335</th><td>        <b>goto</b> <a class="lbl" href="#86exit" data-ref="86exit">exit</a>;</td></tr>
+<tr><th id="336">336</th><td>    }</td></tr>
+<tr><th id="337">337</th><td>    <a class="local col3 ref" href="#83return_value" title='return_value' data-ref="83return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_maketrans_impl" title='bytes_maketrans_impl' data-ref="bytes_maketrans_impl">bytes_maketrans_impl</a>(&amp;<a class="local col4 ref" href="#84frm" title='frm' data-ref="84frm">frm</a>, &amp;<a class="local col5 ref" href="#85to" title='to' data-ref="85to">to</a>);</td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td><dfn class="lbl" id="86exit" data-ref="86exit">exit</dfn>:</td></tr>
+<tr><th id="340">340</th><td>    <i>/* Cleanup for frm */</i></td></tr>
+<tr><th id="341">341</th><td>    <b>if</b> (<a class="local col4 ref" href="#84frm" title='frm' data-ref="84frm">frm</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="342">342</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col4 ref" href="#84frm" title='frm' data-ref="84frm">frm</a>);</td></tr>
+<tr><th id="343">343</th><td>    }</td></tr>
+<tr><th id="344">344</th><td>    <i>/* Cleanup for to */</i></td></tr>
+<tr><th id="345">345</th><td>    <b>if</b> (<a class="local col5 ref" href="#85to" title='to' data-ref="85to">to</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="346">346</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col5 ref" href="#85to" title='to' data-ref="85to">to</a>);</td></tr>
+<tr><th id="347">347</th><td>    }</td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td>    <b>return</b> <a class="local col3 ref" href="#83return_value" title='return_value' data-ref="83return_value">return_value</a>;</td></tr>
+<tr><th id="350">350</th><td>}</td></tr>
+<tr><th id="351">351</th><td></td></tr>
+<tr><th id="352">352</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_replace__doc__[] = &quot;replace($self, old, new, count=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy with all occurrences of substring old replaced by new.\n&quot;&quot;\n&quot;&quot;  count\n&quot;&quot;    Maximum number of occurrences to replace.\n&quot;&quot;    -1 (the default value) means replace all occurrences.\n&quot;&quot;\n&quot;&quot;If the optional argument count is given, only the first count occurrences are\n&quot;&quot;replaced.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_replace__doc__" title='bytes_replace__doc__' data-ref="bytes_replace__doc__">bytes_replace__doc__</dfn>,</td></tr>
+<tr><th id="353">353</th><td><q>"replace($self, old, new, count=-1, /)\n"</q></td></tr>
+<tr><th id="354">354</th><td><q>"--\n"</q></td></tr>
+<tr><th id="355">355</th><td><q>"\n"</q></td></tr>
+<tr><th id="356">356</th><td><q>"Return a copy with all occurrences of substring old replaced by new.\n"</q></td></tr>
+<tr><th id="357">357</th><td><q>"\n"</q></td></tr>
+<tr><th id="358">358</th><td><q>"  count\n"</q></td></tr>
+<tr><th id="359">359</th><td><q>"    Maximum number of occurrences to replace.\n"</q></td></tr>
+<tr><th id="360">360</th><td><q>"    -1 (the default value) means replace all occurrences.\n"</q></td></tr>
+<tr><th id="361">361</th><td><q>"\n"</q></td></tr>
+<tr><th id="362">362</th><td><q>"If the optional argument count is given, only the first count occurrences are\n"</q></td></tr>
+<tr><th id="363">363</th><td><q>"replaced."</q>);</td></tr>
+<tr><th id="364">364</th><td></td></tr>
+<tr><th id="365">365</th><td><u>#define <dfn class="macro" id="_M/BYTES_REPLACE_METHODDEF" data-ref="_M/BYTES_REPLACE_METHODDEF">BYTES_REPLACE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="366">366</th><td><u>    {"replace", (PyCFunction)bytes_replace, METH_FASTCALL, bytes_replace__doc__},</u></td></tr>
+<tr><th id="367">367</th><td></td></tr>
+<tr><th id="368">368</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="369">369</th><td><a class="decl" href="../bytesobject.c.html#bytes_replace_impl" title='bytes_replace_impl' data-ref="bytes_replace_impl" id="bytes_replace_impl">bytes_replace_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col7 decl" id="87self" title='self' data-type='PyBytesObject *' data-ref="87self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col8 decl" id="88old" title='old' data-type='Py_buffer *' data-ref="88old">old</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col9 decl" id="89new" title='new' data-type='Py_buffer *' data-ref="89new">new</dfn>,</td></tr>
+<tr><th id="370">370</th><td>                   <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="90count" title='count' data-type='Py_ssize_t' data-ref="90count">count</dfn>);</td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="373">373</th><td><dfn class="decl def" id="bytes_replace" title='bytes_replace' data-ref="bytes_replace">bytes_replace</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col1 decl" id="91self" title='self' data-type='PyBytesObject *' data-ref="91self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="92args" title='args' data-type='PyObject **' data-ref="92args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="93nargs" title='nargs' data-type='Py_ssize_t' data-ref="93nargs">nargs</dfn>)</td></tr>
+<tr><th id="374">374</th><td>{</td></tr>
+<tr><th id="375">375</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="94return_value" title='return_value' data-type='PyObject *' data-ref="94return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="376">376</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col5 decl" id="95old" title='old' data-type='Py_buffer' data-ref="95old">old</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="377">377</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col6 decl" id="96new" title='new' data-type='Py_buffer' data-ref="96new">new</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="378">378</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="97count" title='count' data-type='Py_ssize_t' data-ref="97count">count</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="379">379</th><td></td></tr>
+<tr><th id="380">380</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col2 ref" href="#92args" title='args' data-ref="92args">args</a>, <a class="local col3 ref" href="#93nargs" title='nargs' data-ref="93nargs">nargs</a>, <q>"y*y*|n:replace"</q>,</td></tr>
+<tr><th id="381">381</th><td>        &amp;<a class="local col5 ref" href="#95old" title='old' data-ref="95old">old</a>, &amp;<a class="local col6 ref" href="#96new" title='new' data-ref="96new">new</a>, &amp;<a class="local col7 ref" href="#97count" title='count' data-ref="97count">count</a>)) {</td></tr>
+<tr><th id="382">382</th><td>        <b>goto</b> <a class="lbl" href="#98exit" data-ref="98exit">exit</a>;</td></tr>
+<tr><th id="383">383</th><td>    }</td></tr>
+<tr><th id="384">384</th><td>    <a class="local col4 ref" href="#94return_value" title='return_value' data-ref="94return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_replace_impl" title='bytes_replace_impl' data-ref="bytes_replace_impl">bytes_replace_impl</a>(<a class="local col1 ref" href="#91self" title='self' data-ref="91self">self</a>, &amp;<a class="local col5 ref" href="#95old" title='old' data-ref="95old">old</a>, &amp;<a class="local col6 ref" href="#96new" title='new' data-ref="96new">new</a>, <a class="local col7 ref" href="#97count" title='count' data-ref="97count">count</a>);</td></tr>
+<tr><th id="385">385</th><td></td></tr>
+<tr><th id="386">386</th><td><dfn class="lbl" id="98exit" data-ref="98exit">exit</dfn>:</td></tr>
+<tr><th id="387">387</th><td>    <i>/* Cleanup for old */</i></td></tr>
+<tr><th id="388">388</th><td>    <b>if</b> (<a class="local col5 ref" href="#95old" title='old' data-ref="95old">old</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="389">389</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col5 ref" href="#95old" title='old' data-ref="95old">old</a>);</td></tr>
+<tr><th id="390">390</th><td>    }</td></tr>
+<tr><th id="391">391</th><td>    <i>/* Cleanup for new */</i></td></tr>
+<tr><th id="392">392</th><td>    <b>if</b> (<a class="local col6 ref" href="#96new" title='new' data-ref="96new">new</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="393">393</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col6 ref" href="#96new" title='new' data-ref="96new">new</a>);</td></tr>
+<tr><th id="394">394</th><td>    }</td></tr>
+<tr><th id="395">395</th><td></td></tr>
+<tr><th id="396">396</th><td>    <b>return</b> <a class="local col4 ref" href="#94return_value" title='return_value' data-ref="94return_value">return_value</a>;</td></tr>
+<tr><th id="397">397</th><td>}</td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_decode__doc__[] = &quot;decode($self, /, encoding=\&apos;utf-8\&apos;, errors=\&apos;strict\&apos;)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Decode the bytes using the codec registered for encoding.\n&quot;&quot;\n&quot;&quot;  encoding\n&quot;&quot;    The encoding with which to decode the bytes.\n&quot;&quot;  errors\n&quot;&quot;    The error handling scheme to use for the handling of decoding errors.\n&quot;&quot;    The default is \&apos;strict\&apos; meaning that decoding errors raise a\n&quot;&quot;    UnicodeDecodeError. Other possible values are \&apos;ignore\&apos; and \&apos;replace\&apos;\n&quot;&quot;    as well as any other name registered with codecs.register_error that\n&quot;&quot;    can handle UnicodeDecodeErrors.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_decode__doc__" title='bytes_decode__doc__' data-ref="bytes_decode__doc__">bytes_decode__doc__</dfn>,</td></tr>
+<tr><th id="400">400</th><td><q>"decode($self, /, encoding=\'utf-8\', errors=\'strict\')\n"</q></td></tr>
+<tr><th id="401">401</th><td><q>"--\n"</q></td></tr>
+<tr><th id="402">402</th><td><q>"\n"</q></td></tr>
+<tr><th id="403">403</th><td><q>"Decode the bytes using the codec registered for encoding.\n"</q></td></tr>
+<tr><th id="404">404</th><td><q>"\n"</q></td></tr>
+<tr><th id="405">405</th><td><q>"  encoding\n"</q></td></tr>
+<tr><th id="406">406</th><td><q>"    The encoding with which to decode the bytes.\n"</q></td></tr>
+<tr><th id="407">407</th><td><q>"  errors\n"</q></td></tr>
+<tr><th id="408">408</th><td><q>"    The error handling scheme to use for the handling of decoding errors.\n"</q></td></tr>
+<tr><th id="409">409</th><td><q>"    The default is \'strict\' meaning that decoding errors raise a\n"</q></td></tr>
+<tr><th id="410">410</th><td><q>"    UnicodeDecodeError. Other possible values are \'ignore\' and \'replace\'\n"</q></td></tr>
+<tr><th id="411">411</th><td><q>"    as well as any other name registered with codecs.register_error that\n"</q></td></tr>
+<tr><th id="412">412</th><td><q>"    can handle UnicodeDecodeErrors."</q>);</td></tr>
+<tr><th id="413">413</th><td></td></tr>
+<tr><th id="414">414</th><td><u>#define <dfn class="macro" id="_M/BYTES_DECODE_METHODDEF" data-ref="_M/BYTES_DECODE_METHODDEF">BYTES_DECODE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="415">415</th><td><u>    {"decode", (PyCFunction)bytes_decode, METH_FASTCALL|METH_KEYWORDS, bytes_decode__doc__},</u></td></tr>
+<tr><th id="416">416</th><td></td></tr>
+<tr><th id="417">417</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="418">418</th><td><a class="decl" href="../bytesobject.c.html#bytes_decode_impl" title='bytes_decode_impl' data-ref="bytes_decode_impl" id="bytes_decode_impl">bytes_decode_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col9 decl" id="99self" title='self' data-type='PyBytesObject *' data-ref="99self">self</dfn>, <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="100encoding" title='encoding' data-type='const char *' data-ref="100encoding">encoding</dfn>,</td></tr>
+<tr><th id="419">419</th><td>                  <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="101errors" title='errors' data-type='const char *' data-ref="101errors">errors</dfn>);</td></tr>
+<tr><th id="420">420</th><td></td></tr>
+<tr><th id="421">421</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="422">422</th><td><dfn class="decl def" id="bytes_decode" title='bytes_decode' data-ref="bytes_decode">bytes_decode</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col2 decl" id="102self" title='self' data-type='PyBytesObject *' data-ref="102self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="103args" title='args' data-type='PyObject **' data-ref="103args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="104nargs" title='nargs' data-type='Py_ssize_t' data-ref="104nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="105kwnames" title='kwnames' data-type='PyObject *' data-ref="105kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="423">423</th><td>{</td></tr>
+<tr><th id="424">424</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="106return_value" title='return_value' data-type='PyObject *' data-ref="106return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="425">425</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col7 decl" id="107_keywords" title='_keywords' data-type='const char *const [3]' data-ref="107_keywords">_keywords</dfn>[] = {<q>"encoding"</q>, <q>"errors"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="426">426</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col8 decl" id="108_parser" title='_parser' data-type='_PyArg_Parser' data-ref="108_parser">_parser</dfn> = {<q>"|ss:decode"</q>, <a class="local col7 ref" href="#107_keywords" title='_keywords' data-ref="107_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="427">427</th><td>    <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="109encoding" title='encoding' data-type='const char *' data-ref="109encoding">encoding</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="428">428</th><td>    <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="110errors" title='errors' data-type='const char *' data-ref="110errors">errors</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="429">429</th><td></td></tr>
+<tr><th id="430">430</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col3 ref" href="#103args" title='args' data-ref="103args">args</a>, <a class="local col4 ref" href="#104nargs" title='nargs' data-ref="104nargs">nargs</a>, <a class="local col5 ref" href="#105kwnames" title='kwnames' data-ref="105kwnames">kwnames</a>, &amp;<a class="local col8 ref" href="#108_parser" title='_parser' data-ref="108_parser">_parser</a>,</td></tr>
+<tr><th id="431">431</th><td>        &amp;<a class="local col9 ref" href="#109encoding" title='encoding' data-ref="109encoding">encoding</a>, &amp;<a class="local col0 ref" href="#110errors" title='errors' data-ref="110errors">errors</a>)) {</td></tr>
+<tr><th id="432">432</th><td>        <b>goto</b> <a class="lbl" href="#111exit" data-ref="111exit">exit</a>;</td></tr>
+<tr><th id="433">433</th><td>    }</td></tr>
+<tr><th id="434">434</th><td>    <a class="local col6 ref" href="#106return_value" title='return_value' data-ref="106return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_decode_impl" title='bytes_decode_impl' data-ref="bytes_decode_impl">bytes_decode_impl</a>(<a class="local col2 ref" href="#102self" title='self' data-ref="102self">self</a>, <a class="local col9 ref" href="#109encoding" title='encoding' data-ref="109encoding">encoding</a>, <a class="local col0 ref" href="#110errors" title='errors' data-ref="110errors">errors</a>);</td></tr>
+<tr><th id="435">435</th><td></td></tr>
+<tr><th id="436">436</th><td><dfn class="lbl" id="111exit" data-ref="111exit">exit</dfn>:</td></tr>
+<tr><th id="437">437</th><td>    <b>return</b> <a class="local col6 ref" href="#106return_value" title='return_value' data-ref="106return_value">return_value</a>;</td></tr>
+<tr><th id="438">438</th><td>}</td></tr>
+<tr><th id="439">439</th><td></td></tr>
+<tr><th id="440">440</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_splitlines__doc__[] = &quot;splitlines($self, /, keepends=False)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of the lines in the bytes, breaking at line boundaries.\n&quot;&quot;\n&quot;&quot;Line breaks are not included in the resulting list unless keepends is given and\n&quot;&quot;true.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_splitlines__doc__" title='bytes_splitlines__doc__' data-ref="bytes_splitlines__doc__">bytes_splitlines__doc__</dfn>,</td></tr>
+<tr><th id="441">441</th><td><q>"splitlines($self, /, keepends=False)\n"</q></td></tr>
+<tr><th id="442">442</th><td><q>"--\n"</q></td></tr>
+<tr><th id="443">443</th><td><q>"\n"</q></td></tr>
+<tr><th id="444">444</th><td><q>"Return a list of the lines in the bytes, breaking at line boundaries.\n"</q></td></tr>
+<tr><th id="445">445</th><td><q>"\n"</q></td></tr>
+<tr><th id="446">446</th><td><q>"Line breaks are not included in the resulting list unless keepends is given and\n"</q></td></tr>
+<tr><th id="447">447</th><td><q>"true."</q>);</td></tr>
+<tr><th id="448">448</th><td></td></tr>
+<tr><th id="449">449</th><td><u>#define <dfn class="macro" id="_M/BYTES_SPLITLINES_METHODDEF" data-ref="_M/BYTES_SPLITLINES_METHODDEF">BYTES_SPLITLINES_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="450">450</th><td><u>    {"splitlines", (PyCFunction)bytes_splitlines, METH_FASTCALL|METH_KEYWORDS, bytes_splitlines__doc__},</u></td></tr>
+<tr><th id="451">451</th><td></td></tr>
+<tr><th id="452">452</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="453">453</th><td><a class="decl" href="../bytesobject.c.html#bytes_splitlines_impl" title='bytes_splitlines_impl' data-ref="bytes_splitlines_impl" id="bytes_splitlines_impl">bytes_splitlines_impl</a>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col2 decl" id="112self" title='self' data-type='PyBytesObject *' data-ref="112self">self</dfn>, <em>int</em> <dfn class="local col3 decl" id="113keepends" title='keepends' data-type='int' data-ref="113keepends">keepends</dfn>);</td></tr>
+<tr><th id="454">454</th><td></td></tr>
+<tr><th id="455">455</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="456">456</th><td><dfn class="decl def" id="bytes_splitlines" title='bytes_splitlines' data-ref="bytes_splitlines">bytes_splitlines</dfn>(<a class="typedef" href="../../Include/bytesobject.h.html#PyBytesObject" title='PyBytesObject' data-type='struct PyBytesObject' data-ref="PyBytesObject">PyBytesObject</a> *<dfn class="local col4 decl" id="114self" title='self' data-type='PyBytesObject *' data-ref="114self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="115args" title='args' data-type='PyObject **' data-ref="115args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="116nargs" title='nargs' data-type='Py_ssize_t' data-ref="116nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="117kwnames" title='kwnames' data-type='PyObject *' data-ref="117kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="457">457</th><td>{</td></tr>
+<tr><th id="458">458</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="118return_value" title='return_value' data-type='PyObject *' data-ref="118return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="459">459</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col9 decl" id="119_keywords" title='_keywords' data-type='const char *const [2]' data-ref="119_keywords">_keywords</dfn>[] = {<q>"keepends"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="460">460</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col0 decl" id="120_parser" title='_parser' data-type='_PyArg_Parser' data-ref="120_parser">_parser</dfn> = {<q>"|i:splitlines"</q>, <a class="local col9 ref" href="#119_keywords" title='_keywords' data-ref="119_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="461">461</th><td>    <em>int</em> <dfn class="local col1 decl" id="121keepends" title='keepends' data-type='int' data-ref="121keepends">keepends</dfn> = <var>0</var>;</td></tr>
+<tr><th id="462">462</th><td></td></tr>
+<tr><th id="463">463</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col5 ref" href="#115args" title='args' data-ref="115args">args</a>, <a class="local col6 ref" href="#116nargs" title='nargs' data-ref="116nargs">nargs</a>, <a class="local col7 ref" href="#117kwnames" title='kwnames' data-ref="117kwnames">kwnames</a>, &amp;<a class="local col0 ref" href="#120_parser" title='_parser' data-ref="120_parser">_parser</a>,</td></tr>
+<tr><th id="464">464</th><td>        &amp;<a class="local col1 ref" href="#121keepends" title='keepends' data-ref="121keepends">keepends</a>)) {</td></tr>
+<tr><th id="465">465</th><td>        <b>goto</b> <a class="lbl" href="#122exit" data-ref="122exit">exit</a>;</td></tr>
+<tr><th id="466">466</th><td>    }</td></tr>
+<tr><th id="467">467</th><td>    <a class="local col8 ref" href="#118return_value" title='return_value' data-ref="118return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_splitlines_impl" title='bytes_splitlines_impl' data-ref="bytes_splitlines_impl">bytes_splitlines_impl</a>(<a class="local col4 ref" href="#114self" title='self' data-ref="114self">self</a>, <a class="local col1 ref" href="#121keepends" title='keepends' data-ref="121keepends">keepends</a>);</td></tr>
+<tr><th id="468">468</th><td></td></tr>
+<tr><th id="469">469</th><td><dfn class="lbl" id="122exit" data-ref="122exit">exit</dfn>:</td></tr>
+<tr><th id="470">470</th><td>    <b>return</b> <a class="local col8 ref" href="#118return_value" title='return_value' data-ref="118return_value">return_value</a>;</td></tr>
+<tr><th id="471">471</th><td>}</td></tr>
+<tr><th id="472">472</th><td></td></tr>
+<tr><th id="473">473</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char bytes_fromhex__doc__[] = &quot;fromhex($type, string, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Create a bytes object from a string of hexadecimal numbers.\n&quot;&quot;\n&quot;&quot;Spaces between two numbers are accepted.\n&quot;&quot;Example: bytes.fromhex(\&apos;B9 01EF\&apos;) -&gt; b\&apos;\\\\xb9\\\\x01\\\\xef\&apos;.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="bytes_fromhex__doc__" title='bytes_fromhex__doc__' data-ref="bytes_fromhex__doc__">bytes_fromhex__doc__</dfn>,</td></tr>
+<tr><th id="474">474</th><td><q>"fromhex($type, string, /)\n"</q></td></tr>
+<tr><th id="475">475</th><td><q>"--\n"</q></td></tr>
+<tr><th id="476">476</th><td><q>"\n"</q></td></tr>
+<tr><th id="477">477</th><td><q>"Create a bytes object from a string of hexadecimal numbers.\n"</q></td></tr>
+<tr><th id="478">478</th><td><q>"\n"</q></td></tr>
+<tr><th id="479">479</th><td><q>"Spaces between two numbers are accepted.\n"</q></td></tr>
+<tr><th id="480">480</th><td><q>"Example: bytes.fromhex(\'B9 01EF\') -&gt; b\'\\\\xb9\\\\x01\\\\xef\'."</q>);</td></tr>
+<tr><th id="481">481</th><td></td></tr>
+<tr><th id="482">482</th><td><u>#define <dfn class="macro" id="_M/BYTES_FROMHEX_METHODDEF" data-ref="_M/BYTES_FROMHEX_METHODDEF">BYTES_FROMHEX_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="483">483</th><td><u>    {"fromhex", (PyCFunction)bytes_fromhex, METH_O|METH_CLASS, bytes_fromhex__doc__},</u></td></tr>
+<tr><th id="484">484</th><td></td></tr>
+<tr><th id="485">485</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="486">486</th><td><a class="decl" href="../bytesobject.c.html#bytes_fromhex_impl" title='bytes_fromhex_impl' data-ref="bytes_fromhex_impl" id="bytes_fromhex_impl">bytes_fromhex_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col3 decl" id="123type" title='type' data-type='PyTypeObject *' data-ref="123type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="124string" title='string' data-type='PyObject *' data-ref="124string">string</dfn>);</td></tr>
+<tr><th id="487">487</th><td></td></tr>
+<tr><th id="488">488</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="489">489</th><td><dfn class="decl def" id="bytes_fromhex" title='bytes_fromhex' data-ref="bytes_fromhex">bytes_fromhex</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col5 decl" id="125type" title='type' data-type='PyTypeObject *' data-ref="125type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="126arg" title='arg' data-type='PyObject *' data-ref="126arg">arg</dfn>)</td></tr>
+<tr><th id="490">490</th><td>{</td></tr>
+<tr><th id="491">491</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="127return_value" title='return_value' data-type='PyObject *' data-ref="127return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="492">492</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="128string" title='string' data-type='PyObject *' data-ref="128string">string</dfn>;</td></tr>
+<tr><th id="493">493</th><td></td></tr>
+<tr><th id="494">494</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col6 ref" href="#126arg" title='arg' data-ref="126arg">arg</a>, <q>"U:fromhex"</q>, &amp;<a class="local col8 ref" href="#128string" title='string' data-ref="128string">string</a>)) {</td></tr>
+<tr><th id="495">495</th><td>        <b>goto</b> <a class="lbl" href="#129exit" data-ref="129exit">exit</a>;</td></tr>
+<tr><th id="496">496</th><td>    }</td></tr>
+<tr><th id="497">497</th><td>    <a class="local col7 ref" href="#127return_value" title='return_value' data-ref="127return_value">return_value</a> = <a class="ref" href="../bytesobject.c.html#bytes_fromhex_impl" title='bytes_fromhex_impl' data-ref="bytes_fromhex_impl">bytes_fromhex_impl</a>(<a class="local col5 ref" href="#125type" title='type' data-ref="125type">type</a>, <a class="local col8 ref" href="#128string" title='string' data-ref="128string">string</a>);</td></tr>
+<tr><th id="498">498</th><td></td></tr>
+<tr><th id="499">499</th><td><dfn class="lbl" id="129exit" data-ref="129exit">exit</dfn>:</td></tr>
+<tr><th id="500">500</th><td>    <b>return</b> <a class="local col7 ref" href="#127return_value" title='return_value' data-ref="127return_value">return_value</a>;</td></tr>
+<tr><th id="501">501</th><td>}</td></tr>
+<tr><th id="502">502</th><td><i>/*[clinic end generated code: output=9e3374bd7d04c163 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="503">503</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../bytesobject.c.html'>codebrowser/Objects/bytesobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

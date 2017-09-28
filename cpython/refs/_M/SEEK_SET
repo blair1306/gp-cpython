@@ -1,0 +1,12 @@
+<dec f='include/stdio.h' l='140'/>
+<doc f='include/stdio.h' l='138'>/* The possibilities for the third argument to `fseek&apos;.
+   These values should not be changed.  */</doc>
+<dec f='include/fcntl.h' l='136'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='871' u='a'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='874' u='c'/>
+<use f='include/zconf.h' l='474' u='a'/>
+<use f='codebrowser/Modules/getpath.c' l='268' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7959' u='a'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7962' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='517' u='c'/>
+<use f='codebrowser/Python/traceback.c' l='310' u='c'/>

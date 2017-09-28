@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/codecs.h' l='49' type='PyObject * _PyCodec_Lookup(const char * encoding)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='84' u='c' c='_codecs_lookup_impl'/>
+<def f='codebrowser/Python/codecs.c' l='101' ll='187' type='PyObject * _PyCodec_Lookup(const char * encoding)'/>
+<use f='codebrowser/Python/codecs.c' l='221' u='c' c='PyCodec_KnownEncoding'/>
+<use f='codebrowser/Python/codecs.c' l='264' u='c' c='codec_getitem'/>
+<use f='codebrowser/Python/codecs.c' l='299' u='c' c='codec_getincrementalcodec'/>
+<use f='codebrowser/Python/codecs.c' l='317' u='c' c='codec_getstreamcodec'/>
+<use f='codebrowser/Python/codecs.c' l='533' u='c' c='_PyCodec_LookupTextEncoding'/>
+<doc f='codebrowser/Python/codecs.c' l='86'>/* Lookup the given encoding and return a tuple providing the codec
+   facilities.
+
+   The encoding string is looked up converted to all lower-case
+   characters. This makes encodings looked up through this mechanism
+   effectively case-insensitive.
+
+   If no codec is found, a LookupError is set and NULL returned.
+
+   As side effect, this tries to load the encodings package, if not
+   yet done. This is part of the lazy load strategy for the encodings
+   package.
+
+*/</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='212' u='c' c='get_codec_name'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1400' u='c' c='initfsencoding'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1682' u='c' c='initstdio'/>

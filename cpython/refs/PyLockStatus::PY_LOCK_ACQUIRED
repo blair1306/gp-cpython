@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pythread.h' l='16' type='1'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='296' u='r' c='_enter_buffered_busy'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='156' u='r' c='lock_PyThread_acquire_lock'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='158' u='r' c='lock_PyThread_acquire_lock'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='297' u='r' c='rlock_acquire'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='314' u='r' c='rlock_acquire'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='323' u='r' c='rlock_acquire'/>
+<use f='codebrowser/Modules/faulthandler.c' l='560' u='r' c='faulthandler_thread'/>
+<use f='codebrowser/Python/thread_pthread.h' l='375' u='r' c='PyThread_acquire_lock_timed'/>

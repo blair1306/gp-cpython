@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/hashtable.h' l='174' type='_Py_hashtable_entry_t * _Py_hashtable_get_entry(_Py_hashtable_t * ht, size_t key_size, const void * pkey)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='405' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='499' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='636' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='639' macro='1' u='c'/>
+<doc f='codebrowser/Modules/hashtable.h' l='169'>/* Get an entry.
+   Return NULL if the key does not exist.
+
+   Don&apos;t call directly this function, but use _Py_HASHTABLE_GET_ENTRY()
+   macro */</doc>
+<def f='codebrowser/Modules/hashtable.c' l='252' ll='271' type='_Py_hashtable_entry_t * _Py_hashtable_get_entry(_Py_hashtable_t * ht, size_t key_size, const void * pkey)'/>
+<use f='codebrowser/Modules/hashtable.c' l='326' u='c' c='_Py_hashtable_set'/>
+<use f='codebrowser/Modules/hashtable.c' l='361' u='c' c='_Py_hashtable_get'/>
+<use f='codebrowser/Python/marshal.c' l='273' macro='1' u='c'/>

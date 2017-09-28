@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyerrors.h' l='315' type='PyObject * PyErr_SetImportError(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Python/ceval.c' l='5084' u='c' c='import_from'/>
+<use f='codebrowser/Python/ceval.c' l='5092' u='c' c='import_from'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='118' u='c' c='_PyImport_FindSharedFuncptr'/>
+<def f='codebrowser/Python/errors.c' l='775' ll='779' type='PyObject * PyErr_SetImportError(PyObject * msg, PyObject * name, PyObject * path)'/>
+<use f='codebrowser/Python/importdl.c' l='139' u='c' c='_PyImport_LoadDynamicModuleWithSpec'/>

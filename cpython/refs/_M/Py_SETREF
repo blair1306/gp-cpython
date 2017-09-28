@@ -1,0 +1,85 @@
+<dec f='codebrowser/Include/object.h' l='875'/>
+<doc f='codebrowser/Include/object.h' l='856'>/* Safely decref `op` and set `op` to `op2`.
+ *
+ * As in case of Py_CLEAR &quot;the obvious&quot; code can be deadly:
+ *
+ *     Py_DECREF(op);
+ *     op = op2;
+ *
+ * The safe way is:
+ *
+ *      Py_SETREF(op, op2);
+ *
+ * That arranges to set `op` to `op2` _before_ decref&apos;ing, so that any code
+ * triggered as a side-effect of `op` getting torn down no longer believes
+ * `op` points to a valid object.
+ *
+ * Py_XSETREF is a variant of Py_SETREF that uses Py_XDECREF instead of
+ * Py_DECREF.
+ */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='452' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1027' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1485' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1898' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2026' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2397' u='c'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='318' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1122' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2291' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2299' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2308' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2316' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3148' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4679' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2652' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3458' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3465' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3481' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3482' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2002' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2035' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2581' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2583' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='287' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='297' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='367' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='368' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='369' u='c'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='99' u='c'/>
+<use f='codebrowser/Modules/_ssl.c' l='1782' u='c'/>
+<use f='codebrowser/Modules/_struct.c' l='1461' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='630' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3492' u='c'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1290' u='c'/>
+<use f='codebrowser/Modules/zipimport.c' l='184' u='c'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='728' u='c'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='742' u='c'/>
+<use f='codebrowser/Objects/abstract.c' l='1345' u='c'/>
+<use f='codebrowser/Objects/abstract.c' l='1357' u='c'/>
+<use f='codebrowser/Objects/abstract.c' l='1371' u='c'/>
+<use f='codebrowser/Objects/abstract.c' l='1373' u='c'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1992' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2346' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2926' u='c'/>
+<use f='codebrowser/Objects/floatobject.c' l='1497' u='c'/>
+<use f='codebrowser/Objects/floatobject.c' l='1587' u='c'/>
+<use f='codebrowser/Objects/floatobject.c' l='1593' u='c'/>
+<use f='codebrowser/Objects/funcobject.c' l='510' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='746' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='5300' u='c'/>
+<use f='codebrowser/Objects/rangeobject.c' l='991' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='450' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='471' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='3015' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='5929' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1873' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1881' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13600' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15313' u='c'/>
+<use f='codebrowser/Python/_warnings.c' l='733' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3404' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='4850' u='c'/>
+<use f='codebrowser/Python/errors.c' l='301' u='c'/>
+<use f='codebrowser/Python/errors.c' l='303' u='c'/>
+<use f='codebrowser/Python/import.c' l='1439' u='c'/>
+<use f='codebrowser/Python/peephole.c' l='204' u='c'/>

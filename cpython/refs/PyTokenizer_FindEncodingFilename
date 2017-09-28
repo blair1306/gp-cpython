@@ -1,0 +1,14 @@
+<def f='codebrowser/Parser/tokenizer.c' l='1920' ll='1970' type='char * PyTokenizer_FindEncodingFilename(int fd, PyObject * filename)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1975' u='c' c='PyTokenizer_FindEncoding'/>
+<doc f='codebrowser/Parser/tokenizer.c' l='1910'>/* Get the encoding of a Python file. Check for the coding cookie and check if
+   the file starts with a BOM.
+
+   PyTokenizer_FindEncodingFilename() returns NULL when it can&apos;t find the
+   encoding in the first or second line of the file (in which case the encoding
+   should be assumed to be UTF-8).
+
+   The char* returned is malloc&apos;ed via PyMem_MALLOC() and thus must be freed
+   by the caller. */</doc>
+<dec f='codebrowser/Python/traceback.c' l='22' type='char * PyTokenizer_FindEncodingFilename(int , PyObject * )'/>
+<use f='codebrowser/Python/traceback.c' l='305' u='c' c='_Py_DisplaySourceLine'/>
+<doc f='codebrowser/Python/traceback.c' l='21'>/* Function from Parser/tokenizer.c */</doc>

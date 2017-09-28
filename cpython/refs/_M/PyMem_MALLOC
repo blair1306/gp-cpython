@@ -1,0 +1,30 @@
+<dec f='codebrowser/Include/pymem.h' l='120'/>
+<doc f='codebrowser/Include/pymem.h' l='118'>/* Returns NULL to indicate error if a negative size or size larger than
+   Py_ssize_t can represent is supplied.  Helps prevents security holes. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='395' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='644' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='653' u='c'/>
+<use f='codebrowser/Modules/_struct.c' l='1348' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10961' u='c'/>
+<use f='codebrowser/Objects/capsule.c' l='201' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='642' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='2018' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='2571' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='2652' u='c'/>
+<use f='codebrowser/Objects/moduleobject.c' l='201' u='c'/>
+<use f='codebrowser/Objects/moduleobject.c' l='367' u='c'/>
+<use f='codebrowser/Objects/odictobject.c' l='693' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='1684' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9859' u='c'/>
+<use f='codebrowser/Parser/parser.c' l='78' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='121' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='164' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='713' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='846' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='867' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='879' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='961' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1015' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1964' u='c'/>
+<use f='codebrowser/Python/marshal.c' l='676' u='c'/>
+<use f='codebrowser/Python/marshal.c' l='1541' u='c'/>

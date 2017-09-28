@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1831' type='int PyUnicode_FSDecoder(PyObject * , void * )'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1828'>/* ParseTuple converter: decode bytes objects to unicode using
+   PyUnicode_DecodeFSDefaultAndSize(); str objects are output as-is. */</doc>
+<use f='codebrowser/Modules/parsermodule.c' l='495' c='parser_compilest'/>
+<use f='codebrowser/Modules/parsermodule.c' l='498' c='parser_compilest'/>
+<use f='codebrowser/Modules/clinic/symtablemodule.c.h' l='27' c='_symtable_symtable'/>
+<use f='codebrowser/Modules/clinic/zipimport.c.h' l='40' c='zipimport_zipimporter___init__'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3898' ll='3970' type='int PyUnicode_FSDecoder(PyObject * arg, void * addr)'/>
+<use f='codebrowser/Python/clinic/bltinmodule.c.h' l='174' c='builtin_compile'/>

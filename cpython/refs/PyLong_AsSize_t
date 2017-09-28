@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/longobject.h' l='26' type='size_t PyLong_AsSize_t(PyObject * )'/>
+<use f='codebrowser/Modules/_struct.c' l='258' u='c' c='get_size_t'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='797' u='c' c='test_long_as_size_t'/>
+<def f='codebrowser/Objects/longobject.c' l='615' ll='653' type='size_t PyLong_AsSize_t(PyObject * vv)'/>
+<doc f='codebrowser/Objects/longobject.c' l='612'>/* Get a C size_t from an int object. Returns (size_t)-1 and sets
+   an error condition if overflow occurs. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1627' u='c' c='pylong_as_zu'/>

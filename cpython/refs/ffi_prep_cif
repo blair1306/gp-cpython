@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/ffi.h' l='433' type='ffi_status ffi_prep_cif(ffi_cif * cif, ffi_abi abi, unsigned int nargs, ffi_type * rtype, ffi_type ** atypes)'/>
+<doc f='include/x86_64-linux-gnu/ffi.h' l='431'>/* ---- Public interface definition -------------------------------------- */</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='387' u='c' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='774' u='c' c='_call_function_pointer'/>

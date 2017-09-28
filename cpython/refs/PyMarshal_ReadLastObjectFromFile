@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/marshal.h' l='20' type='PyObject * PyMarshal_ReadLastObjectFromFile(FILE * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3836' u='c' c='pymarshal_read_last_object_from_file'/>
+<def f='codebrowser/Python/marshal.c' l='1533' ll='1556' type='PyObject * PyMarshal_ReadLastObjectFromFile(FILE * fp)'/>
+<doc f='codebrowser/Python/marshal.c' l='1527'>/* If we can get the size of the file up-front, and it&apos;s reasonably small,
+ * read it in one gulp and delegate to ...FromString() instead.  Much quicker
+ * than reading a byte at a time from file; speeds .pyc imports.
+ * CAUTION:  since this may read the entire remainder of the file, don&apos;t
+ * call it unless you know you&apos;re done with the file.
+ */</doc>
+<use f='codebrowser/Python/pythonrun.c' l='1009' u='c' c='run_pyc_file'/>

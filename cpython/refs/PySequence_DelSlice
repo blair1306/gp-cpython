@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='891' type='int PySequence_DelSlice(PyObject * o, Py_ssize_t i1, Py_ssize_t i2)'/>
+<doc f='codebrowser/Include/abstract.h' l='887'>/* Delete the slice in sequence object &apos;o&apos; from &apos;i1&apos; to &apos;i2&apos;.
+   Returns -1 on failure.
+
+   This is the equivalent of the Python statement: del o[i1:i2]. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='1766' ll='1788' type='int PySequence_DelSlice(PyObject * s, Py_ssize_t i1, Py_ssize_t i2)'/>

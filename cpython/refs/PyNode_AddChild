@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/node.h' l='20' type='int PyNode_AddChild(node * n, int type, char * str, int lineno, int col_offset)'/>
+<use f='codebrowser/Modules/parsermodule.c' l='953' u='c' c='build_node_children'/>
+<def f='codebrowser/Parser/node.c' l='78' ll='113' type='int PyNode_AddChild(node * n1, int type, char * str, int lineno, int col_offset)'/>
+<use f='codebrowser/Parser/parser.c' l='112' u='c' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='126' u='c' c='push'/>

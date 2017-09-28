@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pyerrors.h' l='460' type='int PyUnicodeTranslateError_SetEnd(PyObject * , Py_ssize_t )'/>
+<def f='codebrowser/Objects/exceptions.c' l='1763' ll='1768' type='int PyUnicodeTranslateError_SetEnd(PyObject * exc, Py_ssize_t end)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8640' u='c' c='make_translate_exception'/>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/pystate.h' l='58' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Python/ceval.c' l='4683' u='r' c='PyEval_GetBuiltins'/>
+<use f='codebrowser/Python/import.c' l='50' u='r' c='_PyImport_Init'/>
+<use f='codebrowser/Python/import.c' l='356' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='409' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='412' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='413' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='446' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='463' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/pylifecycle.c' l='283' u='r' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='665' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='666' u='r' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='668' u='r' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1185' u='w' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1186' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1188' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pystate.c' l='103' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='164' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='164' u='w' c='PyInterpreterState_Clear'/>

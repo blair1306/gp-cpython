@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/Python-ast.h' l='354' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:351:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2372' u='m' c='_Py_Name'/>
+<use f='codebrowser/Python/Python-ast.c' l='2373' u='m' c='_Py_Name'/>
+<use f='codebrowser/Python/Python-ast.c' l='3471' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3476' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='198' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1024' u='m' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1027' u='m' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='2845' u='m' c='ast_for_call'/>
+<use f='codebrowser/Python/ast.c' l='2848' u='m' c='ast_for_call'/>
+<use f='codebrowser/Python/ast.c' l='2973' u='m' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2976' u='m' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/compile.c' l='4144' u='m' c='expr_constant'/>
+<use f='codebrowser/Python/compile.c' l='4511' u='m' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4511' u='m' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4553' u='m' c='compiler_augassign'/>
+<use f='codebrowser/Python/compile.c' l='4557' u='m' c='compiler_augassign'/>
+<use f='codebrowser/Python/compile.c' l='4670' u='m' c='compiler_annassign'/>
+<use f='codebrowser/Python/symtable.c' l='1192' u='m' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1200' u='m' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1207' u='m' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1213' u='m' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1500' u='m' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1501' u='m' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1504' u='m' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1506' u='m' c='symtable_visit_expr'/>

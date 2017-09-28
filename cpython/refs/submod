@@ -1,0 +1,11 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='67' ll='76' type='mpd_uint_t submod(mpd_uint_t a, mpd_uint_t b, mpd_uint_t m)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='63'>/*
+ * Restrictions: a &lt; m and b &lt; m
+ * ACL2 proof: umodarith.lisp: submod-2-correct
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='106' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='109' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='133' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='136' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='155' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='158' u='c' c='fnt_dif2'/>

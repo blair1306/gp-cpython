@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pyerrors.h' l='158' type='PyObject *'/>
+<use f='codebrowser/Modules/cjkcodecs/cjkcodecs.h' l='283' u='r' c='getcodec'/>
+<def f='codebrowser/Objects/exceptions.c' l='1513' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2529' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2606' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='7935' u='r' c='charmap_decode_mapping'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8272' u='r' c='charmapencode_lookup'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8721' u='r' c='charmaptranslate_lookup'/>
+<use f='codebrowser/Python/codecs.c' l='142' u='r' c='_PyCodec_Lookup'/>
+<use f='codebrowser/Python/codecs.c' l='171' u='r' c='_PyCodec_Lookup'/>
+<use f='codebrowser/Python/codecs.c' l='556' u='r' c='_PyCodec_LookupTextEncoding'/>
+<use f='codebrowser/Python/codecs.c' l='658' u='r' c='PyCodec_LookupError'/>

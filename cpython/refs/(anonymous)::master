@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/memoryobject.h' l='46' type='Py_buffer'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/memoryobject.h' l='46'>/* snapshot buffer obtained from the original exporter */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='71' u='m' c='mbuf_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='86' u='a' c='_PyManagedBuffer_FromObject'/>
+<use f='codebrowser/Objects/memoryobject.c' l='87' u='m' c='_PyManagedBuffer_FromObject'/>
+<use f='codebrowser/Objects/memoryobject.c' l='107' u='a' c='mbuf_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='116' u='m' c='mbuf_dealloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='123' u='m' c='mbuf_traverse'/>
+<use f='codebrowser/Objects/memoryobject.c' l='123' u='m' c='mbuf_traverse'/>
+<use f='codebrowser/Objects/memoryobject.c' l='656' u='a' c='mbuf_add_view'/>
+<use f='codebrowser/Objects/memoryobject.c' l='695' u='a' c='mbuf_add_incomplete_view'/>
+<use f='codebrowser/Objects/memoryobject.c' l='731' u='a' c='PyMemoryView_FromMemory'/>
+<use f='codebrowser/Objects/memoryobject.c' l='763' u='w' c='PyMemoryView_FromBuffer'/>
+<use f='codebrowser/Objects/memoryobject.c' l='764' u='m' c='PyMemoryView_FromBuffer'/>
+<use f='codebrowser/Objects/memoryobject.c' l='811' u='m' c='mbuf_copy_format'/>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/pystate.h' l='240' type='PyThreadState * PyThreadState_Swap(PyThreadState * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2983' u='c' c='run_in_subinterp'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2990' u='c' c='run_in_subinterp'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2997' u='c' c='run_in_subinterp'/>
+<use f='codebrowser/Programs/_testembed.c' l='61' u='c' c='test_repeated_init_and_subinterpreters'/>
+<use f='codebrowser/Programs/_testembed.c' l='69' u='c' c='test_repeated_init_and_subinterpreters'/>
+<use f='codebrowser/Python/ceval.c' l='223' u='c' c='PyEval_AcquireThread'/>
+<use f='codebrowser/Python/ceval.c' l='233' u='c' c='PyEval_ReleaseThread'/>
+<use f='codebrowser/Python/ceval.c' l='277' u='c' c='PyEval_SaveThread'/>
+<use f='codebrowser/Python/ceval.c' l='305' u='c' c='PyEval_RestoreThread'/>
+<use f='codebrowser/Python/ceval.c' l='1107' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1121' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/pylifecycle.c' l='623' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1097' u='c' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1166' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1239' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1275' u='c' c='Py_EndInterpreter'/>
+<def f='codebrowser/Python/pystate.c' l='583' ll='606' type='PyThreadState * PyThreadState_Swap(PyThreadState * newts)'/>

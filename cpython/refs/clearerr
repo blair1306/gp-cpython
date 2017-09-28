@@ -1,0 +1,6 @@
+<dec f='include/stdio.h' l='826' type='void clearerr(FILE * __stream)'/>
+<doc f='include/stdio.h' l='825'>/* Clear the error and EOF indicators for STREAM.  */</doc>
+<use f='codebrowser/Objects/object.c' l='361' u='c' c='PyObject_Print'/>
+<use f='codebrowser/Objects/object.c' l='410' u='c' c='PyObject_Print'/>
+<use f='codebrowser/Parser/myreadline.c' l='43' u='c' c='my_fgets'/>
+<use f='codebrowser/Parser/myreadline.c' l='74' u='c' c='my_fgets'/>

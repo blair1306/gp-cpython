@@ -1,0 +1,3 @@
+<def f='codebrowser/Objects/stringlib/transmogrify.h' l='635' ll='699' type='PyObject * stringlib_replace(PyObject * self, const char * from_s, Py_ssize_t from_len, const char * to_s, Py_ssize_t to_len, Py_ssize_t maxcount)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1327' u='c' c='bytearray_replace_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2261' u='c' c='bytes_replace_impl'/>

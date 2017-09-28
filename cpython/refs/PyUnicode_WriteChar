@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='814' type='int PyUnicode_WriteChar(PyObject * unicode, Py_ssize_t index, Py_UCS4 character)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='809'>/* Write a character to the string. The string must have been created through
+   PyUnicode_New, must not be shared, and must not have been hashed yet.
+
+   Return 0 on success, -1 on error. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='4200' ll='4221' type='int PyUnicode_WriteChar(PyObject * unicode, Py_ssize_t index, Py_UCS4 ch)'/>

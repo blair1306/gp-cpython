@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/Python-ast.h' l='299' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2111' u='w' c='_Py_Call'/>
+<use f='codebrowser/Python/Python-ast.c' l='3323' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='286' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='3461' u='r' c='maybe_optimize_method_call'/>
+<use f='codebrowser/Python/compile.c' l='3493' u='r' c='compiler_call'/>
+<use f='codebrowser/Python/symtable.c' l='1468' u='r' c='symtable_visit_expr'/>

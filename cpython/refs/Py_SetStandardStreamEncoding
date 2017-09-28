@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='20' type='int Py_SetStandardStreamEncoding(const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/pylifecycle.h' l='17'>/* Only used by applications that embed the interpreter and need to
+ * override the standard encoding determination mechanism
+ */</doc>
+<use f='codebrowser/Programs/_testembed.c' l='100' u='c' c='check_stdio_details'/>
+<use f='codebrowser/Programs/_testembed.c' l='127' u='c' c='test_forced_io_encoding'/>
+<def f='codebrowser/Python/pylifecycle.c' l='143' ll='179' type='int Py_SetStandardStreamEncoding(const char * encoding, const char * errors)'/>

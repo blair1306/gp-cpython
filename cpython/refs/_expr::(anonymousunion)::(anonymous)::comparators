@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/Python-ast.h' l='295' type='asdl_seq *'/>
+<offset>128</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2091' u='w' c='_Py_Compare'/>
+<use f='codebrowser/Python/Python-ast.c' l='3314' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='273' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='273' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='277' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='277' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='283' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='2089' u='r' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='2097' u='r' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='3427' u='r' c='compiler_compare'/>
+<use f='codebrowser/Python/compile.c' l='3439' u='r' c='compiler_compare'/>
+<use f='codebrowser/Python/compile.c' l='3441' u='r' c='compiler_compare'/>
+<use f='codebrowser/Python/symtable.c' l='1465' u='r' c='symtable_visit_expr'/>

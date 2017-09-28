@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='42' type='mpd_uint_t _mpd_baseadd(mpd_uint_t * w, const mpd_uint_t * u, const mpd_uint_t * v, mpd_size_t m, mpd_size_t n)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='50' ll='78' type='mpd_uint_t _mpd_baseadd(mpd_uint_t * w, const mpd_uint_t * u, const mpd_uint_t * v, mpd_size_t m, mpd_size_t n)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='381' u='c' c='_mpd_basedivmod'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='44'>/*
+ * Knuth, TAOCP, Volume 2, 4.3.1:
+ *    w := sum of u (len m) and v (len n)
+ *    n &gt; 0 and m &gt;= n
+ * The calling function has to handle a possible final carry.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3321' u='c' c='_mpd_qaddsub'/>

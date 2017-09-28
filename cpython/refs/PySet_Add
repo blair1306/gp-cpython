@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/setobject.h' l='84' type='int PySet_Add(PyObject * set, PyObject * key)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1504' u='c' c='task_all_tasks'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='889' u='c' c='_openssl_hash_name_mapper'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5872' u='c' c='os_sched_getaffinity_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='824' u='c' c='sigset_to_set'/>
+<def f='codebrowser/Objects/setobject.c' l='2327' ll='2336' type='int PySet_Add(PyObject * anyset, PyObject * key)'/>
+<use f='codebrowser/Objects/setobject.c' l='2440' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2446' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2464' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2466' u='c' c='test_c_api'/>
+<use f='codebrowser/Python/ceval.c' l='1527' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2554' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/marshal.c' l='1318' u='c' c='r_object'/>
+<use f='codebrowser/Python/pythonrun.c' l='816' u='c' c='print_exception_recursive'/>
+<use f='codebrowser/Python/symtable.c' l='477' u='c' c='analyze_name'/>
+<use f='codebrowser/Python/symtable.c' l='504' u='c' c='analyze_name'/>
+<use f='codebrowser/Python/symtable.c' l='508' u='c' c='analyze_name'/>
+<use f='codebrowser/Python/symtable.c' l='522' u='c' c='analyze_name'/>
+<use f='codebrowser/Python/symtable.c' l='796' u='c' c='analyze_block'/>

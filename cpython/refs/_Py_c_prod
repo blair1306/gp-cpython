@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/complexobject.h' l='20' type='Py_complex _Py_c_prod(Py_complex , Py_complex )'/>
+<def f='codebrowser/Objects/complexobject.c' l='49' ll='56' type='Py_complex _Py_c_prod(Py_complex a, Py_complex b)'/>
+<use f='codebrowser/Objects/complexobject.c' l='155' u='c' c='c_powu'/>
+<use f='codebrowser/Objects/complexobject.c' l='157' u='c' c='c_powu'/>
+<use f='codebrowser/Objects/complexobject.c' l='495' u='c' c='complex_mul'/>

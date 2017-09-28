@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/sre.h' l='61' type='struct SRE_REPEAT_T *'/>
+<use f='codebrowser/Modules/sre_lib.h' l='952' u='w' c='sre_ucs1_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='958' u='r' c='sre_ucs1_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1026' u='r' c='sre_ucs1_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1065' u='r' c='sre_ucs1_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='952' u='w' c='sre_ucs2_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='958' u='r' c='sre_ucs2_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1026' u='r' c='sre_ucs2_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1065' u='r' c='sre_ucs2_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='952' u='w' c='sre_ucs4_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='958' u='r' c='sre_ucs4_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1026' u='r' c='sre_ucs4_match'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1065' u='r' c='sre_ucs4_match'/>
+<offset>192</offset>
+<doc f='codebrowser/Modules/sre.h' l='61'>/* points to previous repeat context */</doc>

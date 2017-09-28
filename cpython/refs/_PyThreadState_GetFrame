@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pystate.h' l='346' type='PyThreadFrameGetter'/>
+<use f='codebrowser/Python/ceval.c' l='4719' u='r' c='PyEval_GetFrame'/>
+<def f='codebrowser/Python/pystate.c' l='64' type='PyThreadFrameGetter'/>
+<use f='codebrowser/Python/pystate.c' l='243' u='r' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='244' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/traceback.c' l='691' u='r' c='dump_traceback'/>

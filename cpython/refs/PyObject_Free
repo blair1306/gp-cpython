@@ -1,0 +1,145 @@
+<dec f='codebrowser/Include/objimpl.h' l='102' type='void PyObject_Free(void * ptr)'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='416' macro='1' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='416' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='448' macro='1' u='c'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='232' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='563' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1765' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4865' macro='1'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4865' macro='1'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5550' macro='1'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5550' macro='1'/>
+<use f='codebrowser/Modules/_elementtree.c' l='246' u='c' c='dealloc_extra'/>
+<use f='codebrowser/Modules/_elementtree.c' l='248' u='c' c='dealloc_extra'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2754'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2754'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='438' macro='1' u='c'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='162' macro='1' u='c'/>
+<use f='codebrowser/Modules/_lsprof.c' l='839' macro='1'/>
+<use f='codebrowser/Modules/_lsprof.c' l='839' macro='1'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='507' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='373' macro='1' u='c'/>
+<use f='codebrowser/Modules/_randommodule.c' l='511'/>
+<use f='codebrowser/Modules/_randommodule.c' l='511'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='273' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='959' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='959' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='959' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='562' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='1924' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='2429' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ssl.c' l='1858' macro='1' u='c'/>
+<use f='codebrowser/Modules/_struct.c' l='2041' macro='1'/>
+<use f='codebrowser/Modules/_struct.c' l='2041' macro='1'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='239' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2739' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='283' macro='1'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='283' macro='1'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3246' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3253' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3362' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3394' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4066' u='c' c='pyobject_malloc_without_gil'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4620' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4765' macro='1'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4765' macro='1'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4857' macro='1'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4857' macro='1'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='42' macro='1' u='c'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2860' macro='1'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2860' macro='1'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='700' macro='1' u='c'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1825' macro='1' u='c'/>
+<use f='codebrowser/Modules/md5module.c' l='336' macro='1' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1038' macro='1'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1038' macro='1'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='159' macro='1' u='c'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='204' macro='1' u='c'/>
+<use f='codebrowser/Modules/parsermodule.c' l='391' macro='1' u='c'/>
+<use f='codebrowser/Modules/parsermodule.c' l='956' macro='1' u='c'/>
+<use f='codebrowser/Modules/parsermodule.c' l='962' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='19' u='r'/>
+<use f='codebrowser/Modules/pyexpat.c' l='19' u='r'/>
+<use f='codebrowser/Modules/selectmodule.c' l='695' macro='1' u='c'/>
+<use f='codebrowser/Modules/sha1module.c' l='313' macro='1' u='c'/>
+<use f='codebrowser/Modules/sha256module.c' l='398' macro='1' u='c'/>
+<use f='codebrowser/Modules/sha512module.c' l='463' macro='1' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4853' macro='1'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4853' macro='1'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1282' macro='1'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1282' macro='1'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='624' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='228' u='c' c='PyByteArray_Resize'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='968' u='c' c='bytearray_repr'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1068' u='c' c='bytearray_dealloc'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2257' macro='1'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2257' macro='1'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2877' macro='1'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2877' macro='1'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2974' macro='1' u='c'/>
+<use f='codebrowser/Objects/capsule.c' l='263' macro='1' u='c'/>
+<use f='codebrowser/Objects/codeobject.c' l='448' macro='1' u='c'/>
+<use f='codebrowser/Objects/complexobject.c' l='1156' macro='1'/>
+<use f='codebrowser/Objects/complexobject.c' l='1156' macro='1'/>
+<use f='codebrowser/Objects/dictobject.c' l='266' macro='1' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='564' macro='1' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='1148' macro='1' u='c'/>
+<use f='codebrowser/Objects/fileobject.c' l='508' macro='1'/>
+<use f='codebrowser/Objects/fileobject.c' l='508' macro='1'/>
+<use f='codebrowser/Objects/floatobject.c' l='222' macro='1' u='c'/>
+<use f='codebrowser/Objects/floatobject.c' l='2017' macro='1' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='5445' macro='1'/>
+<use f='codebrowser/Objects/longobject.c' l='5445' macro='1'/>
+<def f='codebrowser/Objects/obmalloc.c' l='500' ll='504' type='void PyObject_Free(void * ptr)'/>
+<use f='codebrowser/Objects/rangeobject.c' l='141' macro='1' u='c'/>
+<use f='codebrowser/Objects/rangeobject.c' l='805' macro='1'/>
+<use f='codebrowser/Objects/rangeobject.c' l='805' macro='1'/>
+<use f='codebrowser/Objects/rangeobject.c' l='968' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='2727' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='3183' u='c' c='type_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='4644' macro='1'/>
+<use f='codebrowser/Objects/typeobject.c' l='4644' macro='1'/>
+<use f='codebrowser/Objects/typeobject.c' l='4974' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='5119' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='925' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='948' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='991' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1700' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1734' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1804' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1806' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1808' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8070' macro='1' u='c'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='981' macro='1' u='c'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1145' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15213' macro='1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15213' macro='1'/>
+<use f='codebrowser/Parser/acceler.c' l='47' macro='1' u='c'/>
+<use f='codebrowser/Parser/acceler.c' l='124' macro='1' u='c'/>
+<use f='codebrowser/Parser/bitset.c' l='25' macro='1' u='c'/>
+<use f='codebrowser/Parser/firstsets.c' l='112' macro='1' u='c'/>
+<use f='codebrowser/Parser/grammar.c' l='38' macro='1' u='c'/>
+<use f='codebrowser/Parser/grammar.c' l='39' macro='1' u='c'/>
+<use f='codebrowser/Parser/grammar.c' l='41' macro='1' u='c'/>
+<use f='codebrowser/Parser/grammar.c' l='44' macro='1' u='c'/>
+<use f='codebrowser/Parser/grammar.c' l='45' macro='1' u='c'/>
+<use f='codebrowser/Parser/node.c' l='125' macro='1' u='c'/>
+<use f='codebrowser/Parser/node.c' l='146' macro='1' u='c'/>
+<use f='codebrowser/Parser/node.c' l='148' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='242' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='248' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='267' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='342' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='124' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='126' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='127' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='504' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='506' macro='1' u='c'/>
+<use f='codebrowser/Python/compile.c' l='385' u='c' c='compiler_free'/>
+<use f='codebrowser/Python/compile.c' l='514' u='c' c='compiler_unit_free'/>
+<use f='codebrowser/Python/compile.c' l='516' u='c' c='compiler_unit_free'/>
+<use f='codebrowser/Python/compile.c' l='528' u='c' c='compiler_unit_free'/>
+<use f='codebrowser/Python/compile.c' l='5022' u='c' c='assemble_free'/>
+<use f='codebrowser/Python/future.c' l='132' u='c' c='PyFuture_FromASTObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1391' macro='1' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='111' macro='1' u='c'/>

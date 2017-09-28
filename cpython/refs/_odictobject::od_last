@@ -1,0 +1,15 @@
+<dec f='codebrowser/Objects/odictobject.c' l='491' type='_ODictNode *'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='w' c='_odict_add_head'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='_odict_add_tail'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='_odict_add_tail'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='_odict_add_tail'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='w' c='_odict_add_tail'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='_odict_remove_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='w' c='_odict_remove_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='w' c='_odict_clear_nodes'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='OrderedDict_popitem_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='OrderedDict_move_to_end_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='OrderedDict_move_to_end_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='527' u='r' c='odictiter_new'/>
+<offset>576</offset>
+<doc f='codebrowser/Objects/odictobject.c' l='491'>/* last node in the linked list, if any */</doc>

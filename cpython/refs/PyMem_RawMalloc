@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/pymem.h' l='15' type='void * PyMem_RawMalloc(size_t size)'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='126' u='c' c='PyLzma_Malloc'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3213' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3322' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/getpath.c' l='838' u='c' c='Py_SetPath'/>
+<use f='codebrowser/Modules/hashtable.c' l='152' u='r' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/main.c' l='397' u='c' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='654' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/readline.c' l='1293' u='c' c='call_readline'/>
+<use f='codebrowser/Modules/readline.c' l='1323' u='c' c='call_readline'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='133' u='c' c='PyZlib_Malloc'/>
+<def f='codebrowser/Objects/obmalloc.c' l='375' ll='387' type='void * PyMem_RawMalloc(size_t size)'/>
+<use f='codebrowser/Objects/obmalloc.c' l='452' u='c' c='_PyMem_RawStrdup'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1427' u='c' c='_PyObject_Alloc'/>
+<use f='codebrowser/Parser/myreadline.c' l='245' u='c' c='PyOS_StdioReadline'/>
+<use f='codebrowser/Programs/python.c' l='49' u='c' c='main'/>
+<use f='codebrowser/Programs/python.c' l='50' u='c' c='main'/>
+<use f='codebrowser/Python/ast.c' l='4308' u='c' c='fstring_compile_expr'/>
+<use f='codebrowser/Python/ast.c' l='4748' u='c' c='ExprList_Append'/>
+<use f='codebrowser/Python/fileutils.c' l='235' u='c' c='decode_ascii_surrogateescape'/>
+<use f='codebrowser/Python/fileutils.c' l='324' u='c' c='Py_DecodeLocale'/>
+<use f='codebrowser/Python/fileutils.c' l='352' u='c' c='Py_DecodeLocale'/>
+<use f='codebrowser/Python/frozenmain.c' l='28' u='c' c='Py_FrozenMain'/>
+<use f='codebrowser/Python/frozenmain.c' l='29' u='c' c='Py_FrozenMain'/>
+<use f='codebrowser/Python/pystate.c' l='92' u='c' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='241' u='c' c='new_threadstate'/>
+<use f='codebrowser/Python/thread_pthread.h' l='287' u='c' c='PyThread_allocate_lock'/>

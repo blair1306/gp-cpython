@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyexpat.h' l='42' type='void (*)(XML_Parser, XML_UnknownEncodingHandler, void *)'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3354' u='r' c='_elementtree_XMLParser___init___impl'/>
+<offset>1024</offset>
+<use f='codebrowser/Modules/pyexpat.c' l='1881' u='w' c='PyInit_pyexpat'/>

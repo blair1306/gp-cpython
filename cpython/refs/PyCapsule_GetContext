@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pycapsule.h' l='39' type='void * PyCapsule_GetContext(PyObject * capsule)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2464' u='c' c='capsule_destructor'/>
+<def f='codebrowser/Objects/capsule.c' l='121' ll='130' type='void * PyCapsule_GetContext(PyObject * o)'/>

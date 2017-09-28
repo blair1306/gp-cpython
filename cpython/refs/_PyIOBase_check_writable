@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='35' type='PyObject * _PyIOBase_check_writable(PyObject * self, PyObject * args)'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1803' u='c' c='_io_BufferedWriter___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2113' u='c' c='_io_BufferedRWPair___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2306' u='c' c='_io_BufferedRandom___init___impl'/>
+<def f='codebrowser/Modules/_io/iobase.c' l='409' ll='424' type='PyObject * _PyIOBase_check_writable(PyObject * self, PyObject * args)'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='768'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='768'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='768'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='768'/>
+<doc f='codebrowser/Modules/_io/iobase.c' l='408'>/* May be called with any object */</doc>

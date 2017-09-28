@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pymem.h' l='190' type='void PyMem_GetAllocator(PyMemAllocatorDomain domain, PyMemAllocatorEx * allocator)'/>
+<doc f='codebrowser/Include/pymem.h' l='189'>/* Get the memory block allocator of the specified domain. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3316' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3504' u='c' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3505' u='c' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3506' u='c' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='996' u='c' c='tracemalloc_init'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1126' u='c' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1136' u='c' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1140' u='c' c='tracemalloc_start'/>
+<use f='codebrowser/Objects/obmalloc.c' l='311' u='c' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='322' u='c' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='328' u='c' c='PyMem_SetupDebugHooks'/>
+<def f='codebrowser/Objects/obmalloc.c' l='333' ll='349' type='void PyMem_GetAllocator(PyMemAllocatorDomain domain, PyMemAllocatorEx * allocator)'/>

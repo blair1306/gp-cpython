@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='60' type='mpd_uint_t _mpd_shortdiv(mpd_uint_t * w, const mpd_uint_t * u, mpd_size_t n, mpd_uint_t v)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='271' ll='290' type='mpd_uint_t _mpd_shortdiv(mpd_uint_t * w, const mpd_uint_t * u, mpd_size_t n, mpd_uint_t v)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='342' u='c' c='_mpd_basedivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='387' u='c' c='_mpd_basedivmod'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='267'>/*
+ * Knuth, TAOCP Volume 2, 4.3.1, exercise 16:
+ *     w := quotient of u (len n) divided by a single word v
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3719' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3871' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7254' u='c' c='_mpd_qreciprocal_approx'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7917' u='c' c='_baseconv_to_u16'/>

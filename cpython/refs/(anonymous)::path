@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pyerrors.h' l='34' type='PyObject *'/>
+<offset>768</offset>
+<use f='codebrowser/Objects/exceptions.c' l='636' u='r' c='ImportError_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='636' u='w' c='ImportError_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='652' u='r' c='ImportError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='652' u='w' c='ImportError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='669' u='r' c='ImportError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='669' u='r' c='ImportError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='689' u='r' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/exceptions.c' l='699' u='r' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/exceptions.c' l='699' u='r' c='ImportError_getstate'/>

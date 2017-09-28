@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pyerrors.h' l='440' type='int PyUnicodeEncodeError_GetStart(PyObject * , Py_ssize_t * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='438'>/* get the value of the start attribute (the int * may not be NULL)
+   return 0 on success, -1 on failure */</doc>
+<def f='codebrowser/Objects/exceptions.c' l='1635' ll='1651' type='int PyUnicodeEncodeError_GetStart(PyObject * exc, Py_ssize_t * start)'/>
+<use f='codebrowser/Objects/exceptions.c' l='1675' u='c' c='PyUnicodeTranslateError_GetStart'/>
+<use f='codebrowser/Python/codecs.c' l='713' u='c' c='PyCodec_ReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='772' u='c' c='PyCodec_XMLCharRefReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='897' u='c' c='PyCodec_BackslashReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='981' u='c' c='PyCodec_NameReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1144' u='c' c='PyCodec_SurrogatePassErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1304' u='c' c='PyCodec_SurrogateEscapeErrors'/>

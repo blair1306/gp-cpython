@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='511' type='void mpd_qplus(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3981' u='c' c='nm_mpd_qplus'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5041' u='c' c='ctx_mpd_qplus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3201' u='c' c='mpd_qabs'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5953' ll='5971' type='void mpd_qplus(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5952'>/* Like the plus operator. */</doc>

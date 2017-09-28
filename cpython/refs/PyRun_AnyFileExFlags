@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pythonrun.h' l='13' type='int PyRun_AnyFileExFlags(FILE * fp, const char * filename, int closeit, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Modules/main.c' l='341' u='c' c='run_file'/>
+<use f='codebrowser/Modules/main.c' l='918' macro='1' u='c'/>
+<use f='codebrowser/Python/frozenmain.c' l='97' macro='1' u='c'/>
+<def f='codebrowser/Python/pythonrun.c' l='69' ll='83' type='int PyRun_AnyFileExFlags(FILE * fp, const char * filename, int closeit, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1454' u='c' c='PyRun_AnyFile'/>
+<use f='codebrowser/Python/pythonrun.c' l='1461' u='c' c='PyRun_AnyFileEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='1468' u='c' c='PyRun_AnyFileFlags'/>
+<doc f='codebrowser/Python/pythonrun.c' l='68'>/* Parse input from a file and execute it */</doc>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/memoryobject.h' l='45' type='Py_ssize_t'/>
+<dec f='codebrowser/Include/memoryobject.h' l='62' type='Py_ssize_t'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/memoryobject.h' l='45'>/* number of direct memoryview exports */</doc>
+<doc f='codebrowser/Include/memoryobject.h' l='62'>/* number of buffer re-exports */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='70' u='w' c='mbuf_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='113' u='r' c='mbuf_dealloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='130' u='r' c='mbuf_clear'/>
+<use f='codebrowser/Objects/memoryobject.c' l='630' u='w' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='677' u='w' c='mbuf_add_view'/>
+<use f='codebrowser/Objects/memoryobject.c' l='708' u='w' c='mbuf_add_incomplete_view'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1028' u='r' c='_memory_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1030' u='r' c='_memory_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1031' u='w' c='_memory_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1035' u='r' c='_memory_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1037' u='r' c='_memory_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1038' u='r' c='_memory_release'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1057' u='r' c='memory_dealloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1478' u='w' c='memory_getbuf'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1486' u='w' c='memory_releasebuf'/>

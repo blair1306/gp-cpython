@@ -1,0 +1,22 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='464' type='int mpd_qcheck_nan(mpd_t * nanresult, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='463'>/* quiet functions */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1537' ll='1549' type='int mpd_qcheck_nan(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2751' u='c' c='mpd_qlogb'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3013' u='c' c='mpd_qshiftn'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3192' u='c' c='mpd_qabs'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4328' u='c' c='mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4849' u='c' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4996' u='c' c='mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5937' u='c' c='mpd_qminus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5958' u='c' c='mpd_qplus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5982' u='c' c='mpd_qnext_minus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6029' u='c' c='mpd_qnext_plus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6872' u='c' c='mpd_qreduce'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7128' u='c' c='_mpd_qround_to_integral'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7668' u='c' c='mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7716' u='c' c='mpd_qsqrt'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1532'>/*
+ * Check if the operand is NaN, copy to result and return 1 if this is
+ * the case. Copying can fail since NaNs are allowed to have a payload that
+ * does not fit in MPD_MINALLOC.
+ */</doc>

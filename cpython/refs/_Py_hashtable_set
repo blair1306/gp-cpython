@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/hashtable.h' l='155' type='int _Py_hashtable_set(_Py_hashtable_t * ht, size_t key_size, const void * pkey, size_t data_size, const void * data)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='413' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='518' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='544' u='c' c='tracemalloc_use_domain_cb'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='657' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='660' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1260' macro='1' u='c'/>
+<doc f='codebrowser/Modules/hashtable.h' l='150'>/* Add a new entry to the hash. The key must not be present in the hash table.
+   Return 0 on success, -1 on memory error.
+
+   Don&apos;t call directly this function,
+   but use _Py_HASHTABLE_SET() and _Py_HASHTABLE_SET_NODATA() macros */</doc>
+<def f='codebrowser/Modules/hashtable.c' l='311' ll='350' type='int _Py_hashtable_set(_Py_hashtable_t * ht, size_t key_size, const void * pkey, size_t data_size, const void * data)'/>
+<use f='codebrowser/Modules/hashtable.c' l='516' u='c' c='_Py_hashtable_copy'/>
+<use f='codebrowser/Python/marshal.c' l='291' macro='1' u='c'/>

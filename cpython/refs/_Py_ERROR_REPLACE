@@ -1,0 +1,9 @@
+<dec f='codebrowser/Objects/unicodeobject.c' l='324' type='3'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='342' u='r' c='get_error_handler'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='330' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='330' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5051' c='PyUnicode_DecodeUTF8Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6779' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6979' c='PyUnicode_DecodeASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6988' u='r' c='PyUnicode_DecodeASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8441' c='charmap_encoding_error'/>

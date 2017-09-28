@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='370' type='ternaryfunc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1227' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1297' u='w'/>
+<offset>1152</offset>
+<use f='codebrowser/Objects/call.c' l='107' u='r' c='_PyObject_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='169' u='r' c='_PyObject_FastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='234' u='r' c='PyObject_Call'/>
+<use f='codebrowser/Objects/object.c' l='1358' u='r' c='PyCallable_Check'/>
+<use f='codebrowser/Objects/typeobject.c' l='4939' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4939' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4939' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4939' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4939' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4939' u='r' c='inherit_slots'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/traceback.h' l='17' type='struct _frame *'/>
+<offset>320</offset>
+<use f='codebrowser/Python/import.c' l='1306' u='r' c='remove_importlib_frames'/>
+<use f='codebrowser/Python/traceback.c' l='55' u='r' c='tb_dealloc'/>
+<use f='codebrowser/Python/traceback.c' l='64' u='r' c='tb_traverse'/>
+<use f='codebrowser/Python/traceback.c' l='64' u='r' c='tb_traverse'/>
+<use f='codebrowser/Python/traceback.c' l='72' u='r' c='tb_clear'/>
+<use f='codebrowser/Python/traceback.c' l='72' u='w' c='tb_clear'/>
+<use f='codebrowser/Python/traceback.c' l='124' u='w' c='newtracebackobject'/>
+<use f='codebrowser/Python/traceback.c' l='434' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='437' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='446' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='448' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='453' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='455' u='r' c='tb_printinternal'/>

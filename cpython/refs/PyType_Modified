@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/object.h' l='510' type='void PyType_Modified(PyTypeObject * )'/>
+<use f='codebrowser/Objects/typeobject.c' l='219' u='c' c='PyType_ClearCache'/>
+<def f='codebrowser/Objects/typeobject.c' l='230' ll='271' type='void PyType_Modified(PyTypeObject * type)'/>
+<use f='codebrowser/Objects/typeobject.c' l='266' u='c' c='PyType_Modified'/>
+<use f='codebrowser/Objects/typeobject.c' l='345' u='c' c='assign_version_tag'/>
+<use f='codebrowser/Objects/typeobject.c' l='510' u='c' c='type_set_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='558' u='c' c='type_set_abstractmethods'/>
+<use f='codebrowser/Objects/typeobject.c' l='824' u='c' c='type_set_doc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1965' u='c' c='mro_internal'/>
+<use f='codebrowser/Objects/typeobject.c' l='3419' u='c' c='type_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='7084' u='c' c='update_slot'/>

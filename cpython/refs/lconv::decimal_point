@@ -1,0 +1,7 @@
+<dec f='include/locale.h' l='57' type='char *'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='877' u='r' c='mpd_parse_fmt_str'/>
+<offset>0</offset>
+<doc f='include/locale.h' l='55'>/* Numeric (non-monetary) information.  */</doc>
+<doc f='include/locale.h' l='57'>/* Decimal point character.  */</doc>
+<use f='codebrowser/Modules/_localemodule.c' l='175' u='r' c='PyLocale_localeconv'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='712' u='r' c='get_locale_info'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='68' type='wchar_t * Py_GetExecPrefix()'/>
+<def f='codebrowser/Modules/getpath.c' l='860' ll='866' type='wchar_t * Py_GetExecPrefix()'/>
+<use f='codebrowser/Python/sysmodule.c' l='2129' u='c' c='_PySys_EndInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2133' u='c' c='_PySys_EndInit'/>

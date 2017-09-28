@@ -1,0 +1,12 @@
+<dec f='include/linux/soundcard.h' l='742'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='802' u='c'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='825' u='c'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='1173' u='c'/>
+<doc f='include/linux/soundcard.h' l='733'>/* 
+ * Mixer devices
+ *
+ * There can be up to 20 different analog mixer channels. The
+ * SOUND_MIXER_NRDEVICES gives the currently supported maximum. 
+ * The SOUND_MIXER_READ_DEVMASK returns a bitmask which tells
+ * the devices supported by the particular mixer.
+ */</doc>

@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='153' type='double pow(double __x, double __y)'/>
+<use f='codebrowser/Modules/mathmodule.c' l='336' u='c' c='m_tgamma'/>
+<use f='codebrowser/Modules/mathmodule.c' l='339' u='c' c='m_tgamma'/>
+<use f='codebrowser/Modules/mathmodule.c' l='348' u='c' c='m_tgamma'/>
+<use f='codebrowser/Modules/mathmodule.c' l='351' u='c' c='m_tgamma'/>
+<use f='codebrowser/Modules/mathmodule.c' l='2138' u='c' c='math_pow_impl'/>
+<use f='codebrowser/Objects/complexobject.c' l='133' u='c' c='_Py_c_pow'/>
+<use f='codebrowser/Objects/floatobject.c' l='790' u='c' c='float_pow'/>

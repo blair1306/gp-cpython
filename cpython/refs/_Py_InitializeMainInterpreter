@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='27' type='int _Py_InitializeMainInterpreter(const _PyMainInterpreterConfig * )'/>
+<use f='codebrowser/Modules/main.c' l='786' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='742' ll='822' type='int _Py_InitializeMainInterpreter(const _PyMainInterpreterConfig * config)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='840' u='c' c='_Py_InitializeEx_Private'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='731'>/* Update interpreter state based on supplied configuration settings
+ *
+ * After calling this function, most of the restrictions on the interpreter
+ * are lifted. The only remaining incomplete settings are those related
+ * to the main module (sys.argv[0], __main__ metadata)
+ *
+ * Calling this when the interpreter is not initializing, is already
+ * initialized or without a valid current thread state is a fatal error.
+ * Other errors should be reported as normal Python exceptions with a
+ * non-zero return code.
+ */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/abstract.h' l='264' type='PyObject * _PyObject_FastCall_Prepend(PyObject * callable, PyObject * obj, PyObject ** args, Py_ssize_t nargs)'/>
+<def f='codebrowser/Objects/call.c' l='835' ll='866' type='PyObject * _PyObject_FastCall_Prepend(PyObject * callable, PyObject * obj, PyObject ** args, Py_ssize_t nargs)'/>
+<doc f='codebrowser/Objects/call.c' l='833'>/* Positional arguments are obj followed by args:
+   call callable(obj, *args, **kwargs) */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='1473' u='c' c='call_unbound'/>

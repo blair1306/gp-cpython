@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/listobject.h' l='59' type='int PyList_SetSlice(PyObject * , Py_ssize_t , Py_ssize_t , PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='112' u='c' c='future_schedule_callbacks'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='548' u='c' c='_asyncio_Future_remove_done_callback'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='551' u='c' c='_asyncio_Future_remove_done_callback'/>
+<use f='codebrowser/Modules/_heapqmodule.c' l='143' u='c' c='heappop_internal'/>
+<use f='codebrowser/Modules/_pickle.c' l='5831' u='c' c='do_append'/>
+<use f='codebrowser/Objects/accu.c' l='43' u='c' c='flush_accumulator'/>
+<def f='codebrowser/Objects/listobject.c' l='686' ll='694' type='int PyList_SetSlice(PyObject * a, Py_ssize_t ilow, Py_ssize_t ihigh, PyObject * v)'/>
+<use f='codebrowser/Objects/object.c' l='2019' u='c' c='Py_ReprLeave'/>
+<use f='codebrowser/Python/ceval.c' l='3776' u='c' c='format_missing'/>
+<use f='codebrowser/Python/pystate.c' l='435' u='c' c='_PyState_ClearModules'/>
+<use f='codebrowser/Python/symtable.c' l='928' u='c' c='symtable_exit_block'/>
+<use f='codebrowser/Python/sysmodule.c' l='1491' u='c' c='PySys_ResetWarnOptions'/>

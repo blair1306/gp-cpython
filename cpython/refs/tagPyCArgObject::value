@@ -1,0 +1,30 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='309' type='union (anonymous union at /home/jon/workspace/cpython/Modules/_ctypes/ctypes.h:298:5)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='416' u='m' c='StructUnionType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='953' u='m' c='PyCPointerType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1380' u='m' c='PyCArrayType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1582' u='a' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1646' u='a' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1715' u='a' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1733' u='a' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1750' u='a' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1792' u='m' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1812' u='m' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1927' u='a' c='PyCSimpleType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2153' u='a' c='PyCSimpleType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2354' u='m' c='PyCFuncPtrType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3565' u='m' c='_byref'/>
+<offset>384</offset>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='440' u='a' c='PyCArgObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='440' u='r' c='PyCArgObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='459' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='464' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='469' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='474' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='485' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='489' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='493' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='498' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='509' u='m' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='624' u='a' c='ConvParam'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='634' u='a' c='ConvParam'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1541' u='m' c='byref'/>

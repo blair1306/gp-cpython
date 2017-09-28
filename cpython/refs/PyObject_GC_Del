@@ -1,0 +1,161 @@
+<dec f='codebrowser/Include/objimpl.h' l='338' type='void PyObject_GC_Del(void * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='998' u='c' c='FutureIter_dealloc'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1676'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1676'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1723' u='c' c='dequeiter_dealloc'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2244'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2244'/>
+<use f='codebrowser/Modules/_csv.c' l='865' u='c' c='Reader_dealloc'/>
+<use f='codebrowser/Modules/_csv.c' l='1320' u='c' c='Writer_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='22' u='c' c='CThunkObject_dealloc'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2089' u='c' c='elementiter_dealloc'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='421'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='421'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='681' u='c' c='lru_list_elem_dealloc'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='1226'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='1226'/>
+<use f='codebrowser/Modules/_operator.c' l='980' u='c' c='itemgetter_dealloc'/>
+<use f='codebrowser/Modules/_operator.c' l='1237' u='c' c='attrgetter_dealloc'/>
+<use f='codebrowser/Modules/_operator.c' l='1514' u='c' c='methodcaller_dealloc'/>
+<use f='codebrowser/Modules/_pickle.c' l='4332' u='c' c='PicklerMemoProxy_dealloc'/>
+<use f='codebrowser/Modules/_pickle.c' l='4549'/>
+<use f='codebrowser/Modules/_pickle.c' l='4549'/>
+<use f='codebrowser/Modules/_pickle.c' l='6789' u='c' c='UnpicklerMemoProxy_dealloc'/>
+<use f='codebrowser/Modules/_pickle.c' l='7018'/>
+<use f='codebrowser/Modules/_pickle.c' l='7018'/>
+<use f='codebrowser/Modules/_ssl.c' l='4303' u='c' c='PySSLSession_dealloc'/>
+<use f='codebrowser/Modules/_struct.c' l='1596' u='c' c='unpackiter_dealloc'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2918' u='c' c='arrayiter_dealloc'/>
+<def f='codebrowser/Modules/gcmodule.c' l='1816' ll='1826' type='void PyObject_GC_Del(void * op)'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='221'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='221'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='269' u='c' c='_grouper_dealloc'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='374'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='374'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='499' u='c' c='teedataobject_dealloc'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='615'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='615'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='684' u='c' c='tee_fromiterable'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='721' u='c' c='tee_dealloc'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='802'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='802'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1053'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1053'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1221'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1221'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1385'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1385'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1644'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1644'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1788'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1788'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2007'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2007'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2365'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2365'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2678'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2678'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3009'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3009'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3401'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3401'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3583'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3583'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3750'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3750'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3906'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3906'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4152'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4152'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4304'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4304'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4574'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4574'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1234' u='c' c='xmlparse_dealloc'/>
+<use f='codebrowser/Modules/zipimport.c' l='833'/>
+<use f='codebrowser/Modules/zipimport.c' l='833'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2273' u='c' c='bytearrayiter_dealloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3013' u='c' c='striter_dealloc'/>
+<use f='codebrowser/Objects/cellobject.c' l='51' u='c' c='cell_dealloc'/>
+<use f='codebrowser/Objects/classobject.c' l='205' u='c' c='method_dealloc'/>
+<use f='codebrowser/Objects/classobject.c' l='385' u='c' c='PyMethod_ClearFreeList'/>
+<use f='codebrowser/Objects/classobject.c' l='487' u='c' c='instancemethod_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='445' u='c' c='code_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='19' u='c' c='descr_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='902' u='c' c='mappingproxy_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='1015' u='c' c='wrapper_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='1697'/>
+<use f='codebrowser/Objects/descrobject.c' l='1697'/>
+<use f='codebrowser/Objects/dictobject.c' l='263' u='c' c='PyDict_ClearFreeList'/>
+<use f='codebrowser/Objects/dictobject.c' l='3159'/>
+<use f='codebrowser/Objects/dictobject.c' l='3159'/>
+<use f='codebrowser/Objects/dictobject.c' l='3279' u='c' c='dictiter_dealloc'/>
+<use f='codebrowser/Objects/dictobject.c' l='3639' u='c' c='dictview_dealloc'/>
+<use f='codebrowser/Objects/enumobject.c' l='232'/>
+<use f='codebrowser/Objects/enumobject.c' l='232'/>
+<use f='codebrowser/Objects/enumobject.c' l='429'/>
+<use f='codebrowser/Objects/enumobject.c' l='429'/>
+<use f='codebrowser/Objects/frameobject.c' l='451' u='c' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='682' u='c' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='990' u='c' c='PyFrame_ClearFreeList'/>
+<use f='codebrowser/Objects/funcobject.c' l='541' u='c' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='802'/>
+<use f='codebrowser/Objects/funcobject.c' l='802'/>
+<use f='codebrowser/Objects/funcobject.c' l='980'/>
+<use f='codebrowser/Objects/funcobject.c' l='980'/>
+<use f='codebrowser/Objects/genobject.c' l='118' u='c' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='1053' u='c' c='coro_wrapper_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='1170' u='c' c='aiter_wrapper_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='1513' u='c' c='PyAsyncGen_ClearFreeLists'/>
+<use f='codebrowser/Objects/genobject.c' l='1520' u='c' c='PyAsyncGen_ClearFreeLists'/>
+<use f='codebrowser/Objects/genobject.c' l='1574' u='c' c='async_gen_asend_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='1749' u='c' c='async_gen_wrapped_val_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='1840' u='c' c='async_gen_athrow_dealloc'/>
+<use f='codebrowser/Objects/iterobject.c' l='35' u='c' c='iter_dealloc'/>
+<use f='codebrowser/Objects/iterobject.c' l='197' u='c' c='calliter_dealloc'/>
+<use f='codebrowser/Objects/listobject.c' l='121' u='c' c='PyList_ClearFreeList'/>
+<use f='codebrowser/Objects/listobject.c' l='2733'/>
+<use f='codebrowser/Objects/listobject.c' l='2733'/>
+<use f='codebrowser/Objects/listobject.c' l='2821' u='c' c='listiter_dealloc'/>
+<use f='codebrowser/Objects/listobject.c' l='2972' u='c' c='listreviter_dealloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='117' u='c' c='mbuf_dealloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1063' u='c' c='memory_dealloc'/>
+<use f='codebrowser/Objects/methodobject.c' l='97' u='c' c='meth_dealloc'/>
+<use f='codebrowser/Objects/methodobject.c' l='314' u='c' c='PyCFunction_ClearFreeList'/>
+<use f='codebrowser/Objects/moduleobject.c' l='790'/>
+<use f='codebrowser/Objects/moduleobject.c' l='790'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='237'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='237'/>
+<use f='codebrowser/Objects/odictobject.c' l='1788' u='c' c='odictiter_dealloc'/>
+<use f='codebrowser/Objects/setobject.c' l='816' u='c' c='setiter_dealloc'/>
+<use f='codebrowser/Objects/setobject.c' l='2171'/>
+<use f='codebrowser/Objects/setobject.c' l='2171'/>
+<use f='codebrowser/Objects/setobject.c' l='2269'/>
+<use f='codebrowser/Objects/setobject.c' l='2269'/>
+<use f='codebrowser/Objects/sliceobject.c' l='105' u='c' c='PySlice_Fini'/>
+<use f='codebrowser/Objects/sliceobject.c' l='331' u='c' c='slice_dealloc'/>
+<use f='codebrowser/Objects/structseq.c' l='70' u='c' c='structseq_dealloc'/>
+<use f='codebrowser/Objects/tupleobject.c' l='866'/>
+<use f='codebrowser/Objects/tupleobject.c' l='866'/>
+<use f='codebrowser/Objects/tupleobject.c' l='917' u='c' c='_PyTuple_Resize'/>
+<use f='codebrowser/Objects/tupleobject.c' l='945' u='c' c='PyTuple_ClearFreeList'/>
+<use f='codebrowser/Objects/tupleobject.c' l='980' u='c' c='tupleiter_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='2722' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='3478'/>
+<use f='codebrowser/Objects/typeobject.c' l='3478'/>
+<use f='codebrowser/Objects/typeobject.c' l='4980' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='7703'/>
+<use f='codebrowser/Objects/typeobject.c' l='7703'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15411' u='c' c='unicodeiter_dealloc'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='391'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='391'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='544' u='c' c='proxy_dealloc'/>
+<use f='codebrowser/Python/Python-ast.c' l='661'/>
+<use f='codebrowser/Python/Python-ast.c' l='661'/>
+<use f='codebrowser/Python/bltinmodule.c' l='568'/>
+<use f='codebrowser/Python/bltinmodule.c' l='568'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1293'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1293'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2610'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2610'/>
+<use f='codebrowser/Python/traceback.c' l='56' u='c' c='tb_dealloc'/>

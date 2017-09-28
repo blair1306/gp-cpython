@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/abstract.h' l='611' type='int PyNumber_Check(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='608'>/* Returns 1 if the object &apos;o&apos; provides numeric protocols, and 0 otherwise.
+
+   This function always succeeds. */</doc>
+<use f='codebrowser/Modules/_csv.c' l='1202' u='c' c='csv_writerow'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='252' u='c' c='_io_open_impl'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3953' u='c' c='count_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3954' u='c' c='count_new'/>
+<def f='codebrowser/Objects/abstract.c' l='741' ll='747' type='int PyNumber_Check(PyObject * o)'/>
+<doc f='codebrowser/Objects/abstract.c' l='739'>/* Operations on numbers */</doc>
+<use f='codebrowser/Objects/bytearrayobject.c' l='652' u='c' c='bytearray_ass_subscript'/>
+<use f='codebrowser/Objects/bytesobject.c' l='460' u='c' c='formatlong'/>
+<use f='codebrowser/Objects/exceptions.c' l='866' u='c' c='oserror_init'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14318' u='c' c='mainformatlong'/>

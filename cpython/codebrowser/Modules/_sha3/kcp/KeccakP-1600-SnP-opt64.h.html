@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>KeccakP-1600-SnP-opt64.h source code [codebrowser/Modules/_sha3/kcp/KeccakP-1600-SnP-opt64.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_sha3/kcp/KeccakP-1600-SnP-opt64.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_sha3</a>/<a href='./'>kcp</a>/<a href='KeccakP-1600-SnP-opt64.h.html'>KeccakP-1600-SnP-opt64.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>Implementation by the Keccak, Keyak and Ketje Teams, namely, Guido Bertoni,</i></td></tr>
+<tr><th id="3">3</th><td><i>Joan Daemen, Michaël Peeters, Gilles Van Assche and Ronny Van Keer, hereby</i></td></tr>
+<tr><th id="4">4</th><td><i>denoted as "the implementer".</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>For more information, feedback or questions, please refer to our websites:</i></td></tr>
+<tr><th id="7">7</th><td><i>http://keccak.noekeon.org/</i></td></tr>
+<tr><th id="8">8</th><td><i>http://keyak.noekeon.org/</i></td></tr>
+<tr><th id="9">9</th><td><i>http://ketje.noekeon.org/</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>To the extent possible under law, the implementer has waived all copyright</i></td></tr>
+<tr><th id="12">12</th><td><i>and related or neighboring rights to the source code in this file.</i></td></tr>
+<tr><th id="13">13</th><td><i>http://creativecommons.org/publicdomain/zero/1.0/</i></td></tr>
+<tr><th id="14">14</th><td><i>*/</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="16">ifndef</span> <span class="macro" data-ref="_M/_KeccakP_1600_SnP_h_">_KeccakP_1600_SnP_h_</span></u></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/_KeccakP_1600_SnP_h_" data-ref="_M/_KeccakP_1600_SnP_h_">_KeccakP_1600_SnP_h_</dfn></u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i class="doc">/** For the documentation, see SnP-documentation.h.</i></td></tr>
+<tr><th id="20">20</th><td><i class="doc"> */</i></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><i>/* #include "brg_endian.h" */</i></td></tr>
+<tr><th id="23">23</th><td><u>#include <a href="KeccakP-1600-opt64-config.h.html">"KeccakP-1600-opt64-config.h"</a></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/KeccakP1600_implementation" data-ref="_M/KeccakP1600_implementation">KeccakP1600_implementation</dfn>      "generic 64-bit optimized implementation (" KeccakP1600_implementation_config ")"</u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/KeccakP1600_stateSizeInBytes" data-ref="_M/KeccakP1600_stateSizeInBytes">KeccakP1600_stateSizeInBytes</dfn>    200</u></td></tr>
+<tr><th id="27">27</th><td><u>#define <dfn class="macro" id="_M/KeccakP1600_stateAlignment" data-ref="_M/KeccakP1600_stateAlignment">KeccakP1600_stateAlignment</dfn>      8</u></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/KeccakF1600_FastLoop_supported" data-ref="_M/KeccakF1600_FastLoop_supported">KeccakF1600_FastLoop_supported</dfn></u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#define <dfn class="macro" id="_M/KeccakP1600_StaticInitialize" data-ref="_M/KeccakP1600_StaticInitialize">KeccakP1600_StaticInitialize</dfn>()</u></td></tr>
+<tr><th id="33">33</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#82" title="_PySHA3_KeccakP1600_Initialize" data-ref="_M/KeccakP1600_Initialize">KeccakP1600_Initialize</a>(<em>void</em> *<dfn class="local col1 decl" id="1state" title='state' data-type='void *' data-ref="1state">state</dfn>);</td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="34">if</span> (<a class="macro" href="../sha3module.c.html#61" title="1234" data-ref="_M/PLATFORM_BYTE_ORDER">PLATFORM_BYTE_ORDER</a> == <a class="macro" href="../sha3module.c.html#58" title="1234" data-ref="_M/IS_LITTLE_ENDIAN">IS_LITTLE_ENDIAN</a>)</u></td></tr>
+<tr><th id="35">35</th><td><u>#define <dfn class="macro" id="_M/KeccakP1600_AddByte" data-ref="_M/KeccakP1600_AddByte">KeccakP1600_AddByte</dfn>(state, byte, offset) \</u></td></tr>
+<tr><th id="36">36</th><td><u>    ((unsigned char*)(state))[(offset)] ^= (byte)</u></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="34">else</span></u></td></tr>
+<tr><th id="38">38</th><td><em>void</em> KeccakP1600_AddByte(<em>void</em> *state, <em>unsigned</em> <em>char</em> data, <em>unsigned</em> <em>int</em> offset);</td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="34">endif</span></u></td></tr>
+<tr><th id="40">40</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#73" title="_PySHA3_KeccakP1600_AddBytes" data-ref="_M/KeccakP1600_AddBytes">KeccakP1600_AddBytes</a>(<em>void</em> *<dfn class="local col2 decl" id="2state" title='state' data-type='void *' data-ref="2state">state</dfn>, <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col3 decl" id="3data" title='data' data-type='const unsigned char *' data-ref="3data">data</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col4 decl" id="4offset" title='offset' data-type='unsigned int' data-ref="4offset">offset</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col5 decl" id="5length" title='length' data-type='unsigned int' data-ref="5length">length</dfn>);</td></tr>
+<tr><th id="41">41</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#83" title="_PySHA3_KeccakP1600_OverwriteBytes" data-ref="_M/KeccakP1600_OverwriteBytes">KeccakP1600_OverwriteBytes</a>(<em>void</em> *<dfn class="local col6 decl" id="6state" title='state' data-type='void *' data-ref="6state">state</dfn>, <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col7 decl" id="7data" title='data' data-type='const unsigned char *' data-ref="7data">data</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col8 decl" id="8offset" title='offset' data-type='unsigned int' data-ref="8offset">offset</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col9 decl" id="9length" title='length' data-type='unsigned int' data-ref="9length">length</dfn>);</td></tr>
+<tr><th id="42">42</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#86" title="_PySHA3_KeccakP1600_OverwriteWithZeroes" data-ref="_M/KeccakP1600_OverwriteWithZeroes">KeccakP1600_OverwriteWithZeroes</a>(<em>void</em> *<dfn class="local col0 decl" id="10state" title='state' data-type='void *' data-ref="10state">state</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col1 decl" id="11byteCount" title='byteCount' data-type='unsigned int' data-ref="11byteCount">byteCount</dfn>);</td></tr>
+<tr><th id="43">43</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#87" title="_PySHA3_KeccakP1600_Permute_12rounds" data-ref="_M/KeccakP1600_Permute_12rounds">KeccakP1600_Permute_12rounds</a>(<em>void</em> *<dfn class="local col2 decl" id="12state" title='state' data-type='void *' data-ref="12state">state</dfn>);</td></tr>
+<tr><th id="44">44</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#88" title="_PySHA3_KeccakP1600_Permute_24rounds" data-ref="_M/KeccakP1600_Permute_24rounds">KeccakP1600_Permute_24rounds</a>(<em>void</em> *<dfn class="local col3 decl" id="13state" title='state' data-type='void *' data-ref="13state">state</dfn>);</td></tr>
+<tr><th id="45">45</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#79" title="_PySHA3_KeccakP1600_ExtractBytes" data-ref="_M/KeccakP1600_ExtractBytes">KeccakP1600_ExtractBytes</a>(<em>const</em> <em>void</em> *<dfn class="local col4 decl" id="14state" title='state' data-type='const void *' data-ref="14state">state</dfn>, <em>unsigned</em> <em>char</em> *<dfn class="local col5 decl" id="15data" title='data' data-type='unsigned char *' data-ref="15data">data</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col6 decl" id="16offset" title='offset' data-type='unsigned int' data-ref="16offset">offset</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col7 decl" id="17length" title='length' data-type='unsigned int' data-ref="17length">length</dfn>);</td></tr>
+<tr><th id="46">46</th><td><em>void</em> <a class="macro" href="../sha3module.c.html#76" title="_PySHA3_KeccakP1600_ExtractAndAddBytes" data-ref="_M/KeccakP1600_ExtractAndAddBytes">KeccakP1600_ExtractAndAddBytes</a>(<em>const</em> <em>void</em> *<dfn class="local col8 decl" id="18state" title='state' data-type='const void *' data-ref="18state">state</dfn>, <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col9 decl" id="19input" title='input' data-type='const unsigned char *' data-ref="19input">input</dfn>, <em>unsigned</em> <em>char</em> *<dfn class="local col0 decl" id="20output" title='output' data-type='unsigned char *' data-ref="20output">output</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col1 decl" id="21offset" title='offset' data-type='unsigned int' data-ref="21offset">offset</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="22length" title='length' data-type='unsigned int' data-ref="22length">length</dfn>);</td></tr>
+<tr><th id="47">47</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <a class="macro" href="../sha3module.c.html#68" title="_PySHA3_KeccakF1600_FastLoop_Absorb" data-ref="_M/KeccakF1600_FastLoop_Absorb">KeccakF1600_FastLoop_Absorb</a>(<em>void</em> *<dfn class="local col3 decl" id="23state" title='state' data-type='void *' data-ref="23state">state</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col4 decl" id="24laneCount" title='laneCount' data-type='unsigned int' data-ref="24laneCount">laneCount</dfn>, <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col5 decl" id="25data" title='data' data-type='const unsigned char *' data-ref="25data">data</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="26dataByteLen" title='dataByteLen' data-type='size_t' data-ref="26dataByteLen">dataByteLen</dfn>);</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="16">endif</span></u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../sha3module.c.html'>codebrowser/Modules/_sha3/sha3module.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

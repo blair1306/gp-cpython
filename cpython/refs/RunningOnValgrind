@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/dynamic_annotations.h' l='456' type='int RunningOnValgrind()'/>
+<doc f='codebrowser/Include/dynamic_annotations.h' l='441'>/* Return non-zero value if running under valgrind.
+
+  If &quot;valgrind.h&quot; is included into dynamic_annotations.c,
+  the regular valgrind mechanism will be used.
+  See http://valgrind.org/docs/manual/manual-core-adv.html about
+  RUNNING_ON_VALGRIND and other valgrind &quot;client requests&quot;.
+  The file &quot;valgrind.h&quot; may be obtained by doing
+     svn co svn://svn.valgrind.org/valgrind/trunk/include
+
+  If for some reason you can&apos;t use &quot;valgrind.h&quot; or want to fake valgrind,
+  there are two ways to make this function return non-zero:
+    - Use environment variable: export RUNNING_ON_VALGRIND=1
+    - Make your tool intercept the function RunningOnValgrind() and
+      change its return value.
+ */</doc>

@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='254' type='int'/>
+<offset>96</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='254'>/* Protocol specific type.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='3490' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3527' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4158' u='w' c='sock_sendmsg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4310' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4324' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4340' u='w' c='sock_sendmsg_afalg'/>

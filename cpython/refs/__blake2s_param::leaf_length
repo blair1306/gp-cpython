@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='96' type='uint32_t'/>
+<offset>32</offset>
+<doc f='codebrowser/Modules/_blake2/impl/blake2.h' l='96'>/* 8 */</doc>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='128' u='w' c='blake2s_param_set_leaf_length'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='169' u='w' c='py_blake2s_new_impl'/>

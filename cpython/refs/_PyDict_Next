@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/dictobject.h' l='100' type='int _PyDict_Next(PyObject * mp, Py_ssize_t * pos, PyObject ** key, PyObject ** value, Py_hash_t * hash)'/>
+<use f='codebrowser/Modules/_sre.c' l='2115' u='c' c='_sre_SRE_Match_groupdict_impl'/>
+<def f='codebrowser/Objects/dictobject.c' l='1606' ll='1648' type='int _PyDict_Next(PyObject * op, Py_ssize_t * ppos, PyObject ** pkey, PyObject ** pvalue, Py_hash_t * phash)'/>
+<use f='codebrowser/Objects/dictobject.c' l='1671' u='c' c='PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='1780' u='c' c='_PyDict_FromKeys'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1601'>/* Internal version of PyDict_Next that returns a hash value in addition
+ * to the key and value.
+ * Return 1 on success, return 0 when the reached the end of the dictionary
+ * (or if op is not a dictionary)
+ */</doc>
+<use f='codebrowser/Objects/setobject.c' l='995' u='c' c='set_update_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='1679' u='c' c='set_symmetric_difference_update'/>

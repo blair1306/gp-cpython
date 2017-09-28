@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='66' type='Py_ssize_t _PyIO_find_line_ending(int translated, int universal, PyObject * readnl, int kind, const char * start, const char * end, Py_ssize_t * consumed)'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='53'>/* Finds the first line ending between `start` and `end`.
+   If found, returns the index after the line ending and doesn&apos;t touch
+   `*consumed`.
+   If not found, returns -1 and sets `*consumed` to the number of characters
+   which can be safely put aside until another search.
+
+   NOTE: for performance reasons, `end` must point to a NUL character (&apos;\0&apos;).
+   Otherwise, the function will scan further and return garbage.
+
+   There are three modes, in order of priority:
+   * translated: Only find \n (assume newlines already translated)
+   * universal: Use universal newlines algorithm
+   * Otherwise, the line ending is specified by readnl, a str object */</doc>
+<use f='codebrowser/Modules/_io/stringio.c' l='362' u='c' c='_stringio_readline'/>
+<def f='codebrowser/Modules/_io/textio.c' l='1731' ll='1815' type='Py_ssize_t _PyIO_find_line_ending(int translated, int universal, PyObject * readnl, int kind, const char * start, const char * end, Py_ssize_t * consumed)'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1883' u='c' c='_textiowrapper_readline'/>

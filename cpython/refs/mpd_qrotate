@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='484' type='void mpd_qrotate(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4333' u='c' c='dec_mpd_qrotate'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5379' u='c' c='ctx_mpd_qrotate'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2862' ll='2931' type='void mpd_qrotate(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2858'>/*
+ * Rotate the coefficient of &apos;a&apos; by &apos;b&apos; digits. &apos;b&apos; must be an integer with
+ * exponent 0.
+ */</doc>

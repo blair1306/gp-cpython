@@ -1,0 +1,11 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='260' ll='270'/>
+<size>48</size>
+<mbr r='mpd_context_t::prec' o='0' t='mpd_ssize_t'/>
+<mbr r='mpd_context_t::emax' o='64' t='mpd_ssize_t'/>
+<mbr r='mpd_context_t::emin' o='128' t='mpd_ssize_t'/>
+<mbr r='mpd_context_t::traps' o='192' t='uint32_t'/>
+<mbr r='mpd_context_t::status' o='224' t='uint32_t'/>
+<mbr r='mpd_context_t::newtrap' o='256' t='uint32_t'/>
+<mbr r='mpd_context_t::round' o='288' t='int'/>
+<mbr r='mpd_context_t::clamp' o='320' t='int'/>
+<mbr r='mpd_context_t::allcr' o='352' t='int'/>

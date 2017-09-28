@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1537' type='PyObject * PyUnicode_AsRawUnicodeEscapeString(PyObject * unicode)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='906' u='c' c='_codecs_raw_unicode_escape_encode_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='6405' ll='6482' type='PyObject * PyUnicode_AsRawUnicodeEscapeString(PyObject * unicode)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6492' u='c' c='PyUnicode_EncodeRawUnicodeEscape'/>

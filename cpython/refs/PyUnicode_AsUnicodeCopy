@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2311' type='Py_UNICODE * PyUnicode_AsUnicodeCopy(PyObject * unicode)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2307'>/* Create a copy of a unicode string ending with a nul character. Return NULL
+   and raise a MemoryError exception on memory allocation failure, otherwise
+   return a new allocated buffer (use PyMem_Free() to free the buffer). */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='15644' ll='15671' type='Py_UNICODE * PyUnicode_AsUnicodeCopy(PyObject * unicode)'/>

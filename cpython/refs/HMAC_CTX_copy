@@ -1,0 +1,3 @@
+<dec f='include/openssl/hmac.h' l='101' type='int HMAC_CTX_copy(HMAC_CTX * dctx, HMAC_CTX * sctx)'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='594' u='c' c='PKCS5_PBKDF2_HMAC_fast'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='608' u='c' c='PKCS5_PBKDF2_HMAC_fast'/>

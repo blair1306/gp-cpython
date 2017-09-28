@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='530' type='void mpd_qmul_ssize(mpd_t * result, const mpd_t * a, mpd_ssize_t b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4829' u='c' c='_mpd_qln'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5846' ll='5857' type='void mpd_qmul_ssize(mpd_t * result, const mpd_t * a, mpd_ssize_t b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5877' u='c' c='mpd_qmul_i32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5892' u='c' c='mpd_qmul_i64'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6294' u='c' c='_qcheck_pow_one'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5845'>/* Multiply decimal and mpd_ssize_t. */</doc>

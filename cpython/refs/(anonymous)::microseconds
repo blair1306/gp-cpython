@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/datetime.h' l='40' type='int'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='99' u='w' c='new_delta_ex'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='format_utcoffset'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_to_microseconds'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_add'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_add'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_negative'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_positive'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_abs'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_subtract'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_subtract'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_cmp'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_cmp'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_bool'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_repr'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_repr'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_str'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='delta_getstate'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='timezone_str'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='timezone_str'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='add_datetime_timedelta'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='95' u='r' c='datetime_richcompare'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/datetime.h' l='40'>/* 0 &lt;= microseconds &lt; 1000000 is invariant */</doc>

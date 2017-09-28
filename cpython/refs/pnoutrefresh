@@ -1,0 +1,3 @@
+<dec f='include/curses.h' l='735' type='int pnoutrefresh(WINDOW * , int , int , int , int , int , int )'/>
+<doc f='include/curses.h' l='735'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1630' u='c' c='PyCursesWindow_NoOutRefresh'/>

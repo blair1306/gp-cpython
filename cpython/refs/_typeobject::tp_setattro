@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/object.h' l='373' type='setattrofunc'/>
+<offset>1344</offset>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='797' u='r' c='PyCStructType_setattro'/>
+<use f='codebrowser/Objects/object.c' l='931' u='r' c='PyObject_SetAttr'/>
+<use f='codebrowser/Objects/object.c' l='932' u='r' c='PyObject_SetAttr'/>
+<use f='codebrowser/Objects/typeobject.c' l='2708' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2709' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4932' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4934' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4934' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='5558' u='r' c='hackcheck'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/pyerrors.h' l='119' type='int PyException_SetTraceback(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2049' u='c' c='task_step_impl'/>
+<doc f='codebrowser/Include/pyerrors.h' l='118'>/* Traceback manipulation (PEP 3134) */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='163' u='c' c='BaseException_with_traceback'/>
+<def f='codebrowser/Objects/exceptions.c' l='311' ll='314' type='int PyException_SetTraceback(PyObject * self, PyObject * tb)'/>
+<use f='codebrowser/Objects/exceptions.c' l='2819' u='c' c='_PyErr_TrySetFromCause'/>
+<use f='codebrowser/Python/ceval.c' l='3633' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3635' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/errors.c' l='379' u='c' c='_PyErr_ChainExceptions'/>
+<use f='codebrowser/Python/errors.c' l='401' u='c' c='_PyErr_FormatVFromCause'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1770' u='c' c='_Py_FatalError_PrintExc'/>
+<use f='codebrowser/Python/pythonrun.c' l='624' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='864' u='c' c='PyErr_Display'/>

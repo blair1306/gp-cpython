@@ -1,0 +1,11 @@
+<dec f='include/stdio.h' l='283' type='FILE * fopen(const char *restrict __filename, const char *restrict __modes)'/>
+<dec f='include/stdio.h' l='297' type='FILE * fopen64(const char *restrict __filename, const char *restrict __modes)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3728' u='c' c='pymarshal_write_long_to_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3754' u='c' c='pymarshal_write_object_to_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3779' u='c' c='pymarshal_read_short_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3804' u='c' c='pymarshal_read_long_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3830' u='c' c='pymarshal_read_last_object_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3854' u='c' c='pymarshal_read_object_from_file'/>
+<use f='codebrowser/Python/fileutils.c' l='1043' u='c' c='_Py_wfopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1065' u='c' c='_Py_fopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1138' u='c' c='_Py_fopen_obj'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pythread.h' l='82' type='void PyThread_delete_key(int )'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1085' u='c' c='tracemalloc_deinit'/>
+<use f='codebrowser/Python/pystate.c' l='798' u='c' c='_PyGILState_Fini'/>
+<use f='codebrowser/Python/pystate.c' l='815' u='c' c='_PyGILState_Reinit'/>
+<def f='codebrowser/Python/thread_pthread.h' l='628' ll='632' type='void PyThread_delete_key(int key)'/>

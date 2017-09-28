@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/frameobject.h' l='50' type='char'/>
+<offset>1184</offset>
+<doc f='codebrowser/Include/frameobject.h' l='50'>/* whether the frame is still executing */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='500' u='w' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='523' u='r' c='frame_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='729' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Python/ceval.c' l='1041' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3742' u='w' c='_PyEval_EvalFrameDefault'/>

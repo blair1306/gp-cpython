@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2240' type='int _PyUnicode_ToDigit(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/unicodedata.c' l='181' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodectype.c' l='123' ll='128' type='int _PyUnicode_ToDigit(Py_UCS4 ch)'/>
+<use f='codebrowser/Objects/unicodectype.c' l='132' u='c' c='_PyUnicode_IsDigit'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='120'>/* Returns the integer digit (0-9) for Unicode characters having
+   this property, -1 otherwise. */</doc>

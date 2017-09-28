@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/Python-ast.h' l='48' type='asdl_seq *'/>
+<dec f='codebrowser/Include/Python-ast.h' l='53' type='asdl_seq *'/>
+<dec f='codebrowser/Include/Python-ast.h' l='57' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='61' type='asdl_seq *'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1221' u='w' c='_Py_Module'/>
+<use f='codebrowser/Python/Python-ast.c' l='1234' u='w' c='_Py_Interactive'/>
+<use f='codebrowser/Python/Python-ast.c' l='1251' u='w' c='_Py_Expression'/>
+<use f='codebrowser/Python/Python-ast.c' l='1263' u='w' c='_Py_Suite'/>
+<use f='codebrowser/Python/Python-ast.c' l='2608' u='r' c='ast2obj_mod'/>
+<use f='codebrowser/Python/Python-ast.c' l='2622' u='r' c='ast2obj_mod'/>
+<use f='codebrowser/Python/Python-ast.c' l='2631' u='r' c='ast2obj_mod'/>
+<use f='codebrowser/Python/Python-ast.c' l='2640' u='r' c='ast2obj_mod'/>
+<use f='codebrowser/Python/ast.c' l='568' u='r' c='PyAST_Validate'/>
+<use f='codebrowser/Python/ast.c' l='571' u='r' c='PyAST_Validate'/>
+<use f='codebrowser/Python/ast.c' l='574' u='r' c='PyAST_Validate'/>
+<use f='codebrowser/Python/ast.c' l='4323' u='r' c='fstring_compile_expr'/>
+<use f='codebrowser/Python/compile.c' l='1459' u='r' c='compiler_mod'/>
+<use f='codebrowser/Python/compile.c' l='1465' u='r' c='compiler_mod'/>
+<use f='codebrowser/Python/compile.c' l='1470' u='r' c='compiler_mod'/>
+<use f='codebrowser/Python/compile.c' l='1473' u='r' c='compiler_mod'/>
+<use f='codebrowser/Python/future.c' l='68' u='r' c='future_parse'/>
+<use f='codebrowser/Python/future.c' l='68' u='r' c='future_parse'/>
+<use f='codebrowser/Python/future.c' l='79' u='r' c='future_parse'/>
+<use f='codebrowser/Python/future.c' l='79' u='r' c='future_parse'/>
+<use f='codebrowser/Python/future.c' l='80' u='r' c='future_parse'/>
+<use f='codebrowser/Python/symtable.c' l='280' u='r' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='287' u='r' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='291' u='r' c='PySymtable_BuildObject'/>

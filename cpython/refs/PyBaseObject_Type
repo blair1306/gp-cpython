@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/object.h' l='490' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5686' u='a' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5687' u='a' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5688' u='a' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5689' u='a' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1296' u='a' c='PyInit__functools'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='713' u='m' c='local_new'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='828' u='m' c='_ldict'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2869' u='a'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2869' u='a'/>
+<use f='codebrowser/Objects/object.c' l='1641' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Objects/typeobject.c' l='219' u='a' c='PyType_ClearCache'/>
+<use f='codebrowser/Objects/typeobject.c' l='345' u='a' c='assign_version_tag'/>
+<use f='codebrowser/Objects/typeobject.c' l='1375' u='a' c='type_is_subtype_base_chain'/>
+<use f='codebrowser/Objects/typeobject.c' l='2066' u='a' c='solid_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='2378' u='a' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2810' u='a' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='4028' u='m' c='_PyObject_GetState'/>
+<use f='codebrowser/Objects/typeobject.c' l='4433' u='m' c='object___reduce_ex___impl'/>
+<def f='codebrowser/Objects/typeobject.c' l='4605' ll='4645' type='PyTypeObject'/>
+<use f='codebrowser/Objects/typeobject.c' l='4764' u='a' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='5022' u='a' c='PyType_Ready'/>
+<use f='codebrowser/Objects/typeobject.c' l='5023' u='a' c='PyType_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15205' u='a'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15205' u='a'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2730' u='a' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2730' u='a' c='_PyBuiltin_Init'/>

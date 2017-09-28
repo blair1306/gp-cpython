@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2196' type='Py_UCS4 _PyUnicode_ToLowercase(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/_sre.c' l='136' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodectype.c' l='202' ll='209' type='Py_UCS4 _PyUnicode_ToLowercase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='199'>/* Returns the lowercase Unicode characters corresponding to ch or just
+   ch if no lowercase mapping is known. */</doc>

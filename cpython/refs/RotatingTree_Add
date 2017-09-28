@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/rotatingtree.h' l='24' type='void RotatingTree_Add(rotating_node_t ** root, rotating_node_t * node)'/>
+<use f='codebrowser/Modules/_lsprof.c' l='249' u='c' c='newProfilerEntry'/>
+<use f='codebrowser/Modules/_lsprof.c' l='281' u='c' c='newSubEntry'/>
+<def f='codebrowser/Modules/rotatingtree.c' l='30' ll='42' type='void RotatingTree_Add(rotating_node_t ** root, rotating_node_t * node)'/>
+<doc f='codebrowser/Modules/rotatingtree.c' l='28'>/* Insert a new node into the tree.
+   (*root) is modified to point to the new root. */</doc>

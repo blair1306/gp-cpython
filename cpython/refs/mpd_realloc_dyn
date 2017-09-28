@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpalloc.h' l='42' type='int mpd_realloc_dyn(mpd_t * result, mpd_ssize_t size, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='277' ll='295' type='int mpd_realloc_dyn(mpd_t * result, mpd_ssize_t nwords, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='263'>/*
+ * Input: &apos;result&apos; is a static or a dynamic mpd_t with a dynamic coefficient.
+ * Resize the coefficient to length &apos;nwords&apos;:
+ *   Case nwords &gt; result-&gt;alloc:
+ *     If realloc is successful:
+ *       &apos;result&apos; has a larger coefficient but the same value. Return 1.
+ *     Otherwise:
+ *       Set &apos;result&apos; to NaN, update status with MPD_Malloc_error and return 0.
+ *   Case nwords &lt; result-&gt;alloc:
+ *     If realloc is successful:
+ *       &apos;result&apos; has a smaller coefficient. result-&gt;len is undefined. Return 1.
+ *     Otherwise (unlikely):
+ *       &apos;result&apos; is unchanged. Reuse the now oversized coefficient. Return 1.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='506' u='c' c='mpd_qresize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='525' u='c' c='mpd_qresize_zero'/>

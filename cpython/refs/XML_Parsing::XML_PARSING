@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='840' type='1'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1242' u='r' c='PyExpat_XML_SetEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1526' u='r' c='PyExpat_XML_UseForeignDTD'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1541' u='r' c='PyExpat_XML_SetReturnNSTriplet'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1851' u='r' c='PyExpat_XML_SetParamEntityParsing'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1870' u='r' c='PyExpat_XML_SetHashSalt'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1897' u='r' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1933' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2048' u='r' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2071' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2226' u='r' c='PyExpat_XML_ResumeParser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2241' c='PyExpat_XML_ResumeParser'/>

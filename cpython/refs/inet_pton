@@ -1,0 +1,7 @@
+<dec f='include/arpa/inet.h' l='58' type='int inet_pton(int __af, const char *restrict __cp, void *restrict __buf)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1033' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1048' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5809' u='c' c='socket_inet_pton'/>
+<doc f='include/arpa/inet.h' l='55'>/* Convert from presentation format of an Internet number in buffer
+   starting at CP to the binary network format and store result for
+   interface type AF in buffer starting at BUF.  */</doc>

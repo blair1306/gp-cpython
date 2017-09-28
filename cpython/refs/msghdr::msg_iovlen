@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='234' type='size_t'/>
+<offset>192</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='234'>/* Number of elements in the vector.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='3454' u='w' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3972' u='w' c='sock_sendmsg_iovec'/>

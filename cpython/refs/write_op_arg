@@ -1,0 +1,7 @@
+<def f='codebrowser/Python/wordcode_helpers.h' l='24' ll='44' type='void write_op_arg(_Py_CODEUNIT * codestr, unsigned char opcode, unsigned int oparg, int ilen)'/>
+<use f='codebrowser/Python/compile.c' l='5168' u='c' c='assemble_emit'/>
+<doc f='codebrowser/Python/wordcode_helpers.h' l='22'>/* Spits out op/oparg pair using ilen bytes. codestr should be pointed at the
+   desired location of the first EXTENDED_ARG */</doc>
+<use f='codebrowser/Python/peephole.c' l='149' u='c' c='set_arg'/>
+<use f='codebrowser/Python/peephole.c' l='165' u='c' c='copy_op_arg'/>
+<use f='codebrowser/Python/peephole.c' l='765' u='c' c='PyCode_Optimize'/>

@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/bytesobject.h' l='153' type='Py_ssize_t'/>
+<offset>128</offset>
+<doc f='codebrowser/Include/bytesobject.h' l='151'>/* Minimum number of allocated bytes,
+       incremented by _PyBytesWriter_Prepare() */</doc>
+<use f='codebrowser/Modules/binascii.c' l='850' u='w' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='871' u='w' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='252' u='w' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='264' u='w' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='336' u='w' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='343' u='w' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='885' u='w' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='914' u='w' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1108' u='w' c='_PyBytes_DecodeEscapeRecode'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3232' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3232' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3325' u='r' c='_PyBytesWriter_Prepare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3330' u='r' c='_PyBytesWriter_Prepare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3335' u='w' c='_PyBytesWriter_Prepare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3346' u='r' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='350' u='w' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='360' u='w' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='390' u='w' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='350' u='w' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='360' u='w' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='390' u='w' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6789' u='w' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6799' u='w' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6831' u='w' c='unicode_encode_ucs1'/>

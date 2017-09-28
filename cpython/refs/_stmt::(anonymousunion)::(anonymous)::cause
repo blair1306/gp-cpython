@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/Python-ast.h' l='169' type='expr_ty'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1605' u='w' c='_Py_Raise'/>
+<use f='codebrowser/Python/Python-ast.c' l='2964' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='457' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='457' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='459' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2939' u='r' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2940' u='r' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1253' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1254' u='r' c='symtable_visit_stmt'/>

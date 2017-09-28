@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/object.h' l='425' type='destructor'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='936' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1831' u='w'/>
+<offset>3264</offset>
+<use f='codebrowser/Modules/gcmodule.c' l='813' u='r' c='finalize_garbage'/>
+<use f='codebrowser/Objects/object.c' l='291' u='r' c='PyObject_CallFinalizer'/>
+<use f='codebrowser/Objects/object.c' l='297' u='r' c='PyObject_CallFinalizer'/>
+<use f='codebrowser/Objects/typeobject.c' l='1123' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1173' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1175' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='4965' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4965' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4965' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4965' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4965' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4965' u='r' c='inherit_slots'/>

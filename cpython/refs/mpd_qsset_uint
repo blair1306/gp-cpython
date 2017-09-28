@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='448' type='void mpd_qsset_uint(mpd_t * result, mpd_uint_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1090' ll='1096' type='void mpd_qsset_uint(mpd_t * result, mpd_uint_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1111' u='c' c='mpd_qsset_u32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1128' u='c' c='mpd_qsset_u64'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3473' u='c' c='mpd_qadd_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3501' u='c' c='mpd_qsub_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4042' u='c' c='mpd_qdiv_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5868' u='c' c='mpd_qmul_uint'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1089'>/* quietly set a static decimal from an mpd_uint_t */</doc>

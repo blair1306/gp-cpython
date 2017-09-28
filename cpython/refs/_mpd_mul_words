@@ -1,0 +1,24 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='205' ll='218' type='void _mpd_mul_words(mpd_uint_t * hi, mpd_uint_t * lo, mpd_uint_t a, mpd_uint_t b)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='618' u='c' c='mul_size_t'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='641' u='c' c='mul_size_t_overflow'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='659' u='c' c='mulmod_size_t'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='110' u='c' c='_mpd_div_words_r'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='122' u='c' c='_mpd_div_words_r'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='156' u='c' c='_mpd_singlemul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='166' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='169' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='175' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='180' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='227' u='c' c='_mpd_shortmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='255' u='c' c='_mpd_basemul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='282' u='c' c='_mpd_shortdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='364' u='c' c='_mpd_basedivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='597' u='c' c='_mpd_shortmul_c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='620' u='c' c='_mpd_shortmul_b'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='646' u='c' c='_mpd_shortdiv_b'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='156' u='c' c='x64_mulmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='46' u='c' c='_crt_mulP1P2_3'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='49' u='c' c='_crt_mulP1P2_3'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='157' u='c' c='crt3'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='871' u='c' c='_mpd_get_msdigits'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1308' u='c' c='_mpd_qget_uint'/>

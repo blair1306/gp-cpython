@@ -1,0 +1,6 @@
+<dec f='include/netinet/in.h' l='377' type='uint16_t ntohs(uint16_t __netshort)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1198' u='c' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1240' u='c' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1322' u='c' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5316' u='c' c='socket_getservbyname'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5557' u='c' c='socket_ntohs'/>

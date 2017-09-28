@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pygetopt.h' l='11' type='wchar_t *'/>
+<use f='codebrowser/Modules/main.c' l='396' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='401' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='412' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='488' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='498' u='r' c='read_command_line'/>
+<def f='codebrowser/Python/getopt.c' l='42' type='wchar_t *'/>
+<use f='codebrowser/Python/getopt.c' l='50' u='w' c='_PyOS_ResetGetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='110' u='w' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='122' u='w' c='_PyOS_GetOpt'/>
+<doc f='codebrowser/Python/getopt.c' l='42'>/* optional argument       */</doc>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='472' type='int mpd_qcopy_abs(mpd_t * result, const mpd_t * a, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4188' u='c' c='dec_mpd_qcopy_abs'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5233' u='c' c='ctx_mpd_qcopy_abs'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1976' ll='1984' type='int mpd_qcopy_abs(mpd_t * result, const mpd_t * a, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5943' u='c' c='mpd_qminus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5964' u='c' c='mpd_qplus'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1972'>/*
+ * Copy a decimal and set the sign to positive. In case of an error, the
+ * status is set to MPD_Malloc_error.
+ */</doc>

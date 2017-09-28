@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1594' type='PyObject * PyUnicode_DecodeASCII(const char * string, Py_ssize_t length, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1588'>/* --- ASCII Codecs -------------------------------------------------------
+
+   Only 7-bit ASCII data is excepted. All other codes generate errors.
+
+*/</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='581' u='c' c='_codecs_ascii_decode_impl'/>
+<use f='codebrowser/Modules/_csv.c' l='260' u='c' c='_set_str'/>
+<use f='codebrowser/Modules/_pickle.c' l='5234' u='c' c='load_inst'/>
+<use f='codebrowser/Modules/_pickle.c' l='5243' u='c' c='load_inst'/>
+<use f='codebrowser/Modules/_pickle.c' l='5446' u='c' c='load_persid'/>
+<use f='codebrowser/Modules/arraymodule.c' l='3041' u='c' c='array_modexec'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13361' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='967' u='c' c='bytearray_repr'/>
+<use f='codebrowser/Objects/object.c' l='575' u='c' c='PyObject_ASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3198' u='c' c='PyUnicode_Decode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='6925' ll='7022' type='PyObject * PyUnicode_DecodeASCII(const char * s, Py_ssize_t size, const char * errors)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='6923'>/* --- 7-bit ASCII Codec -------------------------------------------------- */</doc>

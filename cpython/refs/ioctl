@@ -1,0 +1,38 @@
+<dec f='include/x86_64-linux-gnu/sys/ioctl.h' l='41' type='int ioctl(int __fd, unsigned long __request)'/>
+<doc f='include/x86_64-linux-gnu/sys/ioctl.h' l='38'>/* Perform the I/O control operation specified by REQUEST on FD.
+   One argument may follow; its presence and type depend on REQUEST.
+   Return value depends on REQUEST.  Usually -1 indicates error.  */</doc>
+<dec f='include/stropts.h' l='67' type='int ioctl(int __fd, unsigned long __request)'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='202' u='c' c='fcntl_ioctl_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='206' u='c' c='fcntl_ioctl_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='237' u='c' c='fcntl_ioctl_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='258' u='c' c='fcntl_ioctl_impl'/>
+<doc f='include/stropts.h' l='64'>/* Perform the I/O control operation specified by REQUEST on FD.
+   One argument may follow; its presence and type depend on REQUEST.
+   Return value depends on REQUEST.  Usually -1 indicates error.  */</doc>
+<use f='codebrowser/Modules/ossaudiodev.c' l='135' u='c' c='newossobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='255' u='c' c='_do_ioctl_1'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='280' u='c' c='_do_ioctl_1_internal'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='305' u='c' c='_do_ioctl_0'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='326' u='c' c='oss_nonblock'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='348' u='c' c='oss_getfmts'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='577' u='c' c='oss_setparameters'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='588' u='c' c='oss_setparameters'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='599' u='c' c='oss_setparameters'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='620' u='c' c='_ssize'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='641' u='c' c='_ssize'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='662' u='c' c='oss_bufsize'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='684' u='c' c='oss_obufcount'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='707' u='c' c='oss_obuffree'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='727' u='c' c='oss_getptr'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='807' u='c' c='oss_mixer_get'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='837' u='c' c='oss_mixer_set'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11111' u='c' c='get_terminal_size'/>
+<use f='codebrowser/Modules/socketmodule.c' l='611' u='c' c='internal_setblocking'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1317' u='c' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1372' u='c' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1799' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1911' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1956' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Python/fileutils.c' l='853' u='c' c='set_inheritable'/>
+<use f='codebrowser/Python/fileutils.c' l='1571' u='c' c='_Py_set_blocking'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='408' type='descrsetfunc'/>
+<offset>2368</offset>
+<use f='codebrowser/Objects/object.c' l='1068' macro='1' u='r'/>
+<use f='codebrowser/Objects/object.c' l='1147' macro='1' u='r'/>
+<use f='codebrowser/Objects/object.c' l='1238' u='r' c='_PyObject_GenericSetAttrWithDict'/>
+<use f='codebrowser/Objects/typeobject.c' l='2103' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='2154' u='r' c='subtype_setdict'/>
+<use f='codebrowser/Objects/typeobject.c' l='3061' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='4958' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4958' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4958' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4958' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4958' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4958' u='r' c='inherit_slots'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/dictobject.h' l='106' type='PyObject * PyDict_Items(PyObject * mp)'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1531' u='c' c='_elementtree_Element_items_impl'/>
+<use f='codebrowser/Objects/abstract.c' l='2174' u='c' c='PyMapping_Items'/>
+<def f='codebrowser/Objects/dictobject.c' l='2548' ll='2556' type='PyObject * PyDict_Items(PyObject * mp)'/>
+<use f='codebrowser/Objects/odictobject.c' l='2358' u='c' c='mutablemapping_update'/>
+<use f='codebrowser/Objects/odictobject.c' l='2401' u='c' c='mutablemapping_update'/>
+<use f='codebrowser/Objects/odictobject.c' l='2423' u='c' c='mutablemapping_update'/>

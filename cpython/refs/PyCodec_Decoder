@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/codecs.h' l='164' type='PyObject * PyCodec_Decoder(const char * encoding)'/>
+<doc f='codebrowser/Include/codecs.h' l='162'>/* Get a decoder function for the given encoding. */</doc>
+<def f='codebrowser/Python/codecs.c' l='359' ll='362' type='PyObject * PyCodec_Decoder(const char * encoding)'/>
+<use f='codebrowser/Python/codecs.c' l='517' u='c' c='PyCodec_Decode'/>

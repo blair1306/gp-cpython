@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/bytesobject.h' l='171' type='void _PyBytesWriter_Init(_PyBytesWriter * writer)'/>
+<doc f='codebrowser/Include/bytesobject.h' l='167'>/* Initialize a bytes writer
+
+   By default, the overallocation is disabled. Set the overallocate attribute
+   to control the allocation of the buffer. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='2115' u='c' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/binascii.c' l='356' u='c' c='binascii_b2a_uu_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='458' u='c' c='binascii_a2b_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='547' u='c' c='binascii_b2a_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='617' u='c' c='binascii_a2b_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='690' u='c' c='binascii_rlecode_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='756' u='c' c='binascii_b2a_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='809' u='c' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='197' u='c' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='607' u='c' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1132' u='c' c='_PyBytes_DecodeEscape'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2361' u='c' c='_PyBytes_FromHex'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2709' u='c' c='_PyBytes_FromIterator'/>
+<def f='codebrowser/Objects/bytesobject.c' l='3164' ll='3172' type='void _PyBytesWriter_Init(_PyBytesWriter * writer)'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='283' u='c' c='asciilib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='283' u='c' c='ucs1lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='283' u='c' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='283' u='c' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6743' u='c' c='unicode_encode_ucs1'/>

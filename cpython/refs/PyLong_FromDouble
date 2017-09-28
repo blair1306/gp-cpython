@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/longobject.h' l='22' type='PyObject * PyLong_FromDouble(double )'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2114' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2139' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5883' u='c' c='PyInit__datetime'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5884' u='c' c='PyInit__datetime'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5885' u='c' c='PyInit__datetime'/>
+<use f='codebrowser/Modules/mathmodule.c' l='997' u='r' c='math_1_to_int'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1670' u='c' c='math_factorial'/>
+<use f='codebrowser/Objects/floatobject.c' l='458' u='c' c='float_richcompare'/>
+<use f='codebrowser/Objects/floatobject.c' l='916' u='c' c='float___trunc___impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1061' u='c' c='float___round___impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1575' u='c' c='float_as_integer_ratio_impl'/>
+<def f='codebrowser/Objects/longobject.c' l='340' ll='378' type='PyObject * PyLong_FromDouble(double dval)'/>
+<doc f='codebrowser/Objects/longobject.c' l='338'>/* Create a new int object from a C double */</doc>

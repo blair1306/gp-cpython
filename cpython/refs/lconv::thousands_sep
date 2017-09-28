@@ -1,0 +1,6 @@
+<dec f='include/locale.h' l='58' type='char *'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='878' u='r' c='mpd_parse_fmt_str'/>
+<offset>64</offset>
+<doc f='include/locale.h' l='58'>/* Thousands separator.  */</doc>
+<use f='codebrowser/Modules/_localemodule.c' l='176' u='r' c='PyLocale_localeconv'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='717' u='r' c='get_locale_info'/>

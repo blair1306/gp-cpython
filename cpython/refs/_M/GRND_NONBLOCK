@@ -1,0 +1,9 @@
+<dec f='include/linux/random.h' l='49'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13039' u='c'/>
+<doc f='include/linux/random.h' l='43'>/*
+ * Flags for getrandom(2)
+ *
+ * GRND_NONBLOCK	Don&apos;t block and return EAGAIN instead
+ * GRND_RANDOM		Use the /dev/random pool instead of /dev/urandom
+ */</doc>
+<use f='codebrowser/Python/bootstrap_hash.c' l='112' u='c'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/numbertheory.h' l='51' type='struct fnt_params * _mpd_init_fnt_params(mpd_size_t n, int sign, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='52' u='c' c='std_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='71' u='c' c='std_inv_fnt'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='73' ll='111' type='struct fnt_params * _mpd_init_fnt_params(mpd_size_t n, int sign, int modnum)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='67'>/*
+ * Initialize and return transform parameters.
+ *    n := transform length.
+ *    sign := -1 for forward transform, 1 for backward transform.
+ *    modnum := one of {P1, P2, P3}.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='76' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='109' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='164' u='c' c='inv_six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='197' u='c' c='inv_six_step_fnt'/>

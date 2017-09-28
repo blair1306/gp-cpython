@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/object.h' l='760' type='void _Py_PrintReferenceAddresses(FILE * )'/>
+<def f='codebrowser/Objects/object.c' l='1896' ll='1904' type='void _Py_PrintReferenceAddresses(FILE * fp)'/>
+<doc f='codebrowser/Objects/object.c' l='1893'>/* Print the addresses of all live objects.  Unlike _Py_PrintReferences, this
+ * doesn&apos;t make any calls to the Python C API, so is always safe to call.
+ */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='1107' u='c' c='Py_FinalizeEx'/>

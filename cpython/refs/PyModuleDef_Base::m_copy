@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/moduleobject.h' l='47' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Python/import.c' l='554' u='r' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='558' u='r' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='558' u='w' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='563' u='w' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='564' u='r' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='606' u='r' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='614' u='r' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/pystate.c' l='430' u='r' c='_PyState_ClearModules'/>
+<use f='codebrowser/Python/pystate.c' l='430' u='w' c='_PyState_ClearModules'/>

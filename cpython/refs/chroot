@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='947' type='int chroot(const char * __path)'/>
+<doc f='include/unistd.h' l='945'>/* Make PATH be the root directory (the starting point for absolute paths).
+   This call is restricted to the super-user.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3039' u='c' c='os_chroot_impl'/>

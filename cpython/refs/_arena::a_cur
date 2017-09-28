@@ -1,0 +1,14 @@
+<dec f='codebrowser/Python/pyarena.c' l='57' type='block *'/>
+<use f='codebrowser/Python/pyarena.c' l='135' u='w' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='182' u='r' c='PyArena_Malloc'/>
+<use f='codebrowser/Python/pyarena.c' l='190' u='r' c='PyArena_Malloc'/>
+<use f='codebrowser/Python/pyarena.c' l='191' u='w' c='PyArena_Malloc'/>
+<use f='codebrowser/Python/pyarena.c' l='191' u='r' c='PyArena_Malloc'/>
+<use f='codebrowser/Python/pyarena.c' l='194' u='r' c='PyArena_Malloc'/>
+<use f='codebrowser/Python/pyarena.c' l='195' u='r' c='PyArena_Malloc'/>
+<offset>64</offset>
+<doc f='codebrowser/Python/pyarena.c' l='52'>/* Pointer to the block currently used for allocation.  It&apos;s
+       ab_next field should be NULL.  If it is not-null after a
+       call to block_alloc(), it means a new block has been allocated
+       and a_cur should be reset to point it.
+     */</doc>

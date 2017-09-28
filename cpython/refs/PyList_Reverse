@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/listobject.h' l='61' type='int PyList_Reverse(PyObject * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='156' u='c' c='test_list_api'/>
+<use f='codebrowser/Modules/posixmodule.c' l='417' u='c' c='run_at_forkers'/>
+<use f='codebrowser/Objects/stringlib/split.h' l='233' u='c' c='stringlib_rsplit_whitespace'/>
+<use f='codebrowser/Objects/stringlib/split.h' l='277' u='c' c='stringlib_rsplit_char'/>
+<use f='codebrowser/Objects/stringlib/split.h' l='326' u='c' c='stringlib_rsplit'/>
+<def f='codebrowser/Objects/listobject.c' l='2170' ll='2182' type='int PyList_Reverse(PyObject * v)'/>

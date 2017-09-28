@@ -1,0 +1,50 @@
+<dec f='codebrowser/Include/pymem.h' l='186' type='void (*)(void *, void *)'/>
+<dec f='codebrowser/Include/objimpl.h' l='215' type='void (*)(void *, void *, size_t)'/>
+<offset>128</offset>
+<doc f='codebrowser/Include/pymem.h' l='185'>/* release a memory block */</doc>
+<doc f='codebrowser/Include/objimpl.h' l='214'>/* free an arena */</doc>
+<dec f='include/lzma/base.h' l='398' type='void (*)(void *, void *)'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='757' u='w' c='Compressor_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1179' u='w' c='_lzma_LZMADecompressor___init___impl'/>
+<offset>64</offset>
+<doc f='include/lzma/base.h' l='386'>/**
+	 * \brief       Pointer to a custom memory freeing function
+	 *
+	 * If you don&apos;t want a custom freeing function, but still
+	 * want a custom allocator, set this to NULL and liblzma
+	 * will use the standard free().
+	 *
+	 * \param       opaque  lzma_allocator.opaque (see below)
+	 * \param       ptr     Pointer returned by lzma_allocator.alloc(),
+	 *                      or when it is set to NULL, a pointer returned
+	 *                      by the standard malloc().
+	 */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3296' u='r' c='hook_free'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3315' u='w' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3487' u='r' c='hook_ffree'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3503' u='w' c='fm_setup_hooks'/>
+<dec f='codebrowser/Modules/hashtable.h' l='86' type='void (*)(void *)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='311' u='r' c='raw_free'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='697' u='r' c='tracemalloc_alloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='747' u='r' c='tracemalloc_realloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='767' u='r' c='tracemalloc_free'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1123' u='w' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1133' u='w' c='tracemalloc_start'/>
+<offset>64</offset>
+<doc f='codebrowser/Modules/hashtable.h' l='85'>/* release a memory block */</doc>
+<use f='codebrowser/Modules/hashtable.c' l='153' u='w' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='170' u='r' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='303' u='r' c='_Py_hashtable_pop_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='452' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='465' u='r' c='_Py_hashtable_clear'/>
+<use f='codebrowser/Modules/hashtable.c' l='483' u='r' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='488' u='r' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='489' u='r' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Objects/obmalloc.c' l='307' u='w' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='318' u='w' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='347' u='w' c='PyMem_GetAllocator'/>
+<use f='codebrowser/Objects/obmalloc.c' l='409' u='r' c='PyMem_RawFree'/>
+<use f='codebrowser/Objects/obmalloc.c' l='442' u='r' c='PyMem_Free'/>
+<use f='codebrowser/Objects/obmalloc.c' l='503' u='r' c='PyObject_Free'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1555' u='r' c='_PyObject_Free'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1910' u='r' c='_PyMem_DebugRawFree'/>

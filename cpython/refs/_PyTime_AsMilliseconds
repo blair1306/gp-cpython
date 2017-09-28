@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pytime.h' l='95' type='_PyTime_t _PyTime_AsMilliseconds(_PyTime_t t, _PyTime_round_t round)'/>
+<doc f='codebrowser/Include/pytime.h' l='94'>/* Convert timestamp to a number of milliseconds (10^-3 seconds). */</doc>
+<use f='codebrowser/Modules/_ssl.c' l='1900' u='c' c='PySSL_select'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3979' u='c' c='test_PyTime_AsMilliseconds'/>
+<use f='codebrowser/Modules/selectmodule.c' l='551' u='c' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='597' u='c' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1524' u='c' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1568' u='c' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/socketmodule.c' l='687' u='c' c='internal_select'/>
+<def f='codebrowser/Python/pytime.c' l='397' ll='401' type='_PyTime_t _PyTime_AsMilliseconds(_PyTime_t t, _PyTime_round_t round)'/>

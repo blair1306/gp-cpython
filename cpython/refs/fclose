@@ -1,0 +1,36 @@
+<dec f='include/stdio.h' l='237' type='int fclose(FILE * __stream)'/>
+<doc f='include/stdio.h' l='233'>/* Close STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1759' u='c' c='PyCursesWindow_PutWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2323' u='c' c='PyCurses_GetWin'/>
+<use f='codebrowser/Modules/_ssl.c' l='3560' u='c' c='_ssl__SSLContext_load_dh_params'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3736' u='c' c='pymarshal_write_long_to_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3762' u='c' c='pymarshal_write_object_to_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3788' u='c' c='pymarshal_read_short_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3813' u='c' c='pymarshal_read_long_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3839' u='c' c='pymarshal_read_last_object_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3863' u='c' c='pymarshal_read_object_from_file'/>
+<use f='codebrowser/Modules/getpath.c' l='416' u='c' c='search_for_exec_prefix'/>
+<use f='codebrowser/Modules/getpath.c' l='662' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/main.c' l='140' u='c' c='RunStartupFile'/>
+<use f='codebrowser/Modules/main.c' l='894' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/zipimport.c' l='1075' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1096' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1188' u='c' c='get_data'/>
+<use f='codebrowser/Modules/zipimport.c' l='1211' u='c' c='get_data'/>
+<use f='codebrowser/Modules/zipimport.c' l='1254' u='c' c='get_data'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1942' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1953' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1962' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Python/errors.c' l='1127' u='c' c='err_programtext'/>
+<use f='codebrowser/Python/fileutils.c' l='1051' u='c' c='_Py_wfopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1069' u='c' c='_Py_fopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1154' u='c' c='_Py_fopen_obj'/>
+<use f='codebrowser/Python/import.c' l='1985' u='c' c='_imp_create_dynamic_impl'/>
+<use f='codebrowser/Python/pythonrun.c' l='78' u='c' c='PyRun_AnyFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='376' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='385' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='389' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='931' u='c' c='PyRun_FileExFlags'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/posixmodule.h' l='17' type='int _Py_Uid_Converter(PyObject * , void * )'/>
+<def f='codebrowser/Modules/posixmodule.c' l='525' ll='629' type='int _Py_Uid_Converter(PyObject * obj, void * p)'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='701' c='os_chown'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='742' c='os_fchown'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='781' c='os_lchown'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2710' c='os_setuid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2741' c='os_seteuid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2805' c='os_setreuid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2805' c='os_setreuid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='5188' c='os_setresuid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='5188' c='os_setresuid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='5188' c='os_setresuid'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='122' u='c' c='pwd_getpwuid'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='194' type='void *'/>
+<offset>576</offset>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2624' u='w' c='PyCData_NewGetBuffer'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='158' u='w' c='ndbuf_new'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1538' u='r' c='ndarray_releasebuf'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2577' u='w' c='array_buffer_getbuf'/>
+<use f='codebrowser/Objects/abstract.c' l='662' u='w' c='PyBuffer_FillInfo'/>
+<use f='codebrowser/Objects/memoryobject.c' l='525' u='w' c='init_shared_values'/>
+<use f='codebrowser/Objects/memoryobject.c' l='525' u='r' c='init_shared_values'/>

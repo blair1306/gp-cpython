@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pymem.h' l='147'/>
+<doc f='codebrowser/Include/pymem.h' l='141'>/*
+ * The value of (p) is always clobbered by this macro regardless of success.
+ * The caller MUST check if (p) is NULL afterwards and deal with the memory
+ * error if so.  This means the original value of (p) MUST be saved for the
+ * caller&apos;s memory error handler to not lose track of it.
+ */</doc>
+<use f='codebrowser/Modules/_csv.c' l='570' u='c'/>
+<use f='codebrowser/Modules/_csv.c' l='1108' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2114' u='c'/>

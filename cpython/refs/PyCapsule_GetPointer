@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pycapsule.h' l='33' type='void * PyCapsule_GetPointer(PyObject * capsule, const char * name)'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='89' u='c' c='pymem_destructor'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='170' u='c' c='_ctypes_get_errobj'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='14' u='c' c='pymem_destructor'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2470' u='c' c='capsule_destructor'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2523' u='c' c='test_capsule'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2569' u='c' c='test_capsule'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1864' u='c' c='_multibytecodec___create_codec'/>
+<def f='codebrowser/Objects/capsule.c' l='79' ll='94' type='void * PyCapsule_GetPointer(PyObject * o, const char * name)'/>
+<use f='codebrowser/Python/compile.c' l='653' u='c' c='compiler_exit_scope'/>
+<use f='codebrowser/Python/compile.c' l='683' u='c' c='compiler_set_qualname'/>

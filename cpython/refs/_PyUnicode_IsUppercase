@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2172' type='int _PyUnicode_IsUppercase(Py_UCS4 ch)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='180' ll='185' type='int _PyUnicode_IsUppercase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='177'>/* Returns 1 for Unicode characters having the category &apos;Lu&apos;, 0
+   otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='9745' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11788' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11823' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11835' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11869' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11881' macro='1' u='c'/>

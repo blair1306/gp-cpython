@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dtoa.h source code [codebrowser/Include/dtoa.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/dtoa.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='dtoa.h.html'>dtoa.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#<span data-ppcond="2">ifndef</span> <span class="macro" data-ref="_M/PY_NO_SHORT_FLOAT_REPR">PY_NO_SHORT_FLOAT_REPR</span></u></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><a class="macro" href="pyport.h.html#676" title="double" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>double</em>) <dfn class="decl" id="_Py_dg_strtod" title='_Py_dg_strtod' data-ref="_Py_dg_strtod">_Py_dg_strtod</dfn>(<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="3315str" title='str' data-type='const char *' data-ref="3315str">str</dfn>, <em>char</em> **<dfn class="local col6 decl" id="3316ptr" title='ptr' data-type='char **' data-ref="3316ptr">ptr</dfn>);</td></tr>
+<tr><th id="8">8</th><td><a class="macro" href="pyport.h.html#676" title="char *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>char</em> *) <dfn class="decl" id="_Py_dg_dtoa" title='_Py_dg_dtoa' data-ref="_Py_dg_dtoa">_Py_dg_dtoa</dfn>(<em>double</em> <dfn class="local col7 decl" id="3317d" title='d' data-type='double' data-ref="3317d">d</dfn>, <em>int</em> <dfn class="local col8 decl" id="3318mode" title='mode' data-type='int' data-ref="3318mode">mode</dfn>, <em>int</em> <dfn class="local col9 decl" id="3319ndigits" title='ndigits' data-type='int' data-ref="3319ndigits">ndigits</dfn>,</td></tr>
+<tr><th id="9">9</th><td>                        <em>int</em> *<dfn class="local col0 decl" id="3320decpt" title='decpt' data-type='int *' data-ref="3320decpt">decpt</dfn>, <em>int</em> *<dfn class="local col1 decl" id="3321sign" title='sign' data-type='int *' data-ref="3321sign">sign</dfn>, <em>char</em> **<dfn class="local col2 decl" id="3322rve" title='rve' data-type='char **' data-ref="3322rve">rve</dfn>);</td></tr>
+<tr><th id="10">10</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="_Py_dg_freedtoa" title='_Py_dg_freedtoa' data-ref="_Py_dg_freedtoa">_Py_dg_freedtoa</dfn>(<em>char</em> *<dfn class="local col3 decl" id="3323s" title='s' data-type='char *' data-ref="3323s">s</dfn>);</td></tr>
+<tr><th id="11">11</th><td><a class="macro" href="pyport.h.html#676" title="double" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>double</em>) <dfn class="decl" id="_Py_dg_stdnan" title='_Py_dg_stdnan' data-ref="_Py_dg_stdnan">_Py_dg_stdnan</dfn>(<em>int</em> <dfn class="local col4 decl" id="3324sign" title='sign' data-type='int' data-ref="3324sign">sign</dfn>);</td></tr>
+<tr><th id="12">12</th><td><a class="macro" href="pyport.h.html#676" title="double" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>double</em>) <dfn class="decl" id="_Py_dg_infinity" title='_Py_dg_infinity' data-ref="_Py_dg_infinity">_Py_dg_infinity</dfn>(<em>int</em> <dfn class="local col5 decl" id="3325sign" title='sign' data-type='int' data-ref="3325sign">sign</dfn>);</td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><u>#<span data-ppcond="15">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="16">16</th><td>}</td></tr>
+<tr><th id="17">17</th><td><u>#<span data-ppcond="15">endif</span></u></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="2">endif</span></u></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_asynciomodule.c.html'>codebrowser/Modules/_asynciomodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

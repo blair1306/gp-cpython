@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/sre.h' l='30' type='PyObject *'/>
+<use f='codebrowser/Modules/_sre.c' l='560' u='r' c='pattern_dealloc'/>
+<use f='codebrowser/Modules/_sre.c' l='1350' u='r' c='pattern_groupindex'/>
+<use f='codebrowser/Modules/_sre.c' l='1352' u='r' c='pattern_groupindex'/>
+<use f='codebrowser/Modules/_sre.c' l='1387' u='w' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1434' u='w' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1983' u='r' c='match_getindex'/>
+<use f='codebrowser/Modules/_sre.c' l='1984' u='r' c='match_getindex'/>
+<use f='codebrowser/Modules/_sre.c' l='2112' u='r' c='_sre_SRE_Match_groupdict_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2115' u='r' c='_sre_SRE_Match_groupdict_impl'/>
+<offset>384</offset>
+<doc f='codebrowser/Modules/sre.h' l='30'>/* dict */</doc>

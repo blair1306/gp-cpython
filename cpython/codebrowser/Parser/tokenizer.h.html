@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>tokenizer.h source code [codebrowser/Parser/tokenizer.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="decoding_state,tok_state "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Parser/tokenizer.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Parser</a>/<a href='tokenizer.h.html'>tokenizer.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_TOKENIZER_H">Py_TOKENIZER_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_TOKENIZER_H" data-ref="_M/Py_TOKENIZER_H">Py_TOKENIZER_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#include <a href="../Include/object.h.html">"object.h"</a></u></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><i>/* Tokenizer interface */</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../Include/token.h.html">"token.h"</a>      /* For token types */</u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#define <dfn class="macro" id="_M/MAXINDENT" data-ref="_M/MAXINDENT">MAXINDENT</dfn> 100   /* Max indentation level */</u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><b>enum</b> <dfn class="type def" id="decoding_state" title='decoding_state' data-ref="decoding_state">decoding_state</dfn> {</td></tr>
+<tr><th id="16">16</th><td>    <dfn class="enum" id="decoding_state::STATE_INIT" title='decoding_state::STATE_INIT' data-ref="decoding_state::STATE_INIT">STATE_INIT</dfn>,</td></tr>
+<tr><th id="17">17</th><td>    <dfn class="enum" id="decoding_state::STATE_RAW" title='decoding_state::STATE_RAW' data-ref="decoding_state::STATE_RAW">STATE_RAW</dfn>,</td></tr>
+<tr><th id="18">18</th><td>    <dfn class="enum" id="decoding_state::STATE_NORMAL" title='decoding_state::STATE_NORMAL' data-ref="decoding_state::STATE_NORMAL">STATE_NORMAL</dfn>        <i>/* have a codec associated with input */</i></td></tr>
+<tr><th id="19">19</th><td>};</td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* Tokenizer state */</i></td></tr>
+<tr><th id="22">22</th><td><b>struct</b> <dfn class="type def" id="tok_state" title='tok_state' data-ref="tok_state">tok_state</dfn> {</td></tr>
+<tr><th id="23">23</th><td>    <i>/* Input state; buf &lt;= cur &lt;= inp &lt;= end */</i></td></tr>
+<tr><th id="24">24</th><td>    <i>/* NB an entire line is held in the buffer */</i></td></tr>
+<tr><th id="25">25</th><td>    <em>char</em> *<dfn class="decl" id="tok_state::buf" title='tok_state::buf' data-ref="tok_state::buf">buf</dfn>;          <i>/* Input buffer, or NULL; malloc'ed if fp != NULL */</i></td></tr>
+<tr><th id="26">26</th><td>    <em>char</em> *<dfn class="decl" id="tok_state::cur" title='tok_state::cur' data-ref="tok_state::cur">cur</dfn>;          <i>/* Next character in buffer */</i></td></tr>
+<tr><th id="27">27</th><td>    <em>char</em> *<dfn class="decl" id="tok_state::inp" title='tok_state::inp' data-ref="tok_state::inp">inp</dfn>;          <i>/* End of data in buffer */</i></td></tr>
+<tr><th id="28">28</th><td>    <em>char</em> *<dfn class="decl" id="tok_state::end" title='tok_state::end' data-ref="tok_state::end">end</dfn>;          <i>/* End of input buffer if buf != NULL */</i></td></tr>
+<tr><th id="29">29</th><td>    <em>char</em> *<dfn class="decl" id="tok_state::start" title='tok_state::start' data-ref="tok_state::start">start</dfn>;        <i>/* Start of current token if not NULL */</i></td></tr>
+<tr><th id="30">30</th><td>    <em>int</em> <dfn class="decl" id="tok_state::done" title='tok_state::done' data-ref="tok_state::done">done</dfn>;           <i>/* E_OK normally, E_EOF at EOF, otherwise error code */</i></td></tr>
+<tr><th id="31">31</th><td>    <i>/* NB If done != E_OK, cur must be == inp!!! */</i></td></tr>
+<tr><th id="32">32</th><td>    <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="decl" id="tok_state::fp" title='tok_state::fp' data-ref="tok_state::fp">fp</dfn>;           <i>/* Rest of input; NULL if tokenizing a string */</i></td></tr>
+<tr><th id="33">33</th><td>    <em>int</em> <dfn class="decl" id="tok_state::tabsize" title='tok_state::tabsize' data-ref="tok_state::tabsize">tabsize</dfn>;        <i>/* Tab spacing */</i></td></tr>
+<tr><th id="34">34</th><td>    <em>int</em> <dfn class="decl" id="tok_state::indent" title='tok_state::indent' data-ref="tok_state::indent">indent</dfn>;         <i>/* Current indentation index */</i></td></tr>
+<tr><th id="35">35</th><td>    <em>int</em> <dfn class="decl" id="tok_state::indstack" title='tok_state::indstack' data-ref="tok_state::indstack">indstack</dfn>[<a class="macro" href="#13" title="100" data-ref="_M/MAXINDENT">MAXINDENT</a>];            <i>/* Stack of indents */</i></td></tr>
+<tr><th id="36">36</th><td>    <em>int</em> <dfn class="decl" id="tok_state::atbol" title='tok_state::atbol' data-ref="tok_state::atbol">atbol</dfn>;          <i>/* Nonzero if at begin of new line */</i></td></tr>
+<tr><th id="37">37</th><td>    <em>int</em> <dfn class="decl" id="tok_state::pendin" title='tok_state::pendin' data-ref="tok_state::pendin">pendin</dfn>;         <i>/* Pending indents (if &gt; 0) or dedents (if &lt; 0) */</i></td></tr>
+<tr><th id="38">38</th><td>    <em>const</em> <em>char</em> *<dfn class="decl" id="tok_state::prompt" title='tok_state::prompt' data-ref="tok_state::prompt">prompt</dfn>, *<dfn class="decl" id="tok_state::nextprompt" title='tok_state::nextprompt' data-ref="tok_state::nextprompt">nextprompt</dfn>;          <i>/* For interactive prompting */</i></td></tr>
+<tr><th id="39">39</th><td>    <em>int</em> <dfn class="decl" id="tok_state::lineno" title='tok_state::lineno' data-ref="tok_state::lineno">lineno</dfn>;         <i>/* Current line number */</i></td></tr>
+<tr><th id="40">40</th><td>    <em>int</em> <dfn class="decl" id="tok_state::level" title='tok_state::level' data-ref="tok_state::level">level</dfn>;          <i>/* () [] {} Parentheses nesting level */</i></td></tr>
+<tr><th id="41">41</th><td>            <i>/* Used to allow free continuations inside them */</i></td></tr>
+<tr><th id="42">42</th><td>    <i>/* Stuff for checking on different tab sizes */</i></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="43">ifndef</span> <span class="macro" data-ref="_M/PGEN">PGEN</span></u></td></tr>
+<tr><th id="44">44</th><td>    <i>/* pgen doesn't have access to Python codecs, it cannot decode the input</i></td></tr>
+<tr><th id="45">45</th><td><i>       filename. The bytes filename might be kept, but it is only used by</i></td></tr>
+<tr><th id="46">46</th><td><i>       indenterror() and it is not really needed: pgen only compiles one file</i></td></tr>
+<tr><th id="47">47</th><td><i>       (Grammar/Grammar). */</i></td></tr>
+<tr><th id="48">48</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="tok_state::filename" title='tok_state::filename' data-ref="tok_state::filename">filename</dfn>;</td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="43">endif</span></u></td></tr>
+<tr><th id="50">50</th><td>    <em>int</em> <dfn class="decl" id="tok_state::altwarning" title='tok_state::altwarning' data-ref="tok_state::altwarning">altwarning</dfn>;     <i>/* Issue warning if alternate tabs don't match */</i></td></tr>
+<tr><th id="51">51</th><td>    <em>int</em> <dfn class="decl" id="tok_state::alterror" title='tok_state::alterror' data-ref="tok_state::alterror">alterror</dfn>;       <i>/* Issue error if alternate tabs don't match */</i></td></tr>
+<tr><th id="52">52</th><td>    <em>int</em> <dfn class="decl" id="tok_state::alttabsize" title='tok_state::alttabsize' data-ref="tok_state::alttabsize">alttabsize</dfn>;     <i>/* Alternate tab spacing */</i></td></tr>
+<tr><th id="53">53</th><td>    <em>int</em> <dfn class="decl" id="tok_state::altindstack" title='tok_state::altindstack' data-ref="tok_state::altindstack">altindstack</dfn>[<a class="macro" href="#13" title="100" data-ref="_M/MAXINDENT">MAXINDENT</a>];         <i>/* Stack of alternate indents */</i></td></tr>
+<tr><th id="54">54</th><td>    <i>/* Stuff for PEP 0263 */</i></td></tr>
+<tr><th id="55">55</th><td>    <b>enum</b> <a class="type" href="#decoding_state" title='decoding_state' data-ref="decoding_state">decoding_state</a> <dfn class="decl" id="tok_state::decoding_state" title='tok_state::decoding_state' data-ref="tok_state::decoding_state">decoding_state</dfn>;</td></tr>
+<tr><th id="56">56</th><td>    <em>int</em> <dfn class="decl" id="tok_state::decoding_erred" title='tok_state::decoding_erred' data-ref="tok_state::decoding_erred">decoding_erred</dfn>;         <i>/* whether erred in decoding  */</i></td></tr>
+<tr><th id="57">57</th><td>    <em>int</em> <dfn class="decl" id="tok_state::read_coding_spec" title='tok_state::read_coding_spec' data-ref="tok_state::read_coding_spec">read_coding_spec</dfn>;       <i>/* whether 'coding:...' has been read  */</i></td></tr>
+<tr><th id="58">58</th><td>    <em>char</em> *<dfn class="decl" id="tok_state::encoding" title='tok_state::encoding' data-ref="tok_state::encoding">encoding</dfn>;         <i>/* Source encoding. */</i></td></tr>
+<tr><th id="59">59</th><td>    <em>int</em> <dfn class="decl" id="tok_state::cont_line" title='tok_state::cont_line' data-ref="tok_state::cont_line">cont_line</dfn>;          <i>/* whether we are in a continuation line. */</i></td></tr>
+<tr><th id="60">60</th><td>    <em>const</em> <em>char</em>* <dfn class="decl" id="tok_state::line_start" title='tok_state::line_start' data-ref="tok_state::line_start">line_start</dfn>;     <i>/* pointer to start of current line */</i></td></tr>
+<tr><th id="61">61</th><td><u>#<span data-ppcond="61">ifndef</span> <span class="macro" data-ref="_M/PGEN">PGEN</span></u></td></tr>
+<tr><th id="62">62</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="tok_state::decoding_readline" title='tok_state::decoding_readline' data-ref="tok_state::decoding_readline">decoding_readline</dfn>; <i>/* open(...).readline */</i></td></tr>
+<tr><th id="63">63</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="tok_state::decoding_buffer" title='tok_state::decoding_buffer' data-ref="tok_state::decoding_buffer">decoding_buffer</dfn>;</td></tr>
+<tr><th id="64">64</th><td><u>#<span data-ppcond="61">endif</span></u></td></tr>
+<tr><th id="65">65</th><td>    <em>const</em> <em>char</em>* <dfn class="decl" id="tok_state::enc" title='tok_state::enc' data-ref="tok_state::enc">enc</dfn>;        <i>/* Encoding for the current str. */</i></td></tr>
+<tr><th id="66">66</th><td>    <em>const</em> <em>char</em>* <dfn class="decl" id="tok_state::str" title='tok_state::str' data-ref="tok_state::str">str</dfn>;</td></tr>
+<tr><th id="67">67</th><td>    <em>const</em> <em>char</em>* <dfn class="decl" id="tok_state::input" title='tok_state::input' data-ref="tok_state::input">input</dfn>; <i>/* Tokenizer's newline translated copy of the string. */</i></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td>    <i>/* async/await related fields; can be removed in 3.7 when async and await</i></td></tr>
+<tr><th id="70">70</th><td><i>       become normal keywords. */</i></td></tr>
+<tr><th id="71">71</th><td>    <em>int</em> <dfn class="decl" id="tok_state::async_def" title='tok_state::async_def' data-ref="tok_state::async_def">async_def</dfn>;        <i>/* =1 if tokens are inside an 'async def' body. */</i></td></tr>
+<tr><th id="72">72</th><td>    <em>int</em> <dfn class="decl" id="tok_state::async_def_indent" title='tok_state::async_def_indent' data-ref="tok_state::async_def_indent">async_def_indent</dfn>; <i>/* Indentation level of the outermost 'async def'. */</i></td></tr>
+<tr><th id="73">73</th><td>    <em>int</em> <dfn class="decl" id="tok_state::async_def_nl" title='tok_state::async_def_nl' data-ref="tok_state::async_def_nl">async_def_nl</dfn>;     <i>/* =1 if the outermost 'async def' had at least one</i></td></tr>
+<tr><th id="74">74</th><td><i>                             NEWLINE token after it. */</i></td></tr>
+<tr><th id="75">75</th><td>};</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><b>extern</b> <b>struct</b> <a class="type" href="#tok_state" title='tok_state' data-ref="tok_state">tok_state</a> *<dfn class="decl" id="PyTokenizer_FromString" title='PyTokenizer_FromString' data-ref="PyTokenizer_FromString">PyTokenizer_FromString</dfn>(<em>const</em> <em>char</em> *, <em>int</em>);</td></tr>
+<tr><th id="78">78</th><td><b>extern</b> <b>struct</b> <a class="type" href="#tok_state" title='tok_state' data-ref="tok_state">tok_state</a> *<dfn class="decl" id="PyTokenizer_FromUTF8" title='PyTokenizer_FromUTF8' data-ref="PyTokenizer_FromUTF8">PyTokenizer_FromUTF8</dfn>(<em>const</em> <em>char</em> *, <em>int</em>);</td></tr>
+<tr><th id="79">79</th><td><b>extern</b> <b>struct</b> <a class="type" href="#tok_state" title='tok_state' data-ref="tok_state">tok_state</a> *<dfn class="decl" id="PyTokenizer_FromFile" title='PyTokenizer_FromFile' data-ref="PyTokenizer_FromFile">PyTokenizer_FromFile</dfn>(<a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *, <em>const</em> <em>char</em>*,</td></tr>
+<tr><th id="80">80</th><td>                                              <em>const</em> <em>char</em> *, <em>const</em> <em>char</em> *);</td></tr>
+<tr><th id="81">81</th><td><b>extern</b> <em>void</em> <dfn class="decl" id="PyTokenizer_Free" title='PyTokenizer_Free' data-ref="PyTokenizer_Free">PyTokenizer_Free</dfn>(<b>struct</b> <a class="type" href="#tok_state" title='tok_state' data-ref="tok_state">tok_state</a> *);</td></tr>
+<tr><th id="82">82</th><td><b>extern</b> <em>int</em> <dfn class="decl" id="PyTokenizer_Get" title='PyTokenizer_Get' data-ref="PyTokenizer_Get">PyTokenizer_Get</dfn>(<b>struct</b> <a class="type" href="#tok_state" title='tok_state' data-ref="tok_state">tok_state</a> *, <em>char</em> **, <em>char</em> **);</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><u>#<span data-ppcond="84">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="85">85</th><td>}</td></tr>
+<tr><th id="86">86</th><td><u>#<span data-ppcond="84">endif</span></u></td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="1">endif</span> /* !Py_TOKENIZER_H */</u></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='parsetok.c.html'>codebrowser/Parser/parsetok.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

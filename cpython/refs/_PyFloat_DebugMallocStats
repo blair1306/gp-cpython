@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/floatobject.h' l='115' type='void _PyFloat_DebugMallocStats(FILE * out)'/>
+<def f='codebrowser/Objects/floatobject.c' l='2032' ll='2038' type='void _PyFloat_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/floatobject.c' l='2031'>/* Print summary info about the state of the optimized allocator */</doc>
+<use f='codebrowser/Objects/object.c' l='1947' u='c' c='_PyObject_DebugTypeStats'/>

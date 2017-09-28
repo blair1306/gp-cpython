@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/pystate.h' l='284' type='PyGILState_STATE PyGILState_Ensure()'/>
+<doc f='codebrowser/Include/pystate.h' l='263'>/* Ensure that the current thread is ready to call the Python
+   C API, regardless of the current state of Python, or of its
+   thread lock.  This may be called as many times as desired
+   by a thread so long as each call is matched with a call to
+   PyGILState_Release().  In general, other thread-state APIs may
+   be used between _Ensure() and _Release() calls, so long as the
+   thread-state is restored to its previous state before the Release().
+   For example, normal use of the Py_BEGIN_ALLOW_THREADS/
+   Py_END_ALLOW_THREADS macros are acceptable.
+
+   The return value is an opaque &quot;handle&quot; to the thread state when
+   PyGILState_Ensure() was called, and must be passed to
+   PyGILState_Release() to ensure Python is left in the same state. Even
+   though recursive calls are allowed, these handles can *not* be shared -
+   each unique call to PyGILState_Ensure must save the handle for its
+   call to PyGILState_Release.
+
+   When the function returns, the current thread will hold the GIL.
+
+   Failure is a fatal error.
+*/</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='141' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ssl.c' l='3751' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2235' u='c' c='_make_call'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3624' u='c' c='temporary_c_thread'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='870' u='c' c='tracemalloc_raw_alloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='924' u='c' c='tracemalloc_raw_realloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1802' u='c' c='PyTraceMalloc_Track'/>
+<use f='codebrowser/Modules/readline.c' l='900' u='c' c='on_startup_hook'/>
+<use f='codebrowser/Modules/readline.c' l='919' u='c' c='on_pre_input_hook'/>
+<use f='codebrowser/Modules/readline.c' l='940' u='c' c='on_completion_display_matches_hook'/>
+<use f='codebrowser/Modules/readline.c' l='1006' u='c' c='on_completion'/>
+<use f='codebrowser/Modules/readline.c' l='1049' u='c' c='flex_complete'/>
+<use f='codebrowser/Objects/object.c' l='438' u='c' c='_PyObject_Dump'/>
+<use f='codebrowser/Programs/_testembed.c' l='58' u='c' c='test_repeated_init_and_subinterpreters'/>
+<def f='codebrowser/Python/pystate.c' l='887' ll='925' type='PyGILState_STATE PyGILState_Ensure()'/>

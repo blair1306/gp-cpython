@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/codecs.h' l='126' type='PyObject * _PyCodec_DecodeText(PyObject * object, const char * encoding, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3221' u='c' c='PyUnicode_Decode'/>
+<def f='codebrowser/Python/codecs.c' l='611' ll='622' type='PyObject * _PyCodec_DecodeText(PyObject * object, const char * encoding, const char * errors)'/>

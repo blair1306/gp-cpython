@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='751' type='int mpd_arith_sign(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4544' u='c' c='_dec_hash'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='750'>/* 1 if dec is positive, -1 if dec is negative */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='381' ll='385' macro='1' type='int mpd_arith_sign(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2138' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2141' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2149' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2152' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2165' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2167' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2171' u='c' c='_mpd_cmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2321' u='c' c='mpd_cmp_total'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2383' u='c' c='_mpd_cmp_numequal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2976' u='c' c='mpd_qscaleb'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6580' u='c' c='mpd_qpow'/>

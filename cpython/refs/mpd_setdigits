@@ -1,0 +1,28 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='767' type='void mpd_setdigits(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2066' u='c' c='_dec_settriple'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='766'>/* set number of decimal digits in the coefficient */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='320' u='c' c='mpd_qset_string'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='584' ll='589' type='void mpd_setdigits(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='800' u='c' c='_mpd_cap'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='836' u='c' c='_mpd_fix_nan'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1028' u='c' c='_ssettriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1040' u='c' c='_settriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1673' u='c' c='_mpd_apply_round'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1699' u='c' c='_mpd_apply_round_excess'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1721' u='c' c='_mpd_apply_round_fit'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2657' u='c' c='mpd_qand'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2737' u='c' c='mpd_qinvert'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2850' u='c' c='mpd_qor'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3169' u='c' c='mpd_qxor'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3366' u='c' c='_mpd_qaddsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3748' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3896' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3908' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4295' u='c' c='_mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4714' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5819' u='c' c='_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7259' u='c' c='_mpd_qreciprocal_approx'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7555' u='c' c='_invroot_init_approx'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8328' u='c' c='mpd_qimport_u16'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8404' u='c' c='mpd_qimport_u32'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='583'>/* Set digits. Assumption: result-&gt;len is initialized and &gt; 0. */</doc>

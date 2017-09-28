@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_io/fileio.c' l='194' type='int'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='237' u='a' c='_io_FileIO___init___impl'/>
+<dec f='codebrowser/Modules/posixmodule.c' l='7670' type='int'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7700' u='a' c='os_open_impl'/>
+<def f='codebrowser/Python/fileutils.c' l='36' type='int'/>
+<use f='codebrowser/Python/fileutils.c' l='953' u='a' c='_Py_open_impl'/>
+<doc f='codebrowser/Python/fileutils.c' l='28'>/* Does open() support the O_CLOEXEC flag? Possible values:
+
+   -1: unknown
+    0: open() ignores O_CLOEXEC flag, ex: Linux kernel older than 2.6.23
+    1: open() supports O_CLOEXEC flag, close-on-exec is set
+
+   The flag is used by _Py_open(), _Py_open_noraise(), io.FileIO
+   and os.open(). */</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pygetopt.h' l='15' type='int _PyOS_GetOpt(int argc, wchar_t ** argv, wchar_t * optstring)'/>
+<use f='codebrowser/Modules/main.c' l='389' u='c' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='589' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/getopt.c' l='54' ll='127' type='int _PyOS_GetOpt(int argc, wchar_t ** argv, wchar_t * optstring)'/>

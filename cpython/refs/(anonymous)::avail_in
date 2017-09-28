@@ -1,0 +1,20 @@
+<dec f='include/lzma/base.h' l='463' type='size_t'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='515' u='w' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='529' u='r' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='901' u='r' c='decompress_buf'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='928' u='r' c='decompress_buf'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='963' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='968' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='989' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='992' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='993' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='998' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1010' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1012' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1017' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1032' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1039' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1044' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1048' u='r' c='decompress'/>
+<offset>64</offset>
+<doc f='include/lzma/base.h' l='463'>/**&lt; Number of available input bytes in next_in. */</doc>

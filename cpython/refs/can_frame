@@ -1,0 +1,19 @@
+<def f='include/linux/can.h' l='103' ll='110'/>
+<size>16</size>
+<doc f='include/linux/can.h' l='92'>/**
+ * struct can_frame - basic CAN frame structure
+ * @can_id:  CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition
+ * @can_dlc: frame payload length in byte (0 .. 8) aka data length code
+ *           N.B. the DLC field from ISO 11898-1 Chapter 8.4.2.3 has a 1:1
+ *           mapping of the &apos;data length code&apos; to the real payload length
+ * @__pad:   padding
+ * @__res0:  reserved / padding
+ * @__res1:  reserved / padding
+ * @data:    CAN frame payload (up to 8 byte)
+ */</doc>
+<mbr r='can_frame::can_id' o='0' t='canid_t'/>
+<mbr r='can_frame::can_dlc' o='32' t='__u8'/>
+<mbr r='can_frame::__pad' o='40' t='__u8'/>
+<mbr r='can_frame::__res0' o='48' t='__u8'/>
+<mbr r='can_frame::__res1' o='56' t='__u8'/>
+<mbr r='can_frame::data' o='64' t='__u8 [8]'/>

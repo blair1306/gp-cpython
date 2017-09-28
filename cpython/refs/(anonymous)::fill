@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/setobject.h' l='45' type='Py_ssize_t'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/setobject.h' l='45'>/* Number active and dummy entries*/</doc>
+<use f='codebrowser/Objects/setobject.c' l='233' u='w' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='237' u='r' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='326' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='336' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='358' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='365' u='w' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='457' u='w' c='set_empty_to_minsize'/>
+<use f='codebrowser/Objects/setobject.c' l='469' u='r' c='set_clear_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='645' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='654' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='654' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='664' u='w' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='664' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='670' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='673' u='w' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='779' u='r' c='frozenset_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='783' u='r' c='frozenset_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='991' u='r' c='set_update_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='1051' u='w' c='make_new_set'/>
+<use f='codebrowser/Objects/setobject.c' l='1141' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1141' u='w' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1141' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1141' u='w' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1510' u='r' c='set_difference_update_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='2016' u='r' c='set_init'/>

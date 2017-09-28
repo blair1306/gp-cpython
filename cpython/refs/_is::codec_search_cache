@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pystate.h' l='62' type='PyObject *'/>
+<offset>576</offset>
+<use f='codebrowser/Python/codecs.c' l='125' u='r' c='_PyCodec_Lookup'/>
+<use f='codebrowser/Python/codecs.c' l='177' u='r' c='_PyCodec_Lookup'/>
+<use f='codebrowser/Python/codecs.c' l='209' u='r' c='_PyCodec_Forget'/>
+<use f='codebrowser/Python/codecs.c' l='1510' u='w' c='_PyCodecRegistry_Init'/>
+<use f='codebrowser/Python/codecs.c' l='1527' u='r' c='_PyCodecRegistry_Init'/>
+<use f='codebrowser/Python/pystate.c' l='107' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='159' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='159' u='w' c='PyInterpreterState_Clear'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/longobject.h' l='209' type='PyObject * _PyLong_GCD(PyObject * , PyObject * )'/>
+<doc f='codebrowser/Include/longobject.h' l='208'>/* For use by the gcd function in mathmodule.c */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3477' u='c' c='dec_as_integer_ratio'/>
+<use f='codebrowser/Modules/mathmodule.c' l='830' u='c' c='math_gcd_impl'/>
+<def f='codebrowser/Objects/longobject.c' l='4592' ll='4797' type='PyObject * _PyLong_GCD(PyObject * aarg, PyObject * barg)'/>

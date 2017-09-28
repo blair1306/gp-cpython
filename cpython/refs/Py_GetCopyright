@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='78' type='const char * Py_GetCopyright()'/>
+<use f='codebrowser/Python/frozenmain.c' l='82' u='c' c='Py_FrozenMain'/>
+<def f='codebrowser/Python/getcopyright.c' l='19' ll='23' type='const char * Py_GetCopyright()'/>
+<use f='codebrowser/Python/sysmodule.c' l='1972' u='c' c='_PySys_BeginInit'/>

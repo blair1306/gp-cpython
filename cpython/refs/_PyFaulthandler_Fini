@@ -1,0 +1,4 @@
+<def f='codebrowser/Modules/faulthandler.c' l='1341' ll='1390' type='void _PyFaulthandler_Fini()'/>
+<dec f='codebrowser/Python/pylifecycle.c' l='68' type='void _PyFaulthandler_Fini()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1024' u='c' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1823' u='c' c='Py_FatalError'/>

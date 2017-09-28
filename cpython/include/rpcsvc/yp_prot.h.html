@@ -1,0 +1,385 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>yp_prot.h source code [include/rpcsvc/yp_prot.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="ypbind_binding,ypbind_resp,ypbind_resptype,ypbind_setdom,ypmap_parms,ypmaplist,yppush_status,yppushresp_xfr,ypreq_key,ypreq_nokey,ypreq_xfr,ypresp_all,ypresp_key_val,ypresp_maplist,ypresp_master,ypresp_order,ypresp_val,ypstat "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'include/rpcsvc/yp_prot.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>include</a>/<a href='./'>rpcsvc</a>/<a href='yp_prot.h.html'>yp_prot.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * This file contains symbols and structures defining the rpc protocol</i></td></tr>
+<tr><th id="3">3</th><td><i> * between the NIS clients and the NIS servers.  The servers</i></td></tr>
+<tr><th id="4">4</th><td><i> * are the NIS database servers, and the NIS binders.</i></td></tr>
+<tr><th id="5">5</th><td><i> */</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/_RPCSVC_YP_PROT_H">_RPCSVC_YP_PROT_H</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/_RPCSVC_YP_PROT_H" data-ref="_M/_RPCSVC_YP_PROT_H">_RPCSVC_YP_PROT_H</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="../features.h.html">&lt;features.h&gt;</a></u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><u>#include <a href="../rpc/rpc.h.html">&lt;rpc/rpc.h&gt;</a></u></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="ypclnt.h.html">&lt;rpcsvc/ypclnt.h&gt;</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><a class="macro" href="../x86_64-linux-gnu/sys/cdefs.h.html#101" title="" data-ref="_M/__BEGIN_DECLS">__BEGIN_DECLS</a></td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><i>/*</i></td></tr>
+<tr><th id="18">18</th><td><i> * The following procedures are supported by the protocol:</i></td></tr>
+<tr><th id="19">19</th><td><i> *</i></td></tr>
+<tr><th id="20">20</th><td><i> * YPPROC_NULL() returns () takes nothing, returns nothing.  This indicates</i></td></tr>
+<tr><th id="21">21</th><td><i> * that the NIS server is alive.</i></td></tr>
+<tr><th id="22">22</th><td><i> *</i></td></tr>
+<tr><th id="23">23</th><td><i> * YPPROC_DOMAIN (char *) returns (bool_t) TRUE.  Indicates that the</i></td></tr>
+<tr><th id="24">24</th><td><i> * responding NIS server does serve the named domain; FALSE indicates no</i></td></tr>
+<tr><th id="25">25</th><td><i> * support.</i></td></tr>
+<tr><th id="26">26</th><td><i> *</i></td></tr>
+<tr><th id="27">27</th><td><i> * YPPROC_DOMAIN_NONACK (char *) returns (TRUE) if the NIS server does serve</i></td></tr>
+<tr><th id="28">28</th><td><i> * the named domain, otherwise does not return.  Used in the broadcast case.</i></td></tr>
+<tr><th id="29">29</th><td><i> *</i></td></tr>
+<tr><th id="30">30</th><td><i> * YPPROC_MATCH (struct ypreq_key) returns (struct ypresp_val).  Returns the</i></td></tr>
+<tr><th id="31">31</th><td><i> * right-hand value for a passed left-hand key, within a named map and</i></td></tr>
+<tr><th id="32">32</th><td><i> * domain.</i></td></tr>
+<tr><th id="33">33</th><td><i> *</i></td></tr>
+<tr><th id="34">34</th><td><i> * YPPROC_FIRST (struct ypreq_nokey) returns (struct ypresp_key_val).</i></td></tr>
+<tr><th id="35">35</th><td><i> * Returns the first key-value pair from a named domain and map.</i></td></tr>
+<tr><th id="36">36</th><td><i> *</i></td></tr>
+<tr><th id="37">37</th><td><i> * YPPROC_NEXT (struct ypreq_key) returns (struct ypresp_key_val).  Returns</i></td></tr>
+<tr><th id="38">38</th><td><i> * the key-value pair following a passed key-value pair within a named</i></td></tr>
+<tr><th id="39">39</th><td><i> * domain and map.</i></td></tr>
+<tr><th id="40">40</th><td><i> *</i></td></tr>
+<tr><th id="41">41</th><td><i> * YPPROC_XFR (struct ypreq_xfr) returns nothing.  Indicates to a server that</i></td></tr>
+<tr><th id="42">42</th><td><i> * a map should be updated.</i></td></tr>
+<tr><th id="43">43</th><td><i> *</i></td></tr>
+<tr><th id="44">44</th><td><i> * YPPROC_CLEAR	takes nothing, returns nothing.  Instructs a NIS server to</i></td></tr>
+<tr><th id="45">45</th><td><i> * close the current map, so that old versions of the disk file don't get</i></td></tr>
+<tr><th id="46">46</th><td><i> * held open.</i></td></tr>
+<tr><th id="47">47</th><td><i> *</i></td></tr>
+<tr><th id="48">48</th><td><i> * YPPROC_ALL (struct ypreq_nokey), returns</i></td></tr>
+<tr><th id="49">49</th><td><i> * 	union switch (bool_t more) {</i></td></tr>
+<tr><th id="50">50</th><td><i> *		TRUE:	(struct ypresp_key_val);</i></td></tr>
+<tr><th id="51">51</th><td><i> *		FALSE:	(struct) {};</i></td></tr>
+<tr><th id="52">52</th><td><i> *	}</i></td></tr>
+<tr><th id="53">53</th><td><i> *</i></td></tr>
+<tr><th id="54">54</th><td><i> * YPPROC_MASTER (struct ypreq_nokey), returns (ypresp_master)</i></td></tr>
+<tr><th id="55">55</th><td><i> *</i></td></tr>
+<tr><th id="56">56</th><td><i> * YPPROC_ORDER (struct ypreq_nokey), returns (ypresp_order)</i></td></tr>
+<tr><th id="57">57</th><td><i> *</i></td></tr>
+<tr><th id="58">58</th><td><i> * YPPROC_MAPLIST (char *), returns (struct ypmaplist *)</i></td></tr>
+<tr><th id="59">59</th><td><i> */</i></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* Program and version symbols, magic numbers */</i></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><u>#define <dfn class="macro" id="_M/YPPROG" data-ref="_M/YPPROG">YPPROG</dfn>		100004</u></td></tr>
+<tr><th id="64">64</th><td><u>#define <dfn class="macro" id="_M/YPVERS" data-ref="_M/YPVERS">YPVERS</dfn>		2</u></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/YPVERS_ORIG" data-ref="_M/YPVERS_ORIG">YPVERS_ORIG</dfn>	1</u></td></tr>
+<tr><th id="66">66</th><td><u>#define <dfn class="macro" id="_M/YPMAXRECORD" data-ref="_M/YPMAXRECORD">YPMAXRECORD</dfn>	1024</u></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/YPMAXDOMAIN" data-ref="_M/YPMAXDOMAIN">YPMAXDOMAIN</dfn>	64 /* XXX orig. yp_prot.h defines 256 */</u></td></tr>
+<tr><th id="68">68</th><td><u>#define <dfn class="macro" id="_M/YPMAXMAP" data-ref="_M/YPMAXMAP">YPMAXMAP</dfn>	64</u></td></tr>
+<tr><th id="69">69</th><td><u>#define <dfn class="macro" id="_M/YPMAXPEER" data-ref="_M/YPMAXPEER">YPMAXPEER</dfn>	64 /* XXX orig. yp_prot.h defines 256 */</u></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><i>/* byte size of a large NIS packet */</i></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/YPMSGSZ" data-ref="_M/YPMSGSZ">YPMSGSZ</dfn>		1600</u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="75">75</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="(anonymous)::keydat_len" title='(anonymous struct)::keydat_len' data-ref="(anonymous)::keydat_len">keydat_len</dfn>;</td></tr>
+<tr><th id="76">76</th><td>  <em>char</em> *<dfn class="decl" id="(anonymous)::keydat_val" title='(anonymous struct)::keydat_val' data-ref="(anonymous)::keydat_val">keydat_val</dfn>;</td></tr>
+<tr><th id="77">77</th><td>} <dfn class="typedef" id="keydat_t" title='keydat_t' data-type='struct keydat_t' data-ref="keydat_t">keydat_t</dfn>;</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="80">80</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="(anonymous)::valdat_len" title='(anonymous struct)::valdat_len' data-ref="(anonymous)::valdat_len">valdat_len</dfn>;</td></tr>
+<tr><th id="81">81</th><td>  <em>char</em> *<dfn class="decl" id="(anonymous)::valdat_val" title='(anonymous struct)::valdat_val' data-ref="(anonymous)::valdat_val">valdat_val</dfn>;</td></tr>
+<tr><th id="82">82</th><td>} <dfn class="typedef" id="valdat_t" title='valdat_t' data-type='struct valdat_t' data-ref="valdat_t">valdat_t</dfn>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><b>struct</b> <dfn class="type def" id="ypmap_parms" title='ypmap_parms' data-ref="ypmap_parms">ypmap_parms</dfn> {</td></tr>
+<tr><th id="85">85</th><td>  <em>char</em> *<dfn class="decl" id="ypmap_parms::domain" title='ypmap_parms::domain' data-ref="ypmap_parms::domain">domain</dfn>;			<i>/* Null string means not available */</i></td></tr>
+<tr><th id="86">86</th><td>  <em>char</em> *<dfn class="decl" id="ypmap_parms::map" title='ypmap_parms::map' data-ref="ypmap_parms::map">map</dfn>;			<i>/* Null string means not available */</i></td></tr>
+<tr><th id="87">87</th><td>  <em>unsigned</em> <em>int</em> <dfn class="decl" id="ypmap_parms::ordernum" title='ypmap_parms::ordernum' data-ref="ypmap_parms::ordernum">ordernum</dfn>;	<i>/* 0 means not available */</i></td></tr>
+<tr><th id="88">88</th><td>  <em>char</em> *<dfn class="decl" id="ypmap_parms::owner" title='ypmap_parms::owner' data-ref="ypmap_parms::owner">owner</dfn>;			<i>/* Null string means not available */</i></td></tr>
+<tr><th id="89">89</th><td>};</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><i>/*</i></td></tr>
+<tr><th id="92">92</th><td><i> * Request parameter structures</i></td></tr>
+<tr><th id="93">93</th><td><i> */</i></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><b>struct</b> <dfn class="type def" id="ypreq_key" title='ypreq_key' data-ref="ypreq_key">ypreq_key</dfn> {</td></tr>
+<tr><th id="96">96</th><td>  <em>const</em> <em>char</em> *<dfn class="decl" id="ypreq_key::domain" title='ypreq_key::domain' data-ref="ypreq_key::domain">domain</dfn>;</td></tr>
+<tr><th id="97">97</th><td>  <em>const</em> <em>char</em> *<dfn class="decl" id="ypreq_key::map" title='ypreq_key::map' data-ref="ypreq_key::map">map</dfn>;</td></tr>
+<tr><th id="98">98</th><td>  <a class="typedef" href="#keydat_t" title='keydat_t' data-type='struct keydat_t' data-ref="keydat_t">keydat_t</a> <dfn class="decl" id="ypreq_key::keydat" title='ypreq_key::keydat' data-ref="ypreq_key::keydat">keydat</dfn>;</td></tr>
+<tr><th id="99">99</th><td>};</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><b>struct</b> <dfn class="type def" id="ypreq_nokey" title='ypreq_nokey' data-ref="ypreq_nokey">ypreq_nokey</dfn> {</td></tr>
+<tr><th id="102">102</th><td>  <em>char</em> *<dfn class="decl" id="ypreq_nokey::domain" title='ypreq_nokey::domain' data-ref="ypreq_nokey::domain">domain</dfn>;</td></tr>
+<tr><th id="103">103</th><td>  <em>char</em> *<dfn class="decl" id="ypreq_nokey::map" title='ypreq_nokey::map' data-ref="ypreq_nokey::map">map</dfn>;</td></tr>
+<tr><th id="104">104</th><td>};</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><b>struct</b> <dfn class="type def" id="ypreq_xfr" title='ypreq_xfr' data-ref="ypreq_xfr">ypreq_xfr</dfn> {</td></tr>
+<tr><th id="107">107</th><td>  <b>struct</b> <a class="type" href="#ypmap_parms" title='ypmap_parms' data-ref="ypmap_parms">ypmap_parms</a> <dfn class="decl" id="ypreq_xfr::map_parms" title='ypreq_xfr::map_parms' data-ref="ypreq_xfr::map_parms">map_parms</dfn>;</td></tr>
+<tr><th id="108">108</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="ypreq_xfr::transid" title='ypreq_xfr::transid' data-ref="ypreq_xfr::transid">transid</dfn>;</td></tr>
+<tr><th id="109">109</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="ypreq_xfr::proto" title='ypreq_xfr::proto' data-ref="ypreq_xfr::proto">proto</dfn>;</td></tr>
+<tr><th id="110">110</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="ypreq_xfr::port" title='ypreq_xfr::port' data-ref="ypreq_xfr::port">port</dfn>;</td></tr>
+<tr><th id="111">111</th><td>};</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/ypxfr_domain" data-ref="_M/ypxfr_domain">ypxfr_domain</dfn> map_parms.domain</u></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/ypxfr_map" data-ref="_M/ypxfr_map">ypxfr_map</dfn> map_parms.map</u></td></tr>
+<tr><th id="115">115</th><td><u>#define <dfn class="macro" id="_M/ypxfr_ordernum" data-ref="_M/ypxfr_ordernum">ypxfr_ordernum</dfn> map_parms.ordernum</u></td></tr>
+<tr><th id="116">116</th><td><u>#define <dfn class="macro" id="_M/ypxfr_owner" data-ref="_M/ypxfr_owner">ypxfr_owner</dfn> map_parms.owner</u></td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><i>/* Return status values */</i></td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><b>enum</b> <dfn class="type def" id="ypstat" title='ypstat' data-ref="ypstat">ypstat</dfn> {</td></tr>
+<tr><th id="121">121</th><td>  <dfn class="enum" id="ypstat::YP_TRUE" title='ypstat::YP_TRUE' data-ref="ypstat::YP_TRUE">YP_TRUE</dfn> = <var>1</var>,		<i>/* General purpose success code */</i></td></tr>
+<tr><th id="122">122</th><td><u>#define <dfn class="macro" id="_M/YP_TRUE" data-ref="_M/YP_TRUE">YP_TRUE</dfn> YP_TRUE</u></td></tr>
+<tr><th id="123">123</th><td>  <dfn class="enum" id="ypstat::YP_NOMORE" title='ypstat::YP_NOMORE' data-ref="ypstat::YP_NOMORE">YP_NOMORE</dfn> = <var>2</var>,	<i>/* No more entries in map */</i></td></tr>
+<tr><th id="124">124</th><td><u>#define <dfn class="macro" id="_M/YP_NOMORE" data-ref="_M/YP_NOMORE">YP_NOMORE</dfn> YP_NOMORE</u></td></tr>
+<tr><th id="125">125</th><td>  <dfn class="enum" id="ypstat::YP_FALSE" title='ypstat::YP_FALSE' data-ref="ypstat::YP_FALSE">YP_FALSE</dfn> = <var>0</var>,		<i>/* General purpose failure code */</i></td></tr>
+<tr><th id="126">126</th><td><u>#define <dfn class="macro" id="_M/YP_FALSE" data-ref="_M/YP_FALSE">YP_FALSE</dfn> YP_FALSE</u></td></tr>
+<tr><th id="127">127</th><td>  <dfn class="enum" id="ypstat::YP_NOMAP" title='ypstat::YP_NOMAP' data-ref="ypstat::YP_NOMAP">YP_NOMAP</dfn> = -<var>1</var>,	<i>/* No such map in domain */</i></td></tr>
+<tr><th id="128">128</th><td><u>#define <dfn class="macro" id="_M/YP_NOMAP" data-ref="_M/YP_NOMAP">YP_NOMAP</dfn> YP_NOMAP</u></td></tr>
+<tr><th id="129">129</th><td>  <dfn class="enum" id="ypstat::YP_NODOM" title='ypstat::YP_NODOM' data-ref="ypstat::YP_NODOM">YP_NODOM</dfn> = -<var>2</var>,	<i>/* Domain not supported */</i></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/YP_NODOM" data-ref="_M/YP_NODOM">YP_NODOM</dfn> YP_NODOM</u></td></tr>
+<tr><th id="131">131</th><td>  <dfn class="enum" id="ypstat::YP_NOKEY" title='ypstat::YP_NOKEY' data-ref="ypstat::YP_NOKEY">YP_NOKEY</dfn> = -<var>3</var>,	<i>/* No such key in map */</i></td></tr>
+<tr><th id="132">132</th><td><u>#define <dfn class="macro" id="_M/YP_NOKEY" data-ref="_M/YP_NOKEY">YP_NOKEY</dfn> YP_NOKEY</u></td></tr>
+<tr><th id="133">133</th><td>  <dfn class="enum" id="ypstat::YP_BADOP" title='ypstat::YP_BADOP' data-ref="ypstat::YP_BADOP">YP_BADOP</dfn> = -<var>4</var>,	<i>/* Invalid operation */</i></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/YP_BADOP" data-ref="_M/YP_BADOP">YP_BADOP</dfn> YP_BADOP</u></td></tr>
+<tr><th id="135">135</th><td>  <dfn class="enum" id="ypstat::YP_BADDB" title='ypstat::YP_BADDB' data-ref="ypstat::YP_BADDB">YP_BADDB</dfn> = -<var>5</var>,	<i>/* Server data base is bad */</i></td></tr>
+<tr><th id="136">136</th><td><u>#define <dfn class="macro" id="_M/YP_BADDB" data-ref="_M/YP_BADDB">YP_BADDB</dfn> YP_BADDB</u></td></tr>
+<tr><th id="137">137</th><td>  <dfn class="enum" id="ypstat::YP_YPERR" title='ypstat::YP_YPERR' data-ref="ypstat::YP_YPERR">YP_YPERR</dfn> = -<var>6</var>,	<i>/* NIS server error */</i></td></tr>
+<tr><th id="138">138</th><td><u>#define <dfn class="macro" id="_M/YP_YPERR" data-ref="_M/YP_YPERR">YP_YPERR</dfn> YP_YPERR</u></td></tr>
+<tr><th id="139">139</th><td>  <dfn class="enum" id="ypstat::YP_BADARGS" title='ypstat::YP_BADARGS' data-ref="ypstat::YP_BADARGS">YP_BADARGS</dfn> = -<var>7</var>,	<i>/* Request arguments bad */</i></td></tr>
+<tr><th id="140">140</th><td><u>#define <dfn class="macro" id="_M/YP_BADARGS" data-ref="_M/YP_BADARGS">YP_BADARGS</dfn> YP_BADARGS</u></td></tr>
+<tr><th id="141">141</th><td>  <dfn class="enum" id="ypstat::YP_VERS" title='ypstat::YP_VERS' data-ref="ypstat::YP_VERS">YP_VERS</dfn> = -<var>8</var>,		<i>/* NIS server version mismatch - server can't supply</i></td></tr>
+<tr><th id="142">142</th><td><i>			   requested service. */</i></td></tr>
+<tr><th id="143">143</th><td><u>#define <dfn class="macro" id="_M/YP_VERS" data-ref="_M/YP_VERS">YP_VERS</dfn> YP_VERS</u></td></tr>
+<tr><th id="144">144</th><td>};</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><i>/*</i></td></tr>
+<tr><th id="147">147</th><td><i> * Response parameter structures</i></td></tr>
+<tr><th id="148">148</th><td><i> */</i></td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><b>typedef</b> <b>enum</b> <a class="type" href="#ypstat" title='ypstat' data-ref="ypstat">ypstat</a> <dfn class="typedef" id="ypstat" title='ypstat' data-type='enum ypstat' data-ref="ypstat">ypstat</dfn>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><b>struct</b> <dfn class="type def" id="ypresp_val" title='ypresp_val' data-ref="ypresp_val">ypresp_val</dfn> {</td></tr>
+<tr><th id="153">153</th><td>  <a class="typedef" href="#ypstat" title='ypstat' data-type='enum ypstat' data-ref="ypstat">ypstat</a> <dfn class="decl" id="ypresp_val::status" title='ypresp_val::status' data-ref="ypresp_val::status">status</dfn>;</td></tr>
+<tr><th id="154">154</th><td>  <a class="typedef" href="#valdat_t" title='valdat_t' data-type='struct valdat_t' data-ref="valdat_t">valdat_t</a> <dfn class="decl" id="ypresp_val::valdat" title='ypresp_val::valdat' data-ref="ypresp_val::valdat">valdat</dfn>;</td></tr>
+<tr><th id="155">155</th><td>};</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><b>struct</b> <dfn class="type def" id="ypresp_key_val" title='ypresp_key_val' data-ref="ypresp_key_val">ypresp_key_val</dfn> {</td></tr>
+<tr><th id="158">158</th><td>  <a class="typedef" href="#ypstat" title='ypstat' data-type='enum ypstat' data-ref="ypstat">ypstat</a> <dfn class="decl" id="ypresp_key_val::status" title='ypresp_key_val::status' data-ref="ypresp_key_val::status">status</dfn>;</td></tr>
+<tr><th id="159">159</th><td><u>#<span data-ppcond="159">ifdef</span> <span class="macro" data-ref="_M/STUPID_SUN_BUG">STUPID_SUN_BUG</span></u></td></tr>
+<tr><th id="160">160</th><td>  <i>/* This is the form as distributed by Sun.  But even the Sun NIS</i></td></tr>
+<tr><th id="161">161</th><td><i>     servers expect the values in the other order.  So their</i></td></tr>
+<tr><th id="162">162</th><td><i>     implementation somehow must change the order internally.  We</i></td></tr>
+<tr><th id="163">163</th><td><i>     don't want to follow this bad example since the user should be</i></td></tr>
+<tr><th id="164">164</th><td><i>     able to use rpcgen on this file.  */</i></td></tr>
+<tr><th id="165">165</th><td>  keydat_t keydat;</td></tr>
+<tr><th id="166">166</th><td>  valdat_t valdat;</td></tr>
+<tr><th id="167">167</th><td><u>#<span data-ppcond="159">else</span></u></td></tr>
+<tr><th id="168">168</th><td>  <a class="typedef" href="#valdat_t" title='valdat_t' data-type='struct valdat_t' data-ref="valdat_t">valdat_t</a> <dfn class="decl" id="ypresp_key_val::valdat" title='ypresp_key_val::valdat' data-ref="ypresp_key_val::valdat">valdat</dfn>;</td></tr>
+<tr><th id="169">169</th><td>  <a class="typedef" href="#keydat_t" title='keydat_t' data-type='struct keydat_t' data-ref="keydat_t">keydat_t</a> <dfn class="decl" id="ypresp_key_val::keydat" title='ypresp_key_val::keydat' data-ref="ypresp_key_val::keydat">keydat</dfn>;</td></tr>
+<tr><th id="170">170</th><td><u>#<span data-ppcond="159">endif</span></u></td></tr>
+<tr><th id="171">171</th><td>};</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td><b>struct</b> <dfn class="type def" id="ypresp_master" title='ypresp_master' data-ref="ypresp_master">ypresp_master</dfn> {</td></tr>
+<tr><th id="174">174</th><td>  <a class="typedef" href="#ypstat" title='ypstat' data-type='enum ypstat' data-ref="ypstat">ypstat</a> <dfn class="decl" id="ypresp_master::status" title='ypresp_master::status' data-ref="ypresp_master::status">status</dfn>;</td></tr>
+<tr><th id="175">175</th><td>  <em>char</em> *<dfn class="decl" id="ypresp_master::master" title='ypresp_master::master' data-ref="ypresp_master::master">master</dfn>;</td></tr>
+<tr><th id="176">176</th><td>};</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><b>struct</b> <dfn class="type def" id="ypresp_order" title='ypresp_order' data-ref="ypresp_order">ypresp_order</dfn> {</td></tr>
+<tr><th id="179">179</th><td>  <a class="typedef" href="#ypstat" title='ypstat' data-type='enum ypstat' data-ref="ypstat">ypstat</a> <dfn class="decl" id="ypresp_order::status" title='ypresp_order::status' data-ref="ypresp_order::status">status</dfn>;</td></tr>
+<tr><th id="180">180</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="ypresp_order::ordernum" title='ypresp_order::ordernum' data-ref="ypresp_order::ordernum">ordernum</dfn>;</td></tr>
+<tr><th id="181">181</th><td>};</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td><b>struct</b> <dfn class="type def" id="ypmaplist" title='ypmaplist' data-ref="ypmaplist">ypmaplist</dfn> {</td></tr>
+<tr><th id="184">184</th><td>  <em>char</em> *<dfn class="decl" id="ypmaplist::map" title='ypmaplist::map' data-ref="ypmaplist::map">map</dfn>;</td></tr>
+<tr><th id="185">185</th><td><u>#define <dfn class="macro" id="_M/ypml_name" data-ref="_M/ypml_name">ypml_name</dfn> map</u></td></tr>
+<tr><th id="186">186</th><td>  <b>struct</b> <a class="type" href="#ypmaplist" title='ypmaplist' data-ref="ypmaplist">ypmaplist</a> *<dfn class="decl" id="ypmaplist::next" title='ypmaplist::next' data-ref="ypmaplist::next">next</dfn>;</td></tr>
+<tr><th id="187">187</th><td><u>#define <dfn class="macro" id="_M/ypml_next" data-ref="_M/ypml_next">ypml_next</dfn> next</u></td></tr>
+<tr><th id="188">188</th><td>};</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><b>struct</b> <dfn class="type def" id="ypresp_maplist" title='ypresp_maplist' data-ref="ypresp_maplist">ypresp_maplist</dfn> {</td></tr>
+<tr><th id="191">191</th><td>  <a class="typedef" href="#ypstat" title='ypstat' data-type='enum ypstat' data-ref="ypstat">ypstat</a> <dfn class="decl" id="ypresp_maplist::status" title='ypresp_maplist::status' data-ref="ypresp_maplist::status">status</dfn>;</td></tr>
+<tr><th id="192">192</th><td>  <b>struct</b> <a class="type" href="#ypmaplist" title='ypmaplist' data-ref="ypmaplist">ypmaplist</a> *<dfn class="decl" id="ypresp_maplist::list" title='ypresp_maplist::list' data-ref="ypresp_maplist::list">list</dfn>;</td></tr>
+<tr><th id="193">193</th><td>};</td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td><i>/*</i></td></tr>
+<tr><th id="196">196</th><td><i> * Procedure symbols.  YPPROC_NULL, YPPROC_DOMAIN, and YPPROC_DOMAIN_NONACK</i></td></tr>
+<tr><th id="197">197</th><td><i> * must keep the same values (0, 1, and 2) that they had in the first version</i></td></tr>
+<tr><th id="198">198</th><td><i> * of the protocol.</i></td></tr>
+<tr><th id="199">199</th><td><i> */</i></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><u>#define <dfn class="macro" id="_M/YPPROC_NULL" data-ref="_M/YPPROC_NULL">YPPROC_NULL</dfn>	0</u></td></tr>
+<tr><th id="202">202</th><td><u>#define <dfn class="macro" id="_M/YPPROC_DOMAIN" data-ref="_M/YPPROC_DOMAIN">YPPROC_DOMAIN</dfn>	1</u></td></tr>
+<tr><th id="203">203</th><td><u>#define <dfn class="macro" id="_M/YPPROC_DOMAIN_NONACK" data-ref="_M/YPPROC_DOMAIN_NONACK">YPPROC_DOMAIN_NONACK</dfn> 2</u></td></tr>
+<tr><th id="204">204</th><td><u>#define <dfn class="macro" id="_M/YPPROC_MATCH" data-ref="_M/YPPROC_MATCH">YPPROC_MATCH</dfn>	3</u></td></tr>
+<tr><th id="205">205</th><td><u>#define <dfn class="macro" id="_M/YPPROC_FIRST" data-ref="_M/YPPROC_FIRST">YPPROC_FIRST</dfn>	4</u></td></tr>
+<tr><th id="206">206</th><td><u>#define <dfn class="macro" id="_M/YPPROC_NEXT" data-ref="_M/YPPROC_NEXT">YPPROC_NEXT</dfn>	5</u></td></tr>
+<tr><th id="207">207</th><td><u>#define <dfn class="macro" id="_M/YPPROC_XFR" data-ref="_M/YPPROC_XFR">YPPROC_XFR</dfn>	6</u></td></tr>
+<tr><th id="208">208</th><td><u>#define <dfn class="macro" id="_M/YPPROC_CLEAR" data-ref="_M/YPPROC_CLEAR">YPPROC_CLEAR</dfn>	7</u></td></tr>
+<tr><th id="209">209</th><td><u>#define <dfn class="macro" id="_M/YPPROC_ALL" data-ref="_M/YPPROC_ALL">YPPROC_ALL</dfn>	8</u></td></tr>
+<tr><th id="210">210</th><td><u>#define <dfn class="macro" id="_M/YPPROC_MASTER" data-ref="_M/YPPROC_MASTER">YPPROC_MASTER</dfn>	9</u></td></tr>
+<tr><th id="211">211</th><td><u>#define <dfn class="macro" id="_M/YPPROC_ORDER" data-ref="_M/YPPROC_ORDER">YPPROC_ORDER</dfn>	10</u></td></tr>
+<tr><th id="212">212</th><td><u>#define <dfn class="macro" id="_M/YPPROC_MAPLIST" data-ref="_M/YPPROC_MAPLIST">YPPROC_MAPLIST</dfn>	11</u></td></tr>
+<tr><th id="213">213</th><td><u>#define	<dfn class="macro" id="_M/YPPROC_NEWXFR" data-ref="_M/YPPROC_NEWXFR">YPPROC_NEWXFR</dfn>	12</u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><i>/*</i></td></tr>
+<tr><th id="216">216</th><td><i> *		Protocol between clients and NIS binder servers</i></td></tr>
+<tr><th id="217">217</th><td><i> */</i></td></tr>
+<tr><th id="218">218</th><td></td></tr>
+<tr><th id="219">219</th><td><i>/*</i></td></tr>
+<tr><th id="220">220</th><td><i> * The following procedures are supported by the protocol:</i></td></tr>
+<tr><th id="221">221</th><td><i> *</i></td></tr>
+<tr><th id="222">222</th><td><i> * YPBINDPROC_NULL() returns ()</i></td></tr>
+<tr><th id="223">223</th><td><i> * 	takes nothing, returns nothing</i></td></tr>
+<tr><th id="224">224</th><td><i> *</i></td></tr>
+<tr><th id="225">225</th><td><i> * YPBINDPROC_DOMAIN takes (char *) returns (struct ypbind_resp)</i></td></tr>
+<tr><th id="226">226</th><td><i> *</i></td></tr>
+<tr><th id="227">227</th><td><i> * YPBINDPROC_SETDOM takes (struct ypbind_setdom) returns nothing</i></td></tr>
+<tr><th id="228">228</th><td><i> */</i></td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><i>/* Program and version symbols, magic numbers */</i></td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td><u>#define <dfn class="macro" id="_M/YPBINDPROG" data-ref="_M/YPBINDPROG">YPBINDPROG</dfn>		100007</u></td></tr>
+<tr><th id="233">233</th><td><u>#define <dfn class="macro" id="_M/YPBINDVERS" data-ref="_M/YPBINDVERS">YPBINDVERS</dfn>		2</u></td></tr>
+<tr><th id="234">234</th><td><u>#define <dfn class="macro" id="_M/YPBINDVERS_ORIG" data-ref="_M/YPBINDVERS_ORIG">YPBINDVERS_ORIG</dfn>		1</u></td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><i>/* Procedure symbols */</i></td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td><u>#define <dfn class="macro" id="_M/YPBINDPROC_NULL" data-ref="_M/YPBINDPROC_NULL">YPBINDPROC_NULL</dfn>		0</u></td></tr>
+<tr><th id="239">239</th><td><u>#define <dfn class="macro" id="_M/YPBINDPROC_DOMAIN" data-ref="_M/YPBINDPROC_DOMAIN">YPBINDPROC_DOMAIN</dfn>	1</u></td></tr>
+<tr><th id="240">240</th><td><u>#define <dfn class="macro" id="_M/YPBINDPROC_SETDOM" data-ref="_M/YPBINDPROC_SETDOM">YPBINDPROC_SETDOM</dfn>	2</u></td></tr>
+<tr><th id="241">241</th><td><i>/*</i></td></tr>
+<tr><th id="242">242</th><td><i> * Response structure and overall result status codes.  Success and failure</i></td></tr>
+<tr><th id="243">243</th><td><i> * represent two separate response message types.</i></td></tr>
+<tr><th id="244">244</th><td><i> */</i></td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><b>enum</b> <dfn class="type def" id="ypbind_resptype" title='ypbind_resptype' data-ref="ypbind_resptype">ypbind_resptype</dfn> {<dfn class="enum" id="ypbind_resptype::YPBIND_SUCC_VAL" title='ypbind_resptype::YPBIND_SUCC_VAL' data-ref="ypbind_resptype::YPBIND_SUCC_VAL">YPBIND_SUCC_VAL</dfn> = <var>1</var>, <dfn class="enum" id="ypbind_resptype::YPBIND_FAIL_VAL" title='ypbind_resptype::YPBIND_FAIL_VAL' data-ref="ypbind_resptype::YPBIND_FAIL_VAL">YPBIND_FAIL_VAL</dfn> = <var>2</var>};</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><b>struct</b> <dfn class="type def" id="ypbind_binding" title='ypbind_binding' data-ref="ypbind_binding">ypbind_binding</dfn> {</td></tr>
+<tr><th id="249">249</th><td>  <b>struct</b> <a class="type" href="../netinet/in.h.html#in_addr" title='in_addr' data-ref="in_addr">in_addr</a> <dfn class="decl" id="ypbind_binding::ypbind_binding_addr" title='ypbind_binding::ypbind_binding_addr' data-ref="ypbind_binding::ypbind_binding_addr">ypbind_binding_addr</dfn>;	        <i>/* In network order */</i></td></tr>
+<tr><th id="250">250</th><td>  <em>unsigned</em> <em>short</em> <em>int</em> <dfn class="decl" id="ypbind_binding::ypbind_binding_port" title='ypbind_binding::ypbind_binding_port' data-ref="ypbind_binding::ypbind_binding_port">ypbind_binding_port</dfn>;	<i>/* In network order */</i></td></tr>
+<tr><th id="251">251</th><td>};</td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td><b>struct</b> <dfn class="type def" id="ypbind_resp" title='ypbind_resp' data-ref="ypbind_resp">ypbind_resp</dfn> {</td></tr>
+<tr><th id="254">254</th><td>  <b>enum</b> <a class="type" href="#ypbind_resptype" title='ypbind_resptype' data-ref="ypbind_resptype">ypbind_resptype</a> <dfn class="decl" id="ypbind_resp::ypbind_status" title='ypbind_resp::ypbind_status' data-ref="ypbind_resp::ypbind_status">ypbind_status</dfn>;</td></tr>
+<tr><th id="255">255</th><td>  <b>union</b> {</td></tr>
+<tr><th id="256">256</th><td>    <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="ypbind_resp::(anonymous)::ypbind_error" title='ypbind_resp::(anonymous union)::ypbind_error' data-ref="ypbind_resp::(anonymous)::ypbind_error">ypbind_error</dfn>;</td></tr>
+<tr><th id="257">257</th><td>    <b>struct</b> <a class="type" href="#ypbind_binding" title='ypbind_binding' data-ref="ypbind_binding">ypbind_binding</a> <dfn class="decl" id="ypbind_resp::(anonymous)::ypbind_bindinfo" title='ypbind_resp::(anonymous union)::ypbind_bindinfo' data-ref="ypbind_resp::(anonymous)::ypbind_bindinfo">ypbind_bindinfo</dfn>;</td></tr>
+<tr><th id="258">258</th><td>  } <dfn class="decl" id="ypbind_resp::ypbind_respbody" title='ypbind_resp::ypbind_respbody' data-ref="ypbind_resp::ypbind_respbody">ypbind_respbody</dfn>;</td></tr>
+<tr><th id="259">259</th><td>};</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><i>/* Detailed failure reason codes for response field ypbind_error*/</i></td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td><u>#define <dfn class="macro" id="_M/YPBIND_ERR_ERR" data-ref="_M/YPBIND_ERR_ERR">YPBIND_ERR_ERR</dfn> 1		/* Internal error */</u></td></tr>
+<tr><th id="265">265</th><td><u>#define <dfn class="macro" id="_M/YPBIND_ERR_NOSERV" data-ref="_M/YPBIND_ERR_NOSERV">YPBIND_ERR_NOSERV</dfn> 2		/* No bound server for passed domain */</u></td></tr>
+<tr><th id="266">266</th><td><u>#define <dfn class="macro" id="_M/YPBIND_ERR_RESC" data-ref="_M/YPBIND_ERR_RESC">YPBIND_ERR_RESC</dfn> 3		/* System resource allocation failure */</u></td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td><i>/*</i></td></tr>
+<tr><th id="269">269</th><td><i> * Request data structure for ypbind "Set domain" procedure.</i></td></tr>
+<tr><th id="270">270</th><td><i> */</i></td></tr>
+<tr><th id="271">271</th><td><b>struct</b> <dfn class="type def" id="ypbind_setdom" title='ypbind_setdom' data-ref="ypbind_setdom">ypbind_setdom</dfn> {</td></tr>
+<tr><th id="272">272</th><td>  <em>char</em> *<dfn class="decl" id="ypbind_setdom::ypsetdom_domain" title='ypbind_setdom::ypsetdom_domain' data-ref="ypbind_setdom::ypsetdom_domain">ypsetdom_domain</dfn>;</td></tr>
+<tr><th id="273">273</th><td>  <b>struct</b> <a class="type" href="#ypbind_binding" title='ypbind_binding' data-ref="ypbind_binding">ypbind_binding</a> <dfn class="decl" id="ypbind_setdom::ypsetdom_binding" title='ypbind_setdom::ypsetdom_binding' data-ref="ypbind_setdom::ypsetdom_binding">ypsetdom_binding</dfn>;</td></tr>
+<tr><th id="274">274</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="ypbind_setdom::ypsetdom_vers" title='ypbind_setdom::ypsetdom_vers' data-ref="ypbind_setdom::ypsetdom_vers">ypsetdom_vers</dfn>;</td></tr>
+<tr><th id="275">275</th><td>};</td></tr>
+<tr><th id="276">276</th><td><u>#define <dfn class="macro" id="_M/ypsetdom_addr" data-ref="_M/ypsetdom_addr">ypsetdom_addr</dfn> ypsetdom_binding.ypbind_binding_addr</u></td></tr>
+<tr><th id="277">277</th><td><u>#define <dfn class="macro" id="_M/ypsetdom_port" data-ref="_M/ypsetdom_port">ypsetdom_port</dfn> ypsetdom_binding.ypbind_binding_port</u></td></tr>
+<tr><th id="278">278</th><td></td></tr>
+<tr><th id="279">279</th><td><i>/*</i></td></tr>
+<tr><th id="280">280</th><td><i> *		Protocol between clients (ypxfr, only) and yppush</i></td></tr>
+<tr><th id="281">281</th><td><i> *		yppush speaks a protocol in the transient range, which</i></td></tr>
+<tr><th id="282">282</th><td><i> *		is supplied to ypxfr as a command-line parameter when it</i></td></tr>
+<tr><th id="283">283</th><td><i> *		is activated by ypserv.</i></td></tr>
+<tr><th id="284">284</th><td><i> */</i></td></tr>
+<tr><th id="285">285</th><td><u>#define <dfn class="macro" id="_M/YPPUSHVERS" data-ref="_M/YPPUSHVERS">YPPUSHVERS</dfn>		1</u></td></tr>
+<tr><th id="286">286</th><td><u>#define <dfn class="macro" id="_M/YPPUSHVERS_ORIG" data-ref="_M/YPPUSHVERS_ORIG">YPPUSHVERS_ORIG</dfn>		1</u></td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><i>/* Procedure symbols */</i></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+<tr><th id="290">290</th><td><u>#define <dfn class="macro" id="_M/YPPUSHPROC_NULL" data-ref="_M/YPPUSHPROC_NULL">YPPUSHPROC_NULL</dfn>		0</u></td></tr>
+<tr><th id="291">291</th><td><u>#define <dfn class="macro" id="_M/YPPUSHPROC_XFRRESP" data-ref="_M/YPPUSHPROC_XFRRESP">YPPUSHPROC_XFRRESP</dfn>	1</u></td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td><i>/* Status values for yppushresp_xfr.status */</i></td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td><b>enum</b> <dfn class="type def" id="yppush_status" title='yppush_status' data-ref="yppush_status">yppush_status</dfn> {</td></tr>
+<tr><th id="296">296</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_SUCC" title='yppush_status::YPPUSH_SUCC' data-ref="yppush_status::YPPUSH_SUCC">YPPUSH_SUCC</dfn> = <var>1</var>,		<i>/* Success */</i></td></tr>
+<tr><th id="297">297</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_SUCC" data-ref="_M/YPPUSH_SUCC">YPPUSH_SUCC</dfn>	YPPUSH_SUCC</u></td></tr>
+<tr><th id="298">298</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_AGE" title='yppush_status::YPPUSH_AGE' data-ref="yppush_status::YPPUSH_AGE">YPPUSH_AGE</dfn> = <var>2</var>,		<i>/* Master's version not newer */</i></td></tr>
+<tr><th id="299">299</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_AGE" data-ref="_M/YPPUSH_AGE">YPPUSH_AGE</dfn>	YPPUSH_AGE</u></td></tr>
+<tr><th id="300">300</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_NOMAP" title='yppush_status::YPPUSH_NOMAP' data-ref="yppush_status::YPPUSH_NOMAP">YPPUSH_NOMAP</dfn> = -<var>1</var>,		<i>/* Can't find server for map */</i></td></tr>
+<tr><th id="301">301</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_NOMAP" data-ref="_M/YPPUSH_NOMAP">YPPUSH_NOMAP</dfn> 	YPPUSH_NOMAP</u></td></tr>
+<tr><th id="302">302</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_NODOM" title='yppush_status::YPPUSH_NODOM' data-ref="yppush_status::YPPUSH_NODOM">YPPUSH_NODOM</dfn> = -<var>2</var>,		<i>/* Domain not supported */</i></td></tr>
+<tr><th id="303">303</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_NODOM" data-ref="_M/YPPUSH_NODOM">YPPUSH_NODOM</dfn> 	YPPUSH_NODOM</u></td></tr>
+<tr><th id="304">304</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_RSRC" title='yppush_status::YPPUSH_RSRC' data-ref="yppush_status::YPPUSH_RSRC">YPPUSH_RSRC</dfn> = -<var>3</var>,		<i>/* Local resouce alloc failure */</i></td></tr>
+<tr><th id="305">305</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_RSRC" data-ref="_M/YPPUSH_RSRC">YPPUSH_RSRC</dfn> 	YPPUSH_RSRC</u></td></tr>
+<tr><th id="306">306</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_RPC" title='yppush_status::YPPUSH_RPC' data-ref="yppush_status::YPPUSH_RPC">YPPUSH_RPC</dfn> = -<var>4</var>,		<i>/* RPC failure talking to server */</i></td></tr>
+<tr><th id="307">307</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_RPC" data-ref="_M/YPPUSH_RPC">YPPUSH_RPC</dfn> 	YPPUSH_RPC</u></td></tr>
+<tr><th id="308">308</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_MADDR" title='yppush_status::YPPUSH_MADDR' data-ref="yppush_status::YPPUSH_MADDR">YPPUSH_MADDR</dfn> = -<var>5</var>,		<i>/* Can't get master address */</i></td></tr>
+<tr><th id="309">309</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_MADDR" data-ref="_M/YPPUSH_MADDR">YPPUSH_MADDR</dfn>	YPPUSH_MADDR</u></td></tr>
+<tr><th id="310">310</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_YPERR" title='yppush_status::YPPUSH_YPERR' data-ref="yppush_status::YPPUSH_YPERR">YPPUSH_YPERR</dfn> = -<var>6</var>,		<i>/* NIS server/map db error */</i></td></tr>
+<tr><th id="311">311</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_YPERR" data-ref="_M/YPPUSH_YPERR">YPPUSH_YPERR</dfn> 	YPPUSH_YPERR</u></td></tr>
+<tr><th id="312">312</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_BADARGS" title='yppush_status::YPPUSH_BADARGS' data-ref="yppush_status::YPPUSH_BADARGS">YPPUSH_BADARGS</dfn> = -<var>7</var>,		<i>/* Request arguments bad */</i></td></tr>
+<tr><th id="313">313</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_BADARGS" data-ref="_M/YPPUSH_BADARGS">YPPUSH_BADARGS</dfn> 	YPPUSH_BADARGS</u></td></tr>
+<tr><th id="314">314</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_DBM" title='yppush_status::YPPUSH_DBM' data-ref="yppush_status::YPPUSH_DBM">YPPUSH_DBM</dfn> = -<var>8</var>,		<i>/* Local dbm operation failed */</i></td></tr>
+<tr><th id="315">315</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_DBM" data-ref="_M/YPPUSH_DBM">YPPUSH_DBM</dfn>	YPPUSH_DBM</u></td></tr>
+<tr><th id="316">316</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_FILE" title='yppush_status::YPPUSH_FILE' data-ref="yppush_status::YPPUSH_FILE">YPPUSH_FILE</dfn> = -<var>9</var>,		<i>/* Local file I/O operation failed */</i></td></tr>
+<tr><th id="317">317</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_FILE" data-ref="_M/YPPUSH_FILE">YPPUSH_FILE</dfn>	YPPUSH_FILE</u></td></tr>
+<tr><th id="318">318</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_SKEW" title='yppush_status::YPPUSH_SKEW' data-ref="yppush_status::YPPUSH_SKEW">YPPUSH_SKEW</dfn> = -<var>10</var>,		<i>/* Map version skew during transfer */</i></td></tr>
+<tr><th id="319">319</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_SKEW" data-ref="_M/YPPUSH_SKEW">YPPUSH_SKEW</dfn>	YPPUSH_SKEW</u></td></tr>
+<tr><th id="320">320</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_CLEAR" title='yppush_status::YPPUSH_CLEAR' data-ref="yppush_status::YPPUSH_CLEAR">YPPUSH_CLEAR</dfn> = -<var>11</var>,		<i>/* Can't send "Clear" req to local ypserv */</i></td></tr>
+<tr><th id="321">321</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_CLEAR" data-ref="_M/YPPUSH_CLEAR">YPPUSH_CLEAR</dfn>	YPPUSH_CLEAR</u></td></tr>
+<tr><th id="322">322</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_FORCE" title='yppush_status::YPPUSH_FORCE' data-ref="yppush_status::YPPUSH_FORCE">YPPUSH_FORCE</dfn> = -<var>12</var>,		<i>/* No local order number in map - use -f flag*/</i></td></tr>
+<tr><th id="323">323</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_FORCE" data-ref="_M/YPPUSH_FORCE">YPPUSH_FORCE</dfn>	YPPUSH_FORCE</u></td></tr>
+<tr><th id="324">324</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_XFRERR" title='yppush_status::YPPUSH_XFRERR' data-ref="yppush_status::YPPUSH_XFRERR">YPPUSH_XFRERR</dfn> = -<var>13</var>,		<i>/* ypxfr error */</i></td></tr>
+<tr><th id="325">325</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_XFRERR" data-ref="_M/YPPUSH_XFRERR">YPPUSH_XFRERR</dfn>	YPPUSH_XFRERR</u></td></tr>
+<tr><th id="326">326</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_REFUSED" title='yppush_status::YPPUSH_REFUSED' data-ref="yppush_status::YPPUSH_REFUSED">YPPUSH_REFUSED</dfn> = -<var>14</var>,		<i>/* Transfer request refused by ypserv */</i></td></tr>
+<tr><th id="327">327</th><td><u>#define <dfn class="macro" id="_M/YPPUSH_REFUSED" data-ref="_M/YPPUSH_REFUSED">YPPUSH_REFUSED</dfn>	YPPUSH_REFUSED</u></td></tr>
+<tr><th id="328">328</th><td>  <dfn class="enum" id="yppush_status::YPPUSH_NOALIAS" title='yppush_status::YPPUSH_NOALIAS' data-ref="yppush_status::YPPUSH_NOALIAS">YPPUSH_NOALIAS</dfn> = -<var>15</var>		<i>/* Alias not found for map or domain */</i></td></tr>
+<tr><th id="329">329</th><td><u>#define	<dfn class="macro" id="_M/YPPUSH_NOALIAS" data-ref="_M/YPPUSH_NOALIAS">YPPUSH_NOALIAS</dfn>	YPPUSH_NOALIAS</u></td></tr>
+<tr><th id="330">330</th><td>};</td></tr>
+<tr><th id="331">331</th><td><b>typedef</b> <b>enum</b> <a class="type" href="#yppush_status" title='yppush_status' data-ref="yppush_status">yppush_status</a> <dfn class="typedef" id="yppush_status" title='yppush_status' data-type='enum yppush_status' data-ref="yppush_status">yppush_status</dfn>;</td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td><b>struct</b> <dfn class="type def" id="yppushresp_xfr" title='yppushresp_xfr' data-ref="yppushresp_xfr">yppushresp_xfr</dfn> {</td></tr>
+<tr><th id="334">334</th><td>  <a class="typedef" href="../x86_64-linux-gnu/sys/types.h.html#u_int" title='u_int' data-type='__u_int' data-ref="u_int">u_int</a> <dfn class="decl" id="yppushresp_xfr::transid" title='yppushresp_xfr::transid' data-ref="yppushresp_xfr::transid">transid</dfn>;</td></tr>
+<tr><th id="335">335</th><td>  <a class="typedef" href="#yppush_status" title='yppush_status' data-type='enum yppush_status' data-ref="yppush_status">yppush_status</a> <dfn class="decl" id="yppushresp_xfr::status" title='yppushresp_xfr::status' data-ref="yppushresp_xfr::status">status</dfn>;</td></tr>
+<tr><th id="336">336</th><td>};</td></tr>
+<tr><th id="337">337</th><td></td></tr>
+<tr><th id="338">338</th><td><b>struct</b> <dfn class="type def" id="ypresp_all" title='ypresp_all' data-ref="ypresp_all">ypresp_all</dfn> {</td></tr>
+<tr><th id="339">339</th><td>  <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="ypresp_all::more" title='ypresp_all::more' data-ref="ypresp_all::more">more</dfn>;</td></tr>
+<tr><th id="340">340</th><td>  <b>union</b> {</td></tr>
+<tr><th id="341">341</th><td>    <b>struct</b> <a class="type" href="#ypresp_key_val" title='ypresp_key_val' data-ref="ypresp_key_val">ypresp_key_val</a> <dfn class="decl" id="ypresp_all::(anonymous)::val" title='ypresp_all::(anonymous union)::val' data-ref="ypresp_all::(anonymous)::val">val</dfn>;</td></tr>
+<tr><th id="342">342</th><td>  } <dfn class="decl" id="ypresp_all::ypresp_all_u" title='ypresp_all::ypresp_all_u' data-ref="ypresp_all::ypresp_all_u">ypresp_all_u</dfn>;</td></tr>
+<tr><th id="343">343</th><td>};</td></tr>
+<tr><th id="344">344</th><td></td></tr>
+<tr><th id="345">345</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypreq_key" title='xdr_ypreq_key' data-ref="xdr_ypreq_key">xdr_ypreq_key</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col0 decl" id="290__xdrs" title='__xdrs' data-type='XDR *' data-ref="290__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypreq_key" title='ypreq_key' data-ref="ypreq_key">ypreq_key</a> * <dfn class="local col1 decl" id="291__objp" title='__objp' data-type='struct ypreq_key *' data-ref="291__objp">__objp</dfn>);</td></tr>
+<tr><th id="346">346</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypreq_nokey" title='xdr_ypreq_nokey' data-ref="xdr_ypreq_nokey">xdr_ypreq_nokey</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col2 decl" id="292__xdrs" title='__xdrs' data-type='XDR *' data-ref="292__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypreq_nokey" title='ypreq_nokey' data-ref="ypreq_nokey">ypreq_nokey</a> * <dfn class="local col3 decl" id="293__objp" title='__objp' data-type='struct ypreq_nokey *' data-ref="293__objp">__objp</dfn>);</td></tr>
+<tr><th id="347">347</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypreq_xfr" title='xdr_ypreq_xfr' data-ref="xdr_ypreq_xfr">xdr_ypreq_xfr</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col4 decl" id="294__xdrs" title='__xdrs' data-type='XDR *' data-ref="294__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypreq_xfr" title='ypreq_xfr' data-ref="ypreq_xfr">ypreq_xfr</a> * <dfn class="local col5 decl" id="295__objp" title='__objp' data-type='struct ypreq_xfr *' data-ref="295__objp">__objp</dfn>);</td></tr>
+<tr><th id="348">348</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypresp_val" title='xdr_ypresp_val' data-ref="xdr_ypresp_val">xdr_ypresp_val</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col6 decl" id="296__xdrs" title='__xdrs' data-type='XDR *' data-ref="296__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypresp_val" title='ypresp_val' data-ref="ypresp_val">ypresp_val</a> * <dfn class="local col7 decl" id="297__objp" title='__objp' data-type='struct ypresp_val *' data-ref="297__objp">__objp</dfn>);</td></tr>
+<tr><th id="349">349</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypresp_key_val" title='xdr_ypresp_key_val' data-ref="xdr_ypresp_key_val">xdr_ypresp_key_val</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col8 decl" id="298__xdrs" title='__xdrs' data-type='XDR *' data-ref="298__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypresp_key_val" title='ypresp_key_val' data-ref="ypresp_key_val">ypresp_key_val</a> * <dfn class="local col9 decl" id="299__objp" title='__objp' data-type='struct ypresp_key_val *' data-ref="299__objp">__objp</dfn>);</td></tr>
+<tr><th id="350">350</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypbind_resp" title='xdr_ypbind_resp' data-ref="xdr_ypbind_resp">xdr_ypbind_resp</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col0 decl" id="300__xdrs" title='__xdrs' data-type='XDR *' data-ref="300__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypbind_resp" title='ypbind_resp' data-ref="ypbind_resp">ypbind_resp</a> * <dfn class="local col1 decl" id="301__objp" title='__objp' data-type='struct ypbind_resp *' data-ref="301__objp">__objp</dfn>);</td></tr>
+<tr><th id="351">351</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypbind_setdom" title='xdr_ypbind_setdom' data-ref="xdr_ypbind_setdom">xdr_ypbind_setdom</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col2 decl" id="302__xdrs" title='__xdrs' data-type='XDR *' data-ref="302__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypbind_setdom" title='ypbind_setdom' data-ref="ypbind_setdom">ypbind_setdom</a> * <dfn class="local col3 decl" id="303__objp" title='__objp' data-type='struct ypbind_setdom *' data-ref="303__objp">__objp</dfn>);</td></tr>
+<tr><th id="352">352</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypmap_parms" title='xdr_ypmap_parms' data-ref="xdr_ypmap_parms">xdr_ypmap_parms</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col4 decl" id="304__xdrs" title='__xdrs' data-type='XDR *' data-ref="304__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypmap_parms" title='ypmap_parms' data-ref="ypmap_parms">ypmap_parms</a> * <dfn class="local col5 decl" id="305__objp" title='__objp' data-type='struct ypmap_parms *' data-ref="305__objp">__objp</dfn>);</td></tr>
+<tr><th id="353">353</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_yppushresp_xfr" title='xdr_yppushresp_xfr' data-ref="xdr_yppushresp_xfr">xdr_yppushresp_xfr</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col6 decl" id="306__xdrs" title='__xdrs' data-type='XDR *' data-ref="306__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#yppushresp_xfr" title='yppushresp_xfr' data-ref="yppushresp_xfr">yppushresp_xfr</a> * <dfn class="local col7 decl" id="307__objp" title='__objp' data-type='struct yppushresp_xfr *' data-ref="307__objp">__objp</dfn>);</td></tr>
+<tr><th id="354">354</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypresp_order" title='xdr_ypresp_order' data-ref="xdr_ypresp_order">xdr_ypresp_order</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col8 decl" id="308__xdrs" title='__xdrs' data-type='XDR *' data-ref="308__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypresp_order" title='ypresp_order' data-ref="ypresp_order">ypresp_order</a>  * <dfn class="local col9 decl" id="309__objp" title='__objp' data-type='struct ypresp_order *' data-ref="309__objp">__objp</dfn>);</td></tr>
+<tr><th id="355">355</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypresp_master" title='xdr_ypresp_master' data-ref="xdr_ypresp_master">xdr_ypresp_master</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col0 decl" id="310__xdrs" title='__xdrs' data-type='XDR *' data-ref="310__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypresp_master" title='ypresp_master' data-ref="ypresp_master">ypresp_master</a> * <dfn class="local col1 decl" id="311__objp" title='__objp' data-type='struct ypresp_master *' data-ref="311__objp">__objp</dfn>);</td></tr>
+<tr><th id="356">356</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypall" title='xdr_ypall' data-ref="xdr_ypall">xdr_ypall</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col2 decl" id="312__xdrs" title='__xdrs' data-type='XDR *' data-ref="312__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="ypclnt.h.html#ypall_callback" title='ypall_callback' data-ref="ypall_callback">ypall_callback</a> * <dfn class="local col3 decl" id="313__objp" title='__objp' data-type='struct ypall_callback *' data-ref="313__objp">__objp</dfn>);</td></tr>
+<tr><th id="357">357</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypresp_maplist" title='xdr_ypresp_maplist' data-ref="xdr_ypresp_maplist">xdr_ypresp_maplist</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col4 decl" id="314__xdrs" title='__xdrs' data-type='XDR *' data-ref="314__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypresp_maplist" title='ypresp_maplist' data-ref="ypresp_maplist">ypresp_maplist</a> * <dfn class="local col5 decl" id="315__objp" title='__objp' data-type='struct ypresp_maplist *' data-ref="315__objp">__objp</dfn>);</td></tr>
+<tr><th id="358">358</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypbind_binding" title='xdr_ypbind_binding' data-ref="xdr_ypbind_binding">xdr_ypbind_binding</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col6 decl" id="316__xdrs" title='__xdrs' data-type='XDR *' data-ref="316__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypbind_binding" title='ypbind_binding' data-ref="ypbind_binding">ypbind_binding</a> * <dfn class="local col7 decl" id="317__objp" title='__objp' data-type='struct ypbind_binding *' data-ref="317__objp">__objp</dfn>);</td></tr>
+<tr><th id="359">359</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypbind_resptype" title='xdr_ypbind_resptype' data-ref="xdr_ypbind_resptype">xdr_ypbind_resptype</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col8 decl" id="318__xdrs" title='__xdrs' data-type='XDR *' data-ref="318__xdrs">__xdrs</dfn>, <b>enum</b> <a class="type" href="#ypbind_resptype" title='ypbind_resptype' data-ref="ypbind_resptype">ypbind_resptype</a> * <dfn class="local col9 decl" id="319__objp" title='__objp' data-type='enum ypbind_resptype *' data-ref="319__objp">__objp</dfn>);</td></tr>
+<tr><th id="360">360</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypstat" title='xdr_ypstat' data-ref="xdr_ypstat">xdr_ypstat</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col0 decl" id="320__xdrs" title='__xdrs' data-type='XDR *' data-ref="320__xdrs">__xdrs</dfn>, <b>enum</b> <a class="type" href="#ypbind_resptype" title='ypbind_resptype' data-ref="ypbind_resptype">ypbind_resptype</a> * <dfn class="local col1 decl" id="321__objp" title='__objp' data-type='enum ypbind_resptype *' data-ref="321__objp">__objp</dfn>);</td></tr>
+<tr><th id="361">361</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_ypresp_all" title='xdr_ypresp_all' data-ref="xdr_ypresp_all">xdr_ypresp_all</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col2 decl" id="322__xdrs" title='__xdrs' data-type='XDR *' data-ref="322__xdrs">__xdrs</dfn>, <b>struct</b> <a class="type" href="#ypresp_all" title='ypresp_all' data-ref="ypresp_all">ypresp_all</a>  * <dfn class="local col3 decl" id="323__objp" title='__objp' data-type='struct ypresp_all *' data-ref="323__objp">__objp</dfn>);</td></tr>
+<tr><th id="362">362</th><td><b>extern</b> <a class="typedef" href="../rpc/types.h.html#bool_t" title='bool_t' data-type='int' data-ref="bool_t">bool_t</a> <dfn class="decl" id="xdr_domainname" title='xdr_domainname' data-ref="xdr_domainname">xdr_domainname</dfn> (<a class="typedef" href="../rpc/xdr.h.html#XDR" title='XDR' data-type='struct XDR' data-ref="XDR">XDR</a> *<dfn class="local col4 decl" id="324__xdrs" title='__xdrs' data-type='XDR *' data-ref="324__xdrs">__xdrs</dfn>, <em>char</em> ** <dfn class="local col5 decl" id="325__objp" title='__objp' data-type='char **' data-ref="325__objp">__objp</dfn>);</td></tr>
+<tr><th id="363">363</th><td></td></tr>
+<tr><th id="364">364</th><td><a class="macro" href="../x86_64-linux-gnu/sys/cdefs.h.html#102" title="" data-ref="_M/__END_DECLS">__END_DECLS</a></td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td><u>#<span data-ppcond="7">endif</span>	/* _RPCSVC_YP_PROT_H */</u></td></tr>
+<tr><th id="367">367</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../codebrowser/Modules/nismodule.c.html'>codebrowser/Modules/nismodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project include<br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

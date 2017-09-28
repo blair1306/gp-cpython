@@ -1,0 +1,15 @@
+<dec f='include/stdio.h' l='709' type='size_t fread(void *restrict __ptr, size_t __size, size_t __n, FILE *restrict __stream)'/>
+<doc f='include/stdio.h' l='705'>/* Read chunks of generic data from STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1747' u='c' c='PyCursesWindow_PutWin'/>
+<use f='codebrowser/Modules/getpath.c' l='414' u='c' c='search_for_exec_prefix'/>
+<use f='codebrowser/Modules/zipimport.c' l='933' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='973' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1006' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1169' u='c' c='get_data'/>
+<use f='codebrowser/Modules/zipimport.c' l='1205' u='c' c='get_data'/>
+<use f='codebrowser/Python/marshal.c' l='694' u='c' c='r_string'/>
+<use f='codebrowser/Python/marshal.c' l='1543' u='c' c='PyMarshal_ReadLastObjectFromFile'/>
+<use f='codebrowser/Python/pythonrun.c' l='294' u='c' c='maybe_pyc_file'/>

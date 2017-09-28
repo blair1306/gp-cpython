@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='246' type='4'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1360' u='r' c='init_basic_context'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='246'>/* 0.5 is rounded up               */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='104' u='r' c='mpd_defaultcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='118' u='r' c='mpd_basiccontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1625' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1753' c='_mpd_check_exp'/>

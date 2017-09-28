@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>KeccakHash.h source code [codebrowser/Modules/_sha3/kcp/KeccakHash.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_sha3/kcp/KeccakHash.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_sha3</a>/<a href='./'>kcp</a>/<a href='KeccakHash.h.html'>KeccakHash.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>Implementation by the Keccak, Keyak and Ketje Teams, namely, Guido Bertoni,</i></td></tr>
+<tr><th id="3">3</th><td><i>Joan Daemen, Michaël Peeters, Gilles Van Assche and Ronny Van Keer, hereby</i></td></tr>
+<tr><th id="4">4</th><td><i>denoted as "the implementer".</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>For more information, feedback or questions, please refer to our websites:</i></td></tr>
+<tr><th id="7">7</th><td><i>http://keccak.noekeon.org/</i></td></tr>
+<tr><th id="8">8</th><td><i>http://keyak.noekeon.org/</i></td></tr>
+<tr><th id="9">9</th><td><i>http://ketje.noekeon.org/</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>To the extent possible under law, the implementer has waived all copyright</i></td></tr>
+<tr><th id="12">12</th><td><i>and related or neighboring rights to the source code in this file.</i></td></tr>
+<tr><th id="13">13</th><td><i>http://creativecommons.org/publicdomain/zero/1.0/</i></td></tr>
+<tr><th id="14">14</th><td><i>*/</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="16">ifndef</span> <span class="macro" data-ref="_M/_KeccakHashInterface_h_">_KeccakHashInterface_h_</span></u></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/_KeccakHashInterface_h_" data-ref="_M/_KeccakHashInterface_h_">_KeccakHashInterface_h_</dfn></u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifndef</span> <span class="macro" data-ref="_M/KeccakP1600_excluded">KeccakP1600_excluded</span></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#include <a href="KeccakSponge.h.html">"KeccakSponge.h"</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><b>typedef</b> <em>unsigned</em> <em>char</em> <dfn class="typedef" id="BitSequence" title='BitSequence' data-type='unsigned char' data-ref="BitSequence">BitSequence</dfn>;</td></tr>
+<tr><th id="25">25</th><td><b>typedef</b> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="typedef" id="DataLength" title='DataLength' data-type='size_t' data-ref="DataLength">DataLength</dfn>;</td></tr>
+<tr><th id="26">26</th><td><b>typedef</b> <b>enum</b> { <dfn class="enum" id="SUCCESS" title='SUCCESS' data-ref="SUCCESS">SUCCESS</dfn> = <var>0</var>, <dfn class="enum" id="FAIL" title='FAIL' data-ref="FAIL">FAIL</dfn> = <var>1</var>, <dfn class="enum" id="BAD_HASHLEN" title='BAD_HASHLEN' data-ref="BAD_HASHLEN">BAD_HASHLEN</dfn> = <var>2</var> } <dfn class="typedef" id="HashReturn" title='HashReturn' data-type='enum HashReturn' data-ref="HashReturn">HashReturn</dfn>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="29">29</th><td>    <a class="typedef" href="KeccakSponge.h.html#168" title='KeccakWidth1600_SpongeInstance' data-type='struct KeccakWidth1600_SpongeInstanceStruct' data-ref="KeccakWidth1600_SpongeInstance">KeccakWidth1600_SpongeInstance</a> <dfn class="decl" id="(anonymous)::sponge" title='(anonymous struct)::sponge' data-ref="(anonymous)::sponge">sponge</dfn>;</td></tr>
+<tr><th id="30">30</th><td>    <em>unsigned</em> <em>int</em> <dfn class="decl" id="(anonymous)::fixedOutputLength" title='(anonymous struct)::fixedOutputLength' data-ref="(anonymous)::fixedOutputLength">fixedOutputLength</dfn>;</td></tr>
+<tr><th id="31">31</th><td>    <em>unsigned</em> <em>char</em> <dfn class="decl" id="(anonymous)::delimitedSuffix" title='(anonymous struct)::delimitedSuffix' data-ref="(anonymous)::delimitedSuffix">delimitedSuffix</dfn>;</td></tr>
+<tr><th id="32">32</th><td>} <dfn class="typedef" id="Keccak_HashInstance" title='Keccak_HashInstance' data-type='struct Keccak_HashInstance' data-ref="Keccak_HashInstance">Keccak_HashInstance</dfn>;</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="35">35</th><td><i class="doc">  * Function to initialize the Keccak[r, c] sponge function instance used in sequential hashing mode.</i></td></tr>
+<tr><th id="36">36</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">hashInstance</span>    Pointer to the hash instance to be initialized.</i></td></tr>
+<tr><th id="37">37</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">rate</span>        The value of the rate r.</i></td></tr>
+<tr><th id="38">38</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">capacity</span>    The value of the capacity c.</i></td></tr>
+<tr><th id="39">39</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">hashbitlen</span>  The desired number of output bits,</i></td></tr>
+<tr><th id="40">40</th><td><i class="doc">  *                     or 0 for an arbitrarily-long output.</i></td></tr>
+<tr><th id="41">41</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">delimitedSuffix</span> Bits that will be automatically appended to the end</i></td></tr>
+<tr><th id="42">42</th><td><i class="doc">  *                         of the input message, as in domain separation.</i></td></tr>
+<tr><th id="43">43</th><td><i class="doc">  *                         This is a byte containing from 0 to 7 bits</i></td></tr>
+<tr><th id="44">44</th><td><i class="doc">  *                         formatted like the<span class="command"> @a</span> <span class="arg">delimitedData</span> parameter of</i></td></tr>
+<tr><th id="45">45</th><td><i class="doc">  *                         the Keccak_SpongeAbsorbLastFewBits() function.</i></td></tr>
+<tr><th id="46">46</th><td><i class="doc">  * <span class="command">@pre</span>    One must have r+c=1600 and the rate a multiple of 8 bits in this implementation.</i></td></tr>
+<tr><th id="47">47</th><td><i class="doc">  * <span class="command">@return</span> SUCCESS if successful, FAIL otherwise.</i></td></tr>
+<tr><th id="48">48</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="49">49</th><td><a class="typedef" href="#HashReturn" title='HashReturn' data-type='enum HashReturn' data-ref="HashReturn">HashReturn</a> <a class="macro" href="../sha3module.c.html#70" title="_PySHA3_Keccak_HashInitialize" data-ref="_M/Keccak_HashInitialize">Keccak_HashInitialize</a>(<a class="typedef" href="#Keccak_HashInstance" title='Keccak_HashInstance' data-type='struct Keccak_HashInstance' data-ref="Keccak_HashInstance">Keccak_HashInstance</a> *<dfn class="local col5 decl" id="45hashInstance" title='hashInstance' data-type='Keccak_HashInstance *' data-ref="45hashInstance">hashInstance</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col6 decl" id="46rate" title='rate' data-type='unsigned int' data-ref="46rate">rate</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col7 decl" id="47capacity" title='capacity' data-type='unsigned int' data-ref="47capacity">capacity</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col8 decl" id="48hashbitlen" title='hashbitlen' data-type='unsigned int' data-ref="48hashbitlen">hashbitlen</dfn>, <em>unsigned</em> <em>char</em> <dfn class="local col9 decl" id="49delimitedSuffix" title='delimitedSuffix' data-type='unsigned char' data-ref="49delimitedSuffix">delimitedSuffix</dfn>);</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i class="doc">/** Macro to initialize a SHAKE128 instance as specified in the FIPS 202 standard.</i></td></tr>
+<tr><th id="52">52</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/Keccak_HashInitialize_SHAKE128" data-ref="_M/Keccak_HashInitialize_SHAKE128">Keccak_HashInitialize_SHAKE128</dfn>(hashInstance)        Keccak_HashInitialize(hashInstance, 1344,  256,   0, 0x1F)</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><i class="doc">/** Macro to initialize a SHAKE256 instance as specified in the FIPS 202 standard.</i></td></tr>
+<tr><th id="56">56</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/Keccak_HashInitialize_SHAKE256" data-ref="_M/Keccak_HashInitialize_SHAKE256">Keccak_HashInitialize_SHAKE256</dfn>(hashInstance)        Keccak_HashInitialize(hashInstance, 1088,  512,   0, 0x1F)</u></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><i class="doc">/** Macro to initialize a SHA3-224 instance as specified in the FIPS 202 standard.</i></td></tr>
+<tr><th id="60">60</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/Keccak_HashInitialize_SHA3_224" data-ref="_M/Keccak_HashInitialize_SHA3_224">Keccak_HashInitialize_SHA3_224</dfn>(hashInstance)        Keccak_HashInitialize(hashInstance, 1152,  448, 224, 0x06)</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i class="doc">/** Macro to initialize a SHA3-256 instance as specified in the FIPS 202 standard.</i></td></tr>
+<tr><th id="64">64</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/Keccak_HashInitialize_SHA3_256" data-ref="_M/Keccak_HashInitialize_SHA3_256">Keccak_HashInitialize_SHA3_256</dfn>(hashInstance)        Keccak_HashInitialize(hashInstance, 1088,  512, 256, 0x06)</u></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i class="doc">/** Macro to initialize a SHA3-384 instance as specified in the FIPS 202 standard.</i></td></tr>
+<tr><th id="68">68</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="69">69</th><td><u>#define <dfn class="macro" id="_M/Keccak_HashInitialize_SHA3_384" data-ref="_M/Keccak_HashInitialize_SHA3_384">Keccak_HashInitialize_SHA3_384</dfn>(hashInstance)        Keccak_HashInitialize(hashInstance,  832,  768, 384, 0x06)</u></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><i class="doc">/** Macro to initialize a SHA3-512 instance as specified in the FIPS 202 standard.</i></td></tr>
+<tr><th id="72">72</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/Keccak_HashInitialize_SHA3_512" data-ref="_M/Keccak_HashInitialize_SHA3_512">Keccak_HashInitialize_SHA3_512</dfn>(hashInstance)        Keccak_HashInitialize(hashInstance,  576, 1024, 512, 0x06)</u></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="76">76</th><td><i class="doc">  * Function to give input data to be absorbed.</i></td></tr>
+<tr><th id="77">77</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">hashInstance</span>    Pointer to the hash instance initialized by Keccak_HashInitialize().</i></td></tr>
+<tr><th id="78">78</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">data</span>        Pointer to the input data.</i></td></tr>
+<tr><th id="79">79</th><td><i class="doc">  *                     When<span class="command"> @a</span> <span class="arg">databitLen</span> is not a multiple of 8, the last bits of data must be</i></td></tr>
+<tr><th id="80">80</th><td><i class="doc">  *                     in the least significant bits of the last byte (little-endian convention).</i></td></tr>
+<tr><th id="81">81</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">databitLen</span>  The number of input bits provided in the input data.</i></td></tr>
+<tr><th id="82">82</th><td><i class="doc">  * <span class="command">@pre</span>    In the previous call to Keccak_HashUpdate(), databitlen was a multiple of 8.</i></td></tr>
+<tr><th id="83">83</th><td><i class="doc">  * <span class="command">@return</span> SUCCESS if successful, FAIL otherwise.</i></td></tr>
+<tr><th id="84">84</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="85">85</th><td><a class="typedef" href="#HashReturn" title='HashReturn' data-type='enum HashReturn' data-ref="HashReturn">HashReturn</a> <a class="macro" href="../sha3module.c.html#72" title="_PySHA3_Keccak_HashUpdate" data-ref="_M/Keccak_HashUpdate">Keccak_HashUpdate</a>(<a class="typedef" href="#Keccak_HashInstance" title='Keccak_HashInstance' data-type='struct Keccak_HashInstance' data-ref="Keccak_HashInstance">Keccak_HashInstance</a> *<dfn class="local col0 decl" id="50hashInstance" title='hashInstance' data-type='Keccak_HashInstance *' data-ref="50hashInstance">hashInstance</dfn>, <em>const</em> <a class="typedef" href="#BitSequence" title='BitSequence' data-type='unsigned char' data-ref="BitSequence">BitSequence</a> *<dfn class="local col1 decl" id="51data" title='data' data-type='const BitSequence *' data-ref="51data">data</dfn>, <a class="typedef" href="#DataLength" title='DataLength' data-type='size_t' data-ref="DataLength">DataLength</a> <dfn class="local col2 decl" id="52databitlen" title='databitlen' data-type='DataLength' data-ref="52databitlen">databitlen</dfn>);</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="88">88</th><td><i class="doc">  * Function to call after all input blocks have been input and to get</i></td></tr>
+<tr><th id="89">89</th><td><i class="doc">  * output bits if the length was specified when calling Keccak_HashInitialize().</i></td></tr>
+<tr><th id="90">90</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">hashInstance</span>    Pointer to the hash instance initialized by Keccak_HashInitialize().</i></td></tr>
+<tr><th id="91">91</th><td><i class="doc">  * If<span class="command"> @a</span> <span class="arg">hashbitlen</span> was not 0 in the call to Keccak_HashInitialize(), the number of</i></td></tr>
+<tr><th id="92">92</th><td><i class="doc">  *     output bits is equal to<span class="command"> @a</span> <span class="arg">hashbitlen.</span></i></td></tr>
+<tr><th id="93">93</th><td><i class="doc">  * If<span class="command"> @a</span> <span class="arg">hashbitlen</span> was 0 in the call to Keccak_HashInitialize(), the output bits</i></td></tr>
+<tr><th id="94">94</th><td><i class="doc">  *     must be extracted using the Keccak_HashSqueeze() function.</i></td></tr>
+<tr><th id="95">95</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">state</span>       Pointer to the state of the sponge function initialized by Init().</i></td></tr>
+<tr><th id="96">96</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">hashval</span>     Pointer to the buffer where to store the output data.</i></td></tr>
+<tr><th id="97">97</th><td><i class="doc">  * <span class="command">@return</span> SUCCESS if successful, FAIL otherwise.</i></td></tr>
+<tr><th id="98">98</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="99">99</th><td><a class="typedef" href="#HashReturn" title='HashReturn' data-type='enum HashReturn' data-ref="HashReturn">HashReturn</a> <a class="macro" href="../sha3module.c.html#69" title="_PySHA3_Keccak_HashFinal" data-ref="_M/Keccak_HashFinal">Keccak_HashFinal</a>(<a class="typedef" href="#Keccak_HashInstance" title='Keccak_HashInstance' data-type='struct Keccak_HashInstance' data-ref="Keccak_HashInstance">Keccak_HashInstance</a> *<dfn class="local col3 decl" id="53hashInstance" title='hashInstance' data-type='Keccak_HashInstance *' data-ref="53hashInstance">hashInstance</dfn>, <a class="typedef" href="#BitSequence" title='BitSequence' data-type='unsigned char' data-ref="BitSequence">BitSequence</a> *<dfn class="local col4 decl" id="54hashval" title='hashval' data-type='BitSequence *' data-ref="54hashval">hashval</dfn>);</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td> <i class="doc">/**</i></td></tr>
+<tr><th id="102">102</th><td><i class="doc">  * Function to squeeze output data.</i></td></tr>
+<tr><th id="103">103</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">hashInstance</span>    Pointer to the hash instance initialized by Keccak_HashInitialize().</i></td></tr>
+<tr><th id="104">104</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">data</span>        Pointer to the buffer where to store the output data.</i></td></tr>
+<tr><th id="105">105</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">databitlen</span>  The number of output bits desired (must be a multiple of 8).</i></td></tr>
+<tr><th id="106">106</th><td><i class="doc">  * <span class="command">@pre</span>    Keccak_HashFinal() must have been already called.</i></td></tr>
+<tr><th id="107">107</th><td><i class="doc">  * <span class="command">@pre</span>   <span class="command"> @a</span> <span class="arg">databitlen</span> is a multiple of 8.</i></td></tr>
+<tr><th id="108">108</th><td><i class="doc">  * <span class="command">@return</span> SUCCESS if successful, FAIL otherwise.</i></td></tr>
+<tr><th id="109">109</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="110">110</th><td><a class="typedef" href="#HashReturn" title='HashReturn' data-type='enum HashReturn' data-ref="HashReturn">HashReturn</a> <a class="macro" href="../sha3module.c.html#71" title="_PySHA3_Keccak_HashSqueeze" data-ref="_M/Keccak_HashSqueeze">Keccak_HashSqueeze</a>(<a class="typedef" href="#Keccak_HashInstance" title='Keccak_HashInstance' data-type='struct Keccak_HashInstance' data-ref="Keccak_HashInstance">Keccak_HashInstance</a> *<dfn class="local col5 decl" id="55hashInstance" title='hashInstance' data-type='Keccak_HashInstance *' data-ref="55hashInstance">hashInstance</dfn>, <a class="typedef" href="#BitSequence" title='BitSequence' data-type='unsigned char' data-ref="BitSequence">BitSequence</a> *<dfn class="local col6 decl" id="56data" title='data' data-type='BitSequence *' data-ref="56data">data</dfn>, <a class="typedef" href="#DataLength" title='DataLength' data-type='size_t' data-ref="DataLength">DataLength</a> <dfn class="local col7 decl" id="57databitlen" title='databitlen' data-type='DataLength' data-ref="57databitlen">databitlen</dfn>);</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#<span data-ppcond="19">endif</span></u></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><u>#<span data-ppcond="16">endif</span></u></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../sha3module.c.html'>codebrowser/Modules/_sha3/sha3module.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/hashtable.h' l='97' type='size_t'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='546' u='r' c='tracemalloc_use_domain_cb'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='644' macro='1' u='r'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='650' macro='1' u='r'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1332' macro='1' u='r'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1353' macro='1' u='r'/>
+<offset>256</offset>
+<use f='codebrowser/Modules/hashtable.c' l='165' u='w' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='62' u='r' c='_Py_hashtable_size'/>
+<use f='codebrowser/Modules/hashtable.c' l='66' u='r' c='_Py_hashtable_pop_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='62' u='r' c='_Py_hashtable_set'/>
+<use f='codebrowser/Modules/hashtable.c' l='73' u='r' c='_Py_hashtable_set'/>
+<use f='codebrowser/Modules/hashtable.c' l='66' u='r' c='_Py_hashtable_get'/>
+<use f='codebrowser/Modules/hashtable.c' l='497' u='r' c='_Py_hashtable_copy'/>
+<use f='codebrowser/Python/marshal.c' l='276' macro='1' u='r'/>

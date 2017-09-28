@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/objimpl.h' l='106' type='Py_ssize_t _Py_GetAllocatedBlocks()'/>
+<doc f='codebrowser/Include/objimpl.h' l='105'>/* This function returns the number of allocated memory blocks, regardless of size */</doc>
+<use f='codebrowser/Objects/object.c' l='44' u='c' c='_PyDebug_PrintTotalRefs'/>
+<def f='codebrowser/Objects/obmalloc.c' l='1011' ll='1015' type='Py_ssize_t _Py_GetAllocatedBlocks()'/>
+<use f='codebrowser/Python/sysmodule.c' l='1167' u='c' c='sys_getallocatedblocks'/>

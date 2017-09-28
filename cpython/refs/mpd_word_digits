@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='715' type='int mpd_word_digits(mpd_uint_t word)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='377' u='c' c='exp_to_string'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='389' u='c' c='coeff_to_string'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='410' u='c' c='coeff_to_string_dot'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='133' ll='168' macro='1' type='int mpd_word_digits(mpd_uint_t word)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='226' u='c' c='mpd_msd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='252' u='c' c='mpd_exp_digits'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='587' u='c' c='mpd_setdigits'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='946' u='c' c='mpd_word_ispow10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='973' u='c' c='mpd_word_isallnine'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2436' u='c' c='_mpd_get_rnd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2620' u='c' c='mpd_qand'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2811' u='c' c='mpd_qor'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3130' u='c' c='mpd_qxor'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4167' u='c' c='_mpd_get_exp_iterations'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7250' u='c' c='_mpd_qreciprocal_approx'/>

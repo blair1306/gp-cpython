@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythread.h' l='85' type='void PyThread_delete_key_value(int key)'/>
+<use f='codebrowser/Python/pystate.c' l='505' u='c' c='PyThreadState_Delete'/>
+<use f='codebrowser/Python/pystate.c' l='521' u='c' c='PyThreadState_DeleteCurrent'/>
+<def f='codebrowser/Python/thread_pthread.h' l='634' ll='638' type='void PyThread_delete_key_value(int key)'/>

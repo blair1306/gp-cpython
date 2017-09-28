@@ -1,0 +1,40 @@
+<dec f='codebrowser/Include/dictobject.h' l='158' type='PyObject * PyDict_GetItemString(PyObject * dp, const char * key)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='437' u='c' c='StructUnionType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='461' u='c' c='StructUnionType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='983' u='c' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2289' u='c' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2298' u='c' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2308' u='c' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4121' u='c' c='_init_pos_args'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3247' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3253' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3259' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_pickle.c' l='212' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4331' u='c' c='zip_longest_new'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1269' u='c' c='PyInit__signal'/>
+<def f='codebrowser/Objects/dictobject.c' l='3176' ll='3188' type='PyObject * PyDict_GetItemString(PyObject * v, const char * key)'/>
+<doc f='codebrowser/Objects/dictobject.c' l='3174'>/* For backward compatibility with old dictionary interface */</doc>
+<use f='codebrowser/Objects/structseq.c' l='152' u='c' c='structseq_new_impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='4659' u='c' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='4703' u='c' c='add_members'/>
+<use f='codebrowser/Objects/typeobject.c' l='4724' u='c' c='add_getset'/>
+<use f='codebrowser/Python/_warnings.c' l='661' u='c' c='setup_context'/>
+<use f='codebrowser/Python/_warnings.c' l='677' u='c' c='setup_context'/>
+<use f='codebrowser/Python/_warnings.c' l='687' u='c' c='setup_context'/>
+<use f='codebrowser/Python/_warnings.c' l='867' u='c' c='warnings_warn_explicit'/>
+<use f='codebrowser/Python/_warnings.c' l='868' u='c' c='warnings_warn_explicit'/>
+<use f='codebrowser/Python/codecs.c' l='656' u='c' c='PyCodec_LookupError'/>
+<use f='codebrowser/Python/errors.c' l='856' u='c' c='PyErr_NewException'/>
+<use f='codebrowser/Python/getargs.c' l='1739' u='c' c='vgetargskeywords'/>
+<use f='codebrowser/Python/getargs.c' l='1818' u='c' c='vgetargskeywords'/>
+<use f='codebrowser/Python/import.c' l='366' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='801' u='c' c='module_dict_for_exec'/>
+<use f='codebrowser/Python/import.c' l='1670' u='c' c='PyImport_ReloadModule'/>
+<use f='codebrowser/Python/pylifecycle.c' l='283' u='c' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1340' u='c' c='initmain'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1356' u='c' c='initmain'/>
+<use f='codebrowser/Python/pythonrun.c' l='354' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/sysmodule.c' l='63' u='c' c='PySys_GetObject'/>
+<use f='codebrowser/Python/sysmodule.c' l='87' u='c' c='PySys_SetObject'/>
+<use f='codebrowser/Python/sysmodule.c' l='1958' u='c' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='1960' u='c' c='_PySys_BeginInit'/>

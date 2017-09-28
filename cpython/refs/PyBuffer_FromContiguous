@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/abstract.h' l='534' type='int PyBuffer_FromContiguous(Py_buffer * view, void * buf, Py_ssize_t len, char order)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2876' u='c' c='test_from_contiguous'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2889' u='c' c='test_from_contiguous'/>
+<def f='codebrowser/Objects/abstract.c' l='481' ll='531' type='int PyBuffer_FromContiguous(Py_buffer * view, void * buf, Py_ssize_t len, char fort)'/>

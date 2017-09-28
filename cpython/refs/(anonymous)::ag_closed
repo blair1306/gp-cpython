@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/genobject.h' l='79' type='int'/>
+<offset>736</offset>
+<doc f='codebrowser/Include/genobject.h' l='77'>/* Flag is set to 1 when aclose() is called for the first time, or
+       when a StopAsyncIteration exception is raised. */</doc>
+<use f='codebrowser/Objects/genobject.c' l='42' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='1498' u='w' c='PyAsyncGen_New'/>
+<use f='codebrowser/Objects/genobject.c' l='1544' u='w' c='async_gen_unwrap_value'/>
+<use f='codebrowser/Objects/genobject.c' l='1867' u='r' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1881' u='w' c='async_gen_athrow_send'/>

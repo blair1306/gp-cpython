@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/sendfile.h' l='37' type='ssize_t sendfile(int __out_fd, int __in_fd, __off64_t * __offset, size_t __count)'/>
+<dec f='include/x86_64-linux-gnu/sys/sendfile.h' l='45' type='ssize_t sendfile64(int __out_fd, int __in_fd, __off64_t * __offset, size_t __count)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8363' u='c' c='posix_sendfile'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8376' u='c' c='posix_sendfile'/>

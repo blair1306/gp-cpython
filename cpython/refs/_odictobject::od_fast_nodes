@@ -1,0 +1,17 @@
+<dec f='codebrowser/Objects/odictobject.c' l='495' type='_ODictNode **'/>
+<use f='codebrowser/Objects/odictobject.c' l='536' u='r' c='_odict_free_fast_nodes'/>
+<use f='codebrowser/Objects/odictobject.c' l='537' u='r' c='_odict_free_fast_nodes'/>
+<use f='codebrowser/Objects/odictobject.c' l='588' u='w' c='_odict_resize'/>
+<use f='codebrowser/Objects/odictobject.c' l='625' u='r' c='_odict_find_node_hash'/>
+<use f='codebrowser/Objects/odictobject.c' l='642' u='r' c='_odict_find_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='686' u='r' c='_odict_add_new_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='703' u='r' c='_odict_add_new_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='766' u='r' c='_odict_clear_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='767' u='r' c='_odict_clear_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='774' u='r' c='_odict_clear_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='786' u='w' c='_odict_clear_nodes'/>
+<offset>640</offset>
+<doc f='codebrowser/Objects/odictobject.c' l='492'>/* od_fast_nodes, od_fast_nodes_size and od_resize_sentinel are managed
+     * by _odict_resize().
+     * Note that we rely on implementation details of dict for both. */</doc>
+<doc f='codebrowser/Objects/odictobject.c' l='495'>/* hash table that mirrors the dict table */</doc>

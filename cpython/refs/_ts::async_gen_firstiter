@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pystate.h' l='180' type='PyObject *'/>
+<offset>1664</offset>
+<use f='codebrowser/Objects/genobject.c' l='1337' u='r' c='async_gen_init_hooks'/>
+<use f='codebrowser/Python/ceval.c' l='4652' u='r' c='_PyEval_SetAsyncGenFirstiter'/>
+<use f='codebrowser/Python/ceval.c' l='4652' u='w' c='_PyEval_SetAsyncGenFirstiter'/>
+<use f='codebrowser/Python/ceval.c' l='4659' u='r' c='_PyEval_GetAsyncGenFirstiter'/>
+<use f='codebrowser/Python/pystate.c' l='286' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='468' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='468' u='w' c='PyThreadState_Clear'/>

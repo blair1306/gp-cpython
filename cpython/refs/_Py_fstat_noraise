@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/fileutils.h' l='48' type='int _Py_fstat_noraise(int fd, struct stat * status)'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='433' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='698' u='c' c='_io_FileIO_readall_impl'/>
+<use f='codebrowser/Modules/main.c' l='889' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1118' u='c' c='new_mmap_object'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='307' u='c' c='dev_urandom'/>
+<def f='codebrowser/Python/fileutils.c' l='609' ll='661' type='int _Py_fstat_noraise(int fd, struct stat * status)'/>
+<use f='codebrowser/Python/fileutils.c' l='688' u='c' c='_Py_fstat'/>
+<doc f='codebrowser/Python/fileutils.c' l='597'>/* Return information about a file.
+
+   On POSIX, use fstat().
+
+   On Windows, use GetFileType() and GetFileInformationByHandle() which support
+   files larger than 2 GB.  fstat() may fail with EOVERFLOW on files larger
+   than 2 GB because the file size type is a signed 32-bit integer: see issue
+   #23152.
+
+   On Windows, set the last Windows error and return nonzero on error. On
+   POSIX, set errno and return nonzero on error. Fill status and return 0 on
+   success. */</doc>
+<use f='codebrowser/Python/marshal.c' l='1517' u='c' c='getfilesize'/>
+<use f='codebrowser/Python/sysmodule.c' l='1945' u='c' c='_PySys_BeginInit'/>

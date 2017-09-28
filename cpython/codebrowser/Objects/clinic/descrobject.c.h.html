@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>descrobject.c.h source code [codebrowser/Objects/clinic/descrobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/descrobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='descrobject.c.h.html'>descrobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="6">6</th><td><a class="decl" href="../descrobject.c.html#mappingproxy_new_impl" title='mappingproxy_new_impl' data-ref="mappingproxy_new_impl" id="mappingproxy_new_impl">mappingproxy_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col8 decl" id="238type" title='type' data-type='PyTypeObject *' data-ref="238type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="239mapping" title='mapping' data-type='PyObject *' data-ref="239mapping">mapping</dfn>);</td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="9">9</th><td><dfn class="decl def" id="mappingproxy_new" title='mappingproxy_new' data-ref="mappingproxy_new">mappingproxy_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col0 decl" id="240type" title='type' data-type='PyTypeObject *' data-ref="240type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="241args" title='args' data-type='PyObject *' data-ref="241args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="242kwargs" title='kwargs' data-type='PyObject *' data-ref="242kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="10">10</th><td>{</td></tr>
+<tr><th id="11">11</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="243return_value" title='return_value' data-type='PyObject *' data-ref="243return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="12">12</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col4 decl" id="244_keywords" title='_keywords' data-type='const char *const [2]' data-ref="244_keywords">_keywords</dfn>[] = {<q>"mapping"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="13">13</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col5 decl" id="245_parser" title='_parser' data-type='_PyArg_Parser' data-ref="245_parser">_parser</dfn> = {<q>"O:mappingproxy"</q>, <a class="local col4 ref" href="#244_keywords" title='_keywords' data-ref="244_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="14">14</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="246mapping" title='mapping' data-type='PyObject *' data-ref="246mapping">mapping</dfn>;</td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col1 ref" href="#241args" title='args' data-ref="241args">args</a>, <a class="local col2 ref" href="#242kwargs" title='kwargs' data-ref="242kwargs">kwargs</a>, &amp;<a class="local col5 ref" href="#245_parser" title='_parser' data-ref="245_parser">_parser</a>,</td></tr>
+<tr><th id="17">17</th><td>        &amp;<a class="local col6 ref" href="#246mapping" title='mapping' data-ref="246mapping">mapping</a>)) {</td></tr>
+<tr><th id="18">18</th><td>        <b>goto</b> <a class="lbl" href="#247exit" data-ref="247exit">exit</a>;</td></tr>
+<tr><th id="19">19</th><td>    }</td></tr>
+<tr><th id="20">20</th><td>    <a class="local col3 ref" href="#243return_value" title='return_value' data-ref="243return_value">return_value</a> = <a class="ref" href="../descrobject.c.html#mappingproxy_new_impl" title='mappingproxy_new_impl' data-ref="mappingproxy_new_impl">mappingproxy_new_impl</a>(<a class="local col0 ref" href="#240type" title='type' data-ref="240type">type</a>, <a class="local col6 ref" href="#246mapping" title='mapping' data-ref="246mapping">mapping</a>);</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><dfn class="lbl" id="247exit" data-ref="247exit">exit</dfn>:</td></tr>
+<tr><th id="23">23</th><td>    <b>return</b> <a class="local col3 ref" href="#243return_value" title='return_value' data-ref="243return_value">return_value</a>;</td></tr>
+<tr><th id="24">24</th><td>}</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char property_init__doc__[] = &quot;property(fget=None, fset=None, fdel=None, doc=None)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Property attribute.\n&quot;&quot;\n&quot;&quot;  fget\n&quot;&quot;    function to be used for getting an attribute value\n&quot;&quot;  fset\n&quot;&quot;    function to be used for setting an attribute value\n&quot;&quot;  fdel\n&quot;&quot;    function to be used for del\&apos;ing an attribute\n&quot;&quot;  doc\n&quot;&quot;    docstring\n&quot;&quot;\n&quot;&quot;Typical use is to define a managed attribute x:\n&quot;&quot;\n&quot;&quot;class C(object):\n&quot;&quot;    def getx(self): return self._x\n&quot;&quot;    def setx(self, value): self._x = value\n&quot;&quot;    def delx(self): del self._x\n&quot;&quot;    x = property(getx, setx, delx, \&quot;I\&apos;m the \&apos;x\&apos; property.\&quot;)\n&quot;&quot;\n&quot;&quot;Decorators make defining new properties or modifying existing ones easy:\n&quot;&quot;\n&quot;&quot;class C(object):\n&quot;&quot;    @property\n&quot;&quot;    def x(self):\n&quot;&quot;        \&quot;I am the \&apos;x\&apos; property.\&quot;\n&quot;&quot;        return self._x\n&quot;&quot;    @x.setter\n&quot;&quot;    def x(self, value):\n&quot;&quot;        self._x = value\n&quot;&quot;    @x.deleter\n&quot;&quot;    def x(self):\n&quot;&quot;        del self._x&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="property_init__doc__" title='property_init__doc__' data-ref="property_init__doc__">property_init__doc__</dfn>,</td></tr>
+<tr><th id="27">27</th><td><q>"property(fget=None, fset=None, fdel=None, doc=None)\n"</q></td></tr>
+<tr><th id="28">28</th><td><q>"--\n"</q></td></tr>
+<tr><th id="29">29</th><td><q>"\n"</q></td></tr>
+<tr><th id="30">30</th><td><q>"Property attribute.\n"</q></td></tr>
+<tr><th id="31">31</th><td><q>"\n"</q></td></tr>
+<tr><th id="32">32</th><td><q>"  fget\n"</q></td></tr>
+<tr><th id="33">33</th><td><q>"    function to be used for getting an attribute value\n"</q></td></tr>
+<tr><th id="34">34</th><td><q>"  fset\n"</q></td></tr>
+<tr><th id="35">35</th><td><q>"    function to be used for setting an attribute value\n"</q></td></tr>
+<tr><th id="36">36</th><td><q>"  fdel\n"</q></td></tr>
+<tr><th id="37">37</th><td><q>"    function to be used for del\'ing an attribute\n"</q></td></tr>
+<tr><th id="38">38</th><td><q>"  doc\n"</q></td></tr>
+<tr><th id="39">39</th><td><q>"    docstring\n"</q></td></tr>
+<tr><th id="40">40</th><td><q>"\n"</q></td></tr>
+<tr><th id="41">41</th><td><q>"Typical use is to define a managed attribute x:\n"</q></td></tr>
+<tr><th id="42">42</th><td><q>"\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"class C(object):\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"    def getx(self): return self._x\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"    def setx(self, value): self._x = value\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"    def delx(self): del self._x\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"    x = property(getx, setx, delx, \"I\'m the \'x\' property.\")\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"Decorators make defining new properties or modifying existing ones easy:\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"class C(object):\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"    @property\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"    def x(self):\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"        \"I am the \'x\' property.\"\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"        return self._x\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"    @x.setter\n"</q></td></tr>
+<tr><th id="57">57</th><td><q>"    def x(self, value):\n"</q></td></tr>
+<tr><th id="58">58</th><td><q>"        self._x = value\n"</q></td></tr>
+<tr><th id="59">59</th><td><q>"    @x.deleter\n"</q></td></tr>
+<tr><th id="60">60</th><td><q>"    def x(self):\n"</q></td></tr>
+<tr><th id="61">61</th><td><q>"        del self._x"</q>);</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="64">64</th><td><a class="decl" href="../descrobject.c.html#property_init_impl" title='property_init_impl' data-ref="property_init_impl" id="property_init_impl">property_init_impl</a>(<a class="typedef" href="../descrobject.c.html#propertyobject" title='propertyobject' data-type='struct propertyobject' data-ref="propertyobject">propertyobject</a> *<dfn class="local col8 decl" id="248self" title='self' data-type='propertyobject *' data-ref="248self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="249fget" title='fget' data-type='PyObject *' data-ref="249fget">fget</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="250fset" title='fset' data-type='PyObject *' data-ref="250fset">fset</dfn>,</td></tr>
+<tr><th id="65">65</th><td>                   <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="251fdel" title='fdel' data-type='PyObject *' data-ref="251fdel">fdel</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="252doc" title='doc' data-type='PyObject *' data-ref="252doc">doc</dfn>);</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="68">68</th><td><dfn class="decl def" id="property_init" title='property_init' data-ref="property_init">property_init</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="253self" title='self' data-type='PyObject *' data-ref="253self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="254args" title='args' data-type='PyObject *' data-ref="254args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="255kwargs" title='kwargs' data-type='PyObject *' data-ref="255kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="69">69</th><td>{</td></tr>
+<tr><th id="70">70</th><td>    <em>int</em> <dfn class="local col6 decl" id="256return_value" title='return_value' data-type='int' data-ref="256return_value">return_value</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="71">71</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col7 decl" id="257_keywords" title='_keywords' data-type='const char *const [5]' data-ref="257_keywords">_keywords</dfn>[] = {<q>"fget"</q>, <q>"fset"</q>, <q>"fdel"</q>, <q>"doc"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="72">72</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col8 decl" id="258_parser" title='_parser' data-type='_PyArg_Parser' data-ref="258_parser">_parser</dfn> = {<q>"|OOOO:property"</q>, <a class="local col7 ref" href="#257_keywords" title='_keywords' data-ref="257_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="73">73</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="259fget" title='fget' data-type='PyObject *' data-ref="259fget">fget</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="74">74</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="260fset" title='fset' data-type='PyObject *' data-ref="260fset">fset</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="75">75</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="261fdel" title='fdel' data-type='PyObject *' data-ref="261fdel">fdel</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="76">76</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="262doc" title='doc' data-type='PyObject *' data-ref="262doc">doc</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col4 ref" href="#254args" title='args' data-ref="254args">args</a>, <a class="local col5 ref" href="#255kwargs" title='kwargs' data-ref="255kwargs">kwargs</a>, &amp;<a class="local col8 ref" href="#258_parser" title='_parser' data-ref="258_parser">_parser</a>,</td></tr>
+<tr><th id="79">79</th><td>        &amp;<a class="local col9 ref" href="#259fget" title='fget' data-ref="259fget">fget</a>, &amp;<a class="local col0 ref" href="#260fset" title='fset' data-ref="260fset">fset</a>, &amp;<a class="local col1 ref" href="#261fdel" title='fdel' data-ref="261fdel">fdel</a>, &amp;<a class="local col2 ref" href="#262doc" title='doc' data-ref="262doc">doc</a>)) {</td></tr>
+<tr><th id="80">80</th><td>        <b>goto</b> <a class="lbl" href="#263exit" data-ref="263exit">exit</a>;</td></tr>
+<tr><th id="81">81</th><td>    }</td></tr>
+<tr><th id="82">82</th><td>    <a class="local col6 ref" href="#256return_value" title='return_value' data-ref="256return_value">return_value</a> = <a class="ref" href="../descrobject.c.html#property_init_impl" title='property_init_impl' data-ref="property_init_impl">property_init_impl</a>((<a class="typedef" href="../descrobject.c.html#propertyobject" title='propertyobject' data-type='struct propertyobject' data-ref="propertyobject">propertyobject</a> *)<a class="local col3 ref" href="#253self" title='self' data-ref="253self">self</a>, <a class="local col9 ref" href="#259fget" title='fget' data-ref="259fget">fget</a>, <a class="local col0 ref" href="#260fset" title='fset' data-ref="260fset">fset</a>, <a class="local col1 ref" href="#261fdel" title='fdel' data-ref="261fdel">fdel</a>, <a class="local col2 ref" href="#262doc" title='doc' data-ref="262doc">doc</a>);</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><dfn class="lbl" id="263exit" data-ref="263exit">exit</dfn>:</td></tr>
+<tr><th id="85">85</th><td>    <b>return</b> <a class="local col6 ref" href="#256return_value" title='return_value' data-ref="256return_value">return_value</a>;</td></tr>
+<tr><th id="86">86</th><td>}</td></tr>
+<tr><th id="87">87</th><td><i>/*[clinic end generated code: output=729021fa9cdc46be input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../descrobject.c.html'>codebrowser/Objects/descrobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

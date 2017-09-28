@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/pystate.h' l='302' type='PyThreadState * PyGILState_GetThisThreadState()'/>
+<doc f='codebrowser/Include/pystate.h' l='296'>/* Helper/diagnostic function - get the current thread state for
+   this thread.  May return NULL if no GILState API has been used
+   on the current thread.  Note that the main thread always has such a
+   thread-state, even if no auto-thread-state call has been made
+   on the main thread.
+*/</doc>
+<use f='codebrowser/Modules/_tracemalloc.c' l='459' u='c' c='traceback_get_frames'/>
+<use f='codebrowser/Modules/faulthandler.c' l='240' u='c' c='faulthandler_dump_traceback'/>
+<use f='codebrowser/Python/pystate.c' l='599' u='c' c='PyThreadState_Swap'/>
+<use f='codebrowser/Python/pystate.c' l='768' u='c' c='PyThreadState_IsCurrent'/>
+<use f='codebrowser/Python/pystate.c' l='814' u='c' c='_PyGILState_Reinit'/>
+<def f='codebrowser/Python/pystate.c' l='861' ll='867' type='PyThreadState * PyGILState_GetThisThreadState()'/>
+<use f='codebrowser/Python/pystate.c' l='884' u='c' c='PyGILState_Check'/>
+<doc f='codebrowser/Python/pystate.c' l='860'>/* The public functions */</doc>
+<use f='codebrowser/Python/traceback.c' l='765' u='c' c='_Py_DumpTracebackThreads'/>

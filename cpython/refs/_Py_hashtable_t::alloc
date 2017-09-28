@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/hashtable.h' l='101' type='_Py_hashtable_allocator_t'/>
+<offset>448</offset>
+<use f='codebrowser/Modules/hashtable.c' l='177' u='w' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='303' u='m' c='_Py_hashtable_pop_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='333' u='m' c='_Py_hashtable_set'/>
+<use f='codebrowser/Modules/hashtable.c' l='427' u='m' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='452' u='m' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='465' u='m' c='_Py_hashtable_clear'/>
+<use f='codebrowser/Modules/hashtable.c' l='483' u='m' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='488' u='m' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='489' u='m' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='507' u='a' c='_Py_hashtable_copy'/>

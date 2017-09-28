@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pyerrors.h' l='382' type='PyObject * PyErr_ProgramTextObject(PyObject * filename, int lineno)'/>
+<use f='codebrowser/Python/ast.c' l='681' u='c' c='ast_error'/>
+<use f='codebrowser/Python/compile.c' l='4750' u='c' c='compiler_error'/>
+<use f='codebrowser/Python/errors.c' l='1057' u='c' c='PyErr_SyntaxLocationObject'/>
+<def f='codebrowser/Python/errors.c' l='1148' ll='1160' type='PyObject * PyErr_ProgramTextObject(PyObject * filename, int lineno)'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/iterobject.h' l='8' type='PyTypeObject'/>
+<use f='codebrowser/Objects/iterobject.c' l='20' u='a' c='PySeqIter_New'/>
+<use f='codebrowser/Objects/iterobject.c' l='52' macro='1' u='a'/>
+<def f='codebrowser/Objects/iterobject.c' l='136' ll='167' type='PyTypeObject'/>
+<use f='codebrowser/Objects/object.c' l='1815' u='a' c='_Py_ReadyTypes'/>

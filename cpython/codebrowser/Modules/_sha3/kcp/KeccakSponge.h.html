@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>KeccakSponge.h source code [codebrowser/Modules/_sha3/kcp/KeccakSponge.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_sha3/kcp/KeccakSponge.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_sha3</a>/<a href='./'>kcp</a>/<a href='KeccakSponge.h.html'>KeccakSponge.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>Implementation by the Keccak, Keyak and Ketje Teams, namely, Guido Bertoni,</i></td></tr>
+<tr><th id="3">3</th><td><i>Joan Daemen, Michaël Peeters, Gilles Van Assche and Ronny Van Keer, hereby</i></td></tr>
+<tr><th id="4">4</th><td><i>denoted as "the implementer".</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>For more information, feedback or questions, please refer to our websites:</i></td></tr>
+<tr><th id="7">7</th><td><i>http://keccak.noekeon.org/</i></td></tr>
+<tr><th id="8">8</th><td><i>http://keyak.noekeon.org/</i></td></tr>
+<tr><th id="9">9</th><td><i>http://ketje.noekeon.org/</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>To the extent possible under law, the implementer has waived all copyright</i></td></tr>
+<tr><th id="12">12</th><td><i>and related or neighboring rights to the source code in this file.</i></td></tr>
+<tr><th id="13">13</th><td><i>http://creativecommons.org/publicdomain/zero/1.0/</i></td></tr>
+<tr><th id="14">14</th><td><i>*/</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="16">ifndef</span> <span class="macro" data-ref="_M/_KeccakSponge_h_">_KeccakSponge_h_</span></u></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/_KeccakSponge_h_" data-ref="_M/_KeccakSponge_h_">_KeccakSponge_h_</dfn></u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i class="doc">/** General information</i></td></tr>
+<tr><th id="20">20</th><td><i class="doc">  *</i></td></tr>
+<tr><th id="21">21</th><td><i class="doc">  * The following type and functions are not actually implemented. Their</i></td></tr>
+<tr><th id="22">22</th><td><i class="doc">  * documentation is generic, with the prefix Prefix replaced by</i></td></tr>
+<tr><th id="23">23</th><td><i class="doc">  * - KeccakWidth200 for a sponge function based on Keccak-f[200]</i></td></tr>
+<tr><th id="24">24</th><td><i class="doc">  * - KeccakWidth400 for a sponge function based on Keccak-f[400]</i></td></tr>
+<tr><th id="25">25</th><td><i class="doc">  * - KeccakWidth800 for a sponge function based on Keccak-f[800]</i></td></tr>
+<tr><th id="26">26</th><td><i class="doc">  * - KeccakWidth1600 for a sponge function based on Keccak-f[1600]</i></td></tr>
+<tr><th id="27">27</th><td><i class="doc">  *</i></td></tr>
+<tr><th id="28">28</th><td><i class="doc">  * In all these functions, the rate and capacity must sum to the width of the</i></td></tr>
+<tr><th id="29">29</th><td><i class="doc">  * chosen permutation. For instance, to use the sponge function</i></td></tr>
+<tr><th id="30">30</th><td><i class="doc">  * Keccak[r=1344, c=256], one must use KeccakWidth1600_Sponge() or a combination</i></td></tr>
+<tr><th id="31">31</th><td><i class="doc">  * of KeccakWidth1600_SpongeInitialize(), KeccakWidth1600_SpongeAbsorb(),</i></td></tr>
+<tr><th id="32">32</th><td><i class="doc">  * KeccakWidth1600_SpongeAbsorbLastFewBits() and</i></td></tr>
+<tr><th id="33">33</th><td><i class="doc">  * KeccakWidth1600_SpongeSqueeze().</i></td></tr>
+<tr><th id="34">34</th><td><i class="doc">  *</i></td></tr>
+<tr><th id="35">35</th><td><i class="doc">  * The Prefix_SpongeInstance contains the sponge instance attributes for use</i></td></tr>
+<tr><th id="36">36</th><td><i class="doc">  * with the Prefix_Sponge* functions.</i></td></tr>
+<tr><th id="37">37</th><td><i class="doc">  * It gathers the state processed by the permutation as well as the rate,</i></td></tr>
+<tr><th id="38">38</th><td><i class="doc">  * the position of input/output bytes in the state and the phase</i></td></tr>
+<tr><th id="39">39</th><td><i class="doc">  * (absorbing or squeezing).</i></td></tr>
+<tr><th id="40">40</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="42">ifdef</span> <span class="macro" data-ref="_M/DontReallyInclude_DocumentationOnly">DontReallyInclude_DocumentationOnly</span></u></td></tr>
+<tr><th id="43">43</th><td><i class="doc">/** Function to evaluate the sponge function Keccak[r, c] in a single call.</i></td></tr>
+<tr><th id="44">44</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">rate</span>        The value of the rate r.</i></td></tr>
+<tr><th id="45">45</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">capacity</span>    The value of the capacity c.</i></td></tr>
+<tr><th id="46">46</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">input</span>           Pointer to the input message (before the suffix).</i></td></tr>
+<tr><th id="47">47</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">inputByteLen</span>    The length of the input message in bytes.</i></td></tr>
+<tr><th id="48">48</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">suffix</span>          Byte containing from 0 to 7 suffix bits</i></td></tr>
+<tr><th id="49">49</th><td><i class="doc">  *                         that must be absorbed after<span class="command"> @a</span> <span class="arg">input.</span></i></td></tr>
+<tr><th id="50">50</th><td><i class="doc">  *                         These <span class="tag">&lt;i&gt;</span>n<span class="tag">&lt;/i&gt;</span> bits must be in the least significant bit positions.</i></td></tr>
+<tr><th id="51">51</th><td><i class="doc">  *                         These bits must be delimited with a bit 1 at position <span class="tag">&lt;i&gt;</span>n<span class="tag">&lt;/i&gt;</span></i></td></tr>
+<tr><th id="52">52</th><td><i class="doc">  *                         (counting from 0=LSB to 7=MSB) and followed by bits 0</i></td></tr>
+<tr><th id="53">53</th><td><i class="doc">  *                         from position <span class="tag">&lt;i&gt;</span>n<span class="tag">&lt;/i&gt;</span>+1 to position 7.</i></td></tr>
+<tr><th id="54">54</th><td><i class="doc">  *                         Some examples:</i></td></tr>
+<tr><th id="55">55</th><td><i class="doc">  *                             - If no bits are to be absorbed, then<span class="command"> @a</span> <span class="arg">suffix</span> must be 0x01.</i></td></tr>
+<tr><th id="56">56</th><td><i class="doc">  *                             - If the 2-bit sequence 0,0 is to be absorbed,<span class="command"> @a</span> <span class="arg">suffix</span> must be 0x04.</i></td></tr>
+<tr><th id="57">57</th><td><i class="doc">  *                             - If the 5-bit sequence 0,1,0,0,1 is to be absorbed,<span class="command"> @a</span> <span class="arg">suffix</span> must be 0x32.</i></td></tr>
+<tr><th id="58">58</th><td><i class="doc">  *                             - If the 7-bit sequence 1,1,0,1,0,0,0 is to be absorbed,<span class="command"> @a</span> <span class="arg">suffix</span> must be 0x8B.</i></td></tr>
+<tr><th id="59">59</th><td><i class="doc">  *                         .</i></td></tr>
+<tr><th id="60">60</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">output</span>          Pointer to the output buffer.</i></td></tr>
+<tr><th id="61">61</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">outputByteLen</span>   The desired number of output bytes.</i></td></tr>
+<tr><th id="62">62</th><td><i class="doc">  * <span class="command">@pre</span>    One must have r+c equal to the supported width of this implementation</i></td></tr>
+<tr><th id="63">63</th><td><i class="doc">  *         and the rate a multiple of 8 bits (one byte) in this implementation.</i></td></tr>
+<tr><th id="64">64</th><td><i class="doc">  * <span class="command">@pre</span>   <span class="command"> @a</span> <span class="arg">suffix</span> ≠ 0x00</i></td></tr>
+<tr><th id="65">65</th><td><i class="doc">  * <span class="command">@return</span> Zero if successful, 1 otherwise.</i></td></tr>
+<tr><th id="66">66</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="67">67</th><td><em>int</em> Prefix_Sponge(<em>unsigned</em> <em>int</em> rate, <em>unsigned</em> <em>int</em> capacity, <em>const</em> <em>unsigned</em> <em>char</em> *input, size_t inputByteLen, <em>unsigned</em> <em>char</em> suffix, <em>unsigned</em> <em>char</em> *output, size_t outputByteLen);</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="70">70</th><td><i class="doc">  * Function to initialize the state of the Keccak[r, c] sponge function.</i></td></tr>
+<tr><th id="71">71</th><td><i class="doc">  * The phase of the sponge function is set to absorbing.</i></td></tr>
+<tr><th id="72">72</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">spongeInstance</span>  Pointer to the sponge instance to be initialized.</i></td></tr>
+<tr><th id="73">73</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">rate</span>        The value of the rate r.</i></td></tr>
+<tr><th id="74">74</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">capacity</span>    The value of the capacity c.</i></td></tr>
+<tr><th id="75">75</th><td><i class="doc">  * <span class="command">@pre</span>    One must have r+c equal to the supported width of this implementation</i></td></tr>
+<tr><th id="76">76</th><td><i class="doc">  *         and the rate a multiple of 8 bits (one byte) in this implementation.</i></td></tr>
+<tr><th id="77">77</th><td><i class="doc">  * <span class="command">@return</span> Zero if successful, 1 otherwise.</i></td></tr>
+<tr><th id="78">78</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="79">79</th><td><em>int</em> Prefix_SpongeInitialize(Prefix_SpongeInstance *spongeInstance, <em>unsigned</em> <em>int</em> rate, <em>unsigned</em> <em>int</em> capacity);</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="82">82</th><td><i class="doc">  * Function to give input data bytes for the sponge function to absorb.</i></td></tr>
+<tr><th id="83">83</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">spongeInstance</span>  Pointer to the sponge instance initialized by Prefix_SpongeInitialize().</i></td></tr>
+<tr><th id="84">84</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">data</span>        Pointer to the input data.</i></td></tr>
+<tr><th id="85">85</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">dataByteLen</span>  The number of input bytes provided in the input data.</i></td></tr>
+<tr><th id="86">86</th><td><i class="doc">  * <span class="command">@pre</span>    The sponge function must be in the absorbing phase,</i></td></tr>
+<tr><th id="87">87</th><td><i class="doc">  *         i.e., Prefix_SpongeSqueeze() or Prefix_SpongeAbsorbLastFewBits()</i></td></tr>
+<tr><th id="88">88</th><td><i class="doc">  *         must not have been called before.</i></td></tr>
+<tr><th id="89">89</th><td><i class="doc">  * <span class="command">@return</span> Zero if successful, 1 otherwise.</i></td></tr>
+<tr><th id="90">90</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="91">91</th><td><em>int</em> Prefix_SpongeAbsorb(Prefix_SpongeInstance *spongeInstance, <em>const</em> <em>unsigned</em> <em>char</em> *data, size_t dataByteLen);</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="94">94</th><td><i class="doc">  * Function to give input data bits for the sponge function to absorb</i></td></tr>
+<tr><th id="95">95</th><td><i class="doc">  * and then to switch to the squeezing phase.</i></td></tr>
+<tr><th id="96">96</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">spongeInstance</span>  Pointer to the sponge instance initialized by Prefix_SpongeInitialize().</i></td></tr>
+<tr><th id="97">97</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">delimitedData</span>   Byte containing from 0 to 7 trailing bits</i></td></tr>
+<tr><th id="98">98</th><td><i class="doc">  *                     that must be absorbed.</i></td></tr>
+<tr><th id="99">99</th><td><i class="doc">  *                     These <span class="tag">&lt;i&gt;</span>n<span class="tag">&lt;/i&gt;</span> bits must be in the least significant bit positions.</i></td></tr>
+<tr><th id="100">100</th><td><i class="doc">  *                     These bits must be delimited with a bit 1 at position <span class="tag">&lt;i&gt;</span>n<span class="tag">&lt;/i&gt;</span></i></td></tr>
+<tr><th id="101">101</th><td><i class="doc">  *                     (counting from 0=LSB to 7=MSB) and followed by bits 0</i></td></tr>
+<tr><th id="102">102</th><td><i class="doc">  *                     from position <span class="tag">&lt;i&gt;</span>n<span class="tag">&lt;/i&gt;</span>+1 to position 7.</i></td></tr>
+<tr><th id="103">103</th><td><i class="doc">  *                     Some examples:</i></td></tr>
+<tr><th id="104">104</th><td><i class="doc">  *                         - If no bits are to be absorbed, then<span class="command"> @a</span> <span class="arg">delimitedData</span> must be 0x01.</i></td></tr>
+<tr><th id="105">105</th><td><i class="doc">  *                         - If the 2-bit sequence 0,0 is to be absorbed,<span class="command"> @a</span> <span class="arg">delimitedData</span> must be 0x04.</i></td></tr>
+<tr><th id="106">106</th><td><i class="doc">  *                         - If the 5-bit sequence 0,1,0,0,1 is to be absorbed,<span class="command"> @a</span> <span class="arg">delimitedData</span> must be 0x32.</i></td></tr>
+<tr><th id="107">107</th><td><i class="doc">  *                         - If the 7-bit sequence 1,1,0,1,0,0,0 is to be absorbed,<span class="command"> @a</span> <span class="arg">delimitedData</span> must be 0x8B.</i></td></tr>
+<tr><th id="108">108</th><td><i class="doc">  *                     .</i></td></tr>
+<tr><th id="109">109</th><td><i class="doc">  * <span class="command">@pre</span>    The sponge function must be in the absorbing phase,</i></td></tr>
+<tr><th id="110">110</th><td><i class="doc">  *         i.e., Prefix_SpongeSqueeze() or Prefix_SpongeAbsorbLastFewBits()</i></td></tr>
+<tr><th id="111">111</th><td><i class="doc">  *         must not have been called before.</i></td></tr>
+<tr><th id="112">112</th><td><i class="doc">  * <span class="command">@pre</span>   <span class="command"> @a</span> <span class="arg">delimitedData</span> ≠ 0x00</i></td></tr>
+<tr><th id="113">113</th><td><i class="doc">  * <span class="command">@return</span> Zero if successful, 1 otherwise.</i></td></tr>
+<tr><th id="114">114</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="115">115</th><td><em>int</em> Prefix_SpongeAbsorbLastFewBits(Prefix_SpongeInstance *spongeInstance, <em>unsigned</em> <em>char</em> delimitedData);</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="118">118</th><td><i class="doc">  * Function to squeeze output data from the sponge function.</i></td></tr>
+<tr><th id="119">119</th><td><i class="doc">  * If the sponge function was in the absorbing phase, this function</i></td></tr>
+<tr><th id="120">120</th><td><i class="doc">  * switches it to the squeezing phase</i></td></tr>
+<tr><th id="121">121</th><td><i class="doc">  * as if Prefix_SpongeAbsorbLastFewBits(spongeInstance, 0x01) was called.</i></td></tr>
+<tr><th id="122">122</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">spongeInstance</span>  Pointer to the sponge instance initialized by Prefix_SpongeInitialize().</i></td></tr>
+<tr><th id="123">123</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">data</span>        Pointer to the buffer where to store the output data.</i></td></tr>
+<tr><th id="124">124</th><td><i class="doc">  * <span class="command">@param</span>  <span class="arg">dataByteLen</span> The number of output bytes desired.</i></td></tr>
+<tr><th id="125">125</th><td><i class="doc">  * <span class="command">@return</span> Zero if successful, 1 otherwise.</i></td></tr>
+<tr><th id="126">126</th><td><i class="doc">  */</i></td></tr>
+<tr><th id="127">127</th><td><em>int</em> Prefix_SpongeSqueeze(Prefix_SpongeInstance *spongeInstance, <em>unsigned</em> <em>char</em> *data, size_t dataByteLen);</td></tr>
+<tr><th id="128">128</th><td><u>#<span data-ppcond="42">endif</span></u></td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><u>#include <a href="../../../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="131">131</th><td><u>#include <a href="align.h.html">"align.h"</a></u></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><u>#define <dfn class="macro" id="_M/KCP_DeclareSpongeStructure" data-ref="_M/KCP_DeclareSpongeStructure">KCP_DeclareSpongeStructure</dfn>(prefix, size, alignment) \</u></td></tr>
+<tr><th id="134">134</th><td><u>    ALIGN(alignment) typedef struct prefix##_SpongeInstanceStruct { \</u></td></tr>
+<tr><th id="135">135</th><td><u>        unsigned char <dfn class="decl" id="KeccakWidth1600_SpongeInstanceStruct::state" title='KeccakWidth1600_SpongeInstanceStruct::state' data-ref="KeccakWidth1600_SpongeInstanceStruct::state">state</dfn>[size]; \</u></td></tr>
+<tr><th id="136">136</th><td><u>        unsigned int <dfn class="decl" id="KeccakWidth1600_SpongeInstanceStruct::rate" title='KeccakWidth1600_SpongeInstanceStruct::rate' data-ref="KeccakWidth1600_SpongeInstanceStruct::rate">rate</dfn>; \</u></td></tr>
+<tr><th id="137">137</th><td><u>        unsigned int <dfn class="decl" id="KeccakWidth1600_SpongeInstanceStruct::byteIOIndex" title='KeccakWidth1600_SpongeInstanceStruct::byteIOIndex' data-ref="KeccakWidth1600_SpongeInstanceStruct::byteIOIndex">byteIOIndex</dfn>; \</u></td></tr>
+<tr><th id="138">138</th><td><u>        int <dfn class="decl" id="KeccakWidth1600_SpongeInstanceStruct::squeezing" title='KeccakWidth1600_SpongeInstanceStruct::squeezing' data-ref="KeccakWidth1600_SpongeInstanceStruct::squeezing">squeezing</dfn>; \</u></td></tr>
+<tr><th id="139">139</th><td><u>    } prefix##_SpongeInstance;</u></td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><u>#define <dfn class="macro" id="_M/KCP_DeclareSpongeFunctions" data-ref="_M/KCP_DeclareSpongeFunctions">KCP_DeclareSpongeFunctions</dfn>(prefix) \</u></td></tr>
+<tr><th id="142">142</th><td><u>    int prefix##_Sponge(unsigned int <dfn class="local col7 decl" id="27rate" title='rate' data-type='unsigned int' data-ref="27rate">rate</dfn>, unsigned int <dfn class="local col8 decl" id="28capacity" title='capacity' data-type='unsigned int' data-ref="28capacity">capacity</dfn>, const unsigned char *<dfn class="local col9 decl" id="29input" title='input' data-type='const unsigned char *' data-ref="29input">input</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="30inputByteLen" title='inputByteLen' data-type='size_t' data-ref="30inputByteLen">inputByteLen</dfn>, unsigned char <dfn class="local col1 decl" id="31suffix" title='suffix' data-type='unsigned char' data-ref="31suffix">suffix</dfn>, unsigned char *<dfn class="local col2 decl" id="32output" title='output' data-type='unsigned char *' data-ref="32output">output</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="33outputByteLen" title='outputByteLen' data-type='size_t' data-ref="33outputByteLen">outputByteLen</dfn>); \</u></td></tr>
+<tr><th id="143">143</th><td><u>    int prefix##_SpongeInitialize(prefix##_SpongeInstance *<dfn class="local col4 decl" id="34spongeInstance" title='spongeInstance' data-type='KeccakWidth1600_SpongeInstance *' data-ref="34spongeInstance">spongeInstance</dfn>, unsigned int <dfn class="local col5 decl" id="35rate" title='rate' data-type='unsigned int' data-ref="35rate">rate</dfn>, unsigned int <dfn class="local col6 decl" id="36capacity" title='capacity' data-type='unsigned int' data-ref="36capacity">capacity</dfn>); \</u></td></tr>
+<tr><th id="144">144</th><td><u>    int prefix##_SpongeAbsorb(prefix##_SpongeInstance *<dfn class="local col7 decl" id="37spongeInstance" title='spongeInstance' data-type='KeccakWidth1600_SpongeInstance *' data-ref="37spongeInstance">spongeInstance</dfn>, const unsigned char *<dfn class="local col8 decl" id="38data" title='data' data-type='const unsigned char *' data-ref="38data">data</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="39dataByteLen" title='dataByteLen' data-type='size_t' data-ref="39dataByteLen">dataByteLen</dfn>); \</u></td></tr>
+<tr><th id="145">145</th><td><u>    int prefix##_SpongeAbsorbLastFewBits(prefix##_SpongeInstance *<dfn class="local col0 decl" id="40spongeInstance" title='spongeInstance' data-type='KeccakWidth1600_SpongeInstance *' data-ref="40spongeInstance">spongeInstance</dfn>, unsigned char <dfn class="local col1 decl" id="41delimitedData" title='delimitedData' data-type='unsigned char' data-ref="41delimitedData">delimitedData</dfn>); \</u></td></tr>
+<tr><th id="146">146</th><td><u>    int prefix##_SpongeSqueeze(prefix##_SpongeInstance *<dfn class="local col2 decl" id="42spongeInstance" title='spongeInstance' data-type='KeccakWidth1600_SpongeInstance *' data-ref="42spongeInstance">spongeInstance</dfn>, unsigned char *<dfn class="local col3 decl" id="43data" title='data' data-type='unsigned char *' data-ref="43data">data</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="44dataByteLen" title='dataByteLen' data-type='size_t' data-ref="44dataByteLen">dataByteLen</dfn>);</u></td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><u>#<span data-ppcond="148">ifndef</span> <a class="macro" href="../sha3module.c.html#101" data-ref="_M/KeccakP200_excluded">KeccakP200_excluded</a></u></td></tr>
+<tr><th id="149">149</th><td>    <u>#include "KeccakP-200-SnP.h"</u></td></tr>
+<tr><th id="150">150</th><td>    KCP_DeclareSpongeStructure(KeccakWidth200, KeccakP200_stateSizeInBytes, KeccakP200_stateAlignment)</td></tr>
+<tr><th id="151">151</th><td>    KCP_DeclareSpongeFunctions(KeccakWidth200)</td></tr>
+<tr><th id="152">152</th><td><u>#<span data-ppcond="148">endif</span></u></td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td><u>#<span data-ppcond="154">ifndef</span> <a class="macro" href="../sha3module.c.html#102" data-ref="_M/KeccakP400_excluded">KeccakP400_excluded</a></u></td></tr>
+<tr><th id="155">155</th><td>    <u>#include "KeccakP-400-SnP.h"</u></td></tr>
+<tr><th id="156">156</th><td>    KCP_DeclareSpongeStructure(KeccakWidth400, KeccakP400_stateSizeInBytes, KeccakP400_stateAlignment)</td></tr>
+<tr><th id="157">157</th><td>    KCP_DeclareSpongeFunctions(KeccakWidth400)</td></tr>
+<tr><th id="158">158</th><td><u>#<span data-ppcond="154">endif</span></u></td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="160">ifndef</span> <a class="macro" href="../sha3module.c.html#103" data-ref="_M/KeccakP800_excluded">KeccakP800_excluded</a></u></td></tr>
+<tr><th id="161">161</th><td>    <u>#include "KeccakP-800-SnP.h"</u></td></tr>
+<tr><th id="162">162</th><td>    KCP_DeclareSpongeStructure(KeccakWidth800, KeccakP800_stateSizeInBytes, KeccakP800_stateAlignment)</td></tr>
+<tr><th id="163">163</th><td>    KCP_DeclareSpongeFunctions(KeccakWidth800)</td></tr>
+<tr><th id="164">164</th><td><u>#<span data-ppcond="160">endif</span></u></td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td><u>#<span data-ppcond="166">ifndef</span> <span class="macro" data-ref="_M/KeccakP1600_excluded">KeccakP1600_excluded</span></u></td></tr>
+<tr><th id="167">167</th><td>    <u>#include <a href="KeccakP-1600-SnP.h.html">"KeccakP-1600-SnP.h"</a></u></td></tr>
+<tr><th id="168">168</th><td>    <a class="macro" href="#133" title="__attribute__ ((aligned(8))) typedef struct KeccakWidth1600_SpongeInstanceStruct { unsigned char state[200]; unsigned int rate; unsigned int byteIOIndex; int squeezing; } KeccakWidth1600_SpongeInstance;" data-ref="_M/KCP_DeclareSpongeStructure">KCP_DeclareSpongeStructure</a>(KeccakWidth1600, <a class="macro" href="KeccakP-1600-SnP-opt64.h.html#26" title="200" data-ref="_M/KeccakP1600_stateSizeInBytes">KeccakP1600_stateSizeInBytes</a>, <a class="macro" href="KeccakP-1600-SnP-opt64.h.html#27" title="8" data-ref="_M/KeccakP1600_stateAlignment">KeccakP1600_stateAlignment</a>)</td></tr>
+<tr><th id="169">169</th><td>    <a class="macro" href="#141" title="int _PySHA3_KeccakWidth1600_Sponge(unsigned int rate, unsigned int capacity, const unsigned char *input, size_t inputByteLen, unsigned char suffix, unsigned char *output, size_t outputByteLen); int _PySHA3_KeccakWidth1600_SpongeInitialize(KeccakWidth1600_SpongeInstance *spongeInstance, unsigned int rate, unsigned int capacity); int _PySHA3_KeccakWidth1600_SpongeAbsorb(KeccakWidth1600_SpongeInstance *spongeInstance, const unsigned char *data, size_t dataByteLen); int _PySHA3_KeccakWidth1600_SpongeAbsorbLastFewBits(KeccakWidth1600_SpongeInstance *spongeInstance, unsigned char delimitedData); int _PySHA3_KeccakWidth1600_SpongeSqueeze(KeccakWidth1600_SpongeInstance *spongeInstance, unsigned char *data, size_t dataByteLen);" data-ref="_M/KCP_DeclareSpongeFunctions">KCP_DeclareSpongeFunctions</a>(KeccakWidth1600)</td></tr>
+<tr><th id="170">170</th><td><u>#<span data-ppcond="166">endif</span></u></td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><u>#<span data-ppcond="16">endif</span></u></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../sha3module.c.html'>codebrowser/Modules/_sha3/sha3module.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

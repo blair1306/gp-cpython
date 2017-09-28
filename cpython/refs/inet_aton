@@ -1,0 +1,4 @@
+<dec f='include/arpa/inet.h' l='73' type='int inet_aton(const char * __cp, struct in_addr * __inp)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5708' u='c' c='socket_inet_aton'/>
+<doc f='include/arpa/inet.h' l='71'>/* Convert Internet host address from numbers-and-dots notation in CP
+   into binary data and store the result in the structure INP.  */</doc>

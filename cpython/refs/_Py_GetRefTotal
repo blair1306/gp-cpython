@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/object.h' l='718' type='Py_ssize_t _Py_GetRefTotal()'/>
+<def f='codebrowser/Objects/object.c' l='20' ll='29' type='Py_ssize_t _Py_GetRefTotal()'/>
+<use f='codebrowser/Objects/object.c' l='44' u='c' c='_PyDebug_PrintTotalRefs'/>
+<use f='codebrowser/Python/sysmodule.c' l='1152' u='c' c='sys_gettotalrefcount'/>

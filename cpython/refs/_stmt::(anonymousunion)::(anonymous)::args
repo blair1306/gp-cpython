@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/Python-ast.h' l='80' type='arguments_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='89' type='arguments_ty'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1288' u='w' c='_Py_FunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1319' u='w' c='_Py_AsyncFunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='2672' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2706' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='385' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='508' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='1800' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='1810' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/symtable.c' l='1139' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1140' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1141' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1142' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1143' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1152' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1351' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1352' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1353' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1355' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1356' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1366' u='r' c='symtable_visit_stmt'/>

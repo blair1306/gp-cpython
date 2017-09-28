@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/bytes_methods.h' l='30' type='PyObject * _Py_bytes_startswith(const char * str, Py_ssize_t len, PyObject * args)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1167' u='c' c='bytearray_startswith'/>
+<def f='codebrowser/Objects/bytes_methods.c' l='777' ll='781' type='PyObject * _Py_bytes_startswith(const char * str, Py_ssize_t len, PyObject * args)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2272' u='c' c='bytes_startswith'/>

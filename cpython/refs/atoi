@@ -1,0 +1,4 @@
+<dec f='include/stdlib.h' l='147' type='int atoi(const char * __nptr)'/>
+<doc f='include/stdlib.h' l='146'>/* Convert a string to an integer.  */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='197' u='c' c='add_flag'/>
+<use f='codebrowser/Python/thread.c' l='67' u='c' c='PyThread_init_thread'/>

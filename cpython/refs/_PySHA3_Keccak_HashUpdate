@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='85' macro='1' type='HashReturn _PySHA3_Keccak_HashUpdate(Keccak_HashInstance * hashInstance, const BitSequence * data, DataLength databitlen)'/>
+<def f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='37' macro='1' type='HashReturn _PySHA3_Keccak_HashUpdate(Keccak_HashInstance * instance, const BitSequence * data, DataLength databitlen)'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='72' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='72' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='72' u='c' c='_sha3_sha3_224_update'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='72' u='c' c='_sha3_sha3_224_update'/>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='75'>/**
+  * Function to give input data to be absorbed.
+  * @param  hashInstance    Pointer to the hash instance initialized by Keccak_HashInitialize().
+  * @param  data        Pointer to the input data.
+  *                     When @a databitLen is not a multiple of 8, the last bits of data must be
+  *                     in the least significant bits of the last byte (little-endian convention).
+  * @param  databitLen  The number of input bits provided in the input data.
+  * @pre    In the previous call to Keccak_HashUpdate(), databitlen was a multiple of 8.
+  * @return SUCCESS if successful, FAIL otherwise.
+  */</doc>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='35'>/* ---------------------------------------------------------------- */</doc>

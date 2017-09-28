@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='41' type='PyThreadState * Py_NewInterpreter()'/>
+<doc f='codebrowser/Include/pylifecycle.h' l='40'>/* Subinterpreter support */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2985' u='c' c='run_in_subinterp'/>
+<use f='codebrowser/Programs/_testembed.c' l='64' u='c' c='test_repeated_init_and_subinterpreters'/>
+<def f='codebrowser/Python/pylifecycle.c' l='1140' ll='1244' type='PyThreadState * Py_NewInterpreter()'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='1127'>/* Create and initialize a new interpreter and thread, and return the
+   new thread.  This requires that Py_Initialize() has been called
+   first.
+
+   Unsuccessful initialization yields a NULL pointer.  Note that *no*
+   exception information is available even in this case -- the
+   exception information is held in the thread, and there is no
+   thread.
+
+   Locking: as above.
+
+*/</doc>

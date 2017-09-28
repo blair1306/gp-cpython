@@ -1,0 +1,4 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='77' type='struct tok_state * PyTokenizer_FromString(const char * , int )'/>
+<use f='codebrowser/Parser/parsetok.c' l='57' u='c' c='PyParser_ParseStringObject'/>
+<def f='codebrowser/Parser/tokenizer.c' l='812' ll='827' type='struct tok_state * PyTokenizer_FromString(const char * str, int exec_input)'/>
+<doc f='codebrowser/Parser/tokenizer.c' l='810'>/* Set up tokenizer for string */</doc>

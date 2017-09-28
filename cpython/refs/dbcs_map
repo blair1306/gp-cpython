@@ -1,0 +1,5 @@
+<def f='codebrowser/Modules/cjkcodecs/cjkcodecs.h' l='52' ll='56'/>
+<size>24</size>
+<mbr r='dbcs_map::charset' o='0' t='const char *'/>
+<mbr r='dbcs_map::encmap' o='64' t='const struct unim_index *'/>
+<mbr r='dbcs_map::decmap' o='128' t='const struct dbcs_index *'/>

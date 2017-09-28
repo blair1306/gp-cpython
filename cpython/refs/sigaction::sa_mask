@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='43' type='__sigset_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='42'>/* Additional set of signals to be blocked.  */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='439' u='a' c='faulthandler_enable'/>
+<use f='codebrowser/Modules/faulthandler.c' l='714' u='a' c='faulthandler_register'/>
+<use f='codebrowser/Python/pylifecycle.c' l='2046' u='a' c='PyOS_setsig'/>

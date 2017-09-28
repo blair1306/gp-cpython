@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1909' type='PyObject * PyUnicode_Split(PyObject * s, PyObject * sep, Py_ssize_t maxsplit)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1898'>/* Split a string giving a list of Unicode strings.
+
+   If sep is NULL, splitting will be done at all whitespace
+   substrings. Otherwise, splits occur at the given separator.
+
+   At most maxsplit splits will be done. If negative, no limit is set.
+
+   Separators are not included in the resulting list.
+
+*/</doc>
+<use f='codebrowser/Modules/_pickle.c' l='1569' u='c' c='get_dotted_path'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='12896' ll='12903' type='PyObject * PyUnicode_Split(PyObject * s, PyObject * sep, Py_ssize_t maxsplit)'/>

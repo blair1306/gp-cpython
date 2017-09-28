@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='37' type='PyObject * _PyIOBase_check_closed(PyObject * self, PyObject * args)'/>
+<def f='codebrowser/Modules/_io/iobase.c' l='177' ll='188' type='PyObject * _PyIOBase_check_closed(PyObject * self, PyObject * args)'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='431' u='c' c='iobase_enter'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='475' u='c' c='_io__IOBase_isatty_impl'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='606' u='c' c='iobase_iter'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='719' u='c' c='_io__IOBase_writelines'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='765'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='765'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='765'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='765'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1248' u='c' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1248' u='c' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1248' u='c' c='_textiowrapper_readline'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1248' u='c' c='_io_TextIOWrapper_seek_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1248' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1248' u='c' c='_io_TextIOWrapper_flush_impl'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/object.h' l='896' type='void Py_DecRef(PyObject * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3203' u='c' c='test_incref_decref_API'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3204' u='c' c='test_incref_decref_API'/>
+<def f='codebrowser/Objects/object.c' l='233' ll='237' type='void Py_DecRef(PyObject * o)'/>

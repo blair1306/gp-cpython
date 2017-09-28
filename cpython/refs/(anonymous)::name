@@ -1,0 +1,44 @@
+<dec f='codebrowser/Include/object.h' l='444' type='const char *'/>
+<dec f='codebrowser/Include/pyhash.h' l='89' type='const char *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='33' type='PyObject *'/>
+<offset>704</offset>
+<dec f='codebrowser/Modules/expat/expat.h' l='1038' type='const XML_LChar *'/>
+<offset>64</offset>
+<dec f='include/openssl/conf.h' l='76' type='char *'/>
+<offset>64</offset>
+<dec f='codebrowser/Modules/expat/xmltok.h' l='119' type='const char *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3245' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3246' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3247' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3264' u='r' c='storeAtts'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1452' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1743' u='r' c='PyInit_pyexpat'/>
+<use f='codebrowser/Objects/exceptions.c' l='633' u='r' c='ImportError_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='633' u='w' c='ImportError_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='651' u='r' c='ImportError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='651' u='w' c='ImportError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='668' u='r' c='ImportError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='668' u='r' c='ImportError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='689' u='r' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/exceptions.c' l='695' u='r' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/exceptions.c' l='695' u='r' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/typeobject.c' l='2788' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2790' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2804' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2895' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2899' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2899' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2910' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Python/sysmodule.c' l='839' u='r' c='get_hash_info'/>

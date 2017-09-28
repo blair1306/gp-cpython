@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='449' type='int PyObject_DelItemString(PyObject * o, const char * key)'/>
+<doc f='codebrowser/Include/abstract.h' l='445'>/* Remove the mapping for object, key, from the object &apos;o&apos;.
+   Returns -1 on failure.
+
+   This is equivalent to the Python statement: del o[key]. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='237' ll='253' type='int PyObject_DelItemString(PyObject * o, const char * key)'/>

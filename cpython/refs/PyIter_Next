@@ -1,0 +1,80 @@
+<dec f='codebrowser/Include/abstract.h' l='603' type='PyObject * PyIter_Next(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1497' u='c' c='task_all_tasks'/>
+<doc f='codebrowser/Include/abstract.h' l='596'>/* Takes an iterator object and calls its tp_iternext slot,
+   returning the next value.
+
+   If the iterator is exhausted, this returns NULL without setting an
+   exception.
+
+   NULL with an exception means an error occurred. */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1439' u='c' c='deque_richcompare'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1442' u='c' c='deque_richcompare'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2298' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2332' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_csv.c' l='799' u='c' c='Reader_iternext'/>
+<use f='codebrowser/Modules/_csv.c' l='1196' u='c' c='csv_writerow'/>
+<use f='codebrowser/Modules/_csv.c' l='1283' u='c' c='csv_writerows'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='617' u='c' c='functools_reduce'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='712' u='c' c='_io_BytesIO_writelines'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='675' u='c' c='_io__IOBase_readlines_impl'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='727' u='c' c='_io__IOBase_writelines'/>
+<use f='codebrowser/Modules/_json.c' l='1602' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='2429' u='c' c='batch_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='2448' u='c' c='batch_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='2458' u='c' c='batch_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='2493' u='c' c='batch_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='2659' u='c' c='batch_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='2685' u='c' c='batch_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='2700' u='c' c='batch_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='2745' u='c' c='batch_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='3005' u='c' c='save_frozenset'/>
+<use f='codebrowser/Modules/arraymodule.c' l='980' u='c' c='array_iter_extend'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='96' u='c' c='groupby_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='288' u='c' c='_grouper_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='444' u='c' c='teedataobject_getitem'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='930' u='c' c='cycle_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1872' u='c' c='chain_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4429' u='c' c='zip_longest_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4458' u='c' c='zip_longest_next'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1321' u='c' c='math_fsum'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5761' u='c' c='os_sched_setaffinity_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='769' u='c' c='iterable_to_sigset'/>
+<use f='codebrowser/Objects/abstract.c' l='1829' u='c' c='PySequence_Tuple'/>
+<use f='codebrowser/Objects/abstract.c' l='1951' u='c' c='_PySequence_IterSearch'/>
+<def f='codebrowser/Objects/abstract.c' l='2523' ll='2533' type='PyObject * PyIter_Next(PyObject * iter)'/>
+<doc f='codebrowser/Objects/abstract.c' l='2516'>/* Return next item.
+ * If an error occurs, return NULL.  PyErr_Occurred() will be true.
+ * If the iteration terminates normally, return NULL and clear the
+ * PyExc_StopIteration exception (if it was set).  PyErr_Occurred()
+ * will be false.
+ * Else return the next object.  PyErr_Occurred() will be false.
+ */</doc>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1633' u='c' c='bytearray_extend'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2722' u='c' c='_PyBytes_FromIterator'/>
+<use f='codebrowser/Objects/dictobject.c' l='1816' u='c' c='_PyDict_FromKeys'/>
+<use f='codebrowser/Objects/dictobject.c' l='1823' u='c' c='_PyDict_FromKeys'/>
+<use f='codebrowser/Objects/dictobject.c' l='2252' u='c' c='PyDict_MergeFromSeq2'/>
+<use f='codebrowser/Objects/dictobject.c' l='2413' u='c' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='2413' u='c' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='3701' u='c' c='all_contained_in'/>
+<use f='codebrowser/Objects/dictobject.c' l='3952' u='c' c='dictviews_isdisjoint'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='97' u='c' c='namespace_repr'/>
+<use f='codebrowser/Objects/odictobject.c' l='2283' u='c' c='mutablemapping_add_pairs'/>
+<use f='codebrowser/Objects/odictobject.c' l='2290' u='c' c='mutablemapping_add_pairs'/>
+<use f='codebrowser/Objects/odictobject.c' l='2298' u='c' c='mutablemapping_add_pairs'/>
+<use f='codebrowser/Objects/odictobject.c' l='2306' u='c' c='mutablemapping_add_pairs'/>
+<use f='codebrowser/Objects/odictobject.c' l='2382' u='c' c='mutablemapping_update'/>
+<use f='codebrowser/Objects/setobject.c' l='1006' u='c' c='set_update_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='1304' u='c' c='set_intersection'/>
+<use f='codebrowser/Objects/setobject.c' l='1446' u='c' c='set_isdisjoint'/>
+<use f='codebrowser/Objects/setobject.c' l='1497' u='c' c='set_difference_update_internal'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='597' u='c' c='proxy_iternext'/>
+<use f='codebrowser/Python/ast.c' l='156' u='c' c='validate_constant'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1543' u='c' c='min_max'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2259' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2298' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2338' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/ceval.c' l='4399' u='c' c='unpack_iterable'/>
+<use f='codebrowser/Python/ceval.c' l='4422' u='c' c='unpack_iterable'/>
+<use f='codebrowser/Python/marshal.c' l='528' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/symtable.c' l='634' u='c' c='update_symbols'/>

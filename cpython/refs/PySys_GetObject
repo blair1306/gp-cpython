@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/sysmodule.h' l='10' type='PyObject * PySys_GetObject(const char * )'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='83' u='c' c='PrintError'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2518' u='c' c='PyCurses_setupterm'/>
+<use f='codebrowser/Modules/main.c' l='269' u='c' c='RunMainFromImporter'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1696' u='c' c='PyInit_pyexpat'/>
+<use f='codebrowser/Modules/syslogmodule.c' l='74' u='c' c='syslog_get_argv'/>
+<use f='codebrowser/Python/import.c' l='95' u='c' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='1012' u='c' c='PyImport_GetImporter'/>
+<use f='codebrowser/Python/import.c' l='1013' u='c' c='PyImport_GetImporter'/>
+<def f='codebrowser/Python/sysmodule.c' l='56' ll='64' type='PyObject * PySys_GetObject(const char * name)'/>
+<use f='codebrowser/Python/traceback.c' l='486' u='c' c='PyTraceBack_Print'/>

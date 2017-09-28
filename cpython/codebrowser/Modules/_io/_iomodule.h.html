@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_iomodule.h source code [codebrowser/Modules/_io/_iomodule.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_io/_iomodule.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>_io</a>/<a href='_iomodule.h.html'>_iomodule.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Declarations shared between the different parts of the io module</i></td></tr>
+<tr><th id="3">3</th><td><i> */</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><i>/* ABCs */</i></td></tr>
+<tr><th id="6">6</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyIOBase_Type" title='PyIOBase_Type' data-ref="PyIOBase_Type">PyIOBase_Type</dfn>;</td></tr>
+<tr><th id="7">7</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyRawIOBase_Type" title='PyRawIOBase_Type' data-ref="PyRawIOBase_Type">PyRawIOBase_Type</dfn>;</td></tr>
+<tr><th id="8">8</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</dfn>;</td></tr>
+<tr><th id="9">9</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyTextIOBase_Type" title='PyTextIOBase_Type' data-ref="PyTextIOBase_Type">PyTextIOBase_Type</dfn>;</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><i>/* Concrete classes */</i></td></tr>
+<tr><th id="12">12</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyFileIO_Type" title='PyFileIO_Type' data-ref="PyFileIO_Type">PyFileIO_Type</dfn>;</td></tr>
+<tr><th id="13">13</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyBytesIO_Type" title='PyBytesIO_Type' data-ref="PyBytesIO_Type">PyBytesIO_Type</dfn>;</td></tr>
+<tr><th id="14">14</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyStringIO_Type" title='PyStringIO_Type' data-ref="PyStringIO_Type">PyStringIO_Type</dfn>;</td></tr>
+<tr><th id="15">15</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyBufferedReader_Type" title='PyBufferedReader_Type' data-ref="PyBufferedReader_Type">PyBufferedReader_Type</dfn>;</td></tr>
+<tr><th id="16">16</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyBufferedWriter_Type" title='PyBufferedWriter_Type' data-ref="PyBufferedWriter_Type">PyBufferedWriter_Type</dfn>;</td></tr>
+<tr><th id="17">17</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyBufferedRWPair_Type" title='PyBufferedRWPair_Type' data-ref="PyBufferedRWPair_Type">PyBufferedRWPair_Type</dfn>;</td></tr>
+<tr><th id="18">18</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyBufferedRandom_Type" title='PyBufferedRandom_Type' data-ref="PyBufferedRandom_Type">PyBufferedRandom_Type</dfn>;</td></tr>
+<tr><th id="19">19</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyTextIOWrapper_Type" title='PyTextIOWrapper_Type' data-ref="PyTextIOWrapper_Type">PyTextIOWrapper_Type</dfn>;</td></tr>
+<tr><th id="20">20</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="PyIncrementalNewlineDecoder_Type" title='PyIncrementalNewlineDecoder_Type' data-ref="PyIncrementalNewlineDecoder_Type">PyIncrementalNewlineDecoder_Type</dfn>;</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="22">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="24">24</th><td><b>extern</b> PyTypeObject PyWindowsConsoleIO_Type;</td></tr>
+<tr><th id="25">25</th><td>PyAPI_DATA(PyObject *) _PyWindowsConsoleIO_Type;</td></tr>
+<tr><th id="26">26</th><td><u>#define PyWindowsConsoleIO_Check(op) (PyObject_TypeCheck((op), (PyTypeObject*)_PyWindowsConsoleIO_Type))</u></td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="23">endif</span> /* MS_WINDOWS */</u></td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="22">endif</span> /* Py_LIMITED_API */</u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>/* These functions are used as METH_NOARGS methods, are normally called</i></td></tr>
+<tr><th id="31">31</th><td><i> * with args=NULL, and return a new reference.</i></td></tr>
+<tr><th id="32">32</th><td><i> * BUT when args=Py_True is passed, they return a borrowed reference.</i></td></tr>
+<tr><th id="33">33</th><td><i> */</i></td></tr>
+<tr><th id="34">34</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>* <dfn class="decl" id="_PyIOBase_check_readable" title='_PyIOBase_check_readable' data-ref="_PyIOBase_check_readable">_PyIOBase_check_readable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='PyObject *' data-ref="1self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2args" title='args' data-type='PyObject *' data-ref="2args">args</dfn>);</td></tr>
+<tr><th id="35">35</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>* <dfn class="decl" id="_PyIOBase_check_writable" title='_PyIOBase_check_writable' data-ref="_PyIOBase_check_writable">_PyIOBase_check_writable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3self" title='self' data-type='PyObject *' data-ref="3self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="4args" title='args' data-type='PyObject *' data-ref="4args">args</dfn>);</td></tr>
+<tr><th id="36">36</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>* <dfn class="decl" id="_PyIOBase_check_seekable" title='_PyIOBase_check_seekable' data-ref="_PyIOBase_check_seekable">_PyIOBase_check_seekable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5self" title='self' data-type='PyObject *' data-ref="5self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="6args" title='args' data-type='PyObject *' data-ref="6args">args</dfn>);</td></tr>
+<tr><th id="37">37</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>* <dfn class="decl" id="_PyIOBase_check_closed" title='_PyIOBase_check_closed' data-ref="_PyIOBase_check_closed">_PyIOBase_check_closed</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7self" title='self' data-type='PyObject *' data-ref="7self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="8args" title='args' data-type='PyObject *' data-ref="8args">args</dfn>);</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>/* Helper for finalization.</i></td></tr>
+<tr><th id="40">40</th><td><i>   This function will revive an object ready to be deallocated and try to</i></td></tr>
+<tr><th id="41">41</th><td><i>   close() it. It returns 0 if the object can be destroyed, or -1 if it</i></td></tr>
+<tr><th id="42">42</th><td><i>   is alive again. */</i></td></tr>
+<tr><th id="43">43</th><td><b>extern</b> <em>int</em> <dfn class="decl" id="_PyIOBase_finalize" title='_PyIOBase_finalize' data-ref="_PyIOBase_finalize">_PyIOBase_finalize</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9self" title='self' data-type='PyObject *' data-ref="9self">self</dfn>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/* Returns true if the given FileIO object is closed.</i></td></tr>
+<tr><th id="46">46</th><td><i>   Doesn't check the argument type, so be careful! */</i></td></tr>
+<tr><th id="47">47</th><td><b>extern</b> <em>int</em> <dfn class="decl" id="_PyFileIO_closed" title='_PyFileIO_closed' data-ref="_PyFileIO_closed">_PyFileIO_closed</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10self" title='self' data-type='PyObject *' data-ref="10self">self</dfn>);</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>/* Shortcut to the core of the IncrementalNewlineDecoder.decode method */</i></td></tr>
+<tr><th id="50">50</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIncrementalNewlineDecoder_decode" title='_PyIncrementalNewlineDecoder_decode' data-ref="_PyIncrementalNewlineDecoder_decode">_PyIncrementalNewlineDecoder_decode</dfn>(</td></tr>
+<tr><th id="51">51</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11self" title='self' data-type='PyObject *' data-ref="11self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="12input" title='input' data-type='PyObject *' data-ref="12input">input</dfn>, <em>int</em> <dfn class="local col3 decl" id="13final" title='final' data-type='int' data-ref="13final">final</dfn>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><i>/* Finds the first line ending between `start` and `end`.</i></td></tr>
+<tr><th id="54">54</th><td><i>   If found, returns the index after the line ending and doesn't touch</i></td></tr>
+<tr><th id="55">55</th><td><i>   `*consumed`.</i></td></tr>
+<tr><th id="56">56</th><td><i>   If not found, returns -1 and sets `*consumed` to the number of characters</i></td></tr>
+<tr><th id="57">57</th><td><i>   which can be safely put aside until another search.</i></td></tr>
+<tr><th id="58">58</th><td><i></i></td></tr>
+<tr><th id="59">59</th><td><i>   NOTE: for performance reasons, `end` must point to a NUL character ('\0').</i></td></tr>
+<tr><th id="60">60</th><td><i>   Otherwise, the function will scan further and return garbage.</i></td></tr>
+<tr><th id="61">61</th><td><i></i></td></tr>
+<tr><th id="62">62</th><td><i>   There are three modes, in order of priority:</i></td></tr>
+<tr><th id="63">63</th><td><i>   * translated: Only find \n (assume newlines already translated)</i></td></tr>
+<tr><th id="64">64</th><td><i>   * universal: Use universal newlines algorithm</i></td></tr>
+<tr><th id="65">65</th><td><i>   * Otherwise, the line ending is specified by readnl, a str object */</i></td></tr>
+<tr><th id="66">66</th><td><b>extern</b> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="decl" id="_PyIO_find_line_ending" title='_PyIO_find_line_ending' data-ref="_PyIO_find_line_ending">_PyIO_find_line_ending</dfn>(</td></tr>
+<tr><th id="67">67</th><td>    <em>int</em> <dfn class="local col4 decl" id="14translated" title='translated' data-type='int' data-ref="14translated">translated</dfn>, <em>int</em> <dfn class="local col5 decl" id="15universal" title='universal' data-type='int' data-ref="15universal">universal</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16readnl" title='readnl' data-type='PyObject *' data-ref="16readnl">readnl</dfn>,</td></tr>
+<tr><th id="68">68</th><td>    <em>int</em> <dfn class="local col7 decl" id="17kind" title='kind' data-type='int' data-ref="17kind">kind</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="18start" title='start' data-type='const char *' data-ref="18start">start</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="19end" title='end' data-type='const char *' data-ref="19end">end</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> *<dfn class="local col0 decl" id="20consumed" title='consumed' data-type='Py_ssize_t *' data-ref="20consumed">consumed</dfn>);</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><i>/* Return 1 if an OSError with errno == EINTR is set (and then</i></td></tr>
+<tr><th id="71">71</th><td><i>   clears the error indicator), 0 otherwise.</i></td></tr>
+<tr><th id="72">72</th><td><i>   Should only be called when PyErr_Occurred() is true.</i></td></tr>
+<tr><th id="73">73</th><td><i>*/</i></td></tr>
+<tr><th id="74">74</th><td><b>extern</b> <em>int</em> <dfn class="decl" id="_PyIO_trap_eintr" title='_PyIO_trap_eintr' data-ref="_PyIO_trap_eintr">_PyIO_trap_eintr</dfn>(<em>void</em>);</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/DEFAULT_BUFFER_SIZE" data-ref="_M/DEFAULT_BUFFER_SIZE">DEFAULT_BUFFER_SIZE</dfn> (8 * 1024)  /* bytes */</u></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><i>/*</i></td></tr>
+<tr><th id="79">79</th><td><i> * Offset type for positioning.</i></td></tr>
+<tr><th id="80">80</th><td><i> */</i></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><i>/* Printing a variable of type off_t (with e.g., PyUnicode_FromFormat)</i></td></tr>
+<tr><th id="83">83</th><td><i>   correctly and without producing compiler warnings is surprisingly painful.</i></td></tr>
+<tr><th id="84">84</th><td><i>   We identify an integer type whose size matches off_t and then: (1) cast the</i></td></tr>
+<tr><th id="85">85</th><td><i>   off_t to that integer type and (2) use the appropriate conversion</i></td></tr>
+<tr><th id="86">86</th><td><i>   specification.  The cast is necessary: gcc complains about formatting a</i></td></tr>
+<tr><th id="87">87</th><td><i>   long with "%lld" even when both long and long long have the same</i></td></tr>
+<tr><th id="88">88</th><td><i>   precision. */</i></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><u>#<span data-ppcond="90">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><i>/* Windows uses long long for offsets */</i></td></tr>
+<tr><th id="93">93</th><td><b>typedef</b> <em>long</em> <em>long</em> Py_off_t;</td></tr>
+<tr><th id="94">94</th><td><u># define PyLong_AsOff_t     PyLong_AsLongLong</u></td></tr>
+<tr><th id="95">95</th><td><u># define PyLong_FromOff_t   PyLong_FromLongLong</u></td></tr>
+<tr><th id="96">96</th><td><u># define PY_OFF_T_MAX       LLONG_MAX</u></td></tr>
+<tr><th id="97">97</th><td><u># define PY_OFF_T_MIN       LLONG_MIN</u></td></tr>
+<tr><th id="98">98</th><td><u># define PY_OFF_T_COMPAT    long long    /* type compatible with off_t */</u></td></tr>
+<tr><th id="99">99</th><td><u># define PY_PRIdOFF         "lld"        /* format to use for that type */</u></td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><u>#<span data-ppcond="90">else</span></u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>/* Other platforms use off_t */</i></td></tr>
+<tr><th id="104">104</th><td><b>typedef</b> <a class="typedef" href="../../../include/stdio.h.html#off_t" title='off_t' data-type='__off64_t' data-ref="off_t">off_t</a> <dfn class="typedef" id="Py_off_t" title='Py_off_t' data-type='off_t' data-ref="Py_off_t">Py_off_t</dfn>;</td></tr>
+<tr><th id="105">105</th><td><u>#<span data-ppcond="105">if</span> (<a class="macro" href="../../pyconfig.h.html#1295" title="8" data-ref="_M/SIZEOF_OFF_T">SIZEOF_OFF_T</a> == <a class="macro" href="../../pyconfig.h.html#1307" title="8" data-ref="_M/SIZEOF_SIZE_T">SIZEOF_SIZE_T</a>)</u></td></tr>
+<tr><th id="106">106</th><td><u># define <dfn class="macro" id="_M/PyLong_AsOff_t" data-ref="_M/PyLong_AsOff_t">PyLong_AsOff_t</dfn>     PyLong_AsSsize_t</u></td></tr>
+<tr><th id="107">107</th><td><u># define <dfn class="macro" id="_M/PyLong_FromOff_t" data-ref="_M/PyLong_FromOff_t">PyLong_FromOff_t</dfn>   PyLong_FromSsize_t</u></td></tr>
+<tr><th id="108">108</th><td><u># define <dfn class="macro" id="_M/PY_OFF_T_MAX" data-ref="_M/PY_OFF_T_MAX">PY_OFF_T_MAX</dfn>       PY_SSIZE_T_MAX</u></td></tr>
+<tr><th id="109">109</th><td><u># define <dfn class="macro" id="_M/PY_OFF_T_MIN" data-ref="_M/PY_OFF_T_MIN">PY_OFF_T_MIN</dfn>       PY_SSIZE_T_MIN</u></td></tr>
+<tr><th id="110">110</th><td><u># define <dfn class="macro" id="_M/PY_OFF_T_COMPAT" data-ref="_M/PY_OFF_T_COMPAT">PY_OFF_T_COMPAT</dfn>    Py_ssize_t</u></td></tr>
+<tr><th id="111">111</th><td><u># define <dfn class="macro" id="_M/PY_PRIdOFF" data-ref="_M/PY_PRIdOFF">PY_PRIdOFF</dfn>         "zd"</u></td></tr>
+<tr><th id="112">112</th><td><u>#<span data-ppcond="105">elif</span> (SIZEOF_OFF_T == SIZEOF_LONG_LONG)</u></td></tr>
+<tr><th id="113">113</th><td><u># define PyLong_AsOff_t     PyLong_AsLongLong</u></td></tr>
+<tr><th id="114">114</th><td><u># define PyLong_FromOff_t   PyLong_FromLongLong</u></td></tr>
+<tr><th id="115">115</th><td><u># define PY_OFF_T_MAX       LLONG_MAX</u></td></tr>
+<tr><th id="116">116</th><td><u># define PY_OFF_T_MIN       LLONG_MIN</u></td></tr>
+<tr><th id="117">117</th><td><u># define PY_OFF_T_COMPAT    long long</u></td></tr>
+<tr><th id="118">118</th><td><u># define PY_PRIdOFF         "lld"</u></td></tr>
+<tr><th id="119">119</th><td><u>#elif (SIZEOF_OFF_T == SIZEOF_LONG)</u></td></tr>
+<tr><th id="120">120</th><td><u># define PyLong_AsOff_t     PyLong_AsLong</u></td></tr>
+<tr><th id="121">121</th><td><u># define PyLong_FromOff_t   PyLong_FromLong</u></td></tr>
+<tr><th id="122">122</th><td><u># define PY_OFF_T_MAX       LONG_MAX</u></td></tr>
+<tr><th id="123">123</th><td><u># define PY_OFF_T_MIN       LONG_MIN</u></td></tr>
+<tr><th id="124">124</th><td><u># define PY_OFF_T_COMPAT    long</u></td></tr>
+<tr><th id="125">125</th><td><u># define PY_PRIdOFF         "ld"</u></td></tr>
+<tr><th id="126">126</th><td><u>#else</u></td></tr>
+<tr><th id="127">127</th><td><u># error off_t does not match either size_t, long, or long long!</u></td></tr>
+<tr><th id="128">128</th><td><u>#<span data-ppcond="105">endif</span></u></td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><u>#<span data-ppcond="90">endif</span></u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><b>extern</b> <a class="typedef" href="#Py_off_t" title='Py_off_t' data-type='off_t' data-ref="Py_off_t">Py_off_t</a> <a class="decl" href="_iomodule.c.html#PyNumber_AsOff_t" title='PyNumber_AsOff_t' data-ref="PyNumber_AsOff_t" id="PyNumber_AsOff_t">PyNumber_AsOff_t</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="21item" title='item' data-type='PyObject *' data-ref="21item">item</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="22err" title='err' data-type='PyObject *' data-ref="22err">err</dfn>);</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><i>/* Implementation details */</i></td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><i>/* IO module structure */</i></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><b>extern</b> <a class="typedef" href="../../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="decl" id="_PyIO_Module" title='_PyIO_Module' data-ref="_PyIO_Module">_PyIO_Module</dfn>;</td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="141">141</th><td>    <em>int</em> <dfn class="decl" id="(anonymous)::initialized" title='(anonymous struct)::initialized' data-ref="(anonymous)::initialized">initialized</dfn>;</td></tr>
+<tr><th id="142">142</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</dfn>;</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</dfn>;</td></tr>
+<tr><th id="145">145</th><td>} <dfn class="typedef" id="_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</dfn>;</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td><u>#define <dfn class="macro" id="_M/IO_MOD_STATE" data-ref="_M/IO_MOD_STATE">IO_MOD_STATE</dfn>(mod) ((_PyIO_State *)PyModule_GetState(mod))</u></td></tr>
+<tr><th id="148">148</th><td><u>#define <dfn class="macro" id="_M/IO_STATE" data-ref="_M/IO_STATE">IO_STATE</dfn>() _PyIO_get_module_state()</u></td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><b>extern</b> <a class="typedef" href="#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *<a class="decl" href="_iomodule.c.html#_PyIO_get_module_state" title='_PyIO_get_module_state' data-ref="_PyIO_get_module_state" id="_PyIO_get_module_state">_PyIO_get_module_state</a>(<em>void</em>);</td></tr>
+<tr><th id="151">151</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="decl" href="_iomodule.c.html#_PyIO_get_locale_module" title='_PyIO_get_locale_module' data-ref="_PyIO_get_locale_module" id="_PyIO_get_locale_module">_PyIO_get_locale_module</a>(<a class="typedef" href="#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *);</td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><u>#<span data-ppcond="153">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="154">154</th><td><b>extern</b> <em>char</em> _PyIO_get_console_type(PyObject *);</td></tr>
+<tr><th id="155">155</th><td><u>#<span data-ppcond="153">endif</span></u></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_close" title='_PyIO_str_close' data-ref="_PyIO_str_close">_PyIO_str_close</dfn>;</td></tr>
+<tr><th id="158">158</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_closed" title='_PyIO_str_closed' data-ref="_PyIO_str_closed">_PyIO_str_closed</dfn>;</td></tr>
+<tr><th id="159">159</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_decode" title='_PyIO_str_decode' data-ref="_PyIO_str_decode">_PyIO_str_decode</dfn>;</td></tr>
+<tr><th id="160">160</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_encode" title='_PyIO_str_encode' data-ref="_PyIO_str_encode">_PyIO_str_encode</dfn>;</td></tr>
+<tr><th id="161">161</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_fileno" title='_PyIO_str_fileno' data-ref="_PyIO_str_fileno">_PyIO_str_fileno</dfn>;</td></tr>
+<tr><th id="162">162</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_flush" title='_PyIO_str_flush' data-ref="_PyIO_str_flush">_PyIO_str_flush</dfn>;</td></tr>
+<tr><th id="163">163</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_getstate" title='_PyIO_str_getstate' data-ref="_PyIO_str_getstate">_PyIO_str_getstate</dfn>;</td></tr>
+<tr><th id="164">164</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_isatty" title='_PyIO_str_isatty' data-ref="_PyIO_str_isatty">_PyIO_str_isatty</dfn>;</td></tr>
+<tr><th id="165">165</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_newlines" title='_PyIO_str_newlines' data-ref="_PyIO_str_newlines">_PyIO_str_newlines</dfn>;</td></tr>
+<tr><th id="166">166</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_nl" title='_PyIO_str_nl' data-ref="_PyIO_str_nl">_PyIO_str_nl</dfn>;</td></tr>
+<tr><th id="167">167</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_read" title='_PyIO_str_read' data-ref="_PyIO_str_read">_PyIO_str_read</dfn>;</td></tr>
+<tr><th id="168">168</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_read1" title='_PyIO_str_read1' data-ref="_PyIO_str_read1">_PyIO_str_read1</dfn>;</td></tr>
+<tr><th id="169">169</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_readable" title='_PyIO_str_readable' data-ref="_PyIO_str_readable">_PyIO_str_readable</dfn>;</td></tr>
+<tr><th id="170">170</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_readall" title='_PyIO_str_readall' data-ref="_PyIO_str_readall">_PyIO_str_readall</dfn>;</td></tr>
+<tr><th id="171">171</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_readinto" title='_PyIO_str_readinto' data-ref="_PyIO_str_readinto">_PyIO_str_readinto</dfn>;</td></tr>
+<tr><th id="172">172</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_readline" title='_PyIO_str_readline' data-ref="_PyIO_str_readline">_PyIO_str_readline</dfn>;</td></tr>
+<tr><th id="173">173</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_reset" title='_PyIO_str_reset' data-ref="_PyIO_str_reset">_PyIO_str_reset</dfn>;</td></tr>
+<tr><th id="174">174</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_seek" title='_PyIO_str_seek' data-ref="_PyIO_str_seek">_PyIO_str_seek</dfn>;</td></tr>
+<tr><th id="175">175</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_seekable" title='_PyIO_str_seekable' data-ref="_PyIO_str_seekable">_PyIO_str_seekable</dfn>;</td></tr>
+<tr><th id="176">176</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_setstate" title='_PyIO_str_setstate' data-ref="_PyIO_str_setstate">_PyIO_str_setstate</dfn>;</td></tr>
+<tr><th id="177">177</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_tell" title='_PyIO_str_tell' data-ref="_PyIO_str_tell">_PyIO_str_tell</dfn>;</td></tr>
+<tr><th id="178">178</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_truncate" title='_PyIO_str_truncate' data-ref="_PyIO_str_truncate">_PyIO_str_truncate</dfn>;</td></tr>
+<tr><th id="179">179</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_writable" title='_PyIO_str_writable' data-ref="_PyIO_str_writable">_PyIO_str_writable</dfn>;</td></tr>
+<tr><th id="180">180</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_str_write" title='_PyIO_str_write' data-ref="_PyIO_str_write">_PyIO_str_write</dfn>;</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_empty_str" title='_PyIO_empty_str' data-ref="_PyIO_empty_str">_PyIO_empty_str</dfn>;</td></tr>
+<tr><th id="183">183</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_PyIO_empty_bytes" title='_PyIO_empty_bytes' data-ref="_PyIO_empty_bytes">_PyIO_empty_bytes</dfn>;</td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><b>extern</b> <a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl" id="_PyBytesIOBuffer_Type" title='_PyBytesIOBuffer_Type' data-ref="_PyBytesIOBuffer_Type">_PyBytesIOBuffer_Type</dfn>;</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='_iomodule.c.html'>codebrowser/Modules/_io/_iomodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

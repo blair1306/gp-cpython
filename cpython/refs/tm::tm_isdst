@@ -1,0 +1,9 @@
+<dec f='include/time.h' l='143' type='int'/>
+<offset>256</offset>
+<use f='codebrowser/Modules/timemodule.c' l='299' u='r' c='tmtotuple'/>
+<use f='codebrowser/Modules/timemodule.c' l='433' u='a' c='gettmarg'/>
+<use f='codebrowser/Modules/timemodule.c' l='607' u='r' c='time_strftime'/>
+<use f='codebrowser/Modules/timemodule.c' l='608' u='w' c='time_strftime'/>
+<use f='codebrowser/Modules/timemodule.c' l='609' u='r' c='time_strftime'/>
+<use f='codebrowser/Modules/timemodule.c' l='610' u='w' c='time_strftime'/>
+<use f='codebrowser/Modules/zipimport.c' l='1399' u='w' c='parse_dostime'/>

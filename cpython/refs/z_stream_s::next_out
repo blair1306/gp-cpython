@@ -1,0 +1,11 @@
+<dec f='include/zlib.h' l='90' type='Bytef *'/>
+<offset>192</offset>
+<doc f='include/zlib.h' l='90'>/* next output byte should be put there */</doc>
+<use f='codebrowser/Modules/zlibmodule.c' l='162' u='r' c='arrange_output_buffer_with_maximum'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='181' u='w' c='arrange_output_buffer_with_maximum'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='275' u='r' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='419' u='r' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='692' u='r' c='zlib_Compress_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='848' u='r' c='zlib_Decompress_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='932' u='r' c='zlib_Compress_flush_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1134' u='r' c='zlib_Decompress_flush_impl'/>

@@ -1,0 +1,7 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='101' ll='110' type='mpd_uint_t dw_reduce(mpd_uint_t hi, mpd_uint_t lo, mpd_uint_t m)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='122' u='c' c='dw_submod'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='96'>/*
+ * Reduce double word modulo m.
+ * Restrictions: m != 0
+ * ACL2 proof: umodarith.lisp: section dw-reduce
+ */</doc>

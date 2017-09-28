@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='550' type='XML_StartNamespaceDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='w' c='PyExpat_XML_SetNamespaceDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='w' c='PyExpat_XML_SetStartNamespaceDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='r' c='addBinding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='646' u='r' c='addBinding'/>
+<offset>1600</offset>

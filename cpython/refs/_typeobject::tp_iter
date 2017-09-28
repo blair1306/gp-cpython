@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/object.h' l='398' type='getiterfunc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='930' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1132' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1825' u='w'/>
+<offset>1856</offset>
+<doc f='codebrowser/Include/object.h' l='397'>/* Iterators */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='558' u='r' c='signaldict_iter'/>
+<use f='codebrowser/Objects/abstract.c' l='2496' u='r' c='PyObject_GetIter'/>
+<use f='codebrowser/Objects/typeobject.c' l='4953' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4953' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4953' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4953' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4953' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4953' u='r' c='inherit_slots'/>
+<use f='codebrowser/Python/ceval.c' l='5166' u='r' c='check_args_iterable'/>

@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/bytearrayobject.h' l='47' type='int PyByteArray_Resize(PyObject * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='581' u='c' c='_io__IOBase_readline_impl'/>
+<def f='codebrowser/Objects/bytearrayobject.c' l='167' ll='244' type='int PyByteArray_Resize(PyObject * self, Py_ssize_t requested_size)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='306' u='c' c='bytearray_iconcat'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='355' u='c' c='bytearray_irepeat'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='475' u='c' c='bytearray_setslice_linear'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='503' u='c' c='bytearray_setslice_linear'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='713' u='c' c='bytearray_ass_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='751' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='811' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='826' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='872' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1121' u='c' c='bytearray_clear_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1267' u='c' c='bytearray_translate_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1542' u='c' c='bytearray_insert_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1580' u='c' c='bytearray_append_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1655' u='c' c='bytearray_extend'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1668' u='c' c='bytearray_extend'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1720' u='c' c='bytearray_pop_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1752' u='c' c='bytearray_remove_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3261' u='c' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3400' u='c' c='_PyBytesWriter_Finish'/>

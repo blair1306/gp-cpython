@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/traceback.h' l='26' type='int _Py_DisplaySourceLine(PyObject * , PyObject * , int , int )'/>
+<use f='codebrowser/Python/_warnings.c' l='368' u='c' c='show_warning'/>
+<def f='codebrowser/Python/traceback.c' l='262' ll='392' type='int _Py_DisplaySourceLine(PyObject * f, PyObject * filename, int lineno, int indent)'/>
+<use f='codebrowser/Python/traceback.c' l='411' u='c' c='tb_displayline'/>

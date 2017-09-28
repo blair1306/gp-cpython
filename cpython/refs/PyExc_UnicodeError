@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pyerrors.h' l='189' type='PyObject *'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='805' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='837' u='r' c='decoder_append_pending'/>
+<def f='codebrowser/Objects/exceptions.c' l='1559' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2533' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2610' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6056' u='r' c='_PyUnicode_DecodeUnicodeEscape'/>
+<use f='codebrowser/Python/ast.c' l='2121' u='r' c='ast_for_atom'/>

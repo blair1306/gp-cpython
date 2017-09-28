@@ -1,0 +1,607 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>callbacks.c source code [codebrowser/Modules/_ctypes/callbacks.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_ctypes/callbacks.c'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>_ctypes</a>/<a href='callbacks.c.html'>callbacks.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="../../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../../Include/frameobject.h.html">"frameobject.h"</a></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../../../include/x86_64-linux-gnu/ffi.h.html">&lt;ffi.h&gt;</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="5">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="6">6</th><td><u>#include &lt;windows.h&gt;</u></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="5">endif</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#include <a href="ctypes.h.html">"ctypes.h"</a></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><i  data-doc="CThunkObject_dealloc">/**************************************************************/</i></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="13">13</th><td><dfn class="tu decl def" id="CThunkObject_dealloc" title='CThunkObject_dealloc' data-type='void CThunkObject_dealloc(PyObject * myself)' data-ref="CThunkObject_dealloc">CThunkObject_dealloc</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3myself" title='myself' data-type='PyObject *' data-ref="3myself">myself</dfn>)</td></tr>
+<tr><th id="14">14</th><td>{</td></tr>
+<tr><th id="15">15</th><td>    <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='CThunkObject *' data-ref="4self">self</dfn> = (<a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *)<a class="local col3 ref" href="#3myself" title='myself' data-ref="3myself">myself</a>;</td></tr>
+<tr><th id="16">16</th><td>    <a class="ref" href="../../Include/objimpl.h.html#PyObject_GC_UnTrack" title='PyObject_GC_UnTrack' data-ref="PyObject_GC_UnTrack">PyObject_GC_UnTrack</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>);</td></tr>
+<tr><th id="17">17</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(self-&gt;converters); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 17, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::converters" title='(anonymous struct)::converters' data-ref="(anonymous)::converters">converters</a>);</td></tr>
+<tr><th id="18">18</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(self-&gt;callable); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 18, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::callable" title='(anonymous struct)::callable' data-ref="(anonymous)::callable">callable</a>);</td></tr>
+<tr><th id="19">19</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(self-&gt;restype); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 19, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::restype" title='(anonymous struct)::restype' data-ref="(anonymous)::restype">restype</a>);</td></tr>
+<tr><th id="20">20</th><td>    <b>if</b> (<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_write" title='(anonymous struct)::pcl_write' data-ref="(anonymous)::pcl_write">pcl_write</a>)</td></tr>
+<tr><th id="21">21</th><td>        <a class="ref" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_closure_free" title='ffi_closure_free' data-ref="ffi_closure_free">ffi_closure_free</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_write" title='(anonymous struct)::pcl_write' data-ref="(anonymous)::pcl_write">pcl_write</a>);</td></tr>
+<tr><th id="22">22</th><td>    <a class="ref" href="../../Include/objimpl.h.html#PyObject_GC_Del" title='PyObject_GC_Del' data-ref="PyObject_GC_Del">PyObject_GC_Del</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>);</td></tr>
+<tr><th id="23">23</th><td>}</td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="26">26</th><td><dfn class="tu decl def" id="CThunkObject_traverse" title='CThunkObject_traverse' data-type='int CThunkObject_traverse(PyObject * myself, visitproc visit, void * arg)' data-ref="CThunkObject_traverse">CThunkObject_traverse</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5myself" title='myself' data-type='PyObject *' data-ref="5myself">myself</dfn>, <a class="typedef" href="../../Include/object.h.html#visitproc" title='visitproc' data-type='int (*)(PyObject *, void *)' data-ref="visitproc">visitproc</a> <dfn class="local col6 decl" id="6visit" title='visit' data-type='visitproc' data-ref="6visit">visit</dfn>, <em>void</em> *<dfn class="local col7 decl" id="7arg" title='arg' data-type='void *' data-ref="7arg">arg</dfn>)</td></tr>
+<tr><th id="27">27</th><td>{</td></tr>
+<tr><th id="28">28</th><td>    <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="local col8 decl" id="8self" title='self' data-type='CThunkObject *' data-ref="8self">self</dfn> = (<a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *)<a class="local col5 ref" href="#5myself" title='myself' data-ref="5myself">myself</a>;</td></tr>
+<tr><th id="29">29</th><td>    <a class="macro" href="../../Include/objimpl.h.html#351" title="do { if (self-&gt;converters) { int vret = visit((PyObject *)(self-&gt;converters), arg); if (vret) return vret; } } while (0)" data-ref="_M/Py_VISIT">Py_VISIT</a>(<a class="local col8 ref" href="#8self" title='self' data-ref="8self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::converters" title='(anonymous struct)::converters' data-ref="(anonymous)::converters">converters</a>);</td></tr>
+<tr><th id="30">30</th><td>    <a class="macro" href="../../Include/objimpl.h.html#351" title="do { if (self-&gt;callable) { int vret = visit((PyObject *)(self-&gt;callable), arg); if (vret) return vret; } } while (0)" data-ref="_M/Py_VISIT">Py_VISIT</a>(<a class="local col8 ref" href="#8self" title='self' data-ref="8self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::callable" title='(anonymous struct)::callable' data-ref="(anonymous)::callable">callable</a>);</td></tr>
+<tr><th id="31">31</th><td>    <a class="macro" href="../../Include/objimpl.h.html#351" title="do { if (self-&gt;restype) { int vret = visit((PyObject *)(self-&gt;restype), arg); if (vret) return vret; } } while (0)" data-ref="_M/Py_VISIT">Py_VISIT</a>(<a class="local col8 ref" href="#8self" title='self' data-ref="8self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::restype" title='(anonymous struct)::restype' data-ref="(anonymous)::restype">restype</a>);</td></tr>
+<tr><th id="32">32</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="33">33</th><td>}</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="36">36</th><td><dfn class="tu decl def" id="CThunkObject_clear" title='CThunkObject_clear' data-type='int CThunkObject_clear(PyObject * myself)' data-ref="CThunkObject_clear">CThunkObject_clear</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9myself" title='myself' data-type='PyObject *' data-ref="9myself">myself</dfn>)</td></tr>
+<tr><th id="37">37</th><td>{</td></tr>
+<tr><th id="38">38</th><td>    <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="local col0 decl" id="10self" title='self' data-type='CThunkObject *' data-ref="10self">self</dfn> = (<a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *)<a class="local col9 ref" href="#9myself" title='myself' data-ref="9myself">myself</a>;</td></tr>
+<tr><th id="39">39</th><td>    <a class="macro" href="../../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(self-&gt;converters); if (_py_tmp != ((void*)0)) { (self-&gt;converters) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 39, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col0 ref" href="#10self" title='self' data-ref="10self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::converters" title='(anonymous struct)::converters' data-ref="(anonymous)::converters">converters</a>);</td></tr>
+<tr><th id="40">40</th><td>    <a class="macro" href="../../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(self-&gt;callable); if (_py_tmp != ((void*)0)) { (self-&gt;callable) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 40, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col0 ref" href="#10self" title='self' data-ref="10self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::callable" title='(anonymous struct)::callable' data-ref="(anonymous)::callable">callable</a>);</td></tr>
+<tr><th id="41">41</th><td>    <a class="macro" href="../../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(self-&gt;restype); if (_py_tmp != ((void*)0)) { (self-&gt;restype) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 41, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col0 ref" href="#10self" title='self' data-ref="10self">self</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::restype" title='(anonymous struct)::restype' data-ref="(anonymous)::restype">restype</a>);</td></tr>
+<tr><th id="42">42</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="43">43</th><td>}</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="decl def" id="PyCThunk_Type" title='PyCThunk_Type' data-ref="PyCThunk_Type">PyCThunk_Type</dfn> = {</td></tr>
+<tr><th id="46">46</th><td>    <a class="macro" href="../../Include/object.h.html#89" title="{ { 0, 0, 1, ((void*)0) }, 0 }," data-ref="_M/PyVarObject_HEAD_INIT">PyVarObject_HEAD_INIT</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>0</var>)</td></tr>
+<tr><th id="47">47</th><td>    <q>"_ctypes.CThunkObject"</q>,</td></tr>
+<tr><th id="48">48</th><td>    <b>sizeof</b>(<a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a>),                       <i>/* tp_basicsize */</i></td></tr>
+<tr><th id="49">49</th><td>    <b>sizeof</b>(<a class="typedef" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_type" title='ffi_type' data-type='struct _ffi_type' data-ref="ffi_type">ffi_type</a>),                           <i>/* tp_itemsize */</i></td></tr>
+<tr><th id="50">50</th><td>    <a class="tu ref" href="#CThunkObject_dealloc" title='CThunkObject_dealloc' data-use='r' data-ref="CThunkObject_dealloc">CThunkObject_dealloc</a>,                       <i>/* tp_dealloc */</i></td></tr>
+<tr><th id="51">51</th><td>    <var>0</var>,                                          <i>/* tp_print */</i></td></tr>
+<tr><th id="52">52</th><td>    <var>0</var>,                                          <i>/* tp_getattr */</i></td></tr>
+<tr><th id="53">53</th><td>    <var>0</var>,                                          <i>/* tp_setattr */</i></td></tr>
+<tr><th id="54">54</th><td>    <var>0</var>,                                          <i>/* tp_reserved */</i></td></tr>
+<tr><th id="55">55</th><td>    <var>0</var>,                                          <i>/* tp_repr */</i></td></tr>
+<tr><th id="56">56</th><td>    <var>0</var>,                                          <i>/* tp_as_number */</i></td></tr>
+<tr><th id="57">57</th><td>    <var>0</var>,                                          <i>/* tp_as_sequence */</i></td></tr>
+<tr><th id="58">58</th><td>    <var>0</var>,                                          <i>/* tp_as_mapping */</i></td></tr>
+<tr><th id="59">59</th><td>    <var>0</var>,                                          <i>/* tp_hash */</i></td></tr>
+<tr><th id="60">60</th><td>    <var>0</var>,                                          <i>/* tp_call */</i></td></tr>
+<tr><th id="61">61</th><td>    <var>0</var>,                                          <i>/* tp_str */</i></td></tr>
+<tr><th id="62">62</th><td>    <var>0</var>,                                          <i>/* tp_getattro */</i></td></tr>
+<tr><th id="63">63</th><td>    <var>0</var>,                                          <i>/* tp_setattro */</i></td></tr>
+<tr><th id="64">64</th><td>    <var>0</var>,                                          <i>/* tp_as_buffer */</i></td></tr>
+<tr><th id="65">65</th><td>    <a class="macro" href="../../Include/object.h.html#658" title="( 0 | (1UL &lt;&lt; 18) | 0)" data-ref="_M/Py_TPFLAGS_DEFAULT">Py_TPFLAGS_DEFAULT</a> | <a class="macro" href="../../Include/object.h.html#632" title="(1UL &lt;&lt; 14)" data-ref="_M/Py_TPFLAGS_HAVE_GC">Py_TPFLAGS_HAVE_GC</a>,                            <i>/* tp_flags */</i></td></tr>
+<tr><th id="66">66</th><td>    <q>"CThunkObject"</q>,                             <i>/* tp_doc */</i></td></tr>
+<tr><th id="67">67</th><td>    <a class="tu ref" href="#CThunkObject_traverse" title='CThunkObject_traverse' data-use='r' data-ref="CThunkObject_traverse">CThunkObject_traverse</a>,                      <i>/* tp_traverse */</i></td></tr>
+<tr><th id="68">68</th><td>    <a class="tu ref" href="#CThunkObject_clear" title='CThunkObject_clear' data-use='r' data-ref="CThunkObject_clear">CThunkObject_clear</a>,                         <i>/* tp_clear */</i></td></tr>
+<tr><th id="69">69</th><td>    <var>0</var>,                                          <i>/* tp_richcompare */</i></td></tr>
+<tr><th id="70">70</th><td>    <var>0</var>,                                          <i>/* tp_weaklistoffset */</i></td></tr>
+<tr><th id="71">71</th><td>    <var>0</var>,                                          <i>/* tp_iter */</i></td></tr>
+<tr><th id="72">72</th><td>    <var>0</var>,                                          <i>/* tp_iternext */</i></td></tr>
+<tr><th id="73">73</th><td>    <var>0</var>,                                          <i>/* tp_methods */</i></td></tr>
+<tr><th id="74">74</th><td>    <var>0</var>,                                          <i>/* tp_members */</i></td></tr>
+<tr><th id="75">75</th><td>};</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><i  data-doc="PrintError">/**************************************************************/</i></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="80">80</th><td><dfn class="tu decl def" id="PrintError" title='PrintError' data-type='void PrintError(const char * msg)' data-ref="PrintError">PrintError</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="11msg" title='msg' data-type='const char *' data-ref="11msg">msg</dfn>, ...)</td></tr>
+<tr><th id="81">81</th><td>{</td></tr>
+<tr><th id="82">82</th><td>    <em>char</em> <dfn class="local col2 decl" id="12buf" title='buf' data-type='char [512]' data-ref="12buf">buf</dfn>[<var>512</var>];</td></tr>
+<tr><th id="83">83</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="13f" title='f' data-type='PyObject *' data-ref="13f">f</dfn> = <a class="ref" href="../../Include/sysmodule.h.html#PySys_GetObject" title='PySys_GetObject' data-ref="PySys_GetObject">PySys_GetObject</a>(<q>"stderr"</q>);</td></tr>
+<tr><th id="84">84</th><td>    <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col4 decl" id="14marker" title='marker' data-type='va_list' data-ref="14marker">marker</dfn>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>    <span class="macro" title="__builtin_va_start(marker, msg)" data-ref="_M/va_start">va_start</span>(<a class="local col4 ref" href="#14marker" title='marker' data-ref="14marker">marker</a>, <a class="local col1 ref" href="#11msg" title='msg' data-ref="11msg">msg</a>);</td></tr>
+<tr><th id="87">87</th><td>    <a class="ref" href="../../../include/stdio.h.html#vsnprintf" title='vsnprintf' data-ref="vsnprintf">vsnprintf</a>(<a class="local col2 ref" href="#12buf" title='buf' data-ref="12buf">buf</a>, <b>sizeof</b>(<a class="local col2 ref" href="#12buf" title='buf' data-ref="12buf">buf</a>), <a class="local col1 ref" href="#11msg" title='msg' data-ref="11msg">msg</a>, <a class="local col4 ref" href="#14marker" title='marker' data-ref="14marker">marker</a>);</td></tr>
+<tr><th id="88">88</th><td>    <span class="macro" title="__builtin_va_end(marker)" data-ref="_M/va_end">va_end</span>(<a class="local col4 ref" href="#14marker" title='marker' data-ref="14marker">marker</a>);</td></tr>
+<tr><th id="89">89</th><td>    <b>if</b> (<a class="local col3 ref" href="#13f" title='f' data-ref="13f">f</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="local col3 ref" href="#13f" title='f' data-ref="13f">f</a> != <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>)</td></tr>
+<tr><th id="90">90</th><td>        <a class="ref" href="../../Include/fileobject.h.html#PyFile_WriteString" title='PyFile_WriteString' data-ref="PyFile_WriteString">PyFile_WriteString</a>(<a class="local col2 ref" href="#12buf" title='buf' data-ref="12buf">buf</a>, <a class="local col3 ref" href="#13f" title='f' data-ref="13f">f</a>);</td></tr>
+<tr><th id="91">91</th><td>    <a class="ref" href="../../Include/pythonrun.h.html#PyErr_Print" title='PyErr_Print' data-ref="PyErr_Print">PyErr_Print</a>();</td></tr>
+<tr><th id="92">92</th><td>}</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><u>#<span data-ppcond="95">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="96">96</th><td><i>/*</i></td></tr>
+<tr><th id="97">97</th><td><i> * We must call AddRef() on non-NULL COM pointers we receive as arguments</i></td></tr>
+<tr><th id="98">98</th><td><i> * to callback functions - these functions are COM method implementations.</i></td></tr>
+<tr><th id="99">99</th><td><i> * The Python instances we create have a __del__ method which calls Release().</i></td></tr>
+<tr><th id="100">100</th><td><i> *</i></td></tr>
+<tr><th id="101">101</th><td><i> * The presence of a class attribute named '_needs_com_addref_' triggers this</i></td></tr>
+<tr><th id="102">102</th><td><i> * behaviour.  It would also be possible to call the AddRef() Python method,</i></td></tr>
+<tr><th id="103">103</th><td><i> * after checking for PyObject_IsTrue(), but this would probably be somewhat</i></td></tr>
+<tr><th id="104">104</th><td><i> * slower.</i></td></tr>
+<tr><th id="105">105</th><td><i> */</i></td></tr>
+<tr><th id="106">106</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="107">107</th><td>TryAddRef(StgDictObject *dict, CDataObject *obj)</td></tr>
+<tr><th id="108">108</th><td>{</td></tr>
+<tr><th id="109">109</th><td>    IUnknown *punk;</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td>    <b>if</b> (NULL == PyDict_GetItemString((PyObject *)dict, <q>"_needs_com_addref_"</q>))</td></tr>
+<tr><th id="112">112</th><td>        <b>return</b>;</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td>    punk = *(IUnknown **)obj-&gt;b_ptr;</td></tr>
+<tr><th id="115">115</th><td>    <b>if</b> (punk)</td></tr>
+<tr><th id="116">116</th><td>        punk-&gt;lpVtbl-&gt;AddRef(punk);</td></tr>
+<tr><th id="117">117</th><td>    <b>return</b>;</td></tr>
+<tr><th id="118">118</th><td>}</td></tr>
+<tr><th id="119">119</th><td><u>#<span data-ppcond="95">endif</span></u></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><i  data-doc="_CallPythonObject">/******************************************************************************</i></td></tr>
+<tr><th id="122">122</th><td><i  data-doc="_CallPythonObject"> *</i></td></tr>
+<tr><th id="123">123</th><td><i  data-doc="_CallPythonObject"> * Call the python object with all arguments</i></td></tr>
+<tr><th id="124">124</th><td><i  data-doc="_CallPythonObject"> *</i></td></tr>
+<tr><th id="125">125</th><td><i  data-doc="_CallPythonObject"> */</i></td></tr>
+<tr><th id="126">126</th><td><em>static</em> <em>void</em> <dfn class="tu decl def" id="_CallPythonObject" title='_CallPythonObject' data-type='void _CallPythonObject(void * mem, ffi_type * restype, SETFUNC setfunc, PyObject * callable, PyObject * converters, int flags, void ** pArgs)' data-ref="_CallPythonObject">_CallPythonObject</dfn>(<em>void</em> *<dfn class="local col5 decl" id="15mem" title='mem' data-type='void *' data-ref="15mem">mem</dfn>,</td></tr>
+<tr><th id="127">127</th><td>                              <a class="typedef" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_type" title='ffi_type' data-type='struct _ffi_type' data-ref="ffi_type">ffi_type</a> *<dfn class="local col6 decl" id="16restype" title='restype' data-type='ffi_type *' data-ref="16restype">restype</dfn>,</td></tr>
+<tr><th id="128">128</th><td>                              <a class="typedef" href="ctypes.h.html#SETFUNC" title='SETFUNC' data-type='PyObject *(*)(void *, PyObject *, Py_ssize_t)' data-ref="SETFUNC">SETFUNC</a> <dfn class="local col7 decl" id="17setfunc" title='setfunc' data-type='SETFUNC' data-ref="17setfunc">setfunc</dfn>,</td></tr>
+<tr><th id="129">129</th><td>                              <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18callable" title='callable' data-type='PyObject *' data-ref="18callable">callable</dfn>,</td></tr>
+<tr><th id="130">130</th><td>                              <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19converters" title='converters' data-type='PyObject *' data-ref="19converters">converters</dfn>,</td></tr>
+<tr><th id="131">131</th><td>                              <em>int</em> <dfn class="local col0 decl" id="20flags" title='flags' data-type='int' data-ref="20flags">flags</dfn>,</td></tr>
+<tr><th id="132">132</th><td>                              <em>void</em> **<dfn class="local col1 decl" id="21pArgs" title='pArgs' data-type='void **' data-ref="21pArgs">pArgs</dfn>)</td></tr>
+<tr><th id="133">133</th><td>{</td></tr>
+<tr><th id="134">134</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="22i" title='i' data-type='Py_ssize_t' data-ref="22i">i</dfn>;</td></tr>
+<tr><th id="135">135</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="23result" title='result' data-type='PyObject *' data-ref="23result">result</dfn>;</td></tr>
+<tr><th id="136">136</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24arglist" title='arglist' data-type='PyObject *' data-ref="24arglist">arglist</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="137">137</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="25nArgs" title='nArgs' data-type='Py_ssize_t' data-ref="25nArgs">nArgs</dfn>;</td></tr>
+<tr><th id="138">138</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="26error_object" title='error_object' data-type='PyObject *' data-ref="26error_object">error_object</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="139">139</th><td>    <em>int</em> *<dfn class="local col7 decl" id="27space" title='space' data-type='int *' data-ref="27space">space</dfn>;</td></tr>
+<tr><th id="140">140</th><td><u>#<span data-ppcond="140">ifdef</span> <a class="macro" href="../../pyconfig.h.html#1396" data-ref="_M/WITH_THREAD">WITH_THREAD</a></u></td></tr>
+<tr><th id="141">141</th><td>    <a class="typedef" href="../../Include/pystate.h.html#PyGILState_STATE" title='PyGILState_STATE' data-type='enum PyGILState_STATE' data-ref="PyGILState_STATE">PyGILState_STATE</a> <dfn class="local col8 decl" id="28state" title='state' data-type='PyGILState_STATE' data-ref="28state">state</dfn> = <a class="ref" href="../../Include/pystate.h.html#PyGILState_Ensure" title='PyGILState_Ensure' data-ref="PyGILState_Ensure">PyGILState_Ensure</a>();</td></tr>
+<tr><th id="142">142</th><td><u>#<span data-ppcond="140">endif</span></u></td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>    <a class="local col5 ref" href="#25nArgs" title='nArgs' data-ref="25nArgs">nArgs</a> = <a class="macro" href="../../Include/abstract.h.html#845" title="PySequence_Size" data-ref="_M/PySequence_Length">PySequence_Length</a>(<a class="local col9 ref" href="#19converters" title='converters' data-ref="19converters">converters</a>);</td></tr>
+<tr><th id="145">145</th><td>    <i>/* Hm. What to return in case of error?</i></td></tr>
+<tr><th id="146">146</th><td><i>       For COM, 0xFFFFFFFF seems better than 0.</i></td></tr>
+<tr><th id="147">147</th><td><i>    */</i></td></tr>
+<tr><th id="148">148</th><td>    <b>if</b> (<a class="local col5 ref" href="#25nArgs" title='nArgs' data-ref="25nArgs">nArgs</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="149">149</th><td>        <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"BUG: PySequence_Length"</q>);</td></tr>
+<tr><th id="150">150</th><td>        <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="151">151</th><td>    }</td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td>    <a class="local col4 ref" href="#24arglist" title='arglist' data-ref="24arglist">arglist</a> = <a class="ref" href="../../Include/tupleobject.h.html#PyTuple_New" title='PyTuple_New' data-ref="PyTuple_New">PyTuple_New</a>(<a class="local col5 ref" href="#25nArgs" title='nArgs' data-ref="25nArgs">nArgs</a>);</td></tr>
+<tr><th id="154">154</th><td>    <b>if</b> (!<a class="local col4 ref" href="#24arglist" title='arglist' data-ref="24arglist">arglist</a>) {</td></tr>
+<tr><th id="155">155</th><td>        <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"PyTuple_New()"</q>);</td></tr>
+<tr><th id="156">156</th><td>        <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="157">157</th><td>    }</td></tr>
+<tr><th id="158">158</th><td>    <b>for</b> (<a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a> = <var>0</var>; <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a> &lt; <a class="local col5 ref" href="#25nArgs" title='nArgs' data-ref="25nArgs">nArgs</a>; ++<a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>) {</td></tr>
+<tr><th id="159">159</th><td>        <i>/* Note: new reference! */</i></td></tr>
+<tr><th id="160">160</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30cnv" title='cnv' data-type='PyObject *' data-ref="30cnv">cnv</dfn> = <a class="ref" href="../../Include/abstract.h.html#PySequence_GetItem" title='PySequence_GetItem' data-ref="PySequence_GetItem">PySequence_GetItem</a>(<a class="local col9 ref" href="#19converters" title='converters' data-ref="19converters">converters</a>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>);</td></tr>
+<tr><th id="161">161</th><td>        <a class="typedef" href="ctypes.h.html#StgDictObject" title='StgDictObject' data-type='struct StgDictObject' data-ref="StgDictObject">StgDictObject</a> *<dfn class="local col1 decl" id="31dict" title='dict' data-type='StgDictObject *' data-ref="31dict">dict</dfn>;</td></tr>
+<tr><th id="162">162</th><td>        <b>if</b> (<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>)</td></tr>
+<tr><th id="163">163</th><td>            <a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a> = <a class="ref" href="ctypes.h.html#PyType_stgdict" title='PyType_stgdict' data-ref="PyType_stgdict">PyType_stgdict</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="164">164</th><td>        <b>else</b> {</td></tr>
+<tr><th id="165">165</th><td>            <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"Getting argument converter %d\n"</q>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>);</td></tr>
+<tr><th id="166">166</th><td>            <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="167">167</th><td>        }</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td>        <b>if</b> (<a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a> &amp;&amp; <a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::getfunc" title='(anonymous struct)::getfunc' data-ref="(anonymous)::getfunc">getfunc</a> &amp;&amp; !<a class="ref" href="ctypes.h.html#_ctypes_simple_instance" title='_ctypes_simple_instance' data-ref="_ctypes_simple_instance">_ctypes_simple_instance</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>)) {</td></tr>
+<tr><th id="170">170</th><td>            <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32v" title='v' data-type='PyObject *' data-ref="32v">v</dfn> = <a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::getfunc" title='(anonymous struct)::getfunc' data-ref="(anonymous)::getfunc">getfunc</a>(*<a class="local col1 ref" href="#21pArgs" title='pArgs' data-ref="21pArgs">pArgs</a>, <a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::size" title='(anonymous struct)::size' data-ref="(anonymous)::size">size</a>);</td></tr>
+<tr><th id="171">171</th><td>            <b>if</b> (!<a class="local col2 ref" href="#32v" title='v' data-ref="32v">v</a>) {</td></tr>
+<tr><th id="172">172</th><td>                <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"create argument %d:\n"</q>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>);</td></tr>
+<tr><th id="173">173</th><td>                <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cnv); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 173, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="174">174</th><td>                <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="175">175</th><td>            }</td></tr>
+<tr><th id="176">176</th><td>            <a class="macro" href="../../Include/tupleobject.h.html#62" title="(((PyTupleObject *)(arglist))-&gt;ob_item[i] = v)" data-ref="_M/PyTuple_SET_ITEM">PyTuple_SET_ITEM</a>(<a class="local col4 ref" href="#24arglist" title='arglist' data-ref="24arglist">arglist</a>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>, <a class="local col2 ref" href="#32v" title='v' data-ref="32v">v</a>);</td></tr>
+<tr><th id="177">177</th><td>            <i>/* XXX XXX XX</i></td></tr>
+<tr><th id="178">178</th><td><i>               We have the problem that c_byte or c_short have dict-&gt;size of</i></td></tr>
+<tr><th id="179">179</th><td><i>               1 resp. 4, but these parameters are pushed as sizeof(int) bytes.</i></td></tr>
+<tr><th id="180">180</th><td><i>               BTW, the same problem occurs when they are pushed as parameters</i></td></tr>
+<tr><th id="181">181</th><td><i>            */</i></td></tr>
+<tr><th id="182">182</th><td>        } <b>else</b> <b>if</b> (<a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a>) {</td></tr>
+<tr><th id="183">183</th><td>            <i>/* Hm, shouldn't we use PyCData_AtAddress() or something like that instead? */</i></td></tr>
+<tr><th id="184">184</th><td>            <a class="typedef" href="ctypes.h.html#CDataObject" title='CDataObject' data-type='struct tagCDataObject' data-ref="CDataObject">CDataObject</a> *<dfn class="local col3 decl" id="33obj" title='obj' data-type='CDataObject *' data-ref="33obj">obj</dfn> = (<a class="typedef" href="ctypes.h.html#CDataObject" title='CDataObject' data-type='struct tagCDataObject' data-ref="CDataObject">CDataObject</a> *)<a class="macro" href="../../Include/abstract.h.html#255" title="_PyObject_FastCallDict((cnv), ((void*)0), 0, ((void*)0))" data-ref="_M/_PyObject_CallNoArg">_PyObject_CallNoArg</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="185">185</th><td>            <b>if</b> (!<a class="local col3 ref" href="#33obj" title='obj' data-ref="33obj">obj</a>) {</td></tr>
+<tr><th id="186">186</th><td>                <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"create argument %d:\n"</q>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>);</td></tr>
+<tr><th id="187">187</th><td>                <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cnv); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 187, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="188">188</th><td>                <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="189">189</th><td>            }</td></tr>
+<tr><th id="190">190</th><td>            <b>if</b> (!<a class="macro" href="ctypes.h.html#116" title="((((PyObject*)(obj))-&gt;ob_type) == (&amp;PyCData_Type) || PyType_IsSubtype((((PyObject*)(obj))-&gt;ob_type), (&amp;PyCData_Type)))" data-ref="_M/CDataObject_Check">CDataObject_Check</a>(<a class="local col3 ref" href="#33obj" title='obj' data-ref="33obj">obj</a>)) {</td></tr>
+<tr><th id="191">191</th><td>                <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(obj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 191, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col3 ref" href="#33obj" title='obj' data-ref="33obj">obj</a>);</td></tr>
+<tr><th id="192">192</th><td>                <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cnv); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 192, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="193">193</th><td>                <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"unexpected result of create argument %d:\n"</q>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>);</td></tr>
+<tr><th id="194">194</th><td>                <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="195">195</th><td>            }</td></tr>
+<tr><th id="196">196</th><td>            <a class="ref" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col3 ref" href="#33obj" title='obj' data-ref="33obj">obj</a>-&gt;<a class="ref" href="ctypes.h.html#tagCDataObject::b_ptr" title='tagCDataObject::b_ptr' data-ref="tagCDataObject::b_ptr">b_ptr</a>, *<a class="local col1 ref" href="#21pArgs" title='pArgs' data-ref="21pArgs">pArgs</a>, <a class="local col1 ref" href="#31dict" title='dict' data-ref="31dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::size" title='(anonymous struct)::size' data-ref="(anonymous)::size">size</a>);</td></tr>
+<tr><th id="197">197</th><td>            <a class="macro" href="../../Include/tupleobject.h.html#62" title="(((PyTupleObject *)(arglist))-&gt;ob_item[i] = (PyObject *)obj)" data-ref="_M/PyTuple_SET_ITEM">PyTuple_SET_ITEM</a>(<a class="local col4 ref" href="#24arglist" title='arglist' data-ref="24arglist">arglist</a>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>, (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)<a class="local col3 ref" href="#33obj" title='obj' data-ref="33obj">obj</a>);</td></tr>
+<tr><th id="198">198</th><td><u>#<span data-ppcond="198">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="199">199</th><td>            TryAddRef(dict, obj);</td></tr>
+<tr><th id="200">200</th><td><u>#<span data-ppcond="198">endif</span></u></td></tr>
+<tr><th id="201">201</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="202">202</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="203">203</th><td>                            <q>"cannot build parameter"</q>);</td></tr>
+<tr><th id="204">204</th><td>            <a class="tu ref" href="#PrintError" title='PrintError' data-use='c' data-ref="PrintError">PrintError</a>(<q>"Parsing argument %d\n"</q>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>);</td></tr>
+<tr><th id="205">205</th><td>            <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cnv); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 205, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="206">206</th><td>            <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="207">207</th><td>        }</td></tr>
+<tr><th id="208">208</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cnv); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 208, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#30cnv" title='cnv' data-ref="30cnv">cnv</a>);</td></tr>
+<tr><th id="209">209</th><td>        <i>/* XXX error handling! */</i></td></tr>
+<tr><th id="210">210</th><td>        <a class="local col1 ref" href="#21pArgs" title='pArgs' data-ref="21pArgs">pArgs</a>++;</td></tr>
+<tr><th id="211">211</th><td>    }</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><u>#define <dfn class="macro" id="_M/CHECK" data-ref="_M/CHECK">CHECK</dfn>(what, x) \</u></td></tr>
+<tr><th id="214">214</th><td><u>if (x == NULL) <a class="ref" href="../../Include/traceback.h.html#_PyTraceback_Add" title='_PyTraceback_Add' data-ref="_PyTraceback_Add">_PyTraceback_Add</a>(what, "_ctypes/callbacks.c", __LINE__ - 1), <a class="ref" href="../../Include/pythonrun.h.html#PyErr_Print" title='PyErr_Print' data-ref="PyErr_Print">PyErr_Print</a>()</u></td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td>    <b>if</b> (<a class="local col0 ref" href="#20flags" title='flags' data-ref="20flags">flags</a> &amp; (<a class="macro" href="ctypes.h.html#286" title="0x8" data-ref="_M/FUNCFLAG_USE_ERRNO">FUNCFLAG_USE_ERRNO</a> | <a class="macro" href="ctypes.h.html#287" title="0x10" data-ref="_M/FUNCFLAG_USE_LASTERROR">FUNCFLAG_USE_LASTERROR</a>)) {</td></tr>
+<tr><th id="217">217</th><td>        <a class="local col6 ref" href="#26error_object" title='error_object' data-ref="26error_object">error_object</a> = <a class="ref" href="ctypes.h.html#_ctypes_get_errobj" title='_ctypes_get_errobj' data-ref="_ctypes_get_errobj">_ctypes_get_errobj</a>(&amp;<a class="local col7 ref" href="#27space" title='space' data-ref="27space">space</a>);</td></tr>
+<tr><th id="218">218</th><td>        <b>if</b> (<a class="local col6 ref" href="#26error_object" title='error_object' data-ref="26error_object">error_object</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="219">219</th><td>            <b>goto</b> <a class="lbl" href="#29Done" data-ref="29Done">Done</a>;</td></tr>
+<tr><th id="220">220</th><td>        <b>if</b> (<a class="local col0 ref" href="#20flags" title='flags' data-ref="20flags">flags</a> &amp; <a class="macro" href="ctypes.h.html#286" title="0x8" data-ref="_M/FUNCFLAG_USE_ERRNO">FUNCFLAG_USE_ERRNO</a>) {</td></tr>
+<tr><th id="221">221</th><td>            <em>int</em> <dfn class="local col4 decl" id="34temp" title='temp' data-type='int' data-ref="34temp">temp</dfn> = <a class="local col7 ref" href="#27space" title='space' data-ref="27space">space</a>[<var>0</var>];</td></tr>
+<tr><th id="222">222</th><td>            <a class="local col7 ref" href="#27space" title='space' data-ref="27space">space</a>[<var>0</var>] = <a class="macro" href="../../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="223">223</th><td>            <a class="macro" href="../../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="local col4 ref" href="#34temp" title='temp' data-ref="34temp">temp</a>;</td></tr>
+<tr><th id="224">224</th><td>        }</td></tr>
+<tr><th id="225">225</th><td><u>#<span data-ppcond="225">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="226">226</th><td>        <b>if</b> (flags &amp; FUNCFLAG_USE_LASTERROR) {</td></tr>
+<tr><th id="227">227</th><td>            <em>int</em> temp = space[<var>1</var>];</td></tr>
+<tr><th id="228">228</th><td>            space[<var>1</var>] = GetLastError();</td></tr>
+<tr><th id="229">229</th><td>            SetLastError(temp);</td></tr>
+<tr><th id="230">230</th><td>        }</td></tr>
+<tr><th id="231">231</th><td><u>#<span data-ppcond="225">endif</span></u></td></tr>
+<tr><th id="232">232</th><td>    }</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td>    <a class="local col3 ref" href="#23result" title='result' data-ref="23result">result</a> = <a class="ref" href="../../Include/abstract.h.html#PyObject_CallObject" title='PyObject_CallObject' data-ref="PyObject_CallObject">PyObject_CallObject</a>(<a class="local col8 ref" href="#18callable" title='callable' data-ref="18callable">callable</a>, <a class="local col4 ref" href="#24arglist" title='arglist' data-ref="24arglist">arglist</a>);</td></tr>
+<tr><th id="235">235</th><td>    <a class="macro" href="#213" title="if (result == ((void*)0)) _PyTraceback_Add(&quot;&apos;calling callback function&apos;&quot;, &quot;_ctypes/callbacks.c&quot;, 235 - 1), PyErr_Print()" data-ref="_M/CHECK">CHECK</a>(<q>"'calling callback function'"</q>, <a class="local col3 ref" href="#23result" title='result' data-ref="23result">result</a>);</td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td><u>#<span data-ppcond="237">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="238">238</th><td>    <b>if</b> (flags &amp; FUNCFLAG_USE_LASTERROR) {</td></tr>
+<tr><th id="239">239</th><td>        <em>int</em> temp = space[<var>1</var>];</td></tr>
+<tr><th id="240">240</th><td>        space[<var>1</var>] = GetLastError();</td></tr>
+<tr><th id="241">241</th><td>        SetLastError(temp);</td></tr>
+<tr><th id="242">242</th><td>    }</td></tr>
+<tr><th id="243">243</th><td><u>#<span data-ppcond="237">endif</span></u></td></tr>
+<tr><th id="244">244</th><td>    <b>if</b> (<a class="local col0 ref" href="#20flags" title='flags' data-ref="20flags">flags</a> &amp; <a class="macro" href="ctypes.h.html#286" title="0x8" data-ref="_M/FUNCFLAG_USE_ERRNO">FUNCFLAG_USE_ERRNO</a>) {</td></tr>
+<tr><th id="245">245</th><td>        <em>int</em> <dfn class="local col5 decl" id="35temp" title='temp' data-type='int' data-ref="35temp">temp</dfn> = <a class="local col7 ref" href="#27space" title='space' data-ref="27space">space</a>[<var>0</var>];</td></tr>
+<tr><th id="246">246</th><td>        <a class="local col7 ref" href="#27space" title='space' data-ref="27space">space</a>[<var>0</var>] = <a class="macro" href="../../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="247">247</th><td>        <a class="macro" href="../../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="local col5 ref" href="#35temp" title='temp' data-ref="35temp">temp</a>;</td></tr>
+<tr><th id="248">248</th><td>    }</td></tr>
+<tr><th id="249">249</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(error_object); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 249, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col6 ref" href="#26error_object" title='error_object' data-ref="26error_object">error_object</a>);</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>    <b>if</b> ((<a class="local col6 ref" href="#16restype" title='restype' data-ref="16restype">restype</a> != &amp;<a class="ref" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_type_void" title='ffi_type_void' data-ref="ffi_type_void">ffi_type_void</a>) &amp;&amp; <a class="local col3 ref" href="#23result" title='result' data-ref="23result">result</a>) {</td></tr>
+<tr><th id="252">252</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="36keep" title='keep' data-type='PyObject *' data-ref="36keep">keep</dfn>;</td></tr>
+<tr><th id="253">253</th><td>        <a class="macro" href="../../../include/assert.h.html#88" title="((setfunc) ? (void) (0) : __assert_fail (&quot;setfunc&quot;, &quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 253, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col7 ref" href="#17setfunc" title='setfunc' data-ref="17setfunc">setfunc</a>);</td></tr>
+<tr><th id="254">254</th><td><u>#<span data-ppcond="254">ifdef</span> <span class="macro" data-ref="_M/WORDS_BIGENDIAN">WORDS_BIGENDIAN</span></u></td></tr>
+<tr><th id="255">255</th><td>        <i>/* See the corresponding code in callproc.c, around line 961 */</i></td></tr>
+<tr><th id="256">256</th><td>        <b>if</b> (restype-&gt;type != FFI_TYPE_FLOAT &amp;&amp; restype-&gt;size &lt; <b>sizeof</b>(ffi_arg))</td></tr>
+<tr><th id="257">257</th><td>            mem = (<em>char</em> *)mem + <b>sizeof</b>(ffi_arg) - restype-&gt;size;</td></tr>
+<tr><th id="258">258</th><td><u>#<span data-ppcond="254">endif</span></u></td></tr>
+<tr><th id="259">259</th><td>        <a class="local col6 ref" href="#36keep" title='keep' data-ref="36keep">keep</a> = <a class="local col7 ref" href="#17setfunc" title='setfunc' data-ref="17setfunc">setfunc</a>(<a class="local col5 ref" href="#15mem" title='mem' data-ref="15mem">mem</a>, <a class="local col3 ref" href="#23result" title='result' data-ref="23result">result</a>, <var>0</var>);</td></tr>
+<tr><th id="260">260</th><td>        <a class="macro" href="#213" title="if (keep == ((void*)0)) _PyTraceback_Add(&quot;&apos;converting callback result&apos;&quot;, &quot;_ctypes/callbacks.c&quot;, 260 - 1), PyErr_Print()" data-ref="_M/CHECK">CHECK</a>(<q>"'converting callback result'"</q>, <a class="local col6 ref" href="#36keep" title='keep' data-ref="36keep">keep</a>);</td></tr>
+<tr><th id="261">261</th><td>        <i>/* keep is an object we have to keep alive so that the result</i></td></tr>
+<tr><th id="262">262</th><td><i>           stays valid.  If there is no such object, the setfunc will</i></td></tr>
+<tr><th id="263">263</th><td><i>           have returned Py_None.</i></td></tr>
+<tr><th id="264">264</th><td><i></i></td></tr>
+<tr><th id="265">265</th><td><i>           If there is such an object, we have no choice than to keep</i></td></tr>
+<tr><th id="266">266</th><td><i>           it alive forever - but a refcount and/or memory leak will</i></td></tr>
+<tr><th id="267">267</th><td><i>           be the result.  EXCEPT when restype is py_object - Python</i></td></tr>
+<tr><th id="268">268</th><td><i>           itself knows how to manage the refcount of these objects.</i></td></tr>
+<tr><th id="269">269</th><td><i>        */</i></td></tr>
+<tr><th id="270">270</th><td>        <b>if</b> (<a class="local col6 ref" href="#36keep" title='keep' data-ref="36keep">keep</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <i>/* Could not convert callback result. */</i></td></tr>
+<tr><th id="271">271</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_WriteUnraisable" title='PyErr_WriteUnraisable' data-ref="PyErr_WriteUnraisable">PyErr_WriteUnraisable</a>(<a class="local col8 ref" href="#18callable" title='callable' data-ref="18callable">callable</a>);</td></tr>
+<tr><th id="272">272</th><td>        <b>else</b> <b>if</b> (<a class="local col6 ref" href="#36keep" title='keep' data-ref="36keep">keep</a> == <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>) <i>/* Nothing to keep */</i></td></tr>
+<tr><th id="273">273</th><td>            <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(keep); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 273, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col6 ref" href="#36keep" title='keep' data-ref="36keep">keep</a>);</td></tr>
+<tr><th id="274">274</th><td>        <b>else</b> <b>if</b> (<a class="local col7 ref" href="#17setfunc" title='setfunc' data-ref="17setfunc">setfunc</a> != <a class="ref" href="ctypes.h.html#_ctypes_get_fielddesc" title='_ctypes_get_fielddesc' data-ref="_ctypes_get_fielddesc">_ctypes_get_fielddesc</a>(<q>"O"</q>)-&gt;<a class="ref" href="ctypes.h.html#fielddesc::setfunc" title='fielddesc::setfunc' data-ref="fielddesc::setfunc">setfunc</a>) {</td></tr>
+<tr><th id="275">275</th><td>            <b>if</b> (-<var>1</var> == <a class="ref" href="../../Include/warnings.h.html#PyErr_WarnEx" title='PyErr_WarnEx' data-ref="PyErr_WarnEx">PyErr_WarnEx</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_RuntimeWarning" title='PyExc_RuntimeWarning' data-ref="PyExc_RuntimeWarning">PyExc_RuntimeWarning</a>,</td></tr>
+<tr><th id="276">276</th><td>                                   <q>"memory leak in callback function."</q>,</td></tr>
+<tr><th id="277">277</th><td>                                   <var>1</var>))</td></tr>
+<tr><th id="278">278</th><td>                <a class="ref" href="../../Include/pyerrors.h.html#PyErr_WriteUnraisable" title='PyErr_WriteUnraisable' data-ref="PyErr_WriteUnraisable">PyErr_WriteUnraisable</a>(<a class="local col8 ref" href="#18callable" title='callable' data-ref="18callable">callable</a>);</td></tr>
+<tr><th id="279">279</th><td>        }</td></tr>
+<tr><th id="280">280</th><td>    }</td></tr>
+<tr><th id="281">281</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(result); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 281, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col3 ref" href="#23result" title='result' data-ref="23result">result</a>);</td></tr>
+<tr><th id="282">282</th><td>  <dfn class="lbl" id="29Done" data-ref="29Done">Done</dfn>:</td></tr>
+<tr><th id="283">283</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(arglist); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 283, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col4 ref" href="#24arglist" title='arglist' data-ref="24arglist">arglist</a>);</td></tr>
+<tr><th id="284">284</th><td><u>#<span data-ppcond="284">ifdef</span> <a class="macro" href="../../pyconfig.h.html#1396" data-ref="_M/WITH_THREAD">WITH_THREAD</a></u></td></tr>
+<tr><th id="285">285</th><td>    <a class="ref" href="../../Include/pystate.h.html#PyGILState_Release" title='PyGILState_Release' data-ref="PyGILState_Release">PyGILState_Release</a>(<a class="local col8 ref" href="#28state" title='state' data-ref="28state">state</a>);</td></tr>
+<tr><th id="286">286</th><td><u>#<span data-ppcond="284">endif</span></u></td></tr>
+<tr><th id="287">287</th><td>}</td></tr>
+<tr><th id="288">288</th><td></td></tr>
+<tr><th id="289">289</th><td><em>static</em> <em>void</em> <dfn class="tu decl def" id="closure_fcn" title='closure_fcn' data-type='void closure_fcn(ffi_cif * cif, void * resp, void ** args, void * userdata)' data-ref="closure_fcn">closure_fcn</dfn>(<a class="typedef" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_cif" title='ffi_cif' data-type='struct ffi_cif' data-ref="ffi_cif">ffi_cif</a> *<dfn class="local col7 decl" id="37cif" title='cif' data-type='ffi_cif *' data-ref="37cif">cif</dfn>,</td></tr>
+<tr><th id="290">290</th><td>                        <em>void</em> *<dfn class="local col8 decl" id="38resp" title='resp' data-type='void *' data-ref="38resp">resp</dfn>,</td></tr>
+<tr><th id="291">291</th><td>                        <em>void</em> **<dfn class="local col9 decl" id="39args" title='args' data-type='void **' data-ref="39args">args</dfn>,</td></tr>
+<tr><th id="292">292</th><td>                        <em>void</em> *<dfn class="local col0 decl" id="40userdata" title='userdata' data-type='void *' data-ref="40userdata">userdata</dfn>)</td></tr>
+<tr><th id="293">293</th><td>{</td></tr>
+<tr><th id="294">294</th><td>    <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="local col1 decl" id="41p" title='p' data-type='CThunkObject *' data-ref="41p">p</dfn> = (<a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *)<a class="local col0 ref" href="#40userdata" title='userdata' data-ref="40userdata">userdata</a>;</td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td>    <a class="tu ref" href="#_CallPythonObject" title='_CallPythonObject' data-use='c' data-ref="_CallPythonObject">_CallPythonObject</a>(<a class="local col8 ref" href="#38resp" title='resp' data-ref="38resp">resp</a>,</td></tr>
+<tr><th id="297">297</th><td>                      <a class="local col1 ref" href="#41p" title='p' data-ref="41p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::ffi_restype" title='(anonymous struct)::ffi_restype' data-ref="(anonymous)::ffi_restype">ffi_restype</a>,</td></tr>
+<tr><th id="298">298</th><td>                      <a class="local col1 ref" href="#41p" title='p' data-ref="41p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::setfunc" title='(anonymous struct)::setfunc' data-ref="(anonymous)::setfunc">setfunc</a>,</td></tr>
+<tr><th id="299">299</th><td>                      <a class="local col1 ref" href="#41p" title='p' data-ref="41p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::callable" title='(anonymous struct)::callable' data-ref="(anonymous)::callable">callable</a>,</td></tr>
+<tr><th id="300">300</th><td>                      <a class="local col1 ref" href="#41p" title='p' data-ref="41p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::converters" title='(anonymous struct)::converters' data-ref="(anonymous)::converters">converters</a>,</td></tr>
+<tr><th id="301">301</th><td>                      <a class="local col1 ref" href="#41p" title='p' data-ref="41p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::flags" title='(anonymous struct)::flags' data-ref="(anonymous)::flags">flags</a>,</td></tr>
+<tr><th id="302">302</th><td>                      <a class="local col9 ref" href="#39args" title='args' data-ref="39args">args</a>);</td></tr>
+<tr><th id="303">303</th><td>}</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td><em>static</em> <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a>* <dfn class="tu decl def" id="CThunkObject_new" title='CThunkObject_new' data-type='CThunkObject * CThunkObject_new(Py_ssize_t nArgs)' data-ref="CThunkObject_new">CThunkObject_new</dfn>(<a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="42nArgs" title='nArgs' data-type='Py_ssize_t' data-ref="42nArgs">nArgs</dfn>)</td></tr>
+<tr><th id="306">306</th><td>{</td></tr>
+<tr><th id="307">307</th><td>    <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="local col3 decl" id="43p" title='p' data-type='CThunkObject *' data-ref="43p">p</dfn>;</td></tr>
+<tr><th id="308">308</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="44i" title='i' data-type='Py_ssize_t' data-ref="44i">i</dfn>;</td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a> = <a class="macro" href="../../Include/objimpl.h.html#342" title="( (CThunkObject *) _PyObject_GC_NewVar((&amp;PyCThunk_Type), (nArgs)) )" data-ref="_M/PyObject_GC_NewVar">PyObject_GC_NewVar</a>(<a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a>, &amp;<a class="ref" href="ctypes.h.html#PyCThunk_Type" title='PyCThunk_Type' data-ref="PyCThunk_Type">PyCThunk_Type</a>, <a class="local col2 ref" href="#42nArgs" title='nArgs' data-ref="42nArgs">nArgs</a>);</td></tr>
+<tr><th id="311">311</th><td>    <b>if</b> (<a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="312">312</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="313">313</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="314">314</th><td>    }</td></tr>
+<tr><th id="315">315</th><td></td></tr>
+<tr><th id="316">316</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_write" title='(anonymous struct)::pcl_write' data-ref="(anonymous)::pcl_write">pcl_write</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="317">317</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_exec" title='(anonymous struct)::pcl_exec' data-ref="(anonymous)::pcl_exec">pcl_exec</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="318">318</th><td>    <a class="ref" href="../../../include/string.h.html#memset" title='memset' data-ref="memset">memset</a>(&amp;<a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::cif" title='(anonymous struct)::cif' data-ref="(anonymous)::cif">cif</a>, <var>0</var>, <b>sizeof</b>(<a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::cif" title='(anonymous struct)::cif' data-ref="(anonymous)::cif">cif</a>));</td></tr>
+<tr><th id="319">319</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::flags" title='(anonymous struct)::flags' data-ref="(anonymous)::flags">flags</a> = <var>0</var>;</td></tr>
+<tr><th id="320">320</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::converters" title='(anonymous struct)::converters' data-ref="(anonymous)::converters">converters</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="321">321</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::callable" title='(anonymous struct)::callable' data-ref="(anonymous)::callable">callable</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="322">322</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::restype" title='(anonymous struct)::restype' data-ref="(anonymous)::restype">restype</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="323">323</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::setfunc" title='(anonymous struct)::setfunc' data-ref="(anonymous)::setfunc">setfunc</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="324">324</th><td>    <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::ffi_restype" title='(anonymous struct)::ffi_restype' data-ref="(anonymous)::ffi_restype">ffi_restype</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="325">325</th><td></td></tr>
+<tr><th id="326">326</th><td>    <b>for</b> (<a class="local col4 ref" href="#44i" title='i' data-ref="44i">i</a> = <var>0</var>; <a class="local col4 ref" href="#44i" title='i' data-ref="44i">i</a> &lt; <a class="local col2 ref" href="#42nArgs" title='nArgs' data-ref="42nArgs">nArgs</a> + <var>1</var>; ++<a class="local col4 ref" href="#44i" title='i' data-ref="44i">i</a>)</td></tr>
+<tr><th id="327">327</th><td>        <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::atypes" title='(anonymous struct)::atypes' data-ref="(anonymous)::atypes">atypes</a>[<a class="local col4 ref" href="#44i" title='i' data-ref="44i">i</a>] = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="328">328</th><td>    <a class="ref" href="../../Include/objimpl.h.html#PyObject_GC_Track" title='PyObject_GC_Track' data-ref="PyObject_GC_Track">PyObject_GC_Track</a>((<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)<a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>);</td></tr>
+<tr><th id="329">329</th><td>    <b>return</b> <a class="local col3 ref" href="#43p" title='p' data-ref="43p">p</a>;</td></tr>
+<tr><th id="330">330</th><td>}</td></tr>
+<tr><th id="331">331</th><td></td></tr>
+<tr><th id="332">332</th><td><a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="decl def" id="_ctypes_alloc_callback" title='_ctypes_alloc_callback' data-ref="_ctypes_alloc_callback">_ctypes_alloc_callback</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45callable" title='callable' data-type='PyObject *' data-ref="45callable">callable</dfn>,</td></tr>
+<tr><th id="333">333</th><td>                                    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46converters" title='converters' data-type='PyObject *' data-ref="46converters">converters</dfn>,</td></tr>
+<tr><th id="334">334</th><td>                                    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47restype" title='restype' data-type='PyObject *' data-ref="47restype">restype</dfn>,</td></tr>
+<tr><th id="335">335</th><td>                                    <em>int</em> <dfn class="local col8 decl" id="48flags" title='flags' data-type='int' data-ref="48flags">flags</dfn>)</td></tr>
+<tr><th id="336">336</th><td>{</td></tr>
+<tr><th id="337">337</th><td>    <em>int</em> <dfn class="local col9 decl" id="49result" title='result' data-type='int' data-ref="49result">result</dfn>;</td></tr>
+<tr><th id="338">338</th><td>    <a class="typedef" href="ctypes.h.html#CThunkObject" title='CThunkObject' data-type='struct CThunkObject' data-ref="CThunkObject">CThunkObject</a> *<dfn class="local col0 decl" id="50p" title='p' data-type='CThunkObject *' data-ref="50p">p</dfn>;</td></tr>
+<tr><th id="339">339</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="51nArgs" title='nArgs' data-type='Py_ssize_t' data-ref="51nArgs">nArgs</dfn>, <dfn class="local col2 decl" id="52i" title='i' data-type='Py_ssize_t' data-ref="52i">i</dfn>;</td></tr>
+<tr><th id="340">340</th><td>    <a class="typedef" href="../../../include/x86_64-linux-gnu/ffitarget.h.html#ffi_abi" title='ffi_abi' data-type='enum ffi_abi' data-ref="ffi_abi">ffi_abi</a> <dfn class="local col3 decl" id="53cc" title='cc' data-type='ffi_abi' data-ref="53cc">cc</dfn>;</td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td>    <a class="local col1 ref" href="#51nArgs" title='nArgs' data-ref="51nArgs">nArgs</a> = <a class="ref" href="../../Include/abstract.h.html#PySequence_Size" title='PySequence_Size' data-ref="PySequence_Size">PySequence_Size</a>(<a class="local col6 ref" href="#46converters" title='converters' data-ref="46converters">converters</a>);</td></tr>
+<tr><th id="343">343</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a> = <a class="tu ref" href="#CThunkObject_new" title='CThunkObject_new' data-use='c' data-ref="CThunkObject_new">CThunkObject_new</a>(<a class="local col1 ref" href="#51nArgs" title='nArgs' data-ref="51nArgs">nArgs</a>);</td></tr>
+<tr><th id="344">344</th><td>    <b>if</b> (<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="345">345</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="346">346</th><td></td></tr>
+<tr><th id="347">347</th><td>    <a class="macro" href="../../../include/assert.h.html#88" title="(((((PyObject *)p)-&gt;ob_type == &amp;PyCThunk_Type)) ? (void) (0) : __assert_fail (&quot;CThunk_CheckExact((PyObject *)p)&quot;, &quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 347, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="macro" href="ctypes.h.html#71" title="(((PyObject *)p)-&gt;ob_type == &amp;PyCThunk_Type)" data-ref="_M/CThunk_CheckExact">CThunk_CheckExact</a>((<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>));</td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_write" title='(anonymous struct)::pcl_write' data-ref="(anonymous)::pcl_write">pcl_write</a> = <a class="ref" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_closure_alloc" title='ffi_closure_alloc' data-ref="ffi_closure_alloc">ffi_closure_alloc</a>(<b>sizeof</b>(<a class="typedef" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_closure" title='ffi_closure' data-type='struct ffi_closure' data-ref="ffi_closure">ffi_closure</a>),</td></tr>
+<tr><th id="350">350</th><td>									 &amp;<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_exec" title='(anonymous struct)::pcl_exec' data-ref="(anonymous)::pcl_exec">pcl_exec</a>);</td></tr>
+<tr><th id="351">351</th><td>    <b>if</b> (<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_write" title='(anonymous struct)::pcl_write' data-ref="(anonymous)::pcl_write">pcl_write</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="352">352</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="353">353</th><td>        <b>goto</b> <a class="lbl" href="#54error" data-ref="54error">error</a>;</td></tr>
+<tr><th id="354">354</th><td>    }</td></tr>
+<tr><th id="355">355</th><td></td></tr>
+<tr><th id="356">356</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::flags" title='(anonymous struct)::flags' data-ref="(anonymous)::flags">flags</a> = <a class="local col8 ref" href="#48flags" title='flags' data-ref="48flags">flags</a>;</td></tr>
+<tr><th id="357">357</th><td>    <b>for</b> (<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a> = <var>0</var>; <a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a> &lt; <a class="local col1 ref" href="#51nArgs" title='nArgs' data-ref="51nArgs">nArgs</a>; ++<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>) {</td></tr>
+<tr><th id="358">358</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55cnv" title='cnv' data-type='PyObject *' data-ref="55cnv">cnv</dfn> = <a class="ref" href="../../Include/abstract.h.html#PySequence_GetItem" title='PySequence_GetItem' data-ref="PySequence_GetItem">PySequence_GetItem</a>(<a class="local col6 ref" href="#46converters" title='converters' data-ref="46converters">converters</a>, <a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>);</td></tr>
+<tr><th id="359">359</th><td>        <b>if</b> (<a class="local col5 ref" href="#55cnv" title='cnv' data-ref="55cnv">cnv</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="360">360</th><td>            <b>goto</b> <a class="lbl" href="#54error" data-ref="54error">error</a>;</td></tr>
+<tr><th id="361">361</th><td>        <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::atypes" title='(anonymous struct)::atypes' data-ref="(anonymous)::atypes">atypes</a>[<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>] = <a class="ref" href="ctypes.h.html#_ctypes_get_ffi_type" title='_ctypes_get_ffi_type' data-ref="_ctypes_get_ffi_type">_ctypes_get_ffi_type</a>(<a class="local col5 ref" href="#55cnv" title='cnv' data-ref="55cnv">cnv</a>);</td></tr>
+<tr><th id="362">362</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cnv); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 362, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col5 ref" href="#55cnv" title='cnv' data-ref="55cnv">cnv</a>);</td></tr>
+<tr><th id="363">363</th><td>    }</td></tr>
+<tr><th id="364">364</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::atypes" title='(anonymous struct)::atypes' data-ref="(anonymous)::atypes">atypes</a>[<a class="local col2 ref" href="#52i" title='i' data-ref="52i">i</a>] = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td>    <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(restype))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col7 ref" href="#47restype" title='restype' data-ref="47restype">restype</a>);</td></tr>
+<tr><th id="367">367</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::restype" title='(anonymous struct)::restype' data-ref="(anonymous)::restype">restype</a> = <a class="local col7 ref" href="#47restype" title='restype' data-ref="47restype">restype</a>;</td></tr>
+<tr><th id="368">368</th><td>    <b>if</b> (<a class="local col7 ref" href="#47restype" title='restype' data-ref="47restype">restype</a> == <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>) {</td></tr>
+<tr><th id="369">369</th><td>        <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::setfunc" title='(anonymous struct)::setfunc' data-ref="(anonymous)::setfunc">setfunc</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="370">370</th><td>        <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::ffi_restype" title='(anonymous struct)::ffi_restype' data-ref="(anonymous)::ffi_restype">ffi_restype</a> = &amp;<a class="ref" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_type_void" title='ffi_type_void' data-ref="ffi_type_void">ffi_type_void</a>;</td></tr>
+<tr><th id="371">371</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="372">372</th><td>        <a class="typedef" href="ctypes.h.html#StgDictObject" title='StgDictObject' data-type='struct StgDictObject' data-ref="StgDictObject">StgDictObject</a> *<dfn class="local col6 decl" id="56dict" title='dict' data-type='StgDictObject *' data-ref="56dict">dict</dfn> = <a class="ref" href="ctypes.h.html#PyType_stgdict" title='PyType_stgdict' data-ref="PyType_stgdict">PyType_stgdict</a>(<a class="local col7 ref" href="#47restype" title='restype' data-ref="47restype">restype</a>);</td></tr>
+<tr><th id="373">373</th><td>        <b>if</b> (<a class="local col6 ref" href="#56dict" title='dict' data-ref="56dict">dict</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="local col6 ref" href="#56dict" title='dict' data-ref="56dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::setfunc" title='(anonymous struct)::setfunc' data-ref="(anonymous)::setfunc">setfunc</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="374">374</th><td>          <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="375">375</th><td>                          <q>"invalid result type for callback function"</q>);</td></tr>
+<tr><th id="376">376</th><td>          <b>goto</b> <a class="lbl" href="#54error" data-ref="54error">error</a>;</td></tr>
+<tr><th id="377">377</th><td>        }</td></tr>
+<tr><th id="378">378</th><td>        <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::setfunc" title='(anonymous struct)::setfunc' data-ref="(anonymous)::setfunc">setfunc</a> = <a class="local col6 ref" href="#56dict" title='dict' data-ref="56dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::setfunc" title='(anonymous struct)::setfunc' data-ref="(anonymous)::setfunc">setfunc</a>;</td></tr>
+<tr><th id="379">379</th><td>        <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::ffi_restype" title='(anonymous struct)::ffi_restype' data-ref="(anonymous)::ffi_restype">ffi_restype</a> = &amp;<a class="local col6 ref" href="#56dict" title='dict' data-ref="56dict">dict</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::ffi_type_pointer" title='(anonymous struct)::ffi_type_pointer' data-ref="(anonymous)::ffi_type_pointer">ffi_type_pointer</a>;</td></tr>
+<tr><th id="380">380</th><td>    }</td></tr>
+<tr><th id="381">381</th><td></td></tr>
+<tr><th id="382">382</th><td>    <a class="local col3 ref" href="#53cc" title='cc' data-ref="53cc">cc</a> = <a class="enum" href="../../../include/x86_64-linux-gnu/ffitarget.h.html#ffi_abi::FFI_DEFAULT_ABI" title='ffi_abi::FFI_DEFAULT_ABI' data-ref="ffi_abi::FFI_DEFAULT_ABI">FFI_DEFAULT_ABI</a>;</td></tr>
+<tr><th id="383">383</th><td><u>#<span data-ppcond="383">if</span> defined(<span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span>) &amp;&amp; !defined(<span class="macro" data-ref="_M/_WIN32_WCE">_WIN32_WCE</span>) &amp;&amp; !defined(<span class="macro" data-ref="_M/MS_WIN64">MS_WIN64</span>)</u></td></tr>
+<tr><th id="384">384</th><td>    <b>if</b> ((flags &amp; FUNCFLAG_CDECL) == <var>0</var>)</td></tr>
+<tr><th id="385">385</th><td>        cc = FFI_STDCALL;</td></tr>
+<tr><th id="386">386</th><td><u>#<span data-ppcond="383">endif</span></u></td></tr>
+<tr><th id="387">387</th><td>    <a class="local col9 ref" href="#49result" title='result' data-ref="49result">result</a> = <a class="ref" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_prep_cif" title='ffi_prep_cif' data-ref="ffi_prep_cif">ffi_prep_cif</a>(&amp;<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::cif" title='(anonymous struct)::cif' data-ref="(anonymous)::cif">cif</a>, <a class="local col3 ref" href="#53cc" title='cc' data-ref="53cc">cc</a>,</td></tr>
+<tr><th id="388">388</th><td>                          <a class="macro" href="../../Include/pyport.h.html#298" title="((((Py_ssize_t)(int)(nArgs) == (nArgs)) ? (void) (0) : __assert_fail (&quot;(Py_ssize_t)(int)(nArgs) == (nArgs)&quot;, &quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 388, __PRETTY_FUNCTION__)), (int)(nArgs))" data-ref="_M/Py_SAFE_DOWNCAST">Py_SAFE_DOWNCAST</a>(<a class="local col1 ref" href="#51nArgs" title='nArgs' data-ref="51nArgs">nArgs</a>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a>, <em>int</em>),</td></tr>
+<tr><th id="389">389</th><td>                          <a class="ref" href="ctypes.h.html#_ctypes_get_ffi_type" title='_ctypes_get_ffi_type' data-ref="_ctypes_get_ffi_type">_ctypes_get_ffi_type</a>(<a class="local col7 ref" href="#47restype" title='restype' data-ref="47restype">restype</a>),</td></tr>
+<tr><th id="390">390</th><td>                          &amp;<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::atypes" title='(anonymous struct)::atypes' data-ref="(anonymous)::atypes">atypes</a>[<var>0</var>]);</td></tr>
+<tr><th id="391">391</th><td>    <b>if</b> (<a class="local col9 ref" href="#49result" title='result' data-ref="49result">result</a> != <a class="enum" href="../../../include/x86_64-linux-gnu/ffi.h.html#FFI_OK" title='FFI_OK' data-ref="FFI_OK">FFI_OK</a>) {</td></tr>
+<tr><th id="392">392</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_RuntimeError" title='PyExc_RuntimeError' data-ref="PyExc_RuntimeError">PyExc_RuntimeError</a>,</td></tr>
+<tr><th id="393">393</th><td>                     <q>"ffi_prep_cif failed with %d"</q>, <a class="local col9 ref" href="#49result" title='result' data-ref="49result">result</a>);</td></tr>
+<tr><th id="394">394</th><td>        <b>goto</b> <a class="lbl" href="#54error" data-ref="54error">error</a>;</td></tr>
+<tr><th id="395">395</th><td>    }</td></tr>
+<tr><th id="396">396</th><td><u>#<span data-ppcond="396">if</span> defined(<span class="macro" data-ref="_M/X86_DARWIN">X86_DARWIN</span>) || defined(<span class="macro" data-ref="_M/POWERPC_DARWIN">POWERPC_DARWIN</span>)</u></td></tr>
+<tr><th id="397">397</th><td>    result = ffi_prep_closure(p-&gt;pcl_write, &amp;p-&gt;cif, closure_fcn, p);</td></tr>
+<tr><th id="398">398</th><td><u>#<span data-ppcond="396">else</span></u></td></tr>
+<tr><th id="399">399</th><td>    <a class="local col9 ref" href="#49result" title='result' data-ref="49result">result</a> = <a class="ref" href="../../../include/x86_64-linux-gnu/ffi.h.html#ffi_prep_closure_loc" title='ffi_prep_closure_loc' data-ref="ffi_prep_closure_loc">ffi_prep_closure_loc</a>(<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_write" title='(anonymous struct)::pcl_write' data-ref="(anonymous)::pcl_write">pcl_write</a>, &amp;<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::cif" title='(anonymous struct)::cif' data-ref="(anonymous)::cif">cif</a>, <a class="tu ref" href="#closure_fcn" title='closure_fcn' data-use='r' data-ref="closure_fcn">closure_fcn</a>,</td></tr>
+<tr><th id="400">400</th><td>				  <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>,</td></tr>
+<tr><th id="401">401</th><td>				  <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::pcl_exec" title='(anonymous struct)::pcl_exec' data-ref="(anonymous)::pcl_exec">pcl_exec</a>);</td></tr>
+<tr><th id="402">402</th><td><u>#<span data-ppcond="396">endif</span></u></td></tr>
+<tr><th id="403">403</th><td>    <b>if</b> (<a class="local col9 ref" href="#49result" title='result' data-ref="49result">result</a> != <a class="enum" href="../../../include/x86_64-linux-gnu/ffi.h.html#FFI_OK" title='FFI_OK' data-ref="FFI_OK">FFI_OK</a>) {</td></tr>
+<tr><th id="404">404</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_RuntimeError" title='PyExc_RuntimeError' data-ref="PyExc_RuntimeError">PyExc_RuntimeError</a>,</td></tr>
+<tr><th id="405">405</th><td>                     <q>"ffi_prep_closure failed with %d"</q>, <a class="local col9 ref" href="#49result" title='result' data-ref="49result">result</a>);</td></tr>
+<tr><th id="406">406</th><td>        <b>goto</b> <a class="lbl" href="#54error" data-ref="54error">error</a>;</td></tr>
+<tr><th id="407">407</th><td>    }</td></tr>
+<tr><th id="408">408</th><td></td></tr>
+<tr><th id="409">409</th><td>    <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(converters))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col6 ref" href="#46converters" title='converters' data-ref="46converters">converters</a>);</td></tr>
+<tr><th id="410">410</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::converters" title='(anonymous struct)::converters' data-ref="(anonymous)::converters">converters</a> = <a class="local col6 ref" href="#46converters" title='converters' data-ref="46converters">converters</a>;</td></tr>
+<tr><th id="411">411</th><td>    <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(callable))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col5 ref" href="#45callable" title='callable' data-ref="45callable">callable</a>);</td></tr>
+<tr><th id="412">412</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-&gt;<a class="ref" href="ctypes.h.html#(anonymous)::callable" title='(anonymous struct)::callable' data-ref="(anonymous)::callable">callable</a> = <a class="local col5 ref" href="#45callable" title='callable' data-ref="45callable">callable</a>;</td></tr>
+<tr><th id="413">413</th><td>    <b>return</b> <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>;</td></tr>
+<tr><th id="414">414</th><td></td></tr>
+<tr><th id="415">415</th><td>  <dfn class="lbl" id="54error" data-ref="54error">error</dfn>:</td></tr>
+<tr><th id="416">416</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(p); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_ctypes/callbacks.c&quot;, 416, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>);</td></tr>
+<tr><th id="417">417</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="418">418</th><td>}</td></tr>
+<tr><th id="419">419</th><td></td></tr>
+<tr><th id="420">420</th><td><u>#<span data-ppcond="420">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="421">421</th><td></td></tr>
+<tr><th id="422">422</th><td><em>static</em> <em>void</em> LoadPython(<em>void</em>)</td></tr>
+<tr><th id="423">423</th><td>{</td></tr>
+<tr><th id="424">424</th><td>    <b>if</b> (!Py_IsInitialized()) {</td></tr>
+<tr><th id="425">425</th><td><u>#ifdef WITH_THREAD</u></td></tr>
+<tr><th id="426">426</th><td>        PyEval_InitThreads();</td></tr>
+<tr><th id="427">427</th><td><u>#endif</u></td></tr>
+<tr><th id="428">428</th><td>        Py_Initialize();</td></tr>
+<tr><th id="429">429</th><td>    }</td></tr>
+<tr><th id="430">430</th><td>}</td></tr>
+<tr><th id="431">431</th><td></td></tr>
+<tr><th id="432">432</th><td><i>/******************************************************************/</i></td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td><em>long</em> Call_GetClassObject(REFCLSID rclsid, REFIID riid, LPVOID *ppv)</td></tr>
+<tr><th id="435">435</th><td>{</td></tr>
+<tr><th id="436">436</th><td>    PyObject *mod, *func, *result;</td></tr>
+<tr><th id="437">437</th><td>    <em>long</em> retval;</td></tr>
+<tr><th id="438">438</th><td>    <em>static</em> PyObject *context;</td></tr>
+<tr><th id="439">439</th><td></td></tr>
+<tr><th id="440">440</th><td>    <b>if</b> (context == NULL)</td></tr>
+<tr><th id="441">441</th><td>        context = PyUnicode_InternFromString(<q>"_ctypes.DllGetClassObject"</q>);</td></tr>
+<tr><th id="442">442</th><td></td></tr>
+<tr><th id="443">443</th><td>    mod = PyImport_ImportModuleNoBlock(<q>"ctypes"</q>);</td></tr>
+<tr><th id="444">444</th><td>    <b>if</b> (!mod) {</td></tr>
+<tr><th id="445">445</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="446">446</th><td>        <i>/* There has been a warning before about this already */</i></td></tr>
+<tr><th id="447">447</th><td>        <b>return</b> E_FAIL;</td></tr>
+<tr><th id="448">448</th><td>    }</td></tr>
+<tr><th id="449">449</th><td></td></tr>
+<tr><th id="450">450</th><td>    func = PyObject_GetAttrString(mod, <q>"DllGetClassObject"</q>);</td></tr>
+<tr><th id="451">451</th><td>    Py_DECREF(mod);</td></tr>
+<tr><th id="452">452</th><td>    <b>if</b> (!func) {</td></tr>
+<tr><th id="453">453</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="454">454</th><td>        <b>return</b> E_FAIL;</td></tr>
+<tr><th id="455">455</th><td>    }</td></tr>
+<tr><th id="456">456</th><td></td></tr>
+<tr><th id="457">457</th><td>    {</td></tr>
+<tr><th id="458">458</th><td>        PyObject *py_rclsid = PyLong_FromVoidPtr((<em>void</em> *)rclsid);</td></tr>
+<tr><th id="459">459</th><td>        PyObject *py_riid = PyLong_FromVoidPtr((<em>void</em> *)riid);</td></tr>
+<tr><th id="460">460</th><td>        PyObject *py_ppv = PyLong_FromVoidPtr(ppv);</td></tr>
+<tr><th id="461">461</th><td>        <b>if</b> (!py_rclsid || !py_riid || !py_ppv) {</td></tr>
+<tr><th id="462">462</th><td>            Py_XDECREF(py_rclsid);</td></tr>
+<tr><th id="463">463</th><td>            Py_XDECREF(py_riid);</td></tr>
+<tr><th id="464">464</th><td>            Py_XDECREF(py_ppv);</td></tr>
+<tr><th id="465">465</th><td>            Py_DECREF(func);</td></tr>
+<tr><th id="466">466</th><td>            PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="467">467</th><td>            <b>return</b> E_FAIL;</td></tr>
+<tr><th id="468">468</th><td>        }</td></tr>
+<tr><th id="469">469</th><td>        result = PyObject_CallFunctionObjArgs(func,</td></tr>
+<tr><th id="470">470</th><td>                                              py_rclsid,</td></tr>
+<tr><th id="471">471</th><td>                                              py_riid,</td></tr>
+<tr><th id="472">472</th><td>                                              py_ppv,</td></tr>
+<tr><th id="473">473</th><td>                                              NULL);</td></tr>
+<tr><th id="474">474</th><td>        Py_DECREF(py_rclsid);</td></tr>
+<tr><th id="475">475</th><td>        Py_DECREF(py_riid);</td></tr>
+<tr><th id="476">476</th><td>        Py_DECREF(py_ppv);</td></tr>
+<tr><th id="477">477</th><td>    }</td></tr>
+<tr><th id="478">478</th><td>    Py_DECREF(func);</td></tr>
+<tr><th id="479">479</th><td>    <b>if</b> (!result) {</td></tr>
+<tr><th id="480">480</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="481">481</th><td>        <b>return</b> E_FAIL;</td></tr>
+<tr><th id="482">482</th><td>    }</td></tr>
+<tr><th id="483">483</th><td></td></tr>
+<tr><th id="484">484</th><td>    retval = PyLong_AsLong(result);</td></tr>
+<tr><th id="485">485</th><td>    <b>if</b> (PyErr_Occurred()) {</td></tr>
+<tr><th id="486">486</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="487">487</th><td>        retval = E_FAIL;</td></tr>
+<tr><th id="488">488</th><td>    }</td></tr>
+<tr><th id="489">489</th><td>    Py_DECREF(result);</td></tr>
+<tr><th id="490">490</th><td>    <b>return</b> retval;</td></tr>
+<tr><th id="491">491</th><td>}</td></tr>
+<tr><th id="492">492</th><td></td></tr>
+<tr><th id="493">493</th><td>STDAPI DllGetClassObject(REFCLSID rclsid,</td></tr>
+<tr><th id="494">494</th><td>                         REFIID riid,</td></tr>
+<tr><th id="495">495</th><td>                         LPVOID *ppv)</td></tr>
+<tr><th id="496">496</th><td>{</td></tr>
+<tr><th id="497">497</th><td>    <em>long</em> result;</td></tr>
+<tr><th id="498">498</th><td><u>#ifdef WITH_THREAD</u></td></tr>
+<tr><th id="499">499</th><td>    PyGILState_STATE state;</td></tr>
+<tr><th id="500">500</th><td><u>#endif</u></td></tr>
+<tr><th id="501">501</th><td></td></tr>
+<tr><th id="502">502</th><td>    LoadPython();</td></tr>
+<tr><th id="503">503</th><td><u>#ifdef WITH_THREAD</u></td></tr>
+<tr><th id="504">504</th><td>    state = PyGILState_Ensure();</td></tr>
+<tr><th id="505">505</th><td><u>#endif</u></td></tr>
+<tr><th id="506">506</th><td>    result = Call_GetClassObject(rclsid, riid, ppv);</td></tr>
+<tr><th id="507">507</th><td><u>#ifdef WITH_THREAD</u></td></tr>
+<tr><th id="508">508</th><td>    PyGILState_Release(state);</td></tr>
+<tr><th id="509">509</th><td><u>#endif</u></td></tr>
+<tr><th id="510">510</th><td>    <b>return</b> result;</td></tr>
+<tr><th id="511">511</th><td>}</td></tr>
+<tr><th id="512">512</th><td></td></tr>
+<tr><th id="513">513</th><td><em>long</em> Call_CanUnloadNow(<em>void</em>)</td></tr>
+<tr><th id="514">514</th><td>{</td></tr>
+<tr><th id="515">515</th><td>    PyObject *mod, *func, *result;</td></tr>
+<tr><th id="516">516</th><td>    <em>long</em> retval;</td></tr>
+<tr><th id="517">517</th><td>    <em>static</em> PyObject *context;</td></tr>
+<tr><th id="518">518</th><td></td></tr>
+<tr><th id="519">519</th><td>    <b>if</b> (context == NULL)</td></tr>
+<tr><th id="520">520</th><td>        context = PyUnicode_InternFromString(<q>"_ctypes.DllCanUnloadNow"</q>);</td></tr>
+<tr><th id="521">521</th><td></td></tr>
+<tr><th id="522">522</th><td>    mod = PyImport_ImportModuleNoBlock(<q>"ctypes"</q>);</td></tr>
+<tr><th id="523">523</th><td>    <b>if</b> (!mod) {</td></tr>
+<tr><th id="524">524</th><td><i>/*              OutputDebugString("Could not import ctypes"); */</i></td></tr>
+<tr><th id="525">525</th><td>        <i>/* We assume that this error can only occur when shutting</i></td></tr>
+<tr><th id="526">526</th><td><i>           down, so we silently ignore it */</i></td></tr>
+<tr><th id="527">527</th><td>        PyErr_Clear();</td></tr>
+<tr><th id="528">528</th><td>        <b>return</b> E_FAIL;</td></tr>
+<tr><th id="529">529</th><td>    }</td></tr>
+<tr><th id="530">530</th><td>    <i>/* Other errors cannot be raised, but are printed to stderr */</i></td></tr>
+<tr><th id="531">531</th><td>    func = PyObject_GetAttrString(mod, <q>"DllCanUnloadNow"</q>);</td></tr>
+<tr><th id="532">532</th><td>    Py_DECREF(mod);</td></tr>
+<tr><th id="533">533</th><td>    <b>if</b> (!func) {</td></tr>
+<tr><th id="534">534</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="535">535</th><td>        <b>return</b> E_FAIL;</td></tr>
+<tr><th id="536">536</th><td>    }</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td>    result = _PyObject_CallNoArg(func);</td></tr>
+<tr><th id="539">539</th><td>    Py_DECREF(func);</td></tr>
+<tr><th id="540">540</th><td>    <b>if</b> (!result) {</td></tr>
+<tr><th id="541">541</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="542">542</th><td>        <b>return</b> E_FAIL;</td></tr>
+<tr><th id="543">543</th><td>    }</td></tr>
+<tr><th id="544">544</th><td></td></tr>
+<tr><th id="545">545</th><td>    retval = PyLong_AsLong(result);</td></tr>
+<tr><th id="546">546</th><td>    <b>if</b> (PyErr_Occurred()) {</td></tr>
+<tr><th id="547">547</th><td>        PyErr_WriteUnraisable(context ? context : Py_None);</td></tr>
+<tr><th id="548">548</th><td>        retval = E_FAIL;</td></tr>
+<tr><th id="549">549</th><td>    }</td></tr>
+<tr><th id="550">550</th><td>    Py_DECREF(result);</td></tr>
+<tr><th id="551">551</th><td>    <b>return</b> retval;</td></tr>
+<tr><th id="552">552</th><td>}</td></tr>
+<tr><th id="553">553</th><td></td></tr>
+<tr><th id="554">554</th><td><i>/*</i></td></tr>
+<tr><th id="555">555</th><td><i>  DllRegisterServer and DllUnregisterServer still missing</i></td></tr>
+<tr><th id="556">556</th><td><i>*/</i></td></tr>
+<tr><th id="557">557</th><td></td></tr>
+<tr><th id="558">558</th><td>STDAPI DllCanUnloadNow(<em>void</em>)</td></tr>
+<tr><th id="559">559</th><td>{</td></tr>
+<tr><th id="560">560</th><td>    <em>long</em> result;</td></tr>
+<tr><th id="561">561</th><td><u>#ifdef WITH_THREAD</u></td></tr>
+<tr><th id="562">562</th><td>    PyGILState_STATE state = PyGILState_Ensure();</td></tr>
+<tr><th id="563">563</th><td><u>#endif</u></td></tr>
+<tr><th id="564">564</th><td>    result = Call_CanUnloadNow();</td></tr>
+<tr><th id="565">565</th><td><u>#ifdef WITH_THREAD</u></td></tr>
+<tr><th id="566">566</th><td>    PyGILState_Release(state);</td></tr>
+<tr><th id="567">567</th><td><u>#endif</u></td></tr>
+<tr><th id="568">568</th><td>    <b>return</b> result;</td></tr>
+<tr><th id="569">569</th><td>}</td></tr>
+<tr><th id="570">570</th><td></td></tr>
+<tr><th id="571">571</th><td><u>#ifndef Py_NO_ENABLE_SHARED</u></td></tr>
+<tr><th id="572">572</th><td>BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvRes)</td></tr>
+<tr><th id="573">573</th><td>{</td></tr>
+<tr><th id="574">574</th><td>    <b>switch</b>(fdwReason) {</td></tr>
+<tr><th id="575">575</th><td>    <b>case</b> DLL_PROCESS_ATTACH:</td></tr>
+<tr><th id="576">576</th><td>        DisableThreadLibraryCalls(hinstDLL);</td></tr>
+<tr><th id="577">577</th><td>        <b>break</b>;</td></tr>
+<tr><th id="578">578</th><td>    }</td></tr>
+<tr><th id="579">579</th><td>    <b>return</b> TRUE;</td></tr>
+<tr><th id="580">580</th><td>}</td></tr>
+<tr><th id="581">581</th><td><u>#endif</u></td></tr>
+<tr><th id="582">582</th><td></td></tr>
+<tr><th id="583">583</th><td><u>#<span data-ppcond="420">endif</span></u></td></tr>
+<tr><th id="584">584</th><td></td></tr>
+<tr><th id="585">585</th><td><i>/*</i></td></tr>
+<tr><th id="586">586</th><td><i> Local Variables:</i></td></tr>
+<tr><th id="587">587</th><td><i> compile-command: "cd .. &amp;&amp; python setup.py -q build_ext"</i></td></tr>
+<tr><th id="588">588</th><td><i> End:</i></td></tr>
+<tr><th id="589">589</th><td><i>*/</i></td></tr>
+<tr><th id="590">590</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

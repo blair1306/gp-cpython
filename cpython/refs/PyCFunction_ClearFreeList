@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/methodobject.h' l='116' type='int PyCFunction_ClearFreeList()'/>
+<use f='codebrowser/Modules/gcmodule.c' l='896' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/methodobject.c' l='306' ll='319' type='int PyCFunction_ClearFreeList()'/>
+<use f='codebrowser/Objects/methodobject.c' l='324' u='c' c='PyCFunction_Fini'/>
+<doc f='codebrowser/Objects/methodobject.c' l='304'>/* Clear out the free list */</doc>

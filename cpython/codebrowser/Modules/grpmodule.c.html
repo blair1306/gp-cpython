@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>grpmodule.c source code [codebrowser/Modules/grpmodule.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/grpmodule.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='grpmodule.c.html'>grpmodule.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* UNIX group file access module */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="posixmodule.h.html">"posixmodule.h"</a></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#include <a href="../../include/grp.h.html">&lt;grp.h&gt;</a></u></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><u>#include <a href="clinic/grpmodule.c.h.html">"clinic/grpmodule.c.h"</a></u></td></tr>
+<tr><th id="10">10</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="11">11</th><td><i>module grp</i></td></tr>
+<tr><th id="12">12</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="struct_group_type_fields">/*[clinic end generated code: output=da39a3ee5e6b4b0d input=cade63f2ed1bd9f8]*/</i></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><em>static</em> <a class="typedef" href="../Include/structseq.h.html#PyStructSequence_Field" title='PyStructSequence_Field' data-type='struct PyStructSequence_Field' data-ref="PyStructSequence_Field">PyStructSequence_Field</a> <dfn class="tu decl def" id="struct_group_type_fields" title='struct_group_type_fields' data-type='PyStructSequence_Field [5]' data-ref="struct_group_type_fields">struct_group_type_fields</dfn>[] = {</td></tr>
+<tr><th id="16">16</th><td>   {<q>"gr_name"</q>, <q>"group name"</q>},</td></tr>
+<tr><th id="17">17</th><td>   {<q>"gr_passwd"</q>, <q>"password"</q>},</td></tr>
+<tr><th id="18">18</th><td>   {<q>"gr_gid"</q>, <q>"group id"</q>},</td></tr>
+<tr><th id="19">19</th><td>   {<q>"gr_mem"</q>, <q>"group members"</q>},</td></tr>
+<tr><th id="20">20</th><td>   {<var>0</var>}</td></tr>
+<tr><th id="21">21</th><td>};</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char struct_group__doc__[] = &quot;grp.struct_group: Results from getgr*() routines.\n\nThis object may be accessed either as a tuple of\n  (gr_name,gr_passwd,gr_gid,gr_mem)\nor via the object attributes as named in the above tuple.\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="struct_group__doc__" title='struct_group__doc__' data-ref="struct_group__doc__">struct_group__doc__</dfn>,</td></tr>
+<tr><th id="24">24</th><td><q>"grp.struct_group: Results from getgr*() routines.\n\n\</q></td></tr>
+<tr><th id="25">25</th><td><q>This object may be accessed either as a tuple of\n\</q></td></tr>
+<tr><th id="26">26</th><td><q>  (gr_name,gr_passwd,gr_gid,gr_mem)\n\</q></td></tr>
+<tr><th id="27">27</th><td><q>or via the object attributes as named in the above tuple.\n"</q>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><em>static</em> <a class="typedef" href="../Include/structseq.h.html#PyStructSequence_Desc" title='PyStructSequence_Desc' data-type='struct PyStructSequence_Desc' data-ref="PyStructSequence_Desc">PyStructSequence_Desc</a> <dfn class="tu decl def" id="struct_group_type_desc" title='struct_group_type_desc' data-type='PyStructSequence_Desc' data-ref="struct_group_type_desc">struct_group_type_desc</dfn> = {</td></tr>
+<tr><th id="30">30</th><td>   <q>"grp.struct_group"</q>,</td></tr>
+<tr><th id="31">31</th><td>   <a class="ref" href="#23" title='struct_group__doc__' data-ref="struct_group__doc__">struct_group__doc__</a>,</td></tr>
+<tr><th id="32">32</th><td>   <a class="tu ref" href="#struct_group_type_fields" title='struct_group_type_fields' data-ref="struct_group_type_fields">struct_group_type_fields</a>,</td></tr>
+<tr><th id="33">33</th><td>   <var>4</var>,</td></tr>
+<tr><th id="34">34</th><td>};</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><em>static</em> <em>int</em> <dfn class="tu decl def" id="initialized" title='initialized' data-type='int' data-ref="initialized">initialized</dfn>;</td></tr>
+<tr><th id="38">38</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="tu decl def" id="StructGrpType" title='StructGrpType' data-type='PyTypeObject' data-ref="StructGrpType">StructGrpType</dfn>;</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="41">41</th><td><dfn class="tu decl def" id="mkgrent" title='mkgrent' data-type='PyObject * mkgrent(struct group * p)' data-ref="mkgrent">mkgrent</dfn>(<b>struct</b> <a class="type" href="../../include/grp.h.html#group" title='group' data-ref="group">group</a> *<dfn class="local col7 decl" id="57p" title='p' data-type='struct group *' data-ref="57p">p</dfn>)</td></tr>
+<tr><th id="42">42</th><td>{</td></tr>
+<tr><th id="43">43</th><td>    <em>int</em> <dfn class="local col8 decl" id="58setIndex" title='setIndex' data-type='int' data-ref="58setIndex">setIndex</dfn> = <var>0</var>;</td></tr>
+<tr><th id="44">44</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="59v" title='v' data-type='PyObject *' data-ref="59v">v</dfn> = <a class="ref" href="../Include/structseq.h.html#PyStructSequence_New" title='PyStructSequence_New' data-ref="PyStructSequence_New">PyStructSequence_New</a>(&amp;<a class="tu ref" href="#StructGrpType" title='StructGrpType' data-use='a' data-ref="StructGrpType">StructGrpType</a>), *<dfn class="local col0 decl" id="60w" title='w' data-type='PyObject *' data-ref="60w">w</dfn>;</td></tr>
+<tr><th id="45">45</th><td>    <em>char</em> **<dfn class="local col1 decl" id="61member" title='member' data-type='char **' data-ref="61member">member</dfn>;</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td>    <b>if</b> (<a class="local col9 ref" href="#59v" title='v' data-ref="59v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="48">48</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>    <b>if</b> ((<a class="local col0 ref" href="#60w" title='w' data-ref="60w">w</a> = <a class="ref" href="../Include/listobject.h.html#PyList_New" title='PyList_New' data-ref="PyList_New">PyList_New</a>(<var>0</var>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="51">51</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 51, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col9 ref" href="#59v" title='v' data-ref="59v">v</a>);</td></tr>
+<tr><th id="52">52</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="53">53</th><td>    }</td></tr>
+<tr><th id="54">54</th><td>    <b>for</b> (<a class="local col1 ref" href="#61member" title='member' data-ref="61member">member</a> = <a class="local col7 ref" href="#57p" title='p' data-ref="57p">p</a>-&gt;<a class="ref" href="../../include/grp.h.html#group::gr_mem" title='group::gr_mem' data-ref="group::gr_mem">gr_mem</a>; *<a class="local col1 ref" href="#61member" title='member' data-ref="61member">member</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>; <a class="local col1 ref" href="#61member" title='member' data-ref="61member">member</a>++) {</td></tr>
+<tr><th id="55">55</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62x" title='x' data-type='PyObject *' data-ref="62x">x</dfn> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_DecodeFSDefault" title='PyUnicode_DecodeFSDefault' data-ref="PyUnicode_DecodeFSDefault">PyUnicode_DecodeFSDefault</a>(*<a class="local col1 ref" href="#61member" title='member' data-ref="61member">member</a>);</td></tr>
+<tr><th id="56">56</th><td>        <b>if</b> (<a class="local col2 ref" href="#62x" title='x' data-ref="62x">x</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="ref" href="../Include/listobject.h.html#PyList_Append" title='PyList_Append' data-ref="PyList_Append">PyList_Append</a>(<a class="local col0 ref" href="#60w" title='w' data-ref="60w">w</a>, <a class="local col2 ref" href="#62x" title='x' data-ref="62x">x</a>) != <var>0</var>) {</td></tr>
+<tr><th id="57">57</th><td>            <a class="macro" href="../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(x); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 57, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col2 ref" href="#62x" title='x' data-ref="62x">x</a>);</td></tr>
+<tr><th id="58">58</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(w); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 58, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#60w" title='w' data-ref="60w">w</a>);</td></tr>
+<tr><th id="59">59</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 59, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col9 ref" href="#59v" title='v' data-ref="59v">v</a>);</td></tr>
+<tr><th id="60">60</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="61">61</th><td>        }</td></tr>
+<tr><th id="62">62</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(x); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 62, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col2 ref" href="#62x" title='x' data-ref="62x">x</a>);</td></tr>
+<tr><th id="63">63</th><td>    }</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/SET" data-ref="_M/SET">SET</dfn>(i,val) PyStructSequence_SET_ITEM(<a class="local col9 ref" href="#59v" title='v' data-ref="59v">v</a>, i, val)</u></td></tr>
+<tr><th id="66">66</th><td>    <a class="macro" href="#65" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyUnicode_DecodeFSDefault(p-&gt;gr_name))" data-ref="_M/SET">SET</a>(<a class="local col8 ref" href="#58setIndex" title='setIndex' data-ref="58setIndex">setIndex</a>++, <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_DecodeFSDefault" title='PyUnicode_DecodeFSDefault' data-ref="PyUnicode_DecodeFSDefault">PyUnicode_DecodeFSDefault</a>(<a class="local col7 ref" href="#57p" title='p' data-ref="57p">p</a>-&gt;<a class="ref" href="../../include/grp.h.html#group::gr_name" title='group::gr_name' data-ref="group::gr_name">gr_name</a>));</td></tr>
+<tr><th id="67">67</th><td>    <b>if</b> (<a class="local col7 ref" href="#57p" title='p' data-ref="57p">p</a>-&gt;<a class="ref" href="../../include/grp.h.html#group::gr_passwd" title='group::gr_passwd' data-ref="group::gr_passwd">gr_passwd</a>)</td></tr>
+<tr><th id="68">68</th><td>            <a class="macro" href="#65" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyUnicode_DecodeFSDefault(p-&gt;gr_passwd))" data-ref="_M/SET">SET</a>(<a class="local col8 ref" href="#58setIndex" title='setIndex' data-ref="58setIndex">setIndex</a>++, <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_DecodeFSDefault" title='PyUnicode_DecodeFSDefault' data-ref="PyUnicode_DecodeFSDefault">PyUnicode_DecodeFSDefault</a>(<a class="local col7 ref" href="#57p" title='p' data-ref="57p">p</a>-&gt;<a class="ref" href="../../include/grp.h.html#group::gr_passwd" title='group::gr_passwd' data-ref="group::gr_passwd">gr_passwd</a>));</td></tr>
+<tr><th id="69">69</th><td>    <b>else</b> {</td></tr>
+<tr><th id="70">70</th><td>            <a class="macro" href="#65" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = (&amp;_Py_NoneStruct))" data-ref="_M/SET">SET</a>(<a class="local col8 ref" href="#58setIndex" title='setIndex' data-ref="58setIndex">setIndex</a>++, <a class="macro" href="../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>);</td></tr>
+<tr><th id="71">71</th><td>            <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="macro" href="../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>);</td></tr>
+<tr><th id="72">72</th><td>    }</td></tr>
+<tr><th id="73">73</th><td>    <a class="macro" href="#65" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = _PyLong_FromGid(p-&gt;gr_gid))" data-ref="_M/SET">SET</a>(<a class="local col8 ref" href="#58setIndex" title='setIndex' data-ref="58setIndex">setIndex</a>++, <a class="ref" href="posixmodule.h.html#_PyLong_FromGid" title='_PyLong_FromGid' data-ref="_PyLong_FromGid">_PyLong_FromGid</a>(<a class="local col7 ref" href="#57p" title='p' data-ref="57p">p</a>-&gt;<a class="ref" href="../../include/grp.h.html#group::gr_gid" title='group::gr_gid' data-ref="group::gr_gid">gr_gid</a>));</td></tr>
+<tr><th id="74">74</th><td>    <a class="macro" href="#65" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = w)" data-ref="_M/SET">SET</a>(<a class="local col8 ref" href="#58setIndex" title='setIndex' data-ref="58setIndex">setIndex</a>++, <a class="local col0 ref" href="#60w" title='w' data-ref="60w">w</a>);</td></tr>
+<tr><th id="75">75</th><td><u>#undef <a class="macro" href="#65" data-ref="_M/SET">SET</a></u></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td>    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="78">78</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 78, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col9 ref" href="#59v" title='v' data-ref="59v">v</a>);</td></tr>
+<tr><th id="79">79</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="80">80</th><td>    }</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>    <b>return</b> <a class="local col9 ref" href="#59v" title='v' data-ref="59v">v</a>;</td></tr>
+<tr><th id="83">83</th><td>}</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i  data-doc="grp_getgrgid_impl">/*[clinic input]</i></td></tr>
+<tr><th id="86">86</th><td><i  data-doc="grp_getgrgid_impl">grp.getgrgid</i></td></tr>
+<tr><th id="87">87</th><td><i  data-doc="grp_getgrgid_impl"></i></td></tr>
+<tr><th id="88">88</th><td><i  data-doc="grp_getgrgid_impl">    id: object</i></td></tr>
+<tr><th id="89">89</th><td><i  data-doc="grp_getgrgid_impl"></i></td></tr>
+<tr><th id="90">90</th><td><i  data-doc="grp_getgrgid_impl">Return the group database entry for the given numeric group ID.</i></td></tr>
+<tr><th id="91">91</th><td><i  data-doc="grp_getgrgid_impl"></i></td></tr>
+<tr><th id="92">92</th><td><i  data-doc="grp_getgrgid_impl">If id is not valid, raise KeyError.</i></td></tr>
+<tr><th id="93">93</th><td><i  data-doc="grp_getgrgid_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="96">96</th><td><dfn class="tu decl def" id="grp_getgrgid_impl" title='grp_getgrgid_impl' data-type='PyObject * grp_getgrgid_impl(PyObject * module, PyObject * id)' data-ref="grp_getgrgid_impl">grp_getgrgid_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="63module" title='module' data-type='PyObject *' data-ref="63module">module</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="64id" title='id' data-type='PyObject *' data-ref="64id">id</dfn>)</td></tr>
+<tr><th id="97">97</th><td><i>/*[clinic end generated code: output=30797c289504a1ba input=15fa0e2ccf5cda25]*/</i></td></tr>
+<tr><th id="98">98</th><td>{</td></tr>
+<tr><th id="99">99</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="65py_int_id" title='py_int_id' data-type='PyObject *' data-ref="65py_int_id">py_int_id</dfn>;</td></tr>
+<tr><th id="100">100</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#gid_t" title='gid_t' data-type='__gid_t' data-ref="gid_t">gid_t</a> <dfn class="local col6 decl" id="66gid" title='gid' data-type='gid_t' data-ref="66gid">gid</dfn>;</td></tr>
+<tr><th id="101">101</th><td>    <b>struct</b> <a class="type" href="../../include/grp.h.html#group" title='group' data-ref="group">group</a> *<dfn class="local col7 decl" id="67p" title='p' data-type='struct group *' data-ref="67p">p</dfn>;</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td>    <b>if</b> (!<a class="ref" href="posixmodule.h.html#_Py_Gid_Converter" title='_Py_Gid_Converter' data-ref="_Py_Gid_Converter">_Py_Gid_Converter</a>(<a class="local col4 ref" href="#64id" title='id' data-ref="64id">id</a>, &amp;<a class="local col6 ref" href="#66gid" title='gid' data-ref="66gid">gid</a>)) {</td></tr>
+<tr><th id="104">104</th><td>        <b>if</b> (!<a class="ref" href="../Include/pyerrors.h.html#PyErr_ExceptionMatches" title='PyErr_ExceptionMatches' data-ref="PyErr_ExceptionMatches">PyErr_ExceptionMatches</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>)) {</td></tr>
+<tr><th id="105">105</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="106">106</th><td>        }</td></tr>
+<tr><th id="107">107</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Clear" title='PyErr_Clear' data-ref="PyErr_Clear">PyErr_Clear</a>();</td></tr>
+<tr><th id="108">108</th><td>        <b>if</b> (<a class="ref" href="../Include/warnings.h.html#PyErr_WarnFormat" title='PyErr_WarnFormat' data-ref="PyErr_WarnFormat">PyErr_WarnFormat</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_DeprecationWarning" title='PyExc_DeprecationWarning' data-ref="PyExc_DeprecationWarning">PyExc_DeprecationWarning</a>, <var>1</var>,</td></tr>
+<tr><th id="109">109</th><td>                             <q>"group id must be int, not %.200"</q>,</td></tr>
+<tr><th id="110">110</th><td>                             <a class="local col4 ref" href="#64id" title='id' data-ref="64id">id</a>-&gt;<a class="ref" href="../Include/object.h.html#_object::ob_type" title='_object::ob_type' data-ref="_object::ob_type">ob_type</a>-&gt;<a class="ref" href="../Include/object.h.html#_typeobject::tp_name" title='_typeobject::tp_name' data-ref="_typeobject::tp_name">tp_name</a>) &lt; <var>0</var>) {</td></tr>
+<tr><th id="111">111</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="112">112</th><td>        }</td></tr>
+<tr><th id="113">113</th><td>        <a class="local col5 ref" href="#65py_int_id" title='py_int_id' data-ref="65py_int_id">py_int_id</a> = <a class="ref" href="../Include/abstract.h.html#PyNumber_Long" title='PyNumber_Long' data-ref="PyNumber_Long">PyNumber_Long</a>(<a class="local col4 ref" href="#64id" title='id' data-ref="64id">id</a>);</td></tr>
+<tr><th id="114">114</th><td>        <b>if</b> (!<a class="local col5 ref" href="#65py_int_id" title='py_int_id' data-ref="65py_int_id">py_int_id</a>)</td></tr>
+<tr><th id="115">115</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="116">116</th><td>        <b>if</b> (!<a class="ref" href="posixmodule.h.html#_Py_Gid_Converter" title='_Py_Gid_Converter' data-ref="_Py_Gid_Converter">_Py_Gid_Converter</a>(<a class="local col5 ref" href="#65py_int_id" title='py_int_id' data-ref="65py_int_id">py_int_id</a>, &amp;<a class="local col6 ref" href="#66gid" title='gid' data-ref="66gid">gid</a>)) {</td></tr>
+<tr><th id="117">117</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(py_int_id); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 117, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col5 ref" href="#65py_int_id" title='py_int_id' data-ref="65py_int_id">py_int_id</a>);</td></tr>
+<tr><th id="118">118</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="119">119</th><td>        }</td></tr>
+<tr><th id="120">120</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(py_int_id); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 120, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col5 ref" href="#65py_int_id" title='py_int_id' data-ref="65py_int_id">py_int_id</a>);</td></tr>
+<tr><th id="121">121</th><td>    }</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td>    <b>if</b> ((<a class="local col7 ref" href="#67p" title='p' data-ref="67p">p</a> = <a class="ref" href="../../include/grp.h.html#getgrgid" title='getgrgid' data-ref="getgrgid">getgrgid</a>(<a class="local col6 ref" href="#66gid" title='gid' data-ref="66gid">gid</a>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="124">124</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68gid_obj" title='gid_obj' data-type='PyObject *' data-ref="68gid_obj">gid_obj</dfn> = <a class="ref" href="posixmodule.h.html#_PyLong_FromGid" title='_PyLong_FromGid' data-ref="_PyLong_FromGid">_PyLong_FromGid</a>(<a class="local col6 ref" href="#66gid" title='gid' data-ref="66gid">gid</a>);</td></tr>
+<tr><th id="125">125</th><td>        <b>if</b> (<a class="local col8 ref" href="#68gid_obj" title='gid_obj' data-ref="68gid_obj">gid_obj</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="126">126</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="127">127</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_KeyError" title='PyExc_KeyError' data-ref="PyExc_KeyError">PyExc_KeyError</a>, <q>"getgrgid(): gid not found: %S"</q>, <a class="local col8 ref" href="#68gid_obj" title='gid_obj' data-ref="68gid_obj">gid_obj</a>);</td></tr>
+<tr><th id="128">128</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(gid_obj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 128, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col8 ref" href="#68gid_obj" title='gid_obj' data-ref="68gid_obj">gid_obj</a>);</td></tr>
+<tr><th id="129">129</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="130">130</th><td>    }</td></tr>
+<tr><th id="131">131</th><td>    <b>return</b> <a class="tu ref" href="#mkgrent" title='mkgrent' data-use='c' data-ref="mkgrent">mkgrent</a>(<a class="local col7 ref" href="#67p" title='p' data-ref="67p">p</a>);</td></tr>
+<tr><th id="132">132</th><td>}</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><i  data-doc="grp_getgrnam_impl">/*[clinic input]</i></td></tr>
+<tr><th id="135">135</th><td><i  data-doc="grp_getgrnam_impl">grp.getgrnam</i></td></tr>
+<tr><th id="136">136</th><td><i  data-doc="grp_getgrnam_impl"></i></td></tr>
+<tr><th id="137">137</th><td><i  data-doc="grp_getgrnam_impl">    name: unicode</i></td></tr>
+<tr><th id="138">138</th><td><i  data-doc="grp_getgrnam_impl"></i></td></tr>
+<tr><th id="139">139</th><td><i  data-doc="grp_getgrnam_impl">Return the group database entry for the given group name.</i></td></tr>
+<tr><th id="140">140</th><td><i  data-doc="grp_getgrnam_impl"></i></td></tr>
+<tr><th id="141">141</th><td><i  data-doc="grp_getgrnam_impl">If name is not valid, raise KeyError.</i></td></tr>
+<tr><th id="142">142</th><td><i  data-doc="grp_getgrnam_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="145">145</th><td><dfn class="tu decl def" id="grp_getgrnam_impl" title='grp_getgrnam_impl' data-type='PyObject * grp_getgrnam_impl(PyObject * module, PyObject * name)' data-ref="grp_getgrnam_impl">grp_getgrnam_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69module" title='module' data-type='PyObject *' data-ref="69module">module</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70name" title='name' data-type='PyObject *' data-ref="70name">name</dfn>)</td></tr>
+<tr><th id="146">146</th><td><i>/*[clinic end generated code: output=67905086f403c21c input=08ded29affa3c863]*/</i></td></tr>
+<tr><th id="147">147</th><td>{</td></tr>
+<tr><th id="148">148</th><td>    <em>char</em> *<dfn class="local col1 decl" id="71name_chars" title='name_chars' data-type='char *' data-ref="71name_chars">name_chars</dfn>;</td></tr>
+<tr><th id="149">149</th><td>    <b>struct</b> <a class="type" href="../../include/grp.h.html#group" title='group' data-ref="group">group</a> *<dfn class="local col2 decl" id="72p" title='p' data-type='struct group *' data-ref="72p">p</dfn>;</td></tr>
+<tr><th id="150">150</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="73bytes" title='bytes' data-type='PyObject *' data-ref="73bytes">bytes</dfn>, *<dfn class="local col4 decl" id="74retval" title='retval' data-type='PyObject *' data-ref="74retval">retval</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td>    <b>if</b> ((<a class="local col3 ref" href="#73bytes" title='bytes' data-ref="73bytes">bytes</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_EncodeFSDefault" title='PyUnicode_EncodeFSDefault' data-ref="PyUnicode_EncodeFSDefault">PyUnicode_EncodeFSDefault</a>(<a class="local col0 ref" href="#70name" title='name' data-ref="70name">name</a>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="153">153</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="154">154</th><td>    <i>/* check for embedded null bytes */</i></td></tr>
+<tr><th id="155">155</th><td>    <b>if</b> (<a class="ref" href="../Include/bytesobject.h.html#PyBytes_AsStringAndSize" title='PyBytes_AsStringAndSize' data-ref="PyBytes_AsStringAndSize">PyBytes_AsStringAndSize</a>(<a class="local col3 ref" href="#73bytes" title='bytes' data-ref="73bytes">bytes</a>, &amp;<a class="local col1 ref" href="#71name_chars" title='name_chars' data-ref="71name_chars">name_chars</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) == -<var>1</var>)</td></tr>
+<tr><th id="156">156</th><td>        <b>goto</b> <a class="lbl" href="#75out" data-ref="75out">out</a>;</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>    <b>if</b> ((<a class="local col2 ref" href="#72p" title='p' data-ref="72p">p</a> = <a class="ref" href="../../include/grp.h.html#getgrnam" title='getgrnam' data-ref="getgrnam">getgrnam</a>(<a class="local col1 ref" href="#71name_chars" title='name_chars' data-ref="71name_chars">name_chars</a>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="159">159</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_KeyError" title='PyExc_KeyError' data-ref="PyExc_KeyError">PyExc_KeyError</a>, <q>"getgrnam(): name not found: %s"</q>, <a class="local col1 ref" href="#71name_chars" title='name_chars' data-ref="71name_chars">name_chars</a>);</td></tr>
+<tr><th id="160">160</th><td>        <b>goto</b> <a class="lbl" href="#75out" data-ref="75out">out</a>;</td></tr>
+<tr><th id="161">161</th><td>    }</td></tr>
+<tr><th id="162">162</th><td>    <a class="local col4 ref" href="#74retval" title='retval' data-ref="74retval">retval</a> = <a class="tu ref" href="#mkgrent" title='mkgrent' data-use='c' data-ref="mkgrent">mkgrent</a>(<a class="local col2 ref" href="#72p" title='p' data-ref="72p">p</a>);</td></tr>
+<tr><th id="163">163</th><td><dfn class="lbl" id="75out" data-ref="75out">out</dfn>:</td></tr>
+<tr><th id="164">164</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(bytes); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 164, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col3 ref" href="#73bytes" title='bytes' data-ref="73bytes">bytes</a>);</td></tr>
+<tr><th id="165">165</th><td>    <b>return</b> <a class="local col4 ref" href="#74retval" title='retval' data-ref="74retval">retval</a>;</td></tr>
+<tr><th id="166">166</th><td>}</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><i  data-doc="grp_getgrall_impl">/*[clinic input]</i></td></tr>
+<tr><th id="169">169</th><td><i  data-doc="grp_getgrall_impl">grp.getgrall</i></td></tr>
+<tr><th id="170">170</th><td><i  data-doc="grp_getgrall_impl"></i></td></tr>
+<tr><th id="171">171</th><td><i  data-doc="grp_getgrall_impl">Return a list of all available group entries, in arbitrary order.</i></td></tr>
+<tr><th id="172">172</th><td><i  data-doc="grp_getgrall_impl"></i></td></tr>
+<tr><th id="173">173</th><td><i  data-doc="grp_getgrall_impl">An entry whose name starts with '+' or '-' represents an instruction</i></td></tr>
+<tr><th id="174">174</th><td><i  data-doc="grp_getgrall_impl">to use YP/NIS and may not be accessible via getgrnam or getgrgid.</i></td></tr>
+<tr><th id="175">175</th><td><i  data-doc="grp_getgrall_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="178">178</th><td><dfn class="tu decl def" id="grp_getgrall_impl" title='grp_getgrall_impl' data-type='PyObject * grp_getgrall_impl(PyObject * module)' data-ref="grp_getgrall_impl">grp_getgrall_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="76module" title='module' data-type='PyObject *' data-ref="76module">module</dfn>)</td></tr>
+<tr><th id="179">179</th><td><i>/*[clinic end generated code: output=585dad35e2e763d7 input=d7df76c825c367df]*/</i></td></tr>
+<tr><th id="180">180</th><td>{</td></tr>
+<tr><th id="181">181</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="77d" title='d' data-type='PyObject *' data-ref="77d">d</dfn>;</td></tr>
+<tr><th id="182">182</th><td>    <b>struct</b> <a class="type" href="../../include/grp.h.html#group" title='group' data-ref="group">group</a> *<dfn class="local col8 decl" id="78p" title='p' data-type='struct group *' data-ref="78p">p</dfn>;</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td>    <b>if</b> ((<a class="local col7 ref" href="#77d" title='d' data-ref="77d">d</a> = <a class="ref" href="../Include/listobject.h.html#PyList_New" title='PyList_New' data-ref="PyList_New">PyList_New</a>(<var>0</var>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="185">185</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="186">186</th><td>    <a class="ref" href="../../include/grp.h.html#setgrent" title='setgrent' data-ref="setgrent">setgrent</a>();</td></tr>
+<tr><th id="187">187</th><td>    <b>while</b> ((<a class="local col8 ref" href="#78p" title='p' data-ref="78p">p</a> = <a class="ref" href="../../include/grp.h.html#getgrent" title='getgrent' data-ref="getgrent">getgrent</a>()) != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="188">188</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="79v" title='v' data-type='PyObject *' data-ref="79v">v</dfn> = <a class="tu ref" href="#mkgrent" title='mkgrent' data-use='c' data-ref="mkgrent">mkgrent</a>(<a class="local col8 ref" href="#78p" title='p' data-ref="78p">p</a>);</td></tr>
+<tr><th id="189">189</th><td>        <b>if</b> (<a class="local col9 ref" href="#79v" title='v' data-ref="79v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="ref" href="../Include/listobject.h.html#PyList_Append" title='PyList_Append' data-ref="PyList_Append">PyList_Append</a>(<a class="local col7 ref" href="#77d" title='d' data-ref="77d">d</a>, <a class="local col9 ref" href="#79v" title='v' data-ref="79v">v</a>) != <var>0</var>) {</td></tr>
+<tr><th id="190">190</th><td>            <a class="macro" href="../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(v); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 190, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col9 ref" href="#79v" title='v' data-ref="79v">v</a>);</td></tr>
+<tr><th id="191">191</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(d); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 191, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col7 ref" href="#77d" title='d' data-ref="77d">d</a>);</td></tr>
+<tr><th id="192">192</th><td>            <a class="ref" href="../../include/grp.h.html#endgrent" title='endgrent' data-ref="endgrent">endgrent</a>();</td></tr>
+<tr><th id="193">193</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="194">194</th><td>        }</td></tr>
+<tr><th id="195">195</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/grpmodule.c&quot;, 195, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col9 ref" href="#79v" title='v' data-ref="79v">v</a>);</td></tr>
+<tr><th id="196">196</th><td>    }</td></tr>
+<tr><th id="197">197</th><td>    <a class="ref" href="../../include/grp.h.html#endgrent" title='endgrent' data-ref="endgrent">endgrent</a>();</td></tr>
+<tr><th id="198">198</th><td>    <b>return</b> <a class="local col7 ref" href="#77d" title='d' data-ref="77d">d</a>;</td></tr>
+<tr><th id="199">199</th><td>}</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="grp_methods" title='grp_methods' data-type='PyMethodDef [4]' data-ref="grp_methods">grp_methods</dfn>[] = {</td></tr>
+<tr><th id="202">202</th><td>    <a class="macro" href="clinic/grpmodule.c.h.html#13" title="{&quot;getgrgid&quot;, (PyCFunction)grp_getgrgid, 0x0080|0x0002, grp_getgrgid__doc__}," data-ref="_M/GRP_GETGRGID_METHODDEF">GRP_GETGRGID_METHODDEF</a></td></tr>
+<tr><th id="203">203</th><td>    <a class="macro" href="clinic/grpmodule.c.h.html#45" title="{&quot;getgrnam&quot;, (PyCFunction)grp_getgrnam, 0x0080|0x0002, grp_getgrnam__doc__}," data-ref="_M/GRP_GETGRNAM_METHODDEF">GRP_GETGRNAM_METHODDEF</a></td></tr>
+<tr><th id="204">204</th><td>    <a class="macro" href="clinic/grpmodule.c.h.html#78" title="{&quot;getgrall&quot;, (PyCFunction)grp_getgrall, 0x0004, grp_getgrall__doc__}," data-ref="_M/GRP_GETGRALL_METHODDEF">GRP_GETGRALL_METHODDEF</a></td></tr>
+<tr><th id="205">205</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}</td></tr>
+<tr><th id="206">206</th><td>};</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char grp__doc__[] = &quot;Access to the Unix group database.\n\nGroup entries are reported as 4-tuples containing the following fields\nfrom the group database, in order:\n\n  gr_name   - name of the group\n  gr_passwd - group password (encrypted); often empty\n  gr_gid    - numeric ID of the group\n  gr_mem    - list of members\n\nThe gid is an integer, name and password are strings.  (Note that most\nusers are not explicitly listed as members of the groups they are in\naccording to the password database.  Check both databases to get\ncomplete membership information.)&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="grp__doc__" title='grp__doc__' data-ref="grp__doc__">grp__doc__</dfn>,</td></tr>
+<tr><th id="209">209</th><td><q>"Access to the Unix group database.\n\</q></td></tr>
+<tr><th id="210">210</th><td><q>\n\</q></td></tr>
+<tr><th id="211">211</th><td><q>Group entries are reported as 4-tuples containing the following fields\n\</q></td></tr>
+<tr><th id="212">212</th><td><q>from the group database, in order:\n\</q></td></tr>
+<tr><th id="213">213</th><td><q>\n\</q></td></tr>
+<tr><th id="214">214</th><td><q>  gr_name   - name of the group\n\</q></td></tr>
+<tr><th id="215">215</th><td><q>  gr_passwd - group password (encrypted); often empty\n\</q></td></tr>
+<tr><th id="216">216</th><td><q>  gr_gid    - numeric ID of the group\n\</q></td></tr>
+<tr><th id="217">217</th><td><q>  gr_mem    - list of members\n\</q></td></tr>
+<tr><th id="218">218</th><td><q>\n\</q></td></tr>
+<tr><th id="219">219</th><td><q>The gid is an integer, name and password are strings.  (Note that most\n\</q></td></tr>
+<tr><th id="220">220</th><td><q>users are not explicitly listed as members of the groups they are in\n\</q></td></tr>
+<tr><th id="221">221</th><td><q>according to the password database.  Check both databases to get\n\</q></td></tr>
+<tr><th id="222">222</th><td><q>complete membership information.)"</q>);</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="grpmodule" title='grpmodule' data-type='struct PyModuleDef' data-ref="grpmodule">grpmodule</dfn> = {</td></tr>
+<tr><th id="227">227</th><td>        <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="228">228</th><td>        <q>"grp"</q>,</td></tr>
+<tr><th id="229">229</th><td>        <a class="ref" href="#208" title='grp__doc__' data-ref="grp__doc__">grp__doc__</a>,</td></tr>
+<tr><th id="230">230</th><td>        -<var>1</var>,</td></tr>
+<tr><th id="231">231</th><td>        <a class="tu ref" href="#grp_methods" title='grp_methods' data-ref="grp_methods">grp_methods</a>,</td></tr>
+<tr><th id="232">232</th><td>        <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="233">233</th><td>        <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="234">234</th><td>        <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="235">235</th><td>        <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="236">236</th><td>};</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="239">239</th><td><dfn class="decl def" id="PyInit_grp" title='PyInit_grp' data-ref="PyInit_grp">PyInit_grp</dfn>(<em>void</em>)</td></tr>
+<tr><th id="240">240</th><td>{</td></tr>
+<tr><th id="241">241</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="80m" title='m' data-type='PyObject *' data-ref="80m">m</dfn>, *<dfn class="local col1 decl" id="81d" title='d' data-type='PyObject *' data-ref="81d">d</dfn>;</td></tr>
+<tr><th id="242">242</th><td>    <a class="local col0 ref" href="#80m" title='m' data-ref="80m">m</a> = <a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;grpmodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#grpmodule" title='grpmodule' data-use='a' data-ref="grpmodule">grpmodule</a>);</td></tr>
+<tr><th id="243">243</th><td>    <b>if</b> (<a class="local col0 ref" href="#80m" title='m' data-ref="80m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="244">244</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="245">245</th><td>    <a class="local col1 ref" href="#81d" title='d' data-ref="81d">d</a> = <a class="ref" href="../Include/moduleobject.h.html#PyModule_GetDict" title='PyModule_GetDict' data-ref="PyModule_GetDict">PyModule_GetDict</a>(<a class="local col0 ref" href="#80m" title='m' data-ref="80m">m</a>);</td></tr>
+<tr><th id="246">246</th><td>    <b>if</b> (!<a class="tu ref" href="#initialized" title='initialized' data-use='r' data-ref="initialized">initialized</a>) {</td></tr>
+<tr><th id="247">247</th><td>        <b>if</b> (<a class="ref" href="../Include/structseq.h.html#PyStructSequence_InitType2" title='PyStructSequence_InitType2' data-ref="PyStructSequence_InitType2">PyStructSequence_InitType2</a>(&amp;<a class="tu ref" href="#StructGrpType" title='StructGrpType' data-use='a' data-ref="StructGrpType">StructGrpType</a>,</td></tr>
+<tr><th id="248">248</th><td>                                       &amp;<a class="tu ref" href="#struct_group_type_desc" title='struct_group_type_desc' data-use='a' data-ref="struct_group_type_desc">struct_group_type_desc</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="249">249</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="250">250</th><td>    }</td></tr>
+<tr><th id="251">251</th><td>    <b>if</b> (<a class="ref" href="../Include/dictobject.h.html#PyDict_SetItemString" title='PyDict_SetItemString' data-ref="PyDict_SetItemString">PyDict_SetItemString</a>(<a class="local col1 ref" href="#81d" title='d' data-ref="81d">d</a>, <q>"struct_group"</q>,</td></tr>
+<tr><th id="252">252</th><td>                             (<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="tu ref" href="#StructGrpType" title='StructGrpType' data-use='a' data-ref="StructGrpType">StructGrpType</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="253">253</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="254">254</th><td>    <a class="tu ref" href="#initialized" title='initialized' data-use='w' data-ref="initialized">initialized</a> = <var>1</var>;</td></tr>
+<tr><th id="255">255</th><td>    <b>return</b> <a class="local col0 ref" href="#80m" title='m' data-ref="80m">m</a>;</td></tr>
+<tr><th id="256">256</th><td>}</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

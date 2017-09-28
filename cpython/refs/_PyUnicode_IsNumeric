@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2256' type='int _PyUnicode_IsNumeric(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/_sre.c' l='180' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='182' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='84' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='86' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='93' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='84' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='86' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='93' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='84' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='86' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='93' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='95' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodectype.c' l='140' ll='145' type='int _PyUnicode_IsNumeric(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='137'>/* Returns the numeric value as double for Unicode characters having
+   this property, -1.0 otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='12005' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12014' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12125' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12132' macro='1' u='c'/>

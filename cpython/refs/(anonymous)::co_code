@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/code.h' l='29' type='PyObject *'/>
+<offset>448</offset>
+<doc f='codebrowser/Include/code.h' l='29'>/* instruction opcodes */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='187' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='433' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='638' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='638' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='689' u='r' c='code_hash'/>
+<use f='codebrowser/Objects/frameobject.c' l='158' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/genobject.c' l='355' u='r' c='_PyGen_yf'/>
+<use f='codebrowser/Python/ceval.c' l='1012' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1013' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1013' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1014' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1014' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1015' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1015' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1016' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1016' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/marshal.c' l='547' u='r' c='w_complex_object'/>

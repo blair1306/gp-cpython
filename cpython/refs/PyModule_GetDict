@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/moduleobject.h' l='23' type='PyObject * PyModule_GetDict(PyObject * )'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='504' u='c' c='PyInit__curses_panel'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3315' u='c' c='PyInit__curses'/>
+<use f='codebrowser/Modules/_lsprof.c' l='866' u='c' c='PyInit__lsprof'/>
+<use f='codebrowser/Modules/_sre.c' l='2818' u='c' c='PyInit__sre'/>
+<use f='codebrowser/Modules/_ssl.c' l='5170' u='c' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1382' u='c' c='PyInit__thread'/>
+<use f='codebrowser/Modules/audioop.c' l='1914' u='c' c='PyInit_audioop'/>
+<use f='codebrowser/Modules/binascii.c' l='1584' u='c' c='PyInit_binascii'/>
+<use f='codebrowser/Modules/errnomodule.c' l='102' u='c' c='PyInit_errno'/>
+<use f='codebrowser/Modules/grpmodule.c' l='245' u='c' c='PyInit_grp'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1433' u='c' c='PyInit_mmap'/>
+<use f='codebrowser/Modules/nismodule.c' l='463' u='c' c='PyInit_nis'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1701' u='c' c='PyInit_pyexpat'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1241' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Modules/zipimport.c' l='530' u='c' c='zipimport_zipimporter_load_module_impl'/>
+<use f='codebrowser/Objects/exceptions.c' l='2576' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/frameobject.c' l='630' u='c' c='_PyFrame_New_NoTrack'/>
+<def f='codebrowser/Objects/moduleobject.c' l='444' ll='455' type='PyObject * PyModule_GetDict(PyObject * m)'/>
+<use f='codebrowser/Python/Python-ast.c' l='7921' u='c' c='PyInit__ast'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2691' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/import.c' l='445' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='560' u='c' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='611' u='c' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='800' u='c' c='module_dict_for_exec'/>
+<use f='codebrowser/Python/import.c' l='1205' u='c' c='PyImport_ImportFrozenModuleObject'/>
+<use f='codebrowser/Python/import.c' l='2067' u='c' c='PyInit_imp'/>
+<use f='codebrowser/Python/modsupport.c' l='630' u='c' c='PyModule_AddObject'/>
+<use f='codebrowser/Python/pylifecycle.c' l='665' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='676' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1185' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1198' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1333' u='c' c='initmain'/>
+<use f='codebrowser/Python/pythonrun.c' l='234' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='353' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='422' u='c' c='PyRun_SimpleStringFlags'/>
+<use f='codebrowser/Python/sysmodule.c' l='1935' u='c' c='_PySys_BeginInit'/>

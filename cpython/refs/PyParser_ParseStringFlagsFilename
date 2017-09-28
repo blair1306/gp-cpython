@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/parsetok.h' l='77' type='node * PyParser_ParseStringFlagsFilename(const char * s, const char * filename, grammar * g, int start, perrdetail * err_ret, int flags)'/>
+<use f='codebrowser/Parser/parsetok.c' l='22' u='c' c='PyParser_ParseString'/>
+<use f='codebrowser/Parser/parsetok.c' l='29' u='c' c='PyParser_ParseStringFlags'/>
+<def f='codebrowser/Parser/parsetok.c' l='33' ll='41' type='node * PyParser_ParseStringFlagsFilename(const char * s, const char * filename, grammar * g, int start, perrdetail * err_ret, int flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1236' u='c' c='PyParser_SimpleParseStringFlagsFilename'/>

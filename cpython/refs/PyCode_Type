@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/code.h' l='97' type='PyTypeObject'/>
+<use f='codebrowser/Modules/zipimport.c' l='1313' macro='1' u='a'/>
+<use f='codebrowser/Objects/codeobject.c' l='175' u='a' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='175' u='a' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='498' macro='1' u='a'/>
+<use f='codebrowser/Objects/codeobject.c' l='618' macro='1' u='a'/>
+<use f='codebrowser/Objects/codeobject.c' l='619' macro='1' u='a'/>
+<def f='codebrowser/Objects/codeobject.c' l='715' ll='754' type='PyTypeObject'/>
+<use f='codebrowser/Objects/codeobject.c' l='834' macro='1' u='a'/>
+<use f='codebrowser/Objects/codeobject.c' l='857' macro='1' u='a'/>
+<use f='codebrowser/Objects/funcobject.c' l='256' macro='1' u='a'/>
+<use f='codebrowser/Objects/clinic/funcobject.c.h' l='39' u='a' c='func_new'/>
+<use f='codebrowser/Objects/object.c' l='1755' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/bltinmodule.c' l='879' macro='1' u='a'/>
+<use f='codebrowser/Python/bltinmodule.c' l='959' macro='1' u='a'/>
+<use f='codebrowser/Python/clinic/import.c.h' l='92' u='a' c='_imp__fix_co_filename'/>
+<use f='codebrowser/Python/import.c' l='884' macro='1' u='a'/>
+<use f='codebrowser/Python/import.c' l='1192' macro='1' u='a'/>
+<use f='codebrowser/Python/marshal.c' l='539' macro='1' u='a'/>
+<use f='codebrowser/Python/pythonrun.c' l='1010' macro='1' u='a'/>

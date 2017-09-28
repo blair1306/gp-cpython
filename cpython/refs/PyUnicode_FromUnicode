@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='692' type='PyObject * PyUnicode_FromUnicode(const Py_UNICODE * u, Py_ssize_t size)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1779' u='c' c='test_widechar'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1786' u='c' c='test_widechar'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1991' u='c' c='unicode_legacy_string'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2005' ll='2017' type='PyObject * PyUnicode_FromUnicode(const Py_UNICODE * u, Py_ssize_t size)'/>

@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='155' macro='1' type='sa_family_t'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1096' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1189' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1434' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3435' u='w' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5188' u='r' c='socket_gethostbyname_ex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5241' u='r' c='socket_gethostbyaddr'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/iterobject.h' l='14' type='PyObject * PySeqIter_New(PyObject * )'/>
+<use f='codebrowser/Objects/abstract.c' l='2499' u='c' c='PyObject_GetIter'/>
+<def f='codebrowser/Objects/iterobject.c' l='11' ll='28' type='PyObject * PySeqIter_New(PyObject * seq)'/>
+<use f='codebrowser/Objects/typeobject.c' l='6426' u='c' c='slot_tp_iter'/>

@@ -1,0 +1,12 @@
+<def f='codebrowser/Objects/odictobject.c' l='488' ll='502'/>
+<size>128</size>
+<doc f='codebrowser/Objects/odictobject.c' l='487'>/* PyODictObject */</doc>
+<mbr r='_odictobject::od_dict' o='0' t='PyDictObject'/>
+<mbr r='_odictobject::od_first' o='512' t='_ODictNode *'/>
+<mbr r='_odictobject::od_last' o='576' t='_ODictNode *'/>
+<mbr r='_odictobject::od_fast_nodes' o='640' t='_ODictNode **'/>
+<mbr r='_odictobject::od_fast_nodes_size' o='704' t='Py_ssize_t'/>
+<mbr r='_odictobject::od_resize_sentinel' o='768' t='void *'/>
+<mbr r='_odictobject::od_state' o='832' t='size_t'/>
+<mbr r='_odictobject::od_inst_dict' o='896' t='PyObject *'/>
+<mbr r='_odictobject::od_weakreflist' o='960' t='PyObject *'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='13' type='PyObject *'/>
+<offset>448</offset>
+<use f='codebrowser/Objects/exceptions.c' l='41' u='w' c='BaseException_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='78' u='r' c='BaseException_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='78' u='w' c='BaseException_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='97' u='r' c='BaseException_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='97' u='r' c='BaseException_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='333' u='r' c='PyException_GetContext'/>
+<use f='codebrowser/Objects/exceptions.c' l='342' u='r' c='PyException_SetContext'/>
+<use f='codebrowser/Objects/exceptions.c' l='342' u='w' c='PyException_SetContext'/>
+<use f='codebrowser/Objects/exceptions.c' l='981' u='w' c='OSError_new'/>

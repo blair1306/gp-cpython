@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>datetime.h source code [codebrowser/Include/datetime.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/datetime.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='datetime.h.html'>datetime.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*  datetime.h</i></td></tr>
+<tr><th id="2">2</th><td><i> */</i></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/DATETIME_H">DATETIME_H</span></u></td></tr>
+<tr><th id="5">5</th><td><u>#define <dfn class="macro" id="_M/DATETIME_H" data-ref="_M/DATETIME_H">DATETIME_H</dfn></u></td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="6">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="7">7</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="6">endif</span></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><i>/* Fields are packed into successive bytes, each viewed as unsigned and</i></td></tr>
+<tr><th id="11">11</th><td><i> * big-endian, unless otherwise noted:</i></td></tr>
+<tr><th id="12">12</th><td><i> *</i></td></tr>
+<tr><th id="13">13</th><td><i> * byte offset</i></td></tr>
+<tr><th id="14">14</th><td><i> *  0           year     2 bytes, 1-9999</i></td></tr>
+<tr><th id="15">15</th><td><i> *  2           month    1 byte, 1-12</i></td></tr>
+<tr><th id="16">16</th><td><i> *  3           day      1 byte, 1-31</i></td></tr>
+<tr><th id="17">17</th><td><i> *  4           hour     1 byte, 0-23</i></td></tr>
+<tr><th id="18">18</th><td><i> *  5           minute   1 byte, 0-59</i></td></tr>
+<tr><th id="19">19</th><td><i> *  6           second   1 byte, 0-59</i></td></tr>
+<tr><th id="20">20</th><td><i> *  7           usecond  3 bytes, 0-999999</i></td></tr>
+<tr><th id="21">21</th><td><i> * 10</i></td></tr>
+<tr><th id="22">22</th><td><i> */</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><i>/* # of bytes for year, month, and day. */</i></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/_PyDateTime_DATE_DATASIZE" data-ref="_M/_PyDateTime_DATE_DATASIZE">_PyDateTime_DATE_DATASIZE</dfn> 4</u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>/* # of bytes for hour, minute, second, and usecond. */</i></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/_PyDateTime_TIME_DATASIZE" data-ref="_M/_PyDateTime_TIME_DATASIZE">_PyDateTime_TIME_DATASIZE</dfn> 6</u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>/* # of bytes for year, month, day, hour, minute, second, and usecond. */</i></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/_PyDateTime_DATETIME_DATASIZE" data-ref="_M/_PyDateTime_DATETIME_DATASIZE">_PyDateTime_DATETIME_DATASIZE</dfn> 10</u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="35">35</th><td>{</td></tr>
+<tr><th id="36">36</th><td>    <a class="macro" href="object.h.html#83" title="PyObject ob_base;" data-ref="_M/PyObject_HEAD">PyObject_HEAD</a></td></tr>
+<tr><th id="37">37</th><td>    <a class="typedef" href="pyport.h.html#Py_hash_t" title='Py_hash_t' data-type='Py_ssize_t' data-ref="Py_hash_t">Py_hash_t</a> <dfn class="decl" id="(anonymous)::hashcode" title='(anonymous struct)::hashcode' data-ref="(anonymous)::hashcode">hashcode</dfn>;         <i>/* -1 when unknown */</i></td></tr>
+<tr><th id="38">38</th><td>    <em>int</em> <dfn class="decl" id="(anonymous)::days" title='(anonymous struct)::days' data-ref="(anonymous)::days">days</dfn>;                   <i>/* -MAX_DELTA_DAYS &lt;= days &lt;= MAX_DELTA_DAYS */</i></td></tr>
+<tr><th id="39">39</th><td>    <em>int</em> <dfn class="decl" id="(anonymous)::seconds" title='(anonymous struct)::seconds' data-ref="(anonymous)::seconds">seconds</dfn>;                <i>/* 0 &lt;= seconds &lt; 24*3600 is invariant */</i></td></tr>
+<tr><th id="40">40</th><td>    <em>int</em> <dfn class="decl" id="(anonymous)::microseconds" title='(anonymous struct)::microseconds' data-ref="(anonymous)::microseconds">microseconds</dfn>;           <i>/* 0 &lt;= microseconds &lt; 1000000 is invariant */</i></td></tr>
+<tr><th id="41">41</th><td>} <dfn class="typedef" id="PyDateTime_Delta" title='PyDateTime_Delta' data-type='struct PyDateTime_Delta' data-ref="PyDateTime_Delta">PyDateTime_Delta</dfn>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="44">44</th><td>{</td></tr>
+<tr><th id="45">45</th><td>    <a class="macro" href="object.h.html#83" title="PyObject ob_base;" data-ref="_M/PyObject_HEAD">PyObject_HEAD</a>               <i>/* a pure abstract base class */</i></td></tr>
+<tr><th id="46">46</th><td>} <dfn class="typedef" id="PyDateTime_TZInfo" title='PyDateTime_TZInfo' data-type='struct PyDateTime_TZInfo' data-ref="PyDateTime_TZInfo">PyDateTime_TZInfo</dfn>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>/* The datetime and time types have hashcodes, and an optional tzinfo member,</i></td></tr>
+<tr><th id="50">50</th><td><i> * present if and only if hastzinfo is true.</i></td></tr>
+<tr><th id="51">51</th><td><i> */</i></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/_PyTZINFO_HEAD" data-ref="_M/_PyTZINFO_HEAD">_PyTZINFO_HEAD</dfn>          \</u></td></tr>
+<tr><th id="53">53</th><td><u>    PyObject_HEAD               \</u></td></tr>
+<tr><th id="54">54</th><td><u>    <a class="typedef" href="pyport.h.html#Py_hash_t" title='Py_hash_t' data-type='Py_ssize_t' data-ref="Py_hash_t">Py_hash_t</a> <dfn class="decl" id="(anonymous)::hashcode" title='(anonymous struct)::hashcode' data-ref="(anonymous)::hashcode">hashcode</dfn>;         \</u></td></tr>
+<tr><th id="55">55</th><td><u>    char <dfn class="decl" id="(anonymous)::hastzinfo" title='(anonymous struct)::hastzinfo' data-ref="(anonymous)::hastzinfo">hastzinfo</dfn>;             /* boolean flag */</u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><i>/* No _PyDateTime_BaseTZInfo is allocated; it's just to have something</i></td></tr>
+<tr><th id="58">58</th><td><i> * convenient to cast to, when getting at the hastzinfo member of objects</i></td></tr>
+<tr><th id="59">59</th><td><i> * starting with _PyTZINFO_HEAD.</i></td></tr>
+<tr><th id="60">60</th><td><i> */</i></td></tr>
+<tr><th id="61">61</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="62">62</th><td>{</td></tr>
+<tr><th id="63">63</th><td>    <a class="macro" href="#52" title="PyObject ob_base; Py_hash_t hashcode; char hastzinfo;" data-ref="_M/_PyTZINFO_HEAD">_PyTZINFO_HEAD</a></td></tr>
+<tr><th id="64">64</th><td>} <dfn class="typedef" id="_PyDateTime_BaseTZInfo" title='_PyDateTime_BaseTZInfo' data-type='struct _PyDateTime_BaseTZInfo' data-ref="_PyDateTime_BaseTZInfo">_PyDateTime_BaseTZInfo</dfn>;</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><i>/* All time objects are of PyDateTime_TimeType, but that can be allocated</i></td></tr>
+<tr><th id="67">67</th><td><i> * in two ways, with or without a tzinfo member.  Without is the same as</i></td></tr>
+<tr><th id="68">68</th><td><i> * tzinfo == None, but consumes less memory.  _PyDateTime_BaseTime is an</i></td></tr>
+<tr><th id="69">69</th><td><i> * internal struct used to allocate the right amount of space for the</i></td></tr>
+<tr><th id="70">70</th><td><i> * "without" case.</i></td></tr>
+<tr><th id="71">71</th><td><i> */</i></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/_PyDateTime_TIMEHEAD" data-ref="_M/_PyDateTime_TIMEHEAD">_PyDateTime_TIMEHEAD</dfn>    \</u></td></tr>
+<tr><th id="73">73</th><td><u>    _PyTZINFO_HEAD              \</u></td></tr>
+<tr><th id="74">74</th><td><u>    unsigned char <dfn class="decl" id="(anonymous)::data" title='(anonymous struct)::data' data-ref="(anonymous)::data">data</dfn>[_PyDateTime_TIME_DATASIZE];</u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="77">77</th><td>{</td></tr>
+<tr><th id="78">78</th><td>    <a class="macro" href="#72" title="PyObject ob_base; Py_hash_t hashcode; char hastzinfo; unsigned char data[6];" data-ref="_M/_PyDateTime_TIMEHEAD">_PyDateTime_TIMEHEAD</a></td></tr>
+<tr><th id="79">79</th><td>} <dfn class="typedef" id="_PyDateTime_BaseTime" title='_PyDateTime_BaseTime' data-type='struct _PyDateTime_BaseTime' data-ref="_PyDateTime_BaseTime">_PyDateTime_BaseTime</dfn>;         <i>/* hastzinfo false */</i></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="82">82</th><td>{</td></tr>
+<tr><th id="83">83</th><td>    <a class="macro" href="#72" title="PyObject ob_base; Py_hash_t hashcode; char hastzinfo; unsigned char data[6];" data-ref="_M/_PyDateTime_TIMEHEAD">_PyDateTime_TIMEHEAD</a></td></tr>
+<tr><th id="84">84</th><td>    <em>unsigned</em> <em>char</em> <dfn class="decl" id="(anonymous)::fold" title='(anonymous struct)::fold' data-ref="(anonymous)::fold">fold</dfn>;</td></tr>
+<tr><th id="85">85</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::tzinfo" title='(anonymous struct)::tzinfo' data-ref="(anonymous)::tzinfo">tzinfo</dfn>;</td></tr>
+<tr><th id="86">86</th><td>} <dfn class="typedef" id="PyDateTime_Time" title='PyDateTime_Time' data-type='struct PyDateTime_Time' data-ref="PyDateTime_Time">PyDateTime_Time</dfn>;              <i>/* hastzinfo true */</i></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><i>/* All datetime objects are of PyDateTime_DateTimeType, but that can be</i></td></tr>
+<tr><th id="90">90</th><td><i> * allocated in two ways too, just like for time objects above.  In addition,</i></td></tr>
+<tr><th id="91">91</th><td><i> * the plain date type is a base class for datetime, so it must also have</i></td></tr>
+<tr><th id="92">92</th><td><i> * a hastzinfo member (although it's unused there).</i></td></tr>
+<tr><th id="93">93</th><td><i> */</i></td></tr>
+<tr><th id="94">94</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="95">95</th><td>{</td></tr>
+<tr><th id="96">96</th><td>    <a class="macro" href="#52" title="PyObject ob_base; Py_hash_t hashcode; char hastzinfo;" data-ref="_M/_PyTZINFO_HEAD">_PyTZINFO_HEAD</a></td></tr>
+<tr><th id="97">97</th><td>    <em>unsigned</em> <em>char</em> <dfn class="decl" id="(anonymous)::data" title='(anonymous struct)::data' data-ref="(anonymous)::data">data</dfn>[<a class="macro" href="#25" title="4" data-ref="_M/_PyDateTime_DATE_DATASIZE">_PyDateTime_DATE_DATASIZE</a>];</td></tr>
+<tr><th id="98">98</th><td>} <dfn class="typedef" id="PyDateTime_Date" title='PyDateTime_Date' data-type='struct PyDateTime_Date' data-ref="PyDateTime_Date">PyDateTime_Date</dfn>;</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/_PyDateTime_DATETIMEHEAD" data-ref="_M/_PyDateTime_DATETIMEHEAD">_PyDateTime_DATETIMEHEAD</dfn>        \</u></td></tr>
+<tr><th id="101">101</th><td><u>    _PyTZINFO_HEAD                      \</u></td></tr>
+<tr><th id="102">102</th><td><u>    unsigned char <dfn class="decl" id="(anonymous)::data" title='(anonymous struct)::data' data-ref="(anonymous)::data">data</dfn>[_PyDateTime_DATETIME_DATASIZE];</u></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="105">105</th><td>{</td></tr>
+<tr><th id="106">106</th><td>    <a class="macro" href="#100" title="PyObject ob_base; Py_hash_t hashcode; char hastzinfo; unsigned char data[10];" data-ref="_M/_PyDateTime_DATETIMEHEAD">_PyDateTime_DATETIMEHEAD</a></td></tr>
+<tr><th id="107">107</th><td>} <dfn class="typedef" id="_PyDateTime_BaseDateTime" title='_PyDateTime_BaseDateTime' data-type='struct _PyDateTime_BaseDateTime' data-ref="_PyDateTime_BaseDateTime">_PyDateTime_BaseDateTime</dfn>;     <i>/* hastzinfo false */</i></td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><b>typedef</b> <b>struct</b></td></tr>
+<tr><th id="110">110</th><td>{</td></tr>
+<tr><th id="111">111</th><td>    <a class="macro" href="#100" title="PyObject ob_base; Py_hash_t hashcode; char hastzinfo; unsigned char data[10];" data-ref="_M/_PyDateTime_DATETIMEHEAD">_PyDateTime_DATETIMEHEAD</a></td></tr>
+<tr><th id="112">112</th><td>    <em>unsigned</em> <em>char</em> <dfn class="decl" id="(anonymous)::fold" title='(anonymous struct)::fold' data-ref="(anonymous)::fold">fold</dfn>;</td></tr>
+<tr><th id="113">113</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::tzinfo" title='(anonymous struct)::tzinfo' data-ref="(anonymous)::tzinfo">tzinfo</dfn>;</td></tr>
+<tr><th id="114">114</th><td>} <dfn class="typedef" id="PyDateTime_DateTime" title='PyDateTime_DateTime' data-type='struct PyDateTime_DateTime' data-ref="PyDateTime_DateTime">PyDateTime_DateTime</dfn>;          <i>/* hastzinfo true */</i></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>/* Apply for date and datetime instances. */</i></td></tr>
+<tr><th id="118">118</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_GET_YEAR" data-ref="_M/PyDateTime_GET_YEAR">PyDateTime_GET_YEAR</dfn>(o)     ((((PyDateTime_Date*)o)-&gt;data[0] &lt;&lt; 8) | \</u></td></tr>
+<tr><th id="119">119</th><td><u>                     ((PyDateTime_Date*)o)-&gt;data[1])</u></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_GET_MONTH" data-ref="_M/PyDateTime_GET_MONTH">PyDateTime_GET_MONTH</dfn>(o)    (((PyDateTime_Date*)o)-&gt;data[2])</u></td></tr>
+<tr><th id="121">121</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_GET_DAY" data-ref="_M/PyDateTime_GET_DAY">PyDateTime_GET_DAY</dfn>(o)      (((PyDateTime_Date*)o)-&gt;data[3])</u></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DATE_GET_HOUR" data-ref="_M/PyDateTime_DATE_GET_HOUR">PyDateTime_DATE_GET_HOUR</dfn>(o)        (((PyDateTime_DateTime*)o)-&gt;data[4])</u></td></tr>
+<tr><th id="124">124</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DATE_GET_MINUTE" data-ref="_M/PyDateTime_DATE_GET_MINUTE">PyDateTime_DATE_GET_MINUTE</dfn>(o)      (((PyDateTime_DateTime*)o)-&gt;data[5])</u></td></tr>
+<tr><th id="125">125</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DATE_GET_SECOND" data-ref="_M/PyDateTime_DATE_GET_SECOND">PyDateTime_DATE_GET_SECOND</dfn>(o)      (((PyDateTime_DateTime*)o)-&gt;data[6])</u></td></tr>
+<tr><th id="126">126</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DATE_GET_MICROSECOND" data-ref="_M/PyDateTime_DATE_GET_MICROSECOND">PyDateTime_DATE_GET_MICROSECOND</dfn>(o)              \</u></td></tr>
+<tr><th id="127">127</th><td><u>    ((((PyDateTime_DateTime*)o)-&gt;data[7] &lt;&lt; 16) |       \</u></td></tr>
+<tr><th id="128">128</th><td><u>     (((PyDateTime_DateTime*)o)-&gt;data[8] &lt;&lt; 8)  |       \</u></td></tr>
+<tr><th id="129">129</th><td><u>      ((PyDateTime_DateTime*)o)-&gt;data[9])</u></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DATE_GET_FOLD" data-ref="_M/PyDateTime_DATE_GET_FOLD">PyDateTime_DATE_GET_FOLD</dfn>(o)        (((PyDateTime_DateTime*)o)-&gt;fold)</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><i>/* Apply for time instances. */</i></td></tr>
+<tr><th id="133">133</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_TIME_GET_HOUR" data-ref="_M/PyDateTime_TIME_GET_HOUR">PyDateTime_TIME_GET_HOUR</dfn>(o)        (((PyDateTime_Time*)o)-&gt;data[0])</u></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_TIME_GET_MINUTE" data-ref="_M/PyDateTime_TIME_GET_MINUTE">PyDateTime_TIME_GET_MINUTE</dfn>(o)      (((PyDateTime_Time*)o)-&gt;data[1])</u></td></tr>
+<tr><th id="135">135</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_TIME_GET_SECOND" data-ref="_M/PyDateTime_TIME_GET_SECOND">PyDateTime_TIME_GET_SECOND</dfn>(o)      (((PyDateTime_Time*)o)-&gt;data[2])</u></td></tr>
+<tr><th id="136">136</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_TIME_GET_MICROSECOND" data-ref="_M/PyDateTime_TIME_GET_MICROSECOND">PyDateTime_TIME_GET_MICROSECOND</dfn>(o)              \</u></td></tr>
+<tr><th id="137">137</th><td><u>    ((((PyDateTime_Time*)o)-&gt;data[3] &lt;&lt; 16) |           \</u></td></tr>
+<tr><th id="138">138</th><td><u>     (((PyDateTime_Time*)o)-&gt;data[4] &lt;&lt; 8)  |           \</u></td></tr>
+<tr><th id="139">139</th><td><u>      ((PyDateTime_Time*)o)-&gt;data[5])</u></td></tr>
+<tr><th id="140">140</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_TIME_GET_FOLD" data-ref="_M/PyDateTime_TIME_GET_FOLD">PyDateTime_TIME_GET_FOLD</dfn>(o)        (((PyDateTime_Time*)o)-&gt;fold)</u></td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><i>/* Apply for time delta instances */</i></td></tr>
+<tr><th id="143">143</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DELTA_GET_DAYS" data-ref="_M/PyDateTime_DELTA_GET_DAYS">PyDateTime_DELTA_GET_DAYS</dfn>(o)         (((PyDateTime_Delta*)o)-&gt;days)</u></td></tr>
+<tr><th id="144">144</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DELTA_GET_SECONDS" data-ref="_M/PyDateTime_DELTA_GET_SECONDS">PyDateTime_DELTA_GET_SECONDS</dfn>(o)      (((PyDateTime_Delta*)o)-&gt;seconds)</u></td></tr>
+<tr><th id="145">145</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_DELTA_GET_MICROSECONDS" data-ref="_M/PyDateTime_DELTA_GET_MICROSECONDS">PyDateTime_DELTA_GET_MICROSECONDS</dfn>(o)            \</u></td></tr>
+<tr><th id="146">146</th><td><u>    (((PyDateTime_Delta*)o)-&gt;microseconds)</u></td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>/* Define structure for C API. */</i></td></tr>
+<tr><th id="150">150</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="151">151</th><td>    <i>/* type objects */</i></td></tr>
+<tr><th id="152">152</th><td>    <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="decl" id="(anonymous)::DateType" title='(anonymous struct)::DateType' data-ref="(anonymous)::DateType">DateType</dfn>;</td></tr>
+<tr><th id="153">153</th><td>    <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="decl" id="(anonymous)::DateTimeType" title='(anonymous struct)::DateTimeType' data-ref="(anonymous)::DateTimeType">DateTimeType</dfn>;</td></tr>
+<tr><th id="154">154</th><td>    <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="decl" id="(anonymous)::TimeType" title='(anonymous struct)::TimeType' data-ref="(anonymous)::TimeType">TimeType</dfn>;</td></tr>
+<tr><th id="155">155</th><td>    <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="decl" id="(anonymous)::DeltaType" title='(anonymous struct)::DeltaType' data-ref="(anonymous)::DeltaType">DeltaType</dfn>;</td></tr>
+<tr><th id="156">156</th><td>    <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="decl" id="(anonymous)::TZInfoType" title='(anonymous struct)::TZInfoType' data-ref="(anonymous)::TZInfoType">TZInfoType</dfn>;</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>    <i>/* constructors */</i></td></tr>
+<tr><th id="159">159</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::Date_FromDate" title='(anonymous struct)::Date_FromDate' data-ref="(anonymous)::Date_FromDate">Date_FromDate</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>*);</td></tr>
+<tr><th id="160">160</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::DateTime_FromDateAndTime" title='(anonymous struct)::DateTime_FromDateAndTime' data-ref="(anonymous)::DateTime_FromDateAndTime">DateTime_FromDateAndTime</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>,</td></tr>
+<tr><th id="161">161</th><td>        <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>*);</td></tr>
+<tr><th id="162">162</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::Time_FromTime" title='(anonymous struct)::Time_FromTime' data-ref="(anonymous)::Time_FromTime">Time_FromTime</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>*);</td></tr>
+<tr><th id="163">163</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::Delta_FromDelta" title='(anonymous struct)::Delta_FromDelta' data-ref="(anonymous)::Delta_FromDelta">Delta_FromDelta</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>*);</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td>    <i>/* constructors for the DB API */</i></td></tr>
+<tr><th id="166">166</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::DateTime_FromTimestamp" title='(anonymous struct)::DateTime_FromTimestamp' data-ref="(anonymous)::DateTime_FromTimestamp">DateTime_FromTimestamp</dfn>)(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*);</td></tr>
+<tr><th id="167">167</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::Date_FromTimestamp" title='(anonymous struct)::Date_FromTimestamp' data-ref="(anonymous)::Date_FromTimestamp">Date_FromTimestamp</dfn>)(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*);</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td>    <i>/* PEP 495 constructors */</i></td></tr>
+<tr><th id="170">170</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::DateTime_FromDateAndTimeAndFold" title='(anonymous struct)::DateTime_FromDateAndTimeAndFold' data-ref="(anonymous)::DateTime_FromDateAndTimeAndFold">DateTime_FromDateAndTimeAndFold</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>,</td></tr>
+<tr><th id="171">171</th><td>        <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <em>int</em>, <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>*);</td></tr>
+<tr><th id="172">172</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *(*<dfn class="decl" id="(anonymous)::Time_FromTimeAndFold" title='(anonymous struct)::Time_FromTimeAndFold' data-ref="(anonymous)::Time_FromTimeAndFold">Time_FromTimeAndFold</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*, <em>int</em>, <a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>*);</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>} <dfn class="typedef" id="PyDateTime_CAPI" title='PyDateTime_CAPI' data-type='struct PyDateTime_CAPI' data-ref="PyDateTime_CAPI">PyDateTime_CAPI</dfn>;</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_CAPSULE_NAME" data-ref="_M/PyDateTime_CAPSULE_NAME">PyDateTime_CAPSULE_NAME</dfn> "datetime.datetime_CAPI"</u></td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><u>#<span data-ppcond="179">ifdef</span> <a class="macro" href="../Modules/_datetimemodule.c.html#18" data-ref="_M/Py_BUILD_CORE">Py_BUILD_CORE</a></u></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><i>/* Macros for type checking when building the Python core. */</i></td></tr>
+<tr><th id="182">182</th><td><u>#define <dfn class="macro" id="_M/PyDate_Check" data-ref="_M/PyDate_Check">PyDate_Check</dfn>(op) PyObject_TypeCheck(op, &amp;PyDateTime_DateType)</u></td></tr>
+<tr><th id="183">183</th><td><u>#define <dfn class="macro" id="_M/PyDate_CheckExact" data-ref="_M/PyDate_CheckExact">PyDate_CheckExact</dfn>(op) (Py_TYPE(op) == &amp;PyDateTime_DateType)</u></td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_Check" data-ref="_M/PyDateTime_Check">PyDateTime_Check</dfn>(op) PyObject_TypeCheck(op, &amp;PyDateTime_DateTimeType)</u></td></tr>
+<tr><th id="186">186</th><td><u>#define <dfn class="macro" id="_M/PyDateTime_CheckExact" data-ref="_M/PyDateTime_CheckExact">PyDateTime_CheckExact</dfn>(op) (Py_TYPE(op) == &amp;PyDateTime_DateTimeType)</u></td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><u>#define <dfn class="macro" id="_M/PyTime_Check" data-ref="_M/PyTime_Check">PyTime_Check</dfn>(op) PyObject_TypeCheck(op, &amp;PyDateTime_TimeType)</u></td></tr>
+<tr><th id="189">189</th><td><u>#define <dfn class="macro" id="_M/PyTime_CheckExact" data-ref="_M/PyTime_CheckExact">PyTime_CheckExact</dfn>(op) (Py_TYPE(op) == &amp;PyDateTime_TimeType)</u></td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td><u>#define <dfn class="macro" id="_M/PyDelta_Check" data-ref="_M/PyDelta_Check">PyDelta_Check</dfn>(op) PyObject_TypeCheck(op, &amp;PyDateTime_DeltaType)</u></td></tr>
+<tr><th id="192">192</th><td><u>#define <dfn class="macro" id="_M/PyDelta_CheckExact" data-ref="_M/PyDelta_CheckExact">PyDelta_CheckExact</dfn>(op) (Py_TYPE(op) == &amp;PyDateTime_DeltaType)</u></td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><u>#define <dfn class="macro" id="_M/PyTZInfo_Check" data-ref="_M/PyTZInfo_Check">PyTZInfo_Check</dfn>(op) PyObject_TypeCheck(op, &amp;PyDateTime_TZInfoType)</u></td></tr>
+<tr><th id="195">195</th><td><u>#define <dfn class="macro" id="_M/PyTZInfo_CheckExact" data-ref="_M/PyTZInfo_CheckExact">PyTZInfo_CheckExact</dfn>(op) (Py_TYPE(op) == &amp;PyDateTime_TZInfoType)</u></td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td><u>#<span data-ppcond="179">else</span></u></td></tr>
+<tr><th id="198">198</th><td></td></tr>
+<tr><th id="199">199</th><td><i>/* Define global variable for the C API and a macro for setting it. */</i></td></tr>
+<tr><th id="200">200</th><td><em>static</em> PyDateTime_CAPI *PyDateTimeAPI = NULL;</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><u>#define PyDateTime_IMPORT \</u></td></tr>
+<tr><th id="203">203</th><td><u>    PyDateTimeAPI = (PyDateTime_CAPI *)PyCapsule_Import(PyDateTime_CAPSULE_NAME, 0)</u></td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td><i>/* Macros for type checking when not building the Python core. */</i></td></tr>
+<tr><th id="206">206</th><td><u>#define PyDate_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI-&gt;DateType)</u></td></tr>
+<tr><th id="207">207</th><td><u>#define PyDate_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI-&gt;DateType)</u></td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><u>#define PyDateTime_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI-&gt;DateTimeType)</u></td></tr>
+<tr><th id="210">210</th><td><u>#define PyDateTime_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI-&gt;DateTimeType)</u></td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td><u>#define PyTime_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI-&gt;TimeType)</u></td></tr>
+<tr><th id="213">213</th><td><u>#define PyTime_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI-&gt;TimeType)</u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><u>#define PyDelta_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI-&gt;DeltaType)</u></td></tr>
+<tr><th id="216">216</th><td><u>#define PyDelta_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI-&gt;DeltaType)</u></td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td><u>#define PyTZInfo_Check(op) PyObject_TypeCheck(op, PyDateTimeAPI-&gt;TZInfoType)</u></td></tr>
+<tr><th id="219">219</th><td><u>#define PyTZInfo_CheckExact(op) (Py_TYPE(op) == PyDateTimeAPI-&gt;TZInfoType)</u></td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><i>/* Macros for accessing constructors in a simplified fashion. */</i></td></tr>
+<tr><th id="222">222</th><td><u>#define PyDate_FromDate(year, month, day) \</u></td></tr>
+<tr><th id="223">223</th><td><u>    PyDateTimeAPI-&gt;Date_FromDate(year, month, day, PyDateTimeAPI-&gt;DateType)</u></td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td><u>#define PyDateTime_FromDateAndTime(year, month, day, hour, min, sec, usec) \</u></td></tr>
+<tr><th id="226">226</th><td><u>    PyDateTimeAPI-&gt;DateTime_FromDateAndTime(year, month, day, hour, \</u></td></tr>
+<tr><th id="227">227</th><td><u>        min, sec, usec, Py_None, PyDateTimeAPI-&gt;DateTimeType)</u></td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td><u>#define PyDateTime_FromDateAndTimeAndFold(year, month, day, hour, min, sec, usec, fold) \</u></td></tr>
+<tr><th id="230">230</th><td><u>    PyDateTimeAPI-&gt;DateTime_FromDateAndTimeAndFold(year, month, day, hour, \</u></td></tr>
+<tr><th id="231">231</th><td><u>        min, sec, usec, Py_None, fold, PyDateTimeAPI-&gt;DateTimeType)</u></td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><u>#define PyTime_FromTime(hour, minute, second, usecond) \</u></td></tr>
+<tr><th id="234">234</th><td><u>    PyDateTimeAPI-&gt;Time_FromTime(hour, minute, second, usecond, \</u></td></tr>
+<tr><th id="235">235</th><td><u>        Py_None, PyDateTimeAPI-&gt;TimeType)</u></td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td><u>#define PyTime_FromTimeAndFold(hour, minute, second, usecond, fold) \</u></td></tr>
+<tr><th id="238">238</th><td><u>    PyDateTimeAPI-&gt;Time_FromTimeAndFold(hour, minute, second, usecond, \</u></td></tr>
+<tr><th id="239">239</th><td><u>        Py_None, fold, PyDateTimeAPI-&gt;TimeType)</u></td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td><u>#define PyDelta_FromDSU(days, seconds, useconds) \</u></td></tr>
+<tr><th id="242">242</th><td><u>    PyDateTimeAPI-&gt;Delta_FromDelta(days, seconds, useconds, 1, \</u></td></tr>
+<tr><th id="243">243</th><td><u>        PyDateTimeAPI-&gt;DeltaType)</u></td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td><i>/* Macros supporting the DB API. */</i></td></tr>
+<tr><th id="246">246</th><td><u>#define PyDateTime_FromTimestamp(args) \</u></td></tr>
+<tr><th id="247">247</th><td><u>    PyDateTimeAPI-&gt;DateTime_FromTimestamp( \</u></td></tr>
+<tr><th id="248">248</th><td><u>        (PyObject*) (PyDateTimeAPI-&gt;DateTimeType), args, NULL)</u></td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><u>#define PyDate_FromTimestamp(args) \</u></td></tr>
+<tr><th id="251">251</th><td><u>    PyDateTimeAPI-&gt;Date_FromTimestamp( \</u></td></tr>
+<tr><th id="252">252</th><td><u>        (PyObject*) (PyDateTimeAPI-&gt;DateType), args)</u></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><u>#<span data-ppcond="179">endif</span>  /* Py_BUILD_CORE */</u></td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td><u>#<span data-ppcond="256">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="257">257</th><td>}</td></tr>
+<tr><th id="258">258</th><td><u>#<span data-ppcond="256">endif</span></u></td></tr>
+<tr><th id="259">259</th><td><u>#<span data-ppcond="4">endif</span></u></td></tr>
+<tr><th id="260">260</th><td><u>#<span data-ppcond="3">endif</span> /* !Py_LIMITED_API */</u></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_datetimemodule.c.html'>codebrowser/Modules/_datetimemodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

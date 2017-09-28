@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/accu.h' l='23' type='PyObject *'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/accu.h' l='23'>/* Pending small strings */</doc>
+<use f='codebrowser/Objects/accu.c' l='22' u='w' c='_PyAccu_Init'/>
+<use f='codebrowser/Objects/accu.c' l='23' u='r' c='_PyAccu_Init'/>
+<use f='codebrowser/Objects/accu.c' l='31' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='31' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='40' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='43' u='r' c='flush_accumulator'/>
+<use f='codebrowser/Objects/accu.c' l='60' u='r' c='_PyAccu_Accumulate'/>
+<use f='codebrowser/Objects/accu.c' l='62' u='r' c='_PyAccu_Accumulate'/>
+<use f='codebrowser/Objects/accu.c' l='62' u='r' c='_PyAccu_Accumulate'/>
+<use f='codebrowser/Objects/accu.c' l='82' u='r' c='_PyAccu_FinishAsList'/>
+<use f='codebrowser/Objects/accu.c' l='82' u='w' c='_PyAccu_FinishAsList'/>
+<use f='codebrowser/Objects/accu.c' l='97' u='r' c='_PyAccu_Finish'/>
+<use f='codebrowser/Objects/accu.c' l='98' u='w' c='_PyAccu_Finish'/>
+<use f='codebrowser/Objects/accu.c' l='113' u='r' c='_PyAccu_Destroy'/>
+<use f='codebrowser/Objects/accu.c' l='113' u='w' c='_PyAccu_Destroy'/>

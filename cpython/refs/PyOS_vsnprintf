@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyerrors.h' l='499' type='int PyOS_vsnprintf(char * str, size_t size, const char * format, struct __va_list_tag * va)'/>
+<use f='codebrowser/Python/mysnprintf.c' l='47' u='c' c='PyOS_snprintf'/>
+<def f='codebrowser/Python/mysnprintf.c' l='52' ll='104' type='int PyOS_vsnprintf(char * str, size_t size, const char * format, struct __va_list_tag * va)'/>
+<use f='codebrowser/Python/sysmodule.c' l='2436' u='c' c='sys_write'/>

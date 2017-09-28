@@ -1,0 +1,10 @@
+<dec f='codebrowser/Python/pyarena.c' l='63' type='PyObject *'/>
+<use f='codebrowser/Python/pyarena.c' l='140' u='w' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='141' u='r' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='175' u='r' c='PyArena_Free'/>
+<use f='codebrowser/Python/pyarena.c' l='205' u='r' c='PyArena_AddPyObject'/>
+<offset>128</offset>
+<doc f='codebrowser/Python/pyarena.c' l='59'>/* A Python list object containing references to all the PyObject
+       pointers associated with this area.  They will be DECREFed
+       when the arena is freed.
+    */</doc>

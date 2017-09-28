@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/abstract.h' l='454' type='int PyObject_DelItem(PyObject * o, PyObject * key)'/>
+<doc f='codebrowser/Include/abstract.h' l='451'>/* Delete the mapping for key from object &apos;o&apos;. Returns -1 on failure.
+
+   This is the equivalent of the Python statement: del o[key]. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='555' u='c' c='_operator_delitem_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='205' ll='235' type='int PyObject_DelItem(PyObject * o, PyObject * key)'/>
+<use f='codebrowser/Objects/abstract.c' l='250' u='c' c='PyObject_DelItemString'/>
+<use f='codebrowser/Objects/frameobject.c' l='800' u='c' c='map_to_dict'/>
+<use f='codebrowser/Objects/odictobject.c' l='1129' u='c' c='_odict_popkey_hash'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='577' u='c' c='proxy_setitem'/>
+<use f='codebrowser/Python/ceval.c' l='1775' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2173' u='c' c='_PyEval_EvalFrameDefault'/>

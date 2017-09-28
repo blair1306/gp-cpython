@@ -1,0 +1,3 @@
+<def f='codebrowser/Python/ceval_gil.h' l='135' ll='148' type='void create_gil()'/>
+<use f='codebrowser/Python/ceval_gil.h' l='169' u='c' c='recreate_gil'/>
+<use f='codebrowser/Python/ceval.c' l='179' u='c' c='PyEval_InitThreads'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='951' type='int _PyUnicodeWriter_PrepareKindInternal(_PyUnicodeWriter * writer, enum PyUnicode_Kind kind)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='948'>/* Don&apos;t call this function directly, use the _PyUnicodeWriter_PrepareKind()
+   macro instead. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='5061' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6983' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='13608' ll='13628' type='int _PyUnicodeWriter_PrepareKindInternal(_PyUnicodeWriter * writer, enum PyUnicode_Kind kind)'/>

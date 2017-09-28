@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/bytesobject.h' l='185' type='void * _PyBytesWriter_Alloc(_PyBytesWriter * writer, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/bytesobject.h' l='182'>/* Allocate the buffer to write size bytes.
+   Return the pointer to the beginning of buffer data.
+   Raise an exception and return NULL on error. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='2121' u='c' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/binascii.c' l='367' u='c' c='binascii_b2a_uu_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='461' u='c' c='binascii_a2b_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='562' u='c' c='binascii_b2a_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='627' u='c' c='binascii_a2b_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='700' u='c' c='binascii_rlecode_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='764' u='c' c='binascii_b2a_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='820' u='c' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='199' u='c' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='610' u='c' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1134' u='c' c='_PyBytes_DecodeEscape'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2387' u='c' c='_PyBytes_FromHex'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2710' u='c' c='_PyBytes_FromIterator'/>
+<def f='codebrowser/Objects/bytesobject.c' l='3342' ll='3370' type='void * _PyBytesWriter_Alloc(_PyBytesWriter * writer, Py_ssize_t size)'/>
+<doc f='codebrowser/Objects/bytesobject.c' l='3339'>/* Allocate the buffer to write size bytes.
+   Return the pointer to the beginning of buffer data.
+   Raise an exception and return NULL on error. */</doc>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='290' u='c' c='asciilib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='290' u='c' c='ucs1lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='290' u='c' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='290' u='c' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6744' u='c' c='unicode_encode_ucs1'/>

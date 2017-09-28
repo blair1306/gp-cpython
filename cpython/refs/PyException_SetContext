@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pyerrors.h' l='128' type='void PyException_SetContext(PyObject * , PyObject * )'/>
+<use f='codebrowser/Objects/exceptions.c' l='259' u='c' c='BaseException_set_context'/>
+<def f='codebrowser/Objects/exceptions.c' l='339' ll='343' type='void PyException_SetContext(PyObject * self, PyObject * context)'/>
+<doc f='codebrowser/Objects/exceptions.c' l='338'>/* Steals a reference to context */</doc>
+<use f='codebrowser/Python/errors.c' l='115' u='c' c='PyErr_SetObject'/>
+<use f='codebrowser/Python/errors.c' l='120' u='c' c='PyErr_SetObject'/>
+<use f='codebrowser/Python/errors.c' l='384' u='c' c='_PyErr_ChainExceptions'/>
+<use f='codebrowser/Python/errors.c' l='413' u='c' c='_PyErr_FormatVFromCause'/>

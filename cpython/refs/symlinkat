@@ -1,0 +1,3 @@
+<dec f='include/unistd.h' l='819' type='int symlinkat(const char * __from, int __tofd, const char * __to)'/>
+<doc f='include/unistd.h' l='818'>/* Like symlink but a relative path in TO is interpreted relative to TOFD.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='7421' u='c' c='os_symlink_impl'/>

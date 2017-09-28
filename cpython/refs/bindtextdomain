@@ -1,0 +1,4 @@
+<dec f='include/libintl.h' l='86' type='char * bindtextdomain(const char * __domainname, const char * __dirname)'/>
+<use f='codebrowser/Modules/_localemodule.c' l='552' u='c' c='PyIntl_bindtextdomain'/>
+<doc f='include/libintl.h' l='84'>/* Specify that the DOMAINNAME message catalog will be found
+   in DIRNAME rather than in the system locale data base.  */</doc>

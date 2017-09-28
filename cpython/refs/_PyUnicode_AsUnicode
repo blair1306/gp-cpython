@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='771' type='const Py_UNICODE * _PyUnicode_AsUnicode(PyObject * unicode)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='769'>/* Similar to PyUnicode_AsUnicode(), but raises a ValueError if the string
+   contains null characters. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='4137' ll='4149' type='const Py_UNICODE * _PyUnicode_AsUnicode(PyObject * unicode)'/>

@@ -1,0 +1,46 @@
+<dec f='codebrowser/Modules/sre_lib.h' l='384'/>
+<use f='codebrowser/Modules/sre_lib.h' l='758' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='827' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='913' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1005' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1062' u='c'/>
+<dec f='codebrowser/Modules/sre_lib.h' l='384'/>
+<use f='codebrowser/Modules/sre_lib.h' l='758' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='827' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='913' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1005' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1062' u='c'/>
+<dec f='codebrowser/Modules/sre_lib.h' l='384'/>
+<use f='codebrowser/Modules/sre_lib.h' l='758' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='827' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='913' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1005' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='1062' u='c'/>
+<doc f='codebrowser/Modules/sre_lib.h' l='356'>/* The macros below should be used to protect recursive SRE(match)()
+ * calls that *failed* and do *not* return immediately (IOW, those
+ * that will backtrack). Explaining:
+ *
+ * - Recursive SRE(match)() returned true: that&apos;s usually a success
+ *   (besides atypical cases like ASSERT_NOT), therefore there&apos;s no
+ *   reason to restore lastmark;
+ *
+ * - Recursive SRE(match)() returned false but the current SRE(match)()
+ *   is returning to the caller: If the current SRE(match)() is the
+ *   top function of the recursion, returning false will be a matching
+ *   failure, and it doesn&apos;t matter where lastmark is pointing to.
+ *   If it&apos;s *not* the top function, it will be a recursive SRE(match)()
+ *   failure by itself, and the calling SRE(match)() will have to deal
+ *   with the failure by the same rules explained here (it will restore
+ *   lastmark by itself if necessary);
+ *
+ * - Recursive SRE(match)() returned false, and will continue the
+ *   outside &apos;for&apos; loop: must be protected when breaking, since the next
+ *   OP could potentially depend on lastmark;
+ *
+ * - Recursive SRE(match)() returned false, and will be called again
+ *   inside a local for/while loop: must be protected between each
+ *   loop iteration, since the recursive SRE(match)() could do anything,
+ *   and could potentially depend on lastmark.
+ *
+ * For more information, check the discussion at SF patch #712900.
+ */</doc>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>gcmodule.c.h source code [codebrowser/Modules/clinic/gcmodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/gcmodule.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='gcmodule.c.h.html'>gcmodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_enable__doc__[] = &quot;enable($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Enable automatic garbage collection.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_enable__doc__" title='gc_enable__doc__' data-ref="gc_enable__doc__">gc_enable__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"enable($module, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Enable automatic garbage collection."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/GC_ENABLE_METHODDEF" data-ref="_M/GC_ENABLE_METHODDEF">GC_ENABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"enable", (PyCFunction)gc_enable, METH_NOARGS, gc_enable__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../gcmodule.c.html#gc_enable_impl" title='gc_enable_impl' data-ref="gc_enable_impl" id="gc_enable_impl">gc_enable_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="129module" title='module' data-type='PyObject *' data-ref="129module">module</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="gc_enable" title='gc_enable' data-ref="gc_enable">gc_enable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="130module" title='module' data-type='PyObject *' data-ref="130module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <b>return</b> <a class="ref" href="../gcmodule.c.html#gc_enable_impl" title='gc_enable_impl' data-ref="gc_enable_impl">gc_enable_impl</a>(<a class="local col0 ref" href="#130module" title='module' data-ref="130module">module</a>);</td></tr>
+<tr><th id="21">21</th><td>}</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_disable__doc__[] = &quot;disable($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Disable automatic garbage collection.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_disable__doc__" title='gc_disable__doc__' data-ref="gc_disable__doc__">gc_disable__doc__</dfn>,</td></tr>
+<tr><th id="24">24</th><td><q>"disable($module, /)\n"</q></td></tr>
+<tr><th id="25">25</th><td><q>"--\n"</q></td></tr>
+<tr><th id="26">26</th><td><q>"\n"</q></td></tr>
+<tr><th id="27">27</th><td><q>"Disable automatic garbage collection."</q>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#define <dfn class="macro" id="_M/GC_DISABLE_METHODDEF" data-ref="_M/GC_DISABLE_METHODDEF">GC_DISABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="30">30</th><td><u>    {"disable", (PyCFunction)gc_disable, METH_NOARGS, gc_disable__doc__},</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="33">33</th><td><a class="decl" href="../gcmodule.c.html#gc_disable_impl" title='gc_disable_impl' data-ref="gc_disable_impl" id="gc_disable_impl">gc_disable_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="131module" title='module' data-type='PyObject *' data-ref="131module">module</dfn>);</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="36">36</th><td><dfn class="decl def" id="gc_disable" title='gc_disable' data-ref="gc_disable">gc_disable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="132module" title='module' data-type='PyObject *' data-ref="132module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="37">37</th><td>{</td></tr>
+<tr><th id="38">38</th><td>    <b>return</b> <a class="ref" href="../gcmodule.c.html#gc_disable_impl" title='gc_disable_impl' data-ref="gc_disable_impl">gc_disable_impl</a>(<a class="local col2 ref" href="#132module" title='module' data-ref="132module">module</a>);</td></tr>
+<tr><th id="39">39</th><td>}</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_isenabled__doc__[] = &quot;isenabled($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns true if automatic garbage collection is enabled.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_isenabled__doc__" title='gc_isenabled__doc__' data-ref="gc_isenabled__doc__">gc_isenabled__doc__</dfn>,</td></tr>
+<tr><th id="42">42</th><td><q>"isenabled($module, /)\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"--\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"Returns true if automatic garbage collection is enabled."</q>);</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/GC_ISENABLED_METHODDEF" data-ref="_M/GC_ISENABLED_METHODDEF">GC_ISENABLED_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="48">48</th><td><u>    {"isenabled", (PyCFunction)gc_isenabled, METH_NOARGS, gc_isenabled__doc__},</u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="51">51</th><td><a class="decl" href="../gcmodule.c.html#gc_isenabled_impl" title='gc_isenabled_impl' data-ref="gc_isenabled_impl" id="gc_isenabled_impl">gc_isenabled_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="133module" title='module' data-type='PyObject *' data-ref="133module">module</dfn>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="54">54</th><td><dfn class="decl def" id="gc_isenabled" title='gc_isenabled' data-ref="gc_isenabled">gc_isenabled</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="134module" title='module' data-type='PyObject *' data-ref="134module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="55">55</th><td>{</td></tr>
+<tr><th id="56">56</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="135return_value" title='return_value' data-type='PyObject *' data-ref="135return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="57">57</th><td>    <em>int</em> <dfn class="local col6 decl" id="136_return_value" title='_return_value' data-type='int' data-ref="136_return_value">_return_value</dfn>;</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>    <a class="local col6 ref" href="#136_return_value" title='_return_value' data-ref="136_return_value">_return_value</a> = <a class="ref" href="../gcmodule.c.html#gc_isenabled_impl" title='gc_isenabled_impl' data-ref="gc_isenabled_impl">gc_isenabled_impl</a>(<a class="local col4 ref" href="#134module" title='module' data-ref="134module">module</a>);</td></tr>
+<tr><th id="60">60</th><td>    <b>if</b> ((<a class="local col6 ref" href="#136_return_value" title='_return_value' data-ref="136_return_value">_return_value</a> == -<var>1</var>) &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="61">61</th><td>        <b>goto</b> <a class="lbl" href="#137exit" data-ref="137exit">exit</a>;</td></tr>
+<tr><th id="62">62</th><td>    }</td></tr>
+<tr><th id="63">63</th><td>    <a class="local col5 ref" href="#135return_value" title='return_value' data-ref="135return_value">return_value</a> = <a class="ref" href="../../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>((<em>long</em>)<a class="local col6 ref" href="#136_return_value" title='_return_value' data-ref="136_return_value">_return_value</a>);</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><dfn class="lbl" id="137exit" data-ref="137exit">exit</dfn>:</td></tr>
+<tr><th id="66">66</th><td>    <b>return</b> <a class="local col5 ref" href="#135return_value" title='return_value' data-ref="135return_value">return_value</a>;</td></tr>
+<tr><th id="67">67</th><td>}</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_collect__doc__[] = &quot;collect($module, /, generation=2)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Run the garbage collector.\n&quot;&quot;\n&quot;&quot;With no arguments, run a full collection.  The optional argument\n&quot;&quot;may be an integer specifying which generation to collect.  A ValueError\n&quot;&quot;is raised if the generation number is invalid.\n&quot;&quot;\n&quot;&quot;The number of unreachable objects is returned.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_collect__doc__" title='gc_collect__doc__' data-ref="gc_collect__doc__">gc_collect__doc__</dfn>,</td></tr>
+<tr><th id="70">70</th><td><q>"collect($module, /, generation=2)\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"--\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"Run the garbage collector.\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"\n"</q></td></tr>
+<tr><th id="75">75</th><td><q>"With no arguments, run a full collection.  The optional argument\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"may be an integer specifying which generation to collect.  A ValueError\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"is raised if the generation number is invalid.\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"\n"</q></td></tr>
+<tr><th id="79">79</th><td><q>"The number of unreachable objects is returned."</q>);</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/GC_COLLECT_METHODDEF" data-ref="_M/GC_COLLECT_METHODDEF">GC_COLLECT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="82">82</th><td><u>    {"collect", (PyCFunction)gc_collect, METH_FASTCALL|METH_KEYWORDS, gc_collect__doc__},</u></td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><em>static</em> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a></td></tr>
+<tr><th id="85">85</th><td><a class="decl" href="../gcmodule.c.html#gc_collect_impl" title='gc_collect_impl' data-ref="gc_collect_impl" id="gc_collect_impl">gc_collect_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="138module" title='module' data-type='PyObject *' data-ref="138module">module</dfn>, <em>int</em> <dfn class="local col9 decl" id="139generation" title='generation' data-type='int' data-ref="139generation">generation</dfn>);</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="88">88</th><td><dfn class="decl def" id="gc_collect" title='gc_collect' data-ref="gc_collect">gc_collect</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="140module" title='module' data-type='PyObject *' data-ref="140module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="141args" title='args' data-type='PyObject **' data-ref="141args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="142nargs" title='nargs' data-type='Py_ssize_t' data-ref="142nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="143kwnames" title='kwnames' data-type='PyObject *' data-ref="143kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="89">89</th><td>{</td></tr>
+<tr><th id="90">90</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="144return_value" title='return_value' data-type='PyObject *' data-ref="144return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="91">91</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col5 decl" id="145_keywords" title='_keywords' data-type='const char *const [2]' data-ref="145_keywords">_keywords</dfn>[] = {<q>"generation"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="92">92</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col6 decl" id="146_parser" title='_parser' data-type='_PyArg_Parser' data-ref="146_parser">_parser</dfn> = {<q>"|i:collect"</q>, <a class="local col5 ref" href="#145_keywords" title='_keywords' data-ref="145_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="93">93</th><td>    <em>int</em> <dfn class="local col7 decl" id="147generation" title='generation' data-type='int' data-ref="147generation">generation</dfn> = <a class="macro" href="../gcmodule.c.html#53" title="3" data-ref="_M/NUM_GENERATIONS">NUM_GENERATIONS</a> - <var>1</var>;</td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="148_return_value" title='_return_value' data-type='Py_ssize_t' data-ref="148_return_value">_return_value</dfn>;</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStackAndKeywords" title='_PyArg_ParseStackAndKeywords' data-ref="_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col1 ref" href="#141args" title='args' data-ref="141args">args</a>, <a class="local col2 ref" href="#142nargs" title='nargs' data-ref="142nargs">nargs</a>, <a class="local col3 ref" href="#143kwnames" title='kwnames' data-ref="143kwnames">kwnames</a>, &amp;<a class="local col6 ref" href="#146_parser" title='_parser' data-ref="146_parser">_parser</a>,</td></tr>
+<tr><th id="97">97</th><td>        &amp;<a class="local col7 ref" href="#147generation" title='generation' data-ref="147generation">generation</a>)) {</td></tr>
+<tr><th id="98">98</th><td>        <b>goto</b> <a class="lbl" href="#149exit" data-ref="149exit">exit</a>;</td></tr>
+<tr><th id="99">99</th><td>    }</td></tr>
+<tr><th id="100">100</th><td>    <a class="local col8 ref" href="#148_return_value" title='_return_value' data-ref="148_return_value">_return_value</a> = <a class="ref" href="../gcmodule.c.html#gc_collect_impl" title='gc_collect_impl' data-ref="gc_collect_impl">gc_collect_impl</a>(<a class="local col0 ref" href="#140module" title='module' data-ref="140module">module</a>, <a class="local col7 ref" href="#147generation" title='generation' data-ref="147generation">generation</a>);</td></tr>
+<tr><th id="101">101</th><td>    <b>if</b> ((<a class="local col8 ref" href="#148_return_value" title='_return_value' data-ref="148_return_value">_return_value</a> == -<var>1</var>) &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="102">102</th><td>        <b>goto</b> <a class="lbl" href="#149exit" data-ref="149exit">exit</a>;</td></tr>
+<tr><th id="103">103</th><td>    }</td></tr>
+<tr><th id="104">104</th><td>    <a class="local col4 ref" href="#144return_value" title='return_value' data-ref="144return_value">return_value</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col8 ref" href="#148_return_value" title='_return_value' data-ref="148_return_value">_return_value</a>);</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><dfn class="lbl" id="149exit" data-ref="149exit">exit</dfn>:</td></tr>
+<tr><th id="107">107</th><td>    <b>return</b> <a class="local col4 ref" href="#144return_value" title='return_value' data-ref="144return_value">return_value</a>;</td></tr>
+<tr><th id="108">108</th><td>}</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_set_debug__doc__[] = &quot;set_debug($module, flags, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Set the garbage collection debugging flags.\n&quot;&quot;\n&quot;&quot;  flags\n&quot;&quot;    An integer that can have the following bits turned on:\n&quot;&quot;      DEBUG_STATS - Print statistics during collection.\n&quot;&quot;      DEBUG_COLLECTABLE - Print collectable objects found.\n&quot;&quot;      DEBUG_UNCOLLECTABLE - Print unreachable but uncollectable objects\n&quot;&quot;        found.\n&quot;&quot;      DEBUG_SAVEALL - Save objects to gc.garbage rather than freeing them.\n&quot;&quot;      DEBUG_LEAK - Debug leaking programs (everything but STATS).\n&quot;&quot;\n&quot;&quot;Debugging information is written to sys.stderr.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_set_debug__doc__" title='gc_set_debug__doc__' data-ref="gc_set_debug__doc__">gc_set_debug__doc__</dfn>,</td></tr>
+<tr><th id="111">111</th><td><q>"set_debug($module, flags, /)\n"</q></td></tr>
+<tr><th id="112">112</th><td><q>"--\n"</q></td></tr>
+<tr><th id="113">113</th><td><q>"\n"</q></td></tr>
+<tr><th id="114">114</th><td><q>"Set the garbage collection debugging flags.\n"</q></td></tr>
+<tr><th id="115">115</th><td><q>"\n"</q></td></tr>
+<tr><th id="116">116</th><td><q>"  flags\n"</q></td></tr>
+<tr><th id="117">117</th><td><q>"    An integer that can have the following bits turned on:\n"</q></td></tr>
+<tr><th id="118">118</th><td><q>"      DEBUG_STATS - Print statistics during collection.\n"</q></td></tr>
+<tr><th id="119">119</th><td><q>"      DEBUG_COLLECTABLE - Print collectable objects found.\n"</q></td></tr>
+<tr><th id="120">120</th><td><q>"      DEBUG_UNCOLLECTABLE - Print unreachable but uncollectable objects\n"</q></td></tr>
+<tr><th id="121">121</th><td><q>"        found.\n"</q></td></tr>
+<tr><th id="122">122</th><td><q>"      DEBUG_SAVEALL - Save objects to gc.garbage rather than freeing them.\n"</q></td></tr>
+<tr><th id="123">123</th><td><q>"      DEBUG_LEAK - Debug leaking programs (everything but STATS).\n"</q></td></tr>
+<tr><th id="124">124</th><td><q>"\n"</q></td></tr>
+<tr><th id="125">125</th><td><q>"Debugging information is written to sys.stderr."</q>);</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><u>#define <dfn class="macro" id="_M/GC_SET_DEBUG_METHODDEF" data-ref="_M/GC_SET_DEBUG_METHODDEF">GC_SET_DEBUG_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="128">128</th><td><u>    {"set_debug", (PyCFunction)gc_set_debug, METH_O, gc_set_debug__doc__},</u></td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="131">131</th><td><a class="decl" href="../gcmodule.c.html#gc_set_debug_impl" title='gc_set_debug_impl' data-ref="gc_set_debug_impl" id="gc_set_debug_impl">gc_set_debug_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="150module" title='module' data-type='PyObject *' data-ref="150module">module</dfn>, <em>int</em> <dfn class="local col1 decl" id="151flags" title='flags' data-type='int' data-ref="151flags">flags</dfn>);</td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="134">134</th><td><dfn class="decl def" id="gc_set_debug" title='gc_set_debug' data-ref="gc_set_debug">gc_set_debug</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="152module" title='module' data-type='PyObject *' data-ref="152module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="153arg" title='arg' data-type='PyObject *' data-ref="153arg">arg</dfn>)</td></tr>
+<tr><th id="135">135</th><td>{</td></tr>
+<tr><th id="136">136</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="154return_value" title='return_value' data-type='PyObject *' data-ref="154return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="137">137</th><td>    <em>int</em> <dfn class="local col5 decl" id="155flags" title='flags' data-type='int' data-ref="155flags">flags</dfn>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col3 ref" href="#153arg" title='arg' data-ref="153arg">arg</a>, <q>"i:set_debug"</q>, &amp;<a class="local col5 ref" href="#155flags" title='flags' data-ref="155flags">flags</a>)) {</td></tr>
+<tr><th id="140">140</th><td>        <b>goto</b> <a class="lbl" href="#156exit" data-ref="156exit">exit</a>;</td></tr>
+<tr><th id="141">141</th><td>    }</td></tr>
+<tr><th id="142">142</th><td>    <a class="local col4 ref" href="#154return_value" title='return_value' data-ref="154return_value">return_value</a> = <a class="ref" href="../gcmodule.c.html#gc_set_debug_impl" title='gc_set_debug_impl' data-ref="gc_set_debug_impl">gc_set_debug_impl</a>(<a class="local col2 ref" href="#152module" title='module' data-ref="152module">module</a>, <a class="local col5 ref" href="#155flags" title='flags' data-ref="155flags">flags</a>);</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><dfn class="lbl" id="156exit" data-ref="156exit">exit</dfn>:</td></tr>
+<tr><th id="145">145</th><td>    <b>return</b> <a class="local col4 ref" href="#154return_value" title='return_value' data-ref="154return_value">return_value</a>;</td></tr>
+<tr><th id="146">146</th><td>}</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_get_debug__doc__[] = &quot;get_debug($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Get the garbage collection debugging flags.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_get_debug__doc__" title='gc_get_debug__doc__' data-ref="gc_get_debug__doc__">gc_get_debug__doc__</dfn>,</td></tr>
+<tr><th id="149">149</th><td><q>"get_debug($module, /)\n"</q></td></tr>
+<tr><th id="150">150</th><td><q>"--\n"</q></td></tr>
+<tr><th id="151">151</th><td><q>"\n"</q></td></tr>
+<tr><th id="152">152</th><td><q>"Get the garbage collection debugging flags."</q>);</td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td><u>#define <dfn class="macro" id="_M/GC_GET_DEBUG_METHODDEF" data-ref="_M/GC_GET_DEBUG_METHODDEF">GC_GET_DEBUG_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="155">155</th><td><u>    {"get_debug", (PyCFunction)gc_get_debug, METH_NOARGS, gc_get_debug__doc__},</u></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="158">158</th><td><a class="decl" href="../gcmodule.c.html#gc_get_debug_impl" title='gc_get_debug_impl' data-ref="gc_get_debug_impl" id="gc_get_debug_impl">gc_get_debug_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="157module" title='module' data-type='PyObject *' data-ref="157module">module</dfn>);</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="161">161</th><td><dfn class="decl def" id="gc_get_debug" title='gc_get_debug' data-ref="gc_get_debug">gc_get_debug</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="158module" title='module' data-type='PyObject *' data-ref="158module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="162">162</th><td>{</td></tr>
+<tr><th id="163">163</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="159return_value" title='return_value' data-type='PyObject *' data-ref="159return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="164">164</th><td>    <em>int</em> <dfn class="local col0 decl" id="160_return_value" title='_return_value' data-type='int' data-ref="160_return_value">_return_value</dfn>;</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td>    <a class="local col0 ref" href="#160_return_value" title='_return_value' data-ref="160_return_value">_return_value</a> = <a class="ref" href="../gcmodule.c.html#gc_get_debug_impl" title='gc_get_debug_impl' data-ref="gc_get_debug_impl">gc_get_debug_impl</a>(<a class="local col8 ref" href="#158module" title='module' data-ref="158module">module</a>);</td></tr>
+<tr><th id="167">167</th><td>    <b>if</b> ((<a class="local col0 ref" href="#160_return_value" title='_return_value' data-ref="160_return_value">_return_value</a> == -<var>1</var>) &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="168">168</th><td>        <b>goto</b> <a class="lbl" href="#161exit" data-ref="161exit">exit</a>;</td></tr>
+<tr><th id="169">169</th><td>    }</td></tr>
+<tr><th id="170">170</th><td>    <a class="local col9 ref" href="#159return_value" title='return_value' data-ref="159return_value">return_value</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col0 ref" href="#160_return_value" title='_return_value' data-ref="160_return_value">_return_value</a>);</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><dfn class="lbl" id="161exit" data-ref="161exit">exit</dfn>:</td></tr>
+<tr><th id="173">173</th><td>    <b>return</b> <a class="local col9 ref" href="#159return_value" title='return_value' data-ref="159return_value">return_value</a>;</td></tr>
+<tr><th id="174">174</th><td>}</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_get_threshold__doc__[] = &quot;get_threshold($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the current collection thresholds.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_get_threshold__doc__" title='gc_get_threshold__doc__' data-ref="gc_get_threshold__doc__">gc_get_threshold__doc__</dfn>,</td></tr>
+<tr><th id="177">177</th><td><q>"get_threshold($module, /)\n"</q></td></tr>
+<tr><th id="178">178</th><td><q>"--\n"</q></td></tr>
+<tr><th id="179">179</th><td><q>"\n"</q></td></tr>
+<tr><th id="180">180</th><td><q>"Return the current collection thresholds."</q>);</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><u>#define <dfn class="macro" id="_M/GC_GET_THRESHOLD_METHODDEF" data-ref="_M/GC_GET_THRESHOLD_METHODDEF">GC_GET_THRESHOLD_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="183">183</th><td><u>    {"get_threshold", (PyCFunction)gc_get_threshold, METH_NOARGS, gc_get_threshold__doc__},</u></td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="186">186</th><td><a class="decl" href="../gcmodule.c.html#gc_get_threshold_impl" title='gc_get_threshold_impl' data-ref="gc_get_threshold_impl" id="gc_get_threshold_impl">gc_get_threshold_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="162module" title='module' data-type='PyObject *' data-ref="162module">module</dfn>);</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="189">189</th><td><dfn class="decl def" id="gc_get_threshold" title='gc_get_threshold' data-ref="gc_get_threshold">gc_get_threshold</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="163module" title='module' data-type='PyObject *' data-ref="163module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="190">190</th><td>{</td></tr>
+<tr><th id="191">191</th><td>    <b>return</b> <a class="ref" href="../gcmodule.c.html#gc_get_threshold_impl" title='gc_get_threshold_impl' data-ref="gc_get_threshold_impl">gc_get_threshold_impl</a>(<a class="local col3 ref" href="#163module" title='module' data-ref="163module">module</a>);</td></tr>
+<tr><th id="192">192</th><td>}</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_get_count__doc__[] = &quot;get_count($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a three-tuple of the current collection counts.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_get_count__doc__" title='gc_get_count__doc__' data-ref="gc_get_count__doc__">gc_get_count__doc__</dfn>,</td></tr>
+<tr><th id="195">195</th><td><q>"get_count($module, /)\n"</q></td></tr>
+<tr><th id="196">196</th><td><q>"--\n"</q></td></tr>
+<tr><th id="197">197</th><td><q>"\n"</q></td></tr>
+<tr><th id="198">198</th><td><q>"Return a three-tuple of the current collection counts."</q>);</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><u>#define <dfn class="macro" id="_M/GC_GET_COUNT_METHODDEF" data-ref="_M/GC_GET_COUNT_METHODDEF">GC_GET_COUNT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="201">201</th><td><u>    {"get_count", (PyCFunction)gc_get_count, METH_NOARGS, gc_get_count__doc__},</u></td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="204">204</th><td><a class="decl" href="../gcmodule.c.html#gc_get_count_impl" title='gc_get_count_impl' data-ref="gc_get_count_impl" id="gc_get_count_impl">gc_get_count_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="164module" title='module' data-type='PyObject *' data-ref="164module">module</dfn>);</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="207">207</th><td><dfn class="decl def" id="gc_get_count" title='gc_get_count' data-ref="gc_get_count">gc_get_count</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="165module" title='module' data-type='PyObject *' data-ref="165module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="208">208</th><td>{</td></tr>
+<tr><th id="209">209</th><td>    <b>return</b> <a class="ref" href="../gcmodule.c.html#gc_get_count_impl" title='gc_get_count_impl' data-ref="gc_get_count_impl">gc_get_count_impl</a>(<a class="local col5 ref" href="#165module" title='module' data-ref="165module">module</a>);</td></tr>
+<tr><th id="210">210</th><td>}</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_get_objects__doc__[] = &quot;get_objects($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of objects tracked by the collector (excluding the list returned).&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_get_objects__doc__" title='gc_get_objects__doc__' data-ref="gc_get_objects__doc__">gc_get_objects__doc__</dfn>,</td></tr>
+<tr><th id="213">213</th><td><q>"get_objects($module, /)\n"</q></td></tr>
+<tr><th id="214">214</th><td><q>"--\n"</q></td></tr>
+<tr><th id="215">215</th><td><q>"\n"</q></td></tr>
+<tr><th id="216">216</th><td><q>"Return a list of objects tracked by the collector (excluding the list returned)."</q>);</td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td><u>#define <dfn class="macro" id="_M/GC_GET_OBJECTS_METHODDEF" data-ref="_M/GC_GET_OBJECTS_METHODDEF">GC_GET_OBJECTS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="219">219</th><td><u>    {"get_objects", (PyCFunction)gc_get_objects, METH_NOARGS, gc_get_objects__doc__},</u></td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="222">222</th><td><a class="decl" href="../gcmodule.c.html#gc_get_objects_impl" title='gc_get_objects_impl' data-ref="gc_get_objects_impl" id="gc_get_objects_impl">gc_get_objects_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="166module" title='module' data-type='PyObject *' data-ref="166module">module</dfn>);</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="225">225</th><td><dfn class="decl def" id="gc_get_objects" title='gc_get_objects' data-ref="gc_get_objects">gc_get_objects</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="167module" title='module' data-type='PyObject *' data-ref="167module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="226">226</th><td>{</td></tr>
+<tr><th id="227">227</th><td>    <b>return</b> <a class="ref" href="../gcmodule.c.html#gc_get_objects_impl" title='gc_get_objects_impl' data-ref="gc_get_objects_impl">gc_get_objects_impl</a>(<a class="local col7 ref" href="#167module" title='module' data-ref="167module">module</a>);</td></tr>
+<tr><th id="228">228</th><td>}</td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_get_stats__doc__[] = &quot;get_stats($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of dictionaries containing per-generation statistics.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_get_stats__doc__" title='gc_get_stats__doc__' data-ref="gc_get_stats__doc__">gc_get_stats__doc__</dfn>,</td></tr>
+<tr><th id="231">231</th><td><q>"get_stats($module, /)\n"</q></td></tr>
+<tr><th id="232">232</th><td><q>"--\n"</q></td></tr>
+<tr><th id="233">233</th><td><q>"\n"</q></td></tr>
+<tr><th id="234">234</th><td><q>"Return a list of dictionaries containing per-generation statistics."</q>);</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><u>#define <dfn class="macro" id="_M/GC_GET_STATS_METHODDEF" data-ref="_M/GC_GET_STATS_METHODDEF">GC_GET_STATS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="237">237</th><td><u>    {"get_stats", (PyCFunction)gc_get_stats, METH_NOARGS, gc_get_stats__doc__},</u></td></tr>
+<tr><th id="238">238</th><td></td></tr>
+<tr><th id="239">239</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="240">240</th><td><a class="decl" href="../gcmodule.c.html#gc_get_stats_impl" title='gc_get_stats_impl' data-ref="gc_get_stats_impl" id="gc_get_stats_impl">gc_get_stats_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="168module" title='module' data-type='PyObject *' data-ref="168module">module</dfn>);</td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="243">243</th><td><dfn class="decl def" id="gc_get_stats" title='gc_get_stats' data-ref="gc_get_stats">gc_get_stats</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="169module" title='module' data-type='PyObject *' data-ref="169module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="244">244</th><td>{</td></tr>
+<tr><th id="245">245</th><td>    <b>return</b> <a class="ref" href="../gcmodule.c.html#gc_get_stats_impl" title='gc_get_stats_impl' data-ref="gc_get_stats_impl">gc_get_stats_impl</a>(<a class="local col9 ref" href="#169module" title='module' data-ref="169module">module</a>);</td></tr>
+<tr><th id="246">246</th><td>}</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char gc_is_tracked__doc__[] = &quot;is_tracked($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns true if the object is tracked by the garbage collector.\n&quot;&quot;\n&quot;&quot;Simple atomic objects will return false.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="gc_is_tracked__doc__" title='gc_is_tracked__doc__' data-ref="gc_is_tracked__doc__">gc_is_tracked__doc__</dfn>,</td></tr>
+<tr><th id="249">249</th><td><q>"is_tracked($module, obj, /)\n"</q></td></tr>
+<tr><th id="250">250</th><td><q>"--\n"</q></td></tr>
+<tr><th id="251">251</th><td><q>"\n"</q></td></tr>
+<tr><th id="252">252</th><td><q>"Returns true if the object is tracked by the garbage collector.\n"</q></td></tr>
+<tr><th id="253">253</th><td><q>"\n"</q></td></tr>
+<tr><th id="254">254</th><td><q>"Simple atomic objects will return false."</q>);</td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td><u>#define <dfn class="macro" id="_M/GC_IS_TRACKED_METHODDEF" data-ref="_M/GC_IS_TRACKED_METHODDEF">GC_IS_TRACKED_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="257">257</th><td><u>    {"is_tracked", (PyCFunction)gc_is_tracked, METH_O, gc_is_tracked__doc__},</u></td></tr>
+<tr><th id="258">258</th><td><i>/*[clinic end generated code: output=5a58583f00ab018e input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="259">259</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../gcmodule.c.html'>codebrowser/Modules/gcmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

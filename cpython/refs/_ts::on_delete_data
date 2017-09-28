@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pystate.h' l='175' type='void *'/>
+<offset>1472</offset>
+<use f='codebrowser/Modules/_threadmodule.c' l='1205' u='r' c='thread__set_sentinel'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1209' u='r' c='thread__set_sentinel'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1211' u='w' c='thread__set_sentinel'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1224' u='w' c='thread__set_sentinel'/>
+<use f='codebrowser/Python/pystate.c' l='281' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='492' u='r' c='tstate_delete_common'/>

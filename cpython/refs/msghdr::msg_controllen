@@ -1,0 +1,19 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='237' type='size_t'/>
+<offset>320</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='237'>/* Ancillary data buffer length.
+				   !! The type should be socklen_t but the
+				   definition of the kernel is incompatible
+				   with this.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='2283' u='r' c='cmsg_min_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2295' u='r' c='cmsg_min_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2311' u='r' c='get_cmsg_data_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2313' u='r' c='get_cmsg_data_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3456' u='w' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3468' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3468' macro='1' u='r'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3521' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3521' macro='1' u='r'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4118' u='w' c='sock_sendmsg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4132' macro='1' u='r'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4291' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4303' macro='1' u='r'/>

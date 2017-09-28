@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/grammar.h' l='76' type='dfa * PyGrammar_FindDFA(grammar * g, int type)'/>
+<use f='codebrowser/Parser/acceler.c' l='88' u='c' c='fixstate'/>
+<use f='codebrowser/Parser/firstsets.c' l='84' u='c' c='calcfirstset'/>
+<def f='codebrowser/Parser/grammar1.c' l='11' ll='31' type='dfa * PyGrammar_FindDFA(grammar * g, int type)'/>
+<doc f='codebrowser/Parser/grammar1.c' l='9'>/* Return the DFA for the given type */</doc>
+<use f='codebrowser/Parser/parser.c' l='91' u='c' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='257' u='c' c='PyParser_AddToken'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pytime.h' l='104' type='PyObject * _PyTime_AsNanosecondsObject(_PyTime_t t)'/>
+<doc f='codebrowser/Include/pytime.h' l='102'>/* Convert timestamp to a number of nanoseconds (10^-9 seconds) as a Python int
+   object. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3894' u='c' c='test_pytime_fromseconds'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3910' u='c' c='test_pytime_fromsecondsobject'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3982' u='c' c='test_PyTime_AsMilliseconds'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4000' u='c' c='test_PyTime_AsMicroseconds'/>
+<def f='codebrowser/Python/pytime.c' l='358' ll='363' type='PyObject * _PyTime_AsNanosecondsObject(_PyTime_t t)'/>

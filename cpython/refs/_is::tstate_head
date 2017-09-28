@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pystate.h' l='51' type='struct _ts *'/>
+<offset>64</offset>
+<use f='codebrowser/Python/pylifecycle.c' l='1270' u='r' c='Py_EndInterpreter'/>
+<use f='codebrowser/Python/pystate.c' l='105' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='155' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='182' u='r' c='zapthreads'/>
+<use f='codebrowser/Python/pystate.c' l='201' u='r' c='PyInterpreterState_Delete'/>
+<use f='codebrowser/Python/pystate.c' l='294' u='r' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='297' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='487' u='w' c='tstate_delete_common'/>
+<use f='codebrowser/Python/pystate.c' l='544' u='r' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='552' u='w' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='652' u='r' c='PyThreadState_SetAsyncExc'/>
+<use f='codebrowser/Python/pystate.c' l='697' u='r' c='PyInterpreterState_ThreadHead'/>
+<use f='codebrowser/Python/pystate.c' l='729' u='r' c='_PyThread_CurrentFrames'/>

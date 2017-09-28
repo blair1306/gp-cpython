@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyerrors.h' l='435' type='PyObject * PyUnicodeDecodeError_GetObject(PyObject * )'/>
+<def f='codebrowser/Objects/exceptions.c' l='1623' ll='1627' type='PyObject * PyUnicodeDecodeError_GetObject(PyObject * exc)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4411' u='c' c='unicode_decode_call_errorhandler_writer'/>
+<use f='codebrowser/Python/codecs.c' l='875' u='c' c='PyCodec_BackslashReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1226' u='c' c='PyCodec_SurrogatePassErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1342' u='c' c='PyCodec_SurrogateEscapeErrors'/>

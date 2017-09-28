@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='436'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='434'>/* Return true if the string is a compact ASCII string (use PyASCIIObject
+   structure), or 0 if not.  No type checks or Ready calls are performed. */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1474' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1193' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3986' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4093' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13882' u='c'/>

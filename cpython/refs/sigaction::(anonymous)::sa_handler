@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='31' type='__sighandler_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='30'>/* Used if SA_SIGINFO is not set.  */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='438' macro='1' u='w'/>
+<use f='codebrowser/Modules/faulthandler.c' l='713' macro='1' u='w'/>
+<use f='codebrowser/Python/pylifecycle.c' l='2004' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='2045' macro='1' u='w'/>
+<use f='codebrowser/Python/pylifecycle.c' l='2050' macro='1' u='r'/>

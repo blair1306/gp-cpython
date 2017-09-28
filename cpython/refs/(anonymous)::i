@@ -1,0 +1,40 @@
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='21' type='int'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='332' u='w' c='hz_encode_init'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='338' u='r' c='hz_encode_reset'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='340' u='w' c='hz_encode_reset'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='353' u='r' c='hz_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='356' u='w' c='hz_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='378' u='r' c='hz_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='381' u='w' c='hz_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='394' u='w' c='hz_decode_init'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='400' u='w' c='hz_decode_reset'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='414' u='r' c='hz_decode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='416' u='r' c='hz_decode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='417' u='w' c='hz_decode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='418' u='r' c='hz_decode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='420' u='r' c='hz_decode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='421' u='w' c='hz_decode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_cn.c' l='431' u='r' c='hz_decode'/>
+<offset>0</offset>
+<dec f='codebrowser/Objects/stringlib/localeutil.h' l='12' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='19' u='w' c='asciilib_GroupGenerator_init'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='31' u='r' c='asciilib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='38' u='r' c='asciilib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='40' u='w' c='asciilib_GroupGenerator_next'/>
+<dec f='codebrowser/Objects/stringlib/localeutil.h' l='12' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='19' u='w' c='ucs1lib_GroupGenerator_init'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='31' u='r' c='ucs1lib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='38' u='r' c='ucs1lib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='40' u='w' c='ucs1lib_GroupGenerator_next'/>
+<dec f='codebrowser/Objects/stringlib/localeutil.h' l='12' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='19' u='w' c='ucs2lib_GroupGenerator_init'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='31' u='r' c='ucs2lib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='38' u='r' c='ucs2lib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='40' u='w' c='ucs2lib_GroupGenerator_next'/>
+<dec f='codebrowser/Objects/stringlib/localeutil.h' l='12' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='19' u='w' c='ucs4lib_GroupGenerator_init'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='31' u='r' c='ucs4lib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='38' u='r' c='ucs4lib_GroupGenerator_next'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='40' u='w' c='ucs4lib_GroupGenerator_next'/>
+<offset>128</offset>
+<doc f='codebrowser/Objects/stringlib/localeutil.h' l='12'>/* Where we&apos;re currently pointing in grouping. */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pymem.h' l='108' type='char * _PyMem_RawStrdup(const char * str)'/>
+<use f='codebrowser/Modules/main.c' l='659' u='c' c='Py_Main'/>
+<def f='codebrowser/Objects/obmalloc.c' l='445' ll='457' type='char * _PyMem_RawStrdup(const char * str)'/>
+<use f='codebrowser/Programs/python.c' l='65' u='c' c='main'/>
+<use f='codebrowser/Python/frozenmain.c' l='49' u='c' c='Py_FrozenMain'/>
+<use f='codebrowser/Python/pylifecycle.c' l='158' u='c' c='Py_SetStandardStreamEncoding'/>
+<use f='codebrowser/Python/pylifecycle.c' l='164' u='c' c='Py_SetStandardStreamEncoding'/>
+<use f='codebrowser/Python/pylifecycle.c' l='224' u='c' c='get_codec_name'/>

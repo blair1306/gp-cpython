@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/ceval.h' l='38' type='void _PyEval_SetAsyncGenFinalizer(PyObject * )'/>
+<def f='codebrowser/Python/ceval.c' l='4662' ll='4669' type='void _PyEval_SetAsyncGenFinalizer(PyObject * finalizer)'/>
+<use f='codebrowser/Python/sysmodule.c' l='723' u='c' c='sys_set_asyncgen_hooks'/>
+<use f='codebrowser/Python/sysmodule.c' l='726' u='c' c='sys_set_asyncgen_hooks'/>

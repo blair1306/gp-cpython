@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>count.h source code [codebrowser/Objects/stringlib/count.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/stringlib/count.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>stringlib</a>/<a href='count.h.html'>count.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* stringlib: count implementation */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifndef</span> <a class="macro" href="fastsearch.h.html#3" data-ref="_M/STRINGLIB_FASTSEARCH_H">STRINGLIB_FASTSEARCH_H</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#error must include "stringlib/fastsearch.h" before including this module</u></td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><a class="macro" href="../../Include/pyport.h.html#178" title="static inline Py_ssize_t" data-ref="_M/Py_LOCAL_INLINE">Py_LOCAL_INLINE</a>(<a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a>)</td></tr>
+<tr><th id="8">8</th><td><a class="macro" href="../bytearrayobject.c.html#1078" title="stringlib_count" data-ref="_M/STRINGLIB">STRINGLIB</a>(count)(<em>const</em> <a class="macro" href="../bytearrayobject.c.html#1079" title="char" data-ref="_M/STRINGLIB_CHAR">STRINGLIB_CHAR</a>* <dfn class="local col3 decl" id="393str" title='str' data-type='const char *' data-ref="393str">str</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="394str_len" title='str_len' data-type='Py_ssize_t' data-ref="394str_len">str_len</dfn>,</td></tr>
+<tr><th id="9">9</th><td>                <em>const</em> <a class="macro" href="../bytearrayobject.c.html#1079" title="char" data-ref="_M/STRINGLIB_CHAR">STRINGLIB_CHAR</a>* <dfn class="local col5 decl" id="395sub" title='sub' data-type='const char *' data-ref="395sub">sub</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="396sub_len" title='sub_len' data-type='Py_ssize_t' data-ref="396sub_len">sub_len</dfn>,</td></tr>
+<tr><th id="10">10</th><td>                <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="397maxcount" title='maxcount' data-type='Py_ssize_t' data-ref="397maxcount">maxcount</dfn>)</td></tr>
+<tr><th id="11">11</th><td>{</td></tr>
+<tr><th id="12">12</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="398count" title='count' data-type='Py_ssize_t' data-ref="398count">count</dfn>;</td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td>    <b>if</b> (<a class="local col4 ref" href="#394str_len" title='str_len' data-ref="394str_len">str_len</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="15">15</th><td>        <b>return</b> <var>0</var>; <i>/* start &gt; len(str) */</i></td></tr>
+<tr><th id="16">16</th><td>    <b>if</b> (<a class="local col6 ref" href="#396sub_len" title='sub_len' data-ref="396sub_len">sub_len</a> == <var>0</var>)</td></tr>
+<tr><th id="17">17</th><td>        <b>return</b> (<a class="local col4 ref" href="#394str_len" title='str_len' data-ref="394str_len">str_len</a> &lt; <a class="local col7 ref" href="#397maxcount" title='maxcount' data-ref="397maxcount">maxcount</a>) ? <a class="local col4 ref" href="#394str_len" title='str_len' data-ref="394str_len">str_len</a> + <var>1</var> : <a class="local col7 ref" href="#397maxcount" title='maxcount' data-ref="397maxcount">maxcount</a>;</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td>    <a class="local col8 ref" href="#398count" title='count' data-ref="398count">count</a> = <a class="macro" href="../bytearrayobject.c.html#1077" title="fastsearch" data-ref="_M/FASTSEARCH">FASTSEARCH</a>(<a class="local col3 ref" href="#393str" title='str' data-ref="393str">str</a>, <a class="local col4 ref" href="#394str_len" title='str_len' data-ref="394str_len">str_len</a>, <a class="local col5 ref" href="#395sub" title='sub' data-ref="395sub">sub</a>, <a class="local col6 ref" href="#396sub_len" title='sub_len' data-ref="396sub_len">sub_len</a>, <a class="local col7 ref" href="#397maxcount" title='maxcount' data-ref="397maxcount">maxcount</a>, <a class="macro" href="fastsearch.h.html#16" title="0" data-ref="_M/FAST_COUNT">FAST_COUNT</a>);</td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td>    <b>if</b> (<a class="local col8 ref" href="#398count" title='count' data-ref="398count">count</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="22">22</th><td>        <b>return</b> <var>0</var>; <i>/* no match */</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td>    <b>return</b> <a class="local col8 ref" href="#398count" title='count' data-ref="398count">count</a>;</td></tr>
+<tr><th id="25">25</th><td>}</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../bytearrayobject.c.html'>codebrowser/Objects/bytearrayobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

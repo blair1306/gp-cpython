@@ -1,0 +1,4 @@
+<dec f='include/linux/soundcard.h' l='604' type='int'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='731' u='r' c='oss_getptr'/>
+<offset>32</offset>
+<doc f='include/linux/soundcard.h' l='604'>/* # of fragment transitions since last time */</doc>

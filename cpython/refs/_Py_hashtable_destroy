@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/hashtable.h' l='129' type='void _Py_hashtable_destroy(_Py_hashtable_t * ht)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='570' u='c' c='tracemalloc_use_domain'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='574' u='c' c='tracemalloc_use_domain'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1073' u='c' c='tracemalloc_deinit'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1074' u='c' c='tracemalloc_deinit'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1075' u='c' c='tracemalloc_deinit'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1423' u='c' c='_tracemalloc__get_traces_impl'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1426' u='c' c='_tracemalloc__get_traces_impl'/>
+<def f='codebrowser/Modules/hashtable.c' l='474' ll='490' type='void _Py_hashtable_destroy(_Py_hashtable_t * ht)'/>
+<use f='codebrowser/Modules/hashtable.c' l='518' u='c' c='_Py_hashtable_copy'/>
+<use f='codebrowser/Python/marshal.c' l='608' u='c' c='w_clear_refs'/>

@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='245' type='3'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3442' u='r' c='dec_as_integer_ratio'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4489' u='r' c='dec_floor'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='245'>/* round toward -infinity          */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1631' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1771' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3360' u='r' c='_mpd_qaddsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5942' u='r' c='mpd_qminus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5963' u='r' c='mpd_qplus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6003' u='r' c='mpd_qnext_minus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7186' u='r' c='mpd_qfloor'/>

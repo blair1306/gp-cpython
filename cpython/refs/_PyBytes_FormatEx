@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/bytesobject.h' l='65' type='PyObject * _PyBytes_FormatEx(const char * format, Py_ssize_t format_len, PyObject * args, int use_bytearray)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2191' u='c' c='bytearray_mod'/>
+<def f='codebrowser/Objects/bytesobject.c' l='588' ll='1069' type='PyObject * _PyBytes_FormatEx(const char * format, Py_ssize_t format_len, PyObject * args, int use_bytearray)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2516' u='c' c='bytes_mod'/>
+<doc f='codebrowser/Objects/bytesobject.c' l='586'>/* fmt%(v1,v2,...) is roughly equivalent to sprintf(fmt, v1, v2, ...) */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/modsupport.h' l='90' type='PyObject *'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/modsupport.h' l='90'>/* tuple of keyword parameter names */</doc>
+<use f='codebrowser/Python/getargs.c' l='1874' u='r' c='parser_init'/>
+<use f='codebrowser/Python/getargs.c' l='1975' u='w' c='parser_init'/>
+<use f='codebrowser/Python/getargs.c' l='1986' u='r' c='parser_clear'/>
+<use f='codebrowser/Python/getargs.c' l='1986' u='w' c='parser_clear'/>
+<use f='codebrowser/Python/getargs.c' l='2059' u='r' c='vgetargskeywordsfast_impl'/>

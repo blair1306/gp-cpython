@@ -1,0 +1,12 @@
+<dec f='include/x86_64-linux-gnu/sys/select.h' l='69' type='__fd_mask [16]'/>
+<offset>0</offset>
+<dec f='include/linux/posix_types.h' l='25' type='unsigned long [16]'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/ossaudiodev.c' l='481' macro='1' u='a'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='482' macro='1' u='w'/>
+<use f='codebrowser/Modules/readline.c' l='1202' macro='1' u='a'/>
+<use f='codebrowser/Modules/readline.c' l='1224' macro='1' u='w'/>
+<use f='codebrowser/Modules/selectmodule.c' l='92' macro='1' u='a'/>
+<use f='codebrowser/Modules/selectmodule.c' l='120' macro='1' u='w'/>
+<use f='codebrowser/Modules/selectmodule.c' l='151' macro='1' u='r'/>
+<use f='codebrowser/Modules/selectmodule.c' l='161' macro='1' u='r'/>

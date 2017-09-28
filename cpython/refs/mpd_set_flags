@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='783' type='void mpd_set_flags(mpd_t * result, uint8_t flags)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2064' u='c' c='_dec_settriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='208' u='c' c='mpd_qset_string'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='700' ll='705' macro='1' type='void mpd_set_flags(mpd_t * result, uint8_t flags)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1024' u='c' c='_ssettriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1036' u='c' c='_settriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3333' u='c' c='_mpd_qaddsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3356' u='c' c='_mpd_qaddsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3746' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3897' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3909' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5814' u='c' c='_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6043' u='c' c='mpd_qnext_plus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6264' u='c' c='_qcheck_pow_one_inf'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6318' u='c' c='_qcheck_pow_one'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7332' u='c' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8325' u='c' c='mpd_qimport_u16'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8401' u='c' c='mpd_qimport_u32'/>

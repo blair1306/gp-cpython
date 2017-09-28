@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/stat.h' l='78' type='__blksize_t'/>
+<offset>448</offset>
+<doc f='include/x86_64-linux-gnu/bits/stat.h' l='78'>/* Optimal block size for I/O.  */</doc>
+<use f='codebrowser/Modules/_io/fileio.c' l='461' u='r' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='462' u='r' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2063' u='r' c='_pystat_fromstructstat'/>

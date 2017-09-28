@@ -1,0 +1,21 @@
+<def f='codebrowser/Include/frameobject.h' l='17' ll='53'/>
+<size>400</size>
+<mbr r='_frame::ob_base' o='0' t='PyVarObject'/>
+<mbr r='_frame::f_back' o='320' t='struct _frame *'/>
+<mbr r='_frame::f_code' o='384' t='PyCodeObject *'/>
+<mbr r='_frame::f_builtins' o='448' t='PyObject *'/>
+<mbr r='_frame::f_globals' o='512' t='PyObject *'/>
+<mbr r='_frame::f_locals' o='576' t='PyObject *'/>
+<mbr r='_frame::f_valuestack' o='640' t='PyObject **'/>
+<mbr r='_frame::f_stacktop' o='704' t='PyObject **'/>
+<mbr r='_frame::f_trace' o='768' t='PyObject *'/>
+<mbr r='_frame::f_exc_type' o='832' t='PyObject *'/>
+<mbr r='_frame::f_exc_value' o='896' t='PyObject *'/>
+<mbr r='_frame::f_exc_traceback' o='960' t='PyObject *'/>
+<mbr r='_frame::f_gen' o='1024' t='PyObject *'/>
+<mbr r='_frame::f_lasti' o='1088' t='int'/>
+<mbr r='_frame::f_lineno' o='1120' t='int'/>
+<mbr r='_frame::f_iblock' o='1152' t='int'/>
+<mbr r='_frame::f_executing' o='1184' t='char'/>
+<mbr r='_frame::f_blockstack' o='1216' t='PyTryBlock [20]'/>
+<mbr r='_frame::f_localsplus' o='3136' t='PyObject *[1]'/>

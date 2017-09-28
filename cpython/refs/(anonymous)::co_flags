@@ -1,0 +1,31 @@
+<dec f='codebrowser/Include/code.h' l='27' type='int'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/code.h' l='27'>/* CO_..., see below */</doc>
+<use f='codebrowser/Objects/call.c' l='317' u='r' c='_PyFunction_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='404' u='r' c='_PyFunction_FastCallKeywords'/>
+<use f='codebrowser/Objects/codeobject.c' l='185' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='634' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='634' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='703' u='r' c='code_hash'/>
+<use f='codebrowser/Objects/frameobject.c' l='708' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='711' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='919' u='r' c='PyFrame_FastToLocalsWithError'/>
+<use f='codebrowser/Objects/frameobject.c' l='972' u='r' c='PyFrame_LocalsToFast'/>
+<use f='codebrowser/Objects/genobject.c' l='65' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='228' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='868' u='r' c='gen_is_coroutine'/>
+<use f='codebrowser/Python/ceval.c' l='1043' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2040' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3002' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3683' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3858' u='r' c='too_many_positional'/>
+<use f='codebrowser/Python/ceval.c' l='3944' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='3949' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='3972' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4047' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4130' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4133' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4153' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4729' u='r' c='PyEval_MergeCompilerFlags'/>
+<use f='codebrowser/Python/marshal.c' l='546' u='r' c='w_complex_object'/>
+<use f='codebrowser/Python/pythonrun.c' l='1019' u='r' c='run_pyc_file'/>

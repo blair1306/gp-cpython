@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/fileutils.h' l='119' type='int _Py_set_blocking(int fd, int blocking)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11335' u='c' c='posix_set_blocking'/>
+<def f='codebrowser/Python/fileutils.c' l='1566' ll='1598' type='int _Py_set_blocking(int fd, int blocking)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1560'>/* Set the blocking mode of the specified file descriptor.
+
+   Set the O_NONBLOCK flag if blocking is False, clear the O_NONBLOCK flag
+   otherwise.
+
+   Return 0 on success, raise an exception and return -1 on error. */</doc>

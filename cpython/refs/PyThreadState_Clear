@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pystate.h' l='217' type='void PyThreadState_Clear(PyThreadState * )'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1024' u='c' c='t_bootstrap'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1076' u='c' c='thread_PyThread_start_new_thread'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1238' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pystate.c' l='156' u='c' c='PyInterpreterState_Clear'/>
+<def f='codebrowser/Python/pystate.c' l='442' ll='470' type='void PyThreadState_Clear(PyThreadState * tstate)'/>
+<use f='codebrowser/Python/pystate.c' l='559' u='c' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='952' u='c' c='PyGILState_Release'/>

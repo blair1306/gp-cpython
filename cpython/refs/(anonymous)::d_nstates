@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/grammar.h' l='54' type='int'/>
+<offset>160</offset>
+<use f='codebrowser/Parser/acceler.c' l='45' u='r' c='PyGrammar_RemoveAccelerators'/>
+<use f='codebrowser/Parser/acceler.c' l='59' u='r' c='fixdfa'/>
+<use f='codebrowser/Parser/grammar.c' l='37' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='60' u='w' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='73' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='76' u='w' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='92' u='r' c='_Py_addarc'/>
+<use f='codebrowser/Parser/grammar.c' l='93' u='r' c='_Py_addarc'/>

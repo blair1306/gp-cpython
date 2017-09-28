@@ -1,0 +1,5 @@
+<def f='codebrowser/Modules/_ctypes/_ctypes_test.c' l='52' ll='58' macro='1' type='void _testfunc_large_struct_update_value(Test in)'/>
+<doc f='codebrowser/Modules/_ctypes/_ctypes_test.c' l='47'>/*
+ * See issue 29565. Update a structure passed by value;
+ * the caller should not see any change.
+ */</doc>

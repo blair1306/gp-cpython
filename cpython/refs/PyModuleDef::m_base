@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/moduleobject.h' l='75' type='PyModuleDef_Base'/>
+<offset>0</offset>
+<use f='codebrowser/Objects/moduleobject.c' l='36' u='m' c='PyModuleDef_Init'/>
+<use f='codebrowser/Objects/moduleobject.c' l='40' u='m' c='PyModuleDef_Init'/>
+<use f='codebrowser/Python/import.c' l='554' u='m' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='558' u='m' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='558' u='m' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='563' u='m' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='564' u='m' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='606' u='m' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='614' u='m' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='618' u='m' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='620' u='m' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='1082' u='m' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/importdl.c' l='210' u='m' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/pystate.c' l='327' u='m' c='PyState_FindModule'/>
+<use f='codebrowser/Python/pystate.c' l='362' u='m' c='_PyState_AddModule'/>
+<use f='codebrowser/Python/pystate.c' l='367' u='m' c='_PyState_AddModule'/>
+<use f='codebrowser/Python/pystate.c' l='379' u='m' c='PyState_AddModule'/>
+<use f='codebrowser/Python/pystate.c' l='395' u='m' c='PyState_RemoveModule'/>
+<use f='codebrowser/Python/pystate.c' l='430' u='m' c='_PyState_ClearModules'/>
+<use f='codebrowser/Python/pystate.c' l='430' u='m' c='_PyState_ClearModules'/>

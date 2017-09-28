@@ -1,0 +1,4 @@
+<dec f='include/semaphore.h' l='45' type='int sem_close(sem_t * __sem)'/>
+<doc f='include/semaphore.h' l='44'>/* Close descriptor for named semaphore SEM.  */</doc>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='189' u='c' c='semlock_new'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='189' u='c' c='semlock_dealloc'/>

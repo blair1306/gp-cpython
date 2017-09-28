@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/dictobject.h' l='108' type='PyObject * PyDict_Copy(PyObject * mp)'/>
+<use f='codebrowser/Modules/_elementtree.c' l='332' u='c' c='get_attrib_from_keywords'/>
+<use f='codebrowser/Modules/_elementtree.c' l='368' u='c' c='element_init'/>
+<use f='codebrowser/Modules/_elementtree.c' l='564' u='c' c='subelement'/>
+<use f='codebrowser/Modules/_elementtree.c' l='848' u='c' c='deepcopy'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1574' u='c' c='_elementtree_Element_makeelement_impl'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='91' u='c' c='partial_new'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='95' u='c' c='partial_new'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='207' u='c' c='partial_call'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='352' u='c' c='partial_setstate'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='774' u='c' c='bytesio_getstate'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='828' u='c' c='stringio_getstate'/>
+<use f='codebrowser/Objects/dictobject.c' l='2469' u='c' c='dict_copy'/>
+<def f='codebrowser/Objects/dictobject.c' l='2472' ll='2516' type='PyObject * PyDict_Copy(PyObject * o)'/>
+<use f='codebrowser/Objects/exceptions.c' l='692' u='c' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/typeobject.c' l='2392' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4566' u='c' c='object___dir___impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='7138' u='c' c='set_names'/>
+<use f='codebrowser/Python/import.c' l='50' u='c' c='_PyImport_Init'/>
+<use f='codebrowser/Python/import.c' l='409' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='563' u='c' c='_PyImport_FixupExtensionObject'/>

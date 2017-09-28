@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/object.h' l='578' type='PyObject * _PyObject_GetBuiltin(const char * name)'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2938' u='c' c='array_arrayiterator___reduce___impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2328' u='c' c='bytearrayiter_reduce'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2331' u='c' c='bytearrayiter_reduce'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3064' u='c' c='striter_reduce'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3067' u='c' c='striter_reduce'/>
+<use f='codebrowser/Objects/dictobject.c' l='3624' u='c' c='dictiter_reduce'/>
+<use f='codebrowser/Objects/iterobject.c' l='105' u='c' c='iter_reduce'/>
+<use f='codebrowser/Objects/iterobject.c' l='108' u='c' c='iter_reduce'/>
+<use f='codebrowser/Objects/iterobject.c' l='244' u='c' c='calliter_reduce'/>
+<use f='codebrowser/Objects/iterobject.c' l='247' u='c' c='calliter_reduce'/>
+<use f='codebrowser/Objects/listobject.c' l='3051' u='c' c='listiter_reduce_general'/>
+<use f='codebrowser/Objects/listobject.c' l='3056' u='c' c='listiter_reduce_general'/>
+<use f='codebrowser/Objects/listobject.c' l='3063' u='c' c='listiter_reduce_general'/>
+<def f='codebrowser/Objects/object.c' l='998' ll='1012' type='PyObject * _PyObject_GetBuiltin(const char * name)'/>
+<doc f='codebrowser/Objects/object.c' l='997'>/* Convenience function to get a builtin from its name */</doc>
+<use f='codebrowser/Objects/odictobject.c' l='1947' u='c' c='odictiter_reduce'/>
+<use f='codebrowser/Objects/rangeobject.c' l='763' u='c' c='rangeiter_reduce'/>
+<use f='codebrowser/Objects/rangeobject.c' l='924' u='c' c='longrangeiter_reduce'/>
+<use f='codebrowser/Objects/setobject.c' l='874' u='c' c='setiter_reduce'/>
+<use f='codebrowser/Objects/tupleobject.c' l='1029' u='c' c='tupleiter_reduce'/>
+<use f='codebrowser/Objects/tupleobject.c' l='1032' u='c' c='tupleiter_reduce'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15462' u='c' c='unicodeiter_reduce'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15468' u='c' c='unicodeiter_reduce'/>

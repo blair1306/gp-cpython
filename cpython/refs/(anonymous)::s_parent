@@ -1,0 +1,6 @@
+<dec f='codebrowser/Parser/parser.h' l='15' type='struct _node *'/>
+<offset>128</offset>
+<doc f='codebrowser/Parser/parser.h' l='15'>/* Where to add next node */</doc>
+<use f='codebrowser/Parser/parser.c' l='47' u='w' c='s_push'/>
+<use f='codebrowser/Parser/parser.c' l='112' u='r' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='124' u='r' c='push'/>

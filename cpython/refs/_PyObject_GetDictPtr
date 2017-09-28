@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='541' type='PyObject ** _PyObject_GetDictPtr(PyObject * )'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3214' u='c' c='tzinfo_reduce'/>
+<use f='codebrowser/Objects/dictobject.c' l='4192' u='c' c='PyObject_GenericGetDict'/>
+<use f='codebrowser/Objects/exceptions.c' l='2796' u='c' c='_PyErr_TrySetFromCause'/>
+<def f='codebrowser/Objects/object.c' l='965' ll='988' type='PyObject ** _PyObject_GetDictPtr(PyObject * obj)'/>
+<use f='codebrowser/Objects/object.c' l='1076' u='c' c='_PyObject_GetMethod'/>
+<use f='codebrowser/Objects/object.c' l='1246' u='c' c='_PyObject_GenericSetAttrWithDict'/>
+<use f='codebrowser/Objects/object.c' l='1288' u='c' c='PyObject_GenericSetDict'/>
+<doc f='codebrowser/Objects/object.c' l='963'>/* Helper to get a pointer to an object&apos;s __dict__ slot, if any */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='1035' u='c' c='subtype_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='1091' u='c' c='subtype_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='1229' u='c' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='2162' u='c' c='subtype_setdict'/>
+<use f='codebrowser/Objects/typeobject.c' l='4005' u='c' c='_PyObject_GetState'/>

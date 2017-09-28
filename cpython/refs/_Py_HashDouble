@@ -1,0 +1,55 @@
+<dec f='codebrowser/Include/pyhash.h' l='10' type='Py_hash_t _Py_HashDouble(double )'/>
+<use f='codebrowser/Objects/complexobject.c' l='412' u='c' c='complex_hash'/>
+<use f='codebrowser/Objects/complexobject.c' l='415' u='c' c='complex_hash'/>
+<use f='codebrowser/Objects/floatobject.c' l='533' u='c' c='float_hash'/>
+<def f='codebrowser/Python/pyhash.c' l='85' ll='129' type='Py_hash_t _Py_HashDouble(double v)'/>
+<doc f='codebrowser/Python/pyhash.c' l='34'>/* For numeric types, the hash of a number x is based on the reduction
+   of x modulo the prime P = 2**_PyHASH_BITS - 1.  It&apos;s designed so that
+   hash(x) == hash(y) whenever x and y are numerically equal, even if
+   x and y have different types.
+
+   A quick summary of the hashing strategy:
+
+   (1) First define the &apos;reduction of x modulo P&apos; for any rational
+   number x; this is a standard extension of the usual notion of
+   reduction modulo P for integers.  If x == p/q (written in lowest
+   terms), the reduction is interpreted as the reduction of p times
+   the inverse of the reduction of q, all modulo P; if q is exactly
+   divisible by P then define the reduction to be infinity.  So we&apos;ve
+   got a well-defined map
+
+      reduce : { rational numbers } -&gt; { 0, 1, 2, ..., P-1, infinity }.
+
+   (2) Now for a rational number x, define hash(x) by:
+
+      reduce(x)   if x &gt;= 0
+      -reduce(-x) if x &lt; 0
+
+   If the result of the reduction is infinity (this is impossible for
+   integers, floats and Decimals) then use the predefined hash value
+   _PyHASH_INF for x &gt;= 0, or -_PyHASH_INF for x &lt; 0, instead.
+   _PyHASH_INF, -_PyHASH_INF and _PyHASH_NAN are also used for the
+   hashes of float and Decimal infinities and nans.
+
+   A selling point for the above strategy is that it makes it possible
+   to compute hashes of decimal and binary floating-point numbers
+   efficiently, even if the exponent of the binary or decimal number
+   is large.  The key point is that
+
+      reduce(x * y) == reduce(x) * reduce(y) (modulo _PyHASH_MODULUS)
+
+   provided that {reduce(x), reduce(y)} != {0, infinity}.  The reduction of a
+   binary or decimal float is never infinity, since the denominator is a power
+   of 2 (for binary) or a divisor of a power of 10 (for decimal).  So we have,
+   for nonnegative x,
+
+      reduce(x * 2**e) == reduce(x) * reduce(2**e) % _PyHASH_MODULUS
+
+      reduce(x * 10**e) == reduce(x) * reduce(10**e) % _PyHASH_MODULUS
+
+   and reduce(10**e) can be computed efficiently by the usual modular
+   exponentiation algorithm.  For reduce(2**e) it&apos;s even better: since
+   P is of the form 2**n-1, reduce(2**e) is 2**(e mod n), and multiplication
+   by 2**(e mod n) modulo 2**n-1 just amounts to a rotation of bits.
+
+   */</doc>

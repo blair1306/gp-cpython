@@ -1,0 +1,38 @@
+<dec f='codebrowser/Include/longobject.h' l='24' type='long PyLong_AsLongAndOverflow(PyObject * , int * )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1416' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='246' u='c' c='PyCurses_ConvertToChtype'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='311' u='c' c='PyCurses_ConvertToCchar_t'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='474' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='501' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='518' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='545' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='561' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='576' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='591' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='606' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1673' u='c' c='math_factorial'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1677' u='c' c='math_factorial'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1806' u='c' c='math_ldexp_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='555' u='c' c='_Py_Uid_Converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='661' u='c' c='_Py_Gid_Converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='780' u='c' c='_fd_converter'/>
+<use f='codebrowser/Objects/bytesobject.c' l='503' u='c' c='byte_converter'/>
+<use f='codebrowser/Objects/bytesobject.c' l='512' u='c' c='byte_converter'/>
+<use f='codebrowser/Objects/exceptions.c' l='1461' u='c' c='SyntaxError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1469' u='c' c='SyntaxError_str'/>
+<use f='codebrowser/Objects/frameobject.c' l='105' u='c' c='frame_setlineno'/>
+<def f='codebrowser/Objects/longobject.c' l='402' ll='476' type='long PyLong_AsLongAndOverflow(PyObject * vv, int * overflow)'/>
+<use f='codebrowser/Objects/longobject.c' l='485' u='c' c='PyLong_AsLong'/>
+<use f='codebrowser/Objects/longobject.c' l='502' u='c' c='_PyLong_AsInt'/>
+<doc f='codebrowser/Objects/longobject.c' l='392'>/* Get a C long int from an int object or any object that has an __int__
+   method.
+
+   On overflow, return -1 and set *overflow to 1 or -1 depending on the sign of
+   the result.  Otherwise *overflow is 0.
+
+   For other errors (e.g., TypeError), return -1 and set an error condition.
+   In this case *overflow will be 0.
+*/</doc>
+<use f='codebrowser/Python/bltinmodule.c' l='2252' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2267' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2315' u='c' c='builtin_sum_impl'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/tupleobject.h' l='67' type='void _PyTuple_DebugMallocStats(FILE * out)'/>
+<use f='codebrowser/Objects/object.c' l='1951' u='c' c='_PyObject_DebugTypeStats'/>
+<def f='codebrowser/Objects/tupleobject.c' l='66' ll='80' type='void _PyTuple_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/tupleobject.c' l='65'>/* Print summary info about the state of the optimized allocator */</doc>

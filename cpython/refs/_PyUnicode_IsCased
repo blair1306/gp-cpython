@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2232' type='int _PyUnicode_IsCased(Py_UCS4 ch)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='274' ll='279' type='int _PyUnicode_IsCased(Py_UCS4 ch)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9690' u='c' c='handle_capital_sigma'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9697' u='c' c='handle_capital_sigma'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9835' u='c' c='do_title'/>

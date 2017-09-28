@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/tupleobject.h' l='47' type='PyObject * PyTuple_GetSlice(PyObject * , Py_ssize_t , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='64' u='c' c='partial_new'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='862' u='c' c='stringio_setstate'/>
+<use f='codebrowser/Modules/_operator.c' l='1497' u='c' c='methodcaller_new'/>
+<use f='codebrowser/Modules/_pickle.c' l='3705' u='c' c='save_reduce'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='164' u='c' c='atexit_register'/>
+<use f='codebrowser/Objects/exceptions.c' l='886' u='c' c='oserror_init'/>
+<def f='codebrowser/Objects/tupleobject.c' l='439' ll='447' type='PyObject * PyTuple_GetSlice(PyObject * op, Py_ssize_t i, Py_ssize_t j)'/>
+<use f='codebrowser/Objects/typeobject.c' l='2270' u='c' c='type_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='5791' u='c' c='tp_new_wrapper'/>

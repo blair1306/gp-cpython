@@ -1,0 +1,30 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='917' type='void _PyUnicodeWriter_Init(_PyUnicodeWriter * writer)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='911'>/* Initialize a Unicode writer.
+ *
+ * By default, the minimum buffer size is 0 character and overallocation is
+ * disabled. Set min_length, min_char and overallocate attributes to control
+ * the allocation of the buffer. */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='651' u='c' c='_multibytecodec_MultibyteCodec_decode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1060' u='c' c='_multibytecodec_MultibyteIncrementalDecoder_decode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1268' u='c' c='mbstreamreader_iread'/>
+<use f='codebrowser/Objects/complexobject.c' l='733' u='c' c='complex__format__'/>
+<use f='codebrowser/Objects/dictobject.c' l='1893' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/floatobject.c' l='1828' u='c' c='float___format___impl'/>
+<use f='codebrowser/Objects/listobject.c' l='355' u='c' c='list_repr'/>
+<use f='codebrowser/Objects/longobject.c' l='4932' u='c' c='int___format___impl'/>
+<use f='codebrowser/Objects/tupleobject.c' l='287' u='c' c='tuplerepr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2889' u='c' c='PyUnicode_FromFormatV'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4574' u='c' c='PyUnicode_DecodeUTF7Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4994' u='c' c='PyUnicode_DecodeUTF8Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5285' u='c' c='PyUnicode_DecodeUTF32Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5613' u='c' c='PyUnicode_DecodeUTF16Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5922' u='c' c='_PyUnicode_DecodeUnicodeEscape'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6303' u='c' c='PyUnicode_DecodeRawUnicodeEscape'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6525' u='c' c='_PyUnicode_DecodeUnicodeInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6949' u='c' c='PyUnicode_DecodeASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8024' u='c' c='PyUnicode_DecodeCharmap'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8953' u='c' c='_PyUnicode_TranslateCharmap'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='13517' ll='13529' type='void _PyUnicodeWriter_Init(_PyUnicodeWriter * writer)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='916' u='c' c='build_string'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13857' u='c' c='unicode___format___impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14970' u='c' c='PyUnicode_Format'/>

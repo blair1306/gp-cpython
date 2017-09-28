@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/abstract.h' l='308' type='PyObject * PyObject_CallMethod(PyObject * obj, const char * name, const char * format)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2347' u='c' c='task_wakeup'/>
+<doc f='codebrowser/Include/abstract.h' l='299'>/* Call the method named &apos;name&apos; of object &apos;obj&apos; with a variable number of
+   C arguments.  The C arguments are described by a mkvalue format string.
+
+   The format can be NULL, indicating that no arguments are provided.
+
+   Returns the result of the call on success, or NULL on failure.
+
+   This is the equivalent of the Python expression:
+   obj.name(arg1, arg2, ...). */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='928' u='c' c='call_tzinfo_method'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5707' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5718' u='c' c='PyInit__decimal'/>
+<def f='codebrowser/Objects/call.c' l='1026' ll='1046' type='PyObject * PyObject_CallMethod(PyObject * obj, const char * name, const char * format)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='669' u='c' c='module_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='4396' u='c' c='_common_reduce'/>
+<use f='codebrowser/Python/pylifecycle.c' l='305' u='c' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='308' u='c' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='325' u='c' c='initexternalimport'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/Python-ast.h' l='11' type='3'/>
+<use f='codebrowser/Python/Python-ast.c' l='3537' c='ast2obj_expr_context'/>
+<use f='codebrowser/Python/Python-ast.c' l='6989' u='r' c='obj2ast_expr_context'/>
+<use f='codebrowser/Python/ast.c' l='93' c='expr_context_name'/>
+<use f='codebrowser/Python/ast.c' l='364' u='r' c='validate_assignlist'/>
+<use f='codebrowser/Python/ast.c' l='398' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3094' u='r' c='ast_for_del_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2627' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='3134' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3146' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3163' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3178' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='4460' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4487' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4489' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4782' c='compiler_handle_subscr'/>

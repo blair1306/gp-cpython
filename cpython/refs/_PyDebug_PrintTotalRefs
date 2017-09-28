@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/object.h' l='730' type='void _PyDebug_PrintTotalRefs()'/>
+<doc f='codebrowser/Include/object.h' l='727'>/* Py_REF_DEBUG also controls the display of refcounts and memory block
+ * allocations at the interactive prompt and at interpreter shutdown
+ */</doc>
+<def f='codebrowser/Objects/object.c' l='31' ll='45' type='void _PyDebug_PrintTotalRefs()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1033' macro='1' u='c'/>
+<use f='codebrowser/Python/pythonrun.c' l='115' macro='1' u='c'/>

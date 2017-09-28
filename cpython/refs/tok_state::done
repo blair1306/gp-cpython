@@ -1,0 +1,42 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='30' type='int'/>
+<use f='codebrowser/Parser/parsetok.c' l='210' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='317' u='r' c='parsetok'/>
+<offset>320</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='30'>/* E_OK normally, E_EOF at EOF, otherwise error code */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='126' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='166' u='w' c='new_string'/>
+<use f='codebrowser/Parser/tokenizer.c' l='203' u='w' c='error_ret'/>
+<use f='codebrowser/Parser/tokenizer.c' l='715' u='w' c='translate_newlines'/>
+<use f='codebrowser/Parser/tokenizer.c' l='919' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='928' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='956' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='969' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='972' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='985' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1017' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1025' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1029' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1037' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1041' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1054' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1093' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1293' u='w' c='indenterror'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1327' u='w' c='verify_identifier'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1329' u='w' c='verify_identifier'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1336' u='w' c='verify_identifier'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1355' u='w' c='tok_decimal_tail'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1426' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1447' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1508' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1648' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1665' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1682' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1699' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1728' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1762' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1818' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1821' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1827' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1851' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1905' u='w' c='PyTokenizer_Get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1959' u='r' c='PyTokenizer_FindEncodingFilename'/>

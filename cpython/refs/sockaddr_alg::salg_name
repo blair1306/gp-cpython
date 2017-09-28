@@ -1,0 +1,8 @@
+<dec f='include/linux/if_alg.h' l='23' type='__u8 [64]'/>
+<offset>192</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1420' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1421' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1422' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2062' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2066' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2066' u='r' c='getsockaddrarg'/>

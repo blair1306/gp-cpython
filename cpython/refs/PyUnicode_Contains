@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2121' type='int PyUnicode_Contains(PyObject * container, PyObject * element)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2115'>/* Checks whether element is contained in container and return 1/0
+   accordingly.
+
+   element has to coerce to a one element Unicode string. -1 is
+   returned in case of an error. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='11233' ll='11292' type='int PyUnicode_Contains(PyObject * str, PyObject * substr)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13993'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13993'/>
+<use f='codebrowser/Python/_warnings.c' l='597' u='c' c='is_internal_frame'/>
+<use f='codebrowser/Python/_warnings.c' l='602' u='c' c='is_internal_frame'/>

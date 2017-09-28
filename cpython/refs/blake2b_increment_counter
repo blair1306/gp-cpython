@@ -1,0 +1,4 @@
+<def f='codebrowser/Modules/_blake2/impl/blake2b.c' l='104' ll='117' macro='1' type='int blake2b_increment_counter(blake2b_state * S, const uint64_t inc)'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='341' u='c' c='PyBlake2_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='371' u='c' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='377' u='c' c='PyBlake2_blake2b_final'/>

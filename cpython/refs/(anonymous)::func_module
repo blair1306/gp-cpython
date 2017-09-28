@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/funcobject.h' l='32' type='PyObject *'/>
+<offset>832</offset>
+<doc f='codebrowser/Include/funcobject.h' l='32'>/* The __module__ attribute, can be anything */</doc>
+<use f='codebrowser/Objects/funcobject.c' l='48' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='56' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='101' u='r' c='PyFunction_GetModule'/>
+<use f='codebrowser/Objects/funcobject.c' l='532' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='556' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='556' u='r' c='func_traverse'/>

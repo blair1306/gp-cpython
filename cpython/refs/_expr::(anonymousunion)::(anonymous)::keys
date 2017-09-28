@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/Python-ast.h' l='251' type='asdl_seq *'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1912' u='w' c='_Py_Dict'/>
+<use f='codebrowser/Python/Python-ast.c' l='3186' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='243' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='243' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='250' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='3347' u='r' c='compiler_subdict'/>
+<use f='codebrowser/Python/compile.c' l='3356' u='r' c='compiler_subdict'/>
+<use f='codebrowser/Python/compile.c' l='3365' u='r' c='compiler_subdict'/>
+<use f='codebrowser/Python/compile.c' l='3383' u='r' c='compiler_dict'/>
+<use f='codebrowser/Python/symtable.c' l='1428' u='r' c='symtable_visit_expr'/>

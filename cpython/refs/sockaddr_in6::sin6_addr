@@ -1,0 +1,8 @@
+<dec f='include/netinet/in.h' l='259' type='struct in6_addr'/>
+<offset>64</offset>
+<doc f='include/netinet/in.h' l='259'>/* IPv6 address */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1048' u='a' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5095' u='a' c='gethost_common'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5095' u='r' c='gethost_common'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5251' u='a' c='socket_gethostbyaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5252' u='r' c='socket_gethostbyaddr'/>

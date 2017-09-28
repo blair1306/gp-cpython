@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/ceval.h' l='228' type='void _PyEval_SignalAsyncExc()'/>
+<use f='codebrowser/Python/ceval_gil.h' l='255' u='c' c='take_gil'/>
+<def f='codebrowser/Python/ceval.c' l='264' ll='268' type='void _PyEval_SignalAsyncExc()'/>
+<doc f='codebrowser/Python/ceval.c' l='261'>/* This function is used to signal that async exceptions are waiting to be
+   raised, therefore it is also useful in non-threaded builds. */</doc>
+<use f='codebrowser/Python/pystate.c' l='666' u='c' c='PyThreadState_SetAsyncExc'/>

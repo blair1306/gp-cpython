@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/dictobject.h' l='154' type='int PyDict_MergeFromSeq2(PyObject * d, PyObject * seq2, int override)'/>
+<doc f='codebrowser/Include/dictobject.h' l='149'>/* PyDict_MergeFromSeq2 updates/merges from an iterable object producing
+   iterable objects of length 2.  If override is true, the last occurrence
+   of a key wins, else the first.  The Python dict constructor dict(seq2)
+   is equivalent to dict={}; PyDict_MergeFromSeq(dict, seq2, 1).
+*/</doc>
+<use f='codebrowser/Objects/dictobject.c' l='2199' u='c' c='dict_update_common'/>
+<def f='codebrowser/Objects/dictobject.c' l='2231' ll='2307' type='int PyDict_MergeFromSeq2(PyObject * d, PyObject * seq2, int override)'/>
+<doc f='codebrowser/Objects/dictobject.c' l='2221'>/* Update unconditionally replaces existing items.
+   Merge has a 3rd argument &apos;override&apos;; if set, it acts like Update,
+   otherwise it leaves existing items unchanged.
+
+   PyDict_{Update,Merge} update/merge from a mapping object.
+
+   PyDict_MergeFromSeq2 updates/merges from any iterable object
+   producing iterable objects of length 2.
+*/</doc>

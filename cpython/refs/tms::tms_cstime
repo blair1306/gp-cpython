@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/times.h' l='40' type='clock_t'/>
+<offset>192</offset>
+<doc f='include/x86_64-linux-gnu/sys/times.h' l='40'>/* System CPU time of dead children.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='7554' u='r' c='os_times_impl'/>

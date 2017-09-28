@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/modsupport.h' l='181'/>
+<doc f='codebrowser/Include/modsupport.h' l='178'>/* The PYTHON_ABI_VERSION is introduced in PEP 384. For the lifetime of
+   Python 3, it will stay at the value of 3; changes to the limited API
+   must be performed in a strictly backwards-compatible manner. */</doc>
+<use f='codebrowser/Objects/moduleobject.c' l='120' u='c'/>

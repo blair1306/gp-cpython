@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1798' type='PyObject * PyUnicode_DecodeLocaleAndSize(const char * str, Py_ssize_t len, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1790'>/* Decode a string from the current locale encoding. The decoder is strict if
+   *surrogateescape* is equal to zero, otherwise it uses the &apos;surrogateescape&apos;
+   error handler (PEP 383) to escape undecodable bytes. If a byte sequence can
+   be decoded as a surrogate character and *surrogateescape* is not equal to
+   zero, the byte sequence is escaped using the &apos;surrogateescape&apos; error handler
+   instead of being decoded. *str* must end with a null character but cannot
+   contain embedded null characters. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='3717' ll='3814' type='PyObject * PyUnicode_DecodeLocaleAndSize(const char * str, Py_ssize_t len, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3820' u='c' c='PyUnicode_DecodeLocale'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3852' u='c' c='PyUnicode_DecodeFSDefaultAndSize'/>

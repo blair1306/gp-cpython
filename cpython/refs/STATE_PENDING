@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_asynciomodule.c' l='37' type='0'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='181' u='r' c='future_set_result'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='201' u='r' c='future_set_exception'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='285' u='r' c='future_add_done_callback'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='311' u='r' c='future_cancel'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='610' u='r' c='_asyncio_Future_done_impl'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='721' c='FutureObj_get_state'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1011' u='r' c='FutureIter_iternext'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1597' u='r' c='_asyncio_Task_cancel_impl'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1727' u='r' c='TaskObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1953' u='r' c='task_step_impl'/>

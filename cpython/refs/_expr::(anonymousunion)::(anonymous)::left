@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/Python-ast.h' l='229' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='293' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1811' u='w' c='_Py_BinOp'/>
+<use f='codebrowser/Python/Python-ast.c' l='2089' u='w' c='_Py_Compare'/>
+<use f='codebrowser/Python/Python-ast.c' l='3120' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3298' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='231' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='284' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='2086' u='r' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='3419' u='r' c='compiler_compare'/>
+<use f='codebrowser/Python/compile.c' l='4357' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1399' u='r' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1464' u='r' c='symtable_visit_expr'/>

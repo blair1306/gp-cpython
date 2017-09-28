@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/dtoa.h' l='10' type='void _Py_dg_freedtoa(char * s)'/>
+<use f='codebrowser/Objects/floatobject.c' l='977' u='c' c='double_round'/>
+<def f='codebrowser/Python/dtoa.c' l='2225' ll='2231' type='void _Py_dg_freedtoa(char * s)'/>
+<use f='codebrowser/Python/dtoa.c' l='2869' u='c' c='_Py_dg_dtoa'/>
+<doc f='codebrowser/Python/dtoa.c' l='2219'>/* freedtoa(s) must be used to free values s returned by dtoa
+ * when MULTIPLE_THREADS is #defined.  It should be used in all cases,
+ * but for consistency with earlier versions of dtoa, it is optional
+ * when MULTIPLE_THREADS is not defined.
+ */</doc>
+<use f='codebrowser/Python/pystrtod.c' l='1234' u='c' c='format_float_short'/>

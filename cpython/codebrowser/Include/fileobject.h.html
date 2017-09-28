@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fileobject.h source code [codebrowser/Include/fileobject.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/fileobject.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='fileobject.h.html'>fileobject.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* File object interface (what's left of it -- see io.py) */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifndef</span> <span class="macro" data-ref="_M/Py_FILEOBJECT_H">Py_FILEOBJECT_H</span></u></td></tr>
+<tr><th id="4">4</th><td><u>#define <dfn class="macro" id="_M/Py_FILEOBJECT_H" data-ref="_M/Py_FILEOBJECT_H">Py_FILEOBJECT_H</dfn></u></td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="5">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="6">6</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="5">endif</span></u></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><u>#define <dfn class="macro" id="_M/PY_STDIOTEXTMODE" data-ref="_M/PY_STDIOTEXTMODE">PY_STDIOTEXTMODE</dfn> "b"</u></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="PyFile_FromFd" title='PyFile_FromFd' data-ref="PyFile_FromFd">PyFile_FromFd</dfn>(<em>int</em>, <em>const</em> <em>char</em> *, <em>const</em> <em>char</em> *, <em>int</em>,</td></tr>
+<tr><th id="12">12</th><td>                                     <em>const</em> <em>char</em> *, <em>const</em> <em>char</em> *,</td></tr>
+<tr><th id="13">13</th><td>                                     <em>const</em> <em>char</em> *, <em>int</em>);</td></tr>
+<tr><th id="14">14</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="PyFile_GetLine" title='PyFile_GetLine' data-ref="PyFile_GetLine">PyFile_GetLine</dfn>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *, <em>int</em>);</td></tr>
+<tr><th id="15">15</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyFile_WriteObject" title='PyFile_WriteObject' data-ref="PyFile_WriteObject">PyFile_WriteObject</dfn>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *, <em>int</em>);</td></tr>
+<tr><th id="16">16</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyFile_WriteString" title='PyFile_WriteString' data-ref="PyFile_WriteString">PyFile_WriteString</dfn>(<em>const</em> <em>char</em> *, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *);</td></tr>
+<tr><th id="17">17</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyObject_AsFileDescriptor" title='PyObject_AsFileDescriptor' data-ref="PyObject_AsFileDescriptor">PyObject_AsFileDescriptor</dfn>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *);</td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="18">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="19">19</th><td><a class="macro" href="pyport.h.html#676" title="char *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>char</em> *) <dfn class="decl" id="Py_UniversalNewlineFgets" title='Py_UniversalNewlineFgets' data-ref="Py_UniversalNewlineFgets">Py_UniversalNewlineFgets</dfn>(<em>char</em> *, <em>int</em>, <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a>*, <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *);</td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="18">endif</span></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><i>/* The default encoding used by the platform file system APIs</i></td></tr>
+<tr><th id="23">23</th><td><i>   If non-NULL, this is different than the default encoding for strings</i></td></tr>
+<tr><th id="24">24</th><td><i>*/</i></td></tr>
+<tr><th id="25">25</th><td><a class="macro" href="pyport.h.html#679" title="extern const char *" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>const</em> <em>char</em> *) <dfn class="decl" id="Py_FileSystemDefaultEncoding" title='Py_FileSystemDefaultEncoding' data-ref="Py_FileSystemDefaultEncoding">Py_FileSystemDefaultEncoding</dfn>;</td></tr>
+<tr><th id="26">26</th><td><u>#<span data-ppcond="26">if</span> !defined(<span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span>) || Py_LIMITED_API+0 &gt;= 0x03060000</u></td></tr>
+<tr><th id="27">27</th><td><a class="macro" href="pyport.h.html#679" title="extern const char *" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>const</em> <em>char</em> *) <dfn class="decl" id="Py_FileSystemDefaultEncodeErrors" title='Py_FileSystemDefaultEncodeErrors' data-ref="Py_FileSystemDefaultEncodeErrors">Py_FileSystemDefaultEncodeErrors</dfn>;</td></tr>
+<tr><th id="28">28</th><td><u>#<span data-ppcond="26">endif</span></u></td></tr>
+<tr><th id="29">29</th><td><a class="macro" href="pyport.h.html#679" title="extern int" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>int</em>) <dfn class="decl" id="Py_HasFileSystemDefaultEncoding" title='Py_HasFileSystemDefaultEncoding' data-ref="Py_HasFileSystemDefaultEncoding">Py_HasFileSystemDefaultEncoding</dfn>;</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><i>/* Internal API</i></td></tr>
+<tr><th id="32">32</th><td><i></i></td></tr>
+<tr><th id="33">33</th><td><i>   The std printer acts as a preliminary sys.stderr until the new io</i></td></tr>
+<tr><th id="34">34</th><td><i>   infrastructure is in place. */</i></td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="35">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="36">36</th><td><a class="macro" href="pyport.h.html#676" title="PyObject *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <dfn class="decl" id="PyFile_NewStdPrinter" title='PyFile_NewStdPrinter' data-ref="PyFile_NewStdPrinter">PyFile_NewStdPrinter</dfn>(<em>int</em>);</td></tr>
+<tr><th id="37">37</th><td><a class="macro" href="pyport.h.html#679" title="extern PyTypeObject" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<a class="typedef" href="object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a>) <dfn class="decl" id="PyStdPrinter_Type" title='PyStdPrinter_Type' data-ref="PyStdPrinter_Type">PyStdPrinter_Type</dfn>;</td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="35">endif</span> /* Py_LIMITED_API */</u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><i>/* A routine to check if a file descriptor can be select()-ed. */</i></td></tr>
+<tr><th id="41">41</th><td><u>#<span data-ppcond="41">ifdef</span> <span class="macro" data-ref="_M/_MSC_VER">_MSC_VER</span></u></td></tr>
+<tr><th id="42">42</th><td>    <i>/* On Windows, any socket fd can be select()-ed, no matter how high */</i></td></tr>
+<tr><th id="43">43</th><td>    <u>#define _PyIsSelectable_fd(FD) (1)</u></td></tr>
+<tr><th id="44">44</th><td><u>#<span data-ppcond="41">else</span></u></td></tr>
+<tr><th id="45">45</th><td>    <u>#define <dfn class="macro" id="_M/_PyIsSelectable_fd" data-ref="_M/_PyIsSelectable_fd">_PyIsSelectable_fd</dfn>(FD) ((unsigned int)(FD) &lt; (unsigned int)FD_SETSIZE)</u></td></tr>
+<tr><th id="46">46</th><td><u>#<span data-ppcond="41">endif</span></u></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><u>#<span data-ppcond="48">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="49">49</th><td>}</td></tr>
+<tr><th id="50">50</th><td><u>#<span data-ppcond="48">endif</span></u></td></tr>
+<tr><th id="51">51</th><td><u>#<span data-ppcond="3">endif</span> /* !Py_FILEOBJECT_H */</u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_asynciomodule.c.html'>codebrowser/Modules/_asynciomodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

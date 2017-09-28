@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='405' type='mpd_ssize_t mpd_to_sci_size(char ** res, const mpd_t * dec, int fmt)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3097' u='c' c='dec_str'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5303' u='c' c='ctx_mpd_to_sci'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/io.c' l='653' ll='660' type='mpd_ssize_t mpd_to_sci_size(char ** res, const mpd_t * dec, int fmt)'/>

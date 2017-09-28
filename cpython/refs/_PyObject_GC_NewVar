@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/objimpl.h' l='335' type='PyVarObject * _PyObject_GC_NewVar(PyTypeObject * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='310' macro='1' u='c'/>
+<def f='codebrowser/Modules/gcmodule.c' l='1784' ll='1799' type='PyVarObject * _PyObject_GC_NewVar(PyTypeObject * tp, Py_ssize_t nitems)'/>
+<use f='codebrowser/Objects/frameobject.c' l='667' macro='1' u='c'/>
+<use f='codebrowser/Objects/memoryobject.c' l='623' macro='1' u='c'/>
+<use f='codebrowser/Objects/structseq.c' l='37' macro='1' u='c'/>
+<use f='codebrowser/Objects/tupleobject.c' l='121' macro='1' u='c'/>

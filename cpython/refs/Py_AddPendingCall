@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/ceval.h' l='56' type='int Py_AddPendingCall(int (*)(void *) func, void * arg)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2329' u='c' c='pending_threadfunc'/>
+<use f='codebrowser/Modules/signalmodule.c' l='307' u='c' c='trip_signal'/>
+<def f='codebrowser/Python/ceval.c' l='357' ll='397' type='int Py_AddPendingCall(int (*)(void *) func, void * arg)'/>

@@ -1,0 +1,14 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='798' ll='852' type='int output_markup(SubString * field_name, SubString * format_spec, int format_spec_needs_expanding, Py_UCS4 conversion, _PyUnicodeWriter * writer, PyObject * args, PyObject * kwargs, int recursion_depth, AutoNumber * auto_number)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='889' u='c' c='do_markup'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='785'>/* given:
+
+   {field_name!conversion:format_spec}
+
+   compute the result and write it to output.
+   format_spec_needs_expanding is an optimization.  if it&apos;s false,
+   just output the string directly, otherwise recursively expand the
+   format_spec string.
+
+   field_name is allowed to be zero length, in which case we
+   are doing auto field numbering.
+*/</doc>

@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/Python-ast.h' l='119' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='125' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='132' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='139' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1428' u='w' c='_Py_AugAssign'/>
+<use f='codebrowser/Python/Python-ast.c' l='1455' u='w' c='_Py_AnnAssign'/>
+<use f='codebrowser/Python/Python-ast.c' l='1483' u='w' c='_Py_For'/>
+<use f='codebrowser/Python/Python-ast.c' l='1511' u='w' c='_Py_AsyncFor'/>
+<use f='codebrowser/Python/Python-ast.c' l='2802' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2821' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2845' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2869' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='403' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='406' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='412' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='417' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='422' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2259' u='r' c='compiler_for'/>
+<use f='codebrowser/Python/compile.c' l='2315' u='r' c='compiler_async_for'/>
+<use f='codebrowser/Python/compile.c' l='4524' u='r' c='compiler_augassign'/>
+<use f='codebrowser/Python/compile.c' l='4654' u='r' c='compiler_annassign'/>
+<use f='codebrowser/Python/symtable.c' l='1190' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1191' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1219' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1227' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1231' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1376' u='r' c='symtable_visit_stmt'/>

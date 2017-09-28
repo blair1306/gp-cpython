@@ -1,0 +1,5 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='81' ll='101' type='int autonumber_state_error(AutoNumberState state, int field_name_is_empty)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='375' u='c' c='field_name_split'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='78'>/* Return 1 if an error has been detected switching between automatic
+   field numbering and manual field specification, else return 0. Set
+   ValueError on error. */</doc>

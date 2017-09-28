@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/node.h' l='22' type='void PyNode_Free(node * n)'/>
+<use f='codebrowser/Modules/parsermodule.c' l='376' u='c' c='parser_newstobject'/>
+<use f='codebrowser/Modules/parsermodule.c' l='390' u='c' c='parser_free'/>
+<use f='codebrowser/Modules/parsermodule.c' l='809' u='c' c='parser_tuple2st'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1035' u='c' c='build_node_tree'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1043' u='c' c='build_node_tree'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1050' u='c' c='build_node_tree'/>
+<def f='codebrowser/Parser/node.c' l='120' ll='127' type='void PyNode_Free(node * n)'/>
+<use f='codebrowser/Parser/parser.c' l='100' u='c' c='PyParser_Delete'/>
+<use f='codebrowser/Parser/parsetok.c' l='296' u='c' c='parsetok'/>
+<use f='codebrowser/Python/pythonrun.c' l='1127' u='c' c='PyParser_ASTFromStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1172' u='c' c='PyParser_ASTFromFileObject'/>

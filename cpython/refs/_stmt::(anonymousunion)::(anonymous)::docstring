@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/Python-ast.h' l='84' type='string'/>
+<dec f='codebrowser/Include/Python-ast.h' l='93' type='string'/>
+<dec f='codebrowser/Include/Python-ast.h' l='102' type='string'/>
+<offset>320</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1292' u='w' c='_Py_FunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1323' u='w' c='_Py_AsyncFunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1349' u='w' c='_Py_ClassDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='2692' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2727' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2761' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='384' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='391' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='507' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='1840' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='1841' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='1931' u='r' c='compiler_class'/>

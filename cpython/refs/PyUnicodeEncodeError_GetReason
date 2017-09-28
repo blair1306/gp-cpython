@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pyerrors.h' l='463' type='PyObject * PyUnicodeEncodeError_GetReason(PyObject * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='462'>/* get the value of the reason attribute */</doc>
+<def f='codebrowser/Objects/exceptions.c' l='1770' ll='1774' type='PyObject * PyUnicodeEncodeError_GetReason(PyObject * exc)'/>

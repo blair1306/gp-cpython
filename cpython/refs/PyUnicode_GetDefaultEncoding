@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1175' type='const char * PyUnicode_GetDefaultEncoding()'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1173'>/* Returns &quot;utf-8&quot;.  */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='108' u='c' c='_codecs_encode_impl'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='135' u='c' c='_codecs_decode_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1917' u='c' c='bytearray_decode_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3257' u='c' c='PyUnicode_AsDecodedObject'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3281' u='c' c='PyUnicode_AsDecodedUnicode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3337' u='c' c='PyUnicode_AsEncodedObject'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3665' u='c' c='PyUnicode_AsEncodedUnicode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4223' ll='4227' type='const char * PyUnicode_GetDefaultEncoding()'/>
+<use f='codebrowser/Python/getargs.c' l='1100' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/sysmodule.c' l='279' u='c' c='sys_getdefaultencoding'/>

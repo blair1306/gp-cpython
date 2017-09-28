@@ -1,0 +1,49 @@
+<dec f='codebrowser/Objects/stringlib/stringdefs.h' l='7'/>
+<doc f='codebrowser/Objects/stringlib/stringdefs.h' l='4'>/* this is sort of a hack.  there&apos;s at least one place (formatting
+   floats) where some stringlib code takes a different path if it&apos;s
+   compiled as unicode. */</doc>
+<dec f='codebrowser/Objects/stringlib/asciilib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/find_max_char.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='5' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/ucs1lib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/find_max_char.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='5' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/ucs2lib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/find_max_char.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='5' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/ucs4lib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/find_max_char.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/localeutil.h' l='5' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/unicodedefs.h' l='7'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/asciilib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/ucs1lib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/ucs2lib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<dec f='codebrowser/Objects/stringlib/ucs4lib.h' l='4'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='3' u='c'/>
+<use f='codebrowser/Objects/stringlib/undef.h' l='10' u='w'/>
+<doc f='codebrowser/Objects/stringlib/asciilib.h' l='1'>/* this is sort of a hack.  there&apos;s at least one place (formatting
+   floats) where some stringlib code takes a different path if it&apos;s
+   compiled as unicode. */</doc>
+<doc f='codebrowser/Objects/stringlib/ucs1lib.h' l='1'>/* this is sort of a hack.  there&apos;s at least one place (formatting
+   floats) where some stringlib code takes a different path if it&apos;s
+   compiled as unicode. */</doc>
+<doc f='codebrowser/Objects/stringlib/ucs2lib.h' l='1'>/* this is sort of a hack.  there&apos;s at least one place (formatting
+   floats) where some stringlib code takes a different path if it&apos;s
+   compiled as unicode. */</doc>
+<doc f='codebrowser/Objects/stringlib/ucs4lib.h' l='1'>/* this is sort of a hack.  there&apos;s at least one place (formatting
+   floats) where some stringlib code takes a different path if it&apos;s
+   compiled as unicode. */</doc>
+<doc f='codebrowser/Objects/stringlib/unicodedefs.h' l='4'>/* this is sort of a hack.  there&apos;s at least one place (formatting
+   floats) where some stringlib code takes a different path if it&apos;s
+   compiled as unicode. */</doc>

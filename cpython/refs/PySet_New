@@ -1,0 +1,30 @@
+<dec f='codebrowser/Include/setobject.h' l='81' type='PyObject * PySet_New(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1487' u='c' c='task_all_tasks'/>
+<use f='codebrowser/Modules/_pickle.c' l='5084' u='c' c='load_empty_set'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5863' u='c' c='os_sched_getaffinity_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='806' u='c' c='sigset_to_set'/>
+<use f='codebrowser/Objects/dictobject.c' l='3824' u='c' c='dictviews_sub'/>
+<use f='codebrowser/Objects/dictobject.c' l='3844' u='c' c='_PyDictView_Intersect'/>
+<use f='codebrowser/Objects/dictobject.c' l='3864' u='c' c='dictviews_or'/>
+<use f='codebrowser/Objects/dictobject.c' l='3884' u='c' c='dictviews_xor'/>
+<def f='codebrowser/Objects/setobject.c' l='2275' ll='2279' type='PyObject * PySet_New(PyObject * iterable)'/>
+<use f='codebrowser/Objects/setobject.c' l='2433' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2437' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2455' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2480' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2512' u='c' c='test_c_api'/>
+<doc f='codebrowser/Objects/setobject.c' l='2273'>/***** C API functions *************************************************/</doc>
+<use f='codebrowser/Python/ceval.c' l='2546' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2568' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/marshal.c' l='1294' u='c' c='r_object'/>
+<use f='codebrowser/Python/pythonrun.c' l='879' u='c' c='PyErr_Display'/>
+<use f='codebrowser/Python/symtable.c' l='715' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='733' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='736' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='739' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='806' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='868' u='c' c='analyze_child_block'/>
+<use f='codebrowser/Python/symtable.c' l='871' u='c' c='analyze_child_block'/>
+<use f='codebrowser/Python/symtable.c' l='874' u='c' c='analyze_child_block'/>
+<use f='codebrowser/Python/symtable.c' l='901' u='c' c='symtable_analyze'/>
+<use f='codebrowser/Python/symtable.c' l='904' u='c' c='symtable_analyze'/>

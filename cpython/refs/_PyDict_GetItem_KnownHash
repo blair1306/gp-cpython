@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/dictobject.h' l='72' type='PyObject * _PyDict_GetItem_KnownHash(PyObject * mp, PyObject * key, Py_hash_t hash)'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2310' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='829' u='c' c='infinite_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='887' u='c' c='bounded_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='252' u='c' c='dict_getitem_knownhash'/>
+<def f='codebrowser/Objects/dictobject.c' l='1292' ll='1309' type='PyObject * _PyDict_GetItem_KnownHash(PyObject * op, PyObject * key, Py_hash_t hash)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2366' u='c' c='dict_merge'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1288'>/* Same as PyDict_GetItemWithError() but with hash supplied by caller.
+   This returns NULL *with* an exception set if an exception occurred.
+   It returns NULL *without* an exception set if the key wasn&apos;t present.
+*/</doc>
+<use f='codebrowser/Objects/odictobject.c' l='1112' u='c' c='_odict_popkey_hash'/>

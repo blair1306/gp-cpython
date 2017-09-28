@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='115' type='double modf(double __x, double * __iptr)'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2113' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2138' u='c' c='accum'/>
+<use f='codebrowser/Modules/faulthandler.c' l='607' u='c' c='format_timeout'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1872' u='c' c='math_modf_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='457' u='c' c='float_richcompare'/>
+<use f='codebrowser/Objects/floatobject.c' l='899' u='c' c='float___trunc___impl'/>
+<use f='codebrowser/Python/pytime.c' l='104' u='c' c='_PyTime_DoubleToDenominator'/>
+<use f='codebrowser/Python/pytime.c' l='159' u='c' c='_PyTime_ObjectToTime_t'/>

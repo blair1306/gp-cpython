@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pymem.h' l='16' type='void * PyMem_RawCalloc(size_t nelem, size_t elsize)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3220' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3374' u='c' c='test_setallocators'/>
+<def f='codebrowser/Objects/obmalloc.c' l='389' ll='396' type='void * PyMem_RawCalloc(size_t nelem, size_t elsize)'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1425' u='c' c='_PyObject_Alloc'/>

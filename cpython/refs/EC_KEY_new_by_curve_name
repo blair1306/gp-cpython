@@ -1,0 +1,7 @@
+<dec f='include/openssl/ec.h' l='767' type='EC_KEY * EC_KEY_new_by_curve_name(int nid)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3726' u='c' c='_ssl__SSLContext_set_ecdh_curve'/>
+<doc f='include/openssl/ec.h' l='762'>/** Creates a new EC_KEY object using a named curve as underlying
+ *  EC_GROUP object.
+ *  \param  nid  NID of the named curve.
+ *  \return EC_KEY object or NULL if an error occurred.
+ */</doc>

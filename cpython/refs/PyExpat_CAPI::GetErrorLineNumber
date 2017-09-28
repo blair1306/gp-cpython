@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pyexpat.h' l='21' type='XML_Size (*)(XML_Parser)'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2945' u='r' c='expat_default_handler'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3421' u='r' c='expat_parse'/>
+<offset>384</offset>
+<use f='codebrowser/Modules/pyexpat.c' l='1871' u='w' c='PyInit_pyexpat'/>

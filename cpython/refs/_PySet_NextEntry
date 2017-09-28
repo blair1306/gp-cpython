@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/setobject.h' l='71' type='int _PySet_NextEntry(PyObject * set, Py_ssize_t * pos, PyObject ** key, Py_hash_t * hash)'/>
+<use f='codebrowser/Modules/_pickle.c' l='2944' u='c' c='save_set'/>
+<use f='codebrowser/Objects/codeobject.c' l='574' u='c' c='_PyCode_ConstantKey'/>
+<use f='codebrowser/Objects/dictobject.c' l='1799' u='c' c='_PyDict_FromKeys'/>
+<def f='codebrowser/Objects/setobject.c' l='2350' ll='2364' type='int _PySet_NextEntry(PyObject * set, Py_ssize_t * pos, PyObject ** key, Py_hash_t * hash)'/>
+<use f='codebrowser/Objects/setobject.c' l='2472' u='c' c='test_c_api'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/symtable.h' l='22' type='struct _symtable_entry *'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='50' u='r' c='_symtable_symtable_impl'/>
+<offset>128</offset>
+<doc f='codebrowser/Include/symtable.h' l='22'>/* symbol table entry for module */</doc>
+<use f='codebrowser/Python/symtable.c' l='277' u='w' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='909' u='r' c='symtable_analyze'/>

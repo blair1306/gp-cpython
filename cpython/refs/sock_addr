@@ -1,0 +1,12 @@
+<def f='codebrowser/Modules/socketmodule.h' l='165' ll='196'/>
+<size>128</size>
+<doc f='codebrowser/Modules/socketmodule.h' l='164'>/* Socket address */</doc>
+<mbr r='sock_addr::in' o='0' t='struct sockaddr_in'/>
+<mbr r='sock_addr::sa' o='0' t='struct sockaddr'/>
+<mbr r='sock_addr::un' o='0' t='struct sockaddr_un'/>
+<mbr r='sock_addr::nl' o='0' t='struct sockaddr_nl'/>
+<mbr r='sock_addr::in6' o='0' t='struct sockaddr_in6'/>
+<mbr r='sock_addr::storage' o='0' t='struct sockaddr_storage'/>
+<mbr r='sock_addr::ll' o='0' t='struct sockaddr_ll'/>
+<mbr r='sock_addr::can' o='0' t='struct sockaddr_can'/>
+<mbr r='sock_addr::alg' o='0' t='struct sockaddr_alg'/>

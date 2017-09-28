@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/symtable.h' l='103'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='105' u='c'/>
+<doc f='codebrowser/Include/symtable.h' l='99'>/* GLOBAL_EXPLICIT and GLOBAL_IMPLICIT are used internally by the symbol
+   table.  GLOBAL is returned from PyST_GetScope() for either of them.
+   It is stored in ste_symbols at bits 12-15.
+*/</doc>
+<use f='codebrowser/Python/compile.c' l='459' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='368' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='614' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='626' u='c'/>

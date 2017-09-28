@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='559' type='void PyBuffer_FillContiguousStrides(int ndims, Py_ssize_t * shape, Py_ssize_t * strides, int itemsize, char fort)'/>
+<doc f='codebrowser/Include/abstract.h' l='555'>/*Fill the strides array with byte-strides of a contiguous
+  (Fortran-style if fort is &apos;F&apos; or C-style otherwise)
+  array of the given shape with the given number of bytes
+  per element. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='603' ll='625' type='void PyBuffer_FillContiguousStrides(int nd, Py_ssize_t * shape, Py_ssize_t * strides, int itemsize, char fort)'/>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>grammar.h source code [codebrowser/Include/grammar.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/grammar.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='grammar.h.html'>grammar.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Grammar interface */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/Py_GRAMMAR_H">Py_GRAMMAR_H</span></u></td></tr>
+<tr><th id="5">5</th><td><u>#define <dfn class="macro" id="_M/Py_GRAMMAR_H" data-ref="_M/Py_GRAMMAR_H">Py_GRAMMAR_H</dfn></u></td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="6">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="7">7</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="6">endif</span></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="bitset.h.html">"bitset.h"</a> /* Sigh... */</u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><i>/* A label of an arc */</i></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="15">15</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</dfn>;</td></tr>
+<tr><th id="16">16</th><td>    <em>char</em>	*<dfn class="decl" id="(anonymous)::lb_str" title='(anonymous struct)::lb_str' data-ref="(anonymous)::lb_str">lb_str</dfn>;</td></tr>
+<tr><th id="17">17</th><td>} <dfn class="typedef" id="label" title='label' data-type='struct label' data-ref="label">label</dfn>;</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/EMPTY" data-ref="_M/EMPTY">EMPTY</dfn> 0		/* Label number 0 is by definition the empty label */</u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* A list of labels */</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="24">24</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::ll_nlabels" title='(anonymous struct)::ll_nlabels' data-ref="(anonymous)::ll_nlabels">ll_nlabels</dfn>;</td></tr>
+<tr><th id="25">25</th><td>    <a class="typedef" href="#label" title='label' data-type='struct label' data-ref="label">label</a>	*<dfn class="decl" id="(anonymous)::ll_label" title='(anonymous struct)::ll_label' data-ref="(anonymous)::ll_label">ll_label</dfn>;</td></tr>
+<tr><th id="26">26</th><td>} <dfn class="typedef" id="labellist" title='labellist' data-type='struct labellist' data-ref="labellist">labellist</dfn>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><i>/* An arc from one state to another */</i></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="31">31</th><td>    <em>short</em>	<dfn class="decl" id="(anonymous)::a_lbl" title='(anonymous struct)::a_lbl' data-ref="(anonymous)::a_lbl">a_lbl</dfn>;		<i>/* Label of this arc */</i></td></tr>
+<tr><th id="32">32</th><td>    <em>short</em>	<dfn class="decl" id="(anonymous)::a_arrow" title='(anonymous struct)::a_arrow' data-ref="(anonymous)::a_arrow">a_arrow</dfn>;	<i>/* State where this arc goes to */</i></td></tr>
+<tr><th id="33">33</th><td>} <dfn class="typedef" id="arc" title='arc' data-type='struct arc' data-ref="arc">arc</dfn>;</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* A state in a DFA */</i></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="38">38</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::s_narcs" title='(anonymous struct)::s_narcs' data-ref="(anonymous)::s_narcs">s_narcs</dfn>;</td></tr>
+<tr><th id="39">39</th><td>    <a class="typedef" href="#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a>		*<dfn class="decl" id="(anonymous)::s_arc" title='(anonymous struct)::s_arc' data-ref="(anonymous)::s_arc">s_arc</dfn>;		<i>/* Array of arcs */</i></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td>    <i>/* Optional accelerators */</i></td></tr>
+<tr><th id="42">42</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::s_lower" title='(anonymous struct)::s_lower' data-ref="(anonymous)::s_lower">s_lower</dfn>;	<i>/* Lowest label index */</i></td></tr>
+<tr><th id="43">43</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::s_upper" title='(anonymous struct)::s_upper' data-ref="(anonymous)::s_upper">s_upper</dfn>;	<i>/* Highest label index */</i></td></tr>
+<tr><th id="44">44</th><td>    <em>int</em>		*<dfn class="decl" id="(anonymous)::s_accel" title='(anonymous struct)::s_accel' data-ref="(anonymous)::s_accel">s_accel</dfn>;	<i>/* Accelerator */</i></td></tr>
+<tr><th id="45">45</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::s_accept" title='(anonymous struct)::s_accept' data-ref="(anonymous)::s_accept">s_accept</dfn>;	<i>/* Nonzero for accepting state */</i></td></tr>
+<tr><th id="46">46</th><td>} <dfn class="typedef" id="state" title='state' data-type='struct state' data-ref="state">state</dfn>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><i>/* A DFA */</i></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="51">51</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::d_type" title='(anonymous struct)::d_type' data-ref="(anonymous)::d_type">d_type</dfn>;	<i>/* Non-terminal this represents */</i></td></tr>
+<tr><th id="52">52</th><td>    <em>char</em>	*<dfn class="decl" id="(anonymous)::d_name" title='(anonymous struct)::d_name' data-ref="(anonymous)::d_name">d_name</dfn>;	<i>/* For printing */</i></td></tr>
+<tr><th id="53">53</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::d_initial" title='(anonymous struct)::d_initial' data-ref="(anonymous)::d_initial">d_initial</dfn>;	<i>/* Initial state */</i></td></tr>
+<tr><th id="54">54</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::d_nstates" title='(anonymous struct)::d_nstates' data-ref="(anonymous)::d_nstates">d_nstates</dfn>;</td></tr>
+<tr><th id="55">55</th><td>    <a class="typedef" href="#state" title='state' data-type='struct state' data-ref="state">state</a>	*<dfn class="decl" id="(anonymous)::d_state" title='(anonymous struct)::d_state' data-ref="(anonymous)::d_state">d_state</dfn>;	<i>/* Array of states */</i></td></tr>
+<tr><th id="56">56</th><td>    <a class="typedef" href="bitset.h.html#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a>	 <dfn class="decl" id="(anonymous)::d_first" title='(anonymous struct)::d_first' data-ref="(anonymous)::d_first">d_first</dfn>;</td></tr>
+<tr><th id="57">57</th><td>} <dfn class="typedef" id="dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</dfn>;</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><i>/* A grammar */</i></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="62">62</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::g_ndfas" title='(anonymous struct)::g_ndfas' data-ref="(anonymous)::g_ndfas">g_ndfas</dfn>;</td></tr>
+<tr><th id="63">63</th><td>    <a class="typedef" href="#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a>		*<dfn class="decl" id="(anonymous)::g_dfa" title='(anonymous struct)::g_dfa' data-ref="(anonymous)::g_dfa">g_dfa</dfn>;		<i>/* Array of DFAs */</i></td></tr>
+<tr><th id="64">64</th><td>    <a class="typedef" href="#labellist" title='labellist' data-type='struct labellist' data-ref="labellist">labellist</a>	 <dfn class="decl" id="(anonymous)::g_ll" title='(anonymous struct)::g_ll' data-ref="(anonymous)::g_ll">g_ll</dfn>;</td></tr>
+<tr><th id="65">65</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::g_start" title='(anonymous struct)::g_start' data-ref="(anonymous)::g_start">g_start</dfn>;	<i>/* Start symbol of the grammar */</i></td></tr>
+<tr><th id="66">66</th><td>    <em>int</em>		 <dfn class="decl" id="(anonymous)::g_accel" title='(anonymous struct)::g_accel' data-ref="(anonymous)::g_accel">g_accel</dfn>;	<i>/* Set if accelerators present */</i></td></tr>
+<tr><th id="67">67</th><td>} <dfn class="typedef" id="grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</dfn>;</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i>/* FUNCTIONS */</i></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="decl" id="newgrammar" title='newgrammar' data-ref="newgrammar">newgrammar</dfn>(<em>int</em> <dfn class="local col0 decl" id="360start" title='start' data-type='int' data-ref="360start">start</dfn>);</td></tr>
+<tr><th id="72">72</th><td><em>void</em> <dfn class="decl" id="freegrammar" title='freegrammar' data-ref="freegrammar">freegrammar</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col1 decl" id="361g" title='g' data-type='grammar *' data-ref="361g">g</dfn>);</td></tr>
+<tr><th id="73">73</th><td><a class="typedef" href="#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> *<dfn class="decl" id="adddfa" title='adddfa' data-ref="adddfa">adddfa</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col2 decl" id="362g" title='g' data-type='grammar *' data-ref="362g">g</dfn>, <em>int</em> <dfn class="local col3 decl" id="363type" title='type' data-type='int' data-ref="363type">type</dfn>, <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="364name" title='name' data-type='const char *' data-ref="364name">name</dfn>);</td></tr>
+<tr><th id="74">74</th><td><em>int</em> <dfn class="decl" id="addstate" title='addstate' data-ref="addstate">addstate</dfn>(<a class="typedef" href="#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> *<dfn class="local col5 decl" id="365d" title='d' data-type='dfa *' data-ref="365d">d</dfn>);</td></tr>
+<tr><th id="75">75</th><td><em>void</em> <dfn class="decl" id="addarc" title='addarc' data-ref="addarc">addarc</dfn>(<a class="typedef" href="#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> *<dfn class="local col6 decl" id="366d" title='d' data-type='dfa *' data-ref="366d">d</dfn>, <em>int</em> <dfn class="local col7 decl" id="367from" title='from' data-type='int' data-ref="367from">from</dfn>, <em>int</em> <dfn class="local col8 decl" id="368to" title='to' data-type='int' data-ref="368to">to</dfn>, <em>int</em> <dfn class="local col9 decl" id="369lbl" title='lbl' data-type='int' data-ref="369lbl">lbl</dfn>);</td></tr>
+<tr><th id="76">76</th><td><a class="typedef" href="#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> *<dfn class="decl" id="PyGrammar_FindDFA" title='PyGrammar_FindDFA' data-ref="PyGrammar_FindDFA">PyGrammar_FindDFA</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col0 decl" id="370g" title='g' data-type='grammar *' data-ref="370g">g</dfn>, <em>int</em> <dfn class="local col1 decl" id="371type" title='type' data-type='int' data-ref="371type">type</dfn>);</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>int</em> <dfn class="decl" id="addlabel" title='addlabel' data-ref="addlabel">addlabel</dfn>(<a class="typedef" href="#labellist" title='labellist' data-type='struct labellist' data-ref="labellist">labellist</a> *<dfn class="local col2 decl" id="372ll" title='ll' data-type='labellist *' data-ref="372ll">ll</dfn>, <em>int</em> <dfn class="local col3 decl" id="373type" title='type' data-type='int' data-ref="373type">type</dfn>, <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="374str" title='str' data-type='const char *' data-ref="374str">str</dfn>);</td></tr>
+<tr><th id="79">79</th><td><em>int</em> <dfn class="decl" id="findlabel" title='findlabel' data-ref="findlabel">findlabel</dfn>(<a class="typedef" href="#labellist" title='labellist' data-type='struct labellist' data-ref="labellist">labellist</a> *<dfn class="local col5 decl" id="375ll" title='ll' data-type='labellist *' data-ref="375ll">ll</dfn>, <em>int</em> <dfn class="local col6 decl" id="376type" title='type' data-type='int' data-ref="376type">type</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="377str" title='str' data-type='const char *' data-ref="377str">str</dfn>);</td></tr>
+<tr><th id="80">80</th><td><em>const</em> <em>char</em> *<dfn class="decl" id="PyGrammar_LabelRepr" title='PyGrammar_LabelRepr' data-ref="PyGrammar_LabelRepr">PyGrammar_LabelRepr</dfn>(<a class="typedef" href="#label" title='label' data-type='struct label' data-ref="label">label</a> *<dfn class="local col8 decl" id="378lb" title='lb' data-type='label *' data-ref="378lb">lb</dfn>);</td></tr>
+<tr><th id="81">81</th><td><em>void</em> <dfn class="decl" id="translatelabels" title='translatelabels' data-ref="translatelabels">translatelabels</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col9 decl" id="379g" title='g' data-type='grammar *' data-ref="379g">g</dfn>);</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><em>void</em> <dfn class="decl" id="addfirstsets" title='addfirstsets' data-ref="addfirstsets">addfirstsets</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col0 decl" id="380g" title='g' data-type='grammar *' data-ref="380g">g</dfn>);</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><em>void</em> <dfn class="decl" id="PyGrammar_AddAccelerators" title='PyGrammar_AddAccelerators' data-ref="PyGrammar_AddAccelerators">PyGrammar_AddAccelerators</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col1 decl" id="381g" title='g' data-type='grammar *' data-ref="381g">g</dfn>);</td></tr>
+<tr><th id="86">86</th><td><em>void</em> <dfn class="decl" id="PyGrammar_RemoveAccelerators" title='PyGrammar_RemoveAccelerators' data-ref="PyGrammar_RemoveAccelerators">PyGrammar_RemoveAccelerators</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *);</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><em>void</em> <dfn class="decl" id="printgrammar" title='printgrammar' data-ref="printgrammar">printgrammar</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col2 decl" id="382g" title='g' data-type='grammar *' data-ref="382g">g</dfn>, <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col3 decl" id="383fp" title='fp' data-type='FILE *' data-ref="383fp">fp</dfn>);</td></tr>
+<tr><th id="89">89</th><td><em>void</em> <dfn class="decl" id="printnonterminals" title='printnonterminals' data-ref="printnonterminals">printnonterminals</dfn>(<a class="typedef" href="#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col4 decl" id="384g" title='g' data-type='grammar *' data-ref="384g">g</dfn>, <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col5 decl" id="385fp" title='fp' data-type='FILE *' data-ref="385fp">fp</dfn>);</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><u>#<span data-ppcond="91">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="92">92</th><td>}</td></tr>
+<tr><th id="93">93</th><td><u>#<span data-ppcond="91">endif</span></u></td></tr>
+<tr><th id="94">94</th><td><u>#<span data-ppcond="4">endif</span> /* !Py_GRAMMAR_H */</u></td></tr>
+<tr><th id="95">95</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/parsermodule.c.html'>codebrowser/Modules/parsermodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

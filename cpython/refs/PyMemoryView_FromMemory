@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/memoryobject.h' l='25' type='PyObject * PyMemoryView_FromMemory(char * mem, Py_ssize_t size, int flags)'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='416' u='c' c='pack_single'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='585' u='c' c='unpack_single'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='714' u='c' c='ndarray_as_list'/>
+<def f='codebrowser/Objects/memoryobject.c' l='716' ll='738' type='PyObject * PyMemoryView_FromMemory(char * mem, Py_ssize_t size, int flags)'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1957' u='c' c='struct_get_unpacker'/>
+<doc f='codebrowser/Objects/memoryobject.c' l='713'>/* Expose a raw memory area as a view of contiguous bytes. flags can be
+   PyBUF_READ or PyBUF_WRITE. view-&gt;format is set to &quot;B&quot; (unsigned bytes).
+   The memoryview has complete buffer information. */</doc>

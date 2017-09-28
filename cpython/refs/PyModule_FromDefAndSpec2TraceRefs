@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/modsupport.h' l='189' type='PyObject * PyModule_FromDefAndSpec2TraceRefs(PyModuleDef * def, PyObject * spec, int module_api_version)'/>
+<doc f='codebrowser/Include/modsupport.h' l='204'>/* New in 3.5 */</doc>
+<def f='codebrowser/Objects/moduleobject.c' l='227' macro='1' type='PyObject * PyModule_FromDefAndSpec2TraceRefs(struct PyModuleDef * def, PyObject * spec, int module_api_version)'/>
+<use f='codebrowser/Python/import.c' l='1074' macro='1' u='c'/>
+<use f='codebrowser/Python/importdl.c' l='188' macro='1' u='c'/>

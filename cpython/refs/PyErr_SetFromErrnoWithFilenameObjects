@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyerrors.h' l='246' type='PyObject * PyErr_SetFromErrnoWithFilenameObjects(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1450' u='c' c='path_object_error2'/>
+<use f='codebrowser/Python/errors.c' l='459' u='c' c='PyErr_SetFromErrnoWithFilenameObject'/>
+<def f='codebrowser/Python/errors.c' l='462' ll='558' type='PyObject * PyErr_SetFromErrnoWithFilenameObjects(PyObject * exc, PyObject * filenameObject, PyObject * filenameObject2)'/>
+<use f='codebrowser/Python/errors.c' l='564' u='c' c='PyErr_SetFromErrnoWithFilename'/>
+<use f='codebrowser/Python/errors.c' l='583' u='c' c='PyErr_SetFromErrno'/>

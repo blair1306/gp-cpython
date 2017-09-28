@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='846' type='int wscrl(WINDOW * , int )'/>
+<doc f='include/curses.h' l='846'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1868' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1872' u='c' c='PyCursesWindow_Scroll'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pyarena.h' l='57' type='int PyArena_AddPyObject(PyArena * , PyObject * )'/>
+<doc f='codebrowser/Include/pyarena.h' l='53'>/* This routine isn&apos;t a proper arena allocation routine.  It takes
+   * a PyObject* and records it so that it can be DECREFed when the
+   * arena is freed.
+   */</doc>
+<use f='codebrowser/Python/Python-ast.c' l='765' u='c' c='obj2ast_object'/>
+<use f='codebrowser/Python/Python-ast.c' l='778' u='c' c='obj2ast_constant'/>
+<use f='codebrowser/Python/ast.c' l='667' u='c' c='new_identifier'/>
+<use f='codebrowser/Python/ast.c' l='2154' u='c' c='ast_for_atom'/>
+<use f='codebrowser/Python/ast.c' l='3255' u='c' c='alias_for_import_name'/>
+<use f='codebrowser/Python/ast.c' l='3264' u='c' c='alias_for_import_name'/>
+<use f='codebrowser/Python/ast.c' l='4856' u='c' c='make_str_node_and_del'/>
+<use f='codebrowser/Python/ast.c' l='5223' u='c' c='parsestrplus'/>
+<def f='codebrowser/Python/pyarena.c' l='202' ll='210' type='int PyArena_AddPyObject(PyArena * arena, PyObject * obj)'/>

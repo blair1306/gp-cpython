@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pyerrors.h' l='361' type='int PySignal_SetWakeupFd(int fd)'/>
+<def f='codebrowser/Modules/signalmodule.c' l='664' ll='679' type='int PySignal_SetWakeupFd(int fd)'/>
+<doc f='codebrowser/Modules/signalmodule.c' l='663'>/* C API for the same, without all the error checking */</doc>

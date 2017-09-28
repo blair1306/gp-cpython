@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/classobject.h' l='14' type='PyObject *'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/classobject.h' l='14'>/* The callable object implementing the method */</doc>
+<use f='codebrowser/Objects/classobject.c' l='27' u='r' c='PyMethod_Function'/>
+<use f='codebrowser/Objects/classobject.c' l='66' u='w' c='PyMethod_New'/>
+<use f='codebrowser/Objects/classobject.c' l='77' macro='1' u='r'/>
+<use f='codebrowser/Objects/classobject.c' l='125' u='r' c='method_get_doc'/>
+<use f='codebrowser/Objects/classobject.c' l='158' u='r' c='method_getattro'/>
+<use f='codebrowser/Objects/classobject.c' l='197' u='r' c='method_dealloc'/>
+<use f='codebrowser/Objects/classobject.c' l='224' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='224' u='r' c='method_richcompare'/>
+<use f='codebrowser/Objects/classobject.c' l='246' u='r' c='method_repr'/>
+<use f='codebrowser/Objects/classobject.c' l='287' u='r' c='method_hash'/>
+<use f='codebrowser/Objects/classobject.c' l='299' u='r' c='method_traverse'/>
+<use f='codebrowser/Objects/classobject.c' l='299' u='r' c='method_traverse'/>
+<use f='codebrowser/Objects/classobject.c' l='315' macro='1' u='r'/>
+<use f='codebrowser/Objects/classobject.c' l='331' macro='1' u='r'/>
+<use f='codebrowser/Objects/classobject.c' l='499' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='4750' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='4848' macro='1' u='r'/>

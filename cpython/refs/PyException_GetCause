@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pyerrors.h' l='123' type='PyObject * PyException_GetCause(PyObject * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='122'>/* Cause manipulation (PEP 3134) */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='265' u='c' c='BaseException_get_cause'/>
+<def f='codebrowser/Objects/exceptions.c' l='316' ll='321' type='PyObject * PyException_GetCause(PyObject * self)'/>
+<use f='codebrowser/Python/pythonrun.c' l='819' u='c' c='print_exception_recursive'/>

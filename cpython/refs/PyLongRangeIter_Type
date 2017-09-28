@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/rangeobject.h' l='20' type='PyTypeObject'/>
+<use f='codebrowser/Objects/object.c' l='1797' u='a' c='_Py_ReadyTypes'/>
+<def f='codebrowser/Objects/rangeobject.c' l='1000' ll='1031' type='PyTypeObject'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1068' u='a' c='range_iter'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1154' u='a' c='range_reverse'/>

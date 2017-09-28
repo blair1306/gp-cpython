@@ -1,0 +1,5 @@
+<dec f='include/rpc/xdr.h' l='263'/>
+<doc f='include/rpc/xdr.h' l='259'>/* WARNING: The IXDR_*_LONG defines are removed by Sun for new platforms
+ * and shouldn&apos;t be used any longer. Code which use this defines or longs
+ * in the RPC code will not work on 64bit Solaris platforms !
+ */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2200' type='Py_UCS4 _PyUnicode_ToUppercase(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/_sre.c' l='141' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodectype.c' l='190' ll='197' type='Py_UCS4 _PyUnicode_ToUppercase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='187'>/* Returns the uppercase Unicode characters corresponding to ch or just
+   ch if no uppercase mapping is known. */</doc>

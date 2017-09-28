@@ -1,0 +1,9 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='1099' ll='1123' type='PyObject * formatter_parser(PyObject * ignored, PyObject * self)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15679'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15679'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15679'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15679'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='1095'>/* unicode_formatter_parser is used to implement
+   string.Formatter.vformat.  it parses a string and returns tuples
+   describing the parsed elements.  It&apos;s a wrapper around
+   stringlib/string_format.h&apos;s MarkupIterator */</doc>

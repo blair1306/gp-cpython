@@ -1,0 +1,10 @@
+<dec f='codebrowser/Parser/parser.h' l='13' type='int'/>
+<offset>0</offset>
+<doc f='codebrowser/Parser/parser.h' l='13'>/* State in current DFA */</doc>
+<use f='codebrowser/Parser/parser.c' l='48' u='w' c='s_push'/>
+<use f='codebrowser/Parser/parser.c' l='115' u='w' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='129' u='w' c='push'/>
+<use f='codebrowser/Parser/parser.c' l='244' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='247' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='277' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='282' u='r' c='PyParser_AddToken'/>

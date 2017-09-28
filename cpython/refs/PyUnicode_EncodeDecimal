@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1755' type='int PyUnicode_EncodeDecimal(Py_UNICODE * s, Py_ssize_t length, char * output, const char * errors)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1954' u='c' c='unicode_encodedecimal'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9159' ll='9220' type='int PyUnicode_EncodeDecimal(Py_UNICODE * s, Py_ssize_t length, char * output, const char * errors)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='9157'>/* --- Decimal Encoder ---------------------------------------------------- */</doc>

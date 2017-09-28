@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pytime.h' l='158' type='int'/>
+<offset>96</offset>
+<use f='codebrowser/Modules/timemodule.c' l='74' u='w' c='floatclock'/>
+<use f='codebrowser/Modules/timemodule.c' l='1008' u='w' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1026' u='w' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1055' u='w' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1093' u='w' c='time_get_clock_info'/>
+<use f='codebrowser/Modules/timemodule.c' l='1142' u='r' c='time_get_clock_info'/>
+<use f='codebrowser/Modules/timemodule.c' l='1143' u='r' c='time_get_clock_info'/>
+<use f='codebrowser/Python/pytime.c' l='580' u='w' c='pygettimeofday'/>
+<use f='codebrowser/Python/pytime.c' l='740' u='w' c='pymonotonic'/>

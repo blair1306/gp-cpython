@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/structseq.h' l='27' type='int PyStructSequence_InitType2(PyTypeObject * type, PyStructSequence_Desc * desc)'/>
+<use f='codebrowser/Modules/_lsprof.c' l='872' u='c' c='PyInit__lsprof'/>
+<use f='codebrowser/Modules/_lsprof.c' l='875' u='c' c='PyInit__lsprof'/>
+<use f='codebrowser/Modules/grpmodule.c' l='247' u='c' c='PyInit_grp'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13228' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13236' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13242' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13257' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13263' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13289' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13294' u='c' c='PyInit_posix'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='239' u='c' c='PyInit_pwd'/>
+<use f='codebrowser/Modules/resource.c' l='362' u='c' c='PyInit_resource'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1232' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Modules/spwdmodule.c' l='222' u='c' c='PyInit_spwd'/>
+<use f='codebrowser/Modules/timemodule.c' l='1404' u='c' c='PyInit_time'/>
+<use f='codebrowser/Objects/floatobject.c' l='2004' u='c' c='_PyFloat_Init'/>
+<use f='codebrowser/Objects/longobject.c' l='5529' u='c' c='_PyLong_Init'/>
+<def f='codebrowser/Objects/structseq.c' l='331' ll='401' type='int PyStructSequence_InitType2(PyTypeObject * type, PyStructSequence_Desc * desc)'/>
+<use f='codebrowser/Objects/structseq.c' l='406' u='c' c='PyStructSequence_InitType'/>
+<use f='codebrowser/Objects/structseq.c' l='417' u='c' c='PyStructSequence_NewType'/>
+<use f='codebrowser/Python/sysmodule.c' l='1983' u='c' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2013' u='c' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2031' u='c' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2066' u='c' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/thread.c' l='188' u='c' c='PyThread_GetInfo'/>

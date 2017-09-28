@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/object.h' l='353' type='destructor'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='921' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1128' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1226' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1296' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1816' u='w'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/object.h' l='351'>/* Methods to implement standard operations */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2105' u='r' c='defdict_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='48' u='r' c='PyCStgDict_dealloc'/>
+<use f='codebrowser/Objects/object.c' l='1872' u='r' c='_Py_Dealloc'/>
+<use f='codebrowser/Objects/object.c' l='2073' u='r' c='_PyTrash_destroy_chain'/>
+<use f='codebrowser/Objects/object.c' l='2111' u='r' c='_PyTrash_thread_destroy_chain'/>
+<use f='codebrowser/Objects/odictobject.c' l='1460' u='r' c='odict_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1135' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1168' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1220' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='2711' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2880' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2884' u='w' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='3717' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='3718' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='3718' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='4927' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4927' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4927' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4927' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4927' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4927' u='r' c='inherit_slots'/>

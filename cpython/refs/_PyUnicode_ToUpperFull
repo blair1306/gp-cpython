@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2218' type='int _PyUnicode_ToUpperFull(Py_UCS4 ch, Py_UCS4 * res)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='243' ll='257' type='int _PyUnicode_ToUpperFull(Py_UCS4 ch, Py_UCS4 * res)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9722' u='c' c='do_capitalize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9749' u='c' c='do_swapcase'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9775' u='c' c='do_upper_or_lower'/>

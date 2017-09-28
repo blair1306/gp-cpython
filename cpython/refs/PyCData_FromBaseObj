@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='352' type='PyObject * PyCData_FromBaseObj(PyObject * type, PyObject * base, Py_ssize_t index, char * adr)'/>
+<def f='codebrowser/Modules/_ctypes/_ctypes.c' l='2768' ll='2805' type='PyObject * PyCData_FromBaseObj(PyObject * type, PyObject * base, Py_ssize_t index, char * adr)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2860' u='c' c='PyCData_get'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4890' u='c' c='Pointer_get_contents'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='912' u='c' c='GetResult'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='471' type='mpd_t * mpd_qncopy(const mpd_t * a)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2930' u='c' c='multiply_by_denominator'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3676' u='c' c='PyDec_AsTuple'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1955' ll='1970' type='mpd_t * mpd_qncopy(const mpd_t * a)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4428' u='c' c='mpd_qfma'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7587' u='c' c='_mpd_qinvroot'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1951'>/*
+ * Return a newly allocated copy of the operand. In case of an error,
+ * status is set to MPD_Malloc_error and the return value is NULL.
+ */</doc>

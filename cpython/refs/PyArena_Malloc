@@ -1,0 +1,85 @@
+<dec f='codebrowser/Include/pyarena.h' l='51' type='void * PyArena_Malloc(PyArena * , size_t size)'/>
+<doc f='codebrowser/Include/pyarena.h' l='39'>/* Mostly like malloc(), return the address of a block of memory spanning
+   * `size` bytes, or return NULL (without setting an exception) if enough
+   * new memory can&apos;t be obtained.  Unlike malloc(0), PyArena_Malloc() with
+   * size=0 does not guarantee to return a unique pointer (the pointer
+   * returned may equal one or more other pointers obtained from
+   * PyArena_Malloc()).
+   * Note that pointers obtained via PyArena_Malloc() must never be passed to
+   * the system free() or realloc(), or to any of Python&apos;s similar memory-
+   * management functions.  PyArena_Malloc()-obtained pointers remain valid
+   * until PyArena_Free(ar) is called, at which point all pointers obtained
+   * from the arena `ar` become invalid simultaneously.
+   */</doc>
+<use f='codebrowser/Python/Python-ast.c' l='1217' u='c' c='_Py_Module'/>
+<use f='codebrowser/Python/Python-ast.c' l='1230' u='c' c='_Py_Interactive'/>
+<use f='codebrowser/Python/Python-ast.c' l='1247' u='c' c='_Py_Expression'/>
+<use f='codebrowser/Python/Python-ast.c' l='1259' u='c' c='_Py_Suite'/>
+<use f='codebrowser/Python/Python-ast.c' l='1283' u='c' c='_Py_FunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1314' u='c' c='_Py_AsyncFunctionDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1340' u='c' c='_Py_ClassDef'/>
+<use f='codebrowser/Python/Python-ast.c' l='1359' u='c' c='_Py_Return'/>
+<use f='codebrowser/Python/Python-ast.c' l='1373' u='c' c='_Py_Delete'/>
+<use f='codebrowser/Python/Python-ast.c' l='1393' u='c' c='_Py_Assign'/>
+<use f='codebrowser/Python/Python-ast.c' l='1424' u='c' c='_Py_AugAssign'/>
+<use f='codebrowser/Python/Python-ast.c' l='1451' u='c' c='_Py_AnnAssign'/>
+<use f='codebrowser/Python/Python-ast.c' l='1479' u='c' c='_Py_For'/>
+<use f='codebrowser/Python/Python-ast.c' l='1507' u='c' c='_Py_AsyncFor'/>
+<use f='codebrowser/Python/Python-ast.c' l='1530' u='c' c='_Py_While'/>
+<use f='codebrowser/Python/Python-ast.c' l='1552' u='c' c='_Py_If'/>
+<use f='codebrowser/Python/Python-ast.c' l='1569' u='c' c='_Py_With'/>
+<use f='codebrowser/Python/Python-ast.c' l='1585' u='c' c='_Py_AsyncWith'/>
+<use f='codebrowser/Python/Python-ast.c' l='1600' u='c' c='_Py_Raise'/>
+<use f='codebrowser/Python/Python-ast.c' l='1616' u='c' c='_Py_Try'/>
+<use f='codebrowser/Python/Python-ast.c' l='1638' u='c' c='_Py_Assert'/>
+<use f='codebrowser/Python/Python-ast.c' l='1653' u='c' c='_Py_Import'/>
+<use f='codebrowser/Python/Python-ast.c' l='1668' u='c' c='_Py_ImportFrom'/>
+<use f='codebrowser/Python/Python-ast.c' l='1684' u='c' c='_Py_Global'/>
+<use f='codebrowser/Python/Python-ast.c' l='1698' u='c' c='_Py_Nonlocal'/>
+<use f='codebrowser/Python/Python-ast.c' l='1717' u='c' c='_Py_Expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='1731' u='c' c='_Py_Pass'/>
+<use f='codebrowser/Python/Python-ast.c' l='1744' u='c' c='_Py_Break'/>
+<use f='codebrowser/Python/Python-ast.c' l='1757' u='c' c='_Py_Continue'/>
+<use f='codebrowser/Python/Python-ast.c' l='1776' u='c' c='_Py_BoolOp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1807' u='c' c='_Py_BinOp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1834' u='c' c='_Py_UnaryOp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1860' u='c' c='_Py_Lambda'/>
+<use f='codebrowser/Python/Python-ast.c' l='1891' u='c' c='_Py_IfExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1908' u='c' c='_Py_Dict'/>
+<use f='codebrowser/Python/Python-ast.c' l='1923' u='c' c='_Py_Set'/>
+<use f='codebrowser/Python/Python-ast.c' l='1943' u='c' c='_Py_ListComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1964' u='c' c='_Py_SetComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1990' u='c' c='_Py_DictComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='2012' u='c' c='_Py_GeneratorExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='2032' u='c' c='_Py_Await'/>
+<use f='codebrowser/Python/Python-ast.c' l='2046' u='c' c='_Py_Yield'/>
+<use f='codebrowser/Python/Python-ast.c' l='2065' u='c' c='_Py_YieldFrom'/>
+<use f='codebrowser/Python/Python-ast.c' l='2085' u='c' c='_Py_Compare'/>
+<use f='codebrowser/Python/Python-ast.c' l='2107' u='c' c='_Py_Call'/>
+<use f='codebrowser/Python/Python-ast.c' l='2128' u='c' c='_Py_Num'/>
+<use f='codebrowser/Python/Python-ast.c' l='2147' u='c' c='_Py_Str'/>
+<use f='codebrowser/Python/Python-ast.c' l='2167' u='c' c='_Py_FormattedValue'/>
+<use f='codebrowser/Python/Python-ast.c' l='2183' u='c' c='_Py_JoinedStr'/>
+<use f='codebrowser/Python/Python-ast.c' l='2202' u='c' c='_Py_Bytes'/>
+<use f='codebrowser/Python/Python-ast.c' l='2221' u='c' c='_Py_NameConstant'/>
+<use f='codebrowser/Python/Python-ast.c' l='2235' u='c' c='_Py_Ellipsis'/>
+<use f='codebrowser/Python/Python-ast.c' l='2253' u='c' c='_Py_Constant'/>
+<use f='codebrowser/Python/Python-ast.c' l='2283' u='c' c='_Py_Attribute'/>
+<use f='codebrowser/Python/Python-ast.c' l='2315' u='c' c='_Py_Subscript'/>
+<use f='codebrowser/Python/Python-ast.c' l='2342' u='c' c='_Py_Starred'/>
+<use f='codebrowser/Python/Python-ast.c' l='2368' u='c' c='_Py_Name'/>
+<use f='codebrowser/Python/Python-ast.c' l='2389' u='c' c='_Py_List'/>
+<use f='codebrowser/Python/Python-ast.c' l='2410' u='c' c='_Py_Tuple'/>
+<use f='codebrowser/Python/Python-ast.c' l='2425' u='c' c='_Py_Slice'/>
+<use f='codebrowser/Python/Python-ast.c' l='2439' u='c' c='_Py_ExtSlice'/>
+<use f='codebrowser/Python/Python-ast.c' l='2456' u='c' c='_Py_Index'/>
+<use f='codebrowser/Python/Python-ast.c' l='2479' u='c' c='_Py_comprehension'/>
+<use f='codebrowser/Python/Python-ast.c' l='2494' u='c' c='_Py_ExceptHandler'/>
+<use f='codebrowser/Python/Python-ast.c' l='2511' u='c' c='_Py_arguments'/>
+<use f='codebrowser/Python/Python-ast.c' l='2533' u='c' c='_Py_arg'/>
+<use f='codebrowser/Python/Python-ast.c' l='2552' u='c' c='_Py_keyword'/>
+<use f='codebrowser/Python/Python-ast.c' l='2569' u='c' c='_Py_alias'/>
+<use f='codebrowser/Python/Python-ast.c' l='2586' u='c' c='_Py_withitem'/>
+<use f='codebrowser/Python/asdl.c' l='25' u='c' c='_Py_asdl_seq_new'/>
+<use f='codebrowser/Python/asdl.c' l='56' u='c' c='_Py_asdl_int_seq_new'/>
+<def f='codebrowser/Python/pyarena.c' l='179' ll='200' type='void * PyArena_Malloc(PyArena * arena, size_t size)'/>

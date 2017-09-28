@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/moduleobject.h' l='31' type='void _PyModule_Clear(PyObject * )'/>
+<def f='codebrowser/Objects/moduleobject.c' l='544' ll='550' type='void _PyModule_Clear(PyObject * m)'/>
+<use f='codebrowser/Python/import.c' l='451' u='c' c='PyImport_Cleanup'/>

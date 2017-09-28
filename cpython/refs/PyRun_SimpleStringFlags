@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pythonrun.h' l='11' type='int PyRun_SimpleStringFlags(const char * , PyCompilerFlags * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2994' macro='1' u='c'/>
+<use f='codebrowser/Modules/main.c' l='302' u='c' c='run_command'/>
+<use f='codebrowser/Programs/_testembed.c' l='34' macro='1' u='c'/>
+<use f='codebrowser/Programs/_testembed.c' l='102' macro='1' u='c'/>
+<def f='codebrowser/Python/pythonrun.c' l='415' ll='430' type='int PyRun_SimpleStringFlags(const char * command, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1519' u='c' c='PyRun_SimpleString'/>

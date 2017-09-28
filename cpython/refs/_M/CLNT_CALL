@@ -1,0 +1,12 @@
+<dec f='include/rpc/clnt.h' l='167'/>
+<doc f='include/rpc/clnt.h' l='156'>/*
+ * enum clnt_stat
+ * CLNT_CALL(rh, proc, xargs, argsp, xres, resp, timeout)
+ * 	CLIENT *rh;
+ *	u_long proc;
+ *	xdrproc_t xargs;
+ *	caddr_t argsp;
+ *	xdrproc_t xres;
+ *	caddr_t resp;
+ *	struct timeval timeout;
+ */</doc>

@@ -1,0 +1,42 @@
+<dec f='codebrowser/Include/object.h' l='412' type='newfunc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='935' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1830' u='w'/>
+<offset>2624</offset>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='432' u='r' c='StructUnionType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1015' u='r' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1399' u='r' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1870' u='r' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1944' u='r' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2385' u='r' c='PyCFuncPtrType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5534' u='w' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='510' u='w' c='PyInit__curses_panel'/>
+<use f='codebrowser/Modules/_pickle.c' l='5297' u='r' c='load_newobj'/>
+<use f='codebrowser/Modules/_pickle.c' l='5304' u='r' c='load_newobj'/>
+<use f='codebrowser/Modules/_pickle.c' l='5352' u='r' c='load_newobj_ex'/>
+<use f='codebrowser/Modules/_pickle.c' l='5360' u='r' c='load_newobj_ex'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13238' u='r' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13239' u='w' c='PyInit_posix'/>
+<use f='codebrowser/Modules/posixmodule.c' l='13259' u='w' c='PyInit_posix'/>
+<use f='codebrowser/Objects/exceptions.c' l='932' u='r' c='oserror_use_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2771' u='r' c='_PyErr_TrySetFromCause'/>
+<use f='codebrowser/Objects/odictobject.c' l='1656' u='r' c='odict_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='907' u='r' c='type_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='921' u='r' c='type_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='2370' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2371' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='3542' u='r' c='object_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='3553' u='r' c='object_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4276' u='r' c='reduce_newobj'/>
+<use f='codebrowser/Objects/typeobject.c' l='4766' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4767' u='w' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4767' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='5778' u='r' c='tp_new_wrapper'/>
+<use f='codebrowser/Objects/typeobject.c' l='5782' u='r' c='tp_new_wrapper'/>
+<use f='codebrowser/Objects/typeobject.c' l='5782' u='r' c='tp_new_wrapper'/>
+<use f='codebrowser/Objects/typeobject.c' l='5794' u='r' c='tp_new_wrapper'/>
+<use f='codebrowser/Objects/typeobject.c' l='6987' u='a' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='7000' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='7306' u='r' c='add_operators'/>
+<use f='codebrowser/Objects/typeobject.c' l='7513' u='r' c='super_descr_get'/>
+<use f='codebrowser/Python/sysmodule.c' l='2021' u='w' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2112' u='w' c='_PySys_EndInit'/>

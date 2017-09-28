@@ -1,0 +1,4 @@
+<dec f='codebrowser/Python/errors.c' l='1006' type='PyObject * PyModule_GetWarningsModule()'/>
+<def f='codebrowser/Python/pylifecycle.c' l='110' ll='114' type='PyObject * PyModule_GetWarningsModule()'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='108'>/* PyModule_GetWarningsModule is no longer necessary as of 2.6
+since _warnings is builtin.  This API should not be used. */</doc>

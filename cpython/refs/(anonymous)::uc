@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyhash.h' l='56' type='unsigned char [24]'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/pyhash.h' l='55'>/* ensure 24 bytes */</doc>
+<use f='codebrowser/Python/bootstrap_hash.c' l='540' u='r' c='Py_ReadHashSeed'/>

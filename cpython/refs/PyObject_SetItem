@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/abstract.h' l='443' type='int PyObject_SetItem(PyObject * o, PyObject * key, PyObject * v)'/>
+<doc f='codebrowser/Include/abstract.h' l='438'>/* Map the object &apos;key&apos; to the value &apos;v&apos; into &apos;o&apos;.
+
+   Raise an exception and return -1 on failure; return 0 on success.
+
+   This is the equivalent of the Python statement: o[key]=v. */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2001' u='c' c='defdict_missing'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2342' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_operator.c' l='540' u='c' c='_operator_setitem_impl'/>
+<use f='codebrowser/Modules/_pickle.c' l='5927' u='c' c='do_setitems'/>
+<use f='codebrowser/Modules/_pickle.c' l='6086' u='c' c='load_build'/>
+<def f='codebrowser/Objects/abstract.c' l='173' ll='203' type='int PyObject_SetItem(PyObject * o, PyObject * key, PyObject * value)'/>
+<use f='codebrowser/Objects/abstract.c' l='2116' u='c' c='PyMapping_SetItemString'/>
+<use f='codebrowser/Objects/dictobject.c' l='1824' u='c' c='_PyDict_FromKeys'/>
+<use f='codebrowser/Objects/frameobject.c' l='808' u='c' c='map_to_dict'/>
+<use f='codebrowser/Objects/odictobject.c' l='1050' u='c' c='OrderedDict_setdefault_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='1287' u='c' c='odict_copy'/>
+<use f='codebrowser/Objects/odictobject.c' l='2316' u='c' c='mutablemapping_add_pairs'/>
+<use f='codebrowser/Objects/odictobject.c' l='2385' u='c' c='mutablemapping_update'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='579' u='c' c='proxy_setitem'/>
+<use f='codebrowser/Python/ceval.c' l='1705' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1759' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2157' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2652' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='5153' u='c' c='import_all_from'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/dictobject.h' l='170' type='void _PyDict_DebugMallocStats(FILE * out)'/>
+<def f='codebrowser/Objects/dictobject.c' l='272' ll='277' type='void _PyDict_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/dictobject.c' l='271'>/* Print summary info about the state of the optimized allocator */</doc>
+<use f='codebrowser/Objects/object.c' l='1946' u='c' c='_PyObject_DebugTypeStats'/>

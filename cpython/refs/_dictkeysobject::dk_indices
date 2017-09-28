@@ -1,0 +1,57 @@
+<dec f='codebrowser/Objects/dict-common.h' l='69' type='union (anonymous union at /home/jon/workspace/cpython/Objects/dict-common.h:62:5)'/>
+<use f='codebrowser/Objects/dictobject.c' l='318' u='m' c='dk_get_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='322' u='m' c='dk_get_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='327' u='m' c='dk_get_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='332' u='m' c='dk_get_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='348' u='m' c='dk_set_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='353' u='m' c='dk_set_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='359' u='m' c='dk_set_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='364' u='m' c='dk_set_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='424' u='w'/>
+<use f='codebrowser/Objects/dictobject.c' l='533' u='r' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='546' u='m' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='free_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='lookdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='lookdict_unicode'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='lookdict_unicode_nodummy'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='lookdict_split'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='_PyDict_MaybeUntrack'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='delitem_common'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='_PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='_PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_keys'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_values'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_items'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_equal'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dict_traverse'/>
+<use f='codebrowser/Objects/dictobject.c' l='2934' u='r' c='_PyDict_SizeOf'/>
+<use f='codebrowser/Objects/dictobject.c' l='2944' u='r' c='_PyDict_KeysSize'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictiter_iternextkey'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictiter_iternextkey'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictiter_iternextvalue'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictiter_iternextitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='m' c='dictiter_iternextitem'/>
+<offset>320</offset>
+<doc f='codebrowser/Objects/dict-common.h' l='49'>/* Actual hash table of dk_size entries. It holds indices in dk_entries,
+       or DKIX_EMPTY(-1) or DKIX_DUMMY(-2).
+
+       Indices must be: 0 &lt;= indice &lt; USABLE_FRACTION(dk_size).
+
+       The size in bytes of an indice depends on dk_size:
+
+       - 1 byte if dk_size &lt;= 0xff (char*)
+       - 2 bytes if dk_size &lt;= 0xffff (int16_t*)
+       - 4 bytes if dk_size &lt;= 0xffffffff (int32_t*)
+       - 8 bytes otherwise (int64_t*)
+
+       Dynamically sized, 8 is minimum. */</doc>

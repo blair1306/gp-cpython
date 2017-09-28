@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='495' type='int mpd_cmp_total_mag(const mpd_t * a, const mpd_t * b)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2340' ll='2352' type='int mpd_cmp_total_mag(const mpd_t * a, const mpd_t * b)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2364' u='c' c='mpd_compare_total_mag'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2339'>/* Compare the magnitude of the operands using a total order. */</doc>

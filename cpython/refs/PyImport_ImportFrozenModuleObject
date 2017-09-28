@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/import.h' l='80' type='int PyImport_ImportFrozenModuleObject(PyObject * name)'/>
+<def f='codebrowser/Python/import.c' l='1167' ll='1228' type='int PyImport_ImportFrozenModuleObject(PyObject * name)'/>
+<use f='codebrowser/Python/import.c' l='1238' u='c' c='PyImport_ImportFrozenModule'/>
+<use f='codebrowser/Python/import.c' l='1829' u='c' c='_imp_init_frozen_impl'/>
+<doc f='codebrowser/Python/import.c' l='1162'>/* Initialize a frozen module.
+   Return 1 for success, 0 if the module is not found, and -1 with
+   an exception set if the initialization failed.
+   This function is also used from frozenmain.c */</doc>

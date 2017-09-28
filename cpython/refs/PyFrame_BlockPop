@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/frameobject.h' l='75' type='PyTryBlock * PyFrame_BlockPop(PyFrameObject * )'/>
+<def f='codebrowser/Objects/frameobject.c' l='760' ll='768' type='PyTryBlock * PyFrame_BlockPop(PyFrameObject * f)'/>
+<use f='codebrowser/Python/ceval.c' l='2056' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2068' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2087' u='c' c='_PyEval_EvalFrameDefault'/>

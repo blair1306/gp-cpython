@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='91' type='int _PyImport_ReleaseLock()'/>
+<use f='codebrowser/Modules/posixmodule.c' l='443' u='c' c='PyOS_AfterFork_Parent'/>
+<def f='codebrowser/Python/import.c' l='180' ll='195' type='int _PyImport_ReleaseLock()'/>
+<use f='codebrowser/Python/import.c' l='280' u='c' c='_imp_release_lock_impl'/>

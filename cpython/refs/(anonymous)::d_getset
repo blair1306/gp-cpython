@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/descrobject.h' l='65' type='PyGetSetDef *'/>
+<offset>448</offset>
+<use f='codebrowser/Objects/descrobject.c' l='154' u='r' c='getset_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='155' u='r' c='getset_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='155' u='r' c='getset_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='208' u='r' c='getset_set'/>
+<use f='codebrowser/Objects/descrobject.c' l='209' u='r' c='getset_set'/>
+<use f='codebrowser/Objects/descrobject.c' l='210' u='r' c='getset_set'/>
+<use f='codebrowser/Objects/descrobject.c' l='480' u='r' c='getset_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='483' u='r' c='getset_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='770' u='w' c='PyDescr_NewGetSet'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/floatobject.h' l='110' type='double _PyFloat_Unpack8(const unsigned char * p, int le)'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1050' u='c' c='d_get_sw'/>
+<use f='codebrowser/Modules/_pickle.c' l='4856' u='c' c='load_binfloat'/>
+<use f='codebrowser/Modules/_struct.c' l='321' u='c' c='unpack_double'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2058' u='c' c='array__array_reconstructor_impl'/>
+<def f='codebrowser/Objects/floatobject.c' l='2538' ll='2631' type='double _PyFloat_Unpack8(const unsigned char * p, int le)'/>
+<use f='codebrowser/Python/marshal.c' l='1022' u='c' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1075' u='c' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1081' u='c' c='r_object'/>

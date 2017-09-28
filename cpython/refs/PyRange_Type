@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/rangeobject.h' l='18' type='PyTypeObject'/>
+<use f='codebrowser/Objects/object.c' l='1683' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Objects/rangeobject.c' l='437' macro='1' u='a'/>
+<def f='codebrowser/Objects/rangeobject.c' l='666' ll='705' type='PyTypeObject'/>
+<use f='codebrowser/Objects/rangeobject.c' l='758' u='a' c='rangeiter_reduce'/>
+<use f='codebrowser/Objects/rangeobject.c' l='914' u='a' c='longrangeiter_reduce'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1041' macro='1' u='a'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1092' macro='1' u='a'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2731' u='a' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2731' u='a' c='_PyBuiltin_Init'/>

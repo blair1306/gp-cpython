@@ -1,0 +1,2 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1285' type='PyObject * PyUnicode_EncodeUTF7(const Py_UNICODE * data, Py_ssize_t length, int base64SetO, int base64WhiteSpace, const char * errors)'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4841' ll='4856' type='PyObject * PyUnicode_EncodeUTF7(const Py_UNICODE * s, Py_ssize_t size, int base64SetO, int base64WhiteSpace, const char * errors)'/>

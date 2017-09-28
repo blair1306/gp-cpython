@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pytime.h' l='69' type='_PyTime_t _PyTime_FromSeconds(int seconds)'/>
+<doc f='codebrowser/Include/pytime.h' l='68'>/* Create a timestamp from a number of seconds. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3893' u='c' c='test_pytime_fromseconds'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='104' u='c' c='lock_acquire_parse_args'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2479' u='c' c='sock_setblocking'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2505' u='c' c='socket_parse_timeout'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4657' u='c' c='sock_new'/>
+<def f='codebrowser/Python/pytime.c' l='204' ll='218' type='_PyTime_t _PyTime_FromSeconds(int seconds)'/>

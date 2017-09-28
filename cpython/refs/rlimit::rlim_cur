@@ -1,0 +1,11 @@
+<dec f='include/x86_64-linux-gnu/bits/resource.h' l='142' type='rlim_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/resource.h' l='141'>/* The current (soft) limit.  */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='915' u='w' c='faulthandler_suppress_crash_report'/>
+<use f='codebrowser/Modules/resource.c' l='145' u='w' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='146' u='r' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='162' u='w' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='162' u='r' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='174' u='r' c='rlimit2py'/>
+<use f='codebrowser/Modules/resource.c' l='176' u='r' c='rlimit2py'/>
+<use f='codebrowser/Modules/resource.c' l='179' u='r' c='rlimit2py'/>

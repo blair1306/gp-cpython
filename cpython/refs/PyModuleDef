@@ -1,0 +1,11 @@
+<def f='codebrowser/Include/moduleobject.h' l='74' ll='84'/>
+<size>120</size>
+<mbr r='PyModuleDef::m_base' o='0' t='PyModuleDef_Base'/>
+<mbr r='PyModuleDef::m_name' o='448' t='const char *'/>
+<mbr r='PyModuleDef::m_doc' o='512' t='const char *'/>
+<mbr r='PyModuleDef::m_size' o='576' t='Py_ssize_t'/>
+<mbr r='PyModuleDef::m_methods' o='640' t='PyMethodDef *'/>
+<mbr r='PyModuleDef::m_slots' o='704' t='struct PyModuleDef_Slot *'/>
+<mbr r='PyModuleDef::m_traverse' o='768' t='traverseproc'/>
+<mbr r='PyModuleDef::m_clear' o='832' t='inquiry'/>
+<mbr r='PyModuleDef::m_free' o='896' t='freefunc'/>

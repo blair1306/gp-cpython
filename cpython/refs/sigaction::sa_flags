@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='46' type='int'/>
+<offset>1088</offset>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='45'>/* Special flags.  */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='442' u='w' c='faulthandler_enable'/>
+<use f='codebrowser/Modules/faulthandler.c' l='447' u='w' c='faulthandler_enable'/>
+<use f='codebrowser/Modules/faulthandler.c' l='718' u='w' c='faulthandler_register'/>
+<use f='codebrowser/Modules/faulthandler.c' l='722' u='w' c='faulthandler_register'/>
+<use f='codebrowser/Modules/faulthandler.c' l='728' u='w' c='faulthandler_register'/>
+<use f='codebrowser/Python/pylifecycle.c' l='2047' u='w' c='PyOS_setsig'/>

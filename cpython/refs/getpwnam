@@ -1,0 +1,6 @@
+<dec f='include/pwd.h' l='116' type='struct passwd * getpwnam(const char * __name)'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='164' u='c' c='pwd_getpwnam_impl'/>
+<doc f='include/pwd.h' l='112'>/* Search for an entry with a matching username.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>

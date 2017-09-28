@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/longobject.h' l='117' type='size_t _PyLong_NumBits(PyObject * v)'/>
+<doc f='codebrowser/Include/longobject.h' l='110'>/* _PyLong_NumBits.  Return the number of bits needed to represent the
+   absolute value of a long.  For example, this returns 1 for 1 and -1, 2
+   for 2 and -2, and 2 for 3 and -3.  It returns 0 for 0.
+   v must not be NULL, and must be a normalized long.
+   (size_t)-1 is returned and OverflowError set if the true result doesn&apos;t
+   fit in a size_t.
+*/</doc>
+<use f='codebrowser/Modules/_pickle.c' l='1877' u='c' c='save_long'/>
+<use f='codebrowser/Modules/_randommodule.c' l='274' u='c' c='random_seed'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2106' u='c' c='test_long_numbits'/>
+<use f='codebrowser/Objects/floatobject.c' l='391' u='c' c='float_richcompare'/>
+<def f='codebrowser/Objects/longobject.c' l='743' ll='771' type='size_t _PyLong_NumBits(PyObject * vv)'/>

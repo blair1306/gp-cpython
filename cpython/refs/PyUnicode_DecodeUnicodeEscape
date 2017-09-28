@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1499' type='PyObject * PyUnicode_DecodeUnicodeEscape(const char * string, Py_ssize_t length, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1497'>/* --- Unicode-Escape Codecs ---------------------------------------------- */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='531' u='c' c='_codecs_unicode_escape_decode_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='6126' ll='6145' type='PyObject * PyUnicode_DecodeUnicodeEscape(const char * s, Py_ssize_t size, const char * errors)'/>

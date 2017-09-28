@@ -1,0 +1,25 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='204'/>
+<doc f='codebrowser/Modules/expat/xmltok.h' l='182'>/* Scan the string starting at ptr until the end of the next complete
+   token, but do not scan past eptr.  Return an integer giving the
+   type of token.
+
+   Return XML_TOK_NONE when ptr == eptr; nextTokPtr will not be set.
+
+   Return XML_TOK_PARTIAL when the string does not contain a complete
+   token; nextTokPtr will not be set.
+
+   Return XML_TOK_INVALID when the string does not start a valid
+   token; nextTokPtr will be set to point to the character which made
+   the token invalid.
+
+   Otherwise the string starts with a valid token; nextTokPtr will be
+   set to point to the character following the end of that token.
+
+   Each data character counts as a single token, but adjacent data
+   characters may be returned together.  Similarly for characters in
+   the prolog outside literals, comments and processing instructions.
+*/</doc>
+<use f='codebrowser/Modules/expat/xmltok.c' l='1656' u='c'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='1697' u='c'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='1712' u='c'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='1718' u='c'/>

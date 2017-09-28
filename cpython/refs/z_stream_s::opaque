@@ -1,0 +1,7 @@
+<dec f='include/zlib.h' l='99' type='voidpf'/>
+<offset>640</offset>
+<doc f='include/zlib.h' l='99'>/* private data object passed to zalloc and zfree */</doc>
+<use f='codebrowser/Modules/zlibmodule.c' l='224' u='w' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='351' u='w' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='475' u='w' c='zlib_compressobj_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='571' u='w' c='zlib_decompressobj_impl'/>

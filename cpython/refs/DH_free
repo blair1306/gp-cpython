@@ -1,0 +1,2 @@
+<dec f='include/openssl/dh.h' l='202' type='void DH_free(DH * dh)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3574' u='c' c='_ssl__SSLContext_load_dh_params'/>

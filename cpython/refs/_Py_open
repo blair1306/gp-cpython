@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/fileutils.h' l='56' type='int _Py_open(const char * pathname, int flags)'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='123' u='c' c='newossobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='184' u='c' c='newossmixerobject'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='319' u='c' c='dev_urandom'/>
+<def f='codebrowser/Python/fileutils.c' l='999' ll='1007' type='int _Py_open(const char * pathname, int flags)'/>
+<doc f='codebrowser/Python/fileutils.c' l='989'>/* Open a file with the specified flags (wrapper to open() function).
+   Return a file descriptor on success. Raise an exception and return -1 on
+   error.
+
+   The file descriptor is created non-inheritable.
+
+   When interrupted by a signal (open() fails with EINTR), retry the syscall,
+   except if the Python signal handler raises an exception.
+
+   Release the GIL to call open(). The caller must hold the GIL. */</doc>

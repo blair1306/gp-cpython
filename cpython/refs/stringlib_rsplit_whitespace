@@ -1,0 +1,3 @@
+<def f='codebrowser/Objects/stringlib/split.h' l='193' macro='1' type='PyObject * stringlib_rsplit_whitespace(PyObject * str_obj, const char * str, Py_ssize_t str_len, Py_ssize_t maxcount)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1470' u='c' c='bytearray_rsplit_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1874' u='c' c='bytes_rsplit_impl'/>

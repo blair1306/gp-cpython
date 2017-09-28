@@ -1,0 +1,7 @@
+<dec f='include/unistd.h' l='340' type='__off64_t lseek(int __fd, __off64_t __offset, int __whence)'/>
+<dec f='include/unistd.h' l='348' type='__off64_t lseek64(int __fd, __off64_t __offset, int __whence)'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='694' u='c' c='_io_FileIO_readall_impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='908' u='c' c='portable_lseek'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7976' u='c' c='os_lseek_impl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='517' u='c' c='fp_setreadl'/>
+<use f='codebrowser/Python/traceback.c' l='310' u='c' c='_Py_DisplaySourceLine'/>

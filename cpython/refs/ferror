@@ -1,0 +1,5 @@
+<dec f='include/stdio.h' l='830' type='int ferror(FILE * __stream)'/>
+<doc f='include/stdio.h' l='829'>/* Return the error indicator for STREAM.  */</doc>
+<use f='codebrowser/Modules/zipimport.c' l='1083' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1240' u='c' c='get_data'/>
+<use f='codebrowser/Objects/object.c' l='408' u='c' c='PyObject_Print'/>

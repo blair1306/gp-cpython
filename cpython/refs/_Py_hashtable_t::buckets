@@ -1,0 +1,24 @@
+<dec f='codebrowser/Modules/hashtable.h' l='95' type='_Py_slist_t *'/>
+<offset>128</offset>
+<use f='codebrowser/Modules/hashtable.c' l='167' u='r' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='168' u='w' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='169' u='r' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='173' u='r' c='_Py_hashtable_new_full'/>
+<use f='codebrowser/Modules/hashtable.c' l='58' u='r' c='_Py_hashtable_print_stats'/>
+<use f='codebrowser/Modules/hashtable.c' l='58' u='r' c='_Py_hashtable_get_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='58' u='r' c='_Py_hashtable_pop_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='297' u='r' c='_Py_hashtable_pop_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='344' u='r' c='_Py_hashtable_set'/>
+<use f='codebrowser/Modules/hashtable.c' l='58' u='r' c='_Py_hashtable_foreach'/>
+<use f='codebrowser/Modules/hashtable.c' l='425' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='426' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='427' u='w' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='428' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='430' u='w' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='434' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='448' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='58' u='r' c='_Py_hashtable_clear'/>
+<use f='codebrowser/Modules/hashtable.c' l='467' u='r' c='_Py_hashtable_clear'/>
+<use f='codebrowser/Modules/hashtable.c' l='480' u='r' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='488' u='r' c='_Py_hashtable_destroy'/>
+<use f='codebrowser/Modules/hashtable.c' l='58' u='r' c='_Py_hashtable_copy'/>

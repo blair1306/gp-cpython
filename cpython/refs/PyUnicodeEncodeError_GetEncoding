@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyerrors.h' l='430' type='PyObject * PyUnicodeEncodeError_GetEncoding(PyObject * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='429'>/* get the encoding attribute */</doc>
+<def f='codebrowser/Objects/exceptions.c' l='1605' ll='1609' type='PyObject * PyUnicodeEncodeError_GetEncoding(PyObject * exc)'/>
+<use f='codebrowser/Python/codecs.c' l='1150' u='c' c='PyCodec_SurrogatePassErrors'/>

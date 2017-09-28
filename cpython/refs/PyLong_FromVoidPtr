@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/longobject.h' l='85' type='PyObject * PyLong_FromVoidPtr(void * )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5362' u='c' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5552' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5553' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5554' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5555' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5557' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1356' u='c' c='py_dl_open'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1388' u='c' c='py_dl_sym'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1553' u='c' c='addressof'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1707' u='c' c='POINTER'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1502' u='c' c='P_get'/>
+<use f='codebrowser/Modules/_json.c' l='1491' u='c' c='encoder_listencode_obj'/>
+<use f='codebrowser/Modules/_json.c' l='1563' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1722' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='1733' u='c' c='fast_save_enter'/>
+<use f='codebrowser/Modules/_pickle.c' l='1762' u='c' c='fast_save_leave'/>
+<use f='codebrowser/Modules/_pickle.c' l='4265' u='c' c='_pickle_PicklerMemoProxy_copy_impl'/>
+<use f='codebrowser/Modules/_struct.c' l='517' u='c' c='nu_void_p'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4284' u='c' c='stack_pointer'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1292' u='c' c='array_array_buffer_info_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1243' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1247' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Objects/codeobject.c' l='599' u='c' c='_PyCode_ConstantKey'/>
+<def f='codebrowser/Objects/longobject.c' l='1019' ll='1032' type='PyObject * PyLong_FromVoidPtr(void * p)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1017'>/* Create a new int object from a C pointer */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1719' u='c' c='unpack_single'/>
+<use f='codebrowser/Objects/typeobject.c' l='5215' u='c' c='add_subclass'/>
+<use f='codebrowser/Objects/typeobject.c' l='5255' u='c' c='remove_subclass'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1104' u='c' c='builtin_id'/>
+<use f='codebrowser/Python/symtable.c' l='35' u='c' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='344' u='c' c='PySymtable_Lookup'/>

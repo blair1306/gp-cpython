@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/moduleobject.h' l='32' type='void _PyModule_ClearDict(PyObject * )'/>
+<use f='codebrowser/Objects/moduleobject.c' l='549' u='c' c='_PyModule_Clear'/>
+<def f='codebrowser/Objects/moduleobject.c' l='552' ll='608' type='void _PyModule_ClearDict(PyObject * d)'/>
+<use f='codebrowser/Python/import.c' l='460' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='463' u='c' c='PyImport_Cleanup'/>

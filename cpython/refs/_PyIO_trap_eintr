@@ -1,0 +1,19 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='74' type='int _PyIO_trap_eintr()'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='70'>/* Return 1 if an OSError with errno == EINTR is set (and then
+   clears the error indicator), 0 otherwise.
+   Should only be called when PyErr_Occurred() is true.
+*/</doc>
+<def f='codebrowser/Modules/_io/bufferedio.c' l='783' ll='810' type='int _PyIO_trap_eintr()'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1492' u='c' c='_bufferedreader_raw_read'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1846' u='c' c='_bufferedwriter_raw_write'/>
+<doc f='codebrowser/Modules/_io/bufferedio.c' l='779'>/* Return 1 if an OSError with errno == EINTR is set (and then
+   clears the error indicator), 0 otherwise.
+   Should only be called when PyErr_Occurred() is true.
+*/</doc>
+<use f='codebrowser/Modules/_io/iobase.c' l='523' u='c' c='_io__IOBase_readline_impl'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='563' u='c' c='_io__IOBase_readline_impl'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='740' u='c' c='_io__IOBase_writelines'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='927' u='c' c='_io__RawIOBase_readall_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1322' u='c' c='_textiowrapper_writeflush'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1672' u='c' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1845' u='c' c='_textiowrapper_readline'/>

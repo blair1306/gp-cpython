@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyerrors.h' l='469' type='int PyUnicodeEncodeError_SetReason(PyObject * exc, const char * reason)'/>
+<doc f='codebrowser/Include/pyerrors.h' l='467'>/* assign a new value to the reason attribute
+   return 0 on success, -1 on failure */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='287' u='c' c='multibytecodec_encerror'/>
+<def f='codebrowser/Objects/exceptions.c' l='1791' ll='1796' type='int PyUnicodeEncodeError_SetReason(PyObject * exc, const char * reason)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6628' u='c' c='make_encode_exception'/>

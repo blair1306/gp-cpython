@@ -1,0 +1,31 @@
+<dec f='include/stdlib.h' l='483' type='void free(void * __ptr)'/>
+<doc f='include/stdlib.h' l='482'>/* Free a block allocated by `malloc&apos;, `realloc&apos; or `calloc&apos;.  */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes_test.c' l='209' u='c' c='my_free'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='49'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1416' u='c' c='_lzma__decode_filter_properties_impl'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2661' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2679' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2696' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='295' u='r' c='hashtable_new'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='295' u='r' c='hashtable_new'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1015' u='r' c='parserCreate'/>
+<use f='codebrowser/Modules/nismodule.c' l='193' u='c' c='nis_match'/>
+<use f='codebrowser/Modules/nismodule.c' l='382' u='c' c='nis_maplist'/>
+<use f='codebrowser/Modules/nismodule.c' l='386' u='c' c='nis_maplist'/>
+<use f='codebrowser/Modules/readline.c' l='474' u='c' c='set_completer_delims'/>
+<use f='codebrowser/Modules/readline.c' l='500' u='c' c='_py_free_history_entry'/>
+<use f='codebrowser/Modules/readline.c' l='682' u='c' c='_py_get_history_length'/>
+<use f='codebrowser/Modules/readline.c' l='24' u='c' c='setup_readline'/>
+<use f='codebrowser/Modules/readline.c' l='24' u='c' c='call_readline'/>
+<use f='codebrowser/Modules/readline.c' l='24' u='c' c='call_readline'/>
+<use f='codebrowser/Modules/readline.c' l='1329' u='c' c='call_readline'/>
+<use f='codebrowser/Modules/readline.c' l='24' u='c' c='call_readline'/>
+<use f='codebrowser/Objects/obmalloc.c' l='101' u='c' c='_PyMem_RawFree'/>
+<use f='codebrowser/Parser/grammar.c' l='36' u='c' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='43' u='c' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='184' u='c' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='195' u='c' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='227' u='c' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='234' u='c' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='246' u='c' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='259' u='c' c='translabel'/>

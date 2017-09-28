@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='408' type='int mpd_parse_fmt_str(mpd_spec_t * spec, const char * fmt, int caps)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3223' u='c' c='dec_format'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/io.c' l='772' ll='891' type='int mpd_parse_fmt_str(mpd_spec_t * spec, const char * fmt, int caps)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1389' u='c' c='mpd_qformat'/>

@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1806' type='PyObject * PyUnicode_DecodeLocale(const char * str, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1803'>/* Similar to PyUnicode_DecodeLocaleAndSize(), but compute the string
+   length using strlen(). */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5132' u='c' c='local_timezone_from_timestamp'/>
+<use f='codebrowser/Modules/_localemodule.c' l='116' u='c' c='PyLocale_setlocale'/>
+<use f='codebrowser/Modules/_localemodule.c' l='126' u='c' c='PyLocale_setlocale'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='164' u='c' c='PyLocale_localeconv'/>
+<use f='codebrowser/Modules/_localemodule.c' l='462' u='c' c='PyLocale_nl_langinfo'/>
+<use f='codebrowser/Modules/_localemodule.c' l='481' u='c' c='PyIntl_gettext'/>
+<use f='codebrowser/Modules/_localemodule.c' l='494' u='c' c='PyIntl_dgettext'/>
+<use f='codebrowser/Modules/_localemodule.c' l='508' u='c' c='PyIntl_dcgettext'/>
+<use f='codebrowser/Modules/_localemodule.c' l='526' u='c' c='PyIntl_textdomain'/>
+<use f='codebrowser/Modules/_localemodule.c' l='558' u='c' c='PyIntl_bindtextdomain'/>
+<use f='codebrowser/Modules/_localemodule.c' l='576' u='c' c='PyIntl_bind_textdomain_codeset'/>
+<use f='codebrowser/Modules/main.c' l='666' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9158' u='c' c='os_strerror_impl'/>
+<use f='codebrowser/Modules/readline.c' l='141' u='c' c='decode'/>
+<use f='codebrowser/Modules/timemodule.c' l='302' u='c' c='tmtotuple'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3816' ll='3821' type='PyObject * PyUnicode_DecodeLocale(const char * str, const char * errors)'/>
+<use f='codebrowser/Python/errors.c' l='480' u='c' c='PyErr_SetFromErrnoWithFilenameObjects'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='711' u='c' c='get_locale_info'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='716' u='c' c='get_locale_info'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='38' type='PyWeakReference *'/>
+<offset>448</offset>
+<doc f='codebrowser/Include/weakrefobject.h' l='33'>/* If wr_object is weakly referenced, wr_object has a doubly-linked NULL-
+     * terminated list of weak references to it.  These are the list pointers.
+     * If wr_object goes away, wr_object is set to Py_None, and these pointers
+     * have no meaning then.
+     */</doc>
+<use f='codebrowser/Objects/weakrefobject.c' l='27' u='w' c='init_weakref'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='66' u='r' c='clear_weakref'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='67' u='r' c='clear_weakref'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='69' u='w' c='clear_weakref'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='69' u='r' c='clear_weakref'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='70' u='w' c='clear_weakref'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='247' u='w' c='insert_after'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='250' u='w' c='insert_after'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='262' u='w' c='insert_head'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='265' u='w' c='insert_head'/>

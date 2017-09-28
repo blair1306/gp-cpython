@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2101' type='PyObject * PyUnicode_RichCompare(PyObject * left, PyObject * right, int op)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2089'>/* Rich compare two strings and return one of the following:
+
+   - NULL in case an exception was raised
+   - Py_True or Py_False for successful comparisons
+   - Py_NotImplemented in case the type combination is unknown
+
+   Possible values for op:
+
+     Py_GT, Py_GE, Py_EQ, Py_NE, Py_LT, Py_LE
+
+*/</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='11165' ll='11225' type='PyObject * PyUnicode_RichCompare(PyObject * left, PyObject * right, int op)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15198'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15198'/>

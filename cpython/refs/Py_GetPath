@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='69' type='wchar_t * Py_GetPath()'/>
+<def f='codebrowser/Modules/getpath.c' l='844' ll='850' type='wchar_t * Py_GetPath()'/>
+<dec f='codebrowser/Python/pylifecycle.c' l='49' type='wchar_t * Py_GetPath()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='783' u='c' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1203' u='c' c='Py_NewInterpreter'/>

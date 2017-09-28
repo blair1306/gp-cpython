@@ -1,0 +1,17 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='51' ll='61' type='mpd_uint_t addmod(mpd_uint_t a, mpd_uint_t b, mpd_uint_t m)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='47'>/*
+ * Restrictions: a &lt; m and b &lt; m
+ * ACL2 proof: umodarith.lisp: addmod-correct
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='105' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='108' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='132' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='135' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='154' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='157' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='54' u='c' c='std_size3_ntt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='55' u='c' c='std_size3_ntt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='64' u='c' c='std_size3_ntt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='68' u='c' c='std_size3_ntt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='77' u='c' c='std_size3_ntt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='81' u='c' c='std_size3_ntt'/>

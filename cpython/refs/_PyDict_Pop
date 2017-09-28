@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/dictobject.h' l='119' type='PyObject * _PyDict_Pop(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2298' u='c' c='task_step'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2310' u='c' c='task_step'/>
+<def f='codebrowser/Objects/dictobject.c' l='1732' ll='1752' type='PyObject * _PyDict_Pop(PyObject * dict, PyObject * key, PyObject * deflt)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2816' u='c' c='dict_pop'/>

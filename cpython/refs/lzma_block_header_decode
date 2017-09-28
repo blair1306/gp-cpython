@@ -1,0 +1,34 @@
+<dec f='include/lzma/block.h' l='343' type='lzma_ret lzma_block_header_decode(lzma_block * block, lzma_allocator * allocator, const uint8_t * in)'/>
+<doc f='include/lzma/block.h' l='310'>/**
+ * \brief       Decode Block Header
+ *
+ * block-&gt;version should be set to the highest value supported by the
+ * application; currently the only possible version is zero. This function
+ * will set version to the lowest value that still supports all the features
+ * required by the Block Header.
+ *
+ * The size of the Block Header must have already been decoded with
+ * lzma_block_header_size_decode() macro and stored to block-&gt;header_size.
+ *
+ * block-&gt;filters must have been allocated, but they don&apos;t need to be
+ * initialized (possible existing filter options are not freed).
+ *
+ * \param       block       Destination for Block options.
+ * \param       allocator   lzma_allocator for custom allocator functions.
+ *                          Set to NULL to use malloc() (and also free()
+ *                          if an error occurs).
+ * \param       in          Beginning of the input buffer. This must be
+ *                          at least block-&gt;header_size bytes.
+ *
+ * \return      - LZMA_OK: Decoding was successful. block-&gt;header_size
+ *                bytes were read from the input buffer.
+ *              - LZMA_OPTIONS_ERROR: The Block Header specifies some
+ *                unsupported options such as unsupported filters. This can
+ *                happen also if block-&gt;version was set to a too low value
+ *                compared to what would be required to properly represent
+ *                the information stored in the Block Header.
+ *              - LZMA_DATA_ERROR: Block Header is corrupt, for example,
+ *                the CRC32 doesn&apos;t match.
+ *              - LZMA_PROG_ERROR: Invalid arguments, for example
+ *                block-&gt;header_size is invalid or block-&gt;filters is NULL.
+ */</doc>

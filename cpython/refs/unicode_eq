@@ -1,0 +1,5 @@
+<def f='codebrowser/Objects/stringlib/eq.h' l='6' ll='25' macro='1' type='int unicode_eq(PyObject * aa, PyObject * bb)'/>
+<use f='codebrowser/Objects/dictobject.c' l='760' u='c' c='lookdict_unicode'/>
+<use f='codebrowser/Objects/dictobject.c' l='805' u='c' c='lookdict_unicode_nodummy'/>
+<use f='codebrowser/Objects/dictobject.c' l='851' u='c' c='lookdict_split'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11230' u='c' c='_PyUnicode_EQ'/>

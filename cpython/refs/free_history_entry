@@ -1,0 +1,4 @@
+<dec f='include/readline/history.h' l='97' type='histdata_t free_history_entry(HIST_ENTRY * )'/>
+<use f='codebrowser/Modules/readline.c' l='499' u='c' c='_py_free_history_entry'/>
+<doc f='include/readline/history.h' l='95'>/* Free the history entry H and return any application-specific data
+   associated with it. */</doc>

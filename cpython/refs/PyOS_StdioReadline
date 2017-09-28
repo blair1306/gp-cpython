@@ -1,0 +1,4 @@
+<def f='codebrowser/Parser/myreadline.c' l='198' ll='292' type='char * PyOS_StdioReadline(FILE * sys_stdin, FILE * sys_stdout, const char * prompt)'/>
+<use f='codebrowser/Parser/myreadline.c' l='319' u='r' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='340' u='c' c='PyOS_Readline'/>
+<doc f='codebrowser/Parser/myreadline.c' l='196'>/* Readline implementation using fgets() */</doc>

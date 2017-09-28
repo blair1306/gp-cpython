@@ -1,0 +1,11 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='71' type='int'/>
+<offset>7936</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='69'>/* async/await related fields; can be removed in 3.7 when async and await
+       become normal keywords. */</doc>
+<doc f='codebrowser/Parser/tokenizer.h' l='71'>/* =1 if tokens are inside an &apos;async def&apos; body. */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='154' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1474' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1484' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1556' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1584' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1602' u='r' c='tok_get'/>

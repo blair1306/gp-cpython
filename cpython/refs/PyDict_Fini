@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='107' type='void PyDict_Fini()'/>
+<def f='codebrowser/Objects/dictobject.c' l='280' ll='284' type='void PyDict_Fini()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1067' u='c' c='Py_FinalizeEx'/>

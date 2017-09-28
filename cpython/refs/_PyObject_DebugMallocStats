@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/objimpl.h' l='112' type='void _PyObject_DebugMallocStats(FILE * out)'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1036' u='c' c='new_arena'/>
+<def f='codebrowser/Objects/obmalloc.c' l='2248' ll='2383' type='void _PyObject_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/obmalloc.c' l='2244'>/* Print summary info to &quot;out&quot; about the state of pymalloc&apos;s structures.
+ * In Py_DEBUG mode, also perform some expensive internal consistency
+ * checks.
+ */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='1113' u='c' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/sysmodule.c' l='1298' u='c' c='sys_debugmallocstats'/>

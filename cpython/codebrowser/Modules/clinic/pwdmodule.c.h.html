@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pwdmodule.c.h source code [codebrowser/Modules/clinic/pwdmodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/pwdmodule.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='pwdmodule.c.h.html'>pwdmodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char pwd_getpwuid__doc__[] = &quot;getpwuid($module, uidobj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the password database entry for the given numeric user ID.\n&quot;&quot;\n&quot;&quot;See `help(pwd)` for more on password database entries.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="pwd_getpwuid__doc__" title='pwd_getpwuid__doc__' data-ref="pwd_getpwuid__doc__">pwd_getpwuid__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"getpwuid($module, uidobj, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return the password database entry for the given numeric user ID.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"See `help(pwd)` for more on password database entries."</q>);</td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#define <dfn class="macro" id="_M/PWD_GETPWUID_METHODDEF" data-ref="_M/PWD_GETPWUID_METHODDEF">PWD_GETPWUID_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="14">14</th><td><u>    {"getpwuid", (PyCFunction)pwd_getpwuid, METH_O, pwd_getpwuid__doc__},</u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char pwd_getpwnam__doc__[] = &quot;getpwnam($module, arg, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the password database entry for the given user name.\n&quot;&quot;\n&quot;&quot;See `help(pwd)` for more on password database entries.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="pwd_getpwnam__doc__" title='pwd_getpwnam__doc__' data-ref="pwd_getpwnam__doc__">pwd_getpwnam__doc__</dfn>,</td></tr>
+<tr><th id="17">17</th><td><q>"getpwnam($module, arg, /)\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"--\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"Return the password database entry for the given user name.\n"</q></td></tr>
+<tr><th id="21">21</th><td><q>"\n"</q></td></tr>
+<tr><th id="22">22</th><td><q>"See `help(pwd)` for more on password database entries."</q>);</td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/PWD_GETPWNAM_METHODDEF" data-ref="_M/PWD_GETPWNAM_METHODDEF">PWD_GETPWNAM_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="25">25</th><td><u>    {"getpwnam", (PyCFunction)pwd_getpwnam, METH_O, pwd_getpwnam__doc__},</u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="28">28</th><td><a class="decl" href="../pwdmodule.c.html#pwd_getpwnam_impl" title='pwd_getpwnam_impl' data-ref="pwd_getpwnam_impl" id="pwd_getpwnam_impl">pwd_getpwnam_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="27module" title='module' data-type='PyObject *' data-ref="27module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28arg" title='arg' data-type='PyObject *' data-ref="28arg">arg</dfn>);</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="31">31</th><td><dfn class="decl def" id="pwd_getpwnam" title='pwd_getpwnam' data-ref="pwd_getpwnam">pwd_getpwnam</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29module" title='module' data-type='PyObject *' data-ref="29module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30arg_" title='arg_' data-type='PyObject *' data-ref="30arg_">arg_</dfn>)</td></tr>
+<tr><th id="32">32</th><td>{</td></tr>
+<tr><th id="33">33</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31return_value" title='return_value' data-type='PyObject *' data-ref="31return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="34">34</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32arg" title='arg' data-type='PyObject *' data-ref="32arg">arg</dfn>;</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col0 ref" href="#30arg_" title='arg_' data-ref="30arg_">arg_</a>, <q>"U:getpwnam"</q>, &amp;<a class="local col2 ref" href="#32arg" title='arg' data-ref="32arg">arg</a>)) {</td></tr>
+<tr><th id="37">37</th><td>        <b>goto</b> <a class="lbl" href="#33exit" data-ref="33exit">exit</a>;</td></tr>
+<tr><th id="38">38</th><td>    }</td></tr>
+<tr><th id="39">39</th><td>    <a class="local col1 ref" href="#31return_value" title='return_value' data-ref="31return_value">return_value</a> = <a class="ref" href="../pwdmodule.c.html#pwd_getpwnam_impl" title='pwd_getpwnam_impl' data-ref="pwd_getpwnam_impl">pwd_getpwnam_impl</a>(<a class="local col9 ref" href="#29module" title='module' data-ref="29module">module</a>, <a class="local col2 ref" href="#32arg" title='arg' data-ref="32arg">arg</a>);</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><dfn class="lbl" id="33exit" data-ref="33exit">exit</dfn>:</td></tr>
+<tr><th id="42">42</th><td>    <b>return</b> <a class="local col1 ref" href="#31return_value" title='return_value' data-ref="31return_value">return_value</a>;</td></tr>
+<tr><th id="43">43</th><td>}</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="45">if</span> defined(<a class="macro" href="../../pyconfig.h.html#428" data-ref="_M/HAVE_GETPWENT">HAVE_GETPWENT</a>)</u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char pwd_getpwall__doc__[] = &quot;getpwall($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of all available password database entries, in arbitrary order.\n&quot;&quot;\n&quot;&quot;See help(pwd) for more on password database entries.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="pwd_getpwall__doc__" title='pwd_getpwall__doc__' data-ref="pwd_getpwall__doc__">pwd_getpwall__doc__</dfn>,</td></tr>
+<tr><th id="48">48</th><td><q>"getpwall($module, /)\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"--\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"Return a list of all available password database entries, in arbitrary order.\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"See help(pwd) for more on password database entries."</q>);</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/PWD_GETPWALL_METHODDEF" data-ref="_M/PWD_GETPWALL_METHODDEF">PWD_GETPWALL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="56">56</th><td><u>    {"getpwall", (PyCFunction)pwd_getpwall, METH_NOARGS, pwd_getpwall__doc__},</u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="59">59</th><td><a class="decl" href="../pwdmodule.c.html#pwd_getpwall_impl" title='pwd_getpwall_impl' data-ref="pwd_getpwall_impl" id="pwd_getpwall_impl">pwd_getpwall_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34module" title='module' data-type='PyObject *' data-ref="34module">module</dfn>);</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="62">62</th><td><dfn class="decl def" id="pwd_getpwall" title='pwd_getpwall' data-ref="pwd_getpwall">pwd_getpwall</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35module" title='module' data-type='PyObject *' data-ref="35module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="63">63</th><td>{</td></tr>
+<tr><th id="64">64</th><td>    <b>return</b> <a class="ref" href="../pwdmodule.c.html#pwd_getpwall_impl" title='pwd_getpwall_impl' data-ref="pwd_getpwall_impl">pwd_getpwall_impl</a>(<a class="local col5 ref" href="#35module" title='module' data-ref="35module">module</a>);</td></tr>
+<tr><th id="65">65</th><td>}</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#<span data-ppcond="45">endif</span> /* defined(HAVE_GETPWENT) */</u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><u>#<span data-ppcond="69">ifndef</span> <a class="macro" href="#55" data-ref="_M/PWD_GETPWALL_METHODDEF">PWD_GETPWALL_METHODDEF</a></u></td></tr>
+<tr><th id="70">70</th><td>    <u>#define PWD_GETPWALL_METHODDEF</u></td></tr>
+<tr><th id="71">71</th><td><u>#<span data-ppcond="69">endif</span> /* !defined(PWD_GETPWALL_METHODDEF) */</u></td></tr>
+<tr><th id="72">72</th><td><i>/*[clinic end generated code: output=fc41d8d88ec206d8 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../pwdmodule.c.html'>codebrowser/Modules/pwdmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

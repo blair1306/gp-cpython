@@ -1,0 +1,104 @@
+<dec f='codebrowser/Include/abstract.h' l='225' type='PyObject * _PyObject_FastCallDict(PyObject * callable, PyObject ** args, Py_ssize_t nargs, PyObject * kwargs)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='144' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='161' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='207' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='246' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1456' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1541' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1979' macro='1' u='c'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2431' macro='1' u='c'/>
+<doc f='codebrowser/Include/abstract.h' l='216'>/* Call the callable object &apos;callable&apos; with the &quot;fast call&quot; calling convention:
+   args is a C array for positional arguments (nargs is the number of
+   positional arguments), kwargs is a dictionary for keyword arguments.
+
+   If nargs is equal to zero, args can be NULL. kwargs can be NULL.
+   nargs must be greater or equal to zero.
+
+   Return the result on success. Raise an exception on return NULL on
+   error. */</doc>
+<use f='codebrowser/Modules/_csv.c' l='516' u='c' c='_call_dialect'/>
+<use f='codebrowser/Modules/_csv.c' l='519' u='c' c='_call_dialect'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='213' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='440' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3728' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3731' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5330' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='184' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='251' macro='1' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3186' macro='1' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3203' macro='1' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='866' macro='1' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3453' macro='1' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='167' u='c' c='partial_fastcall'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='553' macro='1' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1296' macro='1' u='c'/>
+<use f='codebrowser/Modules/_operator.c' l='1653' u='c' c='methodcaller_reduce'/>
+<use f='codebrowser/Modules/_pickle.c' l='1151' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='3932' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ssl.c' l='3203' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2236' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2309' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3078' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3626' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4215' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4242' u='c' c='test_pyobject_fastcalldict'/>
+<use f='codebrowser/Modules/main.c' l='166' macro='1' u='c'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1098' macro='1' u='c'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1156' macro='1' u='c'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1746' macro='1' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='994' macro='1' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12301' macro='1' u='c'/>
+<use f='codebrowser/Modules/readline.c' l='870' macro='1' u='c'/>
+<use f='codebrowser/Objects/abstract.c' l='110' macro='1' u='c'/>
+<use f='codebrowser/Objects/abstract.c' l='1351' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='554' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2584' macro='1' u='c'/>
+<def f='codebrowser/Objects/call.c' l='82' ll='132' type='PyObject * _PyObject_FastCallDict(PyObject * callable, PyObject ** args, Py_ssize_t nargs, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/call.c' l='818' u='c' c='PyEval_CallObjectWithKeywords'/>
+<use f='codebrowser/Objects/call.c' l='861' macro='1' u='c'/>
+<use f='codebrowser/Objects/call.c' l='899' u='c' c='_PyObject_Call_Prepend'/>
+<use f='codebrowser/Objects/call.c' l='926' macro='1' u='c'/>
+<use f='codebrowser/Objects/call.c' l='947' macro='1' u='c'/>
+<use f='codebrowser/Objects/call.c' l='952' macro='1' u='c'/>
+<use f='codebrowser/Objects/call.c' l='1193' macro='1' u='c'/>
+<doc f='codebrowser/Objects/call.c' l='80'>/* --- Core PyObject call functions ------------------------------- */</doc>
+<use f='codebrowser/Objects/complexobject.c' l='284' macro='1' u='c'/>
+<use f='codebrowser/Objects/descrobject.c' l='336' u='c' c='classmethoddescr_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='376' u='c' c='wrapperdescr_call'/>
+<use f='codebrowser/Objects/dictobject.c' l='1763' macro='1' u='c'/>
+<use f='codebrowser/Objects/enumobject.c' l='271' macro='1' u='c'/>
+<use f='codebrowser/Objects/fileobject.c' l='187' macro='1' u='c'/>
+<use f='codebrowser/Objects/genobject.c' l='338' macro='1' u='c'/>
+<use f='codebrowser/Objects/iterobject.c' l='217' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='599' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='1405' macro='1' u='c'/>
+<use f='codebrowser/Objects/odictobject.c' l='1262' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='1476' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='1485' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='1488' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='4117' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='4142' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='4195' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='4455' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='7175' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='7187' u='c' c='init_subclass'/>
+<use f='codebrowser/Parser/tokenizer.c' l='446' macro='1' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='539' macro='1' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='656' macro='1' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='151' u='c' c='builtin___build_class__'/>
+<use f='codebrowser/Python/bltinmodule.c' l='165' u='c' c='builtin___build_class__'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1209' macro='1' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2082' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3092' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3126' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3218' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='4311' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='4342' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='5029' macro='1' u='c'/>
+<use f='codebrowser/Python/codecs.c' l='287' macro='1' u='c'/>
+<use f='codebrowser/Python/errors.c' l='59' macro='1' u='c'/>
+<use f='codebrowser/Python/errors.c' l='764' u='c' c='PyErr_SetImportErrorSubclass'/>
+<use f='codebrowser/Python/marshal.c' l='1287' macro='1' u='c'/>
+<use f='codebrowser/Python/pythonrun.c' l='641' macro='1' u='c'/>
+<use f='codebrowser/Python/sysmodule.c' l='393' macro='1' u='c'/>
+<use f='codebrowser/Python/sysmodule.c' l='1087' macro='1' u='c'/>

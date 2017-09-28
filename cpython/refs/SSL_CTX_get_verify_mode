@@ -1,0 +1,4 @@
+<dec f='include/openssl/ssl.h' l='2258' type='int SSL_CTX_get_verify_mode(const SSL_CTX * ctx)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1523' u='c' c='_ssl__SSLSocket_peer_certificate_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3009' u='c' c='get_verify_mode'/>
+<use f='codebrowser/Modules/_ssl.c' l='3121' u='c' c='set_check_hostname'/>

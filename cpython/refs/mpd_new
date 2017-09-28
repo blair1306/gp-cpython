@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='819' type='mpd_t * mpd_new(mpd_context_t * ctx)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='193' ll='203' type='mpd_t * mpd_new(mpd_context_t * ctx)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='191'>/* Allocate new decimal. Caller can check for NULL or MPD_Malloc_error.
+   Raises on error. */</doc>

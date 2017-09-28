@@ -1,0 +1,36 @@
+<dec f='codebrowser/Include/dictobject.h' l='164' type='int _PyDict_SetItemId(PyObject * dp, struct _Py_Identifier * key, PyObject * item)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='845' u='c' c='FutureObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='846' u='c' c='FutureObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='847' u='c' c='FutureObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='851' u='c' c='FutureObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1744' u='c' c='TaskObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1745' u='c' c='TaskObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1751' u='c' c='TaskObj_finalize'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='404' u='c' c='spec_add_field'/>
+<def f='codebrowser/Objects/dictobject.c' l='3190' ll='3198' type='int _PyDict_SetItemId(PyObject * v, struct _Py_Identifier * key, PyObject * item)'/>
+<use f='codebrowser/Objects/exceptions.c' l='695' u='c' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/exceptions.c' l='699' u='c' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/moduleobject.c' l='60' u='c' c='module_init_dict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='62' u='c' c='module_init_dict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='64' u='c' c='module_init_dict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='66' u='c' c='module_init_dict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='68' u='c' c='module_init_dict'/>
+<use f='codebrowser/Objects/object.c' l='1983' u='c' c='Py_ReprEnter'/>
+<use f='codebrowser/Objects/typeobject.c' l='512' u='c' c='type_set_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='545' u='c' c='type_set_abstractmethods'/>
+<use f='codebrowser/Objects/typeobject.c' l='825' u='c' c='type_set_doc'/>
+<use f='codebrowser/Objects/typeobject.c' l='2582' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2639' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2653' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2903' u='c' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='5140' u='c' c='PyType_Ready'/>
+<use f='codebrowser/Objects/typeobject.c' l='5146' u='c' c='PyType_Ready'/>
+<use f='codebrowser/Objects/typeobject.c' l='5160' u='c' c='PyType_Ready'/>
+<use f='codebrowser/Objects/typeobject.c' l='5817' u='c' c='add_tp_new_wrapper'/>
+<use f='codebrowser/Python/Python-ast.c' l='838' u='c' c='add_ast_fields'/>
+<use f='codebrowser/Python/Python-ast.c' l='839' u='c' c='add_ast_fields'/>
+<use f='codebrowser/Python/_warnings.c' l='231' u='c' c='already_warned'/>
+<use f='codebrowser/Python/bltinmodule.c' l='874' u='c' c='builtin_eval_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='954' u='c' c='builtin_exec_impl'/>
+<use f='codebrowser/Python/ceval.c' l='2628' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/sysmodule.c' l='78' u='c' c='_PySys_SetObjectId'/>

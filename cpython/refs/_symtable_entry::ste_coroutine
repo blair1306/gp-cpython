@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/symtable.h' l='51' type='unsigned int'/>
+<offset>707</offset>
+<doc f='codebrowser/Include/symtable.h' l='51'>/* true if namespace is a coroutine */</doc>
+<use f='codebrowser/Python/compile.c' l='2902' u='r' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/compile.c' l='3963' u='r' c='compiler_comprehension'/>
+<use f='codebrowser/Python/compile.c' l='3974' u='r' c='compiler_comprehension'/>
+<use f='codebrowser/Python/compile.c' l='5262' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/compile.c' l='5264' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/compile.c' l='5266' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/symtable.c' l='72' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='1365' u='w' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1461' u='w' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1682' u='w' c='symtable_visit_comprehension'/>
+<use f='codebrowser/Python/symtable.c' l='1737' u='w' c='symtable_handle_comprehension'/>

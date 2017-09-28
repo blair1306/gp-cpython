@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/dtoa.h' l='7' type='double _Py_dg_strtod(const char * str, char ** ptr)'/>
+<use f='codebrowser/Objects/floatobject.c' l='965' u='c' c='double_round'/>
+<def f='codebrowser/Python/dtoa.c' l='1433' ll='2185' type='double _Py_dg_strtod(const char * s00, char ** se)'/>
+<use f='codebrowser/Python/pystrtod.c' l='142' u='c' c='_PyOS_ascii_strtod'/>

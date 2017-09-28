@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/longobject.h' l='93' type='long long PyLong_AsLongLongAndOverflow(PyObject * , int * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='638' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='665' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='682' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='709' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='725' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='740' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='755' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='770' u='c' c='test_long_long_and_overflow'/>
+<def f='codebrowser/Objects/longobject.c' l='1366' ll='1440' type='long long PyLong_AsLongLongAndOverflow(PyObject * vv, int * overflow)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1356'>/* Get a C long long int from an int object or any object that has an
+   __int__ method.
+
+   On overflow, return -1 and set *overflow to 1 or -1 depending on the sign of
+   the result.  Otherwise *overflow is 0.
+
+   For other errors (e.g., TypeError), return -1 and set an error condition.
+   In this case *overflow will be 0.
+*/</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='26' type='PyObject * PyImport_ExecCodeModuleWithPathnames(const char * name, PyObject * co, const char * pathname, const char * cpathname)'/>
+<use f='codebrowser/Python/import.c' l='723' u='c' c='PyImport_ExecCodeModule'/>
+<use f='codebrowser/Python/import.c' l='730' u='c' c='PyImport_ExecCodeModuleEx'/>
+<def f='codebrowser/Python/import.c' l='734' ll='788' type='PyObject * PyImport_ExecCodeModuleWithPathnames(const char * name, PyObject * co, const char * pathname, const char * cpathname)'/>

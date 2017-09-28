@@ -1,0 +1,3 @@
+<dec f='include/openssl/ssl.h' l='2446' type='SSL_SESSION * SSL_get1_session(SSL * ssl)'/>
+<use f='codebrowser/Modules/_ssl.c' l='2403' u='c' c='PySSL_get_session'/>
+<doc f='include/openssl/ssl.h' l='2446'>/* obtain a reference count */</doc>

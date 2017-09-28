@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/longobject.h' l='20' type='PyObject * PyLong_FromSize_t(size_t )'/>
+<use f='codebrowser/Modules/_randommodule.c' l='268' u='c' c='random_seed'/>
+<use f='codebrowser/Modules/_ssl.c' l='4121' u='c' c='memory_bio_get_pending'/>
+<use f='codebrowser/Modules/_struct.c' l='458' u='c' c='nu_size_t'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2359' u='c' c='get_sizeof_void_p'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1283' u='c' c='trace_to_pyobject'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1290' u='c' c='trace_to_pyobject'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1619' u='c' c='_tracemalloc_get_tracemalloc_memory_impl'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4235' u='c' c='repeat_len'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='555' u='c' c='mmap_tell_method'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6263' u='c' c='socket_CMSG_LEN'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6294' u='c' c='socket_CMSG_SPACE'/>
+<use f='codebrowser/Objects/dictobject.c' l='3296' u='c' c='dictiter_len'/>
+<def f='codebrowser/Objects/longobject.c' l='1185' ll='1210' type='PyObject * PyLong_FromSize_t(size_t ival)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1183'>/* Create a new int object from a C size_t. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1711' u='c' c='unpack_single'/>
+<use f='codebrowser/Python/sysmodule.c' l='1134' u='c' c='sys_getsizeof'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='64' type='int _mpd_basedivmod(mpd_uint_t * q, mpd_uint_t * r, const mpd_uint_t * uconst, const mpd_uint_t * vconst, mpd_size_t nplusm, mpd_size_t n)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='302' ll='399' type='int _mpd_basedivmod(mpd_uint_t * q, mpd_uint_t * r, const mpd_uint_t * uconst, const mpd_uint_t * vconst, mpd_size_t nplusm, mpd_size_t n)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='292'>/*
+ * Knuth, TAOCP Volume 2, 4.3.1:
+ *     q, r := quotient and remainder of uconst (len nplusm)
+ *             divided by vconst (len n)
+ *     nplusm &gt;= n
+ *
+ * If r is not NULL, r will contain the remainder. If r is NULL, the
+ * return value indicates if there is a remainder: 1 for true, 0 for
+ * false.  A return value of -1 indicates an error.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3722' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3876' u='c' c='_mpd_qdivmod'/>

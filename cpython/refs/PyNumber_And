@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/abstract.h' l='699' type='PyObject * PyNumber_And(PyObject * o1, PyObject * o2)'/>
+<doc f='codebrowser/Include/abstract.h' l='695'>/* Returns the result of bitwise and of o1 and o2 on success, or NULL on
+   failure.
+
+   This is the equivalent of the Python expression: o1 &amp; o2. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2238' u='c' c='delta_new'/>
+<use f='codebrowser/Modules/_operator.c' l='249' u='c' c='_operator_and__impl'/>
+<def f='codebrowser/Objects/abstract.c' l='931' macro='1' type='PyObject * PyNumber_And(PyObject * v, PyObject * w)'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='510' u='c' c='proxy_and'/>
+<use f='codebrowser/Python/ceval.c' l='1478' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/peephole.c' l='278' u='c' c='fold_binops_on_constants'/>

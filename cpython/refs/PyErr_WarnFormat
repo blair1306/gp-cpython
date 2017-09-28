@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/warnings.h' l='15' type='int PyErr_WarnFormat(PyObject * category, Py_ssize_t stack_level, const char * format)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1076' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/grpmodule.c' l='108' u='c' c='grp_getgrgid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1042' u='c' c='path_converter'/>
+<use f='codebrowser/Objects/abstract.c' l='1266' u='c' c='PyNumber_Index'/>
+<use f='codebrowser/Objects/abstract.c' l='1444' u='c' c='PyNumber_Float'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1256' u='c' c='PyBytes_DecodeEscape'/>
+<use f='codebrowser/Objects/complexobject.c' l='297' u='c' c='try_complex_special_method'/>
+<use f='codebrowser/Objects/floatobject.c' l='268' u='c' c='PyFloat_AsDouble'/>
+<use f='codebrowser/Objects/genobject.c' l='68' u='c' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='257' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/longobject.c' l='176' u='c' c='_PyLong_FromNbInt'/>
+<use f='codebrowser/Objects/moduleobject.c' l='122' u='c' c='check_api_version'/>
+<use f='codebrowser/Objects/typeobject.c' l='2908' u='c' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3623' u='c' c='PyUnicode_AsEncodedString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3933' u='c' c='PyUnicode_FSDecoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6137' u='c' c='PyUnicode_DecodeUnicodeEscape'/>
+<def f='codebrowser/Python/_warnings.c' l='957' ll='972' type='int PyErr_WarnFormat(PyObject * category, Py_ssize_t stack_level, const char * format)'/>
+<use f='codebrowser/Python/bltinmodule.c' l='177' u='c' c='builtin___build_class__'/>
+<use f='codebrowser/Python/ceval.c' l='1899' u='c' c='_PyEval_EvalFrameDefault'/>

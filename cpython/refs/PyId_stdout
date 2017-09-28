@@ -1,0 +1,12 @@
+<def f='codebrowser/Python/bltinmodule.c' l='44' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1753' u='a' c='builtin_print'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1853' u='a' c='builtin_input_impl'/>
+<def f='codebrowser/Python/pylifecycle.c' l='42' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/pylifecycle.c' l='883' u='a' c='flush_std_files'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1666' u='a' c='initstdio'/>
+<def f='codebrowser/Python/pythonrun.c' l='49' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/pythonrun.c' l='961' u='a' c='flush_io'/>
+<def f='codebrowser/Python/sysmodule.c' l='42' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/sysmodule.c' l='182' u='a' c='sys_displayhook'/>
+<use f='codebrowser/Python/sysmodule.c' l='2455' u='a' c='PySys_WriteStdout'/>
+<use f='codebrowser/Python/sysmodule.c' l='2497' u='a' c='PySys_FormatStdout'/>

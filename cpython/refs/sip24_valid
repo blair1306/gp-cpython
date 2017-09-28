@@ -1,0 +1,13 @@
+<def f='codebrowser/Modules/expat/siphash.h' l='271' ll='353' type='int sip24_valid()'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='6667' c='hash'/>
+<doc f='codebrowser/Modules/expat/siphash.h' l='260'>/*
+ * SipHash-2-4 output with
+ * k = 00 01 02 ...
+ * and
+ * in = (empty string)
+ * in = 00 (1 byte)
+ * in = 00 01 (2 bytes)
+ * in = 00 01 02 (3 bytes)
+ * ...
+ * in = 00 01 02 ... 3e (63 bytes)
+ */</doc>

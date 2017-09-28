@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='56' type='uint32_t [2]'/>
+<offset>320</offset>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='66' u='w' c='blake2s_set_lastnode'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='72' u='w' c='blake2s_clear_lastnode'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='78' u='r' c='blake2s_is_lastblock'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='85' u='w' c='blake2s_set_lastblock'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='93' u='w' c='blake2s_clear_lastblock'/>

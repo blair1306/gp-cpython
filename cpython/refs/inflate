@@ -1,0 +1,4 @@
+<dec f='include/zlib.h' l='392' type='int inflate(z_streamp strm, int flush)'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='383' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='809' u='c' c='zlib_Decompress_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1097' u='c' c='zlib_Decompress_flush_impl'/>

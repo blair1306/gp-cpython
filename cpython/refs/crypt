@@ -1,0 +1,3 @@
+<dec f='include/unistd.h' l='1123' type='char * crypt(const char * __key, const char * __salt)'/>
+<doc f='include/unistd.h' l='1122'>/* Encrypt at most 8 characters from KEY using salt to perturb DES.  */</doc>
+<use f='codebrowser/Modules/_cryptmodule.c' l='39' u='c' c='crypt_crypt_impl'/>

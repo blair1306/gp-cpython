@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='114' type='XML_Size'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2322' u='r' c='PyExpat_XML_GetCurrentLineNumber'/>
+<offset>0</offset>
+<doc f='codebrowser/Modules/expat/xmltok.h' l='113'>/* first line and first column are 0 not 1 */</doc>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1780' u='w' c='normal_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1784' u='w' c='normal_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1780' u='w' c='little2_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1784' u='w' c='little2_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1780' u='w' c='big2_updatePosition'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1784' u='w' c='big2_updatePosition'/>

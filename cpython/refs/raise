@@ -1,0 +1,9 @@
+<dec f='include/signal.h' l='139' type='int raise(int __sig)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='38' u='c' c='mpd_dflt_traphandler'/>
+<doc f='include/signal.h' l='138'>/* Raise signal SIG, i.e., send SIG to yourself.  */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3704' u='c' c='test_raise_signal'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4177' u='c' c='raise_SIGINT_then_send_None'/>
+<use f='codebrowser/Modules/faulthandler.c' l='365' u='c' c='faulthandler_fatal_error'/>
+<use f='codebrowser/Modules/faulthandler.c' l='766' u='c' c='faulthandler_user'/>
+<use f='codebrowser/Modules/faulthandler.c' l='959' u='c' c='faulthandler_raise_sigsegv'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1042' u='c' c='faulthandler_sigfpe'/>

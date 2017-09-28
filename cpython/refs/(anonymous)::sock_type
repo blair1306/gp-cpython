@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='206' type='int'/>
+<offset>320</offset>
+<doc f='codebrowser/Modules/socketmodule.h' l='206'>/* Socket type, e.g., SOCK_STREAM */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='602' u='w' c='internal_setblocking'/>
+<use f='codebrowser/Modules/socketmodule.c' l='604' u='w' c='internal_setblocking'/>
+<use f='codebrowser/Modules/socketmodule.c' l='899' u='w' c='init_sockobject'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4642' u='r' c='sock_repr'/>

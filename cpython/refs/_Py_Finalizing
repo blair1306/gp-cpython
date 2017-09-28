@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='122' type='PyThreadState *'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='282' u='r' c='_enter_buffered_busy'/>
+<use f='codebrowser/Python/_warnings.c' l='57' u='r' c='get_warnings_attr'/>
+<use f='codebrowser/Python/ceval.c' l='297' u='r' c='PyEval_RestoreThread'/>
+<use f='codebrowser/Python/ceval.c' l='297' u='r' c='PyEval_RestoreThread'/>
+<use f='codebrowser/Python/ceval.c' l='1116' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1116' u='r' c='_PyEval_EvalFrameDefault'/>
+<def f='codebrowser/Python/pylifecycle.c' l='102' type='PyThreadState *'/>
+<use f='codebrowser/Python/pylifecycle.c' l='571' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='954' u='w' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/sysmodule.c' l='1344' u='r' c='sys_is_finalizing'/>

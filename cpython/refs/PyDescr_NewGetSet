@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/descrobject.h' l='90' type='PyObject * PyDescr_NewGetSet(PyTypeObject * , struct PyGetSetDef * )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1360' u='c' c='add_getset'/>
+<def f='codebrowser/Objects/descrobject.c' l='762' ll='772' type='PyObject * PyDescr_NewGetSet(PyTypeObject * type, PyGetSetDef * getset)'/>
+<use f='codebrowser/Objects/typeobject.c' l='4726' u='c' c='add_getset'/>

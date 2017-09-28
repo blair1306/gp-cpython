@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>metagrammar.c source code [codebrowser/Parser/metagrammar.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Parser/metagrammar.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Parser</a>/<a href='metagrammar.c.html'>metagrammar.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../Include/pgenheaders.h.html">"pgenheaders.h"</a></u></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/metagrammar.h.html">"metagrammar.h"</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/grammar.h.html">"grammar.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../Include/pgen.h.html">"pgen.h"</a></u></td></tr>
+<tr><th id="6">6</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_0_0" title='arcs_0_0' data-type='arc [3]' data-ref="arcs_0_0">arcs_0_0</dfn>[<var>3</var>] = {</td></tr>
+<tr><th id="7">7</th><td>    {<var>2</var>, <var>0</var>},</td></tr>
+<tr><th id="8">8</th><td>    {<var>3</var>, <var>0</var>},</td></tr>
+<tr><th id="9">9</th><td>    {<var>4</var>, <var>1</var>},</td></tr>
+<tr><th id="10">10</th><td>};</td></tr>
+<tr><th id="11">11</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_0_1" title='arcs_0_1' data-type='arc [1]' data-ref="arcs_0_1">arcs_0_1</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="12">12</th><td>    {<var>0</var>, <var>1</var>},</td></tr>
+<tr><th id="13">13</th><td>};</td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#state" title='state' data-type='struct state' data-ref="state">state</a> <dfn class="tu decl def" id="states_0" title='states_0' data-type='state [2]' data-ref="states_0">states_0</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="15">15</th><td>    {<var>3</var>, <a class="tu ref" href="#arcs_0_0" title='arcs_0_0' data-ref="arcs_0_0">arcs_0_0</a>},</td></tr>
+<tr><th id="16">16</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_0_1" title='arcs_0_1' data-ref="arcs_0_1">arcs_0_1</a>},</td></tr>
+<tr><th id="17">17</th><td>};</td></tr>
+<tr><th id="18">18</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_1_0" title='arcs_1_0' data-type='arc [1]' data-ref="arcs_1_0">arcs_1_0</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="19">19</th><td>    {<var>5</var>, <var>1</var>},</td></tr>
+<tr><th id="20">20</th><td>};</td></tr>
+<tr><th id="21">21</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_1_1" title='arcs_1_1' data-type='arc [1]' data-ref="arcs_1_1">arcs_1_1</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="22">22</th><td>    {<var>6</var>, <var>2</var>},</td></tr>
+<tr><th id="23">23</th><td>};</td></tr>
+<tr><th id="24">24</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_1_2" title='arcs_1_2' data-type='arc [1]' data-ref="arcs_1_2">arcs_1_2</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="25">25</th><td>    {<var>7</var>, <var>3</var>},</td></tr>
+<tr><th id="26">26</th><td>};</td></tr>
+<tr><th id="27">27</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_1_3" title='arcs_1_3' data-type='arc [1]' data-ref="arcs_1_3">arcs_1_3</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="28">28</th><td>    {<var>3</var>, <var>4</var>},</td></tr>
+<tr><th id="29">29</th><td>};</td></tr>
+<tr><th id="30">30</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_1_4" title='arcs_1_4' data-type='arc [1]' data-ref="arcs_1_4">arcs_1_4</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="31">31</th><td>    {<var>0</var>, <var>4</var>},</td></tr>
+<tr><th id="32">32</th><td>};</td></tr>
+<tr><th id="33">33</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#state" title='state' data-type='struct state' data-ref="state">state</a> <dfn class="tu decl def" id="states_1" title='states_1' data-type='state [5]' data-ref="states_1">states_1</dfn>[<var>5</var>] = {</td></tr>
+<tr><th id="34">34</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_1_0" title='arcs_1_0' data-ref="arcs_1_0">arcs_1_0</a>},</td></tr>
+<tr><th id="35">35</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_1_1" title='arcs_1_1' data-ref="arcs_1_1">arcs_1_1</a>},</td></tr>
+<tr><th id="36">36</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_1_2" title='arcs_1_2' data-ref="arcs_1_2">arcs_1_2</a>},</td></tr>
+<tr><th id="37">37</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_1_3" title='arcs_1_3' data-ref="arcs_1_3">arcs_1_3</a>},</td></tr>
+<tr><th id="38">38</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_1_4" title='arcs_1_4' data-ref="arcs_1_4">arcs_1_4</a>},</td></tr>
+<tr><th id="39">39</th><td>};</td></tr>
+<tr><th id="40">40</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_2_0" title='arcs_2_0' data-type='arc [1]' data-ref="arcs_2_0">arcs_2_0</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="41">41</th><td>    {<var>8</var>, <var>1</var>},</td></tr>
+<tr><th id="42">42</th><td>};</td></tr>
+<tr><th id="43">43</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_2_1" title='arcs_2_1' data-type='arc [2]' data-ref="arcs_2_1">arcs_2_1</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="44">44</th><td>    {<var>9</var>, <var>0</var>},</td></tr>
+<tr><th id="45">45</th><td>    {<var>0</var>, <var>1</var>},</td></tr>
+<tr><th id="46">46</th><td>};</td></tr>
+<tr><th id="47">47</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#state" title='state' data-type='struct state' data-ref="state">state</a> <dfn class="tu decl def" id="states_2" title='states_2' data-type='state [2]' data-ref="states_2">states_2</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="48">48</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_2_0" title='arcs_2_0' data-ref="arcs_2_0">arcs_2_0</a>},</td></tr>
+<tr><th id="49">49</th><td>    {<var>2</var>, <a class="tu ref" href="#arcs_2_1" title='arcs_2_1' data-ref="arcs_2_1">arcs_2_1</a>},</td></tr>
+<tr><th id="50">50</th><td>};</td></tr>
+<tr><th id="51">51</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_3_0" title='arcs_3_0' data-type='arc [1]' data-ref="arcs_3_0">arcs_3_0</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="52">52</th><td>    {<var>10</var>, <var>1</var>},</td></tr>
+<tr><th id="53">53</th><td>};</td></tr>
+<tr><th id="54">54</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_3_1" title='arcs_3_1' data-type='arc [2]' data-ref="arcs_3_1">arcs_3_1</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="55">55</th><td>    {<var>10</var>, <var>1</var>},</td></tr>
+<tr><th id="56">56</th><td>    {<var>0</var>, <var>1</var>},</td></tr>
+<tr><th id="57">57</th><td>};</td></tr>
+<tr><th id="58">58</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#state" title='state' data-type='struct state' data-ref="state">state</a> <dfn class="tu decl def" id="states_3" title='states_3' data-type='state [2]' data-ref="states_3">states_3</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="59">59</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_3_0" title='arcs_3_0' data-ref="arcs_3_0">arcs_3_0</a>},</td></tr>
+<tr><th id="60">60</th><td>    {<var>2</var>, <a class="tu ref" href="#arcs_3_1" title='arcs_3_1' data-ref="arcs_3_1">arcs_3_1</a>},</td></tr>
+<tr><th id="61">61</th><td>};</td></tr>
+<tr><th id="62">62</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_4_0" title='arcs_4_0' data-type='arc [2]' data-ref="arcs_4_0">arcs_4_0</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="63">63</th><td>    {<var>11</var>, <var>1</var>},</td></tr>
+<tr><th id="64">64</th><td>    {<var>13</var>, <var>2</var>},</td></tr>
+<tr><th id="65">65</th><td>};</td></tr>
+<tr><th id="66">66</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_4_1" title='arcs_4_1' data-type='arc [1]' data-ref="arcs_4_1">arcs_4_1</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="67">67</th><td>    {<var>7</var>, <var>3</var>},</td></tr>
+<tr><th id="68">68</th><td>};</td></tr>
+<tr><th id="69">69</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_4_2" title='arcs_4_2' data-type='arc [3]' data-ref="arcs_4_2">arcs_4_2</dfn>[<var>3</var>] = {</td></tr>
+<tr><th id="70">70</th><td>    {<var>14</var>, <var>4</var>},</td></tr>
+<tr><th id="71">71</th><td>    {<var>15</var>, <var>4</var>},</td></tr>
+<tr><th id="72">72</th><td>    {<var>0</var>, <var>2</var>},</td></tr>
+<tr><th id="73">73</th><td>};</td></tr>
+<tr><th id="74">74</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_4_3" title='arcs_4_3' data-type='arc [1]' data-ref="arcs_4_3">arcs_4_3</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="75">75</th><td>    {<var>12</var>, <var>4</var>},</td></tr>
+<tr><th id="76">76</th><td>};</td></tr>
+<tr><th id="77">77</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_4_4" title='arcs_4_4' data-type='arc [1]' data-ref="arcs_4_4">arcs_4_4</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="78">78</th><td>    {<var>0</var>, <var>4</var>},</td></tr>
+<tr><th id="79">79</th><td>};</td></tr>
+<tr><th id="80">80</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#state" title='state' data-type='struct state' data-ref="state">state</a> <dfn class="tu decl def" id="states_4" title='states_4' data-type='state [5]' data-ref="states_4">states_4</dfn>[<var>5</var>] = {</td></tr>
+<tr><th id="81">81</th><td>    {<var>2</var>, <a class="tu ref" href="#arcs_4_0" title='arcs_4_0' data-ref="arcs_4_0">arcs_4_0</a>},</td></tr>
+<tr><th id="82">82</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_4_1" title='arcs_4_1' data-ref="arcs_4_1">arcs_4_1</a>},</td></tr>
+<tr><th id="83">83</th><td>    {<var>3</var>, <a class="tu ref" href="#arcs_4_2" title='arcs_4_2' data-ref="arcs_4_2">arcs_4_2</a>},</td></tr>
+<tr><th id="84">84</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_4_3" title='arcs_4_3' data-ref="arcs_4_3">arcs_4_3</a>},</td></tr>
+<tr><th id="85">85</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_4_4" title='arcs_4_4' data-ref="arcs_4_4">arcs_4_4</a>},</td></tr>
+<tr><th id="86">86</th><td>};</td></tr>
+<tr><th id="87">87</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_5_0" title='arcs_5_0' data-type='arc [3]' data-ref="arcs_5_0">arcs_5_0</dfn>[<var>3</var>] = {</td></tr>
+<tr><th id="88">88</th><td>    {<var>5</var>, <var>1</var>},</td></tr>
+<tr><th id="89">89</th><td>    {<var>16</var>, <var>1</var>},</td></tr>
+<tr><th id="90">90</th><td>    {<var>17</var>, <var>2</var>},</td></tr>
+<tr><th id="91">91</th><td>};</td></tr>
+<tr><th id="92">92</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_5_1" title='arcs_5_1' data-type='arc [1]' data-ref="arcs_5_1">arcs_5_1</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="93">93</th><td>    {<var>0</var>, <var>1</var>},</td></tr>
+<tr><th id="94">94</th><td>};</td></tr>
+<tr><th id="95">95</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_5_2" title='arcs_5_2' data-type='arc [1]' data-ref="arcs_5_2">arcs_5_2</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="96">96</th><td>    {<var>7</var>, <var>3</var>},</td></tr>
+<tr><th id="97">97</th><td>};</td></tr>
+<tr><th id="98">98</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#arc" title='arc' data-type='struct arc' data-ref="arc">arc</a> <dfn class="tu decl def" id="arcs_5_3" title='arcs_5_3' data-type='arc [1]' data-ref="arcs_5_3">arcs_5_3</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="99">99</th><td>    {<var>18</var>, <var>1</var>},</td></tr>
+<tr><th id="100">100</th><td>};</td></tr>
+<tr><th id="101">101</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#state" title='state' data-type='struct state' data-ref="state">state</a> <dfn class="tu decl def" id="states_5" title='states_5' data-type='state [4]' data-ref="states_5">states_5</dfn>[<var>4</var>] = {</td></tr>
+<tr><th id="102">102</th><td>    {<var>3</var>, <a class="tu ref" href="#arcs_5_0" title='arcs_5_0' data-ref="arcs_5_0">arcs_5_0</a>},</td></tr>
+<tr><th id="103">103</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_5_1" title='arcs_5_1' data-ref="arcs_5_1">arcs_5_1</a>},</td></tr>
+<tr><th id="104">104</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_5_2" title='arcs_5_2' data-ref="arcs_5_2">arcs_5_2</a>},</td></tr>
+<tr><th id="105">105</th><td>    {<var>1</var>, <a class="tu ref" href="#arcs_5_3" title='arcs_5_3' data-ref="arcs_5_3">arcs_5_3</a>},</td></tr>
+<tr><th id="106">106</th><td>};</td></tr>
+<tr><th id="107">107</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> <dfn class="tu decl def" id="dfas" title='dfas' data-type='dfa [6]' data-ref="dfas">dfas</dfn>[<var>6</var>] = {</td></tr>
+<tr><th id="108">108</th><td>    {<var>256</var>, <q>"MSTART"</q>, <var>0</var>, <var>2</var>, <a class="tu ref" href="#states_0" title='states_0' data-ref="states_0">states_0</a>,</td></tr>
+<tr><th id="109">109</th><td>     <q>"\070\000\000"</q>},</td></tr>
+<tr><th id="110">110</th><td>    {<var>257</var>, <q>"RULE"</q>, <var>0</var>, <var>5</var>, <a class="tu ref" href="#states_1" title='states_1' data-ref="states_1">states_1</a>,</td></tr>
+<tr><th id="111">111</th><td>     <q>"\040\000\000"</q>},</td></tr>
+<tr><th id="112">112</th><td>    {<var>258</var>, <q>"RHS"</q>, <var>0</var>, <var>2</var>, <a class="tu ref" href="#states_2" title='states_2' data-ref="states_2">states_2</a>,</td></tr>
+<tr><th id="113">113</th><td>     <q>"\040\010\003"</q>},</td></tr>
+<tr><th id="114">114</th><td>    {<var>259</var>, <q>"ALT"</q>, <var>0</var>, <var>2</var>, <a class="tu ref" href="#states_3" title='states_3' data-ref="states_3">states_3</a>,</td></tr>
+<tr><th id="115">115</th><td>     <q>"\040\010\003"</q>},</td></tr>
+<tr><th id="116">116</th><td>    {<var>260</var>, <q>"ITEM"</q>, <var>0</var>, <var>5</var>, <a class="tu ref" href="#states_4" title='states_4' data-ref="states_4">states_4</a>,</td></tr>
+<tr><th id="117">117</th><td>     <q>"\040\010\003"</q>},</td></tr>
+<tr><th id="118">118</th><td>    {<var>261</var>, <q>"ATOM"</q>, <var>0</var>, <var>4</var>, <a class="tu ref" href="#states_5" title='states_5' data-ref="states_5">states_5</a>,</td></tr>
+<tr><th id="119">119</th><td>     <q>"\040\000\003"</q>},</td></tr>
+<tr><th id="120">120</th><td>};</td></tr>
+<tr><th id="121">121</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#label" title='label' data-type='struct label' data-ref="label">label</a> <dfn class="tu decl def" id="labels" title='labels' data-type='label [19]' data-ref="labels">labels</dfn>[<var>19</var>] = {</td></tr>
+<tr><th id="122">122</th><td>    {<var>0</var>, <q>"EMPTY"</q>},</td></tr>
+<tr><th id="123">123</th><td>    {<var>256</var>, <var>0</var>},</td></tr>
+<tr><th id="124">124</th><td>    {<var>257</var>, <var>0</var>},</td></tr>
+<tr><th id="125">125</th><td>    {<var>4</var>, <var>0</var>},</td></tr>
+<tr><th id="126">126</th><td>    {<var>0</var>, <var>0</var>},</td></tr>
+<tr><th id="127">127</th><td>    {<var>1</var>, <var>0</var>},</td></tr>
+<tr><th id="128">128</th><td>    {<var>11</var>, <var>0</var>},</td></tr>
+<tr><th id="129">129</th><td>    {<var>258</var>, <var>0</var>},</td></tr>
+<tr><th id="130">130</th><td>    {<var>259</var>, <var>0</var>},</td></tr>
+<tr><th id="131">131</th><td>    {<var>18</var>, <var>0</var>},</td></tr>
+<tr><th id="132">132</th><td>    {<var>260</var>, <var>0</var>},</td></tr>
+<tr><th id="133">133</th><td>    {<var>9</var>, <var>0</var>},</td></tr>
+<tr><th id="134">134</th><td>    {<var>10</var>, <var>0</var>},</td></tr>
+<tr><th id="135">135</th><td>    {<var>261</var>, <var>0</var>},</td></tr>
+<tr><th id="136">136</th><td>    {<var>16</var>, <var>0</var>},</td></tr>
+<tr><th id="137">137</th><td>    {<var>14</var>, <var>0</var>},</td></tr>
+<tr><th id="138">138</th><td>    {<var>3</var>, <var>0</var>},</td></tr>
+<tr><th id="139">139</th><td>    {<var>7</var>, <var>0</var>},</td></tr>
+<tr><th id="140">140</th><td>    {<var>8</var>, <var>0</var>},</td></tr>
+<tr><th id="141">141</th><td>};</td></tr>
+<tr><th id="142">142</th><td><em>static</em> <a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> <dfn class="tu decl def" id="_PyParser_Grammar" title='_PyParser_Grammar' data-type='grammar' data-ref="_PyParser_Grammar">_PyParser_Grammar</dfn> = {</td></tr>
+<tr><th id="143">143</th><td>    <var>6</var>,</td></tr>
+<tr><th id="144">144</th><td>    <a class="tu ref" href="#dfas" title='dfas' data-ref="dfas">dfas</a>,</td></tr>
+<tr><th id="145">145</th><td>    {<var>19</var>, <a class="tu ref" href="#labels" title='labels' data-ref="labels">labels</a>},</td></tr>
+<tr><th id="146">146</th><td>    <var>256</var></td></tr>
+<tr><th id="147">147</th><td>};</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *</td></tr>
+<tr><th id="150">150</th><td><a class="macro" href="../Include/pgenheaders.h.html#28" title="_Py_meta_grammar" data-ref="_M/meta_grammar">meta_grammar</a>(<em>void</em>)</td></tr>
+<tr><th id="151">151</th><td>{</td></tr>
+<tr><th id="152">152</th><td>    <b>return</b> &amp;<a class="tu ref" href="#_PyParser_Grammar" title='_PyParser_Grammar' data-use='a' data-ref="_PyParser_Grammar">_PyParser_Grammar</a>;</td></tr>
+<tr><th id="153">153</th><td>}</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *</td></tr>
+<tr><th id="156">156</th><td><dfn class="decl def" id="Py_meta_grammar" title='Py_meta_grammar' data-ref="Py_meta_grammar">Py_meta_grammar</dfn>(<em>void</em>)</td></tr>
+<tr><th id="157">157</th><td>{</td></tr>
+<tr><th id="158">158</th><td>  <b>return</b> <a class="macro" href="../Include/pgenheaders.h.html#28" title="_Py_meta_grammar" data-ref="_M/meta_grammar">meta_grammar</a>();</td></tr>
+<tr><th id="159">159</th><td>}</td></tr>
+<tr><th id="160">160</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

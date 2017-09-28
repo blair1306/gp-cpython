@@ -1,0 +1,34 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='29' type='char *'/>
+<offset>256</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='29'>/* Start of current token if not NULL */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='125' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='202' u='w' c='error_ret'/>
+<use f='codebrowser/Parser/tokenizer.c' l='932' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='974' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='975' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='995' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1012' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1046' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1047' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1063' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1323' u='r' c='verify_identifier'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1323' u='r' c='verify_identifier'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1373' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1460' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1490' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1497' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1550' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1554' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1558' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1561' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1565' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1578' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1579' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1599' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1618' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1630' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1769' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1786' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1842' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1872' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1894' u='r' c='tok_get'/>

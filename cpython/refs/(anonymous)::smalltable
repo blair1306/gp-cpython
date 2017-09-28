@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/setobject.h' l='63' type='setentry [8]'/>
+<offset>640</offset>
+<use f='codebrowser/Objects/setobject.c' l='320' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='324' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='456' u='r' c='set_empty_to_minsize'/>
+<use f='codebrowser/Objects/setobject.c' l='456' u='r' c='set_empty_to_minsize'/>
+<use f='codebrowser/Objects/setobject.c' l='460' u='r' c='set_empty_to_minsize'/>
+<use f='codebrowser/Objects/setobject.c' l='471' u='r' c='set_clear_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='568' u='r' c='set_dealloc'/>
+<use f='codebrowser/Objects/setobject.c' l='1054' u='r' c='make_new_set'/>
+<use f='codebrowser/Objects/setobject.c' l='1146' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1147' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1149' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1150' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1153' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1153' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1154' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1155' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1155' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1156' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='2001' u='r' c='set_sizeof'/>

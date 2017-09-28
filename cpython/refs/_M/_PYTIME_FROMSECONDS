@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pytime.h' l='73'/>
+<doc f='codebrowser/Include/pytime.h' l='71'>/* Macro to create a timestamp from a number of seconds, no integer overflow.
+   Only use the macro for small values, prefer _PyTime_FromSeconds(). */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='891' u='c'/>

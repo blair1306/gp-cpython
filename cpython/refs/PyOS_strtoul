@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/longobject.h' l='204' type='unsigned long PyOS_strtoul(const char * , char ** , int )'/>
+<doc f='codebrowser/Include/longobject.h' l='201'>/* These aren&apos;t really part of the int object, but they&apos;re handy. The
+   functions are in Python/mystrtoul.c.
+ */</doc>
+<use f='codebrowser/Python/ast.c' l='4085' u='c' c='parsenumber_raw'/>
+<def f='codebrowser/Python/mystrtoul.c' l='94' ll='255' type='unsigned long PyOS_strtoul(const char * str, char ** ptr, int base)'/>
+<use f='codebrowser/Python/mystrtoul.c' l='276' u='c' c='PyOS_strtol'/>
+<doc f='codebrowser/Python/mystrtoul.c' l='81'>/*
+**      strtoul
+**              This is a general purpose routine for converting
+**              an ascii string to an integer in an arbitrary base.
+**              Leading white space is ignored.  If &apos;base&apos; is zero
+**              it looks for a leading 0b, 0o or 0x to tell which
+**              base.  If these are absent it defaults to 10.
+**              Base must be 0 or between 2 and 36 (inclusive).
+**              If &apos;ptr&apos; is non-NULL it will contain a pointer to
+**              the end of the scan.
+**              Errors due to bad pointers will probably result in
+**              exceptions - we don&apos;t check for them.
+*/</doc>

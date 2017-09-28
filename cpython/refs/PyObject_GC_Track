@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/objimpl.h' l='336' type='void PyObject_GC_Track(void * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1152' u='c' c='future_new_iter'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1249' u='c' c='TaskSendMethWrapper_new'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1316' u='c' c='TaskWakeupMethWrapper_new'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1706' u='c' c='deque_iter'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1864' u='c' c='deque_reviter'/>
+<use f='codebrowser/Modules/_csv.c' l='979' u='c' c='csv_reader'/>
+<use f='codebrowser/Modules/_csv.c' l='1415' u='c' c='csv_writer'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='328' u='c' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_elementtree.c' l='276' u='c' c='create_new_element'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2300' u='c' c='create_elementiter'/>
+<use f='codebrowser/Modules/_operator.c' l='971' u='c' c='itemgetter_new'/>
+<use f='codebrowser/Modules/_operator.c' l='1228' u='c' c='attrgetter_new'/>
+<use f='codebrowser/Modules/_operator.c' l='1503' u='c' c='methodcaller_new'/>
+<use f='codebrowser/Modules/_pickle.c' l='4391' u='c' c='PicklerMemoProxy_New'/>
+<use f='codebrowser/Modules/_pickle.c' l='6849' u='c' c='UnpicklerMemoProxy_New'/>
+<use f='codebrowser/Modules/_ssl.c' l='2418' u='c' c='PySSL_get_session'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2889' u='c' c='array_iter'/>
+<def f='codebrowser/Modules/gcmodule.c' l='1716' ll='1720' type='void PyObject_GC_Track(void * op)'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='259' u='c' c='_grouper_create'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='420' u='c' c='teedataobject_newinternal'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='659' u='c' c='tee_copy'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='691' u='c' c='tee_fromiterable'/>
+<use f='codebrowser/Modules/pyexpat.c' l='944' u='c' c='pyexpat_xmlparser_ExternalEntityParserCreate_impl'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1180' u='c' c='newxmlparseobject'/>
+<use f='codebrowser/Objects/listobject.c' l='2963' u='c' c='list___reversed___impl'/>
+<use f='codebrowser/Objects/moduleobject.c' l='93' u='c' c='PyModule_NewObject'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='41' u='c' c='new_weakref'/>
+<use f='codebrowser/Python/traceback.c' l='127' u='c' c='newtracebackobject'/>

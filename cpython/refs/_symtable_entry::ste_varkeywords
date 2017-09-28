@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/symtable.h' l='53' type='unsigned int'/>
+<offset>709</offset>
+<doc f='codebrowser/Include/symtable.h' l='53'>/* true if block has varkeywords */</doc>
+<use f='codebrowser/Python/compile.c' l='5270' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/symtable.c' l='59' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='1606' u='w' c='symtable_visit_arguments'/>

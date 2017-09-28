@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='784' type='void mpd_copy_flags(mpd_t * result, const mpd_t * a)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='708' ll='714' macro='1' type='void mpd_copy_flags(mpd_t * result, const mpd_t * a)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1925' u='c' c='mpd_qcopy'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1945' u='c' c='mpd_qcopy_static'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1964' u='c' c='mpd_qncopy'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2418' u='c' c='mpd_qshiftl'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2478' u='c' c='mpd_qsshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2563' u='c' c='mpd_qshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3289' u='c' c='_mpd_qaddsub'/>

@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/pythread.h' l='30' type='void PyThread_free_lock(PyThread_type_lock )'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='412' u='c' c='py_blake2b_dealloc'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='412' u='c' c='py_blake2s_dealloc'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='158' u='c' c='EVP_dealloc'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='406' u='c' c='buffered_dealloc'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='758' u='c' c='_buffered_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='794' u='c' c='Compressor_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='806' u='c' c='Compressor_dealloc'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1234' u='c' c='_lzma_LZMADecompressor___init___impl'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1250' u='c' c='Decompressor_dealloc'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='270' u='c' c='SHA3_dealloc'/>
+<use f='codebrowser/Modules/_ssl.c' l='5094' u='c' c='_setup_ssl_threads'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2298' u='c' c='test_thread_state'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3689' u='c' c='call_in_temporary_c_thread'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3691' u='c' c='call_in_temporary_c_thread'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='40' u='c' c='lock_dealloc'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='287' u='c' c='rlock_dealloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1079' u='c' c='tracemalloc_deinit'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1017' u='c' c='faulthandler_fatal_error_c_thread'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1026' u='c' c='faulthandler_fatal_error_c_thread'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1348' u='c' c='_PyFaulthandler_Fini'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1352' u='c' c='_PyFaulthandler_Fini'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='619' u='c' c='Dealloc'/>
+<use f='codebrowser/Python/import.c' l='295' u='c' c='_PyImport_Fini'/>
+<use f='codebrowser/Python/pystate.c' l='213' u='c' c='PyInterpreterState_Delete'/>
+<def f='codebrowser/Python/thread_pthread.h' l='303' ll='319' type='void PyThread_free_lock(PyThread_type_lock lock)'/>

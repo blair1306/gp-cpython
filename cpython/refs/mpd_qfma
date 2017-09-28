@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='534' type='void mpd_qfma(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_t * c, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4118' u='c' c='dec_mpd_qfma'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5161' u='c' c='ctx_mpd_qfma'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4297' u='c' c='_mpd_qexp'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4420' ll='4442' type='void mpd_qfma(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_t * c, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4419'>/* Fused multiply-add: (a * b) + c, with a single final rounding. */</doc>

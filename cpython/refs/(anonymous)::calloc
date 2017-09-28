@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/pymem.h' l='180' type='void *(*)(void *, size_t, size_t)'/>
+<offset>128</offset>
+<doc f='codebrowser/Include/pymem.h' l='179'>/* allocate a memory block initialized by zeros */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3281' u='r' c='hook_calloc'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3313' u='w' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3470' u='r' c='hook_fcalloc'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3501' u='w' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='687' u='r' c='tracemalloc_alloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='783' u='r' c='tracemalloc_alloc_gil'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='859' u='r' c='tracemalloc_raw_alloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1121' u='w' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1131' u='w' c='tracemalloc_start'/>
+<use f='codebrowser/Objects/obmalloc.c' l='305' u='w' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='316' u='w' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='345' u='w' c='PyMem_GetAllocator'/>
+<use f='codebrowser/Objects/obmalloc.c' l='395' u='r' c='PyMem_RawCalloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='427' u='r' c='PyMem_Calloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='488' u='r' c='PyObject_Calloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1854' u='r' c='_PyMem_DebugRawAlloc'/>

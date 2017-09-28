@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/structmember.h' l='22' type='int'/>
+<offset>192</offset>
+<use f='codebrowser/Objects/structseq.c' l='371' u='w' c='PyStructSequence_InitType2'/>
+<use f='codebrowser/Objects/typeobject.c' l='1060' u='r' c='clear_slots'/>
+<use f='codebrowser/Python/structmember.c' l='107' u='r' c='PyMember_SetOne'/>

@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='610' type='int copywin(const WINDOW * , WINDOW * , int , int , int , int , int , int , int )'/>
+<doc f='include/curses.h' l='610'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1680' u='c' c='PyCursesWindow_Overlay'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1718' u='c' c='PyCursesWindow_Overwrite'/>

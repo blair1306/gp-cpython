@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='541' type='void mpd_qrem(mpd_t * r, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3988' u='c' c='nm_mpd_qrem'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4586' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5060' u='c' c='ctx_mpd_qrem'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6649' u='c' c='_mpd_qpowmod_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6652' u='c' c='_mpd_qpowmod_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6737' u='c' c='mpd_qpowmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6739' u='c' c='mpd_qpowmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6741' u='c' c='mpd_qpowmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6763' u='c' c='mpd_qpowmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6766' u='c' c='mpd_qpowmod'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6901' ll='6936' type='void mpd_qrem(mpd_t * r, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>

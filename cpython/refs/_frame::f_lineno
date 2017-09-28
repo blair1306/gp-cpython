@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/frameobject.h' l='48' type='int'/>
+<offset>1120</offset>
+<doc f='codebrowser/Include/frameobject.h' l='43'>/* Call PyFrame_GetLineNumber() instead of reading this field
+       directly.  As of 2.3 f_lineno is only valid when tracing is
+       active (i.e. when f_trace is set).  At other times we use
+       PyCode_Addr2Line to calculate the line from the current
+       bytecode index. */</doc>
+<doc f='codebrowser/Include/frameobject.h' l='48'>/* Current line number */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='34' u='r' c='PyFrame_GetLineNumber'/>
+<use f='codebrowser/Objects/frameobject.c' l='323' u='w' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='345' u='w' c='frame_settrace'/>
+<use f='codebrowser/Objects/frameobject.c' l='727' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Python/ceval.c' l='4571' u='r' c='maybe_call_line_trace'/>
+<use f='codebrowser/Python/ceval.c' l='4587' u='w' c='maybe_call_line_trace'/>
+<use f='codebrowser/Python/ceval.c' l='5370' u='r' c='maybe_dtrace_line'/>
+<use f='codebrowser/Python/ceval.c' l='5387' u='w' c='maybe_dtrace_line'/>
+<use f='codebrowser/Python/traceback.c' l='173' u='w' c='_PyTraceback_Add'/>

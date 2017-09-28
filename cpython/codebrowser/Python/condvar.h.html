@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>condvar.h source code [codebrowser/Python/condvar.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/condvar.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='condvar.h.html'>condvar.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Portable condition variable support for windows and pthreads.</i></td></tr>
+<tr><th id="3">3</th><td><i> * Everything is inline, this header can be included where needed.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * APIs generally return 0 on success and non-zero on error,</i></td></tr>
+<tr><th id="6">6</th><td><i> * and the caller needs to use its platform's error mechanism to</i></td></tr>
+<tr><th id="7">7</th><td><i> * discover the error (errno, or GetLastError())</i></td></tr>
+<tr><th id="8">8</th><td><i> *</i></td></tr>
+<tr><th id="9">9</th><td><i> * Note that some implementations cannot distinguish between a</i></td></tr>
+<tr><th id="10">10</th><td><i> * condition variable wait time-out and successful wait. Most often</i></td></tr>
+<tr><th id="11">11</th><td><i> * the difference is moot anyway since the wait condition must be</i></td></tr>
+<tr><th id="12">12</th><td><i> * re-checked.</i></td></tr>
+<tr><th id="13">13</th><td><i> * PyCOND_TIMEDWAIT, in addition to returning negative on error,</i></td></tr>
+<tr><th id="14">14</th><td><i> * thus returns 0 on regular success, 1 on timeout</i></td></tr>
+<tr><th id="15">15</th><td><i> * or 2 if it can't tell.</i></td></tr>
+<tr><th id="16">16</th><td><i> *</i></td></tr>
+<tr><th id="17">17</th><td><i> * There are at least two caveats with using these condition variables,</i></td></tr>
+<tr><th id="18">18</th><td><i> * due to the fact that they may be emulated with Semaphores on</i></td></tr>
+<tr><th id="19">19</th><td><i> * Windows:</i></td></tr>
+<tr><th id="20">20</th><td><i> * 1) While PyCOND_SIGNAL() will wake up at least one thread, we</i></td></tr>
+<tr><th id="21">21</th><td><i> *    cannot currently guarantee that it will be one of the threads</i></td></tr>
+<tr><th id="22">22</th><td><i> *    already waiting in a PyCOND_WAIT() call.  It _could_ cause</i></td></tr>
+<tr><th id="23">23</th><td><i> *    the wakeup of a subsequent thread to try a PyCOND_WAIT(),</i></td></tr>
+<tr><th id="24">24</th><td><i> *    including the thread doing the PyCOND_SIGNAL() itself.</i></td></tr>
+<tr><th id="25">25</th><td><i> *    The same applies to PyCOND_BROADCAST(), if N threads are waiting</i></td></tr>
+<tr><th id="26">26</th><td><i> *    then at least N threads will be woken up, but not necessarily</i></td></tr>
+<tr><th id="27">27</th><td><i> *    those already waiting.</i></td></tr>
+<tr><th id="28">28</th><td><i> *    For this reason, don't make the scheduling assumption that a</i></td></tr>
+<tr><th id="29">29</th><td><i> *    specific other thread will get the wakeup signal</i></td></tr>
+<tr><th id="30">30</th><td><i> * 2) The _mutex_ must be held when calling PyCOND_SIGNAL() and</i></td></tr>
+<tr><th id="31">31</th><td><i> *    PyCOND_BROADCAST().</i></td></tr>
+<tr><th id="32">32</th><td><i> *    While e.g. the posix standard strongly recommends that the mutex</i></td></tr>
+<tr><th id="33">33</th><td><i> *    associated with the condition variable is held when a</i></td></tr>
+<tr><th id="34">34</th><td><i> *    pthread_cond_signal() call is made, this is not a hard requirement,</i></td></tr>
+<tr><th id="35">35</th><td><i> *    although scheduling will not be "reliable" if it isn't.  Here</i></td></tr>
+<tr><th id="36">36</th><td><i> *    the mutex is used for internal synchronization of the emulated</i></td></tr>
+<tr><th id="37">37</th><td><i> *    Condition Variable.</i></td></tr>
+<tr><th id="38">38</th><td><i> */</i></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifndef</span> <span class="macro" data-ref="_M/_CONDVAR_H_">_CONDVAR_H_</span></u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/_CONDVAR_H_" data-ref="_M/_CONDVAR_H_">_CONDVAR_H_</dfn></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="45">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/posix_opt.h.html#69" data-ref="_M/_POSIX_THREADS">_POSIX_THREADS</a></u></td></tr>
+<tr><th id="46">46</th><td><i>/* This means pthreads are not implemented in libc headers, hence the macro</i></td></tr>
+<tr><th id="47">47</th><td><i>   not present in unistd.h. But they still can be implemented as an external</i></td></tr>
+<tr><th id="48">48</th><td><i>   library (e.g. gnu pth in pthread emulation) */</i></td></tr>
+<tr><th id="49">49</th><td><u># ifdef HAVE_PTHREAD_H</u></td></tr>
+<tr><th id="50">50</th><td><u>#  include &lt;pthread.h&gt; /* _POSIX_THREADS */</u></td></tr>
+<tr><th id="51">51</th><td><u># endif</u></td></tr>
+<tr><th id="52">52</th><td><u>#<span data-ppcond="45">endif</span></u></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><u>#<span data-ppcond="54">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/posix_opt.h.html#69" data-ref="_M/_POSIX_THREADS">_POSIX_THREADS</a></u></td></tr>
+<tr><th id="55">55</th><td><i>/*</i></td></tr>
+<tr><th id="56">56</th><td><i> * POSIX support</i></td></tr>
+<tr><th id="57">57</th><td><i> */</i></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/Py_HAVE_CONDVAR" data-ref="_M/Py_HAVE_CONDVAR">Py_HAVE_CONDVAR</dfn></u></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><u>#include <a href="../../include/pthread.h.html">&lt;pthread.h&gt;</a></u></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#define <dfn class="macro" id="_M/PyCOND_ADD_MICROSECONDS" data-ref="_M/PyCOND_ADD_MICROSECONDS">PyCOND_ADD_MICROSECONDS</dfn>(tv, interval) \</u></td></tr>
+<tr><th id="63">63</th><td><u>do { /* TODO: add overflow and truncation checks */ \</u></td></tr>
+<tr><th id="64">64</th><td><u>    tv.<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec">tv_usec</a> += (long) interval; \</u></td></tr>
+<tr><th id="65">65</th><td><u>    tv.<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec">tv_sec</a> += tv.<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec">tv_usec</a> / 1000000; \</u></td></tr>
+<tr><th id="66">66</th><td><u>    tv.<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec">tv_usec</a> %= 1000000; \</u></td></tr>
+<tr><th id="67">67</th><td><u>} while (0)</u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i>/* We assume all modern POSIX systems have gettimeofday() */</i></td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="70">ifdef</span> <span class="macro" data-ref="_M/GETTIMEOFDAY_NO_TZ">GETTIMEOFDAY_NO_TZ</span></u></td></tr>
+<tr><th id="71">71</th><td><u>#define PyCOND_GETTIMEOFDAY(ptv) gettimeofday(ptv)</u></td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="70">else</span></u></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/PyCOND_GETTIMEOFDAY" data-ref="_M/PyCOND_GETTIMEOFDAY">PyCOND_GETTIMEOFDAY</dfn>(ptv) <a class="ref" href="../../include/x86_64-linux-gnu/sys/time.h.html#gettimeofday" title='gettimeofday' data-ref="gettimeofday">gettimeofday</a>(ptv, (struct <a class="type" href="../../include/x86_64-linux-gnu/sys/time.h.html#timezone" title='timezone' data-ref="timezone">timezone</a> *)NULL)</u></td></tr>
+<tr><th id="74">74</th><td><u>#<span data-ppcond="70">endif</span></u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><i>/* The following functions return 0 on success, nonzero on error */</i></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/PyMUTEX_T" data-ref="_M/PyMUTEX_T">PyMUTEX_T</dfn> <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t">pthread_mutex_t</a></u></td></tr>
+<tr><th id="78">78</th><td><u>#define <dfn class="macro" id="_M/PyMUTEX_INIT" data-ref="_M/PyMUTEX_INIT">PyMUTEX_INIT</dfn>(mut)       pthread_mutex_init((mut), NULL)</u></td></tr>
+<tr><th id="79">79</th><td><u>#define <dfn class="macro" id="_M/PyMUTEX_FINI" data-ref="_M/PyMUTEX_FINI">PyMUTEX_FINI</dfn>(mut)       pthread_mutex_destroy(mut)</u></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/PyMUTEX_LOCK" data-ref="_M/PyMUTEX_LOCK">PyMUTEX_LOCK</dfn>(mut)       pthread_mutex_lock(mut)</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/PyMUTEX_UNLOCK" data-ref="_M/PyMUTEX_UNLOCK">PyMUTEX_UNLOCK</dfn>(mut)     pthread_mutex_unlock(mut)</u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><u>#define <dfn class="macro" id="_M/PyCOND_T" data-ref="_M/PyCOND_T">PyCOND_T</dfn> <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_cond_t" title='pthread_cond_t' data-type='union pthread_cond_t' data-ref="pthread_cond_t">pthread_cond_t</a></u></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/PyCOND_INIT" data-ref="_M/PyCOND_INIT">PyCOND_INIT</dfn>(cond)       pthread_cond_init((cond), NULL)</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/PyCOND_FINI" data-ref="_M/PyCOND_FINI">PyCOND_FINI</dfn>(cond)       pthread_cond_destroy(cond)</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/PyCOND_SIGNAL" data-ref="_M/PyCOND_SIGNAL">PyCOND_SIGNAL</dfn>(cond)     pthread_cond_signal(cond)</u></td></tr>
+<tr><th id="87">87</th><td><u>#define <dfn class="macro" id="_M/PyCOND_BROADCAST" data-ref="_M/PyCOND_BROADCAST">PyCOND_BROADCAST</dfn>(cond)  pthread_cond_broadcast(cond)</u></td></tr>
+<tr><th id="88">88</th><td><u>#define <dfn class="macro" id="_M/PyCOND_WAIT" data-ref="_M/PyCOND_WAIT">PyCOND_WAIT</dfn>(cond, mut)  pthread_cond_wait((cond), (mut))</u></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>/* return 0 for success, 1 on timeout, -1 on error */</i></td></tr>
+<tr><th id="91">91</th><td><a class="macro" href="../Include/pyport.h.html#178" title="static inline int" data-ref="_M/Py_LOCAL_INLINE">Py_LOCAL_INLINE</a>(<em>int</em>)</td></tr>
+<tr><th id="92">92</th><td><dfn class="decl def" id="PyCOND_TIMEDWAIT" title='PyCOND_TIMEDWAIT' data-ref="PyCOND_TIMEDWAIT">PyCOND_TIMEDWAIT</dfn>(<a class="macro" href="#83" title="pthread_cond_t" data-ref="_M/PyCOND_T">PyCOND_T</a> *<dfn class="local col7 decl" id="7cond" title='cond' data-type='pthread_cond_t *' data-ref="7cond">cond</dfn>, <a class="macro" href="#77" title="pthread_mutex_t" data-ref="_M/PyMUTEX_T">PyMUTEX_T</a> *<dfn class="local col8 decl" id="8mut" title='mut' data-type='pthread_mutex_t *' data-ref="8mut">mut</dfn>, <em>long</em> <em>long</em> <dfn class="local col9 decl" id="9us" title='us' data-type='long long' data-ref="9us">us</dfn>)</td></tr>
+<tr><th id="93">93</th><td>{</td></tr>
+<tr><th id="94">94</th><td>    <em>int</em> <dfn class="local col0 decl" id="10r" title='r' data-type='int' data-ref="10r">r</dfn>;</td></tr>
+<tr><th id="95">95</th><td>    <b>struct</b> <a class="type" href="../../include/time.h.html#timespec" title='timespec' data-ref="timespec">timespec</a> <dfn class="local col1 decl" id="11ts" title='ts' data-type='struct timespec' data-ref="11ts">ts</dfn>;</td></tr>
+<tr><th id="96">96</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval" title='timeval' data-ref="timeval">timeval</a> <dfn class="local col2 decl" id="12deadline" title='deadline' data-type='struct timeval' data-ref="12deadline">deadline</dfn>;</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td>    <a class="macro" href="#73" title="gettimeofday(&amp;deadline, (struct timezone *)((void*)0))" data-ref="_M/PyCOND_GETTIMEOFDAY">PyCOND_GETTIMEOFDAY</a>(&amp;<a class="local col2 ref" href="#12deadline" title='deadline' data-ref="12deadline">deadline</a>);</td></tr>
+<tr><th id="99">99</th><td>    <a class="macro" href="#62" title="do { deadline.tv_usec += (long) us; deadline.tv_sec += deadline.tv_usec / 1000000; deadline.tv_usec %= 1000000; } while (0)" data-ref="_M/PyCOND_ADD_MICROSECONDS">PyCOND_ADD_MICROSECONDS</a>(<a class="local col2 ref" href="#12deadline" title='deadline' data-ref="12deadline">deadline</a>, <a class="local col9 ref" href="#9us" title='us' data-ref="9us">us</a>);</td></tr>
+<tr><th id="100">100</th><td>    <a class="local col1 ref" href="#11ts" title='ts' data-ref="11ts">ts</a>.<a class="ref" href="../../include/time.h.html#timespec::tv_sec" title='timespec::tv_sec' data-ref="timespec::tv_sec">tv_sec</a> = <a class="local col2 ref" href="#12deadline" title='deadline' data-ref="12deadline">deadline</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec">tv_sec</a>;</td></tr>
+<tr><th id="101">101</th><td>    <a class="local col1 ref" href="#11ts" title='ts' data-ref="11ts">ts</a>.<a class="ref" href="../../include/time.h.html#timespec::tv_nsec" title='timespec::tv_nsec' data-ref="timespec::tv_nsec">tv_nsec</a> = <a class="local col2 ref" href="#12deadline" title='deadline' data-ref="12deadline">deadline</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec">tv_usec</a> * <var>1000</var>;</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td>    <a class="local col0 ref" href="#10r" title='r' data-ref="10r">r</a> = <a class="ref" href="../../include/pthread.h.html#pthread_cond_timedwait" title='pthread_cond_timedwait' data-ref="pthread_cond_timedwait">pthread_cond_timedwait</a>((<a class="local col7 ref" href="#7cond" title='cond' data-ref="7cond">cond</a>), (<a class="local col8 ref" href="#8mut" title='mut' data-ref="8mut">mut</a>), &amp;<a class="local col1 ref" href="#11ts" title='ts' data-ref="11ts">ts</a>);</td></tr>
+<tr><th id="104">104</th><td>    <b>if</b> (<a class="local col0 ref" href="#10r" title='r' data-ref="10r">r</a> == <a class="macro" href="../../include/asm-generic/errno.h.html#92" title="110" data-ref="_M/ETIMEDOUT">ETIMEDOUT</a>)</td></tr>
+<tr><th id="105">105</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="106">106</th><td>    <b>else</b> <b>if</b> (<a class="local col0 ref" href="#10r" title='r' data-ref="10r">r</a>)</td></tr>
+<tr><th id="107">107</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="108">108</th><td>    <b>else</b></td></tr>
+<tr><th id="109">109</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="110">110</th><td>}</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#<span data-ppcond="54">elif</span> defined(NT_THREADS)</u></td></tr>
+<tr><th id="113">113</th><td><i>/*</i></td></tr>
+<tr><th id="114">114</th><td><i> * Windows (XP, 2003 server and later, as well as (hopefully) CE) support</i></td></tr>
+<tr><th id="115">115</th><td><i> *</i></td></tr>
+<tr><th id="116">116</th><td><i> * Emulated condition variables ones that work with XP and later, plus</i></td></tr>
+<tr><th id="117">117</th><td><i> * example native support on VISTA and onwards.</i></td></tr>
+<tr><th id="118">118</th><td><i> */</i></td></tr>
+<tr><th id="119">119</th><td><u>#define Py_HAVE_CONDVAR</u></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><i>/* include windows if it hasn't been done before */</i></td></tr>
+<tr><th id="123">123</th><td><u>#define WIN32_LEAN_AND_MEAN</u></td></tr>
+<tr><th id="124">124</th><td><u>#include &lt;windows.h&gt;</u></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><i>/* options */</i></td></tr>
+<tr><th id="127">127</th><td><i>/* non-emulated condition variables are provided for those that want</i></td></tr>
+<tr><th id="128">128</th><td><i> * to target Windows Vista.  Modify this macro to enable them.</i></td></tr>
+<tr><th id="129">129</th><td><i> */</i></td></tr>
+<tr><th id="130">130</th><td><u>#ifndef _PY_EMULATED_WIN_CV</u></td></tr>
+<tr><th id="131">131</th><td><u>#define _PY_EMULATED_WIN_CV 1  /* use emulated condition variables */</u></td></tr>
+<tr><th id="132">132</th><td><u>#endif</u></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><i>/* fall back to emulation if not targeting Vista */</i></td></tr>
+<tr><th id="135">135</th><td><u>#if !defined NTDDI_VISTA || NTDDI_VERSION &lt; NTDDI_VISTA</u></td></tr>
+<tr><th id="136">136</th><td><u>#undef _PY_EMULATED_WIN_CV</u></td></tr>
+<tr><th id="137">137</th><td><u>#define _PY_EMULATED_WIN_CV 1</u></td></tr>
+<tr><th id="138">138</th><td><u>#endif</u></td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><u>#if _PY_EMULATED_WIN_CV</u></td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><i>/* The mutex is a CriticalSection object and</i></td></tr>
+<tr><th id="144">144</th><td><i>   The condition variables is emulated with the help of a semaphore.</i></td></tr>
+<tr><th id="145">145</th><td><i>   Semaphores are available on Windows XP (2003 server) and later.</i></td></tr>
+<tr><th id="146">146</th><td><i>   We use a Semaphore rather than an auto-reset event, because although</i></td></tr>
+<tr><th id="147">147</th><td><i>   an auto-resent event might appear to solve the lost-wakeup bug (race</i></td></tr>
+<tr><th id="148">148</th><td><i>   condition between releasing the outer lock and waiting) because it</i></td></tr>
+<tr><th id="149">149</th><td><i>   maintains state even though a wait hasn't happened, there is still</i></td></tr>
+<tr><th id="150">150</th><td><i>   a lost wakeup problem if more than one thread are interrupted in the</i></td></tr>
+<tr><th id="151">151</th><td><i>   critical place.  A semaphore solves that, because its state is counted,</i></td></tr>
+<tr><th id="152">152</th><td><i>   not Boolean.</i></td></tr>
+<tr><th id="153">153</th><td><i>   Because it is ok to signal a condition variable with no one</i></td></tr>
+<tr><th id="154">154</th><td><i>   waiting, we need to keep track of the number of</i></td></tr>
+<tr><th id="155">155</th><td><i>   waiting threads.  Otherwise, the semaphore's state could rise</i></td></tr>
+<tr><th id="156">156</th><td><i>   without bound.  This also helps reduce the number of "spurious wakeups"</i></td></tr>
+<tr><th id="157">157</th><td><i>   that would otherwise happen.</i></td></tr>
+<tr><th id="158">158</th><td><i></i></td></tr>
+<tr><th id="159">159</th><td><i>   This implementation still has the problem that the threads woken</i></td></tr>
+<tr><th id="160">160</th><td><i>   with a "signal" aren't necessarily those that are already</i></td></tr>
+<tr><th id="161">161</th><td><i>   waiting.  It corresponds to listing 2 in:</i></td></tr>
+<tr><th id="162">162</th><td><i>   <a href="http://birrell.org/andrew/papers/ImplementingCVs.pdf">http://birrell.org/andrew/papers/ImplementingCVs.pdf</a></i></td></tr>
+<tr><th id="163">163</th><td><i></i></td></tr>
+<tr><th id="164">164</th><td><i>   Generic emulations of the pthread_cond_* API using</i></td></tr>
+<tr><th id="165">165</th><td><i>   earlier Win32 functions can be found on the Web.</i></td></tr>
+<tr><th id="166">166</th><td><i>   The following read can be give background information to these issues,</i></td></tr>
+<tr><th id="167">167</th><td><i>   but the implementations are all broken in some way.</i></td></tr>
+<tr><th id="168">168</th><td><i>   <a href="http://www.cse.wustl.edu/~schmidt/win32-cv-1.html">http://www.cse.wustl.edu/~schmidt/win32-cv-1.html</a></i></td></tr>
+<tr><th id="169">169</th><td><i>*/</i></td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td><b>typedef</b> CRITICAL_SECTION PyMUTEX_T;</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="174">174</th><td>PyMUTEX_INIT(PyMUTEX_T *cs)</td></tr>
+<tr><th id="175">175</th><td>{</td></tr>
+<tr><th id="176">176</th><td>    InitializeCriticalSection(cs);</td></tr>
+<tr><th id="177">177</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="178">178</th><td>}</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="181">181</th><td>PyMUTEX_FINI(PyMUTEX_T *cs)</td></tr>
+<tr><th id="182">182</th><td>{</td></tr>
+<tr><th id="183">183</th><td>    DeleteCriticalSection(cs);</td></tr>
+<tr><th id="184">184</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="185">185</th><td>}</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="188">188</th><td>PyMUTEX_LOCK(PyMUTEX_T *cs)</td></tr>
+<tr><th id="189">189</th><td>{</td></tr>
+<tr><th id="190">190</th><td>    EnterCriticalSection(cs);</td></tr>
+<tr><th id="191">191</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="192">192</th><td>}</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="195">195</th><td>PyMUTEX_UNLOCK(PyMUTEX_T *cs)</td></tr>
+<tr><th id="196">196</th><td>{</td></tr>
+<tr><th id="197">197</th><td>    LeaveCriticalSection(cs);</td></tr>
+<tr><th id="198">198</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="199">199</th><td>}</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><i>/* The ConditionVariable object.  From XP onwards it is easily emulated with</i></td></tr>
+<tr><th id="202">202</th><td><i> * a Semaphore</i></td></tr>
+<tr><th id="203">203</th><td><i> */</i></td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td><b>typedef</b> <b>struct</b> _PyCOND_T</td></tr>
+<tr><th id="206">206</th><td>{</td></tr>
+<tr><th id="207">207</th><td>    HANDLE sem;</td></tr>
+<tr><th id="208">208</th><td>    <em>int</em> waiting; <i>/* to allow PyCOND_SIGNAL to be a no-op */</i></td></tr>
+<tr><th id="209">209</th><td>} PyCOND_T;</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="212">212</th><td>PyCOND_INIT(PyCOND_T *cv)</td></tr>
+<tr><th id="213">213</th><td>{</td></tr>
+<tr><th id="214">214</th><td>    <i>/* A semaphore with a "large" max value,  The positive value</i></td></tr>
+<tr><th id="215">215</th><td><i>     * is only needed to catch those "lost wakeup" events and</i></td></tr>
+<tr><th id="216">216</th><td><i>     * race conditions when a timed wait elapses.</i></td></tr>
+<tr><th id="217">217</th><td><i>     */</i></td></tr>
+<tr><th id="218">218</th><td>    cv-&gt;sem = CreateSemaphore(NULL, <var>0</var>, <var>100000</var>, NULL);</td></tr>
+<tr><th id="219">219</th><td>    <b>if</b> (cv-&gt;sem==NULL)</td></tr>
+<tr><th id="220">220</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="221">221</th><td>    cv-&gt;waiting = <var>0</var>;</td></tr>
+<tr><th id="222">222</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="223">223</th><td>}</td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="226">226</th><td>PyCOND_FINI(PyCOND_T *cv)</td></tr>
+<tr><th id="227">227</th><td>{</td></tr>
+<tr><th id="228">228</th><td>    <b>return</b> CloseHandle(cv-&gt;sem) ? <var>0</var> : -<var>1</var>;</td></tr>
+<tr><th id="229">229</th><td>}</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><i>/* this implementation can detect a timeout.  Returns 1 on timeout,</i></td></tr>
+<tr><th id="232">232</th><td><i> * 0 otherwise (and -1 on error)</i></td></tr>
+<tr><th id="233">233</th><td><i> */</i></td></tr>
+<tr><th id="234">234</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="235">235</th><td>_PyCOND_WAIT_MS(PyCOND_T *cv, PyMUTEX_T *cs, DWORD ms)</td></tr>
+<tr><th id="236">236</th><td>{</td></tr>
+<tr><th id="237">237</th><td>    DWORD wait;</td></tr>
+<tr><th id="238">238</th><td>    cv-&gt;waiting++;</td></tr>
+<tr><th id="239">239</th><td>    PyMUTEX_UNLOCK(cs);</td></tr>
+<tr><th id="240">240</th><td>    <i>/* "lost wakeup bug" would occur if the caller were interrupted here,</i></td></tr>
+<tr><th id="241">241</th><td><i>     * but we are safe because we are using a semaphore which has an internal</i></td></tr>
+<tr><th id="242">242</th><td><i>     * count.</i></td></tr>
+<tr><th id="243">243</th><td><i>     */</i></td></tr>
+<tr><th id="244">244</th><td>    wait = WaitForSingleObjectEx(cv-&gt;sem, ms, FALSE);</td></tr>
+<tr><th id="245">245</th><td>    PyMUTEX_LOCK(cs);</td></tr>
+<tr><th id="246">246</th><td>    <b>if</b> (wait != WAIT_OBJECT_0)</td></tr>
+<tr><th id="247">247</th><td>        --cv-&gt;waiting;</td></tr>
+<tr><th id="248">248</th><td>        <i>/* Here we have a benign race condition with PyCOND_SIGNAL.</i></td></tr>
+<tr><th id="249">249</th><td><i>         * When failure occurs or timeout, it is possible that</i></td></tr>
+<tr><th id="250">250</th><td><i>         * PyCOND_SIGNAL also decrements this value</i></td></tr>
+<tr><th id="251">251</th><td><i>         * and signals releases the mutex.  This is benign because it</i></td></tr>
+<tr><th id="252">252</th><td><i>         * just means an extra spurious wakeup for a waiting thread.</i></td></tr>
+<tr><th id="253">253</th><td><i>         * ('waiting' corresponds to the semaphore's "negative" count and</i></td></tr>
+<tr><th id="254">254</th><td><i>         * we may end up with e.g. (waiting == -1 &amp;&amp; sem.count == 1).  When</i></td></tr>
+<tr><th id="255">255</th><td><i>         * a new thread comes along, it will pass right throuhgh, having</i></td></tr>
+<tr><th id="256">256</th><td><i>         * adjusted it to (waiting == 0 &amp;&amp; sem.count == 0).</i></td></tr>
+<tr><th id="257">257</th><td><i>         */</i></td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td>    <b>if</b> (wait == WAIT_FAILED)</td></tr>
+<tr><th id="260">260</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="261">261</th><td>    <i>/* return 0 on success, 1 on timeout */</i></td></tr>
+<tr><th id="262">262</th><td>    <b>return</b> wait != WAIT_OBJECT_0;</td></tr>
+<tr><th id="263">263</th><td>}</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="266">266</th><td>PyCOND_WAIT(PyCOND_T *cv, PyMUTEX_T *cs)</td></tr>
+<tr><th id="267">267</th><td>{</td></tr>
+<tr><th id="268">268</th><td>    <em>int</em> result = _PyCOND_WAIT_MS(cv, cs, INFINITE);</td></tr>
+<tr><th id="269">269</th><td>    <b>return</b> result &gt;= <var>0</var> ? <var>0</var> : result;</td></tr>
+<tr><th id="270">270</th><td>}</td></tr>
+<tr><th id="271">271</th><td></td></tr>
+<tr><th id="272">272</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="273">273</th><td>PyCOND_TIMEDWAIT(PyCOND_T *cv, PyMUTEX_T *cs, <em>long</em> <em>long</em> us)</td></tr>
+<tr><th id="274">274</th><td>{</td></tr>
+<tr><th id="275">275</th><td>    <b>return</b> _PyCOND_WAIT_MS(cv, cs, (DWORD)(us/<var>1000</var>));</td></tr>
+<tr><th id="276">276</th><td>}</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="279">279</th><td>PyCOND_SIGNAL(PyCOND_T *cv)</td></tr>
+<tr><th id="280">280</th><td>{</td></tr>
+<tr><th id="281">281</th><td>    <i>/* this test allows PyCOND_SIGNAL to be a no-op unless required</i></td></tr>
+<tr><th id="282">282</th><td><i>     * to wake someone up, thus preventing an unbounded increase of</i></td></tr>
+<tr><th id="283">283</th><td><i>     * the semaphore's internal counter.</i></td></tr>
+<tr><th id="284">284</th><td><i>     */</i></td></tr>
+<tr><th id="285">285</th><td>    <b>if</b> (cv-&gt;waiting &gt; <var>0</var>) {</td></tr>
+<tr><th id="286">286</th><td>        <i>/* notifying thread decreases the cv-&gt;waiting count so that</i></td></tr>
+<tr><th id="287">287</th><td><i>         * a delay between notify and actual wakeup of the target thread</i></td></tr>
+<tr><th id="288">288</th><td><i>         * doesn't cause a number of extra ReleaseSemaphore calls.</i></td></tr>
+<tr><th id="289">289</th><td><i>         */</i></td></tr>
+<tr><th id="290">290</th><td>        cv-&gt;waiting--;</td></tr>
+<tr><th id="291">291</th><td>        <b>return</b> ReleaseSemaphore(cv-&gt;sem, <var>1</var>, NULL) ? <var>0</var> : -<var>1</var>;</td></tr>
+<tr><th id="292">292</th><td>    }</td></tr>
+<tr><th id="293">293</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="294">294</th><td>}</td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="297">297</th><td>PyCOND_BROADCAST(PyCOND_T *cv)</td></tr>
+<tr><th id="298">298</th><td>{</td></tr>
+<tr><th id="299">299</th><td>    <em>int</em> waiting = cv-&gt;waiting;</td></tr>
+<tr><th id="300">300</th><td>    <b>if</b> (waiting &gt; <var>0</var>) {</td></tr>
+<tr><th id="301">301</th><td>        cv-&gt;waiting = <var>0</var>;</td></tr>
+<tr><th id="302">302</th><td>        <b>return</b> ReleaseSemaphore(cv-&gt;sem, waiting, NULL) ? <var>0</var> : -<var>1</var>;</td></tr>
+<tr><th id="303">303</th><td>    }</td></tr>
+<tr><th id="304">304</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="305">305</th><td>}</td></tr>
+<tr><th id="306">306</th><td></td></tr>
+<tr><th id="307">307</th><td><u>#else</u></td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td><i>/* Use native Win7 primitives if build target is Win7 or higher */</i></td></tr>
+<tr><th id="310">310</th><td></td></tr>
+<tr><th id="311">311</th><td><i>/* SRWLOCK is faster and better than CriticalSection */</i></td></tr>
+<tr><th id="312">312</th><td><b>typedef</b> SRWLOCK PyMUTEX_T;</td></tr>
+<tr><th id="313">313</th><td></td></tr>
+<tr><th id="314">314</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="315">315</th><td>PyMUTEX_INIT(PyMUTEX_T *cs)</td></tr>
+<tr><th id="316">316</th><td>{</td></tr>
+<tr><th id="317">317</th><td>    InitializeSRWLock(cs);</td></tr>
+<tr><th id="318">318</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="319">319</th><td>}</td></tr>
+<tr><th id="320">320</th><td></td></tr>
+<tr><th id="321">321</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="322">322</th><td>PyMUTEX_FINI(PyMUTEX_T *cs)</td></tr>
+<tr><th id="323">323</th><td>{</td></tr>
+<tr><th id="324">324</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="325">325</th><td>}</td></tr>
+<tr><th id="326">326</th><td></td></tr>
+<tr><th id="327">327</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="328">328</th><td>PyMUTEX_LOCK(PyMUTEX_T *cs)</td></tr>
+<tr><th id="329">329</th><td>{</td></tr>
+<tr><th id="330">330</th><td>    AcquireSRWLockExclusive(cs);</td></tr>
+<tr><th id="331">331</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="332">332</th><td>}</td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="335">335</th><td>PyMUTEX_UNLOCK(PyMUTEX_T *cs)</td></tr>
+<tr><th id="336">336</th><td>{</td></tr>
+<tr><th id="337">337</th><td>    ReleaseSRWLockExclusive(cs);</td></tr>
+<tr><th id="338">338</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="339">339</th><td>}</td></tr>
+<tr><th id="340">340</th><td></td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td><b>typedef</b> CONDITION_VARIABLE  PyCOND_T;</td></tr>
+<tr><th id="343">343</th><td></td></tr>
+<tr><th id="344">344</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="345">345</th><td>PyCOND_INIT(PyCOND_T *cv)</td></tr>
+<tr><th id="346">346</th><td>{</td></tr>
+<tr><th id="347">347</th><td>    InitializeConditionVariable(cv);</td></tr>
+<tr><th id="348">348</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="349">349</th><td>}</td></tr>
+<tr><th id="350">350</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="351">351</th><td>PyCOND_FINI(PyCOND_T *cv)</td></tr>
+<tr><th id="352">352</th><td>{</td></tr>
+<tr><th id="353">353</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="354">354</th><td>}</td></tr>
+<tr><th id="355">355</th><td></td></tr>
+<tr><th id="356">356</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="357">357</th><td>PyCOND_WAIT(PyCOND_T *cv, PyMUTEX_T *cs)</td></tr>
+<tr><th id="358">358</th><td>{</td></tr>
+<tr><th id="359">359</th><td>    <b>return</b> SleepConditionVariableSRW(cv, cs, INFINITE, <var>0</var>) ? <var>0</var> : -<var>1</var>;</td></tr>
+<tr><th id="360">360</th><td>}</td></tr>
+<tr><th id="361">361</th><td></td></tr>
+<tr><th id="362">362</th><td><i>/* This implementation makes no distinction about timeouts.  Signal</i></td></tr>
+<tr><th id="363">363</th><td><i> * 2 to indicate that we don't know.</i></td></tr>
+<tr><th id="364">364</th><td><i> */</i></td></tr>
+<tr><th id="365">365</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="366">366</th><td>PyCOND_TIMEDWAIT(PyCOND_T *cv, PyMUTEX_T *cs, <em>long</em> <em>long</em> us)</td></tr>
+<tr><th id="367">367</th><td>{</td></tr>
+<tr><th id="368">368</th><td>    <b>return</b> SleepConditionVariableSRW(cv, cs, (DWORD)(us/<var>1000</var>), <var>0</var>) ? <var>2</var> : -<var>1</var>;</td></tr>
+<tr><th id="369">369</th><td>}</td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="372">372</th><td>PyCOND_SIGNAL(PyCOND_T *cv)</td></tr>
+<tr><th id="373">373</th><td>{</td></tr>
+<tr><th id="374">374</th><td>     WakeConditionVariable(cv);</td></tr>
+<tr><th id="375">375</th><td>     <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="376">376</th><td>}</td></tr>
+<tr><th id="377">377</th><td></td></tr>
+<tr><th id="378">378</th><td>Py_LOCAL_INLINE(<em>int</em>)</td></tr>
+<tr><th id="379">379</th><td>PyCOND_BROADCAST(PyCOND_T *cv)</td></tr>
+<tr><th id="380">380</th><td>{</td></tr>
+<tr><th id="381">381</th><td>     WakeAllConditionVariable(cv);</td></tr>
+<tr><th id="382">382</th><td>     <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="383">383</th><td>}</td></tr>
+<tr><th id="384">384</th><td></td></tr>
+<tr><th id="385">385</th><td></td></tr>
+<tr><th id="386">386</th><td><u>#endif /* _PY_EMULATED_WIN_CV */</u></td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td><u>#<span data-ppcond="54">endif</span> /* _POSIX_THREADS, NT_THREADS */</u></td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td><u>#<span data-ppcond="40">endif</span> /* _CONDVAR_H_ */</u></td></tr>
+<tr><th id="391">391</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='ceval.c.html'>codebrowser/Python/ceval.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

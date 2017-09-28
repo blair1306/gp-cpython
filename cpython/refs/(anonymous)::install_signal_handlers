@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pystate.h' l='43' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/main.c' l='782' u='w' c='Py_Main'/>
+<use f='codebrowser/Python/pylifecycle.c' l='724' u='r' c='_Py_ReadMainInterpreterConfig'/>
+<use f='codebrowser/Python/pylifecycle.c' l='725' u='w' c='_Py_ReadMainInterpreterConfig'/>
+<use f='codebrowser/Python/pylifecycle.c' l='795' u='r' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='835' u='w' c='_Py_InitializeEx_Private'/>

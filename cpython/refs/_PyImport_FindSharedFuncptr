@@ -1,0 +1,3 @@
+<def f='codebrowser/Python/dynload_shlib.c' l='54' ll='128' type='dl_funcptr _PyImport_FindSharedFuncptr(const char * prefix, const char * shortname, const char * pathname, FILE * fp)'/>
+<dec f='codebrowser/Python/importdl.c' l='21' type='dl_funcptr _PyImport_FindSharedFuncptr(const char * prefix, const char * shortname, const char * pathname, FILE * fp)'/>
+<use f='codebrowser/Python/importdl.c' l='124' u='c' c='_PyImport_LoadDynamicModuleWithSpec'/>

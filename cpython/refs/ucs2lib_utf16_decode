@@ -1,0 +1,2 @@
+<def f='codebrowser/Objects/stringlib/codecs.h' l='493' macro='1' type='Py_UCS4 ucs2lib_utf16_decode(const unsigned char ** inptr, const unsigned char * e, Py_UCS2 * dest, Py_ssize_t * outpos, int native_ordering)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5632' u='c' c='PyUnicode_DecodeUTF16Stateful'/>

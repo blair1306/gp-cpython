@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/frameobject.h' l='52' type='PyObject *[1]'/>
+<offset>3136</offset>
+<doc f='codebrowser/Include/frameobject.h' l='52'>/* locals+stack, dynamically sized */</doc>
+<use f='codebrowser/Objects/call.c' l='276' u='r' c='function_code_fastcall'/>
+<use f='codebrowser/Objects/frameobject.c' l='424' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='475' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='509' u='r' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='693' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='695' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='896' u='r' c='PyFrame_FastToLocalsWithError'/>
+<use f='codebrowser/Objects/frameobject.c' l='960' u='r' c='PyFrame_LocalsToFast'/>
+<use f='codebrowser/Objects/typeobject.c' l='7562' u='r' c='super_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='7568' u='r' c='super_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='7592' u='r' c='super_init'/>
+<use f='codebrowser/Python/ceval.c' l='1010' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1011' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3940' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='3941' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='5243' u='r' c='unicode_concatenate'/>
+<use f='codebrowser/Python/ceval.c' l='5250' u='r' c='unicode_concatenate'/>

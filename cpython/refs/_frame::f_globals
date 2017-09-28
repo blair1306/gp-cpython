@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/frameobject.h' l='22' type='PyObject *'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/frameobject.h' l='22'>/* global symbol table (PyDictObject) */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='435' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='466' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='466' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='626' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='706' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Python/_warnings.c' l='652' u='r' c='setup_context'/>
+<use f='codebrowser/Python/ceval.c' l='1055' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2258' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2268' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2299' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2331' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2334' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2352' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3427' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4711' u='r' c='PyEval_GetGlobals'/>
+<use f='codebrowser/Python/ceval.c' l='4712' u='r' c='PyEval_GetGlobals'/>
+<use f='codebrowser/Python/ceval.c' l='5015' u='r' c='import_name'/>
+<use f='codebrowser/Python/ceval.c' l='5025' u='r' c='import_name'/>

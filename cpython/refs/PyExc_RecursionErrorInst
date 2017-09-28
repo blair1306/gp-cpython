@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pyerrors.h' l='222' type='PyObject *'/>
+<def f='codebrowser/Objects/exceptions.c' l='2420' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2682' u='r' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2683' u='w' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2684' u='r' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2689' u='r' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2711' u='r' c='_PyExc_Fini'/>
+<use f='codebrowser/Objects/exceptions.c' l='2711' u='w' c='_PyExc_Fini'/>
+<doc f='codebrowser/Objects/exceptions.c' l='2416'>/* Pre-computed RecursionError instance for when recursion depth is reached.
+   Meant to be used when normalizing the exception for exceeding the recursion
+   depth will cause its own infinite recursion.
+*/</doc>
+<use f='codebrowser/Python/errors.c' l='302' u='r' c='PyErr_NormalizeException'/>
+<use f='codebrowser/Python/errors.c' l='303' u='r' c='PyErr_NormalizeException'/>

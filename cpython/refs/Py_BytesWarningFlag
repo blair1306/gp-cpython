@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pydebug.h' l='17' type='int'/>
+<use f='codebrowser/Modules/main.c' l='530' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='975' u='r' c='bytearray_str'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1001' u='r' c='bytearray_richcompare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1415' u='r' c='bytes_str'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1572' u='r' c='bytes_richcompare'/>
+<use f='codebrowser/Python/_warnings.c' l='1186' u='r' c='init_filters'/>
+<use f='codebrowser/Python/_warnings.c' l='1188' u='r' c='init_filters'/>
+<def f='codebrowser/Python/pylifecycle.c' l='88' type='int'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='88'>/* Warn on str(bytes) and str(buffer) */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='1736' u='r' c='make_flags'/>

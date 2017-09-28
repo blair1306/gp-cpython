@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/genobject.h' l='45' type='int _PyGen_FetchStopIterationValue(PyObject ** )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2012' u='c' c='task_step_impl'/>
+<use f='codebrowser/Objects/genobject.c' l='475' u='c' c='_gen_throw'/>
+<def f='codebrowser/Objects/genobject.c' l='610' ll='657' type='int _PyGen_FetchStopIterationValue(PyObject ** pvalue)'/>
+<doc f='codebrowser/Objects/genobject.c' l='601'>/*
+ *   If StopIteration exception is set, fetches its &apos;value&apos;
+ *   attribute if any, otherwise sets pvalue to None.
+ *
+ *   Returns 0 if no exception or StopIteration is set.
+ *   If any other exception is set, returns -1 and leaves
+ *   pvalue unchanged.
+ */</doc>
+<use f='codebrowser/Python/ceval.c' l='2021' u='c' c='_PyEval_EvalFrameDefault'/>

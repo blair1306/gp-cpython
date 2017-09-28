@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='11' type='PyObject *'/>
+<offset>256</offset>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='186' type='PyDictObject'/>
+<offset>0</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='186'>/* first part identical to PyDictObject */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='40' u='w' c='BaseException_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='74' u='r' c='BaseException_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='74' u='w' c='BaseException_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='93' u='r' c='BaseException_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='93' u='r' c='BaseException_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='131' u='r' c='BaseException_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='132' u='r' c='BaseException_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='688' u='r' c='ImportError_getstate'/>
+<use f='codebrowser/Objects/exceptions.c' l='980' u='w' c='OSError_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='1166' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1167' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='2260' u='r' c='MemoryError_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='2262' u='w' c='MemoryError_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='2276' u='w' c='MemoryError_dealloc'/>
+<use f='codebrowser/Objects/exceptions.c' l='2305' u='r' c='free_preallocated_memerrors'/>

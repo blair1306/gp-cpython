@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2192' type='int _PyUnicode_IsLinebreak(const Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/_sre.c' l='184' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='186' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodetype_db.h' l='5815' ll='5831' type='int _PyUnicode_IsLinebreak(const Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodetype_db.h' l='5811'>/* Returns 1 for Unicode characters having the line break
+ * property &apos;BK&apos;, &apos;CR&apos;, &apos;LF&apos; or &apos;NL&apos; or having bidirectional
+ * type &apos;B&apos;, 0 otherwise.
+ */</doc>

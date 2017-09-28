@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakSponge.h' l='136' type='unsigned int'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='151' u='w' c='_PySHA3_KeccakWidth1600_SpongeInitialize'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='165' u='r' c='_PySHA3_KeccakWidth1600_SpongeAbsorb'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='227' u='r' c='_PySHA3_KeccakWidth1600_SpongeAbsorbLastFewBits'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='275' u='r' c='_PySHA3_KeccakWidth1600_SpongeSqueeze'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='422' u='r' c='SHA3_get_block_size'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='470' u='r' c='SHA3_get_capacity_bits'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='478' u='r' c='SHA3_get_rate_bits'/>
+<offset>1600</offset>

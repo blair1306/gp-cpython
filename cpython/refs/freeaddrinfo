@@ -1,0 +1,9 @@
+<dec f='include/netdb.h' l='668' type='void freeaddrinfo(struct addrinfo * __ai)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='990' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='996' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1004' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1095' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5996' u='c' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6002' u='c' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6101' u='c' c='socket_getnameinfo'/>
+<doc f='include/netdb.h' l='667'>/* Free `addrinfo&apos; structure AI including associated storage.  */</doc>

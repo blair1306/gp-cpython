@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/object.h' l='895' type='void Py_IncRef(PyObject * )'/>
+<doc f='codebrowser/Include/object.h' l='891'>/*
+These are provided as conveniences to Python runtime embedders, so that
+they can have object code that is not dependent on Python compilation flags.
+*/</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3202' u='c' c='test_incref_decref_API'/>
+<def f='codebrowser/Objects/object.c' l='227' ll='231' type='void Py_IncRef(PyObject * o)'/>

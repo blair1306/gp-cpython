@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/dictobject.c' l='4289' ll='4293' type='void _PyDictKeys_DecRef(PyDictKeysObject * keys)'/>
+<dec f='codebrowser/Objects/typeobject.c' l='3158' type='void _PyDictKeys_DecRef(PyDictKeysObject * keys)'/>
+<use f='codebrowser/Objects/typeobject.c' l='3188' u='c' c='type_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='3423' u='c' c='type_clear'/>

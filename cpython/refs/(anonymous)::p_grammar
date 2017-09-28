@@ -1,0 +1,9 @@
+<dec f='codebrowser/Parser/parser.h' l='26' type='grammar *'/>
+<offset>288064</offset>
+<doc f='codebrowser/Parser/parser.h' l='26'>/* Grammar to use */</doc>
+<use f='codebrowser/Parser/parser.c' l='81' u='w' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='139' u='r' c='classify'/>
+<use f='codebrowser/Parser/parser.c' l='258' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='325' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='390' u='r' c='_Py_printtree'/>
+<use f='codebrowser/Parser/parser.c' l='393' u='r' c='_Py_printtree'/>

@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/resource.h' l='216' type='long'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/posixmodule.c' l='6874' u='r' c='wait_helper'/>
+<use f='codebrowser/Modules/resource.c' l='108' u='r' c='resource_getrusage_impl'/>

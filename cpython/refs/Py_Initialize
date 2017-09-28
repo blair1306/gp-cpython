@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='31' type='void Py_Initialize()'/>
+<doc f='codebrowser/Include/pylifecycle.h' l='30'>/* Initialization and finalization */</doc>
+<use f='codebrowser/Programs/_testembed.c' l='16' u='c' c='_testembed_Py_Initialize'/>
+<use f='codebrowser/Programs/_testembed.c' l='125' u='c' c='test_forced_io_encoding'/>
+<use f='codebrowser/Python/frozenmain.c' l='75' u='c' c='Py_FrozenMain'/>
+<def f='codebrowser/Python/pylifecycle.c' l='851' ll='855' type='void Py_Initialize()'/>

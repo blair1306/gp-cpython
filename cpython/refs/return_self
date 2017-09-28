@@ -1,0 +1,17 @@
+<def f='codebrowser/Objects/stringlib/transmogrify.h' l='8' ll='18' type='PyObject * return_self(PyObject * self)'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='104' u='c' c='pad'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='132' u='c' c='stringlib_ljust'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='149' u='c' c='stringlib_rjust'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='167' u='c' c='stringlib_center'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='188' u='c' c='stringlib_zfill'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='322' u='c' c='stringlib_replace_delete_single_character'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='371' u='c' c='stringlib_replace_delete_substring'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='421' u='c' c='stringlib_replace_single_character_in_place'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='471' u='c' c='stringlib_replace_substring_in_place'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='520' u='c' c='stringlib_replace_single_character'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='587' u='c' c='stringlib_replace_substring'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='645' u='c' c='stringlib_replace'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='652' u='c' c='stringlib_replace'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='664' u='c' c='stringlib_replace'/>
+<doc f='codebrowser/Objects/stringlib/transmogrify.h' l='5'>/* the more complicated methods.  parts of these should be pulled out into the
+   shared code in bytes_methods.c to cut down on duplicate code bloat.  */</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='60' type='const char *'/>
+<use f='codebrowser/Parser/parsetok.c' l='256' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='257' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='257' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='257' u='r' c='parsetok'/>
+<offset>7552</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='60'>/* pointer to start of current line */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='934' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='990' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1003' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1060' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1082' u='w' c='tok_nextc'/>

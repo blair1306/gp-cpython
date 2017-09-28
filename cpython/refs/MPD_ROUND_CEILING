@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='244' type='2'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4450' u='r' c='dec_ceil'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='244'>/* round toward +infinity          */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1629' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1762' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6050' u='r' c='mpd_qnext_plus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7196' u='r' c='mpd_qceil'/>

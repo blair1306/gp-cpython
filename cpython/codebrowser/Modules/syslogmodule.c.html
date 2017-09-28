@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>syslogmodule.c source code [codebrowser/Modules/syslogmodule.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/syslogmodule.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='syslogmodule.c.html'>syslogmodule.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/***********************************************************</i></td></tr>
+<tr><th id="2">2</th><td><i>Copyright 1994 by Lance Ellinghouse,</i></td></tr>
+<tr><th id="3">3</th><td><i>Cathedral City, California Republic, United States of America.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>                        All Rights Reserved</i></td></tr>
+<tr><th id="6">6</th><td><i></i></td></tr>
+<tr><th id="7">7</th><td><i>Permission to use, copy, modify, and distribute this software and its</i></td></tr>
+<tr><th id="8">8</th><td><i>documentation for any purpose and without fee is hereby granted,</i></td></tr>
+<tr><th id="9">9</th><td><i>provided that the above copyright notice appear in all copies and that</i></td></tr>
+<tr><th id="10">10</th><td><i>both that copyright notice and this permission notice appear in</i></td></tr>
+<tr><th id="11">11</th><td><i>supporting documentation, and that the name of Lance Ellinghouse</i></td></tr>
+<tr><th id="12">12</th><td><i>not be used in advertising or publicity pertaining to distribution</i></td></tr>
+<tr><th id="13">13</th><td><i>of the software without specific, written prior permission.</i></td></tr>
+<tr><th id="14">14</th><td><i></i></td></tr>
+<tr><th id="15">15</th><td><i>LANCE ELLINGHOUSE DISCLAIMS ALL WARRANTIES WITH REGARD TO</i></td></tr>
+<tr><th id="16">16</th><td><i>THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND</i></td></tr>
+<tr><th id="17">17</th><td><i>FITNESS, IN NO EVENT SHALL LANCE ELLINGHOUSE BE LIABLE FOR ANY SPECIAL,</i></td></tr>
+<tr><th id="18">18</th><td><i>INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING</i></td></tr>
+<tr><th id="19">19</th><td><i>FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,</i></td></tr>
+<tr><th id="20">20</th><td><i>NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION</i></td></tr>
+<tr><th id="21">21</th><td><i>WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</i></td></tr>
+<tr><th id="22">22</th><td><i></i></td></tr>
+<tr><th id="23">23</th><td><i>******************************************************************/</i></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><i>/******************************************************************</i></td></tr>
+<tr><th id="26">26</th><td><i></i></td></tr>
+<tr><th id="27">27</th><td><i>Revision history:</i></td></tr>
+<tr><th id="28">28</th><td><i></i></td></tr>
+<tr><th id="29">29</th><td><i>2010/04/20 (Sean Reifschneider)</i></td></tr>
+<tr><th id="30">30</th><td><i>  - Use basename(sys.argv[0]) for the default "ident".</i></td></tr>
+<tr><th id="31">31</th><td><i>  - Arguments to openlog() are now keyword args and are all optional.</i></td></tr>
+<tr><th id="32">32</th><td><i>  - syslog() calls openlog() if it hasn't already been called.</i></td></tr>
+<tr><th id="33">33</th><td><i></i></td></tr>
+<tr><th id="34">34</th><td><i>1998/04/28 (Sean Reifschneider)</i></td></tr>
+<tr><th id="35">35</th><td><i>  - When facility not specified to syslog() method, use default from openlog()</i></td></tr>
+<tr><th id="36">36</th><td><i>    (This is how it was claimed to work in the documentation)</i></td></tr>
+<tr><th id="37">37</th><td><i>  - Potential resource leak of o_ident, now cleaned up in closelog()</i></td></tr>
+<tr><th id="38">38</th><td><i>  - Minor comment accuracy fix.</i></td></tr>
+<tr><th id="39">39</th><td><i></i></td></tr>
+<tr><th id="40">40</th><td><i>95/06/29 (Steve Clift)</i></td></tr>
+<tr><th id="41">41</th><td><i>  - Changed arg parsing to use PyArg_ParseTuple.</i></td></tr>
+<tr><th id="42">42</th><td><i>  - Added PyErr_Clear() call(s) where needed.</i></td></tr>
+<tr><th id="43">43</th><td><i>  - Fix core dumps if user message contains format specifiers.</i></td></tr>
+<tr><th id="44">44</th><td><i>  - Change openlog arg defaults to match normal syslog behavior.</i></td></tr>
+<tr><th id="45">45</th><td><i>  - Plug memory leak in openlog().</i></td></tr>
+<tr><th id="46">46</th><td><i>  - Fix setlogmask() to return previous mask value.</i></td></tr>
+<tr><th id="47">47</th><td><i></i></td></tr>
+<tr><th id="48">48</th><td><i>******************************************************************/</i></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><i>/* syslog module */</i></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="53">53</th><td><u>#include <a href="../Include/osdefs.h.html">"osdefs.h"</a></u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><u>#include <a href="../../include/syslog.h.html">&lt;syslog.h&gt;</a></u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><i  data-doc="S_ident_o">/*  only one instance, only one syslog, so globals should be ok  */</i></td></tr>
+<tr><th id="58">58</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="tu decl def" id="S_ident_o" title='S_ident_o' data-type='PyObject *' data-ref="S_ident_o">S_ident_o</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;                      <i  data-doc="S_ident_o">/*  identifier, held by openlog()  */</i></td></tr>
+<tr><th id="59">59</th><td><em>static</em> <em>char</em> <dfn class="tu decl def" id="S_log_open" title='S_log_open' data-type='char' data-ref="S_log_open">S_log_open</dfn> = <var>0</var>;</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="63">63</th><td><dfn class="tu decl def" id="syslog_get_argv" title='syslog_get_argv' data-type='PyObject * syslog_get_argv()' data-ref="syslog_get_argv">syslog_get_argv</dfn>(<em>void</em>)</td></tr>
+<tr><th id="64">64</th><td>{</td></tr>
+<tr><th id="65">65</th><td>    <i>/* Figure out what to use for as the program "ident" for openlog().</i></td></tr>
+<tr><th id="66">66</th><td><i>     * This swallows exceptions and continues rather than failing out,</i></td></tr>
+<tr><th id="67">67</th><td><i>     * because the syslog module can still be used because openlog(3)</i></td></tr>
+<tr><th id="68">68</th><td><i>     * is optional.</i></td></tr>
+<tr><th id="69">69</th><td><i>     */</i></td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="10argv_len" title='argv_len' data-type='Py_ssize_t' data-ref="10argv_len">argv_len</dfn>, <dfn class="local col1 decl" id="11scriptlen" title='scriptlen' data-type='Py_ssize_t' data-ref="11scriptlen">scriptlen</dfn>;</td></tr>
+<tr><th id="72">72</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="12scriptobj" title='scriptobj' data-type='PyObject *' data-ref="12scriptobj">scriptobj</dfn>;</td></tr>
+<tr><th id="73">73</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="13slash" title='slash' data-type='Py_ssize_t' data-ref="13slash">slash</dfn>;</td></tr>
+<tr><th id="74">74</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14argv" title='argv' data-type='PyObject *' data-ref="14argv">argv</dfn> = <a class="ref" href="../Include/sysmodule.h.html#PySys_GetObject" title='PySys_GetObject' data-ref="PySys_GetObject">PySys_GetObject</a>(<q>"argv"</q>);</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td>    <b>if</b> (<a class="local col4 ref" href="#14argv" title='argv' data-ref="14argv">argv</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="77">77</th><td>        <b>return</b>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="78">78</th><td>    }</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td>    <a class="local col0 ref" href="#10argv_len" title='argv_len' data-ref="10argv_len">argv_len</a> = <a class="ref" href="../Include/listobject.h.html#PyList_Size" title='PyList_Size' data-ref="PyList_Size">PyList_Size</a>(<a class="local col4 ref" href="#14argv" title='argv' data-ref="14argv">argv</a>);</td></tr>
+<tr><th id="81">81</th><td>    <b>if</b> (<a class="local col0 ref" href="#10argv_len" title='argv_len' data-ref="10argv_len">argv_len</a> == -<var>1</var>) {</td></tr>
+<tr><th id="82">82</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Clear" title='PyErr_Clear' data-ref="PyErr_Clear">PyErr_Clear</a>();</td></tr>
+<tr><th id="83">83</th><td>        <b>return</b>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="84">84</th><td>    }</td></tr>
+<tr><th id="85">85</th><td>    <b>if</b> (<a class="local col0 ref" href="#10argv_len" title='argv_len' data-ref="10argv_len">argv_len</a> == <var>0</var>) {</td></tr>
+<tr><th id="86">86</th><td>        <b>return</b>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="87">87</th><td>    }</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>    <a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a> = <a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col4 ref" href="#14argv" title='argv' data-ref="14argv">argv</a>, <var>0</var>);</td></tr>
+<tr><th id="90">90</th><td>    <b>if</b> (!<a class="macro" href="../Include/unicodeobject.h.html#366" title="((((((PyObject*)(scriptobj))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 28))) != 0)" data-ref="_M/PyUnicode_Check">PyUnicode_Check</a>(<a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a>)) {</td></tr>
+<tr><th id="91">91</th><td>        <b>return</b>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="92">92</th><td>    }</td></tr>
+<tr><th id="93">93</th><td>    <a class="local col1 ref" href="#11scriptlen" title='scriptlen' data-ref="11scriptlen">scriptlen</a> = <a class="macro" href="../Include/unicodeobject.h.html#538" title="(((((((((PyObject*)(scriptobj))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 28))) != 0)) ? (void) (0) : __assert_fail (&quot;PyUnicode_Check(scriptobj)&quot;, &quot;/home/jon/workspace/cpython/Modules/syslogmodule.c&quot;, 93, __PRETTY_FUNCTION__)), (((((PyASCIIObject*)scriptobj)-&gt;state.ready)) ? (void) (0) : __assert_fail (&quot;PyUnicode_IS_READY(scriptobj)&quot;, &quot;/home/jon/workspace/cpython/Modules/syslogmodule.c&quot;, 93, __PRETTY_FUNCTION__)), ((PyASCIIObject *)(scriptobj))-&gt;length)" data-ref="_M/PyUnicode_GET_LENGTH">PyUnicode_GET_LENGTH</a>(<a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a>);</td></tr>
+<tr><th id="94">94</th><td>    <b>if</b> (<a class="local col1 ref" href="#11scriptlen" title='scriptlen' data-ref="11scriptlen">scriptlen</a> == <var>0</var>) {</td></tr>
+<tr><th id="95">95</th><td>        <b>return</b>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="96">96</th><td>    }</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td>    <a class="local col3 ref" href="#13slash" title='slash' data-ref="13slash">slash</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_FindChar" title='PyUnicode_FindChar' data-ref="PyUnicode_FindChar">PyUnicode_FindChar</a>(<a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a>, <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>, <var>0</var>, <a class="local col1 ref" href="#11scriptlen" title='scriptlen' data-ref="11scriptlen">scriptlen</a>, -<var>1</var>);</td></tr>
+<tr><th id="99">99</th><td>    <b>if</b> (<a class="local col3 ref" href="#13slash" title='slash' data-ref="13slash">slash</a> == -<var>2</var>)</td></tr>
+<tr><th id="100">100</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="101">101</th><td>    <b>if</b> (<a class="local col3 ref" href="#13slash" title='slash' data-ref="13slash">slash</a> != -<var>1</var>) {</td></tr>
+<tr><th id="102">102</th><td>        <b>return</b> <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_Substring" title='PyUnicode_Substring' data-ref="PyUnicode_Substring">PyUnicode_Substring</a>(<a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a>, <a class="local col3 ref" href="#13slash" title='slash' data-ref="13slash">slash</a>, <a class="local col1 ref" href="#11scriptlen" title='scriptlen' data-ref="11scriptlen">scriptlen</a>);</td></tr>
+<tr><th id="103">103</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="104">104</th><td>        <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(scriptobj))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a>);</td></tr>
+<tr><th id="105">105</th><td>        <b>return</b>(<a class="local col2 ref" href="#12scriptobj" title='scriptobj' data-ref="12scriptobj">scriptobj</a>);</td></tr>
+<tr><th id="106">106</th><td>    }</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <b>return</b>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="109">109</th><td>}</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="113">113</th><td><dfn class="tu decl def" id="syslog_openlog" title='syslog_openlog' data-type='PyObject * syslog_openlog(PyObject * self, PyObject * args, PyObject * kwds)' data-ref="syslog_openlog">syslog_openlog</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> * <dfn class="local col5 decl" id="15self" title='self' data-type='PyObject *' data-ref="15self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> * <dfn class="local col6 decl" id="16args" title='args' data-type='PyObject *' data-ref="16args">args</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="17kwds" title='kwds' data-type='PyObject *' data-ref="17kwds">kwds</dfn>)</td></tr>
+<tr><th id="114">114</th><td>{</td></tr>
+<tr><th id="115">115</th><td>    <em>long</em> <dfn class="local col8 decl" id="18logopt" title='logopt' data-type='long' data-ref="18logopt">logopt</dfn> = <var>0</var>;</td></tr>
+<tr><th id="116">116</th><td>    <em>long</em> <dfn class="local col9 decl" id="19facility" title='facility' data-type='long' data-ref="19facility">facility</dfn> = <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#94" title="(1&lt;&lt;3)" data-ref="_M/LOG_USER">LOG_USER</a>;</td></tr>
+<tr><th id="117">117</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20new_S_ident_o" title='new_S_ident_o' data-type='PyObject *' data-ref="20new_S_ident_o">new_S_ident_o</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="118">118</th><td>    <em>static</em> <em>char</em> *<dfn class="local col1 decl" id="21keywords" title='keywords' data-type='char *[4]' data-ref="21keywords">keywords</dfn>[] = {<q>"ident"</q>, <q>"logoption"</q>, <q>"facility"</q>, <var>0</var>};</td></tr>
+<tr><th id="119">119</th><td>    <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="22ident" title='ident' data-type='const char *' data-ref="22ident">ident</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTupleAndKeywords" title='PyArg_ParseTupleAndKeywords' data-ref="PyArg_ParseTupleAndKeywords">PyArg_ParseTupleAndKeywords</a>(<a class="local col6 ref" href="#16args" title='args' data-ref="16args">args</a>, <a class="local col7 ref" href="#17kwds" title='kwds' data-ref="17kwds">kwds</a>,</td></tr>
+<tr><th id="122">122</th><td>                          <q>"|Ull:openlog"</q>, <a class="local col1 ref" href="#21keywords" title='keywords' data-ref="21keywords">keywords</a>, &amp;<a class="local col0 ref" href="#20new_S_ident_o" title='new_S_ident_o' data-ref="20new_S_ident_o">new_S_ident_o</a>, &amp;<a class="local col8 ref" href="#18logopt" title='logopt' data-ref="18logopt">logopt</a>, &amp;<a class="local col9 ref" href="#19facility" title='facility' data-ref="19facility">facility</a>))</td></tr>
+<tr><th id="123">123</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td>    <b>if</b> (<a class="local col0 ref" href="#20new_S_ident_o" title='new_S_ident_o' data-ref="20new_S_ident_o">new_S_ident_o</a>) {</td></tr>
+<tr><th id="126">126</th><td>        <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(new_S_ident_o))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col0 ref" href="#20new_S_ident_o" title='new_S_ident_o' data-ref="20new_S_ident_o">new_S_ident_o</a>);</td></tr>
+<tr><th id="127">127</th><td>    }</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td>    <i>/*  get sys.argv[0] or NULL if we can't for some reason  */</i></td></tr>
+<tr><th id="130">130</th><td>    <b>if</b> (!<a class="local col0 ref" href="#20new_S_ident_o" title='new_S_ident_o' data-ref="20new_S_ident_o">new_S_ident_o</a>) {</td></tr>
+<tr><th id="131">131</th><td>        <a class="local col0 ref" href="#20new_S_ident_o" title='new_S_ident_o' data-ref="20new_S_ident_o">new_S_ident_o</a> = <a class="tu ref" href="#syslog_get_argv" title='syslog_get_argv' data-use='c' data-ref="syslog_get_argv">syslog_get_argv</a>();</td></tr>
+<tr><th id="132">132</th><td>    }</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>    <a class="macro" href="../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(S_ident_o); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/syslogmodule.c&quot;, 134, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="tu ref" href="#S_ident_o" title='S_ident_o' data-use='r' data-ref="S_ident_o">S_ident_o</a>);</td></tr>
+<tr><th id="135">135</th><td>    <a class="tu ref" href="#S_ident_o" title='S_ident_o' data-use='w' data-ref="S_ident_o">S_ident_o</a> = <a class="local col0 ref" href="#20new_S_ident_o" title='new_S_ident_o' data-ref="20new_S_ident_o">new_S_ident_o</a>;</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td>    <i>/* At this point, S_ident_o should be INCREF()ed.  openlog(3) does not</i></td></tr>
+<tr><th id="138">138</th><td><i>     * make a copy, and syslog(3) later uses it.  We can't garbagecollect it</i></td></tr>
+<tr><th id="139">139</th><td><i>     * If NULL, just let openlog figure it out (probably using C argv[0]).</i></td></tr>
+<tr><th id="140">140</th><td><i>     */</i></td></tr>
+<tr><th id="141">141</th><td>    <b>if</b> (<a class="tu ref" href="#S_ident_o" title='S_ident_o' data-use='r' data-ref="S_ident_o">S_ident_o</a>) {</td></tr>
+<tr><th id="142">142</th><td>        <a class="local col2 ref" href="#22ident" title='ident' data-ref="22ident">ident</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_AsUTF8" title='PyUnicode_AsUTF8' data-ref="PyUnicode_AsUTF8">PyUnicode_AsUTF8</a>(<a class="tu ref" href="#S_ident_o" title='S_ident_o' data-use='r' data-ref="S_ident_o">S_ident_o</a>);</td></tr>
+<tr><th id="143">143</th><td>        <b>if</b> (<a class="local col2 ref" href="#22ident" title='ident' data-ref="22ident">ident</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="144">144</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="145">145</th><td>    }</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td>    <a class="ref" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#openlog" title='openlog' data-ref="openlog">openlog</a>(<a class="local col2 ref" href="#22ident" title='ident' data-ref="22ident">ident</a>, <a class="local col8 ref" href="#18logopt" title='logopt' data-ref="18logopt">logopt</a>, <a class="local col9 ref" href="#19facility" title='facility' data-ref="19facility">facility</a>);</td></tr>
+<tr><th id="148">148</th><td>    <a class="tu ref" href="#S_log_open" title='S_log_open' data-use='w' data-ref="S_log_open">S_log_open</a> = <var>1</var>;</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="151">151</th><td>}</td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="155">155</th><td><dfn class="tu decl def" id="syslog_syslog" title='syslog_syslog' data-type='PyObject * syslog_syslog(PyObject * self, PyObject * args)' data-ref="syslog_syslog">syslog_syslog</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> * <dfn class="local col3 decl" id="23self" title='self' data-type='PyObject *' data-ref="23self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> * <dfn class="local col4 decl" id="24args" title='args' data-type='PyObject *' data-ref="24args">args</dfn>)</td></tr>
+<tr><th id="156">156</th><td>{</td></tr>
+<tr><th id="157">157</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25message_object" title='message_object' data-type='PyObject *' data-ref="25message_object">message_object</dfn>;</td></tr>
+<tr><th id="158">158</th><td>    <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="26message" title='message' data-type='const char *' data-ref="26message">message</dfn>;</td></tr>
+<tr><th id="159">159</th><td>    <em>int</em>   <dfn class="local col7 decl" id="27priority" title='priority' data-type='int' data-ref="27priority">priority</dfn> = <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#57" title="6" data-ref="_M/LOG_INFO">LOG_INFO</a>;</td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col4 ref" href="#24args" title='args' data-ref="24args">args</a>, <q>"iU;[priority,] message string"</q>,</td></tr>
+<tr><th id="162">162</th><td>                          &amp;<a class="local col7 ref" href="#27priority" title='priority' data-ref="27priority">priority</a>, &amp;<a class="local col5 ref" href="#25message_object" title='message_object' data-ref="25message_object">message_object</a>)) {</td></tr>
+<tr><th id="163">163</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Clear" title='PyErr_Clear' data-ref="PyErr_Clear">PyErr_Clear</a>();</td></tr>
+<tr><th id="164">164</th><td>        <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col4 ref" href="#24args" title='args' data-ref="24args">args</a>, <q>"U;[priority,] message string"</q>,</td></tr>
+<tr><th id="165">165</th><td>                              &amp;<a class="local col5 ref" href="#25message_object" title='message_object' data-ref="25message_object">message_object</a>))</td></tr>
+<tr><th id="166">166</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="167">167</th><td>    }</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td>    <a class="local col6 ref" href="#26message" title='message' data-ref="26message">message</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_AsUTF8" title='PyUnicode_AsUTF8' data-ref="PyUnicode_AsUTF8">PyUnicode_AsUTF8</a>(<a class="local col5 ref" href="#25message_object" title='message_object' data-ref="25message_object">message_object</a>);</td></tr>
+<tr><th id="170">170</th><td>    <b>if</b> (<a class="local col6 ref" href="#26message" title='message' data-ref="26message">message</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="171">171</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>    <i>/*  if log is not opened, open it now  */</i></td></tr>
+<tr><th id="174">174</th><td>    <b>if</b> (!<a class="tu ref" href="#S_log_open" title='S_log_open' data-use='r' data-ref="S_log_open">S_log_open</a>) {</td></tr>
+<tr><th id="175">175</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28openargs" title='openargs' data-type='PyObject *' data-ref="28openargs">openargs</dfn>;</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td>        <i>/* Continue even if PyTuple_New fails, because openlog(3) is optional.</i></td></tr>
+<tr><th id="178">178</th><td><i>         * So, we can still do loggin in the unlikely event things are so hosed</i></td></tr>
+<tr><th id="179">179</th><td><i>         * that we can't do this tuple.</i></td></tr>
+<tr><th id="180">180</th><td><i>         */</i></td></tr>
+<tr><th id="181">181</th><td>        <b>if</b> ((<a class="local col8 ref" href="#28openargs" title='openargs' data-ref="28openargs">openargs</a> = <a class="ref" href="../Include/tupleobject.h.html#PyTuple_New" title='PyTuple_New' data-ref="PyTuple_New">PyTuple_New</a>(<var>0</var>))) {</td></tr>
+<tr><th id="182">182</th><td>            <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29openlog_ret" title='openlog_ret' data-type='PyObject *' data-ref="29openlog_ret">openlog_ret</dfn> = <a class="tu ref" href="#syslog_openlog" title='syslog_openlog' data-use='c' data-ref="syslog_openlog">syslog_openlog</a>(<a class="local col3 ref" href="#23self" title='self' data-ref="23self">self</a>, <a class="local col8 ref" href="#28openargs" title='openargs' data-ref="28openargs">openargs</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="183">183</th><td>            <a class="macro" href="../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(openlog_ret); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/syslogmodule.c&quot;, 183, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col9 ref" href="#29openlog_ret" title='openlog_ret' data-ref="29openlog_ret">openlog_ret</a>);</td></tr>
+<tr><th id="184">184</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(openargs); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/syslogmodule.c&quot;, 184, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col8 ref" href="#28openargs" title='openargs' data-ref="28openargs">openargs</a>);</td></tr>
+<tr><th id="185">185</th><td>        }</td></tr>
+<tr><th id="186">186</th><td>    }</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>    <a class="macro" href="../Include/ceval.h.html#208" title="{ PyThreadState *_save; _save = PyEval_SaveThread();" data-ref="_M/Py_BEGIN_ALLOW_THREADS">Py_BEGIN_ALLOW_THREADS</a>;</td></tr>
+<tr><th id="189">189</th><td>    <a class="ref" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#syslog" title='syslog' data-ref="syslog">syslog</a>(<a class="local col7 ref" href="#27priority" title='priority' data-ref="27priority">priority</a>, <q>"%s"</q>, <a class="local col6 ref" href="#26message" title='message' data-ref="26message">message</a>);</td></tr>
+<tr><th id="190">190</th><td>    <a class="macro" href="../Include/ceval.h.html#213" title="PyEval_RestoreThread(_save); }" data-ref="_M/Py_END_ALLOW_THREADS">Py_END_ALLOW_THREADS</a>;</td></tr>
+<tr><th id="191">191</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="192">192</th><td>}</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="195">195</th><td><dfn class="tu decl def" id="syslog_closelog" title='syslog_closelog' data-type='PyObject * syslog_closelog(PyObject * self, PyObject * unused)' data-ref="syslog_closelog">syslog_closelog</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30self" title='self' data-type='PyObject *' data-ref="30self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31unused" title='unused' data-type='PyObject *' data-ref="31unused">unused</dfn>)</td></tr>
+<tr><th id="196">196</th><td>{</td></tr>
+<tr><th id="197">197</th><td>    <b>if</b> (<a class="tu ref" href="#S_log_open" title='S_log_open' data-use='r' data-ref="S_log_open">S_log_open</a>) {</td></tr>
+<tr><th id="198">198</th><td>        <a class="ref" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#closelog" title='closelog' data-ref="closelog">closelog</a>();</td></tr>
+<tr><th id="199">199</th><td>        <a class="macro" href="../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(S_ident_o); if (_py_tmp != ((void*)0)) { (S_ident_o) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/syslogmodule.c&quot;, 199, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="tu ref" href="#S_ident_o" title='S_ident_o' data-use='r' data-ref="S_ident_o"><a class="tu ref" href="#S_ident_o" title='S_ident_o' data-use='w' data-ref="S_ident_o">S_ident_o</a></a>);</td></tr>
+<tr><th id="200">200</th><td>        <a class="tu ref" href="#S_log_open" title='S_log_open' data-use='w' data-ref="S_log_open">S_log_open</a> = <var>0</var>;</td></tr>
+<tr><th id="201">201</th><td>    }</td></tr>
+<tr><th id="202">202</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="203">203</th><td>}</td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="206">206</th><td><dfn class="tu decl def" id="syslog_setlogmask" title='syslog_setlogmask' data-type='PyObject * syslog_setlogmask(PyObject * self, PyObject * args)' data-ref="syslog_setlogmask">syslog_setlogmask</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32self" title='self' data-type='PyObject *' data-ref="32self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33args" title='args' data-type='PyObject *' data-ref="33args">args</dfn>)</td></tr>
+<tr><th id="207">207</th><td>{</td></tr>
+<tr><th id="208">208</th><td>    <em>long</em> <dfn class="local col4 decl" id="34maskpri" title='maskpri' data-type='long' data-ref="34maskpri">maskpri</dfn>, <dfn class="local col5 decl" id="35omaskpri" title='omaskpri' data-type='long' data-ref="35omaskpri">omaskpri</dfn>;</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col3 ref" href="#33args" title='args' data-ref="33args">args</a>, <q>"l;mask for priority"</q>, &amp;<a class="local col4 ref" href="#34maskpri" title='maskpri' data-ref="34maskpri">maskpri</a>))</td></tr>
+<tr><th id="211">211</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="212">212</th><td>    <a class="local col5 ref" href="#35omaskpri" title='omaskpri' data-ref="35omaskpri">omaskpri</a> = <a class="ref" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#setlogmask" title='setlogmask' data-ref="setlogmask">setlogmask</a>(<a class="local col4 ref" href="#34maskpri" title='maskpri' data-ref="34maskpri">maskpri</a>);</td></tr>
+<tr><th id="213">213</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#35omaskpri" title='omaskpri' data-ref="35omaskpri">omaskpri</a>);</td></tr>
+<tr><th id="214">214</th><td>}</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="217">217</th><td><dfn class="tu decl def" id="syslog_log_mask" title='syslog_log_mask' data-type='PyObject * syslog_log_mask(PyObject * self, PyObject * args)' data-ref="syslog_log_mask">syslog_log_mask</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="36self" title='self' data-type='PyObject *' data-ref="36self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37args" title='args' data-type='PyObject *' data-ref="37args">args</dfn>)</td></tr>
+<tr><th id="218">218</th><td>{</td></tr>
+<tr><th id="219">219</th><td>    <em>long</em> <dfn class="local col8 decl" id="38mask" title='mask' data-type='long' data-ref="38mask">mask</dfn>;</td></tr>
+<tr><th id="220">220</th><td>    <em>long</em> <dfn class="local col9 decl" id="39pri" title='pri' data-type='long' data-ref="39pri">pri</dfn>;</td></tr>
+<tr><th id="221">221</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col7 ref" href="#37args" title='args' data-ref="37args">args</a>, <q>"l:LOG_MASK"</q>, &amp;<a class="local col9 ref" href="#39pri" title='pri' data-ref="39pri">pri</a>))</td></tr>
+<tr><th id="222">222</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="223">223</th><td>    <a class="local col8 ref" href="#38mask" title='mask' data-ref="38mask">mask</a> = <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#153" title="(1 &lt;&lt; (pri))" data-ref="_M/LOG_MASK">LOG_MASK</a>(<a class="local col9 ref" href="#39pri" title='pri' data-ref="39pri">pri</a>);</td></tr>
+<tr><th id="224">224</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col8 ref" href="#38mask" title='mask' data-ref="38mask">mask</a>);</td></tr>
+<tr><th id="225">225</th><td>}</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="228">228</th><td><dfn class="tu decl def" id="syslog_log_upto" title='syslog_log_upto' data-type='PyObject * syslog_log_upto(PyObject * self, PyObject * args)' data-ref="syslog_log_upto">syslog_log_upto</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="40self" title='self' data-type='PyObject *' data-ref="40self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41args" title='args' data-type='PyObject *' data-ref="41args">args</dfn>)</td></tr>
+<tr><th id="229">229</th><td>{</td></tr>
+<tr><th id="230">230</th><td>    <em>long</em> <dfn class="local col2 decl" id="42mask" title='mask' data-type='long' data-ref="42mask">mask</dfn>;</td></tr>
+<tr><th id="231">231</th><td>    <em>long</em> <dfn class="local col3 decl" id="43pri" title='pri' data-type='long' data-ref="43pri">pri</dfn>;</td></tr>
+<tr><th id="232">232</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col1 ref" href="#41args" title='args' data-ref="41args">args</a>, <q>"l:LOG_UPTO"</q>, &amp;<a class="local col3 ref" href="#43pri" title='pri' data-ref="43pri">pri</a>))</td></tr>
+<tr><th id="233">233</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="234">234</th><td>    <a class="local col2 ref" href="#42mask" title='mask' data-ref="42mask">mask</a> = <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#154" title="((1 &lt;&lt; ((pri)+1)) - 1)" data-ref="_M/LOG_UPTO">LOG_UPTO</a>(<a class="local col3 ref" href="#43pri" title='pri' data-ref="43pri">pri</a>);</td></tr>
+<tr><th id="235">235</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col2 ref" href="#42mask" title='mask' data-ref="42mask">mask</a>);</td></tr>
+<tr><th id="236">236</th><td>}</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td><i  data-doc="syslog_methods">/* List of functions defined in the module */</i></td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="syslog_methods" title='syslog_methods' data-type='PyMethodDef [7]' data-ref="syslog_methods">syslog_methods</dfn>[] = {</td></tr>
+<tr><th id="241">241</th><td>    {<q>"openlog"</q>,         (<a class="typedef" href="../Include/methodobject.h.html#PyCFunction" title='PyCFunction' data-type='PyObject *(*)(PyObject *, PyObject *)' data-ref="PyCFunction">PyCFunction</a>) <a class="tu ref" href="#syslog_openlog" title='syslog_openlog' data-ref="syslog_openlog">syslog_openlog</a>,           <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a> | <a class="macro" href="../Include/methodobject.h.html#72" title="0x0002" data-ref="_M/METH_KEYWORDS">METH_KEYWORDS</a>},</td></tr>
+<tr><th id="242">242</th><td>    {<q>"closelog"</q>,        <a class="tu ref" href="#syslog_closelog" title='syslog_closelog' data-ref="syslog_closelog">syslog_closelog</a>,        <a class="macro" href="../Include/methodobject.h.html#74" title="0x0004" data-ref="_M/METH_NOARGS">METH_NOARGS</a>},</td></tr>
+<tr><th id="243">243</th><td>    {<q>"syslog"</q>,          <a class="tu ref" href="#syslog_syslog" title='syslog_syslog' data-ref="syslog_syslog">syslog_syslog</a>,          <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>},</td></tr>
+<tr><th id="244">244</th><td>    {<q>"setlogmask"</q>,      <a class="tu ref" href="#syslog_setlogmask" title='syslog_setlogmask' data-ref="syslog_setlogmask">syslog_setlogmask</a>,      <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>},</td></tr>
+<tr><th id="245">245</th><td>    {<q>"LOG_MASK"</q>,        <a class="tu ref" href="#syslog_log_mask" title='syslog_log_mask' data-ref="syslog_log_mask">syslog_log_mask</a>,        <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>},</td></tr>
+<tr><th id="246">246</th><td>    {<q>"LOG_UPTO"</q>,        <a class="tu ref" href="#syslog_log_upto" title='syslog_log_upto' data-ref="syslog_log_upto">syslog_log_upto</a>,        <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>},</td></tr>
+<tr><th id="247">247</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,              <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                   <var>0</var>}</td></tr>
+<tr><th id="248">248</th><td>};</td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><i  data-doc="syslogmodule">/* Initialization function for the module */</i></td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="syslogmodule" title='syslogmodule' data-type='struct PyModuleDef' data-ref="syslogmodule">syslogmodule</dfn> = {</td></tr>
+<tr><th id="254">254</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="255">255</th><td>    <q>"syslog"</q>,</td></tr>
+<tr><th id="256">256</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="257">257</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="258">258</th><td>    <a class="tu ref" href="#syslog_methods" title='syslog_methods' data-ref="syslog_methods">syslog_methods</a>,</td></tr>
+<tr><th id="259">259</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="260">260</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="261">261</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="262">262</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="263">263</th><td>};</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="266">266</th><td><dfn class="decl def" id="PyInit_syslog" title='PyInit_syslog' data-ref="PyInit_syslog">PyInit_syslog</dfn>(<em>void</em>)</td></tr>
+<tr><th id="267">267</th><td>{</td></tr>
+<tr><th id="268">268</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="44m" title='m' data-type='PyObject *' data-ref="44m">m</dfn>;</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td>    <i>/* Create the module and add the functions */</i></td></tr>
+<tr><th id="271">271</th><td>    <a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a> = <a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;syslogmodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#syslogmodule" title='syslogmodule' data-use='a' data-ref="syslogmodule">syslogmodule</a>);</td></tr>
+<tr><th id="272">272</th><td>    <b>if</b> (<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="273">273</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>    <i>/* Add some symbolic constants to the module */</i></td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td>    <i>/* Priorities */</i></td></tr>
+<tr><th id="278">278</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_EMERG&quot;, 0)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#51" title="0" data-ref="_M/LOG_EMERG">LOG_EMERG</a>);</td></tr>
+<tr><th id="279">279</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_ALERT&quot;, 1)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#52" title="1" data-ref="_M/LOG_ALERT">LOG_ALERT</a>);</td></tr>
+<tr><th id="280">280</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_CRIT&quot;, 2)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#53" title="2" data-ref="_M/LOG_CRIT">LOG_CRIT</a>);</td></tr>
+<tr><th id="281">281</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_ERR&quot;, 3)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#54" title="3" data-ref="_M/LOG_ERR">LOG_ERR</a>);</td></tr>
+<tr><th id="282">282</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_WARNING&quot;, 4)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#55" title="4" data-ref="_M/LOG_WARNING">LOG_WARNING</a>);</td></tr>
+<tr><th id="283">283</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_NOTICE&quot;, 5)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#56" title="5" data-ref="_M/LOG_NOTICE">LOG_NOTICE</a>);</td></tr>
+<tr><th id="284">284</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_INFO&quot;, 6)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#57" title="6" data-ref="_M/LOG_INFO">LOG_INFO</a>);</td></tr>
+<tr><th id="285">285</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_DEBUG&quot;, 7)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#58" title="7" data-ref="_M/LOG_DEBUG">LOG_DEBUG</a>);</td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td>    <i>/* openlog() option flags */</i></td></tr>
+<tr><th id="288">288</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_PID&quot;, 0x01)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#162" title="0x01" data-ref="_M/LOG_PID">LOG_PID</a>);</td></tr>
+<tr><th id="289">289</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_CONS&quot;, 0x02)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#163" title="0x02" data-ref="_M/LOG_CONS">LOG_CONS</a>);</td></tr>
+<tr><th id="290">290</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_NDELAY&quot;, 0x08)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#165" title="0x08" data-ref="_M/LOG_NDELAY">LOG_NDELAY</a>);</td></tr>
+<tr><th id="291">291</th><td><u>#<span data-ppcond="291">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#164" data-ref="_M/LOG_ODELAY">LOG_ODELAY</a></u></td></tr>
+<tr><th id="292">292</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_ODELAY&quot;, 0x04)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#164" title="0x04" data-ref="_M/LOG_ODELAY">LOG_ODELAY</a>);</td></tr>
+<tr><th id="293">293</th><td><u>#<span data-ppcond="291">endif</span></u></td></tr>
+<tr><th id="294">294</th><td><u>#<span data-ppcond="294">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#166" data-ref="_M/LOG_NOWAIT">LOG_NOWAIT</a></u></td></tr>
+<tr><th id="295">295</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_NOWAIT&quot;, 0x10)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#166" title="0x10" data-ref="_M/LOG_NOWAIT">LOG_NOWAIT</a>);</td></tr>
+<tr><th id="296">296</th><td><u>#<span data-ppcond="294">endif</span></u></td></tr>
+<tr><th id="297">297</th><td><u>#<span data-ppcond="297">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#167" data-ref="_M/LOG_PERROR">LOG_PERROR</a></u></td></tr>
+<tr><th id="298">298</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_PERROR&quot;, 0x20)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#167" title="0x20" data-ref="_M/LOG_PERROR">LOG_PERROR</a>);</td></tr>
+<tr><th id="299">299</th><td><u>#<span data-ppcond="297">endif</span></u></td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td>    <i>/* Facilities */</i></td></tr>
+<tr><th id="302">302</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_KERN&quot;, (0&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#93" title="(0&lt;&lt;3)" data-ref="_M/LOG_KERN">LOG_KERN</a>);</td></tr>
+<tr><th id="303">303</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_USER&quot;, (1&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#94" title="(1&lt;&lt;3)" data-ref="_M/LOG_USER">LOG_USER</a>);</td></tr>
+<tr><th id="304">304</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_MAIL&quot;, (2&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#95" title="(2&lt;&lt;3)" data-ref="_M/LOG_MAIL">LOG_MAIL</a>);</td></tr>
+<tr><th id="305">305</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_DAEMON&quot;, (3&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#96" title="(3&lt;&lt;3)" data-ref="_M/LOG_DAEMON">LOG_DAEMON</a>);</td></tr>
+<tr><th id="306">306</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_AUTH&quot;, (4&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#97" title="(4&lt;&lt;3)" data-ref="_M/LOG_AUTH">LOG_AUTH</a>);</td></tr>
+<tr><th id="307">307</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LPR&quot;, (6&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#99" title="(6&lt;&lt;3)" data-ref="_M/LOG_LPR">LOG_LPR</a>);</td></tr>
+<tr><th id="308">308</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL0&quot;, (16&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#107" title="(16&lt;&lt;3)" data-ref="_M/LOG_LOCAL0">LOG_LOCAL0</a>);</td></tr>
+<tr><th id="309">309</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL1&quot;, (17&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#108" title="(17&lt;&lt;3)" data-ref="_M/LOG_LOCAL1">LOG_LOCAL1</a>);</td></tr>
+<tr><th id="310">310</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL2&quot;, (18&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#109" title="(18&lt;&lt;3)" data-ref="_M/LOG_LOCAL2">LOG_LOCAL2</a>);</td></tr>
+<tr><th id="311">311</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL3&quot;, (19&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#110" title="(19&lt;&lt;3)" data-ref="_M/LOG_LOCAL3">LOG_LOCAL3</a>);</td></tr>
+<tr><th id="312">312</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL4&quot;, (20&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#111" title="(20&lt;&lt;3)" data-ref="_M/LOG_LOCAL4">LOG_LOCAL4</a>);</td></tr>
+<tr><th id="313">313</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL5&quot;, (21&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#112" title="(21&lt;&lt;3)" data-ref="_M/LOG_LOCAL5">LOG_LOCAL5</a>);</td></tr>
+<tr><th id="314">314</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL6&quot;, (22&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#113" title="(22&lt;&lt;3)" data-ref="_M/LOG_LOCAL6">LOG_LOCAL6</a>);</td></tr>
+<tr><th id="315">315</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_LOCAL7&quot;, (23&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#114" title="(23&lt;&lt;3)" data-ref="_M/LOG_LOCAL7">LOG_LOCAL7</a>);</td></tr>
+<tr><th id="316">316</th><td></td></tr>
+<tr><th id="317">317</th><td><u>#<span data-ppcond="317">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#98" data-ref="_M/LOG_SYSLOG">LOG_SYSLOG</a></u></td></tr>
+<tr><th id="318">318</th><td><u>#define LOG_SYSLOG              LOG_DAEMON</u></td></tr>
+<tr><th id="319">319</th><td><u>#<span data-ppcond="317">endif</span></u></td></tr>
+<tr><th id="320">320</th><td><u>#<span data-ppcond="320">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#100" data-ref="_M/LOG_NEWS">LOG_NEWS</a></u></td></tr>
+<tr><th id="321">321</th><td><u>#define LOG_NEWS                LOG_MAIL</u></td></tr>
+<tr><th id="322">322</th><td><u>#<span data-ppcond="320">endif</span></u></td></tr>
+<tr><th id="323">323</th><td><u>#<span data-ppcond="323">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#101" data-ref="_M/LOG_UUCP">LOG_UUCP</a></u></td></tr>
+<tr><th id="324">324</th><td><u>#define LOG_UUCP                LOG_MAIL</u></td></tr>
+<tr><th id="325">325</th><td><u>#<span data-ppcond="323">endif</span></u></td></tr>
+<tr><th id="326">326</th><td><u>#<span data-ppcond="326">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#102" data-ref="_M/LOG_CRON">LOG_CRON</a></u></td></tr>
+<tr><th id="327">327</th><td><u>#define LOG_CRON                LOG_DAEMON</u></td></tr>
+<tr><th id="328">328</th><td><u>#<span data-ppcond="326">endif</span></u></td></tr>
+<tr><th id="329">329</th><td></td></tr>
+<tr><th id="330">330</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_SYSLOG&quot;, (5&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#98" title="(5&lt;&lt;3)" data-ref="_M/LOG_SYSLOG">LOG_SYSLOG</a>);</td></tr>
+<tr><th id="331">331</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_CRON&quot;, (9&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#102" title="(9&lt;&lt;3)" data-ref="_M/LOG_CRON">LOG_CRON</a>);</td></tr>
+<tr><th id="332">332</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_UUCP&quot;, (8&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#101" title="(8&lt;&lt;3)" data-ref="_M/LOG_UUCP">LOG_UUCP</a>);</td></tr>
+<tr><th id="333">333</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_NEWS&quot;, (7&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#100" title="(7&lt;&lt;3)" data-ref="_M/LOG_NEWS">LOG_NEWS</a>);</td></tr>
+<tr><th id="334">334</th><td></td></tr>
+<tr><th id="335">335</th><td><u>#<span data-ppcond="335">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#103" data-ref="_M/LOG_AUTHPRIV">LOG_AUTHPRIV</a></u></td></tr>
+<tr><th id="336">336</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOG_AUTHPRIV&quot;, (10&lt;&lt;3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/syslog.h.html#103" title="(10&lt;&lt;3)" data-ref="_M/LOG_AUTHPRIV">LOG_AUTHPRIV</a>);</td></tr>
+<tr><th id="337">337</th><td><u>#<span data-ppcond="335">endif</span></u></td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td>    <b>return</b> <a class="local col4 ref" href="#44m" title='m' data-ref="44m">m</a>;</td></tr>
+<tr><th id="340">340</th><td>}</td></tr>
+<tr><th id="341">341</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

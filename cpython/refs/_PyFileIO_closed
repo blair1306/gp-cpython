@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='47' type='int _PyFileIO_closed(PyObject * self)'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='45'>/* Returns true if the given FileIO object is closed.
+   Doesn&apos;t check the argument type, so be careful! */</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='buffered_flush'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='_io__Buffered_peek_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='_io__Buffered_read_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='_io__Buffered_read1_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='_buffered_readline'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='_io__Buffered_seek_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='349' u='c' c='_io_BufferedWriter_write_impl'/>
+<def f='codebrowser/Modules/_io/fileio.c' l='79' ll='83' type='int _PyFileIO_closed(PyObject * self)'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1232' u='c' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1232' u='c' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1232' u='c' c='_textiowrapper_readline'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1232' u='c' c='_io_TextIOWrapper_seek_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1232' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1232' u='c' c='_io_TextIOWrapper_flush_impl'/>

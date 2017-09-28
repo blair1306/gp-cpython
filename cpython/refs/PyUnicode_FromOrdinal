@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1088' type='PyObject * PyUnicode_FromOrdinal(int ordinal)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1081'>/* Create a Unicode Object from the given Unicode code point ordinal.
+
+   The ordinal must be in range(0x110000). A ValueError is
+   raised in case it is not.
+
+*/</doc>
+<use f='codebrowser/Modules/_csv.c' l='158' u='c' c='get_nullchar_as_None'/>
+<use f='codebrowser/Modules/arraymodule.c' l='240' u='c' c='u_getitem'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1926' u='c' c='make_array'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2255' u='c' c='array_get_typecode'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='239' u='c' c='multibytecodec_encerror'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1253' u='c' c='unicodedata_UCD_lookup_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3029' ll='3039' type='PyObject * PyUnicode_FromOrdinal(int ordinal)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9947' u='c' c='_PyUnicode_JoinArray'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14731' u='c' c='unicode_format_arg_format'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15436' u='c' c='unicodeiter_next'/>
+<use f='codebrowser/Python/bltinmodule.c' l='606' u='c' c='builtin_chr_impl'/>
+<use f='codebrowser/Python/codecs.c' l='1281' u='c' c='PyCodec_SurrogatePassErrors'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='727' u='c' c='get_locale_info'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='728' u='c' c='get_locale_info'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='740' u='c' c='get_locale_info'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='903' u='c' c='format_long_internal'/>
+<use f='codebrowser/Python/modsupport.c' l='379' u='c' c='do_mkvalue'/>

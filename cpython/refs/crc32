@@ -1,0 +1,5 @@
+<dec f='include/zlib.h' l='1600' type='uLong crc32(uLong crc, const Bytef * buf, uInt len)'/>
+<use f='codebrowser/Modules/binascii.c' l='1076' u='c' c='binascii_crc32_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1244' u='c' c='zlib_crc32_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1248' u='c' c='zlib_crc32_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1251' u='c' c='zlib_crc32_impl'/>

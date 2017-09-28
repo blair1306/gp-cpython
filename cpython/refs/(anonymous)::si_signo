@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/siginfo.h' l='64' type='int'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/siginfo.h' l='64'>/* Signal number.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='7014' u='r' c='os_waitid_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='974' u='r' c='fill_siginfo'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/Objects/dict-common.h' l='44' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/dictobject.c' l='450' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='451' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='454' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='543' u='w' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='988' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1007' u='w' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1009' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1099' u='r' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1153' u='w' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='2735' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2758' u='w' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2760' u='r' c='PyDict_SetDefault'/>
+<offset>192</offset>
+<doc f='codebrowser/Objects/dict-common.h' l='43'>/* Number of usable entries in dk_entries. */</doc>

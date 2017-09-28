@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>unicodectype.c source code [codebrowser/Objects/unicodectype.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/unicodectype.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Objects</a>/<a href='unicodectype.c.html'>unicodectype.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>   Unicode character type helpers.</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>   Written by Marc-Andre Lemburg (mal@lemburg.com).</i></td></tr>
+<tr><th id="5">5</th><td><i>   Modified for Python 2.0 by Fredrik Lundh (fredrik@pythonware.com)</i></td></tr>
+<tr><th id="6">6</th><td><i></i></td></tr>
+<tr><th id="7">7</th><td><i>   Copyright (c) Corporation for National Research Initiatives.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>*/</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#define <dfn class="macro" id="_M/ALPHA_MASK" data-ref="_M/ALPHA_MASK">ALPHA_MASK</dfn> 0x01</u></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/DECIMAL_MASK" data-ref="_M/DECIMAL_MASK">DECIMAL_MASK</dfn> 0x02</u></td></tr>
+<tr><th id="15">15</th><td><u>#define <dfn class="macro" id="_M/DIGIT_MASK" data-ref="_M/DIGIT_MASK">DIGIT_MASK</dfn> 0x04</u></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/LOWER_MASK" data-ref="_M/LOWER_MASK">LOWER_MASK</dfn> 0x08</u></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/LINEBREAK_MASK" data-ref="_M/LINEBREAK_MASK">LINEBREAK_MASK</dfn> 0x10</u></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/SPACE_MASK" data-ref="_M/SPACE_MASK">SPACE_MASK</dfn> 0x20</u></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/TITLE_MASK" data-ref="_M/TITLE_MASK">TITLE_MASK</dfn> 0x40</u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/UPPER_MASK" data-ref="_M/UPPER_MASK">UPPER_MASK</dfn> 0x80</u></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/XID_START_MASK" data-ref="_M/XID_START_MASK">XID_START_MASK</dfn> 0x100</u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/XID_CONTINUE_MASK" data-ref="_M/XID_CONTINUE_MASK">XID_CONTINUE_MASK</dfn> 0x200</u></td></tr>
+<tr><th id="23">23</th><td><u>#define <dfn class="macro" id="_M/PRINTABLE_MASK" data-ref="_M/PRINTABLE_MASK">PRINTABLE_MASK</dfn> 0x400</u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/NUMERIC_MASK" data-ref="_M/NUMERIC_MASK">NUMERIC_MASK</dfn> 0x800</u></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/CASE_IGNORABLE_MASK" data-ref="_M/CASE_IGNORABLE_MASK">CASE_IGNORABLE_MASK</dfn> 0x1000</u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/CASED_MASK" data-ref="_M/CASED_MASK">CASED_MASK</dfn> 0x2000</u></td></tr>
+<tr><th id="27">27</th><td><u>#define <dfn class="macro" id="_M/EXTENDED_CASE_MASK" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</dfn> 0x4000</u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="30">30</th><td>    <i  data-doc="(anonymous)::upper">/*</i></td></tr>
+<tr><th id="31">31</th><td><i  data-doc="(anonymous)::upper">       These are either deltas to the character or offsets in</i></td></tr>
+<tr><th id="32">32</th><td><i  data-doc="(anonymous)::upper">       _PyUnicode_ExtendedCase.</i></td></tr>
+<tr><th id="33">33</th><td><i  data-doc="(anonymous)::upper">    */</i></td></tr>
+<tr><th id="34">34</th><td>    <em>const</em> <em>int</em> <dfn class="tu decl" id="(anonymous)::upper" title='(anonymous struct)::upper' data-type='const int' data-ref="(anonymous)::upper">upper</dfn>;</td></tr>
+<tr><th id="35">35</th><td>    <em>const</em> <em>int</em> <dfn class="tu decl" id="(anonymous)::lower" title='(anonymous struct)::lower' data-type='const int' data-ref="(anonymous)::lower">lower</dfn>;</td></tr>
+<tr><th id="36">36</th><td>    <em>const</em> <em>int</em> <dfn class="tu decl" id="(anonymous)::title" title='(anonymous struct)::title' data-type='const int' data-ref="(anonymous)::title">title</dfn>;</td></tr>
+<tr><th id="37">37</th><td>    <i  data-doc="(anonymous)::decimal">/* Note if more flag space is needed, decimal and digit could be unified. */</i></td></tr>
+<tr><th id="38">38</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> <dfn class="tu decl" id="(anonymous)::decimal" title='(anonymous struct)::decimal' data-type='const unsigned char' data-ref="(anonymous)::decimal">decimal</dfn>;</td></tr>
+<tr><th id="39">39</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> <dfn class="tu decl" id="(anonymous)::digit" title='(anonymous struct)::digit' data-type='const unsigned char' data-ref="(anonymous)::digit">digit</dfn>;</td></tr>
+<tr><th id="40">40</th><td>    <em>const</em> <em>unsigned</em> <em>short</em> <dfn class="tu decl" id="(anonymous)::flags" title='(anonymous struct)::flags' data-type='const unsigned short' data-ref="(anonymous)::flags">flags</dfn>;</td></tr>
+<tr><th id="41">41</th><td>} <dfn class="typedef" id="_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</dfn>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#include <a href="unicodetype_db.h.html">"unicodetype_db.h"</a></u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><em>static</em> <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *</td></tr>
+<tr><th id="46">46</th><td><dfn class="tu decl def" id="gettyperecord" title='gettyperecord' data-type='const _PyUnicode_TypeRecord * gettyperecord(Py_UCS4 code)' data-ref="gettyperecord">gettyperecord</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col4 decl" id="4code" title='code' data-type='Py_UCS4' data-ref="4code">code</dfn>)</td></tr>
+<tr><th id="47">47</th><td>{</td></tr>
+<tr><th id="48">48</th><td>    <em>int</em> <dfn class="local col5 decl" id="5index" title='index' data-type='int' data-ref="5index">index</dfn>;</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td>    <b>if</b> (<a class="local col4 ref" href="#4code" title='code' data-ref="4code">code</a> &gt;= <var>0x110000</var>)</td></tr>
+<tr><th id="51">51</th><td>        <a class="local col5 ref" href="#5index" title='index' data-ref="5index">index</a> = <var>0</var>;</td></tr>
+<tr><th id="52">52</th><td>    <b>else</b></td></tr>
+<tr><th id="53">53</th><td>    {</td></tr>
+<tr><th id="54">54</th><td>        <a class="local col5 ref" href="#5index" title='index' data-ref="5index">index</a> = <a class="ref" href="unicodetype_db.h.html#index1" title='index1' data-ref="index1">index1</a>[(<a class="local col4 ref" href="#4code" title='code' data-ref="4code">code</a>&gt;&gt;<a class="macro" href="unicodetype_db.h.html#1744" title="7" data-ref="_M/SHIFT">SHIFT</a>)];</td></tr>
+<tr><th id="55">55</th><td>        <a class="local col5 ref" href="#5index" title='index' data-ref="5index">index</a> = <a class="ref" href="unicodetype_db.h.html#index2" title='index2' data-ref="index2">index2</a>[(<a class="local col5 ref" href="#5index" title='index' data-ref="5index">index</a>&lt;&lt;<a class="macro" href="unicodetype_db.h.html#1744" title="7" data-ref="_M/SHIFT">SHIFT</a>)+(<a class="local col4 ref" href="#4code" title='code' data-ref="4code">code</a>&amp;((<var>1</var>&lt;&lt;<a class="macro" href="unicodetype_db.h.html#1744" title="7" data-ref="_M/SHIFT">SHIFT</a>)-<var>1</var>))];</td></tr>
+<tr><th id="56">56</th><td>    }</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td>    <b>return</b> &amp;<a class="ref" href="unicodetype_db.h.html#_PyUnicode_TypeRecords" title='_PyUnicode_TypeRecords' data-ref="_PyUnicode_TypeRecords">_PyUnicode_TypeRecords</a>[<a class="local col5 ref" href="#5index" title='index' data-ref="5index">index</a>];</td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* Returns the titlecase Unicode characters corresponding to ch or just</i></td></tr>
+<tr><th id="62">62</th><td><i>   ch if no titlecase mapping is known. */</i></td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="decl def" id="_PyUnicode_ToTitlecase" title='_PyUnicode_ToTitlecase' data-ref="_PyUnicode_ToTitlecase">_PyUnicode_ToTitlecase</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col6 decl" id="6ch" title='ch' data-type='Py_UCS4' data-ref="6ch">ch</dfn>)</td></tr>
+<tr><th id="65">65</th><td>{</td></tr>
+<tr><th id="66">66</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col7 decl" id="7ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="7ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col6 ref" href="#6ch" title='ch' data-ref="6ch">ch</a>);</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td>    <b>if</b> (<a class="local col7 ref" href="#7ctype" title='ctype' data-ref="7ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a>)</td></tr>
+<tr><th id="69">69</th><td>        <b>return</b> <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col7 ref" href="#7ctype" title='ctype' data-ref="7ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::title" title='(anonymous struct)::title' data-use='r' data-ref="(anonymous)::title">title</a> &amp; <var>0xFFFF</var>];</td></tr>
+<tr><th id="70">70</th><td>    <b>return</b> <a class="local col6 ref" href="#6ch" title='ch' data-ref="6ch">ch</a> + <a class="local col7 ref" href="#7ctype" title='ctype' data-ref="7ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::title" title='(anonymous struct)::title' data-use='r' data-ref="(anonymous)::title">title</a>;</td></tr>
+<tr><th id="71">71</th><td>}</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/* Returns 1 for Unicode characters having the category 'Lt', 0</i></td></tr>
+<tr><th id="74">74</th><td><i>   otherwise. */</i></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsTitlecase" title='_PyUnicode_IsTitlecase' data-ref="_PyUnicode_IsTitlecase">_PyUnicode_IsTitlecase</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col8 decl" id="8ch" title='ch' data-type='Py_UCS4' data-ref="8ch">ch</dfn>)</td></tr>
+<tr><th id="77">77</th><td>{</td></tr>
+<tr><th id="78">78</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col9 decl" id="9ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="9ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col8 ref" href="#8ch" title='ch' data-ref="8ch">ch</a>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td>    <b>return</b> (<a class="local col9 ref" href="#9ctype" title='ctype' data-ref="9ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#19" title="0x40" data-ref="_M/TITLE_MASK">TITLE_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="81">81</th><td>}</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/* Returns 1 for Unicode characters having the XID_Start property, 0</i></td></tr>
+<tr><th id="84">84</th><td><i>   otherwise. */</i></td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsXidStart" title='_PyUnicode_IsXidStart' data-ref="_PyUnicode_IsXidStart">_PyUnicode_IsXidStart</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col0 decl" id="10ch" title='ch' data-type='Py_UCS4' data-ref="10ch">ch</dfn>)</td></tr>
+<tr><th id="87">87</th><td>{</td></tr>
+<tr><th id="88">88</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col1 decl" id="11ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="11ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col0 ref" href="#10ch" title='ch' data-ref="10ch">ch</a>);</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td>    <b>return</b> (<a class="local col1 ref" href="#11ctype" title='ctype' data-ref="11ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#21" title="0x100" data-ref="_M/XID_START_MASK">XID_START_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="91">91</th><td>}</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><i>/* Returns 1 for Unicode characters having the XID_Continue property,</i></td></tr>
+<tr><th id="94">94</th><td><i>   0 otherwise. */</i></td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsXidContinue" title='_PyUnicode_IsXidContinue' data-ref="_PyUnicode_IsXidContinue">_PyUnicode_IsXidContinue</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col2 decl" id="12ch" title='ch' data-type='Py_UCS4' data-ref="12ch">ch</dfn>)</td></tr>
+<tr><th id="97">97</th><td>{</td></tr>
+<tr><th id="98">98</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col3 decl" id="13ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="13ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col2 ref" href="#12ch" title='ch' data-ref="12ch">ch</a>);</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td>    <b>return</b> (<a class="local col3 ref" href="#13ctype" title='ctype' data-ref="13ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#22" title="0x200" data-ref="_M/XID_CONTINUE_MASK">XID_CONTINUE_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="101">101</th><td>}</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>/* Returns the integer decimal (0-9) for Unicode characters having</i></td></tr>
+<tr><th id="104">104</th><td><i>   this property, -1 otherwise. */</i></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_ToDecimalDigit" title='_PyUnicode_ToDecimalDigit' data-ref="_PyUnicode_ToDecimalDigit">_PyUnicode_ToDecimalDigit</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col4 decl" id="14ch" title='ch' data-type='Py_UCS4' data-ref="14ch">ch</dfn>)</td></tr>
+<tr><th id="107">107</th><td>{</td></tr>
+<tr><th id="108">108</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col5 decl" id="15ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="15ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col4 ref" href="#14ch" title='ch' data-ref="14ch">ch</a>);</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td>    <b>return</b> (<a class="local col5 ref" href="#15ctype" title='ctype' data-ref="15ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#14" title="0x02" data-ref="_M/DECIMAL_MASK">DECIMAL_MASK</a>) ? <a class="local col5 ref" href="#15ctype" title='ctype' data-ref="15ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::decimal" title='(anonymous struct)::decimal' data-use='r' data-ref="(anonymous)::decimal">decimal</a> : -<var>1</var>;</td></tr>
+<tr><th id="111">111</th><td>}</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsDecimalDigit" title='_PyUnicode_IsDecimalDigit' data-ref="_PyUnicode_IsDecimalDigit">_PyUnicode_IsDecimalDigit</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col6 decl" id="16ch" title='ch' data-type='Py_UCS4' data-ref="16ch">ch</dfn>)</td></tr>
+<tr><th id="114">114</th><td>{</td></tr>
+<tr><th id="115">115</th><td>    <b>if</b> (<a class="ref" href="#_PyUnicode_ToDecimalDigit" title='_PyUnicode_ToDecimalDigit' data-ref="_PyUnicode_ToDecimalDigit">_PyUnicode_ToDecimalDigit</a>(<a class="local col6 ref" href="#16ch" title='ch' data-ref="16ch">ch</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="116">116</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="117">117</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="118">118</th><td>}</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><i>/* Returns the integer digit (0-9) for Unicode characters having</i></td></tr>
+<tr><th id="121">121</th><td><i>   this property, -1 otherwise. */</i></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_ToDigit" title='_PyUnicode_ToDigit' data-ref="_PyUnicode_ToDigit">_PyUnicode_ToDigit</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col7 decl" id="17ch" title='ch' data-type='Py_UCS4' data-ref="17ch">ch</dfn>)</td></tr>
+<tr><th id="124">124</th><td>{</td></tr>
+<tr><th id="125">125</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col8 decl" id="18ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="18ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col7 ref" href="#17ch" title='ch' data-ref="17ch">ch</a>);</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td>    <b>return</b> (<a class="local col8 ref" href="#18ctype" title='ctype' data-ref="18ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#15" title="0x04" data-ref="_M/DIGIT_MASK">DIGIT_MASK</a>) ? <a class="local col8 ref" href="#18ctype" title='ctype' data-ref="18ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::digit" title='(anonymous struct)::digit' data-use='r' data-ref="(anonymous)::digit">digit</a> : -<var>1</var>;</td></tr>
+<tr><th id="128">128</th><td>}</td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsDigit" title='_PyUnicode_IsDigit' data-ref="_PyUnicode_IsDigit">_PyUnicode_IsDigit</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col9 decl" id="19ch" title='ch' data-type='Py_UCS4' data-ref="19ch">ch</dfn>)</td></tr>
+<tr><th id="131">131</th><td>{</td></tr>
+<tr><th id="132">132</th><td>    <b>if</b> (<a class="ref" href="#_PyUnicode_ToDigit" title='_PyUnicode_ToDigit' data-ref="_PyUnicode_ToDigit">_PyUnicode_ToDigit</a>(<a class="local col9 ref" href="#19ch" title='ch' data-ref="19ch">ch</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="133">133</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="134">134</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="135">135</th><td>}</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><i>/* Returns the numeric value as double for Unicode characters having</i></td></tr>
+<tr><th id="138">138</th><td><i>   this property, -1.0 otherwise. */</i></td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsNumeric" title='_PyUnicode_IsNumeric' data-ref="_PyUnicode_IsNumeric">_PyUnicode_IsNumeric</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col0 decl" id="20ch" title='ch' data-type='Py_UCS4' data-ref="20ch">ch</dfn>)</td></tr>
+<tr><th id="141">141</th><td>{</td></tr>
+<tr><th id="142">142</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col1 decl" id="21ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="21ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col0 ref" href="#20ch" title='ch' data-ref="20ch">ch</a>);</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>    <b>return</b> (<a class="local col1 ref" href="#21ctype" title='ctype' data-ref="21ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#24" title="0x800" data-ref="_M/NUMERIC_MASK">NUMERIC_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="145">145</th><td>}</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td><i>/* Returns 1 for Unicode characters to be hex-escaped when repr()ed,</i></td></tr>
+<tr><th id="148">148</th><td><i>   0 otherwise.</i></td></tr>
+<tr><th id="149">149</th><td><i>   All characters except those characters defined in the Unicode character</i></td></tr>
+<tr><th id="150">150</th><td><i>   database as following categories are considered printable.</i></td></tr>
+<tr><th id="151">151</th><td><i>      * Cc (Other, Control)</i></td></tr>
+<tr><th id="152">152</th><td><i>      * Cf (Other, Format)</i></td></tr>
+<tr><th id="153">153</th><td><i>      * Cs (Other, Surrogate)</i></td></tr>
+<tr><th id="154">154</th><td><i>      * Co (Other, Private Use)</i></td></tr>
+<tr><th id="155">155</th><td><i>      * Cn (Other, Not Assigned)</i></td></tr>
+<tr><th id="156">156</th><td><i>      * Zl Separator, Line ('\u2028', LINE SEPARATOR)</i></td></tr>
+<tr><th id="157">157</th><td><i>      * Zp Separator, Paragraph ('\u2029', PARAGRAPH SEPARATOR)</i></td></tr>
+<tr><th id="158">158</th><td><i>      * Zs (Separator, Space) other than ASCII space('\x20').</i></td></tr>
+<tr><th id="159">159</th><td><i>*/</i></td></tr>
+<tr><th id="160">160</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsPrintable" title='_PyUnicode_IsPrintable' data-ref="_PyUnicode_IsPrintable">_PyUnicode_IsPrintable</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col2 decl" id="22ch" title='ch' data-type='Py_UCS4' data-ref="22ch">ch</dfn>)</td></tr>
+<tr><th id="161">161</th><td>{</td></tr>
+<tr><th id="162">162</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col3 decl" id="23ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="23ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col2 ref" href="#22ch" title='ch' data-ref="22ch">ch</a>);</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td>    <b>return</b> (<a class="local col3 ref" href="#23ctype" title='ctype' data-ref="23ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#23" title="0x400" data-ref="_M/PRINTABLE_MASK">PRINTABLE_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="165">165</th><td>}</td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td><i>/* Returns 1 for Unicode characters having the category 'Ll', 0</i></td></tr>
+<tr><th id="168">168</th><td><i>   otherwise. */</i></td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsLowercase" title='_PyUnicode_IsLowercase' data-ref="_PyUnicode_IsLowercase">_PyUnicode_IsLowercase</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col4 decl" id="24ch" title='ch' data-type='Py_UCS4' data-ref="24ch">ch</dfn>)</td></tr>
+<tr><th id="171">171</th><td>{</td></tr>
+<tr><th id="172">172</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col5 decl" id="25ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="25ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col4 ref" href="#24ch" title='ch' data-ref="24ch">ch</a>);</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>    <b>return</b> (<a class="local col5 ref" href="#25ctype" title='ctype' data-ref="25ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#16" title="0x08" data-ref="_M/LOWER_MASK">LOWER_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="175">175</th><td>}</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><i>/* Returns 1 for Unicode characters having the category 'Lu', 0</i></td></tr>
+<tr><th id="178">178</th><td><i>   otherwise. */</i></td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsUppercase" title='_PyUnicode_IsUppercase' data-ref="_PyUnicode_IsUppercase">_PyUnicode_IsUppercase</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col6 decl" id="26ch" title='ch' data-type='Py_UCS4' data-ref="26ch">ch</dfn>)</td></tr>
+<tr><th id="181">181</th><td>{</td></tr>
+<tr><th id="182">182</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col7 decl" id="27ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="27ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col6 ref" href="#26ch" title='ch' data-ref="26ch">ch</a>);</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td>    <b>return</b> (<a class="local col7 ref" href="#27ctype" title='ctype' data-ref="27ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#20" title="0x80" data-ref="_M/UPPER_MASK">UPPER_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="185">185</th><td>}</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td><i>/* Returns the uppercase Unicode characters corresponding to ch or just</i></td></tr>
+<tr><th id="188">188</th><td><i>   ch if no uppercase mapping is known. */</i></td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="decl def" id="_PyUnicode_ToUppercase" title='_PyUnicode_ToUppercase' data-ref="_PyUnicode_ToUppercase">_PyUnicode_ToUppercase</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col8 decl" id="28ch" title='ch' data-type='Py_UCS4' data-ref="28ch">ch</dfn>)</td></tr>
+<tr><th id="191">191</th><td>{</td></tr>
+<tr><th id="192">192</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col9 decl" id="29ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="29ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col8 ref" href="#28ch" title='ch' data-ref="28ch">ch</a>);</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td>    <b>if</b> (<a class="local col9 ref" href="#29ctype" title='ctype' data-ref="29ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a>)</td></tr>
+<tr><th id="195">195</th><td>        <b>return</b> <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col9 ref" href="#29ctype" title='ctype' data-ref="29ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::upper" title='(anonymous struct)::upper' data-use='r' data-ref="(anonymous)::upper">upper</a> &amp; <var>0xFFFF</var>];</td></tr>
+<tr><th id="196">196</th><td>    <b>return</b> <a class="local col8 ref" href="#28ch" title='ch' data-ref="28ch">ch</a> + <a class="local col9 ref" href="#29ctype" title='ctype' data-ref="29ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::upper" title='(anonymous struct)::upper' data-use='r' data-ref="(anonymous)::upper">upper</a>;</td></tr>
+<tr><th id="197">197</th><td>}</td></tr>
+<tr><th id="198">198</th><td></td></tr>
+<tr><th id="199">199</th><td><i>/* Returns the lowercase Unicode characters corresponding to ch or just</i></td></tr>
+<tr><th id="200">200</th><td><i>   ch if no lowercase mapping is known. */</i></td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="decl def" id="_PyUnicode_ToLowercase" title='_PyUnicode_ToLowercase' data-ref="_PyUnicode_ToLowercase">_PyUnicode_ToLowercase</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col0 decl" id="30ch" title='ch' data-type='Py_UCS4' data-ref="30ch">ch</dfn>)</td></tr>
+<tr><th id="203">203</th><td>{</td></tr>
+<tr><th id="204">204</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col1 decl" id="31ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="31ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col0 ref" href="#30ch" title='ch' data-ref="30ch">ch</a>);</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td>    <b>if</b> (<a class="local col1 ref" href="#31ctype" title='ctype' data-ref="31ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a>)</td></tr>
+<tr><th id="207">207</th><td>        <b>return</b> <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col1 ref" href="#31ctype" title='ctype' data-ref="31ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &amp; <var>0xFFFF</var>];</td></tr>
+<tr><th id="208">208</th><td>    <b>return</b> <a class="local col0 ref" href="#30ch" title='ch' data-ref="30ch">ch</a> + <a class="local col1 ref" href="#31ctype" title='ctype' data-ref="31ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a>;</td></tr>
+<tr><th id="209">209</th><td>}</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_ToLowerFull" title='_PyUnicode_ToLowerFull' data-ref="_PyUnicode_ToLowerFull">_PyUnicode_ToLowerFull</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col2 decl" id="32ch" title='ch' data-type='Py_UCS4' data-ref="32ch">ch</dfn>, <a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> *<dfn class="local col3 decl" id="33res" title='res' data-type='Py_UCS4 *' data-ref="33res">res</dfn>)</td></tr>
+<tr><th id="212">212</th><td>{</td></tr>
+<tr><th id="213">213</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col4 decl" id="34ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="34ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col2 ref" href="#32ch" title='ch' data-ref="32ch">ch</a>);</td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td>    <b>if</b> (<a class="local col4 ref" href="#34ctype" title='ctype' data-ref="34ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a>) {</td></tr>
+<tr><th id="216">216</th><td>        <em>int</em> <dfn class="local col5 decl" id="35index" title='index' data-type='int' data-ref="35index">index</dfn> = <a class="local col4 ref" href="#34ctype" title='ctype' data-ref="34ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &amp; <var>0xFFFF</var>;</td></tr>
+<tr><th id="217">217</th><td>        <em>int</em> <dfn class="local col6 decl" id="36n" title='n' data-type='int' data-ref="36n">n</dfn> = <a class="local col4 ref" href="#34ctype" title='ctype' data-ref="34ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &gt;&gt; <var>24</var>;</td></tr>
+<tr><th id="218">218</th><td>        <em>int</em> <dfn class="local col7 decl" id="37i" title='i' data-type='int' data-ref="37i">i</dfn>;</td></tr>
+<tr><th id="219">219</th><td>        <b>for</b> (<a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a> = <var>0</var>; <a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a> &lt; <a class="local col6 ref" href="#36n" title='n' data-ref="36n">n</a>; <a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>++)</td></tr>
+<tr><th id="220">220</th><td>            <a class="local col3 ref" href="#33res" title='res' data-ref="33res">res</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>] = <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col5 ref" href="#35index" title='index' data-ref="35index">index</a> + <a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>];</td></tr>
+<tr><th id="221">221</th><td>        <b>return</b> <a class="local col6 ref" href="#36n" title='n' data-ref="36n">n</a>;</td></tr>
+<tr><th id="222">222</th><td>    }</td></tr>
+<tr><th id="223">223</th><td>    <a class="local col3 ref" href="#33res" title='res' data-ref="33res">res</a>[<var>0</var>] = <a class="local col2 ref" href="#32ch" title='ch' data-ref="32ch">ch</a> + <a class="local col4 ref" href="#34ctype" title='ctype' data-ref="34ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a>;</td></tr>
+<tr><th id="224">224</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="225">225</th><td>}</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_ToTitleFull" title='_PyUnicode_ToTitleFull' data-ref="_PyUnicode_ToTitleFull">_PyUnicode_ToTitleFull</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col8 decl" id="38ch" title='ch' data-type='Py_UCS4' data-ref="38ch">ch</dfn>, <a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> *<dfn class="local col9 decl" id="39res" title='res' data-type='Py_UCS4 *' data-ref="39res">res</dfn>)</td></tr>
+<tr><th id="228">228</th><td>{</td></tr>
+<tr><th id="229">229</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col0 decl" id="40ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="40ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col8 ref" href="#38ch" title='ch' data-ref="38ch">ch</a>);</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td>    <b>if</b> (<a class="local col0 ref" href="#40ctype" title='ctype' data-ref="40ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a>) {</td></tr>
+<tr><th id="232">232</th><td>        <em>int</em> <dfn class="local col1 decl" id="41index" title='index' data-type='int' data-ref="41index">index</dfn> = <a class="local col0 ref" href="#40ctype" title='ctype' data-ref="40ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::title" title='(anonymous struct)::title' data-use='r' data-ref="(anonymous)::title">title</a> &amp; <var>0xFFFF</var>;</td></tr>
+<tr><th id="233">233</th><td>        <em>int</em> <dfn class="local col2 decl" id="42n" title='n' data-type='int' data-ref="42n">n</dfn> = <a class="local col0 ref" href="#40ctype" title='ctype' data-ref="40ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::title" title='(anonymous struct)::title' data-use='r' data-ref="(anonymous)::title">title</a> &gt;&gt; <var>24</var>;</td></tr>
+<tr><th id="234">234</th><td>        <em>int</em> <dfn class="local col3 decl" id="43i" title='i' data-type='int' data-ref="43i">i</dfn>;</td></tr>
+<tr><th id="235">235</th><td>        <b>for</b> (<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a> = <var>0</var>; <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a> &lt; <a class="local col2 ref" href="#42n" title='n' data-ref="42n">n</a>; <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>++)</td></tr>
+<tr><th id="236">236</th><td>            <a class="local col9 ref" href="#39res" title='res' data-ref="39res">res</a>[<a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>] = <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col1 ref" href="#41index" title='index' data-ref="41index">index</a> + <a class="local col3 ref" href="#43i" title='i' data-ref="43i">i</a>];</td></tr>
+<tr><th id="237">237</th><td>        <b>return</b> <a class="local col2 ref" href="#42n" title='n' data-ref="42n">n</a>;</td></tr>
+<tr><th id="238">238</th><td>    }</td></tr>
+<tr><th id="239">239</th><td>    <a class="local col9 ref" href="#39res" title='res' data-ref="39res">res</a>[<var>0</var>] = <a class="local col8 ref" href="#38ch" title='ch' data-ref="38ch">ch</a> + <a class="local col0 ref" href="#40ctype" title='ctype' data-ref="40ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::title" title='(anonymous struct)::title' data-use='r' data-ref="(anonymous)::title">title</a>;</td></tr>
+<tr><th id="240">240</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="241">241</th><td>}</td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_ToUpperFull" title='_PyUnicode_ToUpperFull' data-ref="_PyUnicode_ToUpperFull">_PyUnicode_ToUpperFull</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col4 decl" id="44ch" title='ch' data-type='Py_UCS4' data-ref="44ch">ch</dfn>, <a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> *<dfn class="local col5 decl" id="45res" title='res' data-type='Py_UCS4 *' data-ref="45res">res</dfn>)</td></tr>
+<tr><th id="244">244</th><td>{</td></tr>
+<tr><th id="245">245</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col6 decl" id="46ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="46ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col4 ref" href="#44ch" title='ch' data-ref="44ch">ch</a>);</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td>    <b>if</b> (<a class="local col6 ref" href="#46ctype" title='ctype' data-ref="46ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a>) {</td></tr>
+<tr><th id="248">248</th><td>        <em>int</em> <dfn class="local col7 decl" id="47index" title='index' data-type='int' data-ref="47index">index</dfn> = <a class="local col6 ref" href="#46ctype" title='ctype' data-ref="46ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::upper" title='(anonymous struct)::upper' data-use='r' data-ref="(anonymous)::upper">upper</a> &amp; <var>0xFFFF</var>;</td></tr>
+<tr><th id="249">249</th><td>        <em>int</em> <dfn class="local col8 decl" id="48n" title='n' data-type='int' data-ref="48n">n</dfn> = <a class="local col6 ref" href="#46ctype" title='ctype' data-ref="46ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::upper" title='(anonymous struct)::upper' data-use='r' data-ref="(anonymous)::upper">upper</a> &gt;&gt; <var>24</var>;</td></tr>
+<tr><th id="250">250</th><td>        <em>int</em> <dfn class="local col9 decl" id="49i" title='i' data-type='int' data-ref="49i">i</dfn>;</td></tr>
+<tr><th id="251">251</th><td>        <b>for</b> (<a class="local col9 ref" href="#49i" title='i' data-ref="49i">i</a> = <var>0</var>; <a class="local col9 ref" href="#49i" title='i' data-ref="49i">i</a> &lt; <a class="local col8 ref" href="#48n" title='n' data-ref="48n">n</a>; <a class="local col9 ref" href="#49i" title='i' data-ref="49i">i</a>++)</td></tr>
+<tr><th id="252">252</th><td>            <a class="local col5 ref" href="#45res" title='res' data-ref="45res">res</a>[<a class="local col9 ref" href="#49i" title='i' data-ref="49i">i</a>] = <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col7 ref" href="#47index" title='index' data-ref="47index">index</a> + <a class="local col9 ref" href="#49i" title='i' data-ref="49i">i</a>];</td></tr>
+<tr><th id="253">253</th><td>        <b>return</b> <a class="local col8 ref" href="#48n" title='n' data-ref="48n">n</a>;</td></tr>
+<tr><th id="254">254</th><td>    }</td></tr>
+<tr><th id="255">255</th><td>    <a class="local col5 ref" href="#45res" title='res' data-ref="45res">res</a>[<var>0</var>] = <a class="local col4 ref" href="#44ch" title='ch' data-ref="44ch">ch</a> + <a class="local col6 ref" href="#46ctype" title='ctype' data-ref="46ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::upper" title='(anonymous struct)::upper' data-use='r' data-ref="(anonymous)::upper">upper</a>;</td></tr>
+<tr><th id="256">256</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="257">257</th><td>}</td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_ToFoldedFull" title='_PyUnicode_ToFoldedFull' data-ref="_PyUnicode_ToFoldedFull">_PyUnicode_ToFoldedFull</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col0 decl" id="50ch" title='ch' data-type='Py_UCS4' data-ref="50ch">ch</dfn>, <a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> *<dfn class="local col1 decl" id="51res" title='res' data-type='Py_UCS4 *' data-ref="51res">res</dfn>)</td></tr>
+<tr><th id="260">260</th><td>{</td></tr>
+<tr><th id="261">261</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col2 decl" id="52ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="52ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col0 ref" href="#50ch" title='ch' data-ref="50ch">ch</a>);</td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td>    <b>if</b> (<a class="local col2 ref" href="#52ctype" title='ctype' data-ref="52ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#27" title="0x4000" data-ref="_M/EXTENDED_CASE_MASK">EXTENDED_CASE_MASK</a> &amp;&amp; (<a class="local col2 ref" href="#52ctype" title='ctype' data-ref="52ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &gt;&gt; <var>20</var>) &amp; <var>7</var>) {</td></tr>
+<tr><th id="264">264</th><td>        <em>int</em> <dfn class="local col3 decl" id="53index" title='index' data-type='int' data-ref="53index">index</dfn> = (<a class="local col2 ref" href="#52ctype" title='ctype' data-ref="52ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &amp; <var>0xFFFF</var>) + (<a class="local col2 ref" href="#52ctype" title='ctype' data-ref="52ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &gt;&gt; <var>24</var>);</td></tr>
+<tr><th id="265">265</th><td>        <em>int</em> <dfn class="local col4 decl" id="54n" title='n' data-type='int' data-ref="54n">n</dfn> = (<a class="local col2 ref" href="#52ctype" title='ctype' data-ref="52ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::lower" title='(anonymous struct)::lower' data-use='r' data-ref="(anonymous)::lower">lower</a> &gt;&gt; <var>20</var>) &amp; <var>7</var>;</td></tr>
+<tr><th id="266">266</th><td>        <em>int</em> <dfn class="local col5 decl" id="55i" title='i' data-type='int' data-ref="55i">i</dfn>;</td></tr>
+<tr><th id="267">267</th><td>        <b>for</b> (<a class="local col5 ref" href="#55i" title='i' data-ref="55i">i</a> = <var>0</var>; <a class="local col5 ref" href="#55i" title='i' data-ref="55i">i</a> &lt; <a class="local col4 ref" href="#54n" title='n' data-ref="54n">n</a>; <a class="local col5 ref" href="#55i" title='i' data-ref="55i">i</a>++)</td></tr>
+<tr><th id="268">268</th><td>            <a class="local col1 ref" href="#51res" title='res' data-ref="51res">res</a>[<a class="local col5 ref" href="#55i" title='i' data-ref="55i">i</a>] = <a class="ref" href="unicodetype_db.h.html#_PyUnicode_ExtendedCase" title='_PyUnicode_ExtendedCase' data-ref="_PyUnicode_ExtendedCase">_PyUnicode_ExtendedCase</a>[<a class="local col3 ref" href="#53index" title='index' data-ref="53index">index</a> + <a class="local col5 ref" href="#55i" title='i' data-ref="55i">i</a>];</td></tr>
+<tr><th id="269">269</th><td>        <b>return</b> <a class="local col4 ref" href="#54n" title='n' data-ref="54n">n</a>;</td></tr>
+<tr><th id="270">270</th><td>    }</td></tr>
+<tr><th id="271">271</th><td>    <b>return</b> <a class="ref" href="#_PyUnicode_ToLowerFull" title='_PyUnicode_ToLowerFull' data-ref="_PyUnicode_ToLowerFull">_PyUnicode_ToLowerFull</a>(<a class="local col0 ref" href="#50ch" title='ch' data-ref="50ch">ch</a>, <a class="local col1 ref" href="#51res" title='res' data-ref="51res">res</a>);</td></tr>
+<tr><th id="272">272</th><td>}</td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsCased" title='_PyUnicode_IsCased' data-ref="_PyUnicode_IsCased">_PyUnicode_IsCased</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col6 decl" id="56ch" title='ch' data-type='Py_UCS4' data-ref="56ch">ch</dfn>)</td></tr>
+<tr><th id="275">275</th><td>{</td></tr>
+<tr><th id="276">276</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col7 decl" id="57ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="57ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col6 ref" href="#56ch" title='ch' data-ref="56ch">ch</a>);</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td>    <b>return</b> (<a class="local col7 ref" href="#57ctype" title='ctype' data-ref="57ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#26" title="0x2000" data-ref="_M/CASED_MASK">CASED_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="279">279</th><td>}</td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsCaseIgnorable" title='_PyUnicode_IsCaseIgnorable' data-ref="_PyUnicode_IsCaseIgnorable">_PyUnicode_IsCaseIgnorable</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col8 decl" id="58ch" title='ch' data-type='Py_UCS4' data-ref="58ch">ch</dfn>)</td></tr>
+<tr><th id="282">282</th><td>{</td></tr>
+<tr><th id="283">283</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col9 decl" id="59ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="59ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col8 ref" href="#58ch" title='ch' data-ref="58ch">ch</a>);</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td>    <b>return</b> (<a class="local col9 ref" href="#59ctype" title='ctype' data-ref="59ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#25" title="0x1000" data-ref="_M/CASE_IGNORABLE_MASK">CASE_IGNORABLE_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="286">286</th><td>}</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><i>/* Returns 1 for Unicode characters having the category 'Ll', 'Lu', 'Lt',</i></td></tr>
+<tr><th id="289">289</th><td><i>   'Lo' or 'Lm',  0 otherwise. */</i></td></tr>
+<tr><th id="290">290</th><td></td></tr>
+<tr><th id="291">291</th><td><em>int</em> <dfn class="decl def" id="_PyUnicode_IsAlpha" title='_PyUnicode_IsAlpha' data-ref="_PyUnicode_IsAlpha">_PyUnicode_IsAlpha</dfn>(<a class="typedef" href="../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col0 decl" id="60ch" title='ch' data-type='Py_UCS4' data-ref="60ch">ch</dfn>)</td></tr>
+<tr><th id="292">292</th><td>{</td></tr>
+<tr><th id="293">293</th><td>    <em>const</em> <a class="typedef" href="#_PyUnicode_TypeRecord" title='_PyUnicode_TypeRecord' data-type='struct _PyUnicode_TypeRecord' data-ref="_PyUnicode_TypeRecord">_PyUnicode_TypeRecord</a> *<dfn class="local col1 decl" id="61ctype" title='ctype' data-type='const _PyUnicode_TypeRecord *' data-ref="61ctype">ctype</dfn> = <a class="tu ref" href="#gettyperecord" title='gettyperecord' data-use='c' data-ref="gettyperecord">gettyperecord</a>(<a class="local col0 ref" href="#60ch" title='ch' data-ref="60ch">ch</a>);</td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td>    <b>return</b> (<a class="local col1 ref" href="#61ctype" title='ctype' data-ref="61ctype">ctype</a>-&gt;<a class="tu ref" href="#(anonymous)::flags" title='(anonymous struct)::flags' data-use='r' data-ref="(anonymous)::flags">flags</a> &amp; <a class="macro" href="#13" title="0x01" data-ref="_M/ALPHA_MASK">ALPHA_MASK</a>) != <var>0</var>;</td></tr>
+<tr><th id="296">296</th><td>}</td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

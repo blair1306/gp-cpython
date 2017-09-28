@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='77' type='const char * Py_GetPlatform()'/>
+<use f='codebrowser/Modules/main.c' l='795' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/getplatform.c' l='8' ll='12' type='const char * Py_GetPlatform()'/>
+<use f='codebrowser/Python/sysmodule.c' l='1974' u='c' c='_PySys_BeginInit'/>

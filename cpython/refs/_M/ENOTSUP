@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/errno.h' l='27'/>
+<doc f='include/x86_64-linux-gnu/bits/errno.h' l='26'>/* Linux has no ENOTSUP error code.  */</doc>
+<use f='codebrowser/Modules/errnomodule.c' l='864' u='a'/>
+<use f='codebrowser/Modules/errnomodule.c' l='865' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2859' u='c'/>

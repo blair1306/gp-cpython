@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='719' type='mpd_uint_t mpd_lsd(mpd_uint_t word)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='718'>/* least significant digit of a word */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='231' ll='235' macro='1' type='mpd_uint_t mpd_lsd(mpd_uint_t word)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1638' u='c' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3752' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7810' u='c' c='mpd_qsqrt'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/import.h' l='119' type='int PyImport_AppendInittab(const char * name, PyObject *(*)(void) initfunc)'/>
+<def f='codebrowser/Python/import.c' l='2117' ll='2128' type='int PyImport_AppendInittab(const char * name, PyObject *(*)(void) initfunc)'/>
+<doc f='codebrowser/Python/import.c' l='2115'>/* Shorthand to add a single entry given a name and a function */</doc>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/funcobject.h' l='26' type='PyObject *'/>
+<offset>448</offset>
+<doc f='codebrowser/Include/funcobject.h' l='26'>/* NULL or a dict */</doc>
+<use f='codebrowser/Objects/call.c' l='361' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='419' macro='1' u='r'/>
+<use f='codebrowser/Objects/funcobject.c' l='33' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='141' u='r' c='PyFunction_GetKwDefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='161' u='r' c='PyFunction_SetKwDefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='161' u='w' c='PyFunction_SetKwDefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='351' u='r' c='func_get_kwdefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='354' u='r' c='func_get_kwdefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='355' u='r' c='func_get_kwdefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='371' u='r' c='func_set_kwdefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='371' u='w' c='func_set_kwdefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='535' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='558' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='558' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/ceval.c' l='3445' u='w' c='_PyEval_EvalFrameDefault'/>

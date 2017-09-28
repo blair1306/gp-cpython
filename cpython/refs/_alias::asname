@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/Python-ast.h' l='437' type='identifier'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2573' u='w' c='_Py_alias'/>
+<use f='codebrowser/Python/Python-ast.c' l='3948' u='r' c='ast2obj_alias'/>
+<use f='codebrowser/Python/ast.c' l='3202' u='r' c='alias_for_import_name'/>
+<use f='codebrowser/Python/ast.c' l='3203' u='w' c='alias_for_import_name'/>
+<use f='codebrowser/Python/ast.c' l='3204' u='r' c='alias_for_import_name'/>
+<use f='codebrowser/Python/ast.c' l='3206' u='r' c='alias_for_import_name'/>
+<use f='codebrowser/Python/compile.c' l='2722' u='r' c='compiler_import'/>
+<use f='codebrowser/Python/compile.c' l='2723' u='r' c='compiler_import'/>
+<use f='codebrowser/Python/compile.c' l='2808' u='r' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2809' u='r' c='compiler_from_import'/>
+<use f='codebrowser/Python/symtable.c' l='1643' u='r' c='symtable_visit_alias'/>
+<use f='codebrowser/Python/symtable.c' l='1643' u='r' c='symtable_visit_alias'/>

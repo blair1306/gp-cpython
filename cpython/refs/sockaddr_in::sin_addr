@@ -1,0 +1,10 @@
+<dec f='include/netinet/in.h' l='243' type='struct in_addr'/>
+<offset>32</offset>
+<doc f='include/netinet/in.h' l='243'>/* Internet address.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1023' u='m' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1024' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1033' u='a' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5078' u='a' c='gethost_common'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5078' u='r' c='gethost_common'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5246' u='a' c='socket_gethostbyaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5247' u='r' c='socket_gethostbyaddr'/>

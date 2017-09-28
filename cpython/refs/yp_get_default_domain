@@ -1,0 +1,5 @@
+<dec f='include/rpcsvc/ypclnt.h' l='63' type='int yp_get_default_domain(char ** )'/>
+<use f='codebrowser/Modules/nismodule.c' l='146' u='c' c='nis_get_default_domain'/>
+<use f='codebrowser/Modules/nismodule.c' l='177' u='c' c='nis_match'/>
+<use f='codebrowser/Modules/nismodule.c' l='211' u='c' c='nis_cat'/>
+<use f='codebrowser/Modules/nismodule.c' l='402' u='c' c='nis_maps'/>

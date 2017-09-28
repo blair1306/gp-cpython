@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>KeccakSponge.c source code [codebrowser/Modules/_sha3/kcp/KeccakSponge.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_sha3/kcp/KeccakSponge.c'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_sha3</a>/<a href='./'>kcp</a>/<a href='KeccakSponge.c.html'>KeccakSponge.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>Implementation by the Keccak, Keyak and Ketje Teams, namely, Guido Bertoni,</i></td></tr>
+<tr><th id="3">3</th><td><i>Joan Daemen, Michaël Peeters, Gilles Van Assche and Ronny Van Keer, hereby</i></td></tr>
+<tr><th id="4">4</th><td><i>denoted as "the implementer".</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>For more information, feedback or questions, please refer to our websites:</i></td></tr>
+<tr><th id="7">7</th><td><i>http://keccak.noekeon.org/</i></td></tr>
+<tr><th id="8">8</th><td><i>http://keyak.noekeon.org/</i></td></tr>
+<tr><th id="9">9</th><td><i>http://ketje.noekeon.org/</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>To the extent possible under law, the implementer has waived all copyright</i></td></tr>
+<tr><th id="12">12</th><td><i>and related or neighboring rights to the source code in this file.</i></td></tr>
+<tr><th id="13">13</th><td><i>http://creativecommons.org/publicdomain/zero/1.0/</i></td></tr>
+<tr><th id="14">14</th><td><i>*/</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#include <a href="KeccakSponge.h.html">"KeccakSponge.h"</a></u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="18">ifdef</span> <span class="macro" data-ref="_M/KeccakReference">KeccakReference</span></u></td></tr>
+<tr><th id="19">19</th><td>    <u>#include "displayIntermediateValues.h"</u></td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="18">endif</span></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="22">ifndef</span> <a class="macro" href="../sha3module.c.html#101" data-ref="_M/KeccakP200_excluded">KeccakP200_excluded</a></u></td></tr>
+<tr><th id="23">23</th><td>    <u>#include "KeccakP-200-SnP.h"</u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td>    <u>#define prefix KeccakWidth200</u></td></tr>
+<tr><th id="26">26</th><td>    <u>#define SnP KeccakP200</u></td></tr>
+<tr><th id="27">27</th><td>    <u>#define SnP_width 200</u></td></tr>
+<tr><th id="28">28</th><td>    <u>#define SnP_Permute KeccakP200_Permute_18rounds</u></td></tr>
+<tr><th id="29">29</th><td>    <u>#if defined(KeccakF200_FastLoop_supported)</u></td></tr>
+<tr><th id="30">30</th><td>        <u>#define SnP_FastLoop_Absorb KeccakF200_FastLoop_Absorb</u></td></tr>
+<tr><th id="31">31</th><td>    <u>#endif</u></td></tr>
+<tr><th id="32">32</th><td>        <u>#include "KeccakSponge.inc"</u></td></tr>
+<tr><th id="33">33</th><td>    <u>#undef prefix</u></td></tr>
+<tr><th id="34">34</th><td>    <u>#undef SnP</u></td></tr>
+<tr><th id="35">35</th><td>    <u>#undef SnP_width</u></td></tr>
+<tr><th id="36">36</th><td>    <u>#undef SnP_Permute</u></td></tr>
+<tr><th id="37">37</th><td>    <u>#undef SnP_FastLoop_Absorb</u></td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="22">endif</span></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifndef</span> <a class="macro" href="../sha3module.c.html#102" data-ref="_M/KeccakP400_excluded">KeccakP400_excluded</a></u></td></tr>
+<tr><th id="41">41</th><td>    <u>#include "KeccakP-400-SnP.h"</u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td>    <u>#define prefix KeccakWidth400</u></td></tr>
+<tr><th id="44">44</th><td>    <u>#define SnP KeccakP400</u></td></tr>
+<tr><th id="45">45</th><td>    <u>#define SnP_width 400</u></td></tr>
+<tr><th id="46">46</th><td>    <u>#define SnP_Permute KeccakP400_Permute_20rounds</u></td></tr>
+<tr><th id="47">47</th><td>    <u>#if defined(KeccakF400_FastLoop_supported)</u></td></tr>
+<tr><th id="48">48</th><td>        <u>#define SnP_FastLoop_Absorb KeccakF400_FastLoop_Absorb</u></td></tr>
+<tr><th id="49">49</th><td>    <u>#endif</u></td></tr>
+<tr><th id="50">50</th><td>        <u>#include "KeccakSponge.inc"</u></td></tr>
+<tr><th id="51">51</th><td>    <u>#undef prefix</u></td></tr>
+<tr><th id="52">52</th><td>    <u>#undef SnP</u></td></tr>
+<tr><th id="53">53</th><td>    <u>#undef SnP_width</u></td></tr>
+<tr><th id="54">54</th><td>    <u>#undef SnP_Permute</u></td></tr>
+<tr><th id="55">55</th><td>    <u>#undef SnP_FastLoop_Absorb</u></td></tr>
+<tr><th id="56">56</th><td><u>#<span data-ppcond="40">endif</span></u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u>#<span data-ppcond="58">ifndef</span> <a class="macro" href="../sha3module.c.html#103" data-ref="_M/KeccakP800_excluded">KeccakP800_excluded</a></u></td></tr>
+<tr><th id="59">59</th><td>    <u>#include "KeccakP-800-SnP.h"</u></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td>    <u>#define prefix KeccakWidth800</u></td></tr>
+<tr><th id="62">62</th><td>    <u>#define SnP KeccakP800</u></td></tr>
+<tr><th id="63">63</th><td>    <u>#define SnP_width 800</u></td></tr>
+<tr><th id="64">64</th><td>    <u>#define SnP_Permute KeccakP800_Permute_22rounds</u></td></tr>
+<tr><th id="65">65</th><td>    <u>#if defined(KeccakF800_FastLoop_supported)</u></td></tr>
+<tr><th id="66">66</th><td>        <u>#define SnP_FastLoop_Absorb KeccakF800_FastLoop_Absorb</u></td></tr>
+<tr><th id="67">67</th><td>    <u>#endif</u></td></tr>
+<tr><th id="68">68</th><td>        <u>#include "KeccakSponge.inc"</u></td></tr>
+<tr><th id="69">69</th><td>    <u>#undef prefix</u></td></tr>
+<tr><th id="70">70</th><td>    <u>#undef SnP</u></td></tr>
+<tr><th id="71">71</th><td>    <u>#undef SnP_width</u></td></tr>
+<tr><th id="72">72</th><td>    <u>#undef SnP_Permute</u></td></tr>
+<tr><th id="73">73</th><td>    <u>#undef SnP_FastLoop_Absorb</u></td></tr>
+<tr><th id="74">74</th><td><u>#<span data-ppcond="58">endif</span></u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><u>#<span data-ppcond="76">ifndef</span> <span class="macro" data-ref="_M/KeccakP1600_excluded">KeccakP1600_excluded</span></u></td></tr>
+<tr><th id="77">77</th><td>    <u>#include <a href="KeccakP-1600-SnP.h.html">"KeccakP-1600-SnP.h"</a></u></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>    <u>#define <dfn class="macro" id="_M/prefix" data-ref="_M/prefix">prefix</dfn> KeccakWidth1600</u></td></tr>
+<tr><th id="80">80</th><td>    <u>#define <dfn class="macro" id="_M/SnP" data-ref="_M/SnP">SnP</dfn> KeccakP1600</u></td></tr>
+<tr><th id="81">81</th><td>    <u>#define <dfn class="macro" id="_M/SnP_width" data-ref="_M/SnP_width">SnP_width</dfn> 1600</u></td></tr>
+<tr><th id="82">82</th><td>    <u>#define <dfn class="macro" id="_M/SnP_Permute" data-ref="_M/SnP_Permute">SnP_Permute</dfn> KeccakP1600_Permute_24rounds</u></td></tr>
+<tr><th id="83">83</th><td>    <u>#<span data-ppcond="83">if</span> defined(<a class="macro" href="KeccakP-1600-SnP-opt64.h.html#28" data-ref="_M/KeccakF1600_FastLoop_supported">KeccakF1600_FastLoop_supported</a>)</u></td></tr>
+<tr><th id="84">84</th><td>        <u>#define <dfn class="macro" id="_M/SnP_FastLoop_Absorb" data-ref="_M/SnP_FastLoop_Absorb">SnP_FastLoop_Absorb</dfn> KeccakF1600_FastLoop_Absorb</u></td></tr>
+<tr><th id="85">85</th><td>    <u>#<span data-ppcond="83">endif</span></u></td></tr>
+<tr><th id="86">86</th><td>        <u>#include <a href="KeccakSponge.inc.html">"KeccakSponge.inc"</a></u></td></tr>
+<tr><th id="87">87</th><td>    <u>#undef <a class="macro" href="#79" data-ref="_M/prefix">prefix</a></u></td></tr>
+<tr><th id="88">88</th><td>    <u>#undef <a class="macro" href="#80" data-ref="_M/SnP">SnP</a></u></td></tr>
+<tr><th id="89">89</th><td>    <u>#undef <a class="macro" href="#81" data-ref="_M/SnP_width">SnP_width</a></u></td></tr>
+<tr><th id="90">90</th><td>    <u>#undef <a class="macro" href="#82" data-ref="_M/SnP_Permute">SnP_Permute</a></u></td></tr>
+<tr><th id="91">91</th><td>    <u>#undef <a class="macro" href="#84" data-ref="_M/SnP_FastLoop_Absorb">SnP_FastLoop_Absorb</a></u></td></tr>
+<tr><th id="92">92</th><td><u>#<span data-ppcond="76">endif</span></u></td></tr>
+<tr><th id="93">93</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../sha3module.c.html'>codebrowser/Modules/_sha3/sha3module.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/compile.h' l='28' type='int'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/compile.h' l='28'>/* bitmask of CO_xxx flags relevant to future */</doc>
+<use f='codebrowser/Modules/main.c' l='581' u='w' c='Py_Main'/>
+<use f='codebrowser/Modules/parsermodule.c' l='373' u='w' c='parser_newstobject'/>
+<use f='codebrowser/Modules/parsermodule.c' l='618' u='w' c='parser_do_parse'/>
+<use f='codebrowser/Python/ast.c' l='4317' u='w' c='fstring_compile_expr'/>
+<use f='codebrowser/Python/bltinmodule.c' l='619' u='w' c='source_as_string'/>
+<use f='codebrowser/Python/bltinmodule.c' l='697' u='w' c='builtin_compile_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='888' u='w' c='builtin_eval_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='972' u='w' c='builtin_exec_impl'/>
+<use f='codebrowser/Python/ceval.c' l='4726' u='r' c='PyEval_MergeCompilerFlags'/>
+<use f='codebrowser/Python/ceval.c' l='4733' u='w' c='PyEval_MergeCompilerFlags'/>
+<use f='codebrowser/Python/compile.c' l='324' u='w' c='PyAST_CompileObject'/>
+<use f='codebrowser/Python/compile.c' l='327' u='r' c='PyAST_CompileObject'/>
+<use f='codebrowser/Python/compile.c' l='329' u='w' c='PyAST_CompileObject'/>
+<use f='codebrowser/Python/compile.c' l='5275' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/pythonrun.c' l='100' u='w' c='PyRun_InteractiveLoopFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='135' u='r' c='PARSER_FLAGS'/>
+<use f='codebrowser/Python/pythonrun.c' l='137' u='r' c='PARSER_FLAGS'/>
+<use f='codebrowser/Python/pythonrun.c' l='139' u='r' c='PARSER_FLAGS'/>
+<use f='codebrowser/Python/pythonrun.c' l='1019' u='w' c='run_pyc_file'/>
+<use f='codebrowser/Python/pythonrun.c' l='1039' u='r' c='Py_CompileStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1082' u='w' c='Py_SymtableStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1121' u='w' c='PyParser_ASTFromStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1125' u='w' c='PyParser_ASTFromStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1166' u='w' c='PyParser_ASTFromFileObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1170' u='w' c='PyParser_ASTFromFileObject'/>

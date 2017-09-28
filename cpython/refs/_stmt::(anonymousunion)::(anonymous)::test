@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/Python-ast.h' l='146' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='152' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='180' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1534' u='w' c='_Py_While'/>
+<use f='codebrowser/Python/Python-ast.c' l='1556' u='w' c='_Py_If'/>
+<use f='codebrowser/Python/Python-ast.c' l='1642' u='w' c='_Py_Assert'/>
+<use f='codebrowser/Python/Python-ast.c' l='2893' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2912' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2997' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='427' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='431' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='489' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2212' u='r' c='compiler_if'/>
+<use f='codebrowser/Python/compile.c' l='2229' u='r' c='compiler_if'/>
+<use f='codebrowser/Python/compile.c' l='2360' u='r' c='compiler_while'/>
+<use f='codebrowser/Python/compile.c' l='2389' u='r' c='compiler_while'/>
+<use f='codebrowser/Python/compile.c' l='2835' u='r' c='compiler_assert'/>
+<use f='codebrowser/Python/compile.c' l='2836' u='r' c='compiler_assert'/>
+<use f='codebrowser/Python/compile.c' l='2836' u='r' c='compiler_assert'/>
+<use f='codebrowser/Python/compile.c' l='2852' u='r' c='compiler_assert'/>
+<use f='codebrowser/Python/symtable.c' l='1238' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1245' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1265' u='r' c='symtable_visit_stmt'/>

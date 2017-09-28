@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/abstract.h' l='499' type='int PyObject_AsWriteBuffer(PyObject * obj, void ** buffer, Py_ssize_t * buffer_len)'/>
+<doc f='codebrowser/Include/abstract.h' l='493'>/* Takes an arbitrary object which must support the (writable, single segment)
+   buffer interface and returns a pointer to a writable memory location in
+   buffer of size &apos;buffer_len&apos;.
+
+   Return 0 on success.  buffer and buffer_len are only set in case no error
+   occurs. Otherwise, -1 is returned and an exception set. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='308' ll='332' type='int PyObject_AsWriteBuffer(PyObject * obj, void ** buffer, Py_ssize_t * buffer_len)'/>

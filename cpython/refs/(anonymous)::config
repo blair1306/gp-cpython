@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='50' type='const void *'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='249' u='r' c='multibytecodec_encerror'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='499' u='r' c='multibytecodec_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='516' u='r' c='multibytecodec_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='594' u='r' c='_multibytecodec_MultibyteCodec_encode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='658' u='r' c='_multibytecodec_MultibyteCodec_decode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='666' u='r' c='_multibytecodec_MultibyteCodec_decode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='865' u='r' c='decoder_feed_buffer'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='911' u='r' c='_multibytecodec_MultibyteIncrementalEncoder_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='955' u='r' c='mbiencoder_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1131' u='r' c='_multibytecodec_MultibyteIncrementalDecoder_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1173' u='r' c='mbidecoder_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1465' u='r' c='_multibytecodec_MultibyteStreamReader_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1518' u='r' c='mbstreamreader_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1750' u='r' c='mbstreamwriter_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1865' u='r' c='_multibytecodec___create_codec'/>

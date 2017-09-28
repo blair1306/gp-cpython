@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='145' macro='1' type='int PyBlake2_blake2s(uint8_t * out, const void * in, const void * key, const uint8_t outlen, const uint64_t inlen, uint8_t keylen)'/>
+<doc f='codebrowser/Modules/_blake2/impl/blake2.h' l='144'>/* Simple API */</doc>
+<def f='codebrowser/Modules/_blake2/impl/blake2s.c' l='367' macro='1' type='int PyBlake2_blake2s(uint8_t * out, const void * in, const void * key, const uint8_t outlen, const uint64_t inlen, uint8_t keylen)'/>
+<doc f='codebrowser/Modules/_blake2/impl/blake2s.c' l='366'>/* inlen, at least, should be uint64_t. Others can be size_t. */</doc>

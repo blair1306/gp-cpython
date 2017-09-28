@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/hashlib.h' l='8'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='235' u='c'/>
+<doc f='codebrowser/Modules/hashlib.h' l='3'>/*
+ * Given a PyObject* obj, fill in the Py_buffer* viewp with the result
+ * of PyObject_GetBuffer.  Sets an exception and issues the erraction
+ * on any errors, e.g. &apos;return NULL&apos; or &apos;goto error&apos;.
+ */</doc>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='235' u='c'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='226' u='c'/>

@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/dictobject.h' l='128' type='int PyDict_Update(PyObject * mp, PyObject * other)'/>
+<doc f='codebrowser/Include/dictobject.h' l='127'>/* PyDict_Update(mp, other) is equivalent to PyDict_Merge(mp, other, 1). */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='447' u='c' c='StructUnionType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1022' u='c' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1483' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1893' u='c' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2021' u='c' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2392' u='c' c='PyCFuncPtrType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2674' u='c' c='PyCData_setstate'/>
+<use f='codebrowser/Modules/_elementtree.c' l='342' u='c' c='get_attrib_from_keywords'/>
+<use f='codebrowser/Modules/_elementtree.c' l='372' u='c' c='element_init'/>
+<use f='codebrowser/Modules/_elementtree.c' l='568' u='c' c='subelement'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='850' u='c' c='bytesio_setstate'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='929' u='c' c='stringio_setstate'/>
+<def f='codebrowser/Objects/dictobject.c' l='2447' ll='2451' type='int PyDict_Update(PyObject * a, PyObject * b)'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='49' u='c' c='namespace_init'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='250' u='c' c='_PyNamespace_New'/>
+<use f='codebrowser/Objects/typeobject.c' l='3256' u='c' c='merge_class_dict'/>
+<use f='codebrowser/Python/ceval.c' l='2706' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3378' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/import.c' l='413' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='614' u='c' c='_PyImport_FindExtensionObject'/>

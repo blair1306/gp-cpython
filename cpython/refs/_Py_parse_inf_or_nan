@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystrtod.h' l='26' type='double _Py_parse_inf_or_nan(const char * p, char ** endptr)'/>
+<use f='codebrowser/Objects/floatobject.c' l='1346' u='c' c='float_fromhex'/>
+<def f='codebrowser/Python/pystrtod.c' l='27' ll='58' type='double _Py_parse_inf_or_nan(const char * p, char ** endptr)'/>
+<use f='codebrowser/Python/pystrtod.c' l='147' u='c' c='_PyOS_ascii_strtod'/>

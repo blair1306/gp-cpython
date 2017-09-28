@@ -1,0 +1,10 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='103' type='double frexp(double __x, int * __exponent)'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1776' u='c' c='math_frexp_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='424' u='c' c='float_richcompare'/>
+<use f='codebrowser/Objects/floatobject.c' l='1227' u='c' c='float_hex_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1564' u='c' c='float_as_integer_ratio_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='2087' u='c' c='_PyFloat_Pack2'/>
+<use f='codebrowser/Objects/floatobject.c' l='2178' u='c' c='_PyFloat_Pack4'/>
+<use f='codebrowser/Objects/floatobject.c' l='2283' u='c' c='_PyFloat_Pack8'/>
+<use f='codebrowser/Objects/longobject.c' l='361' u='c' c='PyLong_FromDouble'/>
+<use f='codebrowser/Python/pyhash.c' l='99' u='c' c='_Py_HashDouble'/>

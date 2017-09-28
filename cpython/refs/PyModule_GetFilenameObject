@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/moduleobject.h' l='29' type='PyObject * PyModule_GetFilenameObject(PyObject * )'/>
+<def f='codebrowser/Objects/moduleobject.c' l='489' ll='509' type='PyObject * PyModule_GetFilenameObject(PyObject * m)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='516' u='c' c='PyModule_GetFilename'/>
+<use f='codebrowser/Python/ceval.c' l='5066' u='c' c='import_from'/>

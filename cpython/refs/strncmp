@@ -1,0 +1,15 @@
+<dec f='include/string.h' l='143' type='int strncmp(const char * __s1, const char * __s2, size_t __n)'/>
+<doc f='include/string.h' l='142'>/* Compare N characters of S1 and S2.  */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3433' u='c' c='PyInit__curses'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1065' u='c' c='find_syllable'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1103' u='c' c='_getcode'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1121' u='c' c='_getcode'/>
+<use f='codebrowser/Objects/typeobject.c' l='103' u='c' c='find_signature'/>
+<use f='codebrowser/Objects/typeobject.c' l='122' u='c' c='skip_signature'/>
+<use f='codebrowser/Parser/tokenizer.c' l='224' u='c' c='get_normal_name'/>
+<use f='codebrowser/Parser/tokenizer.c' l='229' u='c' c='get_normal_name'/>
+<use f='codebrowser/Parser/tokenizer.c' l='230' u='c' c='get_normal_name'/>
+<use f='codebrowser/Parser/tokenizer.c' l='231' u='c' c='get_normal_name'/>
+<use f='codebrowser/Parser/tokenizer.c' l='254' u='c' c='get_coding_spec'/>
+<use f='codebrowser/Python/pylifecycle.c' l='382' u='c' c='_legacy_locale_warnings_enabled'/>
+<use f='codebrowser/Python/pylifecycle.c' l='476' u='c' c='_Py_CoerceLegacyLocale'/>

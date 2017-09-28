@@ -1,0 +1,35 @@
+<dec f='include/string.h' l='65' type='int memcmp(const void * __s1, const void * __s2, size_t __n)'/>
+<doc f='include/string.h' l='64'>/* Compare N bytes of S1 and S2.  */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4725' u='c' c='Simple_bool'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2836' u='c' c='date_richcompare'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3838' u='c' c='time_richcompare'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3856' u='c' c='time_richcompare'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4910' u='c' c='datetime_richcompare'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4928' u='c' c='datetime_richcompare'/>
+<use f='codebrowser/Modules/_sre.c' l='2587' u='c' c='pattern_richcompare'/>
+<use f='codebrowser/Modules/_ssl.c' l='4330' u='c' c='PySSLSession_richcompare'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2553' u='c' c='cmp_contig'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1837' u='c' c='typecode_to_mformat_code'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1839' u='c' c='typecode_to_mformat_code'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1847' u='c' c='typecode_to_mformat_code'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1849' u='c' c='typecode_to_mformat_code'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2957' u='c' c='doContent'/>
+<use f='codebrowser/Modules/hashtable.c' l='122' u='c' c='_Py_hashtable_compare_direct'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1032' u='c' c='bytearray_richcompare'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='720' u='c' c='tailmatch'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1557' u='c' c='bytes_compare_eq'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1632' u='c' c='bytes_richcompare'/>
+<use f='codebrowser/Objects/stringlib/eq.h' l='23' u='c' c='unicode_eq'/>
+<use f='codebrowser/Objects/floatobject.c' l='1974' u='c' c='_PyFloat_Init'/>
+<use f='codebrowser/Objects/floatobject.c' l='1976' u='c' c='_PyFloat_Init'/>
+<use f='codebrowser/Objects/floatobject.c' l='1988' u='c' c='_PyFloat_Init'/>
+<use f='codebrowser/Objects/floatobject.c' l='1990' u='c' c='_PyFloat_Init'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9556' u='c' c='tailmatch'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10893' u='c' c='unicode_compare'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10990' u='c' c='unicode_compare_eq'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11048' u='c' c='PyUnicode_CompareWithASCIIString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11115' u='c' c='_PyUnicode_EqualToASCIIString'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1558' u='c' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1561' u='c' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1565' u='c' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1579' u='c' c='tok_get'/>

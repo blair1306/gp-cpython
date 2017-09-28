@@ -1,0 +1,27 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='53' type='PyObject *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2459' u='r' c='PyCData_GetContainer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2461' u='w' c='PyCData_GetContainer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2462' u='r' c='PyCData_GetContainer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2466' u='w' c='PyCData_GetContainer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2479' u='r' c='GetKeepedObjects'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2540' u='r' c='KeepRef'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2540' u='r' c='KeepRef'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2541' u='r' c='KeepRef'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2541' u='w' c='KeepRef'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2549' u='r' c='KeepRef'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2562' u='r' c='PyCData_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2562' u='r' c='PyCData_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2570' u='r' c='PyCData_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2570' u='w' c='PyCData_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3020' u='w' c='GenericPyCData_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5351' u='r' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5353' u='w' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5354' u='r' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5357' u='r' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5358' u='w' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5358' u='r' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5359' u='r' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5359' u='r' c='cast'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5365' u='r' c='cast'/>
+<offset>640</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='53'>/* dictionary of references we need to keep, or Py_None */</doc>

@@ -1,0 +1,31 @@
+<dec f='codebrowser/Include/pystate.h' l='128' type='Py_tracefunc'/>
+<offset>384</offset>
+<use f='codebrowser/Python/ceval.c' l='992' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='995' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3722' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3724' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3728' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4542' u='r' c='call_trace'/>
+<use f='codebrowser/Python/ceval.c' l='4557' u='r' c='_PyEval_CallTracing'/>
+<use f='codebrowser/Python/ceval.c' l='4600' u='w' c='PyEval_SetProfile'/>
+<use f='codebrowser/Python/ceval.c' l='4605' u='w' c='PyEval_SetProfile'/>
+<use f='codebrowser/Python/ceval.c' l='4621' u='r' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/ceval.c' l='4627' u='r' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/ceval.c' l='4773' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4774' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4781' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4783' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4789' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4824' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4773' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4774' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4781' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4783' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4789' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4773' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4774' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4781' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4783' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4789' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/pystate.c' l='273' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='462' u='w' c='PyThreadState_Clear'/>

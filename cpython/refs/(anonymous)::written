@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='60' type='Py_ssize_t'/>
+<offset>896</offset>
+<doc f='codebrowser/Include/pyerrors.h' l='60'>/* only for BlockingIOError, -1 otherwise */</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='683' u='a' c='_buffered_check_blocking_error'/>
+<use f='codebrowser/Objects/exceptions.c' l='870' u='w' c='oserror_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='871' u='r' c='oserror_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='982' u='w' c='OSError_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='1177' u='r' c='OSError_written_get'/>
+<use f='codebrowser/Objects/exceptions.c' l='1181' u='r' c='OSError_written_get'/>
+<use f='codebrowser/Objects/exceptions.c' l='1191' u='w' c='OSError_written_set'/>

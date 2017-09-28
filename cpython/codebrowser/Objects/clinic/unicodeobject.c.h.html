@@ -1,0 +1,951 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>unicodeobject.c.h source code [codebrowser/Objects/clinic/unicodeobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/unicodeobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='unicodeobject.c.h.html'>unicodeobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_title__doc__[] = &quot;title($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a version of the string where each word is titlecased.\n&quot;&quot;\n&quot;&quot;More specifically, words start with uppercased characters and all remaining\n&quot;&quot;cased characters have lower case.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_title__doc__" title='unicode_title__doc__' data-ref="unicode_title__doc__">unicode_title__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"title($self, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return a version of the string where each word is titlecased.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"More specifically, words start with uppercased characters and all remaining\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"cased characters have lower case."</q>);</td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/UNICODE_TITLE_METHODDEF" data-ref="_M/UNICODE_TITLE_METHODDEF">UNICODE_TITLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="15">15</th><td><u>    {"title", (PyCFunction)unicode_title, METH_NOARGS, unicode_title__doc__},</u></td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><a class="decl" href="../unicodeobject.c.html#unicode_title_impl" title='unicode_title_impl' data-ref="unicode_title_impl" id="unicode_title_impl">unicode_title_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29self" title='self' data-type='PyObject *' data-ref="29self">self</dfn>);</td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="21">21</th><td><dfn class="decl def" id="unicode_title" title='unicode_title' data-ref="unicode_title">unicode_title</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30self" title='self' data-type='PyObject *' data-ref="30self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="22">22</th><td>{</td></tr>
+<tr><th id="23">23</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_title_impl" title='unicode_title_impl' data-ref="unicode_title_impl">unicode_title_impl</a>(<a class="local col0 ref" href="#30self" title='self' data-ref="30self">self</a>);</td></tr>
+<tr><th id="24">24</th><td>}</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_capitalize__doc__[] = &quot;capitalize($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a capitalized version of the string.\n&quot;&quot;\n&quot;&quot;More specifically, make the first character have upper case and the rest lower\n&quot;&quot;case.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_capitalize__doc__" title='unicode_capitalize__doc__' data-ref="unicode_capitalize__doc__">unicode_capitalize__doc__</dfn>,</td></tr>
+<tr><th id="27">27</th><td><q>"capitalize($self, /)\n"</q></td></tr>
+<tr><th id="28">28</th><td><q>"--\n"</q></td></tr>
+<tr><th id="29">29</th><td><q>"\n"</q></td></tr>
+<tr><th id="30">30</th><td><q>"Return a capitalized version of the string.\n"</q></td></tr>
+<tr><th id="31">31</th><td><q>"\n"</q></td></tr>
+<tr><th id="32">32</th><td><q>"More specifically, make the first character have upper case and the rest lower\n"</q></td></tr>
+<tr><th id="33">33</th><td><q>"case."</q>);</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><u>#define <dfn class="macro" id="_M/UNICODE_CAPITALIZE_METHODDEF" data-ref="_M/UNICODE_CAPITALIZE_METHODDEF">UNICODE_CAPITALIZE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="36">36</th><td><u>    {"capitalize", (PyCFunction)unicode_capitalize, METH_NOARGS, unicode_capitalize__doc__},</u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="39">39</th><td><a class="decl" href="../unicodeobject.c.html#unicode_capitalize_impl" title='unicode_capitalize_impl' data-ref="unicode_capitalize_impl" id="unicode_capitalize_impl">unicode_capitalize_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31self" title='self' data-type='PyObject *' data-ref="31self">self</dfn>);</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="42">42</th><td><dfn class="decl def" id="unicode_capitalize" title='unicode_capitalize' data-ref="unicode_capitalize">unicode_capitalize</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32self" title='self' data-type='PyObject *' data-ref="32self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="43">43</th><td>{</td></tr>
+<tr><th id="44">44</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_capitalize_impl" title='unicode_capitalize_impl' data-ref="unicode_capitalize_impl">unicode_capitalize_impl</a>(<a class="local col2 ref" href="#32self" title='self' data-ref="32self">self</a>);</td></tr>
+<tr><th id="45">45</th><td>}</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_casefold__doc__[] = &quot;casefold($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a version of the string suitable for caseless comparisons.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_casefold__doc__" title='unicode_casefold__doc__' data-ref="unicode_casefold__doc__">unicode_casefold__doc__</dfn>,</td></tr>
+<tr><th id="48">48</th><td><q>"casefold($self, /)\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"--\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"Return a version of the string suitable for caseless comparisons."</q>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/UNICODE_CASEFOLD_METHODDEF" data-ref="_M/UNICODE_CASEFOLD_METHODDEF">UNICODE_CASEFOLD_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="54">54</th><td><u>    {"casefold", (PyCFunction)unicode_casefold, METH_NOARGS, unicode_casefold__doc__},</u></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="57">57</th><td><a class="decl" href="../unicodeobject.c.html#unicode_casefold_impl" title='unicode_casefold_impl' data-ref="unicode_casefold_impl" id="unicode_casefold_impl">unicode_casefold_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33self" title='self' data-type='PyObject *' data-ref="33self">self</dfn>);</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="60">60</th><td><dfn class="decl def" id="unicode_casefold" title='unicode_casefold' data-ref="unicode_casefold">unicode_casefold</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34self" title='self' data-type='PyObject *' data-ref="34self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="61">61</th><td>{</td></tr>
+<tr><th id="62">62</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_casefold_impl" title='unicode_casefold_impl' data-ref="unicode_casefold_impl">unicode_casefold_impl</a>(<a class="local col4 ref" href="#34self" title='self' data-ref="34self">self</a>);</td></tr>
+<tr><th id="63">63</th><td>}</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_center__doc__[] = &quot;center($self, width, fillchar=\&apos; \&apos;, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a centered string of length width.\n&quot;&quot;\n&quot;&quot;Padding is done using the specified fill character (default is a space).&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_center__doc__" title='unicode_center__doc__' data-ref="unicode_center__doc__">unicode_center__doc__</dfn>,</td></tr>
+<tr><th id="66">66</th><td><q>"center($self, width, fillchar=\' \', /)\n"</q></td></tr>
+<tr><th id="67">67</th><td><q>"--\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"Return a centered string of length width.\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"Padding is done using the specified fill character (default is a space)."</q>);</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/UNICODE_CENTER_METHODDEF" data-ref="_M/UNICODE_CENTER_METHODDEF">UNICODE_CENTER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="74">74</th><td><u>    {"center", (PyCFunction)unicode_center, METH_FASTCALL, unicode_center__doc__},</u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="77">77</th><td><a class="decl" href="../unicodeobject.c.html#unicode_center_impl" title='unicode_center_impl' data-ref="unicode_center_impl" id="unicode_center_impl">unicode_center_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35self" title='self' data-type='PyObject *' data-ref="35self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="36width" title='width' data-type='Py_ssize_t' data-ref="36width">width</dfn>, <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col7 decl" id="37fillchar" title='fillchar' data-type='Py_UCS4' data-ref="37fillchar">fillchar</dfn>);</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="80">80</th><td><dfn class="decl def" id="unicode_center" title='unicode_center' data-ref="unicode_center">unicode_center</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="38self" title='self' data-type='PyObject *' data-ref="38self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col9 decl" id="39args" title='args' data-type='PyObject **' data-ref="39args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="40nargs" title='nargs' data-type='Py_ssize_t' data-ref="40nargs">nargs</dfn>)</td></tr>
+<tr><th id="81">81</th><td>{</td></tr>
+<tr><th id="82">82</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41return_value" title='return_value' data-type='PyObject *' data-ref="41return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="83">83</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="42width" title='width' data-type='Py_ssize_t' data-ref="42width">width</dfn>;</td></tr>
+<tr><th id="84">84</th><td>    <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col3 decl" id="43fillchar" title='fillchar' data-type='Py_UCS4' data-ref="43fillchar">fillchar</dfn> = <kbd>' '</kbd>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col9 ref" href="#39args" title='args' data-ref="39args">args</a>, <a class="local col0 ref" href="#40nargs" title='nargs' data-ref="40nargs">nargs</a>, <q>"n|O&amp;:center"</q>,</td></tr>
+<tr><th id="87">87</th><td>        &amp;<a class="local col2 ref" href="#42width" title='width' data-ref="42width">width</a>, <a class="tu ref" href="../unicodeobject.c.html#convert_uc" title='convert_uc' data-ref="convert_uc">convert_uc</a>, &amp;<a class="local col3 ref" href="#43fillchar" title='fillchar' data-ref="43fillchar">fillchar</a>)) {</td></tr>
+<tr><th id="88">88</th><td>        <b>goto</b> <a class="lbl" href="#44exit" data-ref="44exit">exit</a>;</td></tr>
+<tr><th id="89">89</th><td>    }</td></tr>
+<tr><th id="90">90</th><td>    <a class="local col1 ref" href="#41return_value" title='return_value' data-ref="41return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_center_impl" title='unicode_center_impl' data-ref="unicode_center_impl">unicode_center_impl</a>(<a class="local col8 ref" href="#38self" title='self' data-ref="38self">self</a>, <a class="local col2 ref" href="#42width" title='width' data-ref="42width">width</a>, <a class="local col3 ref" href="#43fillchar" title='fillchar' data-ref="43fillchar">fillchar</a>);</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><dfn class="lbl" id="44exit" data-ref="44exit">exit</dfn>:</td></tr>
+<tr><th id="93">93</th><td>    <b>return</b> <a class="local col1 ref" href="#41return_value" title='return_value' data-ref="41return_value">return_value</a>;</td></tr>
+<tr><th id="94">94</th><td>}</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_encode__doc__[] = &quot;encode($self, /, encoding=\&apos;utf-8\&apos;, errors=\&apos;strict\&apos;)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Encode the string using the codec registered for encoding.\n&quot;&quot;\n&quot;&quot;  encoding\n&quot;&quot;    The encoding in which to encode the string.\n&quot;&quot;  errors\n&quot;&quot;    The error handling scheme to use for encoding errors.\n&quot;&quot;    The default is \&apos;strict\&apos; meaning that encoding errors raise a\n&quot;&quot;    UnicodeEncodeError.  Other possible values are \&apos;ignore\&apos;, \&apos;replace\&apos; and\n&quot;&quot;    \&apos;xmlcharrefreplace\&apos; as well as any other name registered with\n&quot;&quot;    codecs.register_error that can handle UnicodeEncodeErrors.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_encode__doc__" title='unicode_encode__doc__' data-ref="unicode_encode__doc__">unicode_encode__doc__</dfn>,</td></tr>
+<tr><th id="97">97</th><td><q>"encode($self, /, encoding=\'utf-8\', errors=\'strict\')\n"</q></td></tr>
+<tr><th id="98">98</th><td><q>"--\n"</q></td></tr>
+<tr><th id="99">99</th><td><q>"\n"</q></td></tr>
+<tr><th id="100">100</th><td><q>"Encode the string using the codec registered for encoding.\n"</q></td></tr>
+<tr><th id="101">101</th><td><q>"\n"</q></td></tr>
+<tr><th id="102">102</th><td><q>"  encoding\n"</q></td></tr>
+<tr><th id="103">103</th><td><q>"    The encoding in which to encode the string.\n"</q></td></tr>
+<tr><th id="104">104</th><td><q>"  errors\n"</q></td></tr>
+<tr><th id="105">105</th><td><q>"    The error handling scheme to use for encoding errors.\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"    The default is \'strict\' meaning that encoding errors raise a\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"    UnicodeEncodeError.  Other possible values are \'ignore\', \'replace\' and\n"</q></td></tr>
+<tr><th id="108">108</th><td><q>"    \'xmlcharrefreplace\' as well as any other name registered with\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"    codecs.register_error that can handle UnicodeEncodeErrors."</q>);</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ENCODE_METHODDEF" data-ref="_M/UNICODE_ENCODE_METHODDEF">UNICODE_ENCODE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="112">112</th><td><u>    {"encode", (PyCFunction)unicode_encode, METH_FASTCALL|METH_KEYWORDS, unicode_encode__doc__},</u></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="115">115</th><td><a class="decl" href="../unicodeobject.c.html#unicode_encode_impl" title='unicode_encode_impl' data-ref="unicode_encode_impl" id="unicode_encode_impl">unicode_encode_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45self" title='self' data-type='PyObject *' data-ref="45self">self</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="46encoding" title='encoding' data-type='const char *' data-ref="46encoding">encoding</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="47errors" title='errors' data-type='const char *' data-ref="47errors">errors</dfn>);</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="118">118</th><td><dfn class="decl def" id="unicode_encode" title='unicode_encode' data-ref="unicode_encode">unicode_encode</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="48self" title='self' data-type='PyObject *' data-ref="48self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col9 decl" id="49args" title='args' data-type='PyObject **' data-ref="49args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="50nargs" title='nargs' data-type='Py_ssize_t' data-ref="50nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51kwnames" title='kwnames' data-type='PyObject *' data-ref="51kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="119">119</th><td>{</td></tr>
+<tr><th id="120">120</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="52return_value" title='return_value' data-type='PyObject *' data-ref="52return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="121">121</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col3 decl" id="53_keywords" title='_keywords' data-type='const char *const [3]' data-ref="53_keywords">_keywords</dfn>[] = {<q>"encoding"</q>, <q>"errors"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="122">122</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col4 decl" id="54_parser" title='_parser' data-type='_PyArg_Parser' data-ref="54_parser">_parser</dfn> = {<q>"|ss:encode"</q>, <a class="local col3 ref" href="#53_keywords" title='_keywords' data-ref="53_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="123">123</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="55encoding" title='encoding' data-type='const char *' data-ref="55encoding">encoding</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="124">124</th><td>    <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="56errors" title='errors' data-type='const char *' data-ref="56errors">errors</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col9 ref" href="#49args" title='args' data-ref="49args">args</a>, <a class="local col0 ref" href="#50nargs" title='nargs' data-ref="50nargs">nargs</a>, <a class="local col1 ref" href="#51kwnames" title='kwnames' data-ref="51kwnames">kwnames</a>, &amp;<a class="local col4 ref" href="#54_parser" title='_parser' data-ref="54_parser">_parser</a>,</td></tr>
+<tr><th id="127">127</th><td>        &amp;<a class="local col5 ref" href="#55encoding" title='encoding' data-ref="55encoding">encoding</a>, &amp;<a class="local col6 ref" href="#56errors" title='errors' data-ref="56errors">errors</a>)) {</td></tr>
+<tr><th id="128">128</th><td>        <b>goto</b> <a class="lbl" href="#57exit" data-ref="57exit">exit</a>;</td></tr>
+<tr><th id="129">129</th><td>    }</td></tr>
+<tr><th id="130">130</th><td>    <a class="local col2 ref" href="#52return_value" title='return_value' data-ref="52return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_encode_impl" title='unicode_encode_impl' data-ref="unicode_encode_impl">unicode_encode_impl</a>(<a class="local col8 ref" href="#48self" title='self' data-ref="48self">self</a>, <a class="local col5 ref" href="#55encoding" title='encoding' data-ref="55encoding">encoding</a>, <a class="local col6 ref" href="#56errors" title='errors' data-ref="56errors">errors</a>);</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><dfn class="lbl" id="57exit" data-ref="57exit">exit</dfn>:</td></tr>
+<tr><th id="133">133</th><td>    <b>return</b> <a class="local col2 ref" href="#52return_value" title='return_value' data-ref="52return_value">return_value</a>;</td></tr>
+<tr><th id="134">134</th><td>}</td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_expandtabs__doc__[] = &quot;expandtabs($self, /, tabsize=8)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy where all tab characters are expanded using spaces.\n&quot;&quot;\n&quot;&quot;If tabsize is not given, a tab size of 8 characters is assumed.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_expandtabs__doc__" title='unicode_expandtabs__doc__' data-ref="unicode_expandtabs__doc__">unicode_expandtabs__doc__</dfn>,</td></tr>
+<tr><th id="137">137</th><td><q>"expandtabs($self, /, tabsize=8)\n"</q></td></tr>
+<tr><th id="138">138</th><td><q>"--\n"</q></td></tr>
+<tr><th id="139">139</th><td><q>"\n"</q></td></tr>
+<tr><th id="140">140</th><td><q>"Return a copy where all tab characters are expanded using spaces.\n"</q></td></tr>
+<tr><th id="141">141</th><td><q>"\n"</q></td></tr>
+<tr><th id="142">142</th><td><q>"If tabsize is not given, a tab size of 8 characters is assumed."</q>);</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><u>#define <dfn class="macro" id="_M/UNICODE_EXPANDTABS_METHODDEF" data-ref="_M/UNICODE_EXPANDTABS_METHODDEF">UNICODE_EXPANDTABS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="145">145</th><td><u>    {"expandtabs", (PyCFunction)unicode_expandtabs, METH_FASTCALL|METH_KEYWORDS, unicode_expandtabs__doc__},</u></td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="148">148</th><td><a class="decl" href="../unicodeobject.c.html#unicode_expandtabs_impl" title='unicode_expandtabs_impl' data-ref="unicode_expandtabs_impl" id="unicode_expandtabs_impl">unicode_expandtabs_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58self" title='self' data-type='PyObject *' data-ref="58self">self</dfn>, <em>int</em> <dfn class="local col9 decl" id="59tabsize" title='tabsize' data-type='int' data-ref="59tabsize">tabsize</dfn>);</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="151">151</th><td><dfn class="decl def" id="unicode_expandtabs" title='unicode_expandtabs' data-ref="unicode_expandtabs">unicode_expandtabs</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="60self" title='self' data-type='PyObject *' data-ref="60self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="61args" title='args' data-type='PyObject **' data-ref="61args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="62nargs" title='nargs' data-type='Py_ssize_t' data-ref="62nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="63kwnames" title='kwnames' data-type='PyObject *' data-ref="63kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="152">152</th><td>{</td></tr>
+<tr><th id="153">153</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="64return_value" title='return_value' data-type='PyObject *' data-ref="64return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="154">154</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col5 decl" id="65_keywords" title='_keywords' data-type='const char *const [2]' data-ref="65_keywords">_keywords</dfn>[] = {<q>"tabsize"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="155">155</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col6 decl" id="66_parser" title='_parser' data-type='_PyArg_Parser' data-ref="66_parser">_parser</dfn> = {<q>"|i:expandtabs"</q>, <a class="local col5 ref" href="#65_keywords" title='_keywords' data-ref="65_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="156">156</th><td>    <em>int</em> <dfn class="local col7 decl" id="67tabsize" title='tabsize' data-type='int' data-ref="67tabsize">tabsize</dfn> = <var>8</var>;</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col1 ref" href="#61args" title='args' data-ref="61args">args</a>, <a class="local col2 ref" href="#62nargs" title='nargs' data-ref="62nargs">nargs</a>, <a class="local col3 ref" href="#63kwnames" title='kwnames' data-ref="63kwnames">kwnames</a>, &amp;<a class="local col6 ref" href="#66_parser" title='_parser' data-ref="66_parser">_parser</a>,</td></tr>
+<tr><th id="159">159</th><td>        &amp;<a class="local col7 ref" href="#67tabsize" title='tabsize' data-ref="67tabsize">tabsize</a>)) {</td></tr>
+<tr><th id="160">160</th><td>        <b>goto</b> <a class="lbl" href="#68exit" data-ref="68exit">exit</a>;</td></tr>
+<tr><th id="161">161</th><td>    }</td></tr>
+<tr><th id="162">162</th><td>    <a class="local col4 ref" href="#64return_value" title='return_value' data-ref="64return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_expandtabs_impl" title='unicode_expandtabs_impl' data-ref="unicode_expandtabs_impl">unicode_expandtabs_impl</a>(<a class="local col0 ref" href="#60self" title='self' data-ref="60self">self</a>, <a class="local col7 ref" href="#67tabsize" title='tabsize' data-ref="67tabsize">tabsize</a>);</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td><dfn class="lbl" id="68exit" data-ref="68exit">exit</dfn>:</td></tr>
+<tr><th id="165">165</th><td>    <b>return</b> <a class="local col4 ref" href="#64return_value" title='return_value' data-ref="64return_value">return_value</a>;</td></tr>
+<tr><th id="166">166</th><td>}</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_islower__doc__[] = &quot;islower($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a lowercase string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is lowercase if all cased characters in the string are lowercase and\n&quot;&quot;there is at least one cased character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_islower__doc__" title='unicode_islower__doc__' data-ref="unicode_islower__doc__">unicode_islower__doc__</dfn>,</td></tr>
+<tr><th id="169">169</th><td><q>"islower($self, /)\n"</q></td></tr>
+<tr><th id="170">170</th><td><q>"--\n"</q></td></tr>
+<tr><th id="171">171</th><td><q>"\n"</q></td></tr>
+<tr><th id="172">172</th><td><q>"Return True if the string is a lowercase string, False otherwise.\n"</q></td></tr>
+<tr><th id="173">173</th><td><q>"\n"</q></td></tr>
+<tr><th id="174">174</th><td><q>"A string is lowercase if all cased characters in the string are lowercase and\n"</q></td></tr>
+<tr><th id="175">175</th><td><q>"there is at least one cased character in the string."</q>);</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISLOWER_METHODDEF" data-ref="_M/UNICODE_ISLOWER_METHODDEF">UNICODE_ISLOWER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="178">178</th><td><u>    {"islower", (PyCFunction)unicode_islower, METH_NOARGS, unicode_islower__doc__},</u></td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="181">181</th><td><a class="decl" href="../unicodeobject.c.html#unicode_islower_impl" title='unicode_islower_impl' data-ref="unicode_islower_impl" id="unicode_islower_impl">unicode_islower_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69self" title='self' data-type='PyObject *' data-ref="69self">self</dfn>);</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="184">184</th><td><dfn class="decl def" id="unicode_islower" title='unicode_islower' data-ref="unicode_islower">unicode_islower</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70self" title='self' data-type='PyObject *' data-ref="70self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="185">185</th><td>{</td></tr>
+<tr><th id="186">186</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_islower_impl" title='unicode_islower_impl' data-ref="unicode_islower_impl">unicode_islower_impl</a>(<a class="local col0 ref" href="#70self" title='self' data-ref="70self">self</a>);</td></tr>
+<tr><th id="187">187</th><td>}</td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isupper__doc__[] = &quot;isupper($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is an uppercase string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is uppercase if all cased characters in the string are uppercase and\n&quot;&quot;there is at least one cased character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isupper__doc__" title='unicode_isupper__doc__' data-ref="unicode_isupper__doc__">unicode_isupper__doc__</dfn>,</td></tr>
+<tr><th id="190">190</th><td><q>"isupper($self, /)\n"</q></td></tr>
+<tr><th id="191">191</th><td><q>"--\n"</q></td></tr>
+<tr><th id="192">192</th><td><q>"\n"</q></td></tr>
+<tr><th id="193">193</th><td><q>"Return True if the string is an uppercase string, False otherwise.\n"</q></td></tr>
+<tr><th id="194">194</th><td><q>"\n"</q></td></tr>
+<tr><th id="195">195</th><td><q>"A string is uppercase if all cased characters in the string are uppercase and\n"</q></td></tr>
+<tr><th id="196">196</th><td><q>"there is at least one cased character in the string."</q>);</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISUPPER_METHODDEF" data-ref="_M/UNICODE_ISUPPER_METHODDEF">UNICODE_ISUPPER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="199">199</th><td><u>    {"isupper", (PyCFunction)unicode_isupper, METH_NOARGS, unicode_isupper__doc__},</u></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="202">202</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isupper_impl" title='unicode_isupper_impl' data-ref="unicode_isupper_impl" id="unicode_isupper_impl">unicode_isupper_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="71self" title='self' data-type='PyObject *' data-ref="71self">self</dfn>);</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="205">205</th><td><dfn class="decl def" id="unicode_isupper" title='unicode_isupper' data-ref="unicode_isupper">unicode_isupper</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="72self" title='self' data-type='PyObject *' data-ref="72self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="206">206</th><td>{</td></tr>
+<tr><th id="207">207</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isupper_impl" title='unicode_isupper_impl' data-ref="unicode_isupper_impl">unicode_isupper_impl</a>(<a class="local col2 ref" href="#72self" title='self' data-ref="72self">self</a>);</td></tr>
+<tr><th id="208">208</th><td>}</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_istitle__doc__[] = &quot;istitle($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a title-cased string, False otherwise.\n&quot;&quot;\n&quot;&quot;In a title-cased string, upper- and title-case characters may only\n&quot;&quot;follow uncased characters and lowercase characters only cased ones.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_istitle__doc__" title='unicode_istitle__doc__' data-ref="unicode_istitle__doc__">unicode_istitle__doc__</dfn>,</td></tr>
+<tr><th id="211">211</th><td><q>"istitle($self, /)\n"</q></td></tr>
+<tr><th id="212">212</th><td><q>"--\n"</q></td></tr>
+<tr><th id="213">213</th><td><q>"\n"</q></td></tr>
+<tr><th id="214">214</th><td><q>"Return True if the string is a title-cased string, False otherwise.\n"</q></td></tr>
+<tr><th id="215">215</th><td><q>"\n"</q></td></tr>
+<tr><th id="216">216</th><td><q>"In a title-cased string, upper- and title-case characters may only\n"</q></td></tr>
+<tr><th id="217">217</th><td><q>"follow uncased characters and lowercase characters only cased ones."</q>);</td></tr>
+<tr><th id="218">218</th><td></td></tr>
+<tr><th id="219">219</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISTITLE_METHODDEF" data-ref="_M/UNICODE_ISTITLE_METHODDEF">UNICODE_ISTITLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="220">220</th><td><u>    {"istitle", (PyCFunction)unicode_istitle, METH_NOARGS, unicode_istitle__doc__},</u></td></tr>
+<tr><th id="221">221</th><td></td></tr>
+<tr><th id="222">222</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="223">223</th><td><a class="decl" href="../unicodeobject.c.html#unicode_istitle_impl" title='unicode_istitle_impl' data-ref="unicode_istitle_impl" id="unicode_istitle_impl">unicode_istitle_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="73self" title='self' data-type='PyObject *' data-ref="73self">self</dfn>);</td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="226">226</th><td><dfn class="decl def" id="unicode_istitle" title='unicode_istitle' data-ref="unicode_istitle">unicode_istitle</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="74self" title='self' data-type='PyObject *' data-ref="74self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="227">227</th><td>{</td></tr>
+<tr><th id="228">228</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_istitle_impl" title='unicode_istitle_impl' data-ref="unicode_istitle_impl">unicode_istitle_impl</a>(<a class="local col4 ref" href="#74self" title='self' data-ref="74self">self</a>);</td></tr>
+<tr><th id="229">229</th><td>}</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isspace__doc__[] = &quot;isspace($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a whitespace string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is whitespace if all characters in the string are whitespace and there\n&quot;&quot;is at least one character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isspace__doc__" title='unicode_isspace__doc__' data-ref="unicode_isspace__doc__">unicode_isspace__doc__</dfn>,</td></tr>
+<tr><th id="232">232</th><td><q>"isspace($self, /)\n"</q></td></tr>
+<tr><th id="233">233</th><td><q>"--\n"</q></td></tr>
+<tr><th id="234">234</th><td><q>"\n"</q></td></tr>
+<tr><th id="235">235</th><td><q>"Return True if the string is a whitespace string, False otherwise.\n"</q></td></tr>
+<tr><th id="236">236</th><td><q>"\n"</q></td></tr>
+<tr><th id="237">237</th><td><q>"A string is whitespace if all characters in the string are whitespace and there\n"</q></td></tr>
+<tr><th id="238">238</th><td><q>"is at least one character in the string."</q>);</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISSPACE_METHODDEF" data-ref="_M/UNICODE_ISSPACE_METHODDEF">UNICODE_ISSPACE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="241">241</th><td><u>    {"isspace", (PyCFunction)unicode_isspace, METH_NOARGS, unicode_isspace__doc__},</u></td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="244">244</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isspace_impl" title='unicode_isspace_impl' data-ref="unicode_isspace_impl" id="unicode_isspace_impl">unicode_isspace_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="75self" title='self' data-type='PyObject *' data-ref="75self">self</dfn>);</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="247">247</th><td><dfn class="decl def" id="unicode_isspace" title='unicode_isspace' data-ref="unicode_isspace">unicode_isspace</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="76self" title='self' data-type='PyObject *' data-ref="76self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="248">248</th><td>{</td></tr>
+<tr><th id="249">249</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isspace_impl" title='unicode_isspace_impl' data-ref="unicode_isspace_impl">unicode_isspace_impl</a>(<a class="local col6 ref" href="#76self" title='self' data-ref="76self">self</a>);</td></tr>
+<tr><th id="250">250</th><td>}</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isalpha__doc__[] = &quot;isalpha($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is an alphabetic string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is alphabetic if all characters in the string are alphabetic and there\n&quot;&quot;is at least one character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isalpha__doc__" title='unicode_isalpha__doc__' data-ref="unicode_isalpha__doc__">unicode_isalpha__doc__</dfn>,</td></tr>
+<tr><th id="253">253</th><td><q>"isalpha($self, /)\n"</q></td></tr>
+<tr><th id="254">254</th><td><q>"--\n"</q></td></tr>
+<tr><th id="255">255</th><td><q>"\n"</q></td></tr>
+<tr><th id="256">256</th><td><q>"Return True if the string is an alphabetic string, False otherwise.\n"</q></td></tr>
+<tr><th id="257">257</th><td><q>"\n"</q></td></tr>
+<tr><th id="258">258</th><td><q>"A string is alphabetic if all characters in the string are alphabetic and there\n"</q></td></tr>
+<tr><th id="259">259</th><td><q>"is at least one character in the string."</q>);</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISALPHA_METHODDEF" data-ref="_M/UNICODE_ISALPHA_METHODDEF">UNICODE_ISALPHA_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="262">262</th><td><u>    {"isalpha", (PyCFunction)unicode_isalpha, METH_NOARGS, unicode_isalpha__doc__},</u></td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="265">265</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isalpha_impl" title='unicode_isalpha_impl' data-ref="unicode_isalpha_impl" id="unicode_isalpha_impl">unicode_isalpha_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="77self" title='self' data-type='PyObject *' data-ref="77self">self</dfn>);</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="268">268</th><td><dfn class="decl def" id="unicode_isalpha" title='unicode_isalpha' data-ref="unicode_isalpha">unicode_isalpha</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="78self" title='self' data-type='PyObject *' data-ref="78self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="269">269</th><td>{</td></tr>
+<tr><th id="270">270</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isalpha_impl" title='unicode_isalpha_impl' data-ref="unicode_isalpha_impl">unicode_isalpha_impl</a>(<a class="local col8 ref" href="#78self" title='self' data-ref="78self">self</a>);</td></tr>
+<tr><th id="271">271</th><td>}</td></tr>
+<tr><th id="272">272</th><td></td></tr>
+<tr><th id="273">273</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isalnum__doc__[] = &quot;isalnum($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is an alpha-numeric string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is alpha-numeric if all characters in the string are alpha-numeric and\n&quot;&quot;there is at least one character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isalnum__doc__" title='unicode_isalnum__doc__' data-ref="unicode_isalnum__doc__">unicode_isalnum__doc__</dfn>,</td></tr>
+<tr><th id="274">274</th><td><q>"isalnum($self, /)\n"</q></td></tr>
+<tr><th id="275">275</th><td><q>"--\n"</q></td></tr>
+<tr><th id="276">276</th><td><q>"\n"</q></td></tr>
+<tr><th id="277">277</th><td><q>"Return True if the string is an alpha-numeric string, False otherwise.\n"</q></td></tr>
+<tr><th id="278">278</th><td><q>"\n"</q></td></tr>
+<tr><th id="279">279</th><td><q>"A string is alpha-numeric if all characters in the string are alpha-numeric and\n"</q></td></tr>
+<tr><th id="280">280</th><td><q>"there is at least one character in the string."</q>);</td></tr>
+<tr><th id="281">281</th><td></td></tr>
+<tr><th id="282">282</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISALNUM_METHODDEF" data-ref="_M/UNICODE_ISALNUM_METHODDEF">UNICODE_ISALNUM_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="283">283</th><td><u>    {"isalnum", (PyCFunction)unicode_isalnum, METH_NOARGS, unicode_isalnum__doc__},</u></td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="286">286</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isalnum_impl" title='unicode_isalnum_impl' data-ref="unicode_isalnum_impl" id="unicode_isalnum_impl">unicode_isalnum_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="79self" title='self' data-type='PyObject *' data-ref="79self">self</dfn>);</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="289">289</th><td><dfn class="decl def" id="unicode_isalnum" title='unicode_isalnum' data-ref="unicode_isalnum">unicode_isalnum</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="80self" title='self' data-type='PyObject *' data-ref="80self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="290">290</th><td>{</td></tr>
+<tr><th id="291">291</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isalnum_impl" title='unicode_isalnum_impl' data-ref="unicode_isalnum_impl">unicode_isalnum_impl</a>(<a class="local col0 ref" href="#80self" title='self' data-ref="80self">self</a>);</td></tr>
+<tr><th id="292">292</th><td>}</td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isdecimal__doc__[] = &quot;isdecimal($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a decimal string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is a decimal string if all characters in the string are decimal and\n&quot;&quot;there is at least one character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isdecimal__doc__" title='unicode_isdecimal__doc__' data-ref="unicode_isdecimal__doc__">unicode_isdecimal__doc__</dfn>,</td></tr>
+<tr><th id="295">295</th><td><q>"isdecimal($self, /)\n"</q></td></tr>
+<tr><th id="296">296</th><td><q>"--\n"</q></td></tr>
+<tr><th id="297">297</th><td><q>"\n"</q></td></tr>
+<tr><th id="298">298</th><td><q>"Return True if the string is a decimal string, False otherwise.\n"</q></td></tr>
+<tr><th id="299">299</th><td><q>"\n"</q></td></tr>
+<tr><th id="300">300</th><td><q>"A string is a decimal string if all characters in the string are decimal and\n"</q></td></tr>
+<tr><th id="301">301</th><td><q>"there is at least one character in the string."</q>);</td></tr>
+<tr><th id="302">302</th><td></td></tr>
+<tr><th id="303">303</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISDECIMAL_METHODDEF" data-ref="_M/UNICODE_ISDECIMAL_METHODDEF">UNICODE_ISDECIMAL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="304">304</th><td><u>    {"isdecimal", (PyCFunction)unicode_isdecimal, METH_NOARGS, unicode_isdecimal__doc__},</u></td></tr>
+<tr><th id="305">305</th><td></td></tr>
+<tr><th id="306">306</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="307">307</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isdecimal_impl" title='unicode_isdecimal_impl' data-ref="unicode_isdecimal_impl" id="unicode_isdecimal_impl">unicode_isdecimal_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="81self" title='self' data-type='PyObject *' data-ref="81self">self</dfn>);</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="310">310</th><td><dfn class="decl def" id="unicode_isdecimal" title='unicode_isdecimal' data-ref="unicode_isdecimal">unicode_isdecimal</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="82self" title='self' data-type='PyObject *' data-ref="82self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="311">311</th><td>{</td></tr>
+<tr><th id="312">312</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isdecimal_impl" title='unicode_isdecimal_impl' data-ref="unicode_isdecimal_impl">unicode_isdecimal_impl</a>(<a class="local col2 ref" href="#82self" title='self' data-ref="82self">self</a>);</td></tr>
+<tr><th id="313">313</th><td>}</td></tr>
+<tr><th id="314">314</th><td></td></tr>
+<tr><th id="315">315</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isdigit__doc__[] = &quot;isdigit($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a digit string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is a digit string if all characters in the string are digits and there\n&quot;&quot;is at least one character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isdigit__doc__" title='unicode_isdigit__doc__' data-ref="unicode_isdigit__doc__">unicode_isdigit__doc__</dfn>,</td></tr>
+<tr><th id="316">316</th><td><q>"isdigit($self, /)\n"</q></td></tr>
+<tr><th id="317">317</th><td><q>"--\n"</q></td></tr>
+<tr><th id="318">318</th><td><q>"\n"</q></td></tr>
+<tr><th id="319">319</th><td><q>"Return True if the string is a digit string, False otherwise.\n"</q></td></tr>
+<tr><th id="320">320</th><td><q>"\n"</q></td></tr>
+<tr><th id="321">321</th><td><q>"A string is a digit string if all characters in the string are digits and there\n"</q></td></tr>
+<tr><th id="322">322</th><td><q>"is at least one character in the string."</q>);</td></tr>
+<tr><th id="323">323</th><td></td></tr>
+<tr><th id="324">324</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISDIGIT_METHODDEF" data-ref="_M/UNICODE_ISDIGIT_METHODDEF">UNICODE_ISDIGIT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="325">325</th><td><u>    {"isdigit", (PyCFunction)unicode_isdigit, METH_NOARGS, unicode_isdigit__doc__},</u></td></tr>
+<tr><th id="326">326</th><td></td></tr>
+<tr><th id="327">327</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="328">328</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isdigit_impl" title='unicode_isdigit_impl' data-ref="unicode_isdigit_impl" id="unicode_isdigit_impl">unicode_isdigit_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="83self" title='self' data-type='PyObject *' data-ref="83self">self</dfn>);</td></tr>
+<tr><th id="329">329</th><td></td></tr>
+<tr><th id="330">330</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="331">331</th><td><dfn class="decl def" id="unicode_isdigit" title='unicode_isdigit' data-ref="unicode_isdigit">unicode_isdigit</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="84self" title='self' data-type='PyObject *' data-ref="84self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="332">332</th><td>{</td></tr>
+<tr><th id="333">333</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isdigit_impl" title='unicode_isdigit_impl' data-ref="unicode_isdigit_impl">unicode_isdigit_impl</a>(<a class="local col4 ref" href="#84self" title='self' data-ref="84self">self</a>);</td></tr>
+<tr><th id="334">334</th><td>}</td></tr>
+<tr><th id="335">335</th><td></td></tr>
+<tr><th id="336">336</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isnumeric__doc__[] = &quot;isnumeric($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a numeric string, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is numeric if all characters in the string are numeric and there is at\n&quot;&quot;least one character in the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isnumeric__doc__" title='unicode_isnumeric__doc__' data-ref="unicode_isnumeric__doc__">unicode_isnumeric__doc__</dfn>,</td></tr>
+<tr><th id="337">337</th><td><q>"isnumeric($self, /)\n"</q></td></tr>
+<tr><th id="338">338</th><td><q>"--\n"</q></td></tr>
+<tr><th id="339">339</th><td><q>"\n"</q></td></tr>
+<tr><th id="340">340</th><td><q>"Return True if the string is a numeric string, False otherwise.\n"</q></td></tr>
+<tr><th id="341">341</th><td><q>"\n"</q></td></tr>
+<tr><th id="342">342</th><td><q>"A string is numeric if all characters in the string are numeric and there is at\n"</q></td></tr>
+<tr><th id="343">343</th><td><q>"least one character in the string."</q>);</td></tr>
+<tr><th id="344">344</th><td></td></tr>
+<tr><th id="345">345</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISNUMERIC_METHODDEF" data-ref="_M/UNICODE_ISNUMERIC_METHODDEF">UNICODE_ISNUMERIC_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="346">346</th><td><u>    {"isnumeric", (PyCFunction)unicode_isnumeric, METH_NOARGS, unicode_isnumeric__doc__},</u></td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="349">349</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isnumeric_impl" title='unicode_isnumeric_impl' data-ref="unicode_isnumeric_impl" id="unicode_isnumeric_impl">unicode_isnumeric_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="85self" title='self' data-type='PyObject *' data-ref="85self">self</dfn>);</td></tr>
+<tr><th id="350">350</th><td></td></tr>
+<tr><th id="351">351</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="352">352</th><td><dfn class="decl def" id="unicode_isnumeric" title='unicode_isnumeric' data-ref="unicode_isnumeric">unicode_isnumeric</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="86self" title='self' data-type='PyObject *' data-ref="86self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="353">353</th><td>{</td></tr>
+<tr><th id="354">354</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isnumeric_impl" title='unicode_isnumeric_impl' data-ref="unicode_isnumeric_impl">unicode_isnumeric_impl</a>(<a class="local col6 ref" href="#86self" title='self' data-ref="86self">self</a>);</td></tr>
+<tr><th id="355">355</th><td>}</td></tr>
+<tr><th id="356">356</th><td></td></tr>
+<tr><th id="357">357</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isidentifier__doc__[] = &quot;isidentifier($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is a valid Python identifier, False otherwise.\n&quot;&quot;\n&quot;&quot;Use keyword.iskeyword() to test for reserved identifiers such as \&quot;def\&quot; and\n&quot;&quot;\&quot;class\&quot;.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isidentifier__doc__" title='unicode_isidentifier__doc__' data-ref="unicode_isidentifier__doc__">unicode_isidentifier__doc__</dfn>,</td></tr>
+<tr><th id="358">358</th><td><q>"isidentifier($self, /)\n"</q></td></tr>
+<tr><th id="359">359</th><td><q>"--\n"</q></td></tr>
+<tr><th id="360">360</th><td><q>"\n"</q></td></tr>
+<tr><th id="361">361</th><td><q>"Return True if the string is a valid Python identifier, False otherwise.\n"</q></td></tr>
+<tr><th id="362">362</th><td><q>"\n"</q></td></tr>
+<tr><th id="363">363</th><td><q>"Use keyword.iskeyword() to test for reserved identifiers such as \"def\" and\n"</q></td></tr>
+<tr><th id="364">364</th><td><q>"\"class\"."</q>);</td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISIDENTIFIER_METHODDEF" data-ref="_M/UNICODE_ISIDENTIFIER_METHODDEF">UNICODE_ISIDENTIFIER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="367">367</th><td><u>    {"isidentifier", (PyCFunction)unicode_isidentifier, METH_NOARGS, unicode_isidentifier__doc__},</u></td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="370">370</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isidentifier_impl" title='unicode_isidentifier_impl' data-ref="unicode_isidentifier_impl" id="unicode_isidentifier_impl">unicode_isidentifier_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="87self" title='self' data-type='PyObject *' data-ref="87self">self</dfn>);</td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="373">373</th><td><dfn class="decl def" id="unicode_isidentifier" title='unicode_isidentifier' data-ref="unicode_isidentifier">unicode_isidentifier</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="88self" title='self' data-type='PyObject *' data-ref="88self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="374">374</th><td>{</td></tr>
+<tr><th id="375">375</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isidentifier_impl" title='unicode_isidentifier_impl' data-ref="unicode_isidentifier_impl">unicode_isidentifier_impl</a>(<a class="local col8 ref" href="#88self" title='self' data-ref="88self">self</a>);</td></tr>
+<tr><th id="376">376</th><td>}</td></tr>
+<tr><th id="377">377</th><td></td></tr>
+<tr><th id="378">378</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_isprintable__doc__[] = &quot;isprintable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the string is printable, False otherwise.\n&quot;&quot;\n&quot;&quot;A string is printable if all of its characters are considered printable in\n&quot;&quot;repr() or if it is empty.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_isprintable__doc__" title='unicode_isprintable__doc__' data-ref="unicode_isprintable__doc__">unicode_isprintable__doc__</dfn>,</td></tr>
+<tr><th id="379">379</th><td><q>"isprintable($self, /)\n"</q></td></tr>
+<tr><th id="380">380</th><td><q>"--\n"</q></td></tr>
+<tr><th id="381">381</th><td><q>"\n"</q></td></tr>
+<tr><th id="382">382</th><td><q>"Return True if the string is printable, False otherwise.\n"</q></td></tr>
+<tr><th id="383">383</th><td><q>"\n"</q></td></tr>
+<tr><th id="384">384</th><td><q>"A string is printable if all of its characters are considered printable in\n"</q></td></tr>
+<tr><th id="385">385</th><td><q>"repr() or if it is empty."</q>);</td></tr>
+<tr><th id="386">386</th><td></td></tr>
+<tr><th id="387">387</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ISPRINTABLE_METHODDEF" data-ref="_M/UNICODE_ISPRINTABLE_METHODDEF">UNICODE_ISPRINTABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="388">388</th><td><u>    {"isprintable", (PyCFunction)unicode_isprintable, METH_NOARGS, unicode_isprintable__doc__},</u></td></tr>
+<tr><th id="389">389</th><td></td></tr>
+<tr><th id="390">390</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="391">391</th><td><a class="decl" href="../unicodeobject.c.html#unicode_isprintable_impl" title='unicode_isprintable_impl' data-ref="unicode_isprintable_impl" id="unicode_isprintable_impl">unicode_isprintable_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="89self" title='self' data-type='PyObject *' data-ref="89self">self</dfn>);</td></tr>
+<tr><th id="392">392</th><td></td></tr>
+<tr><th id="393">393</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="394">394</th><td><dfn class="decl def" id="unicode_isprintable" title='unicode_isprintable' data-ref="unicode_isprintable">unicode_isprintable</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="90self" title='self' data-type='PyObject *' data-ref="90self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="395">395</th><td>{</td></tr>
+<tr><th id="396">396</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_isprintable_impl" title='unicode_isprintable_impl' data-ref="unicode_isprintable_impl">unicode_isprintable_impl</a>(<a class="local col0 ref" href="#90self" title='self' data-ref="90self">self</a>);</td></tr>
+<tr><th id="397">397</th><td>}</td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_join__doc__[] = &quot;join($self, iterable, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Concatenate any number of strings.\n&quot;&quot;\n&quot;&quot;The string whose method is called is inserted in between each given string.\n&quot;&quot;The result is returned as a new string.\n&quot;&quot;\n&quot;&quot;Example: \&apos;.\&apos;.join([\&apos;ab\&apos;, \&apos;pq\&apos;, \&apos;rs\&apos;]) -&gt; \&apos;ab.pq.rs\&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_join__doc__" title='unicode_join__doc__' data-ref="unicode_join__doc__">unicode_join__doc__</dfn>,</td></tr>
+<tr><th id="400">400</th><td><q>"join($self, iterable, /)\n"</q></td></tr>
+<tr><th id="401">401</th><td><q>"--\n"</q></td></tr>
+<tr><th id="402">402</th><td><q>"\n"</q></td></tr>
+<tr><th id="403">403</th><td><q>"Concatenate any number of strings.\n"</q></td></tr>
+<tr><th id="404">404</th><td><q>"\n"</q></td></tr>
+<tr><th id="405">405</th><td><q>"The string whose method is called is inserted in between each given string.\n"</q></td></tr>
+<tr><th id="406">406</th><td><q>"The result is returned as a new string.\n"</q></td></tr>
+<tr><th id="407">407</th><td><q>"\n"</q></td></tr>
+<tr><th id="408">408</th><td><q>"Example: \'.\'.join([\'ab\', \'pq\', \'rs\']) -&gt; \'ab.pq.rs\'"</q>);</td></tr>
+<tr><th id="409">409</th><td></td></tr>
+<tr><th id="410">410</th><td><u>#define <dfn class="macro" id="_M/UNICODE_JOIN_METHODDEF" data-ref="_M/UNICODE_JOIN_METHODDEF">UNICODE_JOIN_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="411">411</th><td><u>    {"join", (PyCFunction)unicode_join, METH_O, unicode_join__doc__},</u></td></tr>
+<tr><th id="412">412</th><td></td></tr>
+<tr><th id="413">413</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_ljust__doc__[] = &quot;ljust($self, width, fillchar=\&apos; \&apos;, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a left-justified string of length width.\n&quot;&quot;\n&quot;&quot;Padding is done using the specified fill character (default is a space).&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_ljust__doc__" title='unicode_ljust__doc__' data-ref="unicode_ljust__doc__">unicode_ljust__doc__</dfn>,</td></tr>
+<tr><th id="414">414</th><td><q>"ljust($self, width, fillchar=\' \', /)\n"</q></td></tr>
+<tr><th id="415">415</th><td><q>"--\n"</q></td></tr>
+<tr><th id="416">416</th><td><q>"\n"</q></td></tr>
+<tr><th id="417">417</th><td><q>"Return a left-justified string of length width.\n"</q></td></tr>
+<tr><th id="418">418</th><td><q>"\n"</q></td></tr>
+<tr><th id="419">419</th><td><q>"Padding is done using the specified fill character (default is a space)."</q>);</td></tr>
+<tr><th id="420">420</th><td></td></tr>
+<tr><th id="421">421</th><td><u>#define <dfn class="macro" id="_M/UNICODE_LJUST_METHODDEF" data-ref="_M/UNICODE_LJUST_METHODDEF">UNICODE_LJUST_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="422">422</th><td><u>    {"ljust", (PyCFunction)unicode_ljust, METH_FASTCALL, unicode_ljust__doc__},</u></td></tr>
+<tr><th id="423">423</th><td></td></tr>
+<tr><th id="424">424</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="425">425</th><td><a class="decl" href="../unicodeobject.c.html#unicode_ljust_impl" title='unicode_ljust_impl' data-ref="unicode_ljust_impl" id="unicode_ljust_impl">unicode_ljust_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="91self" title='self' data-type='PyObject *' data-ref="91self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="92width" title='width' data-type='Py_ssize_t' data-ref="92width">width</dfn>, <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col3 decl" id="93fillchar" title='fillchar' data-type='Py_UCS4' data-ref="93fillchar">fillchar</dfn>);</td></tr>
+<tr><th id="426">426</th><td></td></tr>
+<tr><th id="427">427</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="428">428</th><td><dfn class="decl def" id="unicode_ljust" title='unicode_ljust' data-ref="unicode_ljust">unicode_ljust</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="94self" title='self' data-type='PyObject *' data-ref="94self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="95args" title='args' data-type='PyObject **' data-ref="95args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="96nargs" title='nargs' data-type='Py_ssize_t' data-ref="96nargs">nargs</dfn>)</td></tr>
+<tr><th id="429">429</th><td>{</td></tr>
+<tr><th id="430">430</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="97return_value" title='return_value' data-type='PyObject *' data-ref="97return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="431">431</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="98width" title='width' data-type='Py_ssize_t' data-ref="98width">width</dfn>;</td></tr>
+<tr><th id="432">432</th><td>    <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col9 decl" id="99fillchar" title='fillchar' data-type='Py_UCS4' data-ref="99fillchar">fillchar</dfn> = <kbd>' '</kbd>;</td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col5 ref" href="#95args" title='args' data-ref="95args">args</a>, <a class="local col6 ref" href="#96nargs" title='nargs' data-ref="96nargs">nargs</a>, <q>"n|O&amp;:ljust"</q>,</td></tr>
+<tr><th id="435">435</th><td>        &amp;<a class="local col8 ref" href="#98width" title='width' data-ref="98width">width</a>, <a class="tu ref" href="../unicodeobject.c.html#convert_uc" title='convert_uc' data-ref="convert_uc">convert_uc</a>, &amp;<a class="local col9 ref" href="#99fillchar" title='fillchar' data-ref="99fillchar">fillchar</a>)) {</td></tr>
+<tr><th id="436">436</th><td>        <b>goto</b> <a class="lbl" href="#100exit" data-ref="100exit">exit</a>;</td></tr>
+<tr><th id="437">437</th><td>    }</td></tr>
+<tr><th id="438">438</th><td>    <a class="local col7 ref" href="#97return_value" title='return_value' data-ref="97return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_ljust_impl" title='unicode_ljust_impl' data-ref="unicode_ljust_impl">unicode_ljust_impl</a>(<a class="local col4 ref" href="#94self" title='self' data-ref="94self">self</a>, <a class="local col8 ref" href="#98width" title='width' data-ref="98width">width</a>, <a class="local col9 ref" href="#99fillchar" title='fillchar' data-ref="99fillchar">fillchar</a>);</td></tr>
+<tr><th id="439">439</th><td></td></tr>
+<tr><th id="440">440</th><td><dfn class="lbl" id="100exit" data-ref="100exit">exit</dfn>:</td></tr>
+<tr><th id="441">441</th><td>    <b>return</b> <a class="local col7 ref" href="#97return_value" title='return_value' data-ref="97return_value">return_value</a>;</td></tr>
+<tr><th id="442">442</th><td>}</td></tr>
+<tr><th id="443">443</th><td></td></tr>
+<tr><th id="444">444</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_lower__doc__[] = &quot;lower($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy of the string converted to lowercase.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_lower__doc__" title='unicode_lower__doc__' data-ref="unicode_lower__doc__">unicode_lower__doc__</dfn>,</td></tr>
+<tr><th id="445">445</th><td><q>"lower($self, /)\n"</q></td></tr>
+<tr><th id="446">446</th><td><q>"--\n"</q></td></tr>
+<tr><th id="447">447</th><td><q>"\n"</q></td></tr>
+<tr><th id="448">448</th><td><q>"Return a copy of the string converted to lowercase."</q>);</td></tr>
+<tr><th id="449">449</th><td></td></tr>
+<tr><th id="450">450</th><td><u>#define <dfn class="macro" id="_M/UNICODE_LOWER_METHODDEF" data-ref="_M/UNICODE_LOWER_METHODDEF">UNICODE_LOWER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="451">451</th><td><u>    {"lower", (PyCFunction)unicode_lower, METH_NOARGS, unicode_lower__doc__},</u></td></tr>
+<tr><th id="452">452</th><td></td></tr>
+<tr><th id="453">453</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="454">454</th><td><a class="decl" href="../unicodeobject.c.html#unicode_lower_impl" title='unicode_lower_impl' data-ref="unicode_lower_impl" id="unicode_lower_impl">unicode_lower_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="101self" title='self' data-type='PyObject *' data-ref="101self">self</dfn>);</td></tr>
+<tr><th id="455">455</th><td></td></tr>
+<tr><th id="456">456</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="457">457</th><td><dfn class="decl def" id="unicode_lower" title='unicode_lower' data-ref="unicode_lower">unicode_lower</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="102self" title='self' data-type='PyObject *' data-ref="102self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="458">458</th><td>{</td></tr>
+<tr><th id="459">459</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_lower_impl" title='unicode_lower_impl' data-ref="unicode_lower_impl">unicode_lower_impl</a>(<a class="local col2 ref" href="#102self" title='self' data-ref="102self">self</a>);</td></tr>
+<tr><th id="460">460</th><td>}</td></tr>
+<tr><th id="461">461</th><td></td></tr>
+<tr><th id="462">462</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_strip__doc__[] = &quot;strip($self, chars=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy of the string with leading and trailing whitespace remove.\n&quot;&quot;\n&quot;&quot;If chars is given and not None, remove characters in chars instead.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_strip__doc__" title='unicode_strip__doc__' data-ref="unicode_strip__doc__">unicode_strip__doc__</dfn>,</td></tr>
+<tr><th id="463">463</th><td><q>"strip($self, chars=None, /)\n"</q></td></tr>
+<tr><th id="464">464</th><td><q>"--\n"</q></td></tr>
+<tr><th id="465">465</th><td><q>"\n"</q></td></tr>
+<tr><th id="466">466</th><td><q>"Return a copy of the string with leading and trailing whitespace remove.\n"</q></td></tr>
+<tr><th id="467">467</th><td><q>"\n"</q></td></tr>
+<tr><th id="468">468</th><td><q>"If chars is given and not None, remove characters in chars instead."</q>);</td></tr>
+<tr><th id="469">469</th><td></td></tr>
+<tr><th id="470">470</th><td><u>#define <dfn class="macro" id="_M/UNICODE_STRIP_METHODDEF" data-ref="_M/UNICODE_STRIP_METHODDEF">UNICODE_STRIP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="471">471</th><td><u>    {"strip", (PyCFunction)unicode_strip, METH_FASTCALL, unicode_strip__doc__},</u></td></tr>
+<tr><th id="472">472</th><td></td></tr>
+<tr><th id="473">473</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="474">474</th><td><a class="decl" href="../unicodeobject.c.html#unicode_strip_impl" title='unicode_strip_impl' data-ref="unicode_strip_impl" id="unicode_strip_impl">unicode_strip_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="103self" title='self' data-type='PyObject *' data-ref="103self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="104chars" title='chars' data-type='PyObject *' data-ref="104chars">chars</dfn>);</td></tr>
+<tr><th id="475">475</th><td></td></tr>
+<tr><th id="476">476</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="477">477</th><td><dfn class="decl def" id="unicode_strip" title='unicode_strip' data-ref="unicode_strip">unicode_strip</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="105self" title='self' data-type='PyObject *' data-ref="105self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="106args" title='args' data-type='PyObject **' data-ref="106args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="107nargs" title='nargs' data-type='Py_ssize_t' data-ref="107nargs">nargs</dfn>)</td></tr>
+<tr><th id="478">478</th><td>{</td></tr>
+<tr><th id="479">479</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="108return_value" title='return_value' data-type='PyObject *' data-ref="108return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="480">480</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="109chars" title='chars' data-type='PyObject *' data-ref="109chars">chars</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="481">481</th><td></td></tr>
+<tr><th id="482">482</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col6 ref" href="#106args" title='args' data-ref="106args">args</a>, <a class="local col7 ref" href="#107nargs" title='nargs' data-ref="107nargs">nargs</a>, <q>"strip"</q>,</td></tr>
+<tr><th id="483">483</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="484">484</th><td>        &amp;<a class="local col9 ref" href="#109chars" title='chars' data-ref="109chars">chars</a>)) {</td></tr>
+<tr><th id="485">485</th><td>        <b>goto</b> <a class="lbl" href="#110exit" data-ref="110exit">exit</a>;</td></tr>
+<tr><th id="486">486</th><td>    }</td></tr>
+<tr><th id="487">487</th><td>    <a class="local col8 ref" href="#108return_value" title='return_value' data-ref="108return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_strip_impl" title='unicode_strip_impl' data-ref="unicode_strip_impl">unicode_strip_impl</a>(<a class="local col5 ref" href="#105self" title='self' data-ref="105self">self</a>, <a class="local col9 ref" href="#109chars" title='chars' data-ref="109chars">chars</a>);</td></tr>
+<tr><th id="488">488</th><td></td></tr>
+<tr><th id="489">489</th><td><dfn class="lbl" id="110exit" data-ref="110exit">exit</dfn>:</td></tr>
+<tr><th id="490">490</th><td>    <b>return</b> <a class="local col8 ref" href="#108return_value" title='return_value' data-ref="108return_value">return_value</a>;</td></tr>
+<tr><th id="491">491</th><td>}</td></tr>
+<tr><th id="492">492</th><td></td></tr>
+<tr><th id="493">493</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_lstrip__doc__[] = &quot;lstrip($self, chars=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy of the string with leading whitespace removed.\n&quot;&quot;\n&quot;&quot;If chars is given and not None, remove characters in chars instead.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_lstrip__doc__" title='unicode_lstrip__doc__' data-ref="unicode_lstrip__doc__">unicode_lstrip__doc__</dfn>,</td></tr>
+<tr><th id="494">494</th><td><q>"lstrip($self, chars=None, /)\n"</q></td></tr>
+<tr><th id="495">495</th><td><q>"--\n"</q></td></tr>
+<tr><th id="496">496</th><td><q>"\n"</q></td></tr>
+<tr><th id="497">497</th><td><q>"Return a copy of the string with leading whitespace removed.\n"</q></td></tr>
+<tr><th id="498">498</th><td><q>"\n"</q></td></tr>
+<tr><th id="499">499</th><td><q>"If chars is given and not None, remove characters in chars instead."</q>);</td></tr>
+<tr><th id="500">500</th><td></td></tr>
+<tr><th id="501">501</th><td><u>#define <dfn class="macro" id="_M/UNICODE_LSTRIP_METHODDEF" data-ref="_M/UNICODE_LSTRIP_METHODDEF">UNICODE_LSTRIP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="502">502</th><td><u>    {"lstrip", (PyCFunction)unicode_lstrip, METH_FASTCALL, unicode_lstrip__doc__},</u></td></tr>
+<tr><th id="503">503</th><td></td></tr>
+<tr><th id="504">504</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="505">505</th><td><a class="decl" href="../unicodeobject.c.html#unicode_lstrip_impl" title='unicode_lstrip_impl' data-ref="unicode_lstrip_impl" id="unicode_lstrip_impl">unicode_lstrip_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="111self" title='self' data-type='PyObject *' data-ref="111self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="112chars" title='chars' data-type='PyObject *' data-ref="112chars">chars</dfn>);</td></tr>
+<tr><th id="506">506</th><td></td></tr>
+<tr><th id="507">507</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="508">508</th><td><dfn class="decl def" id="unicode_lstrip" title='unicode_lstrip' data-ref="unicode_lstrip">unicode_lstrip</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="113self" title='self' data-type='PyObject *' data-ref="113self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="114args" title='args' data-type='PyObject **' data-ref="114args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="115nargs" title='nargs' data-type='Py_ssize_t' data-ref="115nargs">nargs</dfn>)</td></tr>
+<tr><th id="509">509</th><td>{</td></tr>
+<tr><th id="510">510</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="116return_value" title='return_value' data-type='PyObject *' data-ref="116return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="511">511</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="117chars" title='chars' data-type='PyObject *' data-ref="117chars">chars</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="512">512</th><td></td></tr>
+<tr><th id="513">513</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col4 ref" href="#114args" title='args' data-ref="114args">args</a>, <a class="local col5 ref" href="#115nargs" title='nargs' data-ref="115nargs">nargs</a>, <q>"lstrip"</q>,</td></tr>
+<tr><th id="514">514</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="515">515</th><td>        &amp;<a class="local col7 ref" href="#117chars" title='chars' data-ref="117chars">chars</a>)) {</td></tr>
+<tr><th id="516">516</th><td>        <b>goto</b> <a class="lbl" href="#118exit" data-ref="118exit">exit</a>;</td></tr>
+<tr><th id="517">517</th><td>    }</td></tr>
+<tr><th id="518">518</th><td>    <a class="local col6 ref" href="#116return_value" title='return_value' data-ref="116return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_lstrip_impl" title='unicode_lstrip_impl' data-ref="unicode_lstrip_impl">unicode_lstrip_impl</a>(<a class="local col3 ref" href="#113self" title='self' data-ref="113self">self</a>, <a class="local col7 ref" href="#117chars" title='chars' data-ref="117chars">chars</a>);</td></tr>
+<tr><th id="519">519</th><td></td></tr>
+<tr><th id="520">520</th><td><dfn class="lbl" id="118exit" data-ref="118exit">exit</dfn>:</td></tr>
+<tr><th id="521">521</th><td>    <b>return</b> <a class="local col6 ref" href="#116return_value" title='return_value' data-ref="116return_value">return_value</a>;</td></tr>
+<tr><th id="522">522</th><td>}</td></tr>
+<tr><th id="523">523</th><td></td></tr>
+<tr><th id="524">524</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_rstrip__doc__[] = &quot;rstrip($self, chars=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy of the string with trailing whitespace removed.\n&quot;&quot;\n&quot;&quot;If chars is given and not None, remove characters in chars instead.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_rstrip__doc__" title='unicode_rstrip__doc__' data-ref="unicode_rstrip__doc__">unicode_rstrip__doc__</dfn>,</td></tr>
+<tr><th id="525">525</th><td><q>"rstrip($self, chars=None, /)\n"</q></td></tr>
+<tr><th id="526">526</th><td><q>"--\n"</q></td></tr>
+<tr><th id="527">527</th><td><q>"\n"</q></td></tr>
+<tr><th id="528">528</th><td><q>"Return a copy of the string with trailing whitespace removed.\n"</q></td></tr>
+<tr><th id="529">529</th><td><q>"\n"</q></td></tr>
+<tr><th id="530">530</th><td><q>"If chars is given and not None, remove characters in chars instead."</q>);</td></tr>
+<tr><th id="531">531</th><td></td></tr>
+<tr><th id="532">532</th><td><u>#define <dfn class="macro" id="_M/UNICODE_RSTRIP_METHODDEF" data-ref="_M/UNICODE_RSTRIP_METHODDEF">UNICODE_RSTRIP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="533">533</th><td><u>    {"rstrip", (PyCFunction)unicode_rstrip, METH_FASTCALL, unicode_rstrip__doc__},</u></td></tr>
+<tr><th id="534">534</th><td></td></tr>
+<tr><th id="535">535</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="536">536</th><td><a class="decl" href="../unicodeobject.c.html#unicode_rstrip_impl" title='unicode_rstrip_impl' data-ref="unicode_rstrip_impl" id="unicode_rstrip_impl">unicode_rstrip_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="119self" title='self' data-type='PyObject *' data-ref="119self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="120chars" title='chars' data-type='PyObject *' data-ref="120chars">chars</dfn>);</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="539">539</th><td><dfn class="decl def" id="unicode_rstrip" title='unicode_rstrip' data-ref="unicode_rstrip">unicode_rstrip</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="121self" title='self' data-type='PyObject *' data-ref="121self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="122args" title='args' data-type='PyObject **' data-ref="122args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="123nargs" title='nargs' data-type='Py_ssize_t' data-ref="123nargs">nargs</dfn>)</td></tr>
+<tr><th id="540">540</th><td>{</td></tr>
+<tr><th id="541">541</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="124return_value" title='return_value' data-type='PyObject *' data-ref="124return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="542">542</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="125chars" title='chars' data-type='PyObject *' data-ref="125chars">chars</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="543">543</th><td></td></tr>
+<tr><th id="544">544</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col2 ref" href="#122args" title='args' data-ref="122args">args</a>, <a class="local col3 ref" href="#123nargs" title='nargs' data-ref="123nargs">nargs</a>, <q>"rstrip"</q>,</td></tr>
+<tr><th id="545">545</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="546">546</th><td>        &amp;<a class="local col5 ref" href="#125chars" title='chars' data-ref="125chars">chars</a>)) {</td></tr>
+<tr><th id="547">547</th><td>        <b>goto</b> <a class="lbl" href="#126exit" data-ref="126exit">exit</a>;</td></tr>
+<tr><th id="548">548</th><td>    }</td></tr>
+<tr><th id="549">549</th><td>    <a class="local col4 ref" href="#124return_value" title='return_value' data-ref="124return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_rstrip_impl" title='unicode_rstrip_impl' data-ref="unicode_rstrip_impl">unicode_rstrip_impl</a>(<a class="local col1 ref" href="#121self" title='self' data-ref="121self">self</a>, <a class="local col5 ref" href="#125chars" title='chars' data-ref="125chars">chars</a>);</td></tr>
+<tr><th id="550">550</th><td></td></tr>
+<tr><th id="551">551</th><td><dfn class="lbl" id="126exit" data-ref="126exit">exit</dfn>:</td></tr>
+<tr><th id="552">552</th><td>    <b>return</b> <a class="local col4 ref" href="#124return_value" title='return_value' data-ref="124return_value">return_value</a>;</td></tr>
+<tr><th id="553">553</th><td>}</td></tr>
+<tr><th id="554">554</th><td></td></tr>
+<tr><th id="555">555</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_replace__doc__[] = &quot;replace($self, old, new, count=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy with all occurrences of substring old replaced by new.\n&quot;&quot;\n&quot;&quot;  count\n&quot;&quot;    Maximum number of occurrences to replace.\n&quot;&quot;    -1 (the default value) means replace all occurrences.\n&quot;&quot;\n&quot;&quot;If the optional argument count is given, only the first count occurrences are\n&quot;&quot;replaced.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_replace__doc__" title='unicode_replace__doc__' data-ref="unicode_replace__doc__">unicode_replace__doc__</dfn>,</td></tr>
+<tr><th id="556">556</th><td><q>"replace($self, old, new, count=-1, /)\n"</q></td></tr>
+<tr><th id="557">557</th><td><q>"--\n"</q></td></tr>
+<tr><th id="558">558</th><td><q>"\n"</q></td></tr>
+<tr><th id="559">559</th><td><q>"Return a copy with all occurrences of substring old replaced by new.\n"</q></td></tr>
+<tr><th id="560">560</th><td><q>"\n"</q></td></tr>
+<tr><th id="561">561</th><td><q>"  count\n"</q></td></tr>
+<tr><th id="562">562</th><td><q>"    Maximum number of occurrences to replace.\n"</q></td></tr>
+<tr><th id="563">563</th><td><q>"    -1 (the default value) means replace all occurrences.\n"</q></td></tr>
+<tr><th id="564">564</th><td><q>"\n"</q></td></tr>
+<tr><th id="565">565</th><td><q>"If the optional argument count is given, only the first count occurrences are\n"</q></td></tr>
+<tr><th id="566">566</th><td><q>"replaced."</q>);</td></tr>
+<tr><th id="567">567</th><td></td></tr>
+<tr><th id="568">568</th><td><u>#define <dfn class="macro" id="_M/UNICODE_REPLACE_METHODDEF" data-ref="_M/UNICODE_REPLACE_METHODDEF">UNICODE_REPLACE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="569">569</th><td><u>    {"replace", (PyCFunction)unicode_replace, METH_FASTCALL, unicode_replace__doc__},</u></td></tr>
+<tr><th id="570">570</th><td></td></tr>
+<tr><th id="571">571</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="572">572</th><td><a class="decl" href="../unicodeobject.c.html#unicode_replace_impl" title='unicode_replace_impl' data-ref="unicode_replace_impl" id="unicode_replace_impl">unicode_replace_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="127self" title='self' data-type='PyObject *' data-ref="127self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="128old" title='old' data-type='PyObject *' data-ref="128old">old</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="129new" title='new' data-type='PyObject *' data-ref="129new">new</dfn>,</td></tr>
+<tr><th id="573">573</th><td>                     <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="130count" title='count' data-type='Py_ssize_t' data-ref="130count">count</dfn>);</td></tr>
+<tr><th id="574">574</th><td></td></tr>
+<tr><th id="575">575</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="576">576</th><td><dfn class="decl def" id="unicode_replace" title='unicode_replace' data-ref="unicode_replace">unicode_replace</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="131self" title='self' data-type='PyObject *' data-ref="131self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="132args" title='args' data-type='PyObject **' data-ref="132args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="133nargs" title='nargs' data-type='Py_ssize_t' data-ref="133nargs">nargs</dfn>)</td></tr>
+<tr><th id="577">577</th><td>{</td></tr>
+<tr><th id="578">578</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="134return_value" title='return_value' data-type='PyObject *' data-ref="134return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="579">579</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="135old" title='old' data-type='PyObject *' data-ref="135old">old</dfn>;</td></tr>
+<tr><th id="580">580</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="136new" title='new' data-type='PyObject *' data-ref="136new">new</dfn>;</td></tr>
+<tr><th id="581">581</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="137count" title='count' data-type='Py_ssize_t' data-ref="137count">count</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="582">582</th><td></td></tr>
+<tr><th id="583">583</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col2 ref" href="#132args" title='args' data-ref="132args">args</a>, <a class="local col3 ref" href="#133nargs" title='nargs' data-ref="133nargs">nargs</a>, <q>"UU|n:replace"</q>,</td></tr>
+<tr><th id="584">584</th><td>        &amp;<a class="local col5 ref" href="#135old" title='old' data-ref="135old">old</a>, &amp;<a class="local col6 ref" href="#136new" title='new' data-ref="136new">new</a>, &amp;<a class="local col7 ref" href="#137count" title='count' data-ref="137count">count</a>)) {</td></tr>
+<tr><th id="585">585</th><td>        <b>goto</b> <a class="lbl" href="#138exit" data-ref="138exit">exit</a>;</td></tr>
+<tr><th id="586">586</th><td>    }</td></tr>
+<tr><th id="587">587</th><td>    <a class="local col4 ref" href="#134return_value" title='return_value' data-ref="134return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_replace_impl" title='unicode_replace_impl' data-ref="unicode_replace_impl">unicode_replace_impl</a>(<a class="local col1 ref" href="#131self" title='self' data-ref="131self">self</a>, <a class="local col5 ref" href="#135old" title='old' data-ref="135old">old</a>, <a class="local col6 ref" href="#136new" title='new' data-ref="136new">new</a>, <a class="local col7 ref" href="#137count" title='count' data-ref="137count">count</a>);</td></tr>
+<tr><th id="588">588</th><td></td></tr>
+<tr><th id="589">589</th><td><dfn class="lbl" id="138exit" data-ref="138exit">exit</dfn>:</td></tr>
+<tr><th id="590">590</th><td>    <b>return</b> <a class="local col4 ref" href="#134return_value" title='return_value' data-ref="134return_value">return_value</a>;</td></tr>
+<tr><th id="591">591</th><td>}</td></tr>
+<tr><th id="592">592</th><td></td></tr>
+<tr><th id="593">593</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_rjust__doc__[] = &quot;rjust($self, width, fillchar=\&apos; \&apos;, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a right-justified string of length width.\n&quot;&quot;\n&quot;&quot;Padding is done using the specified fill character (default is a space).&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_rjust__doc__" title='unicode_rjust__doc__' data-ref="unicode_rjust__doc__">unicode_rjust__doc__</dfn>,</td></tr>
+<tr><th id="594">594</th><td><q>"rjust($self, width, fillchar=\' \', /)\n"</q></td></tr>
+<tr><th id="595">595</th><td><q>"--\n"</q></td></tr>
+<tr><th id="596">596</th><td><q>"\n"</q></td></tr>
+<tr><th id="597">597</th><td><q>"Return a right-justified string of length width.\n"</q></td></tr>
+<tr><th id="598">598</th><td><q>"\n"</q></td></tr>
+<tr><th id="599">599</th><td><q>"Padding is done using the specified fill character (default is a space)."</q>);</td></tr>
+<tr><th id="600">600</th><td></td></tr>
+<tr><th id="601">601</th><td><u>#define <dfn class="macro" id="_M/UNICODE_RJUST_METHODDEF" data-ref="_M/UNICODE_RJUST_METHODDEF">UNICODE_RJUST_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="602">602</th><td><u>    {"rjust", (PyCFunction)unicode_rjust, METH_FASTCALL, unicode_rjust__doc__},</u></td></tr>
+<tr><th id="603">603</th><td></td></tr>
+<tr><th id="604">604</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="605">605</th><td><a class="decl" href="../unicodeobject.c.html#unicode_rjust_impl" title='unicode_rjust_impl' data-ref="unicode_rjust_impl" id="unicode_rjust_impl">unicode_rjust_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="139self" title='self' data-type='PyObject *' data-ref="139self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="140width" title='width' data-type='Py_ssize_t' data-ref="140width">width</dfn>, <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col1 decl" id="141fillchar" title='fillchar' data-type='Py_UCS4' data-ref="141fillchar">fillchar</dfn>);</td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="608">608</th><td><dfn class="decl def" id="unicode_rjust" title='unicode_rjust' data-ref="unicode_rjust">unicode_rjust</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="142self" title='self' data-type='PyObject *' data-ref="142self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="143args" title='args' data-type='PyObject **' data-ref="143args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="144nargs" title='nargs' data-type='Py_ssize_t' data-ref="144nargs">nargs</dfn>)</td></tr>
+<tr><th id="609">609</th><td>{</td></tr>
+<tr><th id="610">610</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="145return_value" title='return_value' data-type='PyObject *' data-ref="145return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="611">611</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="146width" title='width' data-type='Py_ssize_t' data-ref="146width">width</dfn>;</td></tr>
+<tr><th id="612">612</th><td>    <a class="typedef" href="../../Include/unicodeobject.h.html#Py_UCS4" title='Py_UCS4' data-type='uint32_t' data-ref="Py_UCS4">Py_UCS4</a> <dfn class="local col7 decl" id="147fillchar" title='fillchar' data-type='Py_UCS4' data-ref="147fillchar">fillchar</dfn> = <kbd>' '</kbd>;</td></tr>
+<tr><th id="613">613</th><td></td></tr>
+<tr><th id="614">614</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col3 ref" href="#143args" title='args' data-ref="143args">args</a>, <a class="local col4 ref" href="#144nargs" title='nargs' data-ref="144nargs">nargs</a>, <q>"n|O&amp;:rjust"</q>,</td></tr>
+<tr><th id="615">615</th><td>        &amp;<a class="local col6 ref" href="#146width" title='width' data-ref="146width">width</a>, <a class="tu ref" href="../unicodeobject.c.html#convert_uc" title='convert_uc' data-ref="convert_uc">convert_uc</a>, &amp;<a class="local col7 ref" href="#147fillchar" title='fillchar' data-ref="147fillchar">fillchar</a>)) {</td></tr>
+<tr><th id="616">616</th><td>        <b>goto</b> <a class="lbl" href="#148exit" data-ref="148exit">exit</a>;</td></tr>
+<tr><th id="617">617</th><td>    }</td></tr>
+<tr><th id="618">618</th><td>    <a class="local col5 ref" href="#145return_value" title='return_value' data-ref="145return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_rjust_impl" title='unicode_rjust_impl' data-ref="unicode_rjust_impl">unicode_rjust_impl</a>(<a class="local col2 ref" href="#142self" title='self' data-ref="142self">self</a>, <a class="local col6 ref" href="#146width" title='width' data-ref="146width">width</a>, <a class="local col7 ref" href="#147fillchar" title='fillchar' data-ref="147fillchar">fillchar</a>);</td></tr>
+<tr><th id="619">619</th><td></td></tr>
+<tr><th id="620">620</th><td><dfn class="lbl" id="148exit" data-ref="148exit">exit</dfn>:</td></tr>
+<tr><th id="621">621</th><td>    <b>return</b> <a class="local col5 ref" href="#145return_value" title='return_value' data-ref="145return_value">return_value</a>;</td></tr>
+<tr><th id="622">622</th><td>}</td></tr>
+<tr><th id="623">623</th><td></td></tr>
+<tr><th id="624">624</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_split__doc__[] = &quot;split($self, /, sep=None, maxsplit=-1)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of the words in the string, using sep as the delimiter string.\n&quot;&quot;\n&quot;&quot;  sep\n&quot;&quot;    The delimiter according which to split the string.\n&quot;&quot;    None (the default value) means split according to any whitespace,\n&quot;&quot;    and discard empty strings from the result.\n&quot;&quot;  maxsplit\n&quot;&quot;    Maximum number of splits to do.\n&quot;&quot;    -1 (the default value) means no limit.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_split__doc__" title='unicode_split__doc__' data-ref="unicode_split__doc__">unicode_split__doc__</dfn>,</td></tr>
+<tr><th id="625">625</th><td><q>"split($self, /, sep=None, maxsplit=-1)\n"</q></td></tr>
+<tr><th id="626">626</th><td><q>"--\n"</q></td></tr>
+<tr><th id="627">627</th><td><q>"\n"</q></td></tr>
+<tr><th id="628">628</th><td><q>"Return a list of the words in the string, using sep as the delimiter string.\n"</q></td></tr>
+<tr><th id="629">629</th><td><q>"\n"</q></td></tr>
+<tr><th id="630">630</th><td><q>"  sep\n"</q></td></tr>
+<tr><th id="631">631</th><td><q>"    The delimiter according which to split the string.\n"</q></td></tr>
+<tr><th id="632">632</th><td><q>"    None (the default value) means split according to any whitespace,\n"</q></td></tr>
+<tr><th id="633">633</th><td><q>"    and discard empty strings from the result.\n"</q></td></tr>
+<tr><th id="634">634</th><td><q>"  maxsplit\n"</q></td></tr>
+<tr><th id="635">635</th><td><q>"    Maximum number of splits to do.\n"</q></td></tr>
+<tr><th id="636">636</th><td><q>"    -1 (the default value) means no limit."</q>);</td></tr>
+<tr><th id="637">637</th><td></td></tr>
+<tr><th id="638">638</th><td><u>#define <dfn class="macro" id="_M/UNICODE_SPLIT_METHODDEF" data-ref="_M/UNICODE_SPLIT_METHODDEF">UNICODE_SPLIT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="639">639</th><td><u>    {"split", (PyCFunction)unicode_split, METH_FASTCALL|METH_KEYWORDS, unicode_split__doc__},</u></td></tr>
+<tr><th id="640">640</th><td></td></tr>
+<tr><th id="641">641</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="642">642</th><td><a class="decl" href="../unicodeobject.c.html#unicode_split_impl" title='unicode_split_impl' data-ref="unicode_split_impl" id="unicode_split_impl">unicode_split_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="149self" title='self' data-type='PyObject *' data-ref="149self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="150sep" title='sep' data-type='PyObject *' data-ref="150sep">sep</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="151maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="151maxsplit">maxsplit</dfn>);</td></tr>
+<tr><th id="643">643</th><td></td></tr>
+<tr><th id="644">644</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="645">645</th><td><dfn class="decl def" id="unicode_split" title='unicode_split' data-ref="unicode_split">unicode_split</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="152self" title='self' data-type='PyObject *' data-ref="152self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="153args" title='args' data-type='PyObject **' data-ref="153args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="154nargs" title='nargs' data-type='Py_ssize_t' data-ref="154nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="155kwnames" title='kwnames' data-type='PyObject *' data-ref="155kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="646">646</th><td>{</td></tr>
+<tr><th id="647">647</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="156return_value" title='return_value' data-type='PyObject *' data-ref="156return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="648">648</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col7 decl" id="157_keywords" title='_keywords' data-type='const char *const [3]' data-ref="157_keywords">_keywords</dfn>[] = {<q>"sep"</q>, <q>"maxsplit"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="649">649</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col8 decl" id="158_parser" title='_parser' data-type='_PyArg_Parser' data-ref="158_parser">_parser</dfn> = {<q>"|On:split"</q>, <a class="local col7 ref" href="#157_keywords" title='_keywords' data-ref="157_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="650">650</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="159sep" title='sep' data-type='PyObject *' data-ref="159sep">sep</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="651">651</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="160maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="160maxsplit">maxsplit</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="652">652</th><td></td></tr>
+<tr><th id="653">653</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col3 ref" href="#153args" title='args' data-ref="153args">args</a>, <a class="local col4 ref" href="#154nargs" title='nargs' data-ref="154nargs">nargs</a>, <a class="local col5 ref" href="#155kwnames" title='kwnames' data-ref="155kwnames">kwnames</a>, &amp;<a class="local col8 ref" href="#158_parser" title='_parser' data-ref="158_parser">_parser</a>,</td></tr>
+<tr><th id="654">654</th><td>        &amp;<a class="local col9 ref" href="#159sep" title='sep' data-ref="159sep">sep</a>, &amp;<a class="local col0 ref" href="#160maxsplit" title='maxsplit' data-ref="160maxsplit">maxsplit</a>)) {</td></tr>
+<tr><th id="655">655</th><td>        <b>goto</b> <a class="lbl" href="#161exit" data-ref="161exit">exit</a>;</td></tr>
+<tr><th id="656">656</th><td>    }</td></tr>
+<tr><th id="657">657</th><td>    <a class="local col6 ref" href="#156return_value" title='return_value' data-ref="156return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_split_impl" title='unicode_split_impl' data-ref="unicode_split_impl">unicode_split_impl</a>(<a class="local col2 ref" href="#152self" title='self' data-ref="152self">self</a>, <a class="local col9 ref" href="#159sep" title='sep' data-ref="159sep">sep</a>, <a class="local col0 ref" href="#160maxsplit" title='maxsplit' data-ref="160maxsplit">maxsplit</a>);</td></tr>
+<tr><th id="658">658</th><td></td></tr>
+<tr><th id="659">659</th><td><dfn class="lbl" id="161exit" data-ref="161exit">exit</dfn>:</td></tr>
+<tr><th id="660">660</th><td>    <b>return</b> <a class="local col6 ref" href="#156return_value" title='return_value' data-ref="156return_value">return_value</a>;</td></tr>
+<tr><th id="661">661</th><td>}</td></tr>
+<tr><th id="662">662</th><td></td></tr>
+<tr><th id="663">663</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_partition__doc__[] = &quot;partition($self, sep, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Partition the string into three parts using the given separator.\n&quot;&quot;\n&quot;&quot;This will search for the separator in the string.  If the separator is found,\n&quot;&quot;returns a 3-tuple containing the part before the separator, the separator\n&quot;&quot;itself, and the part after it.\n&quot;&quot;\n&quot;&quot;If the separator is not found, returns a 3-tuple containing the original string\n&quot;&quot;and two empty strings.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_partition__doc__" title='unicode_partition__doc__' data-ref="unicode_partition__doc__">unicode_partition__doc__</dfn>,</td></tr>
+<tr><th id="664">664</th><td><q>"partition($self, sep, /)\n"</q></td></tr>
+<tr><th id="665">665</th><td><q>"--\n"</q></td></tr>
+<tr><th id="666">666</th><td><q>"\n"</q></td></tr>
+<tr><th id="667">667</th><td><q>"Partition the string into three parts using the given separator.\n"</q></td></tr>
+<tr><th id="668">668</th><td><q>"\n"</q></td></tr>
+<tr><th id="669">669</th><td><q>"This will search for the separator in the string.  If the separator is found,\n"</q></td></tr>
+<tr><th id="670">670</th><td><q>"returns a 3-tuple containing the part before the separator, the separator\n"</q></td></tr>
+<tr><th id="671">671</th><td><q>"itself, and the part after it.\n"</q></td></tr>
+<tr><th id="672">672</th><td><q>"\n"</q></td></tr>
+<tr><th id="673">673</th><td><q>"If the separator is not found, returns a 3-tuple containing the original string\n"</q></td></tr>
+<tr><th id="674">674</th><td><q>"and two empty strings."</q>);</td></tr>
+<tr><th id="675">675</th><td></td></tr>
+<tr><th id="676">676</th><td><u>#define <dfn class="macro" id="_M/UNICODE_PARTITION_METHODDEF" data-ref="_M/UNICODE_PARTITION_METHODDEF">UNICODE_PARTITION_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="677">677</th><td><u>    {"partition", (PyCFunction)unicode_partition, METH_O, unicode_partition__doc__},</u></td></tr>
+<tr><th id="678">678</th><td></td></tr>
+<tr><th id="679">679</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_rpartition__doc__[] = &quot;rpartition($self, sep, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Partition the string into three parts using the given separator.\n&quot;&quot;\n&quot;&quot;This will search for the separator in the string, starting and the end. If\n&quot;&quot;the separator is found, returns a 3-tuple containing the part before the\n&quot;&quot;separator, the separator itself, and the part after it.\n&quot;&quot;\n&quot;&quot;If the separator is not found, returns a 3-tuple containing two empty strings\n&quot;&quot;and the original string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_rpartition__doc__" title='unicode_rpartition__doc__' data-ref="unicode_rpartition__doc__">unicode_rpartition__doc__</dfn>,</td></tr>
+<tr><th id="680">680</th><td><q>"rpartition($self, sep, /)\n"</q></td></tr>
+<tr><th id="681">681</th><td><q>"--\n"</q></td></tr>
+<tr><th id="682">682</th><td><q>"\n"</q></td></tr>
+<tr><th id="683">683</th><td><q>"Partition the string into three parts using the given separator.\n"</q></td></tr>
+<tr><th id="684">684</th><td><q>"\n"</q></td></tr>
+<tr><th id="685">685</th><td><q>"This will search for the separator in the string, starting and the end. If\n"</q></td></tr>
+<tr><th id="686">686</th><td><q>"the separator is found, returns a 3-tuple containing the part before the\n"</q></td></tr>
+<tr><th id="687">687</th><td><q>"separator, the separator itself, and the part after it.\n"</q></td></tr>
+<tr><th id="688">688</th><td><q>"\n"</q></td></tr>
+<tr><th id="689">689</th><td><q>"If the separator is not found, returns a 3-tuple containing two empty strings\n"</q></td></tr>
+<tr><th id="690">690</th><td><q>"and the original string."</q>);</td></tr>
+<tr><th id="691">691</th><td></td></tr>
+<tr><th id="692">692</th><td><u>#define <dfn class="macro" id="_M/UNICODE_RPARTITION_METHODDEF" data-ref="_M/UNICODE_RPARTITION_METHODDEF">UNICODE_RPARTITION_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="693">693</th><td><u>    {"rpartition", (PyCFunction)unicode_rpartition, METH_O, unicode_rpartition__doc__},</u></td></tr>
+<tr><th id="694">694</th><td></td></tr>
+<tr><th id="695">695</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_rsplit__doc__[] = &quot;rsplit($self, /, sep=None, maxsplit=-1)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of the words in the string, using sep as the delimiter string.\n&quot;&quot;\n&quot;&quot;  sep\n&quot;&quot;    The delimiter according which to split the string.\n&quot;&quot;    None (the default value) means split according to any whitespace,\n&quot;&quot;    and discard empty strings from the result.\n&quot;&quot;  maxsplit\n&quot;&quot;    Maximum number of splits to do.\n&quot;&quot;    -1 (the default value) means no limit.\n&quot;&quot;\n&quot;&quot;Splits are done starting at the end of the string and working to the front.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_rsplit__doc__" title='unicode_rsplit__doc__' data-ref="unicode_rsplit__doc__">unicode_rsplit__doc__</dfn>,</td></tr>
+<tr><th id="696">696</th><td><q>"rsplit($self, /, sep=None, maxsplit=-1)\n"</q></td></tr>
+<tr><th id="697">697</th><td><q>"--\n"</q></td></tr>
+<tr><th id="698">698</th><td><q>"\n"</q></td></tr>
+<tr><th id="699">699</th><td><q>"Return a list of the words in the string, using sep as the delimiter string.\n"</q></td></tr>
+<tr><th id="700">700</th><td><q>"\n"</q></td></tr>
+<tr><th id="701">701</th><td><q>"  sep\n"</q></td></tr>
+<tr><th id="702">702</th><td><q>"    The delimiter according which to split the string.\n"</q></td></tr>
+<tr><th id="703">703</th><td><q>"    None (the default value) means split according to any whitespace,\n"</q></td></tr>
+<tr><th id="704">704</th><td><q>"    and discard empty strings from the result.\n"</q></td></tr>
+<tr><th id="705">705</th><td><q>"  maxsplit\n"</q></td></tr>
+<tr><th id="706">706</th><td><q>"    Maximum number of splits to do.\n"</q></td></tr>
+<tr><th id="707">707</th><td><q>"    -1 (the default value) means no limit.\n"</q></td></tr>
+<tr><th id="708">708</th><td><q>"\n"</q></td></tr>
+<tr><th id="709">709</th><td><q>"Splits are done starting at the end of the string and working to the front."</q>);</td></tr>
+<tr><th id="710">710</th><td></td></tr>
+<tr><th id="711">711</th><td><u>#define <dfn class="macro" id="_M/UNICODE_RSPLIT_METHODDEF" data-ref="_M/UNICODE_RSPLIT_METHODDEF">UNICODE_RSPLIT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="712">712</th><td><u>    {"rsplit", (PyCFunction)unicode_rsplit, METH_FASTCALL|METH_KEYWORDS, unicode_rsplit__doc__},</u></td></tr>
+<tr><th id="713">713</th><td></td></tr>
+<tr><th id="714">714</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="715">715</th><td><a class="decl" href="../unicodeobject.c.html#unicode_rsplit_impl" title='unicode_rsplit_impl' data-ref="unicode_rsplit_impl" id="unicode_rsplit_impl">unicode_rsplit_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="162self" title='self' data-type='PyObject *' data-ref="162self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="163sep" title='sep' data-type='PyObject *' data-ref="163sep">sep</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="164maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="164maxsplit">maxsplit</dfn>);</td></tr>
+<tr><th id="716">716</th><td></td></tr>
+<tr><th id="717">717</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="718">718</th><td><dfn class="decl def" id="unicode_rsplit" title='unicode_rsplit' data-ref="unicode_rsplit">unicode_rsplit</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="165self" title='self' data-type='PyObject *' data-ref="165self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="166args" title='args' data-type='PyObject **' data-ref="166args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="167nargs" title='nargs' data-type='Py_ssize_t' data-ref="167nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="168kwnames" title='kwnames' data-type='PyObject *' data-ref="168kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="719">719</th><td>{</td></tr>
+<tr><th id="720">720</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="169return_value" title='return_value' data-type='PyObject *' data-ref="169return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="721">721</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col0 decl" id="170_keywords" title='_keywords' data-type='const char *const [3]' data-ref="170_keywords">_keywords</dfn>[] = {<q>"sep"</q>, <q>"maxsplit"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="722">722</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col1 decl" id="171_parser" title='_parser' data-type='_PyArg_Parser' data-ref="171_parser">_parser</dfn> = {<q>"|On:rsplit"</q>, <a class="local col0 ref" href="#170_keywords" title='_keywords' data-ref="170_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="723">723</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="172sep" title='sep' data-type='PyObject *' data-ref="172sep">sep</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="724">724</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="173maxsplit" title='maxsplit' data-type='Py_ssize_t' data-ref="173maxsplit">maxsplit</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="725">725</th><td></td></tr>
+<tr><th id="726">726</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col6 ref" href="#166args" title='args' data-ref="166args">args</a>, <a class="local col7 ref" href="#167nargs" title='nargs' data-ref="167nargs">nargs</a>, <a class="local col8 ref" href="#168kwnames" title='kwnames' data-ref="168kwnames">kwnames</a>, &amp;<a class="local col1 ref" href="#171_parser" title='_parser' data-ref="171_parser">_parser</a>,</td></tr>
+<tr><th id="727">727</th><td>        &amp;<a class="local col2 ref" href="#172sep" title='sep' data-ref="172sep">sep</a>, &amp;<a class="local col3 ref" href="#173maxsplit" title='maxsplit' data-ref="173maxsplit">maxsplit</a>)) {</td></tr>
+<tr><th id="728">728</th><td>        <b>goto</b> <a class="lbl" href="#174exit" data-ref="174exit">exit</a>;</td></tr>
+<tr><th id="729">729</th><td>    }</td></tr>
+<tr><th id="730">730</th><td>    <a class="local col9 ref" href="#169return_value" title='return_value' data-ref="169return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_rsplit_impl" title='unicode_rsplit_impl' data-ref="unicode_rsplit_impl">unicode_rsplit_impl</a>(<a class="local col5 ref" href="#165self" title='self' data-ref="165self">self</a>, <a class="local col2 ref" href="#172sep" title='sep' data-ref="172sep">sep</a>, <a class="local col3 ref" href="#173maxsplit" title='maxsplit' data-ref="173maxsplit">maxsplit</a>);</td></tr>
+<tr><th id="731">731</th><td></td></tr>
+<tr><th id="732">732</th><td><dfn class="lbl" id="174exit" data-ref="174exit">exit</dfn>:</td></tr>
+<tr><th id="733">733</th><td>    <b>return</b> <a class="local col9 ref" href="#169return_value" title='return_value' data-ref="169return_value">return_value</a>;</td></tr>
+<tr><th id="734">734</th><td>}</td></tr>
+<tr><th id="735">735</th><td></td></tr>
+<tr><th id="736">736</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_splitlines__doc__[] = &quot;splitlines($self, /, keepends=False)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of the lines in the string, breaking at line boundaries.\n&quot;&quot;\n&quot;&quot;Line breaks are not included in the resulting list unless keepends is given and\n&quot;&quot;true.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_splitlines__doc__" title='unicode_splitlines__doc__' data-ref="unicode_splitlines__doc__">unicode_splitlines__doc__</dfn>,</td></tr>
+<tr><th id="737">737</th><td><q>"splitlines($self, /, keepends=False)\n"</q></td></tr>
+<tr><th id="738">738</th><td><q>"--\n"</q></td></tr>
+<tr><th id="739">739</th><td><q>"\n"</q></td></tr>
+<tr><th id="740">740</th><td><q>"Return a list of the lines in the string, breaking at line boundaries.\n"</q></td></tr>
+<tr><th id="741">741</th><td><q>"\n"</q></td></tr>
+<tr><th id="742">742</th><td><q>"Line breaks are not included in the resulting list unless keepends is given and\n"</q></td></tr>
+<tr><th id="743">743</th><td><q>"true."</q>);</td></tr>
+<tr><th id="744">744</th><td></td></tr>
+<tr><th id="745">745</th><td><u>#define <dfn class="macro" id="_M/UNICODE_SPLITLINES_METHODDEF" data-ref="_M/UNICODE_SPLITLINES_METHODDEF">UNICODE_SPLITLINES_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="746">746</th><td><u>    {"splitlines", (PyCFunction)unicode_splitlines, METH_FASTCALL|METH_KEYWORDS, unicode_splitlines__doc__},</u></td></tr>
+<tr><th id="747">747</th><td></td></tr>
+<tr><th id="748">748</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="749">749</th><td><a class="decl" href="../unicodeobject.c.html#unicode_splitlines_impl" title='unicode_splitlines_impl' data-ref="unicode_splitlines_impl" id="unicode_splitlines_impl">unicode_splitlines_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="175self" title='self' data-type='PyObject *' data-ref="175self">self</dfn>, <em>int</em> <dfn class="local col6 decl" id="176keepends" title='keepends' data-type='int' data-ref="176keepends">keepends</dfn>);</td></tr>
+<tr><th id="750">750</th><td></td></tr>
+<tr><th id="751">751</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="752">752</th><td><dfn class="decl def" id="unicode_splitlines" title='unicode_splitlines' data-ref="unicode_splitlines">unicode_splitlines</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="177self" title='self' data-type='PyObject *' data-ref="177self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col8 decl" id="178args" title='args' data-type='PyObject **' data-ref="178args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="179nargs" title='nargs' data-type='Py_ssize_t' data-ref="179nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="180kwnames" title='kwnames' data-type='PyObject *' data-ref="180kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="753">753</th><td>{</td></tr>
+<tr><th id="754">754</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="181return_value" title='return_value' data-type='PyObject *' data-ref="181return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="755">755</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col2 decl" id="182_keywords" title='_keywords' data-type='const char *const [2]' data-ref="182_keywords">_keywords</dfn>[] = {<q>"keepends"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="756">756</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col3 decl" id="183_parser" title='_parser' data-type='_PyArg_Parser' data-ref="183_parser">_parser</dfn> = {<q>"|i:splitlines"</q>, <a class="local col2 ref" href="#182_keywords" title='_keywords' data-ref="182_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="757">757</th><td>    <em>int</em> <dfn class="local col4 decl" id="184keepends" title='keepends' data-type='int' data-ref="184keepends">keepends</dfn> = <var>0</var>;</td></tr>
+<tr><th id="758">758</th><td></td></tr>
+<tr><th id="759">759</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col8 ref" href="#178args" title='args' data-ref="178args">args</a>, <a class="local col9 ref" href="#179nargs" title='nargs' data-ref="179nargs">nargs</a>, <a class="local col0 ref" href="#180kwnames" title='kwnames' data-ref="180kwnames">kwnames</a>, &amp;<a class="local col3 ref" href="#183_parser" title='_parser' data-ref="183_parser">_parser</a>,</td></tr>
+<tr><th id="760">760</th><td>        &amp;<a class="local col4 ref" href="#184keepends" title='keepends' data-ref="184keepends">keepends</a>)) {</td></tr>
+<tr><th id="761">761</th><td>        <b>goto</b> <a class="lbl" href="#185exit" data-ref="185exit">exit</a>;</td></tr>
+<tr><th id="762">762</th><td>    }</td></tr>
+<tr><th id="763">763</th><td>    <a class="local col1 ref" href="#181return_value" title='return_value' data-ref="181return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_splitlines_impl" title='unicode_splitlines_impl' data-ref="unicode_splitlines_impl">unicode_splitlines_impl</a>(<a class="local col7 ref" href="#177self" title='self' data-ref="177self">self</a>, <a class="local col4 ref" href="#184keepends" title='keepends' data-ref="184keepends">keepends</a>);</td></tr>
+<tr><th id="764">764</th><td></td></tr>
+<tr><th id="765">765</th><td><dfn class="lbl" id="185exit" data-ref="185exit">exit</dfn>:</td></tr>
+<tr><th id="766">766</th><td>    <b>return</b> <a class="local col1 ref" href="#181return_value" title='return_value' data-ref="181return_value">return_value</a>;</td></tr>
+<tr><th id="767">767</th><td>}</td></tr>
+<tr><th id="768">768</th><td></td></tr>
+<tr><th id="769">769</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_swapcase__doc__[] = &quot;swapcase($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Convert uppercase characters to lowercase and lowercase characters to uppercase.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_swapcase__doc__" title='unicode_swapcase__doc__' data-ref="unicode_swapcase__doc__">unicode_swapcase__doc__</dfn>,</td></tr>
+<tr><th id="770">770</th><td><q>"swapcase($self, /)\n"</q></td></tr>
+<tr><th id="771">771</th><td><q>"--\n"</q></td></tr>
+<tr><th id="772">772</th><td><q>"\n"</q></td></tr>
+<tr><th id="773">773</th><td><q>"Convert uppercase characters to lowercase and lowercase characters to uppercase."</q>);</td></tr>
+<tr><th id="774">774</th><td></td></tr>
+<tr><th id="775">775</th><td><u>#define <dfn class="macro" id="_M/UNICODE_SWAPCASE_METHODDEF" data-ref="_M/UNICODE_SWAPCASE_METHODDEF">UNICODE_SWAPCASE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="776">776</th><td><u>    {"swapcase", (PyCFunction)unicode_swapcase, METH_NOARGS, unicode_swapcase__doc__},</u></td></tr>
+<tr><th id="777">777</th><td></td></tr>
+<tr><th id="778">778</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="779">779</th><td><a class="decl" href="../unicodeobject.c.html#unicode_swapcase_impl" title='unicode_swapcase_impl' data-ref="unicode_swapcase_impl" id="unicode_swapcase_impl">unicode_swapcase_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="186self" title='self' data-type='PyObject *' data-ref="186self">self</dfn>);</td></tr>
+<tr><th id="780">780</th><td></td></tr>
+<tr><th id="781">781</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="782">782</th><td><dfn class="decl def" id="unicode_swapcase" title='unicode_swapcase' data-ref="unicode_swapcase">unicode_swapcase</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="187self" title='self' data-type='PyObject *' data-ref="187self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="783">783</th><td>{</td></tr>
+<tr><th id="784">784</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_swapcase_impl" title='unicode_swapcase_impl' data-ref="unicode_swapcase_impl">unicode_swapcase_impl</a>(<a class="local col7 ref" href="#187self" title='self' data-ref="187self">self</a>);</td></tr>
+<tr><th id="785">785</th><td>}</td></tr>
+<tr><th id="786">786</th><td></td></tr>
+<tr><th id="787">787</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_maketrans__doc__[] = &quot;maketrans(x, y=None, z=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a translation table usable for str.translate().\n&quot;&quot;\n&quot;&quot;If there is only one argument, it must be a dictionary mapping Unicode\n&quot;&quot;ordinals (integers) or characters to Unicode ordinals, strings or None.\n&quot;&quot;Character keys will be then converted to ordinals.\n&quot;&quot;If there are two arguments, they must be strings of equal length, and\n&quot;&quot;in the resulting dictionary, each character in x will be mapped to the\n&quot;&quot;character at the same position in y. If there is a third argument, it\n&quot;&quot;must be a string, whose characters will be mapped to None in the result.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_maketrans__doc__" title='unicode_maketrans__doc__' data-ref="unicode_maketrans__doc__">unicode_maketrans__doc__</dfn>,</td></tr>
+<tr><th id="788">788</th><td><q>"maketrans(x, y=None, z=None, /)\n"</q></td></tr>
+<tr><th id="789">789</th><td><q>"--\n"</q></td></tr>
+<tr><th id="790">790</th><td><q>"\n"</q></td></tr>
+<tr><th id="791">791</th><td><q>"Return a translation table usable for str.translate().\n"</q></td></tr>
+<tr><th id="792">792</th><td><q>"\n"</q></td></tr>
+<tr><th id="793">793</th><td><q>"If there is only one argument, it must be a dictionary mapping Unicode\n"</q></td></tr>
+<tr><th id="794">794</th><td><q>"ordinals (integers) or characters to Unicode ordinals, strings or None.\n"</q></td></tr>
+<tr><th id="795">795</th><td><q>"Character keys will be then converted to ordinals.\n"</q></td></tr>
+<tr><th id="796">796</th><td><q>"If there are two arguments, they must be strings of equal length, and\n"</q></td></tr>
+<tr><th id="797">797</th><td><q>"in the resulting dictionary, each character in x will be mapped to the\n"</q></td></tr>
+<tr><th id="798">798</th><td><q>"character at the same position in y. If there is a third argument, it\n"</q></td></tr>
+<tr><th id="799">799</th><td><q>"must be a string, whose characters will be mapped to None in the result."</q>);</td></tr>
+<tr><th id="800">800</th><td></td></tr>
+<tr><th id="801">801</th><td><u>#define <dfn class="macro" id="_M/UNICODE_MAKETRANS_METHODDEF" data-ref="_M/UNICODE_MAKETRANS_METHODDEF">UNICODE_MAKETRANS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="802">802</th><td><u>    {"maketrans", (PyCFunction)unicode_maketrans, METH_FASTCALL|METH_STATIC, unicode_maketrans__doc__},</u></td></tr>
+<tr><th id="803">803</th><td></td></tr>
+<tr><th id="804">804</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="805">805</th><td><a class="decl" href="../unicodeobject.c.html#unicode_maketrans_impl" title='unicode_maketrans_impl' data-ref="unicode_maketrans_impl" id="unicode_maketrans_impl">unicode_maketrans_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="188x" title='x' data-type='PyObject *' data-ref="188x">x</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="189y" title='y' data-type='PyObject *' data-ref="189y">y</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="190z" title='z' data-type='PyObject *' data-ref="190z">z</dfn>);</td></tr>
+<tr><th id="806">806</th><td></td></tr>
+<tr><th id="807">807</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="808">808</th><td><dfn class="decl def" id="unicode_maketrans" title='unicode_maketrans' data-ref="unicode_maketrans">unicode_maketrans</dfn>(<em>void</em> *<dfn class="local col1 decl" id="191null" title='null' data-type='void *' data-ref="191null">null</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="192args" title='args' data-type='PyObject **' data-ref="192args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="193nargs" title='nargs' data-type='Py_ssize_t' data-ref="193nargs">nargs</dfn>)</td></tr>
+<tr><th id="809">809</th><td>{</td></tr>
+<tr><th id="810">810</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="194return_value" title='return_value' data-type='PyObject *' data-ref="194return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="811">811</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="195x" title='x' data-type='PyObject *' data-ref="195x">x</dfn>;</td></tr>
+<tr><th id="812">812</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="196y" title='y' data-type='PyObject *' data-ref="196y">y</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="813">813</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="197z" title='z' data-type='PyObject *' data-ref="197z">z</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="814">814</th><td></td></tr>
+<tr><th id="815">815</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col2 ref" href="#192args" title='args' data-ref="192args">args</a>, <a class="local col3 ref" href="#193nargs" title='nargs' data-ref="193nargs">nargs</a>, <q>"O|UU:maketrans"</q>,</td></tr>
+<tr><th id="816">816</th><td>        &amp;<a class="local col5 ref" href="#195x" title='x' data-ref="195x">x</a>, &amp;<a class="local col6 ref" href="#196y" title='y' data-ref="196y">y</a>, &amp;<a class="local col7 ref" href="#197z" title='z' data-ref="197z">z</a>)) {</td></tr>
+<tr><th id="817">817</th><td>        <b>goto</b> <a class="lbl" href="#198exit" data-ref="198exit">exit</a>;</td></tr>
+<tr><th id="818">818</th><td>    }</td></tr>
+<tr><th id="819">819</th><td>    <a class="local col4 ref" href="#194return_value" title='return_value' data-ref="194return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_maketrans_impl" title='unicode_maketrans_impl' data-ref="unicode_maketrans_impl">unicode_maketrans_impl</a>(<a class="local col5 ref" href="#195x" title='x' data-ref="195x">x</a>, <a class="local col6 ref" href="#196y" title='y' data-ref="196y">y</a>, <a class="local col7 ref" href="#197z" title='z' data-ref="197z">z</a>);</td></tr>
+<tr><th id="820">820</th><td></td></tr>
+<tr><th id="821">821</th><td><dfn class="lbl" id="198exit" data-ref="198exit">exit</dfn>:</td></tr>
+<tr><th id="822">822</th><td>    <b>return</b> <a class="local col4 ref" href="#194return_value" title='return_value' data-ref="194return_value">return_value</a>;</td></tr>
+<tr><th id="823">823</th><td>}</td></tr>
+<tr><th id="824">824</th><td></td></tr>
+<tr><th id="825">825</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_translate__doc__[] = &quot;translate($self, table, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Replace each character in the string using the given translation table.\n&quot;&quot;\n&quot;&quot;  table\n&quot;&quot;    Translation table, which must be a mapping of Unicode ordinals to\n&quot;&quot;    Unicode ordinals, strings, or None.\n&quot;&quot;\n&quot;&quot;The table must implement lookup/indexing via __getitem__, for instance a\n&quot;&quot;dictionary or list.  If this operation raises LookupError, the character is\n&quot;&quot;left untouched.  Characters mapped to None are deleted.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_translate__doc__" title='unicode_translate__doc__' data-ref="unicode_translate__doc__">unicode_translate__doc__</dfn>,</td></tr>
+<tr><th id="826">826</th><td><q>"translate($self, table, /)\n"</q></td></tr>
+<tr><th id="827">827</th><td><q>"--\n"</q></td></tr>
+<tr><th id="828">828</th><td><q>"\n"</q></td></tr>
+<tr><th id="829">829</th><td><q>"Replace each character in the string using the given translation table.\n"</q></td></tr>
+<tr><th id="830">830</th><td><q>"\n"</q></td></tr>
+<tr><th id="831">831</th><td><q>"  table\n"</q></td></tr>
+<tr><th id="832">832</th><td><q>"    Translation table, which must be a mapping of Unicode ordinals to\n"</q></td></tr>
+<tr><th id="833">833</th><td><q>"    Unicode ordinals, strings, or None.\n"</q></td></tr>
+<tr><th id="834">834</th><td><q>"\n"</q></td></tr>
+<tr><th id="835">835</th><td><q>"The table must implement lookup/indexing via __getitem__, for instance a\n"</q></td></tr>
+<tr><th id="836">836</th><td><q>"dictionary or list.  If this operation raises LookupError, the character is\n"</q></td></tr>
+<tr><th id="837">837</th><td><q>"left untouched.  Characters mapped to None are deleted."</q>);</td></tr>
+<tr><th id="838">838</th><td></td></tr>
+<tr><th id="839">839</th><td><u>#define <dfn class="macro" id="_M/UNICODE_TRANSLATE_METHODDEF" data-ref="_M/UNICODE_TRANSLATE_METHODDEF">UNICODE_TRANSLATE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="840">840</th><td><u>    {"translate", (PyCFunction)unicode_translate, METH_O, unicode_translate__doc__},</u></td></tr>
+<tr><th id="841">841</th><td></td></tr>
+<tr><th id="842">842</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_upper__doc__[] = &quot;upper($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy of the string converted to uppercase.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_upper__doc__" title='unicode_upper__doc__' data-ref="unicode_upper__doc__">unicode_upper__doc__</dfn>,</td></tr>
+<tr><th id="843">843</th><td><q>"upper($self, /)\n"</q></td></tr>
+<tr><th id="844">844</th><td><q>"--\n"</q></td></tr>
+<tr><th id="845">845</th><td><q>"\n"</q></td></tr>
+<tr><th id="846">846</th><td><q>"Return a copy of the string converted to uppercase."</q>);</td></tr>
+<tr><th id="847">847</th><td></td></tr>
+<tr><th id="848">848</th><td><u>#define <dfn class="macro" id="_M/UNICODE_UPPER_METHODDEF" data-ref="_M/UNICODE_UPPER_METHODDEF">UNICODE_UPPER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="849">849</th><td><u>    {"upper", (PyCFunction)unicode_upper, METH_NOARGS, unicode_upper__doc__},</u></td></tr>
+<tr><th id="850">850</th><td></td></tr>
+<tr><th id="851">851</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="852">852</th><td><a class="decl" href="../unicodeobject.c.html#unicode_upper_impl" title='unicode_upper_impl' data-ref="unicode_upper_impl" id="unicode_upper_impl">unicode_upper_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="199self" title='self' data-type='PyObject *' data-ref="199self">self</dfn>);</td></tr>
+<tr><th id="853">853</th><td></td></tr>
+<tr><th id="854">854</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="855">855</th><td><dfn class="decl def" id="unicode_upper" title='unicode_upper' data-ref="unicode_upper">unicode_upper</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="200self" title='self' data-type='PyObject *' data-ref="200self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="856">856</th><td>{</td></tr>
+<tr><th id="857">857</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_upper_impl" title='unicode_upper_impl' data-ref="unicode_upper_impl">unicode_upper_impl</a>(<a class="local col0 ref" href="#200self" title='self' data-ref="200self">self</a>);</td></tr>
+<tr><th id="858">858</th><td>}</td></tr>
+<tr><th id="859">859</th><td></td></tr>
+<tr><th id="860">860</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_zfill__doc__[] = &quot;zfill($self, width, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Pad a numeric string with zeros on the left, to fill a field of the given width.\n&quot;&quot;\n&quot;&quot;The string is never truncated.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_zfill__doc__" title='unicode_zfill__doc__' data-ref="unicode_zfill__doc__">unicode_zfill__doc__</dfn>,</td></tr>
+<tr><th id="861">861</th><td><q>"zfill($self, width, /)\n"</q></td></tr>
+<tr><th id="862">862</th><td><q>"--\n"</q></td></tr>
+<tr><th id="863">863</th><td><q>"\n"</q></td></tr>
+<tr><th id="864">864</th><td><q>"Pad a numeric string with zeros on the left, to fill a field of the given width.\n"</q></td></tr>
+<tr><th id="865">865</th><td><q>"\n"</q></td></tr>
+<tr><th id="866">866</th><td><q>"The string is never truncated."</q>);</td></tr>
+<tr><th id="867">867</th><td></td></tr>
+<tr><th id="868">868</th><td><u>#define <dfn class="macro" id="_M/UNICODE_ZFILL_METHODDEF" data-ref="_M/UNICODE_ZFILL_METHODDEF">UNICODE_ZFILL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="869">869</th><td><u>    {"zfill", (PyCFunction)unicode_zfill, METH_O, unicode_zfill__doc__},</u></td></tr>
+<tr><th id="870">870</th><td></td></tr>
+<tr><th id="871">871</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="872">872</th><td><a class="decl" href="../unicodeobject.c.html#unicode_zfill_impl" title='unicode_zfill_impl' data-ref="unicode_zfill_impl" id="unicode_zfill_impl">unicode_zfill_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="201self" title='self' data-type='PyObject *' data-ref="201self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="202width" title='width' data-type='Py_ssize_t' data-ref="202width">width</dfn>);</td></tr>
+<tr><th id="873">873</th><td></td></tr>
+<tr><th id="874">874</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="875">875</th><td><dfn class="decl def" id="unicode_zfill" title='unicode_zfill' data-ref="unicode_zfill">unicode_zfill</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="203self" title='self' data-type='PyObject *' data-ref="203self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="204arg" title='arg' data-type='PyObject *' data-ref="204arg">arg</dfn>)</td></tr>
+<tr><th id="876">876</th><td>{</td></tr>
+<tr><th id="877">877</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="205return_value" title='return_value' data-type='PyObject *' data-ref="205return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="878">878</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="206width" title='width' data-type='Py_ssize_t' data-ref="206width">width</dfn>;</td></tr>
+<tr><th id="879">879</th><td></td></tr>
+<tr><th id="880">880</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col4 ref" href="#204arg" title='arg' data-ref="204arg">arg</a>, <q>"n:zfill"</q>, &amp;<a class="local col6 ref" href="#206width" title='width' data-ref="206width">width</a>)) {</td></tr>
+<tr><th id="881">881</th><td>        <b>goto</b> <a class="lbl" href="#207exit" data-ref="207exit">exit</a>;</td></tr>
+<tr><th id="882">882</th><td>    }</td></tr>
+<tr><th id="883">883</th><td>    <a class="local col5 ref" href="#205return_value" title='return_value' data-ref="205return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode_zfill_impl" title='unicode_zfill_impl' data-ref="unicode_zfill_impl">unicode_zfill_impl</a>(<a class="local col3 ref" href="#203self" title='self' data-ref="203self">self</a>, <a class="local col6 ref" href="#206width" title='width' data-ref="206width">width</a>);</td></tr>
+<tr><th id="884">884</th><td></td></tr>
+<tr><th id="885">885</th><td><dfn class="lbl" id="207exit" data-ref="207exit">exit</dfn>:</td></tr>
+<tr><th id="886">886</th><td>    <b>return</b> <a class="local col5 ref" href="#205return_value" title='return_value' data-ref="205return_value">return_value</a>;</td></tr>
+<tr><th id="887">887</th><td>}</td></tr>
+<tr><th id="888">888</th><td></td></tr>
+<tr><th id="889">889</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode___format____doc__[] = &quot;__format__($self, format_spec, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a formatted version of the string as described by format_spec.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode___format____doc__" title='unicode___format____doc__' data-ref="unicode___format____doc__">unicode___format____doc__</dfn>,</td></tr>
+<tr><th id="890">890</th><td><q>"__format__($self, format_spec, /)\n"</q></td></tr>
+<tr><th id="891">891</th><td><q>"--\n"</q></td></tr>
+<tr><th id="892">892</th><td><q>"\n"</q></td></tr>
+<tr><th id="893">893</th><td><q>"Return a formatted version of the string as described by format_spec."</q>);</td></tr>
+<tr><th id="894">894</th><td></td></tr>
+<tr><th id="895">895</th><td><u>#define <dfn class="macro" id="_M/UNICODE___FORMAT___METHODDEF" data-ref="_M/UNICODE___FORMAT___METHODDEF">UNICODE___FORMAT___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="896">896</th><td><u>    {"__format__", (PyCFunction)unicode___format__, METH_O, unicode___format____doc__},</u></td></tr>
+<tr><th id="897">897</th><td></td></tr>
+<tr><th id="898">898</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="899">899</th><td><a class="decl" href="../unicodeobject.c.html#unicode___format___impl" title='unicode___format___impl' data-ref="unicode___format___impl" id="unicode___format___impl">unicode___format___impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="208self" title='self' data-type='PyObject *' data-ref="208self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="209format_spec" title='format_spec' data-type='PyObject *' data-ref="209format_spec">format_spec</dfn>);</td></tr>
+<tr><th id="900">900</th><td></td></tr>
+<tr><th id="901">901</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="902">902</th><td><dfn class="decl def" id="unicode___format__" title='unicode___format__' data-ref="unicode___format__">unicode___format__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="210self" title='self' data-type='PyObject *' data-ref="210self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="211arg" title='arg' data-type='PyObject *' data-ref="211arg">arg</dfn>)</td></tr>
+<tr><th id="903">903</th><td>{</td></tr>
+<tr><th id="904">904</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="212return_value" title='return_value' data-type='PyObject *' data-ref="212return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="905">905</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="213format_spec" title='format_spec' data-type='PyObject *' data-ref="213format_spec">format_spec</dfn>;</td></tr>
+<tr><th id="906">906</th><td></td></tr>
+<tr><th id="907">907</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col1 ref" href="#211arg" title='arg' data-ref="211arg">arg</a>, <q>"U:__format__"</q>, &amp;<a class="local col3 ref" href="#213format_spec" title='format_spec' data-ref="213format_spec">format_spec</a>)) {</td></tr>
+<tr><th id="908">908</th><td>        <b>goto</b> <a class="lbl" href="#214exit" data-ref="214exit">exit</a>;</td></tr>
+<tr><th id="909">909</th><td>    }</td></tr>
+<tr><th id="910">910</th><td>    <a class="local col2 ref" href="#212return_value" title='return_value' data-ref="212return_value">return_value</a> = <a class="ref" href="../unicodeobject.c.html#unicode___format___impl" title='unicode___format___impl' data-ref="unicode___format___impl">unicode___format___impl</a>(<a class="local col0 ref" href="#210self" title='self' data-ref="210self">self</a>, <a class="local col3 ref" href="#213format_spec" title='format_spec' data-ref="213format_spec">format_spec</a>);</td></tr>
+<tr><th id="911">911</th><td></td></tr>
+<tr><th id="912">912</th><td><dfn class="lbl" id="214exit" data-ref="214exit">exit</dfn>:</td></tr>
+<tr><th id="913">913</th><td>    <b>return</b> <a class="local col2 ref" href="#212return_value" title='return_value' data-ref="212return_value">return_value</a>;</td></tr>
+<tr><th id="914">914</th><td>}</td></tr>
+<tr><th id="915">915</th><td></td></tr>
+<tr><th id="916">916</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unicode_sizeof__doc__[] = &quot;__sizeof__($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the size of the string in memory, in bytes.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unicode_sizeof__doc__" title='unicode_sizeof__doc__' data-ref="unicode_sizeof__doc__">unicode_sizeof__doc__</dfn>,</td></tr>
+<tr><th id="917">917</th><td><q>"__sizeof__($self, /)\n"</q></td></tr>
+<tr><th id="918">918</th><td><q>"--\n"</q></td></tr>
+<tr><th id="919">919</th><td><q>"\n"</q></td></tr>
+<tr><th id="920">920</th><td><q>"Return the size of the string in memory, in bytes."</q>);</td></tr>
+<tr><th id="921">921</th><td></td></tr>
+<tr><th id="922">922</th><td><u>#define <dfn class="macro" id="_M/UNICODE_SIZEOF_METHODDEF" data-ref="_M/UNICODE_SIZEOF_METHODDEF">UNICODE_SIZEOF_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="923">923</th><td><u>    {"__sizeof__", (PyCFunction)unicode_sizeof, METH_NOARGS, unicode_sizeof__doc__},</u></td></tr>
+<tr><th id="924">924</th><td></td></tr>
+<tr><th id="925">925</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="926">926</th><td><a class="decl" href="../unicodeobject.c.html#unicode_sizeof_impl" title='unicode_sizeof_impl' data-ref="unicode_sizeof_impl" id="unicode_sizeof_impl">unicode_sizeof_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="215self" title='self' data-type='PyObject *' data-ref="215self">self</dfn>);</td></tr>
+<tr><th id="927">927</th><td></td></tr>
+<tr><th id="928">928</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="929">929</th><td><dfn class="decl def" id="unicode_sizeof" title='unicode_sizeof' data-ref="unicode_sizeof">unicode_sizeof</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="216self" title='self' data-type='PyObject *' data-ref="216self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="930">930</th><td>{</td></tr>
+<tr><th id="931">931</th><td>    <b>return</b> <a class="ref" href="../unicodeobject.c.html#unicode_sizeof_impl" title='unicode_sizeof_impl' data-ref="unicode_sizeof_impl">unicode_sizeof_impl</a>(<a class="local col6 ref" href="#216self" title='self' data-ref="216self">self</a>);</td></tr>
+<tr><th id="932">932</th><td>}</td></tr>
+<tr><th id="933">933</th><td><i>/*[clinic end generated code: output=8fd799fd7f2cc724 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="934">934</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../unicodeobject.c.html'>codebrowser/Objects/unicodeobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

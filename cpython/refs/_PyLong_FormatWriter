@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/longobject.h' l='178' type='int _PyLong_FormatWriter(_PyUnicodeWriter * writer, PyObject * obj, int base, int alternate)'/>
+<def f='codebrowser/Objects/longobject.c' l='1953' ll='1964' type='int _PyLong_FormatWriter(_PyUnicodeWriter * writer, PyObject * obj, int base, int alternate)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14373' u='c' c='mainformatlong'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14667' u='c' c='unicode_format_arg_format'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='951' u='c' c='format_long_internal'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1460' u='c' c='_PyLong_FormatAdvancedWriter'/>

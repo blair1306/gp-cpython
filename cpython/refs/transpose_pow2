@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/transpose.h' l='45' type='int transpose_pow2(mpd_uint_t * matrix, mpd_size_t rows, mpd_size_t cols)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='71' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='84' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='189' u='c' c='inv_six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='207' u='c' c='inv_six_step_fnt'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='244' ll='274' type='int transpose_pow2(mpd_uint_t * matrix, mpd_size_t rows, mpd_size_t cols)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='240'>/*
+ * In-place transposition of a 2^n x 2^n or a 2^n x (2*2^n)
+ * or a (2*2^n) x 2^n matrix.
+ */</doc>

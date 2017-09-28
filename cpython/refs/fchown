@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='481' type='int fchown(int __fd, __uid_t __owner, __gid_t __group)'/>
+<doc f='include/unistd.h' l='480'>/* Change the owner and group of the file that FD is open on.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3178' u='c' c='os_chown_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3226' u='c' c='os_fchown_impl'/>

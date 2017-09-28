@@ -1,0 +1,3 @@
+<dec f='include/sched.h' l='55' type='int sched_getparam(__pid_t __pid, struct sched_param * __param)'/>
+<doc f='include/sched.h' l='54'>/* Retrieve scheduling parameters for a particular process.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='5645' u='c' c='os_sched_getparam_impl'/>

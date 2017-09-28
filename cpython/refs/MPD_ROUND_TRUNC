@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='250' type='8'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='250'>/* truncate, but set infinity      */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1623' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1755' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4570' u='r' c='mpd_qln10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4734' u='r' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7296' u='r' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7621' u='r' c='_mpd_qinvroot'/>

@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='727' type='void noqiflush()'/>
+<doc f='include/curses.h' l='727'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2146' u='c' c='PyCurses_noqiflush'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2803' u='c' c='PyCurses_QiFlush'/>

@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/pystate.h' l='139' type='PyObject *'/>
+<offset>960</offset>
+<use f='codebrowser/Python/ceval.c' l='953' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='956' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='953' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='956' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='953' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='956' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3616' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3640' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4232' u='r' c='save_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4238' u='r' c='save_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4254' u='r' c='swap_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4255' u='w' c='swap_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4265' u='r' c='restore_and_clear_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4268' u='w' c='restore_and_clear_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4291' u='r' c='do_raise'/>
+<use f='codebrowser/Python/errors.c' l='339' u='r' c='PyErr_GetExcInfo'/>
+<use f='codebrowser/Python/errors.c' l='354' u='r' c='PyErr_SetExcInfo'/>
+<use f='codebrowser/Python/errors.c' l='358' u='w' c='PyErr_SetExcInfo'/>
+<use f='codebrowser/Python/pystate.c' l='271' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='460' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='460' u='w' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/sysmodule.c' l='243' u='r' c='sys_exc_info'/>
+<use f='codebrowser/Python/sysmodule.c' l='244' u='r' c='sys_exc_info'/>

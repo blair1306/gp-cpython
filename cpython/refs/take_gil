@@ -1,0 +1,7 @@
+<def f='codebrowser/Python/ceval_gil.h' l='207' ll='260' type='void take_gil(PyThreadState * tstate)'/>
+<use f='codebrowser/Python/ceval.c' l='180' u='c' c='PyEval_InitThreads'/>
+<use f='codebrowser/Python/ceval.c' l='201' u='c' c='PyEval_AcquireLock'/>
+<use f='codebrowser/Python/ceval.c' l='222' u='c' c='PyEval_AcquireThread'/>
+<use f='codebrowser/Python/ceval.c' l='252' u='c' c='PyEval_ReInitThreads'/>
+<use f='codebrowser/Python/ceval.c' l='295' u='c' c='PyEval_RestoreThread'/>
+<use f='codebrowser/Python/ceval.c' l='1113' u='c' c='_PyEval_EvalFrameDefault'/>

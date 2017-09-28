@@ -1,0 +1,5 @@
+<dec f='include/unistd.h' l='486' type='int lchown(const char * __file, __uid_t __owner, __gid_t __group)'/>
+<doc f='include/unistd.h' l='484'>/* Change owner and group of FILE, if it is a symbolic
+   link the ownership of the symbolic link is changed.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3183' u='c' c='os_chown_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3257' u='c' c='os_lchown_impl'/>

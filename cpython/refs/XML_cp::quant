@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='140' type='enum XML_Content_Quant'/>
+<offset>32</offset>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5168' u='w' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='7119' u='w' c='build_node'/>
+<use f='codebrowser/Modules/pyexpat.c' l='532' u='r' c='conv_content_model'/>

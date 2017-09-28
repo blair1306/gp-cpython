@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pymem.h' l='102' type='void * PyMem_Calloc(size_t nelem, size_t elsize)'/>
+<use f='codebrowser/Modules/_ssl.c' l='5083' u='c' c='_setup_ssl_threads'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3234' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3375' u='c' c='test_setallocators'/>
+<use f='codebrowser/Objects/listobject.c' l='175' u='c' c='PyList_New'/>
+<def f='codebrowser/Objects/obmalloc.c' l='421' ll='428' type='void * PyMem_Calloc(size_t nelem, size_t elsize)'/>

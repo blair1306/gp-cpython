@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='225' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='96' u='r' c='fileio_dealloc_warn'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12085' u='r' c='ScandirIterator_finalize'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4586' u='r' c='sock_finalize'/>
+<def f='codebrowser/Objects/exceptions.c' l='2337' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2546' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2623' macro='1' u='r'/>
+<use f='codebrowser/Python/_warnings.c' l='463' u='r' c='warn_explicit'/>
+<use f='codebrowser/Python/_warnings.c' l='767' u='r' c='get_category'/>
+<use f='codebrowser/Python/_warnings.c' l='777' u='r' c='get_category'/>

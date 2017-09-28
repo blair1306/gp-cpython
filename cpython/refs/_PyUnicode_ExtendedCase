@@ -1,0 +1,9 @@
+<def f='codebrowser/Objects/unicodetype_db.h' l='504' ll='1741' type='const Py_UCS4 [1236]'/>
+<use f='codebrowser/Objects/unicodectype.c' l='69' u='r' c='_PyUnicode_ToTitlecase'/>
+<use f='codebrowser/Objects/unicodectype.c' l='195' u='r' c='_PyUnicode_ToUppercase'/>
+<use f='codebrowser/Objects/unicodectype.c' l='207' u='r' c='_PyUnicode_ToLowercase'/>
+<use f='codebrowser/Objects/unicodectype.c' l='220' u='r' c='_PyUnicode_ToLowerFull'/>
+<use f='codebrowser/Objects/unicodectype.c' l='236' u='r' c='_PyUnicode_ToTitleFull'/>
+<use f='codebrowser/Objects/unicodectype.c' l='252' u='r' c='_PyUnicode_ToUpperFull'/>
+<use f='codebrowser/Objects/unicodectype.c' l='268' u='r' c='_PyUnicode_ToFoldedFull'/>
+<doc f='codebrowser/Objects/unicodetype_db.h' l='502'>/* extended case mappings */</doc>

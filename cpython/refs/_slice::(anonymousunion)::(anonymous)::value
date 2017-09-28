@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/Python-ast.h' l='386' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2460' u='w' c='_Py_Index'/>
+<use f='codebrowser/Python/Python-ast.c' l='3596' u='r' c='ast2obj_slice'/>
+<use f='codebrowser/Python/ast.c' l='56' u='r' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='2424' u='r' c='ast_for_trailer'/>
+<use f='codebrowser/Python/ast.c' l='2425' u='r' c='ast_for_trailer'/>
+<use f='codebrowser/Python/compile.c' l='4591' u='r' c='check_ann_slice'/>
+<use f='codebrowser/Python/compile.c' l='4836' u='r' c='compiler_visit_nested_slice'/>
+<use f='codebrowser/Python/compile.c' l='4855' u='r' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/symtable.c' l='1712' u='r' c='symtable_visit_slice'/>

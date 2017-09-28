@@ -1,0 +1,3 @@
+<def f='codebrowser/Modules/main.c' l='950' ll='955' type='void Py_GetArgcArgv(int * argc, wchar_t *** argv)'/>
+<doc f='codebrowser/Modules/main.c' l='947'>/* Make the *original* argc/argv available to other modules.
+   This is rare, but it is needed by the secureware extension. */</doc>

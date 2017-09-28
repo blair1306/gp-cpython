@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2018' type='Py_ssize_t PyUnicode_FindChar(PyObject * str, Py_UCS4 ch, Py_ssize_t start, Py_ssize_t end, int direction)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2017'>/* Like PyUnicode_Find, but search for single character only. */</doc>
+<use f='codebrowser/Modules/_csv.c' l='1042' u='c' c='join_append_data'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1360' u='c' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1376' u='c' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1040' u='c' c='pattern_subx'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1900' u='c' c='unicode_findchar'/>
+<use f='codebrowser/Modules/syslogmodule.c' l='98' u='c' c='syslog_get_argv'/>
+<use f='codebrowser/Modules/zipimport.c' l='141' u='c' c='zipimport_zipimporter___init___impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='238' u='c' c='get_subname'/>
+<use f='codebrowser/Objects/exceptions.c' l='2978' u='c' c='_report_missing_parentheses'/>
+<use f='codebrowser/Objects/exceptions.c' l='2997' u='c' c='_report_missing_parentheses'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9490' ll='9510' type='Py_ssize_t PyUnicode_FindChar(PyObject * str, Py_UCS4 ch, Py_ssize_t start, Py_ssize_t end, int direction)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12334' u='c' c='_PyUnicode_XStrip'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12347' u='c' c='_PyUnicode_XStrip'/>
+<use f='codebrowser/Python/compile.c' l='247' u='c' c='_Py_Mangle'/>
+<use f='codebrowser/Python/compile.c' l='2676' u='c' c='compiler_import_as'/>
+<use f='codebrowser/Python/compile.c' l='2685' u='c' c='compiler_import_as'/>
+<use f='codebrowser/Python/compile.c' l='2729' u='c' c='compiler_import'/>
+<use f='codebrowser/Python/import.c' l='1428' u='c' c='resolve_name'/>
+<use f='codebrowser/Python/import.c' l='1452' u='c' c='resolve_name'/>
+<use f='codebrowser/Python/import.c' l='1584' u='c' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/importdl.c' l='45' u='c' c='get_encoded_name'/>
+<use f='codebrowser/Python/symtable.c' l='1644' u='c' c='symtable_visit_alias'/>

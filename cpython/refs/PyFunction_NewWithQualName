@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/funcobject.h' l='48' type='PyObject * PyFunction_NewWithQualName(PyObject * , PyObject * , PyObject * )'/>
+<def f='codebrowser/Objects/funcobject.c' l='8' ll='66' type='PyObject * PyFunction_NewWithQualName(PyObject * code, PyObject * globals, PyObject * qualname)'/>
+<use f='codebrowser/Objects/funcobject.c' l='71' u='c' c='PyFunction_New'/>
+<use f='codebrowser/Python/ceval.c' l='3427' u='c' c='_PyEval_EvalFrameDefault'/>

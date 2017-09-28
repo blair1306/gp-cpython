@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/memoryobject.h' l='31' type='PyObject * PyMemoryView_GetContiguous(PyObject * base, int buffertype, char order)'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2425' u='c' c='get_contiguous'/>
+<def f='codebrowser/Objects/memoryobject.c' l='907' ll='943' type='PyObject * PyMemoryView_GetContiguous(PyObject * obj, int buffertype, char order)'/>
+<doc f='codebrowser/Objects/memoryobject.c' l='890'>/*
+   Return a new memoryview object based on a contiguous exporter with
+   buffertype={PyBUF_READ, PyBUF_WRITE} and order={&apos;C&apos;, &apos;F&apos;ortran, or &apos;A&apos;ny}.
+   The logical structure of the input and output buffers is the same
+   (i.e. tolist(input) == tolist(output)), but the physical layout in
+   memory can be explicitly chosen.
+
+   As usual, if buffertype=PyBUF_WRITE, the exporter&apos;s buffer must be writable,
+   otherwise it may be writable or read-only.
+
+   If the exporter is already contiguous with the desired target order,
+   the memoryview will be directly based on the exporter.
+
+   Otherwise, if the buffertype is PyBUF_READ, the memoryview will be
+   based on a new bytes object. If order={&apos;C&apos;, &apos;A&apos;ny}, use &apos;C&apos; order,
+   &apos;F&apos;ortran order otherwise.
+*/</doc>

@@ -1,0 +1,3 @@
+<def f='codebrowser/Modules/_tracemalloc.c' l='1720' ll='1775' type='int _PyTraceMalloc_Init()'/>
+<dec f='codebrowser/Python/pylifecycle.c' l='70' type='int _PyTraceMalloc_Init()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='798' u='c' c='_Py_InitializeMainInterpreter'/>

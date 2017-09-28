@@ -1,0 +1,13 @@
+<dec f='include/x86_64-linux-gnu/bits/sigstack.h' l='51' type='void *'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/faulthandler.c' l='444' u='r' c='faulthandler_enable'/>
+<use f='codebrowser/Modules/faulthandler.c' l='725' u='r' c='faulthandler_register'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1317' u='w' c='_PyFaulthandler_Init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1318' u='r' c='_PyFaulthandler_Init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1321' u='r' c='_PyFaulthandler_Init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1322' u='w' c='_PyFaulthandler_Init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1371' u='r' c='_PyFaulthandler_Fini'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1375' u='r' c='_PyFaulthandler_Fini'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1375' u='r' c='_PyFaulthandler_Fini'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1386' u='r' c='_PyFaulthandler_Fini'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1387' u='w' c='_PyFaulthandler_Fini'/>

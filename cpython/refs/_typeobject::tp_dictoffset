@@ -1,0 +1,40 @@
+<dec f='codebrowser/Include/object.h' l='409' type='Py_ssize_t'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='933' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1828' u='w'/>
+<offset>2432</offset>
+<use f='codebrowser/Objects/object.c' l='971' u='r' c='_PyObject_GetDictPtr'/>
+<use f='codebrowser/Objects/object.c' l='1155' u='r' c='_PyObject_GenericGetAttrWithDict'/>
+<use f='codebrowser/Objects/typeobject.c' l='1034' u='r' c='subtype_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='1034' u='r' c='subtype_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='1090' u='r' c='subtype_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='1090' u='r' c='subtype_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='1228' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1228' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='2050' u='r' c='extra_ivars'/>
+<use f='codebrowser/Objects/typeobject.c' l='2050' u='r' c='extra_ivars'/>
+<use f='codebrowser/Objects/typeobject.c' l='2051' u='r' c='extra_ivars'/>
+<use f='codebrowser/Objects/typeobject.c' l='2089' u='r' c='get_builtin_base_with_dict'/>
+<use f='codebrowser/Objects/typeobject.c' l='2401' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2518' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2681' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2683' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2695' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2697' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2699' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2705' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2751' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2890' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='3713' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='3713' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='3730' u='r' c='same_slots_added'/>
+<use f='codebrowser/Objects/typeobject.c' l='3730' u='r' c='same_slots_added'/>
+<use f='codebrowser/Objects/typeobject.c' l='4029' u='r' c='_PyObject_GetState'/>
+<use f='codebrowser/Objects/typeobject.c' l='4781' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4781' u='w' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4781' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4959' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4959' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4959' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4959' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4959' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4959' u='r' c='inherit_slots'/>

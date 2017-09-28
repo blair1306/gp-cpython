@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/traceback.h' l='23' type='int PyTraceBack_Here(struct _frame * )'/>
+<use f='codebrowser/Python/ceval.c' l='3576' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/sysmodule.c' l='397' u='c' c='call_trampoline'/>
+<def f='codebrowser/Python/traceback.c' l='132' ll='145' type='int PyTraceBack_Here(PyFrameObject * frame)'/>
+<use f='codebrowser/Python/traceback.c' l='176' u='c' c='_PyTraceback_Add'/>

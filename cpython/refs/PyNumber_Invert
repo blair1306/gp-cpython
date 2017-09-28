@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/abstract.h' l='682' type='PyObject * PyNumber_Invert(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='679'>/* Returns the bitwise negation of &apos;o&apos; on success, or NULL on failure.
+
+   This is the equivalent of the Python expression: ~o. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='184' u='c' c='_operator_inv'/>
+<use f='codebrowser/Modules/_operator.c' l='197' u='c' c='_operator_invert'/>
+<def f='codebrowser/Objects/abstract.c' l='1201' ll='1215' type='PyObject * PyNumber_Invert(PyObject * o)'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='507' u='c' c='proxy_invert'/>
+<use f='codebrowser/Python/ceval.c' l='1313' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/peephole.c' l='338' u='c' c='fold_unaryops_on_constants'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pystate.h' l='50' type='struct _is *'/>
+<offset>0</offset>
+<use f='codebrowser/Python/pystate.c' l='129' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='194' u='a' c='PyInterpreterState_Delete'/>
+<use f='codebrowser/Python/pystate.c' l='203' u='r' c='PyInterpreterState_Delete'/>
+<use f='codebrowser/Python/pystate.c' l='692' u='r' c='PyInterpreterState_Next'/>
+<use f='codebrowser/Python/pystate.c' l='727' u='r' c='_PyThread_CurrentFrames'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/dictobject.h' l='91' type='int _PyDict_DelItemIf(PyObject * mp, PyObject * key, int (*)(PyObject *) predicate)'/>
+<use f='codebrowser/Modules/_weakref.c' l='64' u='c' c='_weakref__remove_dead_weakref_impl'/>
+<def f='codebrowser/Objects/dictobject.c' l='1515' ll='1562' type='int _PyDict_DelItemIf(PyObject * op, PyObject * key, int (*)(PyObject *) predicate)'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1511'>/* This function promises that the predicate -&gt; deletion sequence is atomic
+ * (i.e. protected by the GIL), assuming the predicate itself doesn&apos;t
+ * release the GIL.
+ */</doc>

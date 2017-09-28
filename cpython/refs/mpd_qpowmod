@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='545' type='void mpd_qpowmod(mpd_t * result, const mpd_t * base, const mpd_t * exp, const mpd_t * mod, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4079' u='c' c='nm_mpd_qpow'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4566' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4571' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5146' u='c' c='ctx_mpd_qpow'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6658' ll='6788' type='void mpd_qpowmod(mpd_t * result, const mpd_t * base, const mpd_t * exp, const mpd_t * mod, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6657'>/* The powmod function: (base**exp) % mod */</doc>

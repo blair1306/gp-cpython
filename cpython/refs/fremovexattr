@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/xattr.h' l='101' type='int fremovexattr(int __fd, const char * __name)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10906' u='c' c='os_removexattr_impl'/>
+<doc f='include/x86_64-linux-gnu/sys/xattr.h' l='99'>/* Remove the attribute NAME from the file descriptor FD.  Return 0 on
+   success, -1 for errors.  */</doc>

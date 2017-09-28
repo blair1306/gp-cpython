@@ -1,0 +1,6 @@
+<dec f='include/pwd.h' l='110' type='struct passwd * getpwuid(__uid_t __uid)'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='128' u='c' c='pwd_getpwuid'/>
+<doc f='include/pwd.h' l='106'>/* Search for an entry with a matching user ID.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>

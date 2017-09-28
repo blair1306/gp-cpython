@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/sysmodule.h' l='18' type='void PySys_SetArgvEx(int , wchar_t ** , int )'/>
+<use f='codebrowser/Modules/main.c' l='819' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/sysmodule.c' l='2329' ll='2340' type='void PySys_SetArgvEx(int argc, wchar_t ** argv, int updatepath)'/>
+<use f='codebrowser/Python/sysmodule.c' l='2345' u='c' c='PySys_SetArgv'/>

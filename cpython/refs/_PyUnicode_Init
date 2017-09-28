@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/unicodeobject.c' l='15218' ll='15256' type='int _PyUnicode_Init()'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='15216'>/* Initialize the Unicode implementation */</doc>
+<dec f='codebrowser/Python/pylifecycle.c' l='62' type='int _PyUnicode_Init()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='655' u='c' c='_Py_InitializeCore'/>

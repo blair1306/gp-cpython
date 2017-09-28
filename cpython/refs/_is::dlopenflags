@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pystate.h' l='70' type='int'/>
+<offset>992</offset>
+<use f='codebrowser/Python/dynload_shlib.c' l='93' u='r' c='_PyImport_FindSharedFuncptr'/>
+<use f='codebrowser/Python/pystate.c' l='117' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/sysmodule.c' l='1022' u='w' c='sys_setdlopenflags'/>
+<use f='codebrowser/Python/sysmodule.c' l='1042' u='r' c='sys_getdlopenflags'/>

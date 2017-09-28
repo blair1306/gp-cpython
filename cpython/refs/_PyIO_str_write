@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='180' type='PyObject *'/>
+<def f='codebrowser/Modules/_io/_iomodule.c' l='52' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='755' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='755' macro='1' u='w'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1844' u='r' c='_bufferedwriter_raw_write'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='739' u='r' c='_io__IOBase_writelines'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1321' u='r' c='_textiowrapper_writeflush'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='10' type='void Py_SetProgramName(wchar_t * )'/>
+<use f='codebrowser/Modules/main.c' l='772' u='c' c='Py_Main'/>
+<use f='codebrowser/Programs/_testembed.c' l='15' u='c' c='_testembed_Py_Initialize'/>
+<use f='codebrowser/Python/frozenmain.c' l='74' u='c' c='Py_FrozenMain'/>
+<def f='codebrowser/Python/pylifecycle.c' l='1285' ll='1290' type='void Py_SetProgramName(wchar_t * pn)'/>

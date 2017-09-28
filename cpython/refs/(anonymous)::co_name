@@ -1,0 +1,31 @@
+<dec f='codebrowser/Include/code.h' l='42' type='PyObject *'/>
+<offset>960</offset>
+<doc f='codebrowser/Include/code.h' l='42'>/* unicode (name, for reference) */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='202' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='440' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='478' u='r' c='code_repr'/>
+<use f='codebrowser/Objects/codeobject.c' l='482' u='r' c='code_repr'/>
+<use f='codebrowser/Objects/codeobject.c' l='626' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='626' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='687' u='r' c='code_hash'/>
+<use f='codebrowser/Objects/funcobject.c' l='30' u='r' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='490' u='r' c='func_new_impl'/>
+<use f='codebrowser/Objects/genobject.c' l='815' u='r' c='gen_new_with_qualname'/>
+<use f='codebrowser/Python/ceval.c' l='3802' u='r' c='format_missing'/>
+<use f='codebrowser/Python/ceval.c' l='3894' u='r' c='too_many_positional'/>
+<use f='codebrowser/Python/ceval.c' l='3996' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4026' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4039' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='5345' u='r' c='dtrace_function_entry'/>
+<use f='codebrowser/Python/ceval.c' l='5359' u='r' c='dtrace_function_return'/>
+<use f='codebrowser/Python/ceval.c' l='5391' u='r' c='maybe_dtrace_line'/>
+<use f='codebrowser/Python/compile.c' l='1541' u='r' c='compiler_make_closure'/>
+<use f='codebrowser/Python/compile.c' l='1569' u='r' c='compiler_make_closure'/>
+<use f='codebrowser/Python/import.c' l='1321' u='r' c='remove_importlib_frames'/>
+<use f='codebrowser/Python/marshal.c' l='554' u='r' c='w_complex_object'/>
+<use f='codebrowser/Python/traceback.c' l='437' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='448' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='455' u='r' c='tb_printinternal'/>
+<use f='codebrowser/Python/traceback.c' l='671' u='r' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='672' u='r' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='673' u='r' c='dump_frame'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/pythread.h' l='44'/>
+<use f='codebrowser/Include/pythread.h' l='68' u='c'/>
+<doc f='codebrowser/Include/pythread.h' l='35'>/* PY_TIMEOUT_T is the integral type used to specify timeouts when waiting
+   on a lock (see PyThread_acquire_lock_timed() below).
+   PY_TIMEOUT_MAX is the highest usable value (in microseconds) of that
+   type, and depends on the system threading API.
+
+   NOTE: this isn&apos;t the same value as `_thread.TIMEOUT_MAX`.  The _thread
+   module exposes a higher-level API, with timeouts expressed in seconds
+   and floating-point numbers allowed.
+*/</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='293' u='c'/>
+<use f='codebrowser/Modules/faulthandler.c' l='67' u='c'/>
+<use f='codebrowser/Modules/faulthandler.c' l='633' u='c'/>
+<use f='codebrowser/Modules/faulthandler.c' l='650' u='c'/>
+<use f='codebrowser/Python/thread_pthread.h' l='334' u='c'/>

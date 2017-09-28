@@ -1,0 +1,14 @@
+<def f='codebrowser/Modules/cjkcodecs/mappings_jisx0213_pair.h' l='4' type='const struct pair_encodemap *'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_iso2022.c' l='703' u='a' c='jisx0213_init'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_iso2022.c' l='809' u='r' c='jisx0213_encoder'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_iso2022.c' l='817' u='r' c='jisx0213_encoder'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='174' u='r' c='euc_jis_2004_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='186' u='r' c='euc_jis_2004_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='191' u='r' c='euc_jis_2004_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='592' u='r' c='shift_jis_2004_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='604' u='r' c='shift_jis_2004_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='609' u='r' c='shift_jis_2004_encode'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='746' macro='1'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='746' macro='1'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='746' macro='1'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='746' macro='1'/>

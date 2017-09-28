@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/funcobject.h' l='31' type='PyObject *'/>
+<offset>768</offset>
+<doc f='codebrowser/Include/funcobject.h' l='31'>/* List of weak references */</doc>
+<use f='codebrowser/Objects/funcobject.c' l='25' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='528' u='r' c='func_dealloc'/>

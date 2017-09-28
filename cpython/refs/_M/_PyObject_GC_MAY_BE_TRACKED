@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/objimpl.h' l='325'/>
+<doc f='codebrowser/Include/objimpl.h' l='323'>/* True if the object may be tracked by the GC in the future, or already is.
+   This can be useful to implement some optimizations. */</doc>
+<use f='codebrowser/Objects/dictobject.c' l='905' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='906' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='915' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='916' u='c'/>
+<use f='codebrowser/Objects/tupleobject.c' l='202' u='c'/>

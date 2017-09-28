@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='1076' type='int PyMapping_SetItemString(PyObject * o, const char * key, PyObject * value)'/>
+<doc f='codebrowser/Include/abstract.h' l='1072'>/* Map the object &apos;key&apos; to the value &apos;v&apos; in the mapping &apos;o&apos;.
+   Returns -1 on failure.
+
+   This is the equivalent of the Python statement: o[key]=v. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='2102' ll='2119' type='int PyMapping_SetItemString(PyObject * o, const char * key, PyObject * value)'/>

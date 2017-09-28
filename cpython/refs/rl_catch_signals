@@ -1,0 +1,4 @@
+<dec f='include/readline/readline.h' l='617' type='int'/>
+<use f='codebrowser/Modules/readline.c' l='1198' u='w' c='readline_until_enter_or_signal'/>
+<doc f='include/readline/readline.h' l='615'>/* If non-zero, readline will install its own signal handlers for
+   SIGINT, SIGTERM, SIGQUIT, SIGALRM, SIGTSTP, SIGTTIN, and SIGTTOU. */</doc>

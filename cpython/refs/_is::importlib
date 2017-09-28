@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/pystate.h' l='59' type='PyObject *'/>
+<offset>448</offset>
+<use f='codebrowser/Objects/moduleobject.c' l='669' u='r' c='module_repr'/>
+<use f='codebrowser/Python/import.c' l='487' u='r' c='PyImport_GetMagicNumber'/>
+<use f='codebrowser/Python/import.c' l='768' u='r' c='PyImport_ExecCodeModuleWithPathnames'/>
+<use f='codebrowser/Python/import.c' l='853' u='r' c='PyImport_ExecCodeModuleObject'/>
+<use f='codebrowser/Python/import.c' l='1555' u='r' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/import.c' l='1565' u='r' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/import.c' l='1631' u='r' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/pylifecycle.c' l='280' u='w' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='281' u='r' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='325' u='r' c='initexternalimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1358' u='r' c='initmain'/>
+<use f='codebrowser/Python/pystate.c' l='111' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='166' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='166' u='w' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pythonrun.c' l='318' u='r' c='set_main_loader'/>

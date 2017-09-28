@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/classobject.h' l='16' type='PyObject *'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/classobject.h' l='16'>/* List of weak references */</doc>
+<use f='codebrowser/Objects/classobject.c' l='64' u='w' c='PyMethod_New'/>
+<use f='codebrowser/Objects/classobject.c' l='195' u='r' c='method_dealloc'/>

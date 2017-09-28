@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/frameobject.h' l='58' type='PyTypeObject'/>
+<def f='codebrowser/Objects/frameobject.c' l='565' ll='598' type='PyTypeObject'/>
+<use f='codebrowser/Objects/frameobject.c' l='667' u='a' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/object.c' l='1758' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/traceback.c' l='115' macro='1' u='a'/>
+<use f='codebrowser/Python/traceback.c' l='701' macro='1' u='a'/>

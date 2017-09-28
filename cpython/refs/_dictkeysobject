@@ -1,0 +1,9 @@
+<def f='codebrowser/Objects/dict-common.h' l='22' ll='73'/>
+<size>48</size>
+<doc f='codebrowser/Objects/dict-common.h' l='21'>/* See dictobject.c for actual layout of DictKeysObject */</doc>
+<mbr r='_dictkeysobject::dk_refcnt' o='0' t='Py_ssize_t'/>
+<mbr r='_dictkeysobject::dk_size' o='64' t='Py_ssize_t'/>
+<mbr r='_dictkeysobject::dk_lookup' o='128' t='dict_lookup_func'/>
+<mbr r='_dictkeysobject::dk_usable' o='192' t='Py_ssize_t'/>
+<mbr r='_dictkeysobject::dk_nentries' o='256' t='Py_ssize_t'/>
+<mbr r='_dictkeysobject::dk_indices' o='320' t='union (anonymous union at /home/jon/workspace/cpython/Objects/dict-common.h:62:5)'/>

@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/bytesobject.h' l='194' type='void * _PyBytesWriter_Prepare(_PyBytesWriter * writer, void * str, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/bytesobject.h' l='188'>/* Ensure that the buffer is large enough to write *size* bytes.
+   Add size to the writer minimum size (min_size attribute).
+
+   str is the current pointer inside the buffer.
+   Return the updated current pointer inside the buffer.
+   Raise an exception and return NULL on error. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='2131' u='c' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/_pickle.c' l='2149' u='c' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/binascii.c' l='883' u='c' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='437' u='c' c='formatfloat'/>
+<use f='codebrowser/Objects/bytesobject.c' l='971' u='c' c='_PyBytes_FormatEx'/>
+<def f='codebrowser/Objects/bytesobject.c' l='3312' ll='3337' type='void * _PyBytesWriter_Prepare(_PyBytesWriter * writer, void * str, Py_ssize_t size)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3369' u='c' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3422' u='c' c='_PyBytesWriter_WriteBytes'/>
+<use f='codebrowser/Objects/longobject.c' l='1672' u='c' c='long_to_decimal_string_internal'/>
+<use f='codebrowser/Objects/longobject.c' l='1841' u='c' c='long_format_binary'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='625' u='c' c='backslashreplace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='700' u='c' c='xmlcharrefreplace'/>

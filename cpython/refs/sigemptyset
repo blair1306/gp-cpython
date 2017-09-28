@@ -1,0 +1,6 @@
+<dec f='include/signal.h' l='213' type='int sigemptyset(sigset_t * __set)'/>
+<doc f='include/signal.h' l='212'>/* Clear all signals from SET.  */</doc>
+<use f='codebrowser/Modules/faulthandler.c' l='439' u='c' c='faulthandler_enable'/>
+<use f='codebrowser/Modules/faulthandler.c' l='714' u='c' c='faulthandler_register'/>
+<use f='codebrowser/Modules/signalmodule.c' l='761' u='c' c='iterable_to_sigset'/>
+<use f='codebrowser/Python/pylifecycle.c' l='2046' u='c' c='PyOS_setsig'/>

@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/grammar.h' l='55' type='state *'/>
+<use f='codebrowser/Modules/parsermodule.c' l='692' u='r' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='705' u='r' c='validate_node'/>
+<offset>192</offset>
+<doc f='codebrowser/Include/grammar.h' l='55'>/* Array of states */</doc>
+<use f='codebrowser/Parser/acceler.c' l='44' u='r' c='PyGrammar_RemoveAccelerators'/>
+<use f='codebrowser/Parser/acceler.c' l='58' u='r' c='fixdfa'/>
+<use f='codebrowser/Parser/firstsets.c' l='68' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='38' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='39' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='61' u='w' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='72' u='w' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='72' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='74' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='76' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='83' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='83' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='83' u='r' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='95' u='r' c='_Py_addarc'/>
+<use f='codebrowser/Parser/parser.c' l='244' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='276' u='r' c='PyParser_AddToken'/>

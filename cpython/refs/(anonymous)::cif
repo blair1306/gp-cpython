@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/ffi.h' l='321' type='ffi_cif *'/>
+<dec f='include/x86_64-linux-gnu/ffi.h' l='359' type='ffi_cif *'/>
+<dec f='include/x86_64-linux-gnu/ffi.h' l='385' type='ffi_cif *'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='61' type='ffi_cif'/>
+<offset>448</offset>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='318' u='a' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='318' u='r' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='387' u='a' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='399' u='a' c='_ctypes_alloc_callback'/>

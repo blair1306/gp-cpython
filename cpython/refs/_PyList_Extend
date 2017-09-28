@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/listobject.h' l='64' type='PyObject * _PyList_Extend(PyListObject * , PyObject * )'/>
+<use f='codebrowser/Objects/abstract.c' l='1888' u='c' c='PySequence_List'/>
+<def f='codebrowser/Objects/listobject.c' l='941' ll='945' type='PyObject * _PyList_Extend(PyListObject * self, PyObject * iterable)'/>
+<use f='codebrowser/Python/ceval.c' l='2516' u='c' c='_PyEval_EvalFrameDefault'/>

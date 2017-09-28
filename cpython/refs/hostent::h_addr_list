@@ -1,0 +1,6 @@
+<dec f='include/netdb.h' l='106' type='char **'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5065' u='r' c='gethost_common'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5081' u='r' c='gethost_common'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5099' u='r' c='gethost_common'/>
+<offset>192</offset>
+<doc f='include/netdb.h' l='106'>/* List of addresses from name server.  */</doc>

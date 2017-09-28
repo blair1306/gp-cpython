@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/modsupport.h' l='219' type='const char *'/>
+<use f='codebrowser/Objects/moduleobject.c' l='190' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='191' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='193' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='194' u='w' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Python/importdl.c' l='148' u='r' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/importdl.c' l='149' u='w' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/importdl.c' l='150' u='r' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/importdl.c' l='151' u='w' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/importdl.c' l='155' u='w' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<def f='codebrowser/Python/modsupport.c' l='13' type='const char *'/>
+<doc f='codebrowser/Python/modsupport.c' l='12'>/* Package context -- the full module name for package imports */</doc>

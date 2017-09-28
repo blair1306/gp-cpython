@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pygetopt.h' l='9' type='int'/>
+<use f='codebrowser/Modules/main.c' l='588' u='w' c='Py_Main'/>
+<def f='codebrowser/Python/getopt.c' l='40' type='int'/>
+<use f='codebrowser/Python/getopt.c' l='48' u='w' c='_PyOS_ResetGetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='97' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='103' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='116' u='r' c='_PyOS_GetOpt'/>
+<doc f='codebrowser/Python/getopt.c' l='40'>/* generate error messages */</doc>

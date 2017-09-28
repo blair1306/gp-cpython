@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/abstract.h' l='581' type='PyObject * PyObject_Format(PyObject * obj, PyObject * format_spec)'/>
+<doc f='codebrowser/Include/abstract.h' l='579'>/* Takes an arbitrary object and returns the result of calling
+   obj.__format__(format_spec). */</doc>
+<def f='codebrowser/Objects/abstract.c' l='680' ll='738' type='PyObject * PyObject_Format(PyObject * obj, PyObject * format_spec)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='531' u='c' c='render_field'/>
+<use f='codebrowser/Python/bltinmodule.c' l='590' u='c' c='builtin_format_impl'/>
+<use f='codebrowser/Python/ceval.c' l='3520' u='c' c='_PyEval_EvalFrameDefault'/>

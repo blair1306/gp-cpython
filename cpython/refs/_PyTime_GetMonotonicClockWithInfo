@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pytime.h' l='178' type='int _PyTime_GetMonotonicClockWithInfo(_PyTime_t * t, _Py_clock_info_t * info)'/>
+<doc f='codebrowser/Include/pytime.h' l='170'>/* Get the time of a monotonic clock, i.e. a clock that cannot go backwards.
+   The clock is not affected by system clock updates. The reference point of
+   the returned value is undefined, so that only the difference between the
+   results of consecutive calls is valid.
+
+   Fill info (if set) with information of the function used to get the time.
+
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Modules/timemodule.c' l='914' u='c' c='pymonotonic'/>
+<def f='codebrowser/Python/pytime.c' l='768' ll='772' type='int _PyTime_GetMonotonicClockWithInfo(_PyTime_t * tp, _Py_clock_info_t * info)'/>
+<use f='codebrowser/Python/pytime.c' l='784' u='c' c='_PyTime_Init'/>

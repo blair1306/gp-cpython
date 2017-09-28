@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/methodobject.h' l='98' type='PyObject *'/>
+<offset>448</offset>
+<doc f='codebrowser/Include/methodobject.h' l='98'>/* List of weak references */</doc>
+<use f='codebrowser/Objects/methodobject.c' l='40' u='w' c='PyCFunction_NewEx'/>
+<use f='codebrowser/Objects/methodobject.c' l='86' u='r' c='meth_dealloc'/>

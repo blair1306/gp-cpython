@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpalloc.h' l='40' type='int mpd_switch_to_dyn(mpd_t * result, mpd_ssize_t size, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='213' ll='234' type='int mpd_switch_to_dyn(mpd_t * result, mpd_ssize_t nwords, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='205'>/*
+ * Input: &apos;result&apos; is a static mpd_t with a static coefficient.
+ * Assumption: &apos;nwords&apos; &gt;= result-&gt;alloc.
+ *
+ * Resize the static coefficient to a larger dynamic one and copy the
+ * existing data. If successful, the value of &apos;result&apos; is unchanged.
+ * Otherwise, set &apos;result&apos; to NaN and update &apos;status&apos; with MPD_Malloc_error.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='501' u='c' c='mpd_qresize'/>

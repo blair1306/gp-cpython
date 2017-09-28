@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>py_curses.h source code [codebrowser/Include/py_curses.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/py_curses.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='py_curses.h.html'>py_curses.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><u>#<span data-ppcond="2">ifndef</span> <span class="macro" data-ref="_M/Py_CURSES_H">Py_CURSES_H</span></u></td></tr>
+<tr><th id="3">3</th><td><u>#define <dfn class="macro" id="_M/Py_CURSES_H" data-ref="_M/Py_CURSES_H">Py_CURSES_H</dfn></u></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="5">ifdef</span> <span class="macro" data-ref="_M/__APPLE__">__APPLE__</span></u></td></tr>
+<tr><th id="6">6</th><td><i>/*</i></td></tr>
+<tr><th id="7">7</th><td><i>** On Mac OS X 10.2 [n]curses.h and stdlib.h use different guards</i></td></tr>
+<tr><th id="8">8</th><td><i>** against multiple definition of wchar_t.</i></td></tr>
+<tr><th id="9">9</th><td><i>*/</i></td></tr>
+<tr><th id="10">10</th><td><u>#ifdef	_BSD_WCHAR_T_DEFINED_</u></td></tr>
+<tr><th id="11">11</th><td><u>#define _WCHAR_T</u></td></tr>
+<tr><th id="12">12</th><td><u>#endif</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><i>/* the following define is necessary for OS X 10.6; without it, the</i></td></tr>
+<tr><th id="15">15</th><td><i>   Apple-supplied ncurses.h sets NCURSES_OPAQUE to 1, and then Python</i></td></tr>
+<tr><th id="16">16</th><td><i>   can't get at the WINDOW flags field. */</i></td></tr>
+<tr><th id="17">17</th><td><u>#define NCURSES_OPAQUE 0</u></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="5">endif</span> /* __APPLE__ */</u></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="20">ifdef</span> <span class="macro" data-ref="_M/__FreeBSD__">__FreeBSD__</span></u></td></tr>
+<tr><th id="21">21</th><td><i>/*</i></td></tr>
+<tr><th id="22">22</th><td><i>** On FreeBSD, [n]curses.h and stdlib.h/wchar.h use different guards</i></td></tr>
+<tr><th id="23">23</th><td><i>** against multiple definition of wchar_t and wint_t.</i></td></tr>
+<tr><th id="24">24</th><td><i>*/</i></td></tr>
+<tr><th id="25">25</th><td><u>#ifdef	_XOPEN_SOURCE_EXTENDED</u></td></tr>
+<tr><th id="26">26</th><td><u>#ifndef __FreeBSD_version</u></td></tr>
+<tr><th id="27">27</th><td><u>#include &lt;osreldate.h&gt;</u></td></tr>
+<tr><th id="28">28</th><td><u>#endif</u></td></tr>
+<tr><th id="29">29</th><td><u>#if __FreeBSD_version &gt;= 500000</u></td></tr>
+<tr><th id="30">30</th><td><u>#ifndef __wchar_t</u></td></tr>
+<tr><th id="31">31</th><td><u>#define __wchar_t</u></td></tr>
+<tr><th id="32">32</th><td><u>#endif</u></td></tr>
+<tr><th id="33">33</th><td><u>#ifndef __wint_t</u></td></tr>
+<tr><th id="34">34</th><td><u>#define __wint_t</u></td></tr>
+<tr><th id="35">35</th><td><u>#endif</u></td></tr>
+<tr><th id="36">36</th><td><u>#else</u></td></tr>
+<tr><th id="37">37</th><td><u>#ifndef _WCHAR_T</u></td></tr>
+<tr><th id="38">38</th><td><u>#define _WCHAR_T</u></td></tr>
+<tr><th id="39">39</th><td><u>#endif</u></td></tr>
+<tr><th id="40">40</th><td><u>#ifndef _WINT_T</u></td></tr>
+<tr><th id="41">41</th><td><u>#define _WINT_T</u></td></tr>
+<tr><th id="42">42</th><td><u>#endif</u></td></tr>
+<tr><th id="43">43</th><td><u>#endif</u></td></tr>
+<tr><th id="44">44</th><td><u>#endif</u></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="20">endif</span></u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#<span data-ppcond="47">ifdef</span> <a class="macro" href="../pyconfig.h.html#636" data-ref="_M/HAVE_NCURSES_H">HAVE_NCURSES_H</a></u></td></tr>
+<tr><th id="48">48</th><td><u>#include <a href="../../include/curses.h.html">&lt;ncurses.h&gt;</a></u></td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="47">else</span></u></td></tr>
+<tr><th id="50">50</th><td><u>#include &lt;curses.h&gt;</u></td></tr>
+<tr><th id="51">51</th><td><u>#ifdef HAVE_TERM_H</u></td></tr>
+<tr><th id="52">52</th><td><i>/* for tigetstr, which is not declared in SysV curses */</i></td></tr>
+<tr><th id="53">53</th><td><u>#include &lt;term.h&gt;</u></td></tr>
+<tr><th id="54">54</th><td><u>#endif</u></td></tr>
+<tr><th id="55">55</th><td><u>#<span data-ppcond="47">endif</span></u></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><u>#<span data-ppcond="57">ifdef</span> <a class="macro" href="../pyconfig.h.html#636" data-ref="_M/HAVE_NCURSES_H">HAVE_NCURSES_H</a></u></td></tr>
+<tr><th id="58">58</th><td><i>/* configure was checking &lt;curses.h&gt;, but we will</i></td></tr>
+<tr><th id="59">59</th><td><i>   use &lt;ncurses.h&gt;, which has all these features. */</i></td></tr>
+<tr><th id="60">60</th><td><u>#<span data-ppcond="60">ifndef</span> <a class="macro" href="../pyconfig.h.html#1372" data-ref="_M/WINDOW_HAS_FLAGS">WINDOW_HAS_FLAGS</a></u></td></tr>
+<tr><th id="61">61</th><td><u>#define WINDOW_HAS_FLAGS 1</u></td></tr>
+<tr><th id="62">62</th><td><u>#<span data-ppcond="60">endif</span></u></td></tr>
+<tr><th id="63">63</th><td><u>#<span data-ppcond="63">ifndef</span> <a class="macro" href="../pyconfig.h.html#1216" data-ref="_M/MVWDELCH_IS_EXPRESSION">MVWDELCH_IS_EXPRESSION</a></u></td></tr>
+<tr><th id="64">64</th><td><u>#define MVWDELCH_IS_EXPRESSION 1</u></td></tr>
+<tr><th id="65">65</th><td><u>#<span data-ppcond="63">endif</span></u></td></tr>
+<tr><th id="66">66</th><td><u>#<span data-ppcond="57">endif</span></u></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><u>#<span data-ppcond="68">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="69">69</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="68">endif</span></u></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/PyCurses_API_pointers" data-ref="_M/PyCurses_API_pointers">PyCurses_API_pointers</dfn> 4</u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><i>/* Type declarations */</i></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="77">77</th><td>	<a class="macro" href="object.h.html#83" title="PyObject ob_base;" data-ref="_M/PyObject_HEAD">PyObject_HEAD</a></td></tr>
+<tr><th id="78">78</th><td>	<a class="typedef" href="../../include/curses.h.html#WINDOW" title='WINDOW' data-type='struct _win_st' data-ref="WINDOW">WINDOW</a> *<dfn class="decl" id="(anonymous)::win" title='(anonymous struct)::win' data-ref="(anonymous)::win">win</dfn>;</td></tr>
+<tr><th id="79">79</th><td>	<em>char</em> *<dfn class="decl" id="(anonymous)::encoding" title='(anonymous struct)::encoding' data-ref="(anonymous)::encoding">encoding</dfn>;</td></tr>
+<tr><th id="80">80</th><td>} <dfn class="typedef" id="PyCursesWindowObject" title='PyCursesWindowObject' data-type='struct PyCursesWindowObject' data-ref="PyCursesWindowObject">PyCursesWindowObject</dfn>;</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/PyCursesWindow_Check" data-ref="_M/PyCursesWindow_Check">PyCursesWindow_Check</dfn>(v)	 (Py_TYPE(v) == &amp;PyCursesWindow_Type)</u></td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/PyCurses_CAPSULE_NAME" data-ref="_M/PyCurses_CAPSULE_NAME">PyCurses_CAPSULE_NAME</dfn> "_curses._C_API"</u></td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="87">ifdef</span> <span class="macro" data-ref="_M/CURSES_MODULE">CURSES_MODULE</span></u></td></tr>
+<tr><th id="88">88</th><td><i>/* This section is used when compiling _cursesmodule.c */</i></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><u>#<span data-ppcond="87">else</span></u></td></tr>
+<tr><th id="91">91</th><td><i>/* This section is used in modules that use the _cursesmodule API */</i></td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><em>static</em> <em>void</em> **<dfn class="decl def" id="PyCurses_API" title='PyCurses_API' data-ref="PyCurses_API">PyCurses_API</dfn>;</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><u>#define <dfn class="macro" id="_M/PyCursesWindow_Type" data-ref="_M/PyCursesWindow_Type">PyCursesWindow_Type</dfn> (*(PyTypeObject *) PyCurses_API[0])</u></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/PyCursesSetupTermCalled" data-ref="_M/PyCursesSetupTermCalled">PyCursesSetupTermCalled</dfn>  {if (! ((int (*)(void))PyCurses_API[1]) () ) return NULL;}</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/PyCursesInitialised" data-ref="_M/PyCursesInitialised">PyCursesInitialised</dfn>      {if (! ((int (*)(void))PyCurses_API[2]) () ) return NULL;}</u></td></tr>
+<tr><th id="98">98</th><td><u>#define <dfn class="macro" id="_M/PyCursesInitialisedColor" data-ref="_M/PyCursesInitialisedColor">PyCursesInitialisedColor</dfn> {if (! ((int (*)(void))PyCurses_API[3]) () ) return NULL;}</u></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/import_curses" data-ref="_M/import_curses">import_curses</dfn>() \</u></td></tr>
+<tr><th id="101">101</th><td><u>    PyCurses_API = (void **)PyCapsule_Import(PyCurses_CAPSULE_NAME, 1);</u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><u>#<span data-ppcond="87">endif</span></u></td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td><i>/* general error messages */</i></td></tr>
+<tr><th id="106">106</th><td><em>static</em> <em>const</em> <em>char</em> <dfn class="decl def" id="catchall_ERR" title='catchall_ERR' data-ref="catchall_ERR">catchall_ERR</dfn>[]  = <q>"curses function returned ERR"</q>;</td></tr>
+<tr><th id="107">107</th><td><em>static</em> <em>const</em> <em>char</em> <dfn class="decl def" id="catchall_NULL" title='catchall_NULL' data-ref="catchall_NULL">catchall_NULL</dfn>[] = <q>"curses function returned NULL"</q>;</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><i>/* Function Prototype Macros - They are ugly but very, very useful. ;-)</i></td></tr>
+<tr><th id="110">110</th><td><i></i></td></tr>
+<tr><th id="111">111</th><td><i>   X - function name</i></td></tr>
+<tr><th id="112">112</th><td><i>   TYPE - parameter Type</i></td></tr>
+<tr><th id="113">113</th><td><i>   ERGSTR - format string for construction of the return value</i></td></tr>
+<tr><th id="114">114</th><td><i>   PARSESTR - format string for argument parsing</i></td></tr>
+<tr><th id="115">115</th><td><i>   */</i></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><u>#define <dfn class="macro" id="_M/NoArgNoReturnFunction" data-ref="_M/NoArgNoReturnFunction">NoArgNoReturnFunction</dfn>(X) \</u></td></tr>
+<tr><th id="118">118</th><td><u>static PyObject *PyCurses_ ## X (PyObject *self) \</u></td></tr>
+<tr><th id="119">119</th><td><u>{ \</u></td></tr>
+<tr><th id="120">120</th><td><u>  PyCursesInitialised \</u></td></tr>
+<tr><th id="121">121</th><td><u>  return PyCursesCheckERR(X(), # X); }</u></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td><u>#define <dfn class="macro" id="_M/NoArgOrFlagNoReturnFunction" data-ref="_M/NoArgOrFlagNoReturnFunction">NoArgOrFlagNoReturnFunction</dfn>(X) \</u></td></tr>
+<tr><th id="124">124</th><td><u>static PyObject *PyCurses_ ## X (PyObject *self, PyObject *args) \</u></td></tr>
+<tr><th id="125">125</th><td><u>{ \</u></td></tr>
+<tr><th id="126">126</th><td><u>  int flag = 0; \</u></td></tr>
+<tr><th id="127">127</th><td><u>  PyCursesInitialised \</u></td></tr>
+<tr><th id="128">128</th><td><u>  switch(PyTuple_Size(args)) { \</u></td></tr>
+<tr><th id="129">129</th><td><u>  case 0: \</u></td></tr>
+<tr><th id="130">130</th><td><u>    return PyCursesCheckERR(X(), # X); \</u></td></tr>
+<tr><th id="131">131</th><td><u>  case 1: \</u></td></tr>
+<tr><th id="132">132</th><td><u>    if (!PyArg_ParseTuple(args, "i;True(1) or False(0)", &amp;flag)) return NULL; \</u></td></tr>
+<tr><th id="133">133</th><td><u>    if (flag) return PyCursesCheckERR(X(), # X); \</u></td></tr>
+<tr><th id="134">134</th><td><u>    else return PyCursesCheckERR(no ## X (), # X); \</u></td></tr>
+<tr><th id="135">135</th><td><u>  default: \</u></td></tr>
+<tr><th id="136">136</th><td><u>    PyErr_SetString(PyExc_TypeError, # X " requires 0 or 1 arguments"); \</u></td></tr>
+<tr><th id="137">137</th><td><u>    return NULL; } }</u></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><u>#define <dfn class="macro" id="_M/NoArgReturnIntFunction" data-ref="_M/NoArgReturnIntFunction">NoArgReturnIntFunction</dfn>(X) \</u></td></tr>
+<tr><th id="140">140</th><td><u>static PyObject *PyCurses_ ## X (PyObject *self) \</u></td></tr>
+<tr><th id="141">141</th><td><u>{ \</u></td></tr>
+<tr><th id="142">142</th><td><u> PyCursesInitialised \</u></td></tr>
+<tr><th id="143">143</th><td><u> return PyLong_FromLong((long) X()); }</u></td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><u>#define <dfn class="macro" id="_M/NoArgReturnStringFunction" data-ref="_M/NoArgReturnStringFunction">NoArgReturnStringFunction</dfn>(X) \</u></td></tr>
+<tr><th id="147">147</th><td><u>static PyObject *PyCurses_ ## X (PyObject *self) \</u></td></tr>
+<tr><th id="148">148</th><td><u>{ \</u></td></tr>
+<tr><th id="149">149</th><td><u>  PyCursesInitialised \</u></td></tr>
+<tr><th id="150">150</th><td><u>  return PyBytes_FromString(X()); }</u></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><u>#define <dfn class="macro" id="_M/NoArgTrueFalseFunction" data-ref="_M/NoArgTrueFalseFunction">NoArgTrueFalseFunction</dfn>(X) \</u></td></tr>
+<tr><th id="153">153</th><td><u>static PyObject *PyCurses_ ## X (PyObject *self) \</u></td></tr>
+<tr><th id="154">154</th><td><u>{ \</u></td></tr>
+<tr><th id="155">155</th><td><u>  PyCursesInitialised \</u></td></tr>
+<tr><th id="156">156</th><td><u>  if (X () == FALSE) { \</u></td></tr>
+<tr><th id="157">157</th><td><u>    Py_RETURN_FALSE; \</u></td></tr>
+<tr><th id="158">158</th><td><u>  } \</u></td></tr>
+<tr><th id="159">159</th><td><u>  Py_RETURN_TRUE; }</u></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><u>#define <dfn class="macro" id="_M/NoArgNoReturnVoidFunction" data-ref="_M/NoArgNoReturnVoidFunction">NoArgNoReturnVoidFunction</dfn>(X) \</u></td></tr>
+<tr><th id="162">162</th><td><u>static PyObject *PyCurses_ ## X (PyObject *self) \</u></td></tr>
+<tr><th id="163">163</th><td><u>{ \</u></td></tr>
+<tr><th id="164">164</th><td><u>  PyCursesInitialised \</u></td></tr>
+<tr><th id="165">165</th><td><u>  X(); \</u></td></tr>
+<tr><th id="166">166</th><td><u>  Py_RETURN_NONE; }</u></td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="168">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="169">169</th><td>}</td></tr>
+<tr><th id="170">170</th><td><u>#<span data-ppcond="168">endif</span></u></td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><u>#<span data-ppcond="2">endif</span> /* !defined(Py_CURSES_H) */</u></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_curses_panel.c.html'>codebrowser/Modules/_curses_panel.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

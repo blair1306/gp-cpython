@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/pymem.h' l='157'/>
+<doc f='codebrowser/Include/pymem.h' l='154'>/* PyMem{Del,DEL} are left over from ancient days, and shouldn&apos;t be used
+ * anymore.  They&apos;re just confusing aliases for PyMem_{Free,FREE} now.
+ */</doc>
+<use f='codebrowser/Modules/_sre.c' l='466' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='480' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1110' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1116' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6166' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6172' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6184' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6190' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8046' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8068' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8072' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8080' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8084' u='c'/>

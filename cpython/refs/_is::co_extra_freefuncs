@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='79' type='freefunc [255]'/>
+<offset>1280</offset>
+<use f='codebrowser/Objects/codeobject.c' l='423' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='883' u='r' c='_PyCode_SetExtra'/>
+<use f='codebrowser/Python/ceval.c' l='5333' u='w' c='_PyEval_RequestCodeExtraIndex'/>

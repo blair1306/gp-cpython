@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/frameobject.h' l='23' type='PyObject *'/>
+<offset>576</offset>
+<doc f='codebrowser/Include/frameobject.h' l='23'>/* local symbol table (any mapping) */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='26' u='r' c='frame_getlocals'/>
+<use f='codebrowser/Objects/frameobject.c' l='27' u='r' c='frame_getlocals'/>
+<use f='codebrowser/Objects/frameobject.c' l='436' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='436' u='w' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='467' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='467' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='696' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='717' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='723' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='882' u='r' c='PyFrame_FastToLocalsWithError'/>
+<use f='codebrowser/Objects/frameobject.c' l='884' u='w' c='PyFrame_FastToLocalsWithError'/>
+<use f='codebrowser/Objects/frameobject.c' l='952' u='r' c='PyFrame_LocalsToFast'/>
+<use f='codebrowser/Python/ceval.c' l='1720' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1727' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1728' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1744' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2146' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2166' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2279' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2407' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2613' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2619' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2620' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2628' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2642' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2652' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2837' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4700' u='r' c='PyEval_GetLocals'/>
+<use f='codebrowser/Python/ceval.c' l='4701' u='r' c='PyEval_GetLocals'/>
+<use f='codebrowser/Python/ceval.c' l='5016' u='r' c='import_name'/>
+<use f='codebrowser/Python/ceval.c' l='5016' u='r' c='import_name'/>
+<use f='codebrowser/Python/ceval.c' l='5026' u='r' c='import_name'/>
+<use f='codebrowser/Python/ceval.c' l='5026' u='r' c='import_name'/>
+<use f='codebrowser/Python/ceval.c' l='5263' u='r' c='unicode_concatenate'/>

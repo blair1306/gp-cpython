@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/pyerrors.h' l='163' type='PyObject *'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1091' u='r' c='_lzma_LZMADecompressor_decompress_impl'/>
+<use f='codebrowser/Modules/_pickle.c' l='6256' u='r' c='load'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1467' u='r' c='array_array_fromfile_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='869' u='r' c='set_file_error'/>
+<def f='codebrowser/Objects/exceptions.c' l='1267' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2519' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2596' macro='1' u='r'/>
+<use f='codebrowser/Objects/fileobject.c' l='80' u='r' c='PyFile_GetLine'/>
+<use f='codebrowser/Objects/fileobject.c' l='99' u='r' c='PyFile_GetLine'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1985' u='r' c='builtin_input_impl'/>
+<use f='codebrowser/Python/marshal.c' l='668' u='r' c='r_string'/>
+<use f='codebrowser/Python/marshal.c' l='721' u='r' c='r_string'/>
+<use f='codebrowser/Python/marshal.c' l='929' u='r' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='998' u='r' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1037' u='r' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1051' u='r' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1132' u='r' c='r_object'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/code.h' l='46' type='PyObject *'/>
+<offset>1152</offset>
+<doc f='codebrowser/Include/code.h' l='46'>/* to support weakrefs to code objects */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='207' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='446' u='r' c='code_dealloc'/>

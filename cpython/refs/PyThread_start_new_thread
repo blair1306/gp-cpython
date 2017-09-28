@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pythread.h' l='25' type='unsigned long PyThread_start_new_thread(void (*)(void *) , void * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2276' u='c' c='test_thread_state'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2290' u='c' c='test_thread_state'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3667' u='c' c='call_in_temporary_c_thread'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1070' u='c' c='thread_PyThread_start_new_thread'/>
+<use f='codebrowser/Modules/faulthandler.c' l='686' u='c' c='faulthandler_dump_traceback_later'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1015' u='c' c='faulthandler_fatal_error_c_thread'/>
+<def f='codebrowser/Python/thread_pthread.h' l='187' ll='244' type='unsigned long PyThread_start_new_thread(void (*)(void *) func, void * arg)'/>
+<doc f='codebrowser/Python/thread_pthread.h' l='182'>/*
+ * Thread support.
+ */</doc>

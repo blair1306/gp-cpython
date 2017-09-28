@@ -1,0 +1,5 @@
+<dec f='include/linux/netlink.h' l='39' type='__u32'/>
+<offset>64</offset>
+<doc f='include/linux/netlink.h' l='39'>/* multicast groups mask */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1226' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1585' u='w' c='getsockaddrarg'/>

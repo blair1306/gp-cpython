@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2204' type='Py_UCS4 _PyUnicode_ToTitlecase(Py_UCS4 ch)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='64' ll='71' type='Py_UCS4 _PyUnicode_ToTitlecase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='61'>/* Returns the titlecase Unicode characters corresponding to ch or just
+   ch if no titlecase mapping is known. */</doc>

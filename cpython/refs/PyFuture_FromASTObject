@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/compile.h' l='67' type='PyFutureFeatures * PyFuture_FromASTObject(struct _mod * mod, PyObject * filename)'/>
+<use f='codebrowser/Python/compile.c' l='320' u='c' c='PyAST_CompileObject'/>
+<def f='codebrowser/Python/future.c' l='118' ll='136' type='PyFutureFeatures * PyFuture_FromASTObject(mod_ty mod, PyObject * filename)'/>
+<use f='codebrowser/Python/future.c' l='148' u='c' c='PyFuture_FromAST'/>

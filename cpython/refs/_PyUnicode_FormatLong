@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2305' type='PyObject * _PyUnicode_FormatLong(PyObject * , int , int , int )'/>
+<use f='codebrowser/Objects/bytesobject.c' l='459' u='c' c='formatlong'/>
+<use f='codebrowser/Objects/bytesobject.c' l='473' u='c' c='formatlong'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='14177' ll='14303' type='PyObject * _PyUnicode_FormatLong(PyObject * val, int alt, int prec, int type)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14381' u='c' c='mainformatlong'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='14159'>/* formatlong() emulates the format codes d, u, o, x and X, and
+ * the F_ALT flag, for Python&apos;s long (unbounded) ints.  It&apos;s not used for
+ * Python&apos;s regular ints.
+ * Return value:  a new PyUnicodeObject*, or NULL if error.
+ *     The output string is of the form
+ *         &quot;-&quot;? (&quot;0x&quot; | &quot;0X&quot;)? digit+
+ *     &quot;0x&quot;/&quot;0X&quot; are present only for x and X conversions, with F_ALT
+ *         set in flags.  The case of hex digits will be correct,
+ *     There will be at least prec digits, zero-filled on the left if
+ *         necessary to get that many.
+ * val          object to be converted
+ * flags        bitmask of format flags; only F_ALT is looked at
+ * prec         minimum number of digits; 0-fill on left if needed
+ * type         a character in [duoxX]; u acts the same as d
+ *
+ * CAUTION:  o, x and X conversions on regular ints can never
+ * produce a &apos;-&apos; sign, but can for Python&apos;s unbounded ints.
+ */</doc>

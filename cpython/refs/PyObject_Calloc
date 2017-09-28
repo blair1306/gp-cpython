@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/objimpl.h' l='99' type='void * PyObject_Calloc(size_t nelem, size_t elsize)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3248' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3376' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1742' u='c' c='_PyObject_GC_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='81' u='c' c='_PyBytes_FromSize'/>
+<def f='codebrowser/Objects/obmalloc.c' l='482' ll='489' type='void * PyObject_Calloc(size_t nelem, size_t elsize)'/>

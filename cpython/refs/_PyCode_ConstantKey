@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/code.h' l='138' type='PyObject * _PyCode_ConstantKey(PyObject * obj)'/>
+<doc f='codebrowser/Include/code.h' l='131'>/* Create a comparable key used to compare constants taking in account the
+ * object type. It is used to make sure types are not coerced (e.g., float and
+ * complex) _and_ to distinguish 0.0 from -0.0 e.g. on IEEE platforms
+ *
+ * Return (type(obj), obj, ...): a tuple with variable size (at least 2 items)
+ * depending on the type and the value. The type is the first item to not
+ * compare bytes and str which can raise a BytesWarning exception. */</doc>
+<def f='codebrowser/Objects/codeobject.c' l='486' ll='607' type='PyObject * _PyCode_ConstantKey(PyObject * op)'/>
+<use f='codebrowser/Objects/codeobject.c' l='549' u='c' c='_PyCode_ConstantKey'/>
+<use f='codebrowser/Objects/codeobject.c' l='577' u='c' c='_PyCode_ConstantKey'/>
+<use f='codebrowser/Objects/codeobject.c' l='642' u='c' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='645' u='c' c='code_richcompare'/>
+<use f='codebrowser/Python/compile.c' l='406' u='c' c='list2dict'/>
+<use f='codebrowser/Python/compile.c' l='469' u='c' c='dictbytype'/>
+<use f='codebrowser/Python/compile.c' l='573' u='c' c='compiler_enter_scope'/>
+<use f='codebrowser/Python/compile.c' l='1114' u='c' c='compiler_add_o'/>
+<use f='codebrowser/Python/compile.c' l='1526' u='c' c='compiler_lookup_arg'/>

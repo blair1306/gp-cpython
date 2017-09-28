@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/symtable.h' l='54' type='unsigned int'/>
+<offset>710</offset>
+<doc f='codebrowser/Include/symtable.h' l='54'>/* true if namespace uses return with
+                                        an argument */</doc>
+<use f='codebrowser/Python/symtable.c' l='73' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='1179' u='w' c='symtable_visit_stmt'/>

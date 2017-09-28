@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/object.h' l='188' type='int'/>
+<offset>256</offset>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='544' u='r' c='CDataType_from_buffer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2611' u='w' c='PyCData_NewGetBuffer'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='152' u='w' c='ndbuf_new'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='258' u='r' c='ndarray_init_staticbuf'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='838' u='w' c='init_simple'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1455' u='r' c='ndarray_getbuf'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1876' u='r' c='ndarray_ass_subscript'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2041' u='r' c='ndarray_get_readonly'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2614' u='r' c='ndarray_hash'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2565' u='w' c='array_buffer_getbuf'/>
+<use f='codebrowser/Objects/abstract.c' l='649' u='w' c='PyBuffer_FillInfo'/>
+<use f='codebrowser/Objects/memoryobject.c' l='523' u='w' c='init_shared_values'/>
+<use f='codebrowser/Objects/memoryobject.c' l='523' u='r' c='init_shared_values'/>
+<use f='codebrowser/Objects/memoryobject.c' l='922' u='r' c='PyMemoryView_GetContiguous'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1416' u='r' c='memory_getbuf'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2429' u='r' c='memory_ass_sub'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2838' u='r' c='memory_hash'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2964' u='r' c='memory_readonly_get'/>

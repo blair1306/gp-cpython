@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dictobject.c.h source code [codebrowser/Objects/clinic/dictobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/dictobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='dictobject.c.h.html'>dictobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char dict_fromkeys__doc__[] = &quot;fromkeys($type, iterable, value=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Create a new dictionary with keys from iterable and values set to value.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="dict_fromkeys__doc__" title='dict_fromkeys__doc__' data-ref="dict_fromkeys__doc__">dict_fromkeys__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"fromkeys($type, iterable, value=None, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Create a new dictionary with keys from iterable and values set to value."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/DICT_FROMKEYS_METHODDEF" data-ref="_M/DICT_FROMKEYS_METHODDEF">DICT_FROMKEYS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"fromkeys", (PyCFunction)dict_fromkeys, METH_FASTCALL|METH_CLASS, dict_fromkeys__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../dictobject.c.html#dict_fromkeys_impl" title='dict_fromkeys_impl' data-ref="dict_fromkeys_impl" id="dict_fromkeys_impl">dict_fromkeys_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col7 decl" id="27type" title='type' data-type='PyTypeObject *' data-ref="27type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28iterable" title='iterable' data-type='PyObject *' data-ref="28iterable">iterable</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29value" title='value' data-type='PyObject *' data-ref="29value">value</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="dict_fromkeys" title='dict_fromkeys' data-ref="dict_fromkeys">dict_fromkeys</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col0 decl" id="30type" title='type' data-type='PyTypeObject *' data-ref="30type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="31args" title='args' data-type='PyObject **' data-ref="31args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="32nargs" title='nargs' data-type='Py_ssize_t' data-ref="32nargs">nargs</dfn>)</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33return_value" title='return_value' data-type='PyObject *' data-ref="33return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="21">21</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34iterable" title='iterable' data-type='PyObject *' data-ref="34iterable">iterable</dfn>;</td></tr>
+<tr><th id="22">22</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35value" title='value' data-type='PyObject *' data-ref="35value">value</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col1 ref" href="#31args" title='args' data-ref="31args">args</a>, <a class="local col2 ref" href="#32nargs" title='nargs' data-ref="32nargs">nargs</a>, <q>"fromkeys"</q>,</td></tr>
+<tr><th id="25">25</th><td>        <var>1</var>, <var>2</var>,</td></tr>
+<tr><th id="26">26</th><td>        &amp;<a class="local col4 ref" href="#34iterable" title='iterable' data-ref="34iterable">iterable</a>, &amp;<a class="local col5 ref" href="#35value" title='value' data-ref="35value">value</a>)) {</td></tr>
+<tr><th id="27">27</th><td>        <b>goto</b> <a class="lbl" href="#36exit" data-ref="36exit">exit</a>;</td></tr>
+<tr><th id="28">28</th><td>    }</td></tr>
+<tr><th id="29">29</th><td>    <a class="local col3 ref" href="#33return_value" title='return_value' data-ref="33return_value">return_value</a> = <a class="ref" href="../dictobject.c.html#dict_fromkeys_impl" title='dict_fromkeys_impl' data-ref="dict_fromkeys_impl">dict_fromkeys_impl</a>(<a class="local col0 ref" href="#30type" title='type' data-ref="30type">type</a>, <a class="local col4 ref" href="#34iterable" title='iterable' data-ref="34iterable">iterable</a>, <a class="local col5 ref" href="#35value" title='value' data-ref="35value">value</a>);</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><dfn class="lbl" id="36exit" data-ref="36exit">exit</dfn>:</td></tr>
+<tr><th id="32">32</th><td>    <b>return</b> <a class="local col3 ref" href="#33return_value" title='return_value' data-ref="33return_value">return_value</a>;</td></tr>
+<tr><th id="33">33</th><td>}</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char dict___contains____doc__[] = &quot;__contains__($self, key, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;True if the dictionary has the specified key, else False.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="dict___contains____doc__" title='dict___contains____doc__' data-ref="dict___contains____doc__">dict___contains____doc__</dfn>,</td></tr>
+<tr><th id="36">36</th><td><q>"__contains__($self, key, /)\n"</q></td></tr>
+<tr><th id="37">37</th><td><q>"--\n"</q></td></tr>
+<tr><th id="38">38</th><td><q>"\n"</q></td></tr>
+<tr><th id="39">39</th><td><q>"True if the dictionary has the specified key, else False."</q>);</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/DICT___CONTAINS___METHODDEF" data-ref="_M/DICT___CONTAINS___METHODDEF">DICT___CONTAINS___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="42">42</th><td><u>    {"__contains__", (PyCFunction)dict___contains__, METH_O|METH_COEXIST, dict___contains____doc__},</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char dict_get__doc__[] = &quot;get($self, key, default=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the value for key if key is in the dictionary, else default.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="dict_get__doc__" title='dict_get__doc__' data-ref="dict_get__doc__">dict_get__doc__</dfn>,</td></tr>
+<tr><th id="45">45</th><td><q>"get($self, key, default=None, /)\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"--\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"Return the value for key if key is in the dictionary, else default."</q>);</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/DICT_GET_METHODDEF" data-ref="_M/DICT_GET_METHODDEF">DICT_GET_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="51">51</th><td><u>    {"get", (PyCFunction)dict_get, METH_FASTCALL, dict_get__doc__},</u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="54">54</th><td><a class="decl" href="../dictobject.c.html#dict_get_impl" title='dict_get_impl' data-ref="dict_get_impl" id="dict_get_impl">dict_get_impl</a>(<a class="typedef" href="../../Include/dictobject.h.html#PyDictObject" title='PyDictObject' data-type='struct PyDictObject' data-ref="PyDictObject">PyDictObject</a> *<dfn class="local col7 decl" id="37self" title='self' data-type='PyDictObject *' data-ref="37self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="38key" title='key' data-type='PyObject *' data-ref="38key">key</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="39default_value" title='default_value' data-type='PyObject *' data-ref="39default_value">default_value</dfn>);</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="57">57</th><td><dfn class="decl def" id="dict_get" title='dict_get' data-ref="dict_get">dict_get</dfn>(<a class="typedef" href="../../Include/dictobject.h.html#PyDictObject" title='PyDictObject' data-type='struct PyDictObject' data-ref="PyDictObject">PyDictObject</a> *<dfn class="local col0 decl" id="40self" title='self' data-type='PyDictObject *' data-ref="40self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="41args" title='args' data-type='PyObject **' data-ref="41args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="42nargs" title='nargs' data-type='Py_ssize_t' data-ref="42nargs">nargs</dfn>)</td></tr>
+<tr><th id="58">58</th><td>{</td></tr>
+<tr><th id="59">59</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="43return_value" title='return_value' data-type='PyObject *' data-ref="43return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="60">60</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="44key" title='key' data-type='PyObject *' data-ref="44key">key</dfn>;</td></tr>
+<tr><th id="61">61</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45default_value" title='default_value' data-type='PyObject *' data-ref="45default_value">default_value</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col1 ref" href="#41args" title='args' data-ref="41args">args</a>, <a class="local col2 ref" href="#42nargs" title='nargs' data-ref="42nargs">nargs</a>, <q>"get"</q>,</td></tr>
+<tr><th id="64">64</th><td>        <var>1</var>, <var>2</var>,</td></tr>
+<tr><th id="65">65</th><td>        &amp;<a class="local col4 ref" href="#44key" title='key' data-ref="44key">key</a>, &amp;<a class="local col5 ref" href="#45default_value" title='default_value' data-ref="45default_value">default_value</a>)) {</td></tr>
+<tr><th id="66">66</th><td>        <b>goto</b> <a class="lbl" href="#46exit" data-ref="46exit">exit</a>;</td></tr>
+<tr><th id="67">67</th><td>    }</td></tr>
+<tr><th id="68">68</th><td>    <a class="local col3 ref" href="#43return_value" title='return_value' data-ref="43return_value">return_value</a> = <a class="ref" href="../dictobject.c.html#dict_get_impl" title='dict_get_impl' data-ref="dict_get_impl">dict_get_impl</a>(<a class="local col0 ref" href="#40self" title='self' data-ref="40self">self</a>, <a class="local col4 ref" href="#44key" title='key' data-ref="44key">key</a>, <a class="local col5 ref" href="#45default_value" title='default_value' data-ref="45default_value">default_value</a>);</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><dfn class="lbl" id="46exit" data-ref="46exit">exit</dfn>:</td></tr>
+<tr><th id="71">71</th><td>    <b>return</b> <a class="local col3 ref" href="#43return_value" title='return_value' data-ref="43return_value">return_value</a>;</td></tr>
+<tr><th id="72">72</th><td>}</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char dict_setdefault__doc__[] = &quot;setdefault($self, key, default=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Insert key with a value of default if key is not in the dictionary.\n&quot;&quot;\n&quot;&quot;Return the value for key if key is in the dictionary, else default.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="dict_setdefault__doc__" title='dict_setdefault__doc__' data-ref="dict_setdefault__doc__">dict_setdefault__doc__</dfn>,</td></tr>
+<tr><th id="75">75</th><td><q>"setdefault($self, key, default=None, /)\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"--\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"Insert key with a value of default if key is not in the dictionary.\n"</q></td></tr>
+<tr><th id="79">79</th><td><q>"\n"</q></td></tr>
+<tr><th id="80">80</th><td><q>"Return the value for key if key is in the dictionary, else default."</q>);</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/DICT_SETDEFAULT_METHODDEF" data-ref="_M/DICT_SETDEFAULT_METHODDEF">DICT_SETDEFAULT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="83">83</th><td><u>    {"setdefault", (PyCFunction)dict_setdefault, METH_FASTCALL, dict_setdefault__doc__},</u></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="86">86</th><td><a class="decl" href="../dictobject.c.html#dict_setdefault_impl" title='dict_setdefault_impl' data-ref="dict_setdefault_impl" id="dict_setdefault_impl">dict_setdefault_impl</a>(<a class="typedef" href="../../Include/dictobject.h.html#PyDictObject" title='PyDictObject' data-type='struct PyDictObject' data-ref="PyDictObject">PyDictObject</a> *<dfn class="local col7 decl" id="47self" title='self' data-type='PyDictObject *' data-ref="47self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="48key" title='key' data-type='PyObject *' data-ref="48key">key</dfn>,</td></tr>
+<tr><th id="87">87</th><td>                     <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="49default_value" title='default_value' data-type='PyObject *' data-ref="49default_value">default_value</dfn>);</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="90">90</th><td><dfn class="decl def" id="dict_setdefault" title='dict_setdefault' data-ref="dict_setdefault">dict_setdefault</dfn>(<a class="typedef" href="../../Include/dictobject.h.html#PyDictObject" title='PyDictObject' data-type='struct PyDictObject' data-ref="PyDictObject">PyDictObject</a> *<dfn class="local col0 decl" id="50self" title='self' data-type='PyDictObject *' data-ref="50self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="51args" title='args' data-type='PyObject **' data-ref="51args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="52nargs" title='nargs' data-type='Py_ssize_t' data-ref="52nargs">nargs</dfn>)</td></tr>
+<tr><th id="91">91</th><td>{</td></tr>
+<tr><th id="92">92</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53return_value" title='return_value' data-type='PyObject *' data-ref="53return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="93">93</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="54key" title='key' data-type='PyObject *' data-ref="54key">key</dfn>;</td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55default_value" title='default_value' data-type='PyObject *' data-ref="55default_value">default_value</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col1 ref" href="#51args" title='args' data-ref="51args">args</a>, <a class="local col2 ref" href="#52nargs" title='nargs' data-ref="52nargs">nargs</a>, <q>"setdefault"</q>,</td></tr>
+<tr><th id="97">97</th><td>        <var>1</var>, <var>2</var>,</td></tr>
+<tr><th id="98">98</th><td>        &amp;<a class="local col4 ref" href="#54key" title='key' data-ref="54key">key</a>, &amp;<a class="local col5 ref" href="#55default_value" title='default_value' data-ref="55default_value">default_value</a>)) {</td></tr>
+<tr><th id="99">99</th><td>        <b>goto</b> <a class="lbl" href="#56exit" data-ref="56exit">exit</a>;</td></tr>
+<tr><th id="100">100</th><td>    }</td></tr>
+<tr><th id="101">101</th><td>    <a class="local col3 ref" href="#53return_value" title='return_value' data-ref="53return_value">return_value</a> = <a class="ref" href="../dictobject.c.html#dict_setdefault_impl" title='dict_setdefault_impl' data-ref="dict_setdefault_impl">dict_setdefault_impl</a>(<a class="local col0 ref" href="#50self" title='self' data-ref="50self">self</a>, <a class="local col4 ref" href="#54key" title='key' data-ref="54key">key</a>, <a class="local col5 ref" href="#55default_value" title='default_value' data-ref="55default_value">default_value</a>);</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><dfn class="lbl" id="56exit" data-ref="56exit">exit</dfn>:</td></tr>
+<tr><th id="104">104</th><td>    <b>return</b> <a class="local col3 ref" href="#53return_value" title='return_value' data-ref="53return_value">return_value</a>;</td></tr>
+<tr><th id="105">105</th><td>}</td></tr>
+<tr><th id="106">106</th><td><i>/*[clinic end generated code: output=8d09902e60b7ab02 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="107">107</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../dictobject.c.html'>codebrowser/Objects/dictobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

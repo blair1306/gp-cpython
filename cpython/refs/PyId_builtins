@@ -1,0 +1,12 @@
+<def f='codebrowser/Objects/object.c' l='15' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Objects/object.c' l='1003' u='a' c='_PyObject_GetBuiltin'/>
+<def f='codebrowser/Objects/typeobject.c' l='70' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Objects/typeobject.c' l='497' u='a' c='type_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='892' u='a' c='type_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='3630' u='a' c='object_repr'/>
+<def f='codebrowser/Python/errors.c' l='23' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/errors.c' l='969' u='a' c='PyErr_WriteUnraisable'/>
+<def f='codebrowser/Python/pythonrun.c' l='40' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/pythonrun.c' l='756' u='a' c='print_exception'/>
+<def f='codebrowser/Python/sysmodule.c' l='39' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Python/sysmodule.c' l='168' u='a' c='sys_displayhook'/>

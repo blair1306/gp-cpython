@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/Python-ast.h' l='396' type='int'/>
+<offset>192</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2485' u='w' c='_Py_comprehension'/>
+<use f='codebrowser/Python/Python-ast.c' l='3759' u='r' c='ast2obj_comprehension'/>
+<use f='codebrowser/Python/compile.c' l='3724' u='r' c='compiler_comprehension_generator'/>
+<use f='codebrowser/Python/compile.c' l='4029' u='r' c='compiler_comprehension'/>
+<use f='codebrowser/Python/symtable.c' l='1681' u='r' c='symtable_visit_comprehension'/>
+<use f='codebrowser/Python/symtable.c' l='1736' u='r' c='symtable_handle_comprehension'/>

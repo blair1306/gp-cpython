@@ -1,0 +1,12 @@
+<def f='codebrowser/Modules/_blake2/impl/blake2.h' l='90' ll='103'/>
+<size>32</size>
+<mbr r='__blake2s_param::digest_length' o='0' t='uint8_t'/>
+<mbr r='__blake2s_param::key_length' o='8' t='uint8_t'/>
+<mbr r='__blake2s_param::fanout' o='16' t='uint8_t'/>
+<mbr r='__blake2s_param::depth' o='24' t='uint8_t'/>
+<mbr r='__blake2s_param::leaf_length' o='32' t='uint32_t'/>
+<mbr r='__blake2s_param::node_offset' o='64' t='uint8_t [6]'/>
+<mbr r='__blake2s_param::node_depth' o='112' t='uint8_t'/>
+<mbr r='__blake2s_param::inner_length' o='120' t='uint8_t'/>
+<mbr r='__blake2s_param::salt' o='128' t='uint8_t [8]'/>
+<mbr r='__blake2s_param::personal' o='192' t='uint8_t [8]'/>

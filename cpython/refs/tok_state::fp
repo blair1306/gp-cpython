@@ -1,0 +1,15 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='32' type='FILE *'/>
+<offset>384</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='31'>/* NB If done != E_OK, cur must be == inp!!! */</doc>
+<doc f='codebrowser/Parser/tokenizer.h' l='32'>/* Rest of input; NULL if tokenizing a string */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='127' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='200' u='r' c='error_ret'/>
+<use f='codebrowser/Parser/tokenizer.c' l='509' u='r' c='fp_setreadl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='515' u='r' c='fp_setreadl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='551' u='r' c='fp_getc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='557' u='r' c='fp_ungetc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='605' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='652' u='r' c='decoding_feof'/>
+<use f='codebrowser/Parser/tokenizer.c' l='873' u='w' c='PyTokenizer_FromFile'/>
+<use f='codebrowser/Parser/tokenizer.c' l='903' u='r' c='PyTokenizer_Free'/>
+<use f='codebrowser/Parser/tokenizer.c' l='921' u='r' c='tok_nextc'/>

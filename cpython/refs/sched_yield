@@ -1,0 +1,3 @@
+<dec f='include/sched.h' l='65' type='int sched_yield()'/>
+<doc f='include/sched.h' l='64'>/* Yield the processor.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='5719' u='c' c='os_sched_yield_impl'/>

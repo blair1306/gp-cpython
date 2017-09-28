@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/abstract.h' l='1102' type='int _Py_convert_optional_to_ssize_t(PyObject * , void * )'/>
+<doc f='codebrowser/Include/abstract.h' l='1101'>/* Convert Python int to Py_ssize_t. Do nothing if the argument is None. */</doc>
+<use f='codebrowser/Modules/_io/clinic/bufferedio.c.h' l='133' c='_io__Buffered_read'/>
+<use f='codebrowser/Modules/_io/clinic/bufferedio.c.h' l='249' c='_io__Buffered_readline'/>
+<use f='codebrowser/Modules/_io/clinic/bytesio.c.h' l='173' c='_io_BytesIO_read'/>
+<use f='codebrowser/Modules/_io/clinic/bytesio.c.h' l='204' c='_io_BytesIO_read1'/>
+<use f='codebrowser/Modules/_io/clinic/bytesio.c.h' l='236' c='_io_BytesIO_readline'/>
+<use f='codebrowser/Modules/_io/clinic/bytesio.c.h' l='335' c='_io_BytesIO_truncate'/>
+<use f='codebrowser/Modules/_io/clinic/fileio.c.h' l='217' c='_io_FileIO_read'/>
+<use f='codebrowser/Modules/_io/clinic/iobase.c.h' l='189' c='_io__IOBase_readline'/>
+<use f='codebrowser/Modules/_io/clinic/iobase.c.h' l='221' c='_io__IOBase_readlines'/>
+<use f='codebrowser/Modules/_io/clinic/stringio.c.h' l='63' c='_io_StringIO_read'/>
+<use f='codebrowser/Modules/_io/clinic/stringio.c.h' l='93' c='_io_StringIO_readline'/>
+<use f='codebrowser/Modules/_io/clinic/stringio.c.h' l='125' c='_io_StringIO_truncate'/>
+<use f='codebrowser/Modules/_io/clinic/textio.c.h' l='275' c='_io_TextIOWrapper_read'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='251' c='mmap_read_method'/>
+<def f='codebrowser/Python/modsupport.c' l='16' ll='37' type='int _Py_convert_optional_to_ssize_t(PyObject * obj, void * result)'/>

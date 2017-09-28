@@ -1,0 +1,47 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='561'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='558'>/* Return a maximum character value which is suitable for creating another
+   string based on op.  This is always an approximation but more efficient
+   than iterating over the string. */</doc>
+<use f='codebrowser/Modules/_io/textio.c' l='338' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='238' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1919' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1050' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1429' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1429' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1431' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1488' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1488' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1527' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2299' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2383' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2542' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4214' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4433' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5292' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9110' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9398' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9606' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9965' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9997' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10116' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10141' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10181' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10507' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10508' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10512' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11330' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11331' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11405' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11406' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11598' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12559' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13497' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13658' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13698' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14825' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15107' u='c'/>
+<use f='codebrowser/Python/compile.c' l='267' u='c'/>
+<use f='codebrowser/Python/compile.c' l='268' u='c'/>
+<use f='codebrowser/Python/compile.c' l='269' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='582' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='815' u='c'/>

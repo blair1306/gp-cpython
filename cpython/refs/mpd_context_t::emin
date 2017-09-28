@@ -1,0 +1,24 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='263' type='mpd_ssize_t'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1349' u='r' c='context_repr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1455' u='r' c='context_reduce'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4583' u='w' c='_dec_hash'/>
+<offset>128</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='263'>/* min negative exp */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='89' u='w' c='mpd_maxcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='103' u='w' c='mpd_defaultcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='117' u='w' c='mpd_basiccontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='135' u='w' c='mpd_ieee_context'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='161' u='r' c='mpd_getemin'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='221' u='w' c='mpd_qsetemin'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='202' u='r' c='mpd_etiny'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='346' u='r' c='mpd_isnormal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='356' u='r' c='mpd_issubnormal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='722' u='w' c='mpd_workcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='722' u='r' c='mpd_workcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1797' u='r' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1803' u='r' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1849' u='r' c='mpd_check_underflow'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6097' u='r' c='mpd_qnext_toward'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7298' u='w' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7298' u='w' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7413' u='w' c='_mpd_base_ndivmod'/>

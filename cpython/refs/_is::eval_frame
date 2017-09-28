@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='76' type='_PyFrameEvalFunction'/>
+<offset>1152</offset>
+<doc f='codebrowser/Include/pystate.h' l='75'>/* Initialized to PyEval_EvalFrameDefault(). */</doc>
+<use f='codebrowser/Python/ceval.c' l='680' u='r' c='PyEval_EvalFrameEx'/>
+<use f='codebrowser/Python/pystate.c' l='113' u='w' c='PyInterpreterState_New'/>

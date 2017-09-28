@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/fileobject.h' l='36' type='PyObject * PyFile_NewStdPrinter(int )'/>
+<def f='codebrowser/Objects/fileobject.c' l='334' ll='350' type='PyObject * PyFile_NewStdPrinter(int fd)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='686' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1208' u='c' c='Py_NewInterpreter'/>

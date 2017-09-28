@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='418' type='PyObject *'/>
+<offset>3008</offset>
+<use f='codebrowser/Objects/typeobject.c' l='258' u='r' c='PyType_Modified'/>
+<use f='codebrowser/Objects/typeobject.c' l='3179' u='r' c='type_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='3208' u='r' c='type___subclasses___impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='5208' u='r' c='add_subclass'/>
+<use f='codebrowser/Objects/typeobject.c' l='5210' u='w' c='add_subclass'/>
+<use f='codebrowser/Objects/typeobject.c' l='5250' u='r' c='remove_subclass'/>
+<use f='codebrowser/Objects/typeobject.c' l='7218' u='r' c='recurse_down_subclasses'/>

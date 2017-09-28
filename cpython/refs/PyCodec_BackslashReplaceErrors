@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/codecs.h' l='226' type='PyObject * PyCodec_BackslashReplaceErrors(PyObject * exc)'/>
+<doc f='codebrowser/Include/codecs.h' l='225'>/* replace the unicode encode error with backslash escapes (\x, \u and \U) */</doc>
+<def f='codebrowser/Python/codecs.c' l='858' ll='963' type='PyObject * PyCodec_BackslashReplaceErrors(PyObject * exc)'/>
+<use f='codebrowser/Python/codecs.c' l='1396' u='c' c='backslashreplace_errors'/>

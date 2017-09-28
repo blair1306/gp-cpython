@@ -1,0 +1,5 @@
+<dec f='include/readline/history.h' l='199' type='int write_history(const char * )'/>
+<use f='codebrowser/Modules/readline.c' l='245' u='c' c='write_history_file'/>
+<doc f='include/readline/history.h' l='196'>/* Write the current history to FILENAME.  If FILENAME is NULL,
+   then write the history list to ~/.history.  Values returned
+   are as in read_history ().  */</doc>

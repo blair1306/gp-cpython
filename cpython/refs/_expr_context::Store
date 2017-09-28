@@ -1,0 +1,47 @@
+<dec f='codebrowser/Include/Python-ast.h' l='11' type='2'/>
+<use f='codebrowser/Python/Python-ast.c' l='3534' c='ast2obj_expr_context'/>
+<use f='codebrowser/Python/Python-ast.c' l='6981' u='r' c='obj2ast_expr_context'/>
+<use f='codebrowser/Python/ast.c' l='30' u='r' c='validate_comprehension'/>
+<use f='codebrowser/Python/ast.c' l='91' c='expr_context_name'/>
+<use f='codebrowser/Python/ast.c' l='400' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='403' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='412' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='417' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='422' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='440' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='450' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='1011' u='r' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1023' u='r' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1099' u='r' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1864' u='r' c='ast_for_comprehension'/>
+<use f='codebrowser/Python/ast.c' l='1878' u='r' c='ast_for_comprehension'/>
+<use f='codebrowser/Python/ast.c' l='2923' u='r' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2976' u='r' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2982' u='r' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2985' u='r' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3046' u='r' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3733' u='r' c='ast_for_for_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3742' u='r' c='ast_for_for_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3895' u='r' c='ast_for_with_item'/>
+<use f='codebrowser/Python/compile.c' l='1870' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='1915' u='r' c='compiler_class'/>
+<use f='codebrowser/Python/compile.c' l='1924' u='r' c='compiler_class'/>
+<use f='codebrowser/Python/compile.c' l='1954' u='r' c='compiler_class'/>
+<use f='codebrowser/Python/compile.c' l='1997' u='r' c='compiler_class'/>
+<use f='codebrowser/Python/compile.c' l='2590' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2624' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2699' u='r' c='compiler_import_as'/>
+<use f='codebrowser/Python/compile.c' l='2736' u='r' c='compiler_import'/>
+<use f='codebrowser/Python/compile.c' l='2811' u='r' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='3130' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3145' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3162' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3177' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3295' u='r' c='compiler_list'/>
+<use f='codebrowser/Python/compile.c' l='3311' u='r' c='compiler_tuple'/>
+<use f='codebrowser/Python/compile.c' l='4457' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4483' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4485' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4500' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4557' u='r' c='compiler_augassign'/>
+<use f='codebrowser/Python/compile.c' l='4781' c='compiler_handle_subscr'/>

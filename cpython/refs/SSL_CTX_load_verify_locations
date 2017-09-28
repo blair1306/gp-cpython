@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2442' type='int SSL_CTX_load_verify_locations(SSL_CTX * ctx, const char * CAfile, const char * CApath)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3511' u='c' c='_ssl__SSLContext_load_verify_locations_impl'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/abstract.h' l='937' type='Py_ssize_t PySequence_Count(PyObject * o, PyObject * value)'/>
+<doc f='codebrowser/Include/abstract.h' l='932'>/* Return the number of occurrences on value on &apos;o&apos;, that is, return
+   the number of keys for which o[key] == value.
+
+   On failure, return -1.  This is equivalent to the Python expression:
+   o.count(value). */</doc>
+<use f='codebrowser/Modules/_operator.c' l='504' u='c' c='_operator_countOf_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='2013' ll='2017' type='Py_ssize_t PySequence_Count(PyObject * s, PyObject * o)'/>
+<doc f='codebrowser/Objects/abstract.c' l='2012'>/* Return # of times o appears in s. */</doc>

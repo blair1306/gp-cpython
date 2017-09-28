@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/pyerrors.h' l='274' type='PyObject * _PyErr_FormatFromCause(PyObject * exception, const char * format)'/>
+<doc f='codebrowser/Include/pyerrors.h' l='271'>/* Like PyErr_Format(), but saves current exception as __context__ and
+   __cause__.
+ */</doc>
+<use f='codebrowser/Modules/zipimport.c' l='919' u='c' c='read_directory'/>
+<use f='codebrowser/Objects/call.c' l='60' u='c' c='_Py_CheckFunctionResult'/>
+<use f='codebrowser/Objects/call.c' l='65' u='c' c='_Py_CheckFunctionResult'/>
+<use f='codebrowser/Objects/genobject.c' l='245' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='277' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Objects/typeobject.c' l='7148' u='c' c='set_names'/>
+<use f='codebrowser/Python/ceval.c' l='1887' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1952' u='c' c='_PyEval_EvalFrameDefault'/>
+<def f='codebrowser/Python/errors.c' l='419' ll='431' type='PyObject * _PyErr_FormatFromCause(PyObject * exception, const char * format)'/>

@@ -1,0 +1,3 @@
+<dec f='include/wchar.h' l='368' type='size_t mbrtowc(wchar_t *restrict __pwc, const char *restrict __s, size_t __n, mbstate_t *restrict __p)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3698' u='c' c='mbstowcs_errorpos'/>
+<use f='codebrowser/Python/fileutils.c' l='359' u='c' c='Py_DecodeLocale'/>

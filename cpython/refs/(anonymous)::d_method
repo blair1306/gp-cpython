@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/descrobject.h' l='55' type='PyMethodDef *'/>
+<offset>448</offset>
+<use f='codebrowser/Objects/descrobject.c' l='124' u='r' c='classmethod_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='134' u='r' c='method_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='248' u='r' c='methoddescr_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='287' u='r' c='_PyMethodDescr_FastCallKeywords'/>
+<use f='codebrowser/Objects/descrobject.c' l='332' u='r' c='classmethoddescr_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='384' u='r' c='method_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='384' u='r' c='method_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='390' u='r' c='method_get_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='390' u='r' c='method_get_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='734' u='w' c='PyDescr_NewMethod'/>
+<use f='codebrowser/Objects/descrobject.c' l='746' u='w' c='PyDescr_NewClassMethod'/>
+<use f='codebrowser/Python/ceval.c' l='4827' u='r' c='call_function'/>

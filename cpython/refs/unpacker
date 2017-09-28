@@ -1,0 +1,6 @@
+<def f='codebrowser/Objects/memoryobject.c' l='1879' ll='1884'/>
+<size>32</size>
+<doc f='codebrowser/Objects/memoryobject.c' l='1875'>/* For reasonable performance it is necessary to cache all objects required
+   for unpacking. An unpacker can handle the format passed to unpack_from().
+   Invariant: All pointer fields of the struct should either be NULL or valid
+   pointers. */</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/bytes_methods.h' l='26' type='PyObject * _Py_bytes_rfind(const char * str, Py_ssize_t len, PyObject * args)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1149' u='c' c='bytearray_rfind'/>
+<def f='codebrowser/Objects/bytes_methods.c' l='578' ll='585' type='PyObject * _Py_bytes_rfind(const char * str, Py_ssize_t len, PyObject * args)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1932' u='c' c='bytes_rfind'/>

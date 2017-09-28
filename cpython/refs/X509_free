@@ -1,0 +1,4 @@
+<dec f='include/openssl/x509.h' l='823' macro='1' type='void X509_free(X509 * a)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1477' u='c' c='_ssl__test_decode_cert_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1529' u='c' c='_ssl__SSLSocket_peer_certificate_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3384' u='c' c='_add_ca_certs'/>

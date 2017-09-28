@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='538' type='void mpd_qdiv_uint(mpd_t * result, const mpd_t * a, mpd_uint_t b, const mpd_context_t * ctx, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4034' ll='4045' type='void mpd_qdiv_uint(mpd_t * result, const mpd_t * a, mpd_uint_t b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4060' u='c' c='mpd_qdiv_u32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4077' u='c' c='mpd_qdiv_u64'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4033'>/* Divide decimal by mpd_uint_t. */</doc>

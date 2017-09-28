@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/object.h' l='535' type='int PyObject_HasAttr(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1555' u='c' c='_bufferedreader_read_all'/>
+<use f='codebrowser/Objects/object.c' l='864' u='c' c='_PyObject_HasAttrId'/>
+<def f='codebrowser/Objects/object.c' l='904' ll='914' type='int PyObject_HasAttr(PyObject * v, PyObject * name)'/>

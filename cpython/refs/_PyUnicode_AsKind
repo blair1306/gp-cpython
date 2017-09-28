@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1074' type='void * _PyUnicode_AsKind(PyObject * s, unsigned int kind)'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2398' ll='2451' type='void * _PyUnicode_AsKind(PyObject * s, unsigned int kind)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9273' u='c' c='any_find_slice'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9348' u='c' c='_PyUnicode_InsertThousandsGrouping'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9353' u='c' c='_PyUnicode_InsertThousandsGrouping'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9433' u='c' c='PyUnicode_Count'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10296' u='c' c='split'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10388' u='c' c='rsplit'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10546' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10555' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10564' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10567' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10605' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10614' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10621' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10626' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11268' u='c' c='PyUnicode_Contains'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11486' u='c' c='unicode_count'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12962' u='c' c='PyUnicode_Partition'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13020' u='c' c='PyUnicode_RPartition'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='2395'>/* Widen Unicode objects to larger buffers. Don&apos;t write terminating null
+   character. Return NULL on error. */</doc>
+<use f='codebrowser/Python/formatter_unicode.c' l='643' u='c' c='fill_number'/>

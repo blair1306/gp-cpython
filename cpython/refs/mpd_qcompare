@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='492' type='int mpd_qcompare(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4108' u='c' c='dec_mpd_qcompare'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5049' u='c' c='ctx_mpd_qcompare'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2240' ll='2255' type='int mpd_qcompare(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2235'>/*
+ * Compare a and b, convert the usual integer result to a decimal and
+ * store it in &apos;result&apos;. For convenience, the integer result of the comparison
+ * is returned. Comparisons involving NaNs return NaN/INT_MAX.
+ */</doc>

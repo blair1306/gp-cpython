@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1490' type='PyObject * _PyUnicode_EncodeUTF16(PyObject * unicode, const char * errors, int byteorder)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='786' u='c' c='_codecs_utf_16_encode_impl'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='802' u='c' c='_codecs_utf_16_le_encode_impl'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='818' u='c' c='_codecs_utf_16_be_encode_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='709' u='c' c='utf16be_encode'/>
+<use f='codebrowser/Modules/_io/textio.c' l='716' u='c' c='utf16le_encode'/>
+<use f='codebrowser/Modules/_io/textio.c' l='731' u='c' c='utf16_encode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3584' u='c' c='PyUnicode_AsEncodedString'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='5708' ll='5872' type='PyObject * _PyUnicode_EncodeUTF16(PyObject * str, const char * errors, int byteorder)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5884' u='c' c='PyUnicode_EncodeUTF16'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5892' u='c' c='PyUnicode_AsUTF16String'/>

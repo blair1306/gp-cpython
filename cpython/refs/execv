@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='566' type='int execv(const char * __path, char *const * __argv)'/>
+<doc f='include/unistd.h' l='565'>/* Execute PATH with arguments ARGV and environment from `environ&apos;.  */</doc>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='505' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5033' u='c' c='os_execv_impl'/>

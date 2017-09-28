@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/Python-ast.h' l='349' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:346:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2346' u='m' c='_Py_Starred'/>
+<use f='codebrowser/Python/Python-ast.c' l='2347' u='m' c='_Py_Starred'/>
+<use f='codebrowser/Python/Python-ast.c' l='3457' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3462' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='195' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='336' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1018' u='m' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1019' u='m' c='set_context'/>
+<use f='codebrowser/Python/compile.c' l='3241' u='m' c='starunpack_helper'/>
+<use f='codebrowser/Python/compile.c' l='3277' u='m' c='assignment_helper'/>
+<use f='codebrowser/Python/compile.c' l='3623' u='m' c='compiler_call_helper'/>
+<use f='codebrowser/Python/compile.c' l='4499' u='m' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1497' u='m' c='symtable_visit_expr'/>

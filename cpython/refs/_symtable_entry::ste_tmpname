@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/symtable.h' l='63' type='int'/>
+<offset>864</offset>
+<doc f='codebrowser/Include/symtable.h' l='63'>/* counter for listcomp temp vars */</doc>
+<use f='codebrowser/Python/symtable.c' l='62' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='1094' u='w' c='symtable_new_tmpname'/>

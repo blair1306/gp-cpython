@@ -1,0 +1,41 @@
+<def f='codebrowser/Modules/expat/xmltok_impl.c' l='1638' macro='1' type='int normal_sameName(const ENCODING * enc, const char * ptr1, const char * ptr2)'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='448' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='458' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='471' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='482' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='534' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='545' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='572' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='583' macro='1'/>
+<doc f='codebrowser/Modules/expat/xmltok_impl.c' l='1629'>/* This function does not appear to be called from anywhere within the
+ * library code.  It is used via the macro XmlSameName(), which is
+ * defined but never used.  Since it appears in the encoding function
+ * table, removing it is not a thing to be undertaken lightly.  For
+ * the moment, we simply exclude it from coverage tests.
+ *
+ * LCOV_EXCL_START
+ */</doc>

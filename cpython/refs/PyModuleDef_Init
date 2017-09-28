@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/moduleobject.h' l='39' type='PyObject * PyModuleDef_Init(struct PyModuleDef * )'/>
+<doc f='codebrowser/Include/moduleobject.h' l='38'>/* New in 3.5 */</doc>
+<use f='codebrowser/Modules/_testmultiphase.c' l='243' u='c' c='PyInit__testmultiphase'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='291' u='c' c='PyInit__testmultiphase_nonmodule'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='321' u='c' c='PyInit__testmultiphase_nonmodule_with_methods'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='341' u='c' c='PyInitU__testmultiphase_zkouka_naten_evc07gi8e'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='359' u='c' c='PyInitU_eckzbwbhc6jpgzcx415x'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='367' u='c' c='PyInit_x'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='378' u='c' c='PyInit__testmultiphase_null_slots'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='394' u='c' c='PyInit__testmultiphase_bad_slot_large'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='408' u='c' c='PyInit__testmultiphase_bad_slot_negative'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='426' u='c' c='PyInit__testmultiphase_create_int_with_state'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='445' u='c' c='PyInit__testmultiphase_negative_size'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='474' u='c' c='PyInit__testmultiphase_export_unreported_exception'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='494' u='c' c='PyInit__testmultiphase_create_null'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='515' u='c' c='PyInit__testmultiphase_create_raise'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='536' u='c' c='PyInit__testmultiphase_create_unreported_exception'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='551' u='c' c='PyInit__testmultiphase_nonmodule_with_exec_slots'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='571' u='c' c='PyInit__testmultiphase_exec_err'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='592' u='c' c='PyInit__testmultiphase_exec_raise'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='613' u='c' c='PyInit__testmultiphase_exec_unreported_exception'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='623' u='c' c='PyInit_imp_dummy'/>
+<use f='codebrowser/Modules/arraymodule.c' l='3074' u='c' c='PyInit_array'/>
+<use f='codebrowser/Modules/xxsubtype.c' l='313' u='c' c='PyInit_xxsubtype'/>
+<def f='codebrowser/Objects/moduleobject.c' l='31' ll='43' type='PyObject * PyModuleDef_Init(struct PyModuleDef * def)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='169' u='c' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='237' u='c' c='PyModule_FromDefAndSpec2TraceRefs'/>

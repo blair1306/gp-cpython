@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/object.h' l='757' type='void _Py_ForgetReference(PyObject * )'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2970' u='c' c='_PyBytes_Resize'/>
+<use f='codebrowser/Objects/longobject.c' l='5549' u='c' c='PyLong_Fini'/>
+<def f='codebrowser/Objects/object.c' l='1837' ll='1867' type='void _Py_ForgetReference(PyObject * op)'/>
+<use f='codebrowser/Objects/object.c' l='1873' u='c' c='_Py_Dealloc'/>
+<use f='codebrowser/Objects/structseq.c' l='343' u='c' c='PyStructSequence_InitType2'/>
+<use f='codebrowser/Objects/tupleobject.c' l='909' u='c' c='_PyTuple_Resize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='930' u='c' c='resize_compact'/>

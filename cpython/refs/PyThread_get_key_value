@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pythread.h' l='84' type='void * PyThread_get_key_value(int )'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='188' u='c' c='get_reentrant'/>
+<use f='codebrowser/Python/pystate.c' l='504' u='c' c='PyThreadState_Delete'/>
+<use f='codebrowser/Python/pystate.c' l='520' u='c' c='PyThreadState_DeleteCurrent'/>
+<use f='codebrowser/Python/pystate.c' l='783' u='c' c='_PyGILState_Init'/>
+<use f='codebrowser/Python/pystate.c' l='851' u='c' c='_PyGILState_NoteThreadState'/>
+<use f='codebrowser/Python/pystate.c' l='866' u='c' c='PyGILState_GetThisThreadState'/>
+<use f='codebrowser/Python/pystate.c' l='898' u='c' c='PyGILState_Ensure'/>
+<use f='codebrowser/Python/pystate.c' l='930' u='c' c='PyGILState_Release'/>
+<def f='codebrowser/Python/thread_pthread.h' l='648' ll='652' type='void * PyThread_get_key_value(int key)'/>

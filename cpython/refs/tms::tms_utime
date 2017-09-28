@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/times.h' l='36' type='clock_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/sys/times.h' l='36'>/* User CPU time.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='7551' u='r' c='os_times_impl'/>
+<use f='codebrowser/Modules/timemodule.c' l='1050' u='r' c='py_process_time'/>

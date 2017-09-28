@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/ceval.h' l='133' type='PyObject * PyEval_EvalFrameEx(struct _frame * f, int exc)'/>
+<use f='codebrowser/Objects/call.c' l='282' u='c' c='function_code_fastcall'/>
+<use f='codebrowser/Objects/genobject.c' l='189' u='c' c='gen_send_ex'/>
+<use f='codebrowser/Python/ceval.c' l='673' u='c' c='PyEval_EvalFrame'/>
+<def f='codebrowser/Python/ceval.c' l='676' ll='681' type='PyObject * PyEval_EvalFrameEx(PyFrameObject * f, int throwflag)'/>
+<use f='codebrowser/Python/ceval.c' l='4175' u='c' c='_PyEval_EvalCodeWithName'/>

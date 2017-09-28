@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/traceback.h' l='24' type='int PyTraceBack_Print(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2738' u='c' c='traceback_print'/>
+<use f='codebrowser/Python/errors.c' l='948' u='c' c='PyErr_WriteUnraisable'/>
+<use f='codebrowser/Python/pythonrun.c' l='700' u='c' c='print_exception'/>
+<def f='codebrowser/Python/traceback.c' l='473' ll='512' type='int PyTraceBack_Print(PyObject * v, PyObject * f)'/>

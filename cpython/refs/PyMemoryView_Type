@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/memoryobject.h' l='12' type='PyTypeObject'/>
+<use f='codebrowser/Objects/memoryobject.c' l='623' u='a' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='780' macro='1' u='a'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2733' macro='1' u='a'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2740' macro='1' u='a'/>
+<def f='codebrowser/Objects/memoryobject.c' l='3075' ll='3114' type='PyTypeObject'/>
+<use f='codebrowser/Objects/object.c' l='1740' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2716' u='a' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2716' u='a' c='_PyBuiltin_Init'/>

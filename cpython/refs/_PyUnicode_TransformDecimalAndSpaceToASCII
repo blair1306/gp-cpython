@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1782' type='PyObject * _PyUnicode_TransformDecimalAndSpaceToASCII(PyObject * unicode)'/>
+<use f='codebrowser/Objects/complexobject.c' l='913' u='c' c='complex_subtype_from_string'/>
+<use f='codebrowser/Objects/floatobject.c' l='176' u='c' c='PyFloat_FromString'/>
+<use f='codebrowser/Objects/longobject.c' l='2510' u='c' c='PyLong_FromUnicodeObject'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9101' ll='9116' type='PyObject * _PyUnicode_TransformDecimalAndSpaceToASCII(PyObject * unicode)'/>

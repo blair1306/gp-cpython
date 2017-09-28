@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/hashtable.h' l='43'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='239' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='250' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='266' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='280' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='320' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='333' u='c'/>
+<doc f='codebrowser/Modules/hashtable.h' l='41'>/* Get a key value from pkey: use memcpy() rather than a pointer dereference
+   to avoid memory alignment issues. */</doc>
+<use f='codebrowser/Modules/hashtable.c' l='112' u='c'/>

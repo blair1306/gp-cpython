@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/Python-ast.h' l='382' type='asdl_seq *'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2443' u='w' c='_Py_ExtSlice'/>
+<use f='codebrowser/Python/Python-ast.c' l='3587' u='r' c='ast2obj_slice'/>
+<use f='codebrowser/Python/ast.c' l='48' u='r' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='50' u='r' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='50' u='r' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='51' u='r' c='validate_slice'/>
+<use f='codebrowser/Python/compile.c' l='4625' u='r' c='check_ann_subscr'/>
+<use f='codebrowser/Python/compile.c' l='4625' u='r' c='check_ann_subscr'/>
+<use f='codebrowser/Python/compile.c' l='4627' u='r' c='check_ann_subscr'/>
+<use f='codebrowser/Python/compile.c' l='4868' u='r' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/compile.c' l='4868' u='r' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/compile.c' l='4871' u='r' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/symtable.c' l='1709' u='r' c='symtable_visit_slice'/>

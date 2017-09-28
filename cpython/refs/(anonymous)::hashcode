@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/datetime.h' l='37' type='Py_hash_t'/>
+<dec f='codebrowser/Include/datetime.h' l='54' type='Py_hash_t'/>
+<dec f='codebrowser/Include/datetime.h' l='54' type='Py_hash_t'/>
+<dec f='codebrowser/Include/datetime.h' l='54' type='Py_hash_t'/>
+<dec f='codebrowser/Include/datetime.h' l='54' type='Py_hash_t'/>
+<dec f='codebrowser/Include/datetime.h' l='54' type='Py_hash_t'/>
+<dec f='codebrowser/Include/datetime.h' l='54' type='Py_hash_t'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='660' u='w' c='set_date_fields'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='754' u='w' c='new_time_ex2'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='800' u='w' c='new_delta_ex'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1912' u='r' c='delta_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1915' u='w' c='delta_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1919' u='r' c='delta_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2552' u='w' c='date_new'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2886' u='r' c='date_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2887' u='w' c='date_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2891' u='r' c='date_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3632' u='w' c='time_new'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3903' u='r' c='time_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3927' u='w' c='time_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3948' u='w' c='time_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3953' u='r' c='time_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4218' u='w' c='datetime_new'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4984' u='r' c='datetime_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5011' u='w' c='datetime_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5037' u='w' c='datetime_hash'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5042' u='r' c='datetime_hash'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/datetime.h' l='37'>/* -1 when unknown */</doc>

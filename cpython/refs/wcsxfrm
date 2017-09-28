@@ -1,0 +1,3 @@
+<dec f='include/wchar.h' l='199' type='size_t wcsxfrm(wchar_t *restrict __s1, const wchar_t *restrict __s2, size_t __n)'/>
+<use f='codebrowser/Modules/_localemodule.c' l='269' u='c' c='PyLocale_strxfrm'/>
+<use f='codebrowser/Modules/_localemodule.c' l='283' u='c' c='PyLocale_strxfrm'/>

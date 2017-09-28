@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='302' type='int fchmodat(int __fd, const char * __file, __mode_t __mode, int __flag)'/>
+<doc f='include/x86_64-linux-gnu/sys/stat.h' l='300'>/* Set file access permissions of FILE relative to
+   the directory FD is open on.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='2851' u='c' c='os_chmod_impl'/>

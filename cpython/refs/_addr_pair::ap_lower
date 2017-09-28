@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/code.h' l='120' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/Objects/codeobject.c' l='802' u='w' c='_PyCode_CheckLineNumber'/>
+<use f='codebrowser/Objects/codeobject.c' l='808' u='w' c='_PyCode_CheckLineNumber'/>
+<use f='codebrowser/Python/ceval.c' l='4580' u='r' c='maybe_call_line_trace'/>
+<use f='codebrowser/Python/ceval.c' l='5380' u='r' c='maybe_dtrace_line'/>

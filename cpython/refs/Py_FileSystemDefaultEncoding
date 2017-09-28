@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/fileobject.h' l='25' type='const char *'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3540' u='r' c='PyUnicode_EncodeFSDefault'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3542' u='r' c='PyUnicode_EncodeFSDefault'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3846' u='r' c='PyUnicode_DecodeFSDefaultAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3848' u='r' c='PyUnicode_DecodeFSDefaultAndSize'/>
+<def f='codebrowser/Python/bltinmodule.c' l='28' type='const char *'/>
+<doc f='codebrowser/Python/bltinmodule.c' l='28'>/* set by initfsencoding() */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='1078' u='r' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1079' u='r' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1080' u='w' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1387' u='r' c='initfsencoding'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1389' u='w' c='initfsencoding'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1390' u='r' c='initfsencoding'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1400' u='r' c='initfsencoding'/>
+<use f='codebrowser/Python/sysmodule.c' l='292' u='r' c='sys_getfilesystemencoding'/>
+<use f='codebrowser/Python/sysmodule.c' l='293' u='r' c='sys_getfilesystemencoding'/>

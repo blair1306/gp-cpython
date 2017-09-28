@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='988' type='int _PyUnicodeWriter_WriteLatin1String(_PyUnicodeWriter * writer, const char * str, Py_ssize_t len)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='985'>/* Append a latin1-encoded byte string.
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='2872' u='c' c='unicode_fromformat_arg'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='13773' ll='13785' type='int _PyUnicodeWriter_WriteLatin1String(_PyUnicodeWriter * writer, const char * str, Py_ssize_t len)'/>

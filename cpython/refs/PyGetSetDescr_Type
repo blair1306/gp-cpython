@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/descrobject.h' l='76' type='PyTypeObject'/>
+<def f='codebrowser/Objects/descrobject.c' l='631' ll='666' type='PyTypeObject'/>
+<use f='codebrowser/Objects/descrobject.c' l='767' u='a' c='PyDescr_NewGetSet'/>
+<use f='codebrowser/Objects/object.c' l='1776' u='a' c='_Py_ReadyTypes'/>

@@ -1,0 +1,8 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/bits.h' l='106' ll='123' type='int mpd_bsr(mpd_size_t a)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/bits.h' l='103'>/*
+ * Bit scan reverse. Assumptions: a != 0.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5402' u='c' c='_mpd_get_transform_len'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6131' u='c' c='_mpd_qpow_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='65' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='150' u='c' c='inv_six_step_fnt'/>

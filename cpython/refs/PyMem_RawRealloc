@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pymem.h' l='17' type='void * PyMem_RawRealloc(void * ptr, size_t new_size)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3341' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3322' u='c' c='posix_getcwd'/>
+<def f='codebrowser/Objects/obmalloc.c' l='398' ll='405' type='void * PyMem_RawRealloc(void * ptr, size_t new_size)'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1054' u='c' c='new_arena'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1730' u='c' c='_PyObject_Realloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1737' u='c' c='_PyObject_Realloc'/>
+<use f='codebrowser/Parser/myreadline.c' l='274' u='c' c='PyOS_StdioReadline'/>
+<use f='codebrowser/Parser/myreadline.c' l='285' u='c' c='PyOS_StdioReadline'/>
+<use f='codebrowser/Python/ast.c' l='4756' u='c' c='ExprList_Append'/>

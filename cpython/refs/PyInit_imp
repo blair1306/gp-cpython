@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/import.h' l='13' type='PyObject * PyInit_imp()'/>
+<dec f='codebrowser/Modules/config.c' l='52' type='PyObject * PyInit_imp()'/>
+<use f='codebrowser/Modules/config.c' l='89' u='r'/>
+<use f='codebrowser/Modules/config.c' l='89' u='r'/>
+<use f='codebrowser/Modules/config.c' l='89' u='r'/>
+<use f='codebrowser/Modules/config.c' l='89' u='r'/>
+<def f='codebrowser/Python/import.c' l='2059' ll='2075' macro='1' type='PyObject * PyInit_imp()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='289' u='c' c='initimport'/>

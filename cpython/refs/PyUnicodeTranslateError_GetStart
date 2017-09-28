@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyerrors.h' l='442' type='int PyUnicodeTranslateError_GetStart(PyObject * , Py_ssize_t * )'/>
+<def f='codebrowser/Objects/exceptions.c' l='1672' ll='1676' type='int PyUnicodeTranslateError_GetStart(PyObject * exc, Py_ssize_t * start)'/>
+<use f='codebrowser/Python/codecs.c' l='739' u='c' c='PyCodec_ReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='905' u='c' c='PyCodec_BackslashReplaceErrors'/>

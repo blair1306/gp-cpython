@@ -1,0 +1,11 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='565' ll='570' type='void _mpd_div_word(mpd_uint_t * q, mpd_uint_t * r, mpd_uint_t v, mpd_uint_t d)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='440' u='c' c='_mpd_baseshiftl'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='511' u='c' c='_mpd_baseshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='106' u='c' c='dw_reduce'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='86' u='c' c='_crt_div3'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='861' u='c' c='_mpd_get_msdigits'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1002' u='c' c='mpd_isodd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1026' u='c' c='_ssettriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1038' u='c' c='_settriple'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2063' u='c' c='_mpd_basecmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3868' u='c' c='_mpd_qdivmod'/>

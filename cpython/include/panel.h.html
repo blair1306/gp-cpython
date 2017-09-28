@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>panel.h source code [include/panel.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="panel "/>
+<link rel="stylesheet" href="../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'include/panel.h'; var root_path = '..'; var data_path = '../../data';</script>
+<script src='../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='./'>include</a>/<a href='panel.h.html'>panel.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/****************************************************************************</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 1998-2006,2009 Free Software Foundation, Inc.              *</i></td></tr>
+<tr><th id="3">3</th><td><i> *                                                                          *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Permission is hereby granted, free of charge, to any person obtaining a  *</i></td></tr>
+<tr><th id="5">5</th><td><i> * copy of this software and associated documentation files (the            *</i></td></tr>
+<tr><th id="6">6</th><td><i> * "Software"), to deal in the Software without restriction, including      *</i></td></tr>
+<tr><th id="7">7</th><td><i> * without limitation the rights to use, copy, modify, merge, publish,      *</i></td></tr>
+<tr><th id="8">8</th><td><i> * distribute, distribute with modifications, sublicense, and/or sell       *</i></td></tr>
+<tr><th id="9">9</th><td><i> * copies of the Software, and to permit persons to whom the Software is    *</i></td></tr>
+<tr><th id="10">10</th><td><i> * furnished to do so, subject to the following conditions:                 *</i></td></tr>
+<tr><th id="11">11</th><td><i> *                                                                          *</i></td></tr>
+<tr><th id="12">12</th><td><i> * The above copyright notice and this permission notice shall be included  *</i></td></tr>
+<tr><th id="13">13</th><td><i> * in all copies or substantial portions of the Software.                   *</i></td></tr>
+<tr><th id="14">14</th><td><i> *                                                                          *</i></td></tr>
+<tr><th id="15">15</th><td><i> * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS  *</i></td></tr>
+<tr><th id="16">16</th><td><i> * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF               *</i></td></tr>
+<tr><th id="17">17</th><td><i> * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.   *</i></td></tr>
+<tr><th id="18">18</th><td><i> * IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,   *</i></td></tr>
+<tr><th id="19">19</th><td><i> * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR    *</i></td></tr>
+<tr><th id="20">20</th><td><i> * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR    *</i></td></tr>
+<tr><th id="21">21</th><td><i> * THE USE OR OTHER DEALINGS IN THE SOFTWARE.                               *</i></td></tr>
+<tr><th id="22">22</th><td><i> *                                                                          *</i></td></tr>
+<tr><th id="23">23</th><td><i> * Except as contained in this notice, the name(s) of the above copyright   *</i></td></tr>
+<tr><th id="24">24</th><td><i> * holders shall not be used in advertising or otherwise to promote the     *</i></td></tr>
+<tr><th id="25">25</th><td><i> * sale, use or other dealings in this Software without prior written       *</i></td></tr>
+<tr><th id="26">26</th><td><i> * authorization.                                                           *</i></td></tr>
+<tr><th id="27">27</th><td><i> ****************************************************************************/</i></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><i>/****************************************************************************</i></td></tr>
+<tr><th id="30">30</th><td><i> *  Author: Zeyd M. Ben-Halim &lt;zmbenhal@netcom.com&gt; 1995                    *</i></td></tr>
+<tr><th id="31">31</th><td><i> *     and: Eric S. Raymond &lt;esr@snark.thyrsus.com&gt;                         *</i></td></tr>
+<tr><th id="32">32</th><td><i> *     and: Juergen Pfeifer                         1996-1999,2008          *</i></td></tr>
+<tr><th id="33">33</th><td><i> ****************************************************************************/</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* $Id: panel.h,v 1.11 2009/04/11 19:50:40 tom Exp $ */</i></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><i>/* panel.h -- interface file for panels library */</i></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="39">ifndef</span> <span class="macro" data-ref="_M/NCURSES_PANEL_H_incl">NCURSES_PANEL_H_incl</span></u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/NCURSES_PANEL_H_incl" data-ref="_M/NCURSES_PANEL_H_incl">NCURSES_PANEL_H_incl</dfn> 1</u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#include <a href="curses.h.html">&lt;curses.h&gt;</a></u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="panel" title='panel' data-ref="panel"><a class="type" href="#panel" title='panel' data-ref="panel">panel</a></dfn></td></tr>
+<tr><th id="45">45</th><td>{</td></tr>
+<tr><th id="46">46</th><td>  <a class="typedef" href="curses.h.html#WINDOW" title='WINDOW' data-type='struct _win_st' data-ref="WINDOW">WINDOW</a> *<dfn class="decl" id="panel::win" title='panel::win' data-ref="panel::win">win</dfn>;</td></tr>
+<tr><th id="47">47</th><td>  <b>struct</b> <a class="type" href="#panel" title='panel' data-ref="panel">panel</a> *<dfn class="decl" id="panel::below" title='panel::below' data-ref="panel::below">below</dfn>;</td></tr>
+<tr><th id="48">48</th><td>  <b>struct</b> <a class="type" href="#panel" title='panel' data-ref="panel">panel</a> *<dfn class="decl" id="panel::above" title='panel::above' data-ref="panel::above">above</dfn>;</td></tr>
+<tr><th id="49">49</th><td>  <a class="macro" href="curses.h.html#86" title="const" data-ref="_M/NCURSES_CONST">NCURSES_CONST</a> <em>void</em> *<dfn class="decl" id="panel::user" title='panel::user' data-ref="panel::user">user</dfn>;</td></tr>
+<tr><th id="50">50</th><td>} <dfn class="typedef" id="PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</dfn>;</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><u>#<span data-ppcond="52">if</span>	defined(<span class="macro" data-ref="_M/__cplusplus">__cplusplus</span>)</u></td></tr>
+<tr><th id="53">53</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="54">54</th><td><u>#<span data-ppcond="52">endif</span></u></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" WINDOW*" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<a class="typedef" href="curses.h.html#WINDOW" title='WINDOW' data-type='struct _win_st' data-ref="WINDOW">WINDOW</a>*) <dfn class="decl" id="panel_window" title='panel_window' data-ref="panel_window">panel_window</dfn> (<em>const</em> <a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="57">57</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" void" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>void</em>)    <dfn class="decl" id="update_panels" title='update_panels' data-ref="update_panels">update_panels</dfn> (<em>void</em>);</td></tr>
+<tr><th id="58">58</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="hide_panel" title='hide_panel' data-ref="hide_panel">hide_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="59">59</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="show_panel" title='show_panel' data-ref="show_panel">show_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="60">60</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="del_panel" title='del_panel' data-ref="del_panel">del_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="61">61</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="top_panel" title='top_panel' data-ref="top_panel">top_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="62">62</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="bottom_panel" title='bottom_panel' data-ref="bottom_panel">bottom_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="63">63</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" PANEL*" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a>*)  <dfn class="decl" id="new_panel" title='new_panel' data-ref="new_panel">new_panel</dfn> (<a class="typedef" href="curses.h.html#WINDOW" title='WINDOW' data-type='struct _win_st' data-ref="WINDOW">WINDOW</a> *);</td></tr>
+<tr><th id="64">64</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" PANEL*" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a>*)  <dfn class="decl" id="panel_above" title='panel_above' data-ref="panel_above">panel_above</dfn> (<em>const</em> <a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="65">65</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" PANEL*" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a>*)  <dfn class="decl" id="panel_below" title='panel_below' data-ref="panel_below">panel_below</dfn> (<em>const</em> <a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="66">66</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="set_panel_userptr" title='set_panel_userptr' data-ref="set_panel_userptr">set_panel_userptr</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *, <a class="macro" href="curses.h.html#86" title="const" data-ref="_M/NCURSES_CONST">NCURSES_CONST</a> <em>void</em> *);</td></tr>
+<tr><th id="67">67</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" const void*" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<a class="macro" href="curses.h.html#86" title="const" data-ref="_M/NCURSES_CONST">NCURSES_CONST</a> <em>void</em>*) <dfn class="decl" id="panel_userptr" title='panel_userptr' data-ref="panel_userptr">panel_userptr</dfn> (<em>const</em> <a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="68">68</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="move_panel" title='move_panel' data-ref="move_panel">move_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *, <em>int</em>, <em>int</em>);</td></tr>
+<tr><th id="69">69</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="replace_panel" title='replace_panel' data-ref="replace_panel">replace_panel</dfn> (<a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *,<a class="typedef" href="curses.h.html#WINDOW" title='WINDOW' data-type='struct _win_st' data-ref="WINDOW">WINDOW</a> *);</td></tr>
+<tr><th id="70">70</th><td><b>extern</b> <a class="macro" href="ncurses_dll.h.html#96" title=" int" data-ref="_M/NCURSES_EXPORT">NCURSES_EXPORT</a>(<em>int</em>)     <dfn class="decl" id="panel_hidden" title='panel_hidden' data-ref="panel_hidden">panel_hidden</dfn> (<em>const</em> <a class="typedef" href="#PANEL" title='PANEL' data-type='struct panel' data-ref="PANEL">PANEL</a> *);</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="72">if</span> <a class="macro" href="curses.h.html#1051" title="0" data-ref="_M/NCURSES_SP_FUNCS">NCURSES_SP_FUNCS</a></u></td></tr>
+<tr><th id="73">73</th><td><b>extern</b> NCURSES_EXPORT(PANEL *) ground_panel(SCREEN *);</td></tr>
+<tr><th id="74">74</th><td><b>extern</b> NCURSES_EXPORT(PANEL *) ceiling_panel(SCREEN *);</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><b>extern</b> NCURSES_EXPORT(<em>void</em>)    NCURSES_SP_NAME(update_panels) (SCREEN*);</td></tr>
+<tr><th id="77">77</th><td><u>#<span data-ppcond="72">endif</span></u></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><u>#<span data-ppcond="79">if</span>	defined(<span class="macro" data-ref="_M/__cplusplus">__cplusplus</span>)</u></td></tr>
+<tr><th id="80">80</th><td>}</td></tr>
+<tr><th id="81">81</th><td><u>#<span data-ppcond="79">endif</span></u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><u>#<span data-ppcond="39">endif</span> /* NCURSES_PANEL_H_incl */</u></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i>/* end of panel.h */</i></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../codebrowser/Modules/_curses_panel.c.html'>codebrowser/Modules/_curses_panel.c</a><br/>Generated on <em>2017-Aug-29</em> from project include<br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

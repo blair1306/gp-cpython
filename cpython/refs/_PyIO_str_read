@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='167' type='PyObject *'/>
+<def f='codebrowser/Modules/_io/_iomodule.c' l='39' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='743' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='743' macro='1' u='w'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1595' u='r' c='_bufferedreader_read_all'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1543' u='r' c='textiowrapper_read_chunk'/>

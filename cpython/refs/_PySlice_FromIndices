@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/sliceobject.h' l='36' type='PyObject * _PySlice_FromIndices(Py_ssize_t start, Py_ssize_t stop)'/>
+<use f='codebrowser/Objects/abstract.c' l='1672' u='c' c='PySequence_GetSlice'/>
+<use f='codebrowser/Objects/abstract.c' l='1754' u='c' c='PySequence_SetSlice'/>
+<use f='codebrowser/Objects/abstract.c' l='1779' u='c' c='PySequence_DelSlice'/>
+<def f='codebrowser/Objects/sliceobject.c' l='142' ll='159' type='PyObject * _PySlice_FromIndices(Py_ssize_t istart, Py_ssize_t istop)'/>

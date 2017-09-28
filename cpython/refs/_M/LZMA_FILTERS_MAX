@@ -1,0 +1,13 @@
+<dec f='include/lzma/filter.h' l='26'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='365' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='368' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='622' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='649' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='673' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1109' u='c'/>
+<doc f='include/lzma/filter.h' l='20'>/**
+ * \brief       Maximum number of filters in a chain
+ *
+ * A filter chain can have 1-4 filters, of which three are allowed to change
+ * the size of the data. Usually only one or two filters are needed.
+ */</doc>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/code.h' l='30' type='PyObject *'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/code.h' l='30'>/* list (constants used) */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='189' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='434' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='642' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='645' u='r' c='code_richcompare'/>
+<use f='codebrowser/Objects/codeobject.c' l='691' u='r' c='code_hash'/>
+<use f='codebrowser/Objects/funcobject.c' l='36' u='r' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Python/ceval.c' l='1009' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/import.c' l='880' u='r' c='update_code_filenames'/>
+<use f='codebrowser/Python/marshal.c' l='548' u='r' c='w_complex_object'/>

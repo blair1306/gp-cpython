@@ -1,0 +1,7 @@
+<dec f='include/openssl/ssl.h' l='609'/>
+<use f='codebrowser/Modules/_ssl.c' l='2674' u='c'/>
+<use f='codebrowser/Modules/_ssl.c' l='5360' u='c'/>
+<doc f='include/openssl/ssl.h' l='605'>/*
+ * SSL_OP_ALL: various bug workarounds that should be rather harmless.  This
+ * used to be 0x000FFFFFL before 0.9.7.
+ */</doc>

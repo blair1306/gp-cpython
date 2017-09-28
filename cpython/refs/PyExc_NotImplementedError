@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/pyerrors.h' l='180' type='PyObject *'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3065' u='r' c='tzinfo_nogo'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='967' u='r' c='rawiobase_readinto'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='974' u='r' c='rawiobase_write'/>
+<use f='codebrowser/Modules/_pickle.c' l='1162' u='r' c='_Unpickler_ReadFromFile'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1150' u='r' c='argument_unavailable_error'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3427' u='r' c='os_link_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='1048' u='r' c='read_directory'/>
+<def f='codebrowser/Objects/exceptions.c' l='1286' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2522' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2599' macro='1' u='r'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1721' u='r' c='unpack_single'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1865' u='r' c='pack_single'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2010' u='r' c='adjust_fmt'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2252' u='r' c='memory_item'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2273' u='r' c='memory_item_multi'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2406' u='r' c='memory_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2453' u='r' c='memory_ass_sub'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2495' u='r' c='memory_ass_sub'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2507' u='r' c='memory_ass_sub'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='323' u='r' c='dev_urandom'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pycapsule.h' l='41' type='int PyCapsule_IsValid(PyObject * capsule, const char * name)'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='147' u='c' c='_ctypes_get_errobj'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1859' u='c' c='_multibytecodec___create_codec'/>
+<def f='codebrowser/Objects/capsule.c' l='67' ll='76' type='int PyCapsule_IsValid(PyObject * o, const char * name)'/>
+<use f='codebrowser/Objects/capsule.c' l='238' u='c' c='PyCapsule_Import'/>

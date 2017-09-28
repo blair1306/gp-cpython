@@ -1,0 +1,10 @@
+<def f='codebrowser/Modules/testcapi_long.h' l='11' macro='1' type='PyObject * test_long_api_inner(PyObject *(*)(const char *) error)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='406' u='c' c='test_long_api'/>
+<doc f='codebrowser/Modules/testcapi_long.h' l='1'>/* Poor-man&apos;s template.  Macros used:
+   TESTNAME     name of the test (like test_long_api_inner)
+   TYPENAME     the signed type (like long)
+   F_S_TO_PY    convert signed to pylong; TYPENAME -&gt; PyObject*
+   F_PY_TO_S    convert pylong to signed; PyObject* -&gt; TYPENAME
+   F_U_TO_PY    convert unsigned to pylong; unsigned TYPENAME -&gt; PyObject*
+   F_PY_TO_U    convert pylong to unsigned; PyObject* -&gt; unsigned TYPENAME
+*/</doc>

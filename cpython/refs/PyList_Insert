@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/listobject.h' l='56' type='int PyList_Insert(PyObject * , Py_ssize_t , PyObject * )'/>
+<use f='codebrowser/Modules/_bisectmodule.c' l='93' u='c' c='insort_right'/>
+<use f='codebrowser/Modules/_bisectmodule.c' l='197' u='c' c='insort_left'/>
+<use f='codebrowser/Modules/main.c' l='274' u='c' c='RunMainFromImporter'/>
+<def f='codebrowser/Objects/listobject.c' l='274' ll='282' type='int PyList_Insert(PyObject * op, Py_ssize_t where, PyObject * newitem)'/>
+<use f='codebrowser/Python/import.c' l='123' u='c' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/sysmodule.c' l='2324' u='c' c='sys_update_path'/>

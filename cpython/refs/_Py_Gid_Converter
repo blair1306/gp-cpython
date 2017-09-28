@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/posixmodule.h' l='18' type='int _Py_Gid_Converter(PyObject * , void * )'/>
+<use f='codebrowser/Modules/grpmodule.c' l='103' u='c' c='grp_getgrgid_impl'/>
+<use f='codebrowser/Modules/grpmodule.c' l='116' u='c' c='grp_getgrgid_impl'/>
+<def f='codebrowser/Modules/posixmodule.c' l='631' ll='736' type='int _Py_Gid_Converter(PyObject * obj, void * p)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6153' c='posix_getgrouplist'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6334' c='posix_initgroups'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6821' u='c' c='os_setgroups'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='701' c='os_chown'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='742' c='os_fchown'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='781' c='os_lchown'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2772' c='os_setegid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2838' c='os_setregid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2838' c='os_setregid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='2869' c='os_setgid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='5222' c='os_setresgid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='5222' c='os_setresgid'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='5222' c='os_setresgid'/>

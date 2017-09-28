@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/bytes_methods.h' l='21' type='void _Py_bytes_capitalize(char * result, const char * s, Py_ssize_t len)'/>
+<use f='codebrowser/Objects/stringlib/ctype.h' l='95' u='c' c='stringlib_capitalize'/>
+<def f='codebrowser/Objects/bytes_methods.c' l='309' ll='330' type='void _Py_bytes_capitalize(char * result, const char * s, Py_ssize_t len)'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='234' type='PyObject *'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='976' u='r' c='bytearray_str'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1002' u='r' c='bytearray_richcompare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1416' u='r' c='bytes_str'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1581' u='r' c='bytes_richcompare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1594' u='r' c='bytes_richcompare'/>
+<def f='codebrowser/Objects/exceptions.c' l='2403' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2555' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2632' macro='1' u='r'/>
+<use f='codebrowser/Python/_warnings.c' l='1192' u='r' c='init_filters'/>

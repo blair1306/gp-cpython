@@ -1,0 +1,5 @@
+<dec f='include/unistd.h' l='626' type='size_t confstr(int __name, char * __buf, size_t __len)'/>
+<doc f='include/unistd.h' l='625'>/* Get the value of the string-valued system variable NAME.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='9892' u='c' c='os_confstr_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9908' u='c' c='os_confstr_impl'/>
+<use f='codebrowser/Python/thread.c' l='222' u='c' c='PyThread_GetInfo'/>

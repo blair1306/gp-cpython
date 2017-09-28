@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/posixmodule.h' l='16' type='PyObject * _PyLong_FromGid(gid_t )'/>
+<use f='codebrowser/Modules/grpmodule.c' l='73' u='c' c='mkgrent'/>
+<use f='codebrowser/Modules/grpmodule.c' l='124' u='c' c='grp_getgrgid_impl'/>
+<def f='codebrowser/Modules/posixmodule.c' l='517' ll='523' type='PyObject * _PyLong_FromGid(gid_t gid)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2037' u='c' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6067' u='c' c='os_getegid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6099' u='c' c='os_getgid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6180' u='c' c='posix_getgrouplist'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6289' u='c' c='os_getgroups_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10749' u='c' c='os_getresgid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10750' u='c' c='os_getresgid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10751' u='c' c='os_getresgid_impl'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='84' u='c' c='mkpwent'/>

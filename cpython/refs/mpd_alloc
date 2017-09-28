@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='813' type='void * mpd_alloc(mpd_size_t nmemb, mpd_size_t size)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='324' u='c' c='_mpd_basedivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='329' u='c' c='_mpd_basedivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='459' u='c' c='_mpd_to_string'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='567' u='c' c='_mpd_to_string'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1118' u='c' c='_mpd_apply_lconv'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='85' ll='96' type='void * mpd_alloc(mpd_size_t nmemb, mpd_size_t size)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='163' u='c' c='mpd_qnew_size'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='168' u='c' c='mpd_qnew_size'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='220' u='c' c='mpd_switch_to_dyn'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='84'>/* malloc with overflow checking */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8147' u='c' c='mpd_qexport_u16'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8224' u='c' c='mpd_qexport_u32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8307' u='c' c='mpd_qimport_u16'/>

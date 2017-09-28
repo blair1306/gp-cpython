@@ -1,0 +1,48 @@
+<dec f='codebrowser/Include/Python-ast.h' l='337' type='expr_context_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='343' type='expr_context_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='348' type='expr_context_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='353' type='expr_context_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='358' type='expr_context_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='363' type='expr_context_ty'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2289' u='w' c='_Py_Attribute'/>
+<use f='codebrowser/Python/Python-ast.c' l='2321' u='w' c='_Py_Subscript'/>
+<use f='codebrowser/Python/Python-ast.c' l='2347' u='w' c='_Py_Starred'/>
+<use f='codebrowser/Python/Python-ast.c' l='2373' u='w' c='_Py_Name'/>
+<use f='codebrowser/Python/Python-ast.c' l='2394' u='w' c='_Py_List'/>
+<use f='codebrowser/Python/Python-ast.c' l='2415' u='w' c='_Py_Tuple'/>
+<use f='codebrowser/Python/Python-ast.c' l='3429' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3448' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3462' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3476' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3490' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3504' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='189' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='192' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='195' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='198' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='201' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='204' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1010' u='w' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1015' u='w' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1018' u='w' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1027' u='w' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1030' u='w' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1034' u='w' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='2976' u='w' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2982' u='w' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/ast.c' l='2985' u='w' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/compile.c' l='3295' u='r' c='compiler_list'/>
+<use f='codebrowser/Python/compile.c' l='3298' u='r' c='compiler_list'/>
+<use f='codebrowser/Python/compile.c' l='3311' u='r' c='compiler_tuple'/>
+<use f='codebrowser/Python/compile.c' l='3314' u='r' c='compiler_tuple'/>
+<use f='codebrowser/Python/compile.c' l='3466' u='r' c='maybe_optimize_method_call'/>
+<use f='codebrowser/Python/compile.c' l='4445' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4447' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4471' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4499' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4511' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4538' u='w' c='compiler_augassign'/>
+<use f='codebrowser/Python/compile.c' l='4549' u='w' c='compiler_augassign'/>
+<use f='codebrowser/Python/symtable.c' l='1501' u='r' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1504' u='r' c='symtable_visit_expr'/>

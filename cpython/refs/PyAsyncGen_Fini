@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='120' type='void PyAsyncGen_Fini()'/>
+<def f='codebrowser/Objects/genobject.c' l='1526' ll='1530' type='void PyAsyncGen_Fini()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1072' u='c' c='Py_FinalizeEx'/>

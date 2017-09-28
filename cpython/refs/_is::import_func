@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pystate.h' l='74' type='PyObject *'/>
+<offset>1088</offset>
+<use f='codebrowser/Python/ceval.c' l='5008' u='r' c='import_name'/>
+<use f='codebrowser/Python/import.c' l='1567' u='r' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/import.c' l='1633' u='r' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/pylifecycle.c' l='283' u='w' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='284' u='r' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='286' u='r' c='initimport'/>
+<use f='codebrowser/Python/pystate.c' l='112' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='167' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='167' u='w' c='PyInterpreterState_Clear'/>

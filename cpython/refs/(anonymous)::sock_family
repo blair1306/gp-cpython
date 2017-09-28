@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='205' type='int'/>
+<offset>288</offset>
+<doc f='codebrowser/Modules/socketmodule.h' l='205'>/* Address family, e.g., AF_INET */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='898' u='w' c='init_sockobject'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1512' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1556' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1669' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2090' u='r' c='getsockaddrlen'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2365' u='r' c='sock_accept_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4237' u='r' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4641' u='r' c='sock_repr'/>

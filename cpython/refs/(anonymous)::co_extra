@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/code.h' l='50' type='void *'/>
+<offset>1216</offset>
+<doc f='codebrowser/Include/code.h' l='47'>/* Scratch space for extra data relating to the code object.
+       Type is a void* to keep the format private in codeobject.c to force
+       people to go through the proper APIs. */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='208' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='418' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='420' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='455' u='r' c='code_sizeof'/>
+<use f='codebrowser/Objects/codeobject.c' l='840' u='r' c='_PyCode_GetExtra'/>
+<use f='codebrowser/Objects/codeobject.c' l='864' u='r' c='_PyCode_SetExtra'/>
+<use f='codebrowser/Objects/codeobject.c' l='879' u='w' c='_PyCode_SetExtra'/>

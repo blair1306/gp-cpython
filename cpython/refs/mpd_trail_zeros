@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='759' type='mpd_ssize_t mpd_trail_zeros(const mpd_t * dec)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='895' ll='914' type='mpd_ssize_t mpd_trail_zeros(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='926' u='c' c='_mpd_isint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3758' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6891' u='c' c='mpd_qreduce'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7645' u='c' c='_mpd_qinvroot'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='894'>/* Return number of trailing zeros. No errors are possible. */</doc>

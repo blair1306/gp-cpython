@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/epoll.h' l='90' type='epoll_data_t'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1393' u='m' c='pyepoll_internal_ctl'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1584' u='m' c='pyepoll_poll'/>
+<offset>32</offset>
+<doc f='include/x86_64-linux-gnu/sys/epoll.h' l='90'>/* User data variable */</doc>

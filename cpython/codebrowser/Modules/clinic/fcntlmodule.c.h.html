@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fcntlmodule.c.h source code [codebrowser/Modules/clinic/fcntlmodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/fcntlmodule.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='fcntlmodule.c.h.html'>fcntlmodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char fcntl_fcntl__doc__[] = &quot;fcntl($module, fd, cmd, arg=0, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Perform the operation `cmd` on file descriptor fd.\n&quot;&quot;\n&quot;&quot;The values used for `cmd` are operating system dependent, and are available\n&quot;&quot;as constants in the fcntl module, using the same names as used in\n&quot;&quot;the relevant C header files.  The argument arg is optional, and\n&quot;&quot;defaults to 0; it may be an int or a string.  If arg is given as a string,\n&quot;&quot;the return value of fcntl is a string of that length, containing the\n&quot;&quot;resulting value put in the arg buffer by the operating system.  The length\n&quot;&quot;of the arg string is not allowed to exceed 1024 bytes.  If the arg given\n&quot;&quot;is an integer or if none is specified, the result value is an integer\n&quot;&quot;corresponding to the return value of the fcntl call in the C code.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="fcntl_fcntl__doc__" title='fcntl_fcntl__doc__' data-ref="fcntl_fcntl__doc__">fcntl_fcntl__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"fcntl($module, fd, cmd, arg=0, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Perform the operation `cmd` on file descriptor fd.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"The values used for `cmd` are operating system dependent, and are available\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"as constants in the fcntl module, using the same names as used in\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"the relevant C header files.  The argument arg is optional, and\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"defaults to 0; it may be an int or a string.  If arg is given as a string,\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"the return value of fcntl is a string of that length, containing the\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"resulting value put in the arg buffer by the operating system.  The length\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"of the arg string is not allowed to exceed 1024 bytes.  If the arg given\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"is an integer or if none is specified, the result value is an integer\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"corresponding to the return value of the fcntl call in the C code."</q>);</td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/FCNTL_FCNTL_METHODDEF" data-ref="_M/FCNTL_FCNTL_METHODDEF">FCNTL_FCNTL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="22">22</th><td><u>    {"fcntl", (PyCFunction)fcntl_fcntl, METH_FASTCALL, fcntl_fcntl__doc__},</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="25">25</th><td><a class="decl" href="../fcntlmodule.c.html#fcntl_fcntl_impl" title='fcntl_fcntl_impl' data-ref="fcntl_fcntl_impl" id="fcntl_fcntl_impl">fcntl_fcntl_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30module" title='module' data-type='PyObject *' data-ref="30module">module</dfn>, <em>int</em> <dfn class="local col1 decl" id="31fd" title='fd' data-type='int' data-ref="31fd">fd</dfn>, <em>int</em> <dfn class="local col2 decl" id="32code" title='code' data-type='int' data-ref="32code">code</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33arg" title='arg' data-type='PyObject *' data-ref="33arg">arg</dfn>);</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="28">28</th><td><dfn class="decl def" id="fcntl_fcntl" title='fcntl_fcntl' data-ref="fcntl_fcntl">fcntl_fcntl</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34module" title='module' data-type='PyObject *' data-ref="34module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="35args" title='args' data-type='PyObject **' data-ref="35args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="36nargs" title='nargs' data-type='Py_ssize_t' data-ref="36nargs">nargs</dfn>)</td></tr>
+<tr><th id="29">29</th><td>{</td></tr>
+<tr><th id="30">30</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37return_value" title='return_value' data-type='PyObject *' data-ref="37return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="31">31</th><td>    <em>int</em> <dfn class="local col8 decl" id="38fd" title='fd' data-type='int' data-ref="38fd">fd</dfn>;</td></tr>
+<tr><th id="32">32</th><td>    <em>int</em> <dfn class="local col9 decl" id="39code" title='code' data-type='int' data-ref="39code">code</dfn>;</td></tr>
+<tr><th id="33">33</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="40arg" title='arg' data-type='PyObject *' data-ref="40arg">arg</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col5 ref" href="#35args" title='args' data-ref="35args">args</a>, <a class="local col6 ref" href="#36nargs" title='nargs' data-ref="36nargs">nargs</a>, <q>"O&amp;i|O:fcntl"</q>,</td></tr>
+<tr><th id="36">36</th><td>        <a class="tu ref" href="../fcntlmodule.c.html#conv_descriptor" title='conv_descriptor' data-ref="conv_descriptor">conv_descriptor</a>, &amp;<a class="local col8 ref" href="#38fd" title='fd' data-ref="38fd">fd</a>, &amp;<a class="local col9 ref" href="#39code" title='code' data-ref="39code">code</a>, &amp;<a class="local col0 ref" href="#40arg" title='arg' data-ref="40arg">arg</a>)) {</td></tr>
+<tr><th id="37">37</th><td>        <b>goto</b> <a class="lbl" href="#41exit" data-ref="41exit">exit</a>;</td></tr>
+<tr><th id="38">38</th><td>    }</td></tr>
+<tr><th id="39">39</th><td>    <a class="local col7 ref" href="#37return_value" title='return_value' data-ref="37return_value">return_value</a> = <a class="ref" href="../fcntlmodule.c.html#fcntl_fcntl_impl" title='fcntl_fcntl_impl' data-ref="fcntl_fcntl_impl">fcntl_fcntl_impl</a>(<a class="local col4 ref" href="#34module" title='module' data-ref="34module">module</a>, <a class="local col8 ref" href="#38fd" title='fd' data-ref="38fd">fd</a>, <a class="local col9 ref" href="#39code" title='code' data-ref="39code">code</a>, <a class="local col0 ref" href="#40arg" title='arg' data-ref="40arg">arg</a>);</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><dfn class="lbl" id="41exit" data-ref="41exit">exit</dfn>:</td></tr>
+<tr><th id="42">42</th><td>    <b>return</b> <a class="local col7 ref" href="#37return_value" title='return_value' data-ref="37return_value">return_value</a>;</td></tr>
+<tr><th id="43">43</th><td>}</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char fcntl_ioctl__doc__[] = &quot;ioctl($module, fd, request, arg=0, mutate_flag=True, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Perform the operation `request` on file descriptor `fd`.\n&quot;&quot;\n&quot;&quot;The values used for `request` are operating system dependent, and are available\n&quot;&quot;as constants in the fcntl or termios library modules, using the same names as\n&quot;&quot;used in the relevant C header files.\n&quot;&quot;\n&quot;&quot;The argument `arg` is optional, and defaults to 0; it may be an int or a\n&quot;&quot;buffer containing character data (most likely a string or an array).\n&quot;&quot;\n&quot;&quot;If the argument is a mutable buffer (such as an array) and if the\n&quot;&quot;mutate_flag argument (which is only allowed in this case) is true then the\n&quot;&quot;buffer is (in effect) passed to the operating system and changes made by\n&quot;&quot;the OS will be reflected in the contents of the buffer after the call has\n&quot;&quot;returned.  The return value is the integer returned by the ioctl system\n&quot;&quot;call.\n&quot;&quot;\n&quot;&quot;If the argument is a mutable buffer and the mutable_flag argument is false,\n&quot;&quot;the behavior is as if a string had been passed.\n&quot;&quot;\n&quot;&quot;If the argument is an immutable buffer (most likely a string) then a copy\n&quot;&quot;of the buffer is passed to the operating system and the return value is a\n&quot;&quot;string of the same length containing whatever the operating system put in\n&quot;&quot;the buffer.  The length of the arg buffer in this case is not allowed to\n&quot;&quot;exceed 1024 bytes.\n&quot;&quot;\n&quot;&quot;If the arg given is an integer or if none is specified, the result value is\n&quot;&quot;an integer corresponding to the return value of the ioctl call in the C\n&quot;&quot;code.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="fcntl_ioctl__doc__" title='fcntl_ioctl__doc__' data-ref="fcntl_ioctl__doc__">fcntl_ioctl__doc__</dfn>,</td></tr>
+<tr><th id="46">46</th><td><q>"ioctl($module, fd, request, arg=0, mutate_flag=True, /)\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"--\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"Perform the operation `request` on file descriptor `fd`.\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"The values used for `request` are operating system dependent, and are available\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"as constants in the fcntl or termios library modules, using the same names as\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"used in the relevant C header files.\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"The argument `arg` is optional, and defaults to 0; it may be an int or a\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"buffer containing character data (most likely a string or an array).\n"</q></td></tr>
+<tr><th id="57">57</th><td><q>"\n"</q></td></tr>
+<tr><th id="58">58</th><td><q>"If the argument is a mutable buffer (such as an array) and if the\n"</q></td></tr>
+<tr><th id="59">59</th><td><q>"mutate_flag argument (which is only allowed in this case) is true then the\n"</q></td></tr>
+<tr><th id="60">60</th><td><q>"buffer is (in effect) passed to the operating system and changes made by\n"</q></td></tr>
+<tr><th id="61">61</th><td><q>"the OS will be reflected in the contents of the buffer after the call has\n"</q></td></tr>
+<tr><th id="62">62</th><td><q>"returned.  The return value is the integer returned by the ioctl system\n"</q></td></tr>
+<tr><th id="63">63</th><td><q>"call.\n"</q></td></tr>
+<tr><th id="64">64</th><td><q>"\n"</q></td></tr>
+<tr><th id="65">65</th><td><q>"If the argument is a mutable buffer and the mutable_flag argument is false,\n"</q></td></tr>
+<tr><th id="66">66</th><td><q>"the behavior is as if a string had been passed.\n"</q></td></tr>
+<tr><th id="67">67</th><td><q>"\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"If the argument is an immutable buffer (most likely a string) then a copy\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"of the buffer is passed to the operating system and the return value is a\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"string of the same length containing whatever the operating system put in\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"the buffer.  The length of the arg buffer in this case is not allowed to\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"exceed 1024 bytes.\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"If the arg given is an integer or if none is specified, the result value is\n"</q></td></tr>
+<tr><th id="75">75</th><td><q>"an integer corresponding to the return value of the ioctl call in the C\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"code."</q>);</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><u>#define <dfn class="macro" id="_M/FCNTL_IOCTL_METHODDEF" data-ref="_M/FCNTL_IOCTL_METHODDEF">FCNTL_IOCTL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="79">79</th><td><u>    {"ioctl", (PyCFunction)fcntl_ioctl, METH_FASTCALL, fcntl_ioctl__doc__},</u></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="82">82</th><td><a class="decl" href="../fcntlmodule.c.html#fcntl_ioctl_impl" title='fcntl_ioctl_impl' data-ref="fcntl_ioctl_impl" id="fcntl_ioctl_impl">fcntl_ioctl_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="42module" title='module' data-type='PyObject *' data-ref="42module">module</dfn>, <em>int</em> <dfn class="local col3 decl" id="43fd" title='fd' data-type='int' data-ref="43fd">fd</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col4 decl" id="44code" title='code' data-type='unsigned int' data-ref="44code">code</dfn>,</td></tr>
+<tr><th id="83">83</th><td>                 <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45ob_arg" title='ob_arg' data-type='PyObject *' data-ref="45ob_arg">ob_arg</dfn>, <em>int</em> <dfn class="local col6 decl" id="46mutate_arg" title='mutate_arg' data-type='int' data-ref="46mutate_arg">mutate_arg</dfn>);</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="86">86</th><td><dfn class="decl def" id="fcntl_ioctl" title='fcntl_ioctl' data-ref="fcntl_ioctl">fcntl_ioctl</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47module" title='module' data-type='PyObject *' data-ref="47module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col8 decl" id="48args" title='args' data-type='PyObject **' data-ref="48args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="49nargs" title='nargs' data-type='Py_ssize_t' data-ref="49nargs">nargs</dfn>)</td></tr>
+<tr><th id="87">87</th><td>{</td></tr>
+<tr><th id="88">88</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="50return_value" title='return_value' data-type='PyObject *' data-ref="50return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="89">89</th><td>    <em>int</em> <dfn class="local col1 decl" id="51fd" title='fd' data-type='int' data-ref="51fd">fd</dfn>;</td></tr>
+<tr><th id="90">90</th><td>    <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="52code" title='code' data-type='unsigned int' data-ref="52code">code</dfn>;</td></tr>
+<tr><th id="91">91</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53ob_arg" title='ob_arg' data-type='PyObject *' data-ref="53ob_arg">ob_arg</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="92">92</th><td>    <em>int</em> <dfn class="local col4 decl" id="54mutate_arg" title='mutate_arg' data-type='int' data-ref="54mutate_arg">mutate_arg</dfn> = <var>1</var>;</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col8 ref" href="#48args" title='args' data-ref="48args">args</a>, <a class="local col9 ref" href="#49nargs" title='nargs' data-ref="49nargs">nargs</a>, <q>"O&amp;I|Op:ioctl"</q>,</td></tr>
+<tr><th id="95">95</th><td>        <a class="tu ref" href="../fcntlmodule.c.html#conv_descriptor" title='conv_descriptor' data-ref="conv_descriptor">conv_descriptor</a>, &amp;<a class="local col1 ref" href="#51fd" title='fd' data-ref="51fd">fd</a>, &amp;<a class="local col2 ref" href="#52code" title='code' data-ref="52code">code</a>, &amp;<a class="local col3 ref" href="#53ob_arg" title='ob_arg' data-ref="53ob_arg">ob_arg</a>, &amp;<a class="local col4 ref" href="#54mutate_arg" title='mutate_arg' data-ref="54mutate_arg">mutate_arg</a>)) {</td></tr>
+<tr><th id="96">96</th><td>        <b>goto</b> <a class="lbl" href="#55exit" data-ref="55exit">exit</a>;</td></tr>
+<tr><th id="97">97</th><td>    }</td></tr>
+<tr><th id="98">98</th><td>    <a class="local col0 ref" href="#50return_value" title='return_value' data-ref="50return_value">return_value</a> = <a class="ref" href="../fcntlmodule.c.html#fcntl_ioctl_impl" title='fcntl_ioctl_impl' data-ref="fcntl_ioctl_impl">fcntl_ioctl_impl</a>(<a class="local col7 ref" href="#47module" title='module' data-ref="47module">module</a>, <a class="local col1 ref" href="#51fd" title='fd' data-ref="51fd">fd</a>, <a class="local col2 ref" href="#52code" title='code' data-ref="52code">code</a>, <a class="local col3 ref" href="#53ob_arg" title='ob_arg' data-ref="53ob_arg">ob_arg</a>, <a class="local col4 ref" href="#54mutate_arg" title='mutate_arg' data-ref="54mutate_arg">mutate_arg</a>);</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><dfn class="lbl" id="55exit" data-ref="55exit">exit</dfn>:</td></tr>
+<tr><th id="101">101</th><td>    <b>return</b> <a class="local col0 ref" href="#50return_value" title='return_value' data-ref="50return_value">return_value</a>;</td></tr>
+<tr><th id="102">102</th><td>}</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char fcntl_flock__doc__[] = &quot;flock($module, fd, operation, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Perform the lock operation `operation` on file descriptor `fd`.\n&quot;&quot;\n&quot;&quot;See the Unix manual page for flock(2) for details (On some systems, this\n&quot;&quot;function is emulated using fcntl()).&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="fcntl_flock__doc__" title='fcntl_flock__doc__' data-ref="fcntl_flock__doc__">fcntl_flock__doc__</dfn>,</td></tr>
+<tr><th id="105">105</th><td><q>"flock($module, fd, operation, /)\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"--\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"\n"</q></td></tr>
+<tr><th id="108">108</th><td><q>"Perform the lock operation `operation` on file descriptor `fd`.\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"\n"</q></td></tr>
+<tr><th id="110">110</th><td><q>"See the Unix manual page for flock(2) for details (On some systems, this\n"</q></td></tr>
+<tr><th id="111">111</th><td><q>"function is emulated using fcntl())."</q>);</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/FCNTL_FLOCK_METHODDEF" data-ref="_M/FCNTL_FLOCK_METHODDEF">FCNTL_FLOCK_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="114">114</th><td><u>    {"flock", (PyCFunction)fcntl_flock, METH_FASTCALL, fcntl_flock__doc__},</u></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="117">117</th><td><a class="decl" href="../fcntlmodule.c.html#fcntl_flock_impl" title='fcntl_flock_impl' data-ref="fcntl_flock_impl" id="fcntl_flock_impl">fcntl_flock_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56module" title='module' data-type='PyObject *' data-ref="56module">module</dfn>, <em>int</em> <dfn class="local col7 decl" id="57fd" title='fd' data-type='int' data-ref="57fd">fd</dfn>, <em>int</em> <dfn class="local col8 decl" id="58code" title='code' data-type='int' data-ref="58code">code</dfn>);</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="120">120</th><td><dfn class="decl def" id="fcntl_flock" title='fcntl_flock' data-ref="fcntl_flock">fcntl_flock</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="59module" title='module' data-type='PyObject *' data-ref="59module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="60args" title='args' data-type='PyObject **' data-ref="60args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="61nargs" title='nargs' data-type='Py_ssize_t' data-ref="61nargs">nargs</dfn>)</td></tr>
+<tr><th id="121">121</th><td>{</td></tr>
+<tr><th id="122">122</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62return_value" title='return_value' data-type='PyObject *' data-ref="62return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="123">123</th><td>    <em>int</em> <dfn class="local col3 decl" id="63fd" title='fd' data-type='int' data-ref="63fd">fd</dfn>;</td></tr>
+<tr><th id="124">124</th><td>    <em>int</em> <dfn class="local col4 decl" id="64code" title='code' data-type='int' data-ref="64code">code</dfn>;</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col0 ref" href="#60args" title='args' data-ref="60args">args</a>, <a class="local col1 ref" href="#61nargs" title='nargs' data-ref="61nargs">nargs</a>, <q>"O&amp;i:flock"</q>,</td></tr>
+<tr><th id="127">127</th><td>        <a class="tu ref" href="../fcntlmodule.c.html#conv_descriptor" title='conv_descriptor' data-ref="conv_descriptor">conv_descriptor</a>, &amp;<a class="local col3 ref" href="#63fd" title='fd' data-ref="63fd">fd</a>, &amp;<a class="local col4 ref" href="#64code" title='code' data-ref="64code">code</a>)) {</td></tr>
+<tr><th id="128">128</th><td>        <b>goto</b> <a class="lbl" href="#65exit" data-ref="65exit">exit</a>;</td></tr>
+<tr><th id="129">129</th><td>    }</td></tr>
+<tr><th id="130">130</th><td>    <a class="local col2 ref" href="#62return_value" title='return_value' data-ref="62return_value">return_value</a> = <a class="ref" href="../fcntlmodule.c.html#fcntl_flock_impl" title='fcntl_flock_impl' data-ref="fcntl_flock_impl">fcntl_flock_impl</a>(<a class="local col9 ref" href="#59module" title='module' data-ref="59module">module</a>, <a class="local col3 ref" href="#63fd" title='fd' data-ref="63fd">fd</a>, <a class="local col4 ref" href="#64code" title='code' data-ref="64code">code</a>);</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><dfn class="lbl" id="65exit" data-ref="65exit">exit</dfn>:</td></tr>
+<tr><th id="133">133</th><td>    <b>return</b> <a class="local col2 ref" href="#62return_value" title='return_value' data-ref="62return_value">return_value</a>;</td></tr>
+<tr><th id="134">134</th><td>}</td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char fcntl_lockf__doc__[] = &quot;lockf($module, fd, cmd, len=0, start=0, whence=0, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;A wrapper around the fcntl() locking calls.\n&quot;&quot;\n&quot;&quot;`fd` is the file descriptor of the file to lock or unlock, and operation is one\n&quot;&quot;of the following values:\n&quot;&quot;\n&quot;&quot;    LOCK_UN - unlock\n&quot;&quot;    LOCK_SH - acquire a shared lock\n&quot;&quot;    LOCK_EX - acquire an exclusive lock\n&quot;&quot;\n&quot;&quot;When operation is LOCK_SH or LOCK_EX, it can also be bitwise ORed with\n&quot;&quot;LOCK_NB to avoid blocking on lock acquisition.  If LOCK_NB is used and the\n&quot;&quot;lock cannot be acquired, an OSError will be raised and the exception will\n&quot;&quot;have an errno attribute set to EACCES or EAGAIN (depending on the operating\n&quot;&quot;system -- for portability, check for either value).\n&quot;&quot;\n&quot;&quot;`len` is the number of bytes to lock, with the default meaning to lock to\n&quot;&quot;EOF.  `start` is the byte offset, relative to `whence`, to that the lock\n&quot;&quot;starts.  `whence` is as with fileobj.seek(), specifically:\n&quot;&quot;\n&quot;&quot;    0 - relative to the start of the file (SEEK_SET)\n&quot;&quot;    1 - relative to the current buffer position (SEEK_CUR)\n&quot;&quot;    2 - relative to the end of the file (SEEK_END)&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="fcntl_lockf__doc__" title='fcntl_lockf__doc__' data-ref="fcntl_lockf__doc__">fcntl_lockf__doc__</dfn>,</td></tr>
+<tr><th id="137">137</th><td><q>"lockf($module, fd, cmd, len=0, start=0, whence=0, /)\n"</q></td></tr>
+<tr><th id="138">138</th><td><q>"--\n"</q></td></tr>
+<tr><th id="139">139</th><td><q>"\n"</q></td></tr>
+<tr><th id="140">140</th><td><q>"A wrapper around the fcntl() locking calls.\n"</q></td></tr>
+<tr><th id="141">141</th><td><q>"\n"</q></td></tr>
+<tr><th id="142">142</th><td><q>"`fd` is the file descriptor of the file to lock or unlock, and operation is one\n"</q></td></tr>
+<tr><th id="143">143</th><td><q>"of the following values:\n"</q></td></tr>
+<tr><th id="144">144</th><td><q>"\n"</q></td></tr>
+<tr><th id="145">145</th><td><q>"    LOCK_UN - unlock\n"</q></td></tr>
+<tr><th id="146">146</th><td><q>"    LOCK_SH - acquire a shared lock\n"</q></td></tr>
+<tr><th id="147">147</th><td><q>"    LOCK_EX - acquire an exclusive lock\n"</q></td></tr>
+<tr><th id="148">148</th><td><q>"\n"</q></td></tr>
+<tr><th id="149">149</th><td><q>"When operation is LOCK_SH or LOCK_EX, it can also be bitwise ORed with\n"</q></td></tr>
+<tr><th id="150">150</th><td><q>"LOCK_NB to avoid blocking on lock acquisition.  If LOCK_NB is used and the\n"</q></td></tr>
+<tr><th id="151">151</th><td><q>"lock cannot be acquired, an OSError will be raised and the exception will\n"</q></td></tr>
+<tr><th id="152">152</th><td><q>"have an errno attribute set to EACCES or EAGAIN (depending on the operating\n"</q></td></tr>
+<tr><th id="153">153</th><td><q>"system -- for portability, check for either value).\n"</q></td></tr>
+<tr><th id="154">154</th><td><q>"\n"</q></td></tr>
+<tr><th id="155">155</th><td><q>"`len` is the number of bytes to lock, with the default meaning to lock to\n"</q></td></tr>
+<tr><th id="156">156</th><td><q>"EOF.  `start` is the byte offset, relative to `whence`, to that the lock\n"</q></td></tr>
+<tr><th id="157">157</th><td><q>"starts.  `whence` is as with fileobj.seek(), specifically:\n"</q></td></tr>
+<tr><th id="158">158</th><td><q>"\n"</q></td></tr>
+<tr><th id="159">159</th><td><q>"    0 - relative to the start of the file (SEEK_SET)\n"</q></td></tr>
+<tr><th id="160">160</th><td><q>"    1 - relative to the current buffer position (SEEK_CUR)\n"</q></td></tr>
+<tr><th id="161">161</th><td><q>"    2 - relative to the end of the file (SEEK_END)"</q>);</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><u>#define <dfn class="macro" id="_M/FCNTL_LOCKF_METHODDEF" data-ref="_M/FCNTL_LOCKF_METHODDEF">FCNTL_LOCKF_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="164">164</th><td><u>    {"lockf", (PyCFunction)fcntl_lockf, METH_FASTCALL, fcntl_lockf__doc__},</u></td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="167">167</th><td><a class="decl" href="../fcntlmodule.c.html#fcntl_lockf_impl" title='fcntl_lockf_impl' data-ref="fcntl_lockf_impl" id="fcntl_lockf_impl">fcntl_lockf_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="66module" title='module' data-type='PyObject *' data-ref="66module">module</dfn>, <em>int</em> <dfn class="local col7 decl" id="67fd" title='fd' data-type='int' data-ref="67fd">fd</dfn>, <em>int</em> <dfn class="local col8 decl" id="68code" title='code' data-type='int' data-ref="68code">code</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69lenobj" title='lenobj' data-type='PyObject *' data-ref="69lenobj">lenobj</dfn>,</td></tr>
+<tr><th id="168">168</th><td>                 <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70startobj" title='startobj' data-type='PyObject *' data-ref="70startobj">startobj</dfn>, <em>int</em> <dfn class="local col1 decl" id="71whence" title='whence' data-type='int' data-ref="71whence">whence</dfn>);</td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="171">171</th><td><dfn class="decl def" id="fcntl_lockf" title='fcntl_lockf' data-ref="fcntl_lockf">fcntl_lockf</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="72module" title='module' data-type='PyObject *' data-ref="72module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="73args" title='args' data-type='PyObject **' data-ref="73args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="74nargs" title='nargs' data-type='Py_ssize_t' data-ref="74nargs">nargs</dfn>)</td></tr>
+<tr><th id="172">172</th><td>{</td></tr>
+<tr><th id="173">173</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="75return_value" title='return_value' data-type='PyObject *' data-ref="75return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="174">174</th><td>    <em>int</em> <dfn class="local col6 decl" id="76fd" title='fd' data-type='int' data-ref="76fd">fd</dfn>;</td></tr>
+<tr><th id="175">175</th><td>    <em>int</em> <dfn class="local col7 decl" id="77code" title='code' data-type='int' data-ref="77code">code</dfn>;</td></tr>
+<tr><th id="176">176</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="78lenobj" title='lenobj' data-type='PyObject *' data-ref="78lenobj">lenobj</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="177">177</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="79startobj" title='startobj' data-type='PyObject *' data-ref="79startobj">startobj</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="178">178</th><td>    <em>int</em> <dfn class="local col0 decl" id="80whence" title='whence' data-type='int' data-ref="80whence">whence</dfn> = <var>0</var>;</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col3 ref" href="#73args" title='args' data-ref="73args">args</a>, <a class="local col4 ref" href="#74nargs" title='nargs' data-ref="74nargs">nargs</a>, <q>"O&amp;i|OOi:lockf"</q>,</td></tr>
+<tr><th id="181">181</th><td>        <a class="tu ref" href="../fcntlmodule.c.html#conv_descriptor" title='conv_descriptor' data-ref="conv_descriptor">conv_descriptor</a>, &amp;<a class="local col6 ref" href="#76fd" title='fd' data-ref="76fd">fd</a>, &amp;<a class="local col7 ref" href="#77code" title='code' data-ref="77code">code</a>, &amp;<a class="local col8 ref" href="#78lenobj" title='lenobj' data-ref="78lenobj">lenobj</a>, &amp;<a class="local col9 ref" href="#79startobj" title='startobj' data-ref="79startobj">startobj</a>, &amp;<a class="local col0 ref" href="#80whence" title='whence' data-ref="80whence">whence</a>)) {</td></tr>
+<tr><th id="182">182</th><td>        <b>goto</b> <a class="lbl" href="#81exit" data-ref="81exit">exit</a>;</td></tr>
+<tr><th id="183">183</th><td>    }</td></tr>
+<tr><th id="184">184</th><td>    <a class="local col5 ref" href="#75return_value" title='return_value' data-ref="75return_value">return_value</a> = <a class="ref" href="../fcntlmodule.c.html#fcntl_lockf_impl" title='fcntl_lockf_impl' data-ref="fcntl_lockf_impl">fcntl_lockf_impl</a>(<a class="local col2 ref" href="#72module" title='module' data-ref="72module">module</a>, <a class="local col6 ref" href="#76fd" title='fd' data-ref="76fd">fd</a>, <a class="local col7 ref" href="#77code" title='code' data-ref="77code">code</a>, <a class="local col8 ref" href="#78lenobj" title='lenobj' data-ref="78lenobj">lenobj</a>, <a class="local col9 ref" href="#79startobj" title='startobj' data-ref="79startobj">startobj</a>, <a class="local col0 ref" href="#80whence" title='whence' data-ref="80whence">whence</a>);</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td><dfn class="lbl" id="81exit" data-ref="81exit">exit</dfn>:</td></tr>
+<tr><th id="187">187</th><td>    <b>return</b> <a class="local col5 ref" href="#75return_value" title='return_value' data-ref="75return_value">return_value</a>;</td></tr>
+<tr><th id="188">188</th><td>}</td></tr>
+<tr><th id="189">189</th><td><i>/*[clinic end generated code: output=6105e3ada306f434 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="190">190</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../fcntlmodule.c.html'>codebrowser/Modules/fcntlmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

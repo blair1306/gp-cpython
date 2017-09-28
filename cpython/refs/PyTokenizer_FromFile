@@ -1,0 +1,5 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='79' type='struct tok_state * PyTokenizer_FromFile(FILE * , const char * , const char * , const char * )'/>
+<use f='codebrowser/Parser/parsetok.c' l='126' u='c' c='PyParser_ParseFileObject'/>
+<def f='codebrowser/Parser/tokenizer.c' l='860' ll='888' type='struct tok_state * PyTokenizer_FromFile(FILE * fp, const char * enc, const char * ps1, const char * ps2)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1940' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<doc f='codebrowser/Parser/tokenizer.c' l='858'>/* Set up tokenizer for file */</doc>

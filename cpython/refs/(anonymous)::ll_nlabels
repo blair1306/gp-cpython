@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/grammar.h' l='24' type='int'/>
+<use f='codebrowser/Modules/parsermodule.c' l='698' u='r' c='validate_node'/>
+<offset>0</offset>
+<use f='codebrowser/Parser/acceler.c' l='69' u='r' c='fixstate'/>
+<use f='codebrowser/Parser/acceler.c' l='94' u='r' c='fixstate'/>
+<use f='codebrowser/Parser/firstsets.c' l='59' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='25' u='w' c='_Py_newgrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='42' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='110' u='r' c='_Py_addlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='116' u='r' c='_Py_addlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='119' u='w' c='_Py_addlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='123' u='r' c='_Py_addlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='135' u='r' c='_Py_findlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='163' u='r' c='_Py_translatelabels'/>
+<use f='codebrowser/Parser/parser.c' l='140' u='r' c='classify'/>
+<use f='codebrowser/Parser/pgen.c' l='114' u='w' c='newnfagrammar'/>

@@ -1,0 +1,5 @@
+<dec f='include/readline/history.h' l='135' type='HIST_ENTRY * history_get(int )'/>
+<use f='codebrowser/Modules/readline.c' l='717' u='c' c='get_history_item'/>
+<use f='codebrowser/Modules/readline.c' l='1313' u='c' c='call_readline'/>
+<doc f='include/readline/history.h' l='133'>/* Return the history entry which is logically at OFFSET in the history
+   array.  OFFSET is relative to history_base. */</doc>

@@ -1,0 +1,40 @@
+<dec f='codebrowser/Include/object.h' l='559' type='void PyObject_ClearWeakRefs(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='978' u='c' c='FutureObj_dealloc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1854' u='c' c='TaskObj_dealloc'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1308' u='c' c='deque_dealloc'/>
+<use f='codebrowser/Modules/_elementtree.c' l='635' u='c' c='element_dealloc'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='119' u='c' c='partial_dealloc'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='398' u='c' c='buffered_dealloc'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2152' u='c' c='bufferedrwpair_dealloc'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='874' u='c' c='bytesio_dealloc'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='520' u='c' c='fileio_dealloc'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='320' u='c' c='iobase_dealloc'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='610' u='c' c='stringio_dealloc'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1199' u='c' c='textiowrapper_dealloc'/>
+<use f='codebrowser/Modules/_sre.c' l='558' u='c' c='pattern_dealloc'/>
+<use f='codebrowser/Modules/_struct.c' l='1471' u='c' c='s_dealloc'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='35' u='c' c='lock_dealloc'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='279' u='c' c='rlock_dealloc'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='607' u='c' c='localdummy_dealloc'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='800' u='c' c='local_dealloc'/>
+<use f='codebrowser/Modules/arraymodule.c' l='659' u='c' c='array_dealloc'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='711' u='c' c='tee_clear'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='140' u='c' c='mmap_object_dealloc'/>
+<use f='codebrowser/Objects/classobject.c' l='196' u='c' c='method_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='447' u='c' c='code_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='529' u='c' c='func_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='97' u='c' c='gen_dealloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1062' u='c' c='memory_dealloc'/>
+<use f='codebrowser/Objects/methodobject.c' l='87' u='c' c='meth_dealloc'/>
+<use f='codebrowser/Objects/moduleobject.c' l='653' u='c' c='module_dealloc'/>
+<use f='codebrowser/Objects/odictobject.c' l='1449' u='c' c='odict_dealloc'/>
+<use f='codebrowser/Objects/setobject.c' l='560' u='c' c='set_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1193' u='c' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='3172' u='c' c='type_dealloc'/>
+<def f='codebrowser/Objects/weakrefobject.c' l='886' ll='961' type='void PyObject_ClearWeakRefs(PyObject * object)'/>
+<doc f='codebrowser/Objects/weakrefobject.c' l='880'>/* This function is called by the tp_dealloc handler to clear weak references.
+ *
+ * This iterates through the weak references for &apos;object&apos; and calls callbacks
+ * for those references which have one.  It returns when all callbacks have
+ * been attempted.
+ */</doc>

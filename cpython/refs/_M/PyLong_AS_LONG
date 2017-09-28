@@ -1,0 +1,31 @@
+<dec f='codebrowser/Include/longobject.h' l='36'/>
+<doc f='codebrowser/Include/longobject.h' l='34'>/* It may be useful in the future. I&apos;ve added it in the PyInt -&gt; PyLong
+   cleanup to keep the extra information. [CH] */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2295' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3668' u='c'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1150' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='3222' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='164' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='204' u='c'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4004' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='7947' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8282' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8360' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8734' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8784' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8830' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='2077' u='c'/>
+<use f='codebrowser/Python/ceval.c' l='3593' u='c'/>
+<use f='codebrowser/Python/compile.c' l='458' u='c'/>
+<use f='codebrowser/Python/compile.c' l='1533' u='c'/>
+<use f='codebrowser/Python/compile.c' l='5240' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='98' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='368' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='560' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='610' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='613' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='644' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='645' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='764' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='990' u='c'/>
+<use f='codebrowser/Python/symtable.c' l='1019' u='c'/>

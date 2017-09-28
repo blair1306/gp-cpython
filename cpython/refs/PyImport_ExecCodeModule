@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/import.h' l='17' type='PyObject * PyImport_ExecCodeModule(const char * name, PyObject * co)'/>
+<def f='codebrowser/Python/import.c' l='720' ll='725' type='PyObject * PyImport_ExecCodeModule(const char * name, PyObject * co)'/>
+<doc f='codebrowser/Python/import.c' l='710'>/* Execute a code object in a module and return the module object
+ * WITH INCREMENTED REFERENCE COUNT.  If an error occurs, name is
+ * removed from sys.modules, to avoid leaving damaged module objects
+ * in sys.modules.  The caller may wish to restore the original
+ * module object (if any) in this case; PyImport_ReloadModule is an
+ * example.
+ *
+ * Note that PyImport_ExecCodeModuleWithPathnames() is the preferred, richer
+ * interface.  The other two exist primarily for backward compatibility.
+ */</doc>

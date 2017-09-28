@@ -1,0 +1,5 @@
+<dec f='include/readline/history.h' l='84' type='void add_history(const char * )'/>
+<use f='codebrowser/Modules/readline.c' l='595' u='c' c='py_add_history'/>
+<use f='codebrowser/Modules/readline.c' l='1318' u='c' c='call_readline'/>
+<doc f='include/readline/history.h' l='82'>/* Place STRING at the end of the history list.
+   The associated data field (if any) is set to NULL. */</doc>

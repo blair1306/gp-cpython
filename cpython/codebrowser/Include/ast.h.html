@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ast.h source code [codebrowser/Include/ast.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/ast.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='ast.h.html'>ast.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_AST_H">Py_AST_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_AST_H" data-ref="_M/Py_AST_H">Py_AST_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="PyAST_Validate" title='PyAST_Validate' data-ref="PyAST_Validate">PyAST_Validate</dfn>(<a class="typedef" href="Python-ast.h.html#mod_ty" title='mod_ty' data-type='struct _mod *' data-ref="mod_ty">mod_ty</a>);</td></tr>
+<tr><th id="8">8</th><td><a class="macro" href="pyport.h.html#676" title="mod_ty" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="Python-ast.h.html#mod_ty" title='mod_ty' data-type='struct _mod *' data-ref="mod_ty">mod_ty</a>) <dfn class="decl" id="PyAST_FromNode" title='PyAST_FromNode' data-ref="PyAST_FromNode">PyAST_FromNode</dfn>(</td></tr>
+<tr><th id="9">9</th><td>    <em>const</em> <a class="typedef" href="node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col1 decl" id="431n" title='n' data-type='const node *' data-ref="431n">n</dfn>,</td></tr>
+<tr><th id="10">10</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col2 decl" id="432flags" title='flags' data-type='PyCompilerFlags *' data-ref="432flags">flags</dfn>,</td></tr>
+<tr><th id="11">11</th><td>    <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="433filename" title='filename' data-type='const char *' data-ref="433filename">filename</dfn>,       <i>/* decoded from the filesystem encoding */</i></td></tr>
+<tr><th id="12">12</th><td>    <a class="typedef" href="pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col4 decl" id="434arena" title='arena' data-type='PyArena *' data-ref="434arena">arena</dfn>);</td></tr>
+<tr><th id="13">13</th><td><a class="macro" href="pyport.h.html#676" title="mod_ty" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="Python-ast.h.html#mod_ty" title='mod_ty' data-type='struct _mod *' data-ref="mod_ty">mod_ty</a>) <dfn class="decl" id="PyAST_FromNodeObject" title='PyAST_FromNodeObject' data-ref="PyAST_FromNodeObject">PyAST_FromNodeObject</dfn>(</td></tr>
+<tr><th id="14">14</th><td>    <em>const</em> <a class="typedef" href="node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col5 decl" id="435n" title='n' data-type='const node *' data-ref="435n">n</dfn>,</td></tr>
+<tr><th id="15">15</th><td>    <a class="typedef" href="compile.h.html#PyCompilerFlags" title='PyCompilerFlags' data-type='struct PyCompilerFlags' data-ref="PyCompilerFlags">PyCompilerFlags</a> *<dfn class="local col6 decl" id="436flags" title='flags' data-type='PyCompilerFlags *' data-ref="436flags">flags</dfn>,</td></tr>
+<tr><th id="16">16</th><td>    <a class="typedef" href="object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="437filename" title='filename' data-type='PyObject *' data-ref="437filename">filename</dfn>,</td></tr>
+<tr><th id="17">17</th><td>    <a class="typedef" href="pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col8 decl" id="438arena" title='arena' data-type='PyArena *' data-ref="438arena">arena</dfn>);</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="20">20</th><td>}</td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="19">endif</span></u></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="1">endif</span> /* !Py_AST_H */</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/parsermodule.c.html'>codebrowser/Modules/parsermodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

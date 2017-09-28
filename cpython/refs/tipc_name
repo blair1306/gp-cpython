@@ -1,0 +1,4 @@
+<def f='include/linux/tipc.h' l='52' ll='55'/>
+<size>8</size>
+<mbr r='tipc_name::type' o='0' t='__u32'/>
+<mbr r='tipc_name::instance' o='32' t='__u32'/>

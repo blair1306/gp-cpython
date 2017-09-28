@@ -1,0 +1,4 @@
+<dec f='include/linux/can.h' l='174' type='canid_t'/>
+<offset>32</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1383' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1971' u='w' c='getsockaddrarg'/>

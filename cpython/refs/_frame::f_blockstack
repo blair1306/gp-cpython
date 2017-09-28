@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/frameobject.h' l='51' type='PyTryBlock [20]'/>
+<offset>1216</offset>
+<doc f='codebrowser/Include/frameobject.h' l='51'>/* for try and loop blocks */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='315' u='a' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='754' u='a' c='PyFrame_BlockSetup'/>
+<use f='codebrowser/Objects/frameobject.c' l='766' u='a' c='PyFrame_BlockPop'/>
+<use f='codebrowser/Objects/genobject.c' l='849' u='m' c='PyGen_NeedsFinalizing'/>
+<use f='codebrowser/Python/ceval.c' l='3210' u='a' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3588' u='a' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3695' u='m' c='_PyEval_EvalFrameDefault'/>

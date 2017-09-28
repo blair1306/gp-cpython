@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pyerrors.h' l='311' type='PyObject * PyErr_SetImportErrorSubclass(PyObject * , PyObject * , PyObject * , PyObject * )'/>
+<def f='codebrowser/Python/errors.c' l='725' ll='773' type='PyObject * PyErr_SetImportErrorSubclass(PyObject * exception, PyObject * msg, PyObject * name, PyObject * path)'/>
+<use f='codebrowser/Python/errors.c' l='778' u='c' c='PyErr_SetImportError'/>

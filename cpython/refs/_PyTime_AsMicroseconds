@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pytime.h' l='99' type='_PyTime_t _PyTime_AsMicroseconds(_PyTime_t t, _PyTime_round_t round)'/>
+<doc f='codebrowser/Include/pytime.h' l='98'>/* Convert timestamp to a number of microseconds (10^-6 seconds). */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3997' u='c' c='test_PyTime_AsMicroseconds'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='62' u='c' c='acquire_timed'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='132' u='c' c='lock_acquire_parse_args'/>
+<def f='codebrowser/Python/pytime.c' l='403' ll='407' type='_PyTime_t _PyTime_AsMicroseconds(_PyTime_t t, _PyTime_round_t round)'/>

@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/fileutils.h' l='111' type='int _Py_set_inheritable(int fd, int inheritable, int * atomic_flag_works)'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1739' u='c' c='PyCursesWindow_PutWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2292' u='c' c='PyCurses_GetWin'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='426' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='172' u='c' c='make_inheritable'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='434' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='441' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='448' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5950' u='c' c='os_openpty_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5952' u='c' c='os_openpty_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7735' u='c' c='os_open_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7891' u='c' c='os_dup2_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8506' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8511' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11240' u='c' c='os_set_inheritable_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2432' u='c' c='sock_accept'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4795' u='c' c='sock_initobj'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5498' u='c' c='socket_socketpair'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5500' u='c' c='socket_socketpair'/>
+<def f='codebrowser/Python/fileutils.c' l='935' ll='939' type='int _Py_set_inheritable(int fd, int inheritable, int * atomic_flag_works)'/>
+<doc f='codebrowser/Python/fileutils.c' l='918'>/* Set the inheritable flag of the specified file descriptor.
+   On success: return 0, on error: raise an exception if raise is nonzero
+   and return -1.
+
+   If atomic_flag_works is not NULL:
+
+    * if *atomic_flag_works==-1, check if the inheritable is set on the file
+      descriptor: if yes, set *atomic_flag_works to 1, otherwise set to 0 and
+      set the inheritable flag
+    * if *atomic_flag_works==1: do nothing
+    * if *atomic_flag_works==0: set inheritable flag to False
+
+   Set atomic_flag_works to NULL if no atomic flag was used to create the
+   file descriptor.
+
+   atomic_flag_works can only be used to make a file descriptor
+   non-inheritable: atomic_flag_works must be NULL if inheritable=1. */</doc>

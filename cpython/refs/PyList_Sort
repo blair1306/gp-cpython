@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/listobject.h' l='60' type='int PyList_Sort(PyObject * )'/>
+<use f='codebrowser/Modules/_json.c' l='1593' u='c' c='encoder_listencode_dict'/>
+<def f='codebrowser/Objects/listobject.c' l='2141' ll='2153' type='int PyList_Sort(PyObject * v)'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='90' u='c' c='namespace_repr'/>
+<use f='codebrowser/Objects/object.c' l='1383' u='c' c='_dir_locals'/>
+<use f='codebrowser/Objects/object.c' l='1414' u='c' c='_dir_object'/>
+<use f='codebrowser/Objects/typeobject.c' l='2498' u='c' c='type_new'/>
+<use f='codebrowser/Python/compile.c' l='446' u='c' c='dictbytype'/>
+<use f='codebrowser/Python/sysmodule.c' l='1472' u='c' c='list_builtin_module_names'/>

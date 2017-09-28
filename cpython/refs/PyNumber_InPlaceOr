@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/abstract.h' l='822' type='PyObject * PyNumber_InPlaceOr(PyObject * o1, PyObject * o2)'/>
+<doc f='codebrowser/Include/abstract.h' l='818'>/* Returns the result of bitwise or of o1 and o2, possibly in-place,
+   or NULL on failure.
+
+   This is the equivalent of the Python expression: o1 |= o2. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='431' u='c' c='_operator_ior_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='1068' macro='1' type='PyObject * PyNumber_InPlaceOr(PyObject * v, PyObject * w)'/>
+<use f='codebrowser/Objects/setobject.c' l='2508' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='526' u='c' c='proxy_ior'/>
+<use f='codebrowser/Python/ceval.c' l='1689' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/symtable.c' l='750' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='756' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='774' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='781' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='787' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='822' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='837' u='c' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='880' u='c' c='analyze_child_block'/>

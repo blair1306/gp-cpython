@@ -1,0 +1,12 @@
+<dec f='include/stdio.h' l='749' type='int fseek(FILE * __stream, long __off, int __whence)'/>
+<doc f='include/stdio.h' l='745'>/* Seek to a certain position on STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1744' u='c' c='PyCursesWindow_PutWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2314' u='c' c='PyCurses_GetWin'/>
+<use f='codebrowser/Modules/getpath.c' l='268' u='c' c='find_env_config_value'/>
+<use f='codebrowser/Modules/zipimport.c' l='925' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='965' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1166' u='c' c='get_data'/>
+<use f='codebrowser/Modules/zipimport.c' l='1202' u='c' c='get_data'/>

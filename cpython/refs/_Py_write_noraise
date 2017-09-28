@@ -1,0 +1,48 @@
+<dec f='codebrowser/Include/fileutils.h' l='86' type='Py_ssize_t _Py_write_noraise(int fd, const void * buf, size_t count)'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='524' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='530' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='531' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='534' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='539' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='540' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1495' u='c' c='_PyMem_DumpFrame'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1495' u='c' c='_PyMem_DumpFrame'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1495' u='c' c='_PyMem_DumpFrame'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1495' u='c' c='_PyMem_DumpTraceback'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1495' u='c' c='_PyMem_DumpTraceback'/>
+<use f='codebrowser/Modules/faulthandler.c' l='31' u='c' c='faulthandler_fatal_error'/>
+<use f='codebrowser/Modules/faulthandler.c' l='31' u='c' c='faulthandler_fatal_error'/>
+<use f='codebrowser/Modules/faulthandler.c' l='31' u='c' c='faulthandler_fatal_error'/>
+<use f='codebrowser/Modules/faulthandler.c' l='567' u='c' c='faulthandler_thread'/>
+<use f='codebrowser/Modules/signalmodule.c' l='302' u='c' c='trip_signal'/>
+<def f='codebrowser/Python/fileutils.c' l='1340' ll='1344' type='Py_ssize_t _Py_write_noraise(int fd, const void * buf, size_t count)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1333'>/* Write count bytes of buf into fd.
+ *
+ * On success, return the number of written bytes, it can be lower than count
+ * including 0. On error, set errno and return -1.
+ *
+ * When interrupted by a signal (write() fails with EINTR), retry the syscall
+ * without calling the Python signal handler. */</doc>
+<use f='codebrowser/Python/traceback.c' l='537' u='c' c='_Py_DumpDecimal'/>
+<use f='codebrowser/Python/traceback.c' l='565' u='c' c='_Py_DumpHexadecimal'/>
+<use f='codebrowser/Python/traceback.c' l='618' u='c' c='_Py_DumpASCII'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='_Py_DumpASCII'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='_Py_DumpASCII'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='_Py_DumpASCII'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='_Py_DumpASCII'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_traceback'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='dump_traceback'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='write_thread_id'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='write_thread_id'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='write_thread_id'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='_Py_DumpTracebackThreads'/>
+<use f='codebrowser/Python/traceback.c' l='16' u='c' c='_Py_DumpTracebackThreads'/>

@@ -1,0 +1,12 @@
+<def f='codebrowser/Python/ceval_gil.h' l='109' type='_Py_atomic_int'/>
+<use f='codebrowser/Python/ceval_gil.h' l='132' u='a' c='gil_created'/>
+<use f='codebrowser/Python/ceval_gil.h' l='147' u='a' c='create_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='161' u='a' c='destroy_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='174' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='186' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='216' u='a' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='219' u='a' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='228' u='a' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='239' u='a' c='take_gil'/>
+<doc f='codebrowser/Python/ceval_gil.h' l='107'>/* Whether the GIL is already taken (-1 if uninitialized). This is atomic
+   because it can be read without any lock taken in ceval.c. */</doc>

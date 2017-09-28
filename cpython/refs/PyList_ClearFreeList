@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/listobject.h' l='66' type='int PyList_ClearFreeList()'/>
+<use f='codebrowser/Modules/gcmodule.c' l='900' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/listobject.c' l='113' ll='124' type='int PyList_ClearFreeList()'/>
+<use f='codebrowser/Objects/listobject.c' l='129' u='c' c='PyList_Fini'/>

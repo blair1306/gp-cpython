@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/rotatingtree.h' l='26' type='int RotatingTree_Enum(rotating_node_t * root, rotating_tree_enum_fn enumfn, void * arg)'/>
+<use f='codebrowser/Modules/_lsprof.c' l='295' u='c' c='freeEntry'/>
+<use f='codebrowser/Modules/_lsprof.c' l='303' u='c' c='clearEntries'/>
+<use f='codebrowser/Modules/_lsprof.c' l='577' u='c' c='statsForEntry'/>
+<use f='codebrowser/Modules/_lsprof.c' l='643' u='c' c='profiler_getstats'/>
+<def f='codebrowser/Modules/rotatingtree.c' l='106' ll='121' type='int RotatingTree_Enum(rotating_node_t * root, rotating_tree_enum_fn enumfn, void * arg)'/>
+<use f='codebrowser/Modules/rotatingtree.c' l='113' u='c' c='RotatingTree_Enum'/>
+<doc f='codebrowser/Modules/rotatingtree.c' l='103'>/* Enumerate all nodes in the tree.  The callback enumfn() should return
+   zero to continue the enumeration, or non-zero to interrupt it.
+   A non-zero value is directly returned by RotatingTree_Enum(). */</doc>

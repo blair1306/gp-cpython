@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='635' type='Py_ssize_t PyUnicode_CopyCharacters(PyObject * to, Py_ssize_t to_start, PyObject * from, Py_ssize_t from_start, Py_ssize_t how_many)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1927' u='c' c='unicode_copycharacters'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='1550' ll='1604' type='Py_ssize_t PyUnicode_CopyCharacters(PyObject * to, Py_ssize_t to_start, PyObject * from, Py_ssize_t from_start, Py_ssize_t how_many)'/>
+<use f='codebrowser/Python/compile.c' l='276' u='c' c='_Py_Mangle'/>
+<use f='codebrowser/Python/compile.c' l='280' u='c' c='_Py_Mangle'/>

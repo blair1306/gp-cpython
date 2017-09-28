@@ -1,0 +1,27 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='465' type='int mpd_qcheck_nans(mpd_t * nanresult, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1556' ll='1578' type='int mpd_qcheck_nans(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2247' u='c' c='mpd_qcompare'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2265' u='c' c='mpd_qcompare_signal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2873' u='c' c='mpd_qrotate'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2953' u='c' c='mpd_qscaleb'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3048' u='c' c='mpd_qshift'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3394' u='c' c='mpd_qadd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3425' u='c' c='mpd_qsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3666' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3930' u='c' c='mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3984' u='c' c='mpd_qdivint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5116' u='c' c='mpd_qmax'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5152' u='c' c='mpd_qmax_mag'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5189' u='c' c='mpd_qmin'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5225' u='c' c='mpd_qmin_mag'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5739' u='c' c='_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6077' u='c' c='mpd_qnext_toward'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6546' u='c' c='mpd_qpow'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6800' u='c' c='mpd_qquantize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6908' u='c' c='mpd_qrem'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6949' u='c' c='mpd_qrem_near'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1551'>/*
+ * Check if either operand is NaN, copy to result and return 1 if this
+ * is the case. Copying can fail since NaNs are allowed to have a payload
+ * that does not fit in MPD_MINALLOC.
+ */</doc>

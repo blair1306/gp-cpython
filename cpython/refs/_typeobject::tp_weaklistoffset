@@ -1,0 +1,47 @@
+<dec f='codebrowser/Include/object.h' l='395' type='Py_ssize_t'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='929' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1824' u='w'/>
+<offset>1792</offset>
+<doc f='codebrowser/Include/object.h' l='394'>/* weak reference enabler */</doc>
+<use f='codebrowser/Modules/_weakref.c' l='30' macro='1' u='r'/>
+<use f='codebrowser/Modules/_weakref.c' l='33' macro='1' u='r'/>
+<use f='codebrowser/Modules/_weakref.c' l='87' macro='1' u='r'/>
+<use f='codebrowser/Modules/_weakref.c' l='88' macro='1' u='r'/>
+<use f='codebrowser/Modules/gcmodule.c' l='633' macro='1' u='r'/>
+<use f='codebrowser/Modules/gcmodule.c' l='638' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2766' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='1192' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1192' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1209' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1209' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1212' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='2046' u='r' c='extra_ivars'/>
+<use f='codebrowser/Objects/typeobject.c' l='2046' u='r' c='extra_ivars'/>
+<use f='codebrowser/Objects/typeobject.c' l='2047' u='r' c='extra_ivars'/>
+<use f='codebrowser/Objects/typeobject.c' l='2185' u='r' c='subtype_getweakref'/>
+<use f='codebrowser/Objects/typeobject.c' l='2190' u='r' c='subtype_getweakref'/>
+<use f='codebrowser/Objects/typeobject.c' l='2191' u='r' c='subtype_getweakref'/>
+<use f='codebrowser/Objects/typeobject.c' l='2194' u='r' c='subtype_getweakref'/>
+<use f='codebrowser/Objects/typeobject.c' l='2402' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2521' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2688' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2695' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2697' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2699' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='3714' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='3714' u='r' c='compatible_with_tp_base'/>
+<use f='codebrowser/Objects/typeobject.c' l='3732' u='r' c='same_slots_added'/>
+<use f='codebrowser/Objects/typeobject.c' l='3732' u='r' c='same_slots_added'/>
+<use f='codebrowser/Objects/typeobject.c' l='4031' u='r' c='_PyObject_GetState'/>
+<use f='codebrowser/Objects/typeobject.c' l='4780' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4780' u='w' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4780' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='58' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='286' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='294' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='740' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='746' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='799' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='805' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='892' macro='1' u='r'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='897' macro='1' u='r'/>

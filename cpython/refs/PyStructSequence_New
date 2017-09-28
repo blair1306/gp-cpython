@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/structseq.h' l='32' type='PyObject * PyStructSequence_New(PyTypeObject * type)'/>
+<use f='codebrowser/Modules/grpmodule.c' l='44' u='c' c='mkgrent'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2019' u='c' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4403' u='c' c='os_uname_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5548' u='c' c='os_sched_param_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5647' u='c' c='os_sched_getparam_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6857' u='c' c='wait_helper'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7008' u='c' c='os_waitid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7476' u='c' c='build_times_result'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9338' u='c' c='_pystatvfs_fromstructstatvfs'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11147' u='c' c='get_terminal_size'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='70' u='c' c='mkpwent'/>
+<use f='codebrowser/Modules/resource.c' l='97' u='c' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='970' u='c' c='fill_siginfo'/>
+<use f='codebrowser/Modules/spwdmodule.c' l='81' u='c' c='mkspent'/>
+<use f='codebrowser/Modules/timemodule.c' l='285' u='c' c='tmtotuple'/>
+<use f='codebrowser/Objects/floatobject.c' l='84' u='c' c='PyFloat_GetInfo'/>
+<use f='codebrowser/Objects/longobject.c' l='5474' u='c' c='PyLong_GetInfo'/>
+<def f='codebrowser/Objects/structseq.c' l='31' ll='47' type='PyObject * PyStructSequence_New(PyTypeObject * type)'/>
+<use f='codebrowser/Objects/structseq.c' l='141' u='c' c='structseq_new_impl'/>
+<use f='codebrowser/Python/sysmodule.c' l='758' u='c' c='sys_get_asyncgen_hooks'/>
+<use f='codebrowser/Python/sysmodule.c' l='824' u='c' c='get_hash_info'/>
+<use f='codebrowser/Python/sysmodule.c' l='1718' u='c' c='make_flags'/>
+<use f='codebrowser/Python/sysmodule.c' l='1779' u='c' c='make_version_info'/>
+<use f='codebrowser/Python/thread.c' l='192' u='c' c='PyThread_GetInfo'/>

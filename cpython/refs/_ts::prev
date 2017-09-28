@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pystate.h' l='112' type='struct _ts *'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/pystate.h' l='110'>/* See Python/ceval.c for comments explaining most fields */</doc>
+<use f='codebrowser/Python/pystate.c' l='293' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='296' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='484' u='r' c='tstate_delete_common'/>
+<use f='codebrowser/Python/pystate.c' l='485' u='r' c='tstate_delete_common'/>
+<use f='codebrowser/Python/pystate.c' l='489' u='w' c='tstate_delete_common'/>
+<use f='codebrowser/Python/pystate.c' l='489' u='r' c='tstate_delete_common'/>
+<use f='codebrowser/Python/pystate.c' l='547' u='r' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='548' u='r' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='550' u='w' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='550' u='r' c='_PyThreadState_DeleteExcept'/>
+<use f='codebrowser/Python/pystate.c' l='551' u='w' c='_PyThreadState_DeleteExcept'/>

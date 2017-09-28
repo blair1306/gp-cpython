@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>spwdmodule.c source code [codebrowser/Modules/spwdmodule.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/spwdmodule.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='spwdmodule.c.html'>spwdmodule.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* UNIX shadow password file access module */</i></td></tr>
+<tr><th id="3">3</th><td><i>/* A lot of code has been taken from pwdmodule.c */</i></td></tr>
+<tr><th id="4">4</th><td><i>/* For info also see <a href="http://www.unixpapa.com/incnote/passwd.html">http://www.unixpapa.com/incnote/passwd.html</a> */</i></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="9">ifdef</span> <a class="macro" href="../pyconfig.h.html#846" data-ref="_M/HAVE_SHADOW_H">HAVE_SHADOW_H</a></u></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="../../include/shadow.h.html">&lt;shadow.h&gt;</a></u></td></tr>
+<tr><th id="11">11</th><td><u>#<span data-ppcond="9">endif</span></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="clinic/spwdmodule.c.h.html">"clinic/spwdmodule.c.h"</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="16">16</th><td><i>module spwd</i></td></tr>
+<tr><th id="17">17</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="18">18</th><td><i>/*[clinic end generated code: output=da39a3ee5e6b4b0d input=c0b841b90a6a07ce]*/</i></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char spwd__doc__[] = &quot;This module provides access to the Unix shadow password database.\nIt is available on various Unix versions.\n\nShadow password database entries are reported as 9-tuples of type struct_spwd,\ncontaining the following items from the password database (see `&lt;shadow.h&gt;&apos;):\nsp_namp, sp_pwdp, sp_lstchg, sp_min, sp_max, sp_warn, sp_inact, sp_expire, sp_flag.\nThe sp_namp and sp_pwdp are strings, the rest are integers.\nAn exception is raised if the entry asked for cannot be found.\nYou have to be root to be able to use this module.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="spwd__doc__" title='spwd__doc__' data-ref="spwd__doc__">spwd__doc__</dfn>,</td></tr>
+<tr><th id="21">21</th><td><q>"This module provides access to the Unix shadow password database.\n\</q></td></tr>
+<tr><th id="22">22</th><td><q>It is available on various Unix versions.\n\</q></td></tr>
+<tr><th id="23">23</th><td><q>\n\</q></td></tr>
+<tr><th id="24">24</th><td><q>Shadow password database entries are reported as 9-tuples of type struct_spwd,\n\</q></td></tr>
+<tr><th id="25">25</th><td><q>containing the following items from the password database (see `&lt;shadow.h&gt;'):\n\</q></td></tr>
+<tr><th id="26">26</th><td><q>sp_namp, sp_pwdp, sp_lstchg, sp_min, sp_max, sp_warn, sp_inact, sp_expire, sp_flag.\n\</q></td></tr>
+<tr><th id="27">27</th><td><q>The sp_namp and sp_pwdp are strings, the rest are integers.\n\</q></td></tr>
+<tr><th id="28">28</th><td><q>An exception is raised if the entry asked for cannot be found.\n\</q></td></tr>
+<tr><th id="29">29</th><td><q>You have to be root to be able to use this module."</q>);</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">if</span> defined(<a class="macro" href="../pyconfig.h.html#449" data-ref="_M/HAVE_GETSPNAM">HAVE_GETSPNAM</a>) || defined(<a class="macro" href="../pyconfig.h.html#446" data-ref="_M/HAVE_GETSPENT">HAVE_GETSPENT</a>)</u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><em>static</em> <a class="typedef" href="../Include/structseq.h.html#PyStructSequence_Field" title='PyStructSequence_Field' data-type='struct PyStructSequence_Field' data-ref="PyStructSequence_Field">PyStructSequence_Field</a> <dfn class="tu decl def" id="struct_spwd_type_fields" title='struct_spwd_type_fields' data-type='PyStructSequence_Field [12]' data-ref="struct_spwd_type_fields">struct_spwd_type_fields</dfn>[] = {</td></tr>
+<tr><th id="35">35</th><td>    {<q>"sp_namp"</q>, <q>"login name"</q>},</td></tr>
+<tr><th id="36">36</th><td>    {<q>"sp_pwdp"</q>, <q>"encrypted password"</q>},</td></tr>
+<tr><th id="37">37</th><td>    {<q>"sp_lstchg"</q>, <q>"date of last change"</q>},</td></tr>
+<tr><th id="38">38</th><td>    {<q>"sp_min"</q>, <q>"min #days between changes"</q>},</td></tr>
+<tr><th id="39">39</th><td>    {<q>"sp_max"</q>, <q>"max #days between changes"</q>},</td></tr>
+<tr><th id="40">40</th><td>    {<q>"sp_warn"</q>, <q>"#days before pw expires to warn user about it"</q>},</td></tr>
+<tr><th id="41">41</th><td>    {<q>"sp_inact"</q>, <q>"#days after pw expires until account is disabled"</q>},</td></tr>
+<tr><th id="42">42</th><td>    {<q>"sp_expire"</q>, <q>"#days since 1970-01-01 when account expires"</q>},</td></tr>
+<tr><th id="43">43</th><td>    {<q>"sp_flag"</q>, <q>"reserved"</q>},</td></tr>
+<tr><th id="44">44</th><td>    {<q>"sp_nam"</q>, <q>"login name; deprecated"</q>}, <i>/* Backward compatibility */</i></td></tr>
+<tr><th id="45">45</th><td>    {<q>"sp_pwd"</q>, <q>"encrypted password; deprecated"</q>}, <i>/* Backward compatibility */</i></td></tr>
+<tr><th id="46">46</th><td>    {<var>0</var>}</td></tr>
+<tr><th id="47">47</th><td>};</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char struct_spwd__doc__[] = &quot;spwd.struct_spwd: Results from getsp*() routines.\n\nThis object may be accessed either as a 9-tuple of\n  (sp_namp,sp_pwdp,sp_lstchg,sp_min,sp_max,sp_warn,sp_inact,sp_expire,sp_flag)\nor via the object attributes as named in the above tuple.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="struct_spwd__doc__" title='struct_spwd__doc__' data-ref="struct_spwd__doc__">struct_spwd__doc__</dfn>,</td></tr>
+<tr><th id="50">50</th><td><q>"spwd.struct_spwd: Results from getsp*() routines.\n\n\</q></td></tr>
+<tr><th id="51">51</th><td><q>This object may be accessed either as a 9-tuple of\n\</q></td></tr>
+<tr><th id="52">52</th><td><q>  (sp_namp,sp_pwdp,sp_lstchg,sp_min,sp_max,sp_warn,sp_inact,sp_expire,sp_flag)\n\</q></td></tr>
+<tr><th id="53">53</th><td><q>or via the object attributes as named in the above tuple."</q>);</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><em>static</em> <a class="typedef" href="../Include/structseq.h.html#PyStructSequence_Desc" title='PyStructSequence_Desc' data-type='struct PyStructSequence_Desc' data-ref="PyStructSequence_Desc">PyStructSequence_Desc</a> <dfn class="tu decl def" id="struct_spwd_type_desc" title='struct_spwd_type_desc' data-type='PyStructSequence_Desc' data-ref="struct_spwd_type_desc">struct_spwd_type_desc</dfn> = {</td></tr>
+<tr><th id="56">56</th><td>    <q>"spwd.struct_spwd"</q>,</td></tr>
+<tr><th id="57">57</th><td>    <a class="ref" href="#49" title='struct_spwd__doc__' data-ref="struct_spwd__doc__">struct_spwd__doc__</a>,</td></tr>
+<tr><th id="58">58</th><td>    <a class="tu ref" href="#struct_spwd_type_fields" title='struct_spwd_type_fields' data-ref="struct_spwd_type_fields">struct_spwd_type_fields</a>,</td></tr>
+<tr><th id="59">59</th><td>    <var>9</var>,</td></tr>
+<tr><th id="60">60</th><td>};</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><em>static</em> <em>int</em> <dfn class="tu decl def" id="initialized" title='initialized' data-type='int' data-ref="initialized">initialized</dfn>;</td></tr>
+<tr><th id="63">63</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="tu decl def" id="StructSpwdType" title='StructSpwdType' data-type='PyTypeObject' data-ref="StructSpwdType">StructSpwdType</dfn>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="67">67</th><td><dfn class="tu decl def" id="sets" title='sets' data-type='void sets(PyObject * v, int i, const char * val)' data-ref="sets">sets</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34v" title='v' data-type='PyObject *' data-ref="34v">v</dfn>, <em>int</em> <dfn class="local col5 decl" id="35i" title='i' data-type='int' data-ref="35i">i</dfn>, <em>const</em> <em>char</em>* <dfn class="local col6 decl" id="36val" title='val' data-type='const char *' data-ref="36val">val</dfn>)</td></tr>
+<tr><th id="68">68</th><td>{</td></tr>
+<tr><th id="69">69</th><td>  <b>if</b> (<a class="local col6 ref" href="#36val" title='val' data-ref="36val">val</a>) {</td></tr>
+<tr><th id="70">70</th><td>      <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37o" title='o' data-type='PyObject *' data-ref="37o">o</dfn> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_DecodeFSDefault" title='PyUnicode_DecodeFSDefault' data-ref="PyUnicode_DecodeFSDefault">PyUnicode_DecodeFSDefault</a>(<a class="local col6 ref" href="#36val" title='val' data-ref="36val">val</a>);</td></tr>
+<tr><th id="71">71</th><td>      <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(v))-&gt;ob_item[i] = o)" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col4 ref" href="#34v" title='v' data-ref="34v">v</a>, <a class="local col5 ref" href="#35i" title='i' data-ref="35i">i</a>, <a class="local col7 ref" href="#37o" title='o' data-ref="37o">o</a>);</td></tr>
+<tr><th id="72">72</th><td>  } <b>else</b> {</td></tr>
+<tr><th id="73">73</th><td>      <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(v))-&gt;ob_item[i] = (&amp;_Py_NoneStruct))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col4 ref" href="#34v" title='v' data-ref="34v">v</a>, <a class="local col5 ref" href="#35i" title='i' data-ref="35i">i</a>, <a class="macro" href="../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>);</td></tr>
+<tr><th id="74">74</th><td>      <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="macro" href="../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>);</td></tr>
+<tr><th id="75">75</th><td>  }</td></tr>
+<tr><th id="76">76</th><td>}</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="tu decl def" id="mkspent" title='mkspent' data-type='PyObject * mkspent(struct spwd * p)' data-ref="mkspent">mkspent</dfn>(<b>struct</b> <a class="type" href="../../include/shadow.h.html#spwd" title='spwd' data-ref="spwd">spwd</a> *<dfn class="local col8 decl" id="38p" title='p' data-type='struct spwd *' data-ref="38p">p</dfn>)</td></tr>
+<tr><th id="79">79</th><td>{</td></tr>
+<tr><th id="80">80</th><td>    <em>int</em> <dfn class="local col9 decl" id="39setIndex" title='setIndex' data-type='int' data-ref="39setIndex">setIndex</dfn> = <var>0</var>;</td></tr>
+<tr><th id="81">81</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="40v" title='v' data-type='PyObject *' data-ref="40v">v</dfn> = <a class="ref" href="../Include/structseq.h.html#PyStructSequence_New" title='PyStructSequence_New' data-ref="PyStructSequence_New">PyStructSequence_New</a>(&amp;<a class="tu ref" href="#StructSpwdType" title='StructSpwdType' data-use='a' data-ref="StructSpwdType">StructSpwdType</a>);</td></tr>
+<tr><th id="82">82</th><td>    <b>if</b> (<a class="local col0 ref" href="#40v" title='v' data-ref="40v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="83">83</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/SETI" data-ref="_M/SETI">SETI</dfn>(i,val) PyStructSequence_SET_ITEM(<a class="local col0 ref" href="#40v" title='v' data-ref="40v">v</a>, i, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((long) val))</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/SETS" data-ref="_M/SETS">SETS</dfn>(i,val) <a class="tu ref" href="#sets" title='sets' data-use='c' data-ref="sets">sets</a>(<a class="local col0 ref" href="#40v" title='v' data-ref="40v">v</a>, i, val)</u></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>    <a class="macro" href="#86" title="sets(v, setIndex++, p-&gt;sp_namp)" data-ref="_M/SETS">SETS</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_namp" title='spwd::sp_namp' data-ref="spwd::sp_namp">sp_namp</a>);</td></tr>
+<tr><th id="89">89</th><td>    <a class="macro" href="#86" title="sets(v, setIndex++, p-&gt;sp_pwdp)" data-ref="_M/SETS">SETS</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_pwdp" title='spwd::sp_pwdp' data-ref="spwd::sp_pwdp">sp_pwdp</a>);</td></tr>
+<tr><th id="90">90</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_lstchg))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_lstchg" title='spwd::sp_lstchg' data-ref="spwd::sp_lstchg">sp_lstchg</a>);</td></tr>
+<tr><th id="91">91</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_min))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_min" title='spwd::sp_min' data-ref="spwd::sp_min">sp_min</a>);</td></tr>
+<tr><th id="92">92</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_max))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_max" title='spwd::sp_max' data-ref="spwd::sp_max">sp_max</a>);</td></tr>
+<tr><th id="93">93</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_warn))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_warn" title='spwd::sp_warn' data-ref="spwd::sp_warn">sp_warn</a>);</td></tr>
+<tr><th id="94">94</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_inact))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_inact" title='spwd::sp_inact' data-ref="spwd::sp_inact">sp_inact</a>);</td></tr>
+<tr><th id="95">95</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_expire))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_expire" title='spwd::sp_expire' data-ref="spwd::sp_expire">sp_expire</a>);</td></tr>
+<tr><th id="96">96</th><td>    <a class="macro" href="#85" title="(((PyTupleObject *)(v))-&gt;ob_item[setIndex++] = PyLong_FromLong((long) p-&gt;sp_flag))" data-ref="_M/SETI">SETI</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_flag" title='spwd::sp_flag' data-ref="spwd::sp_flag">sp_flag</a>);</td></tr>
+<tr><th id="97">97</th><td>    <a class="macro" href="#86" title="sets(v, setIndex++, p-&gt;sp_namp)" data-ref="_M/SETS">SETS</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_namp" title='spwd::sp_namp' data-ref="spwd::sp_namp">sp_namp</a>); <i>/* Backward compatibility for sp_nam */</i></td></tr>
+<tr><th id="98">98</th><td>    <a class="macro" href="#86" title="sets(v, setIndex++, p-&gt;sp_pwdp)" data-ref="_M/SETS">SETS</a>(<a class="local col9 ref" href="#39setIndex" title='setIndex' data-ref="39setIndex">setIndex</a>++, <a class="local col8 ref" href="#38p" title='p' data-ref="38p">p</a>-&gt;<a class="ref" href="../../include/shadow.h.html#spwd::sp_pwdp" title='spwd::sp_pwdp' data-ref="spwd::sp_pwdp">sp_pwdp</a>); <i>/* Backward compatibility for sp_pwd */</i></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><u>#undef <a class="macro" href="#86" data-ref="_M/SETS">SETS</a></u></td></tr>
+<tr><th id="101">101</th><td><u>#undef <a class="macro" href="#85" data-ref="_M/SETI">SETI</a></u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td>    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="104">104</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/spwdmodule.c&quot;, 104, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#40v" title='v' data-ref="40v">v</a>);</td></tr>
+<tr><th id="105">105</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="106">106</th><td>    }</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <b>return</b> <a class="local col0 ref" href="#40v" title='v' data-ref="40v">v</a>;</td></tr>
+<tr><th id="109">109</th><td>}</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><u>#<span data-ppcond="32">endif</span>  /* HAVE_GETSPNAM || HAVE_GETSPENT */</u></td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><u>#<span data-ppcond="114">ifdef</span> <a class="macro" href="../pyconfig.h.html#449" data-ref="_M/HAVE_GETSPNAM">HAVE_GETSPNAM</a></u></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><i  data-doc="spwd_getspnam_impl">/*[clinic input]</i></td></tr>
+<tr><th id="117">117</th><td><i  data-doc="spwd_getspnam_impl">spwd.getspnam</i></td></tr>
+<tr><th id="118">118</th><td><i  data-doc="spwd_getspnam_impl"></i></td></tr>
+<tr><th id="119">119</th><td><i  data-doc="spwd_getspnam_impl">    arg: unicode</i></td></tr>
+<tr><th id="120">120</th><td><i  data-doc="spwd_getspnam_impl">    /</i></td></tr>
+<tr><th id="121">121</th><td><i  data-doc="spwd_getspnam_impl"></i></td></tr>
+<tr><th id="122">122</th><td><i  data-doc="spwd_getspnam_impl">Return the shadow password database entry for the given user name.</i></td></tr>
+<tr><th id="123">123</th><td><i  data-doc="spwd_getspnam_impl"></i></td></tr>
+<tr><th id="124">124</th><td><i  data-doc="spwd_getspnam_impl">See `help(spwd)` for more on shadow password database entries.</i></td></tr>
+<tr><th id="125">125</th><td><i  data-doc="spwd_getspnam_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="128">128</th><td><dfn class="tu decl def" id="spwd_getspnam_impl" title='spwd_getspnam_impl' data-type='PyObject * spwd_getspnam_impl(PyObject * module, PyObject * arg)' data-ref="spwd_getspnam_impl">spwd_getspnam_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41module" title='module' data-type='PyObject *' data-ref="41module">module</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="42arg" title='arg' data-type='PyObject *' data-ref="42arg">arg</dfn>)</td></tr>
+<tr><th id="129">129</th><td><i>/*[clinic end generated code: output=701250cf57dc6ebe input=dd89429e6167a00f]*/</i></td></tr>
+<tr><th id="130">130</th><td>{</td></tr>
+<tr><th id="131">131</th><td>    <em>char</em> *<dfn class="local col3 decl" id="43name" title='name' data-type='char *' data-ref="43name">name</dfn>;</td></tr>
+<tr><th id="132">132</th><td>    <b>struct</b> <a class="type" href="../../include/shadow.h.html#spwd" title='spwd' data-ref="spwd">spwd</a> *<dfn class="local col4 decl" id="44p" title='p' data-type='struct spwd *' data-ref="44p">p</dfn>;</td></tr>
+<tr><th id="133">133</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45bytes" title='bytes' data-type='PyObject *' data-ref="45bytes">bytes</dfn>, *<dfn class="local col6 decl" id="46retval" title='retval' data-type='PyObject *' data-ref="46retval">retval</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td>    <b>if</b> ((<a class="local col5 ref" href="#45bytes" title='bytes' data-ref="45bytes">bytes</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_EncodeFSDefault" title='PyUnicode_EncodeFSDefault' data-ref="PyUnicode_EncodeFSDefault">PyUnicode_EncodeFSDefault</a>(<a class="local col2 ref" href="#42arg" title='arg' data-ref="42arg">arg</a>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="136">136</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="137">137</th><td>    <i>/* check for embedded null bytes */</i></td></tr>
+<tr><th id="138">138</th><td>    <b>if</b> (<a class="ref" href="../Include/bytesobject.h.html#PyBytes_AsStringAndSize" title='PyBytes_AsStringAndSize' data-ref="PyBytes_AsStringAndSize">PyBytes_AsStringAndSize</a>(<a class="local col5 ref" href="#45bytes" title='bytes' data-ref="45bytes">bytes</a>, &amp;<a class="local col3 ref" href="#43name" title='name' data-ref="43name">name</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) == -<var>1</var>)</td></tr>
+<tr><th id="139">139</th><td>        <b>goto</b> <a class="lbl" href="#47out" data-ref="47out">out</a>;</td></tr>
+<tr><th id="140">140</th><td>    <b>if</b> ((<a class="local col4 ref" href="#44p" title='p' data-ref="44p">p</a> = <a class="ref" href="../../include/shadow.h.html#getspnam" title='getspnam' data-ref="getspnam">getspnam</a>(<a class="local col3 ref" href="#43name" title='name' data-ref="43name">name</a>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="141">141</th><td>        <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> != <var>0</var>)</td></tr>
+<tr><th id="142">142</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="143">143</th><td>        <b>else</b></td></tr>
+<tr><th id="144">144</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_KeyError" title='PyExc_KeyError' data-ref="PyExc_KeyError">PyExc_KeyError</a>, <q>"getspnam(): name not found"</q>);</td></tr>
+<tr><th id="145">145</th><td>        <b>goto</b> <a class="lbl" href="#47out" data-ref="47out">out</a>;</td></tr>
+<tr><th id="146">146</th><td>    }</td></tr>
+<tr><th id="147">147</th><td>    <a class="local col6 ref" href="#46retval" title='retval' data-ref="46retval">retval</a> = <a class="tu ref" href="#mkspent" title='mkspent' data-use='c' data-ref="mkspent">mkspent</a>(<a class="local col4 ref" href="#44p" title='p' data-ref="44p">p</a>);</td></tr>
+<tr><th id="148">148</th><td><dfn class="lbl" id="47out" data-ref="47out">out</dfn>:</td></tr>
+<tr><th id="149">149</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(bytes); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/spwdmodule.c&quot;, 149, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col5 ref" href="#45bytes" title='bytes' data-ref="45bytes">bytes</a>);</td></tr>
+<tr><th id="150">150</th><td>    <b>return</b> <a class="local col6 ref" href="#46retval" title='retval' data-ref="46retval">retval</a>;</td></tr>
+<tr><th id="151">151</th><td>}</td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><u>#<span data-ppcond="114">endif</span> /* HAVE_GETSPNAM */</u></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><u>#<span data-ppcond="155">ifdef</span> <a class="macro" href="../pyconfig.h.html#446" data-ref="_M/HAVE_GETSPENT">HAVE_GETSPENT</a></u></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><i  data-doc="spwd_getspall_impl">/*[clinic input]</i></td></tr>
+<tr><th id="158">158</th><td><i  data-doc="spwd_getspall_impl">spwd.getspall</i></td></tr>
+<tr><th id="159">159</th><td><i  data-doc="spwd_getspall_impl"></i></td></tr>
+<tr><th id="160">160</th><td><i  data-doc="spwd_getspall_impl">Return a list of all available shadow password database entries, in arbitrary order.</i></td></tr>
+<tr><th id="161">161</th><td><i  data-doc="spwd_getspall_impl"></i></td></tr>
+<tr><th id="162">162</th><td><i  data-doc="spwd_getspall_impl">See `help(spwd)` for more on shadow password database entries.</i></td></tr>
+<tr><th id="163">163</th><td><i  data-doc="spwd_getspall_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="166">166</th><td><dfn class="tu decl def" id="spwd_getspall_impl" title='spwd_getspall_impl' data-type='PyObject * spwd_getspall_impl(PyObject * module)' data-ref="spwd_getspall_impl">spwd_getspall_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="48module" title='module' data-type='PyObject *' data-ref="48module">module</dfn>)</td></tr>
+<tr><th id="167">167</th><td><i>/*[clinic end generated code: output=4fda298d6bf6d057 input=b2c84b7857d622bd]*/</i></td></tr>
+<tr><th id="168">168</th><td>{</td></tr>
+<tr><th id="169">169</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="49d" title='d' data-type='PyObject *' data-ref="49d">d</dfn>;</td></tr>
+<tr><th id="170">170</th><td>    <b>struct</b> <a class="type" href="../../include/shadow.h.html#spwd" title='spwd' data-ref="spwd">spwd</a> *<dfn class="local col0 decl" id="50p" title='p' data-type='struct spwd *' data-ref="50p">p</dfn>;</td></tr>
+<tr><th id="171">171</th><td>    <b>if</b> ((<a class="local col9 ref" href="#49d" title='d' data-ref="49d">d</a> = <a class="ref" href="../Include/listobject.h.html#PyList_New" title='PyList_New' data-ref="PyList_New">PyList_New</a>(<var>0</var>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="172">172</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="173">173</th><td>    <a class="ref" href="../../include/shadow.h.html#setspent" title='setspent' data-ref="setspent">setspent</a>();</td></tr>
+<tr><th id="174">174</th><td>    <b>while</b> ((<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a> = <a class="ref" href="../../include/shadow.h.html#getspent" title='getspent' data-ref="getspent">getspent</a>()) != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="175">175</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51v" title='v' data-type='PyObject *' data-ref="51v">v</dfn> = <a class="tu ref" href="#mkspent" title='mkspent' data-use='c' data-ref="mkspent">mkspent</a>(<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>);</td></tr>
+<tr><th id="176">176</th><td>        <b>if</b> (<a class="local col1 ref" href="#51v" title='v' data-ref="51v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="ref" href="../Include/listobject.h.html#PyList_Append" title='PyList_Append' data-ref="PyList_Append">PyList_Append</a>(<a class="local col9 ref" href="#49d" title='d' data-ref="49d">d</a>, <a class="local col1 ref" href="#51v" title='v' data-ref="51v">v</a>) != <var>0</var>) {</td></tr>
+<tr><th id="177">177</th><td>            <a class="macro" href="../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(v); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/spwdmodule.c&quot;, 177, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col1 ref" href="#51v" title='v' data-ref="51v">v</a>);</td></tr>
+<tr><th id="178">178</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(d); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/spwdmodule.c&quot;, 178, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col9 ref" href="#49d" title='d' data-ref="49d">d</a>);</td></tr>
+<tr><th id="179">179</th><td>            <a class="ref" href="../../include/shadow.h.html#endspent" title='endspent' data-ref="endspent">endspent</a>();</td></tr>
+<tr><th id="180">180</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="181">181</th><td>        }</td></tr>
+<tr><th id="182">182</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/spwdmodule.c&quot;, 182, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#51v" title='v' data-ref="51v">v</a>);</td></tr>
+<tr><th id="183">183</th><td>    }</td></tr>
+<tr><th id="184">184</th><td>    <a class="ref" href="../../include/shadow.h.html#endspent" title='endspent' data-ref="endspent">endspent</a>();</td></tr>
+<tr><th id="185">185</th><td>    <b>return</b> <a class="local col9 ref" href="#49d" title='d' data-ref="49d">d</a>;</td></tr>
+<tr><th id="186">186</th><td>}</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><u>#<span data-ppcond="155">endif</span> /* HAVE_GETSPENT */</u></td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="spwd_methods" title='spwd_methods' data-type='PyMethodDef [3]' data-ref="spwd_methods">spwd_methods</dfn>[] = {</td></tr>
+<tr><th id="191">191</th><td><u>#<span data-ppcond="191">ifdef</span> <a class="macro" href="../pyconfig.h.html#449" data-ref="_M/HAVE_GETSPNAM">HAVE_GETSPNAM</a></u></td></tr>
+<tr><th id="192">192</th><td>    <a class="macro" href="clinic/spwdmodule.c.h.html#15" title="{&quot;getspnam&quot;, (PyCFunction)spwd_getspnam, 0x0008, spwd_getspnam__doc__}," data-ref="_M/SPWD_GETSPNAM_METHODDEF">SPWD_GETSPNAM_METHODDEF</a></td></tr>
+<tr><th id="193">193</th><td><u>#<span data-ppcond="191">endif</span></u></td></tr>
+<tr><th id="194">194</th><td><u>#<span data-ppcond="194">ifdef</span> <a class="macro" href="../pyconfig.h.html#446" data-ref="_M/HAVE_GETSPENT">HAVE_GETSPENT</a></u></td></tr>
+<tr><th id="195">195</th><td>    <a class="macro" href="clinic/spwdmodule.c.h.html#48" title="{&quot;getspall&quot;, (PyCFunction)spwd_getspall, 0x0004, spwd_getspall__doc__}," data-ref="_M/SPWD_GETSPALL_METHODDEF">SPWD_GETSPALL_METHODDEF</a></td></tr>
+<tr><th id="196">196</th><td><u>#<span data-ppcond="194">endif</span></u></td></tr>
+<tr><th id="197">197</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,              <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}           <i>/* sentinel */</i></td></tr>
+<tr><th id="198">198</th><td>};</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="spwdmodule" title='spwdmodule' data-type='struct PyModuleDef' data-ref="spwdmodule">spwdmodule</dfn> = {</td></tr>
+<tr><th id="203">203</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="204">204</th><td>    <q>"spwd"</q>,</td></tr>
+<tr><th id="205">205</th><td>    <a class="ref" href="#20" title='spwd__doc__' data-ref="spwd__doc__">spwd__doc__</a>,</td></tr>
+<tr><th id="206">206</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="207">207</th><td>    <a class="tu ref" href="#spwd_methods" title='spwd_methods' data-ref="spwd_methods">spwd_methods</a>,</td></tr>
+<tr><th id="208">208</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="209">209</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="210">210</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="211">211</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="212">212</th><td>};</td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="215">215</th><td><dfn class="decl def" id="PyInit_spwd" title='PyInit_spwd' data-ref="PyInit_spwd">PyInit_spwd</dfn>(<em>void</em>)</td></tr>
+<tr><th id="216">216</th><td>{</td></tr>
+<tr><th id="217">217</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="52m" title='m' data-type='PyObject *' data-ref="52m">m</dfn>;</td></tr>
+<tr><th id="218">218</th><td>    <a class="local col2 ref" href="#52m" title='m' data-ref="52m">m</a>=<a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;spwdmodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#spwdmodule" title='spwdmodule' data-use='a' data-ref="spwdmodule">spwdmodule</a>);</td></tr>
+<tr><th id="219">219</th><td>    <b>if</b> (<a class="local col2 ref" href="#52m" title='m' data-ref="52m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="220">220</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="221">221</th><td>    <b>if</b> (!<a class="tu ref" href="#initialized" title='initialized' data-use='r' data-ref="initialized">initialized</a>) {</td></tr>
+<tr><th id="222">222</th><td>        <b>if</b> (<a class="ref" href="../Include/structseq.h.html#PyStructSequence_InitType2" title='PyStructSequence_InitType2' data-ref="PyStructSequence_InitType2">PyStructSequence_InitType2</a>(&amp;<a class="tu ref" href="#StructSpwdType" title='StructSpwdType' data-use='a' data-ref="StructSpwdType">StructSpwdType</a>,</td></tr>
+<tr><th id="223">223</th><td>                                       &amp;<a class="tu ref" href="#struct_spwd_type_desc" title='struct_spwd_type_desc' data-use='a' data-ref="struct_spwd_type_desc">struct_spwd_type_desc</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="224">224</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="225">225</th><td>    }</td></tr>
+<tr><th id="226">226</th><td>    <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)((PyObject *) &amp;StructSpwdType))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>((<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) &amp;<a class="tu ref" href="#StructSpwdType" title='StructSpwdType' data-use='a' data-ref="StructSpwdType">StructSpwdType</a>);</td></tr>
+<tr><th id="227">227</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col2 ref" href="#52m" title='m' data-ref="52m">m</a>, <q>"struct_spwd"</q>, (<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) &amp;<a class="tu ref" href="#StructSpwdType" title='StructSpwdType' data-use='a' data-ref="StructSpwdType">StructSpwdType</a>);</td></tr>
+<tr><th id="228">228</th><td>    <a class="tu ref" href="#initialized" title='initialized' data-use='w' data-ref="initialized">initialized</a> = <var>1</var>;</td></tr>
+<tr><th id="229">229</th><td>    <b>return</b> <a class="local col2 ref" href="#52m" title='m' data-ref="52m">m</a>;</td></tr>
+<tr><th id="230">230</th><td>}</td></tr>
+<tr><th id="231">231</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

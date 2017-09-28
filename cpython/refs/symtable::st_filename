@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/symtable.h' l='19' type='PyObject *'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/symtable.h' l='19'>/* name of file being compiled,
+                                       decoded from the filesystem encoding */</doc>
+<use f='codebrowser/Python/symtable.c' l='212' u='w' c='symtable_new'/>
+<use f='codebrowser/Python/symtable.c' l='255' u='w' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='333' u='r' c='PySymtable_Free'/>
+<use f='codebrowser/Python/symtable.c' l='382' u='r' c='error_at_directive'/>
+<use f='codebrowser/Python/symtable.c' l='994' u='r' c='symtable_add_def'/>
+<use f='codebrowser/Python/symtable.c' l='1201' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1294' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1324' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1665' u='r' c='symtable_visit_alias'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Objects/unicodeobject.c' l='326' type='5'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='348' u='r' c='get_error_handler'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='348' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='348' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6787' c='unicode_encode_ucs1'/>

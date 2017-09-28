@@ -1,0 +1,11 @@
+<dec f='include/x86_64-linux-gnu/bits/siginfo.h' l='76' type='__pid_t'/>
+<dec f='include/x86_64-linux-gnu/bits/siginfo.h' l='91' type='__pid_t'/>
+<dec f='include/x86_64-linux-gnu/bits/siginfo.h' l='99' type='__pid_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/siginfo.h' l='76'>/* Sending process ID.  */</doc>
+<doc f='include/x86_64-linux-gnu/bits/siginfo.h' l='91'>/* Sending process ID.  */</doc>
+<doc f='include/x86_64-linux-gnu/bits/siginfo.h' l='99'>/* Which child.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='6995' macro='1' u='w'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7005' macro='1' u='r'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7012' macro='1' u='r'/>
+<use f='codebrowser/Modules/signalmodule.c' l='977' macro='1' u='r'/>

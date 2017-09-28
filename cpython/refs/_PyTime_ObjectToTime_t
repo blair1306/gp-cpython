@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pytime.h' l='44' type='int _PyTime_ObjectToTime_t(PyObject * obj, time_t * sec, _PyTime_round_t )'/>
+<doc f='codebrowser/Include/pytime.h' l='43'>/* Convert a number of seconds, int or float, to time_t. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2571' u='c' c='date_local_from_object'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3024' u='c' c='test_pytime_object_to_time_t'/>
+<use f='codebrowser/Modules/timemodule.c' l='334' u='c' c='parse_time_t_args'/>
+<def f='codebrowser/Python/pytime.c' l='149' ll='175' type='int _PyTime_ObjectToTime_t(PyObject * obj, time_t * sec, _PyTime_round_t round)'/>

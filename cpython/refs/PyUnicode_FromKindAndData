@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='713' type='PyObject * PyUnicode_FromKindAndData(int kind, const void * buffer, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='711'>/* Create a new string from a buffer of Py_UCS1, Py_UCS2 or Py_UCS4 characters.
+   Scan the string to find the maximum character. */</doc>
+<use f='codebrowser/Modules/_csv.c' l='531' u='c' c='parse_save_field'/>
+<use f='codebrowser/Modules/_csv.c' l='1257' u='c' c='csv_writerow'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='283' u='c' c='_io_StringIO_getvalue_impl'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='341' u='c' c='_io_StringIO_read_impl'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='371' u='c' c='_stringio_readline'/>
+<use f='codebrowser/Modules/_io/textio.c' l='489' u='c' c='_PyIncrementalNewlineDecoder_decode'/>
+<use f='codebrowser/Modules/_json.c' l='444' u='c' c='scanstring_unicode'/>
+<use f='codebrowser/Modules/_json.c' l='540' u='c' c='scanstring_unicode'/>
+<use f='codebrowser/Modules/_json.c' l='1015' u='c' c='_match_number_unicode'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1881' u='c' c='unicode_asucs4'/>
+<use f='codebrowser/Modules/unicodedata.c' l='581' u='c' c='nfd_nfkd'/>
+<use f='codebrowser/Modules/unicodedata.c' l='763' u='c' c='nfc_nfkc'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1249' u='c' c='unicodedata_UCD_lookup_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='279' u='c' c='make_filename'/>
+<use f='codebrowser/Modules/zipimport.c' l='1416' u='c' c='get_mtime_of_source'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2267' ll='2285' type='PyObject * PyUnicode_FromKindAndData(int kind, const void * buffer, Py_ssize_t size)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4714' u='c' c='PyUnicode_DecodeUTF7Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12389' u='c' c='PyUnicode_Substring'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1042' u='c' c='formatteriter_next'/>
+<use f='codebrowser/Python/codecs.c' l='1358' u='c' c='PyCodec_SurrogateEscapeErrors'/>
+<use f='codebrowser/Python/marshal.c' l='1142' u='c' c='r_object'/>

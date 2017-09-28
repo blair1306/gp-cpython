@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pythonrun.h' l='111' type='PyObject * Py_CompileStringObject(const char * str, PyObject * filename, int start, PyCompilerFlags * flags, int optimize)'/>
+<use f='codebrowser/Modules/zipimport.c' l='1377' u='c' c='compile_source'/>
+<use f='codebrowser/Python/bltinmodule.c' l='765' u='c' c='builtin_compile_impl'/>
+<def f='codebrowser/Python/pythonrun.c' l='1024' ll='1047' type='PyObject * Py_CompileStringObject(const char * str, PyObject * filename, int start, PyCompilerFlags * flags, int optimize)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1057' u='c' c='Py_CompileStringExFlags'/>

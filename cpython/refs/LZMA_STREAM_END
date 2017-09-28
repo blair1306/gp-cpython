@@ -1,0 +1,7 @@
+<dec f='include/lzma/base.h' l='63' type='1'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='87' c='catch_lzma_error'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='530' u='r' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='925' u='r' c='decompress_buf'/>
+<doc f='include/lzma/base.h' l='59'>/**&lt;
+		 * \brief       Operation completed successfully
+		 */</doc>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='814' type='void * mpd_calloc(mpd_size_t nmemb, mpd_size_t size)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='99' ll='110' type='void * mpd_calloc(mpd_size_t nmemb, mpd_size_t size)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='247' u='c' c='mpd_switch_to_dyn_zero'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='98'>/* calloc with overflow checking */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5372' u='c' c='_mpd_kmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5377' u='c' c='_mpd_kmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5501' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5504' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5507' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5523' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5681' u='c' c='_mpd_kmul_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5686' u='c' c='_mpd_kmul_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5780' u='c' c='_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='101' u='c' c='swap_halfrows_pow2'/>

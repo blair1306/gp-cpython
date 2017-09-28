@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/memoryobject.h' l='29' type='PyObject * PyMemoryView_FromBuffer(Py_buffer * info)'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1482' u='c' c='_bufferedreader_raw_read'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1834' u='c' c='_bufferedwriter_raw_write'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='829' u='c' c='init_simple'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2301' u='c' c='ndarray_memoryview_from_buffer'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2849' u='c' c='make_memoryview_from_NULL_pointer'/>
+<def f='codebrowser/Objects/memoryobject.c' l='745' ll='770' type='PyObject * PyMemoryView_FromBuffer(Py_buffer * info)'/>
+<doc f='codebrowser/Objects/memoryobject.c' l='740'>/* Create a memoryview from a given Py_buffer. For simple byte views,
+   PyMemoryView_FromMemory() should be used instead.
+   This function is the only entry point that can create a master buffer
+   without full information. Because of this fact init_shape_strides()
+   must be able to reconstruct missing values.  */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='3218' u='c' c='PyUnicode_Decode'/>
+<use f='codebrowser/Python/marshal.c' l='703' u='c' c='r_string'/>

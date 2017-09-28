@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_pickle.c' l='103' type='1000'/>
+<use f='codebrowser/Modules/_pickle.c' l='2490' u='r' c='batch_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='2504' u='r' c='batch_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='2558' u='r' c='batch_list_exact'/>
+<use f='codebrowser/Modules/_pickle.c' l='2742' u='r' c='batch_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='2756' u='r' c='batch_dict'/>
+<use f='codebrowser/Modules/_pickle.c' l='2812' u='r' c='batch_dict_exact'/>
+<use f='codebrowser/Modules/_pickle.c' l='2824' u='r' c='batch_dict_exact'/>
+<use f='codebrowser/Modules/_pickle.c' l='2947' u='r' c='save_set'/>
+<use f='codebrowser/Modules/_pickle.c' l='2958' u='r' c='save_set'/>
+<doc f='codebrowser/Modules/_pickle.c' l='99'>/* Keep in synch with pickle.Pickler._BATCHSIZE.  This is how many elements
+      batch_list/dict() pumps out before doing APPENDS/SETITEMS.  Nothing will
+      break if this gets out of synch with pickle.py, but it&apos;s unclear that would
+      help anything either. */</doc>

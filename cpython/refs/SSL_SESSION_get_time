@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2221' type='long SSL_SESSION_get_time(const SSL_SESSION * s)'/>
+<use f='codebrowser/Modules/_ssl.c' l='4380' u='c' c='PySSLSession_get_time'/>

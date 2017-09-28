@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/resource.h' l='87' type='int getrusage(__rusage_who_t __who, struct rusage * __usage)'/>
+<doc f='include/x86_64-linux-gnu/sys/resource.h' l='85'>/* Return resource usage information on process indicated by WHO
+   and put it in *USAGE.  Returns 0 for success, -1 for failure.  */</doc>
+<use f='codebrowser/Modules/resource.c' l='87' u='c' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/timemodule.c' l='1019' u='c' c='py_process_time'/>

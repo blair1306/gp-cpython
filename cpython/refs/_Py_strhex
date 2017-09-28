@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/pystrhex.h' l='10' type='PyObject * _Py_strhex(const char * argbuf, const Py_ssize_t arglen)'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='354' u='c' c='_blake2b_blake2b_hexdigest_impl'/>
+<doc f='codebrowser/Include/pystrhex.h' l='9'>/* Returns a str() containing the hex representation of argbuf. */</doc>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='354' u='c' c='_blake2s_blake2s_hexdigest_impl'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='253' u='c' c='EVP_hexdigest'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='352' u='c' c='_sha3_sha3_224_hexdigest_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='625' u='c' c='_SHAKE_digest'/>
+<use f='codebrowser/Modules/md5module.c' l='396' u='c' c='MD5Type_hexdigest_impl'/>
+<use f='codebrowser/Modules/sha1module.c' l='373' u='c' c='SHA1Type_hexdigest_impl'/>
+<use f='codebrowser/Modules/sha256module.c' l='463' u='c' c='SHA256Type_hexdigest_impl'/>
+<use f='codebrowser/Modules/sha512module.c' l='528' u='c' c='SHA512Type_hexdigest_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='2009' u='c' c='bytearray_hex'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2440' u='c' c='bytes_hex'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2139' u='c' c='memory_hex'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2146' u='c' c='memory_hex'/>
+<def f='codebrowser/Python/pystrhex.c' l='51' ll='54' macro='1' type='PyObject * _Py_strhex(const char * argbuf, const Py_ssize_t arglen)'/>

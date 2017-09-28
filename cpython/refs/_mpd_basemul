@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='52' type='void _mpd_basemul(mpd_uint_t * w, const mpd_uint_t * u, const mpd_uint_t * v, mpd_size_t m, mpd_size_t n)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='241' ll='265' type='void _mpd_basemul(mpd_uint_t * w, const mpd_uint_t * u, const mpd_uint_t * v, mpd_size_t m, mpd_size_t n)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='236'>/*
+ * Knuth, TAOCP, Volume 2, 4.3.1:
+ *     w := product of u (len m) and v (len n)
+ *     w must be initialized to zero
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5296' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5582' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5766' u='c' c='_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5786' u='c' c='_mpd_qmul'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythonrun.h' l='83' type='struct _node * PyParser_SimpleParseFileFlags(FILE * , const char * , int , int )'/>
+<def f='codebrowser/Python/pythonrun.c' l='1203' ll='1215' type='struct _node * PyParser_SimpleParseFileFlags(FILE * fp, const char * filename, int start, int flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1440' u='c' c='PyParser_SimpleParseFile'/>
+<doc f='codebrowser/Python/pythonrun.c' l='1201'>/* Simplified interface to parsefile -- return node or set exception */</doc>

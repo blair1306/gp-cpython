@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='243' type='PyObject * PyErr_SetFromErrnoWithFilenameObject(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='421' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='456' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3565' u='c' c='_ssl__SSLContext_load_dh_params'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1439' u='c' c='path_object_error'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7730' u='c' c='os_open_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='677' u='c' c='zipimport_zipimporter_get_data_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='872' u='c' c='set_file_error'/>
+<def f='codebrowser/Python/errors.c' l='456' ll='460' type='PyObject * PyErr_SetFromErrnoWithFilenameObject(PyObject * exc, PyObject * filenameObject)'/>
+<use f='codebrowser/Python/fileutils.c' l='1149' u='c' c='_Py_fopen_obj'/>

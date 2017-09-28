@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/frameobject.h' l='74' type='void PyFrame_BlockSetup(PyFrameObject * , int , int , int )'/>
+<doc f='codebrowser/Include/frameobject.h' l='72'>/* Block management functions */</doc>
+<def f='codebrowser/Objects/frameobject.c' l='748' ll='758' type='void PyFrame_BlockSetup(PyFrameObject * f, int type, int handler, int level)'/>
+<doc f='codebrowser/Objects/frameobject.c' l='746'>/* Block management */</doc>
+<use f='codebrowser/Python/ceval.c' l='3072' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3105' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3132' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3615' u='c' c='_PyEval_EvalFrameDefault'/>

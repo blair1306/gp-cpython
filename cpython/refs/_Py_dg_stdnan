@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/dtoa.h' l='11' type='double _Py_dg_stdnan(int sign)'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='115' u='c' c='m_nan'/>
+<use f='codebrowser/Modules/mathmodule.c' l='257' u='c' c='m_nan'/>
+<use f='codebrowser/Objects/floatobject.c' l='2438' u='c' c='_PyFloat_Unpack2'/>
+<def f='codebrowser/Python/dtoa.c' l='1410' ll='1419' type='double _Py_dg_stdnan(int sign)'/>
+<doc f='codebrowser/Python/dtoa.c' l='1403'>/* Return a &apos;standard&apos; NaN value.
+
+   There are exactly two quiet NaNs that don&apos;t arise by &apos;quieting&apos; signaling
+   NaNs (see IEEE 754-2008, section 6.2.1).  If sign == 0, return the one whose
+   sign bit is cleared.  Otherwise, return the one whose sign bit is set.
+*/</doc>
+<use f='codebrowser/Python/pystrtod.c' l='50' u='c' c='_Py_parse_inf_or_nan'/>

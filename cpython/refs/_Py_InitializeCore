@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='24' type='void _Py_InitializeCore(const _PyCoreConfig * )'/>
+<doc f='codebrowser/Include/pylifecycle.h' l='23'>/* PEP 432 Multi-phase initialization API (Private while provisional!) */</doc>
+<use f='codebrowser/Modules/main.c' l='611' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='542' ll='707' type='void _Py_InitializeCore(const _PyCoreConfig * config)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='836' u='c' c='_Py_InitializeEx_Private'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='538'>/* TODO: Progressively move functionality from Py_BeginInitialization to
+ * Py_ReadConfig and Py_EndInitialization
+ */</doc>

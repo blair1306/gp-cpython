@@ -1,0 +1,8 @@
+<dec f='codebrowser/Parser/parser.h' l='29' type='unsigned long'/>
+<offset>288192</offset>
+<doc f='codebrowser/Parser/parser.h' l='29'>/* see co_flags in Include/code.h */</doc>
+<use f='codebrowser/Parser/parser.c' l='83' u='w' c='PyParser_New'/>
+<use f='codebrowser/Parser/parsetok.c' l='198' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='240' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='246' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='312' u='r' c='parsetok'/>

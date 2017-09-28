@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythonrun.h' l='122' type='struct symtable * Py_SymtableStringObject(const char * str, PyObject * filename, int start)'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='46' u='c' c='_symtable_symtable_impl'/>
+<def f='codebrowser/Python/pythonrun.c' l='1070' ll='1091' type='struct symtable * Py_SymtableStringObject(const char * str, PyObject * filename, int start)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1102' u='c' c='Py_SymtableString'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/eval.h' l='31' type='PyObject * _PyEval_CallTracing(PyObject * func, PyObject * args)'/>
+<def f='codebrowser/Python/ceval.c' l='4547' ll='4562' type='PyObject * _PyEval_CallTracing(PyObject * func, PyObject * args)'/>
+<use f='codebrowser/Python/sysmodule.c' l='1250' u='c' c='sys_call_tracing'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='774' type='void mpd_set_negative(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='217' u='c' c='mpd_qset_string'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='634' ll='638' macro='1' type='void mpd_set_negative(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3361' u='c' c='_mpd_qaddsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4729' u='c' c='_mpd_qln'/>

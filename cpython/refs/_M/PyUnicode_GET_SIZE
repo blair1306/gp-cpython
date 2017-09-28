@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='383'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='378'>/* Returns the deprecated Py_UNICODE representation&apos;s size in code units
+   (this includes surrogate pairs as 2 units).
+   If the Py_UNICODE representation is not available, it will be computed
+   on request.  Use PyUnicode_GET_LENGTH() for the length in code points. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1667' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1716' u='c'/>

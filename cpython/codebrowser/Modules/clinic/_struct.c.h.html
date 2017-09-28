@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_struct.c.h source code [codebrowser/Modules/clinic/_struct.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/_struct.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='_struct.c.h.html'>_struct.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char Struct___init____doc__[] = &quot;Struct(format)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Create a compiled struct object.\n&quot;&quot;\n&quot;&quot;Return a new Struct object which writes and reads binary data according to\n&quot;&quot;the format string.\n&quot;&quot;\n&quot;&quot;See help(struct) for more on format strings.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="Struct___init____doc__" title='Struct___init____doc__' data-ref="Struct___init____doc__">Struct___init____doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"Struct(format)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Create a compiled struct object.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"Return a new Struct object which writes and reads binary data according to\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"the format string.\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"See help(struct) for more on format strings."</q>);</td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="17">17</th><td><a class="decl" href="../_struct.c.html#Struct___init___impl" title='Struct___init___impl' data-ref="Struct___init___impl" id="Struct___init___impl">Struct___init___impl</a>(<a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='PyStructObject *' data-ref="1self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2format" title='format' data-type='PyObject *' data-ref="2format">format</dfn>);</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="20">20</th><td><dfn class="decl def" id="Struct___init__" title='Struct___init__' data-ref="Struct___init__">Struct___init__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3self" title='self' data-type='PyObject *' data-ref="3self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="4args" title='args' data-type='PyObject *' data-ref="4args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5kwargs" title='kwargs' data-type='PyObject *' data-ref="5kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="21">21</th><td>{</td></tr>
+<tr><th id="22">22</th><td>    <em>int</em> <dfn class="local col6 decl" id="6return_value" title='return_value' data-type='int' data-ref="6return_value">return_value</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="23">23</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col7 decl" id="7_keywords" title='_keywords' data-type='const char *const [2]' data-ref="7_keywords">_keywords</dfn>[] = {<q>"format"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="24">24</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col8 decl" id="8_parser" title='_parser' data-type='_PyArg_Parser' data-ref="8_parser">_parser</dfn> = {<q>"O:Struct"</q>, <a class="local col7 ref" href="#7_keywords" title='_keywords' data-ref="7_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="25">25</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9format" title='format' data-type='PyObject *' data-ref="9format">format</dfn>;</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#94" title="_PyArg_ParseTupleAndKeywordsFast_SizeT" data-ref="_M/_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col4 ref" href="#4args" title='args' data-ref="4args">args</a>, <a class="local col5 ref" href="#5kwargs" title='kwargs' data-ref="5kwargs">kwargs</a>, &amp;<a class="local col8 ref" href="#8_parser" title='_parser' data-ref="8_parser">_parser</a>,</td></tr>
+<tr><th id="28">28</th><td>        &amp;<a class="local col9 ref" href="#9format" title='format' data-ref="9format">format</a>)) {</td></tr>
+<tr><th id="29">29</th><td>        <b>goto</b> <a class="lbl" href="#10exit" data-ref="10exit">exit</a>;</td></tr>
+<tr><th id="30">30</th><td>    }</td></tr>
+<tr><th id="31">31</th><td>    <a class="local col6 ref" href="#6return_value" title='return_value' data-ref="6return_value">return_value</a> = <a class="ref" href="../_struct.c.html#Struct___init___impl" title='Struct___init___impl' data-ref="Struct___init___impl">Struct___init___impl</a>((<a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *)<a class="local col3 ref" href="#3self" title='self' data-ref="3self">self</a>, <a class="local col9 ref" href="#9format" title='format' data-ref="9format">format</a>);</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><dfn class="lbl" id="10exit" data-ref="10exit">exit</dfn>:</td></tr>
+<tr><th id="34">34</th><td>    <b>return</b> <a class="local col6 ref" href="#6return_value" title='return_value' data-ref="6return_value">return_value</a>;</td></tr>
+<tr><th id="35">35</th><td>}</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char Struct_unpack__doc__[] = &quot;unpack($self, buffer, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a tuple containing unpacked values.\n&quot;&quot;\n&quot;&quot;Unpack according to the format string Struct.format. The buffer\&apos;s size\n&quot;&quot;in bytes must be Struct.size.\n&quot;&quot;\n&quot;&quot;See help(struct) for more on format strings.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="Struct_unpack__doc__" title='Struct_unpack__doc__' data-ref="Struct_unpack__doc__">Struct_unpack__doc__</dfn>,</td></tr>
+<tr><th id="38">38</th><td><q>"unpack($self, buffer, /)\n"</q></td></tr>
+<tr><th id="39">39</th><td><q>"--\n"</q></td></tr>
+<tr><th id="40">40</th><td><q>"\n"</q></td></tr>
+<tr><th id="41">41</th><td><q>"Return a tuple containing unpacked values.\n"</q></td></tr>
+<tr><th id="42">42</th><td><q>"\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"Unpack according to the format string Struct.format. The buffer\'s size\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"in bytes must be Struct.size.\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"See help(struct) for more on format strings."</q>);</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/STRUCT_UNPACK_METHODDEF" data-ref="_M/STRUCT_UNPACK_METHODDEF">STRUCT_UNPACK_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="49">49</th><td><u>    {"unpack", (PyCFunction)Struct_unpack, METH_O, Struct_unpack__doc__},</u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="52">52</th><td><a class="decl" href="../_struct.c.html#Struct_unpack_impl" title='Struct_unpack_impl' data-ref="Struct_unpack_impl" id="Struct_unpack_impl">Struct_unpack_impl</a>(<a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col1 decl" id="11self" title='self' data-type='PyStructObject *' data-ref="11self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col2 decl" id="12buffer" title='buffer' data-type='Py_buffer *' data-ref="12buffer">buffer</dfn>);</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="55">55</th><td><dfn class="decl def" id="Struct_unpack" title='Struct_unpack' data-ref="Struct_unpack">Struct_unpack</dfn>(<a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col3 decl" id="13self" title='self' data-type='PyStructObject *' data-ref="13self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14arg" title='arg' data-type='PyObject *' data-ref="14arg">arg</dfn>)</td></tr>
+<tr><th id="56">56</th><td>{</td></tr>
+<tr><th id="57">57</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15return_value" title='return_value' data-type='PyObject *' data-ref="15return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="58">58</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col6 decl" id="16buffer" title='buffer' data-type='Py_buffer' data-ref="16buffer">buffer</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col4 ref" href="#14arg" title='arg' data-ref="14arg">arg</a>, <q>"y*:unpack"</q>, &amp;<a class="local col6 ref" href="#16buffer" title='buffer' data-ref="16buffer">buffer</a>)) {</td></tr>
+<tr><th id="61">61</th><td>        <b>goto</b> <a class="lbl" href="#17exit" data-ref="17exit">exit</a>;</td></tr>
+<tr><th id="62">62</th><td>    }</td></tr>
+<tr><th id="63">63</th><td>    <a class="local col5 ref" href="#15return_value" title='return_value' data-ref="15return_value">return_value</a> = <a class="ref" href="../_struct.c.html#Struct_unpack_impl" title='Struct_unpack_impl' data-ref="Struct_unpack_impl">Struct_unpack_impl</a>(<a class="local col3 ref" href="#13self" title='self' data-ref="13self">self</a>, &amp;<a class="local col6 ref" href="#16buffer" title='buffer' data-ref="16buffer">buffer</a>);</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><dfn class="lbl" id="17exit" data-ref="17exit">exit</dfn>:</td></tr>
+<tr><th id="66">66</th><td>    <i>/* Cleanup for buffer */</i></td></tr>
+<tr><th id="67">67</th><td>    <b>if</b> (<a class="local col6 ref" href="#16buffer" title='buffer' data-ref="16buffer">buffer</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="68">68</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col6 ref" href="#16buffer" title='buffer' data-ref="16buffer">buffer</a>);</td></tr>
+<tr><th id="69">69</th><td>    }</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td>    <b>return</b> <a class="local col5 ref" href="#15return_value" title='return_value' data-ref="15return_value">return_value</a>;</td></tr>
+<tr><th id="72">72</th><td>}</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char Struct_unpack_from__doc__[] = &quot;unpack_from($self, /, buffer, offset=0)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a tuple containing unpacked values.\n&quot;&quot;\n&quot;&quot;Values are unpacked according to the format string Struct.format.\n&quot;&quot;\n&quot;&quot;The buffer\&apos;s size in bytes, minus offset, must be at least Struct.size.\n&quot;&quot;\n&quot;&quot;See help(struct) for more on format strings.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="Struct_unpack_from__doc__" title='Struct_unpack_from__doc__' data-ref="Struct_unpack_from__doc__">Struct_unpack_from__doc__</dfn>,</td></tr>
+<tr><th id="75">75</th><td><q>"unpack_from($self, /, buffer, offset=0)\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"--\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"Return a tuple containing unpacked values.\n"</q></td></tr>
+<tr><th id="79">79</th><td><q>"\n"</q></td></tr>
+<tr><th id="80">80</th><td><q>"Values are unpacked according to the format string Struct.format.\n"</q></td></tr>
+<tr><th id="81">81</th><td><q>"\n"</q></td></tr>
+<tr><th id="82">82</th><td><q>"The buffer\'s size in bytes, minus offset, must be at least Struct.size.\n"</q></td></tr>
+<tr><th id="83">83</th><td><q>"\n"</q></td></tr>
+<tr><th id="84">84</th><td><q>"See help(struct) for more on format strings."</q>);</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/STRUCT_UNPACK_FROM_METHODDEF" data-ref="_M/STRUCT_UNPACK_FROM_METHODDEF">STRUCT_UNPACK_FROM_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="87">87</th><td><u>    {"unpack_from", (PyCFunction)Struct_unpack_from, METH_FASTCALL|METH_KEYWORDS, Struct_unpack_from__doc__},</u></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="90">90</th><td><a class="decl" href="../_struct.c.html#Struct_unpack_from_impl" title='Struct_unpack_from_impl' data-ref="Struct_unpack_from_impl" id="Struct_unpack_from_impl">Struct_unpack_from_impl</a>(<a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col8 decl" id="18self" title='self' data-type='PyStructObject *' data-ref="18self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col9 decl" id="19buffer" title='buffer' data-type='Py_buffer *' data-ref="19buffer">buffer</dfn>,</td></tr>
+<tr><th id="91">91</th><td>                        <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="20offset" title='offset' data-type='Py_ssize_t' data-ref="20offset">offset</dfn>);</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="94">94</th><td><dfn class="decl def" id="Struct_unpack_from" title='Struct_unpack_from' data-ref="Struct_unpack_from">Struct_unpack_from</dfn>(<a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col1 decl" id="21self" title='self' data-type='PyStructObject *' data-ref="21self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="22args" title='args' data-type='PyObject **' data-ref="22args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="23nargs" title='nargs' data-type='Py_ssize_t' data-ref="23nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24kwnames" title='kwnames' data-type='PyObject *' data-ref="24kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="95">95</th><td>{</td></tr>
+<tr><th id="96">96</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25return_value" title='return_value' data-type='PyObject *' data-ref="25return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="97">97</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col6 decl" id="26_keywords" title='_keywords' data-type='const char *const [3]' data-ref="26_keywords">_keywords</dfn>[] = {<q>"buffer"</q>, <q>"offset"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="98">98</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col7 decl" id="27_parser" title='_parser' data-type='_PyArg_Parser' data-ref="27_parser">_parser</dfn> = {<q>"y*|n:unpack_from"</q>, <a class="local col6 ref" href="#26_keywords" title='_keywords' data-ref="26_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="99">99</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col8 decl" id="28buffer" title='buffer' data-type='Py_buffer' data-ref="28buffer">buffer</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="100">100</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="29offset" title='offset' data-type='Py_ssize_t' data-ref="29offset">offset</dfn> = <var>0</var>;</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col2 ref" href="#22args" title='args' data-ref="22args">args</a>, <a class="local col3 ref" href="#23nargs" title='nargs' data-ref="23nargs">nargs</a>, <a class="local col4 ref" href="#24kwnames" title='kwnames' data-ref="24kwnames">kwnames</a>, &amp;<a class="local col7 ref" href="#27_parser" title='_parser' data-ref="27_parser">_parser</a>,</td></tr>
+<tr><th id="103">103</th><td>        &amp;<a class="local col8 ref" href="#28buffer" title='buffer' data-ref="28buffer">buffer</a>, &amp;<a class="local col9 ref" href="#29offset" title='offset' data-ref="29offset">offset</a>)) {</td></tr>
+<tr><th id="104">104</th><td>        <b>goto</b> <a class="lbl" href="#30exit" data-ref="30exit">exit</a>;</td></tr>
+<tr><th id="105">105</th><td>    }</td></tr>
+<tr><th id="106">106</th><td>    <a class="local col5 ref" href="#25return_value" title='return_value' data-ref="25return_value">return_value</a> = <a class="ref" href="../_struct.c.html#Struct_unpack_from_impl" title='Struct_unpack_from_impl' data-ref="Struct_unpack_from_impl">Struct_unpack_from_impl</a>(<a class="local col1 ref" href="#21self" title='self' data-ref="21self">self</a>, &amp;<a class="local col8 ref" href="#28buffer" title='buffer' data-ref="28buffer">buffer</a>, <a class="local col9 ref" href="#29offset" title='offset' data-ref="29offset">offset</a>);</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td><dfn class="lbl" id="30exit" data-ref="30exit">exit</dfn>:</td></tr>
+<tr><th id="109">109</th><td>    <i>/* Cleanup for buffer */</i></td></tr>
+<tr><th id="110">110</th><td>    <b>if</b> (<a class="local col8 ref" href="#28buffer" title='buffer' data-ref="28buffer">buffer</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="111">111</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col8 ref" href="#28buffer" title='buffer' data-ref="28buffer">buffer</a>);</td></tr>
+<tr><th id="112">112</th><td>    }</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td>    <b>return</b> <a class="local col5 ref" href="#25return_value" title='return_value' data-ref="25return_value">return_value</a>;</td></tr>
+<tr><th id="115">115</th><td>}</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char Struct_iter_unpack__doc__[] = &quot;iter_unpack($self, buffer, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return an iterator yielding tuples.\n&quot;&quot;\n&quot;&quot;Tuples are unpacked from the given bytes source, like a repeated\n&quot;&quot;invocation of unpack_from().\n&quot;&quot;\n&quot;&quot;Requires that the bytes length be a multiple of the struct size.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="Struct_iter_unpack__doc__" title='Struct_iter_unpack__doc__' data-ref="Struct_iter_unpack__doc__">Struct_iter_unpack__doc__</dfn>,</td></tr>
+<tr><th id="118">118</th><td><q>"iter_unpack($self, buffer, /)\n"</q></td></tr>
+<tr><th id="119">119</th><td><q>"--\n"</q></td></tr>
+<tr><th id="120">120</th><td><q>"\n"</q></td></tr>
+<tr><th id="121">121</th><td><q>"Return an iterator yielding tuples.\n"</q></td></tr>
+<tr><th id="122">122</th><td><q>"\n"</q></td></tr>
+<tr><th id="123">123</th><td><q>"Tuples are unpacked from the given bytes source, like a repeated\n"</q></td></tr>
+<tr><th id="124">124</th><td><q>"invocation of unpack_from().\n"</q></td></tr>
+<tr><th id="125">125</th><td><q>"\n"</q></td></tr>
+<tr><th id="126">126</th><td><q>"Requires that the bytes length be a multiple of the struct size."</q>);</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><u>#define <dfn class="macro" id="_M/STRUCT_ITER_UNPACK_METHODDEF" data-ref="_M/STRUCT_ITER_UNPACK_METHODDEF">STRUCT_ITER_UNPACK_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="129">129</th><td><u>    {"iter_unpack", (PyCFunction)Struct_iter_unpack, METH_O, Struct_iter_unpack__doc__},</u></td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char _clearcache__doc__[] = &quot;_clearcache($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Clear the internal cache.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_clearcache__doc__" title='_clearcache__doc__' data-ref="_clearcache__doc__">_clearcache__doc__</dfn>,</td></tr>
+<tr><th id="132">132</th><td><q>"_clearcache($module, /)\n"</q></td></tr>
+<tr><th id="133">133</th><td><q>"--\n"</q></td></tr>
+<tr><th id="134">134</th><td><q>"\n"</q></td></tr>
+<tr><th id="135">135</th><td><q>"Clear the internal cache."</q>);</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><u>#define <dfn class="macro" id="_M/_CLEARCACHE_METHODDEF" data-ref="_M/_CLEARCACHE_METHODDEF">_CLEARCACHE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="138">138</th><td><u>    {"_clearcache", (PyCFunction)_clearcache, METH_NOARGS, _clearcache__doc__},</u></td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="141">141</th><td><a class="decl" href="../_struct.c.html#_clearcache_impl" title='_clearcache_impl' data-ref="_clearcache_impl" id="_clearcache_impl">_clearcache_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31module" title='module' data-type='PyObject *' data-ref="31module">module</dfn>);</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="144">144</th><td><dfn class="decl def" id="_clearcache" title='_clearcache' data-ref="_clearcache">_clearcache</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32module" title='module' data-type='PyObject *' data-ref="32module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="145">145</th><td>{</td></tr>
+<tr><th id="146">146</th><td>    <b>return</b> <a class="ref" href="../_struct.c.html#_clearcache_impl" title='_clearcache_impl' data-ref="_clearcache_impl">_clearcache_impl</a>(<a class="local col2 ref" href="#32module" title='module' data-ref="32module">module</a>);</td></tr>
+<tr><th id="147">147</th><td>}</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char calcsize__doc__[] = &quot;calcsize($module, format, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return size in bytes of the struct described by the format string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="calcsize__doc__" title='calcsize__doc__' data-ref="calcsize__doc__">calcsize__doc__</dfn>,</td></tr>
+<tr><th id="150">150</th><td><q>"calcsize($module, format, /)\n"</q></td></tr>
+<tr><th id="151">151</th><td><q>"--\n"</q></td></tr>
+<tr><th id="152">152</th><td><q>"\n"</q></td></tr>
+<tr><th id="153">153</th><td><q>"Return size in bytes of the struct described by the format string."</q>);</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><u>#define <dfn class="macro" id="_M/CALCSIZE_METHODDEF" data-ref="_M/CALCSIZE_METHODDEF">CALCSIZE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="156">156</th><td><u>    {"calcsize", (PyCFunction)calcsize, METH_O, calcsize__doc__},</u></td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td><em>static</em> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a></td></tr>
+<tr><th id="159">159</th><td><a class="decl" href="../_struct.c.html#calcsize_impl" title='calcsize_impl' data-ref="calcsize_impl" id="calcsize_impl">calcsize_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33module" title='module' data-type='PyObject *' data-ref="33module">module</dfn>, <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col4 decl" id="34s_object" title='s_object' data-type='PyStructObject *' data-ref="34s_object">s_object</dfn>);</td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="162">162</th><td><dfn class="decl def" id="calcsize" title='calcsize' data-ref="calcsize">calcsize</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35module" title='module' data-type='PyObject *' data-ref="35module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="36arg" title='arg' data-type='PyObject *' data-ref="36arg">arg</dfn>)</td></tr>
+<tr><th id="163">163</th><td>{</td></tr>
+<tr><th id="164">164</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37return_value" title='return_value' data-type='PyObject *' data-ref="37return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="165">165</th><td>    <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col8 decl" id="38s_object" title='s_object' data-type='PyStructObject *' data-ref="38s_object">s_object</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="166">166</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="39_return_value" title='_return_value' data-type='Py_ssize_t' data-ref="39_return_value">_return_value</dfn>;</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col6 ref" href="#36arg" title='arg' data-ref="36arg">arg</a>, <q>"O&amp;:calcsize"</q>, <a class="tu ref" href="../_struct.c.html#cache_struct_converter" title='cache_struct_converter' data-ref="cache_struct_converter">cache_struct_converter</a>, &amp;<a class="local col8 ref" href="#38s_object" title='s_object' data-ref="38s_object">s_object</a>)) {</td></tr>
+<tr><th id="169">169</th><td>        <b>goto</b> <a class="lbl" href="#40exit" data-ref="40exit">exit</a>;</td></tr>
+<tr><th id="170">170</th><td>    }</td></tr>
+<tr><th id="171">171</th><td>    <a class="local col9 ref" href="#39_return_value" title='_return_value' data-ref="39_return_value">_return_value</a> = <a class="ref" href="../_struct.c.html#calcsize_impl" title='calcsize_impl' data-ref="calcsize_impl">calcsize_impl</a>(<a class="local col5 ref" href="#35module" title='module' data-ref="35module">module</a>, <a class="local col8 ref" href="#38s_object" title='s_object' data-ref="38s_object">s_object</a>);</td></tr>
+<tr><th id="172">172</th><td>    <b>if</b> ((<a class="local col9 ref" href="#39_return_value" title='_return_value' data-ref="39_return_value">_return_value</a> == -<var>1</var>) &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="173">173</th><td>        <b>goto</b> <a class="lbl" href="#40exit" data-ref="40exit">exit</a>;</td></tr>
+<tr><th id="174">174</th><td>    }</td></tr>
+<tr><th id="175">175</th><td>    <a class="local col7 ref" href="#37return_value" title='return_value' data-ref="37return_value">return_value</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col9 ref" href="#39_return_value" title='_return_value' data-ref="39_return_value">_return_value</a>);</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><dfn class="lbl" id="40exit" data-ref="40exit">exit</dfn>:</td></tr>
+<tr><th id="178">178</th><td>    <i>/* Cleanup for s_object */</i></td></tr>
+<tr><th id="179">179</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(s_object); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/clinic/_struct.c.h&quot;, 179, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col8 ref" href="#38s_object" title='s_object' data-ref="38s_object">s_object</a>);</td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td>    <b>return</b> <a class="local col7 ref" href="#37return_value" title='return_value' data-ref="37return_value">return_value</a>;</td></tr>
+<tr><th id="182">182</th><td>}</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unpack__doc__[] = &quot;unpack($module, format, buffer, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a tuple containing values unpacked according to the format string.\n&quot;&quot;\n&quot;&quot;The buffer\&apos;s size in bytes must be calcsize(format).\n&quot;&quot;\n&quot;&quot;See help(struct) for more on format strings.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unpack__doc__" title='unpack__doc__' data-ref="unpack__doc__">unpack__doc__</dfn>,</td></tr>
+<tr><th id="185">185</th><td><q>"unpack($module, format, buffer, /)\n"</q></td></tr>
+<tr><th id="186">186</th><td><q>"--\n"</q></td></tr>
+<tr><th id="187">187</th><td><q>"\n"</q></td></tr>
+<tr><th id="188">188</th><td><q>"Return a tuple containing values unpacked according to the format string.\n"</q></td></tr>
+<tr><th id="189">189</th><td><q>"\n"</q></td></tr>
+<tr><th id="190">190</th><td><q>"The buffer\'s size in bytes must be calcsize(format).\n"</q></td></tr>
+<tr><th id="191">191</th><td><q>"\n"</q></td></tr>
+<tr><th id="192">192</th><td><q>"See help(struct) for more on format strings."</q>);</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><u>#define <dfn class="macro" id="_M/UNPACK_METHODDEF" data-ref="_M/UNPACK_METHODDEF">UNPACK_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="195">195</th><td><u>    {"unpack", (PyCFunction)unpack, METH_FASTCALL, unpack__doc__},</u></td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="198">198</th><td><a class="decl" href="../_struct.c.html#unpack_impl" title='unpack_impl' data-ref="unpack_impl" id="unpack_impl">unpack_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41module" title='module' data-type='PyObject *' data-ref="41module">module</dfn>, <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col2 decl" id="42s_object" title='s_object' data-type='PyStructObject *' data-ref="42s_object">s_object</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col3 decl" id="43buffer" title='buffer' data-type='Py_buffer *' data-ref="43buffer">buffer</dfn>);</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="201">201</th><td><dfn class="decl def" id="unpack" title='unpack' data-ref="unpack">unpack</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="44module" title='module' data-type='PyObject *' data-ref="44module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="45args" title='args' data-type='PyObject **' data-ref="45args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="46nargs" title='nargs' data-type='Py_ssize_t' data-ref="46nargs">nargs</dfn>)</td></tr>
+<tr><th id="202">202</th><td>{</td></tr>
+<tr><th id="203">203</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47return_value" title='return_value' data-type='PyObject *' data-ref="47return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="204">204</th><td>    <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col8 decl" id="48s_object" title='s_object' data-type='PyStructObject *' data-ref="48s_object">s_object</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="205">205</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col9 decl" id="49buffer" title='buffer' data-type='Py_buffer' data-ref="49buffer">buffer</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col5 ref" href="#45args" title='args' data-ref="45args">args</a>, <a class="local col6 ref" href="#46nargs" title='nargs' data-ref="46nargs">nargs</a>, <q>"O&amp;y*:unpack"</q>,</td></tr>
+<tr><th id="208">208</th><td>        <a class="tu ref" href="../_struct.c.html#cache_struct_converter" title='cache_struct_converter' data-ref="cache_struct_converter">cache_struct_converter</a>, &amp;<a class="local col8 ref" href="#48s_object" title='s_object' data-ref="48s_object">s_object</a>, &amp;<a class="local col9 ref" href="#49buffer" title='buffer' data-ref="49buffer">buffer</a>)) {</td></tr>
+<tr><th id="209">209</th><td>        <b>goto</b> <a class="lbl" href="#50exit" data-ref="50exit">exit</a>;</td></tr>
+<tr><th id="210">210</th><td>    }</td></tr>
+<tr><th id="211">211</th><td>    <a class="local col7 ref" href="#47return_value" title='return_value' data-ref="47return_value">return_value</a> = <a class="ref" href="../_struct.c.html#unpack_impl" title='unpack_impl' data-ref="unpack_impl">unpack_impl</a>(<a class="local col4 ref" href="#44module" title='module' data-ref="44module">module</a>, <a class="local col8 ref" href="#48s_object" title='s_object' data-ref="48s_object">s_object</a>, &amp;<a class="local col9 ref" href="#49buffer" title='buffer' data-ref="49buffer">buffer</a>);</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><dfn class="lbl" id="50exit" data-ref="50exit">exit</dfn>:</td></tr>
+<tr><th id="214">214</th><td>    <i>/* Cleanup for s_object */</i></td></tr>
+<tr><th id="215">215</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(s_object); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/clinic/_struct.c.h&quot;, 215, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col8 ref" href="#48s_object" title='s_object' data-ref="48s_object">s_object</a>);</td></tr>
+<tr><th id="216">216</th><td>    <i>/* Cleanup for buffer */</i></td></tr>
+<tr><th id="217">217</th><td>    <b>if</b> (<a class="local col9 ref" href="#49buffer" title='buffer' data-ref="49buffer">buffer</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="218">218</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col9 ref" href="#49buffer" title='buffer' data-ref="49buffer">buffer</a>);</td></tr>
+<tr><th id="219">219</th><td>    }</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td>    <b>return</b> <a class="local col7 ref" href="#47return_value" title='return_value' data-ref="47return_value">return_value</a>;</td></tr>
+<tr><th id="222">222</th><td>}</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char unpack_from__doc__[] = &quot;unpack_from($module, format, /, buffer, offset=0)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a tuple containing values unpacked according to the format string.\n&quot;&quot;\n&quot;&quot;The buffer\&apos;s size, minus offset, must be at least calcsize(format).\n&quot;&quot;\n&quot;&quot;See help(struct) for more on format strings.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="unpack_from__doc__" title='unpack_from__doc__' data-ref="unpack_from__doc__">unpack_from__doc__</dfn>,</td></tr>
+<tr><th id="225">225</th><td><q>"unpack_from($module, format, /, buffer, offset=0)\n"</q></td></tr>
+<tr><th id="226">226</th><td><q>"--\n"</q></td></tr>
+<tr><th id="227">227</th><td><q>"\n"</q></td></tr>
+<tr><th id="228">228</th><td><q>"Return a tuple containing values unpacked according to the format string.\n"</q></td></tr>
+<tr><th id="229">229</th><td><q>"\n"</q></td></tr>
+<tr><th id="230">230</th><td><q>"The buffer\'s size, minus offset, must be at least calcsize(format).\n"</q></td></tr>
+<tr><th id="231">231</th><td><q>"\n"</q></td></tr>
+<tr><th id="232">232</th><td><q>"See help(struct) for more on format strings."</q>);</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td><u>#define <dfn class="macro" id="_M/UNPACK_FROM_METHODDEF" data-ref="_M/UNPACK_FROM_METHODDEF">UNPACK_FROM_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="235">235</th><td><u>    {"unpack_from", (PyCFunction)unpack_from, METH_FASTCALL|METH_KEYWORDS, unpack_from__doc__},</u></td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="238">238</th><td><a class="decl" href="../_struct.c.html#unpack_from_impl" title='unpack_from_impl' data-ref="unpack_from_impl" id="unpack_from_impl">unpack_from_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51module" title='module' data-type='PyObject *' data-ref="51module">module</dfn>, <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col2 decl" id="52s_object" title='s_object' data-type='PyStructObject *' data-ref="52s_object">s_object</dfn>,</td></tr>
+<tr><th id="239">239</th><td>                 <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col3 decl" id="53buffer" title='buffer' data-type='Py_buffer *' data-ref="53buffer">buffer</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="54offset" title='offset' data-type='Py_ssize_t' data-ref="54offset">offset</dfn>);</td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="242">242</th><td><dfn class="decl def" id="unpack_from" title='unpack_from' data-ref="unpack_from">unpack_from</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55module" title='module' data-type='PyObject *' data-ref="55module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="56args" title='args' data-type='PyObject **' data-ref="56args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="57nargs" title='nargs' data-type='Py_ssize_t' data-ref="57nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58kwnames" title='kwnames' data-type='PyObject *' data-ref="58kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="243">243</th><td>{</td></tr>
+<tr><th id="244">244</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="59return_value" title='return_value' data-type='PyObject *' data-ref="59return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="245">245</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col0 decl" id="60_keywords" title='_keywords' data-type='const char *const [4]' data-ref="60_keywords">_keywords</dfn>[] = {<q>""</q>, <q>"buffer"</q>, <q>"offset"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="246">246</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col1 decl" id="61_parser" title='_parser' data-type='_PyArg_Parser' data-ref="61_parser">_parser</dfn> = {<q>"O&amp;y*|n:unpack_from"</q>, <a class="local col0 ref" href="#60_keywords" title='_keywords' data-ref="60_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="247">247</th><td>    <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col2 decl" id="62s_object" title='s_object' data-type='PyStructObject *' data-ref="62s_object">s_object</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="248">248</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col3 decl" id="63buffer" title='buffer' data-type='Py_buffer' data-ref="63buffer">buffer</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="249">249</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="64offset" title='offset' data-type='Py_ssize_t' data-ref="64offset">offset</dfn> = <var>0</var>;</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#96" title="_PyArg_ParseStackAndKeywords_SizeT" data-ref="_M/_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col6 ref" href="#56args" title='args' data-ref="56args">args</a>, <a class="local col7 ref" href="#57nargs" title='nargs' data-ref="57nargs">nargs</a>, <a class="local col8 ref" href="#58kwnames" title='kwnames' data-ref="58kwnames">kwnames</a>, &amp;<a class="local col1 ref" href="#61_parser" title='_parser' data-ref="61_parser">_parser</a>,</td></tr>
+<tr><th id="252">252</th><td>        <a class="tu ref" href="../_struct.c.html#cache_struct_converter" title='cache_struct_converter' data-ref="cache_struct_converter">cache_struct_converter</a>, &amp;<a class="local col2 ref" href="#62s_object" title='s_object' data-ref="62s_object">s_object</a>, &amp;<a class="local col3 ref" href="#63buffer" title='buffer' data-ref="63buffer">buffer</a>, &amp;<a class="local col4 ref" href="#64offset" title='offset' data-ref="64offset">offset</a>)) {</td></tr>
+<tr><th id="253">253</th><td>        <b>goto</b> <a class="lbl" href="#65exit" data-ref="65exit">exit</a>;</td></tr>
+<tr><th id="254">254</th><td>    }</td></tr>
+<tr><th id="255">255</th><td>    <a class="local col9 ref" href="#59return_value" title='return_value' data-ref="59return_value">return_value</a> = <a class="ref" href="../_struct.c.html#unpack_from_impl" title='unpack_from_impl' data-ref="unpack_from_impl">unpack_from_impl</a>(<a class="local col5 ref" href="#55module" title='module' data-ref="55module">module</a>, <a class="local col2 ref" href="#62s_object" title='s_object' data-ref="62s_object">s_object</a>, &amp;<a class="local col3 ref" href="#63buffer" title='buffer' data-ref="63buffer">buffer</a>, <a class="local col4 ref" href="#64offset" title='offset' data-ref="64offset">offset</a>);</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td><dfn class="lbl" id="65exit" data-ref="65exit">exit</dfn>:</td></tr>
+<tr><th id="258">258</th><td>    <i>/* Cleanup for s_object */</i></td></tr>
+<tr><th id="259">259</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(s_object); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/clinic/_struct.c.h&quot;, 259, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col2 ref" href="#62s_object" title='s_object' data-ref="62s_object">s_object</a>);</td></tr>
+<tr><th id="260">260</th><td>    <i>/* Cleanup for buffer */</i></td></tr>
+<tr><th id="261">261</th><td>    <b>if</b> (<a class="local col3 ref" href="#63buffer" title='buffer' data-ref="63buffer">buffer</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="262">262</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col3 ref" href="#63buffer" title='buffer' data-ref="63buffer">buffer</a>);</td></tr>
+<tr><th id="263">263</th><td>    }</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td>    <b>return</b> <a class="local col9 ref" href="#59return_value" title='return_value' data-ref="59return_value">return_value</a>;</td></tr>
+<tr><th id="266">266</th><td>}</td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char iter_unpack__doc__[] = &quot;iter_unpack($module, format, buffer, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return an iterator yielding tuples unpacked from the given bytes.\n&quot;&quot;\n&quot;&quot;The bytes are unpacked according to the format string, like\n&quot;&quot;a repeated invocation of unpack_from().\n&quot;&quot;\n&quot;&quot;Requires that the bytes length be a multiple of the format struct size.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="iter_unpack__doc__" title='iter_unpack__doc__' data-ref="iter_unpack__doc__">iter_unpack__doc__</dfn>,</td></tr>
+<tr><th id="269">269</th><td><q>"iter_unpack($module, format, buffer, /)\n"</q></td></tr>
+<tr><th id="270">270</th><td><q>"--\n"</q></td></tr>
+<tr><th id="271">271</th><td><q>"\n"</q></td></tr>
+<tr><th id="272">272</th><td><q>"Return an iterator yielding tuples unpacked from the given bytes.\n"</q></td></tr>
+<tr><th id="273">273</th><td><q>"\n"</q></td></tr>
+<tr><th id="274">274</th><td><q>"The bytes are unpacked according to the format string, like\n"</q></td></tr>
+<tr><th id="275">275</th><td><q>"a repeated invocation of unpack_from().\n"</q></td></tr>
+<tr><th id="276">276</th><td><q>"\n"</q></td></tr>
+<tr><th id="277">277</th><td><q>"Requires that the bytes length be a multiple of the format struct size."</q>);</td></tr>
+<tr><th id="278">278</th><td></td></tr>
+<tr><th id="279">279</th><td><u>#define <dfn class="macro" id="_M/ITER_UNPACK_METHODDEF" data-ref="_M/ITER_UNPACK_METHODDEF">ITER_UNPACK_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="280">280</th><td><u>    {"iter_unpack", (PyCFunction)iter_unpack, METH_FASTCALL, iter_unpack__doc__},</u></td></tr>
+<tr><th id="281">281</th><td></td></tr>
+<tr><th id="282">282</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="283">283</th><td><a class="decl" href="../_struct.c.html#iter_unpack_impl" title='iter_unpack_impl' data-ref="iter_unpack_impl" id="iter_unpack_impl">iter_unpack_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="66module" title='module' data-type='PyObject *' data-ref="66module">module</dfn>, <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col7 decl" id="67s_object" title='s_object' data-type='PyStructObject *' data-ref="67s_object">s_object</dfn>,</td></tr>
+<tr><th id="284">284</th><td>                 <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68buffer" title='buffer' data-type='PyObject *' data-ref="68buffer">buffer</dfn>);</td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="287">287</th><td><dfn class="decl def" id="iter_unpack" title='iter_unpack' data-ref="iter_unpack">iter_unpack</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69module" title='module' data-type='PyObject *' data-ref="69module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="70args" title='args' data-type='PyObject **' data-ref="70args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="71nargs" title='nargs' data-type='Py_ssize_t' data-ref="71nargs">nargs</dfn>)</td></tr>
+<tr><th id="288">288</th><td>{</td></tr>
+<tr><th id="289">289</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="72return_value" title='return_value' data-type='PyObject *' data-ref="72return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="290">290</th><td>    <a class="typedef" href="../_struct.c.html#PyStructObject" title='PyStructObject' data-type='struct PyStructObject' data-ref="PyStructObject">PyStructObject</a> *<dfn class="local col3 decl" id="73s_object" title='s_object' data-type='PyStructObject *' data-ref="73s_object">s_object</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="291">291</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="74buffer" title='buffer' data-type='PyObject *' data-ref="74buffer">buffer</dfn>;</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col0 ref" href="#70args" title='args' data-ref="70args">args</a>, <a class="local col1 ref" href="#71nargs" title='nargs' data-ref="71nargs">nargs</a>, <q>"O&amp;O:iter_unpack"</q>,</td></tr>
+<tr><th id="294">294</th><td>        <a class="tu ref" href="../_struct.c.html#cache_struct_converter" title='cache_struct_converter' data-ref="cache_struct_converter">cache_struct_converter</a>, &amp;<a class="local col3 ref" href="#73s_object" title='s_object' data-ref="73s_object">s_object</a>, &amp;<a class="local col4 ref" href="#74buffer" title='buffer' data-ref="74buffer">buffer</a>)) {</td></tr>
+<tr><th id="295">295</th><td>        <b>goto</b> <a class="lbl" href="#75exit" data-ref="75exit">exit</a>;</td></tr>
+<tr><th id="296">296</th><td>    }</td></tr>
+<tr><th id="297">297</th><td>    <a class="local col2 ref" href="#72return_value" title='return_value' data-ref="72return_value">return_value</a> = <a class="ref" href="../_struct.c.html#iter_unpack_impl" title='iter_unpack_impl' data-ref="iter_unpack_impl">iter_unpack_impl</a>(<a class="local col9 ref" href="#69module" title='module' data-ref="69module">module</a>, <a class="local col3 ref" href="#73s_object" title='s_object' data-ref="73s_object">s_object</a>, <a class="local col4 ref" href="#74buffer" title='buffer' data-ref="74buffer">buffer</a>);</td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td><dfn class="lbl" id="75exit" data-ref="75exit">exit</dfn>:</td></tr>
+<tr><th id="300">300</th><td>    <i>/* Cleanup for s_object */</i></td></tr>
+<tr><th id="301">301</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(s_object); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/clinic/_struct.c.h&quot;, 301, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col3 ref" href="#73s_object" title='s_object' data-ref="73s_object">s_object</a>);</td></tr>
+<tr><th id="302">302</th><td></td></tr>
+<tr><th id="303">303</th><td>    <b>return</b> <a class="local col2 ref" href="#72return_value" title='return_value' data-ref="72return_value">return_value</a>;</td></tr>
+<tr><th id="304">304</th><td>}</td></tr>
+<tr><th id="305">305</th><td><i>/*[clinic end generated code: output=fce060787b4c5261 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="306">306</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../_struct.c.html'>codebrowser/Modules/_struct.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

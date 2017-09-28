@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/longobject.h' l='88' type='PyObject * PyLong_FromLongLong(long long )'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='921' u='c' c='q_get'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='931' u='c' c='q_get_sw'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1447' u='c' c='module_add_int_constant'/>
+<use f='codebrowser/Modules/_struct.c' l='466' u='c' c='nu_longlong'/>
+<use f='codebrowser/Modules/_struct.c' l='823' u='c' c='bu_longlong'/>
+<use f='codebrowser/Modules/_struct.c' l='1044' u='c' c='lu_longlong'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='59' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='650' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='694' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='751' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='766' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1161' u='c' c='getargs_L'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3944' u='c' c='test_PyTime_AsTimeval'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4918' u='c' c='PyInit__testcapi'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4919' u='c' c='PyInit__testcapi'/>
+<use f='codebrowser/Modules/arraymodule.c' l='438' u='c' c='q_getitem'/>
+<use f='codebrowser/Modules/posixmodule.c' l='740' u='c' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2040' u='c' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='4160' macro='1' u='c'/>
+<use f='codebrowser/Modules/resource.c' l='477' u='c' c='PyInit_resource'/>
+<def f='codebrowser/Objects/longobject.c' l='1073' ll='1113' type='PyObject * PyLong_FromLongLong(long long ival)'/>
+<use f='codebrowser/Objects/longobject.c' l='3584' u='c' c='long_mul'/>
+<doc f='codebrowser/Objects/longobject.c' l='1071'>/* Create a new int object from a C long long int. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1705' u='c' c='unpack_single'/>
+<use f='codebrowser/Python/modsupport.c' l='331' u='c' c='do_mkvalue'/>
+<use f='codebrowser/Python/pytime.c' l='61' u='c' c='_PyLong_FromTime_t'/>
+<use f='codebrowser/Python/pytime.c' l='362' u='c' c='_PyTime_AsNanosecondsObject'/>
+<use f='codebrowser/Python/structmember.c' l='78' u='c' c='PyMember_GetOne'/>

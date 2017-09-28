@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/object.h' l='520' type='int PyObject_Print(PyObject * , FILE * , int )'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1011' u='c' c='t_bootstrap'/>
+<def f='codebrowser/Objects/object.c' l='349' ll='415' type='int PyObject_Print(PyObject * op, FILE * fp, int flags)'/>
+<use f='codebrowser/Objects/object.c' l='442' u='c' c='_PyObject_Dump'/>
+<use f='codebrowser/Objects/object.c' l='1887' u='c' c='_Py_PrintReferences'/>
+<use f='codebrowser/Python/ceval.c' l='4472' u='c' c='prtrace'/>
+<use f='codebrowser/Python/pythonrun.c' l='590' u='c' c='handle_system_exit'/>

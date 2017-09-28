@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='547' type='XML_EndDoctypeDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='641' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='641' u='w' c='PyExpat_XML_SetDoctypeDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='641' u='w' c='PyExpat_XML_SetEndDoctypeDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='641' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='641' u='r' c='doProlog'/>
+<offset>1408</offset>

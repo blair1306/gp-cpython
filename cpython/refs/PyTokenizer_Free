@@ -1,0 +1,12 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='81' type='void PyTokenizer_Free(struct tok_state * )'/>
+<use f='codebrowser/Parser/parsetok.c' l='193' u='c' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='355' u='c' c='parsetok'/>
+<use f='codebrowser/Parser/tokenizer.c' l='820' u='c' c='PyTokenizer_FromString'/>
+<use f='codebrowser/Parser/tokenizer.c' l='839' u='c' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='848' u='c' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='868' u='c' c='PyTokenizer_FromFile'/>
+<use f='codebrowser/Parser/tokenizer.c' l='881' u='c' c='PyTokenizer_FromFile'/>
+<def f='codebrowser/Parser/tokenizer.c' l='893' ll='908' type='void PyTokenizer_Free(struct tok_state * tok)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1954' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1968' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<doc f='codebrowser/Parser/tokenizer.c' l='891'>/* Free a tok_state structure */</doc>

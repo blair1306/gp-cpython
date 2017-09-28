@@ -1,0 +1,7 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='393' ll='478' type='PyObject * get_field_object(SubString * input, PyObject * args, PyObject * kwargs, AutoNumber * auto_number)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='811' u='c' c='output_markup'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='388'>/*
+    get_field_object returns the object inside {}, before the
+    format_spec.  It handles getindex and getattr lookups and consumes
+    the entire input string.
+*/</doc>

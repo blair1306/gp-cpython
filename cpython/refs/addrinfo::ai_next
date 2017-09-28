@@ -1,0 +1,6 @@
+<dec f='include/netdb.h' l='576' type='struct addrinfo *'/>
+<use f='codebrowser/Modules/socketmodule.c' l='995' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5976' u='r' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6061' u='r' c='socket_getnameinfo'/>
+<offset>320</offset>
+<doc f='include/netdb.h' l='576'>/* Pointer to next in list.  */</doc>

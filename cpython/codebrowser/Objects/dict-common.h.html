@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dict-common.h source code [codebrowser/Objects/dict-common.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="_dictkeysobject "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/dict-common.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Objects</a>/<a href='dict-common.h.html'>dict-common.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_DICT_COMMON_H">Py_DICT_COMMON_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_DICT_COMMON_H" data-ref="_M/Py_DICT_COMMON_H">Py_DICT_COMMON_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="5">5</th><td>    <i>/* Cached hash code of me_key. */</i></td></tr>
+<tr><th id="6">6</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_hash_t" title='Py_hash_t' data-type='Py_ssize_t' data-ref="Py_hash_t">Py_hash_t</a> <dfn class="decl" id="(anonymous)::me_hash" title='(anonymous struct)::me_hash' data-ref="(anonymous)::me_hash">me_hash</dfn>;</td></tr>
+<tr><th id="7">7</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::me_key" title='(anonymous struct)::me_key' data-ref="(anonymous)::me_key">me_key</dfn>;</td></tr>
+<tr><th id="8">8</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="(anonymous)::me_value" title='(anonymous struct)::me_value' data-ref="(anonymous)::me_value">me_value</dfn>; <i>/* This field is only meaningful for combined tables */</i></td></tr>
+<tr><th id="9">9</th><td>} <dfn class="typedef" id="PyDictKeyEntry" title='PyDictKeyEntry' data-type='struct PyDictKeyEntry' data-ref="PyDictKeyEntry">PyDictKeyEntry</dfn>;</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><i>/* dict_lookup_func() returns index of entry which can be used like DK_ENTRIES(dk)[index].</i></td></tr>
+<tr><th id="12">12</th><td><i> * -1 when no entry found, -3 when compare raises error.</i></td></tr>
+<tr><th id="13">13</th><td><i> */</i></td></tr>
+<tr><th id="14">14</th><td><b>typedef</b> <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> (*<dfn class="typedef" id="dict_lookup_func" title='dict_lookup_func' data-type='Py_ssize_t (*)(PyDictObject *, PyObject *, Py_hash_t, PyObject **)' data-ref="dict_lookup_func">dict_lookup_func</dfn>)</td></tr>
+<tr><th id="15">15</th><td>    (<a class="typedef" href="../Include/dictobject.h.html#PyDictObject" title='PyDictObject' data-type='struct PyDictObject' data-ref="PyDictObject">PyDictObject</a> *<dfn class="local col1 decl" id="1mp" title='mp' data-type='PyDictObject *' data-ref="1mp">mp</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2key" title='key' data-type='PyObject *' data-ref="2key">key</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_hash_t" title='Py_hash_t' data-type='Py_ssize_t' data-ref="Py_hash_t">Py_hash_t</a> <dfn class="local col3 decl" id="3hash" title='hash' data-type='Py_hash_t' data-ref="3hash">hash</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="4value_addr" title='value_addr' data-type='PyObject **' data-ref="4value_addr">value_addr</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/DKIX_EMPTY" data-ref="_M/DKIX_EMPTY">DKIX_EMPTY</dfn> (-1)</u></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/DKIX_DUMMY" data-ref="_M/DKIX_DUMMY">DKIX_DUMMY</dfn> (-2)  /* Used internally */</u></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/DKIX_ERROR" data-ref="_M/DKIX_ERROR">DKIX_ERROR</dfn> (-3)</u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* See dictobject.c for actual layout of DictKeysObject */</i></td></tr>
+<tr><th id="22">22</th><td><b>struct</b> <dfn class="type def" id="_dictkeysobject" title='_dictkeysobject' data-ref="_dictkeysobject">_dictkeysobject</dfn> {</td></tr>
+<tr><th id="23">23</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="decl" id="_dictkeysobject::dk_refcnt" title='_dictkeysobject::dk_refcnt' data-ref="_dictkeysobject::dk_refcnt">dk_refcnt</dfn>;</td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td>    <i>/* Size of the hash table (dk_indices). It must be a power of 2. */</i></td></tr>
+<tr><th id="26">26</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="decl" id="_dictkeysobject::dk_size" title='_dictkeysobject::dk_size' data-ref="_dictkeysobject::dk_size">dk_size</dfn>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td>    <i>/* Function to lookup in the hash table (dk_indices):</i></td></tr>
+<tr><th id="29">29</th><td><i></i></td></tr>
+<tr><th id="30">30</th><td><i>       - lookdict(): general-purpose, and may return DKIX_ERROR if (and</i></td></tr>
+<tr><th id="31">31</th><td><i>         only if) a comparison raises an exception.</i></td></tr>
+<tr><th id="32">32</th><td><i></i></td></tr>
+<tr><th id="33">33</th><td><i>       - lookdict_unicode(): specialized to Unicode string keys, comparison of</i></td></tr>
+<tr><th id="34">34</th><td><i>         which can never raise an exception; that function can never return</i></td></tr>
+<tr><th id="35">35</th><td><i>         DKIX_ERROR.</i></td></tr>
+<tr><th id="36">36</th><td><i></i></td></tr>
+<tr><th id="37">37</th><td><i>       - lookdict_unicode_nodummy(): similar to lookdict_unicode() but further</i></td></tr>
+<tr><th id="38">38</th><td><i>         specialized for Unicode string keys that cannot be the &lt;dummy&gt; value.</i></td></tr>
+<tr><th id="39">39</th><td><i></i></td></tr>
+<tr><th id="40">40</th><td><i>       - lookdict_split(): Version of lookdict() for split tables. */</i></td></tr>
+<tr><th id="41">41</th><td>    <a class="typedef" href="#dict_lookup_func" title='dict_lookup_func' data-type='Py_ssize_t (*)(PyDictObject *, PyObject *, Py_hash_t, PyObject **)' data-ref="dict_lookup_func">dict_lookup_func</a> <dfn class="decl" id="_dictkeysobject::dk_lookup" title='_dictkeysobject::dk_lookup' data-ref="_dictkeysobject::dk_lookup">dk_lookup</dfn>;</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td>    <i>/* Number of usable entries in dk_entries. */</i></td></tr>
+<tr><th id="44">44</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="decl" id="_dictkeysobject::dk_usable" title='_dictkeysobject::dk_usable' data-ref="_dictkeysobject::dk_usable">dk_usable</dfn>;</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td>    <i>/* Number of used entries in dk_entries. */</i></td></tr>
+<tr><th id="47">47</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="decl" id="_dictkeysobject::dk_nentries" title='_dictkeysobject::dk_nentries' data-ref="_dictkeysobject::dk_nentries">dk_nentries</dfn>;</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td>    <i>/* Actual hash table of dk_size entries. It holds indices in dk_entries,</i></td></tr>
+<tr><th id="50">50</th><td><i>       or DKIX_EMPTY(-1) or DKIX_DUMMY(-2).</i></td></tr>
+<tr><th id="51">51</th><td><i></i></td></tr>
+<tr><th id="52">52</th><td><i>       Indices must be: 0 &lt;= indice &lt; USABLE_FRACTION(dk_size).</i></td></tr>
+<tr><th id="53">53</th><td><i></i></td></tr>
+<tr><th id="54">54</th><td><i>       The size in bytes of an indice depends on dk_size:</i></td></tr>
+<tr><th id="55">55</th><td><i></i></td></tr>
+<tr><th id="56">56</th><td><i>       - 1 byte if dk_size &lt;= 0xff (char*)</i></td></tr>
+<tr><th id="57">57</th><td><i>       - 2 bytes if dk_size &lt;= 0xffff (int16_t*)</i></td></tr>
+<tr><th id="58">58</th><td><i>       - 4 bytes if dk_size &lt;= 0xffffffff (int32_t*)</i></td></tr>
+<tr><th id="59">59</th><td><i>       - 8 bytes otherwise (int64_t*)</i></td></tr>
+<tr><th id="60">60</th><td><i></i></td></tr>
+<tr><th id="61">61</th><td><i>       Dynamically sized, 8 is minimum. */</i></td></tr>
+<tr><th id="62">62</th><td>    <b>union</b> {</td></tr>
+<tr><th id="63">63</th><td>        <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#194" title='int8_t' data-type='signed char' data-ref="int8_t">int8_t</a> <dfn class="decl" id="_dictkeysobject::(anonymous)::as_1" title='_dictkeysobject::(anonymous union)::as_1' data-ref="_dictkeysobject::(anonymous)::as_1">as_1</dfn>[<var>8</var>];</td></tr>
+<tr><th id="64">64</th><td>        <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a> <dfn class="decl" id="_dictkeysobject::(anonymous)::as_2" title='_dictkeysobject::(anonymous union)::as_2' data-ref="_dictkeysobject::(anonymous)::as_2">as_2</dfn>[<var>4</var>];</td></tr>
+<tr><th id="65">65</th><td>        <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a> <dfn class="decl" id="_dictkeysobject::(anonymous)::as_4" title='_dictkeysobject::(anonymous union)::as_4' data-ref="_dictkeysobject::(anonymous)::as_4">as_4</dfn>[<var>2</var>];</td></tr>
+<tr><th id="66">66</th><td><u>#<span data-ppcond="66">if</span> <a class="macro" href="../pyconfig.h.html#1316" title="8" data-ref="_M/SIZEOF_VOID_P">SIZEOF_VOID_P</a> &gt; 4</u></td></tr>
+<tr><th id="67">67</th><td>        <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="decl" id="_dictkeysobject::(anonymous)::as_8" title='_dictkeysobject::(anonymous union)::as_8' data-ref="_dictkeysobject::(anonymous)::as_8">as_8</dfn>[<var>1</var>];</td></tr>
+<tr><th id="68">68</th><td><u>#<span data-ppcond="66">endif</span></u></td></tr>
+<tr><th id="69">69</th><td>    } <dfn class="decl" id="_dictkeysobject::dk_indices" title='_dictkeysobject::dk_indices' data-ref="_dictkeysobject::dk_indices">dk_indices</dfn>;</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td>    <i>/* "PyDictKeyEntry dk_entries[dk_usable];" array follows:</i></td></tr>
+<tr><th id="72">72</th><td><i>       see the DK_ENTRIES() macro */</i></td></tr>
+<tr><th id="73">73</th><td>};</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='dictobject.c.html'>codebrowser/Objects/dictobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

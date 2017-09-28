@@ -1,0 +1,7 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='233' type='struct iovec *'/>
+<offset>128</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='233'>/* Vector of data to send/receive into.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='3453' u='w' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3979' u='w' c='sock_sendmsg_iovec'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4182' u='r' c='sock_sendmsg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4359' u='r' c='sock_sendmsg_afalg'/>

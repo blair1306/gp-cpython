@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/mman.h' l='61' type='void * mmap(void * __addr, size_t __len, int __prot, int __flags, int __fd, __off64_t __offset)'/>
+<dec f='include/x86_64-linux-gnu/sys/mman.h' l='70' type='void * mmap64(void * __addr, size_t __len, int __prot, int __flags, int __fd, __off64_t __offset)'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1177' u='c' c='new_mmap_object'/>
+<use f='codebrowser/Objects/obmalloc.c' l='124' u='c' c='_PyObject_ArenaMmap'/>

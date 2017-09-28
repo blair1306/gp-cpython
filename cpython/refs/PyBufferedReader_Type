@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='15' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='444' u='a' c='_io_open_impl'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='706' u='m' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='707' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='707' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='707' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='707' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1368' u='a' c='buffered_iternext'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1466' u='a' c='_io_BufferedReader___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2117' u='a' c='_io_BufferedRWPair___init___impl'/>
+<def f='codebrowser/Modules/_io/bufferedio.c' l='2433' ll='2483' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1050' u='a' c='_io_TextIOWrapper___init___impl'/>

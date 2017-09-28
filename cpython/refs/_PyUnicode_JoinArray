@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1986' type='PyObject * _PyUnicode_JoinArray(PyObject * separator, PyObject ** items, Py_ssize_t seqlen)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9907' u='c' c='PyUnicode_Join'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9912' ll='10082' type='PyObject * _PyUnicode_JoinArray(PyObject * separator, PyObject ** items, Py_ssize_t seqlen)'/>
+<use f='codebrowser/Python/ceval.c' l='2466' u='c' c='_PyEval_EvalFrameDefault'/>

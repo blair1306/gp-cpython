@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/bytesobject.h' l='74' type='PyObject * PyBytes_DecodeEscape(const char * , Py_ssize_t , const char * , Py_ssize_t , const char * )'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='184' u='c' c='_codecs_escape_decode_impl'/>
+<use f='codebrowser/Modules/_pickle.c' l='4894' u='c' c='load_string'/>
+<def f='codebrowser/Objects/bytesobject.c' l='1243' ll='1265' type='PyObject * PyBytes_DecodeEscape(const char * s, Py_ssize_t len, const char * errors, Py_ssize_t unicode, const char * recode_encoding)'/>

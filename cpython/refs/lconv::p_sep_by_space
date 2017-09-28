@@ -1,0 +1,4 @@
+<dec f='include/locale.h' l='82' type='char'/>
+<offset>664</offset>
+<doc f='include/locale.h' l='81'>/* 1 iff a space separates currency_symbol from a positive value.  */</doc>
+<use f='codebrowser/Modules/_localemodule.c' l='193' u='r' c='PyLocale_localeconv'/>

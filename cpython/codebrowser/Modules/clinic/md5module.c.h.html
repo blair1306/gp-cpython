@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>md5module.c.h source code [codebrowser/Modules/clinic/md5module.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/md5module.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='md5module.c.h.html'>md5module.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char MD5Type_copy__doc__[] = &quot;copy($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a copy of the hash object.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="MD5Type_copy__doc__" title='MD5Type_copy__doc__' data-ref="MD5Type_copy__doc__">MD5Type_copy__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"copy($self, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return a copy of the hash object."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/MD5TYPE_COPY_METHODDEF" data-ref="_M/MD5TYPE_COPY_METHODDEF">MD5TYPE_COPY_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"copy", (PyCFunction)MD5Type_copy, METH_NOARGS, MD5Type_copy__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../md5module.c.html#MD5Type_copy_impl" title='MD5Type_copy_impl' data-ref="MD5Type_copy_impl" id="MD5Type_copy_impl">MD5Type_copy_impl</a>(<a class="typedef" href="../md5module.c.html#MD5object" title='MD5object' data-type='struct MD5object' data-ref="MD5object">MD5object</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='MD5object *' data-ref="1self">self</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="MD5Type_copy" title='MD5Type_copy' data-ref="MD5Type_copy">MD5Type_copy</dfn>(<a class="typedef" href="../md5module.c.html#MD5object" title='MD5object' data-type='struct MD5object' data-ref="MD5object">MD5object</a> *<dfn class="local col2 decl" id="2self" title='self' data-type='MD5object *' data-ref="2self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <b>return</b> <a class="ref" href="../md5module.c.html#MD5Type_copy_impl" title='MD5Type_copy_impl' data-ref="MD5Type_copy_impl">MD5Type_copy_impl</a>(<a class="local col2 ref" href="#2self" title='self' data-ref="2self">self</a>);</td></tr>
+<tr><th id="21">21</th><td>}</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char MD5Type_digest__doc__[] = &quot;digest($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the digest value as a string of binary data.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="MD5Type_digest__doc__" title='MD5Type_digest__doc__' data-ref="MD5Type_digest__doc__">MD5Type_digest__doc__</dfn>,</td></tr>
+<tr><th id="24">24</th><td><q>"digest($self, /)\n"</q></td></tr>
+<tr><th id="25">25</th><td><q>"--\n"</q></td></tr>
+<tr><th id="26">26</th><td><q>"\n"</q></td></tr>
+<tr><th id="27">27</th><td><q>"Return the digest value as a string of binary data."</q>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#define <dfn class="macro" id="_M/MD5TYPE_DIGEST_METHODDEF" data-ref="_M/MD5TYPE_DIGEST_METHODDEF">MD5TYPE_DIGEST_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="30">30</th><td><u>    {"digest", (PyCFunction)MD5Type_digest, METH_NOARGS, MD5Type_digest__doc__},</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="33">33</th><td><a class="decl" href="../md5module.c.html#MD5Type_digest_impl" title='MD5Type_digest_impl' data-ref="MD5Type_digest_impl" id="MD5Type_digest_impl">MD5Type_digest_impl</a>(<a class="typedef" href="../md5module.c.html#MD5object" title='MD5object' data-type='struct MD5object' data-ref="MD5object">MD5object</a> *<dfn class="local col3 decl" id="3self" title='self' data-type='MD5object *' data-ref="3self">self</dfn>);</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="36">36</th><td><dfn class="decl def" id="MD5Type_digest" title='MD5Type_digest' data-ref="MD5Type_digest">MD5Type_digest</dfn>(<a class="typedef" href="../md5module.c.html#MD5object" title='MD5object' data-type='struct MD5object' data-ref="MD5object">MD5object</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='MD5object *' data-ref="4self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="37">37</th><td>{</td></tr>
+<tr><th id="38">38</th><td>    <b>return</b> <a class="ref" href="../md5module.c.html#MD5Type_digest_impl" title='MD5Type_digest_impl' data-ref="MD5Type_digest_impl">MD5Type_digest_impl</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>);</td></tr>
+<tr><th id="39">39</th><td>}</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char MD5Type_hexdigest__doc__[] = &quot;hexdigest($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the digest value as a string of hexadecimal digits.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="MD5Type_hexdigest__doc__" title='MD5Type_hexdigest__doc__' data-ref="MD5Type_hexdigest__doc__">MD5Type_hexdigest__doc__</dfn>,</td></tr>
+<tr><th id="42">42</th><td><q>"hexdigest($self, /)\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"--\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"Return the digest value as a string of hexadecimal digits."</q>);</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/MD5TYPE_HEXDIGEST_METHODDEF" data-ref="_M/MD5TYPE_HEXDIGEST_METHODDEF">MD5TYPE_HEXDIGEST_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="48">48</th><td><u>    {"hexdigest", (PyCFunction)MD5Type_hexdigest, METH_NOARGS, MD5Type_hexdigest__doc__},</u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="51">51</th><td><a class="decl" href="../md5module.c.html#MD5Type_hexdigest_impl" title='MD5Type_hexdigest_impl' data-ref="MD5Type_hexdigest_impl" id="MD5Type_hexdigest_impl">MD5Type_hexdigest_impl</a>(<a class="typedef" href="../md5module.c.html#MD5object" title='MD5object' data-type='struct MD5object' data-ref="MD5object">MD5object</a> *<dfn class="local col5 decl" id="5self" title='self' data-type='MD5object *' data-ref="5self">self</dfn>);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="54">54</th><td><dfn class="decl def" id="MD5Type_hexdigest" title='MD5Type_hexdigest' data-ref="MD5Type_hexdigest">MD5Type_hexdigest</dfn>(<a class="typedef" href="../md5module.c.html#MD5object" title='MD5object' data-type='struct MD5object' data-ref="MD5object">MD5object</a> *<dfn class="local col6 decl" id="6self" title='self' data-type='MD5object *' data-ref="6self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="55">55</th><td>{</td></tr>
+<tr><th id="56">56</th><td>    <b>return</b> <a class="ref" href="../md5module.c.html#MD5Type_hexdigest_impl" title='MD5Type_hexdigest_impl' data-ref="MD5Type_hexdigest_impl">MD5Type_hexdigest_impl</a>(<a class="local col6 ref" href="#6self" title='self' data-ref="6self">self</a>);</td></tr>
+<tr><th id="57">57</th><td>}</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char MD5Type_update__doc__[] = &quot;update($self, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Update this hash object\&apos;s state with the provided string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="MD5Type_update__doc__" title='MD5Type_update__doc__' data-ref="MD5Type_update__doc__">MD5Type_update__doc__</dfn>,</td></tr>
+<tr><th id="60">60</th><td><q>"update($self, obj, /)\n"</q></td></tr>
+<tr><th id="61">61</th><td><q>"--\n"</q></td></tr>
+<tr><th id="62">62</th><td><q>"\n"</q></td></tr>
+<tr><th id="63">63</th><td><q>"Update this hash object\'s state with the provided string."</q>);</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/MD5TYPE_UPDATE_METHODDEF" data-ref="_M/MD5TYPE_UPDATE_METHODDEF">MD5TYPE_UPDATE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="66">66</th><td><u>    {"update", (PyCFunction)MD5Type_update, METH_O, MD5Type_update__doc__},</u></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char _md5_md5__doc__[] = &quot;md5($module, /, string=b\&apos;\&apos;)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a new MD5 hash object; optionally initialized with a string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_md5_md5__doc__" title='_md5_md5__doc__' data-ref="_md5_md5__doc__">_md5_md5__doc__</dfn>,</td></tr>
+<tr><th id="69">69</th><td><q>"md5($module, /, string=b\'\')\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"--\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"Return a new MD5 hash object; optionally initialized with a string."</q>);</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/_MD5_MD5_METHODDEF" data-ref="_M/_MD5_MD5_METHODDEF">_MD5_MD5_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="75">75</th><td><u>    {"md5", (PyCFunction)_md5_md5, METH_FASTCALL|METH_KEYWORDS, _md5_md5__doc__},</u></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="78">78</th><td><a class="decl" href="../md5module.c.html#_md5_md5_impl" title='_md5_md5_impl' data-ref="_md5_md5_impl" id="_md5_md5_impl">_md5_md5_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7module" title='module' data-type='PyObject *' data-ref="7module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="8string" title='string' data-type='PyObject *' data-ref="8string">string</dfn>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="81">81</th><td><dfn class="decl def" id="_md5_md5" title='_md5_md5' data-ref="_md5_md5">_md5_md5</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9module" title='module' data-type='PyObject *' data-ref="9module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="10args" title='args' data-type='PyObject **' data-ref="10args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="11nargs" title='nargs' data-type='Py_ssize_t' data-ref="11nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="12kwnames" title='kwnames' data-type='PyObject *' data-ref="12kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="82">82</th><td>{</td></tr>
+<tr><th id="83">83</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="13return_value" title='return_value' data-type='PyObject *' data-ref="13return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="84">84</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col4 decl" id="14_keywords" title='_keywords' data-type='const char *const [2]' data-ref="14_keywords">_keywords</dfn>[] = {<q>"string"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="85">85</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col5 decl" id="15_parser" title='_parser' data-type='_PyArg_Parser' data-ref="15_parser">_parser</dfn> = {<q>"|O:md5"</q>, <a class="local col4 ref" href="#14_keywords" title='_keywords' data-ref="14_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="86">86</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16string" title='string' data-type='PyObject *' data-ref="16string">string</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStackAndKeywords" title='_PyArg_ParseStackAndKeywords' data-ref="_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col0 ref" href="#10args" title='args' data-ref="10args">args</a>, <a class="local col1 ref" href="#11nargs" title='nargs' data-ref="11nargs">nargs</a>, <a class="local col2 ref" href="#12kwnames" title='kwnames' data-ref="12kwnames">kwnames</a>, &amp;<a class="local col5 ref" href="#15_parser" title='_parser' data-ref="15_parser">_parser</a>,</td></tr>
+<tr><th id="89">89</th><td>        &amp;<a class="local col6 ref" href="#16string" title='string' data-ref="16string">string</a>)) {</td></tr>
+<tr><th id="90">90</th><td>        <b>goto</b> <a class="lbl" href="#17exit" data-ref="17exit">exit</a>;</td></tr>
+<tr><th id="91">91</th><td>    }</td></tr>
+<tr><th id="92">92</th><td>    <a class="local col3 ref" href="#13return_value" title='return_value' data-ref="13return_value">return_value</a> = <a class="ref" href="../md5module.c.html#_md5_md5_impl" title='_md5_md5_impl' data-ref="_md5_md5_impl">_md5_md5_impl</a>(<a class="local col9 ref" href="#9module" title='module' data-ref="9module">module</a>, <a class="local col6 ref" href="#16string" title='string' data-ref="16string">string</a>);</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><dfn class="lbl" id="17exit" data-ref="17exit">exit</dfn>:</td></tr>
+<tr><th id="95">95</th><td>    <b>return</b> <a class="local col3 ref" href="#13return_value" title='return_value' data-ref="13return_value">return_value</a>;</td></tr>
+<tr><th id="96">96</th><td>}</td></tr>
+<tr><th id="97">97</th><td><i>/*[clinic end generated code: output=3139ae340ad1ea4e input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../md5module.c.html'>codebrowser/Modules/md5module.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,75 @@
+<dec f='codebrowser/Include/bytesobject.h' l='64' type='int _PyBytes_Resize(PyObject ** , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='244' u='c' c='_codecs_escape_encode_impl'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1344' u='c' c='wrap_strftime'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1354' u='c' c='wrap_strftime'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2613' u='c' c='treebuilder_handle_data'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='977' u='c' c='_io__Buffered_read1_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1690' u='c' c='_bufferedreader_read_generic'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1714' u='c' c='_bufferedreader_read_generic'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='145' u='c' c='resize_buffer'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='317' u='c' c='_io_BytesIO_getvalue_impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='729' u='c' c='_io_FileIO_readall_impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='756' u='c' c='_io_FileIO_readall_impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='814' u='c' c='_io_FileIO_read_impl'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='150' u='c' c='grow_buffer'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='540' u='c' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='940' u='c' c='decompress_buf'/>
+<use f='codebrowser/Modules/_pickle.c' l='927' u='c' c='_Pickler_GetString'/>
+<use f='codebrowser/Modules/_pickle.c' l='972' u='c' c='_Pickler_Write'/>
+<use f='codebrowser/Modules/_ssl.c' l='2180' u='c' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4167' u='c' c='_ssl_MemoryBIO_read_impl'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1964' u='c' c='unicode_encodedecimal'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='177' u='c' c='expand_encodebuffer'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='529' u='c' c='multibytecodec_encode'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='425' u='c' c='oss_read'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8025' u='c' c='os_read_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8193' u='c' c='os_pread_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10818' u='c' c='os_getxattr_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12388' u='c' c='os_getrandom_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2701' u='c' c='sock_getsockopt'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3125' u='c' c='sock_recv'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3308' u='c' c='sock_recvfrom'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3550' u='c' c='makeval_recvmsg'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='174' u='c' c='arrange_output_buffer_with_maximum'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='275' u='c' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='419' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='692' u='c' c='zlib_Compress_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='848' u='c' c='zlib_Decompress_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='932' u='c' c='zlib_Compress_flush_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1134' u='c' c='zlib_Decompress_flush_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2210' u='c' c='bytes_translate_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2909' u='c' c='PyBytes_Concat'/>
+<def f='codebrowser/Objects/bytesobject.c' l='2952' ll='2989' type='int _PyBytes_Resize(PyObject ** pv, Py_ssize_t newsize)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3270' u='c' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3406' u='c' c='_PyBytesWriter_Finish'/>
+<doc f='codebrowser/Objects/bytesobject.c' l='2938'>/* The following function breaks the notion that bytes are immutable:
+   it changes the size of a bytes object.  We get away with this only if there
+   is only one module referencing the object.  You can also think of it
+   as creating a new bytes object and destroying the old one, only
+   more efficiently.  In any case, don&apos;t use this if the bytes object may
+   already be known to some other part of the code...
+   Note that if there&apos;s not enough memory to resize the bytes object, the
+   original bytes object at *pv is deallocated, *pv is set to NULL, an &quot;out of
+   memory&quot; exception is set, and -1 is returned.  Else (on success) 0 is
+   returned, and the value in *pv may or may not be the same as on input.
+   As always, an extra byte is allocated for a trailing \0 byte (newsize
+   does *not* include that), and a trailing \0 byte is stored.
+*/</doc>
+<use f='codebrowser/Objects/fileobject.c' l='85' u='c' c='PyFile_GetLine'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4837' u='c' c='_PyUnicode_EncodeUTF7'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5487' u='c' c='_PyUnicode_EncodeUTF32'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5509' u='c' c='_PyUnicode_EncodeUTF32'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5838' u='c' c='_PyUnicode_EncodeUTF16'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5860' u='c' c='_PyUnicode_EncodeUTF16'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6261' u='c' c='PyUnicode_AsUnicodeEscapeString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6478' u='c' c='PyUnicode_AsRawUnicodeEscapeString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8310' u='c' c='charmapencode_resize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8585' u='c' c='_PyUnicode_EncodeCharmap'/>
+<use f='codebrowser/Python/compile.c' l='5068' u='c' c='assemble_lnotab'/>
+<use f='codebrowser/Python/compile.c' l='5106' u='c' c='assemble_lnotab'/>
+<use f='codebrowser/Python/compile.c' l='5124' u='c' c='assemble_lnotab'/>
+<use f='codebrowser/Python/compile.c' l='5163' u='c' c='assemble_emit'/>
+<use f='codebrowser/Python/compile.c' l='5441' u='c' c='assemble'/>
+<use f='codebrowser/Python/compile.c' l='5443' u='c' c='assemble'/>
+<use f='codebrowser/Python/marshal.c' l='119' u='c' c='w_reserve'/>
+<use f='codebrowser/Python/marshal.c' l='1628' u='c' c='PyMarshal_WriteObjectToString'/>

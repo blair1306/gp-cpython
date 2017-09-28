@@ -1,0 +1,7 @@
+<dec f='include/openssl/ssl.h' l='2135' type='X509_STORE * SSL_CTX_get_cert_store(const SSL_CTX * )'/>
+<use f='codebrowser/Modules/_ssl.c' l='2752' u='c' c='_ssl__SSLContext_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3044' u='c' c='get_verify_flags'/>
+<use f='codebrowser/Modules/_ssl.c' l='3059' u='c' c='set_verify_flags'/>
+<use f='codebrowser/Modules/_ssl.c' l='3365' u='c' c='_add_ca_certs'/>
+<use f='codebrowser/Modules/_ssl.c' l='3908' u='c' c='_ssl__SSLContext_cert_store_stats_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3959' u='c' c='_ssl__SSLContext_get_ca_certs_impl'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/object.h' l='505' type='PyObject * _PyType_LookupId(PyTypeObject * , _Py_Identifier * )'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2278' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2279' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2280' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2281' u='c' c='_count_elements'/>
+<use f='codebrowser/Objects/typeobject.c' l='1421' u='c' c='_PyObject_LookupSpecial'/>
+<use f='codebrowser/Objects/typeobject.c' l='1435' u='c' c='lookup_maybe_method'/>
+<use f='codebrowser/Objects/typeobject.c' l='2102' u='c' c='get_dict_descriptor'/>
+<def f='codebrowser/Objects/typeobject.c' l='3020' ll='3028' type='PyObject * _PyType_LookupId(PyTypeObject * type, struct _Py_Identifier * name)'/>
+<use f='codebrowser/Objects/typeobject.c' l='6315' u='c' c='slot_tp_getattr_hook'/>
+<use f='codebrowser/Objects/typeobject.c' l='6327' u='c' c='slot_tp_getattr_hook'/>
+<use f='codebrowser/Objects/typeobject.c' l='6443' u='c' c='slot_tp_descr_get'/>

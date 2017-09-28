@@ -1,0 +1,8 @@
+<def f='codebrowser/Modules/_blake2/impl/blake2.h' l='52' ll='60'/>
+<size>192</size>
+<mbr r='__blake2s_state::h' o='0' t='uint32_t [8]'/>
+<mbr r='__blake2s_state::t' o='256' t='uint32_t [2]'/>
+<mbr r='__blake2s_state::f' o='320' t='uint32_t [2]'/>
+<mbr r='__blake2s_state::buf' o='384' t='uint8_t [128]'/>
+<mbr r='__blake2s_state::buflen' o='1408' t='size_t'/>
+<mbr r='__blake2s_state::last_node' o='1472' t='uint8_t'/>

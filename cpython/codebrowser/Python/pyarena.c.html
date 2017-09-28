@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pyarena.c source code [codebrowser/Python/pyarena.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="_arena,_block "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/pyarena.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='pyarena.c.html'>pyarena.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><i>/* A simple arena block structure.</i></td></tr>
+<tr><th id="4">4</th><td><i></i></td></tr>
+<tr><th id="5">5</th><td><i>   Measurements with standard library modules suggest the average</i></td></tr>
+<tr><th id="6">6</th><td><i>   allocation is about 20 bytes and that most compiles use a single</i></td></tr>
+<tr><th id="7">7</th><td><i>   block.</i></td></tr>
+<tr><th id="8">8</th><td><i></i></td></tr>
+<tr><th id="9">9</th><td><i>   TODO(jhylton): Think about a realloc API, maybe just for the last</i></td></tr>
+<tr><th id="10">10</th><td><i>   allocation?</i></td></tr>
+<tr><th id="11">11</th><td><i>*/</i></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#define <dfn class="macro" id="_M/DEFAULT_BLOCK_SIZE" data-ref="_M/DEFAULT_BLOCK_SIZE">DEFAULT_BLOCK_SIZE</dfn> 8192</u></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/ALIGNMENT" data-ref="_M/ALIGNMENT">ALIGNMENT</dfn>               8</u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="_block" title='_block' data-ref="_block"><a class="type" href="#_block" title='_block' data-ref="_block">_block</a></dfn> {</td></tr>
+<tr><th id="17">17</th><td>    <i  data-doc="_block::ab_size">/* Total number of bytes owned by this block available to pass out.</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="_block::ab_size">     * Read-only after initialization.  The first such byte starts at</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="_block::ab_size">     * ab_mem.</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="_block::ab_size">     */</i></td></tr>
+<tr><th id="21">21</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="tu decl" id="_block::ab_size" title='_block::ab_size' data-type='size_t' data-ref="_block::ab_size">ab_size</dfn>;</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td>    <i  data-doc="_block::ab_offset">/* Total number of bytes already passed out.  The next byte available</i></td></tr>
+<tr><th id="24">24</th><td><i  data-doc="_block::ab_offset">     * to pass out starts at ab_mem + ab_offset.</i></td></tr>
+<tr><th id="25">25</th><td><i  data-doc="_block::ab_offset">     */</i></td></tr>
+<tr><th id="26">26</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="tu decl" id="_block::ab_offset" title='_block::ab_offset' data-type='size_t' data-ref="_block::ab_offset">ab_offset</dfn>;</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td>    <i  data-doc="_block::ab_next">/* An arena maintains a singly-linked, NULL-terminated list of</i></td></tr>
+<tr><th id="29">29</th><td><i  data-doc="_block::ab_next">     * all blocks owned by the arena.  These are linked via the</i></td></tr>
+<tr><th id="30">30</th><td><i  data-doc="_block::ab_next">     * ab_next member.</i></td></tr>
+<tr><th id="31">31</th><td><i  data-doc="_block::ab_next">     */</i></td></tr>
+<tr><th id="32">32</th><td>    <b>struct</b> <a class="type" href="#_block" title='_block' data-ref="_block">_block</a> *<dfn class="tu decl" id="_block::ab_next" title='_block::ab_next' data-type='struct _block *' data-ref="_block::ab_next">ab_next</dfn>;</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td>    <i  data-doc="_block::ab_mem">/* Pointer to the first allocatable byte owned by this block.  Read-</i></td></tr>
+<tr><th id="35">35</th><td><i  data-doc="_block::ab_mem">     * only after initialization.</i></td></tr>
+<tr><th id="36">36</th><td><i  data-doc="_block::ab_mem">     */</i></td></tr>
+<tr><th id="37">37</th><td>    <em>void</em> *<dfn class="tu decl" id="_block::ab_mem" title='_block::ab_mem' data-type='void *' data-ref="_block::ab_mem">ab_mem</dfn>;</td></tr>
+<tr><th id="38">38</th><td>} <dfn class="typedef" id="block" title='block' data-type='struct _block' data-ref="block">block</dfn>;</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><i>/* The arena manages two kinds of memory, blocks of raw memory</i></td></tr>
+<tr><th id="41">41</th><td><i>   and a list of PyObject* pointers.  PyObjects are decrefed</i></td></tr>
+<tr><th id="42">42</th><td><i>   when the arena is freed.</i></td></tr>
+<tr><th id="43">43</th><td><i>*/</i></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><b>struct</b> <dfn class="type def" id="_arena" title='_arena' data-ref="_arena">_arena</dfn> {</td></tr>
+<tr><th id="46">46</th><td>    <i>/* Pointer to the first block allocated for the arena, never NULL.</i></td></tr>
+<tr><th id="47">47</th><td><i>       It is used only to find the first block when the arena is</i></td></tr>
+<tr><th id="48">48</th><td><i>       being freed.</i></td></tr>
+<tr><th id="49">49</th><td><i>     */</i></td></tr>
+<tr><th id="50">50</th><td>    <a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="decl" id="_arena::a_head" title='_arena::a_head' data-ref="_arena::a_head">a_head</dfn>;</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>    <i>/* Pointer to the block currently used for allocation.  It's</i></td></tr>
+<tr><th id="53">53</th><td><i>       ab_next field should be NULL.  If it is not-null after a</i></td></tr>
+<tr><th id="54">54</th><td><i>       call to block_alloc(), it means a new block has been allocated</i></td></tr>
+<tr><th id="55">55</th><td><i>       and a_cur should be reset to point it.</i></td></tr>
+<tr><th id="56">56</th><td><i>     */</i></td></tr>
+<tr><th id="57">57</th><td>    <a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="decl" id="_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</dfn>;</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>    <i>/* A Python list object containing references to all the PyObject</i></td></tr>
+<tr><th id="60">60</th><td><i>       pointers associated with this area.  They will be DECREFed</i></td></tr>
+<tr><th id="61">61</th><td><i>       when the arena is freed.</i></td></tr>
+<tr><th id="62">62</th><td><i>    */</i></td></tr>
+<tr><th id="63">63</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl" id="_arena::a_objects" title='_arena::a_objects' data-ref="_arena::a_objects">a_objects</dfn>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><u>#<span data-ppcond="65">if</span> defined(<a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a>)</u></td></tr>
+<tr><th id="66">66</th><td>    <i>/* Debug output */</i></td></tr>
+<tr><th id="67">67</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_arena::total_allocs" title='_arena::total_allocs' data-ref="_arena::total_allocs">total_allocs</dfn>;</td></tr>
+<tr><th id="68">68</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_arena::total_size" title='_arena::total_size' data-ref="_arena::total_size">total_size</dfn>;</td></tr>
+<tr><th id="69">69</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_arena::total_blocks" title='_arena::total_blocks' data-ref="_arena::total_blocks">total_blocks</dfn>;</td></tr>
+<tr><th id="70">70</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_arena::total_block_size" title='_arena::total_block_size' data-ref="_arena::total_block_size">total_block_size</dfn>;</td></tr>
+<tr><th id="71">71</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_arena::total_big_blocks" title='_arena::total_big_blocks' data-ref="_arena::total_big_blocks">total_big_blocks</dfn>;</td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="65">endif</span></u></td></tr>
+<tr><th id="73">73</th><td>};</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><em>static</em> <a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *</td></tr>
+<tr><th id="76">76</th><td><dfn class="tu decl def" id="block_new" title='block_new' data-type='block * block_new(size_t size)' data-ref="block_new">block_new</dfn>(<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col1 decl" id="1size" title='size' data-type='size_t' data-ref="1size">size</dfn>)</td></tr>
+<tr><th id="77">77</th><td>{</td></tr>
+<tr><th id="78">78</th><td>    <i>/* Allocate header and block as one unit.</i></td></tr>
+<tr><th id="79">79</th><td><i>       ab_mem points just past header. */</i></td></tr>
+<tr><th id="80">80</th><td>    <a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="local col2 decl" id="2b" title='b' data-type='block *' data-ref="2b">b</dfn> = (<a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *)<a class="ref" href="../Include/pymem.h.html#PyMem_Malloc" title='PyMem_Malloc' data-ref="PyMem_Malloc">PyMem_Malloc</a>(<b>sizeof</b>(<a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a>) + <a class="local col1 ref" href="#1size" title='size' data-ref="1size">size</a>);</td></tr>
+<tr><th id="81">81</th><td>    <b>if</b> (!<a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>)</td></tr>
+<tr><th id="82">82</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="83">83</th><td>    <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>-&gt;<a class="tu ref" href="#_block::ab_size" title='_block::ab_size' data-use='w' data-ref="_block::ab_size">ab_size</a> = <a class="local col1 ref" href="#1size" title='size' data-ref="1size">size</a>;</td></tr>
+<tr><th id="84">84</th><td>    <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>-&gt;<a class="tu ref" href="#_block::ab_mem" title='_block::ab_mem' data-use='w' data-ref="_block::ab_mem">ab_mem</a> = (<em>void</em> *)(<a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a> + <var>1</var>);</td></tr>
+<tr><th id="85">85</th><td>    <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>-&gt;<a class="tu ref" href="#_block::ab_next" title='_block::ab_next' data-use='w' data-ref="_block::ab_next">ab_next</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="86">86</th><td>    <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>-&gt;<a class="tu ref" href="#_block::ab_offset" title='_block::ab_offset' data-use='w' data-ref="_block::ab_offset">ab_offset</a> = (<em>char</em> *)<a class="macro" href="../Include/pymacro.h.html#87" title="((void *)(((uintptr_t)(b-&gt;ab_mem) + (uintptr_t)((8) - 1)) &amp; ~(uintptr_t)((8) - 1)))" data-ref="_M/_Py_ALIGN_UP">_Py_ALIGN_UP</a>(<a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>-&gt;<a class="tu ref" href="#_block::ab_mem" title='_block::ab_mem' data-use='r' data-ref="_block::ab_mem">ab_mem</a>, <a class="macro" href="#14" title="8" data-ref="_M/ALIGNMENT">ALIGNMENT</a>) -</td></tr>
+<tr><th id="87">87</th><td>            (<em>char</em> *)(<a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>-&gt;<a class="tu ref" href="#_block::ab_mem" title='_block::ab_mem' data-use='r' data-ref="_block::ab_mem">ab_mem</a>);</td></tr>
+<tr><th id="88">88</th><td>    <b>return</b> <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>;</td></tr>
+<tr><th id="89">89</th><td>}</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="92">92</th><td><dfn class="tu decl def" id="block_free" title='block_free' data-type='void block_free(block * b)' data-ref="block_free">block_free</dfn>(<a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="local col3 decl" id="3b" title='b' data-type='block *' data-ref="3b">b</dfn>) {</td></tr>
+<tr><th id="93">93</th><td>    <b>while</b> (<a class="local col3 ref" href="#3b" title='b' data-ref="3b">b</a>) {</td></tr>
+<tr><th id="94">94</th><td>        <a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="local col4 decl" id="4next" title='next' data-type='block *' data-ref="4next">next</dfn> = <a class="local col3 ref" href="#3b" title='b' data-ref="3b">b</a>-&gt;<a class="tu ref" href="#_block::ab_next" title='_block::ab_next' data-use='r' data-ref="_block::ab_next">ab_next</a>;</td></tr>
+<tr><th id="95">95</th><td>        <a class="ref" href="../Include/pymem.h.html#PyMem_Free" title='PyMem_Free' data-ref="PyMem_Free">PyMem_Free</a>(<a class="local col3 ref" href="#3b" title='b' data-ref="3b">b</a>);</td></tr>
+<tr><th id="96">96</th><td>        <a class="local col3 ref" href="#3b" title='b' data-ref="3b">b</a> = <a class="local col4 ref" href="#4next" title='next' data-ref="4next">next</a>;</td></tr>
+<tr><th id="97">97</th><td>    }</td></tr>
+<tr><th id="98">98</th><td>}</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><em>static</em> <em>void</em> *</td></tr>
+<tr><th id="101">101</th><td><dfn class="tu decl def" id="block_alloc" title='block_alloc' data-type='void * block_alloc(block * b, size_t size)' data-ref="block_alloc">block_alloc</dfn>(<a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="local col5 decl" id="5b" title='b' data-type='block *' data-ref="5b">b</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="6size" title='size' data-type='size_t' data-ref="6size">size</dfn>)</td></tr>
+<tr><th id="102">102</th><td>{</td></tr>
+<tr><th id="103">103</th><td>    <em>void</em> *<dfn class="local col7 decl" id="7p" title='p' data-type='void *' data-ref="7p">p</dfn>;</td></tr>
+<tr><th id="104">104</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="((b) ? (void) (0) : __assert_fail (&quot;b&quot;, &quot;/home/jon/workspace/cpython/Python/pyarena.c&quot;, 104, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>);</td></tr>
+<tr><th id="105">105</th><td>    <a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a> = <a class="macro" href="../Include/pymacro.h.html#82" title="(((size_t)(size) + (size_t)((8) - 1)) &amp; ~(size_t)((8) - 1))" data-ref="_M/_Py_SIZE_ROUND_UP">_Py_SIZE_ROUND_UP</a>(<a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a>, <a class="macro" href="#14" title="8" data-ref="_M/ALIGNMENT">ALIGNMENT</a>);</td></tr>
+<tr><th id="106">106</th><td>    <b>if</b> (<a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_offset" title='_block::ab_offset' data-use='r' data-ref="_block::ab_offset">ab_offset</a> + <a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a> &gt; <a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_size" title='_block::ab_size' data-use='r' data-ref="_block::ab_size">ab_size</a>) {</td></tr>
+<tr><th id="107">107</th><td>        <i>/* If we need to allocate more memory than will fit in</i></td></tr>
+<tr><th id="108">108</th><td><i>           the default block, allocate a one-off block that is</i></td></tr>
+<tr><th id="109">109</th><td><i>           exactly the right size. */</i></td></tr>
+<tr><th id="110">110</th><td>        <i>/* TODO(jhylton): Think about space waste at end of block */</i></td></tr>
+<tr><th id="111">111</th><td>        <a class="typedef" href="#block" title='block' data-type='struct _block' data-ref="block">block</a> *<dfn class="local col8 decl" id="8newbl" title='newbl' data-type='block *' data-ref="8newbl">newbl</dfn> = <a class="tu ref" href="#block_new" title='block_new' data-use='c' data-ref="block_new">block_new</a>(</td></tr>
+<tr><th id="112">112</th><td>                        <a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a> &lt; <a class="macro" href="#13" title="8192" data-ref="_M/DEFAULT_BLOCK_SIZE">DEFAULT_BLOCK_SIZE</a> ?</td></tr>
+<tr><th id="113">113</th><td>                        <a class="macro" href="#13" title="8192" data-ref="_M/DEFAULT_BLOCK_SIZE">DEFAULT_BLOCK_SIZE</a> : <a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a>);</td></tr>
+<tr><th id="114">114</th><td>        <b>if</b> (!<a class="local col8 ref" href="#8newbl" title='newbl' data-ref="8newbl">newbl</a>)</td></tr>
+<tr><th id="115">115</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="116">116</th><td>        <a class="macro" href="../../include/assert.h.html#88" title="((!b-&gt;ab_next) ? (void) (0) : __assert_fail (&quot;!b-&gt;ab_next&quot;, &quot;/home/jon/workspace/cpython/Python/pyarena.c&quot;, 116, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(!<a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_next" title='_block::ab_next' data-use='r' data-ref="_block::ab_next">ab_next</a>);</td></tr>
+<tr><th id="117">117</th><td>        <a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_next" title='_block::ab_next' data-use='w' data-ref="_block::ab_next">ab_next</a> = <a class="local col8 ref" href="#8newbl" title='newbl' data-ref="8newbl">newbl</a>;</td></tr>
+<tr><th id="118">118</th><td>        <a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a> = <a class="local col8 ref" href="#8newbl" title='newbl' data-ref="8newbl">newbl</a>;</td></tr>
+<tr><th id="119">119</th><td>    }</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="((b-&gt;ab_offset + size &lt;= b-&gt;ab_size) ? (void) (0) : __assert_fail (&quot;b-&gt;ab_offset + size &lt;= b-&gt;ab_size&quot;, &quot;/home/jon/workspace/cpython/Python/pyarena.c&quot;, 121, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_offset" title='_block::ab_offset' data-use='r' data-ref="_block::ab_offset">ab_offset</a> + <a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a> &lt;= <a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_size" title='_block::ab_size' data-use='r' data-ref="_block::ab_size">ab_size</a>);</td></tr>
+<tr><th id="122">122</th><td>    <a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a> = (<em>void</em> *)(((<em>char</em> *)<a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_mem" title='_block::ab_mem' data-use='r' data-ref="_block::ab_mem">ab_mem</a>) + <a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_offset" title='_block::ab_offset' data-use='r' data-ref="_block::ab_offset">ab_offset</a>);</td></tr>
+<tr><th id="123">123</th><td>    <a class="local col5 ref" href="#5b" title='b' data-ref="5b">b</a>-&gt;<a class="tu ref" href="#_block::ab_offset" title='_block::ab_offset' data-use='w' data-ref="_block::ab_offset">ab_offset</a> += <a class="local col6 ref" href="#6size" title='size' data-ref="6size">size</a>;</td></tr>
+<tr><th id="124">124</th><td>    <b>return</b> <a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>;</td></tr>
+<tr><th id="125">125</th><td>}</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *</td></tr>
+<tr><th id="128">128</th><td><dfn class="decl def" id="PyArena_New" title='PyArena_New' data-ref="PyArena_New">PyArena_New</dfn>()</td></tr>
+<tr><th id="129">129</th><td>{</td></tr>
+<tr><th id="130">130</th><td>    <a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a>* <dfn class="local col9 decl" id="9arena" title='arena' data-type='PyArena *' data-ref="9arena">arena</dfn> = (<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *)<a class="ref" href="../Include/pymem.h.html#PyMem_Malloc" title='PyMem_Malloc' data-ref="PyMem_Malloc">PyMem_Malloc</a>(<b>sizeof</b>(<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a>));</td></tr>
+<tr><th id="131">131</th><td>    <b>if</b> (!<a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>)</td></tr>
+<tr><th id="132">132</th><td>        <b>return</b> (<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a>*)<a class="ref" href="../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_head" title='_arena::a_head' data-ref="_arena::a_head">a_head</a> = <a class="tu ref" href="#block_new" title='block_new' data-use='c' data-ref="block_new">block_new</a>(<a class="macro" href="#13" title="8192" data-ref="_M/DEFAULT_BLOCK_SIZE">DEFAULT_BLOCK_SIZE</a>);</td></tr>
+<tr><th id="135">135</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a> = <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_head" title='_arena::a_head' data-ref="_arena::a_head">a_head</a>;</td></tr>
+<tr><th id="136">136</th><td>    <b>if</b> (!<a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_head" title='_arena::a_head' data-ref="_arena::a_head">a_head</a>) {</td></tr>
+<tr><th id="137">137</th><td>        <a class="ref" href="../Include/pymem.h.html#PyMem_Free" title='PyMem_Free' data-ref="PyMem_Free">PyMem_Free</a>((<em>void</em> *)<a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>);</td></tr>
+<tr><th id="138">138</th><td>        <b>return</b> (<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a>*)<a class="ref" href="../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="139">139</th><td>    }</td></tr>
+<tr><th id="140">140</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_objects" title='_arena::a_objects' data-ref="_arena::a_objects">a_objects</a> = <a class="ref" href="../Include/listobject.h.html#PyList_New" title='PyList_New' data-ref="PyList_New">PyList_New</a>(<var>0</var>);</td></tr>
+<tr><th id="141">141</th><td>    <b>if</b> (!<a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_objects" title='_arena::a_objects' data-ref="_arena::a_objects">a_objects</a>) {</td></tr>
+<tr><th id="142">142</th><td>        <a class="tu ref" href="#block_free" title='block_free' data-use='c' data-ref="block_free">block_free</a>(<a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::a_head" title='_arena::a_head' data-ref="_arena::a_head">a_head</a>);</td></tr>
+<tr><th id="143">143</th><td>        <a class="ref" href="../Include/pymem.h.html#PyMem_Free" title='PyMem_Free' data-ref="PyMem_Free">PyMem_Free</a>((<em>void</em> *)<a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>);</td></tr>
+<tr><th id="144">144</th><td>        <b>return</b> (<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a>*)<a class="ref" href="../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="145">145</th><td>    }</td></tr>
+<tr><th id="146">146</th><td><u>#<span data-ppcond="146">if</span> defined(<a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a>)</u></td></tr>
+<tr><th id="147">147</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::total_allocs" title='_arena::total_allocs' data-ref="_arena::total_allocs">total_allocs</a> = <var>0</var>;</td></tr>
+<tr><th id="148">148</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::total_size" title='_arena::total_size' data-ref="_arena::total_size">total_size</a> = <var>0</var>;</td></tr>
+<tr><th id="149">149</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::total_blocks" title='_arena::total_blocks' data-ref="_arena::total_blocks">total_blocks</a> = <var>1</var>;</td></tr>
+<tr><th id="150">150</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::total_block_size" title='_arena::total_block_size' data-ref="_arena::total_block_size">total_block_size</a> = <a class="macro" href="#13" title="8192" data-ref="_M/DEFAULT_BLOCK_SIZE">DEFAULT_BLOCK_SIZE</a>;</td></tr>
+<tr><th id="151">151</th><td>    <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>-&gt;<a class="ref" href="#_arena::total_big_blocks" title='_arena::total_big_blocks' data-ref="_arena::total_big_blocks">total_big_blocks</a> = <var>0</var>;</td></tr>
+<tr><th id="152">152</th><td><u>#<span data-ppcond="146">endif</span></u></td></tr>
+<tr><th id="153">153</th><td>    <b>return</b> <a class="local col9 ref" href="#9arena" title='arena' data-ref="9arena">arena</a>;</td></tr>
+<tr><th id="154">154</th><td>}</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td><em>void</em></td></tr>
+<tr><th id="157">157</th><td><dfn class="decl def" id="PyArena_Free" title='PyArena_Free' data-ref="PyArena_Free">PyArena_Free</dfn>(<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col0 decl" id="10arena" title='arena' data-type='PyArena *' data-ref="10arena">arena</dfn>)</td></tr>
+<tr><th id="158">158</th><td>{</td></tr>
+<tr><th id="159">159</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="((arena) ? (void) (0) : __assert_fail (&quot;arena&quot;, &quot;/home/jon/workspace/cpython/Python/pyarena.c&quot;, 159, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col0 ref" href="#10arena" title='arena' data-ref="10arena">arena</a>);</td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="160">if</span> defined(<a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a>)</u></td></tr>
+<tr><th id="161">161</th><td>    <i>/*</i></td></tr>
+<tr><th id="162">162</th><td><i>    fprintf(stderr,</i></td></tr>
+<tr><th id="163">163</th><td><i>        "alloc=%d size=%d blocks=%d block_size=%d big=%d objects=%d\n",</i></td></tr>
+<tr><th id="164">164</th><td><i>        arena-&gt;total_allocs, arena-&gt;total_size, arena-&gt;total_blocks,</i></td></tr>
+<tr><th id="165">165</th><td><i>        arena-&gt;total_block_size, arena-&gt;total_big_blocks,</i></td></tr>
+<tr><th id="166">166</th><td><i>        PyList_Size(arena-&gt;a_objects));</i></td></tr>
+<tr><th id="167">167</th><td><i>    */</i></td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="160">endif</span></u></td></tr>
+<tr><th id="169">169</th><td>    <a class="tu ref" href="#block_free" title='block_free' data-use='c' data-ref="block_free">block_free</a>(<a class="local col0 ref" href="#10arena" title='arena' data-ref="10arena">arena</a>-&gt;<a class="ref" href="#_arena::a_head" title='_arena::a_head' data-ref="_arena::a_head">a_head</a>);</td></tr>
+<tr><th id="170">170</th><td>    <i>/* This property normally holds, except when the code being compiled</i></td></tr>
+<tr><th id="171">171</th><td><i>       is sys.getobjects(0), in which case there will be two references.</i></td></tr>
+<tr><th id="172">172</th><td><i>    assert(arena-&gt;a_objects-&gt;ob_refcnt == 1);</i></td></tr>
+<tr><th id="173">173</th><td><i>    */</i></td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(arena-&gt;a_objects); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Python/pyarena.c&quot;, 175, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#10arena" title='arena' data-ref="10arena">arena</a>-&gt;<a class="ref" href="#_arena::a_objects" title='_arena::a_objects' data-ref="_arena::a_objects">a_objects</a>);</td></tr>
+<tr><th id="176">176</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_Free" title='PyMem_Free' data-ref="PyMem_Free">PyMem_Free</a>(<a class="local col0 ref" href="#10arena" title='arena' data-ref="10arena">arena</a>);</td></tr>
+<tr><th id="177">177</th><td>}</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><em>void</em> *</td></tr>
+<tr><th id="180">180</th><td><dfn class="decl def" id="PyArena_Malloc" title='PyArena_Malloc' data-ref="PyArena_Malloc">PyArena_Malloc</dfn>(<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col1 decl" id="11arena" title='arena' data-type='PyArena *' data-ref="11arena">arena</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col2 decl" id="12size" title='size' data-type='size_t' data-ref="12size">size</dfn>)</td></tr>
+<tr><th id="181">181</th><td>{</td></tr>
+<tr><th id="182">182</th><td>    <em>void</em> *<dfn class="local col3 decl" id="13p" title='p' data-type='void *' data-ref="13p">p</dfn> = <a class="tu ref" href="#block_alloc" title='block_alloc' data-use='c' data-ref="block_alloc">block_alloc</a>(<a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a>, <a class="local col2 ref" href="#12size" title='size' data-ref="12size">size</a>);</td></tr>
+<tr><th id="183">183</th><td>    <b>if</b> (!<a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>)</td></tr>
+<tr><th id="184">184</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="185">185</th><td><u>#<span data-ppcond="185">if</span> defined(<a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a>)</u></td></tr>
+<tr><th id="186">186</th><td>    <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::total_allocs" title='_arena::total_allocs' data-ref="_arena::total_allocs">total_allocs</a>++;</td></tr>
+<tr><th id="187">187</th><td>    <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::total_size" title='_arena::total_size' data-ref="_arena::total_size">total_size</a> += <a class="local col2 ref" href="#12size" title='size' data-ref="12size">size</a>;</td></tr>
+<tr><th id="188">188</th><td><u>#<span data-ppcond="185">endif</span></u></td></tr>
+<tr><th id="189">189</th><td>    <i>/* Reset cur if we allocated a new block. */</i></td></tr>
+<tr><th id="190">190</th><td>    <b>if</b> (<a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a>-&gt;<a class="tu ref" href="#_block::ab_next" title='_block::ab_next' data-use='r' data-ref="_block::ab_next">ab_next</a>) {</td></tr>
+<tr><th id="191">191</th><td>        <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a> = <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a>-&gt;<a class="tu ref" href="#_block::ab_next" title='_block::ab_next' data-use='r' data-ref="_block::ab_next">ab_next</a>;</td></tr>
+<tr><th id="192">192</th><td><u>#<span data-ppcond="192">if</span> defined(<a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a>)</u></td></tr>
+<tr><th id="193">193</th><td>        <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::total_blocks" title='_arena::total_blocks' data-ref="_arena::total_blocks">total_blocks</a>++;</td></tr>
+<tr><th id="194">194</th><td>        <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::total_block_size" title='_arena::total_block_size' data-ref="_arena::total_block_size">total_block_size</a> += <a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a>-&gt;<a class="tu ref" href="#_block::ab_size" title='_block::ab_size' data-use='r' data-ref="_block::ab_size">ab_size</a>;</td></tr>
+<tr><th id="195">195</th><td>        <b>if</b> (<a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::a_cur" title='_arena::a_cur' data-ref="_arena::a_cur">a_cur</a>-&gt;<a class="tu ref" href="#_block::ab_size" title='_block::ab_size' data-use='r' data-ref="_block::ab_size">ab_size</a> &gt; <a class="macro" href="#13" title="8192" data-ref="_M/DEFAULT_BLOCK_SIZE">DEFAULT_BLOCK_SIZE</a>)</td></tr>
+<tr><th id="196">196</th><td>            ++<a class="local col1 ref" href="#11arena" title='arena' data-ref="11arena">arena</a>-&gt;<a class="ref" href="#_arena::total_big_blocks" title='_arena::total_big_blocks' data-ref="_arena::total_big_blocks">total_big_blocks</a>;</td></tr>
+<tr><th id="197">197</th><td><u>#<span data-ppcond="192">endif</span></u></td></tr>
+<tr><th id="198">198</th><td>    }</td></tr>
+<tr><th id="199">199</th><td>    <b>return</b> <a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>;</td></tr>
+<tr><th id="200">200</th><td>}</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><em>int</em></td></tr>
+<tr><th id="203">203</th><td><dfn class="decl def" id="PyArena_AddPyObject" title='PyArena_AddPyObject' data-ref="PyArena_AddPyObject">PyArena_AddPyObject</dfn>(<a class="typedef" href="../Include/pyarena.h.html#PyArena" title='PyArena' data-type='struct _arena' data-ref="PyArena">PyArena</a> *<dfn class="local col4 decl" id="14arena" title='arena' data-type='PyArena *' data-ref="14arena">arena</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15obj" title='obj' data-type='PyObject *' data-ref="15obj">obj</dfn>)</td></tr>
+<tr><th id="204">204</th><td>{</td></tr>
+<tr><th id="205">205</th><td>    <em>int</em> <dfn class="local col6 decl" id="16r" title='r' data-type='int' data-ref="16r">r</dfn> = <a class="ref" href="../Include/listobject.h.html#PyList_Append" title='PyList_Append' data-ref="PyList_Append">PyList_Append</a>(<a class="local col4 ref" href="#14arena" title='arena' data-ref="14arena">arena</a>-&gt;<a class="ref" href="#_arena::a_objects" title='_arena::a_objects' data-ref="_arena::a_objects">a_objects</a>, <a class="local col5 ref" href="#15obj" title='obj' data-ref="15obj">obj</a>);</td></tr>
+<tr><th id="206">206</th><td>    <b>if</b> (<a class="local col6 ref" href="#16r" title='r' data-ref="16r">r</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="207">207</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(obj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Python/pyarena.c&quot;, 207, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col5 ref" href="#15obj" title='obj' data-ref="15obj">obj</a>);</td></tr>
+<tr><th id="208">208</th><td>    }</td></tr>
+<tr><th id="209">209</th><td>    <b>return</b> <a class="local col6 ref" href="#16r" title='r' data-ref="16r">r</a>;</td></tr>
+<tr><th id="210">210</th><td>}</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

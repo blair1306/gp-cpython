@@ -1,0 +1,3 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='609' macro='1' type='void PyExpat_XML_SetNamespaceDeclHandler(XML_Parser parser, XML_StartNamespaceDeclHandler start, XML_EndNamespaceDeclHandler end)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1743' macro='1' type='void PyExpat_XML_SetNamespaceDeclHandler(XML_Parser parser, XML_StartNamespaceDeclHandler start, XML_EndNamespaceDeclHandler end)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1879' macro='1' u='r'/>

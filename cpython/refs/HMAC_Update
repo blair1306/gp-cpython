@@ -1,0 +1,4 @@
+<dec f='include/openssl/hmac.h' l='96' type='int HMAC_Update(HMAC_CTX * ctx, const unsigned char * data, size_t len)'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='598' u='c' c='PKCS5_PBKDF2_HMAC_fast'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='599' u='c' c='PKCS5_PBKDF2_HMAC_fast'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='612' u='c' c='PKCS5_PBKDF2_HMAC_fast'/>

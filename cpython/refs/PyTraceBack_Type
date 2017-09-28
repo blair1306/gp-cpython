@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/traceback.h' l='31' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1058' macro='1' u='a'/>
+<use f='codebrowser/Objects/exceptions.c' l='225' macro='1' u='a'/>
+<use f='codebrowser/Objects/genobject.c' l='491' macro='1' u='a'/>
+<use f='codebrowser/Objects/object.c' l='1677' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/errors.c' l='33' macro='1' u='a'/>
+<use f='codebrowser/Python/import.c' l='1310' macro='1' u='a'/>
+<use f='codebrowser/Python/pythonrun.c' l='859' macro='1' u='a'/>
+<def f='codebrowser/Python/traceback.c' l='75' ll='108' type='PyTypeObject'/>
+<use f='codebrowser/Python/traceback.c' l='114' macro='1' u='a'/>
+<use f='codebrowser/Python/traceback.c' l='119' u='a' c='newtracebackobject'/>
+<use f='codebrowser/Python/traceback.c' l='482' macro='1' u='a'/>

@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/pyerrors.h' l='116' type='void PyErr_NormalizeException(PyObject ** , PyObject ** , PyObject ** )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1068' u='c' c='FutureIter_throw'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2046' u='c' c='task_step_impl'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='2354' u='c' c='task_wakeup'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='940' u='c' c='_ctypes_extend_error'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='797' u='c' c='_PyIO_trap_eintr'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='102' u='c' c='atexit_callfuncs'/>
+<use f='codebrowser/Objects/exceptions.c' l='2783' u='c' c='_PyErr_TrySetFromCause'/>
+<use f='codebrowser/Objects/exceptions.c' l='2841' u='c' c='_PyErr_TrySetFromCause'/>
+<use f='codebrowser/Objects/genobject.c' l='502' u='c' c='_gen_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='636' u='c' c='_PyGen_FetchStopIterationValue'/>
+<use f='codebrowser/Python/ceval.c' l='3630' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4490' u='c' c='call_exc_trace'/>
+<def f='codebrowser/Python/errors.c' l='214' ll='309' type='void PyErr_NormalizeException(PyObject ** exc, PyObject ** val, PyObject ** tb)'/>
+<use f='codebrowser/Python/errors.c' l='307' u='c' c='PyErr_NormalizeException'/>
+<use f='codebrowser/Python/errors.c' l='377' u='c' c='_PyErr_ChainExceptions'/>
+<use f='codebrowser/Python/errors.c' l='383' u='c' c='_PyErr_ChainExceptions'/>
+<use f='codebrowser/Python/errors.c' l='399' u='c' c='_PyErr_FormatVFromCause'/>
+<use f='codebrowser/Python/errors.c' l='410' u='c' c='_PyErr_FormatVFromCause'/>
+<use f='codebrowser/Python/errors.c' l='1033' u='c' c='PyErr_SyntaxLocationObject'/>
+<doc f='codebrowser/Python/errors.c' l='208'>/* Used in many places to normalize a raised exception, including in
+   eval_code2(), do_raise(), and PyErr_Print()
+
+   XXX: should PyErr_NormalizeException() also call
+            PyException_SetTraceback() with the resulting value and tb?
+*/</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='1765' u='c' c='_Py_FatalError_PrintExc'/>
+<use f='codebrowser/Python/pythonrun.c' l='619' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='648' u='c' c='PyErr_PrintEx'/>

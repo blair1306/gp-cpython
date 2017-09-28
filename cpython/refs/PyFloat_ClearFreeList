@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/floatobject.h' l='113' type='int PyFloat_ClearFreeList()'/>
+<doc f='codebrowser/Include/floatobject.h' l='112'>/* free list api */</doc>
+<use f='codebrowser/Modules/gcmodule.c' l='899' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/floatobject.c' l='2010' ll='2023' type='int PyFloat_ClearFreeList()'/>
+<use f='codebrowser/Objects/floatobject.c' l='2028' u='c' c='PyFloat_Fini'/>

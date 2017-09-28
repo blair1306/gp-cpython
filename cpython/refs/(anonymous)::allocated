@@ -1,0 +1,46 @@
+<dec f='codebrowser/Include/bytesobject.h' l='149' type='Py_ssize_t'/>
+<dec f='codebrowser/Include/listobject.h' l='39' type='Py_ssize_t'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/bytesobject.h' l='148'>/* Number of allocated size. */</doc>
+<doc f='codebrowser/Include/listobject.h' l='28'>/* ob_item contains space for &apos;allocated&apos; elements.  The number
+     * currently in use is ob_size.
+     * Invariants:
+     *     0 &lt;= ob_size &lt;= allocated
+     *     len(list) == ob_size
+     *     ob_item == NULL implies ob_size == allocated == 0
+     * list.sort() temporarily sets allocated to -1 to detect mutations.
+     *
+     * Items must normally not be NULL, except during construction when
+     * the list is not yet visible outside the function that builds it.
+     */</doc>
+<use f='codebrowser/Objects/bytesobject.c' l='2714' u='r' c='_PyBytes_FromIterator'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2747' u='r' c='_PyBytes_FromIterator'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3203' u='r' c='_PyBytesWriter_GetSize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3231' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3232' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3235' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3237' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3249' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3301' u='w' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3332' u='r' c='_PyBytesWriter_Prepare'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3351' u='w' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3362' u='w' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3362' u='r' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3362' u='r' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3365' u='r' c='_PyBytesWriter_Alloc'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3398' u='r' c='_PyBytesWriter_Finish'/>
+<use f='codebrowser/Objects/listobject.c' l='37' u='r' c='list_resize'/>
+<use f='codebrowser/Objects/listobject.c' l='74' u='w' c='list_resize'/>
+<use f='codebrowser/Objects/listobject.c' l='182' u='w' c='PyList_New'/>
+<use f='codebrowser/Objects/listobject.c' l='562' u='w' c='_list_clear'/>
+<use f='codebrowser/Objects/listobject.c' l='914' u='r' c='list_extend'/>
+<use f='codebrowser/Objects/listobject.c' l='928' u='r' c='list_extend'/>
+<use f='codebrowser/Objects/listobject.c' l='2003' u='r' c='list_sort_impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2006' u='w' c='list_sort_impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2108' u='r' c='list_sort_impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2126' u='w' c='list_sort_impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2404' u='r' c='list___init___impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2404' u='r' c='list___init___impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2406' u='r' c='list___init___impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2406' u='r' c='list___init___impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2433' u='r' c='list___sizeof___impl'/>

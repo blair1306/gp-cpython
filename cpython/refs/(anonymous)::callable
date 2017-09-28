@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='64' type='PyObject *'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='88' type='PyObject *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3407' u='w' c='PyCFuncPtr_FromDll'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3529' u='w' c='PyCFuncPtr_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3979' u='r' c='PyCFuncPtr_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3979' u='r' c='PyCFuncPtr_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3993' u='r' c='PyCFuncPtr_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3993' u='w' c='PyCFuncPtr_clear'/>
+<offset>960</offset>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='18' u='r' c='CThunkObject_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='30' u='r' c='CThunkObject_traverse'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='30' u='r' c='CThunkObject_traverse'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='40' u='r' c='CThunkObject_clear'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='40' u='w' c='CThunkObject_clear'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='299' u='r' c='closure_fcn'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='321' u='w' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='412' u='w' c='_ctypes_alloc_callback'/>

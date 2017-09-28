@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/object.h' l='1047' type='void _PyTrash_thread_destroy_chain()'/>
+<use f='codebrowser/Modules/_elementtree.c' l='643' macro='1' u='c'/>
+<use f='codebrowser/Objects/descrobject.c' l='1016' macro='1' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='1871' macro='1' u='c'/>
+<use f='codebrowser/Objects/frameobject.c' l='454' macro='1' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='336' macro='1' u='c'/>
+<def f='codebrowser/Objects/object.c' l='2092' ll='2127' type='void _PyTrash_thread_destroy_chain()'/>
+<doc f='codebrowser/Objects/object.c' l='2091'>/* The equivalent API, using per-thread state recursion info */</doc>
+<use f='codebrowser/Objects/odictobject.c' l='1463' macro='1' u='c'/>
+<use f='codebrowser/Objects/setobject.c' l='571' macro='1' u='c'/>
+<use f='codebrowser/Objects/tupleobject.c' l='265' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='1259' macro='1' u='c'/>
+<use f='codebrowser/Python/traceback.c' l='57' macro='1' u='c'/>

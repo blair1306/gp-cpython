@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dynamic_annotations.h source code [codebrowser/Include/dynamic_annotations.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/dynamic_annotations.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='dynamic_annotations.h.html'>dynamic_annotations.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Copyright (c) 2008-2009, Google Inc.</i></td></tr>
+<tr><th id="2">2</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="5">5</th><td><i> * modification, are permitted provided that the following conditions are</i></td></tr>
+<tr><th id="6">6</th><td><i> * met:</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> *     * Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="9">9</th><td><i> * notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> *     * Neither the name of Google Inc. nor the names of its</i></td></tr>
+<tr><th id="11">11</th><td><i> * contributors may be used to endorse or promote products derived from</i></td></tr>
+<tr><th id="12">12</th><td><i> * this software without specific prior written permission.</i></td></tr>
+<tr><th id="13">13</th><td><i> *</i></td></tr>
+<tr><th id="14">14</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</i></td></tr>
+<tr><th id="15">15</th><td><i> * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</i></td></tr>
+<tr><th id="16">16</th><td><i> * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</i></td></tr>
+<tr><th id="17">17</th><td><i> * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</i></td></tr>
+<tr><th id="18">18</th><td><i> * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</i></td></tr>
+<tr><th id="19">19</th><td><i> * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</i></td></tr>
+<tr><th id="20">20</th><td><i> * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</i></td></tr>
+<tr><th id="21">21</th><td><i> * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</i></td></tr>
+<tr><th id="22">22</th><td><i> * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</i></td></tr>
+<tr><th id="23">23</th><td><i> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</i></td></tr>
+<tr><th id="24">24</th><td><i> * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="25">25</th><td><i> *</i></td></tr>
+<tr><th id="26">26</th><td><i> * ---</i></td></tr>
+<tr><th id="27">27</th><td><i> * Author: Kostya Serebryany</i></td></tr>
+<tr><th id="28">28</th><td><i> * Copied to CPython by Jeffrey Yasskin, with all macros renamed to</i></td></tr>
+<tr><th id="29">29</th><td><i> * start with _Py_ to avoid colliding with users embedding Python, and</i></td></tr>
+<tr><th id="30">30</th><td><i> * with deprecated macros removed.</i></td></tr>
+<tr><th id="31">31</th><td><i> */</i></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>/* This file defines dynamic annotations for use with dynamic analysis</i></td></tr>
+<tr><th id="34">34</th><td><i>   tool such as valgrind, PIN, etc.</i></td></tr>
+<tr><th id="35">35</th><td><i></i></td></tr>
+<tr><th id="36">36</th><td><i>   Dynamic annotation is a source code annotation that affects</i></td></tr>
+<tr><th id="37">37</th><td><i>   the generated code (that is, the annotation is not a comment).</i></td></tr>
+<tr><th id="38">38</th><td><i>   Each such annotation is attached to a particular</i></td></tr>
+<tr><th id="39">39</th><td><i>   instruction and/or to a particular object (address) in the program.</i></td></tr>
+<tr><th id="40">40</th><td><i></i></td></tr>
+<tr><th id="41">41</th><td><i>   The annotations that should be used by users are macros in all upper-case</i></td></tr>
+<tr><th id="42">42</th><td><i>   (e.g., _Py_ANNOTATE_NEW_MEMORY).</i></td></tr>
+<tr><th id="43">43</th><td><i></i></td></tr>
+<tr><th id="44">44</th><td><i>   Actual implementation of these macros may differ depending on the</i></td></tr>
+<tr><th id="45">45</th><td><i>   dynamic analysis tool being used.</i></td></tr>
+<tr><th id="46">46</th><td><i></i></td></tr>
+<tr><th id="47">47</th><td><i>   See <a href="http://code.google.com/p/data-race-test/">http://code.google.com/p/data-race-test/</a>  for more information.</i></td></tr>
+<tr><th id="48">48</th><td><i></i></td></tr>
+<tr><th id="49">49</th><td><i>   This file supports the following dynamic analysis tools:</i></td></tr>
+<tr><th id="50">50</th><td><i>   - None (DYNAMIC_ANNOTATIONS_ENABLED is not defined or zero).</i></td></tr>
+<tr><th id="51">51</th><td><i>      Macros are defined empty.</i></td></tr>
+<tr><th id="52">52</th><td><i>   - ThreadSanitizer, Helgrind, DRD (DYNAMIC_ANNOTATIONS_ENABLED is 1).</i></td></tr>
+<tr><th id="53">53</th><td><i>      Macros are defined as calls to non-inlinable empty functions</i></td></tr>
+<tr><th id="54">54</th><td><i>      that are intercepted by Valgrind. */</i></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><u>#<span data-ppcond="56">ifndef</span> <span class="macro" data-ref="_M/__DYNAMIC_ANNOTATIONS_H__">__DYNAMIC_ANNOTATIONS_H__</span></u></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/__DYNAMIC_ANNOTATIONS_H__" data-ref="_M/__DYNAMIC_ANNOTATIONS_H__">__DYNAMIC_ANNOTATIONS_H__</dfn></u></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><u>#<span data-ppcond="59">ifndef</span> <span class="macro" data-ref="_M/DYNAMIC_ANNOTATIONS_ENABLED">DYNAMIC_ANNOTATIONS_ENABLED</span></u></td></tr>
+<tr><th id="60">60</th><td><u># define <dfn class="macro" id="_M/DYNAMIC_ANNOTATIONS_ENABLED" data-ref="_M/DYNAMIC_ANNOTATIONS_ENABLED">DYNAMIC_ANNOTATIONS_ENABLED</dfn> 0</u></td></tr>
+<tr><th id="61">61</th><td><u>#<span data-ppcond="59">endif</span></u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><u>#<span data-ppcond="63">if</span> <a class="macro" href="#60" title="0" data-ref="_M/DYNAMIC_ANNOTATIONS_ENABLED">DYNAMIC_ANNOTATIONS_ENABLED</a> != 0</u></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="66">66</th><td><i>     Annotations useful when implementing condition variables such as CondVar,</i></td></tr>
+<tr><th id="67">67</th><td><i>     using conditional critical sections (Await/LockWhen) and when constructing</i></td></tr>
+<tr><th id="68">68</th><td><i>     user-defined synchronization mechanisms.</i></td></tr>
+<tr><th id="69">69</th><td><i></i></td></tr>
+<tr><th id="70">70</th><td><i>     The annotations _Py_ANNOTATE_HAPPENS_BEFORE() and</i></td></tr>
+<tr><th id="71">71</th><td><i>     _Py_ANNOTATE_HAPPENS_AFTER() can be used to define happens-before arcs in</i></td></tr>
+<tr><th id="72">72</th><td><i>     user-defined synchronization mechanisms: the race detector will infer an</i></td></tr>
+<tr><th id="73">73</th><td><i>     arc from the former to the latter when they share the same argument</i></td></tr>
+<tr><th id="74">74</th><td><i>     pointer.</i></td></tr>
+<tr><th id="75">75</th><td><i></i></td></tr>
+<tr><th id="76">76</th><td><i>     Example 1 (reference counting):</i></td></tr>
+<tr><th id="77">77</th><td><i></i></td></tr>
+<tr><th id="78">78</th><td><i>     void Unref() {</i></td></tr>
+<tr><th id="79">79</th><td><i>       _Py_ANNOTATE_HAPPENS_BEFORE(&amp;refcount_);</i></td></tr>
+<tr><th id="80">80</th><td><i>       if (AtomicDecrementByOne(&amp;refcount_) == 0) {</i></td></tr>
+<tr><th id="81">81</th><td><i>         _Py_ANNOTATE_HAPPENS_AFTER(&amp;refcount_);</i></td></tr>
+<tr><th id="82">82</th><td><i>         delete this;</i></td></tr>
+<tr><th id="83">83</th><td><i>       }</i></td></tr>
+<tr><th id="84">84</th><td><i>     }</i></td></tr>
+<tr><th id="85">85</th><td><i></i></td></tr>
+<tr><th id="86">86</th><td><i>     Example 2 (message queue):</i></td></tr>
+<tr><th id="87">87</th><td><i></i></td></tr>
+<tr><th id="88">88</th><td><i>     void MyQueue::Put(Type *e) {</i></td></tr>
+<tr><th id="89">89</th><td><i>       MutexLock lock(&amp;mu_);</i></td></tr>
+<tr><th id="90">90</th><td><i>       _Py_ANNOTATE_HAPPENS_BEFORE(e);</i></td></tr>
+<tr><th id="91">91</th><td><i>       PutElementIntoMyQueue(e);</i></td></tr>
+<tr><th id="92">92</th><td><i>     }</i></td></tr>
+<tr><th id="93">93</th><td><i></i></td></tr>
+<tr><th id="94">94</th><td><i>     Type *MyQueue::Get() {</i></td></tr>
+<tr><th id="95">95</th><td><i>       MutexLock lock(&amp;mu_);</i></td></tr>
+<tr><th id="96">96</th><td><i>       Type *e = GetElementFromMyQueue();</i></td></tr>
+<tr><th id="97">97</th><td><i>       _Py_ANNOTATE_HAPPENS_AFTER(e);</i></td></tr>
+<tr><th id="98">98</th><td><i>       return e;</i></td></tr>
+<tr><th id="99">99</th><td><i>     }</i></td></tr>
+<tr><th id="100">100</th><td><i></i></td></tr>
+<tr><th id="101">101</th><td><i>     Note: when possible, please use the existing reference counting and message</i></td></tr>
+<tr><th id="102">102</th><td><i>     queue implementations instead of inventing new ones. */</i></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>  <i>/* Report that wait on the condition variable at address "cv" has succeeded</i></td></tr>
+<tr><th id="105">105</th><td><i>     and the lock at address "lock" is held. */</i></td></tr>
+<tr><th id="106">106</th><td><u>#define _Py_ANNOTATE_CONDVAR_LOCK_WAIT(cv, lock) \</u></td></tr>
+<tr><th id="107">107</th><td><u>    AnnotateCondVarWait(__FILE__, __LINE__, cv, lock)</u></td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td>  <i>/* Report that wait on the condition variable at "cv" has succeeded.  Variant</i></td></tr>
+<tr><th id="110">110</th><td><i>     w/o lock. */</i></td></tr>
+<tr><th id="111">111</th><td><u>#define _Py_ANNOTATE_CONDVAR_WAIT(cv) \</u></td></tr>
+<tr><th id="112">112</th><td><u>    AnnotateCondVarWait(__FILE__, __LINE__, cv, NULL)</u></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td>  <i>/* Report that we are about to signal on the condition variable at address</i></td></tr>
+<tr><th id="115">115</th><td><i>     "cv". */</i></td></tr>
+<tr><th id="116">116</th><td><u>#define _Py_ANNOTATE_CONDVAR_SIGNAL(cv) \</u></td></tr>
+<tr><th id="117">117</th><td><u>    AnnotateCondVarSignal(__FILE__, __LINE__, cv)</u></td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>  <i>/* Report that we are about to signal_all on the condition variable at "cv". */</i></td></tr>
+<tr><th id="120">120</th><td><u>#define _Py_ANNOTATE_CONDVAR_SIGNAL_ALL(cv) \</u></td></tr>
+<tr><th id="121">121</th><td><u>    AnnotateCondVarSignalAll(__FILE__, __LINE__, cv)</u></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td>  <i>/* Annotations for user-defined synchronization mechanisms. */</i></td></tr>
+<tr><th id="124">124</th><td><u>#define _Py_ANNOTATE_HAPPENS_BEFORE(obj) _Py_ANNOTATE_CONDVAR_SIGNAL(obj)</u></td></tr>
+<tr><th id="125">125</th><td><u>#define _Py_ANNOTATE_HAPPENS_AFTER(obj)  _Py_ANNOTATE_CONDVAR_WAIT(obj)</u></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td>  <i>/* Report that the bytes in the range [pointer, pointer+size) are about</i></td></tr>
+<tr><th id="128">128</th><td><i>     to be published safely. The race checker will create a happens-before</i></td></tr>
+<tr><th id="129">129</th><td><i>     arc from the call _Py_ANNOTATE_PUBLISH_MEMORY_RANGE(pointer, size) to</i></td></tr>
+<tr><th id="130">130</th><td><i>     subsequent accesses to this memory.</i></td></tr>
+<tr><th id="131">131</th><td><i>     Note: this annotation may not work properly if the race detector uses</i></td></tr>
+<tr><th id="132">132</th><td><i>     sampling, i.e. does not observe all memory accesses.</i></td></tr>
+<tr><th id="133">133</th><td><i>     */</i></td></tr>
+<tr><th id="134">134</th><td><u>#define _Py_ANNOTATE_PUBLISH_MEMORY_RANGE(pointer, size) \</u></td></tr>
+<tr><th id="135">135</th><td><u>    AnnotatePublishMemoryRange(__FILE__, __LINE__, pointer, size)</u></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td>  <i>/* Instruct the tool to create a happens-before arc between mu-&gt;Unlock() and</i></td></tr>
+<tr><th id="138">138</th><td><i>     mu-&gt;Lock(). This annotation may slow down the race detector and hide real</i></td></tr>
+<tr><th id="139">139</th><td><i>     races. Normally it is used only when it would be difficult to annotate each</i></td></tr>
+<tr><th id="140">140</th><td><i>     of the mutex's critical sections individually using the annotations above.</i></td></tr>
+<tr><th id="141">141</th><td><i>     This annotation makes sense only for hybrid race detectors. For pure</i></td></tr>
+<tr><th id="142">142</th><td><i>     happens-before detectors this is a no-op. For more details see</i></td></tr>
+<tr><th id="143">143</th><td><i>     <a href="http://code.google.com/p/data-race-test/wiki/PureHappensBeforeVsHybrid">http://code.google.com/p/data-race-test/wiki/PureHappensBeforeVsHybrid</a> . */</i></td></tr>
+<tr><th id="144">144</th><td><u>#define _Py_ANNOTATE_PURE_HAPPENS_BEFORE_MUTEX(mu) \</u></td></tr>
+<tr><th id="145">145</th><td><u>    AnnotateMutexIsUsedAsCondVar(__FILE__, __LINE__, mu)</u></td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="148">148</th><td><i>     Annotations useful when defining memory allocators, or when memory that</i></td></tr>
+<tr><th id="149">149</th><td><i>     was protected in one way starts to be protected in another. */</i></td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td>  <i>/* Report that a new memory at "address" of size "size" has been allocated.</i></td></tr>
+<tr><th id="152">152</th><td><i>     This might be used when the memory has been retrieved from a free list and</i></td></tr>
+<tr><th id="153">153</th><td><i>     is about to be reused, or when the locking discipline for a variable</i></td></tr>
+<tr><th id="154">154</th><td><i>     changes. */</i></td></tr>
+<tr><th id="155">155</th><td><u>#define _Py_ANNOTATE_NEW_MEMORY(address, size) \</u></td></tr>
+<tr><th id="156">156</th><td><u>    AnnotateNewMemory(__FILE__, __LINE__, address, size)</u></td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="159">159</th><td><i>     Annotations useful when defining FIFO queues that transfer data between</i></td></tr>
+<tr><th id="160">160</th><td><i>     threads. */</i></td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td>  <i>/* Report that the producer-consumer queue (such as ProducerConsumerQueue) at</i></td></tr>
+<tr><th id="163">163</th><td><i>     address "pcq" has been created.  The _Py_ANNOTATE_PCQ_* annotations should</i></td></tr>
+<tr><th id="164">164</th><td><i>     be used only for FIFO queues.  For non-FIFO queues use</i></td></tr>
+<tr><th id="165">165</th><td><i>     _Py_ANNOTATE_HAPPENS_BEFORE (for put) and _Py_ANNOTATE_HAPPENS_AFTER (for</i></td></tr>
+<tr><th id="166">166</th><td><i>     get). */</i></td></tr>
+<tr><th id="167">167</th><td><u>#define _Py_ANNOTATE_PCQ_CREATE(pcq) \</u></td></tr>
+<tr><th id="168">168</th><td><u>    AnnotatePCQCreate(__FILE__, __LINE__, pcq)</u></td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td>  <i>/* Report that the queue at address "pcq" is about to be destroyed. */</i></td></tr>
+<tr><th id="171">171</th><td><u>#define _Py_ANNOTATE_PCQ_DESTROY(pcq) \</u></td></tr>
+<tr><th id="172">172</th><td><u>    AnnotatePCQDestroy(__FILE__, __LINE__, pcq)</u></td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>  <i>/* Report that we are about to put an element into a FIFO queue at address</i></td></tr>
+<tr><th id="175">175</th><td><i>     "pcq". */</i></td></tr>
+<tr><th id="176">176</th><td><u>#define _Py_ANNOTATE_PCQ_PUT(pcq) \</u></td></tr>
+<tr><th id="177">177</th><td><u>    AnnotatePCQPut(__FILE__, __LINE__, pcq)</u></td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td>  <i>/* Report that we've just got an element from a FIFO queue at address "pcq". */</i></td></tr>
+<tr><th id="180">180</th><td><u>#define _Py_ANNOTATE_PCQ_GET(pcq) \</u></td></tr>
+<tr><th id="181">181</th><td><u>    AnnotatePCQGet(__FILE__, __LINE__, pcq)</u></td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="184">184</th><td><i>     Annotations that suppress errors.  It is usually better to express the</i></td></tr>
+<tr><th id="185">185</th><td><i>     program's synchronization using the other annotations, but these can</i></td></tr>
+<tr><th id="186">186</th><td><i>     be used when all else fails. */</i></td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>  <i>/* Report that we may have a benign race at "pointer", with size</i></td></tr>
+<tr><th id="189">189</th><td><i>     "sizeof(*(pointer))". "pointer" must be a non-void* pointer.  Insert at the</i></td></tr>
+<tr><th id="190">190</th><td><i>     point where "pointer" has been allocated, preferably close to the point</i></td></tr>
+<tr><th id="191">191</th><td><i>     where the race happens.  See also _Py_ANNOTATE_BENIGN_RACE_STATIC. */</i></td></tr>
+<tr><th id="192">192</th><td><u>#define _Py_ANNOTATE_BENIGN_RACE(pointer, description) \</u></td></tr>
+<tr><th id="193">193</th><td><u>    AnnotateBenignRaceSized(__FILE__, __LINE__, pointer, \</u></td></tr>
+<tr><th id="194">194</th><td><u>                            sizeof(*(pointer)), description)</u></td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td>  <i>/* Same as _Py_ANNOTATE_BENIGN_RACE(address, description), but applies to</i></td></tr>
+<tr><th id="197">197</th><td><i>     the memory range [address, address+size). */</i></td></tr>
+<tr><th id="198">198</th><td><u>#define _Py_ANNOTATE_BENIGN_RACE_SIZED(address, size, description) \</u></td></tr>
+<tr><th id="199">199</th><td><u>    AnnotateBenignRaceSized(__FILE__, __LINE__, address, size, description)</u></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td>  <i>/* Request the analysis tool to ignore all reads in the current thread</i></td></tr>
+<tr><th id="202">202</th><td><i>     until _Py_ANNOTATE_IGNORE_READS_END is called.</i></td></tr>
+<tr><th id="203">203</th><td><i>     Useful to ignore intentional racey reads, while still checking</i></td></tr>
+<tr><th id="204">204</th><td><i>     other reads and all writes.</i></td></tr>
+<tr><th id="205">205</th><td><i>     See also _Py_ANNOTATE_UNPROTECTED_READ. */</i></td></tr>
+<tr><th id="206">206</th><td><u>#define _Py_ANNOTATE_IGNORE_READS_BEGIN() \</u></td></tr>
+<tr><th id="207">207</th><td><u>    AnnotateIgnoreReadsBegin(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>  <i>/* Stop ignoring reads. */</i></td></tr>
+<tr><th id="210">210</th><td><u>#define _Py_ANNOTATE_IGNORE_READS_END() \</u></td></tr>
+<tr><th id="211">211</th><td><u>    AnnotateIgnoreReadsEnd(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td>  <i>/* Similar to _Py_ANNOTATE_IGNORE_READS_BEGIN, but ignore writes. */</i></td></tr>
+<tr><th id="214">214</th><td><u>#define _Py_ANNOTATE_IGNORE_WRITES_BEGIN() \</u></td></tr>
+<tr><th id="215">215</th><td><u>    AnnotateIgnoreWritesBegin(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td>  <i>/* Stop ignoring writes. */</i></td></tr>
+<tr><th id="218">218</th><td><u>#define _Py_ANNOTATE_IGNORE_WRITES_END() \</u></td></tr>
+<tr><th id="219">219</th><td><u>    AnnotateIgnoreWritesEnd(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td>  <i>/* Start ignoring all memory accesses (reads and writes). */</i></td></tr>
+<tr><th id="222">222</th><td><u>#define _Py_ANNOTATE_IGNORE_READS_AND_WRITES_BEGIN() \</u></td></tr>
+<tr><th id="223">223</th><td><u>    do {\</u></td></tr>
+<tr><th id="224">224</th><td><u>      _Py_ANNOTATE_IGNORE_READS_BEGIN();\</u></td></tr>
+<tr><th id="225">225</th><td><u>      _Py_ANNOTATE_IGNORE_WRITES_BEGIN();\</u></td></tr>
+<tr><th id="226">226</th><td><u>    }while(0)</u>\</td></tr>
+<tr><th id="227">227</th><td></td></tr>
+<tr><th id="228">228</th><td>  <i>/* Stop ignoring all memory accesses. */</i></td></tr>
+<tr><th id="229">229</th><td><u>#define _Py_ANNOTATE_IGNORE_READS_AND_WRITES_END() \</u></td></tr>
+<tr><th id="230">230</th><td><u>    do {\</u></td></tr>
+<tr><th id="231">231</th><td><u>      _Py_ANNOTATE_IGNORE_WRITES_END();\</u></td></tr>
+<tr><th id="232">232</th><td><u>      _Py_ANNOTATE_IGNORE_READS_END();\</u></td></tr>
+<tr><th id="233">233</th><td><u>    }while(0)</u>\</td></tr>
+<tr><th id="234">234</th><td></td></tr>
+<tr><th id="235">235</th><td>  <i>/* Similar to _Py_ANNOTATE_IGNORE_READS_BEGIN, but ignore synchronization events:</i></td></tr>
+<tr><th id="236">236</th><td><i>     RWLOCK* and CONDVAR*. */</i></td></tr>
+<tr><th id="237">237</th><td><u>#define _Py_ANNOTATE_IGNORE_SYNC_BEGIN() \</u></td></tr>
+<tr><th id="238">238</th><td><u>    AnnotateIgnoreSyncBegin(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td>  <i>/* Stop ignoring sync events. */</i></td></tr>
+<tr><th id="241">241</th><td><u>#define _Py_ANNOTATE_IGNORE_SYNC_END() \</u></td></tr>
+<tr><th id="242">242</th><td><u>    AnnotateIgnoreSyncEnd(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="243">243</th><td></td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td>  <i>/* Enable (enable!=0) or disable (enable==0) race detection for all threads.</i></td></tr>
+<tr><th id="246">246</th><td><i>     This annotation could be useful if you want to skip expensive race analysis</i></td></tr>
+<tr><th id="247">247</th><td><i>     during some period of program execution, e.g. during initialization. */</i></td></tr>
+<tr><th id="248">248</th><td><u>#define _Py_ANNOTATE_ENABLE_RACE_DETECTION(enable) \</u></td></tr>
+<tr><th id="249">249</th><td><u>    AnnotateEnableRaceDetection(__FILE__, __LINE__, enable)</u></td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="252">252</th><td><i>     Annotations useful for debugging. */</i></td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td>  <i>/* Request to trace every access to "address". */</i></td></tr>
+<tr><th id="255">255</th><td><u>#define _Py_ANNOTATE_TRACE_MEMORY(address) \</u></td></tr>
+<tr><th id="256">256</th><td><u>    AnnotateTraceMemory(__FILE__, __LINE__, address)</u></td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td>  <i>/* Report the current thread name to a race detector. */</i></td></tr>
+<tr><th id="259">259</th><td><u>#define _Py_ANNOTATE_THREAD_NAME(name) \</u></td></tr>
+<tr><th id="260">260</th><td><u>    AnnotateThreadName(__FILE__, __LINE__, name)</u></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="263">263</th><td><i>     Annotations useful when implementing locks.  They are not</i></td></tr>
+<tr><th id="264">264</th><td><i>     normally needed by modules that merely use locks.</i></td></tr>
+<tr><th id="265">265</th><td><i>     The "lock" argument is a pointer to the lock object. */</i></td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td>  <i>/* Report that a lock has been created at address "lock". */</i></td></tr>
+<tr><th id="268">268</th><td><u>#define _Py_ANNOTATE_RWLOCK_CREATE(lock) \</u></td></tr>
+<tr><th id="269">269</th><td><u>    AnnotateRWLockCreate(__FILE__, __LINE__, lock)</u></td></tr>
+<tr><th id="270">270</th><td></td></tr>
+<tr><th id="271">271</th><td>  <i>/* Report that the lock at address "lock" is about to be destroyed. */</i></td></tr>
+<tr><th id="272">272</th><td><u>#define _Py_ANNOTATE_RWLOCK_DESTROY(lock) \</u></td></tr>
+<tr><th id="273">273</th><td><u>    AnnotateRWLockDestroy(__FILE__, __LINE__, lock)</u></td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>  <i>/* Report that the lock at address "lock" has been acquired.</i></td></tr>
+<tr><th id="276">276</th><td><i>     is_w=1 for writer lock, is_w=0 for reader lock. */</i></td></tr>
+<tr><th id="277">277</th><td><u>#define _Py_ANNOTATE_RWLOCK_ACQUIRED(lock, is_w) \</u></td></tr>
+<tr><th id="278">278</th><td><u>    AnnotateRWLockAcquired(__FILE__, __LINE__, lock, is_w)</u></td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td>  <i>/* Report that the lock at address "lock" is about to be released. */</i></td></tr>
+<tr><th id="281">281</th><td><u>#define _Py_ANNOTATE_RWLOCK_RELEASED(lock, is_w) \</u></td></tr>
+<tr><th id="282">282</th><td><u>    AnnotateRWLockReleased(__FILE__, __LINE__, lock, is_w)</u></td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="285">285</th><td><i>     Annotations useful when implementing barriers.  They are not</i></td></tr>
+<tr><th id="286">286</th><td><i>     normally needed by modules that merely use barriers.</i></td></tr>
+<tr><th id="287">287</th><td><i>     The "barrier" argument is a pointer to the barrier object. */</i></td></tr>
+<tr><th id="288">288</th><td></td></tr>
+<tr><th id="289">289</th><td>  <i>/* Report that the "barrier" has been initialized with initial "count".</i></td></tr>
+<tr><th id="290">290</th><td><i>   If 'reinitialization_allowed' is true, initialization is allowed to happen</i></td></tr>
+<tr><th id="291">291</th><td><i>   multiple times w/o calling barrier_destroy() */</i></td></tr>
+<tr><th id="292">292</th><td><u>#define _Py_ANNOTATE_BARRIER_INIT(barrier, count, reinitialization_allowed) \</u></td></tr>
+<tr><th id="293">293</th><td><u>    AnnotateBarrierInit(__FILE__, __LINE__, barrier, count, \</u></td></tr>
+<tr><th id="294">294</th><td><u>                        reinitialization_allowed)</u></td></tr>
+<tr><th id="295">295</th><td></td></tr>
+<tr><th id="296">296</th><td>  <i>/* Report that we are about to enter barrier_wait("barrier"). */</i></td></tr>
+<tr><th id="297">297</th><td><u>#define _Py_ANNOTATE_BARRIER_WAIT_BEFORE(barrier) \</u></td></tr>
+<tr><th id="298">298</th><td><u>    AnnotateBarrierWaitBefore(__FILE__, __LINE__, barrier)</u></td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td>  <i>/* Report that we just exited barrier_wait("barrier"). */</i></td></tr>
+<tr><th id="301">301</th><td><u>#define _Py_ANNOTATE_BARRIER_WAIT_AFTER(barrier) \</u></td></tr>
+<tr><th id="302">302</th><td><u>    AnnotateBarrierWaitAfter(__FILE__, __LINE__, barrier)</u></td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td>  <i>/* Report that the "barrier" has been destroyed. */</i></td></tr>
+<tr><th id="305">305</th><td><u>#define _Py_ANNOTATE_BARRIER_DESTROY(barrier) \</u></td></tr>
+<tr><th id="306">306</th><td><u>    AnnotateBarrierDestroy(__FILE__, __LINE__, barrier)</u></td></tr>
+<tr><th id="307">307</th><td></td></tr>
+<tr><th id="308">308</th><td>  <i>/* -------------------------------------------------------------</i></td></tr>
+<tr><th id="309">309</th><td><i>     Annotations useful for testing race detectors. */</i></td></tr>
+<tr><th id="310">310</th><td></td></tr>
+<tr><th id="311">311</th><td>  <i>/* Report that we expect a race on the variable at "address".</i></td></tr>
+<tr><th id="312">312</th><td><i>     Use only in unit tests for a race detector. */</i></td></tr>
+<tr><th id="313">313</th><td><u>#define _Py_ANNOTATE_EXPECT_RACE(address, description) \</u></td></tr>
+<tr><th id="314">314</th><td><u>    AnnotateExpectRace(__FILE__, __LINE__, address, description)</u></td></tr>
+<tr><th id="315">315</th><td></td></tr>
+<tr><th id="316">316</th><td>  <i>/* A no-op. Insert where you like to test the interceptors. */</i></td></tr>
+<tr><th id="317">317</th><td><u>#define _Py_ANNOTATE_NO_OP(arg) \</u></td></tr>
+<tr><th id="318">318</th><td><u>    AnnotateNoOp(__FILE__, __LINE__, arg)</u></td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td>  <i>/* Force the race detector to flush its state. The actual effect depends on</i></td></tr>
+<tr><th id="321">321</th><td><i>   * the implementation of the detector. */</i></td></tr>
+<tr><th id="322">322</th><td><u>#define _Py_ANNOTATE_FLUSH_STATE() \</u></td></tr>
+<tr><th id="323">323</th><td><u>    AnnotateFlushState(__FILE__, __LINE__)</u></td></tr>
+<tr><th id="324">324</th><td></td></tr>
+<tr><th id="325">325</th><td></td></tr>
+<tr><th id="326">326</th><td><u>#<span data-ppcond="63">else</span>  /* DYNAMIC_ANNOTATIONS_ENABLED == 0 */</u></td></tr>
+<tr><th id="327">327</th><td></td></tr>
+<tr><th id="328">328</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_RWLOCK_CREATE" data-ref="_M/_Py_ANNOTATE_RWLOCK_CREATE">_Py_ANNOTATE_RWLOCK_CREATE</dfn>(lock) /* empty */</u></td></tr>
+<tr><th id="329">329</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_RWLOCK_DESTROY" data-ref="_M/_Py_ANNOTATE_RWLOCK_DESTROY">_Py_ANNOTATE_RWLOCK_DESTROY</dfn>(lock) /* empty */</u></td></tr>
+<tr><th id="330">330</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_RWLOCK_ACQUIRED" data-ref="_M/_Py_ANNOTATE_RWLOCK_ACQUIRED">_Py_ANNOTATE_RWLOCK_ACQUIRED</dfn>(lock, is_w) /* empty */</u></td></tr>
+<tr><th id="331">331</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_RWLOCK_RELEASED" data-ref="_M/_Py_ANNOTATE_RWLOCK_RELEASED">_Py_ANNOTATE_RWLOCK_RELEASED</dfn>(lock, is_w) /* empty */</u></td></tr>
+<tr><th id="332">332</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BARRIER_INIT" data-ref="_M/_Py_ANNOTATE_BARRIER_INIT">_Py_ANNOTATE_BARRIER_INIT</dfn>(barrier, count, reinitialization_allowed) /* */</u></td></tr>
+<tr><th id="333">333</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BARRIER_WAIT_BEFORE" data-ref="_M/_Py_ANNOTATE_BARRIER_WAIT_BEFORE">_Py_ANNOTATE_BARRIER_WAIT_BEFORE</dfn>(barrier) /* empty */</u></td></tr>
+<tr><th id="334">334</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BARRIER_WAIT_AFTER" data-ref="_M/_Py_ANNOTATE_BARRIER_WAIT_AFTER">_Py_ANNOTATE_BARRIER_WAIT_AFTER</dfn>(barrier) /* empty */</u></td></tr>
+<tr><th id="335">335</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BARRIER_DESTROY" data-ref="_M/_Py_ANNOTATE_BARRIER_DESTROY">_Py_ANNOTATE_BARRIER_DESTROY</dfn>(barrier) /* empty */</u></td></tr>
+<tr><th id="336">336</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_CONDVAR_LOCK_WAIT" data-ref="_M/_Py_ANNOTATE_CONDVAR_LOCK_WAIT">_Py_ANNOTATE_CONDVAR_LOCK_WAIT</dfn>(cv, lock) /* empty */</u></td></tr>
+<tr><th id="337">337</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_CONDVAR_WAIT" data-ref="_M/_Py_ANNOTATE_CONDVAR_WAIT">_Py_ANNOTATE_CONDVAR_WAIT</dfn>(cv) /* empty */</u></td></tr>
+<tr><th id="338">338</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_CONDVAR_SIGNAL" data-ref="_M/_Py_ANNOTATE_CONDVAR_SIGNAL">_Py_ANNOTATE_CONDVAR_SIGNAL</dfn>(cv) /* empty */</u></td></tr>
+<tr><th id="339">339</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_CONDVAR_SIGNAL_ALL" data-ref="_M/_Py_ANNOTATE_CONDVAR_SIGNAL_ALL">_Py_ANNOTATE_CONDVAR_SIGNAL_ALL</dfn>(cv) /* empty */</u></td></tr>
+<tr><th id="340">340</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_HAPPENS_BEFORE" data-ref="_M/_Py_ANNOTATE_HAPPENS_BEFORE">_Py_ANNOTATE_HAPPENS_BEFORE</dfn>(obj) /* empty */</u></td></tr>
+<tr><th id="341">341</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_HAPPENS_AFTER" data-ref="_M/_Py_ANNOTATE_HAPPENS_AFTER">_Py_ANNOTATE_HAPPENS_AFTER</dfn>(obj) /* empty */</u></td></tr>
+<tr><th id="342">342</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_PUBLISH_MEMORY_RANGE" data-ref="_M/_Py_ANNOTATE_PUBLISH_MEMORY_RANGE">_Py_ANNOTATE_PUBLISH_MEMORY_RANGE</dfn>(address, size) /* empty */</u></td></tr>
+<tr><th id="343">343</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_UNPUBLISH_MEMORY_RANGE" data-ref="_M/_Py_ANNOTATE_UNPUBLISH_MEMORY_RANGE">_Py_ANNOTATE_UNPUBLISH_MEMORY_RANGE</dfn>(address, size)  /* empty */</u></td></tr>
+<tr><th id="344">344</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_SWAP_MEMORY_RANGE" data-ref="_M/_Py_ANNOTATE_SWAP_MEMORY_RANGE">_Py_ANNOTATE_SWAP_MEMORY_RANGE</dfn>(address, size)  /* empty */</u></td></tr>
+<tr><th id="345">345</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_PCQ_CREATE" data-ref="_M/_Py_ANNOTATE_PCQ_CREATE">_Py_ANNOTATE_PCQ_CREATE</dfn>(pcq) /* empty */</u></td></tr>
+<tr><th id="346">346</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_PCQ_DESTROY" data-ref="_M/_Py_ANNOTATE_PCQ_DESTROY">_Py_ANNOTATE_PCQ_DESTROY</dfn>(pcq) /* empty */</u></td></tr>
+<tr><th id="347">347</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_PCQ_PUT" data-ref="_M/_Py_ANNOTATE_PCQ_PUT">_Py_ANNOTATE_PCQ_PUT</dfn>(pcq) /* empty */</u></td></tr>
+<tr><th id="348">348</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_PCQ_GET" data-ref="_M/_Py_ANNOTATE_PCQ_GET">_Py_ANNOTATE_PCQ_GET</dfn>(pcq) /* empty */</u></td></tr>
+<tr><th id="349">349</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_NEW_MEMORY" data-ref="_M/_Py_ANNOTATE_NEW_MEMORY">_Py_ANNOTATE_NEW_MEMORY</dfn>(address, size) /* empty */</u></td></tr>
+<tr><th id="350">350</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_EXPECT_RACE" data-ref="_M/_Py_ANNOTATE_EXPECT_RACE">_Py_ANNOTATE_EXPECT_RACE</dfn>(address, description) /* empty */</u></td></tr>
+<tr><th id="351">351</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BENIGN_RACE" data-ref="_M/_Py_ANNOTATE_BENIGN_RACE">_Py_ANNOTATE_BENIGN_RACE</dfn>(address, description) /* empty */</u></td></tr>
+<tr><th id="352">352</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BENIGN_RACE_SIZED" data-ref="_M/_Py_ANNOTATE_BENIGN_RACE_SIZED">_Py_ANNOTATE_BENIGN_RACE_SIZED</dfn>(address, size, description) /* empty */</u></td></tr>
+<tr><th id="353">353</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_PURE_HAPPENS_BEFORE_MUTEX" data-ref="_M/_Py_ANNOTATE_PURE_HAPPENS_BEFORE_MUTEX">_Py_ANNOTATE_PURE_HAPPENS_BEFORE_MUTEX</dfn>(mu) /* empty */</u></td></tr>
+<tr><th id="354">354</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_MUTEX_IS_USED_AS_CONDVAR" data-ref="_M/_Py_ANNOTATE_MUTEX_IS_USED_AS_CONDVAR">_Py_ANNOTATE_MUTEX_IS_USED_AS_CONDVAR</dfn>(mu) /* empty */</u></td></tr>
+<tr><th id="355">355</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_TRACE_MEMORY" data-ref="_M/_Py_ANNOTATE_TRACE_MEMORY">_Py_ANNOTATE_TRACE_MEMORY</dfn>(arg) /* empty */</u></td></tr>
+<tr><th id="356">356</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_THREAD_NAME" data-ref="_M/_Py_ANNOTATE_THREAD_NAME">_Py_ANNOTATE_THREAD_NAME</dfn>(name) /* empty */</u></td></tr>
+<tr><th id="357">357</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_READS_BEGIN" data-ref="_M/_Py_ANNOTATE_IGNORE_READS_BEGIN">_Py_ANNOTATE_IGNORE_READS_BEGIN</dfn>() /* empty */</u></td></tr>
+<tr><th id="358">358</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_READS_END" data-ref="_M/_Py_ANNOTATE_IGNORE_READS_END">_Py_ANNOTATE_IGNORE_READS_END</dfn>() /* empty */</u></td></tr>
+<tr><th id="359">359</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_WRITES_BEGIN" data-ref="_M/_Py_ANNOTATE_IGNORE_WRITES_BEGIN">_Py_ANNOTATE_IGNORE_WRITES_BEGIN</dfn>() /* empty */</u></td></tr>
+<tr><th id="360">360</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_WRITES_END" data-ref="_M/_Py_ANNOTATE_IGNORE_WRITES_END">_Py_ANNOTATE_IGNORE_WRITES_END</dfn>() /* empty */</u></td></tr>
+<tr><th id="361">361</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_READS_AND_WRITES_BEGIN" data-ref="_M/_Py_ANNOTATE_IGNORE_READS_AND_WRITES_BEGIN">_Py_ANNOTATE_IGNORE_READS_AND_WRITES_BEGIN</dfn>() /* empty */</u></td></tr>
+<tr><th id="362">362</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_READS_AND_WRITES_END" data-ref="_M/_Py_ANNOTATE_IGNORE_READS_AND_WRITES_END">_Py_ANNOTATE_IGNORE_READS_AND_WRITES_END</dfn>() /* empty */</u></td></tr>
+<tr><th id="363">363</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_SYNC_BEGIN" data-ref="_M/_Py_ANNOTATE_IGNORE_SYNC_BEGIN">_Py_ANNOTATE_IGNORE_SYNC_BEGIN</dfn>() /* empty */</u></td></tr>
+<tr><th id="364">364</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_IGNORE_SYNC_END" data-ref="_M/_Py_ANNOTATE_IGNORE_SYNC_END">_Py_ANNOTATE_IGNORE_SYNC_END</dfn>() /* empty */</u></td></tr>
+<tr><th id="365">365</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_ENABLE_RACE_DETECTION" data-ref="_M/_Py_ANNOTATE_ENABLE_RACE_DETECTION">_Py_ANNOTATE_ENABLE_RACE_DETECTION</dfn>(enable) /* empty */</u></td></tr>
+<tr><th id="366">366</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_NO_OP" data-ref="_M/_Py_ANNOTATE_NO_OP">_Py_ANNOTATE_NO_OP</dfn>(arg) /* empty */</u></td></tr>
+<tr><th id="367">367</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_FLUSH_STATE" data-ref="_M/_Py_ANNOTATE_FLUSH_STATE">_Py_ANNOTATE_FLUSH_STATE</dfn>() /* empty */</u></td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td><u>#<span data-ppcond="63">endif</span>  /* DYNAMIC_ANNOTATIONS_ENABLED */</u></td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td><i>/* Use the macros above rather than using these functions directly. */</i></td></tr>
+<tr><th id="372">372</th><td><u>#<span data-ppcond="372">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="373">373</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="374">374</th><td><u>#<span data-ppcond="372">endif</span></u></td></tr>
+<tr><th id="375">375</th><td><em>void</em> <dfn class="decl" id="AnnotateRWLockCreate" title='AnnotateRWLockCreate' data-ref="AnnotateRWLockCreate">AnnotateRWLockCreate</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1file" title='file' data-type='const char *' data-ref="1file">file</dfn>, <em>int</em> <dfn class="local col2 decl" id="2line" title='line' data-type='int' data-ref="2line">line</dfn>,</td></tr>
+<tr><th id="376">376</th><td>                          <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col3 decl" id="3lock" title='lock' data-type='const volatile void *' data-ref="3lock">lock</dfn>);</td></tr>
+<tr><th id="377">377</th><td><em>void</em> <dfn class="decl" id="AnnotateRWLockDestroy" title='AnnotateRWLockDestroy' data-ref="AnnotateRWLockDestroy">AnnotateRWLockDestroy</dfn>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="4file" title='file' data-type='const char *' data-ref="4file">file</dfn>, <em>int</em> <dfn class="local col5 decl" id="5line" title='line' data-type='int' data-ref="5line">line</dfn>,</td></tr>
+<tr><th id="378">378</th><td>                           <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col6 decl" id="6lock" title='lock' data-type='const volatile void *' data-ref="6lock">lock</dfn>);</td></tr>
+<tr><th id="379">379</th><td><em>void</em> <dfn class="decl" id="AnnotateRWLockAcquired" title='AnnotateRWLockAcquired' data-ref="AnnotateRWLockAcquired">AnnotateRWLockAcquired</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="7file" title='file' data-type='const char *' data-ref="7file">file</dfn>, <em>int</em> <dfn class="local col8 decl" id="8line" title='line' data-type='int' data-ref="8line">line</dfn>,</td></tr>
+<tr><th id="380">380</th><td>                            <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col9 decl" id="9lock" title='lock' data-type='const volatile void *' data-ref="9lock">lock</dfn>, <em>long</em> <dfn class="local col0 decl" id="10is_w" title='is_w' data-type='long' data-ref="10is_w">is_w</dfn>);</td></tr>
+<tr><th id="381">381</th><td><em>void</em> <dfn class="decl" id="AnnotateRWLockReleased" title='AnnotateRWLockReleased' data-ref="AnnotateRWLockReleased">AnnotateRWLockReleased</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="11file" title='file' data-type='const char *' data-ref="11file">file</dfn>, <em>int</em> <dfn class="local col2 decl" id="12line" title='line' data-type='int' data-ref="12line">line</dfn>,</td></tr>
+<tr><th id="382">382</th><td>                            <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col3 decl" id="13lock" title='lock' data-type='const volatile void *' data-ref="13lock">lock</dfn>, <em>long</em> <dfn class="local col4 decl" id="14is_w" title='is_w' data-type='long' data-ref="14is_w">is_w</dfn>);</td></tr>
+<tr><th id="383">383</th><td><em>void</em> <dfn class="decl" id="AnnotateBarrierInit" title='AnnotateBarrierInit' data-ref="AnnotateBarrierInit">AnnotateBarrierInit</dfn>(<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="15file" title='file' data-type='const char *' data-ref="15file">file</dfn>, <em>int</em> <dfn class="local col6 decl" id="16line" title='line' data-type='int' data-ref="16line">line</dfn>,</td></tr>
+<tr><th id="384">384</th><td>                         <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col7 decl" id="17barrier" title='barrier' data-type='const volatile void *' data-ref="17barrier">barrier</dfn>, <em>long</em> <dfn class="local col8 decl" id="18count" title='count' data-type='long' data-ref="18count">count</dfn>,</td></tr>
+<tr><th id="385">385</th><td>                         <em>long</em> <dfn class="local col9 decl" id="19reinitialization_allowed" title='reinitialization_allowed' data-type='long' data-ref="19reinitialization_allowed">reinitialization_allowed</dfn>);</td></tr>
+<tr><th id="386">386</th><td><em>void</em> <dfn class="decl" id="AnnotateBarrierWaitBefore" title='AnnotateBarrierWaitBefore' data-ref="AnnotateBarrierWaitBefore">AnnotateBarrierWaitBefore</dfn>(<em>const</em> <em>char</em> *<dfn class="local col0 decl" id="20file" title='file' data-type='const char *' data-ref="20file">file</dfn>, <em>int</em> <dfn class="local col1 decl" id="21line" title='line' data-type='int' data-ref="21line">line</dfn>,</td></tr>
+<tr><th id="387">387</th><td>                               <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col2 decl" id="22barrier" title='barrier' data-type='const volatile void *' data-ref="22barrier">barrier</dfn>);</td></tr>
+<tr><th id="388">388</th><td><em>void</em> <dfn class="decl" id="AnnotateBarrierWaitAfter" title='AnnotateBarrierWaitAfter' data-ref="AnnotateBarrierWaitAfter">AnnotateBarrierWaitAfter</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="23file" title='file' data-type='const char *' data-ref="23file">file</dfn>, <em>int</em> <dfn class="local col4 decl" id="24line" title='line' data-type='int' data-ref="24line">line</dfn>,</td></tr>
+<tr><th id="389">389</th><td>                              <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col5 decl" id="25barrier" title='barrier' data-type='const volatile void *' data-ref="25barrier">barrier</dfn>);</td></tr>
+<tr><th id="390">390</th><td><em>void</em> <dfn class="decl" id="AnnotateBarrierDestroy" title='AnnotateBarrierDestroy' data-ref="AnnotateBarrierDestroy">AnnotateBarrierDestroy</dfn>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="26file" title='file' data-type='const char *' data-ref="26file">file</dfn>, <em>int</em> <dfn class="local col7 decl" id="27line" title='line' data-type='int' data-ref="27line">line</dfn>,</td></tr>
+<tr><th id="391">391</th><td>                            <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col8 decl" id="28barrier" title='barrier' data-type='const volatile void *' data-ref="28barrier">barrier</dfn>);</td></tr>
+<tr><th id="392">392</th><td><em>void</em> <dfn class="decl" id="AnnotateCondVarWait" title='AnnotateCondVarWait' data-ref="AnnotateCondVarWait">AnnotateCondVarWait</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="29file" title='file' data-type='const char *' data-ref="29file">file</dfn>, <em>int</em> <dfn class="local col0 decl" id="30line" title='line' data-type='int' data-ref="30line">line</dfn>,</td></tr>
+<tr><th id="393">393</th><td>                         <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col1 decl" id="31cv" title='cv' data-type='const volatile void *' data-ref="31cv">cv</dfn>,</td></tr>
+<tr><th id="394">394</th><td>                         <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col2 decl" id="32lock" title='lock' data-type='const volatile void *' data-ref="32lock">lock</dfn>);</td></tr>
+<tr><th id="395">395</th><td><em>void</em> <dfn class="decl" id="AnnotateCondVarSignal" title='AnnotateCondVarSignal' data-ref="AnnotateCondVarSignal">AnnotateCondVarSignal</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="33file" title='file' data-type='const char *' data-ref="33file">file</dfn>, <em>int</em> <dfn class="local col4 decl" id="34line" title='line' data-type='int' data-ref="34line">line</dfn>,</td></tr>
+<tr><th id="396">396</th><td>                           <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col5 decl" id="35cv" title='cv' data-type='const volatile void *' data-ref="35cv">cv</dfn>);</td></tr>
+<tr><th id="397">397</th><td><em>void</em> <dfn class="decl" id="AnnotateCondVarSignalAll" title='AnnotateCondVarSignalAll' data-ref="AnnotateCondVarSignalAll">AnnotateCondVarSignalAll</dfn>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="36file" title='file' data-type='const char *' data-ref="36file">file</dfn>, <em>int</em> <dfn class="local col7 decl" id="37line" title='line' data-type='int' data-ref="37line">line</dfn>,</td></tr>
+<tr><th id="398">398</th><td>                              <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col8 decl" id="38cv" title='cv' data-type='const volatile void *' data-ref="38cv">cv</dfn>);</td></tr>
+<tr><th id="399">399</th><td><em>void</em> <dfn class="decl" id="AnnotatePublishMemoryRange" title='AnnotatePublishMemoryRange' data-ref="AnnotatePublishMemoryRange">AnnotatePublishMemoryRange</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="39file" title='file' data-type='const char *' data-ref="39file">file</dfn>, <em>int</em> <dfn class="local col0 decl" id="40line" title='line' data-type='int' data-ref="40line">line</dfn>,</td></tr>
+<tr><th id="400">400</th><td>                                <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col1 decl" id="41address" title='address' data-type='const volatile void *' data-ref="41address">address</dfn>,</td></tr>
+<tr><th id="401">401</th><td>                                <em>long</em> <dfn class="local col2 decl" id="42size" title='size' data-type='long' data-ref="42size">size</dfn>);</td></tr>
+<tr><th id="402">402</th><td><em>void</em> <dfn class="decl" id="AnnotateUnpublishMemoryRange" title='AnnotateUnpublishMemoryRange' data-ref="AnnotateUnpublishMemoryRange">AnnotateUnpublishMemoryRange</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="43file" title='file' data-type='const char *' data-ref="43file">file</dfn>, <em>int</em> <dfn class="local col4 decl" id="44line" title='line' data-type='int' data-ref="44line">line</dfn>,</td></tr>
+<tr><th id="403">403</th><td>                                  <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col5 decl" id="45address" title='address' data-type='const volatile void *' data-ref="45address">address</dfn>,</td></tr>
+<tr><th id="404">404</th><td>                                  <em>long</em> <dfn class="local col6 decl" id="46size" title='size' data-type='long' data-ref="46size">size</dfn>);</td></tr>
+<tr><th id="405">405</th><td><em>void</em> <dfn class="decl" id="AnnotatePCQCreate" title='AnnotatePCQCreate' data-ref="AnnotatePCQCreate">AnnotatePCQCreate</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="47file" title='file' data-type='const char *' data-ref="47file">file</dfn>, <em>int</em> <dfn class="local col8 decl" id="48line" title='line' data-type='int' data-ref="48line">line</dfn>,</td></tr>
+<tr><th id="406">406</th><td>                       <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col9 decl" id="49pcq" title='pcq' data-type='const volatile void *' data-ref="49pcq">pcq</dfn>);</td></tr>
+<tr><th id="407">407</th><td><em>void</em> <dfn class="decl" id="AnnotatePCQDestroy" title='AnnotatePCQDestroy' data-ref="AnnotatePCQDestroy">AnnotatePCQDestroy</dfn>(<em>const</em> <em>char</em> *<dfn class="local col0 decl" id="50file" title='file' data-type='const char *' data-ref="50file">file</dfn>, <em>int</em> <dfn class="local col1 decl" id="51line" title='line' data-type='int' data-ref="51line">line</dfn>,</td></tr>
+<tr><th id="408">408</th><td>                        <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col2 decl" id="52pcq" title='pcq' data-type='const volatile void *' data-ref="52pcq">pcq</dfn>);</td></tr>
+<tr><th id="409">409</th><td><em>void</em> <dfn class="decl" id="AnnotatePCQPut" title='AnnotatePCQPut' data-ref="AnnotatePCQPut">AnnotatePCQPut</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="53file" title='file' data-type='const char *' data-ref="53file">file</dfn>, <em>int</em> <dfn class="local col4 decl" id="54line" title='line' data-type='int' data-ref="54line">line</dfn>,</td></tr>
+<tr><th id="410">410</th><td>                    <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col5 decl" id="55pcq" title='pcq' data-type='const volatile void *' data-ref="55pcq">pcq</dfn>);</td></tr>
+<tr><th id="411">411</th><td><em>void</em> <dfn class="decl" id="AnnotatePCQGet" title='AnnotatePCQGet' data-ref="AnnotatePCQGet">AnnotatePCQGet</dfn>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="56file" title='file' data-type='const char *' data-ref="56file">file</dfn>, <em>int</em> <dfn class="local col7 decl" id="57line" title='line' data-type='int' data-ref="57line">line</dfn>,</td></tr>
+<tr><th id="412">412</th><td>                    <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col8 decl" id="58pcq" title='pcq' data-type='const volatile void *' data-ref="58pcq">pcq</dfn>);</td></tr>
+<tr><th id="413">413</th><td><em>void</em> <dfn class="decl" id="AnnotateNewMemory" title='AnnotateNewMemory' data-ref="AnnotateNewMemory">AnnotateNewMemory</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="59file" title='file' data-type='const char *' data-ref="59file">file</dfn>, <em>int</em> <dfn class="local col0 decl" id="60line" title='line' data-type='int' data-ref="60line">line</dfn>,</td></tr>
+<tr><th id="414">414</th><td>                       <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col1 decl" id="61address" title='address' data-type='const volatile void *' data-ref="61address">address</dfn>,</td></tr>
+<tr><th id="415">415</th><td>                       <em>long</em> <dfn class="local col2 decl" id="62size" title='size' data-type='long' data-ref="62size">size</dfn>);</td></tr>
+<tr><th id="416">416</th><td><em>void</em> <dfn class="decl" id="AnnotateExpectRace" title='AnnotateExpectRace' data-ref="AnnotateExpectRace">AnnotateExpectRace</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="63file" title='file' data-type='const char *' data-ref="63file">file</dfn>, <em>int</em> <dfn class="local col4 decl" id="64line" title='line' data-type='int' data-ref="64line">line</dfn>,</td></tr>
+<tr><th id="417">417</th><td>                        <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col5 decl" id="65address" title='address' data-type='const volatile void *' data-ref="65address">address</dfn>,</td></tr>
+<tr><th id="418">418</th><td>                        <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="66description" title='description' data-type='const char *' data-ref="66description">description</dfn>);</td></tr>
+<tr><th id="419">419</th><td><em>void</em> <dfn class="decl" id="AnnotateBenignRace" title='AnnotateBenignRace' data-ref="AnnotateBenignRace">AnnotateBenignRace</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="67file" title='file' data-type='const char *' data-ref="67file">file</dfn>, <em>int</em> <dfn class="local col8 decl" id="68line" title='line' data-type='int' data-ref="68line">line</dfn>,</td></tr>
+<tr><th id="420">420</th><td>                        <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col9 decl" id="69address" title='address' data-type='const volatile void *' data-ref="69address">address</dfn>,</td></tr>
+<tr><th id="421">421</th><td>                        <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="70description" title='description' data-type='const char *' data-ref="70description">description</dfn>);</td></tr>
+<tr><th id="422">422</th><td><em>void</em> <dfn class="decl" id="AnnotateBenignRaceSized" title='AnnotateBenignRaceSized' data-ref="AnnotateBenignRaceSized">AnnotateBenignRaceSized</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="71file" title='file' data-type='const char *' data-ref="71file">file</dfn>, <em>int</em> <dfn class="local col2 decl" id="72line" title='line' data-type='int' data-ref="72line">line</dfn>,</td></tr>
+<tr><th id="423">423</th><td>                        <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col3 decl" id="73address" title='address' data-type='const volatile void *' data-ref="73address">address</dfn>,</td></tr>
+<tr><th id="424">424</th><td>                        <em>long</em> <dfn class="local col4 decl" id="74size" title='size' data-type='long' data-ref="74size">size</dfn>,</td></tr>
+<tr><th id="425">425</th><td>                        <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="75description" title='description' data-type='const char *' data-ref="75description">description</dfn>);</td></tr>
+<tr><th id="426">426</th><td><em>void</em> <dfn class="decl" id="AnnotateMutexIsUsedAsCondVar" title='AnnotateMutexIsUsedAsCondVar' data-ref="AnnotateMutexIsUsedAsCondVar">AnnotateMutexIsUsedAsCondVar</dfn>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="76file" title='file' data-type='const char *' data-ref="76file">file</dfn>, <em>int</em> <dfn class="local col7 decl" id="77line" title='line' data-type='int' data-ref="77line">line</dfn>,</td></tr>
+<tr><th id="427">427</th><td>                                  <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col8 decl" id="78mu" title='mu' data-type='const volatile void *' data-ref="78mu">mu</dfn>);</td></tr>
+<tr><th id="428">428</th><td><em>void</em> <dfn class="decl" id="AnnotateTraceMemory" title='AnnotateTraceMemory' data-ref="AnnotateTraceMemory">AnnotateTraceMemory</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="79file" title='file' data-type='const char *' data-ref="79file">file</dfn>, <em>int</em> <dfn class="local col0 decl" id="80line" title='line' data-type='int' data-ref="80line">line</dfn>,</td></tr>
+<tr><th id="429">429</th><td>                         <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col1 decl" id="81arg" title='arg' data-type='const volatile void *' data-ref="81arg">arg</dfn>);</td></tr>
+<tr><th id="430">430</th><td><em>void</em> <dfn class="decl" id="AnnotateThreadName" title='AnnotateThreadName' data-ref="AnnotateThreadName">AnnotateThreadName</dfn>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="82file" title='file' data-type='const char *' data-ref="82file">file</dfn>, <em>int</em> <dfn class="local col3 decl" id="83line" title='line' data-type='int' data-ref="83line">line</dfn>,</td></tr>
+<tr><th id="431">431</th><td>                        <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="84name" title='name' data-type='const char *' data-ref="84name">name</dfn>);</td></tr>
+<tr><th id="432">432</th><td><em>void</em> <dfn class="decl" id="AnnotateIgnoreReadsBegin" title='AnnotateIgnoreReadsBegin' data-ref="AnnotateIgnoreReadsBegin">AnnotateIgnoreReadsBegin</dfn>(<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="85file" title='file' data-type='const char *' data-ref="85file">file</dfn>, <em>int</em> <dfn class="local col6 decl" id="86line" title='line' data-type='int' data-ref="86line">line</dfn>);</td></tr>
+<tr><th id="433">433</th><td><em>void</em> <dfn class="decl" id="AnnotateIgnoreReadsEnd" title='AnnotateIgnoreReadsEnd' data-ref="AnnotateIgnoreReadsEnd">AnnotateIgnoreReadsEnd</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="87file" title='file' data-type='const char *' data-ref="87file">file</dfn>, <em>int</em> <dfn class="local col8 decl" id="88line" title='line' data-type='int' data-ref="88line">line</dfn>);</td></tr>
+<tr><th id="434">434</th><td><em>void</em> <dfn class="decl" id="AnnotateIgnoreWritesBegin" title='AnnotateIgnoreWritesBegin' data-ref="AnnotateIgnoreWritesBegin">AnnotateIgnoreWritesBegin</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="89file" title='file' data-type='const char *' data-ref="89file">file</dfn>, <em>int</em> <dfn class="local col0 decl" id="90line" title='line' data-type='int' data-ref="90line">line</dfn>);</td></tr>
+<tr><th id="435">435</th><td><em>void</em> <dfn class="decl" id="AnnotateIgnoreWritesEnd" title='AnnotateIgnoreWritesEnd' data-ref="AnnotateIgnoreWritesEnd">AnnotateIgnoreWritesEnd</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="91file" title='file' data-type='const char *' data-ref="91file">file</dfn>, <em>int</em> <dfn class="local col2 decl" id="92line" title='line' data-type='int' data-ref="92line">line</dfn>);</td></tr>
+<tr><th id="436">436</th><td><em>void</em> <dfn class="decl" id="AnnotateEnableRaceDetection" title='AnnotateEnableRaceDetection' data-ref="AnnotateEnableRaceDetection">AnnotateEnableRaceDetection</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="93file" title='file' data-type='const char *' data-ref="93file">file</dfn>, <em>int</em> <dfn class="local col4 decl" id="94line" title='line' data-type='int' data-ref="94line">line</dfn>, <em>int</em> <dfn class="local col5 decl" id="95enable" title='enable' data-type='int' data-ref="95enable">enable</dfn>);</td></tr>
+<tr><th id="437">437</th><td><em>void</em> <dfn class="decl" id="AnnotateNoOp" title='AnnotateNoOp' data-ref="AnnotateNoOp">AnnotateNoOp</dfn>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="96file" title='file' data-type='const char *' data-ref="96file">file</dfn>, <em>int</em> <dfn class="local col7 decl" id="97line" title='line' data-type='int' data-ref="97line">line</dfn>,</td></tr>
+<tr><th id="438">438</th><td>                  <em>const</em> <em>volatile</em> <em>void</em> *<dfn class="local col8 decl" id="98arg" title='arg' data-type='const volatile void *' data-ref="98arg">arg</dfn>);</td></tr>
+<tr><th id="439">439</th><td><em>void</em> <dfn class="decl" id="AnnotateFlushState" title='AnnotateFlushState' data-ref="AnnotateFlushState">AnnotateFlushState</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="99file" title='file' data-type='const char *' data-ref="99file">file</dfn>, <em>int</em> <dfn class="local col0 decl" id="100line" title='line' data-type='int' data-ref="100line">line</dfn>);</td></tr>
+<tr><th id="440">440</th><td></td></tr>
+<tr><th id="441">441</th><td><i>/* Return non-zero value if running under valgrind.</i></td></tr>
+<tr><th id="442">442</th><td><i></i></td></tr>
+<tr><th id="443">443</th><td><i>  If "valgrind.h" is included into dynamic_annotations.c,</i></td></tr>
+<tr><th id="444">444</th><td><i>  the regular valgrind mechanism will be used.</i></td></tr>
+<tr><th id="445">445</th><td><i>  See <a href="http://valgrind.org/docs/manual/manual-core-adv.html">http://valgrind.org/docs/manual/manual-core-adv.html</a> about</i></td></tr>
+<tr><th id="446">446</th><td><i>  RUNNING_ON_VALGRIND and other valgrind "client requests".</i></td></tr>
+<tr><th id="447">447</th><td><i>  The file "valgrind.h" may be obtained by doing</i></td></tr>
+<tr><th id="448">448</th><td><i>     svn co svn://svn.valgrind.org/valgrind/trunk/include</i></td></tr>
+<tr><th id="449">449</th><td><i></i></td></tr>
+<tr><th id="450">450</th><td><i>  If for some reason you can't use "valgrind.h" or want to fake valgrind,</i></td></tr>
+<tr><th id="451">451</th><td><i>  there are two ways to make this function return non-zero:</i></td></tr>
+<tr><th id="452">452</th><td><i>    - Use environment variable: export RUNNING_ON_VALGRIND=1</i></td></tr>
+<tr><th id="453">453</th><td><i>    - Make your tool intercept the function RunningOnValgrind() and</i></td></tr>
+<tr><th id="454">454</th><td><i>      change its return value.</i></td></tr>
+<tr><th id="455">455</th><td><i> */</i></td></tr>
+<tr><th id="456">456</th><td><em>int</em> <dfn class="decl" id="RunningOnValgrind" title='RunningOnValgrind' data-ref="RunningOnValgrind">RunningOnValgrind</dfn>(<em>void</em>);</td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td><u>#<span data-ppcond="458">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="459">459</th><td>}</td></tr>
+<tr><th id="460">460</th><td><u>#<span data-ppcond="458">endif</span></u></td></tr>
+<tr><th id="461">461</th><td></td></tr>
+<tr><th id="462">462</th><td><u>#<span data-ppcond="462">if</span> <a class="macro" href="#60" title="0" data-ref="_M/DYNAMIC_ANNOTATIONS_ENABLED">DYNAMIC_ANNOTATIONS_ENABLED</a> != 0 &amp;&amp; defined(<span class="macro" data-ref="_M/__cplusplus">__cplusplus</span>)</u></td></tr>
+<tr><th id="463">463</th><td></td></tr>
+<tr><th id="464">464</th><td>  <i>/* _Py_ANNOTATE_UNPROTECTED_READ is the preferred way to annotate racey reads.</i></td></tr>
+<tr><th id="465">465</th><td><i></i></td></tr>
+<tr><th id="466">466</th><td><i>     Instead of doing</i></td></tr>
+<tr><th id="467">467</th><td><i>        _Py_ANNOTATE_IGNORE_READS_BEGIN();</i></td></tr>
+<tr><th id="468">468</th><td><i>        ... = x;</i></td></tr>
+<tr><th id="469">469</th><td><i>        _Py_ANNOTATE_IGNORE_READS_END();</i></td></tr>
+<tr><th id="470">470</th><td><i>     one can use</i></td></tr>
+<tr><th id="471">471</th><td><i>        ... = _Py_ANNOTATE_UNPROTECTED_READ(x); */</i></td></tr>
+<tr><th id="472">472</th><td>  template &lt;class T&gt;</td></tr>
+<tr><th id="473">473</th><td>  <b>inline</b> T _Py_ANNOTATE_UNPROTECTED_READ(<em>const</em> <em>volatile</em> T &amp;x) {</td></tr>
+<tr><th id="474">474</th><td>    _Py_ANNOTATE_IGNORE_READS_BEGIN();</td></tr>
+<tr><th id="475">475</th><td>    T res = x;</td></tr>
+<tr><th id="476">476</th><td>    _Py_ANNOTATE_IGNORE_READS_END();</td></tr>
+<tr><th id="477">477</th><td>    <b>return</b> res;</td></tr>
+<tr><th id="478">478</th><td>  }</td></tr>
+<tr><th id="479">479</th><td>  <i>/* Apply _Py_ANNOTATE_BENIGN_RACE_SIZED to a static variable. */</i></td></tr>
+<tr><th id="480">480</th><td><u>#define _Py_ANNOTATE_BENIGN_RACE_STATIC(static_var, description)        \</u></td></tr>
+<tr><th id="481">481</th><td><u>    namespace {                                                       \</u></td></tr>
+<tr><th id="482">482</th><td><u>      class static_var ## _annotator {                                \</u></td></tr>
+<tr><th id="483">483</th><td><u>       public:                                                        \</u></td></tr>
+<tr><th id="484">484</th><td><u>        static_var ## _annotator() {                                  \</u></td></tr>
+<tr><th id="485">485</th><td><u>          _Py_ANNOTATE_BENIGN_RACE_SIZED(&amp;static_var,                     \</u></td></tr>
+<tr><th id="486">486</th><td><u>                                      sizeof(static_var),             \</u></td></tr>
+<tr><th id="487">487</th><td><u>            # static_var ": " description);                           \</u></td></tr>
+<tr><th id="488">488</th><td><u>        }                                                             \</u></td></tr>
+<tr><th id="489">489</th><td><u>      };                                                              \</u></td></tr>
+<tr><th id="490">490</th><td><u>      static static_var ## _annotator the ## static_var ## _annotator;\</u></td></tr>
+<tr><th id="491">491</th><td><u>    }</u></td></tr>
+<tr><th id="492">492</th><td><u>#<span data-ppcond="462">else</span> /* DYNAMIC_ANNOTATIONS_ENABLED == 0 */</u></td></tr>
+<tr><th id="493">493</th><td></td></tr>
+<tr><th id="494">494</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_UNPROTECTED_READ" data-ref="_M/_Py_ANNOTATE_UNPROTECTED_READ">_Py_ANNOTATE_UNPROTECTED_READ</dfn>(x) (x)</u></td></tr>
+<tr><th id="495">495</th><td><u>#define <dfn class="macro" id="_M/_Py_ANNOTATE_BENIGN_RACE_STATIC" data-ref="_M/_Py_ANNOTATE_BENIGN_RACE_STATIC">_Py_ANNOTATE_BENIGN_RACE_STATIC</dfn>(static_var, description)  /* empty */</u></td></tr>
+<tr><th id="496">496</th><td></td></tr>
+<tr><th id="497">497</th><td><u>#<span data-ppcond="462">endif</span> /* DYNAMIC_ANNOTATIONS_ENABLED */</u></td></tr>
+<tr><th id="498">498</th><td></td></tr>
+<tr><th id="499">499</th><td><u>#<span data-ppcond="56">endif</span>  /* __DYNAMIC_ANNOTATIONS_H__ */</u></td></tr>
+<tr><th id="500">500</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_codecsmodule.c.html'>codebrowser/Modules/_codecsmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

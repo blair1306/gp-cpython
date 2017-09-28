@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/Python-ast.h' l='261' type='asdl_seq *'/>
+<dec f='codebrowser/Include/Python-ast.h' l='266' type='asdl_seq *'/>
+<dec f='codebrowser/Include/Python-ast.h' l='272' type='asdl_seq *'/>
+<dec f='codebrowser/Include/Python-ast.h' l='277' type='asdl_seq *'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1948' u='w' c='_Py_ListComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1969' u='w' c='_Py_SetComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1996' u='w' c='_Py_DictComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='2017' u='w' c='_Py_GeneratorExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='3214' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3228' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3247' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3261' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='256' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='256' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='256' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='263' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='4065' u='r' c='compiler_genexp'/>
+<use f='codebrowser/Python/compile.c' l='4080' u='r' c='compiler_listcomp'/>
+<use f='codebrowser/Python/compile.c' l='4095' u='r' c='compiler_setcomp'/>
+<use f='codebrowser/Python/compile.c' l='4111' u='r' c='compiler_dictcomp'/>
+<use f='codebrowser/Python/symtable.c' l='1762' u='r' c='symtable_visit_genexp'/>
+<use f='codebrowser/Python/symtable.c' l='1770' u='r' c='symtable_visit_listcomp'/>
+<use f='codebrowser/Python/symtable.c' l='1778' u='r' c='symtable_visit_setcomp'/>
+<use f='codebrowser/Python/symtable.c' l='1786' u='r' c='symtable_visit_dictcomp'/>

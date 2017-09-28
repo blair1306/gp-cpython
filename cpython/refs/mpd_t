@@ -1,0 +1,9 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='372' ll='379'/>
+<size>48</size>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='371'>/* mpd_t */</doc>
+<mbr r='mpd_t::flags' o='0' t='uint8_t'/>
+<mbr r='mpd_t::exp' o='64' t='mpd_ssize_t'/>
+<mbr r='mpd_t::digits' o='128' t='mpd_ssize_t'/>
+<mbr r='mpd_t::len' o='192' t='mpd_ssize_t'/>
+<mbr r='mpd_t::alloc' o='256' t='mpd_ssize_t'/>
+<mbr r='mpd_t::data' o='320' t='mpd_uint_t *'/>

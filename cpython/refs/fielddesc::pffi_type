@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='166' type='ffi_type *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='977' u='r' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1882' u='r' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1883' u='r' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1885' u='r' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1924' u='r' c='PyCSimpleType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1991' u='r' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1992' u='r' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1994' u='r' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2152' u='r' c='PyCSimpleType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2282' u='r' c='make_funcptrtype_dict'/>
+<offset>192</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='166'>/* always statically allocated */</doc>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1575' u='w' c='_ctypes_get_fielddesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1577' u='w' c='_ctypes_get_fielddesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1579' u='w' c='_ctypes_get_fielddesc'/>

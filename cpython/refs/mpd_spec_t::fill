@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='396' type='char [5]'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3232' u='w' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3233' u='w' c='dec_format'/>
+<offset>152</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='396'>/* fill character */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='790' u='r' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='803' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='804' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='825' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='826' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1145' u='r' c='_mpd_add_pad'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1183' u='r' c='_mpd_add_pad'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1189' u='r' c='_mpd_add_pad'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1263' u='w' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1264' u='w' c='mpd_qformat_spec'/>

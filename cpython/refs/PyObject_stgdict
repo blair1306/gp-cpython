@@ -1,0 +1,35 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='264' type='StgDictObject * PyObject_stgdict(PyObject * self)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='409' u='c' c='StructUnionType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1091' u='c' c='PyCPointerType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1598' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1610' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1662' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1674' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1797' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1911' u='c' c='PyCSimpleType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2602' u='c' c='PyCData_NewGetBuffer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2648' u='c' c='PyCData_reduce'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2935' u='c' c='_PyCData_set'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3086' u='c' c='PyCFuncPtr_get_restype'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3123' u='c' c='PyCFuncPtr_get_argtypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3851' u='c' c='PyCFuncPtr_call'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4315' u='c' c='Array_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4352' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4449' u='c' c='Array_ass_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4663' u='c' c='Simple_set_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4695' u='c' c='Simple_get_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4823' u='c' c='Pointer_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4860' u='c' c='Pointer_ass_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4888' u='c' c='Pointer_get_contents'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4907' u='c' c='Pointer_set_contents'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5041' u='c' c='Pointer_subscript'/>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='263'>/* May return NULL, but does not set an exception! */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='615' u='c' c='ConvParam'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1492' u='c' c='align_func'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1604' u='c' c='resize'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1766' u='c' c='buffer_info'/>
+<def f='codebrowser/Modules/_ctypes/stgdict.c' l='190' ll='197' type='StgDictObject * PyObject_stgdict(PyObject * self)'/>
+<doc f='codebrowser/Modules/_ctypes/stgdict.c' l='186'>/*
+  This function should be as fast as possible, so we don&apos;t call PyType_stgdict
+  above but inline the code, and avoid the PyType_Check().
+*/</doc>

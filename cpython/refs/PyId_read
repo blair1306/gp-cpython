@@ -1,0 +1,9 @@
+<def f='codebrowser/Modules/_io/bufferedio.c' l='34' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='68' u='a' c='_bufferediobase_readinto_generic'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2183' u='a' c='bufferedrwpair_read'/>
+<def f='codebrowser/Modules/_io/iobase.c' l='74' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='559' u='a' c='_io__IOBase_readline_impl'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='922' u='a' c='_io__RawIOBase_readall_impl'/>
+<def f='codebrowser/Modules/_io/textio.c' l='31' macro='1' type='_Py_Identifier'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1626' u='a' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2257' u='a' c='_io_TextIOWrapper_seek_impl'/>

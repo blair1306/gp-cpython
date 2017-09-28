@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>align.h source code [codebrowser/Modules/_sha3/kcp/align.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_sha3/kcp/align.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_sha3</a>/<a href='./'>kcp</a>/<a href='align.h.html'>align.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>Implementation by the Keccak, Keyak and Ketje Teams, namely, Guido Bertoni,</i></td></tr>
+<tr><th id="3">3</th><td><i>Joan Daemen, Michaël Peeters, Gilles Van Assche and Ronny Van Keer, hereby</i></td></tr>
+<tr><th id="4">4</th><td><i>denoted as "the implementer".</i></td></tr>
+<tr><th id="5">5</th><td><i></i></td></tr>
+<tr><th id="6">6</th><td><i>For more information, feedback or questions, please refer to our websites:</i></td></tr>
+<tr><th id="7">7</th><td><i>http://keccak.noekeon.org/</i></td></tr>
+<tr><th id="8">8</th><td><i>http://keyak.noekeon.org/</i></td></tr>
+<tr><th id="9">9</th><td><i>http://ketje.noekeon.org/</i></td></tr>
+<tr><th id="10">10</th><td><i></i></td></tr>
+<tr><th id="11">11</th><td><i>To the extent possible under law, the implementer has waived all copyright</i></td></tr>
+<tr><th id="12">12</th><td><i>and related or neighboring rights to the source code in this file.</i></td></tr>
+<tr><th id="13">13</th><td><i>http://creativecommons.org/publicdomain/zero/1.0/</i></td></tr>
+<tr><th id="14">14</th><td><i>*/</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="16">ifndef</span> <span class="macro" data-ref="_M/_align_h_">_align_h_</span></u></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/_align_h_" data-ref="_M/_align_h_">_align_h_</dfn></u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/* on Mac OS-X and possibly others, ALIGN(x) is defined in param.h, and -Werror chokes on the redef. */</i></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="21">ifdef</span> <span class="macro" data-ref="_M/ALIGN">ALIGN</span></u></td></tr>
+<tr><th id="22">22</th><td><u>#undef ALIGN</u></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="21">endif</span></u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="25">if</span> defined(<span class="macro" data-ref="_M/__GNUC__">__GNUC__</span>)</u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/ALIGN" data-ref="_M/ALIGN">ALIGN</dfn>(x) __attribute__ ((aligned(x)))</u></td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="25">elif</span> defined(_MSC_VER)</u></td></tr>
+<tr><th id="28">28</th><td><u>#define ALIGN(x) __declspec(align(x))</u></td></tr>
+<tr><th id="29">29</th><td><u>#elif defined(__ARMCC_VERSION)</u></td></tr>
+<tr><th id="30">30</th><td><u>#define ALIGN(x) __align(x)</u></td></tr>
+<tr><th id="31">31</th><td><u>#else</u></td></tr>
+<tr><th id="32">32</th><td><u>#define ALIGN(x)</u></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="25">endif</span></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><u>#<span data-ppcond="16">endif</span></u></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../sha3module.c.html'>codebrowser/Modules/_sha3/sha3module.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

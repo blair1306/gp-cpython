@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_multiprocessing/multiprocessing.h' l='101' type='PyObject * _PyMp_sem_unlink(PyObject * ignore, PyObject * args)'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='132' u='r'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='132' u='r'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='132' u='r'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='132' u='r'/>
+<def f='codebrowser/Modules/_multiprocessing/semaphore.c' l='662' ll='676' type='PyObject * _PyMp_sem_unlink(PyObject * ignore, PyObject * args)'/>
+<doc f='codebrowser/Modules/_multiprocessing/semaphore.c' l='658'>/*
+ * Function to unlink semaphore names
+ */</doc>

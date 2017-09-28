@@ -1,0 +1,23 @@
+<dec f='include/string.h' l='92' type='void * memchr(const void * __s, int __c, size_t __n)'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1107' u='c' c='_buffered_readline'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='72' u='c' c='scan_eol'/>
+<use f='codebrowser/Modules/_io/textio.c' l='387' u='c' c='_PyIncrementalNewlineDecoder_decode'/>
+<use f='codebrowser/Modules/_io/textio.c' l='395' u='c' c='_PyIncrementalNewlineDecoder_decode'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1718' u='c' c='find_control_char'/>
+<use f='codebrowser/Modules/_sre.c' l='1038' u='c' c='pattern_subx'/>
+<use f='codebrowser/Modules/binascii.c' l='1376' u='c' c='binascii_b2a_qp_impl'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='233' u='c' c='mmap_read_line_method'/>
+<use f='codebrowser/Objects/stringlib/fastsearch.h' l='50' u='c' c='stringlib_find_char'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='212' u='c' c='countchar'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='212' u='c' c='stringlib_replace_delete_single_character'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='212' u='c' c='stringlib_replace_single_character_in_place'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='212' u='c' c='stringlib_replace_single_character_in_place'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='212' u='c' c='stringlib_replace_single_character'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1765' u='c' c='lstrip_helper'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1775' u='c' c='rstrip_helper'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='677' u='c' c='_Py_bytes_contains'/>
+<use f='codebrowser/Objects/bytesobject.c' l='635' u='c' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1960' u='c' c='do_xstrip'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1969' u='c' c='do_xstrip'/>
+<use f='codebrowser/Objects/stringlib/replace.h' l='34' u='c' c='ucs1lib_replace_1char_inplace'/>
+<use f='codebrowser/Python/peephole.c' l='450' u='c' c='PyCode_Optimize'/>

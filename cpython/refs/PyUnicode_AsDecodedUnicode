@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1209' type='PyObject * PyUnicode_AsDecodedUnicode(PyObject * unicode, const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1202'>/* Decode a Unicode object unicode and return the result as Unicode
+   object.
+
+   This API is DEPRECATED. The only supported standard encoding is rot13.
+   Use PyCodec_Decode() to decode with rot13 and non-standard codecs
+   that decode from str to str. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='3263' ll='3300' type='PyObject * PyUnicode_AsDecodedUnicode(PyObject * unicode, const char * encoding, const char * errors)'/>

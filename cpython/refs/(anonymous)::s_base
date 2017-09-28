@@ -1,0 +1,10 @@
+<dec f='codebrowser/Parser/parser.h' l='20' type='stackentry [1500]'/>
+<offset>64</offset>
+<doc f='codebrowser/Parser/parser.h' l='20'>/* Array of stack entries */</doc>
+<use f='codebrowser/Parser/parser.c' l='32' u='a' c='s_reset'/>
+<use f='codebrowser/Parser/parser.c' l='41' u='r' c='s_push'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='a' c='s_pop'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='a' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='a' c='push'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='a' c='PyParser_AddToken'/>

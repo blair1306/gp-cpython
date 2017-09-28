@@ -1,0 +1,58 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1842' type='PyObject * PyUnicode_DecodeFSDefault(const char * s)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1833'>/* Decode a null-terminated string using Py_FileSystemDefaultEncoding
+   and the &quot;surrogateescape&quot; error handler.
+
+   If Py_FileSystemDefaultEncoding is not set, fall back to the locale
+   encoding.
+
+   Use PyUnicode_DecodeFSDefaultAndSize() if the string length is known.
+*/</doc>
+<use f='codebrowser/Modules/_ssl.c' l='1763' u='c' c='_ssl__SSLSocket_compression_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4651' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4651' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4651' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4651' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/grpmodule.c' l='55' u='c' c='mkgrent'/>
+<use f='codebrowser/Modules/grpmodule.c' l='66' u='c' c='mkgrent'/>
+<use f='codebrowser/Modules/grpmodule.c' l='68' u='c' c='mkgrent'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2691' u='c' c='os_ctermid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3343' u='c' c='posix_getcwd'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4409' u='c' c='os_uname_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4409' u='c' c='os_uname_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4409' u='c' c='os_uname_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4409' u='c' c='os_uname_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4409' u='c' c='os_uname_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6513' u='c' c='os_getlogin_impl'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='196' u='c' c='os_ttyname'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11860' u='c' c='DirEntry_from_posix_info'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='57' u='c' c='sets'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1217' u='c' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1380' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1388' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4917' u='c' c='socket_gethostname'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6176' c='socket_if_nameindex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6237' u='c' c='socket_if_indextoname'/>
+<use f='codebrowser/Modules/spwdmodule.c' l='70' u='c' c='sets'/>
+<use f='codebrowser/Objects/codeobject.c' l='233' u='c' c='PyCode_NewEmpty'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3824' ll='3828' type='PyObject * PyUnicode_DecodeFSDefault(const char * s)'/>
+<use f='codebrowser/Parser/parsetok.c' l='79' u='c' c='PyParser_ParseStringFlagsFilenameEx'/>
+<use f='codebrowser/Parser/parsetok.c' l='147' u='c' c='PyParser_ParseFileFlagsEx'/>
+<use f='codebrowser/Python/_warnings.c' l='1039' u='c' c='PyErr_WarnExplicit'/>
+<use f='codebrowser/Python/_warnings.c' l='1069' u='c' c='PyErr_WarnExplicitFormat'/>
+<use f='codebrowser/Python/ast.c' l='888' u='c' c='PyAST_FromNode'/>
+<use f='codebrowser/Python/compile.c' l='355' u='c' c='PyAST_CompileEx'/>
+<use f='codebrowser/Python/errors.c' l='563' u='c' c='PyErr_SetFromErrnoWithFilename'/>
+<use f='codebrowser/Python/errors.c' l='1089' u='c' c='PyErr_SyntaxLocationEx'/>
+<use f='codebrowser/Python/future.c' l='145' u='c' c='PyFuture_FromAST'/>
+<use f='codebrowser/Python/import.c' l='747' u='c' c='PyImport_ExecCodeModuleWithPathnames'/>
+<use f='codebrowser/Python/import.c' l='755' u='c' c='PyImport_ExecCodeModuleWithPathnames'/>
+<use f='codebrowser/Python/pythonrun.c' l='92' u='c' c='PyRun_InteractiveLoopFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='253' u='c' c='PyRun_InteractiveOneFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='312' u='c' c='set_main_loader'/>
+<use f='codebrowser/Python/pythonrun.c' l='356' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='920' u='c' c='PyRun_FileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='1054' u='c' c='Py_CompileStringExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='1099' u='c' c='Py_SymtableString'/>
+<use f='codebrowser/Python/pythonrun.c' l='1143' u='c' c='PyParser_ASTFromString'/>
+<use f='codebrowser/Python/pythonrun.c' l='1192' u='c' c='PyParser_ASTFromFile'/>
+<use f='codebrowser/Python/symtable.c' l='322' u='c' c='PySymtable_Build'/>

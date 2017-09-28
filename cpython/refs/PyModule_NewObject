@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/moduleobject.h' l='16' type='PyObject * PyModule_NewObject(PyObject * name)'/>
+<def f='codebrowser/Objects/moduleobject.c' l='79' ll='99' type='PyObject * PyModule_NewObject(PyObject * name)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='108' u='c' c='PyModule_New'/>
+<use f='codebrowser/Objects/moduleobject.c' l='300' u='c' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<use f='codebrowser/Python/import.c' l='672' u='c' c='PyImport_AddModuleObject'/>

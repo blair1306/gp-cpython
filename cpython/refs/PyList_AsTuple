@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/listobject.h' l='62' type='PyObject * PyList_AsTuple(PyObject * )'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2400' u='c' c='sequence_as_tuple'/>
+<use f='codebrowser/Modules/_ssl.c' l='869' u='c' c='_create_tuple_for_X509_NAME'/>
+<use f='codebrowser/Modules/_ssl.c' l='905' u='c' c='_create_tuple_for_X509_NAME'/>
+<use f='codebrowser/Modules/_ssl.c' l='920' u='c' c='_create_tuple_for_X509_NAME'/>
+<use f='codebrowser/Modules/_ssl.c' l='1128' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1193' u='c' c='_get_aia_uri'/>
+<use f='codebrowser/Modules/_ssl.c' l='1250' u='c' c='_get_crl_dp'/>
+<use f='codebrowser/Objects/abstract.c' l='1812' u='c' c='PySequence_Tuple'/>
+<def f='codebrowser/Objects/listobject.c' l='2184' ll='2207' type='PyObject * PyList_AsTuple(PyObject * v)'/>
+<use f='codebrowser/Objects/typeobject.c' l='2502' u='c' c='type_new'/>
+<use f='codebrowser/Python/ceval.c' l='2530' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/compile.c' l='1639' u='c' c='compiler_visit_kwonlydefaults'/>
+<use f='codebrowser/Python/compile.c' l='1734' u='c' c='compiler_visit_annotations'/>
+<use f='codebrowser/Python/compile.c' l='5332' u='c' c='makecode'/>
+<use f='codebrowser/Python/sysmodule.c' l='1477' u='c' c='list_builtin_module_names'/>

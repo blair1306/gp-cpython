@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='514' type='void mpd_qnext_toward(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4114' u='c' c='dec_mpd_qnext_toward'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5058' u='c' c='ctx_mpd_qnext_toward'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6071' ll='6103' type='void mpd_qnext_toward(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6067'>/*
+ * The number closest to the first operand that is in the direction towards
+ * the second operand.
+ */</doc>

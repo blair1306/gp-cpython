@@ -1,0 +1,642 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_testmultiphase.c source code [codebrowser/Modules/_testmultiphase.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_testmultiphase.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='_testmultiphase.c.html'>_testmultiphase.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Testing module for multi-phase initialization of extension modules (PEP 489)</i></td></tr>
+<tr><th id="3">3</th><td><i> */</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><i>/* Example objects */</i></td></tr>
+<tr><th id="8">8</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="9">9</th><td>    <a class="macro" href="../Include/object.h.html#83" title="PyObject ob_base;" data-ref="_M/PyObject_HEAD">PyObject_HEAD</a></td></tr>
+<tr><th id="10">10</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>            *<dfn class="tu decl" id="(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-type='PyObject *' data-ref="(anonymous)::x_attr">x_attr</dfn>;        <i  data-doc="(anonymous)::x_attr">/* Attributes dictionary */</i></td></tr>
+<tr><th id="11">11</th><td>} <dfn class="typedef" id="ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</dfn>;</td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="Example_traverse">/* Example methods */</i></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="16">16</th><td><dfn class="tu decl def" id="Example_traverse" title='Example_traverse' data-type='int Example_traverse(ExampleObject * self, visitproc visit, void * arg)' data-ref="Example_traverse">Example_traverse</dfn>(<a class="typedef" href="#ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='ExampleObject *' data-ref="1self">self</dfn>, <a class="typedef" href="../Include/object.h.html#visitproc" title='visitproc' data-type='int (*)(PyObject *, void *)' data-ref="visitproc">visitproc</a> <dfn class="local col2 decl" id="2visit" title='visit' data-type='visitproc' data-ref="2visit">visit</dfn>, <em>void</em> *<dfn class="local col3 decl" id="3arg" title='arg' data-type='void *' data-ref="3arg">arg</dfn>)</td></tr>
+<tr><th id="17">17</th><td>{</td></tr>
+<tr><th id="18">18</th><td>    <a class="macro" href="../Include/objimpl.h.html#351" title="do { if (self-&gt;x_attr) { int vret = visit((PyObject *)(self-&gt;x_attr), arg); if (vret) return vret; } } while (0)" data-ref="_M/Py_VISIT">Py_VISIT</a>(<a class="local col1 ref" href="#1self" title='self' data-ref="1self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a>);</td></tr>
+<tr><th id="19">19</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="20">20</th><td>}</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="23">23</th><td><dfn class="tu decl def" id="Example_finalize" title='Example_finalize' data-type='int Example_finalize(ExampleObject * self)' data-ref="Example_finalize">Example_finalize</dfn>(<a class="typedef" href="#ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='ExampleObject *' data-ref="4self">self</dfn>)</td></tr>
+<tr><th id="24">24</th><td>{</td></tr>
+<tr><th id="25">25</th><td>    <a class="macro" href="../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(self-&gt;x_attr); if (_py_tmp != ((void*)0)) { (self-&gt;x_attr) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_testmultiphase.c&quot;, 25, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr"><a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='w' data-ref="(anonymous)::x_attr">x_attr</a></a>);</td></tr>
+<tr><th id="26">26</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="27">27</th><td>}</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="30">30</th><td><dfn class="tu decl def" id="Example_demo" title='Example_demo' data-type='PyObject * Example_demo(ExampleObject * self, PyObject * args)' data-ref="Example_demo">Example_demo</dfn>(<a class="typedef" href="#ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</a> *<dfn class="local col5 decl" id="5self" title='self' data-type='ExampleObject *' data-ref="5self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="6args" title='args' data-type='PyObject *' data-ref="6args">args</dfn>)</td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7o" title='o' data-type='PyObject *' data-ref="7o">o</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="33">33</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col6 ref" href="#6args" title='args' data-ref="6args">args</a>, <q>"|O:demo"</q>, &amp;<a class="local col7 ref" href="#7o" title='o' data-ref="7o">o</a>))</td></tr>
+<tr><th id="34">34</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="35">35</th><td>    <b>if</b> (<a class="local col7 ref" href="#7o" title='o' data-ref="7o">o</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="macro" href="../Include/unicodeobject.h.html#366" title="((((((PyObject*)(o))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 28))) != 0)" data-ref="_M/PyUnicode_Check">PyUnicode_Check</a>(<a class="local col7 ref" href="#7o" title='o' data-ref="7o">o</a>)) {</td></tr>
+<tr><th id="36">36</th><td>        <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(o))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col7 ref" href="#7o" title='o' data-ref="7o">o</a>);</td></tr>
+<tr><th id="37">37</th><td>        <b>return</b> <a class="local col7 ref" href="#7o" title='o' data-ref="7o">o</a>;</td></tr>
+<tr><th id="38">38</th><td>    }</td></tr>
+<tr><th id="39">39</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="40">40</th><td>}</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="Example_methods" title='Example_methods' data-type='PyMethodDef [2]' data-ref="Example_methods">Example_methods</dfn>[] = {</td></tr>
+<tr><th id="44">44</th><td>    {<q>"demo"</q>,            (<a class="typedef" href="../Include/methodobject.h.html#PyCFunction" title='PyCFunction' data-type='PyObject *(*)(PyObject *, PyObject *)' data-ref="PyCFunction">PyCFunction</a>)<a class="tu ref" href="#Example_demo" title='Example_demo' data-use='r' data-ref="Example_demo">Example_demo</a>,  <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>,</td></tr>
+<tr><th id="45">45</th><td>        <a class="macro" href="../Include/pymacro.h.html#73" title="&quot;demo() -&gt; None&quot;" data-ref="_M/PyDoc_STR">PyDoc_STR</a>(<q>"demo() -&gt; None"</q>)},</td></tr>
+<tr><th id="46">46</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,              <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}           <i>/* sentinel */</i></td></tr>
+<tr><th id="47">47</th><td>};</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="50">50</th><td><dfn class="tu decl def" id="Example_getattro" title='Example_getattro' data-type='PyObject * Example_getattro(ExampleObject * self, PyObject * name)' data-ref="Example_getattro">Example_getattro</dfn>(<a class="typedef" href="#ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</a> *<dfn class="local col8 decl" id="8self" title='self' data-type='ExampleObject *' data-ref="8self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9name" title='name' data-type='PyObject *' data-ref="9name">name</dfn>)</td></tr>
+<tr><th id="51">51</th><td>{</td></tr>
+<tr><th id="52">52</th><td>    <b>if</b> (<a class="local col8 ref" href="#8self" title='self' data-ref="8self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="53">53</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10v" title='v' data-type='PyObject *' data-ref="10v">v</dfn> = <a class="ref" href="../Include/dictobject.h.html#PyDict_GetItem" title='PyDict_GetItem' data-ref="PyDict_GetItem">PyDict_GetItem</a>(<a class="local col8 ref" href="#8self" title='self' data-ref="8self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a>, <a class="local col9 ref" href="#9name" title='name' data-ref="9name">name</a>);</td></tr>
+<tr><th id="54">54</th><td>        <b>if</b> (<a class="local col0 ref" href="#10v" title='v' data-ref="10v">v</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="55">55</th><td>            <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(v))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col0 ref" href="#10v" title='v' data-ref="10v">v</a>);</td></tr>
+<tr><th id="56">56</th><td>            <b>return</b> <a class="local col0 ref" href="#10v" title='v' data-ref="10v">v</a>;</td></tr>
+<tr><th id="57">57</th><td>        }</td></tr>
+<tr><th id="58">58</th><td>    }</td></tr>
+<tr><th id="59">59</th><td>    <b>return</b> <a class="ref" href="../Include/object.h.html#PyObject_GenericGetAttr" title='PyObject_GenericGetAttr' data-ref="PyObject_GenericGetAttr">PyObject_GenericGetAttr</a>((<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)<a class="local col8 ref" href="#8self" title='self' data-ref="8self">self</a>, <a class="local col9 ref" href="#9name" title='name' data-ref="9name">name</a>);</td></tr>
+<tr><th id="60">60</th><td>}</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="63">63</th><td><dfn class="tu decl def" id="Example_setattr" title='Example_setattr' data-type='int Example_setattr(ExampleObject * self, const char * name, PyObject * v)' data-ref="Example_setattr">Example_setattr</dfn>(<a class="typedef" href="#ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</a> *<dfn class="local col1 decl" id="11self" title='self' data-type='ExampleObject *' data-ref="11self">self</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="12name" title='name' data-type='const char *' data-ref="12name">name</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="13v" title='v' data-type='PyObject *' data-ref="13v">v</dfn>)</td></tr>
+<tr><th id="64">64</th><td>{</td></tr>
+<tr><th id="65">65</th><td>    <b>if</b> (<a class="local col1 ref" href="#11self" title='self' data-ref="11self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="66">66</th><td>        <a class="local col1 ref" href="#11self" title='self' data-ref="11self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='w' data-ref="(anonymous)::x_attr">x_attr</a> = <a class="ref" href="../Include/dictobject.h.html#PyDict_New" title='PyDict_New' data-ref="PyDict_New">PyDict_New</a>();</td></tr>
+<tr><th id="67">67</th><td>        <b>if</b> (<a class="local col1 ref" href="#11self" title='self' data-ref="11self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="68">68</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="69">69</th><td>    }</td></tr>
+<tr><th id="70">70</th><td>    <b>if</b> (<a class="local col3 ref" href="#13v" title='v' data-ref="13v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="71">71</th><td>        <em>int</em> <dfn class="local col4 decl" id="14rv" title='rv' data-type='int' data-ref="14rv">rv</dfn> = <a class="ref" href="../Include/dictobject.h.html#PyDict_DelItemString" title='PyDict_DelItemString' data-ref="PyDict_DelItemString">PyDict_DelItemString</a>(<a class="local col1 ref" href="#11self" title='self' data-ref="11self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a>, <a class="local col2 ref" href="#12name" title='name' data-ref="12name">name</a>);</td></tr>
+<tr><th id="72">72</th><td>        <b>if</b> (<a class="local col4 ref" href="#14rv" title='rv' data-ref="14rv">rv</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="73">73</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_AttributeError" title='PyExc_AttributeError' data-ref="PyExc_AttributeError">PyExc_AttributeError</a>,</td></tr>
+<tr><th id="74">74</th><td>                <q>"delete non-existing Example attribute"</q>);</td></tr>
+<tr><th id="75">75</th><td>        <b>return</b> <a class="local col4 ref" href="#14rv" title='rv' data-ref="14rv">rv</a>;</td></tr>
+<tr><th id="76">76</th><td>    }</td></tr>
+<tr><th id="77">77</th><td>    <b>else</b></td></tr>
+<tr><th id="78">78</th><td>        <b>return</b> <a class="ref" href="../Include/dictobject.h.html#PyDict_SetItemString" title='PyDict_SetItemString' data-ref="PyDict_SetItemString">PyDict_SetItemString</a>(<a class="local col1 ref" href="#11self" title='self' data-ref="11self">self</a>-&gt;<a class="tu ref" href="#(anonymous)::x_attr" title='(anonymous struct)::x_attr' data-use='r' data-ref="(anonymous)::x_attr">x_attr</a>, <a class="local col2 ref" href="#12name" title='name' data-ref="12name">name</a>, <a class="local col3 ref" href="#13v" title='v' data-ref="13v">v</a>);</td></tr>
+<tr><th id="79">79</th><td>}</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyType_Slot" title='PyType_Slot' data-type='struct PyType_Slot' data-ref="PyType_Slot">PyType_Slot</a> <dfn class="tu decl def" id="Example_Type_slots" title='Example_Type_slots' data-type='PyType_Slot [7]' data-ref="Example_Type_slots">Example_Type_slots</dfn>[] = {</td></tr>
+<tr><th id="82">82</th><td>    {<a class="macro" href="../Include/typeslots.h.html#58" title="56" data-ref="_M/Py_tp_doc">Py_tp_doc</a>, <q>"The Example type"</q>},</td></tr>
+<tr><th id="83">83</th><td>    {<a class="macro" href="../Include/typeslots.h.html#84" title="80" data-ref="_M/Py_tp_finalize">Py_tp_finalize</a>, <a class="tu ref" href="#Example_finalize" title='Example_finalize' data-ref="Example_finalize">Example_finalize</a>},</td></tr>
+<tr><th id="84">84</th><td>    {<a class="macro" href="../Include/typeslots.h.html#73" title="71" data-ref="_M/Py_tp_traverse">Py_tp_traverse</a>, <a class="tu ref" href="#Example_traverse" title='Example_traverse' data-ref="Example_traverse">Example_traverse</a>},</td></tr>
+<tr><th id="85">85</th><td>    {<a class="macro" href="../Include/typeslots.h.html#60" title="58" data-ref="_M/Py_tp_getattro">Py_tp_getattro</a>, <a class="tu ref" href="#Example_getattro" title='Example_getattro' data-ref="Example_getattro">Example_getattro</a>},</td></tr>
+<tr><th id="86">86</th><td>    {<a class="macro" href="../Include/typeslots.h.html#70" title="68" data-ref="_M/Py_tp_setattr">Py_tp_setattr</a>, <a class="tu ref" href="#Example_setattr" title='Example_setattr' data-ref="Example_setattr">Example_setattr</a>},</td></tr>
+<tr><th id="87">87</th><td>    {<a class="macro" href="../Include/typeslots.h.html#66" title="64" data-ref="_M/Py_tp_methods">Py_tp_methods</a>, <a class="tu ref" href="#Example_methods" title='Example_methods' data-ref="Example_methods">Example_methods</a>},</td></tr>
+<tr><th id="88">88</th><td>    {<var>0</var>, <var>0</var>},</td></tr>
+<tr><th id="89">89</th><td>};</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyType_Spec" title='PyType_Spec' data-type='struct PyType_Spec' data-ref="PyType_Spec">PyType_Spec</a> <dfn class="tu decl def" id="Example_Type_spec" title='Example_Type_spec' data-type='PyType_Spec' data-ref="Example_Type_spec">Example_Type_spec</dfn> = {</td></tr>
+<tr><th id="92">92</th><td>    <q>"_testimportexec.Example"</q>,</td></tr>
+<tr><th id="93">93</th><td>    <b>sizeof</b>(<a class="typedef" href="#ExampleObject" title='ExampleObject' data-type='struct ExampleObject' data-ref="ExampleObject">ExampleObject</a>),</td></tr>
+<tr><th id="94">94</th><td>    <var>0</var>,</td></tr>
+<tr><th id="95">95</th><td>    <a class="macro" href="../Include/object.h.html#658" title="( 0 | (1UL &lt;&lt; 18) | 0)" data-ref="_M/Py_TPFLAGS_DEFAULT">Py_TPFLAGS_DEFAULT</a> | <a class="macro" href="../Include/object.h.html#632" title="(1UL &lt;&lt; 14)" data-ref="_M/Py_TPFLAGS_HAVE_GC">Py_TPFLAGS_HAVE_GC</a> | <a class="macro" href="../Include/object.h.html#667" title="(1UL &lt;&lt; 0)" data-ref="_M/Py_TPFLAGS_HAVE_FINALIZE">Py_TPFLAGS_HAVE_FINALIZE</a>,</td></tr>
+<tr><th id="96">96</th><td>    <a class="tu ref" href="#Example_Type_slots" title='Example_Type_slots' data-ref="Example_Type_slots">Example_Type_slots</a></td></tr>
+<tr><th id="97">97</th><td>};</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><i>/* Function of two integers returning integer */</i></td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char testexport_foo_doc[] = &quot;foo(i,j)\n\nReturn the sum of i and j.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="testexport_foo_doc" title='testexport_foo_doc' data-ref="testexport_foo_doc">testexport_foo_doc</dfn>,</td></tr>
+<tr><th id="102">102</th><td><q>"foo(i,j)\n\</q></td></tr>
+<tr><th id="103">103</th><td><q>\n\</q></td></tr>
+<tr><th id="104">104</th><td><q>Return the sum of i and j."</q>);</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="107">107</th><td><dfn class="tu decl def" id="testexport_foo" title='testexport_foo' data-type='PyObject * testexport_foo(PyObject * self, PyObject * args)' data-ref="testexport_foo">testexport_foo</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15self" title='self' data-type='PyObject *' data-ref="15self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16args" title='args' data-type='PyObject *' data-ref="16args">args</dfn>)</td></tr>
+<tr><th id="108">108</th><td>{</td></tr>
+<tr><th id="109">109</th><td>    <em>long</em> <dfn class="local col7 decl" id="17i" title='i' data-type='long' data-ref="17i">i</dfn>, <dfn class="local col8 decl" id="18j" title='j' data-type='long' data-ref="18j">j</dfn>;</td></tr>
+<tr><th id="110">110</th><td>    <em>long</em> <dfn class="local col9 decl" id="19res" title='res' data-type='long' data-ref="19res">res</dfn>;</td></tr>
+<tr><th id="111">111</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col6 ref" href="#16args" title='args' data-ref="16args">args</a>, <q>"ll:foo"</q>, &amp;<a class="local col7 ref" href="#17i" title='i' data-ref="17i">i</a>, &amp;<a class="local col8 ref" href="#18j" title='j' data-ref="18j">j</a>))</td></tr>
+<tr><th id="112">112</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="113">113</th><td>    <a class="local col9 ref" href="#19res" title='res' data-ref="19res">res</a> = <a class="local col7 ref" href="#17i" title='i' data-ref="17i">i</a> + <a class="local col8 ref" href="#18j" title='j' data-ref="18j">j</a>;</td></tr>
+<tr><th id="114">114</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col9 ref" href="#19res" title='res' data-ref="19res">res</a>);</td></tr>
+<tr><th id="115">115</th><td>}</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>/* Test that PyState registration fails  */</i></td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char call_state_registration_func_doc[] = &quot;register_state(0): call PyState_FindModule()\nregister_state(1): call PyState_AddModule()\nregister_state(2): call PyState_RemoveModule()&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="call_state_registration_func_doc" title='call_state_registration_func_doc' data-ref="call_state_registration_func_doc">call_state_registration_func_doc</dfn>,</td></tr>
+<tr><th id="120">120</th><td><q>"register_state(0): call PyState_FindModule()\n\</q></td></tr>
+<tr><th id="121">121</th><td><q>register_state(1): call PyState_AddModule()\n\</q></td></tr>
+<tr><th id="122">122</th><td><q>register_state(2): call PyState_RemoveModule()"</q>);</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="125">125</th><td><dfn class="tu decl def" id="call_state_registration_func" title='call_state_registration_func' data-type='PyObject * call_state_registration_func(PyObject * mod, PyObject * args)' data-ref="call_state_registration_func">call_state_registration_func</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20mod" title='mod' data-type='PyObject *' data-ref="20mod">mod</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="21args" title='args' data-type='PyObject *' data-ref="21args">args</dfn>)</td></tr>
+<tr><th id="126">126</th><td>{</td></tr>
+<tr><th id="127">127</th><td>    <em>int</em> <dfn class="local col2 decl" id="22i" title='i' data-type='int' data-ref="22i">i</dfn>, <dfn class="local col3 decl" id="23ret" title='ret' data-type='int' data-ref="23ret">ret</dfn>;</td></tr>
+<tr><th id="128">128</th><td>    <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> *<dfn class="local col4 decl" id="24def" title='def' data-type='PyModuleDef *' data-ref="24def">def</dfn> = <a class="ref" href="../Include/moduleobject.h.html#PyModule_GetDef" title='PyModule_GetDef' data-ref="PyModule_GetDef">PyModule_GetDef</a>(<a class="local col0 ref" href="#20mod" title='mod' data-ref="20mod">mod</a>);</td></tr>
+<tr><th id="129">129</th><td>    <b>if</b> (<a class="local col4 ref" href="#24def" title='def' data-ref="24def">def</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="130">130</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="131">131</th><td>    }</td></tr>
+<tr><th id="132">132</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col1 ref" href="#21args" title='args' data-ref="21args">args</a>, <q>"i:call_state_registration_func"</q>, &amp;<a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>))</td></tr>
+<tr><th id="133">133</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="134">134</th><td>    <b>switch</b> (<a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>) {</td></tr>
+<tr><th id="135">135</th><td>        <b>case</b> <var>0</var>:</td></tr>
+<tr><th id="136">136</th><td>            <a class="local col0 ref" href="#20mod" title='mod' data-ref="20mod">mod</a> = <a class="ref" href="../Include/pystate.h.html#PyState_FindModule" title='PyState_FindModule' data-ref="PyState_FindModule">PyState_FindModule</a>(<a class="local col4 ref" href="#24def" title='def' data-ref="24def">def</a>);</td></tr>
+<tr><th id="137">137</th><td>            <b>if</b> (<a class="local col0 ref" href="#20mod" title='mod' data-ref="20mod">mod</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="138">138</th><td>                <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="139">139</th><td>            }</td></tr>
+<tr><th id="140">140</th><td>            <b>return</b> <a class="local col0 ref" href="#20mod" title='mod' data-ref="20mod">mod</a>;</td></tr>
+<tr><th id="141">141</th><td>        <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="142">142</th><td>            <a class="local col3 ref" href="#23ret" title='ret' data-ref="23ret">ret</a> = <a class="ref" href="../Include/pystate.h.html#PyState_AddModule" title='PyState_AddModule' data-ref="PyState_AddModule">PyState_AddModule</a>(<a class="local col0 ref" href="#20mod" title='mod' data-ref="20mod">mod</a>, <a class="local col4 ref" href="#24def" title='def' data-ref="24def">def</a>);</td></tr>
+<tr><th id="143">143</th><td>            <b>if</b> (<a class="local col3 ref" href="#23ret" title='ret' data-ref="23ret">ret</a> != <var>0</var>) {</td></tr>
+<tr><th id="144">144</th><td>                <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="145">145</th><td>            }</td></tr>
+<tr><th id="146">146</th><td>            <b>break</b>;</td></tr>
+<tr><th id="147">147</th><td>        <b>case</b> <var>2</var>:</td></tr>
+<tr><th id="148">148</th><td>            <a class="local col3 ref" href="#23ret" title='ret' data-ref="23ret">ret</a> = <a class="ref" href="../Include/pystate.h.html#PyState_RemoveModule" title='PyState_RemoveModule' data-ref="PyState_RemoveModule">PyState_RemoveModule</a>(<a class="local col4 ref" href="#24def" title='def' data-ref="24def">def</a>);</td></tr>
+<tr><th id="149">149</th><td>            <b>if</b> (<a class="local col3 ref" href="#23ret" title='ret' data-ref="23ret">ret</a> != <var>0</var>) {</td></tr>
+<tr><th id="150">150</th><td>                <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="151">151</th><td>            }</td></tr>
+<tr><th id="152">152</th><td>            <b>break</b>;</td></tr>
+<tr><th id="153">153</th><td>    }</td></tr>
+<tr><th id="154">154</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="155">155</th><td>}</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyType_Slot" title='PyType_Slot' data-type='struct PyType_Slot' data-ref="PyType_Slot">PyType_Slot</a> <dfn class="tu decl def" id="Str_Type_slots" title='Str_Type_slots' data-type='PyType_Slot [2]' data-ref="Str_Type_slots">Str_Type_slots</dfn>[] = {</td></tr>
+<tr><th id="159">159</th><td>    {<a class="macro" href="../Include/typeslots.h.html#50" title="48" data-ref="_M/Py_tp_base">Py_tp_base</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}, <i>/* filled out in module exec function */</i></td></tr>
+<tr><th id="160">160</th><td>    {<var>0</var>, <var>0</var>},</td></tr>
+<tr><th id="161">161</th><td>};</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyType_Spec" title='PyType_Spec' data-type='struct PyType_Spec' data-ref="PyType_Spec">PyType_Spec</a> <dfn class="tu decl def" id="Str_Type_spec" title='Str_Type_spec' data-type='PyType_Spec' data-ref="Str_Type_spec">Str_Type_spec</dfn> = {</td></tr>
+<tr><th id="164">164</th><td>    <q>"_testimportexec.Str"</q>,</td></tr>
+<tr><th id="165">165</th><td>    <var>0</var>,</td></tr>
+<tr><th id="166">166</th><td>    <var>0</var>,</td></tr>
+<tr><th id="167">167</th><td>    <a class="macro" href="../Include/object.h.html#658" title="( 0 | (1UL &lt;&lt; 18) | 0)" data-ref="_M/Py_TPFLAGS_DEFAULT">Py_TPFLAGS_DEFAULT</a> | <a class="macro" href="../Include/object.h.html#623" title="(1UL &lt;&lt; 10)" data-ref="_M/Py_TPFLAGS_BASETYPE">Py_TPFLAGS_BASETYPE</a>,</td></tr>
+<tr><th id="168">168</th><td>    <a class="tu ref" href="#Str_Type_slots" title='Str_Type_slots' data-ref="Str_Type_slots">Str_Type_slots</a></td></tr>
+<tr><th id="169">169</th><td>};</td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="testexport_methods" title='testexport_methods' data-type='PyMethodDef [3]' data-ref="testexport_methods">testexport_methods</dfn>[] = {</td></tr>
+<tr><th id="172">172</th><td>    {<q>"foo"</q>,             <a class="tu ref" href="#testexport_foo" title='testexport_foo' data-ref="testexport_foo">testexport_foo</a>,         <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>,</td></tr>
+<tr><th id="173">173</th><td>        <a class="ref" href="#101" title='testexport_foo_doc' data-ref="testexport_foo_doc">testexport_foo_doc</a>},</td></tr>
+<tr><th id="174">174</th><td>    {<q>"call_state_registration_func"</q>,  <a class="tu ref" href="#call_state_registration_func" title='call_state_registration_func' data-ref="call_state_registration_func">call_state_registration_func</a>,</td></tr>
+<tr><th id="175">175</th><td>        <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#119" title='call_state_registration_func_doc' data-ref="call_state_registration_func_doc">call_state_registration_func_doc</a>},</td></tr>
+<tr><th id="176">176</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,              <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}           <i>/* sentinel */</i></td></tr>
+<tr><th id="177">177</th><td>};</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><em>static</em> <em>int</em> <dfn class="tu decl def" id="execfunc" title='execfunc' data-type='int execfunc(PyObject * m)' data-ref="execfunc">execfunc</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25m" title='m' data-type='PyObject *' data-ref="25m">m</dfn>)</td></tr>
+<tr><th id="180">180</th><td>{</td></tr>
+<tr><th id="181">181</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="26temp" title='temp' data-type='PyObject *' data-ref="26temp">temp</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td>    <i>/* Due to cross platform compiler issues the slots must be filled</i></td></tr>
+<tr><th id="184">184</th><td><i>     * here. It's required for portability to Windows without requiring</i></td></tr>
+<tr><th id="185">185</th><td><i>     * C++. */</i></td></tr>
+<tr><th id="186">186</th><td>    <a class="tu ref" href="#Str_Type_slots" title='Str_Type_slots' data-use='m' data-ref="Str_Type_slots">Str_Type_slots</a>[<var>0</var>].<a class="ref" href="../Include/object.h.html#(anonymous)::pfunc" title='(anonymous struct)::pfunc' data-ref="(anonymous)::pfunc">pfunc</a> = &amp;<a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_Type" title='PyUnicode_Type' data-ref="PyUnicode_Type">PyUnicode_Type</a>;</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>    <i>/* Add a custom type */</i></td></tr>
+<tr><th id="189">189</th><td>    <a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a> = <a class="ref" href="../Include/object.h.html#PyType_FromSpec" title='PyType_FromSpec' data-ref="PyType_FromSpec">PyType_FromSpec</a>(&amp;<a class="tu ref" href="#Example_Type_spec" title='Example_Type_spec' data-use='a' data-ref="Example_Type_spec">Example_Type_spec</a>);</td></tr>
+<tr><th id="190">190</th><td>    <b>if</b> (<a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="191">191</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="192">192</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col5 ref" href="#25m" title='m' data-ref="25m">m</a>, <q>"Example"</q>, <a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a>) != <var>0</var>)</td></tr>
+<tr><th id="193">193</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td>    <i>/* Add an exception type */</i></td></tr>
+<tr><th id="196">196</th><td>    <a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a> = <a class="ref" href="../Include/pyerrors.h.html#PyErr_NewException" title='PyErr_NewException' data-ref="PyErr_NewException">PyErr_NewException</a>(<q>"_testimportexec.error"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="197">197</th><td>    <b>if</b> (<a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="198">198</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="199">199</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col5 ref" href="#25m" title='m' data-ref="25m">m</a>, <q>"error"</q>, <a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a>) != <var>0</var>)</td></tr>
+<tr><th id="200">200</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td>    <i>/* Add Str */</i></td></tr>
+<tr><th id="203">203</th><td>    <a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a> = <a class="ref" href="../Include/object.h.html#PyType_FromSpec" title='PyType_FromSpec' data-ref="PyType_FromSpec">PyType_FromSpec</a>(&amp;<a class="tu ref" href="#Str_Type_spec" title='Str_Type_spec' data-use='a' data-ref="Str_Type_spec">Str_Type_spec</a>);</td></tr>
+<tr><th id="204">204</th><td>    <b>if</b> (<a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="205">205</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="206">206</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col5 ref" href="#25m" title='m' data-ref="25m">m</a>, <q>"Str"</q>, <a class="local col6 ref" href="#26temp" title='temp' data-ref="26temp">temp</a>) != <var>0</var>)</td></tr>
+<tr><th id="207">207</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col5 ref" href="#25m" title='m' data-ref="25m">m</a>, <q>"int_const"</q>, <var>1969</var>) != <var>0</var>)</td></tr>
+<tr><th id="210">210</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddStringConstant" title='PyModule_AddStringConstant' data-ref="PyModule_AddStringConstant">PyModule_AddStringConstant</a>(<a class="local col5 ref" href="#25m" title='m' data-ref="25m">m</a>, <q>"str_const"</q>, <q>"something different"</q>) != <var>0</var>)</td></tr>
+<tr><th id="213">213</th><td>        <b>goto</b> <a class="lbl" href="#27fail" data-ref="27fail">fail</a>;</td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="216">216</th><td> <dfn class="lbl" id="27fail" data-ref="27fail">fail</dfn>:</td></tr>
+<tr><th id="217">217</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="218">218</th><td>}</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><i>/* Helper for module definitions; there'll be a lot of them */</i></td></tr>
+<tr><th id="221">221</th><td><u>#define <dfn class="macro" id="_M/TEST_MODULE_DEF" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</dfn>(name, slots, methods) { \</u></td></tr>
+<tr><th id="222">222</th><td><u>    PyModuleDef_HEAD_INIT,                      /* m_base */ \</u></td></tr>
+<tr><th id="223">223</th><td><u>    name,                                       /* m_name */ \</u></td></tr>
+<tr><th id="224">224</th><td><u>    PyDoc_STR("Test module " name),             /* m_doc */ \</u></td></tr>
+<tr><th id="225">225</th><td><u>    0,                                          /* m_size */ \</u></td></tr>
+<tr><th id="226">226</th><td><u>    methods,                                    /* m_methods */ \</u></td></tr>
+<tr><th id="227">227</th><td><u>    slots,                                      /* m_slots */ \</u></td></tr>
+<tr><th id="228">228</th><td><u>    NULL,                                       /* m_traverse */ \</u></td></tr>
+<tr><th id="229">229</th><td><u>    NULL,                                       /* m_clear */ \</u></td></tr>
+<tr><th id="230">230</th><td><u>    NULL,                                       /* m_free */ \</u></td></tr>
+<tr><th id="231">231</th><td><u>}</u></td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="decl def" id="main_slots" title='main_slots' data-ref="main_slots">main_slots</dfn>[] = {</td></tr>
+<tr><th id="234">234</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#66" title="2" data-ref="_M/Py_mod_exec">Py_mod_exec</a>, <a class="tu ref" href="#execfunc" title='execfunc' data-ref="execfunc">execfunc</a>},</td></tr>
+<tr><th id="235">235</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="236">236</th><td>};</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="main_def" title='main_def' data-type='PyModuleDef' data-ref="main_def">main_def</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;main&quot;, &quot;Test module &quot; &quot;main&quot;, 0, testexport_methods, main_slots, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(<q>"main"</q>, <a class="ref" href="#main_slots" title='main_slots' data-ref="main_slots">main_slots</a>, <a class="tu ref" href="#testexport_methods" title='testexport_methods' data-ref="testexport_methods">testexport_methods</a>);</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="241">241</th><td><dfn class="decl def" id="PyInit__testmultiphase" title='PyInit__testmultiphase' data-ref="PyInit__testmultiphase">PyInit__testmultiphase</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28spec" title='spec' data-type='PyObject *' data-ref="28spec">spec</dfn>)</td></tr>
+<tr><th id="242">242</th><td>{</td></tr>
+<tr><th id="243">243</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#main_def" title='main_def' data-use='a' data-ref="main_def">main_def</a>);</td></tr>
+<tr><th id="244">244</th><td>}</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><i  data-doc="def_nonmodule">/**** Importing a non-module object ****/</i></td></tr>
+<tr><th id="248">248</th><td></td></tr>
+<tr><th id="249">249</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonmodule" title='def_nonmodule' data-type='PyModuleDef' data-ref="def_nonmodule">def_nonmodule</dfn>;</td></tr>
+<tr><th id="250">250</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonmodule_with_methods" title='def_nonmodule_with_methods' data-type='PyModuleDef' data-ref="def_nonmodule_with_methods">def_nonmodule_with_methods</dfn>;</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td><i  data-doc="createfunc_nonmodule">/* Create a SimpleNamespace(three=3) */</i></td></tr>
+<tr><th id="253">253</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="254">254</th><td><dfn class="tu decl def" id="createfunc_nonmodule" title='createfunc_nonmodule' data-type='PyObject * createfunc_nonmodule(PyObject * spec, PyModuleDef * def)' data-ref="createfunc_nonmodule">createfunc_nonmodule</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29spec" title='spec' data-type='PyObject *' data-ref="29spec">spec</dfn>, <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> *<dfn class="local col0 decl" id="30def" title='def' data-type='PyModuleDef *' data-ref="30def">def</dfn>)</td></tr>
+<tr><th id="255">255</th><td>{</td></tr>
+<tr><th id="256">256</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31dct" title='dct' data-type='PyObject *' data-ref="31dct">dct</dfn>, *<dfn class="local col2 decl" id="32ns" title='ns' data-type='PyObject *' data-ref="32ns">ns</dfn>, *<dfn class="local col3 decl" id="33three" title='three' data-type='PyObject *' data-ref="33three">three</dfn>;</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td>    <b>if</b> (<a class="local col0 ref" href="#30def" title='def' data-ref="30def">def</a> != &amp;<a class="tu ref" href="#def_nonmodule" title='def_nonmodule' data-use='a' data-ref="def_nonmodule">def_nonmodule</a> &amp;&amp; <a class="local col0 ref" href="#30def" title='def' data-ref="30def">def</a> != &amp;<a class="tu ref" href="#def_nonmodule_with_methods" title='def_nonmodule_with_methods' data-use='a' data-ref="def_nonmodule_with_methods">def_nonmodule_with_methods</a>) {</td></tr>
+<tr><th id="259">259</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"def does not match"</q>);</td></tr>
+<tr><th id="260">260</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="261">261</th><td>    }</td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td>    <a class="local col1 ref" href="#31dct" title='dct' data-ref="31dct">dct</a> = <a class="ref" href="../Include/dictobject.h.html#PyDict_New" title='PyDict_New' data-ref="PyDict_New">PyDict_New</a>();</td></tr>
+<tr><th id="264">264</th><td>    <b>if</b> (<a class="local col1 ref" href="#31dct" title='dct' data-ref="31dct">dct</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="265">265</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td>    <a class="local col3 ref" href="#33three" title='three' data-ref="33three">three</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<var>3</var>);</td></tr>
+<tr><th id="268">268</th><td>    <b>if</b> (<a class="local col3 ref" href="#33three" title='three' data-ref="33three">three</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="269">269</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(dct); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_testmultiphase.c&quot;, 269, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#31dct" title='dct' data-ref="31dct">dct</a>);</td></tr>
+<tr><th id="270">270</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="271">271</th><td>    }</td></tr>
+<tr><th id="272">272</th><td>    <a class="ref" href="../Include/dictobject.h.html#PyDict_SetItemString" title='PyDict_SetItemString' data-ref="PyDict_SetItemString">PyDict_SetItemString</a>(<a class="local col1 ref" href="#31dct" title='dct' data-ref="31dct">dct</a>, <q>"three"</q>, <a class="local col3 ref" href="#33three" title='three' data-ref="33three">three</a>);</td></tr>
+<tr><th id="273">273</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(three); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_testmultiphase.c&quot;, 273, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col3 ref" href="#33three" title='three' data-ref="33three">three</a>);</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>    <a class="local col2 ref" href="#32ns" title='ns' data-ref="32ns">ns</a> = <a class="ref" href="../Include/namespaceobject.h.html#_PyNamespace_New" title='_PyNamespace_New' data-ref="_PyNamespace_New">_PyNamespace_New</a>(<a class="local col1 ref" href="#31dct" title='dct' data-ref="31dct">dct</a>);</td></tr>
+<tr><th id="276">276</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(dct); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_testmultiphase.c&quot;, 276, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#31dct" title='dct' data-ref="31dct">dct</a>);</td></tr>
+<tr><th id="277">277</th><td>    <b>return</b> <a class="local col2 ref" href="#32ns" title='ns' data-ref="32ns">ns</a>;</td></tr>
+<tr><th id="278">278</th><td>}</td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_create_nonmodule" title='slots_create_nonmodule' data-type='PyModuleDef_Slot [2]' data-ref="slots_create_nonmodule">slots_create_nonmodule</dfn>[] = {</td></tr>
+<tr><th id="281">281</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#65" title="1" data-ref="_M/Py_mod_create">Py_mod_create</a>, <a class="tu ref" href="#createfunc_nonmodule" title='createfunc_nonmodule' data-ref="createfunc_nonmodule">createfunc_nonmodule</a>},</td></tr>
+<tr><th id="282">282</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="283">283</th><td>};</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonmodule" title='def_nonmodule' data-type='PyModuleDef' data-ref="def_nonmodule">def_nonmodule</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_nonmodule&quot;, &quot;Test module &quot; &quot;_testmultiphase_nonmodule&quot;, 0, ((void*)0), slots_create_nonmodule, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="286">286</th><td>    <q>"_testmultiphase_nonmodule"</q>, <a class="tu ref" href="#slots_create_nonmodule" title='slots_create_nonmodule' data-ref="slots_create_nonmodule">slots_create_nonmodule</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="289">289</th><td><dfn class="decl def" id="PyInit__testmultiphase_nonmodule" title='PyInit__testmultiphase_nonmodule' data-ref="PyInit__testmultiphase_nonmodule">PyInit__testmultiphase_nonmodule</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34spec" title='spec' data-type='PyObject *' data-ref="34spec">spec</dfn>)</td></tr>
+<tr><th id="290">290</th><td>{</td></tr>
+<tr><th id="291">291</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_nonmodule" title='def_nonmodule' data-use='a' data-ref="def_nonmodule">def_nonmodule</a>);</td></tr>
+<tr><th id="292">292</th><td>}</td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char nonmodule_bar_doc[] = &quot;bar(i,j)\n\nReturn the difference of i - j.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="nonmodule_bar_doc" title='nonmodule_bar_doc' data-ref="nonmodule_bar_doc">nonmodule_bar_doc</dfn>,</td></tr>
+<tr><th id="295">295</th><td><q>"bar(i,j)\n\</q></td></tr>
+<tr><th id="296">296</th><td><q>\n\</q></td></tr>
+<tr><th id="297">297</th><td><q>Return the difference of i - j."</q>);</td></tr>
+<tr><th id="298">298</th><td></td></tr>
+<tr><th id="299">299</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="300">300</th><td><dfn class="tu decl def" id="nonmodule_bar" title='nonmodule_bar' data-type='PyObject * nonmodule_bar(PyObject * self, PyObject * args)' data-ref="nonmodule_bar">nonmodule_bar</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35self" title='self' data-type='PyObject *' data-ref="35self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="36args" title='args' data-type='PyObject *' data-ref="36args">args</dfn>)</td></tr>
+<tr><th id="301">301</th><td>{</td></tr>
+<tr><th id="302">302</th><td>    <em>long</em> <dfn class="local col7 decl" id="37i" title='i' data-type='long' data-ref="37i">i</dfn>, <dfn class="local col8 decl" id="38j" title='j' data-type='long' data-ref="38j">j</dfn>;</td></tr>
+<tr><th id="303">303</th><td>    <em>long</em> <dfn class="local col9 decl" id="39res" title='res' data-type='long' data-ref="39res">res</dfn>;</td></tr>
+<tr><th id="304">304</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col6 ref" href="#36args" title='args' data-ref="36args">args</a>, <q>"ll:bar"</q>, &amp;<a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>, &amp;<a class="local col8 ref" href="#38j" title='j' data-ref="38j">j</a>))</td></tr>
+<tr><th id="305">305</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="306">306</th><td>    <a class="local col9 ref" href="#39res" title='res' data-ref="39res">res</a> = <a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a> - <a class="local col8 ref" href="#38j" title='j' data-ref="38j">j</a>;</td></tr>
+<tr><th id="307">307</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col9 ref" href="#39res" title='res' data-ref="39res">res</a>);</td></tr>
+<tr><th id="308">308</th><td>}</td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="nonmodule_methods" title='nonmodule_methods' data-type='PyMethodDef [2]' data-ref="nonmodule_methods">nonmodule_methods</dfn>[] = {</td></tr>
+<tr><th id="311">311</th><td>    {<q>"bar"</q>, <a class="tu ref" href="#nonmodule_bar" title='nonmodule_bar' data-ref="nonmodule_bar">nonmodule_bar</a>, <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#294" title='nonmodule_bar_doc' data-ref="nonmodule_bar_doc">nonmodule_bar_doc</a>},</td></tr>
+<tr><th id="312">312</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}           <i>/* sentinel */</i></td></tr>
+<tr><th id="313">313</th><td>};</td></tr>
+<tr><th id="314">314</th><td></td></tr>
+<tr><th id="315">315</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonmodule_with_methods" title='def_nonmodule_with_methods' data-type='PyModuleDef' data-ref="def_nonmodule_with_methods">def_nonmodule_with_methods</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_nonmodule_with_methods&quot;, &quot;Test module &quot; &quot;_testmultiphase_nonmodule_with_methods&quot;, 0, nonmodule_methods, slots_create_nonmodule, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="316">316</th><td>    <q>"_testmultiphase_nonmodule_with_methods"</q>, <a class="tu ref" href="#slots_create_nonmodule" title='slots_create_nonmodule' data-ref="slots_create_nonmodule">slots_create_nonmodule</a>, <a class="tu ref" href="#nonmodule_methods" title='nonmodule_methods' data-ref="nonmodule_methods">nonmodule_methods</a>);</td></tr>
+<tr><th id="317">317</th><td></td></tr>
+<tr><th id="318">318</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="319">319</th><td><dfn class="decl def" id="PyInit__testmultiphase_nonmodule_with_methods" title='PyInit__testmultiphase_nonmodule_with_methods' data-ref="PyInit__testmultiphase_nonmodule_with_methods">PyInit__testmultiphase_nonmodule_with_methods</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="40spec" title='spec' data-type='PyObject *' data-ref="40spec">spec</dfn>)</td></tr>
+<tr><th id="320">320</th><td>{</td></tr>
+<tr><th id="321">321</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_nonmodule_with_methods" title='def_nonmodule_with_methods' data-use='a' data-ref="def_nonmodule_with_methods">def_nonmodule_with_methods</a>);</td></tr>
+<tr><th id="322">322</th><td>}</td></tr>
+<tr><th id="323">323</th><td></td></tr>
+<tr><th id="324">324</th><td><i  data-doc="def_nonascii_latin">/**** Non-ASCII-named modules ****/</i></td></tr>
+<tr><th id="325">325</th><td></td></tr>
+<tr><th id="326">326</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonascii_latin" title='def_nonascii_latin' data-type='PyModuleDef' data-ref="def_nonascii_latin">def_nonascii_latin</dfn> = { \</td></tr>
+<tr><th id="327">327</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,                      <i>/* m_base */</i></td></tr>
+<tr><th id="328">328</th><td>    <q>"_testmultiphase_nonascii_latin"</q>,           <i>/* m_name */</i></td></tr>
+<tr><th id="329">329</th><td>    <a class="macro" href="../Include/pymacro.h.html#73" title="&quot;Module named in Czech&quot;" data-ref="_M/PyDoc_STR">PyDoc_STR</a>(<q>"Module named in Czech"</q>),         <i>/* m_doc */</i></td></tr>
+<tr><th id="330">330</th><td>    <var>0</var>,                                          <i>/* m_size */</i></td></tr>
+<tr><th id="331">331</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_methods */</i></td></tr>
+<tr><th id="332">332</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_slots */</i></td></tr>
+<tr><th id="333">333</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_traverse */</i></td></tr>
+<tr><th id="334">334</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_clear */</i></td></tr>
+<tr><th id="335">335</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_free */</i></td></tr>
+<tr><th id="336">336</th><td>};</td></tr>
+<tr><th id="337">337</th><td></td></tr>
+<tr><th id="338">338</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="339">339</th><td><dfn class="decl def" id="PyInitU__testmultiphase_zkouka_naten_evc07gi8e" title='PyInitU__testmultiphase_zkouka_naten_evc07gi8e' data-ref="PyInitU__testmultiphase_zkouka_naten_evc07gi8e">PyInitU__testmultiphase_zkouka_naten_evc07gi8e</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41spec" title='spec' data-type='PyObject *' data-ref="41spec">spec</dfn>)</td></tr>
+<tr><th id="340">340</th><td>{</td></tr>
+<tr><th id="341">341</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_nonascii_latin" title='def_nonascii_latin' data-use='a' data-ref="def_nonascii_latin">def_nonascii_latin</a>);</td></tr>
+<tr><th id="342">342</th><td>}</td></tr>
+<tr><th id="343">343</th><td></td></tr>
+<tr><th id="344">344</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonascii_kana" title='def_nonascii_kana' data-type='PyModuleDef' data-ref="def_nonascii_kana">def_nonascii_kana</dfn> = { \</td></tr>
+<tr><th id="345">345</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,                      <i>/* m_base */</i></td></tr>
+<tr><th id="346">346</th><td>    <q>"_testmultiphase_nonascii_kana"</q>,            <i>/* m_name */</i></td></tr>
+<tr><th id="347">347</th><td>    <a class="macro" href="../Include/pymacro.h.html#73" title="&quot;Module named in Japanese&quot;" data-ref="_M/PyDoc_STR">PyDoc_STR</a>(<q>"Module named in Japanese"</q>),      <i>/* m_doc */</i></td></tr>
+<tr><th id="348">348</th><td>    <var>0</var>,                                          <i>/* m_size */</i></td></tr>
+<tr><th id="349">349</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_methods */</i></td></tr>
+<tr><th id="350">350</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_slots */</i></td></tr>
+<tr><th id="351">351</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_traverse */</i></td></tr>
+<tr><th id="352">352</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_clear */</i></td></tr>
+<tr><th id="353">353</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_free */</i></td></tr>
+<tr><th id="354">354</th><td>};</td></tr>
+<tr><th id="355">355</th><td></td></tr>
+<tr><th id="356">356</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="357">357</th><td><dfn class="decl def" id="PyInitU_eckzbwbhc6jpgzcx415x" title='PyInitU_eckzbwbhc6jpgzcx415x' data-ref="PyInitU_eckzbwbhc6jpgzcx415x">PyInitU_eckzbwbhc6jpgzcx415x</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="42spec" title='spec' data-type='PyObject *' data-ref="42spec">spec</dfn>)</td></tr>
+<tr><th id="358">358</th><td>{</td></tr>
+<tr><th id="359">359</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_nonascii_kana" title='def_nonascii_kana' data-use='a' data-ref="def_nonascii_kana">def_nonascii_kana</a>);</td></tr>
+<tr><th id="360">360</th><td>}</td></tr>
+<tr><th id="361">361</th><td></td></tr>
+<tr><th id="362">362</th><td><i>/*** Module with a single-character name ***/</i></td></tr>
+<tr><th id="363">363</th><td></td></tr>
+<tr><th id="364">364</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="365">365</th><td><dfn class="decl def" id="PyInit_x" title='PyInit_x' data-ref="PyInit_x">PyInit_x</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="43spec" title='spec' data-type='PyObject *' data-ref="43spec">spec</dfn>)</td></tr>
+<tr><th id="366">366</th><td>{</td></tr>
+<tr><th id="367">367</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#main_def" title='main_def' data-use='a' data-ref="main_def">main_def</a>);</td></tr>
+<tr><th id="368">368</th><td>}</td></tr>
+<tr><th id="369">369</th><td></td></tr>
+<tr><th id="370">370</th><td><i  data-doc="null_slots_def">/**** Testing NULL slots ****/</i></td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="null_slots_def" title='null_slots_def' data-type='PyModuleDef' data-ref="null_slots_def">null_slots_def</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_null_slots&quot;, &quot;Test module &quot; &quot;_testmultiphase_null_slots&quot;, 0, ((void*)0), ((void*)0), ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="373">373</th><td>    <q>"_testmultiphase_null_slots"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="374">374</th><td></td></tr>
+<tr><th id="375">375</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="376">376</th><td><dfn class="decl def" id="PyInit__testmultiphase_null_slots" title='PyInit__testmultiphase_null_slots' data-ref="PyInit__testmultiphase_null_slots">PyInit__testmultiphase_null_slots</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="44spec" title='spec' data-type='PyObject *' data-ref="44spec">spec</dfn>)</td></tr>
+<tr><th id="377">377</th><td>{</td></tr>
+<tr><th id="378">378</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#null_slots_def" title='null_slots_def' data-use='a' data-ref="null_slots_def">null_slots_def</a>);</td></tr>
+<tr><th id="379">379</th><td>}</td></tr>
+<tr><th id="380">380</th><td></td></tr>
+<tr><th id="381">381</th><td><i  data-doc="slots_bad_large">/**** Problematic modules ****/</i></td></tr>
+<tr><th id="382">382</th><td></td></tr>
+<tr><th id="383">383</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_bad_large" title='slots_bad_large' data-type='PyModuleDef_Slot [2]' data-ref="slots_bad_large">slots_bad_large</dfn>[] = {</td></tr>
+<tr><th id="384">384</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#69" title="2" data-ref="_M/_Py_mod_LAST_SLOT">_Py_mod_LAST_SLOT</a> + <var>1</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="385">385</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="386">386</th><td>};</td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_bad_large" title='def_bad_large' data-type='PyModuleDef' data-ref="def_bad_large">def_bad_large</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_bad_slot_large&quot;, &quot;Test module &quot; &quot;_testmultiphase_bad_slot_large&quot;, 0, ((void*)0), slots_bad_large, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="389">389</th><td>    <q>"_testmultiphase_bad_slot_large"</q>, <a class="tu ref" href="#slots_bad_large" title='slots_bad_large' data-ref="slots_bad_large">slots_bad_large</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="390">390</th><td></td></tr>
+<tr><th id="391">391</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="392">392</th><td><dfn class="decl def" id="PyInit__testmultiphase_bad_slot_large" title='PyInit__testmultiphase_bad_slot_large' data-ref="PyInit__testmultiphase_bad_slot_large">PyInit__testmultiphase_bad_slot_large</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45spec" title='spec' data-type='PyObject *' data-ref="45spec">spec</dfn>)</td></tr>
+<tr><th id="393">393</th><td>{</td></tr>
+<tr><th id="394">394</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_bad_large" title='def_bad_large' data-use='a' data-ref="def_bad_large">def_bad_large</a>);</td></tr>
+<tr><th id="395">395</th><td>}</td></tr>
+<tr><th id="396">396</th><td></td></tr>
+<tr><th id="397">397</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_bad_negative" title='slots_bad_negative' data-type='PyModuleDef_Slot [2]' data-ref="slots_bad_negative">slots_bad_negative</dfn>[] = {</td></tr>
+<tr><th id="398">398</th><td>    {-<var>1</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="399">399</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="400">400</th><td>};</td></tr>
+<tr><th id="401">401</th><td></td></tr>
+<tr><th id="402">402</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_bad_negative" title='def_bad_negative' data-type='PyModuleDef' data-ref="def_bad_negative">def_bad_negative</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_bad_slot_negative&quot;, &quot;Test module &quot; &quot;_testmultiphase_bad_slot_negative&quot;, 0, ((void*)0), slots_bad_negative, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="403">403</th><td>    <q>"_testmultiphase_bad_slot_negative"</q>, <a class="tu ref" href="#slots_bad_negative" title='slots_bad_negative' data-ref="slots_bad_negative">slots_bad_negative</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="404">404</th><td></td></tr>
+<tr><th id="405">405</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="406">406</th><td><dfn class="decl def" id="PyInit__testmultiphase_bad_slot_negative" title='PyInit__testmultiphase_bad_slot_negative' data-ref="PyInit__testmultiphase_bad_slot_negative">PyInit__testmultiphase_bad_slot_negative</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46spec" title='spec' data-type='PyObject *' data-ref="46spec">spec</dfn>)</td></tr>
+<tr><th id="407">407</th><td>{</td></tr>
+<tr><th id="408">408</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_bad_negative" title='def_bad_negative' data-use='a' data-ref="def_bad_negative">def_bad_negative</a>);</td></tr>
+<tr><th id="409">409</th><td>}</td></tr>
+<tr><th id="410">410</th><td></td></tr>
+<tr><th id="411">411</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_create_int_with_state" title='def_create_int_with_state' data-type='PyModuleDef' data-ref="def_create_int_with_state">def_create_int_with_state</dfn> = { \</td></tr>
+<tr><th id="412">412</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,                      <i>/* m_base */</i></td></tr>
+<tr><th id="413">413</th><td>    <q>"create_with_state"</q>,                        <i>/* m_name */</i></td></tr>
+<tr><th id="414">414</th><td>    <a class="macro" href="../Include/pymacro.h.html#73" title="&quot;Not a PyModuleObject object, but requests per-module state&quot;" data-ref="_M/PyDoc_STR">PyDoc_STR</a>(<q>"Not a PyModuleObject object, but requests per-module state"</q>),</td></tr>
+<tr><th id="415">415</th><td>    <var>10</var>,                                         <i>/* m_size */</i></td></tr>
+<tr><th id="416">416</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_methods */</i></td></tr>
+<tr><th id="417">417</th><td>    <a class="tu ref" href="#slots_create_nonmodule" title='slots_create_nonmodule' data-ref="slots_create_nonmodule">slots_create_nonmodule</a>,                     <i>/* m_slots */</i></td></tr>
+<tr><th id="418">418</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_traverse */</i></td></tr>
+<tr><th id="419">419</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_clear */</i></td></tr>
+<tr><th id="420">420</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_free */</i></td></tr>
+<tr><th id="421">421</th><td>};</td></tr>
+<tr><th id="422">422</th><td></td></tr>
+<tr><th id="423">423</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="424">424</th><td><dfn class="decl def" id="PyInit__testmultiphase_create_int_with_state" title='PyInit__testmultiphase_create_int_with_state' data-ref="PyInit__testmultiphase_create_int_with_state">PyInit__testmultiphase_create_int_with_state</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47spec" title='spec' data-type='PyObject *' data-ref="47spec">spec</dfn>)</td></tr>
+<tr><th id="425">425</th><td>{</td></tr>
+<tr><th id="426">426</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_create_int_with_state" title='def_create_int_with_state' data-use='a' data-ref="def_create_int_with_state">def_create_int_with_state</a>);</td></tr>
+<tr><th id="427">427</th><td>}</td></tr>
+<tr><th id="428">428</th><td></td></tr>
+<tr><th id="429">429</th><td></td></tr>
+<tr><th id="430">430</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_negative_size" title='def_negative_size' data-type='PyModuleDef' data-ref="def_negative_size">def_negative_size</dfn> = { \</td></tr>
+<tr><th id="431">431</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,                      <i>/* m_base */</i></td></tr>
+<tr><th id="432">432</th><td>    <q>"negative_size"</q>,                            <i>/* m_name */</i></td></tr>
+<tr><th id="433">433</th><td>    <a class="macro" href="../Include/pymacro.h.html#73" title="&quot;PyModuleDef with negative m_size&quot;" data-ref="_M/PyDoc_STR">PyDoc_STR</a>(<q>"PyModuleDef with negative m_size"</q>),</td></tr>
+<tr><th id="434">434</th><td>    -<var>1</var>,                                         <i>/* m_size */</i></td></tr>
+<tr><th id="435">435</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_methods */</i></td></tr>
+<tr><th id="436">436</th><td>    <a class="tu ref" href="#slots_create_nonmodule" title='slots_create_nonmodule' data-ref="slots_create_nonmodule">slots_create_nonmodule</a>,                     <i>/* m_slots */</i></td></tr>
+<tr><th id="437">437</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_traverse */</i></td></tr>
+<tr><th id="438">438</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_clear */</i></td></tr>
+<tr><th id="439">439</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,                                       <i>/* m_free */</i></td></tr>
+<tr><th id="440">440</th><td>};</td></tr>
+<tr><th id="441">441</th><td></td></tr>
+<tr><th id="442">442</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="443">443</th><td><dfn class="decl def" id="PyInit__testmultiphase_negative_size" title='PyInit__testmultiphase_negative_size' data-ref="PyInit__testmultiphase_negative_size">PyInit__testmultiphase_negative_size</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="48spec" title='spec' data-type='PyObject *' data-ref="48spec">spec</dfn>)</td></tr>
+<tr><th id="444">444</th><td>{</td></tr>
+<tr><th id="445">445</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_negative_size" title='def_negative_size' data-use='a' data-ref="def_negative_size">def_negative_size</a>);</td></tr>
+<tr><th id="446">446</th><td>}</td></tr>
+<tr><th id="447">447</th><td></td></tr>
+<tr><th id="448">448</th><td></td></tr>
+<tr><th id="449">449</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="uninitialized_def" title='uninitialized_def' data-type='PyModuleDef' data-ref="uninitialized_def">uninitialized_def</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;main&quot;, &quot;Test module &quot; &quot;main&quot;, 0, testexport_methods, main_slots, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(<q>"main"</q>, <a class="ref" href="#main_slots" title='main_slots' data-ref="main_slots">main_slots</a>, <a class="tu ref" href="#testexport_methods" title='testexport_methods' data-ref="testexport_methods">testexport_methods</a>);</td></tr>
+<tr><th id="450">450</th><td></td></tr>
+<tr><th id="451">451</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="452">452</th><td><dfn class="decl def" id="PyInit__testmultiphase_export_uninitialized" title='PyInit__testmultiphase_export_uninitialized' data-ref="PyInit__testmultiphase_export_uninitialized">PyInit__testmultiphase_export_uninitialized</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="49spec" title='spec' data-type='PyObject *' data-ref="49spec">spec</dfn>)</td></tr>
+<tr><th id="453">453</th><td>{</td></tr>
+<tr><th id="454">454</th><td>    <b>return</b> (<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*) &amp;<a class="tu ref" href="#uninitialized_def" title='uninitialized_def' data-use='a' data-ref="uninitialized_def">uninitialized_def</a>;</td></tr>
+<tr><th id="455">455</th><td>}</td></tr>
+<tr><th id="456">456</th><td></td></tr>
+<tr><th id="457">457</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="458">458</th><td><dfn class="decl def" id="PyInit__testmultiphase_export_null" title='PyInit__testmultiphase_export_null' data-ref="PyInit__testmultiphase_export_null">PyInit__testmultiphase_export_null</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="50spec" title='spec' data-type='PyObject *' data-ref="50spec">spec</dfn>)</td></tr>
+<tr><th id="459">459</th><td>{</td></tr>
+<tr><th id="460">460</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="461">461</th><td>}</td></tr>
+<tr><th id="462">462</th><td></td></tr>
+<tr><th id="463">463</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="464">464</th><td><dfn class="decl def" id="PyInit__testmultiphase_export_raise" title='PyInit__testmultiphase_export_raise' data-ref="PyInit__testmultiphase_export_raise">PyInit__testmultiphase_export_raise</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51spec" title='spec' data-type='PyObject *' data-ref="51spec">spec</dfn>)</td></tr>
+<tr><th id="465">465</th><td>{</td></tr>
+<tr><th id="466">466</th><td>    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"bad export function"</q>);</td></tr>
+<tr><th id="467">467</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="468">468</th><td>}</td></tr>
+<tr><th id="469">469</th><td></td></tr>
+<tr><th id="470">470</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="471">471</th><td><dfn class="decl def" id="PyInit__testmultiphase_export_unreported_exception" title='PyInit__testmultiphase_export_unreported_exception' data-ref="PyInit__testmultiphase_export_unreported_exception">PyInit__testmultiphase_export_unreported_exception</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="52spec" title='spec' data-type='PyObject *' data-ref="52spec">spec</dfn>)</td></tr>
+<tr><th id="472">472</th><td>{</td></tr>
+<tr><th id="473">473</th><td>    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"bad export function"</q>);</td></tr>
+<tr><th id="474">474</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#main_def" title='main_def' data-use='a' data-ref="main_def">main_def</a>);</td></tr>
+<tr><th id="475">475</th><td>}</td></tr>
+<tr><th id="476">476</th><td></td></tr>
+<tr><th id="477">477</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="478">478</th><td><dfn class="tu decl def" id="createfunc_null" title='createfunc_null' data-type='PyObject * createfunc_null(PyObject * spec, PyModuleDef * def)' data-ref="createfunc_null">createfunc_null</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53spec" title='spec' data-type='PyObject *' data-ref="53spec">spec</dfn>, <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> *<dfn class="local col4 decl" id="54def" title='def' data-type='PyModuleDef *' data-ref="54def">def</dfn>)</td></tr>
+<tr><th id="479">479</th><td>{</td></tr>
+<tr><th id="480">480</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="481">481</th><td>}</td></tr>
+<tr><th id="482">482</th><td></td></tr>
+<tr><th id="483">483</th><td><a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="decl def" id="slots_create_null" title='slots_create_null' data-ref="slots_create_null">slots_create_null</dfn>[] = {</td></tr>
+<tr><th id="484">484</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#65" title="1" data-ref="_M/Py_mod_create">Py_mod_create</a>, <a class="tu ref" href="#createfunc_null" title='createfunc_null' data-ref="createfunc_null">createfunc_null</a>},</td></tr>
+<tr><th id="485">485</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="486">486</th><td>};</td></tr>
+<tr><th id="487">487</th><td></td></tr>
+<tr><th id="488">488</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_create_null" title='def_create_null' data-type='PyModuleDef' data-ref="def_create_null">def_create_null</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_create_null&quot;, &quot;Test module &quot; &quot;_testmultiphase_create_null&quot;, 0, ((void*)0), slots_create_null, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="489">489</th><td>    <q>"_testmultiphase_create_null"</q>, <a class="ref" href="#slots_create_null" title='slots_create_null' data-ref="slots_create_null">slots_create_null</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="490">490</th><td></td></tr>
+<tr><th id="491">491</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="492">492</th><td><dfn class="decl def" id="PyInit__testmultiphase_create_null" title='PyInit__testmultiphase_create_null' data-ref="PyInit__testmultiphase_create_null">PyInit__testmultiphase_create_null</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55spec" title='spec' data-type='PyObject *' data-ref="55spec">spec</dfn>)</td></tr>
+<tr><th id="493">493</th><td>{</td></tr>
+<tr><th id="494">494</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_create_null" title='def_create_null' data-use='a' data-ref="def_create_null">def_create_null</a>);</td></tr>
+<tr><th id="495">495</th><td>}</td></tr>
+<tr><th id="496">496</th><td></td></tr>
+<tr><th id="497">497</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="498">498</th><td><dfn class="tu decl def" id="createfunc_raise" title='createfunc_raise' data-type='PyObject * createfunc_raise(PyObject * spec, PyModuleDef * def)' data-ref="createfunc_raise">createfunc_raise</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56spec" title='spec' data-type='PyObject *' data-ref="56spec">spec</dfn>, <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> *<dfn class="local col7 decl" id="57def" title='def' data-type='PyModuleDef *' data-ref="57def">def</dfn>)</td></tr>
+<tr><th id="499">499</th><td>{</td></tr>
+<tr><th id="500">500</th><td>    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"bad create function"</q>);</td></tr>
+<tr><th id="501">501</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="502">502</th><td>}</td></tr>
+<tr><th id="503">503</th><td></td></tr>
+<tr><th id="504">504</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_create_raise" title='slots_create_raise' data-type='PyModuleDef_Slot [2]' data-ref="slots_create_raise">slots_create_raise</dfn>[] = {</td></tr>
+<tr><th id="505">505</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#65" title="1" data-ref="_M/Py_mod_create">Py_mod_create</a>, <a class="tu ref" href="#createfunc_raise" title='createfunc_raise' data-ref="createfunc_raise">createfunc_raise</a>},</td></tr>
+<tr><th id="506">506</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="507">507</th><td>};</td></tr>
+<tr><th id="508">508</th><td></td></tr>
+<tr><th id="509">509</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_create_raise" title='def_create_raise' data-type='PyModuleDef' data-ref="def_create_raise">def_create_raise</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_create_null&quot;, &quot;Test module &quot; &quot;_testmultiphase_create_null&quot;, 0, ((void*)0), slots_create_raise, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="510">510</th><td>    <q>"_testmultiphase_create_null"</q>, <a class="tu ref" href="#slots_create_raise" title='slots_create_raise' data-ref="slots_create_raise">slots_create_raise</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="511">511</th><td></td></tr>
+<tr><th id="512">512</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="513">513</th><td><dfn class="decl def" id="PyInit__testmultiphase_create_raise" title='PyInit__testmultiphase_create_raise' data-ref="PyInit__testmultiphase_create_raise">PyInit__testmultiphase_create_raise</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58spec" title='spec' data-type='PyObject *' data-ref="58spec">spec</dfn>)</td></tr>
+<tr><th id="514">514</th><td>{</td></tr>
+<tr><th id="515">515</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_create_raise" title='def_create_raise' data-use='a' data-ref="def_create_raise">def_create_raise</a>);</td></tr>
+<tr><th id="516">516</th><td>}</td></tr>
+<tr><th id="517">517</th><td></td></tr>
+<tr><th id="518">518</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="519">519</th><td><dfn class="tu decl def" id="createfunc_unreported_exception" title='createfunc_unreported_exception' data-type='PyObject * createfunc_unreported_exception(PyObject * spec, PyModuleDef * def)' data-ref="createfunc_unreported_exception">createfunc_unreported_exception</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="59spec" title='spec' data-type='PyObject *' data-ref="59spec">spec</dfn>, <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> *<dfn class="local col0 decl" id="60def" title='def' data-type='PyModuleDef *' data-ref="60def">def</dfn>)</td></tr>
+<tr><th id="520">520</th><td>{</td></tr>
+<tr><th id="521">521</th><td>    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"bad create function"</q>);</td></tr>
+<tr><th id="522">522</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModule_New" title='PyModule_New' data-ref="PyModule_New">PyModule_New</a>(<q>"foo"</q>);</td></tr>
+<tr><th id="523">523</th><td>}</td></tr>
+<tr><th id="524">524</th><td></td></tr>
+<tr><th id="525">525</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_create_unreported_exception" title='slots_create_unreported_exception' data-type='PyModuleDef_Slot [2]' data-ref="slots_create_unreported_exception">slots_create_unreported_exception</dfn>[] = {</td></tr>
+<tr><th id="526">526</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#65" title="1" data-ref="_M/Py_mod_create">Py_mod_create</a>, <a class="tu ref" href="#createfunc_unreported_exception" title='createfunc_unreported_exception' data-ref="createfunc_unreported_exception">createfunc_unreported_exception</a>},</td></tr>
+<tr><th id="527">527</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="528">528</th><td>};</td></tr>
+<tr><th id="529">529</th><td></td></tr>
+<tr><th id="530">530</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_create_unreported_exception" title='def_create_unreported_exception' data-type='PyModuleDef' data-ref="def_create_unreported_exception">def_create_unreported_exception</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_create_unreported_exception&quot;, &quot;Test module &quot; &quot;_testmultiphase_create_unreported_exception&quot;, 0, ((void*)0), slots_create_unreported_exception, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="531">531</th><td>    <q>"_testmultiphase_create_unreported_exception"</q>, <a class="tu ref" href="#slots_create_unreported_exception" title='slots_create_unreported_exception' data-ref="slots_create_unreported_exception">slots_create_unreported_exception</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="532">532</th><td></td></tr>
+<tr><th id="533">533</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="534">534</th><td><dfn class="decl def" id="PyInit__testmultiphase_create_unreported_exception" title='PyInit__testmultiphase_create_unreported_exception' data-ref="PyInit__testmultiphase_create_unreported_exception">PyInit__testmultiphase_create_unreported_exception</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="61spec" title='spec' data-type='PyObject *' data-ref="61spec">spec</dfn>)</td></tr>
+<tr><th id="535">535</th><td>{</td></tr>
+<tr><th id="536">536</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_create_unreported_exception" title='def_create_unreported_exception' data-use='a' data-ref="def_create_unreported_exception">def_create_unreported_exception</a>);</td></tr>
+<tr><th id="537">537</th><td>}</td></tr>
+<tr><th id="538">538</th><td></td></tr>
+<tr><th id="539">539</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_nonmodule_with_exec_slots" title='slots_nonmodule_with_exec_slots' data-type='PyModuleDef_Slot [3]' data-ref="slots_nonmodule_with_exec_slots">slots_nonmodule_with_exec_slots</dfn>[] = {</td></tr>
+<tr><th id="540">540</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#65" title="1" data-ref="_M/Py_mod_create">Py_mod_create</a>, <a class="tu ref" href="#createfunc_nonmodule" title='createfunc_nonmodule' data-ref="createfunc_nonmodule">createfunc_nonmodule</a>},</td></tr>
+<tr><th id="541">541</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#66" title="2" data-ref="_M/Py_mod_exec">Py_mod_exec</a>, <a class="tu ref" href="#execfunc" title='execfunc' data-ref="execfunc">execfunc</a>},</td></tr>
+<tr><th id="542">542</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="543">543</th><td>};</td></tr>
+<tr><th id="544">544</th><td></td></tr>
+<tr><th id="545">545</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_nonmodule_with_exec_slots" title='def_nonmodule_with_exec_slots' data-type='PyModuleDef' data-ref="def_nonmodule_with_exec_slots">def_nonmodule_with_exec_slots</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_nonmodule_with_exec_slots&quot;, &quot;Test module &quot; &quot;_testmultiphase_nonmodule_with_exec_slots&quot;, 0, ((void*)0), slots_nonmodule_with_exec_slots, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="546">546</th><td>    <q>"_testmultiphase_nonmodule_with_exec_slots"</q>, <a class="tu ref" href="#slots_nonmodule_with_exec_slots" title='slots_nonmodule_with_exec_slots' data-ref="slots_nonmodule_with_exec_slots">slots_nonmodule_with_exec_slots</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="547">547</th><td></td></tr>
+<tr><th id="548">548</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="549">549</th><td><dfn class="decl def" id="PyInit__testmultiphase_nonmodule_with_exec_slots" title='PyInit__testmultiphase_nonmodule_with_exec_slots' data-ref="PyInit__testmultiphase_nonmodule_with_exec_slots">PyInit__testmultiphase_nonmodule_with_exec_slots</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62spec" title='spec' data-type='PyObject *' data-ref="62spec">spec</dfn>)</td></tr>
+<tr><th id="550">550</th><td>{</td></tr>
+<tr><th id="551">551</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_nonmodule_with_exec_slots" title='def_nonmodule_with_exec_slots' data-use='a' data-ref="def_nonmodule_with_exec_slots">def_nonmodule_with_exec_slots</a>);</td></tr>
+<tr><th id="552">552</th><td>}</td></tr>
+<tr><th id="553">553</th><td></td></tr>
+<tr><th id="554">554</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="555">555</th><td><dfn class="tu decl def" id="execfunc_err" title='execfunc_err' data-type='int execfunc_err(PyObject * mod)' data-ref="execfunc_err">execfunc_err</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="63mod" title='mod' data-type='PyObject *' data-ref="63mod">mod</dfn>)</td></tr>
+<tr><th id="556">556</th><td>{</td></tr>
+<tr><th id="557">557</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="558">558</th><td>}</td></tr>
+<tr><th id="559">559</th><td></td></tr>
+<tr><th id="560">560</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_exec_err" title='slots_exec_err' data-type='PyModuleDef_Slot [2]' data-ref="slots_exec_err">slots_exec_err</dfn>[] = {</td></tr>
+<tr><th id="561">561</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#66" title="2" data-ref="_M/Py_mod_exec">Py_mod_exec</a>, <a class="tu ref" href="#execfunc_err" title='execfunc_err' data-ref="execfunc_err">execfunc_err</a>},</td></tr>
+<tr><th id="562">562</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="563">563</th><td>};</td></tr>
+<tr><th id="564">564</th><td></td></tr>
+<tr><th id="565">565</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_exec_err" title='def_exec_err' data-type='PyModuleDef' data-ref="def_exec_err">def_exec_err</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_exec_err&quot;, &quot;Test module &quot; &quot;_testmultiphase_exec_err&quot;, 0, ((void*)0), slots_exec_err, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="566">566</th><td>    <q>"_testmultiphase_exec_err"</q>, <a class="tu ref" href="#slots_exec_err" title='slots_exec_err' data-ref="slots_exec_err">slots_exec_err</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="567">567</th><td></td></tr>
+<tr><th id="568">568</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="569">569</th><td><dfn class="decl def" id="PyInit__testmultiphase_exec_err" title='PyInit__testmultiphase_exec_err' data-ref="PyInit__testmultiphase_exec_err">PyInit__testmultiphase_exec_err</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="64spec" title='spec' data-type='PyObject *' data-ref="64spec">spec</dfn>)</td></tr>
+<tr><th id="570">570</th><td>{</td></tr>
+<tr><th id="571">571</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_exec_err" title='def_exec_err' data-use='a' data-ref="def_exec_err">def_exec_err</a>);</td></tr>
+<tr><th id="572">572</th><td>}</td></tr>
+<tr><th id="573">573</th><td></td></tr>
+<tr><th id="574">574</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="575">575</th><td><dfn class="tu decl def" id="execfunc_raise" title='execfunc_raise' data-type='int execfunc_raise(PyObject * spec)' data-ref="execfunc_raise">execfunc_raise</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="65spec" title='spec' data-type='PyObject *' data-ref="65spec">spec</dfn>)</td></tr>
+<tr><th id="576">576</th><td>{</td></tr>
+<tr><th id="577">577</th><td>    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"bad exec function"</q>);</td></tr>
+<tr><th id="578">578</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="579">579</th><td>}</td></tr>
+<tr><th id="580">580</th><td></td></tr>
+<tr><th id="581">581</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_exec_raise" title='slots_exec_raise' data-type='PyModuleDef_Slot [2]' data-ref="slots_exec_raise">slots_exec_raise</dfn>[] = {</td></tr>
+<tr><th id="582">582</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#66" title="2" data-ref="_M/Py_mod_exec">Py_mod_exec</a>, <a class="tu ref" href="#execfunc_raise" title='execfunc_raise' data-ref="execfunc_raise">execfunc_raise</a>},</td></tr>
+<tr><th id="583">583</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="584">584</th><td>};</td></tr>
+<tr><th id="585">585</th><td></td></tr>
+<tr><th id="586">586</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_exec_raise" title='def_exec_raise' data-type='PyModuleDef' data-ref="def_exec_raise">def_exec_raise</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_exec_raise&quot;, &quot;Test module &quot; &quot;_testmultiphase_exec_raise&quot;, 0, ((void*)0), slots_exec_raise, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="587">587</th><td>    <q>"_testmultiphase_exec_raise"</q>, <a class="tu ref" href="#slots_exec_raise" title='slots_exec_raise' data-ref="slots_exec_raise">slots_exec_raise</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="588">588</th><td></td></tr>
+<tr><th id="589">589</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="590">590</th><td><dfn class="decl def" id="PyInit__testmultiphase_exec_raise" title='PyInit__testmultiphase_exec_raise' data-ref="PyInit__testmultiphase_exec_raise">PyInit__testmultiphase_exec_raise</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="66mod" title='mod' data-type='PyObject *' data-ref="66mod">mod</dfn>)</td></tr>
+<tr><th id="591">591</th><td>{</td></tr>
+<tr><th id="592">592</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_exec_raise" title='def_exec_raise' data-use='a' data-ref="def_exec_raise">def_exec_raise</a>);</td></tr>
+<tr><th id="593">593</th><td>}</td></tr>
+<tr><th id="594">594</th><td></td></tr>
+<tr><th id="595">595</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="596">596</th><td><dfn class="tu decl def" id="execfunc_unreported_exception" title='execfunc_unreported_exception' data-type='int execfunc_unreported_exception(PyObject * mod)' data-ref="execfunc_unreported_exception">execfunc_unreported_exception</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="67mod" title='mod' data-type='PyObject *' data-ref="67mod">mod</dfn>)</td></tr>
+<tr><th id="597">597</th><td>{</td></tr>
+<tr><th id="598">598</th><td>    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_SystemError" title='PyExc_SystemError' data-ref="PyExc_SystemError">PyExc_SystemError</a>, <q>"bad exec function"</q>);</td></tr>
+<tr><th id="599">599</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="600">600</th><td>}</td></tr>
+<tr><th id="601">601</th><td></td></tr>
+<tr><th id="602">602</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef_Slot" title='PyModuleDef_Slot' data-type='struct PyModuleDef_Slot' data-ref="PyModuleDef_Slot">PyModuleDef_Slot</a> <dfn class="tu decl def" id="slots_exec_unreported_exception" title='slots_exec_unreported_exception' data-type='PyModuleDef_Slot [2]' data-ref="slots_exec_unreported_exception">slots_exec_unreported_exception</dfn>[] = {</td></tr>
+<tr><th id="603">603</th><td>    {<a class="macro" href="../Include/moduleobject.h.html#66" title="2" data-ref="_M/Py_mod_exec">Py_mod_exec</a>, <a class="tu ref" href="#execfunc_unreported_exception" title='execfunc_unreported_exception' data-ref="execfunc_unreported_exception">execfunc_unreported_exception</a>},</td></tr>
+<tr><th id="604">604</th><td>    {<var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="605">605</th><td>};</td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="def_exec_unreported_exception" title='def_exec_unreported_exception' data-type='PyModuleDef' data-ref="def_exec_unreported_exception">def_exec_unreported_exception</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;_testmultiphase_exec_unreported_exception&quot;, &quot;Test module &quot; &quot;_testmultiphase_exec_unreported_exception&quot;, 0, ((void*)0), slots_exec_unreported_exception, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(</td></tr>
+<tr><th id="608">608</th><td>    <q>"_testmultiphase_exec_unreported_exception"</q>, <a class="tu ref" href="#slots_exec_unreported_exception" title='slots_exec_unreported_exception' data-ref="slots_exec_unreported_exception">slots_exec_unreported_exception</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="609">609</th><td></td></tr>
+<tr><th id="610">610</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="611">611</th><td><dfn class="decl def" id="PyInit__testmultiphase_exec_unreported_exception" title='PyInit__testmultiphase_exec_unreported_exception' data-ref="PyInit__testmultiphase_exec_unreported_exception">PyInit__testmultiphase_exec_unreported_exception</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68spec" title='spec' data-type='PyObject *' data-ref="68spec">spec</dfn>)</td></tr>
+<tr><th id="612">612</th><td>{</td></tr>
+<tr><th id="613">613</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#def_exec_unreported_exception" title='def_exec_unreported_exception' data-use='a' data-ref="def_exec_unreported_exception">def_exec_unreported_exception</a>);</td></tr>
+<tr><th id="614">614</th><td>}</td></tr>
+<tr><th id="615">615</th><td></td></tr>
+<tr><th id="616">616</th><td><i  data-doc="imp_dummy_def">/*** Helper for imp test ***/</i></td></tr>
+<tr><th id="617">617</th><td></td></tr>
+<tr><th id="618">618</th><td><em>static</em> <a class="typedef" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-type='struct PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="imp_dummy_def" title='imp_dummy_def' data-type='PyModuleDef' data-ref="imp_dummy_def">imp_dummy_def</dfn> = <a class="macro" href="#221" title="{ { { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }, &quot;imp_dummy&quot;, &quot;Test module &quot; &quot;imp_dummy&quot;, 0, testexport_methods, main_slots, ((void*)0), ((void*)0), ((void*)0), }" data-ref="_M/TEST_MODULE_DEF">TEST_MODULE_DEF</a>(<q>"imp_dummy"</q>, <a class="ref" href="#main_slots" title='main_slots' data-ref="main_slots">main_slots</a>, <a class="tu ref" href="#testexport_methods" title='testexport_methods' data-ref="testexport_methods">testexport_methods</a>);</td></tr>
+<tr><th id="619">619</th><td></td></tr>
+<tr><th id="620">620</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="621">621</th><td><dfn class="decl def" id="PyInit_imp_dummy" title='PyInit_imp_dummy' data-ref="PyInit_imp_dummy">PyInit_imp_dummy</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69spec" title='spec' data-type='PyObject *' data-ref="69spec">spec</dfn>)</td></tr>
+<tr><th id="622">622</th><td>{</td></tr>
+<tr><th id="623">623</th><td>    <b>return</b> <a class="ref" href="../Include/moduleobject.h.html#PyModuleDef_Init" title='PyModuleDef_Init' data-ref="PyModuleDef_Init">PyModuleDef_Init</a>(&amp;<a class="tu ref" href="#imp_dummy_def" title='imp_dummy_def' data-use='a' data-ref="imp_dummy_def">imp_dummy_def</a>);</td></tr>
+<tr><th id="624">624</th><td>}</td></tr>
+<tr><th id="625">625</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

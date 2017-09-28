@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/abstract.h' l='179' type='PyObject * _PyStack_AsDict(PyObject ** values, PyObject * kwnames)'/>
+<doc f='codebrowser/Include/abstract.h' l='169'>/* Convert keyword arguments from the FASTCALL (stack: C array, kwnames: tuple)
+   format to a Python dictionary (&quot;kwargs&quot; dict).
+
+   The type of kwnames keys is not checked. The final function getting
+   arguments is responsible to check if all keys are strings, for example using
+   PyArg_ParseTupleAndKeywords() or PyArg_ValidateKeywordArguments().
+
+   Duplicate keys are merged using the last value. If duplicate keys must raise
+   an exception, the caller is responsible to implement an explicit keys on
+   kwnames. */</doc>
+<use f='codebrowser/Objects/call.c' l='182' u='c' c='_PyObject_FastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='676' u='c' c='_PyMethodDef_RawFastCallKeywords'/>
+<def f='codebrowser/Objects/call.c' l='1314' ll='1338' type='PyObject * _PyStack_AsDict(PyObject ** values, PyObject * kwnames)'/>
+<use f='codebrowser/Python/bltinmodule.c' l='84' u='c' c='builtin___build_class__'/>

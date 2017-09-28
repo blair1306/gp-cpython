@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pyerrors.h' l='194' type='PyObject *'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5776' u='r' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5819' u='r' c='PyInit__decimal'/>
+<use f='codebrowser/Objects/complexobject.c' l='512' u='r' c='complex_div'/>
+<use f='codebrowser/Objects/complexobject.c' l='561' u='r' c='complex_pow'/>
+<def f='codebrowser/Objects/exceptions.c' l='2216' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2541' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2618' macro='1' u='r'/>
+<use f='codebrowser/Objects/floatobject.c' l='579' u='r' c='float_div'/>
+<use f='codebrowser/Objects/floatobject.c' l='597' u='r' c='float_rem'/>
+<use f='codebrowser/Objects/floatobject.c' l='627' u='r' c='float_divmod'/>
+<use f='codebrowser/Objects/floatobject.c' l='742' u='r' c='float_pow'/>
+<use f='codebrowser/Objects/longobject.c' l='2549' u='r' c='long_divrem'/>
+<use f='codebrowser/Objects/longobject.c' l='3854' u='r' c='long_true_divide'/>

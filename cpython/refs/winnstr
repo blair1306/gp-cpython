@@ -1,0 +1,6 @@
+<dec f='include/curses.h' l='831' type='int winnstr(WINDOW * , char * , int )'/>
+<doc f='include/curses.h' l='831'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1399' u='c' c='PyCursesWindow_InStr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1408' u='c' c='PyCursesWindow_InStr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1413' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1422' macro='1' u='c'/>

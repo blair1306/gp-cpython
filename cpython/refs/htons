@@ -1,0 +1,6 @@
+<dec f='include/netinet/in.h' l='381' type='uint16_t htons(uint16_t __hostshort)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1625' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1670' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1819' u='c' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5347' u='c' c='socket_getservbyport'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5628' u='c' c='socket_htons'/>

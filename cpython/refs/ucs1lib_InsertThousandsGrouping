@@ -1,0 +1,2 @@
+<def f='codebrowser/Objects/stringlib/localeutil.h' l='103' macro='1' type='Py_ssize_t ucs1lib_InsertThousandsGrouping(Py_UCS1 * buffer, Py_ssize_t n_buffer, Py_UCS1 * digits, Py_ssize_t n_digits, Py_ssize_t min_width, const char * grouping, Py_UCS1 * thousands_sep, Py_ssize_t thousands_sep_len)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9367' u='c' c='_PyUnicode_InsertThousandsGrouping'/>

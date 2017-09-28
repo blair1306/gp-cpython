@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/hashtable.h' l='187' type='int _Py_hashtable_get(_Py_hashtable_t * ht, size_t key_size, const void * pkey, size_t data_size, void * data)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1240' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1445' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1448' macro='1' u='c'/>
+<doc f='codebrowser/Modules/hashtable.h' l='183'>/* Get data from an entry. Copy entry data into data and return 1 if the entry
+   exists, return 0 if the entry does not exist.
+
+   Don&apos;t call directly this function, but use _Py_HASHTABLE_GET() macro */</doc>
+<def f='codebrowser/Modules/hashtable.c' l='353' ll='366' type='int _Py_hashtable_get(_Py_hashtable_t * ht, size_t key_size, const void * pkey, size_t data_size, void * data)'/>

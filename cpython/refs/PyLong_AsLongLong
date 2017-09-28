@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/longobject.h' l='90' type='long long PyLong_AsLongLong(PyObject * )'/>
+<use f='codebrowser/Modules/_lsprof.c' l='131' u='c' c='CallExternalTimer'/>
+<use f='codebrowser/Modules/_struct.c' l='189' u='c' c='get_longlong'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='64' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='137' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='162' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='186' macro='1' u='c'/>
+<def f='codebrowser/Objects/longobject.c' l='1215' ll='1262' type='long long PyLong_AsLongLong(PyObject * vv)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1212'>/* Get a C long long int from an int object or any object that has an
+   __int__ method.  Return -1 and set an error if overflow occurs. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1582' u='c' c='pylong_as_lld'/>
+<use f='codebrowser/Python/getargs.c' l='837' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/pytime.c' l='43' u='c' c='_PyLong_AsTime_t'/>
+<use f='codebrowser/Python/pytime.c' l='310' u='c' c='_PyTime_FromObject'/>
+<use f='codebrowser/Python/structmember.c' l='269' u='c' c='PyMember_SetOne'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='38' type='32'/>
+<use f='codebrowser/Modules/_blake2/blake2module.c' l='96' u='r' c='PyInit__blake2'/>
+<use f='codebrowser/Modules/_blake2/blake2module.c' l='101' u='r' c='PyInit__blake2'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='230' u='r' c='PyBlake2_blake2s_init_key'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='380' u='r' c='PyBlake2_blake2s'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='205' u='r' c='py_blake2s_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='208' c='py_blake2s_new_impl'/>

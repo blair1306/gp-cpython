@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/object.h' l='562' type='int PyObject_CallFinalizerFromDealloc(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='969' u='c' c='FutureObj_dealloc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1845' u='c' c='TaskObj_dealloc'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='280' u='c' c='_PyIOBase_finalize'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12100' u='c' c='ScandirIterator_dealloc'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4611' u='c' c='sock_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='101' u='c' c='gen_dealloc'/>
+<def f='codebrowser/Objects/object.c' l='302' ll='347' type='int PyObject_CallFinalizerFromDealloc(PyObject * self)'/>
+<use f='codebrowser/Objects/typeobject.c' l='1124' u='c' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1177' u='c' c='subtype_dealloc'/>

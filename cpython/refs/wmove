@@ -1,0 +1,23 @@
+<dec f='include/curses.h' l='838' type='int wmove(WINDOW * , int , int )'/>
+<doc f='include/curses.h' l='838'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='515' u='c' c='PyCursesWindow_wmove'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='635' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='713' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='790' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='986' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1010' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1124' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1150' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1247' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1265' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1300' u='c' c='PyCursesWindow_Hline'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1307' u='c' c='PyCursesWindow_Hline'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1361' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1381' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1413' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1422' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1502' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1580' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1920' u='c' c='PyCursesWindow_Vline'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1927' u='c' c='PyCursesWindow_Vline'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2930' macro='1' u='c'/>

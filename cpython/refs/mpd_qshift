@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='488' type='void mpd_qshift(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4335' u='c' c='dec_mpd_qshift'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5381' u='c' c='ctx_mpd_qshift'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3040' ll='3082' type='void mpd_qshift(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3036'>/*
+ * Same as mpd_shiftn(), but the shift is specified by the decimal b, which
+ * must be an integer with a zero exponent. Infinities remain infinities.
+ */</doc>

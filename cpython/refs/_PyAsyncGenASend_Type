@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/genobject.h' l='83' type='PyTypeObject'/>
+<use f='codebrowser/Objects/genobject.c' l='1519' u='a' c='PyAsyncGen_ClearFreeLists'/>
+<use f='codebrowser/Objects/genobject.c' l='1297' u='a' c='async_gen_asend_dealloc'/>
+<def f='codebrowser/Objects/genobject.c' l='1666' ll='1706' type='PyTypeObject'/>
+<use f='codebrowser/Objects/genobject.c' l='1718' u='a' c='async_gen_asend_new'/>

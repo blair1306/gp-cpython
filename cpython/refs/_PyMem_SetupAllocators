@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pymem.h' l='22' type='int _PyMem_SetupAllocators(const char * opt)'/>
+<doc f='codebrowser/Include/pymem.h' l='20'>/* Configure the Python memory allocators. Pass NULL to use default
+   allocators. */</doc>
+<use f='codebrowser/Modules/main.c' l='602' u='c' c='Py_Main'/>
+<def f='codebrowser/Objects/obmalloc.c' l='205' ll='262' type='int _PyMem_SetupAllocators(const char * opt)'/>
+<use f='codebrowser/Programs/python.c' l='44' u='c' c='main'/>
+<use f='codebrowser/Programs/python.c' l='107' u='c' c='main'/>

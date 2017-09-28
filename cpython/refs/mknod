@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='335' type='int mknod(const char * __path, __mode_t __mode, __dev_t __dev)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8732' u='c' c='os_mknod_impl'/>

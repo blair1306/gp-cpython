@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='508' type='void mpd_qmin(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4112' u='c' c='dec_mpd_qmin'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5055' u='c' c='ctx_mpd_qmin'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5177' ll='5207' type='void mpd_qmin(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5172'>/*
+ * Minimum of the two operands. Attention: If one operand is a quiet NaN and the
+ * other is numeric, the numeric operand is returned. This may not be what one
+ * expects.
+ */</doc>

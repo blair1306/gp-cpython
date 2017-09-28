@@ -1,0 +1,2 @@
+<dec f='include/openssl/rand.h' l='101' type='int RAND_bytes(unsigned char * buf, int num)'/>
+<use f='codebrowser/Modules/_ssl.c' l='4533' u='c' c='PySSL_RAND'/>

@@ -1,0 +1,6 @@
+<dec f='include/netinet/in.h' l='258' type='uint32_t'/>
+<offset>32</offset>
+<doc f='include/netinet/in.h' l='258'>/* IPv6 flow information */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1241' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1671' u='w' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6081' u='w' c='socket_getnameinfo'/>

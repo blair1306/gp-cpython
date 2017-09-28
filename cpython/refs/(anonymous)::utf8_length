@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='342' type='Py_ssize_t'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/unicodeobject.h' l='342'>/* Number of bytes in utf8, excluding the
+                                 * terminating \0. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='426' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='448' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='resize_compact'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='resize_inplace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='resize_inplace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='_PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1229' u='r' c='_PyUnicode_Dump'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1324' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1328' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='PyUnicode_AsUTF8AndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='r' c='PyUnicode_AsUTF8AndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='r' c='PyUnicode_AsUTF8AndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='r' c='_PyUnicode_AsUTF8String'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='r' c='unicode_sizeof_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='unicode_subtype_new'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='101' u='w' c='unicode_subtype_new'/>

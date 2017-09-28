@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/complexobject.h' l='58' type='int _PyComplex_FormatAdvancedWriter(_PyUnicodeWriter * writer, PyObject * obj, PyObject * format_spec, Py_ssize_t start, Py_ssize_t end)'/>
+<use f='codebrowser/Objects/complexobject.c' l='734' u='c' c='complex__format__'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='510' u='r' c='render_field'/>
+<def f='codebrowser/Python/formatter_unicode.c' l='1548' ll='1584' type='int _PyComplex_FormatAdvancedWriter(_PyUnicodeWriter * writer, PyObject * obj, PyObject * format_spec, Py_ssize_t start, Py_ssize_t end)'/>

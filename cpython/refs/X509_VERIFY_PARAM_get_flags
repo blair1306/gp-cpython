@@ -1,0 +1,3 @@
+<dec f='include/openssl/x509_vfy.h' l='580' type='unsigned long X509_VERIFY_PARAM_get_flags(X509_VERIFY_PARAM * param)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3046' u='c' c='get_verify_flags'/>
+<use f='codebrowser/Modules/_ssl.c' l='3061' u='c' c='set_verify_flags'/>

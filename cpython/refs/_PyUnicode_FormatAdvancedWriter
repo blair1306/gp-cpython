@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1007' type='int _PyUnicode_FormatAdvancedWriter(_PyUnicodeWriter * writer, PyObject * obj, PyObject * format_spec, Py_ssize_t start, Py_ssize_t end)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1005'>/* Format the object based on the format_spec, as defined in PEP 3101
+   (Advanced String Formatting). */</doc>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='504' u='r' c='render_field'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13858' u='c' c='unicode___format___impl'/>
+<def f='codebrowser/Python/formatter_unicode.c' l='1410' ll='1444' type='int _PyUnicode_FormatAdvancedWriter(_PyUnicodeWriter * writer, PyObject * obj, PyObject * format_spec, Py_ssize_t start, Py_ssize_t end)'/>

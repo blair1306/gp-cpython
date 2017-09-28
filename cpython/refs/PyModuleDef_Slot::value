@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/moduleobject.h' l='62' type='void *'/>
+<offset>64</offset>
+<use f='codebrowser/Objects/moduleobject.c' l='269' u='r' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='386' u='r' c='PyModule_ExecDef'/>

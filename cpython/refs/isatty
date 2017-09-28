@@ -1,0 +1,15 @@
+<dec f='include/unistd.h' l='782' type='int isatty(int __fd)'/>
+<doc f='include/unistd.h' l='780'>/* Return 1 if FD is a valid descriptor associated
+   with a terminal, zero if not.  */</doc>
+<use f='codebrowser/Modules/_io/fileio.c' l='1117' u='c' c='_io_FileIO_isatty_impl'/>
+<use f='codebrowser/Modules/main.c' l='828' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8440' u='c' c='os_isatty_impl'/>
+<use f='codebrowser/Modules/readline.c' l='1152' u='c' c='setup_readline'/>
+<use f='codebrowser/Objects/fileobject.c' l='428' u='c' c='stdprinter_isatty'/>
+<use f='codebrowser/Parser/myreadline.c' l='339' u='c' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='339' u='c' c='PyOS_Readline'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1896' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1909' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/fileutils.c' l='47' u='c' c='_Py_device_encoding'/>
+<use f='codebrowser/Python/frozenmain.c' l='96' u='c' c='Py_FrozenMain'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1985' u='c' c='Py_FdIsInteractive'/>

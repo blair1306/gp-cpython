@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/compile.h' l='73' type='PyObject * _Py_Mangle(PyObject * p, PyObject * name)'/>
+<doc f='codebrowser/Include/compile.h' l='72'>/* _Py_Mangle is defined in compile.c */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='2474' u='c' c='type_new'/>
+<def f='codebrowser/Python/compile.c' l='220' ll='286' type='PyObject * _Py_Mangle(PyObject * privateobj, PyObject * ident)'/>
+<use f='codebrowser/Python/compile.c' l='690' u='c' c='compiler_set_qualname'/>
+<use f='codebrowser/Python/compile.c' l='1158' u='c' c='compiler_addop_name'/>
+<use f='codebrowser/Python/compile.c' l='1613' u='c' c='compiler_visit_kwonlydefaults'/>
+<use f='codebrowser/Python/compile.c' l='1665' u='c' c='compiler_visit_argannotation'/>
+<use f='codebrowser/Python/compile.c' l='3085' u='c' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='4670' u='c' c='compiler_annassign'/>
+<use f='codebrowser/Python/symtable.c' l='967' u='c' c='symtable_lookup'/>
+<use f='codebrowser/Python/symtable.c' l='983' u='c' c='symtable_add_def'/>
+<use f='codebrowser/Python/symtable.c' l='1115' u='c' c='symtable_record_directive'/>

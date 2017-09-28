@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/Python-ast.h' l='126' type='expr_ty'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1456' u='w' c='_Py_AnnAssign'/>
+<use f='codebrowser/Python/Python-ast.c' l='2826' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='415' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='4581' u='r' c='check_annotation'/>
+<use f='codebrowser/Python/compile.c' l='4674' u='r' c='compiler_annassign'/>
+<use f='codebrowser/Python/symtable.c' l='1221' u='r' c='symtable_visit_stmt'/>

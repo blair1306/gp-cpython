@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='348' type='int mpd_qsetstatus(mpd_context_t * ctx, uint32_t flags)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1042' u='c' c='context_setstatus_list'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1066' u='c' c='context_setstatus_dict'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/context.c' l='245' ll='253' type='int mpd_qsetstatus(mpd_context_t * ctx, uint32_t flags)'/>

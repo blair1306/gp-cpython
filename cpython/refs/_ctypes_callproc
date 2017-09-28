@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='270' type='PyObject * _ctypes_callproc(PPROC pProc, PyObject * arguments, int flags, PyObject * argtypes, PyObject * restype, PyObject * checker)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3941' u='c' c='PyCFuncPtr_call'/>
+<def f='codebrowser/Modules/_ctypes/callproc.c' l='1056' ll='1207' type='PyObject * _ctypes_callproc(PPROC pProc, PyObject * argtuple, int flags, PyObject * argtypes, PyObject * restype, PyObject * checker)'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1410' u='c' c='call_function'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1441' u='c' c='call_cdeclfunction'/>
+<doc f='codebrowser/Modules/_ctypes/callproc.c' l='1049'>/*
+ * Requirements, must be ensured by the caller:
+ * - argtuple is tuple of arguments
+ * - argtypes is either NULL, or a tuple of the same size as argtuple
+ *
+ * - XXX various requirements for restype, not yet collected
+ */</doc>

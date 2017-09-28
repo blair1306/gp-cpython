@@ -1,0 +1,12 @@
+<dec f='codebrowser/Parser/parser.h' l='27' type='node *'/>
+<offset>288128</offset>
+<doc f='codebrowser/Parser/parser.h' l='27'>/* Top of parse tree */</doc>
+<use f='codebrowser/Parser/parser.c' l='85' u='w' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='86' u='r' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='91' u='r' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='100' u='r' c='PyParser_Delete'/>
+<use f='codebrowser/Parser/parser.c' l='390' u='r' c='_Py_printtree'/>
+<use f='codebrowser/Parser/parser.c' l='393' u='r' c='_Py_printtree'/>
+<use f='codebrowser/Parser/parser.c' l='397' u='r' c='_Py_printtree'/>
+<use f='codebrowser/Parser/parsetok.c' l='275' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='276' u='w' c='parsetok'/>

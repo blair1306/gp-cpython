@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='468' type='PySequenceMethods'/>
+<offset>6016</offset>
+<doc f='codebrowser/Include/object.h' l='468'>/* as_sequence comes after as_mapping,
+                                      so that the mapping wins when both
+                                      the mapping and the sequence define
+                                      a given operator (e.g. __getitem__).
+                                      see add_operators() in typeobject.c . */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='2554' u='a' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2843' u='a' c='PyType_FromSpecWithBases'/>

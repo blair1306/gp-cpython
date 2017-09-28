@@ -1,0 +1,5 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='17' type='1'/>
+<use f='codebrowser/Parser/tokenizer.c' l='323' u='r' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='360' u='r' c='check_bom'/>
+<use f='codebrowser/Parser/tokenizer.c' l='602' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='842' u='r' c='PyTokenizer_FromUTF8'/>

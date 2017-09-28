@@ -1,0 +1,6 @@
+<dec f='include/openssl/ssl.h' l='691'/>
+<use f='codebrowser/Modules/_ssl.c' l='668' u='a'/>
+<use f='codebrowser/Modules/_ssl.c' l='669' u='c'/>
+<doc f='include/openssl/ssl.h' l='688'>/*
+ * Never bother the application with retries if the transport is blocking:
+ */</doc>

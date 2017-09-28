@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>node.c source code [codebrowser/Parser/node.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Parser/node.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Parser</a>/<a href='node.c.html'>node.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Parse tree node implementation */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/node.h.html">"node.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../Include/errcode.h.html">"errcode.h"</a></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *</td></tr>
+<tr><th id="8">8</th><td><dfn class="decl def" id="PyNode_New" title='PyNode_New' data-ref="PyNode_New">PyNode_New</dfn>(<em>int</em> <dfn class="local col1 decl" id="1type" title='type' data-type='int' data-ref="1type">type</dfn>)</td></tr>
+<tr><th id="9">9</th><td>{</td></tr>
+<tr><th id="10">10</th><td>    <a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col2 decl" id="2n" title='n' data-type='node *' data-ref="2n">n</dfn> = (<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *) <a class="macro" href="../Include/objimpl.h.html#117" title="PyObject_Malloc" data-ref="_M/PyObject_MALLOC">PyObject_MALLOC</a>(<var>1</var> * <b>sizeof</b>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a>));</td></tr>
+<tr><th id="11">11</th><td>    <b>if</b> (<a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="12">12</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="13">13</th><td>    <a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_type" title='_node::n_type' data-ref="_node::n_type">n_type</a> = <a class="local col1 ref" href="#1type" title='type' data-ref="1type">type</a>;</td></tr>
+<tr><th id="14">14</th><td>    <a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_str" title='_node::n_str' data-ref="_node::n_str">n_str</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="15">15</th><td>    <a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_lineno" title='_node::n_lineno' data-ref="_node::n_lineno">n_lineno</a> = <var>0</var>;</td></tr>
+<tr><th id="16">16</th><td>    <a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_nchildren" title='_node::n_nchildren' data-ref="_node::n_nchildren">n_nchildren</a> = <var>0</var>;</td></tr>
+<tr><th id="17">17</th><td>    <a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="18">18</th><td>    <b>return</b> <a class="local col2 ref" href="#2n" title='n' data-ref="2n">n</a>;</td></tr>
+<tr><th id="19">19</th><td>}</td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="fancy_roundup">/* See comments at XXXROUNDUP below.  Returns -1 on overflow. */</i></td></tr>
+<tr><th id="22">22</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="23">23</th><td><dfn class="tu decl def" id="fancy_roundup" title='fancy_roundup' data-type='int fancy_roundup(int n)' data-ref="fancy_roundup">fancy_roundup</dfn>(<em>int</em> <dfn class="local col3 decl" id="3n" title='n' data-type='int' data-ref="3n">n</dfn>)</td></tr>
+<tr><th id="24">24</th><td>{</td></tr>
+<tr><th id="25">25</th><td>    <i>/* Round up to the closest power of 2 &gt;= n. */</i></td></tr>
+<tr><th id="26">26</th><td>    <em>int</em> <dfn class="local col4 decl" id="4result" title='result' data-type='int' data-ref="4result">result</dfn> = <var>256</var>;</td></tr>
+<tr><th id="27">27</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="((n &gt; 128) ? (void) (0) : __assert_fail (&quot;n &gt; 128&quot;, &quot;/home/jon/workspace/cpython/Parser/node.c&quot;, 27, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col3 ref" href="#3n" title='n' data-ref="3n">n</a> &gt; <var>128</var>);</td></tr>
+<tr><th id="28">28</th><td>    <b>while</b> (<a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> &lt; <a class="local col3 ref" href="#3n" title='n' data-ref="3n">n</a>) {</td></tr>
+<tr><th id="29">29</th><td>        <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> &lt;&lt;= <var>1</var>;</td></tr>
+<tr><th id="30">30</th><td>        <b>if</b> (<a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a> &lt;= <var>0</var>)</td></tr>
+<tr><th id="31">31</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="32">32</th><td>    }</td></tr>
+<tr><th id="33">33</th><td>    <b>return</b> <a class="local col4 ref" href="#4result" title='result' data-ref="4result">result</a>;</td></tr>
+<tr><th id="34">34</th><td>}</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><i>/* A gimmick to make massive numbers of reallocs quicker.  The result is</i></td></tr>
+<tr><th id="37">37</th><td><i> * a number &gt;= the input.  In PyNode_AddChild, it's used like so, when</i></td></tr>
+<tr><th id="38">38</th><td><i> * we're about to add child number current_size + 1:</i></td></tr>
+<tr><th id="39">39</th><td><i> *</i></td></tr>
+<tr><th id="40">40</th><td><i> *     if XXXROUNDUP(current_size) &lt; XXXROUNDUP(current_size + 1):</i></td></tr>
+<tr><th id="41">41</th><td><i> *         allocate space for XXXROUNDUP(current_size + 1) total children</i></td></tr>
+<tr><th id="42">42</th><td><i> *     else:</i></td></tr>
+<tr><th id="43">43</th><td><i> *         we already have enough space</i></td></tr>
+<tr><th id="44">44</th><td><i> *</i></td></tr>
+<tr><th id="45">45</th><td><i> * Since a node starts out empty, we must have</i></td></tr>
+<tr><th id="46">46</th><td><i> *</i></td></tr>
+<tr><th id="47">47</th><td><i> *     XXXROUNDUP(0) &lt; XXXROUNDUP(1)</i></td></tr>
+<tr><th id="48">48</th><td><i> *</i></td></tr>
+<tr><th id="49">49</th><td><i> * so that we allocate space for the first child.  One-child nodes are very</i></td></tr>
+<tr><th id="50">50</th><td><i> * common (presumably that would change if we used a more abstract form</i></td></tr>
+<tr><th id="51">51</th><td><i> * of syntax tree), so to avoid wasting memory it's desirable that</i></td></tr>
+<tr><th id="52">52</th><td><i> * XXXROUNDUP(1) == 1.  That in turn forces XXXROUNDUP(0) == 0.</i></td></tr>
+<tr><th id="53">53</th><td><i> *</i></td></tr>
+<tr><th id="54">54</th><td><i> * Else for 2 &lt;= n &lt;= 128, we round up to the closest multiple of 4.  Why 4?</i></td></tr>
+<tr><th id="55">55</th><td><i> * Rounding up to a multiple of an exact power of 2 is very efficient, and</i></td></tr>
+<tr><th id="56">56</th><td><i> * most nodes with more than one child have &lt;= 4 kids.</i></td></tr>
+<tr><th id="57">57</th><td><i> *</i></td></tr>
+<tr><th id="58">58</th><td><i> * Else we call fancy_roundup() to grow proportionately to n.  We've got an</i></td></tr>
+<tr><th id="59">59</th><td><i> * extreme case then (like test_longexp.py), and on many platforms doing</i></td></tr>
+<tr><th id="60">60</th><td><i> * anything less than proportional growth leads to exorbitant runtime</i></td></tr>
+<tr><th id="61">61</th><td><i> * (e.g., MacPython), or extreme fragmentation of user address space (e.g.,</i></td></tr>
+<tr><th id="62">62</th><td><i> * Win98).</i></td></tr>
+<tr><th id="63">63</th><td><i> *</i></td></tr>
+<tr><th id="64">64</th><td><i> * In a run of compileall across the 2.3a0 Lib directory, Andrew MacIntyre</i></td></tr>
+<tr><th id="65">65</th><td><i> * reported that, with this scheme, 89% of PyObject_REALLOC calls in</i></td></tr>
+<tr><th id="66">66</th><td><i> * PyNode_AddChild passed 1 for the size, and 9% passed 4.  So this usually</i></td></tr>
+<tr><th id="67">67</th><td><i> * wastes very little memory, but is very effective at sidestepping</i></td></tr>
+<tr><th id="68">68</th><td><i> * platform-realloc disasters on vulnerable platforms.</i></td></tr>
+<tr><th id="69">69</th><td><i> *</i></td></tr>
+<tr><th id="70">70</th><td><i> * Note that this would be straightforward if a node stored its current</i></td></tr>
+<tr><th id="71">71</th><td><i> * capacity.  The code is tricky to avoid that.</i></td></tr>
+<tr><th id="72">72</th><td><i> */</i></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/XXXROUNDUP" data-ref="_M/XXXROUNDUP">XXXROUNDUP</dfn>(n) ((n) &lt;= 1 ? (n) :                         \</u></td></tr>
+<tr><th id="74">74</th><td><u>               (n) &lt;= 128 ? (int)_Py_SIZE_ROUND_UP((n), 4) :    \</u></td></tr>
+<tr><th id="75">75</th><td><u>               <a class="tu ref" href="#fancy_roundup" title='fancy_roundup' data-use='c' data-ref="fancy_roundup">fancy_roundup</a>(n))</u></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>int</em></td></tr>
+<tr><th id="79">79</th><td><dfn class="decl def" id="PyNode_AddChild" title='PyNode_AddChild' data-ref="PyNode_AddChild">PyNode_AddChild</dfn>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col5 decl" id="5n1" title='n1' data-type='node *' data-ref="5n1">n1</dfn>, <em>int</em> <dfn class="local col6 decl" id="6type" title='type' data-type='int' data-ref="6type">type</dfn>, <em>char</em> *<dfn class="local col7 decl" id="7str" title='str' data-type='char *' data-ref="7str">str</dfn>, <em>int</em> <dfn class="local col8 decl" id="8lineno" title='lineno' data-type='int' data-ref="8lineno">lineno</dfn>, <em>int</em> <dfn class="local col9 decl" id="9col_offset" title='col_offset' data-type='int' data-ref="9col_offset">col_offset</dfn>)</td></tr>
+<tr><th id="80">80</th><td>{</td></tr>
+<tr><th id="81">81</th><td>    <em>const</em> <em>int</em> <dfn class="local col0 decl" id="10nch" title='nch' data-type='const int' data-ref="10nch">nch</dfn> = <a class="local col5 ref" href="#5n1" title='n1' data-ref="5n1">n1</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_nchildren" title='_node::n_nchildren' data-ref="_node::n_nchildren">n_nchildren</a>;</td></tr>
+<tr><th id="82">82</th><td>    <em>int</em> <dfn class="local col1 decl" id="11current_capacity" title='current_capacity' data-type='int' data-ref="11current_capacity">current_capacity</dfn>;</td></tr>
+<tr><th id="83">83</th><td>    <em>int</em> <dfn class="local col2 decl" id="12required_capacity" title='required_capacity' data-type='int' data-ref="12required_capacity">required_capacity</dfn>;</td></tr>
+<tr><th id="84">84</th><td>    <a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col3 decl" id="13n" title='n' data-type='node *' data-ref="13n">n</dfn>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>    <b>if</b> (<a class="local col0 ref" href="#10nch" title='nch' data-ref="10nch">nch</a> == <span class="macro" title="2147483647" data-ref="_M/INT_MAX">INT_MAX</span> || <a class="local col0 ref" href="#10nch" title='nch' data-ref="10nch">nch</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="87">87</th><td>        <b>return</b> <a class="macro" href="../Include/errcode.h.html#25" title="19" data-ref="_M/E_OVERFLOW">E_OVERFLOW</a>;</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>    <a class="local col1 ref" href="#11current_capacity" title='current_capacity' data-ref="11current_capacity">current_capacity</a> = <a class="macro" href="#73" title="((nch) &lt;= 1 ? (nch) : (nch) &lt;= 128 ? (int)(((size_t)((nch)) + (size_t)((4) - 1)) &amp; ~(size_t)((4) - 1)) : fancy_roundup(nch))" data-ref="_M/XXXROUNDUP">XXXROUNDUP</a>(<a class="local col0 ref" href="#10nch" title='nch' data-ref="10nch">nch</a>);</td></tr>
+<tr><th id="90">90</th><td>    <a class="local col2 ref" href="#12required_capacity" title='required_capacity' data-ref="12required_capacity">required_capacity</a> = <a class="macro" href="#73" title="((nch + 1) &lt;= 1 ? (nch + 1) : (nch + 1) &lt;= 128 ? (int)(((size_t)((nch + 1)) + (size_t)((4) - 1)) &amp; ~(size_t)((4) - 1)) : fancy_roundup(nch + 1))" data-ref="_M/XXXROUNDUP">XXXROUNDUP</a>(<a class="local col0 ref" href="#10nch" title='nch' data-ref="10nch">nch</a> + <var>1</var>);</td></tr>
+<tr><th id="91">91</th><td>    <b>if</b> (<a class="local col1 ref" href="#11current_capacity" title='current_capacity' data-ref="11current_capacity">current_capacity</a> &lt; <var>0</var> || <a class="local col2 ref" href="#12required_capacity" title='required_capacity' data-ref="12required_capacity">required_capacity</a> &lt; <var>0</var>)</td></tr>
+<tr><th id="92">92</th><td>        <b>return</b> <a class="macro" href="../Include/errcode.h.html#25" title="19" data-ref="_M/E_OVERFLOW">E_OVERFLOW</a>;</td></tr>
+<tr><th id="93">93</th><td>    <b>if</b> (<a class="local col1 ref" href="#11current_capacity" title='current_capacity' data-ref="11current_capacity">current_capacity</a> &lt; <a class="local col2 ref" href="#12required_capacity" title='required_capacity' data-ref="12required_capacity">required_capacity</a>) {</td></tr>
+<tr><th id="94">94</th><td>        <b>if</b> ((<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span>)<a class="local col2 ref" href="#12required_capacity" title='required_capacity' data-ref="12required_capacity">required_capacity</a> &gt; <a class="macro" href="../../include/stdint.h.html#261" title="(18446744073709551615UL)" data-ref="_M/SIZE_MAX">SIZE_MAX</a> / <b>sizeof</b>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a>)) {</td></tr>
+<tr><th id="95">95</th><td>            <b>return</b> <a class="macro" href="../Include/errcode.h.html#21" title="15" data-ref="_M/E_NOMEM">E_NOMEM</a>;</td></tr>
+<tr><th id="96">96</th><td>        }</td></tr>
+<tr><th id="97">97</th><td>        <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a> = <a class="local col5 ref" href="#5n1" title='n1' data-ref="5n1">n1</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a>;</td></tr>
+<tr><th id="98">98</th><td>        <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a> = (<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *) <a class="macro" href="../Include/objimpl.h.html#118" title="PyObject_Realloc" data-ref="_M/PyObject_REALLOC">PyObject_REALLOC</a>(<a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>,</td></tr>
+<tr><th id="99">99</th><td>                                      <a class="local col2 ref" href="#12required_capacity" title='required_capacity' data-ref="12required_capacity">required_capacity</a> * <b>sizeof</b>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a>));</td></tr>
+<tr><th id="100">100</th><td>        <b>if</b> (<a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="101">101</th><td>            <b>return</b> <a class="macro" href="../Include/errcode.h.html#21" title="15" data-ref="_M/E_NOMEM">E_NOMEM</a>;</td></tr>
+<tr><th id="102">102</th><td>        <a class="local col5 ref" href="#5n1" title='n1' data-ref="5n1">n1</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a> = <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>;</td></tr>
+<tr><th id="103">103</th><td>    }</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a> = &amp;<a class="local col5 ref" href="#5n1" title='n1' data-ref="5n1">n1</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a>[<a class="local col5 ref" href="#5n1" title='n1' data-ref="5n1">n1</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_nchildren" title='_node::n_nchildren' data-ref="_node::n_nchildren">n_nchildren</a>++];</td></tr>
+<tr><th id="106">106</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_type" title='_node::n_type' data-ref="_node::n_type">n_type</a> = <a class="local col6 ref" href="#6type" title='type' data-ref="6type">type</a>;</td></tr>
+<tr><th id="107">107</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_str" title='_node::n_str' data-ref="_node::n_str">n_str</a> = <a class="local col7 ref" href="#7str" title='str' data-ref="7str">str</a>;</td></tr>
+<tr><th id="108">108</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_lineno" title='_node::n_lineno' data-ref="_node::n_lineno">n_lineno</a> = <a class="local col8 ref" href="#8lineno" title='lineno' data-ref="8lineno">lineno</a>;</td></tr>
+<tr><th id="109">109</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_col_offset" title='_node::n_col_offset' data-ref="_node::n_col_offset">n_col_offset</a> = <a class="local col9 ref" href="#9col_offset" title='col_offset' data-ref="9col_offset">col_offset</a>;</td></tr>
+<tr><th id="110">110</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_nchildren" title='_node::n_nchildren' data-ref="_node::n_nchildren">n_nchildren</a> = <var>0</var>;</td></tr>
+<tr><th id="111">111</th><td>    <a class="local col3 ref" href="#13n" title='n' data-ref="13n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="112">112</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="113">113</th><td>}</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><i  data-doc="freechildren">/* Forward */</i></td></tr>
+<tr><th id="116">116</th><td><em>static</em> <em>void</em> <a class="tu decl" href="#freechildren" title='freechildren' data-type='void freechildren(node * )' data-ref="freechildren">freechildren</a>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *);</td></tr>
+<tr><th id="117">117</th><td><em>static</em> <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <a class="tu decl" href="#sizeofchildren" title='sizeofchildren' data-type='Py_ssize_t sizeofchildren(node * n)' data-ref="sizeofchildren">sizeofchildren</a>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col4 decl" id="14n" title='n' data-type='node *' data-ref="14n">n</dfn>);</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><em>void</em></td></tr>
+<tr><th id="121">121</th><td><dfn class="decl def" id="PyNode_Free" title='PyNode_Free' data-ref="PyNode_Free">PyNode_Free</dfn>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col5 decl" id="15n" title='n' data-type='node *' data-ref="15n">n</dfn>)</td></tr>
+<tr><th id="122">122</th><td>{</td></tr>
+<tr><th id="123">123</th><td>    <b>if</b> (<a class="local col5 ref" href="#15n" title='n' data-ref="15n">n</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="124">124</th><td>        <a class="tu ref" href="#freechildren" title='freechildren' data-use='c' data-ref="freechildren">freechildren</a>(<a class="local col5 ref" href="#15n" title='n' data-ref="15n">n</a>);</td></tr>
+<tr><th id="125">125</th><td>        <a class="macro" href="../Include/objimpl.h.html#119" title="PyObject_Free" data-ref="_M/PyObject_FREE">PyObject_FREE</a>(<a class="local col5 ref" href="#15n" title='n' data-ref="15n">n</a>);</td></tr>
+<tr><th id="126">126</th><td>    }</td></tr>
+<tr><th id="127">127</th><td>}</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a></td></tr>
+<tr><th id="130">130</th><td><dfn class="decl def" id="_PyNode_SizeOf" title='_PyNode_SizeOf' data-ref="_PyNode_SizeOf">_PyNode_SizeOf</dfn>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col6 decl" id="16n" title='n' data-type='node *' data-ref="16n">n</dfn>)</td></tr>
+<tr><th id="131">131</th><td>{</td></tr>
+<tr><th id="132">132</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="17res" title='res' data-type='Py_ssize_t' data-ref="17res">res</dfn> = <var>0</var>;</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>    <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="135">135</th><td>        <a class="local col7 ref" href="#17res" title='res' data-ref="17res">res</a> = <b>sizeof</b>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a>) + <a class="tu ref" href="#sizeofchildren" title='sizeofchildren' data-use='c' data-ref="sizeofchildren">sizeofchildren</a>(<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>);</td></tr>
+<tr><th id="136">136</th><td>    <b>return</b> <a class="local col7 ref" href="#17res" title='res' data-ref="17res">res</a>;</td></tr>
+<tr><th id="137">137</th><td>}</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="140">140</th><td><dfn class="tu decl def" id="freechildren" title='freechildren' data-type='void freechildren(node * n)' data-ref="freechildren">freechildren</dfn>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col8 decl" id="18n" title='n' data-type='node *' data-ref="18n">n</dfn>)</td></tr>
+<tr><th id="141">141</th><td>{</td></tr>
+<tr><th id="142">142</th><td>    <em>int</em> <dfn class="local col9 decl" id="19i" title='i' data-type='int' data-ref="19i">i</dfn>;</td></tr>
+<tr><th id="143">143</th><td>    <b>for</b> (<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a> = <a class="macro" href="../Include/node.h.html#28" title="((n)-&gt;n_nchildren)" data-ref="_M/NCH">NCH</a>(<a class="local col8 ref" href="#18n" title='n' data-ref="18n">n</a>); --<a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a> &gt;= <var>0</var>; )</td></tr>
+<tr><th id="144">144</th><td>        <a class="tu ref" href="#freechildren" title='freechildren' data-use='c' data-ref="freechildren">freechildren</a>(<a class="macro" href="../Include/node.h.html#30" title="(&amp;(n)-&gt;n_child[i])" data-ref="_M/CHILD">CHILD</a>(<a class="local col8 ref" href="#18n" title='n' data-ref="18n">n</a>, <a class="local col9 ref" href="#19i" title='i' data-ref="19i">i</a>));</td></tr>
+<tr><th id="145">145</th><td>    <b>if</b> (<a class="local col8 ref" href="#18n" title='n' data-ref="18n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="146">146</th><td>        <a class="macro" href="../Include/objimpl.h.html#119" title="PyObject_Free" data-ref="_M/PyObject_FREE">PyObject_FREE</a>(<a class="local col8 ref" href="#18n" title='n' data-ref="18n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a>);</td></tr>
+<tr><th id="147">147</th><td>    <b>if</b> (<a class="macro" href="../Include/node.h.html#33" title="((n)-&gt;n_str)" data-ref="_M/STR">STR</a>(<a class="local col8 ref" href="#18n" title='n' data-ref="18n">n</a>) != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="148">148</th><td>        <a class="macro" href="../Include/objimpl.h.html#119" title="PyObject_Free" data-ref="_M/PyObject_FREE">PyObject_FREE</a>(<a class="macro" href="../Include/node.h.html#33" title="((n)-&gt;n_str)" data-ref="_M/STR">STR</a>(<a class="local col8 ref" href="#18n" title='n' data-ref="18n">n</a>));</td></tr>
+<tr><th id="149">149</th><td>}</td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td><em>static</em> <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a></td></tr>
+<tr><th id="152">152</th><td><dfn class="tu decl def" id="sizeofchildren" title='sizeofchildren' data-type='Py_ssize_t sizeofchildren(node * n)' data-ref="sizeofchildren">sizeofchildren</dfn>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a> *<dfn class="local col0 decl" id="20n" title='n' data-type='node *' data-ref="20n">n</dfn>)</td></tr>
+<tr><th id="153">153</th><td>{</td></tr>
+<tr><th id="154">154</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="21res" title='res' data-type='Py_ssize_t' data-ref="21res">res</dfn> = <var>0</var>;</td></tr>
+<tr><th id="155">155</th><td>    <em>int</em> <dfn class="local col2 decl" id="22i" title='i' data-type='int' data-ref="22i">i</dfn>;</td></tr>
+<tr><th id="156">156</th><td>    <b>for</b> (<a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a> = <a class="macro" href="../Include/node.h.html#28" title="((n)-&gt;n_nchildren)" data-ref="_M/NCH">NCH</a>(<a class="local col0 ref" href="#20n" title='n' data-ref="20n">n</a>); --<a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a> &gt;= <var>0</var>; )</td></tr>
+<tr><th id="157">157</th><td>        <a class="local col1 ref" href="#21res" title='res' data-ref="21res">res</a> += <a class="tu ref" href="#sizeofchildren" title='sizeofchildren' data-use='c' data-ref="sizeofchildren">sizeofchildren</a>(<a class="macro" href="../Include/node.h.html#30" title="(&amp;(n)-&gt;n_child[i])" data-ref="_M/CHILD">CHILD</a>(<a class="local col0 ref" href="#20n" title='n' data-ref="20n">n</a>, <a class="local col2 ref" href="#22i" title='i' data-ref="22i">i</a>));</td></tr>
+<tr><th id="158">158</th><td>    <b>if</b> (<a class="local col0 ref" href="#20n" title='n' data-ref="20n">n</a>-&gt;<a class="ref" href="../Include/node.h.html#_node::n_child" title='_node::n_child' data-ref="_node::n_child">n_child</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="159">159</th><td>        <i>/* allocated size of n-&gt;n_child array */</i></td></tr>
+<tr><th id="160">160</th><td>        <a class="local col1 ref" href="#21res" title='res' data-ref="21res">res</a> += <a class="macro" href="#73" title="((((n)-&gt;n_nchildren)) &lt;= 1 ? (((n)-&gt;n_nchildren)) : (((n)-&gt;n_nchildren)) &lt;= 128 ? (int)(((size_t)((((n)-&gt;n_nchildren))) + (size_t)((4) - 1)) &amp; ~(size_t)((4) - 1)) : fancy_roundup(((n)-&gt;n_nchildren)))" data-ref="_M/XXXROUNDUP">XXXROUNDUP</a>(<a class="macro" href="../Include/node.h.html#28" title="((n)-&gt;n_nchildren)" data-ref="_M/NCH">NCH</a>(<a class="local col0 ref" href="#20n" title='n' data-ref="20n">n</a>)) * <b>sizeof</b>(<a class="typedef" href="../Include/node.h.html#node" title='node' data-type='struct _node' data-ref="node">node</a>);</td></tr>
+<tr><th id="161">161</th><td>    <b>if</b> (<a class="macro" href="../Include/node.h.html#33" title="((n)-&gt;n_str)" data-ref="_M/STR">STR</a>(<a class="local col0 ref" href="#20n" title='n' data-ref="20n">n</a>) != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="162">162</th><td>        <a class="local col1 ref" href="#21res" title='res' data-ref="21res">res</a> += <a class="ref" href="../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="macro" href="../Include/node.h.html#33" title="((n)-&gt;n_str)" data-ref="_M/STR">STR</a>(<a class="local col0 ref" href="#20n" title='n' data-ref="20n">n</a>)) + <var>1</var>;</td></tr>
+<tr><th id="163">163</th><td>    <b>return</b> <a class="local col1 ref" href="#21res" title='res' data-ref="21res">res</a>;</td></tr>
+<tr><th id="164">164</th><td>}</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,24 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='49' macro='1' type='HashReturn _PySHA3_Keccak_HashInitialize(Keccak_HashInstance * hashInstance, unsigned int rate, unsigned int capacity, unsigned int hashbitlen, unsigned char delimitedSuffix)'/>
+<def f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='21' macro='1' type='HashReturn _PySHA3_Keccak_HashInitialize(Keccak_HashInstance * instance, unsigned int rate, unsigned int capacity, unsigned int hashbitlen, unsigned char delimitedSuffix)'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='70' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='70' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='70' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='70' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='70' u='c' c='py_sha3_new_impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='70' u='c' c='py_sha3_new_impl'/>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='34'>/**
+  * Function to initialize the Keccak[r, c] sponge function instance used in sequential hashing mode.
+  * @param  hashInstance    Pointer to the hash instance to be initialized.
+  * @param  rate        The value of the rate r.
+  * @param  capacity    The value of the capacity c.
+  * @param  hashbitlen  The desired number of output bits,
+  *                     or 0 for an arbitrarily-long output.
+  * @param  delimitedSuffix Bits that will be automatically appended to the end
+  *                         of the input message, as in domain separation.
+  *                         This is a byte containing from 0 to 7 bits
+  *                         formatted like the @a delimitedData parameter of
+  *                         the Keccak_SpongeAbsorbLastFewBits() function.
+  * @pre    One must have r+c=1600 and the rate a multiple of 8 bits in this implementation.
+  * @return SUCCESS if successful, FAIL otherwise.
+  */</doc>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='19'>/* ---------------------------------------------------------------- */</doc>

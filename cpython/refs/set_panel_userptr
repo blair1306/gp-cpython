@@ -1,0 +1,3 @@
+<dec f='include/panel.h' l='66' type='int set_panel_userptr(PANEL * , const void * )'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='224' u='c' c='PyCursesPanel_Dealloc'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='330' u='c' c='PyCursesPanel_set_panel_userptr'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/descrobject.h' l='71' type='void *'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/descrobject.h' l='71'>/* This can be any function pointer */</doc>
+<use f='codebrowser/Objects/descrobject.c' l='783' u='w' c='PyDescr_NewWrapper'/>
+<use f='codebrowser/Objects/descrobject.c' l='1174' u='r' c='wrapper_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='1183' u='r' c='wrapper_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='6330' u='r' c='slot_tp_getattr_hook'/>
+<use f='codebrowser/Objects/typeobject.c' l='6978' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='6979' u='r' c='update_one_slot'/>

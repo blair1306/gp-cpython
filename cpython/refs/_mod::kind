@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/Python-ast.h' l='45' type='enum _mod_kind'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1220' u='w' c='_Py_Module'/>
+<use f='codebrowser/Python/Python-ast.c' l='1233' u='w' c='_Py_Interactive'/>
+<use f='codebrowser/Python/Python-ast.c' l='1250' u='w' c='_Py_Expression'/>
+<use f='codebrowser/Python/Python-ast.c' l='1262' u='w' c='_Py_Suite'/>
+<use f='codebrowser/Python/Python-ast.c' l='2604' u='r' c='ast2obj_mod'/>
+<use f='codebrowser/Python/ast.c' l='566' u='r' c='PyAST_Validate'/>
+<use f='codebrowser/Python/compile.c' l='1457' u='r' c='compiler_mod'/>
+<use f='codebrowser/Python/compile.c' l='1483' u='r' c='compiler_mod'/>
+<use f='codebrowser/Python/future.c' l='65' u='r' c='future_parse'/>
+<use f='codebrowser/Python/future.c' l='65' u='r' c='future_parse'/>
+<use f='codebrowser/Python/symtable.c' l='278' u='r' c='PySymtable_BuildObject'/>

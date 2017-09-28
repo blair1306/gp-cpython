@@ -1,0 +1,26 @@
+<def f='codebrowser/Include/pystate.h' l='48' ll='86'/>
+<size>2224</size>
+<mbr r='_is::next' o='0' t='struct _is *'/>
+<mbr r='_is::tstate_head' o='64' t='struct _ts *'/>
+<mbr r='_is::id' o='128' t='int64_t'/>
+<mbr r='_is::modules' o='192' t='PyObject *'/>
+<mbr r='_is::modules_by_index' o='256' t='PyObject *'/>
+<mbr r='_is::sysdict' o='320' t='PyObject *'/>
+<mbr r='_is::builtins' o='384' t='PyObject *'/>
+<mbr r='_is::importlib' o='448' t='PyObject *'/>
+<mbr r='_is::codec_search_path' o='512' t='PyObject *'/>
+<mbr r='_is::codec_search_cache' o='576' t='PyObject *'/>
+<mbr r='_is::codec_error_registry' o='640' t='PyObject *'/>
+<mbr r='_is::codecs_initialized' o='704' t='int'/>
+<mbr r='_is::fscodec_initialized' o='736' t='int'/>
+<mbr r='_is::core_config' o='768' t='_PyCoreConfig'/>
+<mbr r='_is::config' o='960' t='_PyMainInterpreterConfig'/>
+<mbr r='_is::dlopenflags' o='992' t='int'/>
+<mbr r='_is::builtins_copy' o='1024' t='PyObject *'/>
+<mbr r='_is::import_func' o='1088' t='PyObject *'/>
+<mbr r='_is::eval_frame' o='1152' t='_PyFrameEvalFunction'/>
+<mbr r='_is::co_extra_user_count' o='1216' t='Py_ssize_t'/>
+<mbr r='_is::co_extra_freefuncs' o='1280' t='freefunc [255]'/>
+<mbr r='_is::before_forkers' o='17600' t='PyObject *'/>
+<mbr r='_is::after_forkers_parent' o='17664' t='PyObject *'/>
+<mbr r='_is::after_forkers_child' o='17728' t='PyObject *'/>

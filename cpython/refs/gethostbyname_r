@@ -1,0 +1,2 @@
+<dec f='include/netdb.h' l='179' type='int gethostbyname_r(const char *restrict __name, struct hostent *restrict __result_buf, char *restrict __buf, size_t __buflen, struct hostent **restrict __result, int *restrict __h_errnop)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5165' u='c' c='socket_gethostbyname_ex'/>

@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='270' ll='307' type='int FieldNameIterator_next(FieldNameIterator * self, int * is_attribute, Py_ssize_t * name_idx, SubString * name)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='448' u='c' c='get_field_object'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1162' u='c' c='fieldnameiter_next'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='269'>/* returns 0 on error, 1 on non-error termination, and 2 if it returns a value */</doc>

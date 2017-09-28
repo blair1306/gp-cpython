@@ -1,0 +1,7 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/numbertheory.h' l='42' ll='47'/>
+<size>24</size>
+<doc f='codebrowser/Modules/_decimal/libmpdec/numbertheory.h' l='41'>/* transform parameters */</doc>
+<mbr r='fnt_params::modnum' o='0' t='int'/>
+<mbr r='fnt_params::modulus' o='64' t='mpd_uint_t'/>
+<mbr r='fnt_params::kernel' o='128' t='mpd_uint_t'/>
+<mbr r='fnt_params::wtable' o='192' t='mpd_uint_t []'/>

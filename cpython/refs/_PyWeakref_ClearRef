@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='67' type='void _PyWeakref_ClearRef(PyWeakReference * self)'/>
+<use f='codebrowser/Modules/gcmodule.c' l='652' u='c' c='handle_weakrefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='1214' u='c' c='subtype_dealloc'/>
+<def f='codebrowser/Objects/weakrefobject.c' l='90' ll='102' type='void _PyWeakref_ClearRef(PyWeakReference * self)'/>
+<doc f='codebrowser/Objects/weakrefobject.c' l='79'>/* Cyclic gc uses this to *just* clear the passed-in reference, leaving
+ * the callback intact and uncalled.  It must be possible to call self&apos;s
+ * tp_dealloc() after calling this, so self has to be left in a sane enough
+ * state for that to work.  We expect tp_dealloc to decref the callback
+ * then.  The reason for not letting clear_weakref() decref the callback
+ * right now is that if the callback goes away, that may in turn trigger
+ * another callback (if a weak reference to the callback exists) -- running
+ * arbitrary Python code in the middle of gc is a disaster.  The convolution
+ * here allows gc to delay triggering such callbacks until the world is in
+ * a sane state again.
+ */</doc>

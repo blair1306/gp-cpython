@@ -1,0 +1,4 @@
+<dec f='include/dirent.h' l='208' type='void rewinddir(DIR * __dirp)'/>
+<doc f='include/dirent.h' l='207'>/* Rewind DIRP to the beginning of the directory.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3659' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11992' u='c' c='ScandirIterator_closedir'/>

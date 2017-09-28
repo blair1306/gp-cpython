@@ -1,0 +1,34 @@
+<dec f='codebrowser/Include/pymem.h' l='104' type='void * PyMem_Realloc(void * ptr, size_t new_size)'/>
+<use f='codebrowser/Modules/_csv.c' l='570' macro='1' u='c'/>
+<use f='codebrowser/Modules/_csv.c' l='1108' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1637' u='c' c='resize'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5669' u='r' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2114' macro='1' u='c'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='109' u='c' c='resize_buffer'/>
+<use f='codebrowser/Modules/_localemodule.c' l='276' u='c' c='PyLocale_strxfrm'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='977' u='c' c='decompress'/>
+<use f='codebrowser/Modules/_pickle.c' l='434' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='1243' u='c' c='_Unpickler_CopyLine'/>
+<use f='codebrowser/Modules/_pickle.c' l='1294' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='6146' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='213' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2259' u='c' c='ndarray_memoryview_from_buffer'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3342' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/arraymodule.c' l='160' macro='1' u='c'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2720' u='c' c='array_new'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='140' u='c' c='atexit_register'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1248' u='c' c='_fsum_realloc'/>
+<use f='codebrowser/Modules/selectmodule.c' l='357' macro='1' u='c'/>
+<use f='codebrowser/Modules/unicodedata.c' l='530' u='c' c='nfd_nfkd'/>
+<use f='codebrowser/Objects/codeobject.c' l='868' u='c' c='_PyCode_SetExtra'/>
+<use f='codebrowser/Objects/listobject.c' l='67' u='c' c='list_resize'/>
+<def f='codebrowser/Objects/obmalloc.c' l='430' ll='437' type='void * PyMem_Realloc(void * ptr, size_t new_size)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='744' macro='1' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='979' macro='1' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1051' macro='1' u='c'/>
+<use f='codebrowser/Python/import.c' l='2102' macro='1' u='c'/>
+<use f='codebrowser/Python/marshal.c' l='684' macro='1' u='c'/>
+<use f='codebrowser/Python/peephole.c' l='514' macro='1' u='c'/>
+<use f='codebrowser/Python/peephole.c' l='545' macro='1' u='c'/>
+<use f='codebrowser/Python/peephole.c' l='592' macro='1' u='c'/>
+<use f='codebrowser/Python/peephole.c' l='610' macro='1' u='c'/>

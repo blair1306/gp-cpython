@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/object.h' l='507' type='PyTypeObject * _PyType_CalculateMetaclass(PyTypeObject * , PyObject * )'/>
+<def f='codebrowser/Objects/typeobject.c' l='2283' ll='2316' type='PyTypeObject * _PyType_CalculateMetaclass(PyTypeObject * metatype, PyObject * bases)'/>
+<use f='codebrowser/Objects/typeobject.c' l='2364' u='c' c='type_new'/>
+<doc f='codebrowser/Objects/typeobject.c' l='2282'>/* Determine the most derived metatype. */</doc>
+<use f='codebrowser/Python/bltinmodule.c' l='120' u='c' c='builtin___build_class__'/>

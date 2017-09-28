@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/tupleobject.h' l='45' type='PyObject * PyTuple_GetItem(PyObject * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='965' u='c' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1567' u='c' c='microseconds_to_delta_ex'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1582' u='c' c='microseconds_to_delta_ex'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1593' u='c' c='microseconds_to_delta_ex'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1609' u='c' c='microseconds_to_delta_ex'/>
+<use f='codebrowser/Modules/audioop.c' l='1371' u='c' c='audioop_ratecv_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='1429' u='c' c='get_mtime_of_source'/>
+<use f='codebrowser/Modules/zipimport.c' l='1430' u='c' c='get_mtime_of_source'/>
+<use f='codebrowser/Modules/zipimport.c' l='1449' u='c' c='get_code_from_data'/>
+<use f='codebrowser/Modules/zipimport.c' l='1512' u='c' c='get_module_code'/>
+<use f='codebrowser/Objects/bytesobject.c' l='388' u='c' c='getnextarg'/>
+<use f='codebrowser/Objects/funcobject.c' l='38' u='c' c='PyFunction_NewWithQualName'/>
+<def f='codebrowser/Objects/tupleobject.c' l='152' ll='164' type='PyObject * PyTuple_GetItem(PyObject * op, Py_ssize_t i)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14107' u='c' c='unicode_format_getnextarg'/>
+<use f='codebrowser/Python/ceval.c' l='1208' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2382' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='824' u='c' c='unicode_concatenate'/>

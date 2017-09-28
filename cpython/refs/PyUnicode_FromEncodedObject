@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='860' type='PyObject * PyUnicode_FromEncodedObject(PyObject * obj, const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='847'>/* Decode obj to a Unicode object.
+
+   bytes, bytearray and other bytes-like objects are decoded according to the
+   given encoding and error handler. The encoding and error handler can be
+   NULL to have the interface use UTF-8 and &quot;strict&quot;.
+
+   All other objects (including Unicode objects) raise an exception.
+
+   The API returns NULL in case of an error. The caller is responsible
+   for decref&apos;ing the returned objects.
+
+*/</doc>
+<use f='codebrowser/Modules/_pickle.c' l='4904' u='c' c='load_string'/>
+<use f='codebrowser/Modules/_ssl.c' l='3795' u='c' c='_servername_callback'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1918' u='c' c='bytearray_decode_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2302' u='c' c='bytes_decode_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3063' ll='3108' type='PyObject * PyUnicode_FromEncodedObject(PyObject * obj, const char * encoding, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15055' u='c' c='unicode_new'/>
+<use f='codebrowser/Python/sysmodule.c' l='138' u='c' c='sys_displayhook_unencodable'/>

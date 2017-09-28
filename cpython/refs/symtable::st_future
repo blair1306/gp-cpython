@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/symtable.h' l='31' type='PyFutureFeatures *'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='52' u='r' c='_symtable_symtable_impl'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/symtable.h' l='31'>/* module&apos;s future features that affect
+                                       the symbol table */</doc>
+<use f='codebrowser/Python/symtable.c' l='256' u='w' c='PySymtable_BuildObject'/>

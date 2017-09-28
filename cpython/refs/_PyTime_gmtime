@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pytime.h' l='193' type='int _PyTime_gmtime(time_t t, struct tm * tm)'/>
+<doc f='codebrowser/Include/pytime.h' l='191'>/* Converts a timestamp to the Gregorian time, assuming UTC.
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4410' u='r' c='datetime_datetime_now_impl'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4425' u='r' c='datetime_utcnow'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4445' u='r' c='datetime_fromtimestamp'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4463' u='r' c='datetime_utcfromtimestamp'/>
+<use f='codebrowser/Modules/timemodule.c' l='351' u='c' c='time_gmtime'/>
+<def f='codebrowser/Python/pytime.c' l='816' ll='840' type='int _PyTime_gmtime(time_t t, struct tm * tm)'/>

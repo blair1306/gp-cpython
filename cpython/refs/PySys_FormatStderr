@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/sysmodule.h' l='26' type='void PySys_FormatStderr(const char * format)'/>
+<use f='codebrowser/Modules/gcmodule.c' l='751' u='c' c='debug_cycle'/>
+<use f='codebrowser/Modules/gcmodule.c' l='929' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1044' u='c' c='collect'/>
+<use f='codebrowser/Modules/zipimport.c' l='567' u='c' c='zipimport_zipimporter_load_module_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='1077' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1293' u='c' c='unmarshal_code'/>
+<use f='codebrowser/Modules/zipimport.c' l='1301' u='c' c='unmarshal_code'/>
+<use f='codebrowser/Modules/zipimport.c' l='1485' u='c' c='get_module_code'/>
+<use f='codebrowser/Objects/moduleobject.c' l='650' u='c' c='module_dealloc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1302' u='c' c='indenterror'/>
+<use f='codebrowser/Python/import.c' l='399' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='450' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='459' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='462' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='635' u='c' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/pylifecycle.c' l='273' u='c' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='294' u='c' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='298' u='c' c='initimport'/>
+<def f='codebrowser/Python/sysmodule.c' l='2501' ll='2509' type='void PySys_FormatStderr(const char * format)'/>

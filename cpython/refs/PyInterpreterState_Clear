@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='193' type='void PyInterpreterState_Clear(PyInterpreterState * )'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1046' u='c' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1274' u='c' c='Py_EndInterpreter'/>
+<def f='codebrowser/Python/pystate.c' l='150' ll='173' type='void PyInterpreterState_Clear(PyInterpreterState * interp)'/>

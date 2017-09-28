@@ -1,0 +1,32 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='150' ll='258' type='mpd_uint_t x64_mulmod(mpd_uint_t a, mpd_uint_t b, mpd_uint_t m)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='263' u='c' c='x64_mulmod2c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='264' u='c' c='x64_mulmod2c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='271' u='c' c='x64_mulmod2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='272' u='c' c='x64_mulmod2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='282' u='c' c='x64_powmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='283' u='c' c='x64_powmod'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='135'>/*
+ * A proof of the algorithm is in literature/mulmod-64.txt. An ACL2
+ * proof is in umodarith.lisp: section &quot;Fast modular reduction&quot;.
+ *
+ * Algorithm: calculate (a * b) % p:
+ *
+ *   a) hi, lo &lt;- a * b       # Calculate a * b.
+ *
+ *   b) hi, lo &lt;-  R(hi, lo)  # Reduce modulo p.
+ *
+ *   c) Repeat step b) until 0 &lt;= hi * 2**64 + lo &lt; 2*p.
+ *
+ *   d) If the result is less than p, return lo. Otherwise return lo - p.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='155' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='163' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='63' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='67' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='76' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='80' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='169' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='236' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='107' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='177' macro='1' u='c'/>

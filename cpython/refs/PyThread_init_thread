@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pythread.h' l='24' type='void PyThread_init_thread()'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1406' u='c' c='PyInit__thread'/>
+<def f='codebrowser/Python/thread.c' l='59' ll='77' type='void PyThread_init_thread()'/>
+<use f='codebrowser/Python/thread_pthread.h' l='201' u='c' c='PyThread_start_new_thread'/>
+<use f='codebrowser/Python/thread_pthread.h' l='257' u='c' c='PyThread_get_thread_ident'/>
+<use f='codebrowser/Python/thread_pthread.h' l='285' u='c' c='PyThread_allocate_lock'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/object.h' l='759' type='void _Py_PrintReferences(FILE * )'/>
+<def f='codebrowser/Objects/object.c' l='1880' ll='1891' type='void _Py_PrintReferences(FILE * fp)'/>
+<doc f='codebrowser/Objects/object.c' l='1877'>/* Print all live objects.  Because PyObject_Print is called, the
+ * interpreter must be in a healthy state.
+ */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='1042' u='c' c='Py_FinalizeEx'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/dtoa.h' l='8' type='char * _Py_dg_dtoa(double d, int mode, int ndigits, int * decpt, int * sign, char ** rve)'/>
+<use f='codebrowser/Objects/floatobject.c' l='940' u='c' c='double_round'/>
+<def f='codebrowser/Python/dtoa.c' l='2271' ll='2871' type='char * _Py_dg_dtoa(double dd, int mode, int ndigits, int * decpt, int * sign, char ** rve)'/>
+<doc f='codebrowser/Python/dtoa.c' l='2267'>/* Additional notes (METD): (1) returns NULL on failure.  (2) to avoid memory
+   leakage, a successful call to _Py_dg_dtoa should always be matched by a
+   call to _Py_dg_freedtoa. */</doc>
+<use f='codebrowser/Python/pystrtod.c' l='1008' u='c' c='format_float_short'/>

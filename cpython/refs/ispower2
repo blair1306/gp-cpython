@@ -1,0 +1,12 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/bits.h' l='38' ll='42' type='int ispower2(mpd_size_t n)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='62' u='c' c='fnt_convolute'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='129' u='c' c='fnt_autoconvolute'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/bits.h' l='37'>/* Check if n is a power of 2. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='87' u='c' c='fnt_dif2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='48' u='c' c='std_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='67' u='c' c='std_inv_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='86' u='c' c='_mpd_init_fnt_params'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='61' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='146' u='c' c='inv_six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='249' u='c' c='transpose_pow2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='250' u='c' c='transpose_pow2'/>

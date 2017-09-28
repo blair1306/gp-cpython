@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='491' type='int mpd_qcmp(const mpd_t * a, const mpd_t * b, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4404' u='c' c='dec_richcompare'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2222' ll='2233' type='int mpd_qcmp(const mpd_t * a, const mpd_t * b, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4397' u='c' c='mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4931' u='c' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5080' u='c' c='mpd_qlog10'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2221'>/* Compare two values and return an integer result. */</doc>

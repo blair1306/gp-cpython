@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>enumobject.c.h source code [codebrowser/Objects/clinic/enumobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/enumobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='enumobject.c.h.html'>enumobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char enum_new__doc__[] = &quot;enumerate(iterable, start=0)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return an enumerate object.\n&quot;&quot;\n&quot;&quot;  iterable\n&quot;&quot;    an object supporting iteration\n&quot;&quot;\n&quot;&quot;The enumerate object yields pairs containing a count (from start, which\n&quot;&quot;defaults to zero) and a value yielded by the iterable argument.\n&quot;&quot;\n&quot;&quot;enumerate is useful for obtaining an indexed list:\n&quot;&quot;    (0, seq[0]), (1, seq[1]), (2, seq[2]), ...&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="enum_new__doc__" title='enum_new__doc__' data-ref="enum_new__doc__">enum_new__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"enumerate(iterable, start=0)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return an enumerate object.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"  iterable\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"    an object supporting iteration\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"The enumerate object yields pairs containing a count (from start, which\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"defaults to zero) and a value yielded by the iterable argument.\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"enumerate is useful for obtaining an indexed list:\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"    (0, seq[0]), (1, seq[1]), (2, seq[2]), ..."</q>);</td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="21">21</th><td><a class="decl" href="../enumobject.c.html#enum_new_impl" title='enum_new_impl' data-ref="enum_new_impl" id="enum_new_impl">enum_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col1 decl" id="1type" title='type' data-type='PyTypeObject *' data-ref="1type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2iterable" title='iterable' data-type='PyObject *' data-ref="2iterable">iterable</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3start" title='start' data-type='PyObject *' data-ref="3start">start</dfn>);</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="24">24</th><td><dfn class="decl def" id="enum_new" title='enum_new' data-ref="enum_new">enum_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col4 decl" id="4type" title='type' data-type='PyTypeObject *' data-ref="4type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject *' data-ref="5args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="6kwargs" title='kwargs' data-type='PyObject *' data-ref="6kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="25">25</th><td>{</td></tr>
+<tr><th id="26">26</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7return_value" title='return_value' data-type='PyObject *' data-ref="7return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="27">27</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col8 decl" id="8_keywords" title='_keywords' data-type='const char *const [3]' data-ref="8_keywords">_keywords</dfn>[] = {<q>"iterable"</q>, <q>"start"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="28">28</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col9 decl" id="9_parser" title='_parser' data-type='_PyArg_Parser' data-ref="9_parser">_parser</dfn> = {<q>"O|O:enumerate"</q>, <a class="local col8 ref" href="#8_keywords" title='_keywords' data-ref="8_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="29">29</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10iterable" title='iterable' data-type='PyObject *' data-ref="10iterable">iterable</dfn>;</td></tr>
+<tr><th id="30">30</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11start" title='start' data-type='PyObject *' data-ref="11start">start</dfn> = <var>0</var>;</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <a class="local col6 ref" href="#6kwargs" title='kwargs' data-ref="6kwargs">kwargs</a>, &amp;<a class="local col9 ref" href="#9_parser" title='_parser' data-ref="9_parser">_parser</a>,</td></tr>
+<tr><th id="33">33</th><td>        &amp;<a class="local col0 ref" href="#10iterable" title='iterable' data-ref="10iterable">iterable</a>, &amp;<a class="local col1 ref" href="#11start" title='start' data-ref="11start">start</a>)) {</td></tr>
+<tr><th id="34">34</th><td>        <b>goto</b> <a class="lbl" href="#12exit" data-ref="12exit">exit</a>;</td></tr>
+<tr><th id="35">35</th><td>    }</td></tr>
+<tr><th id="36">36</th><td>    <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a> = <a class="ref" href="../enumobject.c.html#enum_new_impl" title='enum_new_impl' data-ref="enum_new_impl">enum_new_impl</a>(<a class="local col4 ref" href="#4type" title='type' data-ref="4type">type</a>, <a class="local col0 ref" href="#10iterable" title='iterable' data-ref="10iterable">iterable</a>, <a class="local col1 ref" href="#11start" title='start' data-ref="11start">start</a>);</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><dfn class="lbl" id="12exit" data-ref="12exit">exit</dfn>:</td></tr>
+<tr><th id="39">39</th><td>    <b>return</b> <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a>;</td></tr>
+<tr><th id="40">40</th><td>}</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char reversed_new__doc__[] = &quot;reversed(sequence, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a reverse iterator over the values of the given sequence.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="reversed_new__doc__" title='reversed_new__doc__' data-ref="reversed_new__doc__">reversed_new__doc__</dfn>,</td></tr>
+<tr><th id="43">43</th><td><q>"reversed(sequence, /)\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"--\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"Return a reverse iterator over the values of the given sequence."</q>);</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="49">49</th><td><a class="decl" href="../enumobject.c.html#reversed_new_impl" title='reversed_new_impl' data-ref="reversed_new_impl" id="reversed_new_impl">reversed_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col3 decl" id="13type" title='type' data-type='PyTypeObject *' data-ref="13type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14seq" title='seq' data-type='PyObject *' data-ref="14seq">seq</dfn>);</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="52">52</th><td><dfn class="decl def" id="reversed_new" title='reversed_new' data-ref="reversed_new">reversed_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col5 decl" id="15type" title='type' data-type='PyTypeObject *' data-ref="15type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16args" title='args' data-type='PyObject *' data-ref="16args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="17kwargs" title='kwargs' data-type='PyObject *' data-ref="17kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="53">53</th><td>{</td></tr>
+<tr><th id="54">54</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18return_value" title='return_value' data-type='PyObject *' data-ref="18return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="55">55</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19seq" title='seq' data-type='PyObject *' data-ref="19seq">seq</dfn>;</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td>    <b>if</b> ((<a class="local col5 ref" href="#15type" title='type' data-ref="15type">type</a> == &amp;<a class="ref" href="../../Include/enumobject.h.html#PyReversed_Type" title='PyReversed_Type' data-ref="PyReversed_Type">PyReversed_Type</a>) &amp;&amp;</td></tr>
+<tr><th id="58">58</th><td>        !<a class="macro" href="../../Include/modsupport.h.html#64" title="((kwargs) == ((void*)0) || _PyArg_NoKeywords((&quot;reversed&quot;), (kwargs)))" data-ref="_M/_PyArg_NoKeywords">_PyArg_NoKeywords</a>(<q>"reversed"</q>, <a class="local col7 ref" href="#17kwargs" title='kwargs' data-ref="17kwargs">kwargs</a>)) {</td></tr>
+<tr><th id="59">59</th><td>        <b>goto</b> <a class="lbl" href="#20exit" data-ref="20exit">exit</a>;</td></tr>
+<tr><th id="60">60</th><td>    }</td></tr>
+<tr><th id="61">61</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_UnpackTuple" title='PyArg_UnpackTuple' data-ref="PyArg_UnpackTuple">PyArg_UnpackTuple</a>(<a class="local col6 ref" href="#16args" title='args' data-ref="16args">args</a>, <q>"reversed"</q>,</td></tr>
+<tr><th id="62">62</th><td>        <var>1</var>, <var>1</var>,</td></tr>
+<tr><th id="63">63</th><td>        &amp;<a class="local col9 ref" href="#19seq" title='seq' data-ref="19seq">seq</a>)) {</td></tr>
+<tr><th id="64">64</th><td>        <b>goto</b> <a class="lbl" href="#20exit" data-ref="20exit">exit</a>;</td></tr>
+<tr><th id="65">65</th><td>    }</td></tr>
+<tr><th id="66">66</th><td>    <a class="local col8 ref" href="#18return_value" title='return_value' data-ref="18return_value">return_value</a> = <a class="ref" href="../enumobject.c.html#reversed_new_impl" title='reversed_new_impl' data-ref="reversed_new_impl">reversed_new_impl</a>(<a class="local col5 ref" href="#15type" title='type' data-ref="15type">type</a>, <a class="local col9 ref" href="#19seq" title='seq' data-ref="19seq">seq</a>);</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><dfn class="lbl" id="20exit" data-ref="20exit">exit</dfn>:</td></tr>
+<tr><th id="69">69</th><td>    <b>return</b> <a class="local col8 ref" href="#18return_value" title='return_value' data-ref="18return_value">return_value</a>;</td></tr>
+<tr><th id="70">70</th><td>}</td></tr>
+<tr><th id="71">71</th><td><i>/*[clinic end generated code: output=9008c36999c57218 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../enumobject.c.html'>codebrowser/Objects/enumobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

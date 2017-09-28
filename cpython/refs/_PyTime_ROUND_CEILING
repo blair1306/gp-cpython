@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/pytime.h' l='29' type='1'/>
+<doc f='codebrowser/Include/pytime.h' l='27'>/* Round towards infinity (+inf).
+       For example, used for timeout to wait &quot;at least&quot; N seconds. */</doc>
+<use f='codebrowser/Modules/_ssl.c' l='1900' u='r' c='PySSL_select'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3006' u='r' c='check_time_rounding'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='62' u='r' c='acquire_timed'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='114' u='r' c='lock_acquire_parse_args'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='132' u='r' c='lock_acquire_parse_args'/>
+<use f='codebrowser/Modules/selectmodule.c' l='216' u='r' c='select_select'/>
+<use f='codebrowser/Modules/selectmodule.c' l='224' u='r' c='select_select'/>
+<use f='codebrowser/Modules/selectmodule.c' l='285' u='r' c='select_select'/>
+<use f='codebrowser/Modules/selectmodule.c' l='543' u='r' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='551' u='r' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='597' u='r' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1516' u='r' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1524' u='r' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1568' u='r' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1060' u='r' c='signal_sigtimedwait_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='687' u='r' c='internal_select'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2510' u='r' c='socket_parse_timeout'/>
+<use f='codebrowser/Modules/timemodule.c' l='228' u='r' c='time_sleep'/>
+<use f='codebrowser/Modules/timemodule.c' l='1451' u='r' c='pysleep'/>
+<use f='codebrowser/Python/pytime.c' l='89' u='r' c='_PyTime_Round'/>
+<use f='codebrowser/Python/pytime.c' l='383' u='r' c='_PyTime_Divide'/>

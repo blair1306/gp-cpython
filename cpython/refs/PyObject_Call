@@ -1,0 +1,35 @@
+<dec f='codebrowser/Include/abstract.h' l='155' type='PyObject * PyObject_Call(PyObject * callable, PyObject * args, PyObject * kwargs)'/>
+<doc f='codebrowser/Include/abstract.h' l='147'>/* Call a callable Python object &apos;callable&apos; with arguments given by the
+   tuple &apos;args&apos; and keywords arguments given by the dictionary &apos;kwargs&apos;.
+
+   &apos;args&apos; must not be *NULL*, use an empty tuple if no arguments are
+   needed. If no named arguments are needed, &apos;kwargs&apos; can be NULL.
+
+   This is the equivalent of the Python expression:
+   callable(*args, **kwargs). */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1665' u='c' c='unpickle'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='184' u='c' c='partial_call_impl'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='809' u='c' c='uncached_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='840' u='c' c='infinite_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='901' u='c' c='bounded_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_lsprof.c' l='123' u='c' c='CallExternalTimer'/>
+<use f='codebrowser/Modules/_operator.c' l='1537' u='c' c='methodcaller_call'/>
+<use f='codebrowser/Modules/_pickle.c' l='3623' u='c' c='save_reduce'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='477' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='997' u='c' c='t_bootstrap'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='89' u='c' c='atexit_callfuncs'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1723' u='c' c='starmap_next'/>
+<use f='codebrowser/Modules/main.c' l='216' u='c' c='RunModule'/>
+<use f='codebrowser/Modules/timemodule.c' l='736' u='c' c='time_strptime'/>
+<def f='codebrowser/Objects/call.c' l='211' ll='250' type='PyObject * PyObject_Call(PyObject * callable, PyObject * args, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/call.c' l='821' u='c' c='PyEval_CallObjectWithKeywords'/>
+<use f='codebrowser/Objects/classobject.c' l='499' u='c' c='instancemethod_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='1386' u='c' c='property_descr_get'/>
+<use f='codebrowser/Objects/typeobject.c' l='6260' u='c' c='slot_tp_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='6494' u='c' c='slot_tp_init'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='466' u='c' c='proxy_call'/>
+<use f='codebrowser/Python/ast.c' l='660' u='c' c='new_identifier'/>
+<use f='codebrowser/Python/ceval.c' l='4558' u='c' c='_PyEval_CallTracing'/>
+<use f='codebrowser/Python/ceval.c' l='4888' u='c' c='do_call_core'/>
+<use f='codebrowser/Python/errors.c' l='62' u='c' c='_PyErr_CreateException'/>
+<use f='codebrowser/Python/errors.c' l='547' u='c' c='PyErr_SetFromErrnoWithFilenameObjects'/>

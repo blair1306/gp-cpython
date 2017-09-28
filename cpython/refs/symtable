@@ -1,0 +1,13 @@
+<def f='codebrowser/Include/symtable.h' l='18' ll='35'/>
+<size>80</size>
+<mbr r='symtable::st_filename' o='0' t='PyObject *'/>
+<mbr r='symtable::st_cur' o='64' t='struct _symtable_entry *'/>
+<mbr r='symtable::st_top' o='128' t='struct _symtable_entry *'/>
+<mbr r='symtable::st_blocks' o='192' t='PyObject *'/>
+<mbr r='symtable::st_stack' o='256' t='PyObject *'/>
+<mbr r='symtable::st_global' o='320' t='PyObject *'/>
+<mbr r='symtable::st_nblocks' o='384' t='int'/>
+<mbr r='symtable::st_private' o='448' t='PyObject *'/>
+<mbr r='symtable::st_future' o='512' t='PyFutureFeatures *'/>
+<mbr r='symtable::recursion_depth' o='576' t='int'/>
+<mbr r='symtable::recursion_limit' o='608' t='int'/>

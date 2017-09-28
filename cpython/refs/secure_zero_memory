@@ -1,0 +1,9 @@
+<def f='codebrowser/Modules/_blake2/impl/blake2-impl.h' l='132' ll='136' macro='1' type='void secure_zero_memory(void * v, size_t n)'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='254' u='c' c='PyBlake2_blake2b_init_key'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='230' u='c' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='408' u='c' c='py_blake2b_dealloc'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='409' u='c' c='py_blake2b_dealloc'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='240' u='c' c='PyBlake2_blake2s_init_key'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='230' u='c' c='py_blake2s_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='408' u='c' c='py_blake2s_dealloc'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='409' u='c' c='py_blake2s_dealloc'/>

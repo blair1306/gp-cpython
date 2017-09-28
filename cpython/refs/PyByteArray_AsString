@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/bytearrayobject.h' l='46' type='char * PyByteArray_AsString(PyObject * )'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='898' u='c' c='_io__RawIOBase_read_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1470' u='c' c='idna_converter'/>
+<def f='codebrowser/Objects/bytearrayobject.c' l='158' ll='165' type='char * PyByteArray_AsString(PyObject * self)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='459' u='c' c='fp_readl'/>

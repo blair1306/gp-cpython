@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='176' type='PyObject *'/>
+<def f='codebrowser/Modules/_io/_iomodule.c' l='48' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='752' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='752' macro='1' u='w'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1097' u='r' c='_io_TextIOWrapper___init___impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2105' u='r' c='_textiowrapper_encoder_reset'/>

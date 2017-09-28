@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythonrun.h' l='31' type='int PyRun_InteractiveLoopFlags(FILE * fp, const char * filename, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='76' u='c' c='PyRun_AnyFileExFlags'/>
+<def f='codebrowser/Python/pythonrun.c' l='85' ll='127' type='int PyRun_InteractiveLoopFlags(FILE * fp, const char * filename_str, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1548' u='c' c='PyRun_InteractiveLoop'/>

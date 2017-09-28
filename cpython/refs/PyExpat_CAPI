@@ -1,0 +1,25 @@
+<def f='codebrowser/Include/pyexpat.h' l='9' ll='52'/>
+<size>168</size>
+<mbr r='PyExpat_CAPI::magic' o='0' t='char *'/>
+<mbr r='PyExpat_CAPI::size' o='64' t='int'/>
+<mbr r='PyExpat_CAPI::MAJOR_VERSION' o='96' t='int'/>
+<mbr r='PyExpat_CAPI::MINOR_VERSION' o='128' t='int'/>
+<mbr r='PyExpat_CAPI::MICRO_VERSION' o='160' t='int'/>
+<mbr r='PyExpat_CAPI::ErrorString' o='192' t='const XML_LChar *(*)(enum XML_Error)'/>
+<mbr r='PyExpat_CAPI::GetErrorCode' o='256' t='enum XML_Error (*)(XML_Parser)'/>
+<mbr r='PyExpat_CAPI::GetErrorColumnNumber' o='320' t='XML_Size (*)(XML_Parser)'/>
+<mbr r='PyExpat_CAPI::GetErrorLineNumber' o='384' t='XML_Size (*)(XML_Parser)'/>
+<mbr r='PyExpat_CAPI::Parse' o='448' t='enum XML_Status (*)(XML_Parser, const char *, int, int)'/>
+<mbr r='PyExpat_CAPI::ParserCreate_MM' o='512' t='XML_Parser (*)(const XML_Char *, const XML_Memory_Handling_Suite *, const XML_Char *)'/>
+<mbr r='PyExpat_CAPI::ParserFree' o='576' t='void (*)(XML_Parser)'/>
+<mbr r='PyExpat_CAPI::SetCharacterDataHandler' o='640' t='void (*)(XML_Parser, XML_CharacterDataHandler)'/>
+<mbr r='PyExpat_CAPI::SetCommentHandler' o='704' t='void (*)(XML_Parser, XML_CommentHandler)'/>
+<mbr r='PyExpat_CAPI::SetDefaultHandlerExpand' o='768' t='void (*)(XML_Parser, XML_DefaultHandler)'/>
+<mbr r='PyExpat_CAPI::SetElementHandler' o='832' t='void (*)(XML_Parser, XML_StartElementHandler, XML_EndElementHandler)'/>
+<mbr r='PyExpat_CAPI::SetNamespaceDeclHandler' o='896' t='void (*)(XML_Parser, XML_StartNamespaceDeclHandler, XML_EndNamespaceDeclHandler)'/>
+<mbr r='PyExpat_CAPI::SetProcessingInstructionHandler' o='960' t='void (*)(XML_Parser, XML_ProcessingInstructionHandler)'/>
+<mbr r='PyExpat_CAPI::SetUnknownEncodingHandler' o='1024' t='void (*)(XML_Parser, XML_UnknownEncodingHandler, void *)'/>
+<mbr r='PyExpat_CAPI::SetUserData' o='1088' t='void (*)(XML_Parser, void *)'/>
+<mbr r='PyExpat_CAPI::SetStartDoctypeDeclHandler' o='1152' t='void (*)(XML_Parser, XML_StartDoctypeDeclHandler)'/>
+<mbr r='PyExpat_CAPI::SetEncoding' o='1216' t='enum XML_Status (*)(XML_Parser, const XML_Char *)'/>
+<mbr r='PyExpat_CAPI::DefaultUnknownEncodingHandler' o='1280' t='int (*)(void *, const XML_Char *, XML_Encoding *)'/>

@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/sliceobject.h' l='24' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4995' u='r' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4999' u='r' c='Pointer_subscript'/>
+<use f='codebrowser/Objects/sliceobject.c' l='134' u='w' c='PySlice_New'/>
+<use f='codebrowser/Objects/sliceobject.c' l='167' u='r' c='PySlice_GetIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='170' u='r' c='PySlice_GetIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='171' u='r' c='PySlice_GetIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='202' u='r' c='PySlice_Unpack'/>
+<use f='codebrowser/Objects/sliceobject.c' l='206' u='r' c='PySlice_Unpack'/>
+<use f='codebrowser/Objects/sliceobject.c' l='325' u='r' c='slice_dealloc'/>
+<use f='codebrowser/Objects/sliceobject.c' l='337' u='r' c='slice_repr'/>
+<use f='codebrowser/Objects/sliceobject.c' l='378' u='r' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='385' u='r' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='549' u='r' c='slice_reduce'/>
+<use f='codebrowser/Objects/sliceobject.c' l='600' u='r' c='slice_richcompare'/>
+<use f='codebrowser/Objects/sliceobject.c' l='603' u='r' c='slice_richcompare'/>
+<use f='codebrowser/Objects/sliceobject.c' l='625' u='r' c='slice_traverse'/>
+<use f='codebrowser/Objects/sliceobject.c' l='625' u='r' c='slice_traverse'/>

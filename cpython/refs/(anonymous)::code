@@ -1,0 +1,33 @@
+<dec f='codebrowser/Include/pyerrors.h' l='48' type='PyObject *'/>
+<offset>640</offset>
+<dec f='codebrowser/Modules/sre.h' l='39' type='Py_UCS4 [1]'/>
+<use f='codebrowser/Modules/_sre.c' l='613' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='652' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='691' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='769' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='908' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='908' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='909' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='909' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='938' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='1083' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='1395' u='w' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1396' u='r' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1905' u='r' c='_validate'/>
+<use f='codebrowser/Modules/_sre.c' l='1905' u='r' c='_validate'/>
+<use f='codebrowser/Modules/_sre.c' l='2452' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='2492' macro='1' u='r'/>
+<use f='codebrowser/Modules/_sre.c' l='2544' u='r' c='pattern_hash'/>
+<use f='codebrowser/Modules/_sre.c' l='2544' u='r' c='pattern_hash'/>
+<use f='codebrowser/Modules/_sre.c' l='2587' u='r' c='pattern_richcompare'/>
+<use f='codebrowser/Modules/_sre.c' l='2587' u='r' c='pattern_richcompare'/>
+<use f='codebrowser/Modules/_sre.c' l='2588' u='r' c='pattern_richcompare'/>
+<offset>832</offset>
+<use f='codebrowser/Objects/exceptions.c' l='558' u='r' c='SystemExit_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='558' u='w' c='SystemExit_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='562' u='r' c='SystemExit_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='562' u='w' c='SystemExit_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='570' u='r' c='SystemExit_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='570' u='w' c='SystemExit_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='585' u='r' c='SystemExit_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='585' u='r' c='SystemExit_traverse'/>

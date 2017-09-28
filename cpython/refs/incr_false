@@ -1,0 +1,25 @@
+<def f='codebrowser/Modules/_decimal/_decimal.c' l='119' ll='124' macro='1' type='PyObject * incr_false()'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='571' u='c' c='signaldict_getitem'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_iscanonical'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_isfinite'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_isinfinite'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_isnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_isqnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_issnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_issigned'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3819' u='c' c='dec_mpd_iszero'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3836' u='c' c='dec_mpd_isnormal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3836' u='c' c='dec_mpd_issubnormal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4321' u='c' c='dec_mpd_same_quantum'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4416' u='c' c='dec_richcompare'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4888' u='c' c='ctx_mpd_isnormal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4888' u='c' c='ctx_mpd_issubnormal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_isfinite'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_isinfinite'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_isnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_isqnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_issigned'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_issnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4903' u='c' c='ctx_mpd_iszero'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5190' u='c' c='ctx_iscanonical'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5396' u='c' c='ctx_mpd_same_quantum'/>

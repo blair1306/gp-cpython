@@ -1,0 +1,34 @@
+<dec f='codebrowser/Include/pystate.h' l='118' type='char'/>
+<offset>288</offset>
+<doc f='codebrowser/Include/pystate.h' l='118'>/* The stack has overflowed. Allow 50 more calls
+                        to handle the runtime error. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2166' macro='1' u='w'/>
+<use f='codebrowser/Modules/_json.c' l='1086' macro='1' u='w'/>
+<use f='codebrowser/Modules/_json.c' l='1094' macro='1' u='w'/>
+<use f='codebrowser/Modules/_json.c' l='1477' macro='1' u='w'/>
+<use f='codebrowser/Modules/_json.c' l='1484' macro='1' u='w'/>
+<use f='codebrowser/Modules/_json.c' l='1518' macro='1' u='w'/>
+<use f='codebrowser/Modules/_pickle.c' l='2606' macro='1' u='w'/>
+<use f='codebrowser/Modules/_pickle.c' l='2617' macro='1' u='w'/>
+<use f='codebrowser/Modules/_pickle.c' l='2865' macro='1' u='w'/>
+<use f='codebrowser/Modules/_pickle.c' l='2881' macro='1' u='w'/>
+<use f='codebrowser/Modules/_pickle.c' l='3966' macro='1' u='w'/>
+<use f='codebrowser/Objects/abstract.c' l='2376' macro='1' u='w'/>
+<use f='codebrowser/Objects/abstract.c' l='2389' macro='1' u='w'/>
+<use f='codebrowser/Objects/abstract.c' l='2450' macro='1' u='w'/>
+<use f='codebrowser/Objects/abstract.c' l='2463' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='126' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='200' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='246' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='565' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='711' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='750' macro='1' u='w'/>
+<use f='codebrowser/Objects/call.c' l='765' macro='1' u='w'/>
+<use f='codebrowser/Objects/listobject.c' l='374' macro='1' u='w'/>
+<use f='codebrowser/Objects/object.c' l='539' macro='1' u='w'/>
+<use f='codebrowser/Objects/object.c' l='720' macro='1' u='w'/>
+<use f='codebrowser/Objects/tupleobject.c' l='313' macro='1' u='w'/>
+<use f='codebrowser/Python/ceval.c' l='610' u='r' c='_Py_CheckRecursiveCall'/>
+<use f='codebrowser/Python/ceval.c' l='619' u='w' c='_Py_CheckRecursiveCall'/>
+<use f='codebrowser/Python/ceval.c' l='3741' macro='1' u='w'/>
+<use f='codebrowser/Python/pystate.c' l='251' u='w' c='new_threadstate'/>

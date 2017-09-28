@@ -1,0 +1,5 @@
+<dec f='include/unistd.h' l='425' type='int pipe2(int * __pipedes, int __flags)'/>
+<doc f='include/unistd.h' l='423'>/* Same as pipe but apply flags passed in FLAGS to the new file
+   descriptors.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='8495' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8552' u='c' c='os_pipe2_impl'/>

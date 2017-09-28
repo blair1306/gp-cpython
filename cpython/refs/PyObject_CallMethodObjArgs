@@ -1,0 +1,64 @@
+<dec f='codebrowser/Include/abstract.h' l='355' type='PyObject * PyObject_CallMethodObjArgs(PyObject * obj, PyObject * name)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='774' u='c' c='FutureObj_repr'/>
+<doc f='codebrowser/Include/abstract.h' l='347'>/* Call the method named &apos;name&apos; of object &apos;obj&apos; with a variable number of
+   C arguments.  The C arguments are provided as PyObject* values, terminated
+   by NULL.
+
+   Returns the result of the call on success, or NULL on failure.
+
+   This is the equivalent of the Python expression: obj.name(*args). */</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='472' u='c' c='buffered_simple_flush'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='524' u='c' c='buffered_close'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='532' u='c' c='buffered_close'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='556' u='c' c='buffered_detach'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='573' u='c' c='buffered_seekable'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='580' u='c' c='buffered_readable'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='587' u='c' c='buffered_writable'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='610' u='c' c='buffered_fileno'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='617' u='c' c='buffered_isatty'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='691' u='c' c='_buffered_raw_tell'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='721' u='c' c='_buffered_raw_seek'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1347' u='c' c='_io__Buffered_truncate_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1374' u='c' c='buffered_iternext'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1491' u='c' c='_bufferedreader_raw_read'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1556' u='c' c='_bufferedreader_read_all'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1595' u='c' c='_bufferedreader_read_all'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1844' u='c' c='_bufferedwriter_raw_write'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='211' u='c' c='_io__IOBase_close_impl'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='256' u='c' c='iobase_finalize'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='346' u='c' c='_PyIOBase_check_seekable'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='379' u='c' c='_PyIOBase_check_readable'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='412' u='c' c='_PyIOBase_check_writable'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='441' u='c' c='iobase_exit'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='616' u='c' c='iobase_iternext'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='739' u='c' c='_io__IOBase_writelines'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='885' u='c' c='_io__RawIOBase_read_impl'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='410' u='c' c='stringio_iternext'/>
+<use f='codebrowser/Modules/_io/textio.c' l='319' u='c' c='_PyIncrementalNewlineDecoder_decode'/>
+<use f='codebrowser/Modules/_io/textio.c' l='530' u='c' c='_io_IncrementalNewlineDecoder_getstate_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='604' u='c' c='_io_IncrementalNewlineDecoder_reset_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1085' u='c' c='_io_TextIOWrapper___init___impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1097' u='c' c='_io_TextIOWrapper___init___impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1161' u='c' c='_io_TextIOWrapper_reconfigure_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1289' u='c' c='_io_TextIOWrapper_detach_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1320' u='c' c='_textiowrapper_writeflush'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1385' u='c' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1419' u='c' c='_io_TextIOWrapper_write_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1509' u='c' c='textiowrapper_read_chunk'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1542' u='c' c='textiowrapper_read_chunk'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1564' u='c' c='textiowrapper_read_chunk'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1635' u='c' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2086' u='c' c='_textiowrapper_decoder_setstate'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2101' u='c' c='_textiowrapper_encoder_reset'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2105' u='c' c='_textiowrapper_encoder_reset'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2223' u='c' c='_io_TextIOWrapper_seek_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2238' u='c' c='_io_TextIOWrapper_seek_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2386' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2393' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2393' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2556' u='c' c='_io_TextIOWrapper_truncate_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2561' u='c' c='_io_TextIOWrapper_truncate_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2782' u='c' c='textiowrapper_iternext'/>
+<def f='codebrowser/Objects/call.c' l='1202' ll='1223' type='PyObject * PyObject_CallMethodObjArgs(PyObject * callable, PyObject * name)'/>
+<use f='codebrowser/Python/_warnings.c' l='877' u='c' c='warnings_warn_explicit'/>
+<use f='codebrowser/Python/_warnings.c' l='887' u='c' c='warnings_warn_explicit'/>

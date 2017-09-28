@@ -1,0 +1,16 @@
+<dec f='codebrowser/Objects/dict-common.h' l='6' type='Py_hash_t'/>
+<use f='codebrowser/Objects/dictobject.c' l='701' u='r' c='lookdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='760' u='r' c='lookdict_unicode'/>
+<use f='codebrowser/Objects/dictobject.c' l='805' u='r' c='lookdict_unicode_nodummy'/>
+<use f='codebrowser/Objects/dictobject.c' l='851' u='r' c='lookdict_split'/>
+<use f='codebrowser/Objects/dictobject.c' l='997' u='w' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1047' u='r' c='build_indices'/>
+<use f='codebrowser/Objects/dictobject.c' l='1118' u='w' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1118' u='r' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1644' u='r' c='_PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='2354' u='r' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='2588' u='r' c='dict_equal'/>
+<use f='codebrowser/Objects/dictobject.c' l='2748' u='w' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2862' u='r' c='dict_popitem'/>
+<offset>0</offset>
+<doc f='codebrowser/Objects/dict-common.h' l='5'>/* Cached hash code of me_key. */</doc>

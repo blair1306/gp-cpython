@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/bytesobject.h' l='70' type='PyObject * _PyBytes_FromHex(PyObject * string, int use_bytearray)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1990' u='c' c='bytearray_fromhex_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2344' u='c' c='bytes_fromhex_impl'/>
+<def f='codebrowser/Objects/bytesobject.c' l='2352' ll='2427' type='PyObject * _PyBytes_FromHex(PyObject * string, int use_bytearray)'/>

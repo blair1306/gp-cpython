@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/hashtable.h' l='27' type='Py_uhash_t'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/hashtable.c' l='266' u='r' c='_Py_hashtable_get_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='289' u='r' c='_Py_hashtable_pop_entry'/>
+<use f='codebrowser/Modules/hashtable.c' l='339' u='w' c='_Py_hashtable_set'/>
+<use f='codebrowser/Modules/hashtable.c' l='444' u='r' c='hashtable_rehash'/>
+<use f='codebrowser/Modules/hashtable.c' l='446' u='r' c='hashtable_rehash'/>

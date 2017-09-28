@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/pystate.h' l='57' type='PyObject *'/>
+<offset>320</offset>
+<use f='codebrowser/Python/_warnings.c' l='648' u='r' c='setup_context'/>
+<use f='codebrowser/Python/import.c' l='361' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='366' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='369' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='446' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='460' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/pylifecycle.c' l='676' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='677' u='r' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='679' u='r' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='681' u='r' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='784' u='r' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1198' u='w' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1199' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1201' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1202' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1204' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pystate.c' l='102' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='163' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='163' u='w' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/sysmodule.c' l='50' u='r' c='_PySys_GetObjectId'/>
+<use f='codebrowser/Python/sysmodule.c' l='60' u='r' c='PySys_GetObject'/>
+<use f='codebrowser/Python/sysmodule.c' l='70' u='r' c='_PySys_SetObjectId'/>
+<use f='codebrowser/Python/sysmodule.c' l='85' u='r' c='PySys_SetObject'/>

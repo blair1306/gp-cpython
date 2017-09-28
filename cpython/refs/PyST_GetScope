@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/symtable.h' l='71' type='int PyST_GetScope(PySTEntryObject * , PyObject * )'/>
+<use f='codebrowser/Python/compile.c' l='693' u='c' c='compiler_set_qualname'/>
+<use f='codebrowser/Python/compile.c' l='1503' u='c' c='get_ref_type'/>
+<use f='codebrowser/Python/compile.c' l='3095' u='c' c='compiler_nameop'/>
+<def f='codebrowser/Python/symtable.c' l='361' ll='369' type='int PyST_GetScope(PySTEntryObject * ste, PyObject * name)'/>

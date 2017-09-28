@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/stringlib/find_max_char.h' l='60' macro='1' type='Py_UCS4 ucs2lib_find_max_char(const Py_UCS2 * begin, const Py_UCS2 * end)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2225' u='c' c='_PyUnicode_FromUCS2'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2315' u='c' c='_PyUnicode_FindMaxChar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2351' u='c' c='unicode_adjust_maxchar'/>

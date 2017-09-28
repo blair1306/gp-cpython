@@ -1,0 +1,19 @@
+<dec f='codebrowser/Parser/parser.h' l='25' type='stack'/>
+<offset>0</offset>
+<doc f='codebrowser/Parser/parser.h' l='25'>/* Stack of parser states */</doc>
+<use f='codebrowser/Parser/parser.c' l='90' u='a' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='91' u='a' c='PyParser_New'/>
+<use f='codebrowser/Parser/parser.c' l='243' u='m' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='244' u='m' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='247' u='m' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='259' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='269' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='277' u='m' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='282' u='m' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='291' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='292' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='292' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='296' u='m' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='311' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='313' u='a' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='313' u='a' c='PyParser_AddToken'/>

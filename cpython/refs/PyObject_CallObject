@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/abstract.h' l='283' type='PyObject * PyObject_CallObject(PyObject * callable, PyObject * args)'/>
+<doc f='codebrowser/Include/abstract.h' l='276'>/* Call a callable Python object &apos;callable&apos;, with arguments given by the
+   tuple &apos;args&apos;.  If no arguments are needed, then &apos;args&apos; can be *NULL*.
+
+   Returns the result of the call on success, or *NULL* on failure.
+
+   This is the equivalent of the Python expression:
+   callable(*args). */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='972' u='c' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1432' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1875' u='c' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1986' u='c' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2364' u='c' c='PyCFuncPtrType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2888' u='c' c='_PyCData_set'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='234' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='63' u='c' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1197' u='c' c='context_new'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1203' u='c' c='context_new'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1420' u='c' c='context_copy'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5838' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5857' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5865' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2175' u='c' c='_forward_call'/>
+<use f='codebrowser/Modules/_pickle.c' l='5173' u='c' c='instantiate'/>
+<use f='codebrowser/Modules/_pickle.c' l='6173' u='c' c='load_reduce'/>
+<use f='codebrowser/Modules/_sre.c' l='726' u='c' c='call'/>
+<use f='codebrowser/Modules/_ssl.c' l='502' u='c' c='fill_and_set_sslerror'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='371' u='c' c='pack_from_list'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='452' u='c' c='pack_single'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='104' u='c' c='call_error_callback'/>
+<use f='codebrowser/Modules/posixmodule.c' l='421' u='c' c='run_at_forkers'/>
+<def f='codebrowser/Objects/call.c' l='826' ll='830' type='PyObject * PyObject_CallObject(PyObject * callable, PyObject * args)'/>

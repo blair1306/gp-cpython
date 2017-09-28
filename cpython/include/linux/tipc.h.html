@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>tipc.h source code [include/linux/tipc.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="sockaddr_tipc,tipc_event,tipc_name,tipc_name_seq,tipc_portid,tipc_sioc_ln_req,tipc_subscr "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'include/linux/tipc.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>include</a>/<a href='./'>linux</a>/<a href='tipc.h.html'>tipc.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * include/uapi/linux/tipc.h: Header for TIPC socket interface</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Copyright (c) 2003-2006, Ericsson AB</i></td></tr>
+<tr><th id="5">5</th><td><i> * Copyright (c) 2005, 2010-2011, Wind River Systems</i></td></tr>
+<tr><th id="6">6</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="9">9</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * 1. Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *    notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="13">13</th><td><i> * 2. Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="14">14</th><td><i> *    notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="15">15</th><td><i> *    documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="16">16</th><td><i> * 3. Neither the names of the copyright holders nor the names of its</i></td></tr>
+<tr><th id="17">17</th><td><i> *    contributors may be used to endorse or promote products derived from</i></td></tr>
+<tr><th id="18">18</th><td><i> *    this software without specific prior written permission.</i></td></tr>
+<tr><th id="19">19</th><td><i> *</i></td></tr>
+<tr><th id="20">20</th><td><i> * Alternatively, this software may be distributed under the terms of the</i></td></tr>
+<tr><th id="21">21</th><td><i> * GNU General Public License ("GPL") version 2 as published by the Free</i></td></tr>
+<tr><th id="22">22</th><td><i> * Software Foundation.</i></td></tr>
+<tr><th id="23">23</th><td><i> *</i></td></tr>
+<tr><th id="24">24</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="25">25</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="26">26</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="27">27</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="28">28</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="29">29</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="30">30</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="31">31</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="32">32</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="33">33</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="34">34</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="35">35</th><td><i> */</i></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="37">ifndef</span> <span class="macro" data-ref="_M/_LINUX_TIPC_H_">_LINUX_TIPC_H_</span></u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/_LINUX_TIPC_H_" data-ref="_M/_LINUX_TIPC_H_">_LINUX_TIPC_H_</dfn></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="types.h.html">&lt;linux/types.h&gt;</a></u></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="sockios.h.html">&lt;linux/sockios.h&gt;</a></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>/*</i></td></tr>
+<tr><th id="44">44</th><td><i> * TIPC addressing primitives</i></td></tr>
+<tr><th id="45">45</th><td><i> */</i></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><b>struct</b> <dfn class="type def" id="tipc_portid" title='tipc_portid' data-ref="tipc_portid">tipc_portid</dfn> {</td></tr>
+<tr><th id="48">48</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_portid::ref" title='tipc_portid::ref' data-ref="tipc_portid::ref">ref</dfn>;</td></tr>
+<tr><th id="49">49</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_portid::node" title='tipc_portid::node' data-ref="tipc_portid::node">node</dfn>;</td></tr>
+<tr><th id="50">50</th><td>};</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><b>struct</b> <dfn class="type def" id="tipc_name" title='tipc_name' data-ref="tipc_name">tipc_name</dfn> {</td></tr>
+<tr><th id="53">53</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_name::type" title='tipc_name::type' data-ref="tipc_name::type">type</dfn>;</td></tr>
+<tr><th id="54">54</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_name::instance" title='tipc_name::instance' data-ref="tipc_name::instance">instance</dfn>;</td></tr>
+<tr><th id="55">55</th><td>};</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><b>struct</b> <dfn class="type def" id="tipc_name_seq" title='tipc_name_seq' data-ref="tipc_name_seq">tipc_name_seq</dfn> {</td></tr>
+<tr><th id="58">58</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_name_seq::type" title='tipc_name_seq::type' data-ref="tipc_name_seq::type">type</dfn>;</td></tr>
+<tr><th id="59">59</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_name_seq::lower" title='tipc_name_seq::lower' data-ref="tipc_name_seq::lower">lower</dfn>;</td></tr>
+<tr><th id="60">60</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_name_seq::upper" title='tipc_name_seq::upper' data-ref="tipc_name_seq::upper">upper</dfn>;</td></tr>
+<tr><th id="61">61</th><td>};</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>static</em> <b>__inline__</b> <a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl def" id="tipc_addr" title='tipc_addr' data-ref="tipc_addr">tipc_addr</dfn>(<em>unsigned</em> <em>int</em> <dfn class="local col5 decl" id="205zone" title='zone' data-type='unsigned int' data-ref="205zone">zone</dfn>,</td></tr>
+<tr><th id="64">64</th><td>			      <em>unsigned</em> <em>int</em> <dfn class="local col6 decl" id="206cluster" title='cluster' data-type='unsigned int' data-ref="206cluster">cluster</dfn>,</td></tr>
+<tr><th id="65">65</th><td>			      <em>unsigned</em> <em>int</em> <dfn class="local col7 decl" id="207node" title='node' data-type='unsigned int' data-ref="207node">node</dfn>)</td></tr>
+<tr><th id="66">66</th><td>{</td></tr>
+<tr><th id="67">67</th><td>	<b>return</b> (<a class="local col5 ref" href="#205zone" title='zone' data-ref="205zone">zone</a> &lt;&lt; <var>24</var>) | (<a class="local col6 ref" href="#206cluster" title='cluster' data-ref="206cluster">cluster</a> &lt;&lt; <var>12</var>) | <a class="local col7 ref" href="#207node" title='node' data-ref="207node">node</a>;</td></tr>
+<tr><th id="68">68</th><td>}</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><em>static</em> <b>__inline__</b> <em>unsigned</em> <em>int</em> <dfn class="decl def" id="tipc_zone" title='tipc_zone' data-ref="tipc_zone">tipc_zone</dfn>(<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="local col8 decl" id="208addr" title='addr' data-type='__u32' data-ref="208addr">addr</dfn>)</td></tr>
+<tr><th id="71">71</th><td>{</td></tr>
+<tr><th id="72">72</th><td>	<b>return</b> <a class="local col8 ref" href="#208addr" title='addr' data-ref="208addr">addr</a> &gt;&gt; <var>24</var>;</td></tr>
+<tr><th id="73">73</th><td>}</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><em>static</em> <b>__inline__</b> <em>unsigned</em> <em>int</em> <dfn class="decl def" id="tipc_cluster" title='tipc_cluster' data-ref="tipc_cluster">tipc_cluster</dfn>(<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="local col9 decl" id="209addr" title='addr' data-type='__u32' data-ref="209addr">addr</dfn>)</td></tr>
+<tr><th id="76">76</th><td>{</td></tr>
+<tr><th id="77">77</th><td>	<b>return</b> (<a class="local col9 ref" href="#209addr" title='addr' data-ref="209addr">addr</a> &gt;&gt; <var>12</var>) &amp; <var>0xfff</var>;</td></tr>
+<tr><th id="78">78</th><td>}</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><em>static</em> <b>__inline__</b> <em>unsigned</em> <em>int</em> <dfn class="decl def" id="tipc_node" title='tipc_node' data-ref="tipc_node">tipc_node</dfn>(<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="local col0 decl" id="210addr" title='addr' data-type='__u32' data-ref="210addr">addr</dfn>)</td></tr>
+<tr><th id="81">81</th><td>{</td></tr>
+<tr><th id="82">82</th><td>	<b>return</b> <a class="local col0 ref" href="#210addr" title='addr' data-ref="210addr">addr</a> &amp; <var>0xfff</var>;</td></tr>
+<tr><th id="83">83</th><td>}</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i>/*</i></td></tr>
+<tr><th id="86">86</th><td><i> * Application-accessible port name types</i></td></tr>
+<tr><th id="87">87</th><td><i> */</i></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/TIPC_CFG_SRV" data-ref="_M/TIPC_CFG_SRV">TIPC_CFG_SRV</dfn>		0	/* configuration service name type */</u></td></tr>
+<tr><th id="90">90</th><td><u>#define <dfn class="macro" id="_M/TIPC_TOP_SRV" data-ref="_M/TIPC_TOP_SRV">TIPC_TOP_SRV</dfn>		1	/* topology service name type */</u></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/TIPC_LINK_STATE" data-ref="_M/TIPC_LINK_STATE">TIPC_LINK_STATE</dfn>		2	/* link state name type */</u></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/TIPC_RESERVED_TYPES" data-ref="_M/TIPC_RESERVED_TYPES">TIPC_RESERVED_TYPES</dfn>	64	/* lowest user-publishable name type */</u></td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>/*</i></td></tr>
+<tr><th id="95">95</th><td><i> * Publication scopes when binding port names and port name sequences</i></td></tr>
+<tr><th id="96">96</th><td><i> */</i></td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><u>#define <dfn class="macro" id="_M/TIPC_ZONE_SCOPE" data-ref="_M/TIPC_ZONE_SCOPE">TIPC_ZONE_SCOPE</dfn>		1</u></td></tr>
+<tr><th id="99">99</th><td><u>#define <dfn class="macro" id="_M/TIPC_CLUSTER_SCOPE" data-ref="_M/TIPC_CLUSTER_SCOPE">TIPC_CLUSTER_SCOPE</dfn>	2</u></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/TIPC_NODE_SCOPE" data-ref="_M/TIPC_NODE_SCOPE">TIPC_NODE_SCOPE</dfn>		3</u></td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><i>/*</i></td></tr>
+<tr><th id="103">103</th><td><i> * Limiting values for messages</i></td></tr>
+<tr><th id="104">104</th><td><i> */</i></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td><u>#define <dfn class="macro" id="_M/TIPC_MAX_USER_MSG_SIZE" data-ref="_M/TIPC_MAX_USER_MSG_SIZE">TIPC_MAX_USER_MSG_SIZE</dfn>	66000U</u></td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td><i>/*</i></td></tr>
+<tr><th id="109">109</th><td><i> * Message importance levels</i></td></tr>
+<tr><th id="110">110</th><td><i> */</i></td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/TIPC_LOW_IMPORTANCE" data-ref="_M/TIPC_LOW_IMPORTANCE">TIPC_LOW_IMPORTANCE</dfn>		0</u></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/TIPC_MEDIUM_IMPORTANCE" data-ref="_M/TIPC_MEDIUM_IMPORTANCE">TIPC_MEDIUM_IMPORTANCE</dfn>		1</u></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/TIPC_HIGH_IMPORTANCE" data-ref="_M/TIPC_HIGH_IMPORTANCE">TIPC_HIGH_IMPORTANCE</dfn>		2</u></td></tr>
+<tr><th id="115">115</th><td><u>#define <dfn class="macro" id="_M/TIPC_CRITICAL_IMPORTANCE" data-ref="_M/TIPC_CRITICAL_IMPORTANCE">TIPC_CRITICAL_IMPORTANCE</dfn>	3</u></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>/*</i></td></tr>
+<tr><th id="118">118</th><td><i> * Msg rejection/connection shutdown reasons</i></td></tr>
+<tr><th id="119">119</th><td><i> */</i></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><u>#define <dfn class="macro" id="_M/TIPC_OK" data-ref="_M/TIPC_OK">TIPC_OK</dfn>			0</u></td></tr>
+<tr><th id="122">122</th><td><u>#define <dfn class="macro" id="_M/TIPC_ERR_NO_NAME" data-ref="_M/TIPC_ERR_NO_NAME">TIPC_ERR_NO_NAME</dfn>	1</u></td></tr>
+<tr><th id="123">123</th><td><u>#define <dfn class="macro" id="_M/TIPC_ERR_NO_PORT" data-ref="_M/TIPC_ERR_NO_PORT">TIPC_ERR_NO_PORT</dfn>	2</u></td></tr>
+<tr><th id="124">124</th><td><u>#define <dfn class="macro" id="_M/TIPC_ERR_NO_NODE" data-ref="_M/TIPC_ERR_NO_NODE">TIPC_ERR_NO_NODE</dfn>	3</u></td></tr>
+<tr><th id="125">125</th><td><u>#define <dfn class="macro" id="_M/TIPC_ERR_OVERLOAD" data-ref="_M/TIPC_ERR_OVERLOAD">TIPC_ERR_OVERLOAD</dfn>	4</u></td></tr>
+<tr><th id="126">126</th><td><u>#define <dfn class="macro" id="_M/TIPC_CONN_SHUTDOWN" data-ref="_M/TIPC_CONN_SHUTDOWN">TIPC_CONN_SHUTDOWN</dfn>	5</u></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><i>/*</i></td></tr>
+<tr><th id="129">129</th><td><i> * TIPC topology subscription service definitions</i></td></tr>
+<tr><th id="130">130</th><td><i> */</i></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><u>#define <dfn class="macro" id="_M/TIPC_SUB_PORTS" data-ref="_M/TIPC_SUB_PORTS">TIPC_SUB_PORTS</dfn>		0x01	/* filter for port availability */</u></td></tr>
+<tr><th id="133">133</th><td><u>#define <dfn class="macro" id="_M/TIPC_SUB_SERVICE" data-ref="_M/TIPC_SUB_SERVICE">TIPC_SUB_SERVICE</dfn>	0x02	/* filter for service availability */</u></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/TIPC_SUB_CANCEL" data-ref="_M/TIPC_SUB_CANCEL">TIPC_SUB_CANCEL</dfn>		0x04	/* cancel a subscription */</u></td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><u>#define <dfn class="macro" id="_M/TIPC_WAIT_FOREVER" data-ref="_M/TIPC_WAIT_FOREVER">TIPC_WAIT_FOREVER</dfn>	(~0)	/* timeout for permanent subscription */</u></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><b>struct</b> <dfn class="type def" id="tipc_subscr" title='tipc_subscr' data-ref="tipc_subscr">tipc_subscr</dfn> {</td></tr>
+<tr><th id="139">139</th><td>	<b>struct</b> <a class="type" href="#tipc_name_seq" title='tipc_name_seq' data-ref="tipc_name_seq">tipc_name_seq</a> <dfn class="decl" id="tipc_subscr::seq" title='tipc_subscr::seq' data-ref="tipc_subscr::seq">seq</dfn>;	<i>/* name sequence of interest */</i></td></tr>
+<tr><th id="140">140</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_subscr::timeout" title='tipc_subscr::timeout' data-ref="tipc_subscr::timeout">timeout</dfn>;			<i>/* subscription duration (in ms) */</i></td></tr>
+<tr><th id="141">141</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_subscr::filter" title='tipc_subscr::filter' data-ref="tipc_subscr::filter">filter</dfn>;			<i>/* bitmask of filter options */</i></td></tr>
+<tr><th id="142">142</th><td>	<em>char</em> <dfn class="decl" id="tipc_subscr::usr_handle" title='tipc_subscr::usr_handle' data-ref="tipc_subscr::usr_handle">usr_handle</dfn>[<var>8</var>];		<i>/* available for subscriber use */</i></td></tr>
+<tr><th id="143">143</th><td>};</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td><u>#define <dfn class="macro" id="_M/TIPC_PUBLISHED" data-ref="_M/TIPC_PUBLISHED">TIPC_PUBLISHED</dfn>		1	/* publication event */</u></td></tr>
+<tr><th id="146">146</th><td><u>#define <dfn class="macro" id="_M/TIPC_WITHDRAWN" data-ref="_M/TIPC_WITHDRAWN">TIPC_WITHDRAWN</dfn>		2	/* withdraw event */</u></td></tr>
+<tr><th id="147">147</th><td><u>#define <dfn class="macro" id="_M/TIPC_SUBSCR_TIMEOUT" data-ref="_M/TIPC_SUBSCR_TIMEOUT">TIPC_SUBSCR_TIMEOUT</dfn>	3	/* subscription timeout event */</u></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><b>struct</b> <dfn class="type def" id="tipc_event" title='tipc_event' data-ref="tipc_event">tipc_event</dfn> {</td></tr>
+<tr><th id="150">150</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_event::event" title='tipc_event::event' data-ref="tipc_event::event">event</dfn>;			<i>/* event type */</i></td></tr>
+<tr><th id="151">151</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_event::found_lower" title='tipc_event::found_lower' data-ref="tipc_event::found_lower">found_lower</dfn>;		<i>/* matching name seq instances */</i></td></tr>
+<tr><th id="152">152</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_event::found_upper" title='tipc_event::found_upper' data-ref="tipc_event::found_upper">found_upper</dfn>;		<i>/*    "      "    "     "      */</i></td></tr>
+<tr><th id="153">153</th><td>	<b>struct</b> <a class="type" href="#tipc_portid" title='tipc_portid' data-ref="tipc_portid">tipc_portid</a> <dfn class="decl" id="tipc_event::port" title='tipc_event::port' data-ref="tipc_event::port">port</dfn>;	<i>/* associated port */</i></td></tr>
+<tr><th id="154">154</th><td>	<b>struct</b> <a class="type" href="#tipc_subscr" title='tipc_subscr' data-ref="tipc_subscr">tipc_subscr</a> <dfn class="decl" id="tipc_event::s" title='tipc_event::s' data-ref="tipc_event::s">s</dfn>;		<i>/* associated subscription */</i></td></tr>
+<tr><th id="155">155</th><td>};</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><i>/*</i></td></tr>
+<tr><th id="158">158</th><td><i> * Socket API</i></td></tr>
+<tr><th id="159">159</th><td><i> */</i></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><u>#<span data-ppcond="161">ifndef</span> <a class="macro" href="../x86_64-linux-gnu/bits/socket.h.html#121" data-ref="_M/AF_TIPC">AF_TIPC</a></u></td></tr>
+<tr><th id="162">162</th><td><u>#define AF_TIPC		30</u></td></tr>
+<tr><th id="163">163</th><td><u>#<span data-ppcond="161">endif</span></u></td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><u>#<span data-ppcond="165">ifndef</span> <a class="macro" href="../x86_64-linux-gnu/bits/socket.h.html#74" data-ref="_M/PF_TIPC">PF_TIPC</a></u></td></tr>
+<tr><th id="166">166</th><td><u>#define PF_TIPC		AF_TIPC</u></td></tr>
+<tr><th id="167">167</th><td><u>#<span data-ppcond="165">endif</span></u></td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><u>#<span data-ppcond="169">ifndef</span> <span class="macro" data-ref="_M/SOL_TIPC">SOL_TIPC</span></u></td></tr>
+<tr><th id="170">170</th><td><u>#define <dfn class="macro" id="_M/SOL_TIPC" data-ref="_M/SOL_TIPC">SOL_TIPC</dfn>	271</u></td></tr>
+<tr><th id="171">171</th><td><u>#<span data-ppcond="169">endif</span></u></td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td><u>#define <dfn class="macro" id="_M/TIPC_ADDR_NAMESEQ" data-ref="_M/TIPC_ADDR_NAMESEQ">TIPC_ADDR_NAMESEQ</dfn>	1</u></td></tr>
+<tr><th id="174">174</th><td><u>#define <dfn class="macro" id="_M/TIPC_ADDR_MCAST" data-ref="_M/TIPC_ADDR_MCAST">TIPC_ADDR_MCAST</dfn>		1</u></td></tr>
+<tr><th id="175">175</th><td><u>#define <dfn class="macro" id="_M/TIPC_ADDR_NAME" data-ref="_M/TIPC_ADDR_NAME">TIPC_ADDR_NAME</dfn>		2</u></td></tr>
+<tr><th id="176">176</th><td><u>#define <dfn class="macro" id="_M/TIPC_ADDR_ID" data-ref="_M/TIPC_ADDR_ID">TIPC_ADDR_ID</dfn>		3</u></td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><b>struct</b> <dfn class="type def" id="sockaddr_tipc" title='sockaddr_tipc' data-ref="sockaddr_tipc">sockaddr_tipc</dfn> {</td></tr>
+<tr><th id="179">179</th><td>	<em>unsigned</em> <em>short</em> <dfn class="decl" id="sockaddr_tipc::family" title='sockaddr_tipc::family' data-ref="sockaddr_tipc::family">family</dfn>;</td></tr>
+<tr><th id="180">180</th><td>	<em>unsigned</em> <em>char</em>  <dfn class="decl" id="sockaddr_tipc::addrtype" title='sockaddr_tipc::addrtype' data-ref="sockaddr_tipc::addrtype">addrtype</dfn>;</td></tr>
+<tr><th id="181">181</th><td>	<em>signed</em>   <em>char</em>  <dfn class="decl" id="sockaddr_tipc::scope" title='sockaddr_tipc::scope' data-ref="sockaddr_tipc::scope">scope</dfn>;</td></tr>
+<tr><th id="182">182</th><td>	<b>union</b> {</td></tr>
+<tr><th id="183">183</th><td>		<b>struct</b> <a class="type" href="#tipc_portid" title='tipc_portid' data-ref="tipc_portid">tipc_portid</a> <dfn class="decl" id="sockaddr_tipc::(anonymous)::id" title='sockaddr_tipc::(anonymous union)::id' data-ref="sockaddr_tipc::(anonymous)::id">id</dfn>;</td></tr>
+<tr><th id="184">184</th><td>		<b>struct</b> <a class="type" href="#tipc_name_seq" title='tipc_name_seq' data-ref="tipc_name_seq">tipc_name_seq</a> <dfn class="decl" id="sockaddr_tipc::(anonymous)::nameseq" title='sockaddr_tipc::(anonymous union)::nameseq' data-ref="sockaddr_tipc::(anonymous)::nameseq">nameseq</dfn>;</td></tr>
+<tr><th id="185">185</th><td>		<b>struct</b> {</td></tr>
+<tr><th id="186">186</th><td>			<b>struct</b> <a class="type" href="#tipc_name" title='tipc_name' data-ref="tipc_name">tipc_name</a> <dfn class="decl" id="sockaddr_tipc::(anonymousunion)::(anonymous)::name" title='sockaddr_tipc::(anonymous union)::(anonymous struct)::name' data-ref="sockaddr_tipc::(anonymousunion)::(anonymous)::name">name</dfn>;</td></tr>
+<tr><th id="187">187</th><td>			<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="sockaddr_tipc::(anonymousunion)::(anonymous)::domain" title='sockaddr_tipc::(anonymous union)::(anonymous struct)::domain' data-ref="sockaddr_tipc::(anonymousunion)::(anonymous)::domain">domain</dfn>;</td></tr>
+<tr><th id="188">188</th><td>		} <dfn class="decl" id="sockaddr_tipc::(anonymous)::name" title='sockaddr_tipc::(anonymous union)::name' data-ref="sockaddr_tipc::(anonymous)::name">name</dfn>;</td></tr>
+<tr><th id="189">189</th><td>	} <dfn class="decl" id="sockaddr_tipc::addr" title='sockaddr_tipc::addr' data-ref="sockaddr_tipc::addr">addr</dfn>;</td></tr>
+<tr><th id="190">190</th><td>};</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><i>/*</i></td></tr>
+<tr><th id="193">193</th><td><i> * Ancillary data objects supported by recvmsg()</i></td></tr>
+<tr><th id="194">194</th><td><i> */</i></td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><u>#define <dfn class="macro" id="_M/TIPC_ERRINFO" data-ref="_M/TIPC_ERRINFO">TIPC_ERRINFO</dfn>	1	/* error info */</u></td></tr>
+<tr><th id="197">197</th><td><u>#define <dfn class="macro" id="_M/TIPC_RETDATA" data-ref="_M/TIPC_RETDATA">TIPC_RETDATA</dfn>	2	/* returned data */</u></td></tr>
+<tr><th id="198">198</th><td><u>#define <dfn class="macro" id="_M/TIPC_DESTNAME" data-ref="_M/TIPC_DESTNAME">TIPC_DESTNAME</dfn>	3	/* destination name */</u></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><i>/*</i></td></tr>
+<tr><th id="201">201</th><td><i> * TIPC-specific socket option values</i></td></tr>
+<tr><th id="202">202</th><td><i> */</i></td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><u>#define <dfn class="macro" id="_M/TIPC_IMPORTANCE" data-ref="_M/TIPC_IMPORTANCE">TIPC_IMPORTANCE</dfn>		127	/* Default: TIPC_LOW_IMPORTANCE */</u></td></tr>
+<tr><th id="205">205</th><td><u>#define <dfn class="macro" id="_M/TIPC_SRC_DROPPABLE" data-ref="_M/TIPC_SRC_DROPPABLE">TIPC_SRC_DROPPABLE</dfn>	128	/* Default: based on socket type */</u></td></tr>
+<tr><th id="206">206</th><td><u>#define <dfn class="macro" id="_M/TIPC_DEST_DROPPABLE" data-ref="_M/TIPC_DEST_DROPPABLE">TIPC_DEST_DROPPABLE</dfn>	129	/* Default: based on socket type */</u></td></tr>
+<tr><th id="207">207</th><td><u>#define <dfn class="macro" id="_M/TIPC_CONN_TIMEOUT" data-ref="_M/TIPC_CONN_TIMEOUT">TIPC_CONN_TIMEOUT</dfn>	130	/* Default: 8000 (ms)  */</u></td></tr>
+<tr><th id="208">208</th><td><u>#define <dfn class="macro" id="_M/TIPC_NODE_RECVQ_DEPTH" data-ref="_M/TIPC_NODE_RECVQ_DEPTH">TIPC_NODE_RECVQ_DEPTH</dfn>	131	/* Default: none (read only) */</u></td></tr>
+<tr><th id="209">209</th><td><u>#define <dfn class="macro" id="_M/TIPC_SOCK_RECVQ_DEPTH" data-ref="_M/TIPC_SOCK_RECVQ_DEPTH">TIPC_SOCK_RECVQ_DEPTH</dfn>	132	/* Default: none (read only) */</u></td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><i>/*</i></td></tr>
+<tr><th id="212">212</th><td><i> * Maximum sizes of TIPC bearer-related names (including terminating NULL)</i></td></tr>
+<tr><th id="213">213</th><td><i> * The string formatting for each name element is:</i></td></tr>
+<tr><th id="214">214</th><td><i> * media: media</i></td></tr>
+<tr><th id="215">215</th><td><i> * interface: media:interface name</i></td></tr>
+<tr><th id="216">216</th><td><i> * link: Z.C.N:interface-Z.C.N:interface</i></td></tr>
+<tr><th id="217">217</th><td><i> *</i></td></tr>
+<tr><th id="218">218</th><td><i> */</i></td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><u>#define <dfn class="macro" id="_M/TIPC_MAX_MEDIA_NAME" data-ref="_M/TIPC_MAX_MEDIA_NAME">TIPC_MAX_MEDIA_NAME</dfn>	16</u></td></tr>
+<tr><th id="221">221</th><td><u>#define <dfn class="macro" id="_M/TIPC_MAX_IF_NAME" data-ref="_M/TIPC_MAX_IF_NAME">TIPC_MAX_IF_NAME</dfn>	16</u></td></tr>
+<tr><th id="222">222</th><td><u>#define <dfn class="macro" id="_M/TIPC_MAX_BEARER_NAME" data-ref="_M/TIPC_MAX_BEARER_NAME">TIPC_MAX_BEARER_NAME</dfn>	32</u></td></tr>
+<tr><th id="223">223</th><td><u>#define <dfn class="macro" id="_M/TIPC_MAX_LINK_NAME" data-ref="_M/TIPC_MAX_LINK_NAME">TIPC_MAX_LINK_NAME</dfn>	60</u></td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td><u>#define <dfn class="macro" id="_M/SIOCGETLINKNAME" data-ref="_M/SIOCGETLINKNAME">SIOCGETLINKNAME</dfn>		SIOCPROTOPRIVATE</u></td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><b>struct</b> <dfn class="type def" id="tipc_sioc_ln_req" title='tipc_sioc_ln_req' data-ref="tipc_sioc_ln_req">tipc_sioc_ln_req</dfn> {</td></tr>
+<tr><th id="228">228</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_sioc_ln_req::peer" title='tipc_sioc_ln_req::peer' data-ref="tipc_sioc_ln_req::peer">peer</dfn>;</td></tr>
+<tr><th id="229">229</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="decl" id="tipc_sioc_ln_req::bearer_id" title='tipc_sioc_ln_req::bearer_id' data-ref="tipc_sioc_ln_req::bearer_id">bearer_id</dfn>;</td></tr>
+<tr><th id="230">230</th><td>	<em>char</em> <dfn class="decl" id="tipc_sioc_ln_req::linkname" title='tipc_sioc_ln_req::linkname' data-ref="tipc_sioc_ln_req::linkname">linkname</dfn>[<a class="macro" href="#223" title="60" data-ref="_M/TIPC_MAX_LINK_NAME">TIPC_MAX_LINK_NAME</a>];</td></tr>
+<tr><th id="231">231</th><td>};</td></tr>
+<tr><th id="232">232</th><td><u>#<span data-ppcond="37">endif</span></u></td></tr>
+<tr><th id="233">233</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../codebrowser/Modules/_ssl.c.html'>codebrowser/Modules/_ssl.c</a><br/>Generated on <em>2017-Aug-29</em> from project include<br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

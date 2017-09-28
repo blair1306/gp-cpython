@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='765' type='Py_UNICODE * PyUnicode_AsUnicode(PyObject * unicode)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='760'>/* Return a read-only pointer to the Unicode object&apos;s internal
+   Py_UNICODE buffer.
+   If the wchar_t/Py_UNICODE representation is not yet available, this
+   function will calculate it. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1660' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1666' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1667' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1694' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1699' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1707' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1715' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1716' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1789' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1995' macro='1' u='c'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2709' u='c' c='array_new'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2716' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4131' ll='4135' type='Py_UNICODE * PyUnicode_AsUnicode(PyObject * unicode)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4160' u='c' c='PyUnicode_GetSize'/>

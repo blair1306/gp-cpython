@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='133' type='int _PyOS_URandomNonblock(void * buffer, Py_ssize_t size)'/>
+<use f='codebrowser/Modules/_randommodule.c' l='208' u='c' c='random_seed_urandom'/>
+<def f='codebrowser/Python/bootstrap_hash.c' l='530' ll='534' type='int _PyOS_URandomNonblock(void * buffer, Py_ssize_t size)'/>
+<doc f='codebrowser/Python/bootstrap_hash.c' l='522'>/* Fill buffer with size pseudo-random bytes from the operating system random
+   number generator (RNG). It is not suitable for cryptographic purpose.
+
+   On Linux 3.17 and newer (when getrandom() syscall is used), if the system
+   urandom is not initialized yet, the function returns &quot;weak&quot; entropy read
+   from /dev/urandom.
+
+   Return 0 on success. Raise an exception and return -1 on error. */</doc>

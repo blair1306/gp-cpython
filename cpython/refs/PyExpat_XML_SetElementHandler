@@ -1,0 +1,3 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='535' macro='1' type='void PyExpat_XML_SetElementHandler(XML_Parser parser, XML_StartElementHandler start, XML_EndElementHandler end)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1608' macro='1' type='void PyExpat_XML_SetElementHandler(XML_Parser parser, XML_StartElementHandler start, XML_EndElementHandler end)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1878' macro='1' u='r'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/moduleobject.h' l='81' type='traverseproc'/>
+<offset>768</offset>
+<use f='codebrowser/Objects/moduleobject.c' l='310' u='r' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='700' u='r' c='module_traverse'/>
+<use f='codebrowser/Objects/moduleobject.c' l='701' u='r' c='module_traverse'/>

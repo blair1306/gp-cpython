@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/object.h' l='410' type='initproc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='934' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1829' u='w'/>
+<offset>2496</offset>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2184' u='r' c='defdict_init'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='22' u='r' c='PyCStgDict_init'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='713' u='r' c='local_new'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='713' u='r' c='local_new'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='828' u='r' c='_ldict'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='828' u='r' c='_ldict'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='829' u='r' c='_ldict'/>
+<use f='codebrowser/Modules/xxsubtype.c' l='85' u='r' c='spamlist_init'/>
+<use f='codebrowser/Modules/xxsubtype.c' l='182' u='r' c='spamdict_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='931' u='r' c='oserror_use_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2770' u='r' c='_PyErr_TrySetFromCause'/>
+<use f='codebrowser/Objects/typeobject.c' l='940' u='r' c='type_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='941' u='r' c='type_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='3542' u='r' c='object_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='3553' u='r' c='object_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4960' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4960' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4960' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4960' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4960' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4960' u='r' c='inherit_slots'/>
+<use f='codebrowser/Python/sysmodule.c' l='2020' u='w' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2111' u='w' c='_PySys_EndInit'/>

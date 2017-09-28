@@ -1,0 +1,10 @@
+<dec f='include/lzma/base.h' l='476' type='lzma_allocator *'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='758' u='w' c='Compressor_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1180' u='w' c='_lzma_LZMADecompressor___init___impl'/>
+<offset>384</offset>
+<doc f='include/lzma/base.h' l='470'>/**
+	 * \brief       Custom memory allocation functions
+	 *
+	 * In most cases this is NULL which makes liblzma use
+	 * the standard malloc() and free().
+	 */</doc>

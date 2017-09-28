@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/ceval.h' l='34' type='void _PyEval_SetCoroutineWrapper(PyObject * )'/>
+<def f='codebrowser/Python/ceval.c' l='4630' ll='4637' type='void _PyEval_SetCoroutineWrapper(PyObject * wrapper)'/>
+<use f='codebrowser/Python/sysmodule.c' l='649' u='c' c='sys_set_coroutine_wrapper'/>
+<use f='codebrowser/Python/sysmodule.c' l='652' u='c' c='sys_set_coroutine_wrapper'/>

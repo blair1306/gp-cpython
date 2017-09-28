@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='738' type='int mpd_isnormal(const mpd_t * dec, const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4131' u='c' c='dec_mpd_isnormal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5171' u='c' c='ctx_mpd_isnormal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='340' ll='347' type='int mpd_isnormal(const mpd_t * dec, const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2680' u='c' c='mpd_class'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2690' u='c' c='mpd_class'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='339'>/* Normal */</doc>

@@ -1,0 +1,11 @@
+<dec f='include/wchar.h' l='147' type='wchar_t * wcscpy(wchar_t *restrict __dest, const wchar_t *restrict __src)'/>
+<use f='codebrowser/Modules/getpath.c' l='232' u='c' c='copy_absolute'/>
+<use f='codebrowser/Modules/getpath.c' l='236' u='c' c='copy_absolute'/>
+<use f='codebrowser/Modules/getpath.c' l='254' u='c' c='absolutize'/>
+<use f='codebrowser/Modules/getpath.c' l='643' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='660' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='746' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='802' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='812' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='840' u='c' c='Py_SetPath'/>
+<use f='codebrowser/Modules/main.c' l='401' u='c' c='read_command_line'/>

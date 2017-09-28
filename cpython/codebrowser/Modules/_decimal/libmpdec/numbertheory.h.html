@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>numbertheory.h source code [codebrowser/Modules/_decimal/libmpdec/numbertheory.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="fnt_params "/>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_decimal/libmpdec/numbertheory.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_decimal</a>/<a href='./'>libmpdec</a>/<a href='numbertheory.h.html'>numbertheory.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2008-2016 Stefan Krah. All rights reserved.</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="5">5</th><td><i> * modification, are permitted provided that the following conditions</i></td></tr>
+<tr><th id="6">6</th><td><i> * are met:</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * 1. Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="9">9</th><td><i> *    notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * 2. Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *    notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="13">13</th><td><i> *    documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="14">14</th><td><i> *</i></td></tr>
+<tr><th id="15">15</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS" AND</i></td></tr>
+<tr><th id="16">16</th><td><i> * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="17">17</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="18">18</th><td><i> * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE</i></td></tr>
+<tr><th id="19">19</th><td><i> * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</i></td></tr>
+<tr><th id="20">20</th><td><i> * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</i></td></tr>
+<tr><th id="21">21</th><td><i> * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</i></td></tr>
+<tr><th id="22">22</th><td><i> * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</i></td></tr>
+<tr><th id="23">23</th><td><i> * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</i></td></tr>
+<tr><th id="24">24</th><td><i> * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</i></td></tr>
+<tr><th id="25">25</th><td><i> * SUCH DAMAGE.</i></td></tr>
+<tr><th id="26">26</th><td><i> */</i></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifndef</span> <span class="macro" data-ref="_M/NUMBER_THEORY_H">NUMBER_THEORY_H</span></u></td></tr>
+<tr><th id="30">30</th><td><u>#define <dfn class="macro" id="_M/NUMBER_THEORY_H" data-ref="_M/NUMBER_THEORY_H">NUMBER_THEORY_H</dfn></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="constants.h.html">"constants.h"</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="mpdecimal.h.html">"mpdecimal.h"</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><i>/* Internal header file: all symbols have local scope in the DSO */</i></td></tr>
+<tr><th id="38">38</th><td><a class="macro" href="mpdecimal.h.html#74" title="" data-ref="_M/MPD_PRAGMA">MPD_PRAGMA</a>(<a class="macro" href="mpdecimal.h.html#75" title="&quot;GCC visibility push(hidden)&quot;" data-ref="_M/MPD_HIDE_SYMBOLS_START">MPD_HIDE_SYMBOLS_START</a>)</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>/* transform parameters */</i></td></tr>
+<tr><th id="42">42</th><td><b>struct</b> <dfn class="type def" id="fnt_params" title='fnt_params' data-ref="fnt_params">fnt_params</dfn> {</td></tr>
+<tr><th id="43">43</th><td>    <em>int</em> <dfn class="decl" id="fnt_params::modnum" title='fnt_params::modnum' data-ref="fnt_params::modnum">modnum</dfn>;</td></tr>
+<tr><th id="44">44</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="decl" id="fnt_params::modulus" title='fnt_params::modulus' data-ref="fnt_params::modulus">modulus</dfn>;</td></tr>
+<tr><th id="45">45</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="decl" id="fnt_params::kernel" title='fnt_params::kernel' data-ref="fnt_params::kernel">kernel</dfn>;</td></tr>
+<tr><th id="46">46</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="decl" id="fnt_params::wtable" title='fnt_params::wtable' data-ref="fnt_params::wtable">wtable</dfn>[];</td></tr>
+<tr><th id="47">47</th><td>};</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="decl" id="_mpd_getkernel" title='_mpd_getkernel' data-ref="_mpd_getkernel">_mpd_getkernel</dfn>(<a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col8 decl" id="18n" title='n' data-type='mpd_uint_t' data-ref="18n">n</dfn>, <em>int</em> <dfn class="local col9 decl" id="19sign" title='sign' data-type='int' data-ref="19sign">sign</dfn>, <em>int</em> <dfn class="local col0 decl" id="20modnum" title='modnum' data-type='int' data-ref="20modnum">modnum</dfn>);</td></tr>
+<tr><th id="51">51</th><td><b>struct</b> <a class="type" href="#fnt_params" title='fnt_params' data-ref="fnt_params">fnt_params</a> *<dfn class="decl" id="_mpd_init_fnt_params" title='_mpd_init_fnt_params' data-ref="_mpd_init_fnt_params">_mpd_init_fnt_params</dfn>(<a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col1 decl" id="21n" title='n' data-type='mpd_size_t' data-ref="21n">n</dfn>, <em>int</em> <dfn class="local col2 decl" id="22sign" title='sign' data-type='int' data-ref="22sign">sign</dfn>, <em>int</em> <dfn class="local col3 decl" id="23modnum" title='modnum' data-type='int' data-ref="23modnum">modnum</dfn>);</td></tr>
+<tr><th id="52">52</th><td><em>void</em> <dfn class="decl" id="_mpd_init_w3table" title='_mpd_init_w3table' data-ref="_mpd_init_w3table">_mpd_init_w3table</dfn>(<a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col4 decl" id="24w3table" title='w3table' data-type='mpd_uint_t *' data-ref="24w3table">w3table</dfn>[<var>3</var>], <em>int</em> <dfn class="local col5 decl" id="25sign" title='sign' data-type='int' data-ref="25sign">sign</dfn>, <em>int</em> <dfn class="local col6 decl" id="26modnum" title='modnum' data-type='int' data-ref="26modnum">modnum</dfn>);</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><u>#<span data-ppcond="55">ifdef</span> <span class="macro" data-ref="_M/PPRO">PPRO</span></u></td></tr>
+<tr><th id="56">56</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="57">57</th><td>ppro_setmodulus(<em>int</em> modnum, mpd_uint_t *umod, <em>double</em> *dmod, uint32_t dinvmod[<var>3</var>])</td></tr>
+<tr><th id="58">58</th><td>{</td></tr>
+<tr><th id="59">59</th><td>    *dmod = *umod =  mpd_moduli[modnum];</td></tr>
+<tr><th id="60">60</th><td>    dinvmod[<var>0</var>] = mpd_invmoduli[modnum][<var>0</var>];</td></tr>
+<tr><th id="61">61</th><td>    dinvmod[<var>1</var>] = mpd_invmoduli[modnum][<var>1</var>];</td></tr>
+<tr><th id="62">62</th><td>    dinvmod[<var>2</var>] = mpd_invmoduli[modnum][<var>2</var>];</td></tr>
+<tr><th id="63">63</th><td>}</td></tr>
+<tr><th id="64">64</th><td><u>#<span data-ppcond="55">else</span></u></td></tr>
+<tr><th id="65">65</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="66">66</th><td><dfn class="decl def" id="std_setmodulus" title='std_setmodulus' data-ref="std_setmodulus">std_setmodulus</dfn>(<em>int</em> <dfn class="local col7 decl" id="27modnum" title='modnum' data-type='int' data-ref="27modnum">modnum</dfn>, <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col8 decl" id="28umod" title='umod' data-type='mpd_uint_t *' data-ref="28umod">umod</dfn>)</td></tr>
+<tr><th id="67">67</th><td>{</td></tr>
+<tr><th id="68">68</th><td>    *<a class="local col8 ref" href="#28umod" title='umod' data-ref="28umod">umod</a> =  <a class="ref" href="constants.h.html#mpd_moduli" title='mpd_moduli' data-ref="mpd_moduli">mpd_moduli</a>[<a class="local col7 ref" href="#27modnum" title='modnum' data-ref="27modnum">modnum</a>];</td></tr>
+<tr><th id="69">69</th><td>}</td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="55">endif</span></u></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><a class="macro" href="mpdecimal.h.html#74" title="" data-ref="_M/MPD_PRAGMA">MPD_PRAGMA</a>(<a class="macro" href="mpdecimal.h.html#76" title="&quot;GCC visibility pop&quot;" data-ref="_M/MPD_HIDE_SYMBOLS_END">MPD_HIDE_SYMBOLS_END</a>) <i>/* restore previous scope rules */</i></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='convolute.c.html'>codebrowser/Modules/_decimal/libmpdec/convolute.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

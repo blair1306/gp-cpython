@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1600' type='PyObject * PyUnicode_AsASCIIString(PyObject * unicode)'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1966' u='c' c='PyCursesWindow_set_encoding'/>
+<use f='codebrowser/Modules/_pickle.c' l='3308' u='r' c='save_global'/>
+<use f='codebrowser/Modules/_ssl.c' l='3486' u='c' c='_ssl__SSLContext_load_verify_locations_impl'/>
+<use f='codebrowser/Modules/_struct.c' l='1444' u='c' c='Struct___init___impl'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='806' u='c' c='get_format'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2374' u='c' c='get_ascii_order'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1188' u='c' c='cast_to_1D'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='7056' ll='7060' type='PyObject * PyUnicode_AsASCIIString(PyObject * unicode)'/>

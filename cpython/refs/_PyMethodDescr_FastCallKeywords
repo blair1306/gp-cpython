@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/descrobject.h' l='94' type='PyObject * _PyMethodDescr_FastCallKeywords(PyObject * descrobj, PyObject ** stack, Py_ssize_t nargs, PyObject * kwnames)'/>
+<def f='codebrowser/Objects/descrobject.c' l='256' ll='291' type='PyObject * _PyMethodDescr_FastCallKeywords(PyObject * descrobj, PyObject ** args, Py_ssize_t nargs, PyObject * kwnames)'/>
+<doc f='codebrowser/Objects/descrobject.c' l='255'>// same to methoddescr_call(), but use FASTCALL convention.</doc>
+<use f='codebrowser/Python/ceval.c' l='4836' u='c' c='call_function'/>

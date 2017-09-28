@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/complexobject.h' l='50' type='double PyComplex_ImagAsDouble(PyObject * op)'/>
+<def f='codebrowser/Objects/complexobject.c' l='265' ll='274' type='double PyComplex_ImagAsDouble(PyObject * op)'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1229' u='c' c='format_complex_internal'/>
+<use f='codebrowser/Python/marshal.c' l='402' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/marshal.c' l='422' u='c' c='w_complex_object'/>

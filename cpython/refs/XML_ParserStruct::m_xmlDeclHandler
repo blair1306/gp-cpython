@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='560' type='XML_XmlDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='660' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='660' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='660' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='660' u='w' c='PyExpat_XML_SetXmlDeclHandler'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='660' u='r' c='processXmlDecl'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='660' u='r' c='processXmlDecl'/>
+<offset>2240</offset>

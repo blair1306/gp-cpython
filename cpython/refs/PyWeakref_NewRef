@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='58' type='PyObject * PyWeakref_NewRef(PyObject * ob, PyObject * callback)'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='574' u='c' c='_PyIO_get_locale_module'/>
+<use f='codebrowser/Modules/_ssl.c' l='695' u='c' c='newPySSLSocket'/>
+<use f='codebrowser/Modules/_ssl.c' l='1839' u='c' c='PySSL_set_owner'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='679' u='c' c='_local_create_dummy'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='745' u='c' c='local_new'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1219' u='c' c='thread__set_sentinel'/>
+<use f='codebrowser/Objects/typeobject.c' l='5218' u='c' c='add_subclass'/>
+<def f='codebrowser/Objects/weakrefobject.c' l='733' ll='789' type='PyObject * PyWeakref_NewRef(PyObject * ob, PyObject * callback)'/>
+<use f='codebrowser/Python/import.c' l='382' u='c' c='PyImport_Cleanup'/>

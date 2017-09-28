@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='468' type='const char * mpd_class(const mpd_t * a, const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4235' u='c' c='dec_mpd_class'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5287' u='c' c='ctx_mpd_class'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2666' ll='2695' type='const char * mpd_class(const mpd_t * a, const mpd_context_t * ctx)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2665'>/* Class of an operand. Returns a pointer to the constant name. */</doc>

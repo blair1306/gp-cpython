@@ -1,0 +1,33 @@
+<dec f='codebrowser/Include/abstract.h' l='553' type='int PyBuffer_IsContiguous(const Py_buffer * view, char fort)'/>
+<doc f='codebrowser/Include/abstract.h' l='552'>/* Copy the data from the src buffer to the buffer of destination. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='551' u='c' c='CDataType_from_buffer'/>
+<use f='codebrowser/Modules/_ssl.c' l='3472' u='c' c='_ssl__SSLContext_load_verify_locations_impl'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='271' u='c' c='init_flags'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='273' u='c' c='init_flags'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1161' u='c' c='init_structure'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1163' u='c' c='init_structure'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1515' u='c' c='ndarray_getbuf'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1518' u='c' c='ndarray_getbuf'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1521' u='c' c='ndarray_getbuf'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2091' u='c' c='ndarray_c_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2105' u='c' c='ndarray_fortran_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2119' u='c' c='ndarray_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2530' u='c' c='cmp_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2530' u='c' c='cmp_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2531' u='c' c='cmp_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2531' u='c' c='cmp_contig'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2589' u='c' c='is_contiguous'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2598' u='c' c='is_contiguous'/>
+<use f='codebrowser/Modules/binascii.c' l='234' u='c' c='ascii_buffer_converter'/>
+<def f='codebrowser/Objects/abstract.c' l='417' ll='430' type='int PyBuffer_IsContiguous(const Py_buffer * view, char order)'/>
+<use f='codebrowser/Objects/abstract.c' l='493' u='c' c='PyBuffer_FromContiguous'/>
+<use f='codebrowser/Objects/abstract.c' l='562' u='c' c='PyObject_CopyData'/>
+<use f='codebrowser/Objects/abstract.c' l='563' u='c' c='PyObject_CopyData'/>
+<use f='codebrowser/Objects/abstract.c' l='564' u='c' c='PyObject_CopyData'/>
+<use f='codebrowser/Objects/abstract.c' l='565' u='c' c='PyObject_CopyData'/>
+<use f='codebrowser/Objects/memoryobject.c' l='600' u='c' c='init_flags'/>
+<use f='codebrowser/Objects/memoryobject.c' l='602' u='c' c='init_flags'/>
+<use f='codebrowser/Objects/memoryobject.c' l='929' u='c' c='PyMemoryView_GetContiguous'/>
+<use f='codebrowser/Objects/memoryobject.c' l='984' u='c' c='PyBuffer_ToContiguous'/>
+<use f='codebrowser/Python/getargs.c' l='1329' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='1384' u='c' c='getbuffer'/>

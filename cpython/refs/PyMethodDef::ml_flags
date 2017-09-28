@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/methodobject.h' l='59' type='int'/>
+<offset>128</offset>
+<doc f='codebrowser/Include/methodobject.h' l='59'>/* Combination of METH_xxx flags, which mostly
+                               describe the args expected by the C func */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5637' u='r' c='cfunc_noargs'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3197' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='12' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='459' u='r' c='_PyMethodDef_RawFastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='580' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='603' u='r' c='_PyMethodDef_RawFastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='726' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='740' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='743' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='778' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='67' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='77' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='187' macro='1' u='r'/>
+<use f='codebrowser/Objects/moduleobject.c' l='140' u='r' c='_add_methods_to_object'/>
+<use f='codebrowser/Objects/moduleobject.c' l='141' u='r' c='_add_methods_to_object'/>
+<use f='codebrowser/Objects/typeobject.c' l='4660' u='r' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='4662' u='r' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='4663' u='r' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='4670' u='r' c='add_methods'/>

@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/bits/termios.h' l='35' type='cc_t [32]'/>
+<offset>136</offset>
+<doc f='include/x86_64-linux-gnu/bits/termios.h' l='35'>/* control characters */</doc>
+<use f='codebrowser/Modules/termios.c' l='86' u='r' c='termios_tcgetattr'/>
+<use f='codebrowser/Modules/termios.c' l='97' u='r' c='termios_tcgetattr'/>
+<use f='codebrowser/Modules/termios.c' l='101' u='r' c='termios_tcgetattr'/>
+<use f='codebrowser/Modules/termios.c' l='180' u='w' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/termios.c' l='182' u='w' c='termios_tcsetattr'/>

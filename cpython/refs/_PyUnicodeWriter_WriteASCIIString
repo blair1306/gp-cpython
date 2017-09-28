@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='980' type='int _PyUnicodeWriter_WriteASCIIString(_PyUnicodeWriter * writer, const char * str, Py_ssize_t len)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='977'>/* Append an ASCII-encoded byte string.
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Objects/dictobject.c' l='1914' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/dictobject.c' l='1927' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/listobject.c' l='367' u='c' c='list_repr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='306' u='c' c='tuplerepr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='330' u='c' c='tuplerepr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2749' u='c' c='unicode_fromformat_arg'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2772' u='c' c='unicode_fromformat_arg'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2924' u='c' c='PyUnicode_FromFormatV'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='13713' ll='13771' type='int _PyUnicodeWriter_WriteASCIIString(_PyUnicodeWriter * writer, const char * ascii, Py_ssize_t len)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14148' u='c' c='formatfloat'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1102' u='c' c='format_float_internal'/>

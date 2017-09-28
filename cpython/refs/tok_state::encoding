@@ -1,0 +1,31 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='58' type='char *'/>
+<use f='codebrowser/Parser/parsetok.c' l='332' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='338' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='346' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='347' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='348' u='w' c='parsetok'/>
+<offset>7424</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='58'>/* Source encoding. */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='146' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='322' u='r' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='325' u='w' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='329' u='w' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='339' u='r' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='405' u='r' c='check_bom'/>
+<use f='codebrowser/Parser/tokenizer.c' l='406' u='r' c='check_bom'/>
+<use f='codebrowser/Parser/tokenizer.c' l='407' u='w' c='check_bom'/>
+<use f='codebrowser/Parser/tokenizer.c' l='408' u='r' c='check_bom'/>
+<use f='codebrowser/Parser/tokenizer.c' l='624' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='846' u='w' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='847' u='r' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='851' u='r' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='879' u='w' c='PyTokenizer_FromFile'/>
+<use f='codebrowser/Parser/tokenizer.c' l='880' u='r' c='PyTokenizer_FromFile'/>
+<use f='codebrowser/Parser/tokenizer.c' l='884' u='r' c='PyTokenizer_FromFile'/>
+<use f='codebrowser/Parser/tokenizer.c' l='896' u='r' c='PyTokenizer_Free'/>
+<use f='codebrowser/Parser/tokenizer.c' l='897' u='r' c='PyTokenizer_Free'/>
+<use f='codebrowser/Parser/tokenizer.c' l='949' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='953' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1963' u='r' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1964' u='r' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1966' u='r' c='PyTokenizer_FindEncodingFilename'/>

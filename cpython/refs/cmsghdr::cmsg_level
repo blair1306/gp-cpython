@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='253' type='int'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='253'>/* Originating protocol.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='3489' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3526' u='r' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4157' u='w' c='sock_sendmsg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4309' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4323' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4339' u='w' c='sock_sendmsg_afalg'/>

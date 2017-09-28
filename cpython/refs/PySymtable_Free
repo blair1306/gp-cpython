@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/symtable.h' l='83' type='void PySymtable_Free(struct symtable * )'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='53' u='c' c='_symtable_symtable_impl'/>
+<use f='codebrowser/Python/compile.c' l='383' u='c' c='compiler_free'/>
+<use f='codebrowser/Python/symtable.c' l='223' u='c' c='symtable_new'/>
+<use f='codebrowser/Python/symtable.c' l='251' u='c' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='261' u='c' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='273' u='c' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='303' u='c' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='309' u='c' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='313' u='c' c='PySymtable_BuildObject'/>
+<def f='codebrowser/Python/symtable.c' l='330' ll='337' type='void PySymtable_Free(struct symtable * st)'/>

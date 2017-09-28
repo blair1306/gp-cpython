@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2236' type='int _PyUnicode_ToDecimalDigit(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1944' macro='1' u='c'/>
+<use f='codebrowser/Modules/unicodedata.c' l='145' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodectype.c' l='106' ll='111' type='int _PyUnicode_ToDecimalDigit(Py_UCS4 ch)'/>
+<use f='codebrowser/Objects/unicodectype.c' l='115' u='c' c='_PyUnicode_IsDecimalDigit'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='103'>/* Returns the integer decimal (0-9) for Unicode characters having
+   this property, -1 otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='9084' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9132' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9149' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9195' macro='1' u='c'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='120' macro='1' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='67' macro='1' u='c'/>

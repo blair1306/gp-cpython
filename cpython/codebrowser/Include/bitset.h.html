@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bitset.h source code [codebrowser/Include/bitset.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/bitset.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='bitset.h.html'>bitset.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><u>#<span data-ppcond="2">ifndef</span> <span class="macro" data-ref="_M/Py_BITSET_H">Py_BITSET_H</span></u></td></tr>
+<tr><th id="3">3</th><td><u>#define <dfn class="macro" id="_M/Py_BITSET_H" data-ref="_M/Py_BITSET_H">Py_BITSET_H</dfn></u></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="5">5</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="4">endif</span></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* Bitset interface */</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/BYTE" data-ref="_M/BYTE">BYTE</dfn>		char</u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><b>typedef</b> <a class="macro" href="#10" title="char" data-ref="_M/BYTE">BYTE</a> *<dfn class="typedef" id="bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</dfn>;</td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="decl" id="newbitset" title='newbitset' data-ref="newbitset">newbitset</dfn>(<em>int</em> <dfn class="local col0 decl" id="350nbits" title='nbits' data-type='int' data-ref="350nbits">nbits</dfn>);</td></tr>
+<tr><th id="15">15</th><td><em>void</em> <dfn class="decl" id="delbitset" title='delbitset' data-ref="delbitset">delbitset</dfn>(<a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="local col1 decl" id="351bs" title='bs' data-type='bitset' data-ref="351bs">bs</dfn>);</td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/testbit" data-ref="_M/testbit">testbit</dfn>(ss, ibit) (((ss)[BIT2BYTE(ibit)] &amp; BIT2MASK(ibit)) != 0)</u></td></tr>
+<tr><th id="17">17</th><td><em>int</em> <dfn class="decl" id="addbit" title='addbit' data-ref="addbit">addbit</dfn>(<a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="local col2 decl" id="352bs" title='bs' data-type='bitset' data-ref="352bs">bs</dfn>, <em>int</em> <dfn class="local col3 decl" id="353ibit" title='ibit' data-type='int' data-ref="353ibit">ibit</dfn>); <i>/* Returns 0 if already set */</i></td></tr>
+<tr><th id="18">18</th><td><em>int</em> <dfn class="decl" id="samebitset" title='samebitset' data-ref="samebitset">samebitset</dfn>(<a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="local col4 decl" id="354bs1" title='bs1' data-type='bitset' data-ref="354bs1">bs1</dfn>, <a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="local col5 decl" id="355bs2" title='bs2' data-type='bitset' data-ref="355bs2">bs2</dfn>, <em>int</em> <dfn class="local col6 decl" id="356nbits" title='nbits' data-type='int' data-ref="356nbits">nbits</dfn>);</td></tr>
+<tr><th id="19">19</th><td><em>void</em> <dfn class="decl" id="mergebitset" title='mergebitset' data-ref="mergebitset">mergebitset</dfn>(<a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="local col7 decl" id="357bs1" title='bs1' data-type='bitset' data-ref="357bs1">bs1</dfn>, <a class="typedef" href="#bitset" title='bitset' data-type='char *' data-ref="bitset">bitset</a> <dfn class="local col8 decl" id="358bs2" title='bs2' data-type='bitset' data-ref="358bs2">bs2</dfn>, <em>int</em> <dfn class="local col9 decl" id="359nbits" title='nbits' data-type='int' data-ref="359nbits">nbits</dfn>);</td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/BITSPERBYTE" data-ref="_M/BITSPERBYTE">BITSPERBYTE</dfn>	(8*sizeof(BYTE))</u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/NBYTES" data-ref="_M/NBYTES">NBYTES</dfn>(nbits)	(((nbits) + BITSPERBYTE - 1) / BITSPERBYTE)</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/BIT2BYTE" data-ref="_M/BIT2BYTE">BIT2BYTE</dfn>(ibit)	((ibit) / BITSPERBYTE)</u></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/BIT2SHIFT" data-ref="_M/BIT2SHIFT">BIT2SHIFT</dfn>(ibit)	((ibit) % BITSPERBYTE)</u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/BIT2MASK" data-ref="_M/BIT2MASK">BIT2MASK</dfn>(ibit)	(1 &lt;&lt; BIT2SHIFT(ibit))</u></td></tr>
+<tr><th id="27">27</th><td><u>#define <dfn class="macro" id="_M/BYTE2BIT" data-ref="_M/BYTE2BIT">BYTE2BIT</dfn>(ibyte)	((ibyte) * BITSPERBYTE)</u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="30">30</th><td>}</td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="29">endif</span></u></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="2">endif</span> /* !Py_BITSET_H */</u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/parsermodule.c.html'>codebrowser/Modules/parsermodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

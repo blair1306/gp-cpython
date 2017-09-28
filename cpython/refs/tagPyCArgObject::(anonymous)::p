@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='308' type='void *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='416' u='w' c='StructUnionType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='953' u='w' c='PyCPointerType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1380' u='w' c='PyCArrayType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1792' u='w' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1812' u='w' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2354' u='w' c='PyCFuncPtrType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3565' u='w' c='_byref'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='509' u='r' c='PyCArg_repr'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1541' u='w' c='byref'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='782' type='void mpd_clear_flags(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3715' u='c' c='PyDec_AsTuple'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='693' ll='697' macro='1' type='void mpd_clear_flags(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2653' u='c' c='mpd_qand'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2733' u='c' c='mpd_qinvert'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2846' u='c' c='mpd_qor'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3165' u='c' c='mpd_qxor'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4710' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5992' u='c' c='mpd_qnext_minus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6038' u='c' c='mpd_qnext_plus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7256' u='c' c='_mpd_qreciprocal_approx'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7287' u='c' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7551' u='c' c='_invroot_init_approx'/>

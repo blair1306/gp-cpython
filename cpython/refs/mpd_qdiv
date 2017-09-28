@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='535' type='void mpd_qdiv(mpd_t * q, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3987' u='c' c='nm_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5051' u='c' c='ctx_mpd_qdiv'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3773' ll='3778' type='void mpd_qdiv(mpd_t * q, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4029' u='c' c='mpd_qdiv_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4043' u='c' c='mpd_qdiv_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4296' u='c' c='_mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6212' u='c' c='_mpd_qpow_int'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3772'>/* Divide a by b. */</doc>

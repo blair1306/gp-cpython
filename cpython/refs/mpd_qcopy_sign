@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='474' type='int mpd_qcopy_sign(mpd_t * result, const mpd_t * a, const mpd_t * b, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4294' u='c' c='dec_mpd_qcopy_sign'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5364' u='c' c='ctx_mpd_qcopy_sign'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2004' ll='2014' type='int mpd_qcopy_sign(mpd_t * result, const mpd_t * a, const mpd_t * b, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6083' u='c' c='mpd_qnext_toward'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2000'>/*
+ * Copy a decimal, setting the sign of the first operand to the sign of the
+ * second operand. In case of an error, the status is set to MPD_Malloc_error.
+ */</doc>

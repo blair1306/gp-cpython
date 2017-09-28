@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_math.h' l='41'/>
+<doc f='codebrowser/Modules/_math.h' l='39'>/* Use the substitute from _math.c on all platforms:
+   it includes workarounds for buggy handling of zeros. */</doc>
+<use f='codebrowser/Modules/cmathmodule.c' l='447' u='c'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='657' u='c'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1167' u='c'/>

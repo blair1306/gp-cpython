@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2142' type='const SSL_CIPHER * SSL_get_current_cipher(const SSL * s)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1676' u='c' c='_ssl__SSLSocket_cipher_impl'/>

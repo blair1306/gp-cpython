@@ -1,0 +1,57 @@
+<dec f='codebrowser/Include/dictobject.h' l='95' type='int PyDict_Next(PyObject * mp, Py_ssize_t * pos, PyObject ** key, PyObject ** value)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4183' u='c' c='Struct_init'/>
+<use f='codebrowser/Modules/_elementtree.c' l='841' u='c' c='deepcopy'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='294' u='c' c='partial_repr'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='780' u='c' c='lru_cache_make_key'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='795' u='c' c='lru_cache_make_key'/>
+<use f='codebrowser/Modules/_operator.c' l='1580' u='c' c='methodcaller_repr'/>
+<use f='codebrowser/Modules/_pickle.c' l='1682' u='c' c='whichmodule'/>
+<use f='codebrowser/Modules/_pickle.c' l='2792' u='c' c='batch_dict_exact'/>
+<use f='codebrowser/Modules/_pickle.c' l='2807' u='c' c='batch_dict_exact'/>
+<use f='codebrowser/Modules/_pickle.c' l='4430' u='c' c='Pickler_set_memo'/>
+<use f='codebrowser/Modules/_pickle.c' l='6080' u='c' c='load_build'/>
+<use f='codebrowser/Modules/_pickle.c' l='6107' u='c' c='load_build'/>
+<use f='codebrowser/Modules/_pickle.c' l='6898' u='c' c='Unpickler_set_memo'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='200' u='c' c='test_dict_inner'/>
+<use f='codebrowser/Modules/selectmodule.c' l='365' u='c' c='update_ufd_array'/>
+<use f='codebrowser/Objects/call.c' l='346' u='c' c='_PyFunction_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='1385' u='c' c='_PyStack_UnpackDict'/>
+<use f='codebrowser/Objects/dictobject.c' l='871' u='c' c='_PyDict_HasOnlyStringKeys'/>
+<def f='codebrowser/Objects/dictobject.c' l='1668' ll='1672' type='int PyDict_Next(PyObject * op, Py_ssize_t * ppos, PyObject ** pkey, PyObject ** pvalue)'/>
+<use f='codebrowser/Objects/dictobject.c' l='1905' u='c' c='dict_repr'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1650'>/*
+ * Iterate over a dict.  Use like so:
+ *
+ *     Py_ssize_t i;
+ *     PyObject *key, *value;
+ *     i = 0;   # important!  i should not otherwise be changed by you
+ *     while (PyDict_Next(yourdict, &amp;i, &amp;key, &amp;value)) {
+ *         Refer to borrowed references in key and value.
+ *     }
+ *
+ * Return 1 on success, return 0 when the reached the end of the dictionary
+ * (or if op is not a dictionary)
+ *
+ * CAUTION:  In general, it isn&apos;t safe to use PyDict_Next in a loop that
+ * mutates the dict.  One exception:  it is safe if the loop merely changes
+ * the values associated with the keys (but doesn&apos;t insert new keys or
+ * delete keys), via PyDict_SetItem().
+ */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='153' u='c' c='BaseException_setstate'/>
+<use f='codebrowser/Objects/moduleobject.c' l='567' u='c' c='_PyModule_ClearDict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='586' u='c' c='_PyModule_ClearDict'/>
+<use f='codebrowser/Objects/typeobject.c' l='262' u='c' c='PyType_Modified'/>
+<use f='codebrowser/Objects/typeobject.c' l='1651' u='c' c='set_mro_error'/>
+<use f='codebrowser/Objects/typeobject.c' l='3213' u='c' c='type___subclasses___impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='7142' u='c' c='set_names'/>
+<use f='codebrowser/Objects/typeobject.c' l='7223' u='c' c='recurse_down_subclasses'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13258' u='c' c='unicode_maketrans_impl'/>
+<use f='codebrowser/Python/Python-ast.c' l='580' u='c' c='ast_type_init'/>
+<use f='codebrowser/Python/compile.c' l='5239' u='c' c='dict_keys_inorder'/>
+<use f='codebrowser/Python/getargs.c' l='1832' u='c' c='vgetargskeywords'/>
+<use f='codebrowser/Python/getargs.c' l='2207' u='c' c='vgetargskeywordsfast_impl'/>
+<use f='codebrowser/Python/import.c' l='396' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/marshal.c' l='502' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/symtable.c' l='557' u='c' c='analyze_cells'/>
+<use f='codebrowser/Python/symtable.c' l='607' u='c' c='update_symbols'/>
+<use f='codebrowser/Python/symtable.c' l='763' u='c' c='analyze_block'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/marshal.h' l='14' type='PyObject * PyMarshal_WriteObjectToString(PyObject * , int )'/>
+<def f='codebrowser/Python/marshal.c' l='1601' ll='1642' type='PyObject * PyMarshal_WriteObjectToString(PyObject * x, int version)'/>
+<use f='codebrowser/Python/marshal.c' l='1673' u='c' c='marshal_dump_impl'/>
+<use f='codebrowser/Python/marshal.c' l='1760' u='c' c='marshal_dumps_impl'/>

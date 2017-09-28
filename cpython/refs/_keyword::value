@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/Python-ast.h' l='432' type='expr_ty'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2556' u='w' c='_Py_keyword'/>
+<use f='codebrowser/Python/Python-ast.c' l='3920' u='r' c='ast2obj_keyword'/>
+<use f='codebrowser/Python/ast.c' l='68' u='r' c='validate_keywords'/>
+<use f='codebrowser/Python/compile.c' l='3562' u='r' c='compiler_subkwargs'/>
+<use f='codebrowser/Python/compile.c' l='3581' u='r' c='compiler_subkwargs'/>
+<use f='codebrowser/Python/compile.c' l='3658' u='r' c='compiler_call_helper'/>
+<use f='codebrowser/Python/compile.c' l='4119' u='r' c='compiler_visit_keyword'/>
+<use f='codebrowser/Python/symtable.c' l='1691' u='r' c='symtable_visit_keyword'/>

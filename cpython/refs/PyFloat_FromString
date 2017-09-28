@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/floatobject.h' l='42' type='PyObject * PyFloat_FromString(PyObject * )'/>
+<doc f='codebrowser/Include/floatobject.h' l='41'>/* Return Python float from string PyObject. */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3607' u='c' c='PyDec_AsFloat'/>
+<use f='codebrowser/Modules/_json.c' l='1036' u='c' c='_match_number_unicode'/>
+<use f='codebrowser/Objects/abstract.c' l='1459' u='c' c='PyNumber_Float'/>
+<def f='codebrowser/Objects/floatobject.c' l='166' ll='215' type='PyObject * PyFloat_FromString(PyObject * v)'/>
+<use f='codebrowser/Objects/floatobject.c' l='1629' u='c' c='float_new_impl'/>

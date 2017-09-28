@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/arraymodule.c' l='75' type='0'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1823' u='r' c='typecode_to_mformat_code'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2088' c='array__array_reconstructor_impl'/>
+<doc f='codebrowser/Modules/arraymodule.c' l='64'>/* UNKNOWN_FORMAT is used to indicate that the machine format for an
+     * array type code cannot be interpreted. When this occurs, a list of
+     * Python objects is used to represent the content of the array
+     * instead of using the memory content of the array directly. In that
+     * case, the array_reconstructor mechanism is bypassed completely, and
+     * the standard array constructor is used instead.
+     *
+     * This is will most likely occur when the machine doesn&apos;t use IEEE
+     * floating-point numbers.
+     */</doc>

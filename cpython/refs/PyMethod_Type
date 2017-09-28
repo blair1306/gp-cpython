@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/classobject.h' l='19' type='PyTypeObject'/>
+<use f='codebrowser/Objects/classobject.c' l='23' macro='1' u='a'/>
+<use f='codebrowser/Objects/classobject.c' l='33' macro='1' u='a'/>
+<use f='codebrowser/Objects/classobject.c' l='56' u='a' c='PyMethod_New'/>
+<use f='codebrowser/Objects/classobject.c' l='60' u='a' c='PyMethod_New'/>
+<use f='codebrowser/Objects/classobject.c' l='217' macro='1' u='a'/>
+<use f='codebrowser/Objects/classobject.c' l='218' macro='1' u='a'/>
+<def f='codebrowser/Objects/classobject.c' l='334' ll='373' type='PyTypeObject'/>
+<use f='codebrowser/Objects/object.c' l='1764' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/ceval.c' l='4749' macro='1' u='a'/>
+<use f='codebrowser/Python/ceval.c' l='4762' macro='1' u='a'/>
+<use f='codebrowser/Python/ceval.c' l='4840' macro='1' u='a'/>

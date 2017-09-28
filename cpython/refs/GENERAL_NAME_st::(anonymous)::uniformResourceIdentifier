@@ -1,0 +1,5 @@
+<dec f='include/openssl/x509v3.h' l='196' type='ASN1_IA5STRING *'/>
+<use f='codebrowser/Modules/_ssl.c' l='1019' u='r' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1173' u='r' c='_get_aia_uri'/>
+<use f='codebrowser/Modules/_ssl.c' l='1236' u='r' c='_get_crl_dp'/>
+<offset>0</offset>

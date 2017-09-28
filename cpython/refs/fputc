@@ -1,0 +1,25 @@
+<dec f='include/stdio.h' l='573' type='int fputc(int __c, FILE * __stream)'/>
+<doc f='include/stdio.h' l='566'>/* Write a character to STREAM.
+
+   These functions are possible cancellation points and therefore not
+   marked with __THROW.
+
+   These functions is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='595' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='604' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='620' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='54' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='59' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7429' macro='1' u='c'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2104' u='c' c='_PyObject_DebugDumpAddress'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2133' u='c' c='_PyObject_DebugDumpAddress'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2161' u='c' c='_PyObject_DebugDumpAddress'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2163' u='c' c='_PyObject_DebugDumpAddress'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2179' u='c' c='printone'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2180' u='c' c='printone'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2333' u='c' c='_PyObject_DebugMallocStats'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2357' u='c' c='_PyObject_DebugMallocStats'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2370' u='c' c='_PyObject_DebugMallocStats'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1724' u='c' c='_Py_FatalError_DumpTracebacks'/>
+<use f='codebrowser/Python/sysmodule.c' l='1299' u='c' c='sys_debugmallocstats'/>

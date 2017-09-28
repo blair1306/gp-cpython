@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='1115' type='int fdatasync(int __fildes)'/>
+<doc f='include/unistd.h' l='1113'>/* Synchronize at least the data part of a file with the underlying
+   media.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3102' u='r' c='os_fdatasync_impl'/>

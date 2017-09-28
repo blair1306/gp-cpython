@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/Python-ast.h' l='219' type='30'/>
+<use f='codebrowser/Python/Python-ast.c' l='2413' u='r' c='_Py_Tuple'/>
+<use f='codebrowser/Python/Python-ast.c' l='3496' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='203' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='339' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1033' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='2991' c='ast_for_expr_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2835' u='r' c='compiler_assert'/>
+<use f='codebrowser/Python/compile.c' l='4515' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1516' c='symtable_visit_expr'/>

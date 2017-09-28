@@ -1,0 +1,13 @@
+<dec f='codebrowser/Objects/unicodeobject.c' l='321' type='0'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='271' u='r' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='315' u='r' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='271' u='r' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='315' u='r' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4979' u='r' c='PyUnicode_DecodeUTF8Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5043' u='r' c='PyUnicode_DecodeUTF8Stateful'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6728' u='r' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6771' u='r' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6940' u='r' c='PyUnicode_DecodeASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6974' u='r' c='PyUnicode_DecodeASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8433' u='r' c='charmap_encoding_error'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8542' u='r' c='_PyUnicode_EncodeCharmap'/>

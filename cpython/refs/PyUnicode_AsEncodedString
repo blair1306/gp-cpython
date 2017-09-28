@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1244' type='PyObject * PyUnicode_AsEncodedString(PyObject * unicode, const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1241'>/* Encodes a Unicode object and returns the result as Python string
+   object. */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='232' u='c' c='PyCurses_ConvertToChtype'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='355' u='c' c='PyCurses_ConvertToString'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3542' u='c' c='_elementtree_XMLParser__parse_whole'/>
+<use f='codebrowser/Modules/_pickle.c' l='2229' u='c' c='write_unicode_binary'/>
+<use f='codebrowser/Modules/_ssl.c' l='3153' u='c' c='_pwinfo_set'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1479' u='c' c='idna_converter'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5919' u='c' c='socket_getaddrinfo'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='778' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1101' u='c' c='_PyBytes_DecodeEscapeRecode'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2564' u='c' c='bytes_new'/>
+<use f='codebrowser/Objects/object.c' l='389' u='c' c='PyObject_Print'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3313' u='c' c='PyUnicode_Encode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3541' u='c' c='PyUnicode_EncodeFSDefault'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3551' ll='3645' type='PyObject * PyUnicode_AsEncodedString(PyObject * unicode, const char * encoding, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11540' u='c' c='unicode_encode_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1961' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/getargs.c' l='1136' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/importdl.c' l='59' u='c' c='get_encoded_name'/>
+<use f='codebrowser/Python/importdl.c' l='65' u='c' c='get_encoded_name'/>
+<use f='codebrowser/Python/marshal.c' l='460' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/sysmodule.c' l='120' u='c' c='sys_displayhook_unencodable'/>

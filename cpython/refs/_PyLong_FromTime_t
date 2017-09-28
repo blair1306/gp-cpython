@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pytime.h' l='36' type='PyObject * _PyLong_FromTime_t(time_t sec)'/>
+<doc f='codebrowser/Include/pytime.h' l='35'>/* Convert a time_t to a PyLong. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3026' u='c' c='test_pytime_object_to_time_t'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3042' u='c' c='test_pytime_object_to_timeval'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3058' u='c' c='test_pytime_object_to_timespec'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3963' u='c' c='test_PyTime_AsTimespec'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1972' u='c' c='fill_time'/>
+<def f='codebrowser/Python/pytime.c' l='57' ll='66' type='PyObject * _PyLong_FromTime_t(time_t t)'/>

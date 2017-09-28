@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/dictobject.h' l='109' type='int PyDict_Contains(PyObject * mp, PyObject * key)'/>
+<use f='codebrowser/Modules/_json.c' l='1494' u='c' c='encoder_listencode_obj'/>
+<use f='codebrowser/Modules/_json.c' l='1566' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1725' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1289' u='c' c='faulthandler_env_options'/>
+<use f='codebrowser/Modules/zipimport.c' l='310' u='c' c='check_is_directory'/>
+<use f='codebrowser/Objects/descrobject.c' l='821' u='c' c='mappingproxy_contains'/>
+<def f='codebrowser/Objects/dictobject.c' l='3021' ll='3039' type='int PyDict_Contains(PyObject * op, PyObject * key)'/>
+<use f='codebrowser/Objects/dictobject.c' l='3064'/>
+<use f='codebrowser/Objects/dictobject.c' l='3064'/>
+<use f='codebrowser/Objects/dictobject.c' l='3807' u='c' c='dictkeys_contains'/>
+<doc f='codebrowser/Objects/dictobject.c' l='3020'>/* Return 1 if `key` is in dict `op`, 0 if not, and -1 on error. */</doc>

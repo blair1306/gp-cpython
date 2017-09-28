@@ -1,0 +1,8 @@
+<dec f='include/lzma/check.h' l='42' type='4'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='772' u='r' c='Compressor_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1478' macro='1' u='r'/>
+<doc f='include/lzma/check.h' l='36'>/**&lt;
+		 * CRC32 using the polynomial from the IEEE 802.3 standard
+		 *
+		 * Size of the Check field: 4 bytes
+		 */</doc>

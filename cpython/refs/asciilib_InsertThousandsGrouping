@@ -1,0 +1,32 @@
+<def f='codebrowser/Objects/stringlib/localeutil.h' l='103' macro='1' type='Py_ssize_t asciilib_InsertThousandsGrouping(Py_UCS1 * buffer, Py_ssize_t n_buffer, Py_UCS1 * digits, Py_ssize_t n_digits, Py_ssize_t min_width, const char * grouping, Py_UCS1 * thousands_sep, Py_ssize_t thousands_sep_len)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9362' u='c' c='_PyUnicode_InsertThousandsGrouping'/>
+<doc f='codebrowser/Objects/stringlib/localeutil.h' l='72'>/**
+ * InsertThousandsGrouping:
+ * @buffer: A pointer to the start of a string.
+ * @n_buffer: Number of characters in @buffer.
+ * @digits: A pointer to the digits we&apos;re reading from. If count
+ *          is non-NULL, this is unused.
+ * @n_digits: The number of digits in the string, in which we want
+ *            to put the grouping chars.
+ * @min_width: The minimum width of the digits in the output string.
+ *             Output will be zero-padded on the left to fill.
+ * @grouping: see definition in localeconv().
+ * @thousands_sep: see definition in localeconv().
+ *
+ * There are 2 modes: counting and filling. If @buffer is NULL,
+ *  we are in counting mode, else filling mode.
+ * If counting, the required buffer size is returned.
+ * If filling, we know the buffer will be large enough, so we don&apos;t
+ *  need to pass in the buffer size.
+ * Inserts thousand grouping characters (as defined by grouping and
+ *  thousands_sep) into the string between buffer and buffer+n_digits.
+ *
+ * Return value: 0 on error, else 1.  Note that no error can occur if
+ *  count is non-NULL.
+ *
+ * This name won&apos;t be used, the includer of this file should define
+ *  it to be the actual function name, based on unicode or string.
+ *
+ * As closely as possible, this code mimics the logic in decimal.py&apos;s
+    _insert_thousands_sep().
+ **/</doc>

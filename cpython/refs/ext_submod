@@ -1,0 +1,6 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='82' ll='94' type='mpd_uint_t ext_submod(mpd_uint_t a, mpd_uint_t b, mpd_uint_t m)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='78'>/*
+ * Restrictions: a &lt; 2m and b &lt; 2m
+ * ACL2 proof: umodarith.lisp: section ext-submod
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='154' u='c' c='crt3'/>

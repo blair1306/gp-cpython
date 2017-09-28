@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='814' type='int wchgat(WINDOW * , int , attr_t , short , const void * )'/>
+<doc f='include/curses.h' l='814'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='986' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='990' u='c' c='PyCursesWindow_ChgAt'/>

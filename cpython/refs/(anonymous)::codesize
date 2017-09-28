@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/sre.h' l='38' type='Py_ssize_t'/>
+<use f='codebrowser/Modules/_sre.c' l='907' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1390' u='w' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1905' u='r' c='_validate'/>
+<use f='codebrowser/Modules/_sre.c' l='2544' u='r' c='pattern_hash'/>
+<use f='codebrowser/Modules/_sre.c' l='2549' u='r' c='pattern_hash'/>
+<use f='codebrowser/Modules/_sre.c' l='2581' u='r' c='pattern_richcompare'/>
+<use f='codebrowser/Modules/_sre.c' l='2581' u='r' c='pattern_richcompare'/>
+<use f='codebrowser/Modules/_sre.c' l='2588' u='r' c='pattern_richcompare'/>
+<offset>768</offset>
+<doc f='codebrowser/Modules/sre.h' l='37'>/* pattern code */</doc>

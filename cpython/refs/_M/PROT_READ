@@ -1,0 +1,14 @@
+<dec f='include/x86_64-linux-gnu/bits/mman-linux.h' l='35'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1056' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1079' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1085' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1089' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1093' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1097' u='c'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1441' u='a'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1442' u='c'/>
+<doc f='include/x86_64-linux-gnu/bits/mman-linux.h' l='30'>/* Protections are chosen from these bits, OR&apos;d together.  The
+   implementation does not necessarily support PROT_EXEC or PROT_WRITE
+   without PROT_READ.  The only guarantees are that no writing will be
+   allowed without PROT_WRITE and no access will be allowed for PROT_NONE. */</doc>
+<use f='codebrowser/Objects/obmalloc.c' l='124' u='c'/>

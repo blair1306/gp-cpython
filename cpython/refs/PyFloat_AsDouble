@@ -1,0 +1,47 @@
+<dec f='codebrowser/Include/floatobject.h' l='49' type='double PyFloat_AsDouble(PyObject * )'/>
+<doc f='codebrowser/Include/floatobject.h' l='47'>/* Extract C double from Python float.  The macro version trades safety for
+   speed. */</doc>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='991' u='c' c='g_set'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1011' u='c' c='d_set'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1031' u='c' c='d_set_sw'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1059' u='c' c='f_set'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1079' u='c' c='f_set_sw'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2110' u='c' c='accum'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2249' u='c' c='PyDecType_FromFloatExact'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4465' u='c' c='dec_complex'/>
+<use f='codebrowser/Modules/_lsprof.c' l='137' u='c' c='CallExternalTimer'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='289' u='c' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_struct.c' l='294' u='c' c='pack_halffloat'/>
+<use f='codebrowser/Modules/_struct.c' l='717' u='c' c='np_float'/>
+<use f='codebrowser/Modules/_struct.c' l='730' u='c' c='np_double'/>
+<use f='codebrowser/Modules/_struct.c' l='949' u='c' c='bp_float'/>
+<use f='codebrowser/Modules/_struct.c' l='961' u='c' c='bp_double'/>
+<use f='codebrowser/Modules/_struct.c' l='1164' u='c' c='lp_float'/>
+<use f='codebrowser/Modules/_struct.c' l='1176' u='c' c='lp_double'/>
+<use f='codebrowser/Modules/mathmodule.c' l='913' u='c' c='math_1_to_whatever'/>
+<use f='codebrowser/Modules/mathmodule.c' l='949' u='c' c='math_1a'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1007' u='c' c='math_2'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1008' u='c' c='math_2'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1327' u='c' c='math_fsum'/>
+<use f='codebrowser/Objects/bytesobject.c' l='419' u='c' c='formatfloat'/>
+<use f='codebrowser/Objects/complexobject.c' l='261' u='c' c='PyComplex_RealAsDouble'/>
+<use f='codebrowser/Objects/complexobject.c' l='341' u='c' c='PyComplex_AsCComplex'/>
+<use f='codebrowser/Objects/complexobject.c' l='452' u='c' c='to_complex'/>
+<use f='codebrowser/Objects/complexobject.c' l='657' u='c' c='complex_richcompare'/>
+<use f='codebrowser/Objects/complexobject.c' l='1048' u='c' c='complex_new_impl'/>
+<use f='codebrowser/Objects/complexobject.c' l='1065' u='c' c='complex_new_impl'/>
+<def f='codebrowser/Objects/floatobject.c' l='233' ll='281' type='double PyFloat_AsDouble(PyObject * op)'/>
+<use f='codebrowser/Objects/floatobject.c' l='837' u='c' c='float_is_integer_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='896' u='c' c='float___trunc___impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1053' u='c' c='float___round___impl'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1818' u='c' c='pack_single'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14131' u='c' c='formatfloat'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1064' u='c' c='format_float_internal'/>
+<use f='codebrowser/Python/getargs.c' l='858' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='868' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/marshal.c' l='370' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/pytime.c' l='136' u='c' c='_PyTime_ObjectToDenominator'/>
+<use f='codebrowser/Python/pytime.c' l='157' u='c' c='_PyTime_ObjectToTime_t'/>
+<use f='codebrowser/Python/pytime.c' l='303' u='c' c='_PyTime_FromObject'/>
+<use f='codebrowser/Python/structmember.c' l='233' u='c' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='240' u='c' c='PyMember_SetOne'/>

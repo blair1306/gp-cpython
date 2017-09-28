@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pytime.h' l='81' type='int _PyTime_FromSecondsObject(_PyTime_t * t, PyObject * obj, _PyTime_round_t round)'/>
+<doc f='codebrowser/Include/pytime.h' l='79'>/* Convert a number of seconds (Python float or int) to a timetamp.
+   Raise an exception and return -1 on error, return 0 on success. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3908' u='c' c='test_pytime_fromsecondsobject'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='113' u='c' c='lock_acquire_parse_args'/>
+<use f='codebrowser/Modules/selectmodule.c' l='215' u='c' c='select_select'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1515' u='c' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1059' u='c' c='signal_sigtimedwait_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2509' u='c' c='socket_parse_timeout'/>
+<use f='codebrowser/Modules/timemodule.c' l='178' u='c' c='time_clock_settime'/>
+<use f='codebrowser/Modules/timemodule.c' l='228' u='c' c='time_sleep'/>
+<def f='codebrowser/Python/pytime.c' l='326' ll='330' type='int _PyTime_FromSecondsObject(_PyTime_t * t, PyObject * obj, _PyTime_round_t round)'/>

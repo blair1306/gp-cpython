@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/object.h' l='355' type='getattrfunc'/>
+<offset>640</offset>
+<use f='codebrowser/Objects/object.c' l='786' u='r' c='PyObject_GetAttrString'/>
+<use f='codebrowser/Objects/object.c' l='787' u='r' c='PyObject_GetAttrString'/>
+<use f='codebrowser/Objects/object.c' l='892' u='r' c='PyObject_GetAttr'/>
+<use f='codebrowser/Objects/object.c' l='896' u='r' c='PyObject_GetAttr'/>
+<use f='codebrowser/Objects/object.c' l='946' u='r' c='PyObject_SetAttr'/>
+<use f='codebrowser/Objects/typeobject.c' l='2706' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4928' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4929' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4929' u='r' c='inherit_slots'/>

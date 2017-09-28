@@ -1,0 +1,27 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='592' type='DTD *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='PyExpat_XML_ParserReset'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='PyExpat_XML_ParserFree'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='PyExpat_XML_ParserFree'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='PyExpat_XML_SetBase'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='addBinding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='processXmlDecl'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='externalParEntInitProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='appendAttributeValue'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='storeEntityValue'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='setElementTypePrefix'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='getAttributeId'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='getContext'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='setContext'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='nextScaffoldPart'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='build_node'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='build_model'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='692' u='r' c='getElementType'/>
+<offset>5440</offset>

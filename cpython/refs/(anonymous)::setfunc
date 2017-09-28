@@ -1,0 +1,29 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='66' type='SETFUNC'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='179' type='SETFUNC'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='200' type='SETFUNC'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1602' u='r' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1611' u='r' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1666' u='r' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1675' u='r' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1886' u='w' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1995' u='w' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2285' u='w' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2878' u='r' c='_PyCData_set'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2879' u='r' c='_PyCData_set'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4460' u='r' c='Array_ass_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4671' u='r' c='Simple_set_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4672' u='r' c='Simple_set_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4873' u='r' c='Pointer_ass_item'/>
+<offset>960</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='179'>/* setter function if proto is NULL */</doc>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='200'>/* Only for simple objects */</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='298' u='r' c='closure_fcn'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='323' u='w' c='CThunkObject_new'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='369' u='w' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='373' u='r' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='378' u='w' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='378' u='r' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='138' u='w' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='220' u='r' c='PyCField_set'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='264' u='w' c='MakeFields'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='264' u='r' c='MakeFields'/>

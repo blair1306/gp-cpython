@@ -1,0 +1,4 @@
+<dec f='include/lzma/delta.h' l='47' type='lzma_delta_type'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='275' u='w' c='parse_filter_spec_delta'/>
+<offset>0</offset>
+<doc f='include/lzma/delta.h' l='46'>/** For now, this must always be LZMA_DELTA_TYPE_BYTE. */</doc>

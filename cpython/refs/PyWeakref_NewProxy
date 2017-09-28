@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='60' type='PyObject * PyWeakref_NewProxy(PyObject * ob, PyObject * callback)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='225' u='c' c='PyDict_SetItemProxy'/>
+<use f='codebrowser/Modules/_weakref.c' l='122' u='c' c='weakref_proxy'/>
+<def f='codebrowser/Objects/weakrefobject.c' l='792' ll='853' type='PyObject * PyWeakref_NewProxy(PyObject * ob, PyObject * callback)'/>

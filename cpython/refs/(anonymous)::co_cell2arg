@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/code.h' l='40' type='Py_ssize_t *'/>
+<offset>832</offset>
+<doc f='codebrowser/Include/code.h' l='35'>/* The rest aren&apos;t used in either hash or comparisons, except for co_name,
+       used in both. This is done to preserve the name and line number
+       for tracebacks and debuggers; otherwise, constant de-duplication
+       would collapse identical functions/lambdas defined on different lines.
+    */</doc>
+<doc f='codebrowser/Include/code.h' l='40'>/* Maps cell vars which are arguments. */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='198' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='442' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='443' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='457' u='r' c='code_sizeof'/>
+<use f='codebrowser/Objects/typeobject.c' l='7563' u='r' c='super_init'/>
+<use f='codebrowser/Objects/typeobject.c' l='7567' u='r' c='super_init'/>
+<use f='codebrowser/Python/ceval.c' l='4108' u='r' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4109' u='r' c='_PyEval_EvalCodeWithName'/>

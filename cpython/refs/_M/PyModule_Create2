@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/modsupport.h' l='188'/>
+<use f='codebrowser/Include/modsupport.h' l='192' u='c'/>
+<doc f='codebrowser/Include/modsupport.h' l='185'>/* When we are tracing reference counts, rename module creation functions so
+    modules compiled with incompatible settings will generate a
+    link-time error. */</doc>
+<use f='codebrowser/Objects/moduleobject.c' l='162' u='c'/>

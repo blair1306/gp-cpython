@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pycapsule.h' l='21' type='PyTypeObject'/>
+<use f='codebrowser/Objects/capsule.c' l='19' macro='1' u='a'/>
+<use f='codebrowser/Objects/capsule.c' l='53' u='a' c='PyCapsule_New'/>
+<use f='codebrowser/Objects/capsule.c' l='53' u='a' c='PyCapsule_New'/>
+<use f='codebrowser/Objects/capsule.c' l='73' macro='1' u='a'/>
+<def f='codebrowser/Objects/capsule.c' l='299' ll='322' type='PyTypeObject'/>
+<use f='codebrowser/Objects/object.c' l='1794' u='a' c='_Py_ReadyTypes'/>

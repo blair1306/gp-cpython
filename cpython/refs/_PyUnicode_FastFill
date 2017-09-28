@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='673' type='void _PyUnicode_FastFill(PyObject * unicode, Py_ssize_t start, Py_ssize_t length, Py_UCS4 fill_char)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='671'>/* Unsafe version of PyUnicode_Fill(): don&apos;t check arguments and so may crash
+   if parameters are invalid (e.g. if length is longer than the string). */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='10108' ll='10120' type='void _PyUnicode_FastFill(PyObject * unicode, Py_ssize_t start, Py_ssize_t length, Py_UCS4 fill_char)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10153' u='c' c='PyUnicode_Fill'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='374' u='c' c='fill_padding'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='380' u='c' c='fill_padding'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='606' u='c' c='fill_number'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='630' u='c' c='fill_number'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='691' u='c' c='fill_number'/>

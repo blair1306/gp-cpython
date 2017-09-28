@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/abstract.h' l='687' type='PyObject * PyNumber_Lshift(PyObject * o1, PyObject * o2)'/>
+<doc f='codebrowser/Include/abstract.h' l='684'>/* Returns the result of left shifting o1 by o2 on success, or NULL on failure.
+
+   This is the equivalent of the Python expression: o1 &lt;&lt; o2. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='210' u='c' c='_operator_lshift_impl'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='112' u='c' c='test_long_api_inner'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='112' u='c' c='test_longlong_api_inner'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1708' u='c' c='math_factorial'/>
+<def f='codebrowser/Objects/abstract.c' l='932' macro='1' type='PyObject * PyNumber_Lshift(PyObject * v, PyObject * w)'/>
+<use f='codebrowser/Objects/floatobject.c' l='468' u='c' c='float_richcompare'/>
+<use f='codebrowser/Objects/floatobject.c' l='474' u='c' c='float_richcompare'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='508' u='c' c='proxy_lshift'/>
+<use f='codebrowser/Python/ceval.c' l='1454' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/peephole.c' l='272' u='c' c='fold_binops_on_constants'/>

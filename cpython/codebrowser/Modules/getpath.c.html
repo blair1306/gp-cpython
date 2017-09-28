@@ -1,0 +1,897 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>getpath.c source code [codebrowser/Modules/getpath.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/getpath.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='getpath.c.html'>getpath.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Return the initial module search path. */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/osdefs.h.html">"osdefs.h"</a></u></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="7">7</th><td><u>#include <a href="../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="9">ifdef</span> <span class="macro" data-ref="_M/__APPLE__">__APPLE__</span></u></td></tr>
+<tr><th id="10">10</th><td><u>#include &lt;mach-o/dyld.h&gt;</u></td></tr>
+<tr><th id="11">11</th><td><u>#<span data-ppcond="9">endif</span></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i>/* Search in some common locations for the associated Python libraries.</i></td></tr>
+<tr><th id="14">14</th><td><i> *</i></td></tr>
+<tr><th id="15">15</th><td><i> * Two directories must be found, the platform independent directory</i></td></tr>
+<tr><th id="16">16</th><td><i> * (prefix), containing the common .py and .pyc files, and the platform</i></td></tr>
+<tr><th id="17">17</th><td><i> * dependent directory (exec_prefix), containing the shared library</i></td></tr>
+<tr><th id="18">18</th><td><i> * modules.  Note that prefix and exec_prefix can be the same directory,</i></td></tr>
+<tr><th id="19">19</th><td><i> * but for some installations, they are different.</i></td></tr>
+<tr><th id="20">20</th><td><i> *</i></td></tr>
+<tr><th id="21">21</th><td><i> * Py_GetPath() carries out separate searches for prefix and exec_prefix.</i></td></tr>
+<tr><th id="22">22</th><td><i> * Each search tries a number of different locations until a ``landmark''</i></td></tr>
+<tr><th id="23">23</th><td><i> * file or directory is found.  If no prefix or exec_prefix is found, a</i></td></tr>
+<tr><th id="24">24</th><td><i> * warning message is issued and the preprocessor defined PREFIX and</i></td></tr>
+<tr><th id="25">25</th><td><i> * EXEC_PREFIX are used (even though they will not work); python carries on</i></td></tr>
+<tr><th id="26">26</th><td><i> * as best as is possible, but most imports will fail.</i></td></tr>
+<tr><th id="27">27</th><td><i> *</i></td></tr>
+<tr><th id="28">28</th><td><i> * Before any searches are done, the location of the executable is</i></td></tr>
+<tr><th id="29">29</th><td><i> * determined.  If argv[0] has one or more slashes in it, it is used</i></td></tr>
+<tr><th id="30">30</th><td><i> * unchanged.  Otherwise, it must have been invoked from the shell's path,</i></td></tr>
+<tr><th id="31">31</th><td><i> * so we search $PATH for the named executable and use that.  If the</i></td></tr>
+<tr><th id="32">32</th><td><i> * executable was not found on $PATH (or there was no $PATH environment</i></td></tr>
+<tr><th id="33">33</th><td><i> * variable), the original argv[0] string is used.</i></td></tr>
+<tr><th id="34">34</th><td><i> *</i></td></tr>
+<tr><th id="35">35</th><td><i> * Next, the executable location is examined to see if it is a symbolic</i></td></tr>
+<tr><th id="36">36</th><td><i> * link.  If so, the link is chased (correctly interpreting a relative</i></td></tr>
+<tr><th id="37">37</th><td><i> * pathname if one is found) and the directory of the link target is used.</i></td></tr>
+<tr><th id="38">38</th><td><i> *</i></td></tr>
+<tr><th id="39">39</th><td><i> * Finally, argv0_path is set to the directory containing the executable</i></td></tr>
+<tr><th id="40">40</th><td><i> * (i.e. the last component is stripped).</i></td></tr>
+<tr><th id="41">41</th><td><i> *</i></td></tr>
+<tr><th id="42">42</th><td><i> * With argv0_path in hand, we perform a number of steps.  The same steps</i></td></tr>
+<tr><th id="43">43</th><td><i> * are performed for prefix and for exec_prefix, but with a different</i></td></tr>
+<tr><th id="44">44</th><td><i> * landmark.</i></td></tr>
+<tr><th id="45">45</th><td><i> *</i></td></tr>
+<tr><th id="46">46</th><td><i> * Step 1. Are we running python out of the build directory?  This is</i></td></tr>
+<tr><th id="47">47</th><td><i> * checked by looking for a different kind of landmark relative to</i></td></tr>
+<tr><th id="48">48</th><td><i> * argv0_path.  For prefix, the landmark's path is derived from the VPATH</i></td></tr>
+<tr><th id="49">49</th><td><i> * preprocessor variable (taking into account that its value is almost, but</i></td></tr>
+<tr><th id="50">50</th><td><i> * not quite, what we need).  For exec_prefix, the landmark is</i></td></tr>
+<tr><th id="51">51</th><td><i> * pybuilddir.txt.  If the landmark is found, we're done.</i></td></tr>
+<tr><th id="52">52</th><td><i> *</i></td></tr>
+<tr><th id="53">53</th><td><i> * For the remaining steps, the prefix landmark will always be</i></td></tr>
+<tr><th id="54">54</th><td><i> * lib/python$VERSION/os.py and the exec_prefix will always be</i></td></tr>
+<tr><th id="55">55</th><td><i> * lib/python$VERSION/lib-dynload, where $VERSION is Python's version</i></td></tr>
+<tr><th id="56">56</th><td><i> * number as supplied by the Makefile.  Note that this means that no more</i></td></tr>
+<tr><th id="57">57</th><td><i> * build directory checking is performed; if the first step did not find</i></td></tr>
+<tr><th id="58">58</th><td><i> * the landmarks, the assumption is that python is running from an</i></td></tr>
+<tr><th id="59">59</th><td><i> * installed setup.</i></td></tr>
+<tr><th id="60">60</th><td><i> *</i></td></tr>
+<tr><th id="61">61</th><td><i> * Step 2. See if the $PYTHONHOME environment variable points to the</i></td></tr>
+<tr><th id="62">62</th><td><i> * installed location of the Python libraries.  If $PYTHONHOME is set, then</i></td></tr>
+<tr><th id="63">63</th><td><i> * it points to prefix and exec_prefix.  $PYTHONHOME can be a single</i></td></tr>
+<tr><th id="64">64</th><td><i> * directory, which is used for both, or the prefix and exec_prefix</i></td></tr>
+<tr><th id="65">65</th><td><i> * directories separated by a colon.</i></td></tr>
+<tr><th id="66">66</th><td><i> *</i></td></tr>
+<tr><th id="67">67</th><td><i> * Step 3. Try to find prefix and exec_prefix relative to argv0_path,</i></td></tr>
+<tr><th id="68">68</th><td><i> * backtracking up the path until it is exhausted.  This is the most common</i></td></tr>
+<tr><th id="69">69</th><td><i> * step to succeed.  Note that if prefix and exec_prefix are different,</i></td></tr>
+<tr><th id="70">70</th><td><i> * exec_prefix is more likely to be found; however if exec_prefix is a</i></td></tr>
+<tr><th id="71">71</th><td><i> * subdirectory of prefix, both will be found.</i></td></tr>
+<tr><th id="72">72</th><td><i> *</i></td></tr>
+<tr><th id="73">73</th><td><i> * Step 4. Search the directories pointed to by the preprocessor variables</i></td></tr>
+<tr><th id="74">74</th><td><i> * PREFIX and EXEC_PREFIX.  These are supplied by the Makefile but can be</i></td></tr>
+<tr><th id="75">75</th><td><i> * passed in as options to the configure script.</i></td></tr>
+<tr><th id="76">76</th><td><i> *</i></td></tr>
+<tr><th id="77">77</th><td><i> * That's it!</i></td></tr>
+<tr><th id="78">78</th><td><i> *</i></td></tr>
+<tr><th id="79">79</th><td><i> * Well, almost.  Once we have determined prefix and exec_prefix, the</i></td></tr>
+<tr><th id="80">80</th><td><i> * preprocessor variable PYTHONPATH is used to construct a path.  Each</i></td></tr>
+<tr><th id="81">81</th><td><i> * relative path on PYTHONPATH is prefixed with prefix.  Then the directory</i></td></tr>
+<tr><th id="82">82</th><td><i> * containing the shared library modules is appended.  The environment</i></td></tr>
+<tr><th id="83">83</th><td><i> * variable $PYTHONPATH is inserted in front of it all.  Finally, the</i></td></tr>
+<tr><th id="84">84</th><td><i> * prefix and exec_prefix globals are tweaked so they reflect the values</i></td></tr>
+<tr><th id="85">85</th><td><i> * expected by other code, by stripping the "lib/python$VERSION/..." stuff</i></td></tr>
+<tr><th id="86">86</th><td><i> * off.  If either points to the build directory, the globals are reset to</i></td></tr>
+<tr><th id="87">87</th><td><i> * the corresponding preprocessor variables (so sys.prefix will reflect the</i></td></tr>
+<tr><th id="88">88</th><td><i> * installation location, even though sys.path points into the build</i></td></tr>
+<tr><th id="89">89</th><td><i> * directory).  This seems to make more sense given that currently the only</i></td></tr>
+<tr><th id="90">90</th><td><i> * known use of sys.prefix and sys.exec_prefix is for the ILU installation</i></td></tr>
+<tr><th id="91">91</th><td><i> * process to find the installed Python tree.</i></td></tr>
+<tr><th id="92">92</th><td><i> *</i></td></tr>
+<tr><th id="93">93</th><td><i> * An embedding application can use Py_SetPath() to override all of</i></td></tr>
+<tr><th id="94">94</th><td><i> * these authomatic path computations.</i></td></tr>
+<tr><th id="95">95</th><td><i> *</i></td></tr>
+<tr><th id="96">96</th><td><i> * NOTE: Windows MSVC builds use PC/getpathp.c instead!</i></td></tr>
+<tr><th id="97">97</th><td><i> */</i></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><u>#<span data-ppcond="99">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="100">100</th><td> <b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="101">101</th><td><u>#<span data-ppcond="99">endif</span></u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#<span data-ppcond="104">if</span> !defined(<span class="macro" data-ref="_M/PREFIX">PREFIX</span>) || !defined(<span class="macro" data-ref="_M/EXEC_PREFIX">EXEC_PREFIX</span>) || !defined(<span class="macro" data-ref="_M/VERSION">VERSION</span>) || !defined(<span class="macro" data-ref="_M/VPATH">VPATH</span>)</u></td></tr>
+<tr><th id="105">105</th><td><u>#error "PREFIX, EXEC_PREFIX, VERSION, and VPATH must be constant defined"</u></td></tr>
+<tr><th id="106">106</th><td><u>#<span data-ppcond="104">endif</span></u></td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td><u>#<span data-ppcond="108">ifndef</span> <span class="macro" data-ref="_M/LANDMARK">LANDMARK</span></u></td></tr>
+<tr><th id="109">109</th><td><u>#define <dfn class="macro" id="_M/LANDMARK" data-ref="_M/LANDMARK">LANDMARK</dfn> L"os.py"</u></td></tr>
+<tr><th id="110">110</th><td><u>#<span data-ppcond="108">endif</span></u></td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><em>static</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="tu decl def" id="prefix" title='prefix' data-type='wchar_t [4097]' data-ref="prefix">prefix</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="113">113</th><td><em>static</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="tu decl def" id="exec_prefix" title='exec_prefix' data-type='wchar_t [4097]' data-ref="exec_prefix">exec_prefix</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="114">114</th><td><em>static</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="tu decl def" id="progpath" title='progpath' data-type='wchar_t [4097]' data-ref="progpath">progpath</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="115">115</th><td><em>static</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="tu decl def" id="module_search_path" title='module_search_path' data-type='wchar_t *' data-ref="module_search_path">module_search_path</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i  data-doc="_Py_wstat">/* Get file status. Encode the path to the locale encoding. */</i></td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="120">120</th><td><dfn class="tu decl def" id="_Py_wstat" title='_Py_wstat' data-type='int _Py_wstat(const wchar_t * path, struct stat * buf)' data-ref="_Py_wstat">_Py_wstat</dfn>(<em>const</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>* <dfn class="local col1 decl" id="1path" title='path' data-type='const wchar_t *' data-ref="1path">path</dfn>, <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat" title='stat' data-ref="stat">stat</a> *<dfn class="local col2 decl" id="2buf" title='buf' data-type='struct stat *' data-ref="2buf">buf</dfn>)</td></tr>
+<tr><th id="121">121</th><td>{</td></tr>
+<tr><th id="122">122</th><td>    <em>int</em> <dfn class="local col3 decl" id="3err" title='err' data-type='int' data-ref="3err">err</dfn>;</td></tr>
+<tr><th id="123">123</th><td>    <em>char</em> *<dfn class="local col4 decl" id="4fname" title='fname' data-type='char *' data-ref="4fname">fname</dfn>;</td></tr>
+<tr><th id="124">124</th><td>    <a class="local col4 ref" href="#4fname" title='fname' data-ref="4fname">fname</a> = <a class="ref" href="../Include/fileutils.h.html#Py_EncodeLocale" title='Py_EncodeLocale' data-ref="Py_EncodeLocale">Py_EncodeLocale</a>(<a class="local col1 ref" href="#1path" title='path' data-ref="1path">path</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="125">125</th><td>    <b>if</b> (<a class="local col4 ref" href="#4fname" title='fname' data-ref="4fname">fname</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="126">126</th><td>        <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="macro" href="../../include/asm-generic/errno-base.h.html#25" title="22" data-ref="_M/EINVAL">EINVAL</a>;</td></tr>
+<tr><th id="127">127</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="128">128</th><td>    }</td></tr>
+<tr><th id="129">129</th><td>    <a class="local col3 ref" href="#3err" title='err' data-ref="3err">err</a> = <a class="ref" href="../../include/x86_64-linux-gnu/sys/stat.h.html#216" title='stat' data-ref="stat64">stat</a>(<a class="local col4 ref" href="#4fname" title='fname' data-ref="4fname">fname</a>, <a class="local col2 ref" href="#2buf" title='buf' data-ref="2buf">buf</a>);</td></tr>
+<tr><th id="130">130</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_Free" title='PyMem_Free' data-ref="PyMem_Free">PyMem_Free</a>(<a class="local col4 ref" href="#4fname" title='fname' data-ref="4fname">fname</a>);</td></tr>
+<tr><th id="131">131</th><td>    <b>return</b> <a class="local col3 ref" href="#3err" title='err' data-ref="3err">err</a>;</td></tr>
+<tr><th id="132">132</th><td>}</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="135">135</th><td><dfn class="tu decl def" id="reduce" title='reduce' data-type='void reduce(wchar_t * dir)' data-ref="reduce">reduce</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col5 decl" id="5dir" title='dir' data-type='wchar_t *' data-ref="5dir">dir</dfn>)</td></tr>
+<tr><th id="136">136</th><td>{</td></tr>
+<tr><th id="137">137</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="6i" title='i' data-type='size_t' data-ref="6i">i</dfn> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col5 ref" href="#5dir" title='dir' data-ref="5dir">dir</a>);</td></tr>
+<tr><th id="138">138</th><td>    <b>while</b> (<a class="local col6 ref" href="#6i" title='i' data-ref="6i">i</a> &gt; <var>0</var> &amp;&amp; <a class="local col5 ref" href="#5dir" title='dir' data-ref="5dir">dir</a>[<a class="local col6 ref" href="#6i" title='i' data-ref="6i">i</a>] != <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="139">139</th><td>        --<a class="local col6 ref" href="#6i" title='i' data-ref="6i">i</a>;</td></tr>
+<tr><th id="140">140</th><td>    <a class="local col5 ref" href="#5dir" title='dir' data-ref="5dir">dir</a>[<a class="local col6 ref" href="#6i" title='i' data-ref="6i">i</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="141">141</th><td>}</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="144">144</th><td><dfn class="tu decl def" id="isfile" title='isfile' data-type='int isfile(wchar_t * filename)' data-ref="isfile">isfile</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col7 decl" id="7filename" title='filename' data-type='wchar_t *' data-ref="7filename">filename</dfn>)          <i>/* Is file, not directory */</i></td></tr>
+<tr><th id="145">145</th><td>{</td></tr>
+<tr><th id="146">146</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat" title='stat' data-ref="stat">stat</a> <dfn class="local col8 decl" id="8buf" title='buf' data-type='struct stat' data-ref="8buf">buf</dfn>;</td></tr>
+<tr><th id="147">147</th><td>    <b>if</b> (<a class="tu ref" href="#_Py_wstat" title='_Py_wstat' data-use='c' data-ref="_Py_wstat">_Py_wstat</a>(<a class="local col7 ref" href="#7filename" title='filename' data-ref="7filename">filename</a>, &amp;<a class="local col8 ref" href="#8buf" title='buf' data-ref="8buf">buf</a>) != <var>0</var>)</td></tr>
+<tr><th id="148">148</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="149">149</th><td>    <b>if</b> (!<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#131" title="((((buf.st_mode)) &amp; 0170000) == (0100000))" data-ref="_M/S_ISREG">S_ISREG</a>(<a class="local col8 ref" href="#8buf" title='buf' data-ref="8buf">buf</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_mode" title='stat::st_mode' data-ref="stat::st_mode">st_mode</a>))</td></tr>
+<tr><th id="150">150</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="151">151</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="152">152</th><td>}</td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="156">156</th><td><dfn class="tu decl def" id="ismodule" title='ismodule' data-type='int ismodule(wchar_t * filename)' data-ref="ismodule">ismodule</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col9 decl" id="9filename" title='filename' data-type='wchar_t *' data-ref="9filename">filename</dfn>)        <i>/* Is module -- check for .pyc too */</i></td></tr>
+<tr><th id="157">157</th><td>{</td></tr>
+<tr><th id="158">158</th><td>    <b>if</b> (<a class="tu ref" href="#isfile" title='isfile' data-use='c' data-ref="isfile">isfile</a>(<a class="local col9 ref" href="#9filename" title='filename' data-ref="9filename">filename</a>))</td></tr>
+<tr><th id="159">159</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td>    <i>/* Check for the compiled version of prefix. */</i></td></tr>
+<tr><th id="162">162</th><td>    <b>if</b> (<a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col9 ref" href="#9filename" title='filename' data-ref="9filename">filename</a>) &lt; <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>) {</td></tr>
+<tr><th id="163">163</th><td>        <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col9 ref" href="#9filename" title='filename' data-ref="9filename">filename</a>, L<q>"c"</q>);</td></tr>
+<tr><th id="164">164</th><td>        <b>if</b> (<a class="tu ref" href="#isfile" title='isfile' data-use='c' data-ref="isfile">isfile</a>(<a class="local col9 ref" href="#9filename" title='filename' data-ref="9filename">filename</a>))</td></tr>
+<tr><th id="165">165</th><td>            <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="166">166</th><td>    }</td></tr>
+<tr><th id="167">167</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="168">168</th><td>}</td></tr>
+<tr><th id="169">169</th><td></td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="172">172</th><td><dfn class="tu decl def" id="isxfile" title='isxfile' data-type='int isxfile(wchar_t * filename)' data-ref="isxfile">isxfile</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col0 decl" id="10filename" title='filename' data-type='wchar_t *' data-ref="10filename">filename</dfn>)         <i>/* Is executable file */</i></td></tr>
+<tr><th id="173">173</th><td>{</td></tr>
+<tr><th id="174">174</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat" title='stat' data-ref="stat">stat</a> <dfn class="local col1 decl" id="11buf" title='buf' data-type='struct stat' data-ref="11buf">buf</dfn>;</td></tr>
+<tr><th id="175">175</th><td>    <b>if</b> (<a class="tu ref" href="#_Py_wstat" title='_Py_wstat' data-use='c' data-ref="_Py_wstat">_Py_wstat</a>(<a class="local col0 ref" href="#10filename" title='filename' data-ref="10filename">filename</a>, &amp;<a class="local col1 ref" href="#11buf" title='buf' data-ref="11buf">buf</a>) != <var>0</var>)</td></tr>
+<tr><th id="176">176</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="177">177</th><td>    <b>if</b> (!<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#131" title="((((buf.st_mode)) &amp; 0170000) == (0100000))" data-ref="_M/S_ISREG">S_ISREG</a>(<a class="local col1 ref" href="#11buf" title='buf' data-ref="11buf">buf</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_mode" title='stat::st_mode' data-ref="stat::st_mode">st_mode</a>))</td></tr>
+<tr><th id="178">178</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="179">179</th><td>    <b>if</b> ((<a class="local col1 ref" href="#11buf" title='buf' data-ref="11buf">buf</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_mode" title='stat::st_mode' data-ref="stat::st_mode">st_mode</a> &amp; <var>0111</var>) == <var>0</var>)</td></tr>
+<tr><th id="180">180</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="181">181</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="182">182</th><td>}</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="186">186</th><td><dfn class="tu decl def" id="isdir" title='isdir' data-type='int isdir(wchar_t * filename)' data-ref="isdir">isdir</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col2 decl" id="12filename" title='filename' data-type='wchar_t *' data-ref="12filename">filename</dfn>)                   <i>/* Is directory */</i></td></tr>
+<tr><th id="187">187</th><td>{</td></tr>
+<tr><th id="188">188</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat" title='stat' data-ref="stat">stat</a> <dfn class="local col3 decl" id="13buf" title='buf' data-type='struct stat' data-ref="13buf">buf</dfn>;</td></tr>
+<tr><th id="189">189</th><td>    <b>if</b> (<a class="tu ref" href="#_Py_wstat" title='_Py_wstat' data-use='c' data-ref="_Py_wstat">_Py_wstat</a>(<a class="local col2 ref" href="#12filename" title='filename' data-ref="12filename">filename</a>, &amp;<a class="local col3 ref" href="#13buf" title='buf' data-ref="13buf">buf</a>) != <var>0</var>)</td></tr>
+<tr><th id="190">190</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="191">191</th><td>    <b>if</b> (!<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#128" title="((((buf.st_mode)) &amp; 0170000) == (0040000))" data-ref="_M/S_ISDIR">S_ISDIR</a>(<a class="local col3 ref" href="#13buf" title='buf' data-ref="13buf">buf</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_mode" title='stat::st_mode' data-ref="stat::st_mode">st_mode</a>))</td></tr>
+<tr><th id="192">192</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="193">193</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="194">194</th><td>}</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td><i  data-doc="joinpath">/* Add a path component, by appending stuff to buffer.</i></td></tr>
+<tr><th id="198">198</th><td><i  data-doc="joinpath">   buffer must have at least MAXPATHLEN + 1 bytes allocated, and contain a</i></td></tr>
+<tr><th id="199">199</th><td><i  data-doc="joinpath">   NUL-terminated string with no more than MAXPATHLEN characters (not counting</i></td></tr>
+<tr><th id="200">200</th><td><i  data-doc="joinpath">   the trailing NUL).  It's a fatal error if it contains a string longer than</i></td></tr>
+<tr><th id="201">201</th><td><i  data-doc="joinpath">   that (callers must be careful!).  If these requirements are met, it's</i></td></tr>
+<tr><th id="202">202</th><td><i  data-doc="joinpath">   guaranteed that buffer will still be a NUL-terminated string with no more</i></td></tr>
+<tr><th id="203">203</th><td><i  data-doc="joinpath">   than MAXPATHLEN characters at exit.  If stuff is too long, only as much of</i></td></tr>
+<tr><th id="204">204</th><td><i  data-doc="joinpath">   stuff as fits will be appended.</i></td></tr>
+<tr><th id="205">205</th><td><i  data-doc="joinpath">*/</i></td></tr>
+<tr><th id="206">206</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="207">207</th><td><dfn class="tu decl def" id="joinpath" title='joinpath' data-type='void joinpath(wchar_t * buffer, wchar_t * stuff)' data-ref="joinpath">joinpath</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col4 decl" id="14buffer" title='buffer' data-type='wchar_t *' data-ref="14buffer">buffer</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col5 decl" id="15stuff" title='stuff' data-type='wchar_t *' data-ref="15stuff">stuff</dfn>)</td></tr>
+<tr><th id="208">208</th><td>{</td></tr>
+<tr><th id="209">209</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="16n" title='n' data-type='size_t' data-ref="16n">n</dfn>, <dfn class="local col7 decl" id="17k" title='k' data-type='size_t' data-ref="17k">k</dfn>;</td></tr>
+<tr><th id="210">210</th><td>    <b>if</b> (<a class="local col5 ref" href="#15stuff" title='stuff' data-ref="15stuff">stuff</a>[<var>0</var>] == <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="211">211</th><td>        <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> = <var>0</var>;</td></tr>
+<tr><th id="212">212</th><td>    <b>else</b> {</td></tr>
+<tr><th id="213">213</th><td>        <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col4 ref" href="#14buffer" title='buffer' data-ref="14buffer">buffer</a>);</td></tr>
+<tr><th id="214">214</th><td>        <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &gt; <var>0</var> &amp;&amp; <a class="local col4 ref" href="#14buffer" title='buffer' data-ref="14buffer">buffer</a>[<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>-<var>1</var>] != <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a> &amp;&amp; <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &lt; <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>)</td></tr>
+<tr><th id="215">215</th><td>            <a class="local col4 ref" href="#14buffer" title='buffer' data-ref="14buffer">buffer</a>[<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>++] = <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>;</td></tr>
+<tr><th id="216">216</th><td>    }</td></tr>
+<tr><th id="217">217</th><td>    <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &gt; <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>)</td></tr>
+<tr><th id="218">218</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"buffer overflow in getpath.c's joinpath()"</q>);</td></tr>
+<tr><th id="219">219</th><td>    <a class="local col7 ref" href="#17k" title='k' data-ref="17k">k</a> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col5 ref" href="#15stuff" title='stuff' data-ref="15stuff">stuff</a>);</td></tr>
+<tr><th id="220">220</th><td>    <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> + <a class="local col7 ref" href="#17k" title='k' data-ref="17k">k</a> &gt; <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>)</td></tr>
+<tr><th id="221">221</th><td>        <a class="local col7 ref" href="#17k" title='k' data-ref="17k">k</a> = <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a> - <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>;</td></tr>
+<tr><th id="222">222</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="local col4 ref" href="#14buffer" title='buffer' data-ref="14buffer">buffer</a>+<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>, <a class="local col5 ref" href="#15stuff" title='stuff' data-ref="15stuff">stuff</a>, <a class="local col7 ref" href="#17k" title='k' data-ref="17k">k</a>);</td></tr>
+<tr><th id="223">223</th><td>    <a class="local col4 ref" href="#14buffer" title='buffer' data-ref="14buffer">buffer</a>[<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>+<a class="local col7 ref" href="#17k" title='k' data-ref="17k">k</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="224">224</th><td>}</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td><i  data-doc="copy_absolute">/* copy_absolute requires that path be allocated at least</i></td></tr>
+<tr><th id="227">227</th><td><i  data-doc="copy_absolute">   MAXPATHLEN + 1 bytes and that p be no more than MAXPATHLEN bytes. */</i></td></tr>
+<tr><th id="228">228</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="229">229</th><td><dfn class="tu decl def" id="copy_absolute" title='copy_absolute' data-type='void copy_absolute(wchar_t * path, wchar_t * p, size_t pathlen)' data-ref="copy_absolute">copy_absolute</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col8 decl" id="18path" title='path' data-type='wchar_t *' data-ref="18path">path</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col9 decl" id="19p" title='p' data-type='wchar_t *' data-ref="19p">p</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="20pathlen" title='pathlen' data-type='size_t' data-ref="20pathlen">pathlen</dfn>)</td></tr>
+<tr><th id="230">230</th><td>{</td></tr>
+<tr><th id="231">231</th><td>    <b>if</b> (<a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>[<var>0</var>] == <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="232">232</th><td>        <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="local col8 ref" href="#18path" title='path' data-ref="18path">path</a>, <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>);</td></tr>
+<tr><th id="233">233</th><td>    <b>else</b> {</td></tr>
+<tr><th id="234">234</th><td>        <b>if</b> (!<a class="ref" href="../Include/fileutils.h.html#_Py_wgetcwd" title='_Py_wgetcwd' data-ref="_Py_wgetcwd">_Py_wgetcwd</a>(<a class="local col8 ref" href="#18path" title='path' data-ref="18path">path</a>, <a class="local col0 ref" href="#20pathlen" title='pathlen' data-ref="20pathlen">pathlen</a>)) {</td></tr>
+<tr><th id="235">235</th><td>            <i>/* unable to get the current directory */</i></td></tr>
+<tr><th id="236">236</th><td>            <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="local col8 ref" href="#18path" title='path' data-ref="18path">path</a>, <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>);</td></tr>
+<tr><th id="237">237</th><td>            <b>return</b>;</td></tr>
+<tr><th id="238">238</th><td>        }</td></tr>
+<tr><th id="239">239</th><td>        <b>if</b> (<a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>[<var>0</var>] == <kbd>'.'</kbd> &amp;&amp; <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>[<var>1</var>] == <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="240">240</th><td>            <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a> += <var>2</var>;</td></tr>
+<tr><th id="241">241</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="local col8 ref" href="#18path" title='path' data-ref="18path">path</a>, <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>);</td></tr>
+<tr><th id="242">242</th><td>    }</td></tr>
+<tr><th id="243">243</th><td>}</td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td><i  data-doc="absolutize">/* absolutize() requires that path be allocated at least MAXPATHLEN+1 bytes. */</i></td></tr>
+<tr><th id="246">246</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="247">247</th><td><dfn class="tu decl def" id="absolutize" title='absolutize' data-type='void absolutize(wchar_t * path)' data-ref="absolutize">absolutize</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col1 decl" id="21path" title='path' data-type='wchar_t *' data-ref="21path">path</dfn>)</td></tr>
+<tr><th id="248">248</th><td>{</td></tr>
+<tr><th id="249">249</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col2 decl" id="22buffer" title='buffer' data-type='wchar_t [4097]' data-ref="22buffer">buffer</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>    <b>if</b> (<a class="local col1 ref" href="#21path" title='path' data-ref="21path">path</a>[<var>0</var>] == <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="252">252</th><td>        <b>return</b>;</td></tr>
+<tr><th id="253">253</th><td>    <a class="tu ref" href="#copy_absolute" title='copy_absolute' data-use='c' data-ref="copy_absolute">copy_absolute</a>(<a class="local col2 ref" href="#22buffer" title='buffer' data-ref="22buffer">buffer</a>, <a class="local col1 ref" href="#21path" title='path' data-ref="21path">path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>);</td></tr>
+<tr><th id="254">254</th><td>    <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="local col1 ref" href="#21path" title='path' data-ref="21path">path</a>, <a class="local col2 ref" href="#22buffer" title='buffer' data-ref="22buffer">buffer</a>);</td></tr>
+<tr><th id="255">255</th><td>}</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td><i  data-doc="find_env_config_value">/* search for a prefix value in an environment file. If found, copy it</i></td></tr>
+<tr><th id="258">258</th><td><i  data-doc="find_env_config_value">   to the provided buffer, which is expected to be no more than MAXPATHLEN</i></td></tr>
+<tr><th id="259">259</th><td><i  data-doc="find_env_config_value">   bytes long.</i></td></tr>
+<tr><th id="260">260</th><td><i  data-doc="find_env_config_value">*/</i></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="263">263</th><td><dfn class="tu decl def" id="find_env_config_value" title='find_env_config_value' data-type='int find_env_config_value(FILE * env_file, const wchar_t * key, wchar_t * value)' data-ref="find_env_config_value">find_env_config_value</dfn>(<a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> * <dfn class="local col3 decl" id="23env_file" title='env_file' data-type='FILE *' data-ref="23env_file">env_file</dfn>, <em>const</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> * <dfn class="local col4 decl" id="24key" title='key' data-type='const wchar_t *' data-ref="24key">key</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> * <dfn class="local col5 decl" id="25value" title='value' data-type='wchar_t *' data-ref="25value">value</dfn>)</td></tr>
+<tr><th id="264">264</th><td>{</td></tr>
+<tr><th id="265">265</th><td>    <em>int</em> <dfn class="local col6 decl" id="26result" title='result' data-type='int' data-ref="26result">result</dfn> = <var>0</var>; <i>/* meaning not found */</i></td></tr>
+<tr><th id="266">266</th><td>    <em>char</em> <dfn class="local col7 decl" id="27buffer" title='buffer' data-type='char [8193]' data-ref="27buffer">buffer</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>*<var>2</var>+<var>1</var>];  <i>/* allow extra for key, '=', etc. */</i></td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td>    <a class="ref" href="../../include/stdio.h.html#fseek" title='fseek' data-ref="fseek">fseek</a>(<a class="local col3 ref" href="#23env_file" title='env_file' data-ref="23env_file">env_file</a>, <var>0</var>, <a class="macro" href="../../include/stdio.h.html#140" title="0" data-ref="_M/SEEK_SET">SEEK_SET</a>);</td></tr>
+<tr><th id="269">269</th><td>    <b>while</b> (!<a class="ref" href="../../include/stdio.h.html#feof" title='feof' data-ref="feof">feof</a>(<a class="local col3 ref" href="#23env_file" title='env_file' data-ref="23env_file">env_file</a>)) {</td></tr>
+<tr><th id="270">270</th><td>        <em>char</em> * <dfn class="local col8 decl" id="28p" title='p' data-type='char *' data-ref="28p">p</dfn> = <a class="ref" href="../../include/stdio.h.html#fgets" title='fgets' data-ref="fgets">fgets</a>(<a class="local col7 ref" href="#27buffer" title='buffer' data-ref="27buffer">buffer</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>*<var>2</var>, <a class="local col3 ref" href="#23env_file" title='env_file' data-ref="23env_file">env_file</a>);</td></tr>
+<tr><th id="271">271</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col9 decl" id="29tmpbuffer" title='tmpbuffer' data-type='wchar_t [8193]' data-ref="29tmpbuffer">tmpbuffer</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>*<var>2</var>+<var>1</var>];</td></tr>
+<tr><th id="272">272</th><td>        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> * <dfn class="local col0 decl" id="30decoded" title='decoded' data-type='PyObject *' data-ref="30decoded">decoded</dfn>;</td></tr>
+<tr><th id="273">273</th><td>        <em>int</em> <dfn class="local col1 decl" id="31n" title='n' data-type='int' data-ref="31n">n</dfn>;</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>        <b>if</b> (<a class="local col8 ref" href="#28p" title='p' data-ref="28p">p</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="276">276</th><td>            <b>break</b>;</td></tr>
+<tr><th id="277">277</th><td>        <a class="local col1 ref" href="#31n" title='n' data-ref="31n">n</a> = <a class="ref" href="../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col8 ref" href="#28p" title='p' data-ref="28p">p</a>);</td></tr>
+<tr><th id="278">278</th><td>        <b>if</b> (<a class="local col8 ref" href="#28p" title='p' data-ref="28p">p</a>[<a class="local col1 ref" href="#31n" title='n' data-ref="31n">n</a> - <var>1</var>] != <kbd>'\n'</kbd>) {</td></tr>
+<tr><th id="279">279</th><td>            <i>/* line has overflowed - bail */</i></td></tr>
+<tr><th id="280">280</th><td>            <b>break</b>;</td></tr>
+<tr><th id="281">281</th><td>        }</td></tr>
+<tr><th id="282">282</th><td>        <b>if</b> (<a class="local col8 ref" href="#28p" title='p' data-ref="28p">p</a>[<var>0</var>] == <kbd>'#'</kbd>)    <i>/* Comment - skip */</i></td></tr>
+<tr><th id="283">283</th><td>            <b>continue</b>;</td></tr>
+<tr><th id="284">284</th><td>        <a class="local col0 ref" href="#30decoded" title='decoded' data-ref="30decoded">decoded</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_DecodeUTF8" title='PyUnicode_DecodeUTF8' data-ref="PyUnicode_DecodeUTF8">PyUnicode_DecodeUTF8</a>(<a class="local col7 ref" href="#27buffer" title='buffer' data-ref="27buffer">buffer</a>, <a class="local col1 ref" href="#31n" title='n' data-ref="31n">n</a>, <q>"surrogateescape"</q>);</td></tr>
+<tr><th id="285">285</th><td>        <b>if</b> (<a class="local col0 ref" href="#30decoded" title='decoded' data-ref="30decoded">decoded</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="286">286</th><td>            <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="32k" title='k' data-type='Py_ssize_t' data-ref="32k">k</dfn>;</td></tr>
+<tr><th id="287">287</th><td>            <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> * <dfn class="local col3 decl" id="33state" title='state' data-type='wchar_t *' data-ref="33state">state</dfn>;</td></tr>
+<tr><th id="288">288</th><td>            <a class="local col2 ref" href="#32k" title='k' data-ref="32k">k</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_AsWideChar" title='PyUnicode_AsWideChar' data-ref="PyUnicode_AsWideChar">PyUnicode_AsWideChar</a>(<a class="local col0 ref" href="#30decoded" title='decoded' data-ref="30decoded">decoded</a>,</td></tr>
+<tr><th id="289">289</th><td>                                     <a class="local col9 ref" href="#29tmpbuffer" title='tmpbuffer' data-ref="29tmpbuffer">tmpbuffer</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a> * <var>2</var>);</td></tr>
+<tr><th id="290">290</th><td>            <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(decoded); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/getpath.c&quot;, 290, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#30decoded" title='decoded' data-ref="30decoded">decoded</a>);</td></tr>
+<tr><th id="291">291</th><td>            <b>if</b> (<a class="local col2 ref" href="#32k" title='k' data-ref="32k">k</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="292">292</th><td>                <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> * <dfn class="local col4 decl" id="34tok" title='tok' data-type='wchar_t *' data-ref="34tok">tok</dfn> = <a class="ref" href="../../include/wchar.h.html#wcstok" title='wcstok' data-ref="wcstok">wcstok</a>(<a class="local col9 ref" href="#29tmpbuffer" title='tmpbuffer' data-ref="29tmpbuffer">tmpbuffer</a>, L<q>" \t\r\n"</q>, &amp;<a class="local col3 ref" href="#33state" title='state' data-ref="33state">state</a>);</td></tr>
+<tr><th id="293">293</th><td>                <b>if</b> ((<a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) &amp;&amp; !<a class="ref" href="../../include/wchar.h.html#wcscmp" title='wcscmp' data-ref="wcscmp">wcscmp</a>(<a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a>, <a class="local col4 ref" href="#24key" title='key' data-ref="24key">key</a>)) {</td></tr>
+<tr><th id="294">294</th><td>                    <a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a> = <a class="ref" href="../../include/wchar.h.html#wcstok" title='wcstok' data-ref="wcstok">wcstok</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, L<q>" \t"</q>, &amp;<a class="local col3 ref" href="#33state" title='state' data-ref="33state">state</a>);</td></tr>
+<tr><th id="295">295</th><td>                    <b>if</b> ((<a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) &amp;&amp; !<a class="ref" href="../../include/wchar.h.html#wcscmp" title='wcscmp' data-ref="wcscmp">wcscmp</a>(<a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a>, L<q>"="</q>)) {</td></tr>
+<tr><th id="296">296</th><td>                        <a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a> = <a class="ref" href="../../include/wchar.h.html#wcstok" title='wcstok' data-ref="wcstok">wcstok</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, L<q>"\r\n"</q>, &amp;<a class="local col3 ref" href="#33state" title='state' data-ref="33state">state</a>);</td></tr>
+<tr><th id="297">297</th><td>                        <b>if</b> (<a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="298">298</th><td>                            <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="local col5 ref" href="#25value" title='value' data-ref="25value">value</a>, <a class="local col4 ref" href="#34tok" title='tok' data-ref="34tok">tok</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="299">299</th><td>                            <a class="local col6 ref" href="#26result" title='result' data-ref="26result">result</a> = <var>1</var>;</td></tr>
+<tr><th id="300">300</th><td>                            <b>break</b>;</td></tr>
+<tr><th id="301">301</th><td>                        }</td></tr>
+<tr><th id="302">302</th><td>                    }</td></tr>
+<tr><th id="303">303</th><td>                }</td></tr>
+<tr><th id="304">304</th><td>            }</td></tr>
+<tr><th id="305">305</th><td>        }</td></tr>
+<tr><th id="306">306</th><td>    }</td></tr>
+<tr><th id="307">307</th><td>    <b>return</b> <a class="local col6 ref" href="#26result" title='result' data-ref="26result">result</a>;</td></tr>
+<tr><th id="308">308</th><td>}</td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td><i  data-doc="search_for_prefix">/* search_for_prefix requires that argv0_path be no more than MAXPATHLEN</i></td></tr>
+<tr><th id="311">311</th><td><i  data-doc="search_for_prefix">   bytes long.</i></td></tr>
+<tr><th id="312">312</th><td><i  data-doc="search_for_prefix">*/</i></td></tr>
+<tr><th id="313">313</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="314">314</th><td><dfn class="tu decl def" id="search_for_prefix" title='search_for_prefix' data-type='int search_for_prefix(wchar_t * argv0_path, wchar_t * home, wchar_t * _prefix, wchar_t * lib_python)' data-ref="search_for_prefix">search_for_prefix</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col5 decl" id="35argv0_path" title='argv0_path' data-type='wchar_t *' data-ref="35argv0_path">argv0_path</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col6 decl" id="36home" title='home' data-type='wchar_t *' data-ref="36home">home</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col7 decl" id="37_prefix" title='_prefix' data-type='wchar_t *' data-ref="37_prefix">_prefix</dfn>,</td></tr>
+<tr><th id="315">315</th><td>                  <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col8 decl" id="38lib_python" title='lib_python' data-type='wchar_t *' data-ref="38lib_python">lib_python</dfn>)</td></tr>
+<tr><th id="316">316</th><td>{</td></tr>
+<tr><th id="317">317</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="39n" title='n' data-type='size_t' data-ref="39n">n</dfn>;</td></tr>
+<tr><th id="318">318</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col0 decl" id="40vpath" title='vpath' data-type='wchar_t *' data-ref="40vpath">vpath</dfn>;</td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td>    <i>/* If PYTHONHOME is set, we believe it unconditionally */</i></td></tr>
+<tr><th id="321">321</th><td>    <b>if</b> (<a class="local col6 ref" href="#36home" title='home' data-ref="36home">home</a>) {</td></tr>
+<tr><th id="322">322</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col1 decl" id="41delim" title='delim' data-type='wchar_t *' data-ref="41delim">delim</dfn>;</td></tr>
+<tr><th id="323">323</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col6 ref" href="#36home" title='home' data-ref="36home">home</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="324">324</th><td>        <a class="tu ref" href="#prefix" title='prefix' data-use='w' data-ref="prefix">prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="325">325</th><td>        <a class="local col1 ref" href="#41delim" title='delim' data-ref="41delim">delim</a> = <a class="ref" href="../../include/wchar.h.html#wcschr" title='wcschr' data-ref="wcschr">wcschr</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a>);</td></tr>
+<tr><th id="326">326</th><td>        <b>if</b> (<a class="local col1 ref" href="#41delim" title='delim' data-ref="41delim">delim</a>)</td></tr>
+<tr><th id="327">327</th><td>            *<a class="local col1 ref" href="#41delim" title='delim' data-ref="41delim">delim</a> = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="328">328</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col8 ref" href="#38lib_python" title='lib_python' data-ref="38lib_python">lib_python</a>);</td></tr>
+<tr><th id="329">329</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="macro" href="#109" title="L&quot;os.py&quot;" data-ref="_M/LANDMARK">LANDMARK</a>);</td></tr>
+<tr><th id="330">330</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="331">331</th><td>    }</td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td>    <i>/* Check to see if argv[0] is in the build directory */</i></td></tr>
+<tr><th id="334">334</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col5 ref" href="#35argv0_path" title='argv0_path' data-ref="35argv0_path">argv0_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="335">335</th><td>    <a class="tu ref" href="#prefix" title='prefix' data-use='w' data-ref="prefix">prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="336">336</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, L<q>"Modules/Setup"</q>);</td></tr>
+<tr><th id="337">337</th><td>    <b>if</b> (<a class="tu ref" href="#isfile" title='isfile' data-use='c' data-ref="isfile">isfile</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>)) {</td></tr>
+<tr><th id="338">338</th><td>        <i>/* Check VPATH to see if argv0_path is in the build directory. */</i></td></tr>
+<tr><th id="339">339</th><td>        <a class="local col0 ref" href="#40vpath" title='vpath' data-ref="40vpath">vpath</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<span class="macro" title="&quot;&quot;" data-ref="_M/VPATH">VPATH</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="340">340</th><td>        <b>if</b> (<a class="local col0 ref" href="#40vpath" title='vpath' data-ref="40vpath">vpath</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="341">341</th><td>            <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col5 ref" href="#35argv0_path" title='argv0_path' data-ref="35argv0_path">argv0_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="342">342</th><td>            <a class="tu ref" href="#prefix" title='prefix' data-use='w' data-ref="prefix">prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="343">343</th><td>            <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col0 ref" href="#40vpath" title='vpath' data-ref="40vpath">vpath</a>);</td></tr>
+<tr><th id="344">344</th><td>            <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col0 ref" href="#40vpath" title='vpath' data-ref="40vpath">vpath</a>);</td></tr>
+<tr><th id="345">345</th><td>            <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, L<q>"Lib"</q>);</td></tr>
+<tr><th id="346">346</th><td>            <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="macro" href="#109" title="L&quot;os.py&quot;" data-ref="_M/LANDMARK">LANDMARK</a>);</td></tr>
+<tr><th id="347">347</th><td>            <b>if</b> (<a class="tu ref" href="#ismodule" title='ismodule' data-use='c' data-ref="ismodule">ismodule</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>))</td></tr>
+<tr><th id="348">348</th><td>                <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="349">349</th><td>        }</td></tr>
+<tr><th id="350">350</th><td>    }</td></tr>
+<tr><th id="351">351</th><td></td></tr>
+<tr><th id="352">352</th><td>    <i>/* Search from argv0_path, until root is found */</i></td></tr>
+<tr><th id="353">353</th><td>    <a class="tu ref" href="#copy_absolute" title='copy_absolute' data-use='c' data-ref="copy_absolute">copy_absolute</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col5 ref" href="#35argv0_path" title='argv0_path' data-ref="35argv0_path">argv0_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>);</td></tr>
+<tr><th id="354">354</th><td>    <b>do</b> {</td></tr>
+<tr><th id="355">355</th><td>        <a class="local col9 ref" href="#39n" title='n' data-ref="39n">n</a> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>);</td></tr>
+<tr><th id="356">356</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col8 ref" href="#38lib_python" title='lib_python' data-ref="38lib_python">lib_python</a>);</td></tr>
+<tr><th id="357">357</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="macro" href="#109" title="L&quot;os.py&quot;" data-ref="_M/LANDMARK">LANDMARK</a>);</td></tr>
+<tr><th id="358">358</th><td>        <b>if</b> (<a class="tu ref" href="#ismodule" title='ismodule' data-use='c' data-ref="ismodule">ismodule</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>))</td></tr>
+<tr><th id="359">359</th><td>            <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="360">360</th><td>        <a class="tu ref" href="#prefix" title='prefix' data-use='w' data-ref="prefix">prefix</a>[<a class="local col9 ref" href="#39n" title='n' data-ref="39n">n</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="361">361</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>);</td></tr>
+<tr><th id="362">362</th><td>    } <b>while</b> (<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>[<var>0</var>]);</td></tr>
+<tr><th id="363">363</th><td></td></tr>
+<tr><th id="364">364</th><td>    <i>/* Look at configure's PREFIX */</i></td></tr>
+<tr><th id="365">365</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col7 ref" href="#37_prefix" title='_prefix' data-ref="37_prefix">_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="366">366</th><td>    <a class="tu ref" href="#prefix" title='prefix' data-use='w' data-ref="prefix">prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="367">367</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col8 ref" href="#38lib_python" title='lib_python' data-ref="38lib_python">lib_python</a>);</td></tr>
+<tr><th id="368">368</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="macro" href="#109" title="L&quot;os.py&quot;" data-ref="_M/LANDMARK">LANDMARK</a>);</td></tr>
+<tr><th id="369">369</th><td>    <b>if</b> (<a class="tu ref" href="#ismodule" title='ismodule' data-use='c' data-ref="ismodule">ismodule</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>))</td></tr>
+<tr><th id="370">370</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td>    <i>/* Fail */</i></td></tr>
+<tr><th id="373">373</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="374">374</th><td>}</td></tr>
+<tr><th id="375">375</th><td></td></tr>
+<tr><th id="376">376</th><td></td></tr>
+<tr><th id="377">377</th><td><i  data-doc="search_for_exec_prefix">/* search_for_exec_prefix requires that argv0_path be no more than</i></td></tr>
+<tr><th id="378">378</th><td><i  data-doc="search_for_exec_prefix">   MAXPATHLEN bytes long.</i></td></tr>
+<tr><th id="379">379</th><td><i  data-doc="search_for_exec_prefix">*/</i></td></tr>
+<tr><th id="380">380</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="381">381</th><td><dfn class="tu decl def" id="search_for_exec_prefix" title='search_for_exec_prefix' data-type='int search_for_exec_prefix(wchar_t * argv0_path, wchar_t * home, wchar_t * _exec_prefix, wchar_t * lib_python)' data-ref="search_for_exec_prefix">search_for_exec_prefix</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col2 decl" id="42argv0_path" title='argv0_path' data-type='wchar_t *' data-ref="42argv0_path">argv0_path</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col3 decl" id="43home" title='home' data-type='wchar_t *' data-ref="43home">home</dfn>,</td></tr>
+<tr><th id="382">382</th><td>                       <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col4 decl" id="44_exec_prefix" title='_exec_prefix' data-type='wchar_t *' data-ref="44_exec_prefix">_exec_prefix</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col5 decl" id="45lib_python" title='lib_python' data-type='wchar_t *' data-ref="45lib_python">lib_python</dfn>)</td></tr>
+<tr><th id="383">383</th><td>{</td></tr>
+<tr><th id="384">384</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="46n" title='n' data-type='size_t' data-ref="46n">n</dfn>;</td></tr>
+<tr><th id="385">385</th><td></td></tr>
+<tr><th id="386">386</th><td>    <i>/* If PYTHONHOME is set, we believe it unconditionally */</i></td></tr>
+<tr><th id="387">387</th><td>    <b>if</b> (<a class="local col3 ref" href="#43home" title='home' data-ref="43home">home</a>) {</td></tr>
+<tr><th id="388">388</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col7 decl" id="47delim" title='delim' data-type='wchar_t *' data-ref="47delim">delim</dfn>;</td></tr>
+<tr><th id="389">389</th><td>        <a class="local col7 ref" href="#47delim" title='delim' data-ref="47delim">delim</a> = <a class="ref" href="../../include/wchar.h.html#wcschr" title='wcschr' data-ref="wcschr">wcschr</a>(<a class="local col3 ref" href="#43home" title='home' data-ref="43home">home</a>, <a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a>);</td></tr>
+<tr><th id="390">390</th><td>        <b>if</b> (<a class="local col7 ref" href="#47delim" title='delim' data-ref="47delim">delim</a>)</td></tr>
+<tr><th id="391">391</th><td>            <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col7 ref" href="#47delim" title='delim' data-ref="47delim">delim</a>+<var>1</var>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="392">392</th><td>        <b>else</b></td></tr>
+<tr><th id="393">393</th><td>            <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col3 ref" href="#43home" title='home' data-ref="43home">home</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="394">394</th><td>        <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='w' data-ref="exec_prefix">exec_prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="395">395</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col5 ref" href="#45lib_python" title='lib_python' data-ref="45lib_python">lib_python</a>);</td></tr>
+<tr><th id="396">396</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, L<q>"lib-dynload"</q>);</td></tr>
+<tr><th id="397">397</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="398">398</th><td>    }</td></tr>
+<tr><th id="399">399</th><td></td></tr>
+<tr><th id="400">400</th><td>    <i>/* Check to see if argv[0] is in the build directory. "pybuilddir.txt"</i></td></tr>
+<tr><th id="401">401</th><td><i>       is written by setup.py and contains the relative path to the location</i></td></tr>
+<tr><th id="402">402</th><td><i>       of shared library modules. */</i></td></tr>
+<tr><th id="403">403</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col2 ref" href="#42argv0_path" title='argv0_path' data-ref="42argv0_path">argv0_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="404">404</th><td>    <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='w' data-ref="exec_prefix">exec_prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="405">405</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, L<q>"pybuilddir.txt"</q>);</td></tr>
+<tr><th id="406">406</th><td>    <b>if</b> (<a class="tu ref" href="#isfile" title='isfile' data-use='c' data-ref="isfile">isfile</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>)) {</td></tr>
+<tr><th id="407">407</th><td>        <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> *<dfn class="local col8 decl" id="48f" title='f' data-type='FILE *' data-ref="48f">f</dfn> = <a class="ref" href="../Include/fileutils.h.html#_Py_wfopen" title='_Py_wfopen' data-ref="_Py_wfopen">_Py_wfopen</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, L<q>"rb"</q>);</td></tr>
+<tr><th id="408">408</th><td>        <b>if</b> (<a class="local col8 ref" href="#48f" title='f' data-ref="48f">f</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="409">409</th><td>            <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <var>0</var>;</td></tr>
+<tr><th id="410">410</th><td>        <b>else</b> {</td></tr>
+<tr><th id="411">411</th><td>            <em>char</em> <dfn class="local col9 decl" id="49buf" title='buf' data-type='char [4097]' data-ref="49buf">buf</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="412">412</th><td>            <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="50decoded" title='decoded' data-type='PyObject *' data-ref="50decoded">decoded</dfn>;</td></tr>
+<tr><th id="413">413</th><td>            <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col1 decl" id="51rel_builddir_path" title='rel_builddir_path' data-type='wchar_t [4097]' data-ref="51rel_builddir_path">rel_builddir_path</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="414">414</th><td>            <a class="local col6 ref" href="#46n" title='n' data-ref="46n">n</a> = <a class="ref" href="../../include/stdio.h.html#fread" title='fread' data-ref="fread">fread</a>(<a class="local col9 ref" href="#49buf" title='buf' data-ref="49buf">buf</a>, <var>1</var>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>, <a class="local col8 ref" href="#48f" title='f' data-ref="48f">f</a>);</td></tr>
+<tr><th id="415">415</th><td>            <a class="local col9 ref" href="#49buf" title='buf' data-ref="49buf">buf</a>[<a class="local col6 ref" href="#46n" title='n' data-ref="46n">n</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="416">416</th><td>            <a class="ref" href="../../include/stdio.h.html#fclose" title='fclose' data-ref="fclose">fclose</a>(<a class="local col8 ref" href="#48f" title='f' data-ref="48f">f</a>);</td></tr>
+<tr><th id="417">417</th><td>            <a class="local col0 ref" href="#50decoded" title='decoded' data-ref="50decoded">decoded</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_DecodeUTF8" title='PyUnicode_DecodeUTF8' data-ref="PyUnicode_DecodeUTF8">PyUnicode_DecodeUTF8</a>(<a class="local col9 ref" href="#49buf" title='buf' data-ref="49buf">buf</a>, <a class="local col6 ref" href="#46n" title='n' data-ref="46n">n</a>, <q>"surrogateescape"</q>);</td></tr>
+<tr><th id="418">418</th><td>            <b>if</b> (<a class="local col0 ref" href="#50decoded" title='decoded' data-ref="50decoded">decoded</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="419">419</th><td>                <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="52k" title='k' data-type='Py_ssize_t' data-ref="52k">k</dfn>;</td></tr>
+<tr><th id="420">420</th><td>                <a class="local col2 ref" href="#52k" title='k' data-ref="52k">k</a> = <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_AsWideChar" title='PyUnicode_AsWideChar' data-ref="PyUnicode_AsWideChar">PyUnicode_AsWideChar</a>(<a class="local col0 ref" href="#50decoded" title='decoded' data-ref="50decoded">decoded</a>,</td></tr>
+<tr><th id="421">421</th><td>                                         <a class="local col1 ref" href="#51rel_builddir_path" title='rel_builddir_path' data-ref="51rel_builddir_path">rel_builddir_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="422">422</th><td>                <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(decoded); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/getpath.c&quot;, 422, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#50decoded" title='decoded' data-ref="50decoded">decoded</a>);</td></tr>
+<tr><th id="423">423</th><td>                <b>if</b> (<a class="local col2 ref" href="#52k" title='k' data-ref="52k">k</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="424">424</th><td>                    <a class="local col1 ref" href="#51rel_builddir_path" title='rel_builddir_path' data-ref="51rel_builddir_path">rel_builddir_path</a>[<a class="local col2 ref" href="#52k" title='k' data-ref="52k">k</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="425">425</th><td>                    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col2 ref" href="#42argv0_path" title='argv0_path' data-ref="42argv0_path">argv0_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="426">426</th><td>                    <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='w' data-ref="exec_prefix">exec_prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="427">427</th><td>                    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col1 ref" href="#51rel_builddir_path" title='rel_builddir_path' data-ref="51rel_builddir_path">rel_builddir_path</a>);</td></tr>
+<tr><th id="428">428</th><td>                    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="429">429</th><td>                }</td></tr>
+<tr><th id="430">430</th><td>            }</td></tr>
+<tr><th id="431">431</th><td>        }</td></tr>
+<tr><th id="432">432</th><td>    }</td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td>    <i>/* Search from argv0_path, until root is found */</i></td></tr>
+<tr><th id="435">435</th><td>    <a class="tu ref" href="#copy_absolute" title='copy_absolute' data-use='c' data-ref="copy_absolute">copy_absolute</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col2 ref" href="#42argv0_path" title='argv0_path' data-ref="42argv0_path">argv0_path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>);</td></tr>
+<tr><th id="436">436</th><td>    <b>do</b> {</td></tr>
+<tr><th id="437">437</th><td>        <a class="local col6 ref" href="#46n" title='n' data-ref="46n">n</a> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>);</td></tr>
+<tr><th id="438">438</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col5 ref" href="#45lib_python" title='lib_python' data-ref="45lib_python">lib_python</a>);</td></tr>
+<tr><th id="439">439</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, L<q>"lib-dynload"</q>);</td></tr>
+<tr><th id="440">440</th><td>        <b>if</b> (<a class="tu ref" href="#isdir" title='isdir' data-use='c' data-ref="isdir">isdir</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>))</td></tr>
+<tr><th id="441">441</th><td>            <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="442">442</th><td>        <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='w' data-ref="exec_prefix">exec_prefix</a>[<a class="local col6 ref" href="#46n" title='n' data-ref="46n">n</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="443">443</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>);</td></tr>
+<tr><th id="444">444</th><td>    } <b>while</b> (<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>[<var>0</var>]);</td></tr>
+<tr><th id="445">445</th><td></td></tr>
+<tr><th id="446">446</th><td>    <i>/* Look at configure's EXEC_PREFIX */</i></td></tr>
+<tr><th id="447">447</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col4 ref" href="#44_exec_prefix" title='_exec_prefix' data-ref="44_exec_prefix">_exec_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="448">448</th><td>    <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='w' data-ref="exec_prefix">exec_prefix</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="449">449</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col5 ref" href="#45lib_python" title='lib_python' data-ref="45lib_python">lib_python</a>);</td></tr>
+<tr><th id="450">450</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, L<q>"lib-dynload"</q>);</td></tr>
+<tr><th id="451">451</th><td>    <b>if</b> (<a class="tu ref" href="#isdir" title='isdir' data-use='c' data-ref="isdir">isdir</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>))</td></tr>
+<tr><th id="452">452</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="453">453</th><td></td></tr>
+<tr><th id="454">454</th><td>    <i>/* Fail */</i></td></tr>
+<tr><th id="455">455</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="456">456</th><td>}</td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="459">459</th><td><dfn class="tu decl def" id="calculate_path" title='calculate_path' data-type='void calculate_path()' data-ref="calculate_path">calculate_path</dfn>(<em>void</em>)</td></tr>
+<tr><th id="460">460</th><td>{</td></tr>
+<tr><th id="461">461</th><td>    <b>extern</b> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<a class="decl" href="../Include/pylifecycle.h.html#Py_GetProgramName" title='Py_GetProgramName' data-ref="Py_GetProgramName" id="Py_GetProgramName">Py_GetProgramName</a>(<em>void</em>);</td></tr>
+<tr><th id="462">462</th><td></td></tr>
+<tr><th id="463">463</th><td>    <em>static</em> <em>const</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col3 decl" id="53delimiter" title='delimiter' data-type='const wchar_t [2]' data-ref="53delimiter">delimiter</dfn>[<var>2</var>] = {<a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a>, <kbd>'\0'</kbd>};</td></tr>
+<tr><th id="464">464</th><td>    <em>static</em> <em>const</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col4 decl" id="54separator" title='separator' data-type='const wchar_t [2]' data-ref="54separator">separator</dfn>[<var>2</var>] = {<a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>, <kbd>'\0'</kbd>};</td></tr>
+<tr><th id="465">465</th><td>    <em>char</em> *<dfn class="local col5 decl" id="55_rtpypath" title='_rtpypath' data-type='char *' data-ref="55_rtpypath">_rtpypath</dfn> = <a class="macro" href="../Include/pydebug.h.html#34" title="(Py_IgnoreEnvironmentFlag ? ((void*)0) : getenv(&quot;PYTHONPATH&quot;))" data-ref="_M/Py_GETENV">Py_GETENV</a>(<q>"PYTHONPATH"</q>); <i>/* XXX use wide version on Windows */</i></td></tr>
+<tr><th id="466">466</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col6 decl" id="56rtpypath" title='rtpypath' data-type='wchar_t *' data-ref="56rtpypath">rtpypath</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="467">467</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col7 decl" id="57home" title='home' data-type='wchar_t *' data-ref="57home">home</dfn> = <a class="ref" href="../Include/pylifecycle.h.html#Py_GetPythonHome" title='Py_GetPythonHome' data-ref="Py_GetPythonHome">Py_GetPythonHome</a>();</td></tr>
+<tr><th id="468">468</th><td>    <em>char</em> *<dfn class="local col8 decl" id="58_path" title='_path' data-type='char *' data-ref="58_path">_path</dfn> = <a class="ref" href="../../include/stdlib.h.html#getenv" title='getenv' data-ref="getenv">getenv</a>(<q>"PATH"</q>);</td></tr>
+<tr><th id="469">469</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col9 decl" id="59path_buffer" title='path_buffer' data-type='wchar_t *' data-ref="59path_buffer">path_buffer</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="470">470</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col0 decl" id="60path" title='path' data-type='wchar_t *' data-ref="60path">path</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="471">471</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col1 decl" id="61prog" title='prog' data-type='wchar_t *' data-ref="61prog">prog</dfn> = <a class="ref" href="../Include/pylifecycle.h.html#Py_GetProgramName" title='Py_GetProgramName' data-ref="Py_GetProgramName">Py_GetProgramName</a>();</td></tr>
+<tr><th id="472">472</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col2 decl" id="62argv0_path" title='argv0_path' data-type='wchar_t [4097]' data-ref="62argv0_path">argv0_path</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="473">473</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col3 decl" id="63zip_path" title='zip_path' data-type='wchar_t [4097]' data-ref="63zip_path">zip_path</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="474">474</th><td>    <em>int</em> <dfn class="local col4 decl" id="64pfound" title='pfound' data-type='int' data-ref="64pfound">pfound</dfn>, <dfn class="local col5 decl" id="65efound" title='efound' data-type='int' data-ref="65efound">efound</dfn>; <i>/* 1 if found; -1 if found build directory */</i></td></tr>
+<tr><th id="475">475</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col6 decl" id="66buf" title='buf' data-type='wchar_t *' data-ref="66buf">buf</dfn>;</td></tr>
+<tr><th id="476">476</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="67bufsz" title='bufsz' data-type='size_t' data-ref="67bufsz">bufsz</dfn>;</td></tr>
+<tr><th id="477">477</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="68prefixsz" title='prefixsz' data-type='size_t' data-ref="68prefixsz">prefixsz</dfn>;</td></tr>
+<tr><th id="478">478</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col9 decl" id="69defpath" title='defpath' data-type='wchar_t *' data-ref="69defpath">defpath</dfn>;</td></tr>
+<tr><th id="479">479</th><td><u>#<span data-ppcond="479">ifdef</span> <span class="macro" data-ref="_M/WITH_NEXT_FRAMEWORK">WITH_NEXT_FRAMEWORK</span></u></td></tr>
+<tr><th id="480">480</th><td>    NSModule pythonModule;</td></tr>
+<tr><th id="481">481</th><td>    <em>const</em> <em>char</em>*    modPath;</td></tr>
+<tr><th id="482">482</th><td><u>#<span data-ppcond="479">endif</span></u></td></tr>
+<tr><th id="483">483</th><td><u>#<span data-ppcond="483">ifdef</span> <span class="macro" data-ref="_M/__APPLE__">__APPLE__</span></u></td></tr>
+<tr><th id="484">484</th><td><u>#if MAC_OS_X_VERSION_MAX_ALLOWED &gt;= MAC_OS_X_VERSION_10_4</u></td></tr>
+<tr><th id="485">485</th><td>    uint32_t nsexeclength = MAXPATHLEN;</td></tr>
+<tr><th id="486">486</th><td><u>#else</u></td></tr>
+<tr><th id="487">487</th><td>    <em>unsigned</em> <em>long</em> nsexeclength = MAXPATHLEN;</td></tr>
+<tr><th id="488">488</th><td><u>#endif</u></td></tr>
+<tr><th id="489">489</th><td>    <em>char</em> execpath[MAXPATHLEN+<var>1</var>];</td></tr>
+<tr><th id="490">490</th><td><u>#<span data-ppcond="483">endif</span></u></td></tr>
+<tr><th id="491">491</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col0 decl" id="70_pythonpath" title='_pythonpath' data-type='wchar_t *' data-ref="70_pythonpath">_pythonpath</dfn>, *<dfn class="local col1 decl" id="71_prefix" title='_prefix' data-type='wchar_t *' data-ref="71_prefix">_prefix</dfn>, *<dfn class="local col2 decl" id="72_exec_prefix" title='_exec_prefix' data-type='wchar_t *' data-ref="72_exec_prefix">_exec_prefix</dfn>;</td></tr>
+<tr><th id="492">492</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col3 decl" id="73lib_python" title='lib_python' data-type='wchar_t *' data-ref="73lib_python">lib_python</dfn>;</td></tr>
+<tr><th id="493">493</th><td></td></tr>
+<tr><th id="494">494</th><td>    <a class="local col0 ref" href="#70_pythonpath" title='_pythonpath' data-ref="70_pythonpath">_pythonpath</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<span class="macro" title="&quot;:&quot;" data-ref="_M/PYTHONPATH">PYTHONPATH</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="495">495</th><td>    <a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<span class="macro" title="&quot;/usr/local&quot;" data-ref="_M/PREFIX">PREFIX</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="496">496</th><td>    <a class="local col2 ref" href="#72_exec_prefix" title='_exec_prefix' data-ref="72_exec_prefix">_exec_prefix</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<span class="macro" title="&quot;/usr/local&quot;" data-ref="_M/EXEC_PREFIX">EXEC_PREFIX</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="497">497</th><td>    <a class="local col3 ref" href="#73lib_python" title='lib_python' data-ref="73lib_python">lib_python</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<q>"lib/python"</q> <span class="macro" title="&quot;3.7&quot;" data-ref="_M/VERSION">VERSION</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="498">498</th><td></td></tr>
+<tr><th id="499">499</th><td>    <b>if</b> (!<a class="local col0 ref" href="#70_pythonpath" title='_pythonpath' data-ref="70_pythonpath">_pythonpath</a> || !<a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a> || !<a class="local col2 ref" href="#72_exec_prefix" title='_exec_prefix' data-ref="72_exec_prefix">_exec_prefix</a> || !<a class="local col3 ref" href="#73lib_python" title='lib_python' data-ref="73lib_python">lib_python</a>) {</td></tr>
+<tr><th id="500">500</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(</td></tr>
+<tr><th id="501">501</th><td>            <q>"Unable to decode path variables in getpath.c: "</q></td></tr>
+<tr><th id="502">502</th><td>            <q>"memory error"</q>);</td></tr>
+<tr><th id="503">503</th><td>    }</td></tr>
+<tr><th id="504">504</th><td></td></tr>
+<tr><th id="505">505</th><td>    <b>if</b> (<a class="local col8 ref" href="#58_path" title='_path' data-ref="58_path">_path</a>) {</td></tr>
+<tr><th id="506">506</th><td>        <a class="local col9 ref" href="#59path_buffer" title='path_buffer' data-ref="59path_buffer">path_buffer</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<a class="local col8 ref" href="#58_path" title='_path' data-ref="58_path">_path</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="507">507</th><td>        <a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a> = <a class="local col9 ref" href="#59path_buffer" title='path_buffer' data-ref="59path_buffer">path_buffer</a>;</td></tr>
+<tr><th id="508">508</th><td>    }</td></tr>
+<tr><th id="509">509</th><td></td></tr>
+<tr><th id="510">510</th><td>    <i>/* If there is no slash in the argv0 path, then we have to</i></td></tr>
+<tr><th id="511">511</th><td><i>     * assume python is on the user's $PATH, since there's no</i></td></tr>
+<tr><th id="512">512</th><td><i>     * other way to find a directory to start the search from.  If</i></td></tr>
+<tr><th id="513">513</th><td><i>     * $PATH isn't exported, you lose.</i></td></tr>
+<tr><th id="514">514</th><td><i>     */</i></td></tr>
+<tr><th id="515">515</th><td>    <b>if</b> (<a class="ref" href="../../include/wchar.h.html#wcschr" title='wcschr' data-ref="wcschr">wcschr</a>(<a class="local col1 ref" href="#61prog" title='prog' data-ref="61prog">prog</a>, <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>))</td></tr>
+<tr><th id="516">516</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="local col1 ref" href="#61prog" title='prog' data-ref="61prog">prog</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="517">517</th><td><u>#<span data-ppcond="517">ifdef</span> <span class="macro" data-ref="_M/__APPLE__">__APPLE__</span></u></td></tr>
+<tr><th id="518">518</th><td>     <i>/* On Mac OS X, if a script uses an interpreter of the form</i></td></tr>
+<tr><th id="519">519</th><td><i>      * "#!/opt/python2.3/bin/python", the kernel only passes "python"</i></td></tr>
+<tr><th id="520">520</th><td><i>      * as argv[0], which falls through to the $PATH search below.</i></td></tr>
+<tr><th id="521">521</th><td><i>      * If /opt/python2.3/bin isn't in your path, or is near the end,</i></td></tr>
+<tr><th id="522">522</th><td><i>      * this algorithm may incorrectly find /usr/bin/python. To work</i></td></tr>
+<tr><th id="523">523</th><td><i>      * around this, we can use _NSGetExecutablePath to get a better</i></td></tr>
+<tr><th id="524">524</th><td><i>      * hint of what the intended interpreter was, although this</i></td></tr>
+<tr><th id="525">525</th><td><i>      * will fail if a relative path was used. but in that case,</i></td></tr>
+<tr><th id="526">526</th><td><i>      * absolutize() should help us out below</i></td></tr>
+<tr><th id="527">527</th><td><i>      */</i></td></tr>
+<tr><th id="528">528</th><td>    <b>else</b> <b>if</b>(<var>0</var> == _NSGetExecutablePath(execpath, &amp;nsexeclength) &amp;&amp; execpath[<var>0</var>] == SEP) {</td></tr>
+<tr><th id="529">529</th><td>        size_t r = mbstowcs(progpath, execpath, MAXPATHLEN+<var>1</var>);</td></tr>
+<tr><th id="530">530</th><td>        <b>if</b> (r == (size_t)-<var>1</var> || r &gt; MAXPATHLEN) {</td></tr>
+<tr><th id="531">531</th><td>            <i>/* Could not convert execpath, or it's too long. */</i></td></tr>
+<tr><th id="532">532</th><td>            progpath[<var>0</var>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="533">533</th><td>        }</td></tr>
+<tr><th id="534">534</th><td>    }</td></tr>
+<tr><th id="535">535</th><td><u>#<span data-ppcond="517">endif</span> /* __APPLE__ */</u></td></tr>
+<tr><th id="536">536</th><td>    <b>else</b> <b>if</b> (<a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a>) {</td></tr>
+<tr><th id="537">537</th><td>        <b>while</b> (<var>1</var>) {</td></tr>
+<tr><th id="538">538</th><td>            <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col4 decl" id="74delim" title='delim' data-type='wchar_t *' data-ref="74delim">delim</dfn> = <a class="ref" href="../../include/wchar.h.html#wcschr" title='wcschr' data-ref="wcschr">wcschr</a>(<a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a>, <a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a>);</td></tr>
+<tr><th id="539">539</th><td></td></tr>
+<tr><th id="540">540</th><td>            <b>if</b> (<a class="local col4 ref" href="#74delim" title='delim' data-ref="74delim">delim</a>) {</td></tr>
+<tr><th id="541">541</th><td>                <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="75len" title='len' data-type='size_t' data-ref="75len">len</dfn> = <a class="local col4 ref" href="#74delim" title='delim' data-ref="74delim">delim</a> - <a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a>;</td></tr>
+<tr><th id="542">542</th><td>                <b>if</b> (<a class="local col5 ref" href="#75len" title='len' data-ref="75len">len</a> &gt; <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>)</td></tr>
+<tr><th id="543">543</th><td>                    <a class="local col5 ref" href="#75len" title='len' data-ref="75len">len</a> = <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>;</td></tr>
+<tr><th id="544">544</th><td>                <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a>, <a class="local col5 ref" href="#75len" title='len' data-ref="75len">len</a>);</td></tr>
+<tr><th id="545">545</th><td>                *(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a> + <a class="local col5 ref" href="#75len" title='len' data-ref="75len">len</a>) = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="546">546</th><td>            }</td></tr>
+<tr><th id="547">547</th><td>            <b>else</b></td></tr>
+<tr><th id="548">548</th><td>                <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="549">549</th><td></td></tr>
+<tr><th id="550">550</th><td>            <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="local col1 ref" href="#61prog" title='prog' data-ref="61prog">prog</a>);</td></tr>
+<tr><th id="551">551</th><td>            <b>if</b> (<a class="tu ref" href="#isxfile" title='isxfile' data-use='c' data-ref="isxfile">isxfile</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>))</td></tr>
+<tr><th id="552">552</th><td>                <b>break</b>;</td></tr>
+<tr><th id="553">553</th><td></td></tr>
+<tr><th id="554">554</th><td>            <b>if</b> (!<a class="local col4 ref" href="#74delim" title='delim' data-ref="74delim">delim</a>) {</td></tr>
+<tr><th id="555">555</th><td>                <a class="tu ref" href="#progpath" title='progpath' data-use='w' data-ref="progpath">progpath</a>[<var>0</var>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="556">556</th><td>                <b>break</b>;</td></tr>
+<tr><th id="557">557</th><td>            }</td></tr>
+<tr><th id="558">558</th><td>            <a class="local col0 ref" href="#60path" title='path' data-ref="60path">path</a> = <a class="local col4 ref" href="#74delim" title='delim' data-ref="74delim">delim</a> + <var>1</var>;</td></tr>
+<tr><th id="559">559</th><td>        }</td></tr>
+<tr><th id="560">560</th><td>    }</td></tr>
+<tr><th id="561">561</th><td>    <b>else</b></td></tr>
+<tr><th id="562">562</th><td>        <a class="tu ref" href="#progpath" title='progpath' data-use='w' data-ref="progpath">progpath</a>[<var>0</var>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="563">563</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col9 ref" href="#59path_buffer" title='path_buffer' data-ref="59path_buffer">path_buffer</a>);</td></tr>
+<tr><th id="564">564</th><td>    <b>if</b> (<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>[<var>0</var>] != <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a> &amp;&amp; <a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>[<var>0</var>] != <kbd>'\0'</kbd>)</td></tr>
+<tr><th id="565">565</th><td>        <a class="tu ref" href="#absolutize" title='absolutize' data-use='c' data-ref="absolutize">absolutize</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>);</td></tr>
+<tr><th id="566">566</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="567">567</th><td>    <a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="568">568</th><td></td></tr>
+<tr><th id="569">569</th><td><u>#<span data-ppcond="569">ifdef</span> <span class="macro" data-ref="_M/WITH_NEXT_FRAMEWORK">WITH_NEXT_FRAMEWORK</span></u></td></tr>
+<tr><th id="570">570</th><td>    <i>/* On Mac OS X we have a special case if we're running from a framework.</i></td></tr>
+<tr><th id="571">571</th><td><i>    ** This is because the python home should be set relative to the library,</i></td></tr>
+<tr><th id="572">572</th><td><i>    ** which is in the framework, not relative to the executable, which may</i></td></tr>
+<tr><th id="573">573</th><td><i>    ** be outside of the framework. Except when we're in the build directory...</i></td></tr>
+<tr><th id="574">574</th><td><i>    */</i></td></tr>
+<tr><th id="575">575</th><td>    pythonModule = NSModuleForSymbol(NSLookupAndBindSymbol(<q>"_Py_Initialize"</q>));</td></tr>
+<tr><th id="576">576</th><td>    <i>/* Use dylib functions to find out where the framework was loaded from */</i></td></tr>
+<tr><th id="577">577</th><td>    modPath = NSLibraryNameForModule(pythonModule);</td></tr>
+<tr><th id="578">578</th><td>    <b>if</b> (modPath != NULL) {</td></tr>
+<tr><th id="579">579</th><td>        <i>/* We're in a framework. */</i></td></tr>
+<tr><th id="580">580</th><td>        <i>/* See if we might be in the build directory. The framework in the</i></td></tr>
+<tr><th id="581">581</th><td><i>        ** build directory is incomplete, it only has the .dylib and a few</i></td></tr>
+<tr><th id="582">582</th><td><i>        ** needed symlinks, it doesn't have the Lib directories and such.</i></td></tr>
+<tr><th id="583">583</th><td><i>        ** If we're running with the framework from the build directory we must</i></td></tr>
+<tr><th id="584">584</th><td><i>        ** be running the interpreter in the build directory, so we use the</i></td></tr>
+<tr><th id="585">585</th><td><i>        ** build-directory-specific logic to find Lib and such.</i></td></tr>
+<tr><th id="586">586</th><td><i>        */</i></td></tr>
+<tr><th id="587">587</th><td>        wchar_t* wbuf = Py_DecodeLocale(modPath, NULL);</td></tr>
+<tr><th id="588">588</th><td>        <b>if</b> (wbuf == NULL) {</td></tr>
+<tr><th id="589">589</th><td>            Py_FatalError(<q>"Cannot decode framework location"</q>);</td></tr>
+<tr><th id="590">590</th><td>        }</td></tr>
+<tr><th id="591">591</th><td></td></tr>
+<tr><th id="592">592</th><td>        wcsncpy(argv0_path, wbuf, MAXPATHLEN);</td></tr>
+<tr><th id="593">593</th><td>        reduce(argv0_path);</td></tr>
+<tr><th id="594">594</th><td>        joinpath(argv0_path, lib_python);</td></tr>
+<tr><th id="595">595</th><td>        joinpath(argv0_path, LANDMARK);</td></tr>
+<tr><th id="596">596</th><td>        <b>if</b> (!ismodule(argv0_path)) {</td></tr>
+<tr><th id="597">597</th><td>            <i>/* We are in the build directory so use the name of the</i></td></tr>
+<tr><th id="598">598</th><td><i>               executable - we know that the absolute path is passed */</i></td></tr>
+<tr><th id="599">599</th><td>            wcsncpy(argv0_path, progpath, MAXPATHLEN);</td></tr>
+<tr><th id="600">600</th><td>        }</td></tr>
+<tr><th id="601">601</th><td>        <b>else</b> {</td></tr>
+<tr><th id="602">602</th><td>            <i>/* Use the location of the library as the progpath */</i></td></tr>
+<tr><th id="603">603</th><td>            wcsncpy(argv0_path, wbuf, MAXPATHLEN);</td></tr>
+<tr><th id="604">604</th><td>        }</td></tr>
+<tr><th id="605">605</th><td>        PyMem_RawFree(wbuf);</td></tr>
+<tr><th id="606">606</th><td>    }</td></tr>
+<tr><th id="607">607</th><td><u>#<span data-ppcond="569">endif</span></u></td></tr>
+<tr><th id="608">608</th><td></td></tr>
+<tr><th id="609">609</th><td><u>#<span data-ppcond="609">if</span> <a class="macro" href="../pyconfig.h.html#720" title="1" data-ref="_M/HAVE_READLINK">HAVE_READLINK</a></u></td></tr>
+<tr><th id="610">610</th><td>    {</td></tr>
+<tr><th id="611">611</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col6 decl" id="76tmpbuffer" title='tmpbuffer' data-type='wchar_t [4097]' data-ref="76tmpbuffer">tmpbuffer</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="612">612</th><td>        <em>int</em> <dfn class="local col7 decl" id="77linklen" title='linklen' data-type='int' data-ref="77linklen">linklen</dfn> = <a class="ref" href="../Include/fileutils.h.html#_Py_wreadlink" title='_Py_wreadlink' data-ref="_Py_wreadlink">_Py_wreadlink</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="local col6 ref" href="#76tmpbuffer" title='tmpbuffer' data-ref="76tmpbuffer">tmpbuffer</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="613">613</th><td>        <b>while</b> (<a class="local col7 ref" href="#77linklen" title='linklen' data-ref="77linklen">linklen</a> != -<var>1</var>) {</td></tr>
+<tr><th id="614">614</th><td>            <b>if</b> (<a class="local col6 ref" href="#76tmpbuffer" title='tmpbuffer' data-ref="76tmpbuffer">tmpbuffer</a>[<var>0</var>] == <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="615">615</th><td>                <i>/* tmpbuffer should never be longer than MAXPATHLEN,</i></td></tr>
+<tr><th id="616">616</th><td><i>                   but extra check does not hurt */</i></td></tr>
+<tr><th id="617">617</th><td>                <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="local col6 ref" href="#76tmpbuffer" title='tmpbuffer' data-ref="76tmpbuffer">tmpbuffer</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="618">618</th><td>            <b>else</b> {</td></tr>
+<tr><th id="619">619</th><td>                <i>/* Interpret relative to progpath */</i></td></tr>
+<tr><th id="620">620</th><td>                <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>);</td></tr>
+<tr><th id="621">621</th><td>                <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="local col6 ref" href="#76tmpbuffer" title='tmpbuffer' data-ref="76tmpbuffer">tmpbuffer</a>);</td></tr>
+<tr><th id="622">622</th><td>            }</td></tr>
+<tr><th id="623">623</th><td>            <a class="local col7 ref" href="#77linklen" title='linklen' data-ref="77linklen">linklen</a> = <a class="ref" href="../Include/fileutils.h.html#_Py_wreadlink" title='_Py_wreadlink' data-ref="_Py_wreadlink">_Py_wreadlink</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="local col6 ref" href="#76tmpbuffer" title='tmpbuffer' data-ref="76tmpbuffer">tmpbuffer</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="624">624</th><td>        }</td></tr>
+<tr><th id="625">625</th><td>    }</td></tr>
+<tr><th id="626">626</th><td><u>#<span data-ppcond="609">endif</span> /* HAVE_READLINK */</u></td></tr>
+<tr><th id="627">627</th><td></td></tr>
+<tr><th id="628">628</th><td>    <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>);</td></tr>
+<tr><th id="629">629</th><td>    <i>/* At this point, argv0_path is guaranteed to be less than</i></td></tr>
+<tr><th id="630">630</th><td><i>       MAXPATHLEN bytes long.</i></td></tr>
+<tr><th id="631">631</th><td><i>    */</i></td></tr>
+<tr><th id="632">632</th><td></td></tr>
+<tr><th id="633">633</th><td>    <i>/* Search for an environment configuration file, first in the</i></td></tr>
+<tr><th id="634">634</th><td><i>       executable's directory and then in the parent directory.</i></td></tr>
+<tr><th id="635">635</th><td><i>       If found, open it for use when searching for prefixes.</i></td></tr>
+<tr><th id="636">636</th><td><i>    */</i></td></tr>
+<tr><th id="637">637</th><td></td></tr>
+<tr><th id="638">638</th><td>    {</td></tr>
+<tr><th id="639">639</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> <dfn class="local col8 decl" id="78tmpbuffer" title='tmpbuffer' data-type='wchar_t [4097]' data-ref="78tmpbuffer">tmpbuffer</dfn>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>+<var>1</var>];</td></tr>
+<tr><th id="640">640</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col9 decl" id="79env_cfg" title='env_cfg' data-type='wchar_t *' data-ref="79env_cfg">env_cfg</dfn> = L<q>"pyvenv.cfg"</q>;</td></tr>
+<tr><th id="641">641</th><td>        <a class="typedef" href="../../include/stdio.h.html#FILE" title='FILE' data-type='struct _IO_FILE' data-ref="FILE">FILE</a> * <dfn class="local col0 decl" id="80env_file" title='env_file' data-type='FILE *' data-ref="80env_file">env_file</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="642">642</th><td></td></tr>
+<tr><th id="643">643</th><td>        <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>, <a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>);</td></tr>
+<tr><th id="644">644</th><td></td></tr>
+<tr><th id="645">645</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>, <a class="local col9 ref" href="#79env_cfg" title='env_cfg' data-ref="79env_cfg">env_cfg</a>);</td></tr>
+<tr><th id="646">646</th><td>        <a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a> = <a class="ref" href="../Include/fileutils.h.html#_Py_wfopen" title='_Py_wfopen' data-ref="_Py_wfopen">_Py_wfopen</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>, L<q>"r"</q>);</td></tr>
+<tr><th id="647">647</th><td>        <b>if</b> (<a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="648">648</th><td>            <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <var>0</var>;</td></tr>
+<tr><th id="649">649</th><td>            <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>);</td></tr>
+<tr><th id="650">650</th><td>            <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>);</td></tr>
+<tr><th id="651">651</th><td>            <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>, <a class="local col9 ref" href="#79env_cfg" title='env_cfg' data-ref="79env_cfg">env_cfg</a>);</td></tr>
+<tr><th id="652">652</th><td>            <a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a> = <a class="ref" href="../Include/fileutils.h.html#_Py_wfopen" title='_Py_wfopen' data-ref="_Py_wfopen">_Py_wfopen</a>(<a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>, L<q>"r"</q>);</td></tr>
+<tr><th id="653">653</th><td>            <b>if</b> (<a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="654">654</th><td>                <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <var>0</var>;</td></tr>
+<tr><th id="655">655</th><td>            }</td></tr>
+<tr><th id="656">656</th><td>        }</td></tr>
+<tr><th id="657">657</th><td>        <b>if</b> (<a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="658">658</th><td>            <i>/* Look for a 'home' variable and set argv0_path to it, if found */</i></td></tr>
+<tr><th id="659">659</th><td>            <b>if</b> (<a class="tu ref" href="#find_env_config_value" title='find_env_config_value' data-use='c' data-ref="find_env_config_value">find_env_config_value</a>(<a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a>, L<q>"home"</q>, <a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>)) {</td></tr>
+<tr><th id="660">660</th><td>                <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="local col8 ref" href="#78tmpbuffer" title='tmpbuffer' data-ref="78tmpbuffer">tmpbuffer</a>);</td></tr>
+<tr><th id="661">661</th><td>            }</td></tr>
+<tr><th id="662">662</th><td>            <a class="ref" href="../../include/stdio.h.html#fclose" title='fclose' data-ref="fclose">fclose</a>(<a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a>);</td></tr>
+<tr><th id="663">663</th><td>            <a class="local col0 ref" href="#80env_file" title='env_file' data-ref="80env_file">env_file</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="664">664</th><td>        }</td></tr>
+<tr><th id="665">665</th><td>    }</td></tr>
+<tr><th id="666">666</th><td></td></tr>
+<tr><th id="667">667</th><td>    <a class="local col4 ref" href="#64pfound" title='pfound' data-ref="64pfound">pfound</a> = <a class="tu ref" href="#search_for_prefix" title='search_for_prefix' data-use='c' data-ref="search_for_prefix">search_for_prefix</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="local col7 ref" href="#57home" title='home' data-ref="57home">home</a>, <a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a>, <a class="local col3 ref" href="#73lib_python" title='lib_python' data-ref="73lib_python">lib_python</a>);</td></tr>
+<tr><th id="668">668</th><td>    <b>if</b> (!<a class="local col4 ref" href="#64pfound" title='pfound' data-ref="64pfound">pfound</a>) {</td></tr>
+<tr><th id="669">669</th><td>        <b>if</b> (!<a class="ref" href="../Include/pydebug.h.html#Py_FrozenFlag" title='Py_FrozenFlag' data-ref="Py_FrozenFlag">Py_FrozenFlag</a>)</td></tr>
+<tr><th id="670">670</th><td>            <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>,</td></tr>
+<tr><th id="671">671</th><td>                <q>"Could not find platform independent libraries &lt;prefix&gt;\n"</q>);</td></tr>
+<tr><th id="672">672</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="673">673</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col3 ref" href="#73lib_python" title='lib_python' data-ref="73lib_python">lib_python</a>);</td></tr>
+<tr><th id="674">674</th><td>    }</td></tr>
+<tr><th id="675">675</th><td>    <b>else</b></td></tr>
+<tr><th id="676">676</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>);</td></tr>
+<tr><th id="677">677</th><td></td></tr>
+<tr><th id="678">678</th><td>    <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>, <a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="679">679</th><td>    <a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>[<a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="680">680</th><td>    <b>if</b> (<a class="local col4 ref" href="#64pfound" title='pfound' data-ref="64pfound">pfound</a> &gt; <var>0</var>) { <i>/* Use the reduced prefix returned by Py_GetPrefix() */</i></td></tr>
+<tr><th id="681">681</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>);</td></tr>
+<tr><th id="682">682</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>);</td></tr>
+<tr><th id="683">683</th><td>    }</td></tr>
+<tr><th id="684">684</th><td>    <b>else</b></td></tr>
+<tr><th id="685">685</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>, <a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="686">686</th><td>    <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>, L<q>"lib/python00.zip"</q>);</td></tr>
+<tr><th id="687">687</th><td>    <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>);   <i>/* Replace "00" with version */</i></td></tr>
+<tr><th id="688">688</th><td>    <a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>[<a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> - <var>6</var>] = <span class="macro" title="&quot;3.7&quot;" data-ref="_M/VERSION">VERSION</span>[<var>0</var>];</td></tr>
+<tr><th id="689">689</th><td>    <a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>[<a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> - <var>5</var>] = <span class="macro" title="&quot;3.7&quot;" data-ref="_M/VERSION">VERSION</span>[<var>2</var>];</td></tr>
+<tr><th id="690">690</th><td></td></tr>
+<tr><th id="691">691</th><td>    <a class="local col5 ref" href="#65efound" title='efound' data-ref="65efound">efound</a> = <a class="tu ref" href="#search_for_exec_prefix" title='search_for_exec_prefix' data-use='c' data-ref="search_for_exec_prefix">search_for_exec_prefix</a>(<a class="local col2 ref" href="#62argv0_path" title='argv0_path' data-ref="62argv0_path">argv0_path</a>, <a class="local col7 ref" href="#57home" title='home' data-ref="57home">home</a>,</td></tr>
+<tr><th id="692">692</th><td>                                    <a class="local col2 ref" href="#72_exec_prefix" title='_exec_prefix' data-ref="72_exec_prefix">_exec_prefix</a>, <a class="local col3 ref" href="#73lib_python" title='lib_python' data-ref="73lib_python">lib_python</a>);</td></tr>
+<tr><th id="693">693</th><td>    <b>if</b> (!<a class="local col5 ref" href="#65efound" title='efound' data-ref="65efound">efound</a>) {</td></tr>
+<tr><th id="694">694</th><td>        <b>if</b> (!<a class="ref" href="../Include/pydebug.h.html#Py_FrozenFlag" title='Py_FrozenFlag' data-ref="Py_FrozenFlag">Py_FrozenFlag</a>)</td></tr>
+<tr><th id="695">695</th><td>            <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>,</td></tr>
+<tr><th id="696">696</th><td>                <q>"Could not find platform dependent libraries &lt;exec_prefix&gt;\n"</q>);</td></tr>
+<tr><th id="697">697</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col2 ref" href="#72_exec_prefix" title='_exec_prefix' data-ref="72_exec_prefix">_exec_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="698">698</th><td>        <a class="tu ref" href="#joinpath" title='joinpath' data-use='c' data-ref="joinpath">joinpath</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, L<q>"lib/lib-dynload"</q>);</td></tr>
+<tr><th id="699">699</th><td>    }</td></tr>
+<tr><th id="700">700</th><td>    <i>/* If we found EXEC_PREFIX do *not* reduce it!  (Yet.) */</i></td></tr>
+<tr><th id="701">701</th><td></td></tr>
+<tr><th id="702">702</th><td>    <b>if</b> ((!<a class="local col4 ref" href="#64pfound" title='pfound' data-ref="64pfound">pfound</a> || !<a class="local col5 ref" href="#65efound" title='efound' data-ref="65efound">efound</a>) &amp;&amp; !<a class="ref" href="../Include/pydebug.h.html#Py_FrozenFlag" title='Py_FrozenFlag' data-ref="Py_FrozenFlag">Py_FrozenFlag</a>)</td></tr>
+<tr><th id="703">703</th><td>        <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>,</td></tr>
+<tr><th id="704">704</th><td>                <q>"Consider setting $PYTHONHOME to &lt;prefix&gt;[:&lt;exec_prefix&gt;]\n"</q>);</td></tr>
+<tr><th id="705">705</th><td></td></tr>
+<tr><th id="706">706</th><td>    <i>/* Calculate size of return buffer.</i></td></tr>
+<tr><th id="707">707</th><td><i>     */</i></td></tr>
+<tr><th id="708">708</th><td>    <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> = <var>0</var>;</td></tr>
+<tr><th id="709">709</th><td></td></tr>
+<tr><th id="710">710</th><td>    <b>if</b> (<a class="local col5 ref" href="#55_rtpypath" title='_rtpypath' data-ref="55_rtpypath">_rtpypath</a> &amp;&amp; <a class="local col5 ref" href="#55_rtpypath" title='_rtpypath' data-ref="55_rtpypath">_rtpypath</a>[<var>0</var>] != <kbd>'\0'</kbd>) {</td></tr>
+<tr><th id="711">711</th><td>        <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col1 decl" id="81rtpypath_len" title='rtpypath_len' data-type='size_t' data-ref="81rtpypath_len">rtpypath_len</dfn>;</td></tr>
+<tr><th id="712">712</th><td>        <a class="local col6 ref" href="#56rtpypath" title='rtpypath' data-ref="56rtpypath">rtpypath</a> = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<a class="local col5 ref" href="#55_rtpypath" title='_rtpypath' data-ref="55_rtpypath">_rtpypath</a>, &amp;<a class="local col1 ref" href="#81rtpypath_len" title='rtpypath_len' data-ref="81rtpypath_len">rtpypath_len</a>);</td></tr>
+<tr><th id="713">713</th><td>        <b>if</b> (<a class="local col6 ref" href="#56rtpypath" title='rtpypath' data-ref="56rtpypath">rtpypath</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="714">714</th><td>            <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> += <a class="local col1 ref" href="#81rtpypath_len" title='rtpypath_len' data-ref="81rtpypath_len">rtpypath_len</a> + <var>1</var>;</td></tr>
+<tr><th id="715">715</th><td>    }</td></tr>
+<tr><th id="716">716</th><td></td></tr>
+<tr><th id="717">717</th><td>    <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a> = <a class="local col0 ref" href="#70_pythonpath" title='_pythonpath' data-ref="70_pythonpath">_pythonpath</a>;</td></tr>
+<tr><th id="718">718</th><td>    <a class="local col8 ref" href="#68prefixsz" title='prefixsz' data-ref="68prefixsz">prefixsz</a> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>) + <var>1</var>;</td></tr>
+<tr><th id="719">719</th><td>    <b>while</b> (<var>1</var>) {</td></tr>
+<tr><th id="720">720</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col2 decl" id="82delim" title='delim' data-type='wchar_t *' data-ref="82delim">delim</dfn> = <a class="ref" href="../../include/wchar.h.html#wcschr" title='wcschr' data-ref="wcschr">wcschr</a>(<a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>, <a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a>);</td></tr>
+<tr><th id="721">721</th><td></td></tr>
+<tr><th id="722">722</th><td>        <b>if</b> (<a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>[<var>0</var>] != <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>)</td></tr>
+<tr><th id="723">723</th><td>            <i>/* Paths are relative to prefix */</i></td></tr>
+<tr><th id="724">724</th><td>            <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> += <a class="local col8 ref" href="#68prefixsz" title='prefixsz' data-ref="68prefixsz">prefixsz</a>;</td></tr>
+<tr><th id="725">725</th><td></td></tr>
+<tr><th id="726">726</th><td>        <b>if</b> (<a class="local col2 ref" href="#82delim" title='delim' data-ref="82delim">delim</a>)</td></tr>
+<tr><th id="727">727</th><td>            <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> += <a class="local col2 ref" href="#82delim" title='delim' data-ref="82delim">delim</a> - <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a> + <var>1</var>;</td></tr>
+<tr><th id="728">728</th><td>        <b>else</b> {</td></tr>
+<tr><th id="729">729</th><td>            <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> += <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>) + <var>1</var>;</td></tr>
+<tr><th id="730">730</th><td>            <b>break</b>;</td></tr>
+<tr><th id="731">731</th><td>        }</td></tr>
+<tr><th id="732">732</th><td>        <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a> = <a class="local col2 ref" href="#82delim" title='delim' data-ref="82delim">delim</a> + <var>1</var>;</td></tr>
+<tr><th id="733">733</th><td>    }</td></tr>
+<tr><th id="734">734</th><td></td></tr>
+<tr><th id="735">735</th><td>    <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> += <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>) + <var>1</var>;</td></tr>
+<tr><th id="736">736</th><td>    <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a> += <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>) + <var>1</var>;</td></tr>
+<tr><th id="737">737</th><td></td></tr>
+<tr><th id="738">738</th><td>    <a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a> = <a class="macro" href="../Include/pymem.h.html#134" title="( ((size_t)(bufsz) &gt; ((Py_ssize_t)(((size_t)-1)&gt;&gt;1)) / sizeof(wchar_t)) ? ((void*)0) : ( (wchar_t *) PyMem_Malloc((bufsz) * sizeof(wchar_t)) ) )" data-ref="_M/PyMem_New">PyMem_New</a>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>, <a class="local col7 ref" href="#67bufsz" title='bufsz' data-ref="67bufsz">bufsz</a>);</td></tr>
+<tr><th id="739">739</th><td>    <b>if</b> (<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="740">740</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(</td></tr>
+<tr><th id="741">741</th><td>            <q>"Not enough memory for dynamic PYTHONPATH"</q>);</td></tr>
+<tr><th id="742">742</th><td>    }</td></tr>
+<tr><th id="743">743</th><td></td></tr>
+<tr><th id="744">744</th><td>    <i>/* Run-time value of $PYTHONPATH goes first */</i></td></tr>
+<tr><th id="745">745</th><td>    <b>if</b> (<a class="local col6 ref" href="#56rtpypath" title='rtpypath' data-ref="56rtpypath">rtpypath</a>) {</td></tr>
+<tr><th id="746">746</th><td>        <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col6 ref" href="#56rtpypath" title='rtpypath' data-ref="56rtpypath">rtpypath</a>);</td></tr>
+<tr><th id="747">747</th><td>        <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col3 ref" href="#53delimiter" title='delimiter' data-ref="53delimiter">delimiter</a>);</td></tr>
+<tr><th id="748">748</th><td>    }</td></tr>
+<tr><th id="749">749</th><td>    <b>else</b></td></tr>
+<tr><th id="750">750</th><td>        <a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>[<var>0</var>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="751">751</th><td></td></tr>
+<tr><th id="752">752</th><td>    <i>/* Next is the default zip path */</i></td></tr>
+<tr><th id="753">753</th><td>    <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col3 ref" href="#63zip_path" title='zip_path' data-ref="63zip_path">zip_path</a>);</td></tr>
+<tr><th id="754">754</th><td>    <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col3 ref" href="#53delimiter" title='delimiter' data-ref="53delimiter">delimiter</a>);</td></tr>
+<tr><th id="755">755</th><td></td></tr>
+<tr><th id="756">756</th><td>    <i>/* Next goes merge of compile-time $PYTHONPATH with</i></td></tr>
+<tr><th id="757">757</th><td><i>     * dynamically located prefix.</i></td></tr>
+<tr><th id="758">758</th><td><i>     */</i></td></tr>
+<tr><th id="759">759</th><td>    <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a> = <a class="local col0 ref" href="#70_pythonpath" title='_pythonpath' data-ref="70_pythonpath">_pythonpath</a>;</td></tr>
+<tr><th id="760">760</th><td>    <b>while</b> (<var>1</var>) {</td></tr>
+<tr><th id="761">761</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col3 decl" id="83delim" title='delim' data-type='wchar_t *' data-ref="83delim">delim</dfn> = <a class="ref" href="../../include/wchar.h.html#wcschr" title='wcschr' data-ref="wcschr">wcschr</a>(<a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>, <a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a>);</td></tr>
+<tr><th id="762">762</th><td></td></tr>
+<tr><th id="763">763</th><td>        <b>if</b> (<a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>[<var>0</var>] != <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a>) {</td></tr>
+<tr><th id="764">764</th><td>            <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>);</td></tr>
+<tr><th id="765">765</th><td>            <b>if</b> (<a class="local col8 ref" href="#68prefixsz" title='prefixsz' data-ref="68prefixsz">prefixsz</a> &gt;= <var>2</var> &amp;&amp; <a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>[<a class="local col8 ref" href="#68prefixsz" title='prefixsz' data-ref="68prefixsz">prefixsz</a> - <var>2</var>] != <a class="macro" href="../Include/osdefs.h.html#19" title="L&apos;/&apos;" data-ref="_M/SEP">SEP</a> &amp;&amp;</td></tr>
+<tr><th id="766">766</th><td>                <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>[<var>0</var>] != (<a class="local col3 ref" href="#83delim" title='delim' data-ref="83delim">delim</a> ? <a class="macro" href="../Include/osdefs.h.html#41" title="L&apos;:&apos;" data-ref="_M/DELIM">DELIM</a> : L<kbd>'\0'</kbd>)) {  <i>/* not empty */</i></td></tr>
+<tr><th id="767">767</th><td>                <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col4 ref" href="#54separator" title='separator' data-ref="54separator">separator</a>);</td></tr>
+<tr><th id="768">768</th><td>            }</td></tr>
+<tr><th id="769">769</th><td>        }</td></tr>
+<tr><th id="770">770</th><td></td></tr>
+<tr><th id="771">771</th><td>        <b>if</b> (<a class="local col3 ref" href="#83delim" title='delim' data-ref="83delim">delim</a>) {</td></tr>
+<tr><th id="772">772</th><td>            <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="84len" title='len' data-type='size_t' data-ref="84len">len</dfn> = <a class="local col3 ref" href="#83delim" title='delim' data-ref="83delim">delim</a> - <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a> + <var>1</var>;</td></tr>
+<tr><th id="773">773</th><td>            <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="85end" title='end' data-type='size_t' data-ref="85end">end</dfn> = <a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>) + <a class="local col4 ref" href="#84len" title='len' data-ref="84len">len</a>;</td></tr>
+<tr><th id="774">774</th><td>            <a class="ref" href="../../include/wchar.h.html#wcsncat" title='wcsncat' data-ref="wcsncat">wcsncat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>, <a class="local col4 ref" href="#84len" title='len' data-ref="84len">len</a>);</td></tr>
+<tr><th id="775">775</th><td>            *(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a> + <a class="local col5 ref" href="#85end" title='end' data-ref="85end">end</a>) = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="776">776</th><td>        }</td></tr>
+<tr><th id="777">777</th><td>        <b>else</b> {</td></tr>
+<tr><th id="778">778</th><td>            <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a>);</td></tr>
+<tr><th id="779">779</th><td>            <b>break</b>;</td></tr>
+<tr><th id="780">780</th><td>        }</td></tr>
+<tr><th id="781">781</th><td>        <a class="local col9 ref" href="#69defpath" title='defpath' data-ref="69defpath">defpath</a> = <a class="local col3 ref" href="#83delim" title='delim' data-ref="83delim">delim</a> + <var>1</var>;</td></tr>
+<tr><th id="782">782</th><td>    }</td></tr>
+<tr><th id="783">783</th><td>    <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="local col3 ref" href="#53delimiter" title='delimiter' data-ref="53delimiter">delimiter</a>);</td></tr>
+<tr><th id="784">784</th><td></td></tr>
+<tr><th id="785">785</th><td>    <i>/* Finally, on goes the directory for dynamic-load modules */</i></td></tr>
+<tr><th id="786">786</th><td>    <a class="ref" href="../../include/wchar.h.html#wcscat" title='wcscat' data-ref="wcscat">wcscat</a>(<a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>, <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>);</td></tr>
+<tr><th id="787">787</th><td></td></tr>
+<tr><th id="788">788</th><td>    <i>/* And publish the results */</i></td></tr>
+<tr><th id="789">789</th><td>    <a class="tu ref" href="#module_search_path" title='module_search_path' data-use='w' data-ref="module_search_path">module_search_path</a> = <a class="local col6 ref" href="#66buf" title='buf' data-ref="66buf">buf</a>;</td></tr>
+<tr><th id="790">790</th><td></td></tr>
+<tr><th id="791">791</th><td>    <i>/* Reduce prefix and exec_prefix to their essence,</i></td></tr>
+<tr><th id="792">792</th><td><i>     * e.g. /usr/local/lib/python1.5 is reduced to /usr/local.</i></td></tr>
+<tr><th id="793">793</th><td><i>     * If we're loading relative to the build directory,</i></td></tr>
+<tr><th id="794">794</th><td><i>     * return the compiled-in defaults instead.</i></td></tr>
+<tr><th id="795">795</th><td><i>     */</i></td></tr>
+<tr><th id="796">796</th><td>    <b>if</b> (<a class="local col4 ref" href="#64pfound" title='pfound' data-ref="64pfound">pfound</a> &gt; <var>0</var>) {</td></tr>
+<tr><th id="797">797</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>);</td></tr>
+<tr><th id="798">798</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>);</td></tr>
+<tr><th id="799">799</th><td>        <i>/* The prefix is the root directory, but reduce() chopped</i></td></tr>
+<tr><th id="800">800</th><td><i>         * off the "/". */</i></td></tr>
+<tr><th id="801">801</th><td>        <b>if</b> (!<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>[<var>0</var>])</td></tr>
+<tr><th id="802">802</th><td>                <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col4 ref" href="#54separator" title='separator' data-ref="54separator">separator</a>);</td></tr>
+<tr><th id="803">803</th><td>    }</td></tr>
+<tr><th id="804">804</th><td>    <b>else</b></td></tr>
+<tr><th id="805">805</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>, <a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="806">806</th><td></td></tr>
+<tr><th id="807">807</th><td>    <b>if</b> (<a class="local col5 ref" href="#65efound" title='efound' data-ref="65efound">efound</a> &gt; <var>0</var>) {</td></tr>
+<tr><th id="808">808</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>);</td></tr>
+<tr><th id="809">809</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>);</td></tr>
+<tr><th id="810">810</th><td>        <a class="tu ref" href="#reduce" title='reduce' data-use='c' data-ref="reduce">reduce</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>);</td></tr>
+<tr><th id="811">811</th><td>        <b>if</b> (!<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>[<var>0</var>])</td></tr>
+<tr><th id="812">812</th><td>                <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col4 ref" href="#54separator" title='separator' data-ref="54separator">separator</a>);</td></tr>
+<tr><th id="813">813</th><td>    }</td></tr>
+<tr><th id="814">814</th><td>    <b>else</b></td></tr>
+<tr><th id="815">815</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>, <a class="local col2 ref" href="#72_exec_prefix" title='_exec_prefix' data-ref="72_exec_prefix">_exec_prefix</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="816">816</th><td></td></tr>
+<tr><th id="817">817</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col0 ref" href="#70_pythonpath" title='_pythonpath' data-ref="70_pythonpath">_pythonpath</a>);</td></tr>
+<tr><th id="818">818</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col1 ref" href="#71_prefix" title='_prefix' data-ref="71_prefix">_prefix</a>);</td></tr>
+<tr><th id="819">819</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col2 ref" href="#72_exec_prefix" title='_exec_prefix' data-ref="72_exec_prefix">_exec_prefix</a>);</td></tr>
+<tr><th id="820">820</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col3 ref" href="#73lib_python" title='lib_python' data-ref="73lib_python">lib_python</a>);</td></tr>
+<tr><th id="821">821</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col6 ref" href="#56rtpypath" title='rtpypath' data-ref="56rtpypath">rtpypath</a>);</td></tr>
+<tr><th id="822">822</th><td>}</td></tr>
+<tr><th id="823">823</th><td></td></tr>
+<tr><th id="824">824</th><td></td></tr>
+<tr><th id="825">825</th><td><i>/* External interface */</i></td></tr>
+<tr><th id="826">826</th><td><em>void</em></td></tr>
+<tr><th id="827">827</th><td><dfn class="decl def" id="Py_SetPath" title='Py_SetPath' data-ref="Py_SetPath">Py_SetPath</dfn>(<em>const</em> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col6 decl" id="86path" title='path' data-type='const wchar_t *' data-ref="86path">path</dfn>)</td></tr>
+<tr><th id="828">828</th><td>{</td></tr>
+<tr><th id="829">829</th><td>    <b>if</b> (<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="830">830</th><td>        <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>);</td></tr>
+<tr><th id="831">831</th><td>        <a class="tu ref" href="#module_search_path" title='module_search_path' data-use='w' data-ref="module_search_path">module_search_path</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="832">832</th><td>    }</td></tr>
+<tr><th id="833">833</th><td>    <b>if</b> (<a class="local col6 ref" href="#86path" title='path' data-ref="86path">path</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="834">834</th><td>        <b>extern</b> <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<a class="decl" href="../Include/pylifecycle.h.html#Py_GetProgramName" title='Py_GetProgramName' data-ref="Py_GetProgramName" id="Py_GetProgramName">Py_GetProgramName</a>(<em>void</em>);</td></tr>
+<tr><th id="835">835</th><td>        <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col7 decl" id="87prog" title='prog' data-type='wchar_t *' data-ref="87prog">prog</dfn> = <a class="ref" href="../Include/pylifecycle.h.html#Py_GetProgramName" title='Py_GetProgramName' data-ref="Py_GetProgramName">Py_GetProgramName</a>();</td></tr>
+<tr><th id="836">836</th><td>        <a class="ref" href="../../include/wchar.h.html#wcsncpy" title='wcsncpy' data-ref="wcsncpy">wcsncpy</a>(<a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>, <a class="local col7 ref" href="#87prog" title='prog' data-ref="87prog">prog</a>, <a class="macro" href="../Include/osdefs.h.html#33" title="4096" data-ref="_M/MAXPATHLEN">MAXPATHLEN</a>);</td></tr>
+<tr><th id="837">837</th><td>        <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='w' data-ref="exec_prefix">exec_prefix</a>[<var>0</var>] = <a class="tu ref" href="#prefix" title='prefix' data-use='w' data-ref="prefix">prefix</a>[<var>0</var>] = L<kbd>'\0'</kbd>;</td></tr>
+<tr><th id="838">838</th><td>        <a class="tu ref" href="#module_search_path" title='module_search_path' data-use='w' data-ref="module_search_path">module_search_path</a> = <a class="ref" href="../Include/pymem.h.html#PyMem_RawMalloc" title='PyMem_RawMalloc' data-ref="PyMem_RawMalloc">PyMem_RawMalloc</a>((<a class="ref" href="../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col6 ref" href="#86path" title='path' data-ref="86path">path</a>) + <var>1</var>) * <b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>));</td></tr>
+<tr><th id="839">839</th><td>        <b>if</b> (<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="840">840</th><td>            <a class="ref" href="../../include/wchar.h.html#wcscpy" title='wcscpy' data-ref="wcscpy">wcscpy</a>(<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>, <a class="local col6 ref" href="#86path" title='path' data-ref="86path">path</a>);</td></tr>
+<tr><th id="841">841</th><td>    }</td></tr>
+<tr><th id="842">842</th><td>}</td></tr>
+<tr><th id="843">843</th><td></td></tr>
+<tr><th id="844">844</th><td><span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *</td></tr>
+<tr><th id="845">845</th><td><dfn class="decl def" id="Py_GetPath" title='Py_GetPath' data-ref="Py_GetPath">Py_GetPath</dfn>(<em>void</em>)</td></tr>
+<tr><th id="846">846</th><td>{</td></tr>
+<tr><th id="847">847</th><td>    <b>if</b> (!<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>)</td></tr>
+<tr><th id="848">848</th><td>        <a class="tu ref" href="#calculate_path" title='calculate_path' data-use='c' data-ref="calculate_path">calculate_path</a>();</td></tr>
+<tr><th id="849">849</th><td>    <b>return</b> <a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>;</td></tr>
+<tr><th id="850">850</th><td>}</td></tr>
+<tr><th id="851">851</th><td></td></tr>
+<tr><th id="852">852</th><td><span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *</td></tr>
+<tr><th id="853">853</th><td><dfn class="decl def" id="Py_GetPrefix" title='Py_GetPrefix' data-ref="Py_GetPrefix">Py_GetPrefix</dfn>(<em>void</em>)</td></tr>
+<tr><th id="854">854</th><td>{</td></tr>
+<tr><th id="855">855</th><td>    <b>if</b> (!<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>)</td></tr>
+<tr><th id="856">856</th><td>        <a class="tu ref" href="#calculate_path" title='calculate_path' data-use='c' data-ref="calculate_path">calculate_path</a>();</td></tr>
+<tr><th id="857">857</th><td>    <b>return</b> <a class="tu ref" href="#prefix" title='prefix' data-use='r' data-ref="prefix">prefix</a>;</td></tr>
+<tr><th id="858">858</th><td>}</td></tr>
+<tr><th id="859">859</th><td></td></tr>
+<tr><th id="860">860</th><td><span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *</td></tr>
+<tr><th id="861">861</th><td><dfn class="decl def" id="Py_GetExecPrefix" title='Py_GetExecPrefix' data-ref="Py_GetExecPrefix">Py_GetExecPrefix</dfn>(<em>void</em>)</td></tr>
+<tr><th id="862">862</th><td>{</td></tr>
+<tr><th id="863">863</th><td>    <b>if</b> (!<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>)</td></tr>
+<tr><th id="864">864</th><td>        <a class="tu ref" href="#calculate_path" title='calculate_path' data-use='c' data-ref="calculate_path">calculate_path</a>();</td></tr>
+<tr><th id="865">865</th><td>    <b>return</b> <a class="tu ref" href="#exec_prefix" title='exec_prefix' data-use='r' data-ref="exec_prefix">exec_prefix</a>;</td></tr>
+<tr><th id="866">866</th><td>}</td></tr>
+<tr><th id="867">867</th><td></td></tr>
+<tr><th id="868">868</th><td><span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *</td></tr>
+<tr><th id="869">869</th><td><dfn class="decl def" id="Py_GetProgramFullPath" title='Py_GetProgramFullPath' data-ref="Py_GetProgramFullPath">Py_GetProgramFullPath</dfn>(<em>void</em>)</td></tr>
+<tr><th id="870">870</th><td>{</td></tr>
+<tr><th id="871">871</th><td>    <b>if</b> (!<a class="tu ref" href="#module_search_path" title='module_search_path' data-use='r' data-ref="module_search_path">module_search_path</a>)</td></tr>
+<tr><th id="872">872</th><td>        <a class="tu ref" href="#calculate_path" title='calculate_path' data-use='c' data-ref="calculate_path">calculate_path</a>();</td></tr>
+<tr><th id="873">873</th><td>    <b>return</b> <a class="tu ref" href="#progpath" title='progpath' data-use='r' data-ref="progpath">progpath</a>;</td></tr>
+<tr><th id="874">874</th><td>}</td></tr>
+<tr><th id="875">875</th><td></td></tr>
+<tr><th id="876">876</th><td></td></tr>
+<tr><th id="877">877</th><td><u>#<span data-ppcond="877">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="878">878</th><td>}</td></tr>
+<tr><th id="879">879</th><td><u>#<span data-ppcond="877">endif</span></u></td></tr>
+<tr><th id="880">880</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

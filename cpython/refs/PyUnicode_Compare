@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2051' type='int PyUnicode_Compare(PyObject * left, PyObject * right)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2047'>/* Compare two strings and return -1, 0, 1 for less than, equal,
+   greater than resp.
+   Raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='521' u='c' c='getround'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1758' u='c' c='test_widechar'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='254' u='c' c='hashtable_compare_unicode'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='347' u='c' c='hashtable_compare_traceback'/>
+<use f='codebrowser/Objects/codeobject.c' l='158' u='c' c='PyCode_New'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='10995' ll='11014' type='int PyUnicode_Compare(PyObject * left, PyObject * right)'/>
+<use f='codebrowser/Python/ast.c' l='2851' u='c' c='ast_for_call'/>
+<use f='codebrowser/Python/import.c' l='874' u='c' c='update_code_filenames'/>
+<use f='codebrowser/Python/import.c' l='895' u='c' c='update_compiled_module'/>
+<use f='codebrowser/Python/marshal.c' l='1395' u='c' c='r_object'/>
+<use f='codebrowser/Python/symtable.c' l='381' u='c' c='error_at_directive'/>

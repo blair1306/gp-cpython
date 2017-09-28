@@ -1,0 +1,6 @@
+<def f='codebrowser/Objects/stringlib/find.h' l='86' macro='1' type='int stringlib_parse_args_finds(const char * function_name, PyObject * args, PyObject ** subobj, Py_ssize_t * start, Py_ssize_t * end)'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='422' u='c' c='parse_args_finds_byte'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='741' u='c' c='_Py_bytes_tailmatch'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11442' u='c' c='parse_args_finds_unicode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13406' u='c' c='unicode_startswith'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13460' u='c' c='unicode_endswith'/>

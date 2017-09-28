@@ -1,0 +1,3 @@
+<def f='codebrowser/Objects/stringlib/partition.h' l='63' macro='1' type='PyObject * stringlib_rpartition(PyObject * str_obj, const char * str, Py_ssize_t str_len, PyObject * sep_obj, const char * sep, Py_ssize_t sep_len)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1437' u='c' c='bytearray_rpartition'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1847' u='c' c='bytes_rpartition_impl'/>

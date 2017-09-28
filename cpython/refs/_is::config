@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pystate.h' l='68' type='_PyMainInterpreterConfig'/>
+<offset>960</offset>
+<use f='codebrowser/Python/pylifecycle.c' l='618' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='763' u='w' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1171' u='w' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1171' u='r' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1176' u='w' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1176' u='r' c='Py_NewInterpreter'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1996' type='Py_ssize_t PyUnicode_Tailmatch(PyObject * str, PyObject * substr, Py_ssize_t start, Py_ssize_t end, int direction)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1993'>/* Return 1 if substr matches str[start:end] at the given tail end, 0
+   otherwise. */</doc>
+<use f='codebrowser/Modules/zipimport.c' l='667' u='c' c='zipimport_zipimporter_get_data_impl'/>
+<use f='codebrowser/Objects/exceptions.c' l='2946' u='c' c='_check_for_legacy_statements'/>
+<use f='codebrowser/Objects/exceptions.c' l='2959' u='c' c='_check_for_legacy_statements'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9579' ll='9590' type='Py_ssize_t PyUnicode_Tailmatch(PyObject * str, PyObject * substr, Py_ssize_t start, Py_ssize_t end, int direction)'/>

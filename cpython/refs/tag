@@ -1,0 +1,15 @@
+<def f='codebrowser/Modules/expat/xmlparse.c' l='238' ll='246'/>
+<size>88</size>
+<doc f='codebrowser/Modules/expat/xmlparse.c' l='225'>/* TAG represents an open element.
+   The name of the element is stored in both the document and API
+   encodings.  The memory buffer &apos;buf&apos; is a separately-allocated
+   memory area which stores the name.  During the XML_Parse()/
+   XMLParseBuffer() when the element is open, the memory for the &apos;raw&apos;
+   version of the name (in the document encoding) is shared with the
+   document buffer.  If the element is open across calls to
+   XML_Parse()/XML_ParseBuffer(), the buffer is re-allocated to
+   contain the &apos;raw&apos; name as well.
+
+   A parser re-uses these structures, maintaining a list of allocated
+   TAG objects in a free list.
+*/</doc>

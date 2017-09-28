@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>zipimport.c.h source code [codebrowser/Modules/clinic/zipimport.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/zipimport.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='zipimport.c.h.html'>zipimport.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter___init____doc__[] = &quot;zipimporter(archivepath, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Create a new zipimporter instance.\n&quot;&quot;\n&quot;&quot;  archivepath\n&quot;&quot;    A path-like object to a zipfile, or to a specific path inside\n&quot;&quot;    a zipfile.\n&quot;&quot;\n&quot;&quot;\&apos;archivepath\&apos; must be a path-like object to a zipfile, or to a specific path\n&quot;&quot;inside a zipfile. For example, it can be \&apos;/tmp/myimport.zip\&apos;, or\n&quot;&quot;\&apos;/tmp/myimport.zip/mydirectory\&apos;, if mydirectory is a valid directory inside\n&quot;&quot;the archive.\n&quot;&quot;\n&quot;&quot;\&apos;ZipImportError\&apos; is raised if \&apos;archivepath\&apos; doesn\&apos;t point to a valid Zip\n&quot;&quot;archive.\n&quot;&quot;\n&quot;&quot;The \&apos;archive\&apos; attribute of the zipimporter object contains the name of the\n&quot;&quot;zipfile targeted.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter___init____doc__" title='zipimport_zipimporter___init____doc__' data-ref="zipimport_zipimporter___init____doc__">zipimport_zipimporter___init____doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"zipimporter(archivepath, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Create a new zipimporter instance.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"  archivepath\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"    A path-like object to a zipfile, or to a specific path inside\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"    a zipfile.\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"\'archivepath\' must be a path-like object to a zipfile, or to a specific path\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"inside a zipfile. For example, it can be \'/tmp/myimport.zip\', or\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"\'/tmp/myimport.zip/mydirectory\', if mydirectory is a valid directory inside\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"the archive.\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"\'ZipImportError\' is raised if \'archivepath\' doesn\'t point to a valid Zip\n"</q></td></tr>
+<tr><th id="21">21</th><td><q>"archive.\n"</q></td></tr>
+<tr><th id="22">22</th><td><q>"\n"</q></td></tr>
+<tr><th id="23">23</th><td><q>"The \'archive\' attribute of the zipimporter object contains the name of the\n"</q></td></tr>
+<tr><th id="24">24</th><td><q>"zipfile targeted."</q>);</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="27">27</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter___init___impl" title='zipimport_zipimporter___init___impl' data-ref="zipimport_zipimporter___init___impl" id="zipimport_zipimporter___init___impl">zipimport_zipimporter___init___impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col8 decl" id="8self" title='self' data-type='ZipImporter *' data-ref="8self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9path" title='path' data-type='PyObject *' data-ref="9path">path</dfn>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="30">30</th><td><dfn class="decl def" id="zipimport_zipimporter___init__" title='zipimport_zipimporter___init__' data-ref="zipimport_zipimporter___init__">zipimport_zipimporter___init__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10self" title='self' data-type='PyObject *' data-ref="10self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11args" title='args' data-type='PyObject *' data-ref="11args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="12kwargs" title='kwargs' data-type='PyObject *' data-ref="12kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>    <em>int</em> <dfn class="local col3 decl" id="13return_value" title='return_value' data-type='int' data-ref="13return_value">return_value</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="33">33</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14path" title='path' data-type='PyObject *' data-ref="14path">path</dfn>;</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td>    <b>if</b> ((<a class="macro" href="../../Include/object.h.html#118" title="(((PyObject*)(self))-&gt;ob_type)" data-ref="_M/Py_TYPE">Py_TYPE</a>(<a class="local col0 ref" href="#10self" title='self' data-ref="10self">self</a>) == &amp;<a class="tu ref" href="../zipimport.c.html#ZipImporter_Type" title='ZipImporter_Type' data-use='a' data-ref="ZipImporter_Type">ZipImporter_Type</a>) &amp;&amp;</td></tr>
+<tr><th id="36">36</th><td>        !<a class="macro" href="../../Include/modsupport.h.html#64" title="((kwargs) == ((void*)0) || _PyArg_NoKeywords((&quot;zipimporter&quot;), (kwargs)))" data-ref="_M/_PyArg_NoKeywords">_PyArg_NoKeywords</a>(<q>"zipimporter"</q>, <a class="local col2 ref" href="#12kwargs" title='kwargs' data-ref="12kwargs">kwargs</a>)) {</td></tr>
+<tr><th id="37">37</th><td>        <b>goto</b> <a class="lbl" href="#15exit" data-ref="15exit">exit</a>;</td></tr>
+<tr><th id="38">38</th><td>    }</td></tr>
+<tr><th id="39">39</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col1 ref" href="#11args" title='args' data-ref="11args">args</a>, <q>"O&amp;:zipimporter"</q>,</td></tr>
+<tr><th id="40">40</th><td>        <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_FSDecoder" title='PyUnicode_FSDecoder' data-ref="PyUnicode_FSDecoder">PyUnicode_FSDecoder</a>, &amp;<a class="local col4 ref" href="#14path" title='path' data-ref="14path">path</a>)) {</td></tr>
+<tr><th id="41">41</th><td>        <b>goto</b> <a class="lbl" href="#15exit" data-ref="15exit">exit</a>;</td></tr>
+<tr><th id="42">42</th><td>    }</td></tr>
+<tr><th id="43">43</th><td>    <a class="local col3 ref" href="#13return_value" title='return_value' data-ref="13return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter___init___impl" title='zipimport_zipimporter___init___impl' data-ref="zipimport_zipimporter___init___impl">zipimport_zipimporter___init___impl</a>((<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *)<a class="local col0 ref" href="#10self" title='self' data-ref="10self">self</a>, <a class="local col4 ref" href="#14path" title='path' data-ref="14path">path</a>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><dfn class="lbl" id="15exit" data-ref="15exit">exit</dfn>:</td></tr>
+<tr><th id="46">46</th><td>    <b>return</b> <a class="local col3 ref" href="#13return_value" title='return_value' data-ref="13return_value">return_value</a>;</td></tr>
+<tr><th id="47">47</th><td>}</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_find_module__doc__[] = &quot;find_module($self, fullname, path=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Search for a module specified by \&apos;fullname\&apos;.\n&quot;&quot;\n&quot;&quot;\&apos;fullname\&apos; must be the fully qualified (dotted) module name. It returns the\n&quot;&quot;zipimporter instance itself if the module was found, or None if it wasn\&apos;t.\n&quot;&quot;The optional \&apos;path\&apos; argument is ignored -- it\&apos;s there for compatibility\n&quot;&quot;with the importer protocol.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_find_module__doc__" title='zipimport_zipimporter_find_module__doc__' data-ref="zipimport_zipimporter_find_module__doc__">zipimport_zipimporter_find_module__doc__</dfn>,</td></tr>
+<tr><th id="50">50</th><td><q>"find_module($self, fullname, path=None, /)\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"--\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"Search for a module specified by \'fullname\'.\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"\'fullname\' must be the fully qualified (dotted) module name. It returns the\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"zipimporter instance itself if the module was found, or None if it wasn\'t.\n"</q></td></tr>
+<tr><th id="57">57</th><td><q>"The optional \'path\' argument is ignored -- it\'s there for compatibility\n"</q></td></tr>
+<tr><th id="58">58</th><td><q>"with the importer protocol."</q>);</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_FIND_MODULE_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_FIND_MODULE_METHODDEF">ZIPIMPORT_ZIPIMPORTER_FIND_MODULE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="61">61</th><td><u>    {"find_module", (PyCFunction)zipimport_zipimporter_find_module, METH_FASTCALL, zipimport_zipimporter_find_module__doc__},</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="64">64</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_find_module_impl" title='zipimport_zipimporter_find_module_impl' data-ref="zipimport_zipimporter_find_module_impl" id="zipimport_zipimporter_find_module_impl">zipimport_zipimporter_find_module_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col6 decl" id="16self" title='self' data-type='ZipImporter *' data-ref="16self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="17fullname" title='fullname' data-type='PyObject *' data-ref="17fullname">fullname</dfn>,</td></tr>
+<tr><th id="65">65</th><td>                                       <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18path" title='path' data-type='PyObject *' data-ref="18path">path</dfn>);</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="68">68</th><td><dfn class="decl def" id="zipimport_zipimporter_find_module" title='zipimport_zipimporter_find_module' data-ref="zipimport_zipimporter_find_module">zipimport_zipimporter_find_module</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col9 decl" id="19self" title='self' data-type='ZipImporter *' data-ref="19self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="20args" title='args' data-type='PyObject **' data-ref="20args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="21nargs" title='nargs' data-type='Py_ssize_t' data-ref="21nargs">nargs</dfn>)</td></tr>
+<tr><th id="69">69</th><td>{</td></tr>
+<tr><th id="70">70</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="22return_value" title='return_value' data-type='PyObject *' data-ref="22return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="71">71</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="23fullname" title='fullname' data-type='PyObject *' data-ref="23fullname">fullname</dfn>;</td></tr>
+<tr><th id="72">72</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24path" title='path' data-type='PyObject *' data-ref="24path">path</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col0 ref" href="#20args" title='args' data-ref="20args">args</a>, <a class="local col1 ref" href="#21nargs" title='nargs' data-ref="21nargs">nargs</a>, <q>"U|O:find_module"</q>,</td></tr>
+<tr><th id="75">75</th><td>        &amp;<a class="local col3 ref" href="#23fullname" title='fullname' data-ref="23fullname">fullname</a>, &amp;<a class="local col4 ref" href="#24path" title='path' data-ref="24path">path</a>)) {</td></tr>
+<tr><th id="76">76</th><td>        <b>goto</b> <a class="lbl" href="#25exit" data-ref="25exit">exit</a>;</td></tr>
+<tr><th id="77">77</th><td>    }</td></tr>
+<tr><th id="78">78</th><td>    <a class="local col2 ref" href="#22return_value" title='return_value' data-ref="22return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_find_module_impl" title='zipimport_zipimporter_find_module_impl' data-ref="zipimport_zipimporter_find_module_impl">zipimport_zipimporter_find_module_impl</a>(<a class="local col9 ref" href="#19self" title='self' data-ref="19self">self</a>, <a class="local col3 ref" href="#23fullname" title='fullname' data-ref="23fullname">fullname</a>, <a class="local col4 ref" href="#24path" title='path' data-ref="24path">path</a>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><dfn class="lbl" id="25exit" data-ref="25exit">exit</dfn>:</td></tr>
+<tr><th id="81">81</th><td>    <b>return</b> <a class="local col2 ref" href="#22return_value" title='return_value' data-ref="22return_value">return_value</a>;</td></tr>
+<tr><th id="82">82</th><td>}</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_find_loader__doc__[] = &quot;find_loader($self, fullname, path=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Search for a module specified by \&apos;fullname\&apos;.\n&quot;&quot;\n&quot;&quot;\&apos;fullname\&apos; must be the fully qualified (dotted) module name. It returns the\n&quot;&quot;zipimporter instance itself if the module was found, a string containing the\n&quot;&quot;full path name if it\&apos;s possibly a portion of a namespace package,\n&quot;&quot;or None otherwise. The optional \&apos;path\&apos; argument is ignored -- it\&apos;s\n&quot;&quot;there for compatibility with the importer protocol.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_find_loader__doc__" title='zipimport_zipimporter_find_loader__doc__' data-ref="zipimport_zipimporter_find_loader__doc__">zipimport_zipimporter_find_loader__doc__</dfn>,</td></tr>
+<tr><th id="85">85</th><td><q>"find_loader($self, fullname, path=None, /)\n"</q></td></tr>
+<tr><th id="86">86</th><td><q>"--\n"</q></td></tr>
+<tr><th id="87">87</th><td><q>"\n"</q></td></tr>
+<tr><th id="88">88</th><td><q>"Search for a module specified by \'fullname\'.\n"</q></td></tr>
+<tr><th id="89">89</th><td><q>"\n"</q></td></tr>
+<tr><th id="90">90</th><td><q>"\'fullname\' must be the fully qualified (dotted) module name. It returns the\n"</q></td></tr>
+<tr><th id="91">91</th><td><q>"zipimporter instance itself if the module was found, a string containing the\n"</q></td></tr>
+<tr><th id="92">92</th><td><q>"full path name if it\'s possibly a portion of a namespace package,\n"</q></td></tr>
+<tr><th id="93">93</th><td><q>"or None otherwise. The optional \'path\' argument is ignored -- it\'s\n"</q></td></tr>
+<tr><th id="94">94</th><td><q>"there for compatibility with the importer protocol."</q>);</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_FIND_LOADER_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_FIND_LOADER_METHODDEF">ZIPIMPORT_ZIPIMPORTER_FIND_LOADER_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="97">97</th><td><u>    {"find_loader", (PyCFunction)zipimport_zipimporter_find_loader, METH_FASTCALL, zipimport_zipimporter_find_loader__doc__},</u></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="100">100</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_find_loader_impl" title='zipimport_zipimporter_find_loader_impl' data-ref="zipimport_zipimporter_find_loader_impl" id="zipimport_zipimporter_find_loader_impl">zipimport_zipimporter_find_loader_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col6 decl" id="26self" title='self' data-type='ZipImporter *' data-ref="26self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="27fullname" title='fullname' data-type='PyObject *' data-ref="27fullname">fullname</dfn>,</td></tr>
+<tr><th id="101">101</th><td>                                       <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28path" title='path' data-type='PyObject *' data-ref="28path">path</dfn>);</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="104">104</th><td><dfn class="decl def" id="zipimport_zipimporter_find_loader" title='zipimport_zipimporter_find_loader' data-ref="zipimport_zipimporter_find_loader">zipimport_zipimporter_find_loader</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col9 decl" id="29self" title='self' data-type='ZipImporter *' data-ref="29self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="30args" title='args' data-type='PyObject **' data-ref="30args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="31nargs" title='nargs' data-type='Py_ssize_t' data-ref="31nargs">nargs</dfn>)</td></tr>
+<tr><th id="105">105</th><td>{</td></tr>
+<tr><th id="106">106</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32return_value" title='return_value' data-type='PyObject *' data-ref="32return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="107">107</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33fullname" title='fullname' data-type='PyObject *' data-ref="33fullname">fullname</dfn>;</td></tr>
+<tr><th id="108">108</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34path" title='path' data-type='PyObject *' data-ref="34path">path</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col0 ref" href="#30args" title='args' data-ref="30args">args</a>, <a class="local col1 ref" href="#31nargs" title='nargs' data-ref="31nargs">nargs</a>, <q>"U|O:find_loader"</q>,</td></tr>
+<tr><th id="111">111</th><td>        &amp;<a class="local col3 ref" href="#33fullname" title='fullname' data-ref="33fullname">fullname</a>, &amp;<a class="local col4 ref" href="#34path" title='path' data-ref="34path">path</a>)) {</td></tr>
+<tr><th id="112">112</th><td>        <b>goto</b> <a class="lbl" href="#35exit" data-ref="35exit">exit</a>;</td></tr>
+<tr><th id="113">113</th><td>    }</td></tr>
+<tr><th id="114">114</th><td>    <a class="local col2 ref" href="#32return_value" title='return_value' data-ref="32return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_find_loader_impl" title='zipimport_zipimporter_find_loader_impl' data-ref="zipimport_zipimporter_find_loader_impl">zipimport_zipimporter_find_loader_impl</a>(<a class="local col9 ref" href="#29self" title='self' data-ref="29self">self</a>, <a class="local col3 ref" href="#33fullname" title='fullname' data-ref="33fullname">fullname</a>, <a class="local col4 ref" href="#34path" title='path' data-ref="34path">path</a>);</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><dfn class="lbl" id="35exit" data-ref="35exit">exit</dfn>:</td></tr>
+<tr><th id="117">117</th><td>    <b>return</b> <a class="local col2 ref" href="#32return_value" title='return_value' data-ref="32return_value">return_value</a>;</td></tr>
+<tr><th id="118">118</th><td>}</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_load_module__doc__[] = &quot;load_module($self, fullname, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Load the module specified by \&apos;fullname\&apos;.\n&quot;&quot;\n&quot;&quot;\&apos;fullname\&apos; must be the fully qualified (dotted) module name. It returns the\n&quot;&quot;imported module, or raises ZipImportError if it wasn\&apos;t found.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_load_module__doc__" title='zipimport_zipimporter_load_module__doc__' data-ref="zipimport_zipimporter_load_module__doc__">zipimport_zipimporter_load_module__doc__</dfn>,</td></tr>
+<tr><th id="121">121</th><td><q>"load_module($self, fullname, /)\n"</q></td></tr>
+<tr><th id="122">122</th><td><q>"--\n"</q></td></tr>
+<tr><th id="123">123</th><td><q>"\n"</q></td></tr>
+<tr><th id="124">124</th><td><q>"Load the module specified by \'fullname\'.\n"</q></td></tr>
+<tr><th id="125">125</th><td><q>"\n"</q></td></tr>
+<tr><th id="126">126</th><td><q>"\'fullname\' must be the fully qualified (dotted) module name. It returns the\n"</q></td></tr>
+<tr><th id="127">127</th><td><q>"imported module, or raises ZipImportError if it wasn\'t found."</q>);</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_LOAD_MODULE_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_LOAD_MODULE_METHODDEF">ZIPIMPORT_ZIPIMPORTER_LOAD_MODULE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="130">130</th><td><u>    {"load_module", (PyCFunction)zipimport_zipimporter_load_module, METH_O, zipimport_zipimporter_load_module__doc__},</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="133">133</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_load_module_impl" title='zipimport_zipimporter_load_module_impl' data-ref="zipimport_zipimporter_load_module_impl" id="zipimport_zipimporter_load_module_impl">zipimport_zipimporter_load_module_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col6 decl" id="36self" title='self' data-type='ZipImporter *' data-ref="36self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37fullname" title='fullname' data-type='PyObject *' data-ref="37fullname">fullname</dfn>);</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="136">136</th><td><dfn class="decl def" id="zipimport_zipimporter_load_module" title='zipimport_zipimporter_load_module' data-ref="zipimport_zipimporter_load_module">zipimport_zipimporter_load_module</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col8 decl" id="38self" title='self' data-type='ZipImporter *' data-ref="38self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="39arg" title='arg' data-type='PyObject *' data-ref="39arg">arg</dfn>)</td></tr>
+<tr><th id="137">137</th><td>{</td></tr>
+<tr><th id="138">138</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="40return_value" title='return_value' data-type='PyObject *' data-ref="40return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="139">139</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41fullname" title='fullname' data-type='PyObject *' data-ref="41fullname">fullname</dfn>;</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col9 ref" href="#39arg" title='arg' data-ref="39arg">arg</a>, <q>"U:load_module"</q>, &amp;<a class="local col1 ref" href="#41fullname" title='fullname' data-ref="41fullname">fullname</a>)) {</td></tr>
+<tr><th id="142">142</th><td>        <b>goto</b> <a class="lbl" href="#42exit" data-ref="42exit">exit</a>;</td></tr>
+<tr><th id="143">143</th><td>    }</td></tr>
+<tr><th id="144">144</th><td>    <a class="local col0 ref" href="#40return_value" title='return_value' data-ref="40return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_load_module_impl" title='zipimport_zipimporter_load_module_impl' data-ref="zipimport_zipimporter_load_module_impl">zipimport_zipimporter_load_module_impl</a>(<a class="local col8 ref" href="#38self" title='self' data-ref="38self">self</a>, <a class="local col1 ref" href="#41fullname" title='fullname' data-ref="41fullname">fullname</a>);</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><dfn class="lbl" id="42exit" data-ref="42exit">exit</dfn>:</td></tr>
+<tr><th id="147">147</th><td>    <b>return</b> <a class="local col0 ref" href="#40return_value" title='return_value' data-ref="40return_value">return_value</a>;</td></tr>
+<tr><th id="148">148</th><td>}</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_get_filename__doc__[] = &quot;get_filename($self, fullname, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the filename for the specified module.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_get_filename__doc__" title='zipimport_zipimporter_get_filename__doc__' data-ref="zipimport_zipimporter_get_filename__doc__">zipimport_zipimporter_get_filename__doc__</dfn>,</td></tr>
+<tr><th id="151">151</th><td><q>"get_filename($self, fullname, /)\n"</q></td></tr>
+<tr><th id="152">152</th><td><q>"--\n"</q></td></tr>
+<tr><th id="153">153</th><td><q>"\n"</q></td></tr>
+<tr><th id="154">154</th><td><q>"Return the filename for the specified module."</q>);</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_GET_FILENAME_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_GET_FILENAME_METHODDEF">ZIPIMPORT_ZIPIMPORTER_GET_FILENAME_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="157">157</th><td><u>    {"get_filename", (PyCFunction)zipimport_zipimporter_get_filename, METH_O, zipimport_zipimporter_get_filename__doc__},</u></td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="160">160</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_get_filename_impl" title='zipimport_zipimporter_get_filename_impl' data-ref="zipimport_zipimporter_get_filename_impl" id="zipimport_zipimporter_get_filename_impl">zipimport_zipimporter_get_filename_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col3 decl" id="43self" title='self' data-type='ZipImporter *' data-ref="43self">self</dfn>,</td></tr>
+<tr><th id="161">161</th><td>                                        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="44fullname" title='fullname' data-type='PyObject *' data-ref="44fullname">fullname</dfn>);</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="164">164</th><td><dfn class="decl def" id="zipimport_zipimporter_get_filename" title='zipimport_zipimporter_get_filename' data-ref="zipimport_zipimporter_get_filename">zipimport_zipimporter_get_filename</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col5 decl" id="45self" title='self' data-type='ZipImporter *' data-ref="45self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46arg" title='arg' data-type='PyObject *' data-ref="46arg">arg</dfn>)</td></tr>
+<tr><th id="165">165</th><td>{</td></tr>
+<tr><th id="166">166</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47return_value" title='return_value' data-type='PyObject *' data-ref="47return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="167">167</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="48fullname" title='fullname' data-type='PyObject *' data-ref="48fullname">fullname</dfn>;</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col6 ref" href="#46arg" title='arg' data-ref="46arg">arg</a>, <q>"U:get_filename"</q>, &amp;<a class="local col8 ref" href="#48fullname" title='fullname' data-ref="48fullname">fullname</a>)) {</td></tr>
+<tr><th id="170">170</th><td>        <b>goto</b> <a class="lbl" href="#49exit" data-ref="49exit">exit</a>;</td></tr>
+<tr><th id="171">171</th><td>    }</td></tr>
+<tr><th id="172">172</th><td>    <a class="local col7 ref" href="#47return_value" title='return_value' data-ref="47return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_get_filename_impl" title='zipimport_zipimporter_get_filename_impl' data-ref="zipimport_zipimporter_get_filename_impl">zipimport_zipimporter_get_filename_impl</a>(<a class="local col5 ref" href="#45self" title='self' data-ref="45self">self</a>, <a class="local col8 ref" href="#48fullname" title='fullname' data-ref="48fullname">fullname</a>);</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td><dfn class="lbl" id="49exit" data-ref="49exit">exit</dfn>:</td></tr>
+<tr><th id="175">175</th><td>    <b>return</b> <a class="local col7 ref" href="#47return_value" title='return_value' data-ref="47return_value">return_value</a>;</td></tr>
+<tr><th id="176">176</th><td>}</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_is_package__doc__[] = &quot;is_package($self, fullname, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if the module specified by fullname is a package.\n&quot;&quot;\n&quot;&quot;Raise ZipImportError if the module couldn\&apos;t be found.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_is_package__doc__" title='zipimport_zipimporter_is_package__doc__' data-ref="zipimport_zipimporter_is_package__doc__">zipimport_zipimporter_is_package__doc__</dfn>,</td></tr>
+<tr><th id="179">179</th><td><q>"is_package($self, fullname, /)\n"</q></td></tr>
+<tr><th id="180">180</th><td><q>"--\n"</q></td></tr>
+<tr><th id="181">181</th><td><q>"\n"</q></td></tr>
+<tr><th id="182">182</th><td><q>"Return True if the module specified by fullname is a package.\n"</q></td></tr>
+<tr><th id="183">183</th><td><q>"\n"</q></td></tr>
+<tr><th id="184">184</th><td><q>"Raise ZipImportError if the module couldn\'t be found."</q>);</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_IS_PACKAGE_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_IS_PACKAGE_METHODDEF">ZIPIMPORT_ZIPIMPORTER_IS_PACKAGE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="187">187</th><td><u>    {"is_package", (PyCFunction)zipimport_zipimporter_is_package, METH_O, zipimport_zipimporter_is_package__doc__},</u></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="190">190</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_is_package_impl" title='zipimport_zipimporter_is_package_impl' data-ref="zipimport_zipimporter_is_package_impl" id="zipimport_zipimporter_is_package_impl">zipimport_zipimporter_is_package_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col0 decl" id="50self" title='self' data-type='ZipImporter *' data-ref="50self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51fullname" title='fullname' data-type='PyObject *' data-ref="51fullname">fullname</dfn>);</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="193">193</th><td><dfn class="decl def" id="zipimport_zipimporter_is_package" title='zipimport_zipimporter_is_package' data-ref="zipimport_zipimporter_is_package">zipimport_zipimporter_is_package</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col2 decl" id="52self" title='self' data-type='ZipImporter *' data-ref="52self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53arg" title='arg' data-type='PyObject *' data-ref="53arg">arg</dfn>)</td></tr>
+<tr><th id="194">194</th><td>{</td></tr>
+<tr><th id="195">195</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="54return_value" title='return_value' data-type='PyObject *' data-ref="54return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="196">196</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55fullname" title='fullname' data-type='PyObject *' data-ref="55fullname">fullname</dfn>;</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col3 ref" href="#53arg" title='arg' data-ref="53arg">arg</a>, <q>"U:is_package"</q>, &amp;<a class="local col5 ref" href="#55fullname" title='fullname' data-ref="55fullname">fullname</a>)) {</td></tr>
+<tr><th id="199">199</th><td>        <b>goto</b> <a class="lbl" href="#56exit" data-ref="56exit">exit</a>;</td></tr>
+<tr><th id="200">200</th><td>    }</td></tr>
+<tr><th id="201">201</th><td>    <a class="local col4 ref" href="#54return_value" title='return_value' data-ref="54return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_is_package_impl" title='zipimport_zipimporter_is_package_impl' data-ref="zipimport_zipimporter_is_package_impl">zipimport_zipimporter_is_package_impl</a>(<a class="local col2 ref" href="#52self" title='self' data-ref="52self">self</a>, <a class="local col5 ref" href="#55fullname" title='fullname' data-ref="55fullname">fullname</a>);</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td><dfn class="lbl" id="56exit" data-ref="56exit">exit</dfn>:</td></tr>
+<tr><th id="204">204</th><td>    <b>return</b> <a class="local col4 ref" href="#54return_value" title='return_value' data-ref="54return_value">return_value</a>;</td></tr>
+<tr><th id="205">205</th><td>}</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_get_data__doc__[] = &quot;get_data($self, pathname, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the data associated with \&apos;pathname\&apos;.\n&quot;&quot;\n&quot;&quot;Raise OSError if the file was not found.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_get_data__doc__" title='zipimport_zipimporter_get_data__doc__' data-ref="zipimport_zipimporter_get_data__doc__">zipimport_zipimporter_get_data__doc__</dfn>,</td></tr>
+<tr><th id="208">208</th><td><q>"get_data($self, pathname, /)\n"</q></td></tr>
+<tr><th id="209">209</th><td><q>"--\n"</q></td></tr>
+<tr><th id="210">210</th><td><q>"\n"</q></td></tr>
+<tr><th id="211">211</th><td><q>"Return the data associated with \'pathname\'.\n"</q></td></tr>
+<tr><th id="212">212</th><td><q>"\n"</q></td></tr>
+<tr><th id="213">213</th><td><q>"Raise OSError if the file was not found."</q>);</td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_GET_DATA_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_GET_DATA_METHODDEF">ZIPIMPORT_ZIPIMPORTER_GET_DATA_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="216">216</th><td><u>    {"get_data", (PyCFunction)zipimport_zipimporter_get_data, METH_O, zipimport_zipimporter_get_data__doc__},</u></td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="219">219</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_get_data_impl" title='zipimport_zipimporter_get_data_impl' data-ref="zipimport_zipimporter_get_data_impl" id="zipimport_zipimporter_get_data_impl">zipimport_zipimporter_get_data_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col7 decl" id="57self" title='self' data-type='ZipImporter *' data-ref="57self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58path" title='path' data-type='PyObject *' data-ref="58path">path</dfn>);</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="222">222</th><td><dfn class="decl def" id="zipimport_zipimporter_get_data" title='zipimport_zipimporter_get_data' data-ref="zipimport_zipimporter_get_data">zipimport_zipimporter_get_data</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col9 decl" id="59self" title='self' data-type='ZipImporter *' data-ref="59self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="60arg" title='arg' data-type='PyObject *' data-ref="60arg">arg</dfn>)</td></tr>
+<tr><th id="223">223</th><td>{</td></tr>
+<tr><th id="224">224</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="61return_value" title='return_value' data-type='PyObject *' data-ref="61return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="225">225</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62path" title='path' data-type='PyObject *' data-ref="62path">path</dfn>;</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col0 ref" href="#60arg" title='arg' data-ref="60arg">arg</a>, <q>"U:get_data"</q>, &amp;<a class="local col2 ref" href="#62path" title='path' data-ref="62path">path</a>)) {</td></tr>
+<tr><th id="228">228</th><td>        <b>goto</b> <a class="lbl" href="#63exit" data-ref="63exit">exit</a>;</td></tr>
+<tr><th id="229">229</th><td>    }</td></tr>
+<tr><th id="230">230</th><td>    <a class="local col1 ref" href="#61return_value" title='return_value' data-ref="61return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_get_data_impl" title='zipimport_zipimporter_get_data_impl' data-ref="zipimport_zipimporter_get_data_impl">zipimport_zipimporter_get_data_impl</a>(<a class="local col9 ref" href="#59self" title='self' data-ref="59self">self</a>, <a class="local col2 ref" href="#62path" title='path' data-ref="62path">path</a>);</td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td><dfn class="lbl" id="63exit" data-ref="63exit">exit</dfn>:</td></tr>
+<tr><th id="233">233</th><td>    <b>return</b> <a class="local col1 ref" href="#61return_value" title='return_value' data-ref="61return_value">return_value</a>;</td></tr>
+<tr><th id="234">234</th><td>}</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_get_code__doc__[] = &quot;get_code($self, fullname, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the code object for the specified module.\n&quot;&quot;\n&quot;&quot;Raise ZipImportError if the module couldn\&apos;t be found.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_get_code__doc__" title='zipimport_zipimporter_get_code__doc__' data-ref="zipimport_zipimporter_get_code__doc__">zipimport_zipimporter_get_code__doc__</dfn>,</td></tr>
+<tr><th id="237">237</th><td><q>"get_code($self, fullname, /)\n"</q></td></tr>
+<tr><th id="238">238</th><td><q>"--\n"</q></td></tr>
+<tr><th id="239">239</th><td><q>"\n"</q></td></tr>
+<tr><th id="240">240</th><td><q>"Return the code object for the specified module.\n"</q></td></tr>
+<tr><th id="241">241</th><td><q>"\n"</q></td></tr>
+<tr><th id="242">242</th><td><q>"Raise ZipImportError if the module couldn\'t be found."</q>);</td></tr>
+<tr><th id="243">243</th><td></td></tr>
+<tr><th id="244">244</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_GET_CODE_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_GET_CODE_METHODDEF">ZIPIMPORT_ZIPIMPORTER_GET_CODE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="245">245</th><td><u>    {"get_code", (PyCFunction)zipimport_zipimporter_get_code, METH_O, zipimport_zipimporter_get_code__doc__},</u></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="248">248</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_get_code_impl" title='zipimport_zipimporter_get_code_impl' data-ref="zipimport_zipimporter_get_code_impl" id="zipimport_zipimporter_get_code_impl">zipimport_zipimporter_get_code_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col4 decl" id="64self" title='self' data-type='ZipImporter *' data-ref="64self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="65fullname" title='fullname' data-type='PyObject *' data-ref="65fullname">fullname</dfn>);</td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="251">251</th><td><dfn class="decl def" id="zipimport_zipimporter_get_code" title='zipimport_zipimporter_get_code' data-ref="zipimport_zipimporter_get_code">zipimport_zipimporter_get_code</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col6 decl" id="66self" title='self' data-type='ZipImporter *' data-ref="66self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="67arg" title='arg' data-type='PyObject *' data-ref="67arg">arg</dfn>)</td></tr>
+<tr><th id="252">252</th><td>{</td></tr>
+<tr><th id="253">253</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68return_value" title='return_value' data-type='PyObject *' data-ref="68return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="254">254</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69fullname" title='fullname' data-type='PyObject *' data-ref="69fullname">fullname</dfn>;</td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col7 ref" href="#67arg" title='arg' data-ref="67arg">arg</a>, <q>"U:get_code"</q>, &amp;<a class="local col9 ref" href="#69fullname" title='fullname' data-ref="69fullname">fullname</a>)) {</td></tr>
+<tr><th id="257">257</th><td>        <b>goto</b> <a class="lbl" href="#70exit" data-ref="70exit">exit</a>;</td></tr>
+<tr><th id="258">258</th><td>    }</td></tr>
+<tr><th id="259">259</th><td>    <a class="local col8 ref" href="#68return_value" title='return_value' data-ref="68return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_get_code_impl" title='zipimport_zipimporter_get_code_impl' data-ref="zipimport_zipimporter_get_code_impl">zipimport_zipimporter_get_code_impl</a>(<a class="local col6 ref" href="#66self" title='self' data-ref="66self">self</a>, <a class="local col9 ref" href="#69fullname" title='fullname' data-ref="69fullname">fullname</a>);</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td><dfn class="lbl" id="70exit" data-ref="70exit">exit</dfn>:</td></tr>
+<tr><th id="262">262</th><td>    <b>return</b> <a class="local col8 ref" href="#68return_value" title='return_value' data-ref="68return_value">return_value</a>;</td></tr>
+<tr><th id="263">263</th><td>}</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char zipimport_zipimporter_get_source__doc__[] = &quot;get_source($self, fullname, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the source code for the specified module.\n&quot;&quot;\n&quot;&quot;Raise ZipImportError if the module couldn\&apos;t be found, return None if the\n&quot;&quot;archive does contain the module, but has no source for it.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="zipimport_zipimporter_get_source__doc__" title='zipimport_zipimporter_get_source__doc__' data-ref="zipimport_zipimporter_get_source__doc__">zipimport_zipimporter_get_source__doc__</dfn>,</td></tr>
+<tr><th id="266">266</th><td><q>"get_source($self, fullname, /)\n"</q></td></tr>
+<tr><th id="267">267</th><td><q>"--\n"</q></td></tr>
+<tr><th id="268">268</th><td><q>"\n"</q></td></tr>
+<tr><th id="269">269</th><td><q>"Return the source code for the specified module.\n"</q></td></tr>
+<tr><th id="270">270</th><td><q>"\n"</q></td></tr>
+<tr><th id="271">271</th><td><q>"Raise ZipImportError if the module couldn\'t be found, return None if the\n"</q></td></tr>
+<tr><th id="272">272</th><td><q>"archive does contain the module, but has no source for it."</q>);</td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><u>#define <dfn class="macro" id="_M/ZIPIMPORT_ZIPIMPORTER_GET_SOURCE_METHODDEF" data-ref="_M/ZIPIMPORT_ZIPIMPORTER_GET_SOURCE_METHODDEF">ZIPIMPORT_ZIPIMPORTER_GET_SOURCE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="275">275</th><td><u>    {"get_source", (PyCFunction)zipimport_zipimporter_get_source, METH_O, zipimport_zipimporter_get_source__doc__},</u></td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="278">278</th><td><a class="decl" href="../zipimport.c.html#zipimport_zipimporter_get_source_impl" title='zipimport_zipimporter_get_source_impl' data-ref="zipimport_zipimporter_get_source_impl" id="zipimport_zipimporter_get_source_impl">zipimport_zipimporter_get_source_impl</a>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col1 decl" id="71self" title='self' data-type='ZipImporter *' data-ref="71self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="72fullname" title='fullname' data-type='PyObject *' data-ref="72fullname">fullname</dfn>);</td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="281">281</th><td><dfn class="decl def" id="zipimport_zipimporter_get_source" title='zipimport_zipimporter_get_source' data-ref="zipimport_zipimporter_get_source">zipimport_zipimporter_get_source</dfn>(<a class="typedef" href="../zipimport.c.html#ZipImporter" title='ZipImporter' data-type='struct _zipimporter' data-ref="ZipImporter">ZipImporter</a> *<dfn class="local col3 decl" id="73self" title='self' data-type='ZipImporter *' data-ref="73self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="74arg" title='arg' data-type='PyObject *' data-ref="74arg">arg</dfn>)</td></tr>
+<tr><th id="282">282</th><td>{</td></tr>
+<tr><th id="283">283</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="75return_value" title='return_value' data-type='PyObject *' data-ref="75return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="284">284</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="76fullname" title='fullname' data-type='PyObject *' data-ref="76fullname">fullname</dfn>;</td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col4 ref" href="#74arg" title='arg' data-ref="74arg">arg</a>, <q>"U:get_source"</q>, &amp;<a class="local col6 ref" href="#76fullname" title='fullname' data-ref="76fullname">fullname</a>)) {</td></tr>
+<tr><th id="287">287</th><td>        <b>goto</b> <a class="lbl" href="#77exit" data-ref="77exit">exit</a>;</td></tr>
+<tr><th id="288">288</th><td>    }</td></tr>
+<tr><th id="289">289</th><td>    <a class="local col5 ref" href="#75return_value" title='return_value' data-ref="75return_value">return_value</a> = <a class="ref" href="../zipimport.c.html#zipimport_zipimporter_get_source_impl" title='zipimport_zipimporter_get_source_impl' data-ref="zipimport_zipimporter_get_source_impl">zipimport_zipimporter_get_source_impl</a>(<a class="local col3 ref" href="#73self" title='self' data-ref="73self">self</a>, <a class="local col6 ref" href="#76fullname" title='fullname' data-ref="76fullname">fullname</a>);</td></tr>
+<tr><th id="290">290</th><td></td></tr>
+<tr><th id="291">291</th><td><dfn class="lbl" id="77exit" data-ref="77exit">exit</dfn>:</td></tr>
+<tr><th id="292">292</th><td>    <b>return</b> <a class="local col5 ref" href="#75return_value" title='return_value' data-ref="75return_value">return_value</a>;</td></tr>
+<tr><th id="293">293</th><td>}</td></tr>
+<tr><th id="294">294</th><td><i>/*[clinic end generated code: output=bac6c9144950eaec input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="295">295</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../zipimport.c.html'>codebrowser/Modules/zipimport.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

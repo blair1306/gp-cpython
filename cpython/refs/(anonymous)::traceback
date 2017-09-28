@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='12' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Objects/exceptions.c' l='41' u='w' c='BaseException_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='76' u='r' c='BaseException_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='76' u='w' c='BaseException_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='95' u='r' c='BaseException_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='95' u='r' c='BaseException_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='211' u='r' c='BaseException_get_tb'/>
+<use f='codebrowser/Objects/exceptions.c' l='214' u='r' c='BaseException_get_tb'/>
+<use f='codebrowser/Objects/exceptions.c' l='215' u='r' c='BaseException_get_tb'/>
+<use f='codebrowser/Objects/exceptions.c' l='232' u='r' c='BaseException_set_tb'/>
+<use f='codebrowser/Objects/exceptions.c' l='232' u='w' c='BaseException_set_tb'/>
+<use f='codebrowser/Objects/exceptions.c' l='306' u='r' c='PyException_GetTraceback'/>
+<use f='codebrowser/Objects/exceptions.c' l='307' u='r' c='PyException_GetTraceback'/>
+<use f='codebrowser/Objects/exceptions.c' l='981' u='w' c='OSError_new'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='269' type='const ENCODING **'/>
+<offset>1152</offset>
+<use f='codebrowser/Modules/expat/xmltok.c' l='1611' u='r' c='initScan'/>
+<use f='codebrowser/Modules/expat/xmltok_ns.c' l='66' u='w' c='PyExpat_XmlInitEncoding'/>
+<use f='codebrowser/Modules/expat/xmltok_ns.c' l='66' u='w' c='PyExpat_XmlInitEncodingNS'/>

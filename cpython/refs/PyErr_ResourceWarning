@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/warnings.h' l='23' type='int PyErr_ResourceWarning(PyObject * source, Py_ssize_t stack_level, const char * format)'/>
+<doc f='codebrowser/Include/warnings.h' l='22'>/* Emit a ResourceWarning warning */</doc>
+<use f='codebrowser/Modules/_io/fileio.c' l='94' u='c' c='fileio_dealloc_warn'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12082' u='c' c='ScandirIterator_finalize'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4584' u='c' c='sock_finalize'/>
+<def f='codebrowser/Python/_warnings.c' l='974' ll='990' type='int PyErr_ResourceWarning(PyObject * source, Py_ssize_t stack_level, const char * format)'/>

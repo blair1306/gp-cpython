@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='574' type='size_t mpd_qexport_u32(uint32_t ** rdata, size_t rlen, uint32_t base, const mpd_t * src, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3362' u='c' c='dec_as_long'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8205' ll='8281' type='size_t mpd_qexport_u32(uint32_t ** rdata, size_t rlen, uint32_t rbase, const mpd_t * src, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8190'>/*
+ * Convert an integer mpd_t to a multiprecision integer with base&lt;=UINT32_MAX.
+ * The least significant word of the result is (*rdata)[0].
+ *
+ * If rdata is NULL, space is allocated by the function and rlen is irrelevant.
+ * In case of an error any allocated storage is freed and rdata is set back to
+ * NULL.
+ *
+ * If rdata is non-NULL, it MUST be allocated by one of libmpdec&apos;s allocation
+ * functions and rlen MUST be correct. If necessary, the function will resize
+ * rdata. In case of an error the caller must free rdata.
+ *
+ * Return value: In case of success, the exact length of rdata, SIZE_MAX
+ * otherwise.
+ */</doc>

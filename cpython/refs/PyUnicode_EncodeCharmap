@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1646' type='PyObject * PyUnicode_EncodeCharmap(const Py_UNICODE * data, Py_ssize_t length, PyObject * mapping, const char * errors)'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='8600' ll='8613' type='PyObject * PyUnicode_EncodeCharmap(const Py_UNICODE * p, Py_ssize_t size, PyObject * mapping, const char * errors)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='8599'>/* Deprecated */</doc>

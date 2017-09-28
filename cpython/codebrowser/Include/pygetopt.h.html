@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pygetopt.h source code [codebrowser/Include/pygetopt.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/pygetopt.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='pygetopt.h.html'>pygetopt.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><u>#<span data-ppcond="2">ifndef</span> <span class="macro" data-ref="_M/Py_PYGETOPT_H">Py_PYGETOPT_H</span></u></td></tr>
+<tr><th id="3">3</th><td><u>#define <dfn class="macro" id="_M/Py_PYGETOPT_H" data-ref="_M/Py_PYGETOPT_H">Py_PYGETOPT_H</dfn></u></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="5">5</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="4">endif</span></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="8">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="9">9</th><td><a class="macro" href="pyport.h.html#679" title="extern int" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>int</em>) <dfn class="decl" id="_PyOS_opterr" title='_PyOS_opterr' data-ref="_PyOS_opterr">_PyOS_opterr</dfn>;</td></tr>
+<tr><th id="10">10</th><td><a class="macro" href="pyport.h.html#679" title="extern int" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<em>int</em>) <dfn class="decl" id="_PyOS_optind" title='_PyOS_optind' data-ref="_PyOS_optind">_PyOS_optind</dfn>;</td></tr>
+<tr><th id="11">11</th><td><a class="macro" href="pyport.h.html#679" title="extern wchar_t *" data-ref="_M/PyAPI_DATA">PyAPI_DATA</a>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *) <dfn class="decl" id="_PyOS_optarg" title='_PyOS_optarg' data-ref="_PyOS_optarg">_PyOS_optarg</dfn>;</td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="_PyOS_ResetGetOpt" title='_PyOS_ResetGetOpt' data-ref="_PyOS_ResetGetOpt">_PyOS_ResetGetOpt</dfn>(<em>void</em>);</td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><a class="macro" href="pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="_PyOS_GetOpt" title='_PyOS_GetOpt' data-ref="_PyOS_GetOpt">_PyOS_GetOpt</dfn>(<em>int</em> <dfn class="local col1 decl" id="1argc" title='argc' data-type='int' data-ref="1argc">argc</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **<dfn class="local col2 decl" id="2argv" title='argv' data-type='wchar_t **' data-ref="2argv">argv</dfn>, <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col3 decl" id="3optstring" title='optstring' data-type='wchar_t *' data-ref="3optstring">optstring</dfn>);</td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="8">endif</span> /* !Py_LIMITED_API */</u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="18">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="19">19</th><td>}</td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="18">endif</span></u></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="2">endif</span> /* !Py_PYGETOPT_H */</u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/main.c.html'>codebrowser/Modules/main.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/frameobject.h' l='38' type='PyObject *'/>
+<offset>960</offset>
+<use f='codebrowser/Objects/frameobject.c' l='440' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='440' u='w' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='471' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='471' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='504' u='r' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='504' u='w' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='698' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/genobject.c' l='286' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='289' u='w' c='gen_send_ex'/>
+<use f='codebrowser/Python/ceval.c' l='4235' u='r' c='save_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4238' u='w' c='save_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4255' u='r' c='swap_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4256' u='w' c='swap_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4268' u='r' c='restore_and_clear_exc_state'/>
+<use f='codebrowser/Python/ceval.c' l='4271' u='w' c='restore_and_clear_exc_state'/>

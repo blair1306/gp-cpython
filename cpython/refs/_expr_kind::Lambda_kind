@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/Python-ast.h' l='211' type='4'/>
+<use f='codebrowser/Python/Python-ast.c' l='1863' u='r' c='_Py_Lambda'/>
+<use f='codebrowser/Python/Python-ast.c' l='3150' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='235' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1037' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='2835' u='r' c='ast_for_call'/>
+<use f='codebrowser/Python/compile.c' l='2157' u='r' c='compiler_lambda'/>
+<use f='codebrowser/Python/compile.c' l='4365' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1405' c='symtable_visit_expr'/>

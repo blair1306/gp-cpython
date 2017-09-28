@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/object.h' l='1042' type='PyObject *'/>
+<def f='codebrowser/Objects/object.c' l='2037' type='PyObject *'/>
+<use f='codebrowser/Objects/object.c' l='2049' u='r' c='_PyTrash_deposit_object'/>
+<use f='codebrowser/Objects/object.c' l='2050' u='w' c='_PyTrash_deposit_object'/>
+<use f='codebrowser/Objects/object.c' l='2071' u='r' c='_PyTrash_destroy_chain'/>
+<use f='codebrowser/Objects/object.c' l='2072' u='r' c='_PyTrash_destroy_chain'/>
+<use f='codebrowser/Objects/object.c' l='2075' u='w' c='_PyTrash_destroy_chain'/>
+<doc f='codebrowser/Objects/object.c' l='2034'>/* List of objects that still need to be cleaned up, singly linked via their
+ * gc headers&apos; gc_prev pointers.
+ */</doc>

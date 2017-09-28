@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1378' type='PyObject * PyUnicode_AsUTF32String(PyObject * unicode)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1375'>/* Returns a Python string using the UTF-32 encoding in native byte
+   order. The string always starts with a BOM mark.  */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='5537' ll='5541' type='PyObject * PyUnicode_AsUTF32String(PyObject * unicode)'/>

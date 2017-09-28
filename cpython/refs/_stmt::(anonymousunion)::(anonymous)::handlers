@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/Python-ast.h' l='174' type='asdl_seq *'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1621' u='w' c='_Py_Try'/>
+<use f='codebrowser/Python/Python-ast.c' l='2978' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='467' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='467' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='472' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='472' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='477' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='477' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='478' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='1394' u='r' c='find_ann'/>
+<use f='codebrowser/Python/compile.c' l='1394' u='r' c='find_ann'/>
+<use f='codebrowser/Python/compile.c' l='1396' u='r' c='find_ann'/>
+<use f='codebrowser/Python/compile.c' l='2490' u='r' c='compiler_try_finally'/>
+<use f='codebrowser/Python/compile.c' l='2490' u='r' c='compiler_try_finally'/>
+<use f='codebrowser/Python/compile.c' l='2490' u='r' c='compiler_try_finally'/>
+<use f='codebrowser/Python/compile.c' l='2562' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2562' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2566' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/symtable.c' l='1261' u='r' c='symtable_visit_stmt'/>

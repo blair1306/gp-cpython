@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pycapsule.h' l='35' type='PyCapsule_Destructor PyCapsule_GetDestructor(PyObject * capsule)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2466' u='c' c='capsule_destructor'/>
+<def f='codebrowser/Objects/capsule.c' l='109' ll='118' type='PyCapsule_Destructor PyCapsule_GetDestructor(PyObject * o)'/>

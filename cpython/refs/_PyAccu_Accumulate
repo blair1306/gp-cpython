@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/accu.h' l='27' type='int _PyAccu_Accumulate(_PyAccu * acc, PyObject * unicode)'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='133' u='c' c='make_intermediate'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='220' u='c' c='write_str'/>
+<use f='codebrowser/Modules/_json.c' l='1435' u='c' c='_steal_accumulate'/>
+<use f='codebrowser/Modules/_json.c' l='1559' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1577' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1642' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1650' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1655' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1679' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1717' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/_json.c' l='1736' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/_json.c' l='1750' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/_json.c' l='1768' u='c' c='encoder_listencode_list'/>
+<def f='codebrowser/Objects/accu.c' l='54' ll='73' type='int _PyAccu_Accumulate(_PyAccu * acc, PyObject * unicode)'/>

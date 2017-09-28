@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='196' type='Py_ssize_t'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='977' u='w' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1467' u='r' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1473' u='w' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1883' u='w' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1992' u='w' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2282' u='w' c='make_funcptrtype_dict'/>
+<offset>576</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='196'>/* alignment requirements */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1490' u='r' c='align_func'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1494' u='r' c='align_func'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='155' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='155' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='157' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='403' u='r' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='600' u='w' c='PyCStructUnionType_update_stgdict'/>

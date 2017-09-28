@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/Python-ast.h' l='73' type='22'/>
+<use f='codebrowser/Python/Python-ast.c' l='1720' u='r' c='_Py_Expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3054' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='503' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3535' u='r' c='docstring_from_stmts'/>
+<use f='codebrowser/Python/compile.c' l='2957' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1336' c='symtable_visit_stmt'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='507' type='void mpd_qmax_mag(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4111' u='c' c='dec_mpd_qmax_mag'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5054' u='c' c='ctx_mpd_qmax_mag'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5140' ll='5170' type='void mpd_qmax_mag(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5136'>/*
+ * Maximum magnitude: Same as mpd_max(), but compares the operands with their
+ * sign ignored.
+ */</doc>

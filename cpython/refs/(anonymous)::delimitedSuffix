@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakHash.h' l='31' type='unsigned char'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='31' u='w' c='_PySHA3_Keccak_HashInitialize'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='49' u='r' c='_PySHA3_Keccak_HashUpdate'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='51' u='w' c='_PySHA3_Keccak_HashUpdate'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='57' u='w' c='_PySHA3_Keccak_HashUpdate'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakHash.c' l='68' u='r' c='_PySHA3_Keccak_HashFinal'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='486' u='r' c='SHA3_get_suffix'/>
+<offset>1728</offset>

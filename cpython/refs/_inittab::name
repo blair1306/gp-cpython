@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/import.h' l='110' type='const char *'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/import.h' l='110'>/* ASCII encoded string */</doc>
+<use f='codebrowser/Python/import.c' l='939' u='r' c='is_builtin'/>
+<use f='codebrowser/Python/import.c' l='940' u='r' c='is_builtin'/>
+<use f='codebrowser/Python/import.c' l='1058' u='r' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/import.c' l='1060' u='r' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/import.c' l='2093' u='r' c='PyImport_ExtendInittab'/>
+<use f='codebrowser/Python/import.c' l='2097' u='r' c='PyImport_ExtendInittab'/>
+<use f='codebrowser/Python/import.c' l='2124' u='w' c='PyImport_AppendInittab'/>
+<use f='codebrowser/Python/sysmodule.c' l='1464' u='r' c='list_builtin_module_names'/>
+<use f='codebrowser/Python/sysmodule.c' l='1466' u='r' c='list_builtin_module_names'/>

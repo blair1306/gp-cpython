@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1292' type='PyObject * _PyUnicode_EncodeUTF7(PyObject * unicode, int base64SetO, int base64WhiteSpace, const char * errors)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='746' u='c' c='_codecs_utf_7_encode_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4740' ll='4840' type='PyObject * _PyUnicode_EncodeUTF7(PyObject * str, int base64SetO, int base64WhiteSpace, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4852' u='c' c='PyUnicode_EncodeUTF7'/>

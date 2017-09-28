@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/moduleobject.h' l='27' type='const char * PyModule_GetName(PyObject * )'/>
+<use f='codebrowser/Objects/moduleobject.c' l='357' u='c' c='PyModule_ExecDef'/>
+<def f='codebrowser/Objects/moduleobject.c' l='479' ll='487' type='const char * PyModule_GetName(PyObject * m)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='732' u='c' c='module_dir'/>
+<use f='codebrowser/Python/modsupport.c' l='634' u='c' c='PyModule_AddObject'/>

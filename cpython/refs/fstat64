@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='219' type='int fstat(int __fd, struct stat * __buf)'/>
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='229' type='int fstat64(int __fd, struct stat64 * __buf)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='373' u='c' c='posix_do_stat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='373' u='c' c='os_fstat_impl'/>
+<use f='codebrowser/Python/fileutils.c' l='659' u='c' c='_Py_fstat_noraise'/>

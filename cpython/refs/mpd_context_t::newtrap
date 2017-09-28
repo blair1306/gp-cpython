@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='266' type='uint32_t'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1426' u='w' c='context_copy'/>
+<offset>256</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='266'>/* set by mpd_addstatus_raise() */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='93' u='w' c='mpd_maxcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='107' u='w' c='mpd_defaultcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='121' u='w' c='mpd_basiccontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='139' u='w' c='mpd_ieee_context'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='281' u='w' c='mpd_addstatus_raise'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='726' u='w' c='mpd_workcontext'/>

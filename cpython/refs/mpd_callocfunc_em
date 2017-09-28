@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='811' type='void * mpd_callocfunc_em(size_t nmemb, size_t size)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5670' u='r' c='PyInit__decimal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='53' ll='81' type='void * mpd_callocfunc_em(size_t nmemb, size_t size)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='52'>/* emulate calloc if it is not available */</doc>

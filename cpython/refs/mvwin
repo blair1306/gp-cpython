@@ -1,0 +1,3 @@
+<dec f='include/curses.h' l='704' type='int mvwin(WINDOW * , int , int )'/>
+<doc f='include/curses.h' l='704'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='513' u='c' c='PyCursesWindow_mvwin'/>

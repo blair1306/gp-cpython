@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='186' type='PyObject *'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='999' u='r' c='t_bootstrap'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1097' u='r' c='thread_PyThread_exit_thread'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='100' u='r' c='atexit_callfuncs'/>
+<def f='codebrowser/Objects/exceptions.c' l='595' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2514' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2586' macro='1' u='r'/>
+<use f='codebrowser/Python/pythonrun.c' l='613' u='r' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='644' u='r' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/sysmodule.c' l='261' u='r' c='sys_exit'/>

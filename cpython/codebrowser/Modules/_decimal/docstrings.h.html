@@ -1,0 +1,902 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>docstrings.h source code [codebrowser/Modules/_decimal/docstrings.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_decimal/docstrings.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>_decimal</a>/<a href='docstrings.h.html'>docstrings.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2001-2012 Python Software Foundation. All Rights Reserved.</i></td></tr>
+<tr><th id="3">3</th><td><i> * Modified and extended by Stefan Krah.</i></td></tr>
+<tr><th id="4">4</th><td><i> */</i></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/DOCSTRINGS_H">DOCSTRINGS_H</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/DOCSTRINGS_H" data-ref="_M/DOCSTRINGS_H">DOCSTRINGS_H</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../../Include/pymacro.h.html">"pymacro.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><i>/******************************************************************************/</i></td></tr>
+<tr><th id="15">15</th><td><i>/*                                Module                                      */</i></td></tr>
+<tr><th id="16">16</th><td><i>/******************************************************************************/</i></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc__decimal[] = &quot;C decimal arithmetic module&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc__decimal" title='doc__decimal' data-ref="doc__decimal">doc__decimal</dfn>,</td></tr>
+<tr><th id="20">20</th><td><q>"C decimal arithmetic module"</q>);</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_getcontext[] = &quot;getcontext($module, /)\n--\n\nGet the current default context.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_getcontext" title='doc_getcontext' data-ref="doc_getcontext">doc_getcontext</dfn>,</td></tr>
+<tr><th id="23">23</th><td><q>"getcontext($module, /)\n--\n\n\</q></td></tr>
+<tr><th id="24">24</th><td><q>Get the current default context.\n\</q></td></tr>
+<tr><th id="25">25</th><td><q>\n"</q>);</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_setcontext[] = &quot;setcontext($module, context, /)\n--\n\nSet a new default context.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_setcontext" title='doc_setcontext' data-ref="doc_setcontext">doc_setcontext</dfn>,</td></tr>
+<tr><th id="28">28</th><td><q>"setcontext($module, context, /)\n--\n\n\</q></td></tr>
+<tr><th id="29">29</th><td><q>Set a new default context.\n\</q></td></tr>
+<tr><th id="30">30</th><td><q>\n"</q>);</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_localcontext[] = &quot;localcontext($module, /, ctx=None)\n--\n\nReturn a context manager that will set the default context to a copy of ctx\non entry to the with-statement and restore the previous default context when\nexiting the with-statement. If no context is specified, a copy of the current\ndefault context is used.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_localcontext" title='doc_localcontext' data-ref="doc_localcontext">doc_localcontext</dfn>,</td></tr>
+<tr><th id="33">33</th><td><q>"localcontext($module, /, ctx=None)\n--\n\n\</q></td></tr>
+<tr><th id="34">34</th><td><q>Return a context manager that will set the default context to a copy of ctx\n\</q></td></tr>
+<tr><th id="35">35</th><td><q>on entry to the with-statement and restore the previous default context when\n\</q></td></tr>
+<tr><th id="36">36</th><td><q>exiting the with-statement. If no context is specified, a copy of the current\n\</q></td></tr>
+<tr><th id="37">37</th><td><q>default context is used.\n\</q></td></tr>
+<tr><th id="38">38</th><td><q>\n"</q>);</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifdef</span> <span class="macro" data-ref="_M/EXTRA_FUNCTIONALITY">EXTRA_FUNCTIONALITY</span></u></td></tr>
+<tr><th id="41">41</th><td>PyDoc_STRVAR(doc_ieee_context,</td></tr>
+<tr><th id="42">42</th><td><q>"IEEEContext($module, bits, /)\n--\n\n\</q></td></tr>
+<tr><th id="43">43</th><td><q>Return a context object initialized to the proper values for one of the\n\</q></td></tr>
+<tr><th id="44">44</th><td><q>IEEE interchange formats.  The argument must be a multiple of 32 and less\n\</q></td></tr>
+<tr><th id="45">45</th><td><q>than IEEE_CONTEXT_MAX_BITS.  For the most common values, the constants\n\</q></td></tr>
+<tr><th id="46">46</th><td><q>DECIMAL32, DECIMAL64 and DECIMAL128 are provided.\n\</q></td></tr>
+<tr><th id="47">47</th><td><q>\n"</q>);</td></tr>
+<tr><th id="48">48</th><td><u>#<span data-ppcond="40">endif</span></u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/******************************************************************************/</i></td></tr>
+<tr><th id="52">52</th><td><i>/*                       Decimal Object and Methods                           */</i></td></tr>
+<tr><th id="53">53</th><td><i>/******************************************************************************/</i></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_decimal[] = &quot;Decimal(value=\&quot;0\&quot;, context=None)\n--\n\nConstruct a new Decimal object. &apos;value&apos; can be an integer, string, tuple,\nor another Decimal object. If no value is given, return Decimal(&apos;0&apos;). The\ncontext does not affect the conversion and is only passed to determine if\nthe InvalidOperation trap is active.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_decimal" title='doc_decimal' data-ref="doc_decimal">doc_decimal</dfn>,</td></tr>
+<tr><th id="56">56</th><td><q>"Decimal(value=\"0\", context=None)\n--\n\n\</q></td></tr>
+<tr><th id="57">57</th><td><q>Construct a new Decimal object. 'value' can be an integer, string, tuple,\n\</q></td></tr>
+<tr><th id="58">58</th><td><q>or another Decimal object. If no value is given, return Decimal('0'). The\n\</q></td></tr>
+<tr><th id="59">59</th><td><q>context does not affect the conversion and is only passed to determine if\n\</q></td></tr>
+<tr><th id="60">60</th><td><q>the InvalidOperation trap is active.\n\</q></td></tr>
+<tr><th id="61">61</th><td><q>\n"</q>);</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_adjusted[] = &quot;adjusted($self, /)\n--\n\nReturn the adjusted exponent of the number.  Defined as exp + digits - 1.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_adjusted" title='doc_adjusted' data-ref="doc_adjusted">doc_adjusted</dfn>,</td></tr>
+<tr><th id="64">64</th><td><q>"adjusted($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="65">65</th><td><q>Return the adjusted exponent of the number.  Defined as exp + digits - 1.\n\</q></td></tr>
+<tr><th id="66">66</th><td><q>\n"</q>);</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_as_tuple[] = &quot;as_tuple($self, /)\n--\n\nReturn a tuple representation of the number.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_as_tuple" title='doc_as_tuple' data-ref="doc_as_tuple">doc_as_tuple</dfn>,</td></tr>
+<tr><th id="69">69</th><td><q>"as_tuple($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="70">70</th><td><q>Return a tuple representation of the number.\n\</q></td></tr>
+<tr><th id="71">71</th><td><q>\n"</q>);</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_as_integer_ratio[] = &quot;as_integer_ratio($self, /)\n--\n\nDecimal.as_integer_ratio() -&gt; (int, int)\n\nReturn a pair of integers, whose ratio is exactly equal to the original\nDecimal and with a positive denominator. The ratio is in lowest terms.\nRaise OverflowError on infinities and a ValueError on NaNs.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_as_integer_ratio" title='doc_as_integer_ratio' data-ref="doc_as_integer_ratio">doc_as_integer_ratio</dfn>,</td></tr>
+<tr><th id="74">74</th><td><q>"as_integer_ratio($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="75">75</th><td><q>Decimal.as_integer_ratio() -&gt; (int, int)\n\</q></td></tr>
+<tr><th id="76">76</th><td><q>\n\</q></td></tr>
+<tr><th id="77">77</th><td><q>Return a pair of integers, whose ratio is exactly equal to the original\n\</q></td></tr>
+<tr><th id="78">78</th><td><q>Decimal and with a positive denominator. The ratio is in lowest terms.\n\</q></td></tr>
+<tr><th id="79">79</th><td><q>Raise OverflowError on infinities and a ValueError on NaNs.\n\</q></td></tr>
+<tr><th id="80">80</th><td><q>\n"</q>);</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_canonical[] = &quot;canonical($self, /)\n--\n\nReturn the canonical encoding of the argument.  Currently, the encoding\nof a Decimal instance is always canonical, so this operation returns its\nargument unchanged.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_canonical" title='doc_canonical' data-ref="doc_canonical">doc_canonical</dfn>,</td></tr>
+<tr><th id="83">83</th><td><q>"canonical($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="84">84</th><td><q>Return the canonical encoding of the argument.  Currently, the encoding\n\</q></td></tr>
+<tr><th id="85">85</th><td><q>of a Decimal instance is always canonical, so this operation returns its\n\</q></td></tr>
+<tr><th id="86">86</th><td><q>argument unchanged.\n\</q></td></tr>
+<tr><th id="87">87</th><td><q>\n"</q>);</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_compare[] = &quot;compare($self, /, other, context=None)\n--\n\nCompare self to other.  Return a decimal value:\n\n    a or b is a NaN ==&gt; Decimal(&apos;NaN&apos;)\n    a &lt; b           ==&gt; Decimal(&apos;-1&apos;)\n    a == b          ==&gt; Decimal(&apos;0&apos;)\n    a &gt; b           ==&gt; Decimal(&apos;1&apos;)\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_compare" title='doc_compare' data-ref="doc_compare">doc_compare</dfn>,</td></tr>
+<tr><th id="90">90</th><td><q>"compare($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="91">91</th><td><q>Compare self to other.  Return a decimal value:\n\</q></td></tr>
+<tr><th id="92">92</th><td><q>\n\</q></td></tr>
+<tr><th id="93">93</th><td><q>    a or b is a NaN ==&gt; Decimal('NaN')\n\</q></td></tr>
+<tr><th id="94">94</th><td><q>    a &lt; b           ==&gt; Decimal('-1')\n\</q></td></tr>
+<tr><th id="95">95</th><td><q>    a == b          ==&gt; Decimal('0')\n\</q></td></tr>
+<tr><th id="96">96</th><td><q>    a &gt; b           ==&gt; Decimal('1')\n\</q></td></tr>
+<tr><th id="97">97</th><td><q>\n"</q>);</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_compare_signal[] = &quot;compare_signal($self, /, other, context=None)\n--\n\nIdentical to compare, except that all NaNs signal.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_compare_signal" title='doc_compare_signal' data-ref="doc_compare_signal">doc_compare_signal</dfn>,</td></tr>
+<tr><th id="100">100</th><td><q>"compare_signal($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="101">101</th><td><q>Identical to compare, except that all NaNs signal.\n\</q></td></tr>
+<tr><th id="102">102</th><td><q>\n"</q>);</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_compare_total[] = &quot;compare_total($self, /, other, context=None)\n--\n\nCompare two operands using their abstract representation rather than\ntheir numerical value.  Similar to the compare() method, but the result\ngives a total ordering on Decimal instances.  Two Decimal instances with\nthe same numeric value but different representations compare unequal\nin this ordering:\n\n    &gt;&gt;&gt; Decimal(&apos;12.0&apos;).compare_total(Decimal(&apos;12&apos;))\n    Decimal(&apos;-1&apos;)\n\nQuiet and signaling NaNs are also included in the total ordering. The result\nof this function is Decimal(&apos;0&apos;) if both operands have the same representation,\nDecimal(&apos;-1&apos;) if the first operand is lower in the total order than the second,\nand Decimal(&apos;1&apos;) if the first operand is higher in the total order than the\nsecond operand. See the specification for details of the total order.\n\nThis operation is unaffected by context and is quiet: no flags are changed\nand no rounding is performed. As an exception, the C version may raise\nInvalidOperation if the second operand cannot be converted exactly.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_compare_total" title='doc_compare_total' data-ref="doc_compare_total">doc_compare_total</dfn>,</td></tr>
+<tr><th id="105">105</th><td><q>"compare_total($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="106">106</th><td><q>Compare two operands using their abstract representation rather than\n\</q></td></tr>
+<tr><th id="107">107</th><td><q>their numerical value.  Similar to the compare() method, but the result\n\</q></td></tr>
+<tr><th id="108">108</th><td><q>gives a total ordering on Decimal instances.  Two Decimal instances with\n\</q></td></tr>
+<tr><th id="109">109</th><td><q>the same numeric value but different representations compare unequal\n\</q></td></tr>
+<tr><th id="110">110</th><td><q>in this ordering:\n\</q></td></tr>
+<tr><th id="111">111</th><td><q>\n\</q></td></tr>
+<tr><th id="112">112</th><td><q>    &gt;&gt;&gt; Decimal('12.0').compare_total(Decimal('12'))\n\</q></td></tr>
+<tr><th id="113">113</th><td><q>    Decimal('-1')\n\</q></td></tr>
+<tr><th id="114">114</th><td><q>\n\</q></td></tr>
+<tr><th id="115">115</th><td><q>Quiet and signaling NaNs are also included in the total ordering. The result\n\</q></td></tr>
+<tr><th id="116">116</th><td><q>of this function is Decimal('0') if both operands have the same representation,\n\</q></td></tr>
+<tr><th id="117">117</th><td><q>Decimal('-1') if the first operand is lower in the total order than the second,\n\</q></td></tr>
+<tr><th id="118">118</th><td><q>and Decimal('1') if the first operand is higher in the total order than the\n\</q></td></tr>
+<tr><th id="119">119</th><td><q>second operand. See the specification for details of the total order.\n\</q></td></tr>
+<tr><th id="120">120</th><td><q>\n\</q></td></tr>
+<tr><th id="121">121</th><td><q>This operation is unaffected by context and is quiet: no flags are changed\n\</q></td></tr>
+<tr><th id="122">122</th><td><q>and no rounding is performed. As an exception, the C version may raise\n\</q></td></tr>
+<tr><th id="123">123</th><td><q>InvalidOperation if the second operand cannot be converted exactly.\n\</q></td></tr>
+<tr><th id="124">124</th><td><q>\n"</q>);</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_compare_total_mag[] = &quot;compare_total_mag($self, /, other, context=None)\n--\n\nCompare two operands using their abstract representation rather than their\nvalue as in compare_total(), but ignoring the sign of each operand.\n\nx.compare_total_mag(y) is equivalent to x.copy_abs().compare_total(y.copy_abs()).\n\nThis operation is unaffected by context and is quiet: no flags are changed\nand no rounding is performed. As an exception, the C version may raise\nInvalidOperation if the second operand cannot be converted exactly.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_compare_total_mag" title='doc_compare_total_mag' data-ref="doc_compare_total_mag">doc_compare_total_mag</dfn>,</td></tr>
+<tr><th id="127">127</th><td><q>"compare_total_mag($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="128">128</th><td><q>Compare two operands using their abstract representation rather than their\n\</q></td></tr>
+<tr><th id="129">129</th><td><q>value as in compare_total(), but ignoring the sign of each operand.\n\</q></td></tr>
+<tr><th id="130">130</th><td><q>\n\</q></td></tr>
+<tr><th id="131">131</th><td><q>x.compare_total_mag(y) is equivalent to x.copy_abs().compare_total(y.copy_abs()).\n\</q></td></tr>
+<tr><th id="132">132</th><td><q>\n\</q></td></tr>
+<tr><th id="133">133</th><td><q>This operation is unaffected by context and is quiet: no flags are changed\n\</q></td></tr>
+<tr><th id="134">134</th><td><q>and no rounding is performed. As an exception, the C version may raise\n\</q></td></tr>
+<tr><th id="135">135</th><td><q>InvalidOperation if the second operand cannot be converted exactly.\n\</q></td></tr>
+<tr><th id="136">136</th><td><q>\n"</q>);</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_conjugate[] = &quot;conjugate($self, /)\n--\n\nReturn self.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_conjugate" title='doc_conjugate' data-ref="doc_conjugate">doc_conjugate</dfn>,</td></tr>
+<tr><th id="139">139</th><td><q>"conjugate($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="140">140</th><td><q>Return self.\n\</q></td></tr>
+<tr><th id="141">141</th><td><q>\n"</q>);</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_copy_abs[] = &quot;copy_abs($self, /)\n--\n\nReturn the absolute value of the argument.  This operation is unaffected by\ncontext and is quiet: no flags are changed and no rounding is performed.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_copy_abs" title='doc_copy_abs' data-ref="doc_copy_abs">doc_copy_abs</dfn>,</td></tr>
+<tr><th id="144">144</th><td><q>"copy_abs($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="145">145</th><td><q>Return the absolute value of the argument.  This operation is unaffected by\n\</q></td></tr>
+<tr><th id="146">146</th><td><q>context and is quiet: no flags are changed and no rounding is performed.\n\</q></td></tr>
+<tr><th id="147">147</th><td><q>\n"</q>);</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_copy_negate[] = &quot;copy_negate($self, /)\n--\n\nReturn the negation of the argument.  This operation is unaffected by context\nand is quiet: no flags are changed and no rounding is performed.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_copy_negate" title='doc_copy_negate' data-ref="doc_copy_negate">doc_copy_negate</dfn>,</td></tr>
+<tr><th id="150">150</th><td><q>"copy_negate($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="151">151</th><td><q>Return the negation of the argument.  This operation is unaffected by context\n\</q></td></tr>
+<tr><th id="152">152</th><td><q>and is quiet: no flags are changed and no rounding is performed.\n\</q></td></tr>
+<tr><th id="153">153</th><td><q>\n"</q>);</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_copy_sign[] = &quot;copy_sign($self, /, other, context=None)\n--\n\nReturn a copy of the first operand with the sign set to be the same as the\nsign of the second operand. For example:\n\n    &gt;&gt;&gt; Decimal(&apos;2.3&apos;).copy_sign(Decimal(&apos;-1.5&apos;))\n    Decimal(&apos;-2.3&apos;)\n\nThis operation is unaffected by context and is quiet: no flags are changed\nand no rounding is performed. As an exception, the C version may raise\nInvalidOperation if the second operand cannot be converted exactly.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_copy_sign" title='doc_copy_sign' data-ref="doc_copy_sign">doc_copy_sign</dfn>,</td></tr>
+<tr><th id="156">156</th><td><q>"copy_sign($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="157">157</th><td><q>Return a copy of the first operand with the sign set to be the same as the\n\</q></td></tr>
+<tr><th id="158">158</th><td><q>sign of the second operand. For example:\n\</q></td></tr>
+<tr><th id="159">159</th><td><q>\n\</q></td></tr>
+<tr><th id="160">160</th><td><q>    &gt;&gt;&gt; Decimal('2.3').copy_sign(Decimal('-1.5'))\n\</q></td></tr>
+<tr><th id="161">161</th><td><q>    Decimal('-2.3')\n\</q></td></tr>
+<tr><th id="162">162</th><td><q>\n\</q></td></tr>
+<tr><th id="163">163</th><td><q>This operation is unaffected by context and is quiet: no flags are changed\n\</q></td></tr>
+<tr><th id="164">164</th><td><q>and no rounding is performed. As an exception, the C version may raise\n\</q></td></tr>
+<tr><th id="165">165</th><td><q>InvalidOperation if the second operand cannot be converted exactly.\n\</q></td></tr>
+<tr><th id="166">166</th><td><q>\n"</q>);</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_exp[] = &quot;exp($self, /, context=None)\n--\n\nReturn the value of the (natural) exponential function e**x at the given\nnumber.  The function always uses the ROUND_HALF_EVEN mode and the result\nis correctly rounded.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_exp" title='doc_exp' data-ref="doc_exp">doc_exp</dfn>,</td></tr>
+<tr><th id="169">169</th><td><q>"exp($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="170">170</th><td><q>Return the value of the (natural) exponential function e**x at the given\n\</q></td></tr>
+<tr><th id="171">171</th><td><q>number.  The function always uses the ROUND_HALF_EVEN mode and the result\n\</q></td></tr>
+<tr><th id="172">172</th><td><q>is correctly rounded.\n\</q></td></tr>
+<tr><th id="173">173</th><td><q>\n"</q>);</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_from_float[] = &quot;from_float($type, f, /)\n--\n\nClass method that converts a float to a decimal number, exactly.\nSince 0.1 is not exactly representable in binary floating point,\nDecimal.from_float(0.1) is not the same as Decimal(&apos;0.1&apos;).\n\n    &gt;&gt;&gt; Decimal.from_float(0.1)\n    Decimal(&apos;0.1000000000000000055511151231257827021181583404541015625&apos;)\n    &gt;&gt;&gt; Decimal.from_float(float(&apos;nan&apos;))\n    Decimal(&apos;NaN&apos;)\n    &gt;&gt;&gt; Decimal.from_float(float(&apos;inf&apos;))\n    Decimal(&apos;Infinity&apos;)\n    &gt;&gt;&gt; Decimal.from_float(float(&apos;-inf&apos;))\n    Decimal(&apos;-Infinity&apos;)\n\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_from_float" title='doc_from_float' data-ref="doc_from_float">doc_from_float</dfn>,</td></tr>
+<tr><th id="176">176</th><td><q>"from_float($type, f, /)\n--\n\n\</q></td></tr>
+<tr><th id="177">177</th><td><q>Class method that converts a float to a decimal number, exactly.\n\</q></td></tr>
+<tr><th id="178">178</th><td><q>Since 0.1 is not exactly representable in binary floating point,\n\</q></td></tr>
+<tr><th id="179">179</th><td><q>Decimal.from_float(0.1) is not the same as Decimal('0.1').\n\</q></td></tr>
+<tr><th id="180">180</th><td><q>\n\</q></td></tr>
+<tr><th id="181">181</th><td><q>    &gt;&gt;&gt; Decimal.from_float(0.1)\n\</q></td></tr>
+<tr><th id="182">182</th><td><q>    Decimal('0.1000000000000000055511151231257827021181583404541015625')\n\</q></td></tr>
+<tr><th id="183">183</th><td><q>    &gt;&gt;&gt; Decimal.from_float(float('nan'))\n\</q></td></tr>
+<tr><th id="184">184</th><td><q>    Decimal('NaN')\n\</q></td></tr>
+<tr><th id="185">185</th><td><q>    &gt;&gt;&gt; Decimal.from_float(float('inf'))\n\</q></td></tr>
+<tr><th id="186">186</th><td><q>    Decimal('Infinity')\n\</q></td></tr>
+<tr><th id="187">187</th><td><q>    &gt;&gt;&gt; Decimal.from_float(float('-inf'))\n\</q></td></tr>
+<tr><th id="188">188</th><td><q>    Decimal('-Infinity')\n\</q></td></tr>
+<tr><th id="189">189</th><td><q>\n\</q></td></tr>
+<tr><th id="190">190</th><td><q>\n"</q>);</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_fma[] = &quot;fma($self, /, other, third, context=None)\n--\n\nFused multiply-add.  Return self*other+third with no rounding of the\nintermediate product self*other.\n\n    &gt;&gt;&gt; Decimal(2).fma(3, 5)\n    Decimal(&apos;11&apos;)\n\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_fma" title='doc_fma' data-ref="doc_fma">doc_fma</dfn>,</td></tr>
+<tr><th id="193">193</th><td><q>"fma($self, /, other, third, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="194">194</th><td><q>Fused multiply-add.  Return self*other+third with no rounding of the\n\</q></td></tr>
+<tr><th id="195">195</th><td><q>intermediate product self*other.\n\</q></td></tr>
+<tr><th id="196">196</th><td><q>\n\</q></td></tr>
+<tr><th id="197">197</th><td><q>    &gt;&gt;&gt; Decimal(2).fma(3, 5)\n\</q></td></tr>
+<tr><th id="198">198</th><td><q>    Decimal('11')\n\</q></td></tr>
+<tr><th id="199">199</th><td><q>\n\</q></td></tr>
+<tr><th id="200">200</th><td><q>\n"</q>);</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_canonical[] = &quot;is_canonical($self, /)\n--\n\nReturn True if the argument is canonical and False otherwise.  Currently,\na Decimal instance is always canonical, so this operation always returns\nTrue.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_canonical" title='doc_is_canonical' data-ref="doc_is_canonical">doc_is_canonical</dfn>,</td></tr>
+<tr><th id="203">203</th><td><q>"is_canonical($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="204">204</th><td><q>Return True if the argument is canonical and False otherwise.  Currently,\n\</q></td></tr>
+<tr><th id="205">205</th><td><q>a Decimal instance is always canonical, so this operation always returns\n\</q></td></tr>
+<tr><th id="206">206</th><td><q>True.\n\</q></td></tr>
+<tr><th id="207">207</th><td><q>\n"</q>);</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_finite[] = &quot;is_finite($self, /)\n--\n\nReturn True if the argument is a finite number, and False if the argument\nis infinite or a NaN.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_finite" title='doc_is_finite' data-ref="doc_is_finite">doc_is_finite</dfn>,</td></tr>
+<tr><th id="210">210</th><td><q>"is_finite($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="211">211</th><td><q>Return True if the argument is a finite number, and False if the argument\n\</q></td></tr>
+<tr><th id="212">212</th><td><q>is infinite or a NaN.\n\</q></td></tr>
+<tr><th id="213">213</th><td><q>\n"</q>);</td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_infinite[] = &quot;is_infinite($self, /)\n--\n\nReturn True if the argument is either positive or negative infinity and\nFalse otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_infinite" title='doc_is_infinite' data-ref="doc_is_infinite">doc_is_infinite</dfn>,</td></tr>
+<tr><th id="216">216</th><td><q>"is_infinite($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="217">217</th><td><q>Return True if the argument is either positive or negative infinity and\n\</q></td></tr>
+<tr><th id="218">218</th><td><q>False otherwise.\n\</q></td></tr>
+<tr><th id="219">219</th><td><q>\n"</q>);</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_nan[] = &quot;is_nan($self, /)\n--\n\nReturn True if the argument is a (quiet or signaling) NaN and False\notherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_nan" title='doc_is_nan' data-ref="doc_is_nan">doc_is_nan</dfn>,</td></tr>
+<tr><th id="222">222</th><td><q>"is_nan($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="223">223</th><td><q>Return True if the argument is a (quiet or signaling) NaN and False\n\</q></td></tr>
+<tr><th id="224">224</th><td><q>otherwise.\n\</q></td></tr>
+<tr><th id="225">225</th><td><q>\n"</q>);</td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_normal[] = &quot;is_normal($self, /, context=None)\n--\n\nReturn True if the argument is a normal finite non-zero number with an\nadjusted exponent greater than or equal to Emin. Return False if the\nargument is zero, subnormal, infinite or a NaN.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_normal" title='doc_is_normal' data-ref="doc_is_normal">doc_is_normal</dfn>,</td></tr>
+<tr><th id="228">228</th><td><q>"is_normal($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="229">229</th><td><q>Return True if the argument is a normal finite non-zero number with an\n\</q></td></tr>
+<tr><th id="230">230</th><td><q>adjusted exponent greater than or equal to Emin. Return False if the\n\</q></td></tr>
+<tr><th id="231">231</th><td><q>argument is zero, subnormal, infinite or a NaN.\n\</q></td></tr>
+<tr><th id="232">232</th><td><q>\n"</q>);</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_qnan[] = &quot;is_qnan($self, /)\n--\n\nReturn True if the argument is a quiet NaN, and False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_qnan" title='doc_is_qnan' data-ref="doc_is_qnan">doc_is_qnan</dfn>,</td></tr>
+<tr><th id="235">235</th><td><q>"is_qnan($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="236">236</th><td><q>Return True if the argument is a quiet NaN, and False otherwise.\n\</q></td></tr>
+<tr><th id="237">237</th><td><q>\n"</q>);</td></tr>
+<tr><th id="238">238</th><td></td></tr>
+<tr><th id="239">239</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_signed[] = &quot;is_signed($self, /)\n--\n\nReturn True if the argument has a negative sign and False otherwise.\nNote that both zeros and NaNs can carry signs.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_signed" title='doc_is_signed' data-ref="doc_is_signed">doc_is_signed</dfn>,</td></tr>
+<tr><th id="240">240</th><td><q>"is_signed($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="241">241</th><td><q>Return True if the argument has a negative sign and False otherwise.\n\</q></td></tr>
+<tr><th id="242">242</th><td><q>Note that both zeros and NaNs can carry signs.\n\</q></td></tr>
+<tr><th id="243">243</th><td><q>\n"</q>);</td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_snan[] = &quot;is_snan($self, /)\n--\n\nReturn True if the argument is a signaling NaN and False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_snan" title='doc_is_snan' data-ref="doc_is_snan">doc_is_snan</dfn>,</td></tr>
+<tr><th id="246">246</th><td><q>"is_snan($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="247">247</th><td><q>Return True if the argument is a signaling NaN and False otherwise.\n\</q></td></tr>
+<tr><th id="248">248</th><td><q>\n"</q>);</td></tr>
+<tr><th id="249">249</th><td></td></tr>
+<tr><th id="250">250</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_subnormal[] = &quot;is_subnormal($self, /, context=None)\n--\n\nReturn True if the argument is subnormal, and False otherwise. A number is\nsubnormal if it is non-zero, finite, and has an adjusted exponent less\nthan Emin.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_subnormal" title='doc_is_subnormal' data-ref="doc_is_subnormal">doc_is_subnormal</dfn>,</td></tr>
+<tr><th id="251">251</th><td><q>"is_subnormal($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="252">252</th><td><q>Return True if the argument is subnormal, and False otherwise. A number is\n\</q></td></tr>
+<tr><th id="253">253</th><td><q>subnormal if it is non-zero, finite, and has an adjusted exponent less\n\</q></td></tr>
+<tr><th id="254">254</th><td><q>than Emin.\n\</q></td></tr>
+<tr><th id="255">255</th><td><q>\n"</q>);</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_is_zero[] = &quot;is_zero($self, /)\n--\n\nReturn True if the argument is a (positive or negative) zero and False\notherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_is_zero" title='doc_is_zero' data-ref="doc_is_zero">doc_is_zero</dfn>,</td></tr>
+<tr><th id="258">258</th><td><q>"is_zero($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="259">259</th><td><q>Return True if the argument is a (positive or negative) zero and False\n\</q></td></tr>
+<tr><th id="260">260</th><td><q>otherwise.\n\</q></td></tr>
+<tr><th id="261">261</th><td><q>\n"</q>);</td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ln[] = &quot;ln($self, /, context=None)\n--\n\nReturn the natural (base e) logarithm of the operand. The function always\nuses the ROUND_HALF_EVEN mode and the result is correctly rounded.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ln" title='doc_ln' data-ref="doc_ln">doc_ln</dfn>,</td></tr>
+<tr><th id="264">264</th><td><q>"ln($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="265">265</th><td><q>Return the natural (base e) logarithm of the operand. The function always\n\</q></td></tr>
+<tr><th id="266">266</th><td><q>uses the ROUND_HALF_EVEN mode and the result is correctly rounded.\n\</q></td></tr>
+<tr><th id="267">267</th><td><q>\n"</q>);</td></tr>
+<tr><th id="268">268</th><td></td></tr>
+<tr><th id="269">269</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_log10[] = &quot;log10($self, /, context=None)\n--\n\nReturn the base ten logarithm of the operand. The function always uses the\nROUND_HALF_EVEN mode and the result is correctly rounded.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_log10" title='doc_log10' data-ref="doc_log10">doc_log10</dfn>,</td></tr>
+<tr><th id="270">270</th><td><q>"log10($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="271">271</th><td><q>Return the base ten logarithm of the operand. The function always uses the\n\</q></td></tr>
+<tr><th id="272">272</th><td><q>ROUND_HALF_EVEN mode and the result is correctly rounded.\n\</q></td></tr>
+<tr><th id="273">273</th><td><q>\n"</q>);</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_logb[] = &quot;logb($self, /, context=None)\n--\n\nFor a non-zero number, return the adjusted exponent of the operand as a\nDecimal instance.  If the operand is a zero, then Decimal(&apos;-Infinity&apos;) is\nreturned and the DivisionByZero condition is raised. If the operand is\nan infinity then Decimal(&apos;Infinity&apos;) is returned.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_logb" title='doc_logb' data-ref="doc_logb">doc_logb</dfn>,</td></tr>
+<tr><th id="276">276</th><td><q>"logb($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="277">277</th><td><q>For a non-zero number, return the adjusted exponent of the operand as a\n\</q></td></tr>
+<tr><th id="278">278</th><td><q>Decimal instance.  If the operand is a zero, then Decimal('-Infinity') is\n\</q></td></tr>
+<tr><th id="279">279</th><td><q>returned and the DivisionByZero condition is raised. If the operand is\n\</q></td></tr>
+<tr><th id="280">280</th><td><q>an infinity then Decimal('Infinity') is returned.\n\</q></td></tr>
+<tr><th id="281">281</th><td><q>\n"</q>);</td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_logical_and[] = &quot;logical_and($self, /, other, context=None)\n--\n\nReturn the digit-wise &apos;and&apos; of the two (logical) operands.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_logical_and" title='doc_logical_and' data-ref="doc_logical_and">doc_logical_and</dfn>,</td></tr>
+<tr><th id="284">284</th><td><q>"logical_and($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="285">285</th><td><q>Return the digit-wise 'and' of the two (logical) operands.\n\</q></td></tr>
+<tr><th id="286">286</th><td><q>\n"</q>);</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_logical_invert[] = &quot;logical_invert($self, /, context=None)\n--\n\nReturn the digit-wise inversion of the (logical) operand.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_logical_invert" title='doc_logical_invert' data-ref="doc_logical_invert">doc_logical_invert</dfn>,</td></tr>
+<tr><th id="289">289</th><td><q>"logical_invert($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="290">290</th><td><q>Return the digit-wise inversion of the (logical) operand.\n\</q></td></tr>
+<tr><th id="291">291</th><td><q>\n"</q>);</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_logical_or[] = &quot;logical_or($self, /, other, context=None)\n--\n\nReturn the digit-wise &apos;or&apos; of the two (logical) operands.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_logical_or" title='doc_logical_or' data-ref="doc_logical_or">doc_logical_or</dfn>,</td></tr>
+<tr><th id="294">294</th><td><q>"logical_or($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="295">295</th><td><q>Return the digit-wise 'or' of the two (logical) operands.\n\</q></td></tr>
+<tr><th id="296">296</th><td><q>\n"</q>);</td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_logical_xor[] = &quot;logical_xor($self, /, other, context=None)\n--\n\nReturn the digit-wise &apos;exclusive or&apos; of the two (logical) operands.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_logical_xor" title='doc_logical_xor' data-ref="doc_logical_xor">doc_logical_xor</dfn>,</td></tr>
+<tr><th id="299">299</th><td><q>"logical_xor($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="300">300</th><td><q>Return the digit-wise 'exclusive or' of the two (logical) operands.\n\</q></td></tr>
+<tr><th id="301">301</th><td><q>\n"</q>);</td></tr>
+<tr><th id="302">302</th><td></td></tr>
+<tr><th id="303">303</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_max[] = &quot;max($self, /, other, context=None)\n--\n\nMaximum of self and other.  If one operand is a quiet NaN and the other is\nnumeric, the numeric operand is returned.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_max" title='doc_max' data-ref="doc_max">doc_max</dfn>,</td></tr>
+<tr><th id="304">304</th><td><q>"max($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="305">305</th><td><q>Maximum of self and other.  If one operand is a quiet NaN and the other is\n\</q></td></tr>
+<tr><th id="306">306</th><td><q>numeric, the numeric operand is returned.\n\</q></td></tr>
+<tr><th id="307">307</th><td><q>\n"</q>);</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_max_mag[] = &quot;max_mag($self, /, other, context=None)\n--\n\nSimilar to the max() method, but the comparison is done using the absolute\nvalues of the operands.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_max_mag" title='doc_max_mag' data-ref="doc_max_mag">doc_max_mag</dfn>,</td></tr>
+<tr><th id="310">310</th><td><q>"max_mag($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="311">311</th><td><q>Similar to the max() method, but the comparison is done using the absolute\n\</q></td></tr>
+<tr><th id="312">312</th><td><q>values of the operands.\n\</q></td></tr>
+<tr><th id="313">313</th><td><q>\n"</q>);</td></tr>
+<tr><th id="314">314</th><td></td></tr>
+<tr><th id="315">315</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_min[] = &quot;min($self, /, other, context=None)\n--\n\nMinimum of self and other. If one operand is a quiet NaN and the other is\nnumeric, the numeric operand is returned.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_min" title='doc_min' data-ref="doc_min">doc_min</dfn>,</td></tr>
+<tr><th id="316">316</th><td><q>"min($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="317">317</th><td><q>Minimum of self and other. If one operand is a quiet NaN and the other is\n\</q></td></tr>
+<tr><th id="318">318</th><td><q>numeric, the numeric operand is returned.\n\</q></td></tr>
+<tr><th id="319">319</th><td><q>\n"</q>);</td></tr>
+<tr><th id="320">320</th><td></td></tr>
+<tr><th id="321">321</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_min_mag[] = &quot;min_mag($self, /, other, context=None)\n--\n\nSimilar to the min() method, but the comparison is done using the absolute\nvalues of the operands.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_min_mag" title='doc_min_mag' data-ref="doc_min_mag">doc_min_mag</dfn>,</td></tr>
+<tr><th id="322">322</th><td><q>"min_mag($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="323">323</th><td><q>Similar to the min() method, but the comparison is done using the absolute\n\</q></td></tr>
+<tr><th id="324">324</th><td><q>values of the operands.\n\</q></td></tr>
+<tr><th id="325">325</th><td><q>\n"</q>);</td></tr>
+<tr><th id="326">326</th><td></td></tr>
+<tr><th id="327">327</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_next_minus[] = &quot;next_minus($self, /, context=None)\n--\n\nReturn the largest number representable in the given context (or in the\ncurrent default context if no context is given) that is smaller than the\ngiven operand.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_next_minus" title='doc_next_minus' data-ref="doc_next_minus">doc_next_minus</dfn>,</td></tr>
+<tr><th id="328">328</th><td><q>"next_minus($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="329">329</th><td><q>Return the largest number representable in the given context (or in the\n\</q></td></tr>
+<tr><th id="330">330</th><td><q>current default context if no context is given) that is smaller than the\n\</q></td></tr>
+<tr><th id="331">331</th><td><q>given operand.\n\</q></td></tr>
+<tr><th id="332">332</th><td><q>\n"</q>);</td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_next_plus[] = &quot;next_plus($self, /, context=None)\n--\n\nReturn the smallest number representable in the given context (or in the\ncurrent default context if no context is given) that is larger than the\ngiven operand.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_next_plus" title='doc_next_plus' data-ref="doc_next_plus">doc_next_plus</dfn>,</td></tr>
+<tr><th id="335">335</th><td><q>"next_plus($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="336">336</th><td><q>Return the smallest number representable in the given context (or in the\n\</q></td></tr>
+<tr><th id="337">337</th><td><q>current default context if no context is given) that is larger than the\n\</q></td></tr>
+<tr><th id="338">338</th><td><q>given operand.\n\</q></td></tr>
+<tr><th id="339">339</th><td><q>\n"</q>);</td></tr>
+<tr><th id="340">340</th><td></td></tr>
+<tr><th id="341">341</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_next_toward[] = &quot;next_toward($self, /, other, context=None)\n--\n\nIf the two operands are unequal, return the number closest to the first\noperand in the direction of the second operand.  If both operands are\nnumerically equal, return a copy of the first operand with the sign set\nto be the same as the sign of the second operand.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_next_toward" title='doc_next_toward' data-ref="doc_next_toward">doc_next_toward</dfn>,</td></tr>
+<tr><th id="342">342</th><td><q>"next_toward($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="343">343</th><td><q>If the two operands are unequal, return the number closest to the first\n\</q></td></tr>
+<tr><th id="344">344</th><td><q>operand in the direction of the second operand.  If both operands are\n\</q></td></tr>
+<tr><th id="345">345</th><td><q>numerically equal, return a copy of the first operand with the sign set\n\</q></td></tr>
+<tr><th id="346">346</th><td><q>to be the same as the sign of the second operand.\n\</q></td></tr>
+<tr><th id="347">347</th><td><q>\n"</q>);</td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_normalize[] = &quot;normalize($self, /, context=None)\n--\n\nNormalize the number by stripping the rightmost trailing zeros and\nconverting any result equal to Decimal(&apos;0&apos;) to Decimal(&apos;0e0&apos;).  Used\nfor producing canonical values for members of an equivalence class.\nFor example, Decimal(&apos;32.100&apos;) and Decimal(&apos;0.321000e+2&apos;) both normalize\nto the equivalent value Decimal(&apos;32.1&apos;).\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_normalize" title='doc_normalize' data-ref="doc_normalize">doc_normalize</dfn>,</td></tr>
+<tr><th id="350">350</th><td><q>"normalize($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="351">351</th><td><q>Normalize the number by stripping the rightmost trailing zeros and\n\</q></td></tr>
+<tr><th id="352">352</th><td><q>converting any result equal to Decimal('0') to Decimal('0e0').  Used\n\</q></td></tr>
+<tr><th id="353">353</th><td><q>for producing canonical values for members of an equivalence class.\n\</q></td></tr>
+<tr><th id="354">354</th><td><q>For example, Decimal('32.100') and Decimal('0.321000e+2') both normalize\n\</q></td></tr>
+<tr><th id="355">355</th><td><q>to the equivalent value Decimal('32.1').\n\</q></td></tr>
+<tr><th id="356">356</th><td><q>\n"</q>);</td></tr>
+<tr><th id="357">357</th><td></td></tr>
+<tr><th id="358">358</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_number_class[] = &quot;number_class($self, /, context=None)\n--\n\nReturn a string describing the class of the operand.  The returned value\nis one of the following ten strings:\n\n    * &apos;-Infinity&apos;, indicating that the operand is negative infinity.\n    * &apos;-Normal&apos;, indicating that the operand is a negative normal number.\n    * &apos;-Subnormal&apos;, indicating that the operand is negative and subnormal.\n    * &apos;-Zero&apos;, indicating that the operand is a negative zero.\n    * &apos;+Zero&apos;, indicating that the operand is a positive zero.\n    * &apos;+Subnormal&apos;, indicating that the operand is positive and subnormal.\n    * &apos;+Normal&apos;, indicating that the operand is a positive normal number.\n    * &apos;+Infinity&apos;, indicating that the operand is positive infinity.\n    * &apos;NaN&apos;, indicating that the operand is a quiet NaN (Not a Number).\n    * &apos;sNaN&apos;, indicating that the operand is a signaling NaN.\n\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_number_class" title='doc_number_class' data-ref="doc_number_class">doc_number_class</dfn>,</td></tr>
+<tr><th id="359">359</th><td><q>"number_class($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="360">360</th><td><q>Return a string describing the class of the operand.  The returned value\n\</q></td></tr>
+<tr><th id="361">361</th><td><q>is one of the following ten strings:\n\</q></td></tr>
+<tr><th id="362">362</th><td><q>\n\</q></td></tr>
+<tr><th id="363">363</th><td><q>    * '-Infinity', indicating that the operand is negative infinity.\n\</q></td></tr>
+<tr><th id="364">364</th><td><q>    * '-Normal', indicating that the operand is a negative normal number.\n\</q></td></tr>
+<tr><th id="365">365</th><td><q>    * '-Subnormal', indicating that the operand is negative and subnormal.\n\</q></td></tr>
+<tr><th id="366">366</th><td><q>    * '-Zero', indicating that the operand is a negative zero.\n\</q></td></tr>
+<tr><th id="367">367</th><td><q>    * '+Zero', indicating that the operand is a positive zero.\n\</q></td></tr>
+<tr><th id="368">368</th><td><q>    * '+Subnormal', indicating that the operand is positive and subnormal.\n\</q></td></tr>
+<tr><th id="369">369</th><td><q>    * '+Normal', indicating that the operand is a positive normal number.\n\</q></td></tr>
+<tr><th id="370">370</th><td><q>    * '+Infinity', indicating that the operand is positive infinity.\n\</q></td></tr>
+<tr><th id="371">371</th><td><q>    * 'NaN', indicating that the operand is a quiet NaN (Not a Number).\n\</q></td></tr>
+<tr><th id="372">372</th><td><q>    * 'sNaN', indicating that the operand is a signaling NaN.\n\</q></td></tr>
+<tr><th id="373">373</th><td><q>\n\</q></td></tr>
+<tr><th id="374">374</th><td><q>\n"</q>);</td></tr>
+<tr><th id="375">375</th><td></td></tr>
+<tr><th id="376">376</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_quantize[] = &quot;quantize($self, /, exp, rounding=None, context=None)\n--\n\nReturn a value equal to the first operand after rounding and having the\nexponent of the second operand.\n\n    &gt;&gt;&gt; Decimal(&apos;1.41421356&apos;).quantize(Decimal(&apos;1.000&apos;))\n    Decimal(&apos;1.414&apos;)\n\nUnlike other operations, if the length of the coefficient after the quantize\noperation would be greater than precision, then an InvalidOperation is signaled.\nThis guarantees that, unless there is an error condition, the quantized exponent\nis always equal to that of the right-hand operand.\n\nAlso unlike other operations, quantize never signals Underflow, even if the\nresult is subnormal and inexact.\n\nIf the exponent of the second operand is larger than that of the first, then\nrounding may be necessary. In this case, the rounding mode is determined by the\nrounding argument if given, else by the given context argument; if neither\nargument is given, the rounding mode of the current thread&apos;s context is used.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_quantize" title='doc_quantize' data-ref="doc_quantize">doc_quantize</dfn>,</td></tr>
+<tr><th id="377">377</th><td><q>"quantize($self, /, exp, rounding=None, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="378">378</th><td><q>Return a value equal to the first operand after rounding and having the\n\</q></td></tr>
+<tr><th id="379">379</th><td><q>exponent of the second operand.\n\</q></td></tr>
+<tr><th id="380">380</th><td><q>\n\</q></td></tr>
+<tr><th id="381">381</th><td><q>    &gt;&gt;&gt; Decimal('1.41421356').quantize(Decimal('1.000'))\n\</q></td></tr>
+<tr><th id="382">382</th><td><q>    Decimal('1.414')\n\</q></td></tr>
+<tr><th id="383">383</th><td><q>\n\</q></td></tr>
+<tr><th id="384">384</th><td><q>Unlike other operations, if the length of the coefficient after the quantize\n\</q></td></tr>
+<tr><th id="385">385</th><td><q>operation would be greater than precision, then an InvalidOperation is signaled.\n\</q></td></tr>
+<tr><th id="386">386</th><td><q>This guarantees that, unless there is an error condition, the quantized exponent\n\</q></td></tr>
+<tr><th id="387">387</th><td><q>is always equal to that of the right-hand operand.\n\</q></td></tr>
+<tr><th id="388">388</th><td><q>\n\</q></td></tr>
+<tr><th id="389">389</th><td><q>Also unlike other operations, quantize never signals Underflow, even if the\n\</q></td></tr>
+<tr><th id="390">390</th><td><q>result is subnormal and inexact.\n\</q></td></tr>
+<tr><th id="391">391</th><td><q>\n\</q></td></tr>
+<tr><th id="392">392</th><td><q>If the exponent of the second operand is larger than that of the first, then\n\</q></td></tr>
+<tr><th id="393">393</th><td><q>rounding may be necessary. In this case, the rounding mode is determined by the\n\</q></td></tr>
+<tr><th id="394">394</th><td><q>rounding argument if given, else by the given context argument; if neither\n\</q></td></tr>
+<tr><th id="395">395</th><td><q>argument is given, the rounding mode of the current thread's context is used.\n\</q></td></tr>
+<tr><th id="396">396</th><td><q>\n"</q>);</td></tr>
+<tr><th id="397">397</th><td></td></tr>
+<tr><th id="398">398</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_radix[] = &quot;radix($self, /)\n--\n\nReturn Decimal(10), the radix (base) in which the Decimal class does\nall its arithmetic. Included for compatibility with the specification.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_radix" title='doc_radix' data-ref="doc_radix">doc_radix</dfn>,</td></tr>
+<tr><th id="399">399</th><td><q>"radix($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="400">400</th><td><q>Return Decimal(10), the radix (base) in which the Decimal class does\n\</q></td></tr>
+<tr><th id="401">401</th><td><q>all its arithmetic. Included for compatibility with the specification.\n\</q></td></tr>
+<tr><th id="402">402</th><td><q>\n"</q>);</td></tr>
+<tr><th id="403">403</th><td></td></tr>
+<tr><th id="404">404</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_remainder_near[] = &quot;remainder_near($self, /, other, context=None)\n--\n\nReturn the remainder from dividing self by other.  This differs from\nself % other in that the sign of the remainder is chosen so as to minimize\nits absolute value. More precisely, the return value is self - n * other\nwhere n is the integer nearest to the exact value of self / other, and\nif two integers are equally near then the even one is chosen.\n\nIf the result is zero then its sign will be the sign of self.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_remainder_near" title='doc_remainder_near' data-ref="doc_remainder_near">doc_remainder_near</dfn>,</td></tr>
+<tr><th id="405">405</th><td><q>"remainder_near($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="406">406</th><td><q>Return the remainder from dividing self by other.  This differs from\n\</q></td></tr>
+<tr><th id="407">407</th><td><q>self % other in that the sign of the remainder is chosen so as to minimize\n\</q></td></tr>
+<tr><th id="408">408</th><td><q>its absolute value. More precisely, the return value is self - n * other\n\</q></td></tr>
+<tr><th id="409">409</th><td><q>where n is the integer nearest to the exact value of self / other, and\n\</q></td></tr>
+<tr><th id="410">410</th><td><q>if two integers are equally near then the even one is chosen.\n\</q></td></tr>
+<tr><th id="411">411</th><td><q>\n\</q></td></tr>
+<tr><th id="412">412</th><td><q>If the result is zero then its sign will be the sign of self.\n\</q></td></tr>
+<tr><th id="413">413</th><td><q>\n"</q>);</td></tr>
+<tr><th id="414">414</th><td></td></tr>
+<tr><th id="415">415</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_rotate[] = &quot;rotate($self, /, other, context=None)\n--\n\nReturn the result of rotating the digits of the first operand by an amount\nspecified by the second operand.  The second operand must be an integer in\nthe range -precision through precision. The absolute value of the second\noperand gives the number of places to rotate. If the second operand is\npositive then rotation is to the left; otherwise rotation is to the right.\nThe coefficient of the first operand is padded on the left with zeros to\nlength precision if necessary. The sign and exponent of the first operand are\nunchanged.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_rotate" title='doc_rotate' data-ref="doc_rotate">doc_rotate</dfn>,</td></tr>
+<tr><th id="416">416</th><td><q>"rotate($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="417">417</th><td><q>Return the result of rotating the digits of the first operand by an amount\n\</q></td></tr>
+<tr><th id="418">418</th><td><q>specified by the second operand.  The second operand must be an integer in\n\</q></td></tr>
+<tr><th id="419">419</th><td><q>the range -precision through precision. The absolute value of the second\n\</q></td></tr>
+<tr><th id="420">420</th><td><q>operand gives the number of places to rotate. If the second operand is\n\</q></td></tr>
+<tr><th id="421">421</th><td><q>positive then rotation is to the left; otherwise rotation is to the right.\n\</q></td></tr>
+<tr><th id="422">422</th><td><q>The coefficient of the first operand is padded on the left with zeros to\n\</q></td></tr>
+<tr><th id="423">423</th><td><q>length precision if necessary. The sign and exponent of the first operand are\n\</q></td></tr>
+<tr><th id="424">424</th><td><q>unchanged.\n\</q></td></tr>
+<tr><th id="425">425</th><td><q>\n"</q>);</td></tr>
+<tr><th id="426">426</th><td></td></tr>
+<tr><th id="427">427</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_same_quantum[] = &quot;same_quantum($self, /, other, context=None)\n--\n\nTest whether self and other have the same exponent or whether both are NaN.\n\nThis operation is unaffected by context and is quiet: no flags are changed\nand no rounding is performed. As an exception, the C version may raise\nInvalidOperation if the second operand cannot be converted exactly.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_same_quantum" title='doc_same_quantum' data-ref="doc_same_quantum">doc_same_quantum</dfn>,</td></tr>
+<tr><th id="428">428</th><td><q>"same_quantum($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="429">429</th><td><q>Test whether self and other have the same exponent or whether both are NaN.\n\</q></td></tr>
+<tr><th id="430">430</th><td><q>\n\</q></td></tr>
+<tr><th id="431">431</th><td><q>This operation is unaffected by context and is quiet: no flags are changed\n\</q></td></tr>
+<tr><th id="432">432</th><td><q>and no rounding is performed. As an exception, the C version may raise\n\</q></td></tr>
+<tr><th id="433">433</th><td><q>InvalidOperation if the second operand cannot be converted exactly.\n\</q></td></tr>
+<tr><th id="434">434</th><td><q>\n"</q>);</td></tr>
+<tr><th id="435">435</th><td></td></tr>
+<tr><th id="436">436</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_scaleb[] = &quot;scaleb($self, /, other, context=None)\n--\n\nReturn the first operand with the exponent adjusted the second.  Equivalently,\nreturn the first operand multiplied by 10**other. The second operand must be\nan integer.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_scaleb" title='doc_scaleb' data-ref="doc_scaleb">doc_scaleb</dfn>,</td></tr>
+<tr><th id="437">437</th><td><q>"scaleb($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="438">438</th><td><q>Return the first operand with the exponent adjusted the second.  Equivalently,\n\</q></td></tr>
+<tr><th id="439">439</th><td><q>return the first operand multiplied by 10**other. The second operand must be\n\</q></td></tr>
+<tr><th id="440">440</th><td><q>an integer.\n\</q></td></tr>
+<tr><th id="441">441</th><td><q>\n"</q>);</td></tr>
+<tr><th id="442">442</th><td></td></tr>
+<tr><th id="443">443</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_shift[] = &quot;shift($self, /, other, context=None)\n--\n\nReturn the result of shifting the digits of the first operand by an amount\nspecified by the second operand.  The second operand must be an integer in\nthe range -precision through precision. The absolute value of the second\noperand gives the number of places to shift. If the second operand is\npositive, then the shift is to the left; otherwise the shift is to the\nright. Digits shifted into the coefficient are zeros. The sign and exponent\nof the first operand are unchanged.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_shift" title='doc_shift' data-ref="doc_shift">doc_shift</dfn>,</td></tr>
+<tr><th id="444">444</th><td><q>"shift($self, /, other, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="445">445</th><td><q>Return the result of shifting the digits of the first operand by an amount\n\</q></td></tr>
+<tr><th id="446">446</th><td><q>specified by the second operand.  The second operand must be an integer in\n\</q></td></tr>
+<tr><th id="447">447</th><td><q>the range -precision through precision. The absolute value of the second\n\</q></td></tr>
+<tr><th id="448">448</th><td><q>operand gives the number of places to shift. If the second operand is\n\</q></td></tr>
+<tr><th id="449">449</th><td><q>positive, then the shift is to the left; otherwise the shift is to the\n\</q></td></tr>
+<tr><th id="450">450</th><td><q>right. Digits shifted into the coefficient are zeros. The sign and exponent\n\</q></td></tr>
+<tr><th id="451">451</th><td><q>of the first operand are unchanged.\n\</q></td></tr>
+<tr><th id="452">452</th><td><q>\n"</q>);</td></tr>
+<tr><th id="453">453</th><td></td></tr>
+<tr><th id="454">454</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_sqrt[] = &quot;sqrt($self, /, context=None)\n--\n\nReturn the square root of the argument to full precision. The result is\ncorrectly rounded using the ROUND_HALF_EVEN rounding mode.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_sqrt" title='doc_sqrt' data-ref="doc_sqrt">doc_sqrt</dfn>,</td></tr>
+<tr><th id="455">455</th><td><q>"sqrt($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="456">456</th><td><q>Return the square root of the argument to full precision. The result is\n\</q></td></tr>
+<tr><th id="457">457</th><td><q>correctly rounded using the ROUND_HALF_EVEN rounding mode.\n\</q></td></tr>
+<tr><th id="458">458</th><td><q>\n"</q>);</td></tr>
+<tr><th id="459">459</th><td></td></tr>
+<tr><th id="460">460</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_to_eng_string[] = &quot;to_eng_string($self, /, context=None)\n--\n\nConvert to an engineering-type string.  Engineering notation has an exponent\nwhich is a multiple of 3, so there are up to 3 digits left of the decimal\nplace. For example, Decimal(&apos;123E+1&apos;) is converted to Decimal(&apos;1.23E+3&apos;).\n\nThe value of context.capitals determines whether the exponent sign is lower\nor upper case. Otherwise, the context does not affect the operation.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_to_eng_string" title='doc_to_eng_string' data-ref="doc_to_eng_string">doc_to_eng_string</dfn>,</td></tr>
+<tr><th id="461">461</th><td><q>"to_eng_string($self, /, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="462">462</th><td><q>Convert to an engineering-type string.  Engineering notation has an exponent\n\</q></td></tr>
+<tr><th id="463">463</th><td><q>which is a multiple of 3, so there are up to 3 digits left of the decimal\n\</q></td></tr>
+<tr><th id="464">464</th><td><q>place. For example, Decimal('123E+1') is converted to Decimal('1.23E+3').\n\</q></td></tr>
+<tr><th id="465">465</th><td><q>\n\</q></td></tr>
+<tr><th id="466">466</th><td><q>The value of context.capitals determines whether the exponent sign is lower\n\</q></td></tr>
+<tr><th id="467">467</th><td><q>or upper case. Otherwise, the context does not affect the operation.\n\</q></td></tr>
+<tr><th id="468">468</th><td><q>\n"</q>);</td></tr>
+<tr><th id="469">469</th><td></td></tr>
+<tr><th id="470">470</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_to_integral[] = &quot;to_integral($self, /, rounding=None, context=None)\n--\n\nIdentical to the to_integral_value() method.  The to_integral() name has been\nkept for compatibility with older versions.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_to_integral" title='doc_to_integral' data-ref="doc_to_integral">doc_to_integral</dfn>,</td></tr>
+<tr><th id="471">471</th><td><q>"to_integral($self, /, rounding=None, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="472">472</th><td><q>Identical to the to_integral_value() method.  The to_integral() name has been\n\</q></td></tr>
+<tr><th id="473">473</th><td><q>kept for compatibility with older versions.\n\</q></td></tr>
+<tr><th id="474">474</th><td><q>\n"</q>);</td></tr>
+<tr><th id="475">475</th><td></td></tr>
+<tr><th id="476">476</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_to_integral_exact[] = &quot;to_integral_exact($self, /, rounding=None, context=None)\n--\n\nRound to the nearest integer, signaling Inexact or Rounded as appropriate if\nrounding occurs.  The rounding mode is determined by the rounding parameter\nif given, else by the given context. If neither parameter is given, then the\nrounding mode of the current default context is used.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_to_integral_exact" title='doc_to_integral_exact' data-ref="doc_to_integral_exact">doc_to_integral_exact</dfn>,</td></tr>
+<tr><th id="477">477</th><td><q>"to_integral_exact($self, /, rounding=None, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="478">478</th><td><q>Round to the nearest integer, signaling Inexact or Rounded as appropriate if\n\</q></td></tr>
+<tr><th id="479">479</th><td><q>rounding occurs.  The rounding mode is determined by the rounding parameter\n\</q></td></tr>
+<tr><th id="480">480</th><td><q>if given, else by the given context. If neither parameter is given, then the\n\</q></td></tr>
+<tr><th id="481">481</th><td><q>rounding mode of the current default context is used.\n\</q></td></tr>
+<tr><th id="482">482</th><td><q>\n"</q>);</td></tr>
+<tr><th id="483">483</th><td></td></tr>
+<tr><th id="484">484</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_to_integral_value[] = &quot;to_integral_value($self, /, rounding=None, context=None)\n--\n\nRound to the nearest integer without signaling Inexact or Rounded.  The\nrounding mode is determined by the rounding parameter if given, else by\nthe given context. If neither parameter is given, then the rounding mode\nof the current default context is used.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_to_integral_value" title='doc_to_integral_value' data-ref="doc_to_integral_value">doc_to_integral_value</dfn>,</td></tr>
+<tr><th id="485">485</th><td><q>"to_integral_value($self, /, rounding=None, context=None)\n--\n\n\</q></td></tr>
+<tr><th id="486">486</th><td><q>Round to the nearest integer without signaling Inexact or Rounded.  The\n\</q></td></tr>
+<tr><th id="487">487</th><td><q>rounding mode is determined by the rounding parameter if given, else by\n\</q></td></tr>
+<tr><th id="488">488</th><td><q>the given context. If neither parameter is given, then the rounding mode\n\</q></td></tr>
+<tr><th id="489">489</th><td><q>of the current default context is used.\n\</q></td></tr>
+<tr><th id="490">490</th><td><q>\n"</q>);</td></tr>
+<tr><th id="491">491</th><td></td></tr>
+<tr><th id="492">492</th><td></td></tr>
+<tr><th id="493">493</th><td><i>/******************************************************************************/</i></td></tr>
+<tr><th id="494">494</th><td><i>/*                       Context Object and Methods                           */</i></td></tr>
+<tr><th id="495">495</th><td><i>/******************************************************************************/</i></td></tr>
+<tr><th id="496">496</th><td></td></tr>
+<tr><th id="497">497</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_context[] = &quot;Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=None, clamp=None, flags=None, traps=None)\n--\n\nThe context affects almost all operations and controls rounding,\nOver/Underflow, raising of exceptions and much more.  A new context\ncan be constructed as follows:\n\n    &gt;&gt;&gt; c = Context(prec=28, Emin=-425000000, Emax=425000000,\n    ...             rounding=ROUND_HALF_EVEN, capitals=1, clamp=1,\n    ...             traps=[InvalidOperation, DivisionByZero, Overflow],\n    ...             flags=[])\n    &gt;&gt;&gt;\n\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_context" title='doc_context' data-ref="doc_context">doc_context</dfn>,</td></tr>
+<tr><th id="498">498</th><td><q>"Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=None, clamp=None, flags=None, traps=None)\n--\n\n\</q></td></tr>
+<tr><th id="499">499</th><td><q>The context affects almost all operations and controls rounding,\n\</q></td></tr>
+<tr><th id="500">500</th><td><q>Over/Underflow, raising of exceptions and much more.  A new context\n\</q></td></tr>
+<tr><th id="501">501</th><td><q>can be constructed as follows:\n\</q></td></tr>
+<tr><th id="502">502</th><td><q>\n\</q></td></tr>
+<tr><th id="503">503</th><td><q>    &gt;&gt;&gt; c = Context(prec=28, Emin=-425000000, Emax=425000000,\n\</q></td></tr>
+<tr><th id="504">504</th><td><q>    ...             rounding=ROUND_HALF_EVEN, capitals=1, clamp=1,\n\</q></td></tr>
+<tr><th id="505">505</th><td><q>    ...             traps=[InvalidOperation, DivisionByZero, Overflow],\n\</q></td></tr>
+<tr><th id="506">506</th><td><q>    ...             flags=[])\n\</q></td></tr>
+<tr><th id="507">507</th><td><q>    &gt;&gt;&gt;\n\</q></td></tr>
+<tr><th id="508">508</th><td><q>\n\</q></td></tr>
+<tr><th id="509">509</th><td><q>\n"</q>);</td></tr>
+<tr><th id="510">510</th><td></td></tr>
+<tr><th id="511">511</th><td><u>#<span data-ppcond="511">ifdef</span> <span class="macro" data-ref="_M/EXTRA_FUNCTIONALITY">EXTRA_FUNCTIONALITY</span></u></td></tr>
+<tr><th id="512">512</th><td>PyDoc_STRVAR(doc_ctx_apply,</td></tr>
+<tr><th id="513">513</th><td><q>"apply($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="514">514</th><td><q>Apply self to Decimal x.\n\</q></td></tr>
+<tr><th id="515">515</th><td><q>\n"</q>);</td></tr>
+<tr><th id="516">516</th><td><u>#<span data-ppcond="511">endif</span></u></td></tr>
+<tr><th id="517">517</th><td></td></tr>
+<tr><th id="518">518</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_clear_flags[] = &quot;clear_flags($self, /)\n--\n\nReset all flags to False.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_clear_flags" title='doc_ctx_clear_flags' data-ref="doc_ctx_clear_flags">doc_ctx_clear_flags</dfn>,</td></tr>
+<tr><th id="519">519</th><td><q>"clear_flags($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="520">520</th><td><q>Reset all flags to False.\n\</q></td></tr>
+<tr><th id="521">521</th><td><q>\n"</q>);</td></tr>
+<tr><th id="522">522</th><td></td></tr>
+<tr><th id="523">523</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_clear_traps[] = &quot;clear_traps($self, /)\n--\n\nSet all traps to False.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_clear_traps" title='doc_ctx_clear_traps' data-ref="doc_ctx_clear_traps">doc_ctx_clear_traps</dfn>,</td></tr>
+<tr><th id="524">524</th><td><q>"clear_traps($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="525">525</th><td><q>Set all traps to False.\n\</q></td></tr>
+<tr><th id="526">526</th><td><q>\n"</q>);</td></tr>
+<tr><th id="527">527</th><td></td></tr>
+<tr><th id="528">528</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_copy[] = &quot;copy($self, /)\n--\n\nReturn a duplicate of the context with all flags cleared.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_copy" title='doc_ctx_copy' data-ref="doc_ctx_copy">doc_ctx_copy</dfn>,</td></tr>
+<tr><th id="529">529</th><td><q>"copy($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="530">530</th><td><q>Return a duplicate of the context with all flags cleared.\n\</q></td></tr>
+<tr><th id="531">531</th><td><q>\n"</q>);</td></tr>
+<tr><th id="532">532</th><td></td></tr>
+<tr><th id="533">533</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_copy_decimal[] = &quot;copy_decimal($self, x, /)\n--\n\nReturn a copy of Decimal x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_copy_decimal" title='doc_ctx_copy_decimal' data-ref="doc_ctx_copy_decimal">doc_ctx_copy_decimal</dfn>,</td></tr>
+<tr><th id="534">534</th><td><q>"copy_decimal($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="535">535</th><td><q>Return a copy of Decimal x.\n\</q></td></tr>
+<tr><th id="536">536</th><td><q>\n"</q>);</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_create_decimal[] = &quot;create_decimal($self, num=\&quot;0\&quot;, /)\n--\n\nCreate a new Decimal instance from num, using self as the context. Unlike the\nDecimal constructor, this function observes the context limits.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_create_decimal" title='doc_ctx_create_decimal' data-ref="doc_ctx_create_decimal">doc_ctx_create_decimal</dfn>,</td></tr>
+<tr><th id="539">539</th><td><q>"create_decimal($self, num=\"0\", /)\n--\n\n\</q></td></tr>
+<tr><th id="540">540</th><td><q>Create a new Decimal instance from num, using self as the context. Unlike the\n\</q></td></tr>
+<tr><th id="541">541</th><td><q>Decimal constructor, this function observes the context limits.\n\</q></td></tr>
+<tr><th id="542">542</th><td><q>\n"</q>);</td></tr>
+<tr><th id="543">543</th><td></td></tr>
+<tr><th id="544">544</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_create_decimal_from_float[] = &quot;create_decimal_from_float($self, f, /)\n--\n\nCreate a new Decimal instance from float f.  Unlike the Decimal.from_float()\nclass method, this function observes the context limits.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_create_decimal_from_float" title='doc_ctx_create_decimal_from_float' data-ref="doc_ctx_create_decimal_from_float">doc_ctx_create_decimal_from_float</dfn>,</td></tr>
+<tr><th id="545">545</th><td><q>"create_decimal_from_float($self, f, /)\n--\n\n\</q></td></tr>
+<tr><th id="546">546</th><td><q>Create a new Decimal instance from float f.  Unlike the Decimal.from_float()\n\</q></td></tr>
+<tr><th id="547">547</th><td><q>class method, this function observes the context limits.\n\</q></td></tr>
+<tr><th id="548">548</th><td><q>\n"</q>);</td></tr>
+<tr><th id="549">549</th><td></td></tr>
+<tr><th id="550">550</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_Etiny[] = &quot;Etiny($self, /)\n--\n\nReturn a value equal to Emin - prec + 1, which is the minimum exponent value\nfor subnormal results.  When underflow occurs, the exponent is set to Etiny.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_Etiny" title='doc_ctx_Etiny' data-ref="doc_ctx_Etiny">doc_ctx_Etiny</dfn>,</td></tr>
+<tr><th id="551">551</th><td><q>"Etiny($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="552">552</th><td><q>Return a value equal to Emin - prec + 1, which is the minimum exponent value\n\</q></td></tr>
+<tr><th id="553">553</th><td><q>for subnormal results.  When underflow occurs, the exponent is set to Etiny.\n\</q></td></tr>
+<tr><th id="554">554</th><td><q>\n"</q>);</td></tr>
+<tr><th id="555">555</th><td></td></tr>
+<tr><th id="556">556</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_Etop[] = &quot;Etop($self, /)\n--\n\nReturn a value equal to Emax - prec + 1.  This is the maximum exponent\nif the _clamp field of the context is set to 1 (IEEE clamp mode).  Etop()\nmust not be negative.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_Etop" title='doc_ctx_Etop' data-ref="doc_ctx_Etop">doc_ctx_Etop</dfn>,</td></tr>
+<tr><th id="557">557</th><td><q>"Etop($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="558">558</th><td><q>Return a value equal to Emax - prec + 1.  This is the maximum exponent\n\</q></td></tr>
+<tr><th id="559">559</th><td><q>if the _clamp field of the context is set to 1 (IEEE clamp mode).  Etop()\n\</q></td></tr>
+<tr><th id="560">560</th><td><q>must not be negative.\n\</q></td></tr>
+<tr><th id="561">561</th><td><q>\n"</q>);</td></tr>
+<tr><th id="562">562</th><td></td></tr>
+<tr><th id="563">563</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_abs[] = &quot;abs($self, x, /)\n--\n\nReturn the absolute value of x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_abs" title='doc_ctx_abs' data-ref="doc_ctx_abs">doc_ctx_abs</dfn>,</td></tr>
+<tr><th id="564">564</th><td><q>"abs($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="565">565</th><td><q>Return the absolute value of x.\n\</q></td></tr>
+<tr><th id="566">566</th><td><q>\n"</q>);</td></tr>
+<tr><th id="567">567</th><td></td></tr>
+<tr><th id="568">568</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_add[] = &quot;add($self, x, y, /)\n--\n\nReturn the sum of x and y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_add" title='doc_ctx_add' data-ref="doc_ctx_add">doc_ctx_add</dfn>,</td></tr>
+<tr><th id="569">569</th><td><q>"add($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="570">570</th><td><q>Return the sum of x and y.\n\</q></td></tr>
+<tr><th id="571">571</th><td><q>\n"</q>);</td></tr>
+<tr><th id="572">572</th><td></td></tr>
+<tr><th id="573">573</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_canonical[] = &quot;canonical($self, x, /)\n--\n\nReturn a new instance of x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_canonical" title='doc_ctx_canonical' data-ref="doc_ctx_canonical">doc_ctx_canonical</dfn>,</td></tr>
+<tr><th id="574">574</th><td><q>"canonical($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="575">575</th><td><q>Return a new instance of x.\n\</q></td></tr>
+<tr><th id="576">576</th><td><q>\n"</q>);</td></tr>
+<tr><th id="577">577</th><td></td></tr>
+<tr><th id="578">578</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_compare[] = &quot;compare($self, x, y, /)\n--\n\nCompare x and y numerically.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_compare" title='doc_ctx_compare' data-ref="doc_ctx_compare">doc_ctx_compare</dfn>,</td></tr>
+<tr><th id="579">579</th><td><q>"compare($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="580">580</th><td><q>Compare x and y numerically.\n\</q></td></tr>
+<tr><th id="581">581</th><td><q>\n"</q>);</td></tr>
+<tr><th id="582">582</th><td></td></tr>
+<tr><th id="583">583</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_compare_signal[] = &quot;compare_signal($self, x, y, /)\n--\n\nCompare x and y numerically.  All NaNs signal.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_compare_signal" title='doc_ctx_compare_signal' data-ref="doc_ctx_compare_signal">doc_ctx_compare_signal</dfn>,</td></tr>
+<tr><th id="584">584</th><td><q>"compare_signal($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="585">585</th><td><q>Compare x and y numerically.  All NaNs signal.\n\</q></td></tr>
+<tr><th id="586">586</th><td><q>\n"</q>);</td></tr>
+<tr><th id="587">587</th><td></td></tr>
+<tr><th id="588">588</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_compare_total[] = &quot;compare_total($self, x, y, /)\n--\n\nCompare x and y using their abstract representation.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_compare_total" title='doc_ctx_compare_total' data-ref="doc_ctx_compare_total">doc_ctx_compare_total</dfn>,</td></tr>
+<tr><th id="589">589</th><td><q>"compare_total($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="590">590</th><td><q>Compare x and y using their abstract representation.\n\</q></td></tr>
+<tr><th id="591">591</th><td><q>\n"</q>);</td></tr>
+<tr><th id="592">592</th><td></td></tr>
+<tr><th id="593">593</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_compare_total_mag[] = &quot;compare_total_mag($self, x, y, /)\n--\n\nCompare x and y using their abstract representation, ignoring sign.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_compare_total_mag" title='doc_ctx_compare_total_mag' data-ref="doc_ctx_compare_total_mag">doc_ctx_compare_total_mag</dfn>,</td></tr>
+<tr><th id="594">594</th><td><q>"compare_total_mag($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="595">595</th><td><q>Compare x and y using their abstract representation, ignoring sign.\n\</q></td></tr>
+<tr><th id="596">596</th><td><q>\n"</q>);</td></tr>
+<tr><th id="597">597</th><td></td></tr>
+<tr><th id="598">598</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_copy_abs[] = &quot;copy_abs($self, x, /)\n--\n\nReturn a copy of x with the sign set to 0.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_copy_abs" title='doc_ctx_copy_abs' data-ref="doc_ctx_copy_abs">doc_ctx_copy_abs</dfn>,</td></tr>
+<tr><th id="599">599</th><td><q>"copy_abs($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="600">600</th><td><q>Return a copy of x with the sign set to 0.\n\</q></td></tr>
+<tr><th id="601">601</th><td><q>\n"</q>);</td></tr>
+<tr><th id="602">602</th><td></td></tr>
+<tr><th id="603">603</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_copy_negate[] = &quot;copy_negate($self, x, /)\n--\n\nReturn a copy of x with the sign inverted.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_copy_negate" title='doc_ctx_copy_negate' data-ref="doc_ctx_copy_negate">doc_ctx_copy_negate</dfn>,</td></tr>
+<tr><th id="604">604</th><td><q>"copy_negate($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="605">605</th><td><q>Return a copy of x with the sign inverted.\n\</q></td></tr>
+<tr><th id="606">606</th><td><q>\n"</q>);</td></tr>
+<tr><th id="607">607</th><td></td></tr>
+<tr><th id="608">608</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_copy_sign[] = &quot;copy_sign($self, x, y, /)\n--\n\nCopy the sign from y to x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_copy_sign" title='doc_ctx_copy_sign' data-ref="doc_ctx_copy_sign">doc_ctx_copy_sign</dfn>,</td></tr>
+<tr><th id="609">609</th><td><q>"copy_sign($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="610">610</th><td><q>Copy the sign from y to x.\n\</q></td></tr>
+<tr><th id="611">611</th><td><q>\n"</q>);</td></tr>
+<tr><th id="612">612</th><td></td></tr>
+<tr><th id="613">613</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_divide[] = &quot;divide($self, x, y, /)\n--\n\nReturn x divided by y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_divide" title='doc_ctx_divide' data-ref="doc_ctx_divide">doc_ctx_divide</dfn>,</td></tr>
+<tr><th id="614">614</th><td><q>"divide($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="615">615</th><td><q>Return x divided by y.\n\</q></td></tr>
+<tr><th id="616">616</th><td><q>\n"</q>);</td></tr>
+<tr><th id="617">617</th><td></td></tr>
+<tr><th id="618">618</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_divide_int[] = &quot;divide_int($self, x, y, /)\n--\n\nReturn x divided by y, truncated to an integer.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_divide_int" title='doc_ctx_divide_int' data-ref="doc_ctx_divide_int">doc_ctx_divide_int</dfn>,</td></tr>
+<tr><th id="619">619</th><td><q>"divide_int($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="620">620</th><td><q>Return x divided by y, truncated to an integer.\n\</q></td></tr>
+<tr><th id="621">621</th><td><q>\n"</q>);</td></tr>
+<tr><th id="622">622</th><td></td></tr>
+<tr><th id="623">623</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_divmod[] = &quot;divmod($self, x, y, /)\n--\n\nReturn quotient and remainder of the division x / y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_divmod" title='doc_ctx_divmod' data-ref="doc_ctx_divmod">doc_ctx_divmod</dfn>,</td></tr>
+<tr><th id="624">624</th><td><q>"divmod($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="625">625</th><td><q>Return quotient and remainder of the division x / y.\n\</q></td></tr>
+<tr><th id="626">626</th><td><q>\n"</q>);</td></tr>
+<tr><th id="627">627</th><td></td></tr>
+<tr><th id="628">628</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_exp[] = &quot;exp($self, x, /)\n--\n\nReturn e ** x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_exp" title='doc_ctx_exp' data-ref="doc_ctx_exp">doc_ctx_exp</dfn>,</td></tr>
+<tr><th id="629">629</th><td><q>"exp($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="630">630</th><td><q>Return e ** x.\n\</q></td></tr>
+<tr><th id="631">631</th><td><q>\n"</q>);</td></tr>
+<tr><th id="632">632</th><td></td></tr>
+<tr><th id="633">633</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_fma[] = &quot;fma($self, x, y, z, /)\n--\n\nReturn x multiplied by y, plus z.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_fma" title='doc_ctx_fma' data-ref="doc_ctx_fma">doc_ctx_fma</dfn>,</td></tr>
+<tr><th id="634">634</th><td><q>"fma($self, x, y, z, /)\n--\n\n\</q></td></tr>
+<tr><th id="635">635</th><td><q>Return x multiplied by y, plus z.\n\</q></td></tr>
+<tr><th id="636">636</th><td><q>\n"</q>);</td></tr>
+<tr><th id="637">637</th><td></td></tr>
+<tr><th id="638">638</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_canonical[] = &quot;is_canonical($self, x, /)\n--\n\nReturn True if x is canonical, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_canonical" title='doc_ctx_is_canonical' data-ref="doc_ctx_is_canonical">doc_ctx_is_canonical</dfn>,</td></tr>
+<tr><th id="639">639</th><td><q>"is_canonical($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="640">640</th><td><q>Return True if x is canonical, False otherwise.\n\</q></td></tr>
+<tr><th id="641">641</th><td><q>\n"</q>);</td></tr>
+<tr><th id="642">642</th><td></td></tr>
+<tr><th id="643">643</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_finite[] = &quot;is_finite($self, x, /)\n--\n\nReturn True if x is finite, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_finite" title='doc_ctx_is_finite' data-ref="doc_ctx_is_finite">doc_ctx_is_finite</dfn>,</td></tr>
+<tr><th id="644">644</th><td><q>"is_finite($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="645">645</th><td><q>Return True if x is finite, False otherwise.\n\</q></td></tr>
+<tr><th id="646">646</th><td><q>\n"</q>);</td></tr>
+<tr><th id="647">647</th><td></td></tr>
+<tr><th id="648">648</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_infinite[] = &quot;is_infinite($self, x, /)\n--\n\nReturn True if x is infinite, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_infinite" title='doc_ctx_is_infinite' data-ref="doc_ctx_is_infinite">doc_ctx_is_infinite</dfn>,</td></tr>
+<tr><th id="649">649</th><td><q>"is_infinite($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="650">650</th><td><q>Return True if x is infinite, False otherwise.\n\</q></td></tr>
+<tr><th id="651">651</th><td><q>\n"</q>);</td></tr>
+<tr><th id="652">652</th><td></td></tr>
+<tr><th id="653">653</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_nan[] = &quot;is_nan($self, x, /)\n--\n\nReturn True if x is a qNaN or sNaN, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_nan" title='doc_ctx_is_nan' data-ref="doc_ctx_is_nan">doc_ctx_is_nan</dfn>,</td></tr>
+<tr><th id="654">654</th><td><q>"is_nan($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="655">655</th><td><q>Return True if x is a qNaN or sNaN, False otherwise.\n\</q></td></tr>
+<tr><th id="656">656</th><td><q>\n"</q>);</td></tr>
+<tr><th id="657">657</th><td></td></tr>
+<tr><th id="658">658</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_normal[] = &quot;is_normal($self, x, /)\n--\n\nReturn True if x is a normal number, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_normal" title='doc_ctx_is_normal' data-ref="doc_ctx_is_normal">doc_ctx_is_normal</dfn>,</td></tr>
+<tr><th id="659">659</th><td><q>"is_normal($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="660">660</th><td><q>Return True if x is a normal number, False otherwise.\n\</q></td></tr>
+<tr><th id="661">661</th><td><q>\n"</q>);</td></tr>
+<tr><th id="662">662</th><td></td></tr>
+<tr><th id="663">663</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_qnan[] = &quot;is_qnan($self, x, /)\n--\n\nReturn True if x is a quiet NaN, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_qnan" title='doc_ctx_is_qnan' data-ref="doc_ctx_is_qnan">doc_ctx_is_qnan</dfn>,</td></tr>
+<tr><th id="664">664</th><td><q>"is_qnan($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="665">665</th><td><q>Return True if x is a quiet NaN, False otherwise.\n\</q></td></tr>
+<tr><th id="666">666</th><td><q>\n"</q>);</td></tr>
+<tr><th id="667">667</th><td></td></tr>
+<tr><th id="668">668</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_signed[] = &quot;is_signed($self, x, /)\n--\n\nReturn True if x is negative, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_signed" title='doc_ctx_is_signed' data-ref="doc_ctx_is_signed">doc_ctx_is_signed</dfn>,</td></tr>
+<tr><th id="669">669</th><td><q>"is_signed($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="670">670</th><td><q>Return True if x is negative, False otherwise.\n\</q></td></tr>
+<tr><th id="671">671</th><td><q>\n"</q>);</td></tr>
+<tr><th id="672">672</th><td></td></tr>
+<tr><th id="673">673</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_snan[] = &quot;is_snan($self, x, /)\n--\n\nReturn True if x is a signaling NaN, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_snan" title='doc_ctx_is_snan' data-ref="doc_ctx_is_snan">doc_ctx_is_snan</dfn>,</td></tr>
+<tr><th id="674">674</th><td><q>"is_snan($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="675">675</th><td><q>Return True if x is a signaling NaN, False otherwise.\n\</q></td></tr>
+<tr><th id="676">676</th><td><q>\n"</q>);</td></tr>
+<tr><th id="677">677</th><td></td></tr>
+<tr><th id="678">678</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_subnormal[] = &quot;is_subnormal($self, x, /)\n--\n\nReturn True if x is subnormal, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_subnormal" title='doc_ctx_is_subnormal' data-ref="doc_ctx_is_subnormal">doc_ctx_is_subnormal</dfn>,</td></tr>
+<tr><th id="679">679</th><td><q>"is_subnormal($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="680">680</th><td><q>Return True if x is subnormal, False otherwise.\n\</q></td></tr>
+<tr><th id="681">681</th><td><q>\n"</q>);</td></tr>
+<tr><th id="682">682</th><td></td></tr>
+<tr><th id="683">683</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_is_zero[] = &quot;is_zero($self, x, /)\n--\n\nReturn True if x is a zero, False otherwise.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_is_zero" title='doc_ctx_is_zero' data-ref="doc_ctx_is_zero">doc_ctx_is_zero</dfn>,</td></tr>
+<tr><th id="684">684</th><td><q>"is_zero($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="685">685</th><td><q>Return True if x is a zero, False otherwise.\n\</q></td></tr>
+<tr><th id="686">686</th><td><q>\n"</q>);</td></tr>
+<tr><th id="687">687</th><td></td></tr>
+<tr><th id="688">688</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_ln[] = &quot;ln($self, x, /)\n--\n\nReturn the natural (base e) logarithm of x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_ln" title='doc_ctx_ln' data-ref="doc_ctx_ln">doc_ctx_ln</dfn>,</td></tr>
+<tr><th id="689">689</th><td><q>"ln($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="690">690</th><td><q>Return the natural (base e) logarithm of x.\n\</q></td></tr>
+<tr><th id="691">691</th><td><q>\n"</q>);</td></tr>
+<tr><th id="692">692</th><td></td></tr>
+<tr><th id="693">693</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_log10[] = &quot;log10($self, x, /)\n--\n\nReturn the base 10 logarithm of x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_log10" title='doc_ctx_log10' data-ref="doc_ctx_log10">doc_ctx_log10</dfn>,</td></tr>
+<tr><th id="694">694</th><td><q>"log10($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="695">695</th><td><q>Return the base 10 logarithm of x.\n\</q></td></tr>
+<tr><th id="696">696</th><td><q>\n"</q>);</td></tr>
+<tr><th id="697">697</th><td></td></tr>
+<tr><th id="698">698</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_logb[] = &quot;logb($self, x, /)\n--\n\nReturn the exponent of the magnitude of the operand&apos;s MSD.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_logb" title='doc_ctx_logb' data-ref="doc_ctx_logb">doc_ctx_logb</dfn>,</td></tr>
+<tr><th id="699">699</th><td><q>"logb($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="700">700</th><td><q>Return the exponent of the magnitude of the operand's MSD.\n\</q></td></tr>
+<tr><th id="701">701</th><td><q>\n"</q>);</td></tr>
+<tr><th id="702">702</th><td></td></tr>
+<tr><th id="703">703</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_logical_and[] = &quot;logical_and($self, x, y, /)\n--\n\nDigit-wise and of x and y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_logical_and" title='doc_ctx_logical_and' data-ref="doc_ctx_logical_and">doc_ctx_logical_and</dfn>,</td></tr>
+<tr><th id="704">704</th><td><q>"logical_and($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="705">705</th><td><q>Digit-wise and of x and y.\n\</q></td></tr>
+<tr><th id="706">706</th><td><q>\n"</q>);</td></tr>
+<tr><th id="707">707</th><td></td></tr>
+<tr><th id="708">708</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_logical_invert[] = &quot;logical_invert($self, x, /)\n--\n\nInvert all digits of x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_logical_invert" title='doc_ctx_logical_invert' data-ref="doc_ctx_logical_invert">doc_ctx_logical_invert</dfn>,</td></tr>
+<tr><th id="709">709</th><td><q>"logical_invert($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="710">710</th><td><q>Invert all digits of x.\n\</q></td></tr>
+<tr><th id="711">711</th><td><q>\n"</q>);</td></tr>
+<tr><th id="712">712</th><td></td></tr>
+<tr><th id="713">713</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_logical_or[] = &quot;logical_or($self, x, y, /)\n--\n\nDigit-wise or of x and y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_logical_or" title='doc_ctx_logical_or' data-ref="doc_ctx_logical_or">doc_ctx_logical_or</dfn>,</td></tr>
+<tr><th id="714">714</th><td><q>"logical_or($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="715">715</th><td><q>Digit-wise or of x and y.\n\</q></td></tr>
+<tr><th id="716">716</th><td><q>\n"</q>);</td></tr>
+<tr><th id="717">717</th><td></td></tr>
+<tr><th id="718">718</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_logical_xor[] = &quot;logical_xor($self, x, y, /)\n--\n\nDigit-wise xor of x and y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_logical_xor" title='doc_ctx_logical_xor' data-ref="doc_ctx_logical_xor">doc_ctx_logical_xor</dfn>,</td></tr>
+<tr><th id="719">719</th><td><q>"logical_xor($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="720">720</th><td><q>Digit-wise xor of x and y.\n\</q></td></tr>
+<tr><th id="721">721</th><td><q>\n"</q>);</td></tr>
+<tr><th id="722">722</th><td></td></tr>
+<tr><th id="723">723</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_max[] = &quot;max($self, x, y, /)\n--\n\nCompare the values numerically and return the maximum.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_max" title='doc_ctx_max' data-ref="doc_ctx_max">doc_ctx_max</dfn>,</td></tr>
+<tr><th id="724">724</th><td><q>"max($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="725">725</th><td><q>Compare the values numerically and return the maximum.\n\</q></td></tr>
+<tr><th id="726">726</th><td><q>\n"</q>);</td></tr>
+<tr><th id="727">727</th><td></td></tr>
+<tr><th id="728">728</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_max_mag[] = &quot;max_mag($self, x, y, /)\n--\n\nCompare the values numerically with their sign ignored.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_max_mag" title='doc_ctx_max_mag' data-ref="doc_ctx_max_mag">doc_ctx_max_mag</dfn>,</td></tr>
+<tr><th id="729">729</th><td><q>"max_mag($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="730">730</th><td><q>Compare the values numerically with their sign ignored.\n\</q></td></tr>
+<tr><th id="731">731</th><td><q>\n"</q>);</td></tr>
+<tr><th id="732">732</th><td></td></tr>
+<tr><th id="733">733</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_min[] = &quot;min($self, x, y, /)\n--\n\nCompare the values numerically and return the minimum.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_min" title='doc_ctx_min' data-ref="doc_ctx_min">doc_ctx_min</dfn>,</td></tr>
+<tr><th id="734">734</th><td><q>"min($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="735">735</th><td><q>Compare the values numerically and return the minimum.\n\</q></td></tr>
+<tr><th id="736">736</th><td><q>\n"</q>);</td></tr>
+<tr><th id="737">737</th><td></td></tr>
+<tr><th id="738">738</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_min_mag[] = &quot;min_mag($self, x, y, /)\n--\n\nCompare the values numerically with their sign ignored.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_min_mag" title='doc_ctx_min_mag' data-ref="doc_ctx_min_mag">doc_ctx_min_mag</dfn>,</td></tr>
+<tr><th id="739">739</th><td><q>"min_mag($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="740">740</th><td><q>Compare the values numerically with their sign ignored.\n\</q></td></tr>
+<tr><th id="741">741</th><td><q>\n"</q>);</td></tr>
+<tr><th id="742">742</th><td></td></tr>
+<tr><th id="743">743</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_minus[] = &quot;minus($self, x, /)\n--\n\nMinus corresponds to the unary prefix minus operator in Python, but applies\nthe context to the result.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_minus" title='doc_ctx_minus' data-ref="doc_ctx_minus">doc_ctx_minus</dfn>,</td></tr>
+<tr><th id="744">744</th><td><q>"minus($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="745">745</th><td><q>Minus corresponds to the unary prefix minus operator in Python, but applies\n\</q></td></tr>
+<tr><th id="746">746</th><td><q>the context to the result.\n\</q></td></tr>
+<tr><th id="747">747</th><td><q>\n"</q>);</td></tr>
+<tr><th id="748">748</th><td></td></tr>
+<tr><th id="749">749</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_multiply[] = &quot;multiply($self, x, y, /)\n--\n\nReturn the product of x and y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_multiply" title='doc_ctx_multiply' data-ref="doc_ctx_multiply">doc_ctx_multiply</dfn>,</td></tr>
+<tr><th id="750">750</th><td><q>"multiply($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="751">751</th><td><q>Return the product of x and y.\n\</q></td></tr>
+<tr><th id="752">752</th><td><q>\n"</q>);</td></tr>
+<tr><th id="753">753</th><td></td></tr>
+<tr><th id="754">754</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_next_minus[] = &quot;next_minus($self, x, /)\n--\n\nReturn the largest representable number smaller than x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_next_minus" title='doc_ctx_next_minus' data-ref="doc_ctx_next_minus">doc_ctx_next_minus</dfn>,</td></tr>
+<tr><th id="755">755</th><td><q>"next_minus($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="756">756</th><td><q>Return the largest representable number smaller than x.\n\</q></td></tr>
+<tr><th id="757">757</th><td><q>\n"</q>);</td></tr>
+<tr><th id="758">758</th><td></td></tr>
+<tr><th id="759">759</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_next_plus[] = &quot;next_plus($self, x, /)\n--\n\nReturn the smallest representable number larger than x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_next_plus" title='doc_ctx_next_plus' data-ref="doc_ctx_next_plus">doc_ctx_next_plus</dfn>,</td></tr>
+<tr><th id="760">760</th><td><q>"next_plus($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="761">761</th><td><q>Return the smallest representable number larger than x.\n\</q></td></tr>
+<tr><th id="762">762</th><td><q>\n"</q>);</td></tr>
+<tr><th id="763">763</th><td></td></tr>
+<tr><th id="764">764</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_next_toward[] = &quot;next_toward($self, x, y, /)\n--\n\nReturn the number closest to x, in the direction towards y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_next_toward" title='doc_ctx_next_toward' data-ref="doc_ctx_next_toward">doc_ctx_next_toward</dfn>,</td></tr>
+<tr><th id="765">765</th><td><q>"next_toward($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="766">766</th><td><q>Return the number closest to x, in the direction towards y.\n\</q></td></tr>
+<tr><th id="767">767</th><td><q>\n"</q>);</td></tr>
+<tr><th id="768">768</th><td></td></tr>
+<tr><th id="769">769</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_normalize[] = &quot;normalize($self, x, /)\n--\n\nReduce x to its simplest form. Alias for reduce(x).\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_normalize" title='doc_ctx_normalize' data-ref="doc_ctx_normalize">doc_ctx_normalize</dfn>,</td></tr>
+<tr><th id="770">770</th><td><q>"normalize($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="771">771</th><td><q>Reduce x to its simplest form. Alias for reduce(x).\n\</q></td></tr>
+<tr><th id="772">772</th><td><q>\n"</q>);</td></tr>
+<tr><th id="773">773</th><td></td></tr>
+<tr><th id="774">774</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_number_class[] = &quot;number_class($self, x, /)\n--\n\nReturn an indication of the class of x.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_number_class" title='doc_ctx_number_class' data-ref="doc_ctx_number_class">doc_ctx_number_class</dfn>,</td></tr>
+<tr><th id="775">775</th><td><q>"number_class($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="776">776</th><td><q>Return an indication of the class of x.\n\</q></td></tr>
+<tr><th id="777">777</th><td><q>\n"</q>);</td></tr>
+<tr><th id="778">778</th><td></td></tr>
+<tr><th id="779">779</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_plus[] = &quot;plus($self, x, /)\n--\n\nPlus corresponds to the unary prefix plus operator in Python, but applies\nthe context to the result.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_plus" title='doc_ctx_plus' data-ref="doc_ctx_plus">doc_ctx_plus</dfn>,</td></tr>
+<tr><th id="780">780</th><td><q>"plus($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="781">781</th><td><q>Plus corresponds to the unary prefix plus operator in Python, but applies\n\</q></td></tr>
+<tr><th id="782">782</th><td><q>the context to the result.\n\</q></td></tr>
+<tr><th id="783">783</th><td><q>\n"</q>);</td></tr>
+<tr><th id="784">784</th><td></td></tr>
+<tr><th id="785">785</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_power[] = &quot;power($self, /, a, b, modulo=None)\n--\n\nCompute a**b. If &apos;a&apos; is negative, then &apos;b&apos; must be integral. The result\nwill be inexact unless &apos;a&apos; is integral and the result is finite and can\nbe expressed exactly in &apos;precision&apos; digits.  In the Python version the\nresult is always correctly rounded, in the C version the result is almost\nalways correctly rounded.\n\nIf modulo is given, compute (a**b) % modulo. The following restrictions\nhold:\n\n    * all three arguments must be integral\n    * &apos;b&apos; must be nonnegative\n    * at least one of &apos;a&apos; or &apos;b&apos; must be nonzero\n    * modulo must be nonzero and less than 10**prec in absolute value\n\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_power" title='doc_ctx_power' data-ref="doc_ctx_power">doc_ctx_power</dfn>,</td></tr>
+<tr><th id="786">786</th><td><q>"power($self, /, a, b, modulo=None)\n--\n\n\</q></td></tr>
+<tr><th id="787">787</th><td><q>Compute a**b. If 'a' is negative, then 'b' must be integral. The result\n\</q></td></tr>
+<tr><th id="788">788</th><td><q>will be inexact unless 'a' is integral and the result is finite and can\n\</q></td></tr>
+<tr><th id="789">789</th><td><q>be expressed exactly in 'precision' digits.  In the Python version the\n\</q></td></tr>
+<tr><th id="790">790</th><td><q>result is always correctly rounded, in the C version the result is almost\n\</q></td></tr>
+<tr><th id="791">791</th><td><q>always correctly rounded.\n\</q></td></tr>
+<tr><th id="792">792</th><td><q>\n\</q></td></tr>
+<tr><th id="793">793</th><td><q>If modulo is given, compute (a**b) % modulo. The following restrictions\n\</q></td></tr>
+<tr><th id="794">794</th><td><q>hold:\n\</q></td></tr>
+<tr><th id="795">795</th><td><q>\n\</q></td></tr>
+<tr><th id="796">796</th><td><q>    * all three arguments must be integral\n\</q></td></tr>
+<tr><th id="797">797</th><td><q>    * 'b' must be nonnegative\n\</q></td></tr>
+<tr><th id="798">798</th><td><q>    * at least one of 'a' or 'b' must be nonzero\n\</q></td></tr>
+<tr><th id="799">799</th><td><q>    * modulo must be nonzero and less than 10**prec in absolute value\n\</q></td></tr>
+<tr><th id="800">800</th><td><q>\n\</q></td></tr>
+<tr><th id="801">801</th><td><q>\n"</q>);</td></tr>
+<tr><th id="802">802</th><td></td></tr>
+<tr><th id="803">803</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_quantize[] = &quot;quantize($self, x, y, /)\n--\n\nReturn a value equal to x (rounded), having the exponent of y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_quantize" title='doc_ctx_quantize' data-ref="doc_ctx_quantize">doc_ctx_quantize</dfn>,</td></tr>
+<tr><th id="804">804</th><td><q>"quantize($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="805">805</th><td><q>Return a value equal to x (rounded), having the exponent of y.\n\</q></td></tr>
+<tr><th id="806">806</th><td><q>\n"</q>);</td></tr>
+<tr><th id="807">807</th><td></td></tr>
+<tr><th id="808">808</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_radix[] = &quot;radix($self, /)\n--\n\nReturn 10.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_radix" title='doc_ctx_radix' data-ref="doc_ctx_radix">doc_ctx_radix</dfn>,</td></tr>
+<tr><th id="809">809</th><td><q>"radix($self, /)\n--\n\n\</q></td></tr>
+<tr><th id="810">810</th><td><q>Return 10.\n\</q></td></tr>
+<tr><th id="811">811</th><td><q>\n"</q>);</td></tr>
+<tr><th id="812">812</th><td></td></tr>
+<tr><th id="813">813</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_remainder[] = &quot;remainder($self, x, y, /)\n--\n\nReturn the remainder from integer division.  The sign of the result,\nif non-zero, is the same as that of the original dividend.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_remainder" title='doc_ctx_remainder' data-ref="doc_ctx_remainder">doc_ctx_remainder</dfn>,</td></tr>
+<tr><th id="814">814</th><td><q>"remainder($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="815">815</th><td><q>Return the remainder from integer division.  The sign of the result,\n\</q></td></tr>
+<tr><th id="816">816</th><td><q>if non-zero, is the same as that of the original dividend.\n\</q></td></tr>
+<tr><th id="817">817</th><td><q>\n"</q>);</td></tr>
+<tr><th id="818">818</th><td></td></tr>
+<tr><th id="819">819</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_remainder_near[] = &quot;remainder_near($self, x, y, /)\n--\n\nReturn x - y * n, where n is the integer nearest the exact value of x / y\n(if the result is 0 then its sign will be the sign of x).\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_remainder_near" title='doc_ctx_remainder_near' data-ref="doc_ctx_remainder_near">doc_ctx_remainder_near</dfn>,</td></tr>
+<tr><th id="820">820</th><td><q>"remainder_near($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="821">821</th><td><q>Return x - y * n, where n is the integer nearest the exact value of x / y\n\</q></td></tr>
+<tr><th id="822">822</th><td><q>(if the result is 0 then its sign will be the sign of x).\n\</q></td></tr>
+<tr><th id="823">823</th><td><q>\n"</q>);</td></tr>
+<tr><th id="824">824</th><td></td></tr>
+<tr><th id="825">825</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_rotate[] = &quot;rotate($self, x, y, /)\n--\n\nReturn a copy of x, rotated by y places.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_rotate" title='doc_ctx_rotate' data-ref="doc_ctx_rotate">doc_ctx_rotate</dfn>,</td></tr>
+<tr><th id="826">826</th><td><q>"rotate($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="827">827</th><td><q>Return a copy of x, rotated by y places.\n\</q></td></tr>
+<tr><th id="828">828</th><td><q>\n"</q>);</td></tr>
+<tr><th id="829">829</th><td></td></tr>
+<tr><th id="830">830</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_same_quantum[] = &quot;same_quantum($self, x, y, /)\n--\n\nReturn True if the two operands have the same exponent.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_same_quantum" title='doc_ctx_same_quantum' data-ref="doc_ctx_same_quantum">doc_ctx_same_quantum</dfn>,</td></tr>
+<tr><th id="831">831</th><td><q>"same_quantum($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="832">832</th><td><q>Return True if the two operands have the same exponent.\n\</q></td></tr>
+<tr><th id="833">833</th><td><q>\n"</q>);</td></tr>
+<tr><th id="834">834</th><td></td></tr>
+<tr><th id="835">835</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_scaleb[] = &quot;scaleb($self, x, y, /)\n--\n\nReturn the first operand after adding the second value to its exp.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_scaleb" title='doc_ctx_scaleb' data-ref="doc_ctx_scaleb">doc_ctx_scaleb</dfn>,</td></tr>
+<tr><th id="836">836</th><td><q>"scaleb($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="837">837</th><td><q>Return the first operand after adding the second value to its exp.\n\</q></td></tr>
+<tr><th id="838">838</th><td><q>\n"</q>);</td></tr>
+<tr><th id="839">839</th><td></td></tr>
+<tr><th id="840">840</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_shift[] = &quot;shift($self, x, y, /)\n--\n\nReturn a copy of x, shifted by y places.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_shift" title='doc_ctx_shift' data-ref="doc_ctx_shift">doc_ctx_shift</dfn>,</td></tr>
+<tr><th id="841">841</th><td><q>"shift($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="842">842</th><td><q>Return a copy of x, shifted by y places.\n\</q></td></tr>
+<tr><th id="843">843</th><td><q>\n"</q>);</td></tr>
+<tr><th id="844">844</th><td></td></tr>
+<tr><th id="845">845</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_sqrt[] = &quot;sqrt($self, x, /)\n--\n\nSquare root of a non-negative number to context precision.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_sqrt" title='doc_ctx_sqrt' data-ref="doc_ctx_sqrt">doc_ctx_sqrt</dfn>,</td></tr>
+<tr><th id="846">846</th><td><q>"sqrt($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="847">847</th><td><q>Square root of a non-negative number to context precision.\n\</q></td></tr>
+<tr><th id="848">848</th><td><q>\n"</q>);</td></tr>
+<tr><th id="849">849</th><td></td></tr>
+<tr><th id="850">850</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_subtract[] = &quot;subtract($self, x, y, /)\n--\n\nReturn the difference between x and y.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_subtract" title='doc_ctx_subtract' data-ref="doc_ctx_subtract">doc_ctx_subtract</dfn>,</td></tr>
+<tr><th id="851">851</th><td><q>"subtract($self, x, y, /)\n--\n\n\</q></td></tr>
+<tr><th id="852">852</th><td><q>Return the difference between x and y.\n\</q></td></tr>
+<tr><th id="853">853</th><td><q>\n"</q>);</td></tr>
+<tr><th id="854">854</th><td></td></tr>
+<tr><th id="855">855</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_to_eng_string[] = &quot;to_eng_string($self, x, /)\n--\n\nConvert a number to a string, using engineering notation.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_to_eng_string" title='doc_ctx_to_eng_string' data-ref="doc_ctx_to_eng_string">doc_ctx_to_eng_string</dfn>,</td></tr>
+<tr><th id="856">856</th><td><q>"to_eng_string($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="857">857</th><td><q>Convert a number to a string, using engineering notation.\n\</q></td></tr>
+<tr><th id="858">858</th><td><q>\n"</q>);</td></tr>
+<tr><th id="859">859</th><td></td></tr>
+<tr><th id="860">860</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_to_integral[] = &quot;to_integral($self, x, /)\n--\n\nIdentical to to_integral_value(x).\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_to_integral" title='doc_ctx_to_integral' data-ref="doc_ctx_to_integral">doc_ctx_to_integral</dfn>,</td></tr>
+<tr><th id="861">861</th><td><q>"to_integral($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="862">862</th><td><q>Identical to to_integral_value(x).\n\</q></td></tr>
+<tr><th id="863">863</th><td><q>\n"</q>);</td></tr>
+<tr><th id="864">864</th><td></td></tr>
+<tr><th id="865">865</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_to_integral_exact[] = &quot;to_integral_exact($self, x, /)\n--\n\nRound to an integer. Signal if the result is rounded or inexact.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_to_integral_exact" title='doc_ctx_to_integral_exact' data-ref="doc_ctx_to_integral_exact">doc_ctx_to_integral_exact</dfn>,</td></tr>
+<tr><th id="866">866</th><td><q>"to_integral_exact($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="867">867</th><td><q>Round to an integer. Signal if the result is rounded or inexact.\n\</q></td></tr>
+<tr><th id="868">868</th><td><q>\n"</q>);</td></tr>
+<tr><th id="869">869</th><td></td></tr>
+<tr><th id="870">870</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_to_integral_value[] = &quot;to_integral_value($self, x, /)\n--\n\nRound to an integer.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_to_integral_value" title='doc_ctx_to_integral_value' data-ref="doc_ctx_to_integral_value">doc_ctx_to_integral_value</dfn>,</td></tr>
+<tr><th id="871">871</th><td><q>"to_integral_value($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="872">872</th><td><q>Round to an integer.\n\</q></td></tr>
+<tr><th id="873">873</th><td><q>\n"</q>);</td></tr>
+<tr><th id="874">874</th><td></td></tr>
+<tr><th id="875">875</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char doc_ctx_to_sci_string[] = &quot;to_sci_string($self, x, /)\n--\n\nConvert a number to a string using scientific notation.\n\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="doc_ctx_to_sci_string" title='doc_ctx_to_sci_string' data-ref="doc_ctx_to_sci_string">doc_ctx_to_sci_string</dfn>,</td></tr>
+<tr><th id="876">876</th><td><q>"to_sci_string($self, x, /)\n--\n\n\</q></td></tr>
+<tr><th id="877">877</th><td><q>Convert a number to a string using scientific notation.\n\</q></td></tr>
+<tr><th id="878">878</th><td><q>\n"</q>);</td></tr>
+<tr><th id="879">879</th><td></td></tr>
+<tr><th id="880">880</th><td></td></tr>
+<tr><th id="881">881</th><td><u>#<span data-ppcond="7">endif</span> /* DOCSTRINGS_H */</u></td></tr>
+<tr><th id="882">882</th><td></td></tr>
+<tr><th id="883">883</th><td></td></tr>
+<tr><th id="884">884</th><td></td></tr>
+<tr><th id="885">885</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='_decimal.c.html'>codebrowser/Modules/_decimal/_decimal.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

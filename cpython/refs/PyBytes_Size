@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/bytesobject.h' l='58' type='Py_ssize_t PyBytes_Size(PyObject * )'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='213' u='c' c='PyCurses_ConvertToChtype'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='306' u='c' c='PyCurses_ConvertToCchar_t'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1705' u='c' c='_multibytecodec_MultibyteStreamWriter_reset_impl'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='848' u='c' c='mmap_ass_item'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1467' u='c' c='idna_converter'/>
+<use f='codebrowser/Modules/termios.c' l='179' u='c' c='termios_tcsetattr'/>
+<use f='codebrowser/Modules/zipimport.c' l='1283' u='c' c='unmarshal_code'/>
+<use f='codebrowser/Modules/zipimport.c' l='1340' u='c' c='normalize_line_endings'/>
+<def f='codebrowser/Objects/bytesobject.c' l='1269' ll='1278' type='Py_ssize_t PyBytes_Size(PyObject * op)'/>
+<doc f='codebrowser/Objects/bytesobject.c' l='1267'>/* object api */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='763' u='c' c='PyCode_Addr2Line'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8484' u='c' c='charmap_encoding_error'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8486' u='c' c='charmap_encoding_error'/>
+<use f='codebrowser/Python/getargs.c' l='889' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/marshal.c' l='108' u='c' c='w_reserve'/>
+<use f='codebrowser/Python/marshal.c' l='1611' u='c' c='PyMarshal_WriteObjectToString'/>

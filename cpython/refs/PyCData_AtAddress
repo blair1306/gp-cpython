@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='133' type='PyObject * PyCData_AtAddress(PyObject * type, void * buf)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='511' u='c' c='CDataType_from_address'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='574' u='c' c='CDataType_from_buffer'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='687' u='c' c='CDataType_in_dll'/>
+<def f='codebrowser/Modules/_ctypes/_ctypes.c' l='2810' ll='2833' type='PyObject * PyCData_AtAddress(PyObject * type, void * buf)'/>
+<doc f='codebrowser/Modules/_ctypes/_ctypes.c' l='2807'>/*
+ Box a memory block into a CData instance.
+*/</doc>

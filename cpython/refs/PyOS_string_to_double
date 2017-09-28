@@ -1,0 +1,44 @@
+<dec f='codebrowser/Include/pystrtod.h' l='9' type='double PyOS_string_to_double(const char * str, char ** endptr, PyObject * overflow_exception)'/>
+<use f='codebrowser/Modules/_pickle.c' l='4831' u='c' c='load_float'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2411' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2411' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2411' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2411' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2411' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2420' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2420' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2420' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2420' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2420' u='c' c='test_string_to_double'/>
+<use f='codebrowser/Objects/complexobject.c' l='824' u='c' c='complex_from_string_inner'/>
+<use f='codebrowser/Objects/complexobject.c' l='837' u='c' c='complex_from_string_inner'/>
+<use f='codebrowser/Objects/floatobject.c' l='151' u='c' c='float_from_string_inner'/>
+<use f='codebrowser/Python/ast.c' l='4100' u='c' c='parsenumber_raw'/>
+<use f='codebrowser/Python/ast.c' l='4107' u='c' c='parsenumber_raw'/>
+<use f='codebrowser/Python/marshal.c' l='1007' u='c' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1046' u='c' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1060' u='c' c='r_object'/>
+<def f='codebrowser/Python/pystrtod.c' l='336' ll='371' type='double PyOS_string_to_double(const char * s, char ** endptr, PyObject * overflow_exception)'/>
+<doc f='codebrowser/Python/pystrtod.c' l='312'>/* PyOS_string_to_double converts a null-terminated byte string s (interpreted
+   as a string of ASCII characters) to a float.  The string should not have
+   leading or trailing whitespace.  The conversion is independent of the
+   current locale.
+
+   If endptr is NULL, try to convert the whole string.  Raise ValueError and
+   return -1.0 if the string is not a valid representation of a floating-point
+   number.
+
+   If endptr is non-NULL, try to convert as much of the string as possible.
+   If no initial segment of the string is the valid representation of a
+   floating-point number then *endptr is set to point to the beginning of the
+   string, -1.0 is returned and again ValueError is raised.
+
+   On overflow (e.g., when trying to convert &apos;1e500&apos; on an IEEE 754 machine),
+   if overflow_exception is NULL then +-Py_HUGE_VAL is returned, and no Python
+   exception is raised.  Otherwise, overflow_exception should point to
+   a Python exception, this exception will be raised, -1.0 will be returned,
+   and *endptr will point just past the end of the converted value.
+
+   If any other failure occurs (for example lack of memory), -1.0 is returned
+   and the appropriate Python exception will have been set.
+*/</doc>

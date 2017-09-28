@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='768' type='void mpd_set_sign(mpd_t * result, uint8_t sign)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2339' u='c' c='PyDecType_FromFloatExact'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='592' ll='597' macro='1' type='void mpd_set_sign(mpd_t * result, uint8_t sign)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2012' u='c' c='mpd_qcopy_sign'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6144' u='c' c='_mpd_qpow_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6187' u='c' c='_mpd_qpow_mpd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6775' u='c' c='mpd_qpowmod'/>

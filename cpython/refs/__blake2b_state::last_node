@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='69' type='uint8_t'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='89' u='r' c='blake2b_set_lastblock'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='97' u='r' c='blake2b_clear_lastblock'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='222' u='w' c='py_blake2b_new_impl'/>
+<offset>2880</offset>

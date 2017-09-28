@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='1068' type='void _PyDebugAllocatorStats(FILE * out, const char * block_name, int num_blocks, size_t sizeof_block)'/>
+<use f='codebrowser/Objects/classobject.c' l='402' u='c' c='_PyMethod_DebugMallocStats'/>
+<use f='codebrowser/Objects/dictobject.c' l='275' u='c' c='_PyDict_DebugMallocStats'/>
+<use f='codebrowser/Objects/floatobject.c' l='2035' u='c' c='_PyFloat_DebugMallocStats'/>
+<use f='codebrowser/Objects/frameobject.c' l='1007' u='c' c='_PyFrame_DebugMallocStats'/>
+<use f='codebrowser/Objects/listobject.c' l='136' u='c' c='_PyList_DebugMallocStats'/>
+<use f='codebrowser/Objects/methodobject.c' l='331' u='c' c='_PyCFunction_DebugMallocStats'/>
+<def f='codebrowser/Objects/obmalloc.c' l='2206' ll='2218' type='void _PyDebugAllocatorStats(FILE * out, const char * block_name, int num_blocks, size_t sizeof_block)'/>
+<use f='codebrowser/Objects/tupleobject.c' l='75' u='c' c='_PyTuple_DebugMallocStats'/>

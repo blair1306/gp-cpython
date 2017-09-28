@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='565' type='XML_Bool'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='startParsing'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='initializeEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='processXmlDecl'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='handleUnknownEncoding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='670' u='r' c='getAttributeId'/>
+<offset>3712</offset>

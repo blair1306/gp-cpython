@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/symtable.h' l='13' type='2'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='97' u='r' c='PyInit__symtable'/>
+<use f='codebrowser/Python/symtable.c' l='272' u='r' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='953' u='r' c='symtable_enter_block'/>
+<use f='codebrowser/Python/symtable.c' l='1661' u='r' c='symtable_visit_alias'/>

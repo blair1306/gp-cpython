@@ -1,0 +1,18 @@
+<dec f='include/stdlib.h' l='515' type='void abort()'/>
+<doc f='include/stdlib.h' l='514'>/* Abort execution and generate a core-dump.  */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='595' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='604' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='620' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='59' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='493' u='c' c='_mpd_to_string'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1287' u='c' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1781' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3955' u='c' c='mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4000' u='c' c='mpd_qdivint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6921' u='c' c='mpd_qrem'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6962' u='c' c='mpd_qrem_near'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='95' u='c' c='swap_halfrows_pow2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/transpose.c' l='270' u='c' c='transpose_pow2'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1052' u='c' c='faulthandler_sigabrt'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10535' u='c' c='os_abort_impl'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1849' u='c' c='Py_FatalError'/>

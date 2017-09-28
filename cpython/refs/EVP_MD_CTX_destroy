@@ -1,0 +1,10 @@
+<dec f='include/openssl/evp.h' l='589' type='void EVP_MD_CTX_destroy(EVP_MD_CTX * ctx)'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_dealloc'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_digest'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_hexdigest'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_new_md5'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_new_sha1'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_new_sha224'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_new_sha256'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_new_sha384'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='43' u='c' c='EVP_new_sha512'/>

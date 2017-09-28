@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pytime.h' l='32' type='2'/>
+<doc f='codebrowser/Include/pytime.h' l='30'>/* Round to nearest with ties going to nearest even integer.
+       For example, used to round from a Python float. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4359' u='r' c='datetime_from_timestamp'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3007' u='r' c='check_time_rounding'/>
+<use f='codebrowser/Python/pytime.c' l='87' u='r' c='_PyTime_Round'/>
+<use f='codebrowser/Python/pytime.c' l='370' u='r' c='_PyTime_Divide'/>

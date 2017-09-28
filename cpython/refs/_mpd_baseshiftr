@@ -1,0 +1,31 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='68' type='mpd_uint_t _mpd_baseshiftr(mpd_uint_t * dest, mpd_uint_t * src, mpd_size_t slen, mpd_size_t shift)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='494' ll='550' type='mpd_uint_t _mpd_baseshiftr(mpd_uint_t * dest, mpd_uint_t * src, mpd_size_t slen, mpd_size_t shift)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='469'>/*
+ * Right shift of src by &apos;shift&apos; digits; src may equal dest.
+ * Assumption: srcdigits-shift &gt; 0.
+ *
+ *  dest := area with space for srcdigits-shift digits.
+ *  src  := coefficient with length &apos;slen&apos;.
+ *
+ * The case splits in the function rely on the following equations:
+ *
+ *  Let msdigits denote the number of digits in the most significant
+ *  word of src. Then 1 &lt;= msdigits &lt;= rdigits.
+ *
+ *  1) shift = q * rdigits + r
+ *  2) srcdigits = qsrc * rdigits + msdigits
+ *  3) destdigits = srcdigits - shift
+ *                = qsrc * rdigits + msdigits - (q * rdigits + r)
+ *                = (qsrc - q) * rdigits + msdigits - r
+ *
+ * Since destdigits &gt; 0 and 1 &lt;= msdigits &lt;= rdigits:
+ *
+ *  4) qsrc &gt;= q
+ *  5) qsrc == q  ==&gt;  msdigits &gt; r
+ *
+ * The result has slen-q words if msdigits &gt; r, slen-q-1 words otherwise.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2474' u='c' c='mpd_qsshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2508' u='c' c='mpd_qshiftr_inplace'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2550' u='c' c='mpd_qshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2558' u='c' c='mpd_qshiftr'/>

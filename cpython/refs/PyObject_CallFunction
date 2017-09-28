@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/abstract.h' l='296' type='PyObject * PyObject_CallFunction(PyObject * callable, const char * format)'/>
+<doc f='codebrowser/Include/abstract.h' l='286'>/* Call a callable Python object, callable, with a variable number of C
+   arguments. The C arguments are described using a mkvalue-style format
+   string.
+
+   The format may be NULL, indicating that no arguments are provided.
+
+   Returns the result of the call on success, or NULL on failure.
+
+   This is the equivalent of the Python expression:
+   callable(arg1, arg2, ...). */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='544' u='c' c='deque_copy'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='900' u='c' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1700' u='c' c='POINTER'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1718' u='c' c='POINTER'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2577' u='c' c='date_local_from_object'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2642' u='c' c='date_fromordinal'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4507' u='c' c='datetime_combine'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5731' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1110' u='c' c='lru_cache_cache_info'/>
+<use f='codebrowser/Modules/_json.c' l='334' u='c' c='raise_errmsg'/>
+<use f='codebrowser/Modules/_lsprof.c' l='550' u='c' c='statsForSubEntry'/>
+<use f='codebrowser/Modules/_lsprof.c' l='588' u='c' c='statsForEntry'/>
+<use f='codebrowser/Modules/_pickle.c' l='1114' u='c' c='_Unpickler_SkipConsumed'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1118' u='c' c='invoke_gc_callback'/>
+<use f='codebrowser/Modules/pyexpat.c' l='769' u='c' c='readinst'/>
+<use f='codebrowser/Modules/readline.c' l='953' u='c' c='on_completion_display_matches_hook'/>
+<use f='codebrowser/Modules/readline.c' l='1010' u='c' c='on_completion'/>
+<use f='codebrowser/Modules/zipimport.c' l='1234' u='c' c='get_data'/>
+<def f='codebrowser/Objects/call.c' l='965' ll='976' type='PyObject * PyObject_CallFunction(PyObject * callable, const char * format)'/>
+<use f='codebrowser/Python/Python-ast.c' l='681' u='c' c='make_type'/>
+<use f='codebrowser/Python/ceval.c' l='4167' u='c' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/codecs.c' l='285' u='c' c='codec_makeincrementalcodec'/>
+<use f='codebrowser/Python/codecs.c' l='323' u='c' c='codec_getstreamcodec'/>
+<use f='codebrowser/Python/errors.c' l='874' u='c' c='PyErr_NewException'/>
+<use f='codebrowser/Python/import.c' l='1754' u='c' c='PyImport_Import'/>
+<use f='codebrowser/Python/pythonrun.c' l='328' u='c' c='set_main_loader'/>

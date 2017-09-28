@@ -1,0 +1,6 @@
+<dec f='include/curses.h' l='802' type='int waddnstr(WINDOW * , const char * , int )'/>
+<doc f='include/curses.h' l='802'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='713' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='715' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='790' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='792' u='c' c='PyCursesWindow_AddNStr'/>

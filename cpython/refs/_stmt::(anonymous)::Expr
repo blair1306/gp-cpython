@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/Python-ast.h' l='204' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:202:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1721' u='m' c='_Py_Expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3057' u='m' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='504' u='m' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='3535' u='m' c='docstring_from_stmts'/>
+<use f='codebrowser/Python/ast.c' l='3536' u='m' c='docstring_from_stmts'/>
+<use f='codebrowser/Python/compile.c' l='2958' u='m' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1337' u='m' c='symtable_visit_stmt'/>

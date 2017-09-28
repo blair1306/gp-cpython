@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='65' type='Py_ssize_t _PyWeakref_GetWeakrefCount(PyWeakReference * head)'/>
+<use f='codebrowser/Modules/_weakref.c' l='34' u='c' c='_weakref_getweakrefcount_impl'/>
+<use f='codebrowser/Modules/_weakref.c' l='89' u='c' c='weakref_getweakrefs'/>
+<def f='codebrowser/Objects/weakrefobject.c' l='9' ll='19' type='Py_ssize_t _PyWeakref_GetWeakrefCount(PyWeakReference * head)'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='906' u='c' c='PyObject_ClearWeakRefs'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='99' type='41'/>
+<doc f='codebrowser/Modules/expat/expat.h' l='98'>/* Added in 2.2.1. */</doc>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1523' u='r' c='PyExpat_XML_UseForeignDTD'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1881' u='r' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2268' u='r' c='PyExpat_XML_GetErrorCode'/>

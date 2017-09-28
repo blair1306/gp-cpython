@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/codecs.h' l='65' type='int PyCodec_KnownEncoding(const char * encoding)'/>
+<doc f='codebrowser/Include/codecs.h' l='58'>/* Codec registry encoding check API.
+
+   Returns 1/0 depending on whether there is a registered codec for
+   the given encoding.
+
+*/</doc>
+<def f='codebrowser/Python/codecs.c' l='217' ll='230' type='int PyCodec_KnownEncoding(const char * encoding)'/>
+<doc f='codebrowser/Python/codecs.c' l='215'>/* Codec registry encoding check API. */</doc>

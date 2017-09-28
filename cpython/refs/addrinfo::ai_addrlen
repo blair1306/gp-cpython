@@ -1,0 +1,9 @@
+<dec f='include/netdb.h' l='573' type='socklen_t'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1001' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1002' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1092' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1093' u='r' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5979' u='r' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6087' u='r' c='socket_getnameinfo'/>
+<offset>128</offset>
+<doc f='include/netdb.h' l='573'>/* Length of socket address.  */</doc>

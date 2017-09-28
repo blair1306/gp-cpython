@@ -1,0 +1,6 @@
+<dec f='include/openssl/bio.h' l='594' type='size_t BIO_ctrl_pending(BIO * b)'/>
+<doc f='include/openssl/bio.h' l='593'>/* ...pending macros have inappropriate return type */</doc>
+<use f='codebrowser/Modules/_ssl.c' l='4121' u='c' c='memory_bio_get_pending'/>
+<use f='codebrowser/Modules/_ssl.c' l='4130' u='c' c='memory_bio_get_eof'/>
+<use f='codebrowser/Modules/_ssl.c' l='4157' u='c' c='_ssl_MemoryBIO_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4157' u='c' c='_ssl_MemoryBIO_read_impl'/>

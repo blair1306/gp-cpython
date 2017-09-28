@@ -1,0 +1,12 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='193' ll='200' type='int _mpd_isallzero(const mpd_uint_t * data, mpd_ssize_t len)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='392' u='c' c='_mpd_basedivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='522' u='c' c='_mpd_baseshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='539' u='c' c='_mpd_baseshiftr'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='189'>/*
+ * Test if all words from data[len-1] to data[0] are zero. If len is 0, nothing
+ * is tested and the coefficient is regarded as &quot;all zero&quot;.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='959' u='c' c='mpd_coeff_ispow10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2090' u='c' c='_mpd_basecmp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2438' u='c' c='_mpd_get_rnd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2442' u='c' c='_mpd_get_rnd'/>

@@ -1,0 +1,38 @@
+<def f='codebrowser/Parser/tokenizer.h' l='22' ll='75'/>
+<size>1008</size>
+<doc f='codebrowser/Parser/tokenizer.h' l='21'>/* Tokenizer state */</doc>
+<mbr r='tok_state::buf' o='0' t='char *'/>
+<mbr r='tok_state::cur' o='64' t='char *'/>
+<mbr r='tok_state::inp' o='128' t='char *'/>
+<mbr r='tok_state::end' o='192' t='char *'/>
+<mbr r='tok_state::start' o='256' t='char *'/>
+<mbr r='tok_state::done' o='320' t='int'/>
+<mbr r='tok_state::fp' o='384' t='FILE *'/>
+<mbr r='tok_state::tabsize' o='448' t='int'/>
+<mbr r='tok_state::indent' o='480' t='int'/>
+<mbr r='tok_state::indstack' o='512' t='int [100]'/>
+<mbr r='tok_state::atbol' o='3712' t='int'/>
+<mbr r='tok_state::pendin' o='3744' t='int'/>
+<mbr r='tok_state::prompt' o='3776' t='const char *'/>
+<mbr r='tok_state::nextprompt' o='3840' t='const char *'/>
+<mbr r='tok_state::lineno' o='3904' t='int'/>
+<mbr r='tok_state::level' o='3936' t='int'/>
+<mbr r='tok_state::filename' o='3968' t='PyObject *'/>
+<mbr r='tok_state::altwarning' o='4032' t='int'/>
+<mbr r='tok_state::alterror' o='4064' t='int'/>
+<mbr r='tok_state::alttabsize' o='4096' t='int'/>
+<mbr r='tok_state::altindstack' o='4128' t='int [100]'/>
+<mbr r='tok_state::decoding_state' o='7328' t='enum decoding_state'/>
+<mbr r='tok_state::decoding_erred' o='7360' t='int'/>
+<mbr r='tok_state::read_coding_spec' o='7392' t='int'/>
+<mbr r='tok_state::encoding' o='7424' t='char *'/>
+<mbr r='tok_state::cont_line' o='7488' t='int'/>
+<mbr r='tok_state::line_start' o='7552' t='const char *'/>
+<mbr r='tok_state::decoding_readline' o='7616' t='PyObject *'/>
+<mbr r='tok_state::decoding_buffer' o='7680' t='PyObject *'/>
+<mbr r='tok_state::enc' o='7744' t='const char *'/>
+<mbr r='tok_state::str' o='7808' t='const char *'/>
+<mbr r='tok_state::input' o='7872' t='const char *'/>
+<mbr r='tok_state::async_def' o='7936' t='int'/>
+<mbr r='tok_state::async_def_indent' o='7968' t='int'/>
+<mbr r='tok_state::async_def_nl' o='8000' t='int'/>

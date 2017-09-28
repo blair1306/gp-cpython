@@ -1,0 +1,795 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_iomodule.c source code [codebrowser/Modules/_io/_iomodule.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_io/_iomodule.c'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>_io</a>/<a href='_iomodule.c.html'>_iomodule.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>    An implementation of the new I/O lib as defined by PEP 3116 - "New I/O"</i></td></tr>
+<tr><th id="3">3</th><td><i></i></td></tr>
+<tr><th id="4">4</th><td><i>    Classes defined here: UnsupportedOperation, BlockingIOError.</i></td></tr>
+<tr><th id="5">5</th><td><i>    Functions defined here: open().</i></td></tr>
+<tr><th id="6">6</th><td><i></i></td></tr>
+<tr><th id="7">7</th><td><i>    Mostly written by Amaury Forgeot d'Arc</i></td></tr>
+<tr><th id="8">8</th><td><i>*/</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/PY_SSIZE_T_CLEAN" data-ref="_M/PY_SSIZE_T_CLEAN">PY_SSIZE_T_CLEAN</dfn></u></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="12">12</th><td><u>#include <a href="../../Include/structmember.h.html">"structmember.h"</a></u></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="_iomodule.h.html">"_iomodule.h"</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><u>#<span data-ppcond="15">ifdef</span> <a class="macro" href="../../pyconfig.h.html#1071" data-ref="_M/HAVE_SYS_TYPES_H">HAVE_SYS_TYPES_H</a></u></td></tr>
+<tr><th id="16">16</th><td><u>#include <a href="../../../include/x86_64-linux-gnu/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="17">17</th><td><u>#<span data-ppcond="15">endif</span> /* HAVE_SYS_TYPES_H */</u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="19">ifdef</span> <a class="macro" href="../../pyconfig.h.html#1053" data-ref="_M/HAVE_SYS_STAT_H">HAVE_SYS_STAT_H</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#include <a href="../../../include/x86_64-linux-gnu/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="19">endif</span> /* HAVE_SYS_STAT_H */</u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#include &lt;consoleapi.h&gt;</u></td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>/* Various interned strings */</i></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_close" title='_PyIO_str_close' data-ref="_PyIO_str_close">_PyIO_str_close</dfn>;</td></tr>
+<tr><th id="30">30</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_closed" title='_PyIO_str_closed' data-ref="_PyIO_str_closed">_PyIO_str_closed</dfn>;</td></tr>
+<tr><th id="31">31</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_decode" title='_PyIO_str_decode' data-ref="_PyIO_str_decode">_PyIO_str_decode</dfn>;</td></tr>
+<tr><th id="32">32</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_encode" title='_PyIO_str_encode' data-ref="_PyIO_str_encode">_PyIO_str_encode</dfn>;</td></tr>
+<tr><th id="33">33</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_fileno" title='_PyIO_str_fileno' data-ref="_PyIO_str_fileno">_PyIO_str_fileno</dfn>;</td></tr>
+<tr><th id="34">34</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_flush" title='_PyIO_str_flush' data-ref="_PyIO_str_flush">_PyIO_str_flush</dfn>;</td></tr>
+<tr><th id="35">35</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_getstate" title='_PyIO_str_getstate' data-ref="_PyIO_str_getstate">_PyIO_str_getstate</dfn>;</td></tr>
+<tr><th id="36">36</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_isatty" title='_PyIO_str_isatty' data-ref="_PyIO_str_isatty">_PyIO_str_isatty</dfn>;</td></tr>
+<tr><th id="37">37</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_newlines" title='_PyIO_str_newlines' data-ref="_PyIO_str_newlines">_PyIO_str_newlines</dfn>;</td></tr>
+<tr><th id="38">38</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_nl" title='_PyIO_str_nl' data-ref="_PyIO_str_nl">_PyIO_str_nl</dfn>;</td></tr>
+<tr><th id="39">39</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_read" title='_PyIO_str_read' data-ref="_PyIO_str_read">_PyIO_str_read</dfn>;</td></tr>
+<tr><th id="40">40</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_read1" title='_PyIO_str_read1' data-ref="_PyIO_str_read1">_PyIO_str_read1</dfn>;</td></tr>
+<tr><th id="41">41</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_readable" title='_PyIO_str_readable' data-ref="_PyIO_str_readable">_PyIO_str_readable</dfn>;</td></tr>
+<tr><th id="42">42</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_readall" title='_PyIO_str_readall' data-ref="_PyIO_str_readall">_PyIO_str_readall</dfn>;</td></tr>
+<tr><th id="43">43</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_readinto" title='_PyIO_str_readinto' data-ref="_PyIO_str_readinto">_PyIO_str_readinto</dfn>;</td></tr>
+<tr><th id="44">44</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_readline" title='_PyIO_str_readline' data-ref="_PyIO_str_readline">_PyIO_str_readline</dfn>;</td></tr>
+<tr><th id="45">45</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_reset" title='_PyIO_str_reset' data-ref="_PyIO_str_reset">_PyIO_str_reset</dfn>;</td></tr>
+<tr><th id="46">46</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_seek" title='_PyIO_str_seek' data-ref="_PyIO_str_seek">_PyIO_str_seek</dfn>;</td></tr>
+<tr><th id="47">47</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_seekable" title='_PyIO_str_seekable' data-ref="_PyIO_str_seekable">_PyIO_str_seekable</dfn>;</td></tr>
+<tr><th id="48">48</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_setstate" title='_PyIO_str_setstate' data-ref="_PyIO_str_setstate">_PyIO_str_setstate</dfn>;</td></tr>
+<tr><th id="49">49</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_tell" title='_PyIO_str_tell' data-ref="_PyIO_str_tell">_PyIO_str_tell</dfn>;</td></tr>
+<tr><th id="50">50</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_truncate" title='_PyIO_str_truncate' data-ref="_PyIO_str_truncate">_PyIO_str_truncate</dfn>;</td></tr>
+<tr><th id="51">51</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_writable" title='_PyIO_str_writable' data-ref="_PyIO_str_writable">_PyIO_str_writable</dfn>;</td></tr>
+<tr><th id="52">52</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_str_write" title='_PyIO_str_write' data-ref="_PyIO_str_write">_PyIO_str_write</dfn>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_empty_str" title='_PyIO_empty_str' data-ref="_PyIO_empty_str">_PyIO_empty_str</dfn>;</td></tr>
+<tr><th id="55">55</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="_PyIO_empty_bytes" title='_PyIO_empty_bytes' data-ref="_PyIO_empty_bytes">_PyIO_empty_bytes</dfn>;</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char module_doc[] = &quot;The io module provides the Python interfaces to stream handling. The\n&quot;&quot;builtin open function is defined in this module.\n&quot;&quot;\n&quot;&quot;At the top of the I/O hierarchy is the abstract base class IOBase. It\n&quot;&quot;defines the basic interface to a stream. Note, however, that there is no\n&quot;&quot;separation between reading and writing to streams; implementations are\n&quot;&quot;allowed to raise an OSError if they do not support a given operation.\n&quot;&quot;\n&quot;&quot;Extending IOBase is RawIOBase which deals simply with the reading and\n&quot;&quot;writing of raw bytes to a stream. FileIO subclasses RawIOBase to provide\n&quot;&quot;an interface to OS files.\n&quot;&quot;\n&quot;&quot;BufferedIOBase deals with buffering on a raw byte stream (RawIOBase). Its\n&quot;&quot;subclasses, BufferedWriter, BufferedReader, and BufferedRWPair buffer\n&quot;&quot;streams that are readable, writable, and both respectively.\n&quot;&quot;BufferedRandom provides a buffered interface to random access\n&quot;&quot;streams. BytesIO is a simple stream of in-memory bytes.\n&quot;&quot;\n&quot;&quot;Another IOBase subclass, TextIOBase, deals with the encoding and decoding\n&quot;&quot;of streams into text. TextIOWrapper, which extends it, is a buffered text\n&quot;&quot;interface to a buffered raw stream (`BufferedIOBase`). Finally, StringIO\n&quot;&quot;is an in-memory stream for text.\n&quot;&quot;\n&quot;&quot;Argument names are not part of the specification, and only the arguments\n&quot;&quot;of open() are intended to be used as keyword arguments.\n&quot;&quot;\n&quot;&quot;data:\n&quot;&quot;\n&quot;&quot;DEFAULT_BUFFER_SIZE\n&quot;&quot;\n&quot;&quot;   An int containing the default buffer size used by the module&apos;s buffered\n&quot;&quot;   I/O classes. open() uses the file&apos;s blksize (as obtained by os.stat) if\n&quot;&quot;   possible.\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="module_doc" title='module_doc' data-ref="module_doc">module_doc</dfn>,</td></tr>
+<tr><th id="58">58</th><td><q>"The io module provides the Python interfaces to stream handling. The\n"</q></td></tr>
+<tr><th id="59">59</th><td><q>"builtin open function is defined in this module.\n"</q></td></tr>
+<tr><th id="60">60</th><td><q>"\n"</q></td></tr>
+<tr><th id="61">61</th><td><q>"At the top of the I/O hierarchy is the abstract base class IOBase. It\n"</q></td></tr>
+<tr><th id="62">62</th><td><q>"defines the basic interface to a stream. Note, however, that there is no\n"</q></td></tr>
+<tr><th id="63">63</th><td><q>"separation between reading and writing to streams; implementations are\n"</q></td></tr>
+<tr><th id="64">64</th><td><q>"allowed to raise an OSError if they do not support a given operation.\n"</q></td></tr>
+<tr><th id="65">65</th><td><q>"\n"</q></td></tr>
+<tr><th id="66">66</th><td><q>"Extending IOBase is RawIOBase which deals simply with the reading and\n"</q></td></tr>
+<tr><th id="67">67</th><td><q>"writing of raw bytes to a stream. FileIO subclasses RawIOBase to provide\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"an interface to OS files.\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"BufferedIOBase deals with buffering on a raw byte stream (RawIOBase). Its\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"subclasses, BufferedWriter, BufferedReader, and BufferedRWPair buffer\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"streams that are readable, writable, and both respectively.\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"BufferedRandom provides a buffered interface to random access\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"streams. BytesIO is a simple stream of in-memory bytes.\n"</q></td></tr>
+<tr><th id="75">75</th><td><q>"\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"Another IOBase subclass, TextIOBase, deals with the encoding and decoding\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"of streams into text. TextIOWrapper, which extends it, is a buffered text\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"interface to a buffered raw stream (`BufferedIOBase`). Finally, StringIO\n"</q></td></tr>
+<tr><th id="79">79</th><td><q>"is an in-memory stream for text.\n"</q></td></tr>
+<tr><th id="80">80</th><td><q>"\n"</q></td></tr>
+<tr><th id="81">81</th><td><q>"Argument names are not part of the specification, and only the arguments\n"</q></td></tr>
+<tr><th id="82">82</th><td><q>"of open() are intended to be used as keyword arguments.\n"</q></td></tr>
+<tr><th id="83">83</th><td><q>"\n"</q></td></tr>
+<tr><th id="84">84</th><td><q>"data:\n"</q></td></tr>
+<tr><th id="85">85</th><td><q>"\n"</q></td></tr>
+<tr><th id="86">86</th><td><q>"DEFAULT_BUFFER_SIZE\n"</q></td></tr>
+<tr><th id="87">87</th><td><q>"\n"</q></td></tr>
+<tr><th id="88">88</th><td><q>"   An int containing the default buffer size used by the module's buffered\n"</q></td></tr>
+<tr><th id="89">89</th><td><q>"   I/O classes. open() uses the file's blksize (as obtained by os.stat) if\n"</q></td></tr>
+<tr><th id="90">90</th><td><q>"   possible.\n"</q></td></tr>
+<tr><th id="91">91</th><td>    );</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><i>/*</i></td></tr>
+<tr><th id="95">95</th><td><i> * The main open() function</i></td></tr>
+<tr><th id="96">96</th><td><i> */</i></td></tr>
+<tr><th id="97">97</th><td><i  data-doc="_io_open_impl">/*[clinic input]</i></td></tr>
+<tr><th id="98">98</th><td><i  data-doc="_io_open_impl">module _io</i></td></tr>
+<tr><th id="99">99</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="100">100</th><td><i  data-doc="_io_open_impl">_io.open</i></td></tr>
+<tr><th id="101">101</th><td><i  data-doc="_io_open_impl">    file: object</i></td></tr>
+<tr><th id="102">102</th><td><i  data-doc="_io_open_impl">    mode: str = "r"</i></td></tr>
+<tr><th id="103">103</th><td><i  data-doc="_io_open_impl">    buffering: int = -1</i></td></tr>
+<tr><th id="104">104</th><td><i  data-doc="_io_open_impl">    encoding: str(accept={str, NoneType}) = NULL</i></td></tr>
+<tr><th id="105">105</th><td><i  data-doc="_io_open_impl">    errors: str(accept={str, NoneType}) = NULL</i></td></tr>
+<tr><th id="106">106</th><td><i  data-doc="_io_open_impl">    newline: str(accept={str, NoneType}) = NULL</i></td></tr>
+<tr><th id="107">107</th><td><i  data-doc="_io_open_impl">    closefd: bool(accept={int}) = True</i></td></tr>
+<tr><th id="108">108</th><td><i  data-doc="_io_open_impl">    opener: object = None</i></td></tr>
+<tr><th id="109">109</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="110">110</th><td><i  data-doc="_io_open_impl">Open file and return a stream.  Raise OSError upon failure.</i></td></tr>
+<tr><th id="111">111</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="112">112</th><td><i  data-doc="_io_open_impl">file is either a text or byte string giving the name (and the path</i></td></tr>
+<tr><th id="113">113</th><td><i  data-doc="_io_open_impl">if the file isn't in the current working directory) of the file to</i></td></tr>
+<tr><th id="114">114</th><td><i  data-doc="_io_open_impl">be opened or an integer file descriptor of the file to be</i></td></tr>
+<tr><th id="115">115</th><td><i  data-doc="_io_open_impl">wrapped. (If a file descriptor is given, it is closed when the</i></td></tr>
+<tr><th id="116">116</th><td><i  data-doc="_io_open_impl">returned I/O object is closed, unless closefd is set to False.)</i></td></tr>
+<tr><th id="117">117</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="118">118</th><td><i  data-doc="_io_open_impl">mode is an optional string that specifies the mode in which the file</i></td></tr>
+<tr><th id="119">119</th><td><i  data-doc="_io_open_impl">is opened. It defaults to 'r' which means open for reading in text</i></td></tr>
+<tr><th id="120">120</th><td><i  data-doc="_io_open_impl">mode.  Other common values are 'w' for writing (truncating the file if</i></td></tr>
+<tr><th id="121">121</th><td><i  data-doc="_io_open_impl">it already exists), 'x' for creating and writing to a new file, and</i></td></tr>
+<tr><th id="122">122</th><td><i  data-doc="_io_open_impl">'a' for appending (which on some Unix systems, means that all writes</i></td></tr>
+<tr><th id="123">123</th><td><i  data-doc="_io_open_impl">append to the end of the file regardless of the current seek position).</i></td></tr>
+<tr><th id="124">124</th><td><i  data-doc="_io_open_impl">In text mode, if encoding is not specified the encoding used is platform</i></td></tr>
+<tr><th id="125">125</th><td><i  data-doc="_io_open_impl">dependent: locale.getpreferredencoding(False) is called to get the</i></td></tr>
+<tr><th id="126">126</th><td><i  data-doc="_io_open_impl">current locale encoding. (For reading and writing raw bytes use binary</i></td></tr>
+<tr><th id="127">127</th><td><i  data-doc="_io_open_impl">mode and leave encoding unspecified.) The available modes are:</i></td></tr>
+<tr><th id="128">128</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="129">129</th><td><i  data-doc="_io_open_impl">========= ===============================================================</i></td></tr>
+<tr><th id="130">130</th><td><i  data-doc="_io_open_impl">Character Meaning</i></td></tr>
+<tr><th id="131">131</th><td><i  data-doc="_io_open_impl">--------- ---------------------------------------------------------------</i></td></tr>
+<tr><th id="132">132</th><td><i  data-doc="_io_open_impl">'r'       open for reading (default)</i></td></tr>
+<tr><th id="133">133</th><td><i  data-doc="_io_open_impl">'w'       open for writing, truncating the file first</i></td></tr>
+<tr><th id="134">134</th><td><i  data-doc="_io_open_impl">'x'       create a new file and open it for writing</i></td></tr>
+<tr><th id="135">135</th><td><i  data-doc="_io_open_impl">'a'       open for writing, appending to the end of the file if it exists</i></td></tr>
+<tr><th id="136">136</th><td><i  data-doc="_io_open_impl">'b'       binary mode</i></td></tr>
+<tr><th id="137">137</th><td><i  data-doc="_io_open_impl">'t'       text mode (default)</i></td></tr>
+<tr><th id="138">138</th><td><i  data-doc="_io_open_impl">'+'       open a disk file for updating (reading and writing)</i></td></tr>
+<tr><th id="139">139</th><td><i  data-doc="_io_open_impl">'U'       universal newline mode (deprecated)</i></td></tr>
+<tr><th id="140">140</th><td><i  data-doc="_io_open_impl">========= ===============================================================</i></td></tr>
+<tr><th id="141">141</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="142">142</th><td><i  data-doc="_io_open_impl">The default mode is 'rt' (open for reading text). For binary random</i></td></tr>
+<tr><th id="143">143</th><td><i  data-doc="_io_open_impl">access, the mode 'w+b' opens and truncates the file to 0 bytes, while</i></td></tr>
+<tr><th id="144">144</th><td><i  data-doc="_io_open_impl">'r+b' opens the file without truncation. The 'x' mode implies 'w' and</i></td></tr>
+<tr><th id="145">145</th><td><i  data-doc="_io_open_impl">raises an `FileExistsError` if the file already exists.</i></td></tr>
+<tr><th id="146">146</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="147">147</th><td><i  data-doc="_io_open_impl">Python distinguishes between files opened in binary and text modes,</i></td></tr>
+<tr><th id="148">148</th><td><i  data-doc="_io_open_impl">even when the underlying operating system doesn't. Files opened in</i></td></tr>
+<tr><th id="149">149</th><td><i  data-doc="_io_open_impl">binary mode (appending 'b' to the mode argument) return contents as</i></td></tr>
+<tr><th id="150">150</th><td><i  data-doc="_io_open_impl">bytes objects without any decoding. In text mode (the default, or when</i></td></tr>
+<tr><th id="151">151</th><td><i  data-doc="_io_open_impl">'t' is appended to the mode argument), the contents of the file are</i></td></tr>
+<tr><th id="152">152</th><td><i  data-doc="_io_open_impl">returned as strings, the bytes having been first decoded using a</i></td></tr>
+<tr><th id="153">153</th><td><i  data-doc="_io_open_impl">platform-dependent encoding or using the specified encoding if given.</i></td></tr>
+<tr><th id="154">154</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="155">155</th><td><i  data-doc="_io_open_impl">'U' mode is deprecated and will raise an exception in future versions</i></td></tr>
+<tr><th id="156">156</th><td><i  data-doc="_io_open_impl">of Python.  It has no effect in Python 3.  Use newline to control</i></td></tr>
+<tr><th id="157">157</th><td><i  data-doc="_io_open_impl">universal newlines mode.</i></td></tr>
+<tr><th id="158">158</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="159">159</th><td><i  data-doc="_io_open_impl">buffering is an optional integer used to set the buffering policy.</i></td></tr>
+<tr><th id="160">160</th><td><i  data-doc="_io_open_impl">Pass 0 to switch buffering off (only allowed in binary mode), 1 to select</i></td></tr>
+<tr><th id="161">161</th><td><i  data-doc="_io_open_impl">line buffering (only usable in text mode), and an integer &gt; 1 to indicate</i></td></tr>
+<tr><th id="162">162</th><td><i  data-doc="_io_open_impl">the size of a fixed-size chunk buffer.  When no buffering argument is</i></td></tr>
+<tr><th id="163">163</th><td><i  data-doc="_io_open_impl">given, the default buffering policy works as follows:</i></td></tr>
+<tr><th id="164">164</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="165">165</th><td><i  data-doc="_io_open_impl">* Binary files are buffered in fixed-size chunks; the size of the buffer</i></td></tr>
+<tr><th id="166">166</th><td><i  data-doc="_io_open_impl">  is chosen using a heuristic trying to determine the underlying device's</i></td></tr>
+<tr><th id="167">167</th><td><i  data-doc="_io_open_impl">  "block size" and falling back on `io.DEFAULT_BUFFER_SIZE`.</i></td></tr>
+<tr><th id="168">168</th><td><i  data-doc="_io_open_impl">  On many systems, the buffer will typically be 4096 or 8192 bytes long.</i></td></tr>
+<tr><th id="169">169</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="170">170</th><td><i  data-doc="_io_open_impl">* "Interactive" text files (files for which isatty() returns True)</i></td></tr>
+<tr><th id="171">171</th><td><i  data-doc="_io_open_impl">  use line buffering.  Other text files use the policy described above</i></td></tr>
+<tr><th id="172">172</th><td><i  data-doc="_io_open_impl">  for binary files.</i></td></tr>
+<tr><th id="173">173</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="174">174</th><td><i  data-doc="_io_open_impl">encoding is the name of the encoding used to decode or encode the</i></td></tr>
+<tr><th id="175">175</th><td><i  data-doc="_io_open_impl">file. This should only be used in text mode. The default encoding is</i></td></tr>
+<tr><th id="176">176</th><td><i  data-doc="_io_open_impl">platform dependent, but any encoding supported by Python can be</i></td></tr>
+<tr><th id="177">177</th><td><i  data-doc="_io_open_impl">passed.  See the codecs module for the list of supported encodings.</i></td></tr>
+<tr><th id="178">178</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="179">179</th><td><i  data-doc="_io_open_impl">errors is an optional string that specifies how encoding errors are to</i></td></tr>
+<tr><th id="180">180</th><td><i  data-doc="_io_open_impl">be handled---this argument should not be used in binary mode. Pass</i></td></tr>
+<tr><th id="181">181</th><td><i  data-doc="_io_open_impl">'strict' to raise a ValueError exception if there is an encoding error</i></td></tr>
+<tr><th id="182">182</th><td><i  data-doc="_io_open_impl">(the default of None has the same effect), or pass 'ignore' to ignore</i></td></tr>
+<tr><th id="183">183</th><td><i  data-doc="_io_open_impl">errors. (Note that ignoring encoding errors can lead to data loss.)</i></td></tr>
+<tr><th id="184">184</th><td><i  data-doc="_io_open_impl">See the documentation for codecs.register or run 'help(codecs.Codec)'</i></td></tr>
+<tr><th id="185">185</th><td><i  data-doc="_io_open_impl">for a list of the permitted encoding error strings.</i></td></tr>
+<tr><th id="186">186</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="187">187</th><td><i  data-doc="_io_open_impl">newline controls how universal newlines works (it only applies to text</i></td></tr>
+<tr><th id="188">188</th><td><i  data-doc="_io_open_impl">mode). It can be None, '', '\n', '\r', and '\r\n'.  It works as</i></td></tr>
+<tr><th id="189">189</th><td><i  data-doc="_io_open_impl">follows:</i></td></tr>
+<tr><th id="190">190</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="191">191</th><td><i  data-doc="_io_open_impl">* On input, if newline is None, universal newlines mode is</i></td></tr>
+<tr><th id="192">192</th><td><i  data-doc="_io_open_impl">  enabled. Lines in the input can end in '\n', '\r', or '\r\n', and</i></td></tr>
+<tr><th id="193">193</th><td><i  data-doc="_io_open_impl">  these are translated into '\n' before being returned to the</i></td></tr>
+<tr><th id="194">194</th><td><i  data-doc="_io_open_impl">  caller. If it is '', universal newline mode is enabled, but line</i></td></tr>
+<tr><th id="195">195</th><td><i  data-doc="_io_open_impl">  endings are returned to the caller untranslated. If it has any of</i></td></tr>
+<tr><th id="196">196</th><td><i  data-doc="_io_open_impl">  the other legal values, input lines are only terminated by the given</i></td></tr>
+<tr><th id="197">197</th><td><i  data-doc="_io_open_impl">  string, and the line ending is returned to the caller untranslated.</i></td></tr>
+<tr><th id="198">198</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="199">199</th><td><i  data-doc="_io_open_impl">* On output, if newline is None, any '\n' characters written are</i></td></tr>
+<tr><th id="200">200</th><td><i  data-doc="_io_open_impl">  translated to the system default line separator, os.linesep. If</i></td></tr>
+<tr><th id="201">201</th><td><i  data-doc="_io_open_impl">  newline is '' or '\n', no translation takes place. If newline is any</i></td></tr>
+<tr><th id="202">202</th><td><i  data-doc="_io_open_impl">  of the other legal values, any '\n' characters written are translated</i></td></tr>
+<tr><th id="203">203</th><td><i  data-doc="_io_open_impl">  to the given string.</i></td></tr>
+<tr><th id="204">204</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="205">205</th><td><i  data-doc="_io_open_impl">If closefd is False, the underlying file descriptor will be kept open</i></td></tr>
+<tr><th id="206">206</th><td><i  data-doc="_io_open_impl">when the file is closed. This does not work when a file name is given</i></td></tr>
+<tr><th id="207">207</th><td><i  data-doc="_io_open_impl">and must be True in that case.</i></td></tr>
+<tr><th id="208">208</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="209">209</th><td><i  data-doc="_io_open_impl">A custom opener can be used by passing a callable as *opener*. The</i></td></tr>
+<tr><th id="210">210</th><td><i  data-doc="_io_open_impl">underlying file descriptor for the file object is then obtained by</i></td></tr>
+<tr><th id="211">211</th><td><i  data-doc="_io_open_impl">calling *opener* with (*file*, *flags*). *opener* must return an open</i></td></tr>
+<tr><th id="212">212</th><td><i  data-doc="_io_open_impl">file descriptor (passing os.open as *opener* results in functionality</i></td></tr>
+<tr><th id="213">213</th><td><i  data-doc="_io_open_impl">similar to passing None).</i></td></tr>
+<tr><th id="214">214</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="215">215</th><td><i  data-doc="_io_open_impl">open() returns a file object whose type depends on the mode, and</i></td></tr>
+<tr><th id="216">216</th><td><i  data-doc="_io_open_impl">through which the standard file operations such as reading and writing</i></td></tr>
+<tr><th id="217">217</th><td><i  data-doc="_io_open_impl">are performed. When open() is used to open a file in a text mode ('w',</i></td></tr>
+<tr><th id="218">218</th><td><i  data-doc="_io_open_impl">'r', 'wt', 'rt', etc.), it returns a TextIOWrapper. When used to open</i></td></tr>
+<tr><th id="219">219</th><td><i  data-doc="_io_open_impl">a file in a binary mode, the returned class varies: in read binary</i></td></tr>
+<tr><th id="220">220</th><td><i  data-doc="_io_open_impl">mode, it returns a BufferedReader; in write binary and append binary</i></td></tr>
+<tr><th id="221">221</th><td><i  data-doc="_io_open_impl">modes, it returns a BufferedWriter, and in read/write mode, it returns</i></td></tr>
+<tr><th id="222">222</th><td><i  data-doc="_io_open_impl">a BufferedRandom.</i></td></tr>
+<tr><th id="223">223</th><td><i  data-doc="_io_open_impl"></i></td></tr>
+<tr><th id="224">224</th><td><i  data-doc="_io_open_impl">It is also possible to use a string or bytearray as a file for both</i></td></tr>
+<tr><th id="225">225</th><td><i  data-doc="_io_open_impl">reading and writing. For strings StringIO can be used like a file</i></td></tr>
+<tr><th id="226">226</th><td><i  data-doc="_io_open_impl">opened in a text mode, and for bytes a BytesIO can be used like a file</i></td></tr>
+<tr><th id="227">227</th><td><i  data-doc="_io_open_impl">opened in a binary mode.</i></td></tr>
+<tr><th id="228">228</th><td><i  data-doc="_io_open_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="231">231</th><td><dfn class="tu decl def" id="_io_open_impl" title='_io_open_impl' data-type='PyObject * _io_open_impl(PyObject * module, PyObject * file, const char * mode, int buffering, const char * encoding, const char * errors, const char * newline, int closefd, PyObject * opener)' data-ref="_io_open_impl">_io_open_impl</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="23module" title='module' data-type='PyObject *' data-ref="23module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24file" title='file' data-type='PyObject *' data-ref="24file">file</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="25mode" title='mode' data-type='const char *' data-ref="25mode">mode</dfn>,</td></tr>
+<tr><th id="232">232</th><td>              <em>int</em> <dfn class="local col6 decl" id="26buffering" title='buffering' data-type='int' data-ref="26buffering">buffering</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="27encoding" title='encoding' data-type='const char *' data-ref="27encoding">encoding</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="28errors" title='errors' data-type='const char *' data-ref="28errors">errors</dfn>,</td></tr>
+<tr><th id="233">233</th><td>              <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="29newline" title='newline' data-type='const char *' data-ref="29newline">newline</dfn>, <em>int</em> <dfn class="local col0 decl" id="30closefd" title='closefd' data-type='int' data-ref="30closefd">closefd</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31opener" title='opener' data-type='PyObject *' data-ref="31opener">opener</dfn>)</td></tr>
+<tr><th id="234">234</th><td><i>/*[clinic end generated code: output=aefafc4ce2b46dc0 input=03da2940c8a65871]*/</i></td></tr>
+<tr><th id="235">235</th><td>{</td></tr>
+<tr><th id="236">236</th><td>    <em>unsigned</em> <dfn class="local col2 decl" id="32i" title='i' data-type='unsigned int' data-ref="32i">i</dfn>;</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td>    <em>int</em> <dfn class="local col3 decl" id="33creating" title='creating' data-type='int' data-ref="33creating">creating</dfn> = <var>0</var>, <dfn class="local col4 decl" id="34reading" title='reading' data-type='int' data-ref="34reading">reading</dfn> = <var>0</var>, <dfn class="local col5 decl" id="35writing" title='writing' data-type='int' data-ref="35writing">writing</dfn> = <var>0</var>, <dfn class="local col6 decl" id="36appending" title='appending' data-type='int' data-ref="36appending">appending</dfn> = <var>0</var>, <dfn class="local col7 decl" id="37updating" title='updating' data-type='int' data-ref="37updating">updating</dfn> = <var>0</var>;</td></tr>
+<tr><th id="239">239</th><td>    <em>int</em> <dfn class="local col8 decl" id="38text" title='text' data-type='int' data-ref="38text">text</dfn> = <var>0</var>, <dfn class="local col9 decl" id="39binary" title='binary' data-type='int' data-ref="39binary">binary</dfn> = <var>0</var>, <dfn class="local col0 decl" id="40universal" title='universal' data-type='int' data-ref="40universal">universal</dfn> = <var>0</var>;</td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td>    <em>char</em> <dfn class="local col1 decl" id="41rawmode" title='rawmode' data-type='char [6]' data-ref="41rawmode">rawmode</dfn>[<var>6</var>], *<dfn class="local col2 decl" id="42m" title='m' data-type='char *' data-ref="42m">m</dfn>;</td></tr>
+<tr><th id="242">242</th><td>    <em>int</em> <dfn class="local col3 decl" id="43line_buffering" title='line_buffering' data-type='int' data-ref="43line_buffering">line_buffering</dfn>, <dfn class="local col4 decl" id="44is_number" title='is_number' data-type='int' data-ref="44is_number">is_number</dfn>;</td></tr>
+<tr><th id="243">243</th><td>    <em>long</em> <dfn class="local col5 decl" id="45isatty" title='isatty' data-type='long' data-ref="45isatty">isatty</dfn>;</td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46raw" title='raw' data-type='PyObject *' data-ref="46raw">raw</dfn>, *<dfn class="local col7 decl" id="47modeobj" title='modeobj' data-type='PyObject *' data-ref="47modeobj">modeobj</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, *<dfn class="local col8 decl" id="48buffer" title='buffer' data-type='PyObject *' data-ref="48buffer">buffer</dfn>, *<dfn class="local col9 decl" id="49wrapper" title='wrapper' data-type='PyObject *' data-ref="49wrapper">wrapper</dfn>, *<dfn class="local col0 decl" id="50result" title='result' data-type='PyObject *' data-ref="50result">result</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, *<dfn class="local col1 decl" id="51path_or_fd" title='path_or_fd' data-type='PyObject *' data-ref="51path_or_fd">path_or_fd</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td>    <a class="macro" href="../../Include/object.h.html#150" title="static _Py_Identifier PyId__blksize = { .next = ((void*)0), .string = &quot;_blksize&quot;, .object = ((void*)0) }" data-ref="_M/_Py_IDENTIFIER">_Py_IDENTIFIER</a>(_blksize);</td></tr>
+<tr><th id="248">248</th><td>    <a class="macro" href="../../Include/object.h.html#150" title="static _Py_Identifier PyId_isatty = { .next = ((void*)0), .string = &quot;isatty&quot;, .object = ((void*)0) }" data-ref="_M/_Py_IDENTIFIER">_Py_IDENTIFIER</a>(isatty);</td></tr>
+<tr><th id="249">249</th><td>    <a class="macro" href="../../Include/object.h.html#150" title="static _Py_Identifier PyId_mode = { .next = ((void*)0), .string = &quot;mode&quot;, .object = ((void*)0) }" data-ref="_M/_Py_IDENTIFIER">_Py_IDENTIFIER</a>(mode);</td></tr>
+<tr><th id="250">250</th><td>    <a class="macro" href="../../Include/object.h.html#150" title="static _Py_Identifier PyId_close = { .next = ((void*)0), .string = &quot;close&quot;, .object = ((void*)0) }" data-ref="_M/_Py_IDENTIFIER">_Py_IDENTIFIER</a>(close);</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td>    <a class="local col4 ref" href="#44is_number" title='is_number' data-ref="44is_number">is_number</a> = <a class="ref" href="../../Include/abstract.h.html#PyNumber_Check" title='PyNumber_Check' data-ref="PyNumber_Check">PyNumber_Check</a>(<a class="local col4 ref" href="#24file" title='file' data-ref="24file">file</a>);</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td>    <b>if</b> (<a class="local col4 ref" href="#44is_number" title='is_number' data-ref="44is_number">is_number</a>) {</td></tr>
+<tr><th id="255">255</th><td>        <a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a> = <a class="local col4 ref" href="#24file" title='file' data-ref="24file">file</a>;</td></tr>
+<tr><th id="256">256</th><td>        <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(path_or_fd))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a>);</td></tr>
+<tr><th id="257">257</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="258">258</th><td>        <a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a> = <a class="ref" href="../../Include/osmodule.h.html#PyOS_FSPath" title='PyOS_FSPath' data-ref="PyOS_FSPath">PyOS_FSPath</a>(<a class="local col4 ref" href="#24file" title='file' data-ref="24file">file</a>);</td></tr>
+<tr><th id="259">259</th><td>        <b>if</b> (<a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="260">260</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="261">261</th><td>        }</td></tr>
+<tr><th id="262">262</th><td>    }</td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td>    <b>if</b> (!<a class="local col4 ref" href="#44is_number" title='is_number' data-ref="44is_number">is_number</a> &amp;&amp;</td></tr>
+<tr><th id="265">265</th><td>        !<a class="macro" href="../../Include/unicodeobject.h.html#366" title="((((((PyObject*)(path_or_fd))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 28))) != 0)" data-ref="_M/PyUnicode_Check">PyUnicode_Check</a>(<a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a>) &amp;&amp;</td></tr>
+<tr><th id="266">266</th><td>        !<a class="macro" href="../../Include/bytesobject.h.html#47" title="((((((PyObject*)(path_or_fd))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 27))) != 0)" data-ref="_M/PyBytes_Check">PyBytes_Check</a>(<a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a>)) {</td></tr>
+<tr><th id="267">267</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>, <q>"invalid file: %R"</q>, <a class="local col4 ref" href="#24file" title='file' data-ref="24file">file</a>);</td></tr>
+<tr><th id="268">268</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="269">269</th><td>    }</td></tr>
+<tr><th id="270">270</th><td></td></tr>
+<tr><th id="271">271</th><td>    <i>/* Decode mode */</i></td></tr>
+<tr><th id="272">272</th><td>    <b>for</b> (<a class="local col2 ref" href="#32i" title='i' data-ref="32i">i</a> = <var>0</var>; <a class="local col2 ref" href="#32i" title='i' data-ref="32i">i</a> &lt; <a class="ref" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col5 ref" href="#25mode" title='mode' data-ref="25mode">mode</a>); <a class="local col2 ref" href="#32i" title='i' data-ref="32i">i</a>++) {</td></tr>
+<tr><th id="273">273</th><td>        <em>char</em> <dfn class="local col3 decl" id="53c" title='c' data-type='char' data-ref="53c">c</dfn> = <a class="local col5 ref" href="#25mode" title='mode' data-ref="25mode">mode</a>[<a class="local col2 ref" href="#32i" title='i' data-ref="32i">i</a>];</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>        <b>switch</b> (<a class="local col3 ref" href="#53c" title='c' data-ref="53c">c</a>) {</td></tr>
+<tr><th id="276">276</th><td>        <b>case</b> <kbd>'x'</kbd>:</td></tr>
+<tr><th id="277">277</th><td>            <a class="local col3 ref" href="#33creating" title='creating' data-ref="33creating">creating</a> = <var>1</var>;</td></tr>
+<tr><th id="278">278</th><td>            <b>break</b>;</td></tr>
+<tr><th id="279">279</th><td>        <b>case</b> <kbd>'r'</kbd>:</td></tr>
+<tr><th id="280">280</th><td>            <a class="local col4 ref" href="#34reading" title='reading' data-ref="34reading">reading</a> = <var>1</var>;</td></tr>
+<tr><th id="281">281</th><td>            <b>break</b>;</td></tr>
+<tr><th id="282">282</th><td>        <b>case</b> <kbd>'w'</kbd>:</td></tr>
+<tr><th id="283">283</th><td>            <a class="local col5 ref" href="#35writing" title='writing' data-ref="35writing">writing</a> = <var>1</var>;</td></tr>
+<tr><th id="284">284</th><td>            <b>break</b>;</td></tr>
+<tr><th id="285">285</th><td>        <b>case</b> <kbd>'a'</kbd>:</td></tr>
+<tr><th id="286">286</th><td>            <a class="local col6 ref" href="#36appending" title='appending' data-ref="36appending">appending</a> = <var>1</var>;</td></tr>
+<tr><th id="287">287</th><td>            <b>break</b>;</td></tr>
+<tr><th id="288">288</th><td>        <b>case</b> <kbd>'+'</kbd>:</td></tr>
+<tr><th id="289">289</th><td>            <a class="local col7 ref" href="#37updating" title='updating' data-ref="37updating">updating</a> = <var>1</var>;</td></tr>
+<tr><th id="290">290</th><td>            <b>break</b>;</td></tr>
+<tr><th id="291">291</th><td>        <b>case</b> <kbd>'t'</kbd>:</td></tr>
+<tr><th id="292">292</th><td>            <a class="local col8 ref" href="#38text" title='text' data-ref="38text">text</a> = <var>1</var>;</td></tr>
+<tr><th id="293">293</th><td>            <b>break</b>;</td></tr>
+<tr><th id="294">294</th><td>        <b>case</b> <kbd>'b'</kbd>:</td></tr>
+<tr><th id="295">295</th><td>            <a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a> = <var>1</var>;</td></tr>
+<tr><th id="296">296</th><td>            <b>break</b>;</td></tr>
+<tr><th id="297">297</th><td>        <b>case</b> <kbd>'U'</kbd>:</td></tr>
+<tr><th id="298">298</th><td>            <a class="local col0 ref" href="#40universal" title='universal' data-ref="40universal">universal</a> = <var>1</var>;</td></tr>
+<tr><th id="299">299</th><td>            <a class="local col4 ref" href="#34reading" title='reading' data-ref="34reading">reading</a> = <var>1</var>;</td></tr>
+<tr><th id="300">300</th><td>            <b>break</b>;</td></tr>
+<tr><th id="301">301</th><td>        <b>default</b>:</td></tr>
+<tr><th id="302">302</th><td>            <b>goto</b> <a class="lbl" href="#54invalid_mode" data-ref="54invalid_mode">invalid_mode</a>;</td></tr>
+<tr><th id="303">303</th><td>        }</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td>        <i>/* c must not be duplicated */</i></td></tr>
+<tr><th id="306">306</th><td>        <b>if</b> (<a class="ref" href="../../../include/string.h.html#strchr" title='strchr' data-ref="strchr">strchr</a>(<a class="local col5 ref" href="#25mode" title='mode' data-ref="25mode">mode</a>+<a class="local col2 ref" href="#32i" title='i' data-ref="32i">i</a>+<var>1</var>, <a class="local col3 ref" href="#53c" title='c' data-ref="53c">c</a>)) {</td></tr>
+<tr><th id="307">307</th><td>          <dfn class="lbl" id="54invalid_mode" data-ref="54invalid_mode">invalid_mode</dfn>:</td></tr>
+<tr><th id="308">308</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>, <q>"invalid mode: '%s'"</q>, <a class="local col5 ref" href="#25mode" title='mode' data-ref="25mode">mode</a>);</td></tr>
+<tr><th id="309">309</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="310">310</th><td>        }</td></tr>
+<tr><th id="311">311</th><td></td></tr>
+<tr><th id="312">312</th><td>    }</td></tr>
+<tr><th id="313">313</th><td></td></tr>
+<tr><th id="314">314</th><td>    <a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a> = <a class="local col1 ref" href="#41rawmode" title='rawmode' data-ref="41rawmode">rawmode</a>;</td></tr>
+<tr><th id="315">315</th><td>    <b>if</b> (<a class="local col3 ref" href="#33creating" title='creating' data-ref="33creating">creating</a>)  *(<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a>++) = <kbd>'x'</kbd>;</td></tr>
+<tr><th id="316">316</th><td>    <b>if</b> (<a class="local col4 ref" href="#34reading" title='reading' data-ref="34reading">reading</a>)   *(<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a>++) = <kbd>'r'</kbd>;</td></tr>
+<tr><th id="317">317</th><td>    <b>if</b> (<a class="local col5 ref" href="#35writing" title='writing' data-ref="35writing">writing</a>)   *(<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a>++) = <kbd>'w'</kbd>;</td></tr>
+<tr><th id="318">318</th><td>    <b>if</b> (<a class="local col6 ref" href="#36appending" title='appending' data-ref="36appending">appending</a>) *(<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a>++) = <kbd>'a'</kbd>;</td></tr>
+<tr><th id="319">319</th><td>    <b>if</b> (<a class="local col7 ref" href="#37updating" title='updating' data-ref="37updating">updating</a>)  *(<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a>++) = <kbd>'+'</kbd>;</td></tr>
+<tr><th id="320">320</th><td>    *<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a> = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="321">321</th><td></td></tr>
+<tr><th id="322">322</th><td>    <i>/* Parameters validation */</i></td></tr>
+<tr><th id="323">323</th><td>    <b>if</b> (<a class="local col0 ref" href="#40universal" title='universal' data-ref="40universal">universal</a>) {</td></tr>
+<tr><th id="324">324</th><td>        <b>if</b> (<a class="local col3 ref" href="#33creating" title='creating' data-ref="33creating">creating</a> || <a class="local col5 ref" href="#35writing" title='writing' data-ref="35writing">writing</a> || <a class="local col6 ref" href="#36appending" title='appending' data-ref="36appending">appending</a> || <a class="local col7 ref" href="#37updating" title='updating' data-ref="37updating">updating</a>) {</td></tr>
+<tr><th id="325">325</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="326">326</th><td>                            <q>"mode U cannot be combined with x', 'w', 'a', or '+'"</q>);</td></tr>
+<tr><th id="327">327</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="328">328</th><td>        }</td></tr>
+<tr><th id="329">329</th><td>        <b>if</b> (<a class="ref" href="../../Include/warnings.h.html#PyErr_WarnEx" title='PyErr_WarnEx' data-ref="PyErr_WarnEx">PyErr_WarnEx</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_DeprecationWarning" title='PyExc_DeprecationWarning' data-ref="PyExc_DeprecationWarning">PyExc_DeprecationWarning</a>,</td></tr>
+<tr><th id="330">330</th><td>                         <q>"'U' mode is deprecated"</q>, <var>1</var>) &lt; <var>0</var>)</td></tr>
+<tr><th id="331">331</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="332">332</th><td>        <a class="local col4 ref" href="#34reading" title='reading' data-ref="34reading">reading</a> = <var>1</var>;</td></tr>
+<tr><th id="333">333</th><td>    }</td></tr>
+<tr><th id="334">334</th><td></td></tr>
+<tr><th id="335">335</th><td>    <b>if</b> (<a class="local col8 ref" href="#38text" title='text' data-ref="38text">text</a> &amp;&amp; <a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a>) {</td></tr>
+<tr><th id="336">336</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="337">337</th><td>                        <q>"can't have text and binary mode at once"</q>);</td></tr>
+<tr><th id="338">338</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="339">339</th><td>    }</td></tr>
+<tr><th id="340">340</th><td></td></tr>
+<tr><th id="341">341</th><td>    <b>if</b> (<a class="local col3 ref" href="#33creating" title='creating' data-ref="33creating">creating</a> + <a class="local col4 ref" href="#34reading" title='reading' data-ref="34reading">reading</a> + <a class="local col5 ref" href="#35writing" title='writing' data-ref="35writing">writing</a> + <a class="local col6 ref" href="#36appending" title='appending' data-ref="36appending">appending</a> &gt; <var>1</var>) {</td></tr>
+<tr><th id="342">342</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="343">343</th><td>                        <q>"must have exactly one of create/read/write/append mode"</q>);</td></tr>
+<tr><th id="344">344</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="345">345</th><td>    }</td></tr>
+<tr><th id="346">346</th><td></td></tr>
+<tr><th id="347">347</th><td>    <b>if</b> (<a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a> &amp;&amp; <a class="local col7 ref" href="#27encoding" title='encoding' data-ref="27encoding">encoding</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="348">348</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="349">349</th><td>                        <q>"binary mode doesn't take an encoding argument"</q>);</td></tr>
+<tr><th id="350">350</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="351">351</th><td>    }</td></tr>
+<tr><th id="352">352</th><td></td></tr>
+<tr><th id="353">353</th><td>    <b>if</b> (<a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a> &amp;&amp; <a class="local col8 ref" href="#28errors" title='errors' data-ref="28errors">errors</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="354">354</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="355">355</th><td>                        <q>"binary mode doesn't take an errors argument"</q>);</td></tr>
+<tr><th id="356">356</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="357">357</th><td>    }</td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td>    <b>if</b> (<a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a> &amp;&amp; <a class="local col9 ref" href="#29newline" title='newline' data-ref="29newline">newline</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="360">360</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="361">361</th><td>                        <q>"binary mode doesn't take a newline argument"</q>);</td></tr>
+<tr><th id="362">362</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="363">363</th><td>    }</td></tr>
+<tr><th id="364">364</th><td></td></tr>
+<tr><th id="365">365</th><td>    <i>/* Create the Raw file stream */</i></td></tr>
+<tr><th id="366">366</th><td>    {</td></tr>
+<tr><th id="367">367</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55RawIO_class" title='RawIO_class' data-type='PyObject *' data-ref="55RawIO_class">RawIO_class</dfn> = (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="ref" href="_iomodule.h.html#PyFileIO_Type" title='PyFileIO_Type' data-ref="PyFileIO_Type">PyFileIO_Type</a>;</td></tr>
+<tr><th id="368">368</th><td><u>#<span data-ppcond="368">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="369">369</th><td>        <b>if</b> (!Py_LegacyWindowsStdioFlag &amp;&amp; _PyIO_get_console_type(path_or_fd) != <kbd>'\0'</kbd>) {</td></tr>
+<tr><th id="370">370</th><td>            RawIO_class = (PyObject *)&amp;PyWindowsConsoleIO_Type;</td></tr>
+<tr><th id="371">371</th><td>            encoding = <q>"utf-8"</q>;</td></tr>
+<tr><th id="372">372</th><td>        }</td></tr>
+<tr><th id="373">373</th><td><u>#<span data-ppcond="368">endif</span></u></td></tr>
+<tr><th id="374">374</th><td>        <a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a> = <a class="macro" href="../../Include/abstract.h.html#139" title="_PyObject_CallFunction_SizeT" data-ref="_M/PyObject_CallFunction">PyObject_CallFunction</a>(<a class="local col5 ref" href="#55RawIO_class" title='RawIO_class' data-ref="55RawIO_class">RawIO_class</a>,</td></tr>
+<tr><th id="375">375</th><td>                                    <q>"OsiO"</q>, <a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a>, <a class="local col1 ref" href="#41rawmode" title='rawmode' data-ref="41rawmode">rawmode</a>, <a class="local col0 ref" href="#30closefd" title='closefd' data-ref="30closefd">closefd</a>, <a class="local col1 ref" href="#31opener" title='opener' data-ref="31opener">opener</a>);</td></tr>
+<tr><th id="376">376</th><td>    }</td></tr>
+<tr><th id="377">377</th><td></td></tr>
+<tr><th id="378">378</th><td>    <b>if</b> (<a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="379">379</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="380">380</th><td>    <a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a> = <a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a>;</td></tr>
+<tr><th id="381">381</th><td></td></tr>
+<tr><th id="382">382</th><td>    <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(path_or_fd); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 382, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a>);</td></tr>
+<tr><th id="383">383</th><td>    <a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="384">384</th><td></td></tr>
+<tr><th id="385">385</th><td>    <a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a> = <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_FromString" title='PyUnicode_FromString' data-ref="PyUnicode_FromString">PyUnicode_FromString</a>(<a class="local col5 ref" href="#25mode" title='mode' data-ref="25mode">mode</a>);</td></tr>
+<tr><th id="386">386</th><td>    <b>if</b> (<a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="387">387</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="388">388</th><td></td></tr>
+<tr><th id="389">389</th><td>    <i>/* buffering */</i></td></tr>
+<tr><th id="390">390</th><td>    {</td></tr>
+<tr><th id="391">391</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56res" title='res' data-type='PyObject *' data-ref="56res">res</dfn> = <a class="macro" href="../../Include/abstract.h.html#142" title="_PyObject_CallMethodId_SizeT" data-ref="_M/_PyObject_CallMethodId">_PyObject_CallMethodId</a>(<a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a>, &amp;<a class="local col7 ref" href="#248" title='PyId_isatty' data-ref="57PyId_isatty">PyId_isatty</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="392">392</th><td>        <b>if</b> (<a class="local col6 ref" href="#56res" title='res' data-ref="56res">res</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="393">393</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="394">394</th><td>        <a class="local col5 ref" href="#45isatty" title='isatty' data-ref="45isatty">isatty</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="local col6 ref" href="#56res" title='res' data-ref="56res">res</a>);</td></tr>
+<tr><th id="395">395</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(res); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 395, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col6 ref" href="#56res" title='res' data-ref="56res">res</a>);</td></tr>
+<tr><th id="396">396</th><td>        <b>if</b> (<a class="local col5 ref" href="#45isatty" title='isatty' data-ref="45isatty">isatty</a> == -<var>1</var> &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="397">397</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="398">398</th><td>    }</td></tr>
+<tr><th id="399">399</th><td></td></tr>
+<tr><th id="400">400</th><td>    <b>if</b> (<a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> == <var>1</var> || (<a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> &lt; <var>0</var> &amp;&amp; <a class="local col5 ref" href="#45isatty" title='isatty' data-ref="45isatty">isatty</a>)) {</td></tr>
+<tr><th id="401">401</th><td>        <a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> = -<var>1</var>;</td></tr>
+<tr><th id="402">402</th><td>        <a class="local col3 ref" href="#43line_buffering" title='line_buffering' data-ref="43line_buffering">line_buffering</a> = <var>1</var>;</td></tr>
+<tr><th id="403">403</th><td>    }</td></tr>
+<tr><th id="404">404</th><td>    <b>else</b></td></tr>
+<tr><th id="405">405</th><td>        <a class="local col3 ref" href="#43line_buffering" title='line_buffering' data-ref="43line_buffering">line_buffering</a> = <var>0</var>;</td></tr>
+<tr><th id="406">406</th><td></td></tr>
+<tr><th id="407">407</th><td>    <b>if</b> (<a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="408">408</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58blksize_obj" title='blksize_obj' data-type='PyObject *' data-ref="58blksize_obj">blksize_obj</dfn>;</td></tr>
+<tr><th id="409">409</th><td>        <a class="local col8 ref" href="#58blksize_obj" title='blksize_obj' data-ref="58blksize_obj">blksize_obj</a> = <a class="ref" href="../../Include/object.h.html#_PyObject_GetAttrId" title='_PyObject_GetAttrId' data-ref="_PyObject_GetAttrId">_PyObject_GetAttrId</a>(<a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a>, &amp;<a class="local col9 ref" href="#247" title='PyId__blksize' data-ref="59PyId__blksize">PyId__blksize</a>);</td></tr>
+<tr><th id="410">410</th><td>        <b>if</b> (<a class="local col8 ref" href="#58blksize_obj" title='blksize_obj' data-ref="58blksize_obj">blksize_obj</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="411">411</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="412">412</th><td>        <a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="local col8 ref" href="#58blksize_obj" title='blksize_obj' data-ref="58blksize_obj">blksize_obj</a>);</td></tr>
+<tr><th id="413">413</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(blksize_obj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 413, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col8 ref" href="#58blksize_obj" title='blksize_obj' data-ref="58blksize_obj">blksize_obj</a>);</td></tr>
+<tr><th id="414">414</th><td>        <b>if</b> (<a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> == -<var>1</var> &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="415">415</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="416">416</th><td>    }</td></tr>
+<tr><th id="417">417</th><td>    <b>if</b> (<a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="418">418</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="419">419</th><td>                        <q>"invalid buffering size"</q>);</td></tr>
+<tr><th id="420">420</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="421">421</th><td>    }</td></tr>
+<tr><th id="422">422</th><td></td></tr>
+<tr><th id="423">423</th><td>    <i>/* if not buffering, returns the raw file object */</i></td></tr>
+<tr><th id="424">424</th><td>    <b>if</b> (<a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a> == <var>0</var>) {</td></tr>
+<tr><th id="425">425</th><td>        <b>if</b> (!<a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a>) {</td></tr>
+<tr><th id="426">426</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="427">427</th><td>                            <q>"can't have unbuffered text I/O"</q>);</td></tr>
+<tr><th id="428">428</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="429">429</th><td>        }</td></tr>
+<tr><th id="430">430</th><td></td></tr>
+<tr><th id="431">431</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(modeobj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 431, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a>);</td></tr>
+<tr><th id="432">432</th><td>        <b>return</b> <a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a>;</td></tr>
+<tr><th id="433">433</th><td>    }</td></tr>
+<tr><th id="434">434</th><td></td></tr>
+<tr><th id="435">435</th><td>    <i>/* wraps into a buffered file */</i></td></tr>
+<tr><th id="436">436</th><td>    {</td></tr>
+<tr><th id="437">437</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="60Buffered_class" title='Buffered_class' data-type='PyObject *' data-ref="60Buffered_class">Buffered_class</dfn>;</td></tr>
+<tr><th id="438">438</th><td></td></tr>
+<tr><th id="439">439</th><td>        <b>if</b> (<a class="local col7 ref" href="#37updating" title='updating' data-ref="37updating">updating</a>)</td></tr>
+<tr><th id="440">440</th><td>            <a class="local col0 ref" href="#60Buffered_class" title='Buffered_class' data-ref="60Buffered_class">Buffered_class</a> = (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="ref" href="_iomodule.h.html#PyBufferedRandom_Type" title='PyBufferedRandom_Type' data-ref="PyBufferedRandom_Type">PyBufferedRandom_Type</a>;</td></tr>
+<tr><th id="441">441</th><td>        <b>else</b> <b>if</b> (<a class="local col3 ref" href="#33creating" title='creating' data-ref="33creating">creating</a> || <a class="local col5 ref" href="#35writing" title='writing' data-ref="35writing">writing</a> || <a class="local col6 ref" href="#36appending" title='appending' data-ref="36appending">appending</a>)</td></tr>
+<tr><th id="442">442</th><td>            <a class="local col0 ref" href="#60Buffered_class" title='Buffered_class' data-ref="60Buffered_class">Buffered_class</a> = (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="ref" href="_iomodule.h.html#PyBufferedWriter_Type" title='PyBufferedWriter_Type' data-ref="PyBufferedWriter_Type">PyBufferedWriter_Type</a>;</td></tr>
+<tr><th id="443">443</th><td>        <b>else</b> <b>if</b> (<a class="local col4 ref" href="#34reading" title='reading' data-ref="34reading">reading</a>)</td></tr>
+<tr><th id="444">444</th><td>            <a class="local col0 ref" href="#60Buffered_class" title='Buffered_class' data-ref="60Buffered_class">Buffered_class</a> = (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="ref" href="_iomodule.h.html#PyBufferedReader_Type" title='PyBufferedReader_Type' data-ref="PyBufferedReader_Type">PyBufferedReader_Type</a>;</td></tr>
+<tr><th id="445">445</th><td>        <b>else</b> {</td></tr>
+<tr><th id="446">446</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="447">447</th><td>                         <q>"unknown mode: '%s'"</q>, <a class="local col5 ref" href="#25mode" title='mode' data-ref="25mode">mode</a>);</td></tr>
+<tr><th id="448">448</th><td>            <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="449">449</th><td>        }</td></tr>
+<tr><th id="450">450</th><td></td></tr>
+<tr><th id="451">451</th><td>        <a class="local col8 ref" href="#48buffer" title='buffer' data-ref="48buffer">buffer</a> = <a class="macro" href="../../Include/abstract.h.html#139" title="_PyObject_CallFunction_SizeT" data-ref="_M/PyObject_CallFunction">PyObject_CallFunction</a>(<a class="local col0 ref" href="#60Buffered_class" title='Buffered_class' data-ref="60Buffered_class">Buffered_class</a>, <q>"Oi"</q>, <a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a>, <a class="local col6 ref" href="#26buffering" title='buffering' data-ref="26buffering">buffering</a>);</td></tr>
+<tr><th id="452">452</th><td>    }</td></tr>
+<tr><th id="453">453</th><td>    <b>if</b> (<a class="local col8 ref" href="#48buffer" title='buffer' data-ref="48buffer">buffer</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="454">454</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="455">455</th><td>    <a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a> = <a class="local col8 ref" href="#48buffer" title='buffer' data-ref="48buffer">buffer</a>;</td></tr>
+<tr><th id="456">456</th><td>    <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(raw); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 456, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col6 ref" href="#46raw" title='raw' data-ref="46raw">raw</a>);</td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td></td></tr>
+<tr><th id="459">459</th><td>    <i>/* if binary, returns the buffered file */</i></td></tr>
+<tr><th id="460">460</th><td>    <b>if</b> (<a class="local col9 ref" href="#39binary" title='binary' data-ref="39binary">binary</a>) {</td></tr>
+<tr><th id="461">461</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(modeobj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 461, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a>);</td></tr>
+<tr><th id="462">462</th><td>        <b>return</b> <a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a>;</td></tr>
+<tr><th id="463">463</th><td>    }</td></tr>
+<tr><th id="464">464</th><td></td></tr>
+<tr><th id="465">465</th><td>    <i>/* wraps into a TextIOWrapper */</i></td></tr>
+<tr><th id="466">466</th><td>    <a class="local col9 ref" href="#49wrapper" title='wrapper' data-ref="49wrapper">wrapper</a> = <a class="macro" href="../../Include/abstract.h.html#139" title="_PyObject_CallFunction_SizeT" data-ref="_M/PyObject_CallFunction">PyObject_CallFunction</a>((<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="ref" href="_iomodule.h.html#PyTextIOWrapper_Type" title='PyTextIOWrapper_Type' data-ref="PyTextIOWrapper_Type">PyTextIOWrapper_Type</a>,</td></tr>
+<tr><th id="467">467</th><td>                                    <q>"Osssi"</q>,</td></tr>
+<tr><th id="468">468</th><td>                                    <a class="local col8 ref" href="#48buffer" title='buffer' data-ref="48buffer">buffer</a>,</td></tr>
+<tr><th id="469">469</th><td>                                    <a class="local col7 ref" href="#27encoding" title='encoding' data-ref="27encoding">encoding</a>, <a class="local col8 ref" href="#28errors" title='errors' data-ref="28errors">errors</a>, <a class="local col9 ref" href="#29newline" title='newline' data-ref="29newline">newline</a>,</td></tr>
+<tr><th id="470">470</th><td>                                    <a class="local col3 ref" href="#43line_buffering" title='line_buffering' data-ref="43line_buffering">line_buffering</a>);</td></tr>
+<tr><th id="471">471</th><td>    <b>if</b> (<a class="local col9 ref" href="#49wrapper" title='wrapper' data-ref="49wrapper">wrapper</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="472">472</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="473">473</th><td>    <a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a> = <a class="local col9 ref" href="#49wrapper" title='wrapper' data-ref="49wrapper">wrapper</a>;</td></tr>
+<tr><th id="474">474</th><td>    <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(buffer); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 474, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col8 ref" href="#48buffer" title='buffer' data-ref="48buffer">buffer</a>);</td></tr>
+<tr><th id="475">475</th><td></td></tr>
+<tr><th id="476">476</th><td>    <b>if</b> (<a class="ref" href="../../Include/object.h.html#_PyObject_SetAttrId" title='_PyObject_SetAttrId' data-ref="_PyObject_SetAttrId">_PyObject_SetAttrId</a>(<a class="local col9 ref" href="#49wrapper" title='wrapper' data-ref="49wrapper">wrapper</a>, &amp;<a class="local col1 ref" href="#249" title='PyId_mode' data-ref="61PyId_mode">PyId_mode</a>, <a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="477">477</th><td>        <b>goto</b> <a class="lbl" href="#52error" data-ref="52error">error</a>;</td></tr>
+<tr><th id="478">478</th><td>    <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(modeobj); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 478, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a>);</td></tr>
+<tr><th id="479">479</th><td>    <b>return</b> <a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a>;</td></tr>
+<tr><th id="480">480</th><td></td></tr>
+<tr><th id="481">481</th><td>  <dfn class="lbl" id="52error" data-ref="52error">error</dfn>:</td></tr>
+<tr><th id="482">482</th><td>    <b>if</b> (<a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="483">483</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62exc" title='exc' data-type='PyObject *' data-ref="62exc">exc</dfn>, *<dfn class="local col3 decl" id="63val" title='val' data-type='PyObject *' data-ref="63val">val</dfn>, *<dfn class="local col4 decl" id="64tb" title='tb' data-type='PyObject *' data-ref="64tb">tb</dfn>, *<dfn class="local col5 decl" id="65close_result" title='close_result' data-type='PyObject *' data-ref="65close_result">close_result</dfn>;</td></tr>
+<tr><th id="484">484</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Fetch" title='PyErr_Fetch' data-ref="PyErr_Fetch">PyErr_Fetch</a>(&amp;<a class="local col2 ref" href="#62exc" title='exc' data-ref="62exc">exc</a>, &amp;<a class="local col3 ref" href="#63val" title='val' data-ref="63val">val</a>, &amp;<a class="local col4 ref" href="#64tb" title='tb' data-ref="64tb">tb</a>);</td></tr>
+<tr><th id="485">485</th><td>        <a class="local col5 ref" href="#65close_result" title='close_result' data-ref="65close_result">close_result</a> = <a class="macro" href="../../Include/abstract.h.html#142" title="_PyObject_CallMethodId_SizeT" data-ref="_M/_PyObject_CallMethodId">_PyObject_CallMethodId</a>(<a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a>, &amp;<a class="local col6 ref" href="#250" title='PyId_close' data-ref="66PyId_close">PyId_close</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="486">486</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#_PyErr_ChainExceptions" title='_PyErr_ChainExceptions' data-ref="_PyErr_ChainExceptions">_PyErr_ChainExceptions</a>(<a class="local col2 ref" href="#62exc" title='exc' data-ref="62exc">exc</a>, <a class="local col3 ref" href="#63val" title='val' data-ref="63val">val</a>, <a class="local col4 ref" href="#64tb" title='tb' data-ref="64tb">tb</a>);</td></tr>
+<tr><th id="487">487</th><td>        <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(close_result); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 487, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col5 ref" href="#65close_result" title='close_result' data-ref="65close_result">close_result</a>);</td></tr>
+<tr><th id="488">488</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(result); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 488, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col0 ref" href="#50result" title='result' data-ref="50result">result</a>);</td></tr>
+<tr><th id="489">489</th><td>    }</td></tr>
+<tr><th id="490">490</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(path_or_fd); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 490, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col1 ref" href="#51path_or_fd" title='path_or_fd' data-ref="51path_or_fd">path_or_fd</a>);</td></tr>
+<tr><th id="491">491</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(modeobj); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 491, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col7 ref" href="#47modeobj" title='modeobj' data-ref="47modeobj">modeobj</a>);</td></tr>
+<tr><th id="492">492</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="493">493</th><td>}</td></tr>
+<tr><th id="494">494</th><td></td></tr>
+<tr><th id="495">495</th><td><i>/*</i></td></tr>
+<tr><th id="496">496</th><td><i> * Private helpers for the io module.</i></td></tr>
+<tr><th id="497">497</th><td><i> */</i></td></tr>
+<tr><th id="498">498</th><td></td></tr>
+<tr><th id="499">499</th><td><a class="typedef" href="_iomodule.h.html#Py_off_t" title='Py_off_t' data-type='off_t' data-ref="Py_off_t">Py_off_t</a></td></tr>
+<tr><th id="500">500</th><td><dfn class="decl def" id="PyNumber_AsOff_t" title='PyNumber_AsOff_t' data-ref="PyNumber_AsOff_t">PyNumber_AsOff_t</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="67item" title='item' data-type='PyObject *' data-ref="67item">item</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68err" title='err' data-type='PyObject *' data-ref="68err">err</dfn>)</td></tr>
+<tr><th id="501">501</th><td>{</td></tr>
+<tr><th id="502">502</th><td>    <a class="typedef" href="_iomodule.h.html#Py_off_t" title='Py_off_t' data-type='off_t' data-ref="Py_off_t">Py_off_t</a> <dfn class="local col9 decl" id="69result" title='result' data-type='Py_off_t' data-ref="69result">result</dfn>;</td></tr>
+<tr><th id="503">503</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70runerr" title='runerr' data-type='PyObject *' data-ref="70runerr">runerr</dfn>;</td></tr>
+<tr><th id="504">504</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="71value" title='value' data-type='PyObject *' data-ref="71value">value</dfn> = <a class="ref" href="../../Include/abstract.h.html#PyNumber_Index" title='PyNumber_Index' data-ref="PyNumber_Index">PyNumber_Index</a>(<a class="local col7 ref" href="#67item" title='item' data-ref="67item">item</a>);</td></tr>
+<tr><th id="505">505</th><td>    <b>if</b> (<a class="local col1 ref" href="#71value" title='value' data-ref="71value">value</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="506">506</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="507">507</th><td></td></tr>
+<tr><th id="508">508</th><td>    <i>/* We're done if PyLong_AsSsize_t() returns without error. */</i></td></tr>
+<tr><th id="509">509</th><td>    <a class="local col9 ref" href="#69result" title='result' data-ref="69result">result</a> = <a class="macro" href="_iomodule.h.html#106" title="PyLong_AsSsize_t" data-ref="_M/PyLong_AsOff_t">PyLong_AsOff_t</a>(<a class="local col1 ref" href="#71value" title='value' data-ref="71value">value</a>);</td></tr>
+<tr><th id="510">510</th><td>    <b>if</b> (<a class="local col9 ref" href="#69result" title='result' data-ref="69result">result</a> != -<var>1</var> || !(<a class="local col0 ref" href="#70runerr" title='runerr' data-ref="70runerr">runerr</a> = <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()))</td></tr>
+<tr><th id="511">511</th><td>        <b>goto</b> <a class="lbl" href="#72finish" data-ref="72finish">finish</a>;</td></tr>
+<tr><th id="512">512</th><td></td></tr>
+<tr><th id="513">513</th><td>    <i>/* Error handling code -- only manage OverflowError differently */</i></td></tr>
+<tr><th id="514">514</th><td>    <b>if</b> (!<a class="ref" href="../../Include/pyerrors.h.html#PyErr_GivenExceptionMatches" title='PyErr_GivenExceptionMatches' data-ref="PyErr_GivenExceptionMatches">PyErr_GivenExceptionMatches</a>(<a class="local col0 ref" href="#70runerr" title='runerr' data-ref="70runerr">runerr</a>, <a class="ref" href="../../Include/pyerrors.h.html#PyExc_OverflowError" title='PyExc_OverflowError' data-ref="PyExc_OverflowError">PyExc_OverflowError</a>))</td></tr>
+<tr><th id="515">515</th><td>        <b>goto</b> <a class="lbl" href="#72finish" data-ref="72finish">finish</a>;</td></tr>
+<tr><th id="516">516</th><td></td></tr>
+<tr><th id="517">517</th><td>    <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Clear" title='PyErr_Clear' data-ref="PyErr_Clear">PyErr_Clear</a>();</td></tr>
+<tr><th id="518">518</th><td>    <i>/* If no error-handling desired then the default clipping</i></td></tr>
+<tr><th id="519">519</th><td><i>       is sufficient.</i></td></tr>
+<tr><th id="520">520</th><td><i>     */</i></td></tr>
+<tr><th id="521">521</th><td>    <b>if</b> (!<a class="local col8 ref" href="#68err" title='err' data-ref="68err">err</a>) {</td></tr>
+<tr><th id="522">522</th><td>        <a class="macro" href="../../../include/assert.h.html#88" title="((((((((PyObject*)(value))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 24))) != 0)) ? (void) (0) : __assert_fail (&quot;PyLong_Check(value)&quot;, &quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 522, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="macro" href="../../Include/longobject.h.html#14" title="((((((PyObject*)(value))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 24))) != 0)" data-ref="_M/PyLong_Check">PyLong_Check</a>(<a class="local col1 ref" href="#71value" title='value' data-ref="71value">value</a>));</td></tr>
+<tr><th id="523">523</th><td>        <i>/* Whether or not it is less than or equal to</i></td></tr>
+<tr><th id="524">524</th><td><i>           zero is determined by the sign of ob_size</i></td></tr>
+<tr><th id="525">525</th><td><i>        */</i></td></tr>
+<tr><th id="526">526</th><td>        <b>if</b> (<a class="ref" href="../../Include/longobject.h.html#_PyLong_Sign" title='_PyLong_Sign' data-ref="_PyLong_Sign">_PyLong_Sign</a>(<a class="local col1 ref" href="#71value" title='value' data-ref="71value">value</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="527">527</th><td>            <a class="local col9 ref" href="#69result" title='result' data-ref="69result">result</a> = <a class="macro" href="_iomodule.h.html#109" title="(-((Py_ssize_t)(((size_t)-1)&gt;&gt;1))-1)" data-ref="_M/PY_OFF_T_MIN">PY_OFF_T_MIN</a>;</td></tr>
+<tr><th id="528">528</th><td>        <b>else</b></td></tr>
+<tr><th id="529">529</th><td>            <a class="local col9 ref" href="#69result" title='result' data-ref="69result">result</a> = <a class="macro" href="_iomodule.h.html#108" title="((Py_ssize_t)(((size_t)-1)&gt;&gt;1))" data-ref="_M/PY_OFF_T_MAX">PY_OFF_T_MAX</a>;</td></tr>
+<tr><th id="530">530</th><td>    }</td></tr>
+<tr><th id="531">531</th><td>    <b>else</b> {</td></tr>
+<tr><th id="532">532</th><td>        <i>/* Otherwise replace the error with caller's error object. */</i></td></tr>
+<tr><th id="533">533</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="local col8 ref" href="#68err" title='err' data-ref="68err">err</a>,</td></tr>
+<tr><th id="534">534</th><td>                     <q>"cannot fit '%.200s' into an offset-sized integer"</q>,</td></tr>
+<tr><th id="535">535</th><td>                     <a class="local col7 ref" href="#67item" title='item' data-ref="67item">item</a>-&gt;<a class="ref" href="../../Include/object.h.html#_object::ob_type" title='_object::ob_type' data-ref="_object::ob_type">ob_type</a>-&gt;<a class="ref" href="../../Include/object.h.html#_typeobject::tp_name" title='_typeobject::tp_name' data-ref="_typeobject::tp_name">tp_name</a>);</td></tr>
+<tr><th id="536">536</th><td>    }</td></tr>
+<tr><th id="537">537</th><td></td></tr>
+<tr><th id="538">538</th><td> <dfn class="lbl" id="72finish" data-ref="72finish">finish</dfn>:</td></tr>
+<tr><th id="539">539</th><td>    <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(value); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 539, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#71value" title='value' data-ref="71value">value</a>);</td></tr>
+<tr><th id="540">540</th><td>    <b>return</b> <a class="local col9 ref" href="#69result" title='result' data-ref="69result">result</a>;</td></tr>
+<tr><th id="541">541</th><td>}</td></tr>
+<tr><th id="542">542</th><td></td></tr>
+<tr><th id="543">543</th><td></td></tr>
+<tr><th id="544">544</th><td><a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *</td></tr>
+<tr><th id="545">545</th><td><dfn class="decl def" id="_PyIO_get_module_state" title='_PyIO_get_module_state' data-ref="_PyIO_get_module_state">_PyIO_get_module_state</dfn>(<em>void</em>)</td></tr>
+<tr><th id="546">546</th><td>{</td></tr>
+<tr><th id="547">547</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="73mod" title='mod' data-type='PyObject *' data-ref="73mod">mod</dfn> = <a class="ref" href="../../Include/pystate.h.html#PyState_FindModule" title='PyState_FindModule' data-ref="PyState_FindModule">PyState_FindModule</a>(&amp;<a class="ref" href="_iomodule.h.html#_PyIO_Module" title='_PyIO_Module' data-ref="_PyIO_Module">_PyIO_Module</a>);</td></tr>
+<tr><th id="548">548</th><td>    <a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *<dfn class="local col4 decl" id="74state" title='state' data-type='_PyIO_State *' data-ref="74state">state</dfn>;</td></tr>
+<tr><th id="549">549</th><td>    <b>if</b> (<a class="local col3 ref" href="#73mod" title='mod' data-ref="73mod">mod</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || (<a class="local col4 ref" href="#74state" title='state' data-ref="74state">state</a> = <a class="macro" href="_iomodule.h.html#147" title="((_PyIO_State *)PyModule_GetState(mod))" data-ref="_M/IO_MOD_STATE">IO_MOD_STATE</a>(<a class="local col3 ref" href="#73mod" title='mod' data-ref="73mod">mod</a>)) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="550">550</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_RuntimeError" title='PyExc_RuntimeError' data-ref="PyExc_RuntimeError">PyExc_RuntimeError</a>,</td></tr>
+<tr><th id="551">551</th><td>                        <q>"could not find io module state "</q></td></tr>
+<tr><th id="552">552</th><td>                        <q>"(interpreter shutdown?)"</q>);</td></tr>
+<tr><th id="553">553</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="554">554</th><td>    }</td></tr>
+<tr><th id="555">555</th><td>    <b>return</b> <a class="local col4 ref" href="#74state" title='state' data-ref="74state">state</a>;</td></tr>
+<tr><th id="556">556</th><td>}</td></tr>
+<tr><th id="557">557</th><td></td></tr>
+<tr><th id="558">558</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="559">559</th><td><dfn class="decl def" id="_PyIO_get_locale_module" title='_PyIO_get_locale_module' data-ref="_PyIO_get_locale_module">_PyIO_get_locale_module</dfn>(<a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *<dfn class="local col5 decl" id="75state" title='state' data-type='_PyIO_State *' data-ref="75state">state</dfn>)</td></tr>
+<tr><th id="560">560</th><td>{</td></tr>
+<tr><th id="561">561</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="76mod" title='mod' data-type='PyObject *' data-ref="76mod">mod</dfn>;</td></tr>
+<tr><th id="562">562</th><td>    <b>if</b> (<a class="local col5 ref" href="#75state" title='state' data-ref="75state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="563">563</th><td>        <a class="macro" href="../../../include/assert.h.html#88" title="((((((PyObject*)(state-&gt;locale_module))-&gt;ob_type) == (&amp;_PyWeakref_RefType) || PyType_IsSubtype((((PyObject*)(state-&gt;locale_module))-&gt;ob_type), (&amp;_PyWeakref_RefType)))) ? (void) (0) : __assert_fail (&quot;PyWeakref_CheckRef(state-&gt;locale_module)&quot;, &quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 563, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="macro" href="../../Include/weakrefobject.h.html#47" title="((((PyObject*)(state-&gt;locale_module))-&gt;ob_type) == (&amp;_PyWeakref_RefType) || PyType_IsSubtype((((PyObject*)(state-&gt;locale_module))-&gt;ob_type), (&amp;_PyWeakref_RefType)))" data-ref="_M/PyWeakref_CheckRef">PyWeakref_CheckRef</a>(<a class="local col5 ref" href="#75state" title='state' data-ref="75state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a>));</td></tr>
+<tr><th id="564">564</th><td>        <a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a> = <a class="macro" href="../../Include/weakrefobject.h.html#77" title="((((PyObject*)(((PyWeakReference *)(state-&gt;locale_module))-&gt;wr_object))-&gt;ob_refcnt) &gt; 0 ? ((PyWeakReference *)(state-&gt;locale_module))-&gt;wr_object : (&amp;_Py_NoneStruct))" data-ref="_M/PyWeakref_GET_OBJECT">PyWeakref_GET_OBJECT</a>(<a class="local col5 ref" href="#75state" title='state' data-ref="75state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a>);</td></tr>
+<tr><th id="565">565</th><td>        <b>if</b> (<a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a> != <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>) {</td></tr>
+<tr><th id="566">566</th><td>            <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(mod))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a>);</td></tr>
+<tr><th id="567">567</th><td>            <b>return</b> <a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a>;</td></tr>
+<tr><th id="568">568</th><td>        }</td></tr>
+<tr><th id="569">569</th><td>        <a class="macro" href="../../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(state-&gt;locale_module); if (_py_tmp != ((void*)0)) { (state-&gt;locale_module) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 569, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col5 ref" href="#75state" title='state' data-ref="75state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a>);</td></tr>
+<tr><th id="570">570</th><td>    }</td></tr>
+<tr><th id="571">571</th><td>    <a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a> = <a class="ref" href="../../Include/import.h.html#PyImport_ImportModule" title='PyImport_ImportModule' data-ref="PyImport_ImportModule">PyImport_ImportModule</a>(<q>"_bootlocale"</q>);</td></tr>
+<tr><th id="572">572</th><td>    <b>if</b> (<a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="573">573</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="574">574</th><td>    <a class="local col5 ref" href="#75state" title='state' data-ref="75state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a> = <a class="ref" href="../../Include/weakrefobject.h.html#PyWeakref_NewRef" title='PyWeakref_NewRef' data-ref="PyWeakref_NewRef">PyWeakref_NewRef</a>(<a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="575">575</th><td>    <b>if</b> (<a class="local col5 ref" href="#75state" title='state' data-ref="75state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="576">576</th><td>        <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(mod); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 576, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a>);</td></tr>
+<tr><th id="577">577</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="578">578</th><td>    }</td></tr>
+<tr><th id="579">579</th><td>    <b>return</b> <a class="local col6 ref" href="#76mod" title='mod' data-ref="76mod">mod</a>;</td></tr>
+<tr><th id="580">580</th><td>}</td></tr>
+<tr><th id="581">581</th><td></td></tr>
+<tr><th id="582">582</th><td></td></tr>
+<tr><th id="583">583</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="584">584</th><td><dfn class="tu decl def" id="iomodule_traverse" title='iomodule_traverse' data-type='int iomodule_traverse(PyObject * mod, visitproc visit, void * arg)' data-ref="iomodule_traverse">iomodule_traverse</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="77mod" title='mod' data-type='PyObject *' data-ref="77mod">mod</dfn>, <a class="typedef" href="../../Include/object.h.html#visitproc" title='visitproc' data-type='int (*)(PyObject *, void *)' data-ref="visitproc">visitproc</a> <dfn class="local col8 decl" id="78visit" title='visit' data-type='visitproc' data-ref="78visit">visit</dfn>, <em>void</em> *<dfn class="local col9 decl" id="79arg" title='arg' data-type='void *' data-ref="79arg">arg</dfn>) {</td></tr>
+<tr><th id="585">585</th><td>    <a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *<dfn class="local col0 decl" id="80state" title='state' data-type='_PyIO_State *' data-ref="80state">state</dfn> = <a class="macro" href="_iomodule.h.html#147" title="((_PyIO_State *)PyModule_GetState(mod))" data-ref="_M/IO_MOD_STATE">IO_MOD_STATE</a>(<a class="local col7 ref" href="#77mod" title='mod' data-ref="77mod">mod</a>);</td></tr>
+<tr><th id="586">586</th><td>    <b>if</b> (!<a class="local col0 ref" href="#80state" title='state' data-ref="80state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::initialized" title='(anonymous struct)::initialized' data-ref="(anonymous)::initialized">initialized</a>)</td></tr>
+<tr><th id="587">587</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="588">588</th><td>    <b>if</b> (<a class="local col0 ref" href="#80state" title='state' data-ref="80state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="589">589</th><td>        <a class="macro" href="../../Include/objimpl.h.html#351" title="do { if (state-&gt;locale_module) { int vret = visit((PyObject *)(state-&gt;locale_module), arg); if (vret) return vret; } } while (0)" data-ref="_M/Py_VISIT">Py_VISIT</a>(<a class="local col0 ref" href="#80state" title='state' data-ref="80state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a>);</td></tr>
+<tr><th id="590">590</th><td>    }</td></tr>
+<tr><th id="591">591</th><td>    <a class="macro" href="../../Include/objimpl.h.html#351" title="do { if (state-&gt;unsupported_operation) { int vret = visit((PyObject *)(state-&gt;unsupported_operation), arg); if (vret) return vret; } } while (0)" data-ref="_M/Py_VISIT">Py_VISIT</a>(<a class="local col0 ref" href="#80state" title='state' data-ref="80state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a>);</td></tr>
+<tr><th id="592">592</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="593">593</th><td>}</td></tr>
+<tr><th id="594">594</th><td></td></tr>
+<tr><th id="595">595</th><td></td></tr>
+<tr><th id="596">596</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="597">597</th><td><dfn class="tu decl def" id="iomodule_clear" title='iomodule_clear' data-type='int iomodule_clear(PyObject * mod)' data-ref="iomodule_clear">iomodule_clear</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="81mod" title='mod' data-type='PyObject *' data-ref="81mod">mod</dfn>) {</td></tr>
+<tr><th id="598">598</th><td>    <a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *<dfn class="local col2 decl" id="82state" title='state' data-type='_PyIO_State *' data-ref="82state">state</dfn> = <a class="macro" href="_iomodule.h.html#147" title="((_PyIO_State *)PyModule_GetState(mod))" data-ref="_M/IO_MOD_STATE">IO_MOD_STATE</a>(<a class="local col1 ref" href="#81mod" title='mod' data-ref="81mod">mod</a>);</td></tr>
+<tr><th id="599">599</th><td>    <b>if</b> (!<a class="local col2 ref" href="#82state" title='state' data-ref="82state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::initialized" title='(anonymous struct)::initialized' data-ref="(anonymous)::initialized">initialized</a>)</td></tr>
+<tr><th id="600">600</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="601">601</th><td>    <b>if</b> (<a class="local col2 ref" href="#82state" title='state' data-ref="82state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="602">602</th><td>        <a class="macro" href="../../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(state-&gt;locale_module); if (_py_tmp != ((void*)0)) { (state-&gt;locale_module) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 602, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col2 ref" href="#82state" title='state' data-ref="82state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::locale_module" title='(anonymous struct)::locale_module' data-ref="(anonymous)::locale_module">locale_module</a>);</td></tr>
+<tr><th id="603">603</th><td>    <a class="macro" href="../../Include/object.h.html#831" title="do { PyObject *_py_tmp = (PyObject *)(state-&gt;unsupported_operation); if (_py_tmp != ((void*)0)) { (state-&gt;unsupported_operation) = ((void*)0); do { PyObject *_py_decref_tmp = (PyObject *)(_py_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 603, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } } while (0)" data-ref="_M/Py_CLEAR">Py_CLEAR</a>(<a class="local col2 ref" href="#82state" title='state' data-ref="82state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a>);</td></tr>
+<tr><th id="604">604</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="605">605</th><td>}</td></tr>
+<tr><th id="606">606</th><td></td></tr>
+<tr><th id="607">607</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="608">608</th><td><dfn class="tu decl def" id="iomodule_free" title='iomodule_free' data-type='void iomodule_free(PyObject * mod)' data-ref="iomodule_free">iomodule_free</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="83mod" title='mod' data-type='PyObject *' data-ref="83mod">mod</dfn>) {</td></tr>
+<tr><th id="609">609</th><td>    <a class="tu ref" href="#iomodule_clear" title='iomodule_clear' data-use='c' data-ref="iomodule_clear">iomodule_clear</a>(<a class="local col3 ref" href="#83mod" title='mod' data-ref="83mod">mod</a>);</td></tr>
+<tr><th id="610">610</th><td>}</td></tr>
+<tr><th id="611">611</th><td></td></tr>
+<tr><th id="612">612</th><td></td></tr>
+<tr><th id="613">613</th><td><i>/*</i></td></tr>
+<tr><th id="614">614</th><td><i> * Module definition</i></td></tr>
+<tr><th id="615">615</th><td><i> */</i></td></tr>
+<tr><th id="616">616</th><td></td></tr>
+<tr><th id="617">617</th><td><u>#include <a href="clinic/_iomodule.c.h.html">"clinic/_iomodule.c.h"</a></u></td></tr>
+<tr><th id="618">618</th><td></td></tr>
+<tr><th id="619">619</th><td><em>static</em> <a class="typedef" href="../../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="module_methods" title='module_methods' data-type='PyMethodDef [2]' data-ref="module_methods">module_methods</dfn>[] = {</td></tr>
+<tr><th id="620">620</th><td>    <a class="macro" href="clinic/_iomodule.c.h.html#129" title="{&quot;open&quot;, (PyCFunction)_io_open, 0x0080|0x0002, _io_open__doc__}," data-ref="_M/_IO_OPEN_METHODDEF">_IO_OPEN_METHODDEF</a></td></tr>
+<tr><th id="621">621</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}</td></tr>
+<tr><th id="622">622</th><td>};</td></tr>
+<tr><th id="623">623</th><td></td></tr>
+<tr><th id="624">624</th><td><b>struct</b> <a class="type" href="../../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="decl def" id="_PyIO_Module" title='_PyIO_Module' data-ref="_PyIO_Module">_PyIO_Module</dfn> = {</td></tr>
+<tr><th id="625">625</th><td>    <a class="macro" href="../../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="626">626</th><td>    <q>"io"</q>,</td></tr>
+<tr><th id="627">627</th><td>    <a class="ref" href="#57" title='module_doc' data-ref="module_doc">module_doc</a>,</td></tr>
+<tr><th id="628">628</th><td>    <b>sizeof</b>(<a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a>),</td></tr>
+<tr><th id="629">629</th><td>    <a class="tu ref" href="#module_methods" title='module_methods' data-ref="module_methods">module_methods</a>,</td></tr>
+<tr><th id="630">630</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="631">631</th><td>    <a class="tu ref" href="#iomodule_traverse" title='iomodule_traverse' data-ref="iomodule_traverse">iomodule_traverse</a>,</td></tr>
+<tr><th id="632">632</th><td>    <a class="tu ref" href="#iomodule_clear" title='iomodule_clear' data-ref="iomodule_clear">iomodule_clear</a>,</td></tr>
+<tr><th id="633">633</th><td>    (<a class="typedef" href="../../Include/object.h.html#freefunc" title='freefunc' data-type='void (*)(void *)' data-ref="freefunc">freefunc</a>)<a class="tu ref" href="#iomodule_free" title='iomodule_free' data-ref="iomodule_free">iomodule_free</a>,</td></tr>
+<tr><th id="634">634</th><td>};</td></tr>
+<tr><th id="635">635</th><td></td></tr>
+<tr><th id="636">636</th><td><a class="macro" href="../../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="637">637</th><td><dfn class="decl def" id="PyInit__io" title='PyInit__io' data-ref="PyInit__io">PyInit__io</dfn>(<em>void</em>)</td></tr>
+<tr><th id="638">638</th><td>{</td></tr>
+<tr><th id="639">639</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="109m" title='m' data-type='PyObject *' data-ref="109m">m</dfn> = <a class="macro" href="../../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;_PyIO_Module, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="ref" href="_iomodule.h.html#_PyIO_Module" title='_PyIO_Module' data-ref="_PyIO_Module">_PyIO_Module</a>);</td></tr>
+<tr><th id="640">640</th><td>    <a class="typedef" href="_iomodule.h.html#_PyIO_State" title='_PyIO_State' data-type='struct _PyIO_State' data-ref="_PyIO_State">_PyIO_State</a> *<dfn class="local col0 decl" id="110state" title='state' data-type='_PyIO_State *' data-ref="110state">state</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="641">641</th><td>    <b>if</b> (<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="642">642</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="643">643</th><td>    <a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a> = <a class="macro" href="_iomodule.h.html#147" title="((_PyIO_State *)PyModule_GetState(m))" data-ref="_M/IO_MOD_STATE">IO_MOD_STATE</a>(<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>);</td></tr>
+<tr><th id="644">644</th><td>    <a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::initialized" title='(anonymous struct)::initialized' data-ref="(anonymous)::initialized">initialized</a> = <var>0</var>;</td></tr>
+<tr><th id="645">645</th><td></td></tr>
+<tr><th id="646">646</th><td><u>#define <dfn class="macro" id="_M/ADD_TYPE" data-ref="_M/ADD_TYPE">ADD_TYPE</dfn>(type, name) \</u></td></tr>
+<tr><th id="647">647</th><td><u>    if (<a class="ref" href="../../Include/object.h.html#PyType_Ready" title='PyType_Ready' data-ref="PyType_Ready">PyType_Ready</a>(type) &lt; 0) \</u></td></tr>
+<tr><th id="648">648</th><td><u>        goto <a class="lbl" href="#111fail" data-ref="111fail">fail</a>; \</u></td></tr>
+<tr><th id="649">649</th><td><u>    Py_INCREF(type); \</u></td></tr>
+<tr><th id="650">650</th><td><u>    if (<a class="ref" href="../../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>, name, (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)type) &lt; 0) {  \</u></td></tr>
+<tr><th id="651">651</th><td><u>        Py_DECREF(type); \</u></td></tr>
+<tr><th id="652">652</th><td><u>        goto <a class="lbl" href="#111fail" data-ref="111fail">fail</a>; \</u></td></tr>
+<tr><th id="653">653</th><td><u>    }</u></td></tr>
+<tr><th id="654">654</th><td></td></tr>
+<tr><th id="655">655</th><td>    <i>/* DEFAULT_BUFFER_SIZE */</i></td></tr>
+<tr><th id="656">656</th><td>    <b>if</b> (<a class="macro" href="../../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEFAULT_BUFFER_SIZE&quot;, (8 * 1024))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>, <a class="macro" href="_iomodule.h.html#76" title="(8 * 1024)" data-ref="_M/DEFAULT_BUFFER_SIZE">DEFAULT_BUFFER_SIZE</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="657">657</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="658">658</th><td></td></tr>
+<tr><th id="659">659</th><td>    <i>/* UnsupportedOperation inherits from ValueError and OSError */</i></td></tr>
+<tr><th id="660">660</th><td>    <a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a> = <a class="macro" href="../../Include/abstract.h.html#139" title="_PyObject_CallFunction_SizeT" data-ref="_M/PyObject_CallFunction">PyObject_CallFunction</a>(</td></tr>
+<tr><th id="661">661</th><td>        (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)&amp;<a class="ref" href="../../Include/object.h.html#PyType_Type" title='PyType_Type' data-ref="PyType_Type">PyType_Type</a>, <q>"s(OO){}"</q>,</td></tr>
+<tr><th id="662">662</th><td>        <q>"UnsupportedOperation"</q>, <a class="ref" href="../../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>, <a class="ref" href="../../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>);</td></tr>
+<tr><th id="663">663</th><td>    <b>if</b> (<a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="664">664</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="665">665</th><td>    <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(state-&gt;unsupported_operation))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a>);</td></tr>
+<tr><th id="666">666</th><td>    <b>if</b> (<a class="ref" href="../../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>, <q>"UnsupportedOperation"</q>,</td></tr>
+<tr><th id="667">667</th><td>                           <a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="668">668</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="669">669</th><td></td></tr>
+<tr><th id="670">670</th><td>    <i>/* BlockingIOError, for compatibility */</i></td></tr>
+<tr><th id="671">671</th><td>    <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(PyExc_BlockingIOError))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_BlockingIOError" title='PyExc_BlockingIOError' data-ref="PyExc_BlockingIOError">PyExc_BlockingIOError</a>);</td></tr>
+<tr><th id="672">672</th><td>    <b>if</b> (<a class="ref" href="../../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>, <q>"BlockingIOError"</q>,</td></tr>
+<tr><th id="673">673</th><td>                           (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *) <a class="ref" href="../../Include/pyerrors.h.html#PyExc_BlockingIOError" title='PyExc_BlockingIOError' data-ref="PyExc_BlockingIOError">PyExc_BlockingIOError</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="674">674</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="675">675</th><td></td></tr>
+<tr><th id="676">676</th><td>    <i>/* Concrete base types of the IO ABCs.</i></td></tr>
+<tr><th id="677">677</th><td><i>       (the ABCs themselves are declared through inheritance in io.py)</i></td></tr>
+<tr><th id="678">678</th><td><i>    */</i></td></tr>
+<tr><th id="679">679</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyIOBase_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyIOBase_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;_IOBase&quot;, (PyObject *)&amp;PyIOBase_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyIOBase_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 679, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyIOBase_Type" title='PyIOBase_Type' data-ref="PyIOBase_Type">PyIOBase_Type</a>, <q>"_IOBase"</q>);</td></tr>
+<tr><th id="680">680</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyRawIOBase_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyRawIOBase_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;_RawIOBase&quot;, (PyObject *)&amp;PyRawIOBase_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyRawIOBase_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 680, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyRawIOBase_Type" title='PyRawIOBase_Type' data-ref="PyRawIOBase_Type">PyRawIOBase_Type</a>, <q>"_RawIOBase"</q>);</td></tr>
+<tr><th id="681">681</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyBufferedIOBase_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyBufferedIOBase_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;_BufferedIOBase&quot;, (PyObject *)&amp;PyBufferedIOBase_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyBufferedIOBase_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 681, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</a>, <q>"_BufferedIOBase"</q>);</td></tr>
+<tr><th id="682">682</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyTextIOBase_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyTextIOBase_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;_TextIOBase&quot;, (PyObject *)&amp;PyTextIOBase_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyTextIOBase_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 682, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyTextIOBase_Type" title='PyTextIOBase_Type' data-ref="PyTextIOBase_Type">PyTextIOBase_Type</a>, <q>"_TextIOBase"</q>);</td></tr>
+<tr><th id="683">683</th><td></td></tr>
+<tr><th id="684">684</th><td>    <i>/* Implementation of concrete IO objects. */</i></td></tr>
+<tr><th id="685">685</th><td>    <i>/* FileIO */</i></td></tr>
+<tr><th id="686">686</th><td>    <a class="ref" href="_iomodule.h.html#PyFileIO_Type" title='PyFileIO_Type' data-ref="PyFileIO_Type">PyFileIO_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyRawIOBase_Type" title='PyRawIOBase_Type' data-ref="PyRawIOBase_Type">PyRawIOBase_Type</a>;</td></tr>
+<tr><th id="687">687</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyFileIO_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyFileIO_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;FileIO&quot;, (PyObject *)&amp;PyFileIO_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyFileIO_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 687, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyFileIO_Type" title='PyFileIO_Type' data-ref="PyFileIO_Type">PyFileIO_Type</a>, <q>"FileIO"</q>);</td></tr>
+<tr><th id="688">688</th><td></td></tr>
+<tr><th id="689">689</th><td>    <i>/* BytesIO */</i></td></tr>
+<tr><th id="690">690</th><td>    <a class="ref" href="_iomodule.h.html#PyBytesIO_Type" title='PyBytesIO_Type' data-ref="PyBytesIO_Type">PyBytesIO_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</a>;</td></tr>
+<tr><th id="691">691</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyBytesIO_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyBytesIO_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;BytesIO&quot;, (PyObject *)&amp;PyBytesIO_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyBytesIO_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 691, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyBytesIO_Type" title='PyBytesIO_Type' data-ref="PyBytesIO_Type">PyBytesIO_Type</a>, <q>"BytesIO"</q>);</td></tr>
+<tr><th id="692">692</th><td>    <b>if</b> (<a class="ref" href="../../Include/object.h.html#PyType_Ready" title='PyType_Ready' data-ref="PyType_Ready">PyType_Ready</a>(&amp;<a class="ref" href="_iomodule.h.html#_PyBytesIOBuffer_Type" title='_PyBytesIOBuffer_Type' data-ref="_PyBytesIOBuffer_Type">_PyBytesIOBuffer_Type</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="693">693</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="694">694</th><td></td></tr>
+<tr><th id="695">695</th><td>    <i>/* StringIO */</i></td></tr>
+<tr><th id="696">696</th><td>    <a class="ref" href="_iomodule.h.html#PyStringIO_Type" title='PyStringIO_Type' data-ref="PyStringIO_Type">PyStringIO_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyTextIOBase_Type" title='PyTextIOBase_Type' data-ref="PyTextIOBase_Type">PyTextIOBase_Type</a>;</td></tr>
+<tr><th id="697">697</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyStringIO_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyStringIO_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;StringIO&quot;, (PyObject *)&amp;PyStringIO_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyStringIO_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 697, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyStringIO_Type" title='PyStringIO_Type' data-ref="PyStringIO_Type">PyStringIO_Type</a>, <q>"StringIO"</q>);</td></tr>
+<tr><th id="698">698</th><td></td></tr>
+<tr><th id="699">699</th><td><u>#<span data-ppcond="699">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="700">700</th><td>    <i>/* WindowsConsoleIO */</i></td></tr>
+<tr><th id="701">701</th><td>    PyWindowsConsoleIO_Type.tp_base = &amp;PyRawIOBase_Type;</td></tr>
+<tr><th id="702">702</th><td>    ADD_TYPE(&amp;PyWindowsConsoleIO_Type, <q>"_WindowsConsoleIO"</q>);</td></tr>
+<tr><th id="703">703</th><td><u>#<span data-ppcond="699">endif</span></u></td></tr>
+<tr><th id="704">704</th><td></td></tr>
+<tr><th id="705">705</th><td>    <i>/* BufferedReader */</i></td></tr>
+<tr><th id="706">706</th><td>    <a class="ref" href="_iomodule.h.html#PyBufferedReader_Type" title='PyBufferedReader_Type' data-ref="PyBufferedReader_Type">PyBufferedReader_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</a>;</td></tr>
+<tr><th id="707">707</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyBufferedReader_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyBufferedReader_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;BufferedReader&quot;, (PyObject *)&amp;PyBufferedReader_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyBufferedReader_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 707, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyBufferedReader_Type" title='PyBufferedReader_Type' data-ref="PyBufferedReader_Type">PyBufferedReader_Type</a>, <q>"BufferedReader"</q>);</td></tr>
+<tr><th id="708">708</th><td></td></tr>
+<tr><th id="709">709</th><td>    <i>/* BufferedWriter */</i></td></tr>
+<tr><th id="710">710</th><td>    <a class="ref" href="_iomodule.h.html#PyBufferedWriter_Type" title='PyBufferedWriter_Type' data-ref="PyBufferedWriter_Type">PyBufferedWriter_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</a>;</td></tr>
+<tr><th id="711">711</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyBufferedWriter_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyBufferedWriter_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;BufferedWriter&quot;, (PyObject *)&amp;PyBufferedWriter_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyBufferedWriter_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 711, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyBufferedWriter_Type" title='PyBufferedWriter_Type' data-ref="PyBufferedWriter_Type">PyBufferedWriter_Type</a>, <q>"BufferedWriter"</q>);</td></tr>
+<tr><th id="712">712</th><td></td></tr>
+<tr><th id="713">713</th><td>    <i>/* BufferedRWPair */</i></td></tr>
+<tr><th id="714">714</th><td>    <a class="ref" href="_iomodule.h.html#PyBufferedRWPair_Type" title='PyBufferedRWPair_Type' data-ref="PyBufferedRWPair_Type">PyBufferedRWPair_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</a>;</td></tr>
+<tr><th id="715">715</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyBufferedRWPair_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyBufferedRWPair_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;BufferedRWPair&quot;, (PyObject *)&amp;PyBufferedRWPair_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyBufferedRWPair_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 715, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyBufferedRWPair_Type" title='PyBufferedRWPair_Type' data-ref="PyBufferedRWPair_Type">PyBufferedRWPair_Type</a>, <q>"BufferedRWPair"</q>);</td></tr>
+<tr><th id="716">716</th><td></td></tr>
+<tr><th id="717">717</th><td>    <i>/* BufferedRandom */</i></td></tr>
+<tr><th id="718">718</th><td>    <a class="ref" href="_iomodule.h.html#PyBufferedRandom_Type" title='PyBufferedRandom_Type' data-ref="PyBufferedRandom_Type">PyBufferedRandom_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyBufferedIOBase_Type" title='PyBufferedIOBase_Type' data-ref="PyBufferedIOBase_Type">PyBufferedIOBase_Type</a>;</td></tr>
+<tr><th id="719">719</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyBufferedRandom_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyBufferedRandom_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;BufferedRandom&quot;, (PyObject *)&amp;PyBufferedRandom_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyBufferedRandom_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 719, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyBufferedRandom_Type" title='PyBufferedRandom_Type' data-ref="PyBufferedRandom_Type">PyBufferedRandom_Type</a>, <q>"BufferedRandom"</q>);</td></tr>
+<tr><th id="720">720</th><td></td></tr>
+<tr><th id="721">721</th><td>    <i>/* TextIOWrapper */</i></td></tr>
+<tr><th id="722">722</th><td>    <a class="ref" href="_iomodule.h.html#PyTextIOWrapper_Type" title='PyTextIOWrapper_Type' data-ref="PyTextIOWrapper_Type">PyTextIOWrapper_Type</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_base" title='_typeobject::tp_base' data-ref="_typeobject::tp_base">tp_base</a> = &amp;<a class="ref" href="_iomodule.h.html#PyTextIOBase_Type" title='PyTextIOBase_Type' data-ref="PyTextIOBase_Type">PyTextIOBase_Type</a>;</td></tr>
+<tr><th id="723">723</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyTextIOWrapper_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyTextIOWrapper_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;TextIOWrapper&quot;, (PyObject *)&amp;PyTextIOWrapper_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyTextIOWrapper_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 723, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyTextIOWrapper_Type" title='PyTextIOWrapper_Type' data-ref="PyTextIOWrapper_Type">PyTextIOWrapper_Type</a>, <q>"TextIOWrapper"</q>);</td></tr>
+<tr><th id="724">724</th><td></td></tr>
+<tr><th id="725">725</th><td>    <i>/* IncrementalNewlineDecoder */</i></td></tr>
+<tr><th id="726">726</th><td>    <a class="macro" href="#646" title="if (PyType_Ready(&amp;PyIncrementalNewlineDecoder_Type) &lt; 0) goto fail; ( _Py_RefTotal++ , ((PyObject *)(&amp;PyIncrementalNewlineDecoder_Type))-&gt;ob_refcnt++); if (PyModule_AddObject(m, &quot;IncrementalNewlineDecoder&quot;, (PyObject *)&amp;PyIncrementalNewlineDecoder_Type) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(&amp;PyIncrementalNewlineDecoder_Type); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 726, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); goto fail; }" data-ref="_M/ADD_TYPE">ADD_TYPE</a>(&amp;<a class="ref" href="_iomodule.h.html#PyIncrementalNewlineDecoder_Type" title='PyIncrementalNewlineDecoder_Type' data-ref="PyIncrementalNewlineDecoder_Type">PyIncrementalNewlineDecoder_Type</a>, <q>"IncrementalNewlineDecoder"</q>);</td></tr>
+<tr><th id="727">727</th><td></td></tr>
+<tr><th id="728">728</th><td>    <i>/* Interned strings */</i></td></tr>
+<tr><th id="729">729</th><td><u>#define <dfn class="macro" id="_M/ADD_INTERNED" data-ref="_M/ADD_INTERNED">ADD_INTERNED</dfn>(name) \</u></td></tr>
+<tr><th id="730">730</th><td><u>    if (!_PyIO_str_ ## name &amp;&amp; \</u></td></tr>
+<tr><th id="731">731</th><td><u>        !(_PyIO_str_ ## name = <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_InternFromString" title='PyUnicode_InternFromString' data-ref="PyUnicode_InternFromString">PyUnicode_InternFromString</a>(# name))) \</u></td></tr>
+<tr><th id="732">732</th><td><u>        goto <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</u></td></tr>
+<tr><th id="733">733</th><td></td></tr>
+<tr><th id="734">734</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_close &amp;&amp; !(_PyIO_str_close = PyUnicode_InternFromString(&quot;close&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(close)</td></tr>
+<tr><th id="735">735</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_closed &amp;&amp; !(_PyIO_str_closed = PyUnicode_InternFromString(&quot;closed&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(closed)</td></tr>
+<tr><th id="736">736</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_decode &amp;&amp; !(_PyIO_str_decode = PyUnicode_InternFromString(&quot;decode&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(decode)</td></tr>
+<tr><th id="737">737</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_encode &amp;&amp; !(_PyIO_str_encode = PyUnicode_InternFromString(&quot;encode&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(encode)</td></tr>
+<tr><th id="738">738</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_fileno &amp;&amp; !(_PyIO_str_fileno = PyUnicode_InternFromString(&quot;fileno&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(fileno)</td></tr>
+<tr><th id="739">739</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_flush &amp;&amp; !(_PyIO_str_flush = PyUnicode_InternFromString(&quot;flush&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(flush)</td></tr>
+<tr><th id="740">740</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_getstate &amp;&amp; !(_PyIO_str_getstate = PyUnicode_InternFromString(&quot;getstate&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(getstate)</td></tr>
+<tr><th id="741">741</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_isatty &amp;&amp; !(_PyIO_str_isatty = PyUnicode_InternFromString(&quot;isatty&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(isatty)</td></tr>
+<tr><th id="742">742</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_newlines &amp;&amp; !(_PyIO_str_newlines = PyUnicode_InternFromString(&quot;newlines&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(newlines)</td></tr>
+<tr><th id="743">743</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_read &amp;&amp; !(_PyIO_str_read = PyUnicode_InternFromString(&quot;read&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(read)</td></tr>
+<tr><th id="744">744</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_read1 &amp;&amp; !(_PyIO_str_read1 = PyUnicode_InternFromString(&quot;read1&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(read1)</td></tr>
+<tr><th id="745">745</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_readable &amp;&amp; !(_PyIO_str_readable = PyUnicode_InternFromString(&quot;readable&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(readable)</td></tr>
+<tr><th id="746">746</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_readall &amp;&amp; !(_PyIO_str_readall = PyUnicode_InternFromString(&quot;readall&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(readall)</td></tr>
+<tr><th id="747">747</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_readinto &amp;&amp; !(_PyIO_str_readinto = PyUnicode_InternFromString(&quot;readinto&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(readinto)</td></tr>
+<tr><th id="748">748</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_readline &amp;&amp; !(_PyIO_str_readline = PyUnicode_InternFromString(&quot;readline&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(readline)</td></tr>
+<tr><th id="749">749</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_reset &amp;&amp; !(_PyIO_str_reset = PyUnicode_InternFromString(&quot;reset&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(reset)</td></tr>
+<tr><th id="750">750</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_seek &amp;&amp; !(_PyIO_str_seek = PyUnicode_InternFromString(&quot;seek&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(seek)</td></tr>
+<tr><th id="751">751</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_seekable &amp;&amp; !(_PyIO_str_seekable = PyUnicode_InternFromString(&quot;seekable&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(seekable)</td></tr>
+<tr><th id="752">752</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_setstate &amp;&amp; !(_PyIO_str_setstate = PyUnicode_InternFromString(&quot;setstate&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(setstate)</td></tr>
+<tr><th id="753">753</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_tell &amp;&amp; !(_PyIO_str_tell = PyUnicode_InternFromString(&quot;tell&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(tell)</td></tr>
+<tr><th id="754">754</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_truncate &amp;&amp; !(_PyIO_str_truncate = PyUnicode_InternFromString(&quot;truncate&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(truncate)</td></tr>
+<tr><th id="755">755</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_write &amp;&amp; !(_PyIO_str_write = PyUnicode_InternFromString(&quot;write&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(write)</td></tr>
+<tr><th id="756">756</th><td>    <a class="macro" href="#729" title="if (!_PyIO_str_writable &amp;&amp; !(_PyIO_str_writable = PyUnicode_InternFromString(&quot;writable&quot;))) goto fail;" data-ref="_M/ADD_INTERNED">ADD_INTERNED</a>(writable)</td></tr>
+<tr><th id="757">757</th><td></td></tr>
+<tr><th id="758">758</th><td>    <b>if</b> (!<a class="ref" href="_iomodule.h.html#_PyIO_str_nl" title='_PyIO_str_nl' data-ref="_PyIO_str_nl">_PyIO_str_nl</a> &amp;&amp;</td></tr>
+<tr><th id="759">759</th><td>        !(<a class="ref" href="_iomodule.h.html#_PyIO_str_nl" title='_PyIO_str_nl' data-ref="_PyIO_str_nl">_PyIO_str_nl</a> = <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_InternFromString" title='PyUnicode_InternFromString' data-ref="PyUnicode_InternFromString">PyUnicode_InternFromString</a>(<q>"\n"</q>)))</td></tr>
+<tr><th id="760">760</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="761">761</th><td></td></tr>
+<tr><th id="762">762</th><td>    <b>if</b> (!<a class="ref" href="_iomodule.h.html#_PyIO_empty_str" title='_PyIO_empty_str' data-ref="_PyIO_empty_str">_PyIO_empty_str</a> &amp;&amp;</td></tr>
+<tr><th id="763">763</th><td>        !(<a class="ref" href="_iomodule.h.html#_PyIO_empty_str" title='_PyIO_empty_str' data-ref="_PyIO_empty_str">_PyIO_empty_str</a> = <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_FromStringAndSize" title='PyUnicode_FromStringAndSize' data-ref="PyUnicode_FromStringAndSize">PyUnicode_FromStringAndSize</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>0</var>)))</td></tr>
+<tr><th id="764">764</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="765">765</th><td>    <b>if</b> (!<a class="ref" href="_iomodule.h.html#_PyIO_empty_bytes" title='_PyIO_empty_bytes' data-ref="_PyIO_empty_bytes">_PyIO_empty_bytes</a> &amp;&amp;</td></tr>
+<tr><th id="766">766</th><td>        !(<a class="ref" href="_iomodule.h.html#_PyIO_empty_bytes" title='_PyIO_empty_bytes' data-ref="_PyIO_empty_bytes">_PyIO_empty_bytes</a> = <a class="ref" href="../../Include/bytesobject.h.html#PyBytes_FromStringAndSize" title='PyBytes_FromStringAndSize' data-ref="PyBytes_FromStringAndSize">PyBytes_FromStringAndSize</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>0</var>)))</td></tr>
+<tr><th id="767">767</th><td>        <b>goto</b> <a class="lbl" href="#111fail" data-ref="111fail">fail</a>;</td></tr>
+<tr><th id="768">768</th><td></td></tr>
+<tr><th id="769">769</th><td>    <a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::initialized" title='(anonymous struct)::initialized' data-ref="(anonymous)::initialized">initialized</a> = <var>1</var>;</td></tr>
+<tr><th id="770">770</th><td></td></tr>
+<tr><th id="771">771</th><td>    <b>return</b> <a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>;</td></tr>
+<tr><th id="772">772</th><td></td></tr>
+<tr><th id="773">773</th><td>  <dfn class="lbl" id="111fail" data-ref="111fail">fail</dfn>:</td></tr>
+<tr><th id="774">774</th><td>    <a class="macro" href="../../Include/object.h.html#848" title="do { PyObject *_py_xdecref_tmp = (PyObject *)(state-&gt;unsupported_operation); if (_py_xdecref_tmp != ((void*)0)) do { PyObject *_py_decref_tmp = (PyObject *)(_py_xdecref_tmp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 774, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); } while (0)" data-ref="_M/Py_XDECREF">Py_XDECREF</a>(<a class="local col0 ref" href="#110state" title='state' data-ref="110state">state</a>-&gt;<a class="ref" href="_iomodule.h.html#(anonymous)::unsupported_operation" title='(anonymous struct)::unsupported_operation' data-ref="(anonymous)::unsupported_operation">unsupported_operation</a>);</td></tr>
+<tr><th id="775">775</th><td>    <a class="macro" href="../../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(m); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_io/_iomodule.c&quot;, 775, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col9 ref" href="#109m" title='m' data-ref="109m">m</a>);</td></tr>
+<tr><th id="776">776</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="777">777</th><td>}</td></tr>
+<tr><th id="778">778</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

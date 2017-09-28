@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>listobject.c.h source code [codebrowser/Objects/clinic/listobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/listobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='listobject.c.h.html'>listobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_insert__doc__[] = &quot;insert($self, index, object, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Insert object before index.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_insert__doc__" title='list_insert__doc__' data-ref="list_insert__doc__">list_insert__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"insert($self, index, object, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Insert object before index."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/LIST_INSERT_METHODDEF" data-ref="_M/LIST_INSERT_METHODDEF">LIST_INSERT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"insert", (PyCFunction)list_insert, METH_FASTCALL, list_insert__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../listobject.c.html#list_insert_impl" title='list_insert_impl' data-ref="list_insert_impl" id="list_insert_impl">list_insert_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col1 decl" id="1self" title='self' data-type='PyListObject *' data-ref="1self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="2index" title='index' data-type='Py_ssize_t' data-ref="2index">index</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3object" title='object' data-type='PyObject *' data-ref="3object">object</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="list_insert" title='list_insert' data-ref="list_insert">list_insert</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='PyListObject *' data-ref="4self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject **' data-ref="5args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="6nargs" title='nargs' data-type='Py_ssize_t' data-ref="6nargs">nargs</dfn>)</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7return_value" title='return_value' data-type='PyObject *' data-ref="7return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="21">21</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="8index" title='index' data-type='Py_ssize_t' data-ref="8index">index</dfn>;</td></tr>
+<tr><th id="22">22</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9object" title='object' data-type='PyObject *' data-ref="9object">object</dfn>;</td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <a class="local col6 ref" href="#6nargs" title='nargs' data-ref="6nargs">nargs</a>, <q>"nO:insert"</q>,</td></tr>
+<tr><th id="25">25</th><td>        &amp;<a class="local col8 ref" href="#8index" title='index' data-ref="8index">index</a>, &amp;<a class="local col9 ref" href="#9object" title='object' data-ref="9object">object</a>)) {</td></tr>
+<tr><th id="26">26</th><td>        <b>goto</b> <a class="lbl" href="#10exit" data-ref="10exit">exit</a>;</td></tr>
+<tr><th id="27">27</th><td>    }</td></tr>
+<tr><th id="28">28</th><td>    <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a> = <a class="ref" href="../listobject.c.html#list_insert_impl" title='list_insert_impl' data-ref="list_insert_impl">list_insert_impl</a>(<a class="local col4 ref" href="#4self" title='self' data-ref="4self">self</a>, <a class="local col8 ref" href="#8index" title='index' data-ref="8index">index</a>, <a class="local col9 ref" href="#9object" title='object' data-ref="9object">object</a>);</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><dfn class="lbl" id="10exit" data-ref="10exit">exit</dfn>:</td></tr>
+<tr><th id="31">31</th><td>    <b>return</b> <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a>;</td></tr>
+<tr><th id="32">32</th><td>}</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_clear__doc__[] = &quot;clear($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Remove all items from list.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_clear__doc__" title='list_clear__doc__' data-ref="list_clear__doc__">list_clear__doc__</dfn>,</td></tr>
+<tr><th id="35">35</th><td><q>"clear($self, /)\n"</q></td></tr>
+<tr><th id="36">36</th><td><q>"--\n"</q></td></tr>
+<tr><th id="37">37</th><td><q>"\n"</q></td></tr>
+<tr><th id="38">38</th><td><q>"Remove all items from list."</q>);</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/LIST_CLEAR_METHODDEF" data-ref="_M/LIST_CLEAR_METHODDEF">LIST_CLEAR_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="41">41</th><td><u>    {"clear", (PyCFunction)list_clear, METH_NOARGS, list_clear__doc__},</u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="44">44</th><td><a class="decl" href="../listobject.c.html#list_clear_impl" title='list_clear_impl' data-ref="list_clear_impl" id="list_clear_impl">list_clear_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col1 decl" id="11self" title='self' data-type='PyListObject *' data-ref="11self">self</dfn>);</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="47">47</th><td><dfn class="decl def" id="list_clear" title='list_clear' data-ref="list_clear">list_clear</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col2 decl" id="12self" title='self' data-type='PyListObject *' data-ref="12self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="48">48</th><td>{</td></tr>
+<tr><th id="49">49</th><td>    <b>return</b> <a class="ref" href="../listobject.c.html#list_clear_impl" title='list_clear_impl' data-ref="list_clear_impl">list_clear_impl</a>(<a class="local col2 ref" href="#12self" title='self' data-ref="12self">self</a>);</td></tr>
+<tr><th id="50">50</th><td>}</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_copy__doc__[] = &quot;copy($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a shallow copy of the list.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_copy__doc__" title='list_copy__doc__' data-ref="list_copy__doc__">list_copy__doc__</dfn>,</td></tr>
+<tr><th id="53">53</th><td><q>"copy($self, /)\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"--\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"Return a shallow copy of the list."</q>);</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/LIST_COPY_METHODDEF" data-ref="_M/LIST_COPY_METHODDEF">LIST_COPY_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="59">59</th><td><u>    {"copy", (PyCFunction)list_copy, METH_NOARGS, list_copy__doc__},</u></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="62">62</th><td><a class="decl" href="../listobject.c.html#list_copy_impl" title='list_copy_impl' data-ref="list_copy_impl" id="list_copy_impl">list_copy_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col3 decl" id="13self" title='self' data-type='PyListObject *' data-ref="13self">self</dfn>);</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="65">65</th><td><dfn class="decl def" id="list_copy" title='list_copy' data-ref="list_copy">list_copy</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col4 decl" id="14self" title='self' data-type='PyListObject *' data-ref="14self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="66">66</th><td>{</td></tr>
+<tr><th id="67">67</th><td>    <b>return</b> <a class="ref" href="../listobject.c.html#list_copy_impl" title='list_copy_impl' data-ref="list_copy_impl">list_copy_impl</a>(<a class="local col4 ref" href="#14self" title='self' data-ref="14self">self</a>);</td></tr>
+<tr><th id="68">68</th><td>}</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_append__doc__[] = &quot;append($self, object, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Append object to the end of the list.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_append__doc__" title='list_append__doc__' data-ref="list_append__doc__">list_append__doc__</dfn>,</td></tr>
+<tr><th id="71">71</th><td><q>"append($self, object, /)\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"--\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"Append object to the end of the list."</q>);</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/LIST_APPEND_METHODDEF" data-ref="_M/LIST_APPEND_METHODDEF">LIST_APPEND_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="77">77</th><td><u>    {"append", (PyCFunction)list_append, METH_O, list_append__doc__},</u></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_extend__doc__[] = &quot;extend($self, iterable, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Extend list by appending elements from the iterable.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_extend__doc__" title='list_extend__doc__' data-ref="list_extend__doc__">list_extend__doc__</dfn>,</td></tr>
+<tr><th id="80">80</th><td><q>"extend($self, iterable, /)\n"</q></td></tr>
+<tr><th id="81">81</th><td><q>"--\n"</q></td></tr>
+<tr><th id="82">82</th><td><q>"\n"</q></td></tr>
+<tr><th id="83">83</th><td><q>"Extend list by appending elements from the iterable."</q>);</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/LIST_EXTEND_METHODDEF" data-ref="_M/LIST_EXTEND_METHODDEF">LIST_EXTEND_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="86">86</th><td><u>    {"extend", (PyCFunction)list_extend, METH_O, list_extend__doc__},</u></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_pop__doc__[] = &quot;pop($self, index=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Remove and return item at index (default last).\n&quot;&quot;\n&quot;&quot;Raises IndexError if list is empty or index is out of range.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_pop__doc__" title='list_pop__doc__' data-ref="list_pop__doc__">list_pop__doc__</dfn>,</td></tr>
+<tr><th id="89">89</th><td><q>"pop($self, index=-1, /)\n"</q></td></tr>
+<tr><th id="90">90</th><td><q>"--\n"</q></td></tr>
+<tr><th id="91">91</th><td><q>"\n"</q></td></tr>
+<tr><th id="92">92</th><td><q>"Remove and return item at index (default last).\n"</q></td></tr>
+<tr><th id="93">93</th><td><q>"\n"</q></td></tr>
+<tr><th id="94">94</th><td><q>"Raises IndexError if list is empty or index is out of range."</q>);</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/LIST_POP_METHODDEF" data-ref="_M/LIST_POP_METHODDEF">LIST_POP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="97">97</th><td><u>    {"pop", (PyCFunction)list_pop, METH_FASTCALL, list_pop__doc__},</u></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="100">100</th><td><a class="decl" href="../listobject.c.html#list_pop_impl" title='list_pop_impl' data-ref="list_pop_impl" id="list_pop_impl">list_pop_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col5 decl" id="15self" title='self' data-type='PyListObject *' data-ref="15self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="16index" title='index' data-type='Py_ssize_t' data-ref="16index">index</dfn>);</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="103">103</th><td><dfn class="decl def" id="list_pop" title='list_pop' data-ref="list_pop">list_pop</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col7 decl" id="17self" title='self' data-type='PyListObject *' data-ref="17self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col8 decl" id="18args" title='args' data-type='PyObject **' data-ref="18args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="19nargs" title='nargs' data-type='Py_ssize_t' data-ref="19nargs">nargs</dfn>)</td></tr>
+<tr><th id="104">104</th><td>{</td></tr>
+<tr><th id="105">105</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20return_value" title='return_value' data-type='PyObject *' data-ref="20return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="106">106</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="21index" title='index' data-type='Py_ssize_t' data-ref="21index">index</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col8 ref" href="#18args" title='args' data-ref="18args">args</a>, <a class="local col9 ref" href="#19nargs" title='nargs' data-ref="19nargs">nargs</a>, <q>"|n:pop"</q>,</td></tr>
+<tr><th id="109">109</th><td>        &amp;<a class="local col1 ref" href="#21index" title='index' data-ref="21index">index</a>)) {</td></tr>
+<tr><th id="110">110</th><td>        <b>goto</b> <a class="lbl" href="#22exit" data-ref="22exit">exit</a>;</td></tr>
+<tr><th id="111">111</th><td>    }</td></tr>
+<tr><th id="112">112</th><td>    <a class="local col0 ref" href="#20return_value" title='return_value' data-ref="20return_value">return_value</a> = <a class="ref" href="../listobject.c.html#list_pop_impl" title='list_pop_impl' data-ref="list_pop_impl">list_pop_impl</a>(<a class="local col7 ref" href="#17self" title='self' data-ref="17self">self</a>, <a class="local col1 ref" href="#21index" title='index' data-ref="21index">index</a>);</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><dfn class="lbl" id="22exit" data-ref="22exit">exit</dfn>:</td></tr>
+<tr><th id="115">115</th><td>    <b>return</b> <a class="local col0 ref" href="#20return_value" title='return_value' data-ref="20return_value">return_value</a>;</td></tr>
+<tr><th id="116">116</th><td>}</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_sort__doc__[] = &quot;sort($self, /, *, key=None, reverse=False)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Stable sort *IN PLACE*.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_sort__doc__" title='list_sort__doc__' data-ref="list_sort__doc__">list_sort__doc__</dfn>,</td></tr>
+<tr><th id="119">119</th><td><q>"sort($self, /, *, key=None, reverse=False)\n"</q></td></tr>
+<tr><th id="120">120</th><td><q>"--\n"</q></td></tr>
+<tr><th id="121">121</th><td><q>"\n"</q></td></tr>
+<tr><th id="122">122</th><td><q>"Stable sort *IN PLACE*."</q>);</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><u>#define <dfn class="macro" id="_M/LIST_SORT_METHODDEF" data-ref="_M/LIST_SORT_METHODDEF">LIST_SORT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="125">125</th><td><u>    {"sort", (PyCFunction)list_sort, METH_FASTCALL|METH_KEYWORDS, list_sort__doc__},</u></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="128">128</th><td><a class="decl" href="../listobject.c.html#list_sort_impl" title='list_sort_impl' data-ref="list_sort_impl" id="list_sort_impl">list_sort_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col3 decl" id="23self" title='self' data-type='PyListObject *' data-ref="23self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24keyfunc" title='keyfunc' data-type='PyObject *' data-ref="24keyfunc">keyfunc</dfn>, <em>int</em> <dfn class="local col5 decl" id="25reverse" title='reverse' data-type='int' data-ref="25reverse">reverse</dfn>);</td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="131">131</th><td><dfn class="decl def" id="list_sort" title='list_sort' data-ref="list_sort">list_sort</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col6 decl" id="26self" title='self' data-type='PyListObject *' data-ref="26self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col7 decl" id="27args" title='args' data-type='PyObject **' data-ref="27args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="28nargs" title='nargs' data-type='Py_ssize_t' data-ref="28nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29kwnames" title='kwnames' data-type='PyObject *' data-ref="29kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="132">132</th><td>{</td></tr>
+<tr><th id="133">133</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30return_value" title='return_value' data-type='PyObject *' data-ref="30return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="134">134</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col1 decl" id="31_keywords" title='_keywords' data-type='const char *const [3]' data-ref="31_keywords">_keywords</dfn>[] = {<q>"key"</q>, <q>"reverse"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="135">135</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col2 decl" id="32_parser" title='_parser' data-type='_PyArg_Parser' data-ref="32_parser">_parser</dfn> = {<q>"|$Oi:sort"</q>, <a class="local col1 ref" href="#31_keywords" title='_keywords' data-ref="31_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="136">136</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33keyfunc" title='keyfunc' data-type='PyObject *' data-ref="33keyfunc">keyfunc</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="137">137</th><td>    <em>int</em> <dfn class="local col4 decl" id="34reverse" title='reverse' data-type='int' data-ref="34reverse">reverse</dfn> = <var>0</var>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStackAndKeywords" title='_PyArg_ParseStackAndKeywords' data-ref="_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col7 ref" href="#27args" title='args' data-ref="27args">args</a>, <a class="local col8 ref" href="#28nargs" title='nargs' data-ref="28nargs">nargs</a>, <a class="local col9 ref" href="#29kwnames" title='kwnames' data-ref="29kwnames">kwnames</a>, &amp;<a class="local col2 ref" href="#32_parser" title='_parser' data-ref="32_parser">_parser</a>,</td></tr>
+<tr><th id="140">140</th><td>        &amp;<a class="local col3 ref" href="#33keyfunc" title='keyfunc' data-ref="33keyfunc">keyfunc</a>, &amp;<a class="local col4 ref" href="#34reverse" title='reverse' data-ref="34reverse">reverse</a>)) {</td></tr>
+<tr><th id="141">141</th><td>        <b>goto</b> <a class="lbl" href="#35exit" data-ref="35exit">exit</a>;</td></tr>
+<tr><th id="142">142</th><td>    }</td></tr>
+<tr><th id="143">143</th><td>    <a class="local col0 ref" href="#30return_value" title='return_value' data-ref="30return_value">return_value</a> = <a class="ref" href="../listobject.c.html#list_sort_impl" title='list_sort_impl' data-ref="list_sort_impl">list_sort_impl</a>(<a class="local col6 ref" href="#26self" title='self' data-ref="26self">self</a>, <a class="local col3 ref" href="#33keyfunc" title='keyfunc' data-ref="33keyfunc">keyfunc</a>, <a class="local col4 ref" href="#34reverse" title='reverse' data-ref="34reverse">reverse</a>);</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td><dfn class="lbl" id="35exit" data-ref="35exit">exit</dfn>:</td></tr>
+<tr><th id="146">146</th><td>    <b>return</b> <a class="local col0 ref" href="#30return_value" title='return_value' data-ref="30return_value">return_value</a>;</td></tr>
+<tr><th id="147">147</th><td>}</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_reverse__doc__[] = &quot;reverse($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Reverse *IN PLACE*.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_reverse__doc__" title='list_reverse__doc__' data-ref="list_reverse__doc__">list_reverse__doc__</dfn>,</td></tr>
+<tr><th id="150">150</th><td><q>"reverse($self, /)\n"</q></td></tr>
+<tr><th id="151">151</th><td><q>"--\n"</q></td></tr>
+<tr><th id="152">152</th><td><q>"\n"</q></td></tr>
+<tr><th id="153">153</th><td><q>"Reverse *IN PLACE*."</q>);</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><u>#define <dfn class="macro" id="_M/LIST_REVERSE_METHODDEF" data-ref="_M/LIST_REVERSE_METHODDEF">LIST_REVERSE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="156">156</th><td><u>    {"reverse", (PyCFunction)list_reverse, METH_NOARGS, list_reverse__doc__},</u></td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="159">159</th><td><a class="decl" href="../listobject.c.html#list_reverse_impl" title='list_reverse_impl' data-ref="list_reverse_impl" id="list_reverse_impl">list_reverse_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col6 decl" id="36self" title='self' data-type='PyListObject *' data-ref="36self">self</dfn>);</td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="162">162</th><td><dfn class="decl def" id="list_reverse" title='list_reverse' data-ref="list_reverse">list_reverse</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col7 decl" id="37self" title='self' data-type='PyListObject *' data-ref="37self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="163">163</th><td>{</td></tr>
+<tr><th id="164">164</th><td>    <b>return</b> <a class="ref" href="../listobject.c.html#list_reverse_impl" title='list_reverse_impl' data-ref="list_reverse_impl">list_reverse_impl</a>(<a class="local col7 ref" href="#37self" title='self' data-ref="37self">self</a>);</td></tr>
+<tr><th id="165">165</th><td>}</td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_index__doc__[] = &quot;index($self, value, start=0, stop=sys.maxsize, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return first index of value.\n&quot;&quot;\n&quot;&quot;Raises ValueError if the value is not present.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_index__doc__" title='list_index__doc__' data-ref="list_index__doc__">list_index__doc__</dfn>,</td></tr>
+<tr><th id="168">168</th><td><q>"index($self, value, start=0, stop=sys.maxsize, /)\n"</q></td></tr>
+<tr><th id="169">169</th><td><q>"--\n"</q></td></tr>
+<tr><th id="170">170</th><td><q>"\n"</q></td></tr>
+<tr><th id="171">171</th><td><q>"Return first index of value.\n"</q></td></tr>
+<tr><th id="172">172</th><td><q>"\n"</q></td></tr>
+<tr><th id="173">173</th><td><q>"Raises ValueError if the value is not present."</q>);</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><u>#define <dfn class="macro" id="_M/LIST_INDEX_METHODDEF" data-ref="_M/LIST_INDEX_METHODDEF">LIST_INDEX_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="176">176</th><td><u>    {"index", (PyCFunction)list_index, METH_FASTCALL, list_index__doc__},</u></td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="179">179</th><td><a class="decl" href="../listobject.c.html#list_index_impl" title='list_index_impl' data-ref="list_index_impl" id="list_index_impl">list_index_impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col8 decl" id="38self" title='self' data-type='PyListObject *' data-ref="38self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="39value" title='value' data-type='PyObject *' data-ref="39value">value</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="40start" title='start' data-type='Py_ssize_t' data-ref="40start">start</dfn>,</td></tr>
+<tr><th id="180">180</th><td>                <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="41stop" title='stop' data-type='Py_ssize_t' data-ref="41stop">stop</dfn>);</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="183">183</th><td><dfn class="decl def" id="list_index" title='list_index' data-ref="list_index">list_index</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col2 decl" id="42self" title='self' data-type='PyListObject *' data-ref="42self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="43args" title='args' data-type='PyObject **' data-ref="43args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="44nargs" title='nargs' data-type='Py_ssize_t' data-ref="44nargs">nargs</dfn>)</td></tr>
+<tr><th id="184">184</th><td>{</td></tr>
+<tr><th id="185">185</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45return_value" title='return_value' data-type='PyObject *' data-ref="45return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="186">186</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46value" title='value' data-type='PyObject *' data-ref="46value">value</dfn>;</td></tr>
+<tr><th id="187">187</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="47start" title='start' data-type='Py_ssize_t' data-ref="47start">start</dfn> = <var>0</var>;</td></tr>
+<tr><th id="188">188</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="48stop" title='stop' data-type='Py_ssize_t' data-ref="48stop">stop</dfn> = <a class="macro" href="../../Include/pyport.h.html#109" title="((Py_ssize_t)(((size_t)-1)&gt;&gt;1))" data-ref="_M/PY_SSIZE_T_MAX">PY_SSIZE_T_MAX</a>;</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col3 ref" href="#43args" title='args' data-ref="43args">args</a>, <a class="local col4 ref" href="#44nargs" title='nargs' data-ref="44nargs">nargs</a>, <q>"O|O&amp;O&amp;:index"</q>,</td></tr>
+<tr><th id="191">191</th><td>        &amp;<a class="local col6 ref" href="#46value" title='value' data-ref="46value">value</a>, <a class="ref" href="../../Include/ceval.h.html#_PyEval_SliceIndexNotNone" title='_PyEval_SliceIndexNotNone' data-ref="_PyEval_SliceIndexNotNone">_PyEval_SliceIndexNotNone</a>, &amp;<a class="local col7 ref" href="#47start" title='start' data-ref="47start">start</a>, <a class="ref" href="../../Include/ceval.h.html#_PyEval_SliceIndexNotNone" title='_PyEval_SliceIndexNotNone' data-ref="_PyEval_SliceIndexNotNone">_PyEval_SliceIndexNotNone</a>, &amp;<a class="local col8 ref" href="#48stop" title='stop' data-ref="48stop">stop</a>)) {</td></tr>
+<tr><th id="192">192</th><td>        <b>goto</b> <a class="lbl" href="#49exit" data-ref="49exit">exit</a>;</td></tr>
+<tr><th id="193">193</th><td>    }</td></tr>
+<tr><th id="194">194</th><td>    <a class="local col5 ref" href="#45return_value" title='return_value' data-ref="45return_value">return_value</a> = <a class="ref" href="../listobject.c.html#list_index_impl" title='list_index_impl' data-ref="list_index_impl">list_index_impl</a>(<a class="local col2 ref" href="#42self" title='self' data-ref="42self">self</a>, <a class="local col6 ref" href="#46value" title='value' data-ref="46value">value</a>, <a class="local col7 ref" href="#47start" title='start' data-ref="47start">start</a>, <a class="local col8 ref" href="#48stop" title='stop' data-ref="48stop">stop</a>);</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><dfn class="lbl" id="49exit" data-ref="49exit">exit</dfn>:</td></tr>
+<tr><th id="197">197</th><td>    <b>return</b> <a class="local col5 ref" href="#45return_value" title='return_value' data-ref="45return_value">return_value</a>;</td></tr>
+<tr><th id="198">198</th><td>}</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_count__doc__[] = &quot;count($self, value, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return number of occurrences of value.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_count__doc__" title='list_count__doc__' data-ref="list_count__doc__">list_count__doc__</dfn>,</td></tr>
+<tr><th id="201">201</th><td><q>"count($self, value, /)\n"</q></td></tr>
+<tr><th id="202">202</th><td><q>"--\n"</q></td></tr>
+<tr><th id="203">203</th><td><q>"\n"</q></td></tr>
+<tr><th id="204">204</th><td><q>"Return number of occurrences of value."</q>);</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><u>#define <dfn class="macro" id="_M/LIST_COUNT_METHODDEF" data-ref="_M/LIST_COUNT_METHODDEF">LIST_COUNT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="207">207</th><td><u>    {"count", (PyCFunction)list_count, METH_O, list_count__doc__},</u></td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list_remove__doc__[] = &quot;remove($self, value, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Remove first occurrence of value.\n&quot;&quot;\n&quot;&quot;Raises ValueError if the value is not present.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list_remove__doc__" title='list_remove__doc__' data-ref="list_remove__doc__">list_remove__doc__</dfn>,</td></tr>
+<tr><th id="210">210</th><td><q>"remove($self, value, /)\n"</q></td></tr>
+<tr><th id="211">211</th><td><q>"--\n"</q></td></tr>
+<tr><th id="212">212</th><td><q>"\n"</q></td></tr>
+<tr><th id="213">213</th><td><q>"Remove first occurrence of value.\n"</q></td></tr>
+<tr><th id="214">214</th><td><q>"\n"</q></td></tr>
+<tr><th id="215">215</th><td><q>"Raises ValueError if the value is not present."</q>);</td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td><u>#define <dfn class="macro" id="_M/LIST_REMOVE_METHODDEF" data-ref="_M/LIST_REMOVE_METHODDEF">LIST_REMOVE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="218">218</th><td><u>    {"remove", (PyCFunction)list_remove, METH_O, list_remove__doc__},</u></td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list___init____doc__[] = &quot;list(iterable=(), /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Built-in mutable sequence.\n&quot;&quot;\n&quot;&quot;If no argument is given, the constructor creates a new empty list.\n&quot;&quot;The argument must be an iterable if specified.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list___init____doc__" title='list___init____doc__' data-ref="list___init____doc__">list___init____doc__</dfn>,</td></tr>
+<tr><th id="221">221</th><td><q>"list(iterable=(), /)\n"</q></td></tr>
+<tr><th id="222">222</th><td><q>"--\n"</q></td></tr>
+<tr><th id="223">223</th><td><q>"\n"</q></td></tr>
+<tr><th id="224">224</th><td><q>"Built-in mutable sequence.\n"</q></td></tr>
+<tr><th id="225">225</th><td><q>"\n"</q></td></tr>
+<tr><th id="226">226</th><td><q>"If no argument is given, the constructor creates a new empty list.\n"</q></td></tr>
+<tr><th id="227">227</th><td><q>"The argument must be an iterable if specified."</q>);</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="230">230</th><td><a class="decl" href="../listobject.c.html#list___init___impl" title='list___init___impl' data-ref="list___init___impl" id="list___init___impl">list___init___impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col0 decl" id="50self" title='self' data-type='PyListObject *' data-ref="50self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51iterable" title='iterable' data-type='PyObject *' data-ref="51iterable">iterable</dfn>);</td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="233">233</th><td><dfn class="decl def" id="list___init__" title='list___init__' data-ref="list___init__">list___init__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="52self" title='self' data-type='PyObject *' data-ref="52self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53args" title='args' data-type='PyObject *' data-ref="53args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="54kwargs" title='kwargs' data-type='PyObject *' data-ref="54kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="234">234</th><td>{</td></tr>
+<tr><th id="235">235</th><td>    <em>int</em> <dfn class="local col5 decl" id="55return_value" title='return_value' data-type='int' data-ref="55return_value">return_value</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="236">236</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56iterable" title='iterable' data-type='PyObject *' data-ref="56iterable">iterable</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td>    <b>if</b> ((<a class="macro" href="../../Include/object.h.html#118" title="(((PyObject*)(self))-&gt;ob_type)" data-ref="_M/Py_TYPE">Py_TYPE</a>(<a class="local col2 ref" href="#52self" title='self' data-ref="52self">self</a>) == &amp;<a class="ref" href="../../Include/listobject.h.html#PyList_Type" title='PyList_Type' data-ref="PyList_Type">PyList_Type</a>) &amp;&amp;</td></tr>
+<tr><th id="239">239</th><td>        !<a class="macro" href="../../Include/modsupport.h.html#64" title="((kwargs) == ((void*)0) || _PyArg_NoKeywords((&quot;list&quot;), (kwargs)))" data-ref="_M/_PyArg_NoKeywords">_PyArg_NoKeywords</a>(<q>"list"</q>, <a class="local col4 ref" href="#54kwargs" title='kwargs' data-ref="54kwargs">kwargs</a>)) {</td></tr>
+<tr><th id="240">240</th><td>        <b>goto</b> <a class="lbl" href="#57exit" data-ref="57exit">exit</a>;</td></tr>
+<tr><th id="241">241</th><td>    }</td></tr>
+<tr><th id="242">242</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_UnpackTuple" title='PyArg_UnpackTuple' data-ref="PyArg_UnpackTuple">PyArg_UnpackTuple</a>(<a class="local col3 ref" href="#53args" title='args' data-ref="53args">args</a>, <q>"list"</q>,</td></tr>
+<tr><th id="243">243</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="244">244</th><td>        &amp;<a class="local col6 ref" href="#56iterable" title='iterable' data-ref="56iterable">iterable</a>)) {</td></tr>
+<tr><th id="245">245</th><td>        <b>goto</b> <a class="lbl" href="#57exit" data-ref="57exit">exit</a>;</td></tr>
+<tr><th id="246">246</th><td>    }</td></tr>
+<tr><th id="247">247</th><td>    <a class="local col5 ref" href="#55return_value" title='return_value' data-ref="55return_value">return_value</a> = <a class="ref" href="../listobject.c.html#list___init___impl" title='list___init___impl' data-ref="list___init___impl">list___init___impl</a>((<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *)<a class="local col2 ref" href="#52self" title='self' data-ref="52self">self</a>, <a class="local col6 ref" href="#56iterable" title='iterable' data-ref="56iterable">iterable</a>);</td></tr>
+<tr><th id="248">248</th><td></td></tr>
+<tr><th id="249">249</th><td><dfn class="lbl" id="57exit" data-ref="57exit">exit</dfn>:</td></tr>
+<tr><th id="250">250</th><td>    <b>return</b> <a class="local col5 ref" href="#55return_value" title='return_value' data-ref="55return_value">return_value</a>;</td></tr>
+<tr><th id="251">251</th><td>}</td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list___sizeof____doc__[] = &quot;__sizeof__($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the size of the list in memory, in bytes.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list___sizeof____doc__" title='list___sizeof____doc__' data-ref="list___sizeof____doc__">list___sizeof____doc__</dfn>,</td></tr>
+<tr><th id="254">254</th><td><q>"__sizeof__($self, /)\n"</q></td></tr>
+<tr><th id="255">255</th><td><q>"--\n"</q></td></tr>
+<tr><th id="256">256</th><td><q>"\n"</q></td></tr>
+<tr><th id="257">257</th><td><q>"Return the size of the list in memory, in bytes."</q>);</td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td><u>#define <dfn class="macro" id="_M/LIST___SIZEOF___METHODDEF" data-ref="_M/LIST___SIZEOF___METHODDEF">LIST___SIZEOF___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="260">260</th><td><u>    {"__sizeof__", (PyCFunction)list___sizeof__, METH_NOARGS, list___sizeof____doc__},</u></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="263">263</th><td><a class="decl" href="../listobject.c.html#list___sizeof___impl" title='list___sizeof___impl' data-ref="list___sizeof___impl" id="list___sizeof___impl">list___sizeof___impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col8 decl" id="58self" title='self' data-type='PyListObject *' data-ref="58self">self</dfn>);</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="266">266</th><td><dfn class="decl def" id="list___sizeof__" title='list___sizeof__' data-ref="list___sizeof__">list___sizeof__</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col9 decl" id="59self" title='self' data-type='PyListObject *' data-ref="59self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="267">267</th><td>{</td></tr>
+<tr><th id="268">268</th><td>    <b>return</b> <a class="ref" href="../listobject.c.html#list___sizeof___impl" title='list___sizeof___impl' data-ref="list___sizeof___impl">list___sizeof___impl</a>(<a class="local col9 ref" href="#59self" title='self' data-ref="59self">self</a>);</td></tr>
+<tr><th id="269">269</th><td>}</td></tr>
+<tr><th id="270">270</th><td></td></tr>
+<tr><th id="271">271</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char list___reversed____doc__[] = &quot;__reversed__($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a reverse iterator over the list.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="list___reversed____doc__" title='list___reversed____doc__' data-ref="list___reversed____doc__">list___reversed____doc__</dfn>,</td></tr>
+<tr><th id="272">272</th><td><q>"__reversed__($self, /)\n"</q></td></tr>
+<tr><th id="273">273</th><td><q>"--\n"</q></td></tr>
+<tr><th id="274">274</th><td><q>"\n"</q></td></tr>
+<tr><th id="275">275</th><td><q>"Return a reverse iterator over the list."</q>);</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td><u>#define <dfn class="macro" id="_M/LIST___REVERSED___METHODDEF" data-ref="_M/LIST___REVERSED___METHODDEF">LIST___REVERSED___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="278">278</th><td><u>    {"__reversed__", (PyCFunction)list___reversed__, METH_NOARGS, list___reversed____doc__},</u></td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="281">281</th><td><a class="decl" href="../listobject.c.html#list___reversed___impl" title='list___reversed___impl' data-ref="list___reversed___impl" id="list___reversed___impl">list___reversed___impl</a>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col0 decl" id="60self" title='self' data-type='PyListObject *' data-ref="60self">self</dfn>);</td></tr>
+<tr><th id="282">282</th><td></td></tr>
+<tr><th id="283">283</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="284">284</th><td><dfn class="decl def" id="list___reversed__" title='list___reversed__' data-ref="list___reversed__">list___reversed__</dfn>(<a class="typedef" href="../../Include/listobject.h.html#PyListObject" title='PyListObject' data-type='struct PyListObject' data-ref="PyListObject">PyListObject</a> *<dfn class="local col1 decl" id="61self" title='self' data-type='PyListObject *' data-ref="61self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="285">285</th><td>{</td></tr>
+<tr><th id="286">286</th><td>    <b>return</b> <a class="ref" href="../listobject.c.html#list___reversed___impl" title='list___reversed___impl' data-ref="list___reversed___impl">list___reversed___impl</a>(<a class="local col1 ref" href="#61self" title='self' data-ref="61self">self</a>);</td></tr>
+<tr><th id="287">287</th><td>}</td></tr>
+<tr><th id="288">288</th><td><i>/*[clinic end generated code: output=4a4f72a5e7ff5068 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="289">289</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../listobject.c.html'>codebrowser/Objects/listobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

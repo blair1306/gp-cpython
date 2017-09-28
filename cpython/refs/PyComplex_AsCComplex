@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/complexobject.h' l='52' type='Py_complex PyComplex_AsCComplex(PyObject * op)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3014' u='c' c='convert_op_cmp'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='966' u='c' c='cmath_log_impl'/>
+<use f='codebrowser/Objects/codeobject.c' l='518' u='c' c='_PyCode_ConstantKey'/>
+<def f='codebrowser/Objects/complexobject.c' l='310' ll='344' type='Py_complex PyComplex_AsCComplex(PyObject * op)'/>
+<use f='codebrowser/Python/getargs.c' l='879' u='c' c='convertsimple'/>

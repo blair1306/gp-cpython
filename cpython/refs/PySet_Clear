@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/setobject.h' l='85' type='int PySet_Clear(PyObject * set)'/>
+<def f='codebrowser/Objects/setobject.c' l='2297' ll='2305' type='int PySet_Clear(PyObject * set)'/>
+<use f='codebrowser/Objects/setobject.c' l='2456' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2462' u='c' c='test_c_api'/>

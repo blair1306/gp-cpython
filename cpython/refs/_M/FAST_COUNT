@@ -1,0 +1,11 @@
+<dec f='codebrowser/Objects/stringlib/fastsearch.h' l='16'/>
+<use f='codebrowser/Objects/stringlib/fastsearch.h' l='174' u='c'/>
+<use f='codebrowser/Objects/stringlib/fastsearch.h' l='226' u='c'/>
+<use f='codebrowser/Objects/stringlib/fastsearch.h' l='280' u='c'/>
+<use f='codebrowser/Objects/stringlib/count.h' l='19' u='c'/>
+<doc f='codebrowser/Objects/stringlib/fastsearch.h' l='9'>/* note: fastsearch may access s[n], which isn&apos;t a problem when using
+   Python&apos;s ordinary string types, but may cause problems if you&apos;re
+   using this code in other contexts.  also, the count mode returns -1
+   if there cannot possible be a match in the target string, and 0 if
+   it has actually checked for matches, but didn&apos;t find any.  callers
+   beware! */</doc>

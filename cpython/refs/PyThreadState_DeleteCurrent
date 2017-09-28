@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='223' type='void PyThreadState_DeleteCurrent()'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1025' u='c' c='t_bootstrap'/>
+<def f='codebrowser/Python/pystate.c' l='512' ll='524' type='void PyThreadState_DeleteCurrent()'/>
+<use f='codebrowser/Python/pystate.c' l='958' u='c' c='PyGILState_Release'/>

@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1826' type='int PyUnicode_FSConverter(PyObject * , void * )'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1823'>/* ParseTuple converter: encode str objects to bytes using
+   PyUnicode_EncodeFSDefault(); bytes objects are output as-is. */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1336' u='c' c='py_dl_open'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='281' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_localemodule.c' l='545' u='c' c='PyIntl_bindtextdomain'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='636' u='c' c='subprocess_fork_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='655' u='c' c='subprocess_fork_exec'/>
+<use f='codebrowser/Modules/clinic/_ssl.c.h' l='39' c='_ssl__test_decode_cert'/>
+<use f='codebrowser/Modules/clinic/_ssl.c.h' l='973' c='_ssl_RAND_egd'/>
+<use f='codebrowser/Modules/_ssl.c' l='3257' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3262' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3455' u='c' c='_ssl__SSLContext_load_verify_locations_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3460' u='c' c='_ssl__SSLContext_load_verify_locations_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3716' u='c' c='_ssl__SSLContext_set_ecdh_curve'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1604' u='c' c='parse_tuple_and_keywords'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2794' c='argparsing'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1030' u='c' c='path_converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4841' u='c' c='fsconvert_strdup'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4911' u='c' c='parse_envlist'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4913' u='c' c='parse_envlist'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6333' c='posix_initgroups'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11418' u='c' c='DirEntry_fetch_stat'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='1398' c='os_system'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='4379' c='os_putenv'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='4379' c='os_putenv'/>
+<use f='codebrowser/Modules/clinic/posixmodule.c.h' l='4415' c='os_unsetenv'/>
+<use f='codebrowser/Modules/readline.c' l='183' u='c' c='read_init_file'/>
+<use f='codebrowser/Modules/readline.c' l='209' u='c' c='read_history_file'/>
+<use f='codebrowser/Modules/readline.c' l='238' u='c' c='write_history_file'/>
+<use f='codebrowser/Modules/readline.c' l='274' u='c' c='append_history_file'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1900' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1943' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4946' c='socket_sethostname'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6203' c='socket_if_nametoindex'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3858' ll='3895' type='int PyUnicode_FSConverter(PyObject * arg, void * addr)'/>
+<use f='codebrowser/Python/fileutils.c' l='1132' u='c' c='_Py_fopen_obj'/>

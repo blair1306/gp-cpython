@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pytime.h' l='92' type='double _PyTime_AsSecondsDouble(_PyTime_t t)'/>
+<doc f='codebrowser/Include/pytime.h' l='91'>/* Convert a timestamp to a number of seconds as a C double. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3923' u='c' c='test_pytime_assecondsdouble'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1372' u='c' c='PyInit__thread'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1048' u='c' c='collect'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2572' u='c' c='sock_gettimeout'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6120' u='c' c='socket_getdefaulttimeout'/>
+<use f='codebrowser/Modules/timemodule.c' l='918' u='c' c='pymonotonic'/>
+<use f='codebrowser/Modules/timemodule.c' l='1424' u='c' c='floattime'/>
+<def f='codebrowser/Python/pytime.c' l='338' ll='356' type='double _PyTime_AsSecondsDouble(_PyTime_t t)'/>

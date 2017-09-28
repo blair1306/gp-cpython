@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/ceval.h' l='194' type='void PyEval_ReleaseLock()'/>
+<doc f='codebrowser/Include/ceval.h' l='194'>/* Py_DEPRECATED(3.2) */</doc>
+<def f='codebrowser/Python/ceval.c' l='204' ll='213' type='void PyEval_ReleaseLock()'/>
+<use f='codebrowser/Python/pystate.c' l='523' u='c' c='PyThreadState_DeleteCurrent'/>

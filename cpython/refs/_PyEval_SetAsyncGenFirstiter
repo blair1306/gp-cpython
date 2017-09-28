@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/ceval.h' l='36' type='void _PyEval_SetAsyncGenFirstiter(PyObject * )'/>
+<def f='codebrowser/Python/ceval.c' l='4646' ll='4653' type='void _PyEval_SetAsyncGenFirstiter(PyObject * firstiter)'/>
+<use f='codebrowser/Python/sysmodule.c' l='736' u='c' c='sys_set_asyncgen_hooks'/>
+<use f='codebrowser/Python/sysmodule.c' l='739' u='c' c='sys_set_asyncgen_hooks'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='432' type='void mpd_zerocoeff(mpd_t * result)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='431'>/* set coefficient to zero or all nines */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='744' ll='751' type='void mpd_zerocoeff(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1747' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1810' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1830' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2469' u='c' c='mpd_qsshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2505' u='c' c='mpd_qshiftr_inplace'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2544' u='c' c='mpd_qshiftr'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='743'>/* Set coefficient to zero */</doc>

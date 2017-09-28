@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/odictobject.h' l='28' type='PyObject * PyODict_New()'/>
+<use f='codebrowser/Objects/odictobject.c' l='1260' u='c' c='odict_copy'/>
+<def f='codebrowser/Objects/odictobject.c' l='1719' ll='1722' type='PyObject * PyODict_New()'/>
+<doc f='codebrowser/Objects/odictobject.c' l='1715'>/* ----------------------------------------------
+ * the public OrderedDict API
+ */</doc>

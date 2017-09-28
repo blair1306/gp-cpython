@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='54' type='uint32_t [8]'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='167' u='w' c='blake2s_init0'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='178' u='r' c='PyBlake2_blake2s_init_param'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='284' u='a' c='PyBlake2_blake2s_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='285' u='a' c='PyBlake2_blake2s_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='298' u='a' c='PyBlake2_blake2s_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='299' u='a' c='PyBlake2_blake2s_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='360' u='r' c='PyBlake2_blake2s_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='360' u='r' c='PyBlake2_blake2s_final'/>

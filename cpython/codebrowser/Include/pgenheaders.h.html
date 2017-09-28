@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pgenheaders.h source code [codebrowser/Include/pgenheaders.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/pgenheaders.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='pgenheaders.h.html'>pgenheaders.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_PGENHEADERS_H">Py_PGENHEADERS_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_PGENHEADERS_H" data-ref="_M/Py_PGENHEADERS_H">Py_PGENHEADERS_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* Include files and extern declarations used by most of the parser. */</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <a class="decl" href="sysmodule.h.html#PySys_WriteStdout" title='PySys_WriteStdout' data-ref="PySys_WriteStdout" id="PySys_WriteStdout">PySys_WriteStdout</a>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1format" title='format' data-type='const char *' data-ref="1format">format</dfn>, ...)</td></tr>
+<tr><th id="13">13</th><td>			<a class="macro" href="pyport.h.html#733" title="__attribute__((format(printf, 1, 2)))" data-ref="_M/Py_GCC_ATTRIBUTE">Py_GCC_ATTRIBUTE</a>((format(printf, <var>1</var>, <var>2</var>)));</td></tr>
+<tr><th id="14">14</th><td><a class="macro" href="pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <a class="decl" href="sysmodule.h.html#PySys_WriteStderr" title='PySys_WriteStderr' data-ref="PySys_WriteStderr" id="PySys_WriteStderr">PySys_WriteStderr</a>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="2format" title='format' data-type='const char *' data-ref="2format">format</dfn>, ...)</td></tr>
+<tr><th id="15">15</th><td>			<a class="macro" href="pyport.h.html#733" title="__attribute__((format(printf, 1, 2)))" data-ref="_M/Py_GCC_ATTRIBUTE">Py_GCC_ATTRIBUTE</a>((format(printf, <var>1</var>, <var>2</var>)));</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/addarc" data-ref="_M/addarc">addarc</dfn> _Py_addarc</u></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/addbit" data-ref="_M/addbit">addbit</dfn> _Py_addbit</u></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/adddfa" data-ref="_M/adddfa">adddfa</dfn> _Py_adddfa</u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/addfirstsets" data-ref="_M/addfirstsets">addfirstsets</dfn> _Py_addfirstsets</u></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/addlabel" data-ref="_M/addlabel">addlabel</dfn> _Py_addlabel</u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/addstate" data-ref="_M/addstate">addstate</dfn> _Py_addstate</u></td></tr>
+<tr><th id="23">23</th><td><u>#define <dfn class="macro" id="_M/delbitset" data-ref="_M/delbitset">delbitset</dfn> _Py_delbitset</u></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/dumptree" data-ref="_M/dumptree">dumptree</dfn> _Py_dumptree</u></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/findlabel" data-ref="_M/findlabel">findlabel</dfn> _Py_findlabel</u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/freegrammar" data-ref="_M/freegrammar">freegrammar</dfn> _Py_freegrammar</u></td></tr>
+<tr><th id="27">27</th><td><u>#define <dfn class="macro" id="_M/mergebitset" data-ref="_M/mergebitset">mergebitset</dfn> _Py_mergebitset</u></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/meta_grammar" data-ref="_M/meta_grammar">meta_grammar</dfn> _Py_meta_grammar</u></td></tr>
+<tr><th id="29">29</th><td><u>#define <dfn class="macro" id="_M/newbitset" data-ref="_M/newbitset">newbitset</dfn> _Py_newbitset</u></td></tr>
+<tr><th id="30">30</th><td><u>#define <dfn class="macro" id="_M/newgrammar" data-ref="_M/newgrammar">newgrammar</dfn> _Py_newgrammar</u></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/pgen" data-ref="_M/pgen">pgen</dfn> _Py_pgen</u></td></tr>
+<tr><th id="32">32</th><td><u>#define <dfn class="macro" id="_M/printgrammar" data-ref="_M/printgrammar">printgrammar</dfn> _Py_printgrammar</u></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/printnonterminals" data-ref="_M/printnonterminals">printnonterminals</dfn> _Py_printnonterminals</u></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/printtree" data-ref="_M/printtree">printtree</dfn> _Py_printtree</u></td></tr>
+<tr><th id="35">35</th><td><u>#define <dfn class="macro" id="_M/samebitset" data-ref="_M/samebitset">samebitset</dfn> _Py_samebitset</u></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/showtree" data-ref="_M/showtree">showtree</dfn> _Py_showtree</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/tok_dump" data-ref="_M/tok_dump">tok_dump</dfn> _Py_tok_dump</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/translatelabels" data-ref="_M/translatelabels">translatelabels</dfn> _Py_translatelabels</u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="41">41</th><td>}</td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="40">endif</span></u></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="1">endif</span> /* !Py_PGENHEADERS_H */</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Parser/acceler.c.html'>codebrowser/Parser/acceler.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

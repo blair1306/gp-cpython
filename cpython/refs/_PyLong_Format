@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/longobject.h' l='176' type='PyObject * _PyLong_Format(PyObject * obj, int base)'/>
+<doc f='codebrowser/Include/longobject.h' l='174'>/* _PyLong_Format: Convert the long to a string object with given base,
+   appending a base prefix of 0[box] if base is 2, 8 or 16. */</doc>
+<use f='codebrowser/Objects/abstract.c' l='1472' u='c' c='PyNumber_ToBase'/>
+<def f='codebrowser/Objects/longobject.c' l='1939' ll='1951' type='PyObject * _PyLong_Format(PyObject * obj, int base)'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='960' u='c' c='format_long_internal'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='550' type='void mpd_qsqrt(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4105' u='c' c='dec_mpd_qsqrt'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5045' u='c' c='ctx_mpd_qsqrt'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7699' ll='7831' type='void mpd_qsqrt(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7698'>/* Algorithm from decimal.py */</doc>

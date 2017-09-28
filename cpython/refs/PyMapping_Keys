@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/abstract.h' l='1055' type='PyObject * PyMapping_Keys(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='1053'>/* On success, return a list or tuple of the keys in mapping object &apos;o&apos;.
+   On failure, return NULL. */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='4874' u='c' c='parse_envlist'/>
+<def f='codebrowser/Objects/abstract.c' l='2149' ll='2164' type='PyObject * PyMapping_Keys(PyObject * o)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2395' u='c' c='dict_merge'/>
+<use f='codebrowser/Objects/object.c' l='1373' u='c' c='_dir_locals'/>
+<use f='codebrowser/Python/ceval.c' l='5123' u='c' c='import_all_from'/>

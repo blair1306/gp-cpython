@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1853' type='PyObject * PyUnicode_DecodeFSDefaultAndSize(const char * s, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1846'>/* Decode a string using Py_FileSystemDefaultEncoding
+   and the &quot;surrogateescape&quot; error handler.
+
+   If Py_FileSystemDefaultEncoding is not set, fall back to the locale
+   encoding.
+*/</doc>
+<use f='codebrowser/Modules/nismodule.c' l='116' u='c' c='nis_foreach'/>
+<use f='codebrowser/Modules/nismodule.c' l='117' u='c' c='nis_foreach'/>
+<use f='codebrowser/Modules/nismodule.c' l='192' u='c' c='nis_match'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3639' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7180' u='c' c='posix_readlink'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9910' u='c' c='os_confstr_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9914' u='c' c='os_confstr_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10995' u='c' c='os_listxattr_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11858' u='c' c='DirEntry_from_posix_info'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3827' u='c' c='PyUnicode_DecodeFSDefault'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3830' ll='3855' type='PyObject * PyUnicode_DecodeFSDefaultAndSize(const char * s, Py_ssize_t size)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3944' u='c' c='PyUnicode_FSDecoder'/>
+<use f='codebrowser/Python/thread.c' l='224' u='c' c='PyThread_GetInfo'/>

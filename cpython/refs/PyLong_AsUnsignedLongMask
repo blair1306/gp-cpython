@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/longobject.h' l='28' type='unsigned long PyLong_AsUnsignedLongMask(PyObject * )'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='364' u='c' c='get_long'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='383' u='c' c='get_ulong'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1481' u='c' c='P_set'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1190' u='c' c='test_k_code'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1209' u='c' c='test_k_code'/>
+<def f='codebrowser/Objects/longobject.c' l='688' ll='710' type='unsigned long PyLong_AsUnsignedLongMask(PyObject * op)'/>
+<use f='codebrowser/Python/getargs.c' l='709' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='746' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='783' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='825' u='c' c='convertsimple'/>

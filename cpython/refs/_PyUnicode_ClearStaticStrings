@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2330' type='void _PyUnicode_ClearStaticStrings()'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2329'>/* Clear all static strings. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='2129' ll='2140' type='void _PyUnicode_ClearStaticStrings()'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15275' u='c' c='_PyUnicode_Fini'/>

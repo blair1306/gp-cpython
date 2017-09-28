@@ -1,0 +1,14 @@
+<def f='codebrowser/Include/object.h' l='182' ll='195'/>
+<size>80</size>
+<doc f='codebrowser/Include/object.h' l='181'>/* buffer interface */</doc>
+<mbr r='bufferinfo::buf' o='0' t='void *'/>
+<mbr r='bufferinfo::obj' o='64' t='PyObject *'/>
+<mbr r='bufferinfo::len' o='128' t='Py_ssize_t'/>
+<mbr r='bufferinfo::itemsize' o='192' t='Py_ssize_t'/>
+<mbr r='bufferinfo::readonly' o='256' t='int'/>
+<mbr r='bufferinfo::ndim' o='288' t='int'/>
+<mbr r='bufferinfo::format' o='320' t='char *'/>
+<mbr r='bufferinfo::shape' o='384' t='Py_ssize_t *'/>
+<mbr r='bufferinfo::strides' o='448' t='Py_ssize_t *'/>
+<mbr r='bufferinfo::suboffsets' o='512' t='Py_ssize_t *'/>
+<mbr r='bufferinfo::internal' o='576' t='void *'/>

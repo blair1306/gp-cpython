@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/import.h' l='97' type='void _PyImport_ReInitLock()'/>
+<use f='codebrowser/Modules/posixmodule.c' l='458' u='c' c='PyOS_AfterFork_Child'/>
+<def f='codebrowser/Python/import.c' l='202' ll='225' type='void _PyImport_ReInitLock()'/>
+<doc f='codebrowser/Python/import.c' l='197'>/* This function is called from PyOS_AfterFork_Child to ensure that newly
+   created child processes do not share locks with the parent.
+   We now acquire the import lock around fork() calls but on some platforms
+   (Solaris 9 and earlier? see isue7242) that still left us with problems. */</doc>

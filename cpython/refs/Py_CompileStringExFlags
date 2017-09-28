@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pythonrun.h' l='105' type='PyObject * Py_CompileStringExFlags(const char * str, const char * filename, int start, PyCompilerFlags * flags, int optimize)'/>
+<def f='codebrowser/Python/pythonrun.c' l='1049' ll='1060' type='PyObject * Py_CompileStringExFlags(const char * str, const char * filename_str, int start, PyCompilerFlags * flags, int optimize)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1067' macro='1' u='c'/>
+<use f='codebrowser/Python/pythonrun.c' l='1526' u='c' c='Py_CompileString'/>
+<use f='codebrowser/Python/pythonrun.c' l='1534' u='c' c='Py_CompileStringFlags'/>

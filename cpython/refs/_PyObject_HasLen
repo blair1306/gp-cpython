@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/abstract.h' l='423' type='int _PyObject_HasLen(PyObject * o)'/>
+<def f='codebrowser/Objects/abstract.c' l='72' ll='76' type='int _PyObject_HasLen(PyObject * o)'/>
+<use f='codebrowser/Objects/abstract.c' l='90' u='c' c='PyObject_LengthHint'/>
+<use f='codebrowser/Objects/iterobject.c' l='84' u='c' c='iter_len'/>

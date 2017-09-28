@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/pymem.h' l='183' type='void *(*)(void *, void *, size_t)'/>
+<offset>192</offset>
+<doc f='codebrowser/Include/pymem.h' l='182'>/* allocate or resize a memory block */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3289' u='r' c='hook_realloc'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3314' u='w' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3480' u='r' c='hook_frealloc'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3502' u='w' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='711' u='r' c='tracemalloc_realloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='826' u='r' c='tracemalloc_realloc_gil'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='908' u='r' c='tracemalloc_raw_realloc'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1122' u='w' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1132' u='w' c='tracemalloc_start'/>
+<use f='codebrowser/Objects/obmalloc.c' l='306' u='w' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='317' u='w' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='346' u='w' c='PyMem_GetAllocator'/>
+<use f='codebrowser/Objects/obmalloc.c' l='404' u='r' c='PyMem_RawRealloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='436' u='r' c='PyMem_Realloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='497' u='r' c='PyObject_Realloc'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1939' u='r' c='_PyMem_DebugRawRealloc'/>

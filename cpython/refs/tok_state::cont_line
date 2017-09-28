@@ -1,0 +1,7 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='59' type='int'/>
+<offset>7488</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='59'>/* whether we are in a continuation line. */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='147' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='300' u='r' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1601' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1855' u='w' c='tok_get'/>

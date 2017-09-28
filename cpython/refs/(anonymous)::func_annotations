@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/funcobject.h' l='33' type='PyObject *'/>
+<offset>896</offset>
+<doc f='codebrowser/Include/funcobject.h' l='33'>/* Annotations, a dict or NULL */</doc>
+<use f='codebrowser/Objects/funcobject.c' l='49' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='204' u='r' c='PyFunction_GetAnnotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='224' u='r' c='PyFunction_SetAnnotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='224' u='w' c='PyFunction_SetAnnotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='378' u='r' c='func_get_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='379' u='w' c='func_get_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='380' u='r' c='func_get_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='383' u='r' c='func_get_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='384' u='r' c='func_get_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='401' u='r' c='func_set_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='401' u='w' c='func_set_annotations'/>
+<use f='codebrowser/Objects/funcobject.c' l='539' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='563' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='563' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/ceval.c' l='3441' u='w' c='_PyEval_EvalFrameDefault'/>

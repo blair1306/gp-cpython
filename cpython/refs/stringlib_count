@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/stringlib/count.h' l='8' macro='1' type='Py_ssize_t stringlib_count(const char * str, Py_ssize_t str_len, const char * sub, Py_ssize_t sub_len, Py_ssize_t maxcount)'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='365' u='c' c='stringlib_replace_delete_substring'/>
+<use f='codebrowser/Objects/stringlib/transmogrify.h' l='581' u='c' c='stringlib_replace_substring'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='648' u='c' c='_Py_bytes_count'/>

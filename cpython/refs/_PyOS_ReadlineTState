@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pythonrun.h' l='160' type='PyThreadState *'/>
+<use f='codebrowser/Modules/readline.c' l='1238' u='r' c='readline_until_enter_or_signal'/>
+<def f='codebrowser/Parser/myreadline.c' l='19' type='PyThreadState *'/>
+<use f='codebrowser/Parser/myreadline.c' l='81' u='r' c='my_fgets'/>
+<use f='codebrowser/Parser/myreadline.c' l='311' u='r' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='328' u='w' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='350' u='w' c='PyOS_Readline'/>

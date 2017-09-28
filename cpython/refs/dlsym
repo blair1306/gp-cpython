@@ -1,0 +1,8 @@
+<dec f='include/dlfcn.h' l='64' type='void * dlsym(void *restrict __handle, const char *restrict __name)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='674' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3373' macro='1' u='c'/>
+<doc f='include/dlfcn.h' l='62'>/* Find the run-time address in the shared object HANDLE refers to
+   of the symbol called NAME.  */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1382' macro='1' u='c'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='82' u='c' c='_PyImport_FindSharedFuncptr'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='126' u='c' c='_PyImport_FindSharedFuncptr'/>

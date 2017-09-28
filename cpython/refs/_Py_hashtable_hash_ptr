@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/hashtable.h' l='105' type='Py_uhash_t _Py_hashtable_hash_ptr(struct _Py_hashtable_t * ht, const void * pkey)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1037' u='r' c='tracemalloc_init'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1391' u='r' c='_tracemalloc__get_traces_impl'/>
+<doc f='codebrowser/Modules/hashtable.h' l='104'>/* hash a pointer (void*) */</doc>
+<def f='codebrowser/Modules/hashtable.c' l='107' ll='114' type='Py_uhash_t _Py_hashtable_hash_ptr(struct _Py_hashtable_t * ht, const void * pkey)'/>
+<use f='codebrowser/Python/marshal.c' l='582' u='r' c='w_init_refs'/>

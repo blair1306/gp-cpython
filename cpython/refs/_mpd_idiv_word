@@ -1,0 +1,7 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='572' ll='577' type='void _mpd_idiv_word(mpd_ssize_t * q, mpd_ssize_t * r, mpd_ssize_t v, mpd_ssize_t d)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='306' u='c' c='mpd_qset_string'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='243' u='c' c='mpd_digits_to_size'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='759' u='c' c='mpd_qmaxcoeff'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='789' u='c' c='_mpd_cap'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='825' u='c' c='_mpd_fix_nan'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2713' u='c' c='mpd_qinvert'/>

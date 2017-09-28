@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='248' type='6'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1177'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1177'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3657' u='r' c='PyDec_Round'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='248'>/* 0.5 is rounded to even          */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='90' u='r' c='mpd_maxcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='136' u='r' c='mpd_ieee_context'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1627' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1753' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4271' u='r' c='_mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4345' u='r' c='mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4902' u='r' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4976' u='r' c='_mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4993' u='r' c='mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6208' u='r' c='_mpd_qpow_int'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6500' u='r' c='_mpd_qpow_real'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7692' u='r' c='mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7824' u='r' c='mpd_qsqrt'/>

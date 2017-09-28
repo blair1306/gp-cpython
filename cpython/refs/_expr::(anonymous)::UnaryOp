@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/Python-ast.h' l='237' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:234:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1838' u='m' c='_Py_UnaryOp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1839' u='m' c='_Py_UnaryOp'/>
+<use f='codebrowser/Python/Python-ast.c' l='3139' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3144' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='234' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='2036' u='m' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='2037' u='m' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='4362' u='m' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4363' u='m' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1403' u='m' c='symtable_visit_expr'/>

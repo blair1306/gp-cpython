@@ -1,0 +1,28 @@
+<dec f='include/time.h' l='123' type='__syscall_slong_t'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='302' u='w' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='303' u='r' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='304' u='w' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3963' u='r' c='test_PyTime_AsTimespec'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2043' u='r' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2044' u='r' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2045' u='r' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4450' u='w' c='utime_dir_fd'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4452' u='w' c='utime_dir_fd'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4450' u='w' c='utime_fd'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4452' u='w' c='utime_fd'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4450' u='w' c='utime_nofollow_symlinks'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4452' u='w' c='utime_nofollow_symlinks'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4450' u='w' c='utime_default'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4452' u='w' c='utime_default'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5704' u='r' c='os_sched_rr_get_interval_impl'/>
+<use f='codebrowser/Modules/timemodule.c' l='156' u='r' c='time_clock_gettime'/>
+<use f='codebrowser/Modules/timemodule.c' l='215' u='r' c='time_clock_getres'/>
+<use f='codebrowser/Modules/timemodule.c' l='1010' u='r' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1014' u='r' c='py_process_time'/>
+<use f='codebrowser/Python/condvar.h' l='101' u='w' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/pytime.c' l='246' u='r' c='_PyTime_FromTimespec'/>
+<use f='codebrowser/Python/pytime.c' l='514' u='w' c='_PyTime_AsTimespec'/>
+<use f='codebrowser/Python/pytime.c' l='582' u='r' c='pygettimeofday'/>
+<use f='codebrowser/Python/pytime.c' l='745' u='r' c='pymonotonic'/>
+<use f='codebrowser/Python/thread_pthread.h' l='119' u='w' c='PyThread_acquire_lock_timed'/>

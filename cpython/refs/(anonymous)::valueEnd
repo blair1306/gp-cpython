@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='121' type='const char *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3286' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3296' u='r' c='storeAtts'/>
+<offset>128</offset>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1477' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1491' u='w' c='normal_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1477' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1491' u='w' c='little2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1477' u='w' c='big2_getAtts'/>
+<use f='codebrowser/Modules/expat/xmltok_impl.c' l='1491' u='w' c='big2_getAtts'/>

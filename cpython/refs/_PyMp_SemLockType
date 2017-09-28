@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_multiprocessing/multiprocessing.h' l='100' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='168' u='a' c='PyInit__multiprocessing'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='170' u='a' c='PyInit__multiprocessing'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='184' u='m' c='PyInit__multiprocessing'/>
+<use f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='187' u='a' c='PyInit__multiprocessing'/>
+<doc f='codebrowser/Modules/_multiprocessing/multiprocessing.h' l='96'>/*
+ * Externs - not all will really exist on all platforms
+ */</doc>
+<def f='codebrowser/Modules/_multiprocessing/semaphore.c' l='617' ll='656' type='PyTypeObject'/>
+<doc f='codebrowser/Modules/_multiprocessing/semaphore.c' l='613'>/*
+ * Semaphore type
+ */</doc>

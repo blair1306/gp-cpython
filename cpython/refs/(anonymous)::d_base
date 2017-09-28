@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/descrobject.h' l='70' type='struct wrapperbase *'/>
+<offset>448</offset>
+<use f='codebrowser/Objects/descrobject.c' l='495' u='r' c='wrapperdescr_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='495' u='r' c='wrapperdescr_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='501' u='r' c='wrapperdescr_get_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='501' u='r' c='wrapperdescr_get_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='782' u='w' c='PyDescr_NewWrapper'/>
+<use f='codebrowser/Objects/descrobject.c' l='1095' u='r' c='wrapper_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='1134' u='r' c='wrapper_name'/>
+<use f='codebrowser/Objects/descrobject.c' l='1142' u='r' c='wrapper_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='1142' u='r' c='wrapper_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='1148' u='r' c='wrapper_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='1148' u='r' c='wrapper_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='1169' u='r' c='wrapper_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='1172' u='r' c='wrapper_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='1180' u='r' c='wrapper_call'/>
+<use f='codebrowser/Objects/typeobject.c' l='6969' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='6974' u='r' c='update_one_slot'/>

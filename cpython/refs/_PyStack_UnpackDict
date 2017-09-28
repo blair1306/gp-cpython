@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/abstract.h' l='194' type='int _PyStack_UnpackDict(PyObject ** args, Py_ssize_t nargs, PyObject * kwargs, PyObject *** p_stack, PyObject ** p_kwnames)'/>
+<doc f='codebrowser/Include/abstract.h' l='183'>/* Convert (args, nargs, kwargs: dict) into a (stack, nargs, kwnames: tuple).
+
+   Return 0 on success, raise an exception and return -1 on error.
+
+   Write the new stack into *p_stack. If *p_stack is differen than args, it
+   must be released by PyMem_Free().
+
+   The stack uses borrowed references.
+
+   The type of keyword keys is not checked, these checks should be done
+   later (ex: _PyArg_ParseStackAndKeywords). */</doc>
+<use f='codebrowser/Objects/call.c' l='538' u='c' c='_PyMethodDef_RawFastCallDict'/>
+<def f='codebrowser/Objects/call.c' l='1341' ll='1396' type='int _PyStack_UnpackDict(PyObject ** args, Py_ssize_t nargs, PyObject * kwargs, PyObject *** p_stack, PyObject ** p_kwnames)'/>

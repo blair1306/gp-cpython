@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2208' type='int _PyUnicode_ToLowerFull(Py_UCS4 ch, Py_UCS4 * res)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='211' ll='225' type='int _PyUnicode_ToLowerFull(Py_UCS4 ch, Py_UCS4 * res)'/>
+<use f='codebrowser/Objects/unicodectype.c' l='271' u='c' c='_PyUnicode_ToFoldedFull'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9711' u='c' c='lower_ucs4'/>

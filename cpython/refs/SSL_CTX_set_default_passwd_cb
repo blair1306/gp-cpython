@@ -1,0 +1,4 @@
+<dec f='include/openssl/ssl.h' l='2282' type='void SSL_CTX_set_default_passwd_cb(SSL_CTX * ctx, pem_password_cb * cb)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3274' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3323' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3329' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>

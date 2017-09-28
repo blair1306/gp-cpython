@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='741' type='int mpd_isoddword(mpd_uint_t word)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='740'>/* odd word */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='360' ll='364' macro='1' type='int mpd_isoddword(mpd_uint_t word)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='370' u='c' c='mpd_isoddcoeff'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1004' u='c' c='mpd_isodd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1006' u='c' c='mpd_isodd'/>

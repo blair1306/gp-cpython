@@ -1,0 +1,14 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='28' type='char *'/>
+<offset>192</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='28'>/* End of input buffer if buf != NULL */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='125' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='202' u='w' c='error_ret'/>
+<use f='codebrowser/Parser/tokenizer.c' l='825' u='w' c='PyTokenizer_FromString'/>
+<use f='codebrowser/Parser/tokenizer.c' l='854' u='w' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='872' u='w' c='PyTokenizer_FromFile'/>
+<use f='codebrowser/Parser/tokenizer.c' l='994' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1005' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1020' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1022' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1062' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1066' u='r' c='tok_nextc'/>

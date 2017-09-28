@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pyctype.h' l='18'/>
+<doc f='codebrowser/Include/pyctype.h' l='15'>/* Unlike their C counterparts, the following macros are not meant to
+ * handle an int with any of the values [EOF, 0-UCHAR_MAX]. The argument
+ * must be a signed/unsigned char. */</doc>
+<use f='codebrowser/Objects/bytes_methods.c' l='141' u='c'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='152' u='c'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='184' u='c'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='229' u='c'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='288' u='c'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='316' u='c'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='346' u='c'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/methodobject.h' l='66' type='PyObject * PyCFunction_NewEx(PyMethodDef * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3145' u='c' c='create_cfunction'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='748' u='c' c='local_new'/>
+<use f='codebrowser/Objects/descrobject.c' l='124' u='c' c='classmethod_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='134' u='c' c='method_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='332' u='c' c='classmethoddescr_call'/>
+<use f='codebrowser/Objects/methodobject.c' l='22' u='c' c='PyCFunction_New'/>
+<def f='codebrowser/Objects/methodobject.c' l='25' ll='48' type='PyObject * PyCFunction_NewEx(PyMethodDef * ml, PyObject * self, PyObject * module)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='147' u='c' c='_add_methods_to_object'/>
+<use f='codebrowser/Objects/typeobject.c' l='4671' u='c' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='5814' u='c' c='add_tp_new_wrapper'/>
+<use f='codebrowser/Python/ceval.c' l='4827' u='c' c='call_function'/>
+<use f='codebrowser/Python/codecs.c' l='1515' u='c' c='_PyCodecRegistry_Init'/>

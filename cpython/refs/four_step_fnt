@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/fourstep.h' l='41' type='int four_step_fnt(mpd_uint_t * a, mpd_size_t n, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='73' u='r' c='fnt_convolute'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='140' u='r' c='fnt_autoconvolute'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='136' ll='194' type='int four_step_fnt(mpd_uint_t * a, mpd_size_t n, int modnum)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='135'>/* forward transform, sign = -1; transform length = 3 * 2**n */</doc>

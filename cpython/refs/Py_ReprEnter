@@ -1,0 +1,30 @@
+<dec f='codebrowser/Include/object.h' l='590' type='int Py_ReprEnter(PyObject * )'/>
+<doc f='codebrowser/Include/object.h' l='589'>/* Helpers for printing recursive container types */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1381' u='c' c='deque_repr'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2121' u='c' c='defdict_repr'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1647' u='c' c='element_repr'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='273' u='c' c='partial_repr'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1411' u='c' c='buffered_repr'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='1083' u='c' c='fileio_repr'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2576' u='c' c='textiowrapper_repr'/>
+<use f='codebrowser/Modules/_operator.c' l='1029' u='c' c='itemgetter_repr'/>
+<use f='codebrowser/Modules/_operator.c' l='1356' u='c' c='attrgetter_repr'/>
+<use f='codebrowser/Modules/_operator.c' l='1547' u='c' c='methodcaller_repr'/>
+<use f='codebrowser/Objects/dictobject.c' l='1883' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/listobject.c' l='350' u='c' c='list_repr'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='74' u='c' c='namespace_repr'/>
+<def f='codebrowser/Objects/object.c' l='1966' ll='1995' type='int Py_ReprEnter(PyObject * obj)'/>
+<doc f='codebrowser/Objects/object.c' l='1954'>/* These methods are used to control infinite recursion in repr, str, print,
+   etc.  Container objects that may recursively contain themselves,
+   e.g. builtin dictionaries and lists, should use Py_ReprEnter() and
+   Py_ReprLeave() to avoid infinite recursion.
+
+   Py_ReprEnter() returns 0 the first time it is called for a particular
+   object and 1 every time thereafter.  It returns -1 if an exception
+   occurred.  Py_ReprLeave() has no return value.
+
+   See dictobject.c and listobject.c for examples of use.
+*/</doc>
+<use f='codebrowser/Objects/odictobject.c' l='1485' u='c' c='odict_repr'/>
+<use f='codebrowser/Objects/setobject.c' l='578' u='c' c='set_repr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='282' u='c' c='tuplerepr'/>

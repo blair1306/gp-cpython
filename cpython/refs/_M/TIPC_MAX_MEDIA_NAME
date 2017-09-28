@@ -1,0 +1,9 @@
+<dec f='include/linux/tipc.h' l='220'/>
+<doc f='include/linux/tipc.h' l='211'>/*
+ * Maximum sizes of TIPC bearer-related names (including terminating NULL)
+ * The string formatting for each name element is:
+ * media: media
+ * interface: media:interface name
+ * link: Z.C.N:interface-Z.C.N:interface
+ *
+ */</doc>

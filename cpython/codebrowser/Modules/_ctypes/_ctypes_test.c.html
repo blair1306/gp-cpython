@@ -1,0 +1,722 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_ctypes_test.c source code [codebrowser/Modules/_ctypes/_ctypes_test.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="BITS,tagpoint "/>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_ctypes/_ctypes_test.c'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>_ctypes</a>/<a href='_ctypes_test.c.html'>_ctypes_test.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="../../Include/Python.h.html">&lt;Python.h&gt;</a></u></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="4">4</th><td><u>#include &lt;windows.h&gt;</u></td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">if</span> defined(<span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span>) || defined(<span class="macro" data-ref="_M/__CYGWIN__">__CYGWIN__</span>)</u></td></tr>
+<tr><th id="8">8</th><td><u>#define EXPORT(x) __declspec(dllexport) x</u></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="7">else</span></u></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/EXPORT" data-ref="_M/EXPORT">EXPORT</dfn>(x) x</u></td></tr>
+<tr><th id="11">11</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i>/* some functions handy for testing */</i></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>)</td></tr>
+<tr><th id="16">16</th><td><dfn class="decl def" id="_testfunc_cbk_reg_int" title='_testfunc_cbk_reg_int' data-ref="_testfunc_cbk_reg_int">_testfunc_cbk_reg_int</dfn>(<em>int</em> <dfn class="local col1 decl" id="1a" title='a' data-type='int' data-ref="1a">a</dfn>, <em>int</em> <dfn class="local col2 decl" id="2b" title='b' data-type='int' data-ref="2b">b</dfn>, <em>int</em> <dfn class="local col3 decl" id="3c" title='c' data-type='int' data-ref="3c">c</dfn>, <em>int</em> <dfn class="local col4 decl" id="4d" title='d' data-type='int' data-ref="4d">d</dfn>, <em>int</em> <dfn class="local col5 decl" id="5e" title='e' data-type='int' data-ref="5e">e</dfn>,</td></tr>
+<tr><th id="17">17</th><td>                      <em>int</em> (*<dfn class="local col6 decl" id="6func" title='func' data-type='int (*)(int, int, int, int, int)' data-ref="6func">func</dfn>)(<em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>, <em>int</em>))</td></tr>
+<tr><th id="18">18</th><td>{</td></tr>
+<tr><th id="19">19</th><td>    <b>return</b> <a class="local col6 ref" href="#6func" title='func' data-ref="6func">func</a>(<a class="local col1 ref" href="#1a" title='a' data-ref="1a">a</a>*<a class="local col1 ref" href="#1a" title='a' data-ref="1a">a</a>, <a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>*<a class="local col2 ref" href="#2b" title='b' data-ref="2b">b</a>, <a class="local col3 ref" href="#3c" title='c' data-ref="3c">c</a>*<a class="local col3 ref" href="#3c" title='c' data-ref="3c">c</a>, <a class="local col4 ref" href="#4d" title='d' data-ref="4d">d</a>*<a class="local col4 ref" href="#4d" title='d' data-ref="4d">d</a>, <a class="local col5 ref" href="#5e" title='e' data-ref="5e">e</a>*<a class="local col5 ref" href="#5e" title='e' data-ref="5e">e</a>);</td></tr>
+<tr><th id="20">20</th><td>}</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><a class="macro" href="#10" title="double" data-ref="_M/EXPORT">EXPORT</a>(<em>double</em>)</td></tr>
+<tr><th id="23">23</th><td><dfn class="decl def" id="_testfunc_cbk_reg_double" title='_testfunc_cbk_reg_double' data-ref="_testfunc_cbk_reg_double">_testfunc_cbk_reg_double</dfn>(<em>double</em> <dfn class="local col7 decl" id="7a" title='a' data-type='double' data-ref="7a">a</dfn>, <em>double</em> <dfn class="local col8 decl" id="8b" title='b' data-type='double' data-ref="8b">b</dfn>, <em>double</em> <dfn class="local col9 decl" id="9c" title='c' data-type='double' data-ref="9c">c</dfn>, <em>double</em> <dfn class="local col0 decl" id="10d" title='d' data-type='double' data-ref="10d">d</dfn>, <em>double</em> <dfn class="local col1 decl" id="11e" title='e' data-type='double' data-ref="11e">e</dfn>,</td></tr>
+<tr><th id="24">24</th><td>                         <em>double</em> (*<dfn class="local col2 decl" id="12func" title='func' data-type='double (*)(double, double, double, double, double)' data-ref="12func">func</dfn>)(<em>double</em>, <em>double</em>, <em>double</em>, <em>double</em>, <em>double</em>))</td></tr>
+<tr><th id="25">25</th><td>{</td></tr>
+<tr><th id="26">26</th><td>    <b>return</b> <a class="local col2 ref" href="#12func" title='func' data-ref="12func">func</a>(<a class="local col7 ref" href="#7a" title='a' data-ref="7a">a</a>*<a class="local col7 ref" href="#7a" title='a' data-ref="7a">a</a>, <a class="local col8 ref" href="#8b" title='b' data-ref="8b">b</a>*<a class="local col8 ref" href="#8b" title='b' data-ref="8b">b</a>, <a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a>*<a class="local col9 ref" href="#9c" title='c' data-ref="9c">c</a>, <a class="local col0 ref" href="#10d" title='d' data-ref="10d">d</a>*<a class="local col0 ref" href="#10d" title='d' data-ref="10d">d</a>, <a class="local col1 ref" href="#11e" title='e' data-ref="11e">e</a>*<a class="local col1 ref" href="#11e" title='e' data-ref="11e">e</a>);</td></tr>
+<tr><th id="27">27</th><td>}</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><i>/*</i></td></tr>
+<tr><th id="30">30</th><td><i> * This structure should be the same as in test_callbacks.py and the</i></td></tr>
+<tr><th id="31">31</th><td><i> * method test_callback_large_struct. See issues 17310 and 20160: the</i></td></tr>
+<tr><th id="32">32</th><td><i> * structure must be larger than 8 bytes long.</i></td></tr>
+<tr><th id="33">33</th><td><i> */</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="36">36</th><td>    <em>unsigned</em> <em>long</em> <dfn class="tu decl" id="(anonymous)::first" title='(anonymous struct)::first' data-type='unsigned long' data-ref="(anonymous)::first">first</dfn>;</td></tr>
+<tr><th id="37">37</th><td>    <em>unsigned</em> <em>long</em> <dfn class="tu decl" id="(anonymous)::second" title='(anonymous struct)::second' data-type='unsigned long' data-ref="(anonymous)::second">second</dfn>;</td></tr>
+<tr><th id="38">38</th><td>    <em>unsigned</em> <em>long</em> <dfn class="tu decl" id="(anonymous)::third" title='(anonymous struct)::third' data-type='unsigned long' data-ref="(anonymous)::third">third</dfn>;</td></tr>
+<tr><th id="39">39</th><td>} <dfn class="typedef" id="Test" title='Test' data-type='struct Test' data-ref="Test">Test</dfn>;</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>)</td></tr>
+<tr><th id="42">42</th><td><dfn class="decl def" id="_testfunc_cbk_large_struct" title='_testfunc_cbk_large_struct' data-ref="_testfunc_cbk_large_struct">_testfunc_cbk_large_struct</dfn>(<a class="typedef" href="#Test" title='Test' data-type='struct Test' data-ref="Test">Test</a> <dfn class="local col3 decl" id="13in" title='in' data-type='Test' data-ref="13in">in</dfn>, <em>void</em> (*<dfn class="local col4 decl" id="14func" title='func' data-type='void (*)(Test)' data-ref="14func">func</dfn>)(<a class="typedef" href="#Test" title='Test' data-type='struct Test' data-ref="Test">Test</a>))</td></tr>
+<tr><th id="43">43</th><td>{</td></tr>
+<tr><th id="44">44</th><td>    <a class="local col4 ref" href="#14func" title='func' data-ref="14func">func</a>(<a class="local col3 ref" href="#13in" title='in' data-ref="13in">in</a>);</td></tr>
+<tr><th id="45">45</th><td>}</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><i>/*</i></td></tr>
+<tr><th id="48">48</th><td><i> * See issue 29565. Update a structure passed by value;</i></td></tr>
+<tr><th id="49">49</th><td><i> * the caller should not see any change.</i></td></tr>
+<tr><th id="50">50</th><td><i> */</i></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>)</td></tr>
+<tr><th id="53">53</th><td><dfn class="decl def" id="_testfunc_large_struct_update_value" title='_testfunc_large_struct_update_value' data-ref="_testfunc_large_struct_update_value">_testfunc_large_struct_update_value</dfn>(<a class="typedef" href="#Test" title='Test' data-type='struct Test' data-ref="Test">Test</a> <dfn class="local col5 decl" id="15in" title='in' data-type='Test' data-ref="15in">in</dfn>)</td></tr>
+<tr><th id="54">54</th><td>{</td></tr>
+<tr><th id="55">55</th><td>    ((<em>volatile</em> <a class="typedef" href="#Test" title='Test' data-type='struct Test' data-ref="Test">Test</a> *)&amp;<a class="local col5 ref" href="#15in" title='in' data-ref="15in">in</a>)-&gt;<a class="tu ref" href="#(anonymous)::first" title='(anonymous struct)::first' data-use='w' data-ref="(anonymous)::first">first</a> = <var>0x0badf00d</var>;</td></tr>
+<tr><th id="56">56</th><td>    ((<em>volatile</em> <a class="typedef" href="#Test" title='Test' data-type='struct Test' data-ref="Test">Test</a> *)&amp;<a class="local col5 ref" href="#15in" title='in' data-ref="15in">in</a>)-&gt;<a class="tu ref" href="#(anonymous)::second" title='(anonymous struct)::second' data-use='w' data-ref="(anonymous)::second">second</a> = <var>0x0badf00d</var>;</td></tr>
+<tr><th id="57">57</th><td>    ((<em>volatile</em> <a class="typedef" href="#Test" title='Test' data-type='struct Test' data-ref="Test">Test</a> *)&amp;<a class="local col5 ref" href="#15in" title='in' data-ref="15in">in</a>)-&gt;<a class="tu ref" href="#(anonymous)::third" title='(anonymous struct)::third' data-use='w' data-ref="(anonymous)::third">third</a> = <var>0x0badf00d</var>;</td></tr>
+<tr><th id="58">58</th><td>}</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="61">61</th><td>    <em>unsigned</em> <em>int</em> <dfn class="tu decl" id="(anonymous)::first" title='(anonymous struct)::first' data-type='unsigned int' data-ref="(anonymous)::first">first</dfn>;</td></tr>
+<tr><th id="62">62</th><td>    <em>unsigned</em> <em>int</em> <dfn class="tu decl" id="(anonymous)::second" title='(anonymous struct)::second' data-type='unsigned int' data-ref="(anonymous)::second">second</dfn>;</td></tr>
+<tr><th id="63">63</th><td>} <dfn class="typedef" id="TestReg" title='TestReg' data-type='struct TestReg' data-ref="TestReg">TestReg</dfn>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><a class="macro" href="#10" title="TestReg" data-ref="_M/EXPORT">EXPORT</a>(<a class="typedef" href="#TestReg" title='TestReg' data-type='struct TestReg' data-ref="TestReg">TestReg</a>) <dfn class="decl def" id="last_tfrsuv_arg" title='last_tfrsuv_arg' data-ref="last_tfrsuv_arg">last_tfrsuv_arg</dfn>;</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>)</td></tr>
+<tr><th id="70">70</th><td><dfn class="decl def" id="_testfunc_reg_struct_update_value" title='_testfunc_reg_struct_update_value' data-ref="_testfunc_reg_struct_update_value">_testfunc_reg_struct_update_value</dfn>(<a class="typedef" href="#TestReg" title='TestReg' data-type='struct TestReg' data-ref="TestReg">TestReg</a> <dfn class="local col6 decl" id="16in" title='in' data-type='TestReg' data-ref="16in">in</dfn>)</td></tr>
+<tr><th id="71">71</th><td>{</td></tr>
+<tr><th id="72">72</th><td>    <a class="ref" href="#last_tfrsuv_arg" title='last_tfrsuv_arg' data-ref="last_tfrsuv_arg">last_tfrsuv_arg</a> = <a class="local col6 ref" href="#16in" title='in' data-ref="16in">in</a>;</td></tr>
+<tr><th id="73">73</th><td>    ((<em>volatile</em> <a class="typedef" href="#TestReg" title='TestReg' data-type='struct TestReg' data-ref="TestReg">TestReg</a> *)&amp;<a class="local col6 ref" href="#16in" title='in' data-ref="16in">in</a>)-&gt;<a class="tu ref" href="#(anonymous)::first" title='(anonymous struct)::first' data-use='w' data-ref="(anonymous)::first">first</a> = <var>0x0badf00d</var>;</td></tr>
+<tr><th id="74">74</th><td>    ((<em>volatile</em> <a class="typedef" href="#TestReg" title='TestReg' data-type='struct TestReg' data-ref="TestReg">TestReg</a> *)&amp;<a class="local col6 ref" href="#16in" title='in' data-ref="16in">in</a>)-&gt;<a class="tu ref" href="#(anonymous)::second" title='(anonymous struct)::second' data-use='w' data-ref="(anonymous)::second">second</a> = <var>0x0badf00d</var>;</td></tr>
+<tr><th id="75">75</th><td>}</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>)<dfn class="decl def" id="testfunc_array" title='testfunc_array' data-ref="testfunc_array">testfunc_array</dfn>(<em>int</em> <dfn class="local col7 decl" id="17values" title='values' data-type='int *' data-ref="17values">values</dfn>[<var>4</var>])</td></tr>
+<tr><th id="79">79</th><td>{</td></tr>
+<tr><th id="80">80</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"testfunc_array %d %d %d %d\n"</q>,</td></tr>
+<tr><th id="81">81</th><td>           <a class="local col7 ref" href="#17values" title='values' data-ref="17values">values</a>[<var>0</var>],</td></tr>
+<tr><th id="82">82</th><td>           <a class="local col7 ref" href="#17values" title='values' data-ref="17values">values</a>[<var>1</var>],</td></tr>
+<tr><th id="83">83</th><td>           <a class="local col7 ref" href="#17values" title='values' data-ref="17values">values</a>[<var>2</var>],</td></tr>
+<tr><th id="84">84</th><td>           <a class="local col7 ref" href="#17values" title='values' data-ref="17values">values</a>[<var>3</var>]);</td></tr>
+<tr><th id="85">85</th><td>}</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><a class="macro" href="#10" title="long double" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>double</em>)<dfn class="decl def" id="testfunc_Ddd" title='testfunc_Ddd' data-ref="testfunc_Ddd">testfunc_Ddd</dfn>(<em>double</em> <dfn class="local col8 decl" id="18a" title='a' data-type='double' data-ref="18a">a</dfn>, <em>double</em> <dfn class="local col9 decl" id="19b" title='b' data-type='double' data-ref="19b">b</dfn>)</td></tr>
+<tr><th id="88">88</th><td>{</td></tr>
+<tr><th id="89">89</th><td>    <em>long</em> <em>double</em> <dfn class="local col0 decl" id="20result" title='result' data-type='long double' data-ref="20result">result</dfn> = (<em>long</em> <em>double</em>)(<a class="local col8 ref" href="#18a" title='a' data-ref="18a">a</a> * <a class="local col9 ref" href="#19b" title='b' data-ref="19b">b</a>);</td></tr>
+<tr><th id="90">90</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"testfunc_Ddd(%p, %p)\n"</q>, &amp;<a class="local col8 ref" href="#18a" title='a' data-ref="18a">a</a>, &amp;<a class="local col9 ref" href="#19b" title='b' data-ref="19b">b</a>);</td></tr>
+<tr><th id="91">91</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"testfunc_Ddd(%g, %g)\n"</q>, <a class="local col8 ref" href="#18a" title='a' data-ref="18a">a</a>, <a class="local col9 ref" href="#19b" title='b' data-ref="19b">b</a>);</td></tr>
+<tr><th id="92">92</th><td>    <b>return</b> <a class="local col0 ref" href="#20result" title='result' data-ref="20result">result</a>;</td></tr>
+<tr><th id="93">93</th><td>}</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><a class="macro" href="#10" title="long double" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>double</em>)<dfn class="decl def" id="testfunc_DDD" title='testfunc_DDD' data-ref="testfunc_DDD">testfunc_DDD</dfn>(<em>long</em> <em>double</em> <dfn class="local col1 decl" id="21a" title='a' data-type='long double' data-ref="21a">a</dfn>, <em>long</em> <em>double</em> <dfn class="local col2 decl" id="22b" title='b' data-type='long double' data-ref="22b">b</dfn>)</td></tr>
+<tr><th id="96">96</th><td>{</td></tr>
+<tr><th id="97">97</th><td>    <em>long</em> <em>double</em> <dfn class="local col3 decl" id="23result" title='result' data-type='long double' data-ref="23result">result</dfn> = <a class="local col1 ref" href="#21a" title='a' data-ref="21a">a</a> * <a class="local col2 ref" href="#22b" title='b' data-ref="22b">b</a>;</td></tr>
+<tr><th id="98">98</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"testfunc_DDD(%p, %p)\n"</q>, &amp;<a class="local col1 ref" href="#21a" title='a' data-ref="21a">a</a>, &amp;<a class="local col2 ref" href="#22b" title='b' data-ref="22b">b</a>);</td></tr>
+<tr><th id="99">99</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"testfunc_DDD(%Lg, %Lg)\n"</q>, <a class="local col1 ref" href="#21a" title='a' data-ref="21a">a</a>, <a class="local col2 ref" href="#22b" title='b' data-ref="22b">b</a>);</td></tr>
+<tr><th id="100">100</th><td>    <b>return</b> <a class="local col3 ref" href="#23result" title='result' data-ref="23result">result</a>;</td></tr>
+<tr><th id="101">101</th><td>}</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>)<dfn class="decl def" id="testfunc_iii" title='testfunc_iii' data-ref="testfunc_iii">testfunc_iii</dfn>(<em>int</em> <dfn class="local col4 decl" id="24a" title='a' data-type='int' data-ref="24a">a</dfn>, <em>int</em> <dfn class="local col5 decl" id="25b" title='b' data-type='int' data-ref="25b">b</dfn>)</td></tr>
+<tr><th id="104">104</th><td>{</td></tr>
+<tr><th id="105">105</th><td>    <em>int</em> <dfn class="local col6 decl" id="26result" title='result' data-type='int' data-ref="26result">result</dfn> = <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a> * <a class="local col5 ref" href="#25b" title='b' data-ref="25b">b</a>;</td></tr>
+<tr><th id="106">106</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"testfunc_iii(%p, %p)\n"</q>, &amp;<a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>, &amp;<a class="local col5 ref" href="#25b" title='b' data-ref="25b">b</a>);</td></tr>
+<tr><th id="107">107</th><td>    <b>return</b> <a class="local col6 ref" href="#26result" title='result' data-ref="26result">result</a>;</td></tr>
+<tr><th id="108">108</th><td>}</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>)<dfn class="decl def" id="myprintf" title='myprintf' data-ref="myprintf">myprintf</dfn>(<em>char</em> *<dfn class="local col7 decl" id="27fmt" title='fmt' data-type='char *' data-ref="27fmt">fmt</dfn>, ...)</td></tr>
+<tr><th id="111">111</th><td>{</td></tr>
+<tr><th id="112">112</th><td>    <em>int</em> <dfn class="local col8 decl" id="28result" title='result' data-type='int' data-ref="28result">result</dfn>;</td></tr>
+<tr><th id="113">113</th><td>    <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col9 decl" id="29argptr" title='argptr' data-type='va_list' data-ref="29argptr">argptr</dfn>;</td></tr>
+<tr><th id="114">114</th><td>    <span class="macro" title="__builtin_va_start(argptr, fmt)" data-ref="_M/va_start">va_start</span>(<a class="local col9 ref" href="#29argptr" title='argptr' data-ref="29argptr">argptr</a>, <a class="local col7 ref" href="#27fmt" title='fmt' data-ref="27fmt">fmt</a>);</td></tr>
+<tr><th id="115">115</th><td>    <a class="local col8 ref" href="#28result" title='result' data-ref="28result">result</a> = <a class="ref" href="../../../include/stdio.h.html#vprintf" title='vprintf' data-ref="vprintf">vprintf</a>(<a class="local col7 ref" href="#27fmt" title='fmt' data-ref="27fmt">fmt</a>, <a class="local col9 ref" href="#29argptr" title='argptr' data-ref="29argptr">argptr</a>);</td></tr>
+<tr><th id="116">116</th><td>    <span class="macro" title="__builtin_va_end(argptr)" data-ref="_M/va_end">va_end</span>(<a class="local col9 ref" href="#29argptr" title='argptr' data-ref="29argptr">argptr</a>);</td></tr>
+<tr><th id="117">117</th><td>    <b>return</b> <a class="local col8 ref" href="#28result" title='result' data-ref="28result">result</a>;</td></tr>
+<tr><th id="118">118</th><td>}</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><a class="macro" href="#10" title="char *" data-ref="_M/EXPORT">EXPORT</a>(<em>char</em> *)<dfn class="decl def" id="my_strtok" title='my_strtok' data-ref="my_strtok">my_strtok</dfn>(<em>char</em> *<dfn class="local col0 decl" id="30token" title='token' data-type='char *' data-ref="30token">token</dfn>, <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="31delim" title='delim' data-type='const char *' data-ref="31delim">delim</dfn>)</td></tr>
+<tr><th id="121">121</th><td>{</td></tr>
+<tr><th id="122">122</th><td>    <b>return</b> <a class="ref" href="../../../include/string.h.html#strtok" title='strtok' data-ref="strtok">strtok</a>(<a class="local col0 ref" href="#30token" title='token' data-ref="30token">token</a>, <a class="local col1 ref" href="#31delim" title='delim' data-ref="31delim">delim</a>);</td></tr>
+<tr><th id="123">123</th><td>}</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td><a class="macro" href="#10" title="char *" data-ref="_M/EXPORT">EXPORT</a>(<em>char</em> *)<dfn class="decl def" id="my_strchr" title='my_strchr' data-ref="my_strchr">my_strchr</dfn>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="32s" title='s' data-type='const char *' data-ref="32s">s</dfn>, <em>int</em> <dfn class="local col3 decl" id="33c" title='c' data-type='int' data-ref="33c">c</dfn>)</td></tr>
+<tr><th id="126">126</th><td>{</td></tr>
+<tr><th id="127">127</th><td>    <b>return</b> <a class="ref" href="../../../include/string.h.html#strchr" title='strchr' data-ref="strchr">strchr</a>(<a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>, <a class="local col3 ref" href="#33c" title='c' data-ref="33c">c</a>);</td></tr>
+<tr><th id="128">128</th><td>}</td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><a class="macro" href="#10" title="double" data-ref="_M/EXPORT">EXPORT</a>(<em>double</em>) <dfn class="decl def" id="my_sqrt" title='my_sqrt' data-ref="my_sqrt">my_sqrt</dfn>(<em>double</em> <dfn class="local col4 decl" id="34a" title='a' data-type='double' data-ref="34a">a</dfn>)</td></tr>
+<tr><th id="132">132</th><td>{</td></tr>
+<tr><th id="133">133</th><td>    <b>return</b> <a class="ref" href="../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#156" title='sqrt' data-ref="sqrt">sqrt</a>(<a class="local col4 ref" href="#34a" title='a' data-ref="34a">a</a>);</td></tr>
+<tr><th id="134">134</th><td>}</td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="my_qsort" title='my_qsort' data-ref="my_qsort">my_qsort</dfn>(<em>void</em> *<dfn class="local col5 decl" id="35base" title='base' data-type='void *' data-ref="35base">base</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="36num" title='num' data-type='size_t' data-ref="36num">num</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="37width" title='width' data-type='size_t' data-ref="37width">width</dfn>, <em>int</em>(*<dfn class="local col8 decl" id="38compare" title='compare' data-type='int (*)(const void *, const void *)' data-ref="38compare">compare</dfn>)(<em>const</em> <em>void</em>*, <em>const</em> <em>void</em>*))</td></tr>
+<tr><th id="137">137</th><td>{</td></tr>
+<tr><th id="138">138</th><td>    <a class="ref" href="../../../include/stdlib.h.html#qsort" title='qsort' data-ref="qsort">qsort</a>(<a class="local col5 ref" href="#35base" title='base' data-ref="35base">base</a>, <a class="local col6 ref" href="#36num" title='num' data-ref="36num">num</a>, <a class="local col7 ref" href="#37width" title='width' data-ref="37width">width</a>, <a class="local col8 ref" href="#38compare" title='compare' data-ref="38compare">compare</a>);</td></tr>
+<tr><th id="139">139</th><td>}</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><a class="macro" href="#10" title="int *" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em> *) <dfn class="decl def" id="_testfunc_ai8" title='_testfunc_ai8' data-ref="_testfunc_ai8">_testfunc_ai8</dfn>(<em>int</em> <dfn class="local col9 decl" id="39a" title='a' data-type='int *' data-ref="39a">a</dfn>[<var>8</var>])</td></tr>
+<tr><th id="142">142</th><td>{</td></tr>
+<tr><th id="143">143</th><td>    <b>return</b> <a class="local col9 ref" href="#39a" title='a' data-ref="39a">a</a>;</td></tr>
+<tr><th id="144">144</th><td>}</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="_testfunc_v" title='_testfunc_v' data-ref="_testfunc_v">_testfunc_v</dfn>(<em>int</em> <dfn class="local col0 decl" id="40a" title='a' data-type='int' data-ref="40a">a</dfn>, <em>int</em> <dfn class="local col1 decl" id="41b" title='b' data-type='int' data-ref="41b">b</dfn>, <em>int</em> *<dfn class="local col2 decl" id="42presult" title='presult' data-type='int *' data-ref="42presult">presult</dfn>)</td></tr>
+<tr><th id="147">147</th><td>{</td></tr>
+<tr><th id="148">148</th><td>    *<a class="local col2 ref" href="#42presult" title='presult' data-ref="42presult">presult</a> = <a class="local col0 ref" href="#40a" title='a' data-ref="40a">a</a> + <a class="local col1 ref" href="#41b" title='b' data-ref="41b">b</a>;</td></tr>
+<tr><th id="149">149</th><td>}</td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="_testfunc_i_bhilfd" title='_testfunc_i_bhilfd' data-ref="_testfunc_i_bhilfd">_testfunc_i_bhilfd</dfn>(<em>signed</em> <em>char</em> <dfn class="local col3 decl" id="43b" title='b' data-type='signed char' data-ref="43b">b</dfn>, <em>short</em> <dfn class="local col4 decl" id="44h" title='h' data-type='short' data-ref="44h">h</dfn>, <em>int</em> <dfn class="local col5 decl" id="45i" title='i' data-type='int' data-ref="45i">i</dfn>, <em>long</em> <dfn class="local col6 decl" id="46l" title='l' data-type='long' data-ref="46l">l</dfn>, <em>float</em> <dfn class="local col7 decl" id="47f" title='f' data-type='float' data-ref="47f">f</dfn>, <em>double</em> <dfn class="local col8 decl" id="48d" title='d' data-type='double' data-ref="48d">d</dfn>)</td></tr>
+<tr><th id="152">152</th><td>{</td></tr>
+<tr><th id="153">153</th><td><i>/*      printf("_testfunc_i_bhilfd got %d %d %d %ld %f %f\n",</i></td></tr>
+<tr><th id="154">154</th><td><i>               b, h, i, l, f, d);</i></td></tr>
+<tr><th id="155">155</th><td><i>*/</i></td></tr>
+<tr><th id="156">156</th><td>    <b>return</b> (<em>int</em>)(<a class="local col3 ref" href="#43b" title='b' data-ref="43b">b</a> + <a class="local col4 ref" href="#44h" title='h' data-ref="44h">h</a> + <a class="local col5 ref" href="#45i" title='i' data-ref="45i">i</a> + <a class="local col6 ref" href="#46l" title='l' data-ref="46l">l</a> + <a class="local col7 ref" href="#47f" title='f' data-ref="47f">f</a> + <a class="local col8 ref" href="#48d" title='d' data-ref="48d">d</a>);</td></tr>
+<tr><th id="157">157</th><td>}</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td><a class="macro" href="#10" title="float" data-ref="_M/EXPORT">EXPORT</a>(<em>float</em>) <dfn class="decl def" id="_testfunc_f_bhilfd" title='_testfunc_f_bhilfd' data-ref="_testfunc_f_bhilfd">_testfunc_f_bhilfd</dfn>(<em>signed</em> <em>char</em> <dfn class="local col9 decl" id="49b" title='b' data-type='signed char' data-ref="49b">b</dfn>, <em>short</em> <dfn class="local col0 decl" id="50h" title='h' data-type='short' data-ref="50h">h</dfn>, <em>int</em> <dfn class="local col1 decl" id="51i" title='i' data-type='int' data-ref="51i">i</dfn>, <em>long</em> <dfn class="local col2 decl" id="52l" title='l' data-type='long' data-ref="52l">l</dfn>, <em>float</em> <dfn class="local col3 decl" id="53f" title='f' data-type='float' data-ref="53f">f</dfn>, <em>double</em> <dfn class="local col4 decl" id="54d" title='d' data-type='double' data-ref="54d">d</dfn>)</td></tr>
+<tr><th id="160">160</th><td>{</td></tr>
+<tr><th id="161">161</th><td><i>/*      printf("_testfunc_f_bhilfd got %d %d %d %ld %f %f\n",</i></td></tr>
+<tr><th id="162">162</th><td><i>               b, h, i, l, f, d);</i></td></tr>
+<tr><th id="163">163</th><td><i>*/</i></td></tr>
+<tr><th id="164">164</th><td>    <b>return</b> (<em>float</em>)(<a class="local col9 ref" href="#49b" title='b' data-ref="49b">b</a> + <a class="local col0 ref" href="#50h" title='h' data-ref="50h">h</a> + <a class="local col1 ref" href="#51i" title='i' data-ref="51i">i</a> + <a class="local col2 ref" href="#52l" title='l' data-ref="52l">l</a> + <a class="local col3 ref" href="#53f" title='f' data-ref="53f">f</a> + <a class="local col4 ref" href="#54d" title='d' data-ref="54d">d</a>);</td></tr>
+<tr><th id="165">165</th><td>}</td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td><a class="macro" href="#10" title="double" data-ref="_M/EXPORT">EXPORT</a>(<em>double</em>) <dfn class="decl def" id="_testfunc_d_bhilfd" title='_testfunc_d_bhilfd' data-ref="_testfunc_d_bhilfd">_testfunc_d_bhilfd</dfn>(<em>signed</em> <em>char</em> <dfn class="local col5 decl" id="55b" title='b' data-type='signed char' data-ref="55b">b</dfn>, <em>short</em> <dfn class="local col6 decl" id="56h" title='h' data-type='short' data-ref="56h">h</dfn>, <em>int</em> <dfn class="local col7 decl" id="57i" title='i' data-type='int' data-ref="57i">i</dfn>, <em>long</em> <dfn class="local col8 decl" id="58l" title='l' data-type='long' data-ref="58l">l</dfn>, <em>float</em> <dfn class="local col9 decl" id="59f" title='f' data-type='float' data-ref="59f">f</dfn>, <em>double</em> <dfn class="local col0 decl" id="60d" title='d' data-type='double' data-ref="60d">d</dfn>)</td></tr>
+<tr><th id="168">168</th><td>{</td></tr>
+<tr><th id="169">169</th><td><i>/*      printf("_testfunc_d_bhilfd got %d %d %d %ld %f %f\n",</i></td></tr>
+<tr><th id="170">170</th><td><i>               b, h, i, l, f, d);</i></td></tr>
+<tr><th id="171">171</th><td><i>*/</i></td></tr>
+<tr><th id="172">172</th><td>    <b>return</b> (<em>double</em>)(<a class="local col5 ref" href="#55b" title='b' data-ref="55b">b</a> + <a class="local col6 ref" href="#56h" title='h' data-ref="56h">h</a> + <a class="local col7 ref" href="#57i" title='i' data-ref="57i">i</a> + <a class="local col8 ref" href="#58l" title='l' data-ref="58l">l</a> + <a class="local col9 ref" href="#59f" title='f' data-ref="59f">f</a> + <a class="local col0 ref" href="#60d" title='d' data-ref="60d">d</a>);</td></tr>
+<tr><th id="173">173</th><td>}</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><a class="macro" href="#10" title="long double" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>double</em>) <dfn class="decl def" id="_testfunc_D_bhilfD" title='_testfunc_D_bhilfD' data-ref="_testfunc_D_bhilfD">_testfunc_D_bhilfD</dfn>(<em>signed</em> <em>char</em> <dfn class="local col1 decl" id="61b" title='b' data-type='signed char' data-ref="61b">b</dfn>, <em>short</em> <dfn class="local col2 decl" id="62h" title='h' data-type='short' data-ref="62h">h</dfn>, <em>int</em> <dfn class="local col3 decl" id="63i" title='i' data-type='int' data-ref="63i">i</dfn>, <em>long</em> <dfn class="local col4 decl" id="64l" title='l' data-type='long' data-ref="64l">l</dfn>, <em>float</em> <dfn class="local col5 decl" id="65f" title='f' data-type='float' data-ref="65f">f</dfn>, <em>long</em> <em>double</em> <dfn class="local col6 decl" id="66d" title='d' data-type='long double' data-ref="66d">d</dfn>)</td></tr>
+<tr><th id="176">176</th><td>{</td></tr>
+<tr><th id="177">177</th><td><i>/*      printf("_testfunc_d_bhilfd got %d %d %d %ld %f %f\n",</i></td></tr>
+<tr><th id="178">178</th><td><i>               b, h, i, l, f, d);</i></td></tr>
+<tr><th id="179">179</th><td><i>*/</i></td></tr>
+<tr><th id="180">180</th><td>    <b>return</b> (<em>long</em> <em>double</em>)(<a class="local col1 ref" href="#61b" title='b' data-ref="61b">b</a> + <a class="local col2 ref" href="#62h" title='h' data-ref="62h">h</a> + <a class="local col3 ref" href="#63i" title='i' data-ref="63i">i</a> + <a class="local col4 ref" href="#64l" title='l' data-ref="64l">l</a> + <a class="local col5 ref" href="#65f" title='f' data-ref="65f">f</a> + <a class="local col6 ref" href="#66d" title='d' data-ref="66d">d</a>);</td></tr>
+<tr><th id="181">181</th><td>}</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td><a class="macro" href="#10" title="char *" data-ref="_M/EXPORT">EXPORT</a>(<em>char</em> *) <dfn class="decl def" id="_testfunc_p_p" title='_testfunc_p_p' data-ref="_testfunc_p_p">_testfunc_p_p</dfn>(<em>void</em> *<dfn class="local col7 decl" id="67s" title='s' data-type='void *' data-ref="67s">s</dfn>)</td></tr>
+<tr><th id="184">184</th><td>{</td></tr>
+<tr><th id="185">185</th><td>    <b>return</b> (<em>char</em> *)<a class="local col7 ref" href="#67s" title='s' data-ref="67s">s</a>;</td></tr>
+<tr><th id="186">186</th><td>}</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><a class="macro" href="#10" title="void *" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em> *) <dfn class="decl def" id="_testfunc_c_p_p" title='_testfunc_c_p_p' data-ref="_testfunc_c_p_p">_testfunc_c_p_p</dfn>(<em>int</em> *<dfn class="local col8 decl" id="68argcp" title='argcp' data-type='int *' data-ref="68argcp">argcp</dfn>, <em>char</em> **<dfn class="local col9 decl" id="69argv" title='argv' data-type='char **' data-ref="69argv">argv</dfn>)</td></tr>
+<tr><th id="189">189</th><td>{</td></tr>
+<tr><th id="190">190</th><td>    <b>return</b> <a class="local col9 ref" href="#69argv" title='argv' data-ref="69argv">argv</a>[(*<a class="local col8 ref" href="#68argcp" title='argcp' data-ref="68argcp">argcp</a>)-<var>1</var>];</td></tr>
+<tr><th id="191">191</th><td>}</td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><a class="macro" href="#10" title="void *" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em> *) <dfn class="decl def" id="get_strchr" title='get_strchr' data-ref="get_strchr">get_strchr</dfn>(<em>void</em>)</td></tr>
+<tr><th id="194">194</th><td>{</td></tr>
+<tr><th id="195">195</th><td>    <b>return</b> (<em>void</em> *)<a class="ref" href="../../../include/string.h.html#strchr" title='strchr' data-ref="strchr">strchr</a>;</td></tr>
+<tr><th id="196">196</th><td>}</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><a class="macro" href="#10" title="char *" data-ref="_M/EXPORT">EXPORT</a>(<em>char</em> *) <dfn class="decl def" id="my_strdup" title='my_strdup' data-ref="my_strdup">my_strdup</dfn>(<em>char</em> *<dfn class="local col0 decl" id="70src" title='src' data-type='char *' data-ref="70src">src</dfn>)</td></tr>
+<tr><th id="199">199</th><td>{</td></tr>
+<tr><th id="200">200</th><td>    <em>char</em> *<dfn class="local col1 decl" id="71dst" title='dst' data-type='char *' data-ref="71dst">dst</dfn> = (<em>char</em> *)<a class="ref" href="../../../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="ref" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col0 ref" href="#70src" title='src' data-ref="70src">src</a>)+<var>1</var>);</td></tr>
+<tr><th id="201">201</th><td>    <b>if</b> (!<a class="local col1 ref" href="#71dst" title='dst' data-ref="71dst">dst</a>)</td></tr>
+<tr><th id="202">202</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="203">203</th><td>    <a class="ref" href="../../../include/string.h.html#strcpy" title='strcpy' data-ref="strcpy">strcpy</a>(<a class="local col1 ref" href="#71dst" title='dst' data-ref="71dst">dst</a>, <a class="local col0 ref" href="#70src" title='src' data-ref="70src">src</a>);</td></tr>
+<tr><th id="204">204</th><td>    <b>return</b> <a class="local col1 ref" href="#71dst" title='dst' data-ref="71dst">dst</a>;</td></tr>
+<tr><th id="205">205</th><td>}</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>)<dfn class="decl def" id="my_free" title='my_free' data-ref="my_free">my_free</dfn>(<em>void</em> *<dfn class="local col2 decl" id="72ptr" title='ptr' data-type='void *' data-ref="72ptr">ptr</dfn>)</td></tr>
+<tr><th id="208">208</th><td>{</td></tr>
+<tr><th id="209">209</th><td>    <a class="ref" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col2 ref" href="#72ptr" title='ptr' data-ref="72ptr">ptr</a>);</td></tr>
+<tr><th id="210">210</th><td>}</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td><u>#<span data-ppcond="212">ifdef</span> <a class="macro" href="../../pyconfig.h.html#1177" data-ref="_M/HAVE_WCHAR_H">HAVE_WCHAR_H</a></u></td></tr>
+<tr><th id="213">213</th><td><a class="macro" href="#10" title="wchar_t *" data-ref="_M/EXPORT">EXPORT</a>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *) <dfn class="decl def" id="my_wcsdup" title='my_wcsdup' data-ref="my_wcsdup">my_wcsdup</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col3 decl" id="73src" title='src' data-type='wchar_t *' data-ref="73src">src</dfn>)</td></tr>
+<tr><th id="214">214</th><td>{</td></tr>
+<tr><th id="215">215</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="74len" title='len' data-type='size_t' data-ref="74len">len</dfn> = <a class="ref" href="../../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col3 ref" href="#73src" title='src' data-ref="73src">src</a>);</td></tr>
+<tr><th id="216">216</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col5 decl" id="75ptr" title='ptr' data-type='wchar_t *' data-ref="75ptr">ptr</dfn> = (<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *)<a class="ref" href="../../../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>((<a class="local col4 ref" href="#74len" title='len' data-ref="74len">len</a> + <var>1</var>) * <b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>));</td></tr>
+<tr><th id="217">217</th><td>    <b>if</b> (<a class="local col5 ref" href="#75ptr" title='ptr' data-ref="75ptr">ptr</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="218">218</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="219">219</th><td>    <a class="ref" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col5 ref" href="#75ptr" title='ptr' data-ref="75ptr">ptr</a>, <a class="local col3 ref" href="#73src" title='src' data-ref="73src">src</a>, (<a class="local col4 ref" href="#74len" title='len' data-ref="74len">len</a>+<var>1</var>) * <b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>));</td></tr>
+<tr><th id="220">220</th><td>    <b>return</b> <a class="local col5 ref" href="#75ptr" title='ptr' data-ref="75ptr">ptr</a>;</td></tr>
+<tr><th id="221">221</th><td>}</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td><a class="macro" href="#10" title="size_t" data-ref="_M/EXPORT">EXPORT</a>(<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span>) <dfn class="decl def" id="my_wcslen" title='my_wcslen' data-ref="my_wcslen">my_wcslen</dfn>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> *<dfn class="local col6 decl" id="76src" title='src' data-type='wchar_t *' data-ref="76src">src</dfn>)</td></tr>
+<tr><th id="224">224</th><td>{</td></tr>
+<tr><th id="225">225</th><td>    <b>return</b> <a class="ref" href="../../../include/wchar.h.html#wcslen" title='wcslen' data-ref="wcslen">wcslen</a>(<a class="local col6 ref" href="#76src" title='src' data-ref="76src">src</a>);</td></tr>
+<tr><th id="226">226</th><td>}</td></tr>
+<tr><th id="227">227</th><td><u>#<span data-ppcond="212">endif</span></u></td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td><u>#<span data-ppcond="229">ifndef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="230">230</th><td><u># <span data-ppcond="230">ifndef</span> <span class="macro" data-ref="_M/__stdcall">__stdcall</span></u></td></tr>
+<tr><th id="231">231</th><td><u>#  define <dfn class="macro" id="_M/__stdcall" data-ref="_M/__stdcall">__stdcall</dfn> /* */</u></td></tr>
+<tr><th id="232">232</th><td><u># <span data-ppcond="230">endif</span></u></td></tr>
+<tr><th id="233">233</th><td><u>#<span data-ppcond="229">endif</span></u></td></tr>
+<tr><th id="234">234</th><td></td></tr>
+<tr><th id="235">235</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="236">236</th><td>    <em>int</em> (*<dfn class="tu decl" id="(anonymous)::c" title='(anonymous struct)::c' data-type='int (*)(int, int)' data-ref="(anonymous)::c">c</dfn>)(<em>int</em>, <em>int</em>);</td></tr>
+<tr><th id="237">237</th><td>    <em>int</em> (<a class="macro" href="#231" title="" data-ref="_M/__stdcall"><b>__stdcall</b></a> *<dfn class="tu decl" id="(anonymous)::s" title='(anonymous struct)::s' data-type='int (*)(int, int)' data-ref="(anonymous)::s">s</dfn>)(<em>int</em>, <em>int</em>);</td></tr>
+<tr><th id="238">238</th><td>} <dfn class="typedef" id="FUNCS" title='FUNCS' data-type='struct FUNCS' data-ref="FUNCS">FUNCS</dfn>;</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="_testfunc_callfuncp" title='_testfunc_callfuncp' data-ref="_testfunc_callfuncp">_testfunc_callfuncp</dfn>(<a class="typedef" href="#FUNCS" title='FUNCS' data-type='struct FUNCS' data-ref="FUNCS">FUNCS</a> *<dfn class="local col7 decl" id="77fp" title='fp' data-type='FUNCS *' data-ref="77fp">fp</dfn>)</td></tr>
+<tr><th id="241">241</th><td>{</td></tr>
+<tr><th id="242">242</th><td>    <a class="local col7 ref" href="#77fp" title='fp' data-ref="77fp">fp</a>-&gt;<a class="tu ref" href="#(anonymous)::c" title='(anonymous struct)::c' data-use='r' data-ref="(anonymous)::c">c</a>(<var>1</var>, <var>2</var>);</td></tr>
+<tr><th id="243">243</th><td>    <a class="local col7 ref" href="#77fp" title='fp' data-ref="77fp">fp</a>-&gt;<a class="tu ref" href="#(anonymous)::s" title='(anonymous struct)::s' data-use='r' data-ref="(anonymous)::s">s</a>(<var>3</var>, <var>4</var>);</td></tr>
+<tr><th id="244">244</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="245">245</th><td>}</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="_testfunc_deref_pointer" title='_testfunc_deref_pointer' data-ref="_testfunc_deref_pointer">_testfunc_deref_pointer</dfn>(<em>int</em> *<dfn class="local col8 decl" id="78pi" title='pi' data-type='int *' data-ref="78pi">pi</dfn>)</td></tr>
+<tr><th id="248">248</th><td>{</td></tr>
+<tr><th id="249">249</th><td>    <b>return</b> *<a class="local col8 ref" href="#78pi" title='pi' data-ref="78pi">pi</a>;</td></tr>
+<tr><th id="250">250</th><td>}</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td><u>#<span data-ppcond="252">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="253">253</th><td>EXPORT(<em>int</em>) _testfunc_piunk(IUnknown FAR *piunk)</td></tr>
+<tr><th id="254">254</th><td>{</td></tr>
+<tr><th id="255">255</th><td>    piunk-&gt;lpVtbl-&gt;AddRef(piunk);</td></tr>
+<tr><th id="256">256</th><td>    <b>return</b> piunk-&gt;lpVtbl-&gt;Release(piunk);</td></tr>
+<tr><th id="257">257</th><td>}</td></tr>
+<tr><th id="258">258</th><td><u>#<span data-ppcond="252">endif</span></u></td></tr>
+<tr><th id="259">259</th><td></td></tr>
+<tr><th id="260">260</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="_testfunc_callback_with_pointer" title='_testfunc_callback_with_pointer' data-ref="_testfunc_callback_with_pointer">_testfunc_callback_with_pointer</dfn>(<em>int</em> (*<dfn class="local col9 decl" id="79func" title='func' data-type='int (*)(int *)' data-ref="79func">func</dfn>)(<em>int</em> *))</td></tr>
+<tr><th id="261">261</th><td>{</td></tr>
+<tr><th id="262">262</th><td>    <em>int</em> <dfn class="local col0 decl" id="80table" title='table' data-type='int [10]' data-ref="80table">table</dfn>[] = {<var>1</var>, <var>2</var>, <var>3</var>, <var>4</var>, <var>5</var>, <var>6</var>, <var>7</var>, <var>8</var>, <var>9</var>, <var>10</var>};</td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td>    <b>return</b> (*<a class="local col9 ref" href="#79func" title='func' data-ref="79func">func</a>)(<a class="local col0 ref" href="#80table" title='table' data-ref="80table">table</a>);</td></tr>
+<tr><th id="265">265</th><td>}</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><a class="macro" href="#10" title="long long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>long</em>) <dfn class="decl def" id="_testfunc_q_bhilfdq" title='_testfunc_q_bhilfdq' data-ref="_testfunc_q_bhilfdq">_testfunc_q_bhilfdq</dfn>(<em>signed</em> <em>char</em> <dfn class="local col1 decl" id="81b" title='b' data-type='signed char' data-ref="81b">b</dfn>, <em>short</em> <dfn class="local col2 decl" id="82h" title='h' data-type='short' data-ref="82h">h</dfn>, <em>int</em> <dfn class="local col3 decl" id="83i" title='i' data-type='int' data-ref="83i">i</dfn>, <em>long</em> <dfn class="local col4 decl" id="84l" title='l' data-type='long' data-ref="84l">l</dfn>, <em>float</em> <dfn class="local col5 decl" id="85f" title='f' data-type='float' data-ref="85f">f</dfn>,</td></tr>
+<tr><th id="268">268</th><td>                                      <em>double</em> <dfn class="local col6 decl" id="86d" title='d' data-type='double' data-ref="86d">d</dfn>, <em>long</em> <em>long</em> <dfn class="local col7 decl" id="87q" title='q' data-type='long long' data-ref="87q">q</dfn>)</td></tr>
+<tr><th id="269">269</th><td>{</td></tr>
+<tr><th id="270">270</th><td>    <b>return</b> (<em>long</em> <em>long</em>)(<a class="local col1 ref" href="#81b" title='b' data-ref="81b">b</a> + <a class="local col2 ref" href="#82h" title='h' data-ref="82h">h</a> + <a class="local col3 ref" href="#83i" title='i' data-ref="83i">i</a> + <a class="local col4 ref" href="#84l" title='l' data-ref="84l">l</a> + <a class="local col5 ref" href="#85f" title='f' data-ref="85f">f</a> + <a class="local col6 ref" href="#86d" title='d' data-ref="86d">d</a> + <a class="local col7 ref" href="#87q" title='q' data-ref="87q">q</a>);</td></tr>
+<tr><th id="271">271</th><td>}</td></tr>
+<tr><th id="272">272</th><td></td></tr>
+<tr><th id="273">273</th><td><a class="macro" href="#10" title="long long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>long</em>) <dfn class="decl def" id="_testfunc_q_bhilfd" title='_testfunc_q_bhilfd' data-ref="_testfunc_q_bhilfd">_testfunc_q_bhilfd</dfn>(<em>signed</em> <em>char</em> <dfn class="local col8 decl" id="88b" title='b' data-type='signed char' data-ref="88b">b</dfn>, <em>short</em> <dfn class="local col9 decl" id="89h" title='h' data-type='short' data-ref="89h">h</dfn>, <em>int</em> <dfn class="local col0 decl" id="90i" title='i' data-type='int' data-ref="90i">i</dfn>, <em>long</em> <dfn class="local col1 decl" id="91l" title='l' data-type='long' data-ref="91l">l</dfn>, <em>float</em> <dfn class="local col2 decl" id="92f" title='f' data-type='float' data-ref="92f">f</dfn>, <em>double</em> <dfn class="local col3 decl" id="93d" title='d' data-type='double' data-ref="93d">d</dfn>)</td></tr>
+<tr><th id="274">274</th><td>{</td></tr>
+<tr><th id="275">275</th><td>    <b>return</b> (<em>long</em> <em>long</em>)(<a class="local col8 ref" href="#88b" title='b' data-ref="88b">b</a> + <a class="local col9 ref" href="#89h" title='h' data-ref="89h">h</a> + <a class="local col0 ref" href="#90i" title='i' data-ref="90i">i</a> + <a class="local col1 ref" href="#91l" title='l' data-ref="91l">l</a> + <a class="local col2 ref" href="#92f" title='f' data-ref="92f">f</a> + <a class="local col3 ref" href="#93d" title='d' data-ref="93d">d</a>);</td></tr>
+<tr><th id="276">276</th><td>}</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="_testfunc_callback_i_if" title='_testfunc_callback_i_if' data-ref="_testfunc_callback_i_if">_testfunc_callback_i_if</dfn>(<em>int</em> <dfn class="local col4 decl" id="94value" title='value' data-type='int' data-ref="94value">value</dfn>, <em>int</em> (*<dfn class="local col5 decl" id="95func" title='func' data-type='int (*)(int)' data-ref="95func">func</dfn>)(<em>int</em>))</td></tr>
+<tr><th id="279">279</th><td>{</td></tr>
+<tr><th id="280">280</th><td>    <em>int</em> <dfn class="local col6 decl" id="96sum" title='sum' data-type='int' data-ref="96sum">sum</dfn> = <var>0</var>;</td></tr>
+<tr><th id="281">281</th><td>    <b>while</b> (<a class="local col4 ref" href="#94value" title='value' data-ref="94value">value</a> != <var>0</var>) {</td></tr>
+<tr><th id="282">282</th><td>        <a class="local col6 ref" href="#96sum" title='sum' data-ref="96sum">sum</a> += <a class="local col5 ref" href="#95func" title='func' data-ref="95func">func</a>(<a class="local col4 ref" href="#94value" title='value' data-ref="94value">value</a>);</td></tr>
+<tr><th id="283">283</th><td>        <a class="local col4 ref" href="#94value" title='value' data-ref="94value">value</a> /= <var>2</var>;</td></tr>
+<tr><th id="284">284</th><td>    }</td></tr>
+<tr><th id="285">285</th><td>    <b>return</b> <a class="local col6 ref" href="#96sum" title='sum' data-ref="96sum">sum</a>;</td></tr>
+<tr><th id="286">286</th><td>}</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><a class="macro" href="#10" title="long long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>long</em>) <dfn class="decl def" id="_testfunc_callback_q_qf" title='_testfunc_callback_q_qf' data-ref="_testfunc_callback_q_qf">_testfunc_callback_q_qf</dfn>(<em>long</em> <em>long</em> <dfn class="local col7 decl" id="97value" title='value' data-type='long long' data-ref="97value">value</dfn>,</td></tr>
+<tr><th id="289">289</th><td>                                          <em>long</em> <em>long</em> (*<dfn class="local col8 decl" id="98func" title='func' data-type='long long (*)(long long)' data-ref="98func">func</dfn>)(<em>long</em> <em>long</em>))</td></tr>
+<tr><th id="290">290</th><td>{</td></tr>
+<tr><th id="291">291</th><td>    <em>long</em> <em>long</em> <dfn class="local col9 decl" id="99sum" title='sum' data-type='long long' data-ref="99sum">sum</dfn> = <var>0</var>;</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td>    <b>while</b> (<a class="local col7 ref" href="#97value" title='value' data-ref="97value">value</a> != <var>0</var>) {</td></tr>
+<tr><th id="294">294</th><td>        <a class="local col9 ref" href="#99sum" title='sum' data-ref="99sum">sum</a> += <a class="local col8 ref" href="#98func" title='func' data-ref="98func">func</a>(<a class="local col7 ref" href="#97value" title='value' data-ref="97value">value</a>);</td></tr>
+<tr><th id="295">295</th><td>        <a class="local col7 ref" href="#97value" title='value' data-ref="97value">value</a> /= <var>2</var>;</td></tr>
+<tr><th id="296">296</th><td>    }</td></tr>
+<tr><th id="297">297</th><td>    <b>return</b> <a class="local col9 ref" href="#99sum" title='sum' data-ref="99sum">sum</a>;</td></tr>
+<tr><th id="298">298</th><td>}</td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="301">301</th><td>    <em>char</em> *<dfn class="tu decl" id="(anonymous)::name" title='(anonymous struct)::name' data-type='char *' data-ref="(anonymous)::name">name</dfn>;</td></tr>
+<tr><th id="302">302</th><td>    <em>char</em> *<dfn class="tu decl" id="(anonymous)::value" title='(anonymous struct)::value' data-type='char *' data-ref="(anonymous)::value">value</dfn>;</td></tr>
+<tr><th id="303">303</th><td>} <dfn class="typedef" id="SPAM" title='SPAM' data-type='struct SPAM' data-ref="SPAM">SPAM</dfn>;</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="306">306</th><td>    <em>char</em> *<dfn class="tu decl" id="(anonymous)::name" title='(anonymous struct)::name' data-type='char *' data-ref="(anonymous)::name">name</dfn>;</td></tr>
+<tr><th id="307">307</th><td>    <em>int</em> <dfn class="tu decl" id="(anonymous)::num_spams" title='(anonymous struct)::num_spams' data-type='int' data-ref="(anonymous)::num_spams">num_spams</dfn>;</td></tr>
+<tr><th id="308">308</th><td>    <a class="typedef" href="#SPAM" title='SPAM' data-type='struct SPAM' data-ref="SPAM">SPAM</a> *<dfn class="tu decl" id="(anonymous)::spams" title='(anonymous struct)::spams' data-type='SPAM *' data-ref="(anonymous)::spams">spams</dfn>;</td></tr>
+<tr><th id="309">309</th><td>} <dfn class="typedef" id="EGG" title='EGG' data-type='struct EGG' data-ref="EGG">EGG</dfn>;</td></tr>
+<tr><th id="310">310</th><td></td></tr>
+<tr><th id="311">311</th><td><a class="typedef" href="#SPAM" title='SPAM' data-type='struct SPAM' data-ref="SPAM">SPAM</a> <dfn class="decl def" id="my_spams" title='my_spams' data-ref="my_spams">my_spams</dfn>[<var>2</var>] = {</td></tr>
+<tr><th id="312">312</th><td>    { <q>"name1"</q>, <q>"value1"</q> },</td></tr>
+<tr><th id="313">313</th><td>    { <q>"name2"</q>, <q>"value2"</q> },</td></tr>
+<tr><th id="314">314</th><td>};</td></tr>
+<tr><th id="315">315</th><td></td></tr>
+<tr><th id="316">316</th><td><a class="typedef" href="#EGG" title='EGG' data-type='struct EGG' data-ref="EGG">EGG</a> <dfn class="decl def" id="my_eggs" title='my_eggs' data-ref="my_eggs">my_eggs</dfn>[<var>1</var>] = {</td></tr>
+<tr><th id="317">317</th><td>    { <q>"first egg"</q>, <var>1</var>, <a class="ref" href="#my_spams" title='my_spams' data-ref="my_spams">my_spams</a> }</td></tr>
+<tr><th id="318">318</th><td>};</td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="getSPAMANDEGGS" title='getSPAMANDEGGS' data-ref="getSPAMANDEGGS">getSPAMANDEGGS</dfn>(<a class="typedef" href="#EGG" title='EGG' data-type='struct EGG' data-ref="EGG">EGG</a> **<dfn class="local col0 decl" id="100eggs" title='eggs' data-type='EGG **' data-ref="100eggs">eggs</dfn>)</td></tr>
+<tr><th id="321">321</th><td>{</td></tr>
+<tr><th id="322">322</th><td>    *<a class="local col0 ref" href="#100eggs" title='eggs' data-ref="100eggs">eggs</a> = <a class="ref" href="#my_eggs" title='my_eggs' data-ref="my_eggs">my_eggs</a>;</td></tr>
+<tr><th id="323">323</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="324">324</th><td>}</td></tr>
+<tr><th id="325">325</th><td></td></tr>
+<tr><th id="326">326</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="tagpoint" title='tagpoint' data-ref="tagpoint"><a class="type" href="#tagpoint" title='tagpoint' data-ref="tagpoint">tagpoint</a></dfn> {</td></tr>
+<tr><th id="327">327</th><td>    <em>int</em> <dfn class="tu decl" id="tagpoint::x" title='tagpoint::x' data-type='int' data-ref="tagpoint::x">x</dfn>;</td></tr>
+<tr><th id="328">328</th><td>    <em>int</em> <dfn class="tu decl" id="tagpoint::y" title='tagpoint::y' data-type='int' data-ref="tagpoint::y">y</dfn>;</td></tr>
+<tr><th id="329">329</th><td>} <dfn class="typedef" id="point" title='point' data-type='struct tagpoint' data-ref="point">point</dfn>;</td></tr>
+<tr><th id="330">330</th><td></td></tr>
+<tr><th id="331">331</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="_testfunc_byval" title='_testfunc_byval' data-ref="_testfunc_byval">_testfunc_byval</dfn>(<a class="typedef" href="#point" title='point' data-type='struct tagpoint' data-ref="point">point</a> <dfn class="local col1 decl" id="101in" title='in' data-type='point' data-ref="101in">in</dfn>, <a class="typedef" href="#point" title='point' data-type='struct tagpoint' data-ref="point">point</a> *<dfn class="local col2 decl" id="102pout" title='pout' data-type='point *' data-ref="102pout">pout</dfn>)</td></tr>
+<tr><th id="332">332</th><td>{</td></tr>
+<tr><th id="333">333</th><td>    <b>if</b> (<a class="local col2 ref" href="#102pout" title='pout' data-ref="102pout">pout</a>) {</td></tr>
+<tr><th id="334">334</th><td>        <a class="local col2 ref" href="#102pout" title='pout' data-ref="102pout">pout</a>-&gt;<a class="tu ref" href="#tagpoint::x" title='tagpoint::x' data-use='w' data-ref="tagpoint::x">x</a> = <a class="local col1 ref" href="#101in" title='in' data-ref="101in">in</a>.<a class="tu ref" href="#tagpoint::x" title='tagpoint::x' data-use='r' data-ref="tagpoint::x">x</a>;</td></tr>
+<tr><th id="335">335</th><td>        <a class="local col2 ref" href="#102pout" title='pout' data-ref="102pout">pout</a>-&gt;<a class="tu ref" href="#tagpoint::y" title='tagpoint::y' data-use='w' data-ref="tagpoint::y">y</a> = <a class="local col1 ref" href="#101in" title='in' data-ref="101in">in</a>.<a class="tu ref" href="#tagpoint::y" title='tagpoint::y' data-use='r' data-ref="tagpoint::y">y</a>;</td></tr>
+<tr><th id="336">336</th><td>    }</td></tr>
+<tr><th id="337">337</th><td>    <b>return</b> <a class="local col1 ref" href="#101in" title='in' data-ref="101in">in</a>.<a class="tu ref" href="#tagpoint::x" title='tagpoint::x' data-use='r' data-ref="tagpoint::x">x</a> + <a class="local col1 ref" href="#101in" title='in' data-ref="101in">in</a>.<a class="tu ref" href="#tagpoint::y" title='tagpoint::y' data-use='r' data-ref="tagpoint::y">y</a>;</td></tr>
+<tr><th id="338">338</th><td>}</td></tr>
+<tr><th id="339">339</th><td></td></tr>
+<tr><th id="340">340</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a> (<em>int</em>) <dfn class="decl def" id="an_integer" title='an_integer' data-ref="an_integer">an_integer</dfn> = <var>42</var>;</td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="get_an_integer" title='get_an_integer' data-ref="get_an_integer">get_an_integer</dfn>(<em>void</em>)</td></tr>
+<tr><th id="343">343</th><td>{</td></tr>
+<tr><th id="344">344</th><td>    <b>return</b> <a class="ref" href="#an_integer" title='an_integer' data-ref="an_integer">an_integer</a>;</td></tr>
+<tr><th id="345">345</th><td>}</td></tr>
+<tr><th id="346">346</th><td></td></tr>
+<tr><th id="347">347</th><td><a class="macro" href="#10" title="double" data-ref="_M/EXPORT">EXPORT</a>(<em>double</em>)</td></tr>
+<tr><th id="348">348</th><td><dfn class="decl def" id="integrate" title='integrate' data-ref="integrate">integrate</dfn>(<em>double</em> <dfn class="local col3 decl" id="103a" title='a' data-type='double' data-ref="103a">a</dfn>, <em>double</em> <dfn class="local col4 decl" id="104b" title='b' data-type='double' data-ref="104b">b</dfn>, <em>double</em> (*<dfn class="local col5 decl" id="105f" title='f' data-type='double (*)(double)' data-ref="105f">f</dfn>)(<em>double</em>), <em>long</em> <dfn class="local col6 decl" id="106nstep" title='nstep' data-type='long' data-ref="106nstep">nstep</dfn>)</td></tr>
+<tr><th id="349">349</th><td>{</td></tr>
+<tr><th id="350">350</th><td>    <em>double</em> <dfn class="local col7 decl" id="107x" title='x' data-type='double' data-ref="107x">x</dfn>, <dfn class="local col8 decl" id="108sum" title='sum' data-type='double' data-ref="108sum">sum</dfn>=<var>0.0</var>, <dfn class="local col9 decl" id="109dx" title='dx' data-type='double' data-ref="109dx">dx</dfn>=(<a class="local col4 ref" href="#104b" title='b' data-ref="104b">b</a>-<a class="local col3 ref" href="#103a" title='a' data-ref="103a">a</a>)/(<em>double</em>)<a class="local col6 ref" href="#106nstep" title='nstep' data-ref="106nstep">nstep</a>;</td></tr>
+<tr><th id="351">351</th><td>    <b>for</b>(<a class="local col7 ref" href="#107x" title='x' data-ref="107x">x</a>=<a class="local col3 ref" href="#103a" title='a' data-ref="103a">a</a>+<var>0.5</var>*<a class="local col9 ref" href="#109dx" title='dx' data-ref="109dx">dx</a>; (<a class="local col4 ref" href="#104b" title='b' data-ref="104b">b</a>-<a class="local col7 ref" href="#107x" title='x' data-ref="107x">x</a>)*(<a class="local col7 ref" href="#107x" title='x' data-ref="107x">x</a>-<a class="local col3 ref" href="#103a" title='a' data-ref="103a">a</a>)&gt;<var>0.0</var>; <a class="local col7 ref" href="#107x" title='x' data-ref="107x">x</a>+=<a class="local col9 ref" href="#109dx" title='dx' data-ref="109dx">dx</a>)</td></tr>
+<tr><th id="352">352</th><td>        <a class="local col8 ref" href="#108sum" title='sum' data-ref="108sum">sum</a> += <a class="local col5 ref" href="#105f" title='f' data-ref="105f">f</a>(<a class="local col7 ref" href="#107x" title='x' data-ref="107x">x</a>);</td></tr>
+<tr><th id="353">353</th><td>    <b>return</b> <a class="local col8 ref" href="#108sum" title='sum' data-ref="108sum">sum</a>/(<em>double</em>)<a class="local col6 ref" href="#106nstep" title='nstep' data-ref="106nstep">nstep</a>;</td></tr>
+<tr><th id="354">354</th><td>}</td></tr>
+<tr><th id="355">355</th><td></td></tr>
+<tr><th id="356">356</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="357">357</th><td>    <em>void</em> (*<dfn class="tu decl" id="(anonymous)::initialize" title='(anonymous struct)::initialize' data-type='void (*)(void *(*)(int), void (*)(void *))' data-ref="(anonymous)::initialize">initialize</dfn>)(<em>void</em> *(*)(<em>int</em>), <em>void</em>(*)(<em>void</em> *));</td></tr>
+<tr><th id="358">358</th><td>} <dfn class="typedef" id="xxx_library" title='xxx_library' data-type='struct xxx_library' data-ref="xxx_library">xxx_library</dfn>;</td></tr>
+<tr><th id="359">359</th><td></td></tr>
+<tr><th id="360">360</th><td><em>static</em> <em>void</em> <dfn class="tu decl def" id="_xxx_init" title='_xxx_init' data-type='void _xxx_init(void *(*)(int) Xalloc, void (*)(void *) Xfree)' data-ref="_xxx_init">_xxx_init</dfn>(<em>void</em> *(*<dfn class="local col0 decl" id="110Xalloc" title='Xalloc' data-type='void *(*)(int)' data-ref="110Xalloc">Xalloc</dfn>)(<em>int</em>), <em>void</em> (*<dfn class="local col1 decl" id="111Xfree" title='Xfree' data-type='void (*)(void *)' data-ref="111Xfree">Xfree</dfn>)(<em>void</em> *))</td></tr>
+<tr><th id="361">361</th><td>{</td></tr>
+<tr><th id="362">362</th><td>    <em>void</em> *<dfn class="local col2 decl" id="112ptr" title='ptr' data-type='void *' data-ref="112ptr">ptr</dfn>;</td></tr>
+<tr><th id="363">363</th><td></td></tr>
+<tr><th id="364">364</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"_xxx_init got %p %p\n"</q>, <a class="local col0 ref" href="#110Xalloc" title='Xalloc' data-ref="110Xalloc">Xalloc</a>, <a class="local col1 ref" href="#111Xfree" title='Xfree' data-ref="111Xfree">Xfree</a>);</td></tr>
+<tr><th id="365">365</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"calling\n"</q>);</td></tr>
+<tr><th id="366">366</th><td>    <a class="local col2 ref" href="#112ptr" title='ptr' data-ref="112ptr">ptr</a> = <a class="local col0 ref" href="#110Xalloc" title='Xalloc' data-ref="110Xalloc">Xalloc</a>(<var>32</var>);</td></tr>
+<tr><th id="367">367</th><td>    <a class="local col1 ref" href="#111Xfree" title='Xfree' data-ref="111Xfree">Xfree</a>(<a class="local col2 ref" href="#112ptr" title='ptr' data-ref="112ptr">ptr</a>);</td></tr>
+<tr><th id="368">368</th><td>    <a class="ref" href="../../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"calls done, ptr was %p\n"</q>, <a class="local col2 ref" href="#112ptr" title='ptr' data-ref="112ptr">ptr</a>);</td></tr>
+<tr><th id="369">369</th><td>}</td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td><a class="typedef" href="#xxx_library" title='xxx_library' data-type='struct xxx_library' data-ref="xxx_library">xxx_library</a> <dfn class="decl def" id="_xxx_lib" title='_xxx_lib' data-ref="_xxx_lib">_xxx_lib</dfn> = {</td></tr>
+<tr><th id="372">372</th><td>    <a class="tu ref" href="#_xxx_init" title='_xxx_init' data-ref="_xxx_init">_xxx_init</a></td></tr>
+<tr><th id="373">373</th><td>};</td></tr>
+<tr><th id="374">374</th><td></td></tr>
+<tr><th id="375">375</th><td><a class="macro" href="#10" title="xxx_library" data-ref="_M/EXPORT">EXPORT</a>(<a class="typedef" href="#xxx_library" title='xxx_library' data-type='struct xxx_library' data-ref="xxx_library">xxx_library</a>) *<dfn class="decl def" id="library_get" title='library_get' data-ref="library_get">library_get</dfn>(<em>void</em>)</td></tr>
+<tr><th id="376">376</th><td>{</td></tr>
+<tr><th id="377">377</th><td>    <b>return</b> &amp;<a class="ref" href="#_xxx_lib" title='_xxx_lib' data-ref="_xxx_lib">_xxx_lib</a>;</td></tr>
+<tr><th id="378">378</th><td>}</td></tr>
+<tr><th id="379">379</th><td></td></tr>
+<tr><th id="380">380</th><td><u>#<span data-ppcond="380">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="381">381</th><td><i>/* See Don Box (german), pp 79ff. */</i></td></tr>
+<tr><th id="382">382</th><td>EXPORT(<em>void</em>) GetString(BSTR *pbstr)</td></tr>
+<tr><th id="383">383</th><td>{</td></tr>
+<tr><th id="384">384</th><td>    *pbstr = SysAllocString(L<q>"Goodbye!"</q>);</td></tr>
+<tr><th id="385">385</th><td>}</td></tr>
+<tr><th id="386">386</th><td><u>#<span data-ppcond="380">endif</span></u></td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td><i>/*</i></td></tr>
+<tr><th id="389">389</th><td><i> * Some do-nothing functions, for speed tests</i></td></tr>
+<tr><th id="390">390</th><td><i> */</i></td></tr>
+<tr><th id="391">391</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="py_func_si" title='py_func_si' data-ref="py_func_si">py_func_si</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="113self" title='self' data-type='PyObject *' data-ref="113self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="114args" title='args' data-type='PyObject *' data-ref="114args">args</dfn>)</td></tr>
+<tr><th id="392">392</th><td>{</td></tr>
+<tr><th id="393">393</th><td>    <em>char</em> *<dfn class="local col5 decl" id="115name" title='name' data-type='char *' data-ref="115name">name</dfn>;</td></tr>
+<tr><th id="394">394</th><td>    <em>int</em> <dfn class="local col6 decl" id="116i" title='i' data-type='int' data-ref="116i">i</dfn>;</td></tr>
+<tr><th id="395">395</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col4 ref" href="#114args" title='args' data-ref="114args">args</a>, <q>"si"</q>, &amp;<a class="local col5 ref" href="#115name" title='name' data-ref="115name">name</a>, &amp;<a class="local col6 ref" href="#116i" title='i' data-ref="116i">i</a>))</td></tr>
+<tr><th id="396">396</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="397">397</th><td>    <a class="macro" href="../../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="398">398</th><td>}</td></tr>
+<tr><th id="399">399</th><td></td></tr>
+<tr><th id="400">400</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="_py_func_si" title='_py_func_si' data-ref="_py_func_si">_py_func_si</dfn>(<em>char</em> *<dfn class="local col7 decl" id="117s" title='s' data-type='char *' data-ref="117s">s</dfn>, <em>int</em> <dfn class="local col8 decl" id="118i" title='i' data-type='int' data-ref="118i">i</dfn>)</td></tr>
+<tr><th id="401">401</th><td>{</td></tr>
+<tr><th id="402">402</th><td>}</td></tr>
+<tr><th id="403">403</th><td></td></tr>
+<tr><th id="404">404</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="decl def" id="py_func" title='py_func' data-ref="py_func">py_func</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="119self" title='self' data-type='PyObject *' data-ref="119self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="120args" title='args' data-type='PyObject *' data-ref="120args">args</dfn>)</td></tr>
+<tr><th id="405">405</th><td>{</td></tr>
+<tr><th id="406">406</th><td>    <a class="macro" href="../../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="407">407</th><td>}</td></tr>
+<tr><th id="408">408</th><td></td></tr>
+<tr><th id="409">409</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="_py_func" title='_py_func' data-ref="_py_func">_py_func</dfn>(<em>void</em>)</td></tr>
+<tr><th id="410">410</th><td>{</td></tr>
+<tr><th id="411">411</th><td>}</td></tr>
+<tr><th id="412">412</th><td></td></tr>
+<tr><th id="413">413</th><td><a class="macro" href="#10" title="long long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>long</em>) <dfn class="decl def" id="last_tf_arg_s" title='last_tf_arg_s' data-ref="last_tf_arg_s">last_tf_arg_s</dfn>;</td></tr>
+<tr><th id="414">414</th><td><a class="macro" href="#10" title="unsigned long long" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>long</em> <em>long</em>) <dfn class="decl def" id="last_tf_arg_u" title='last_tf_arg_u' data-ref="last_tf_arg_u">last_tf_arg_u</dfn>;</td></tr>
+<tr><th id="415">415</th><td></td></tr>
+<tr><th id="416">416</th><td><b>struct</b> <dfn class="type def" id="BITS" title='BITS' data-ref="BITS">BITS</dfn> {</td></tr>
+<tr><th id="417">417</th><td>    <em>int</em> <dfn class="tu decl" id="BITS::A" title='BITS::A' data-type='int' data-ref="BITS::A">A</dfn>: <var>1</var>, <dfn class="tu decl" id="BITS::B" title='BITS::B' data-type='int' data-ref="BITS::B">B</dfn>:<var>2</var>, <dfn class="tu decl" id="BITS::C" title='BITS::C' data-type='int' data-ref="BITS::C">C</dfn>:<var>3</var>, <dfn class="tu decl" id="BITS::D" title='BITS::D' data-type='int' data-ref="BITS::D">D</dfn>:<var>4</var>, <dfn class="tu decl" id="BITS::E" title='BITS::E' data-type='int' data-ref="BITS::E">E</dfn>: <var>5</var>, <dfn class="tu decl" id="BITS::F" title='BITS::F' data-type='int' data-ref="BITS::F">F</dfn>: <var>6</var>, <dfn class="tu decl" id="BITS::G" title='BITS::G' data-type='int' data-ref="BITS::G">G</dfn>: <var>7</var>, <dfn class="tu decl" id="BITS::H" title='BITS::H' data-type='int' data-ref="BITS::H">H</dfn>: <var>8</var>, <dfn class="tu decl" id="BITS::I" title='BITS::I' data-type='int' data-ref="BITS::I">I</dfn>: <var>9</var>;</td></tr>
+<tr><th id="418">418</th><td>    <em>short</em> <dfn class="tu decl" id="BITS::M" title='BITS::M' data-type='short' data-ref="BITS::M">M</dfn>: <var>1</var>, <dfn class="tu decl" id="BITS::N" title='BITS::N' data-type='short' data-ref="BITS::N">N</dfn>: <var>2</var>, <dfn class="tu decl" id="BITS::O" title='BITS::O' data-type='short' data-ref="BITS::O">O</dfn>: <var>3</var>, <dfn class="tu decl" id="BITS::P" title='BITS::P' data-type='short' data-ref="BITS::P">P</dfn>: <var>4</var>, <dfn class="tu decl" id="BITS::Q" title='BITS::Q' data-type='short' data-ref="BITS::Q">Q</dfn>: <var>5</var>, <dfn class="tu decl" id="BITS::R" title='BITS::R' data-type='short' data-ref="BITS::R">R</dfn>: <var>6</var>, <dfn class="tu decl" id="BITS::S" title='BITS::S' data-type='short' data-ref="BITS::S">S</dfn>: <var>7</var>;</td></tr>
+<tr><th id="419">419</th><td>};</td></tr>
+<tr><th id="420">420</th><td></td></tr>
+<tr><th id="421">421</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="set_bitfields" title='set_bitfields' data-ref="set_bitfields">set_bitfields</dfn>(<b>struct</b> <a class="type" href="#BITS" title='BITS' data-ref="BITS">BITS</a> *<dfn class="local col1 decl" id="121bits" title='bits' data-type='struct BITS *' data-ref="121bits">bits</dfn>, <em>char</em> <dfn class="local col2 decl" id="122name" title='name' data-type='char' data-ref="122name">name</dfn>, <em>int</em> <dfn class="local col3 decl" id="123value" title='value' data-type='int' data-ref="123value">value</dfn>)</td></tr>
+<tr><th id="422">422</th><td>{</td></tr>
+<tr><th id="423">423</th><td>    <b>switch</b> (<a class="local col2 ref" href="#122name" title='name' data-ref="122name">name</a>) {</td></tr>
+<tr><th id="424">424</th><td>    <b>case</b> <kbd>'A'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::A" title='BITS::A' data-use='w' data-ref="BITS::A">A</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="425">425</th><td>    <b>case</b> <kbd>'B'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::B" title='BITS::B' data-use='w' data-ref="BITS::B">B</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="426">426</th><td>    <b>case</b> <kbd>'C'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::C" title='BITS::C' data-use='w' data-ref="BITS::C">C</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="427">427</th><td>    <b>case</b> <kbd>'D'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::D" title='BITS::D' data-use='w' data-ref="BITS::D">D</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="428">428</th><td>    <b>case</b> <kbd>'E'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::E" title='BITS::E' data-use='w' data-ref="BITS::E">E</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="429">429</th><td>    <b>case</b> <kbd>'F'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::F" title='BITS::F' data-use='w' data-ref="BITS::F">F</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="430">430</th><td>    <b>case</b> <kbd>'G'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::G" title='BITS::G' data-use='w' data-ref="BITS::G">G</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="431">431</th><td>    <b>case</b> <kbd>'H'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::H" title='BITS::H' data-use='w' data-ref="BITS::H">H</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="432">432</th><td>    <b>case</b> <kbd>'I'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::I" title='BITS::I' data-use='w' data-ref="BITS::I">I</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td>    <b>case</b> <kbd>'M'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::M" title='BITS::M' data-use='w' data-ref="BITS::M">M</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="435">435</th><td>    <b>case</b> <kbd>'N'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::N" title='BITS::N' data-use='w' data-ref="BITS::N">N</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="436">436</th><td>    <b>case</b> <kbd>'O'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::O" title='BITS::O' data-use='w' data-ref="BITS::O">O</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="437">437</th><td>    <b>case</b> <kbd>'P'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::P" title='BITS::P' data-use='w' data-ref="BITS::P">P</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="438">438</th><td>    <b>case</b> <kbd>'Q'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::Q" title='BITS::Q' data-use='w' data-ref="BITS::Q">Q</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="439">439</th><td>    <b>case</b> <kbd>'R'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::R" title='BITS::R' data-use='w' data-ref="BITS::R">R</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="440">440</th><td>    <b>case</b> <kbd>'S'</kbd>: <a class="local col1 ref" href="#121bits" title='bits' data-ref="121bits">bits</a>-&gt;<a class="tu ref" href="#BITS::S" title='BITS::S' data-use='w' data-ref="BITS::S">S</a> = <a class="local col3 ref" href="#123value" title='value' data-ref="123value">value</a>; <b>break</b>;</td></tr>
+<tr><th id="441">441</th><td>    }</td></tr>
+<tr><th id="442">442</th><td>}</td></tr>
+<tr><th id="443">443</th><td></td></tr>
+<tr><th id="444">444</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="unpack_bitfields" title='unpack_bitfields' data-ref="unpack_bitfields">unpack_bitfields</dfn>(<b>struct</b> <a class="type" href="#BITS" title='BITS' data-ref="BITS">BITS</a> *<dfn class="local col4 decl" id="124bits" title='bits' data-type='struct BITS *' data-ref="124bits">bits</dfn>, <em>char</em> <dfn class="local col5 decl" id="125name" title='name' data-type='char' data-ref="125name">name</dfn>)</td></tr>
+<tr><th id="445">445</th><td>{</td></tr>
+<tr><th id="446">446</th><td>    <b>switch</b> (<a class="local col5 ref" href="#125name" title='name' data-ref="125name">name</a>) {</td></tr>
+<tr><th id="447">447</th><td>    <b>case</b> <kbd>'A'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::A" title='BITS::A' data-use='r' data-ref="BITS::A">A</a>;</td></tr>
+<tr><th id="448">448</th><td>    <b>case</b> <kbd>'B'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::B" title='BITS::B' data-use='r' data-ref="BITS::B">B</a>;</td></tr>
+<tr><th id="449">449</th><td>    <b>case</b> <kbd>'C'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::C" title='BITS::C' data-use='r' data-ref="BITS::C">C</a>;</td></tr>
+<tr><th id="450">450</th><td>    <b>case</b> <kbd>'D'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::D" title='BITS::D' data-use='r' data-ref="BITS::D">D</a>;</td></tr>
+<tr><th id="451">451</th><td>    <b>case</b> <kbd>'E'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::E" title='BITS::E' data-use='r' data-ref="BITS::E">E</a>;</td></tr>
+<tr><th id="452">452</th><td>    <b>case</b> <kbd>'F'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::F" title='BITS::F' data-use='r' data-ref="BITS::F">F</a>;</td></tr>
+<tr><th id="453">453</th><td>    <b>case</b> <kbd>'G'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::G" title='BITS::G' data-use='r' data-ref="BITS::G">G</a>;</td></tr>
+<tr><th id="454">454</th><td>    <b>case</b> <kbd>'H'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::H" title='BITS::H' data-use='r' data-ref="BITS::H">H</a>;</td></tr>
+<tr><th id="455">455</th><td>    <b>case</b> <kbd>'I'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::I" title='BITS::I' data-use='r' data-ref="BITS::I">I</a>;</td></tr>
+<tr><th id="456">456</th><td></td></tr>
+<tr><th id="457">457</th><td>    <b>case</b> <kbd>'M'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::M" title='BITS::M' data-use='r' data-ref="BITS::M">M</a>;</td></tr>
+<tr><th id="458">458</th><td>    <b>case</b> <kbd>'N'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::N" title='BITS::N' data-use='r' data-ref="BITS::N">N</a>;</td></tr>
+<tr><th id="459">459</th><td>    <b>case</b> <kbd>'O'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::O" title='BITS::O' data-use='r' data-ref="BITS::O">O</a>;</td></tr>
+<tr><th id="460">460</th><td>    <b>case</b> <kbd>'P'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::P" title='BITS::P' data-use='r' data-ref="BITS::P">P</a>;</td></tr>
+<tr><th id="461">461</th><td>    <b>case</b> <kbd>'Q'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::Q" title='BITS::Q' data-use='r' data-ref="BITS::Q">Q</a>;</td></tr>
+<tr><th id="462">462</th><td>    <b>case</b> <kbd>'R'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::R" title='BITS::R' data-use='r' data-ref="BITS::R">R</a>;</td></tr>
+<tr><th id="463">463</th><td>    <b>case</b> <kbd>'S'</kbd>: <b>return</b> <a class="local col4 ref" href="#124bits" title='bits' data-ref="124bits">bits</a>-&gt;<a class="tu ref" href="#BITS::S" title='BITS::S' data-use='r' data-ref="BITS::S">S</a>;</td></tr>
+<tr><th id="464">464</th><td>    }</td></tr>
+<tr><th id="465">465</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="466">466</th><td>}</td></tr>
+<tr><th id="467">467</th><td></td></tr>
+<tr><th id="468">468</th><td><em>static</em> <a class="typedef" href="../../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="module_methods" title='module_methods' data-type='PyMethodDef [3]' data-ref="module_methods">module_methods</dfn>[] = {</td></tr>
+<tr><th id="469">469</th><td><i>/*      {"get_last_tf_arg_s", get_last_tf_arg_s, METH_NOARGS},</i></td></tr>
+<tr><th id="470">470</th><td><i>    {"get_last_tf_arg_u", get_last_tf_arg_u, METH_NOARGS},</i></td></tr>
+<tr><th id="471">471</th><td><i>*/</i></td></tr>
+<tr><th id="472">472</th><td>    {<q>"func_si"</q>, <a class="ref" href="#py_func_si" title='py_func_si' data-ref="py_func_si">py_func_si</a>, <a class="macro" href="../../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>},</td></tr>
+<tr><th id="473">473</th><td>    {<q>"func"</q>, <a class="ref" href="#py_func" title='py_func' data-ref="py_func">py_func</a>, <a class="macro" href="../../Include/methodobject.h.html#74" title="0x0004" data-ref="_M/METH_NOARGS">METH_NOARGS</a>},</td></tr>
+<tr><th id="474">474</th><td>    { <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>0</var>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>},</td></tr>
+<tr><th id="475">475</th><td>};</td></tr>
+<tr><th id="476">476</th><td></td></tr>
+<tr><th id="477">477</th><td><u>#define <dfn class="macro" id="_M/S" data-ref="_M/S">S</dfn> <a class="ref" href="#last_tf_arg_s" title='last_tf_arg_s' data-ref="last_tf_arg_s">last_tf_arg_s</a> = (long long)<a class="local col6 ref" href="#126c" title='c' data-ref="126c"><a class="local col8 ref" href="#128c" title='c' data-ref="128c"><a class="local col0 ref" href="#130c" title='c' data-ref="130c"><a class="local col2 ref" href="#132c" title='c' data-ref="132c"><a class="local col4 ref" href="#134c" title='c' data-ref="134c"><a class="local col6 ref" href="#136c" title='c' data-ref="136c"><a class="local col7 ref" href="#137c" title='c' data-ref="137c"><a class="local col8 ref" href="#138c" title='c' data-ref="138c"><a class="local col0 ref" href="#140c" title='c' data-ref="140c"><a class="local col4 ref" href="#144c" title='c' data-ref="144c"><a class="local col8 ref" href="#148c" title='c' data-ref="148c"><a class="local col2 ref" href="#152c" title='c' data-ref="152c"><a class="local col6 ref" href="#156c" title='c' data-ref="156c"><a class="local col0 ref" href="#160c" title='c' data-ref="160c"><a class="local col2 ref" href="#162c" title='c' data-ref="162c"><a class="local col4 ref" href="#164c" title='c' data-ref="164c"><a class="local col5 ref" href="#165c" title='c' data-ref="165c">c</a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></a></u></td></tr>
+<tr><th id="478">478</th><td><u>#define <dfn class="macro" id="_M/U" data-ref="_M/U">U</dfn> <a class="ref" href="#last_tf_arg_u" title='last_tf_arg_u' data-ref="last_tf_arg_u">last_tf_arg_u</a> = (unsigned long long)<a class="local col7 ref" href="#127c" title='c' data-ref="127c"><a class="local col9 ref" href="#129c" title='c' data-ref="129c"><a class="local col1 ref" href="#131c" title='c' data-ref="131c"><a class="local col3 ref" href="#133c" title='c' data-ref="133c"><a class="local col5 ref" href="#135c" title='c' data-ref="135c"><a class="local col2 ref" href="#142c" title='c' data-ref="142c"><a class="local col6 ref" href="#146c" title='c' data-ref="146c"><a class="local col0 ref" href="#150c" title='c' data-ref="150c"><a class="local col4 ref" href="#154c" title='c' data-ref="154c"><a class="local col8 ref" href="#158c" title='c' data-ref="158c">c</a></a></a></a></a></a></a></a></a></a></u></td></tr>
+<tr><th id="479">479</th><td></td></tr>
+<tr><th id="480">480</th><td><a class="macro" href="#10" title="signed char" data-ref="_M/EXPORT">EXPORT</a>(<em>signed</em> <em>char</em>) <dfn class="decl def" id="tf_b" title='tf_b' data-ref="tf_b">tf_b</dfn>(<em>signed</em> <em>char</em> <dfn class="local col6 decl" id="126c" title='c' data-type='signed char' data-ref="126c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col6 ref" href="#126c" title='c' data-ref="126c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="481">481</th><td><a class="macro" href="#10" title="unsigned char" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>char</em>) <dfn class="decl def" id="tf_B" title='tf_B' data-ref="tf_B">tf_B</dfn>(<em>unsigned</em> <em>char</em> <dfn class="local col7 decl" id="127c" title='c' data-type='unsigned char' data-ref="127c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col7 ref" href="#127c" title='c' data-ref="127c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="482">482</th><td><a class="macro" href="#10" title="short" data-ref="_M/EXPORT">EXPORT</a>(<em>short</em>) <dfn class="decl def" id="tf_h" title='tf_h' data-ref="tf_h">tf_h</dfn>(<em>short</em> <dfn class="local col8 decl" id="128c" title='c' data-type='short' data-ref="128c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col8 ref" href="#128c" title='c' data-ref="128c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="483">483</th><td><a class="macro" href="#10" title="unsigned short" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>short</em>) <dfn class="decl def" id="tf_H" title='tf_H' data-ref="tf_H">tf_H</dfn>(<em>unsigned</em> <em>short</em> <dfn class="local col9 decl" id="129c" title='c' data-type='unsigned short' data-ref="129c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col9 ref" href="#129c" title='c' data-ref="129c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="484">484</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="tf_i" title='tf_i' data-ref="tf_i">tf_i</dfn>(<em>int</em> <dfn class="local col0 decl" id="130c" title='c' data-type='int' data-ref="130c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col0 ref" href="#130c" title='c' data-ref="130c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="485">485</th><td><a class="macro" href="#10" title="unsigned int" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>int</em>) <dfn class="decl def" id="tf_I" title='tf_I' data-ref="tf_I">tf_I</dfn>(<em>unsigned</em> <em>int</em> <dfn class="local col1 decl" id="131c" title='c' data-type='unsigned int' data-ref="131c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col1 ref" href="#131c" title='c' data-ref="131c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="486">486</th><td><a class="macro" href="#10" title="long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em>) <dfn class="decl def" id="tf_l" title='tf_l' data-ref="tf_l">tf_l</dfn>(<em>long</em> <dfn class="local col2 decl" id="132c" title='c' data-type='long' data-ref="132c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="487">487</th><td><a class="macro" href="#10" title="unsigned long" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>long</em>) <dfn class="decl def" id="tf_L" title='tf_L' data-ref="tf_L">tf_L</dfn>(<em>unsigned</em> <em>long</em> <dfn class="local col3 decl" id="133c" title='c' data-type='unsigned long' data-ref="133c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col3 ref" href="#133c" title='c' data-ref="133c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="488">488</th><td><a class="macro" href="#10" title="long long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>long</em>) <dfn class="decl def" id="tf_q" title='tf_q' data-ref="tf_q">tf_q</dfn>(<em>long</em> <em>long</em> <dfn class="local col4 decl" id="134c" title='c' data-type='long long' data-ref="134c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col4 ref" href="#134c" title='c' data-ref="134c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="489">489</th><td><a class="macro" href="#10" title="unsigned long long" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>long</em> <em>long</em>) <dfn class="decl def" id="tf_Q" title='tf_Q' data-ref="tf_Q">tf_Q</dfn>(<em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col5 decl" id="135c" title='c' data-type='unsigned long long' data-ref="135c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col5 ref" href="#135c" title='c' data-ref="135c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="490">490</th><td><a class="macro" href="#10" title="float" data-ref="_M/EXPORT">EXPORT</a>(<em>float</em>) <dfn class="decl def" id="tf_f" title='tf_f' data-ref="tf_f">tf_f</dfn>(<em>float</em> <dfn class="local col6 decl" id="136c" title='c' data-type='float' data-ref="136c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col6 ref" href="#136c" title='c' data-ref="136c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="491">491</th><td><a class="macro" href="#10" title="double" data-ref="_M/EXPORT">EXPORT</a>(<em>double</em>) <dfn class="decl def" id="tf_d" title='tf_d' data-ref="tf_d">tf_d</dfn>(<em>double</em> <dfn class="local col7 decl" id="137c" title='c' data-type='double' data-ref="137c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col7 ref" href="#137c" title='c' data-ref="137c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="492">492</th><td><a class="macro" href="#10" title="long double" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>double</em>) <dfn class="decl def" id="tf_D" title='tf_D' data-ref="tf_D">tf_D</dfn>(<em>long</em> <em>double</em> <dfn class="local col8 decl" id="138c" title='c' data-type='long double' data-ref="138c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col8 ref" href="#138c" title='c' data-ref="138c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="493">493</th><td></td></tr>
+<tr><th id="494">494</th><td><u>#<span data-ppcond="494">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="495">495</th><td>EXPORT(<em>signed</em> <em>char</em>) <b>__stdcall</b> s_tf_b(<em>signed</em> <em>char</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="496">496</th><td>EXPORT(<em>unsigned</em> <em>char</em>) <b>__stdcall</b> s_tf_B(<em>unsigned</em> <em>char</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="497">497</th><td>EXPORT(<em>short</em>) <b>__stdcall</b> s_tf_h(<em>short</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="498">498</th><td>EXPORT(<em>unsigned</em> <em>short</em>) <b>__stdcall</b> s_tf_H(<em>unsigned</em> <em>short</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="499">499</th><td>EXPORT(<em>int</em>) <b>__stdcall</b> s_tf_i(<em>int</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="500">500</th><td>EXPORT(<em>unsigned</em> <em>int</em>) <b>__stdcall</b> s_tf_I(<em>unsigned</em> <em>int</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="501">501</th><td>EXPORT(<em>long</em>) <b>__stdcall</b> s_tf_l(<em>long</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="502">502</th><td>EXPORT(<em>unsigned</em> <em>long</em>) <b>__stdcall</b> s_tf_L(<em>unsigned</em> <em>long</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="503">503</th><td>EXPORT(<em>long</em> <em>long</em>) <b>__stdcall</b> s_tf_q(<em>long</em> <em>long</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="504">504</th><td>EXPORT(<em>unsigned</em> <em>long</em> <em>long</em>) <b>__stdcall</b> s_tf_Q(<em>unsigned</em> <em>long</em> <em>long</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="505">505</th><td>EXPORT(<em>float</em>) <b>__stdcall</b> s_tf_f(<em>float</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="506">506</th><td>EXPORT(<em>double</em>) <b>__stdcall</b> s_tf_d(<em>double</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="507">507</th><td>EXPORT(<em>long</em> <em>double</em>) <b>__stdcall</b> s_tf_D(<em>long</em> <em>double</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="508">508</th><td><u>#<span data-ppcond="494">endif</span></u></td></tr>
+<tr><th id="509">509</th><td><i>/*******/</i></td></tr>
+<tr><th id="510">510</th><td></td></tr>
+<tr><th id="511">511</th><td><a class="macro" href="#10" title="signed char" data-ref="_M/EXPORT">EXPORT</a>(<em>signed</em> <em>char</em>) <dfn class="decl def" id="tf_bb" title='tf_bb' data-ref="tf_bb">tf_bb</dfn>(<em>signed</em> <em>char</em> <dfn class="local col9 decl" id="139x" title='x' data-type='signed char' data-ref="139x">x</dfn>, <em>signed</em> <em>char</em> <dfn class="local col0 decl" id="140c" title='c' data-type='signed char' data-ref="140c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col0 ref" href="#140c" title='c' data-ref="140c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="512">512</th><td><a class="macro" href="#10" title="unsigned char" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>char</em>) <dfn class="decl def" id="tf_bB" title='tf_bB' data-ref="tf_bB">tf_bB</dfn>(<em>signed</em> <em>char</em> <dfn class="local col1 decl" id="141x" title='x' data-type='signed char' data-ref="141x">x</dfn>, <em>unsigned</em> <em>char</em> <dfn class="local col2 decl" id="142c" title='c' data-type='unsigned char' data-ref="142c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col2 ref" href="#142c" title='c' data-ref="142c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="513">513</th><td><a class="macro" href="#10" title="short" data-ref="_M/EXPORT">EXPORT</a>(<em>short</em>) <dfn class="decl def" id="tf_bh" title='tf_bh' data-ref="tf_bh">tf_bh</dfn>(<em>signed</em> <em>char</em> <dfn class="local col3 decl" id="143x" title='x' data-type='signed char' data-ref="143x">x</dfn>, <em>short</em> <dfn class="local col4 decl" id="144c" title='c' data-type='short' data-ref="144c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col4 ref" href="#144c" title='c' data-ref="144c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="514">514</th><td><a class="macro" href="#10" title="unsigned short" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>short</em>) <dfn class="decl def" id="tf_bH" title='tf_bH' data-ref="tf_bH">tf_bH</dfn>(<em>signed</em> <em>char</em> <dfn class="local col5 decl" id="145x" title='x' data-type='signed char' data-ref="145x">x</dfn>, <em>unsigned</em> <em>short</em> <dfn class="local col6 decl" id="146c" title='c' data-type='unsigned short' data-ref="146c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col6 ref" href="#146c" title='c' data-ref="146c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="515">515</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="tf_bi" title='tf_bi' data-ref="tf_bi">tf_bi</dfn>(<em>signed</em> <em>char</em> <dfn class="local col7 decl" id="147x" title='x' data-type='signed char' data-ref="147x">x</dfn>, <em>int</em> <dfn class="local col8 decl" id="148c" title='c' data-type='int' data-ref="148c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col8 ref" href="#148c" title='c' data-ref="148c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="516">516</th><td><a class="macro" href="#10" title="unsigned int" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>int</em>) <dfn class="decl def" id="tf_bI" title='tf_bI' data-ref="tf_bI">tf_bI</dfn>(<em>signed</em> <em>char</em> <dfn class="local col9 decl" id="149x" title='x' data-type='signed char' data-ref="149x">x</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col0 decl" id="150c" title='c' data-type='unsigned int' data-ref="150c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col0 ref" href="#150c" title='c' data-ref="150c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="517">517</th><td><a class="macro" href="#10" title="long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em>) <dfn class="decl def" id="tf_bl" title='tf_bl' data-ref="tf_bl">tf_bl</dfn>(<em>signed</em> <em>char</em> <dfn class="local col1 decl" id="151x" title='x' data-type='signed char' data-ref="151x">x</dfn>, <em>long</em> <dfn class="local col2 decl" id="152c" title='c' data-type='long' data-ref="152c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col2 ref" href="#152c" title='c' data-ref="152c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="518">518</th><td><a class="macro" href="#10" title="unsigned long" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>long</em>) <dfn class="decl def" id="tf_bL" title='tf_bL' data-ref="tf_bL">tf_bL</dfn>(<em>signed</em> <em>char</em> <dfn class="local col3 decl" id="153x" title='x' data-type='signed char' data-ref="153x">x</dfn>, <em>unsigned</em> <em>long</em> <dfn class="local col4 decl" id="154c" title='c' data-type='unsigned long' data-ref="154c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col4 ref" href="#154c" title='c' data-ref="154c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="519">519</th><td><a class="macro" href="#10" title="long long" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>long</em>) <dfn class="decl def" id="tf_bq" title='tf_bq' data-ref="tf_bq">tf_bq</dfn>(<em>signed</em> <em>char</em> <dfn class="local col5 decl" id="155x" title='x' data-type='signed char' data-ref="155x">x</dfn>, <em>long</em> <em>long</em> <dfn class="local col6 decl" id="156c" title='c' data-type='long long' data-ref="156c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col6 ref" href="#156c" title='c' data-ref="156c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="520">520</th><td><a class="macro" href="#10" title="unsigned long long" data-ref="_M/EXPORT">EXPORT</a>(<em>unsigned</em> <em>long</em> <em>long</em>) <dfn class="decl def" id="tf_bQ" title='tf_bQ' data-ref="tf_bQ">tf_bQ</dfn>(<em>signed</em> <em>char</em> <dfn class="local col7 decl" id="157x" title='x' data-type='signed char' data-ref="157x">x</dfn>, <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col8 decl" id="158c" title='c' data-type='unsigned long long' data-ref="158c">c</dfn>) { <a class="macro" href="#478" title="last_tf_arg_u = (unsigned long long)c" data-ref="_M/U">U</a>; <b>return</b> <a class="local col8 ref" href="#158c" title='c' data-ref="158c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="521">521</th><td><a class="macro" href="#10" title="float" data-ref="_M/EXPORT">EXPORT</a>(<em>float</em>) <dfn class="decl def" id="tf_bf" title='tf_bf' data-ref="tf_bf">tf_bf</dfn>(<em>signed</em> <em>char</em> <dfn class="local col9 decl" id="159x" title='x' data-type='signed char' data-ref="159x">x</dfn>, <em>float</em> <dfn class="local col0 decl" id="160c" title='c' data-type='float' data-ref="160c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col0 ref" href="#160c" title='c' data-ref="160c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="522">522</th><td><a class="macro" href="#10" title="double" data-ref="_M/EXPORT">EXPORT</a>(<em>double</em>) <dfn class="decl def" id="tf_bd" title='tf_bd' data-ref="tf_bd">tf_bd</dfn>(<em>signed</em> <em>char</em> <dfn class="local col1 decl" id="161x" title='x' data-type='signed char' data-ref="161x">x</dfn>, <em>double</em> <dfn class="local col2 decl" id="162c" title='c' data-type='double' data-ref="162c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col2 ref" href="#162c" title='c' data-ref="162c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="523">523</th><td><a class="macro" href="#10" title="long double" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <em>double</em>) <dfn class="decl def" id="tf_bD" title='tf_bD' data-ref="tf_bD">tf_bD</dfn>(<em>signed</em> <em>char</em> <dfn class="local col3 decl" id="163x" title='x' data-type='signed char' data-ref="163x">x</dfn>, <em>long</em> <em>double</em> <dfn class="local col4 decl" id="164c" title='c' data-type='long double' data-ref="164c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b> <a class="local col4 ref" href="#164c" title='c' data-ref="164c">c</a>/<var>3</var>; }</td></tr>
+<tr><th id="524">524</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="tv_i" title='tv_i' data-ref="tv_i">tv_i</dfn>(<em>int</em> <dfn class="local col5 decl" id="165c" title='c' data-type='int' data-ref="165c">c</dfn>) { <a class="macro" href="#477" title="last_tf_arg_s = (long long)c" data-ref="_M/S">S</a>; <b>return</b>; }</td></tr>
+<tr><th id="525">525</th><td></td></tr>
+<tr><th id="526">526</th><td><u>#<span data-ppcond="526">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="527">527</th><td>EXPORT(<em>signed</em> <em>char</em>) <b>__stdcall</b> s_tf_bb(<em>signed</em> <em>char</em> x, <em>signed</em> <em>char</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="528">528</th><td>EXPORT(<em>unsigned</em> <em>char</em>) <b>__stdcall</b> s_tf_bB(<em>signed</em> <em>char</em> x, <em>unsigned</em> <em>char</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="529">529</th><td>EXPORT(<em>short</em>) <b>__stdcall</b> s_tf_bh(<em>signed</em> <em>char</em> x, <em>short</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="530">530</th><td>EXPORT(<em>unsigned</em> <em>short</em>) <b>__stdcall</b> s_tf_bH(<em>signed</em> <em>char</em> x, <em>unsigned</em> <em>short</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="531">531</th><td>EXPORT(<em>int</em>) <b>__stdcall</b> s_tf_bi(<em>signed</em> <em>char</em> x, <em>int</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="532">532</th><td>EXPORT(<em>unsigned</em> <em>int</em>) <b>__stdcall</b> s_tf_bI(<em>signed</em> <em>char</em> x, <em>unsigned</em> <em>int</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="533">533</th><td>EXPORT(<em>long</em>) <b>__stdcall</b> s_tf_bl(<em>signed</em> <em>char</em> x, <em>long</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="534">534</th><td>EXPORT(<em>unsigned</em> <em>long</em>) <b>__stdcall</b> s_tf_bL(<em>signed</em> <em>char</em> x, <em>unsigned</em> <em>long</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="535">535</th><td>EXPORT(<em>long</em> <em>long</em>) <b>__stdcall</b> s_tf_bq(<em>signed</em> <em>char</em> x, <em>long</em> <em>long</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="536">536</th><td>EXPORT(<em>unsigned</em> <em>long</em> <em>long</em>) <b>__stdcall</b> s_tf_bQ(<em>signed</em> <em>char</em> x, <em>unsigned</em> <em>long</em> <em>long</em> c) { U; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="537">537</th><td>EXPORT(<em>float</em>) <b>__stdcall</b> s_tf_bf(<em>signed</em> <em>char</em> x, <em>float</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="538">538</th><td>EXPORT(<em>double</em>) <b>__stdcall</b> s_tf_bd(<em>signed</em> <em>char</em> x, <em>double</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="539">539</th><td>EXPORT(<em>long</em> <em>double</em>) <b>__stdcall</b> s_tf_bD(<em>signed</em> <em>char</em> x, <em>long</em> <em>double</em> c) { S; <b>return</b> c/<var>3</var>; }</td></tr>
+<tr><th id="540">540</th><td>EXPORT(<em>void</em>) <b>__stdcall</b> s_tv_i(<em>int</em> c) { S; <b>return</b>; }</td></tr>
+<tr><th id="541">541</th><td><u>#<span data-ppcond="526">endif</span></u></td></tr>
+<tr><th id="542">542</th><td></td></tr>
+<tr><th id="543">543</th><td><i>/********/</i></td></tr>
+<tr><th id="544">544</th><td></td></tr>
+<tr><th id="545">545</th><td><u>#<span data-ppcond="545">ifndef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="546">546</th><td></td></tr>
+<tr><th id="547">547</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="548">548</th><td>    <em>long</em> <dfn class="tu decl" id="(anonymous)::x" title='(anonymous struct)::x' data-type='long' data-ref="(anonymous)::x">x</dfn>;</td></tr>
+<tr><th id="549">549</th><td>    <em>long</em> <dfn class="tu decl" id="(anonymous)::y" title='(anonymous struct)::y' data-type='long' data-ref="(anonymous)::y">y</dfn>;</td></tr>
+<tr><th id="550">550</th><td>} <dfn class="typedef" id="POINT" title='POINT' data-type='struct POINT' data-ref="POINT">POINT</dfn>;</td></tr>
+<tr><th id="551">551</th><td></td></tr>
+<tr><th id="552">552</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="553">553</th><td>    <em>long</em> <dfn class="tu decl" id="(anonymous)::left" title='(anonymous struct)::left' data-type='long' data-ref="(anonymous)::left">left</dfn>;</td></tr>
+<tr><th id="554">554</th><td>    <em>long</em> <dfn class="tu decl" id="(anonymous)::top" title='(anonymous struct)::top' data-type='long' data-ref="(anonymous)::top">top</dfn>;</td></tr>
+<tr><th id="555">555</th><td>    <em>long</em> <dfn class="tu decl" id="(anonymous)::right" title='(anonymous struct)::right' data-type='long' data-ref="(anonymous)::right">right</dfn>;</td></tr>
+<tr><th id="556">556</th><td>    <em>long</em> <dfn class="tu decl" id="(anonymous)::bottom" title='(anonymous struct)::bottom' data-type='long' data-ref="(anonymous)::bottom">bottom</dfn>;</td></tr>
+<tr><th id="557">557</th><td>} <dfn class="typedef" id="RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</dfn>;</td></tr>
+<tr><th id="558">558</th><td></td></tr>
+<tr><th id="559">559</th><td><u>#<span data-ppcond="545">endif</span></u></td></tr>
+<tr><th id="560">560</th><td></td></tr>
+<tr><th id="561">561</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="PointInRect" title='PointInRect' data-ref="PointInRect">PointInRect</dfn>(<a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a> *<dfn class="local col6 decl" id="166prc" title='prc' data-type='RECT *' data-ref="166prc">prc</dfn>, <a class="typedef" href="#POINT" title='POINT' data-type='struct POINT' data-ref="POINT">POINT</a> <dfn class="local col7 decl" id="167pt" title='pt' data-type='POINT' data-ref="167pt">pt</dfn>)</td></tr>
+<tr><th id="562">562</th><td>{</td></tr>
+<tr><th id="563">563</th><td>    <b>if</b> (<a class="local col7 ref" href="#167pt" title='pt' data-ref="167pt">pt</a>.<a class="tu ref" href="#(anonymous)::x" title='(anonymous struct)::x' data-use='r' data-ref="(anonymous)::x">x</a> &lt; <a class="local col6 ref" href="#166prc" title='prc' data-ref="166prc">prc</a>-&gt;<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='r' data-ref="(anonymous)::left">left</a>)</td></tr>
+<tr><th id="564">564</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="565">565</th><td>    <b>if</b> (<a class="local col7 ref" href="#167pt" title='pt' data-ref="167pt">pt</a>.<a class="tu ref" href="#(anonymous)::x" title='(anonymous struct)::x' data-use='r' data-ref="(anonymous)::x">x</a> &gt; <a class="local col6 ref" href="#166prc" title='prc' data-ref="166prc">prc</a>-&gt;<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='r' data-ref="(anonymous)::right">right</a>)</td></tr>
+<tr><th id="566">566</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="567">567</th><td>    <b>if</b> (<a class="local col7 ref" href="#167pt" title='pt' data-ref="167pt">pt</a>.<a class="tu ref" href="#(anonymous)::y" title='(anonymous struct)::y' data-use='r' data-ref="(anonymous)::y">y</a> &lt; <a class="local col6 ref" href="#166prc" title='prc' data-ref="166prc">prc</a>-&gt;<a class="tu ref" href="#(anonymous)::top" title='(anonymous struct)::top' data-use='r' data-ref="(anonymous)::top">top</a>)</td></tr>
+<tr><th id="568">568</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="569">569</th><td>    <b>if</b> (<a class="local col7 ref" href="#167pt" title='pt' data-ref="167pt">pt</a>.<a class="tu ref" href="#(anonymous)::y" title='(anonymous struct)::y' data-use='r' data-ref="(anonymous)::y">y</a> &gt; <a class="local col6 ref" href="#166prc" title='prc' data-ref="166prc">prc</a>-&gt;<a class="tu ref" href="#(anonymous)::bottom" title='(anonymous struct)::bottom' data-use='r' data-ref="(anonymous)::bottom">bottom</a>)</td></tr>
+<tr><th id="570">570</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="571">571</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="572">572</th><td>}</td></tr>
+<tr><th id="573">573</th><td></td></tr>
+<tr><th id="574">574</th><td><a class="macro" href="#10" title="long left = 10" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <dfn class="decl def" id="left" title='left' data-ref="left">left</dfn> = <var>10</var>);</td></tr>
+<tr><th id="575">575</th><td><a class="macro" href="#10" title="long top = 20" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <dfn class="decl def" id="top" title='top' data-ref="top">top</dfn> = <var>20</var>);</td></tr>
+<tr><th id="576">576</th><td><a class="macro" href="#10" title="long right = 30" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <dfn class="decl def" id="right" title='right' data-ref="right">right</dfn> = <var>30</var>);</td></tr>
+<tr><th id="577">577</th><td><a class="macro" href="#10" title="long bottom = 40" data-ref="_M/EXPORT">EXPORT</a>(<em>long</em> <dfn class="decl def" id="bottom" title='bottom' data-ref="bottom">bottom</dfn> = <var>40</var>);</td></tr>
+<tr><th id="578">578</th><td></td></tr>
+<tr><th id="579">579</th><td><a class="macro" href="#10" title="RECT" data-ref="_M/EXPORT">EXPORT</a>(<a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a>) <dfn class="decl def" id="ReturnRect" title='ReturnRect' data-ref="ReturnRect">ReturnRect</dfn>(<em>int</em> <dfn class="local col8 decl" id="168i" title='i' data-type='int' data-ref="168i">i</dfn>, <a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a> <dfn class="local col9 decl" id="169ar" title='ar' data-type='RECT' data-ref="169ar">ar</dfn>, <a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a>* <dfn class="local col0 decl" id="170br" title='br' data-type='RECT *' data-ref="170br">br</dfn>, <a class="typedef" href="#POINT" title='POINT' data-type='struct POINT' data-ref="POINT">POINT</a> <dfn class="local col1 decl" id="171cp" title='cp' data-type='POINT' data-ref="171cp">cp</dfn>, <a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a> <dfn class="local col2 decl" id="172dr" title='dr' data-type='RECT' data-ref="172dr">dr</dfn>,</td></tr>
+<tr><th id="580">580</th><td>                        <a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a> *<dfn class="local col3 decl" id="173er" title='er' data-type='RECT *' data-ref="173er">er</dfn>, <a class="typedef" href="#POINT" title='POINT' data-type='struct POINT' data-ref="POINT">POINT</a> <dfn class="local col4 decl" id="174fp" title='fp' data-type='POINT' data-ref="174fp">fp</dfn>, <a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a> <dfn class="local col5 decl" id="175gr" title='gr' data-type='RECT' data-ref="175gr">gr</dfn>)</td></tr>
+<tr><th id="581">581</th><td>{</td></tr>
+<tr><th id="582">582</th><td>    <i>/*Check input */</i></td></tr>
+<tr><th id="583">583</th><td>    <b>if</b> (<a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>.<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='r' data-ref="(anonymous)::left">left</a> + <a class="local col0 ref" href="#170br" title='br' data-ref="170br">br</a>-&gt;<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='r' data-ref="(anonymous)::left">left</a> + <a class="local col2 ref" href="#172dr" title='dr' data-ref="172dr">dr</a>.<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='r' data-ref="(anonymous)::left">left</a> + <a class="local col3 ref" href="#173er" title='er' data-ref="173er">er</a>-&gt;<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='r' data-ref="(anonymous)::left">left</a> + <a class="local col5 ref" href="#175gr" title='gr' data-ref="175gr">gr</a>.<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='r' data-ref="(anonymous)::left">left</a> != <a class="ref" href="#574" title='left' data-ref="left">left</a> * <var>5</var>)</td></tr>
+<tr><th id="584">584</th><td>    {</td></tr>
+<tr><th id="585">585</th><td>        <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>.<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='w' data-ref="(anonymous)::left">left</a> = <var>100</var>;</td></tr>
+<tr><th id="586">586</th><td>        <b>return</b> <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>;</td></tr>
+<tr><th id="587">587</th><td>    }</td></tr>
+<tr><th id="588">588</th><td>    <b>if</b> (<a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>.<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='r' data-ref="(anonymous)::right">right</a> + <a class="local col0 ref" href="#170br" title='br' data-ref="170br">br</a>-&gt;<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='r' data-ref="(anonymous)::right">right</a> + <a class="local col2 ref" href="#172dr" title='dr' data-ref="172dr">dr</a>.<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='r' data-ref="(anonymous)::right">right</a> + <a class="local col3 ref" href="#173er" title='er' data-ref="173er">er</a>-&gt;<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='r' data-ref="(anonymous)::right">right</a> + <a class="local col5 ref" href="#175gr" title='gr' data-ref="175gr">gr</a>.<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='r' data-ref="(anonymous)::right">right</a> != <a class="ref" href="#576" title='right' data-ref="right">right</a> * <var>5</var>)</td></tr>
+<tr><th id="589">589</th><td>    {</td></tr>
+<tr><th id="590">590</th><td>        <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>.<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='w' data-ref="(anonymous)::right">right</a> = <var>100</var>;</td></tr>
+<tr><th id="591">591</th><td>        <b>return</b> <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>;</td></tr>
+<tr><th id="592">592</th><td>    }</td></tr>
+<tr><th id="593">593</th><td>    <b>if</b> (<a class="local col1 ref" href="#171cp" title='cp' data-ref="171cp">cp</a>.<a class="tu ref" href="#(anonymous)::x" title='(anonymous struct)::x' data-use='r' data-ref="(anonymous)::x">x</a> != <a class="local col4 ref" href="#174fp" title='fp' data-ref="174fp">fp</a>.<a class="tu ref" href="#(anonymous)::x" title='(anonymous struct)::x' data-use='r' data-ref="(anonymous)::x">x</a>)</td></tr>
+<tr><th id="594">594</th><td>    {</td></tr>
+<tr><th id="595">595</th><td>        <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>.<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='w' data-ref="(anonymous)::left">left</a> = -<var>100</var>;</td></tr>
+<tr><th id="596">596</th><td>    }</td></tr>
+<tr><th id="597">597</th><td>    <b>if</b> (<a class="local col1 ref" href="#171cp" title='cp' data-ref="171cp">cp</a>.<a class="tu ref" href="#(anonymous)::y" title='(anonymous struct)::y' data-use='r' data-ref="(anonymous)::y">y</a> != <a class="local col4 ref" href="#174fp" title='fp' data-ref="174fp">fp</a>.<a class="tu ref" href="#(anonymous)::y" title='(anonymous struct)::y' data-use='r' data-ref="(anonymous)::y">y</a>)</td></tr>
+<tr><th id="598">598</th><td>    {</td></tr>
+<tr><th id="599">599</th><td>        <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>.<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='w' data-ref="(anonymous)::left">left</a> = -<var>200</var>;</td></tr>
+<tr><th id="600">600</th><td>    }</td></tr>
+<tr><th id="601">601</th><td>    <b>switch</b>(<a class="local col8 ref" href="#168i" title='i' data-ref="168i">i</a>)</td></tr>
+<tr><th id="602">602</th><td>    {</td></tr>
+<tr><th id="603">603</th><td>    <b>case</b> <var>0</var>:</td></tr>
+<tr><th id="604">604</th><td>        <b>return</b> <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>;</td></tr>
+<tr><th id="605">605</th><td>        <b>break</b>;</td></tr>
+<tr><th id="606">606</th><td>    <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="607">607</th><td>        <b>return</b> <a class="local col2 ref" href="#172dr" title='dr' data-ref="172dr">dr</a>;</td></tr>
+<tr><th id="608">608</th><td>        <b>break</b>;</td></tr>
+<tr><th id="609">609</th><td>    <b>case</b> <var>2</var>:</td></tr>
+<tr><th id="610">610</th><td>        <b>return</b> <a class="local col5 ref" href="#175gr" title='gr' data-ref="175gr">gr</a>;</td></tr>
+<tr><th id="611">611</th><td>        <b>break</b>;</td></tr>
+<tr><th id="612">612</th><td></td></tr>
+<tr><th id="613">613</th><td>    }</td></tr>
+<tr><th id="614">614</th><td>    <b>return</b> <a class="local col9 ref" href="#169ar" title='ar' data-ref="169ar">ar</a>;</td></tr>
+<tr><th id="615">615</th><td>}</td></tr>
+<tr><th id="616">616</th><td></td></tr>
+<tr><th id="617">617</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="618">618</th><td>    <em>short</em> <dfn class="tu decl" id="(anonymous)::x" title='(anonymous struct)::x' data-type='short' data-ref="(anonymous)::x">x</dfn>;</td></tr>
+<tr><th id="619">619</th><td>    <em>short</em> <dfn class="tu decl" id="(anonymous)::y" title='(anonymous struct)::y' data-type='short' data-ref="(anonymous)::y">y</dfn>;</td></tr>
+<tr><th id="620">620</th><td>} <dfn class="typedef" id="S2H" title='S2H' data-type='struct S2H' data-ref="S2H">S2H</dfn>;</td></tr>
+<tr><th id="621">621</th><td></td></tr>
+<tr><th id="622">622</th><td><a class="macro" href="#10" title="S2H" data-ref="_M/EXPORT">EXPORT</a>(<a class="typedef" href="#S2H" title='S2H' data-type='struct S2H' data-ref="S2H">S2H</a>) <dfn class="decl def" id="ret_2h_func" title='ret_2h_func' data-ref="ret_2h_func">ret_2h_func</dfn>(<a class="typedef" href="#S2H" title='S2H' data-type='struct S2H' data-ref="S2H">S2H</a> <dfn class="local col6 decl" id="176inp" title='inp' data-type='S2H' data-ref="176inp">inp</dfn>)</td></tr>
+<tr><th id="623">623</th><td>{</td></tr>
+<tr><th id="624">624</th><td>    <a class="local col6 ref" href="#176inp" title='inp' data-ref="176inp">inp</a>.<a class="tu ref" href="#(anonymous)::x" title='(anonymous struct)::x' data-use='w' data-ref="(anonymous)::x">x</a> *= <var>2</var>;</td></tr>
+<tr><th id="625">625</th><td>    <a class="local col6 ref" href="#176inp" title='inp' data-ref="176inp">inp</a>.<a class="tu ref" href="#(anonymous)::y" title='(anonymous struct)::y' data-use='w' data-ref="(anonymous)::y">y</a> *= <var>3</var>;</td></tr>
+<tr><th id="626">626</th><td>    <b>return</b> <a class="local col6 ref" href="#176inp" title='inp' data-ref="176inp">inp</a>;</td></tr>
+<tr><th id="627">627</th><td>}</td></tr>
+<tr><th id="628">628</th><td></td></tr>
+<tr><th id="629">629</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="630">630</th><td>    <em>int</em> <dfn class="tu decl" id="(anonymous)::a" title='(anonymous struct)::a' data-type='int' data-ref="(anonymous)::a">a</dfn>, <dfn class="tu decl" id="(anonymous)::b" title='(anonymous struct)::b' data-type='int' data-ref="(anonymous)::b">b</dfn>, <dfn class="tu decl" id="(anonymous)::c" title='(anonymous struct)::c' data-type='int' data-ref="(anonymous)::c">c</dfn>, <dfn class="tu decl" id="(anonymous)::d" title='(anonymous struct)::d' data-type='int' data-ref="(anonymous)::d">d</dfn>, <dfn class="tu decl" id="(anonymous)::e" title='(anonymous struct)::e' data-type='int' data-ref="(anonymous)::e">e</dfn>, <dfn class="tu decl" id="(anonymous)::f" title='(anonymous struct)::f' data-type='int' data-ref="(anonymous)::f">f</dfn>, <dfn class="tu decl" id="(anonymous)::g" title='(anonymous struct)::g' data-type='int' data-ref="(anonymous)::g">g</dfn>, <dfn class="tu decl" id="(anonymous)::h" title='(anonymous struct)::h' data-type='int' data-ref="(anonymous)::h">h</dfn>;</td></tr>
+<tr><th id="631">631</th><td>} <dfn class="typedef" id="S8I" title='S8I' data-type='struct S8I' data-ref="S8I">S8I</dfn>;</td></tr>
+<tr><th id="632">632</th><td></td></tr>
+<tr><th id="633">633</th><td><a class="macro" href="#10" title="S8I" data-ref="_M/EXPORT">EXPORT</a>(<a class="typedef" href="#S8I" title='S8I' data-type='struct S8I' data-ref="S8I">S8I</a>) <dfn class="decl def" id="ret_8i_func" title='ret_8i_func' data-ref="ret_8i_func">ret_8i_func</dfn>(<a class="typedef" href="#S8I" title='S8I' data-type='struct S8I' data-ref="S8I">S8I</a> <dfn class="local col7 decl" id="177inp" title='inp' data-type='S8I' data-ref="177inp">inp</dfn>)</td></tr>
+<tr><th id="634">634</th><td>{</td></tr>
+<tr><th id="635">635</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::a" title='(anonymous struct)::a' data-use='w' data-ref="(anonymous)::a">a</a> *= <var>2</var>;</td></tr>
+<tr><th id="636">636</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::b" title='(anonymous struct)::b' data-use='w' data-ref="(anonymous)::b">b</a> *= <var>3</var>;</td></tr>
+<tr><th id="637">637</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::c" title='(anonymous struct)::c' data-use='w' data-ref="(anonymous)::c">c</a> *= <var>4</var>;</td></tr>
+<tr><th id="638">638</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::d" title='(anonymous struct)::d' data-use='w' data-ref="(anonymous)::d">d</a> *= <var>5</var>;</td></tr>
+<tr><th id="639">639</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::e" title='(anonymous struct)::e' data-use='w' data-ref="(anonymous)::e">e</a> *= <var>6</var>;</td></tr>
+<tr><th id="640">640</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::f" title='(anonymous struct)::f' data-use='w' data-ref="(anonymous)::f">f</a> *= <var>7</var>;</td></tr>
+<tr><th id="641">641</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::g" title='(anonymous struct)::g' data-use='w' data-ref="(anonymous)::g">g</a> *= <var>8</var>;</td></tr>
+<tr><th id="642">642</th><td>    <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>.<a class="tu ref" href="#(anonymous)::h" title='(anonymous struct)::h' data-use='w' data-ref="(anonymous)::h">h</a> *= <var>9</var>;</td></tr>
+<tr><th id="643">643</th><td>    <b>return</b> <a class="local col7 ref" href="#177inp" title='inp' data-ref="177inp">inp</a>;</td></tr>
+<tr><th id="644">644</th><td>}</td></tr>
+<tr><th id="645">645</th><td></td></tr>
+<tr><th id="646">646</th><td><a class="macro" href="#10" title="int" data-ref="_M/EXPORT">EXPORT</a>(<em>int</em>) <dfn class="decl def" id="GetRectangle" title='GetRectangle' data-ref="GetRectangle">GetRectangle</dfn>(<em>int</em> <dfn class="local col8 decl" id="178flag" title='flag' data-type='int' data-ref="178flag">flag</dfn>, <a class="typedef" href="#RECT" title='RECT' data-type='struct RECT' data-ref="RECT">RECT</a> *<dfn class="local col9 decl" id="179prect" title='prect' data-type='RECT *' data-ref="179prect">prect</dfn>)</td></tr>
+<tr><th id="647">647</th><td>{</td></tr>
+<tr><th id="648">648</th><td>    <b>if</b> (<a class="local col8 ref" href="#178flag" title='flag' data-ref="178flag">flag</a> == <var>0</var>)</td></tr>
+<tr><th id="649">649</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="650">650</th><td>    <a class="local col9 ref" href="#179prect" title='prect' data-ref="179prect">prect</a>-&gt;<a class="tu ref" href="#(anonymous)::left" title='(anonymous struct)::left' data-use='w' data-ref="(anonymous)::left">left</a> = (<em>int</em>)<a class="local col8 ref" href="#178flag" title='flag' data-ref="178flag">flag</a>;</td></tr>
+<tr><th id="651">651</th><td>    <a class="local col9 ref" href="#179prect" title='prect' data-ref="179prect">prect</a>-&gt;<a class="tu ref" href="#(anonymous)::top" title='(anonymous struct)::top' data-use='w' data-ref="(anonymous)::top">top</a> = (<em>int</em>)<a class="local col8 ref" href="#178flag" title='flag' data-ref="178flag">flag</a> + <var>1</var>;</td></tr>
+<tr><th id="652">652</th><td>    <a class="local col9 ref" href="#179prect" title='prect' data-ref="179prect">prect</a>-&gt;<a class="tu ref" href="#(anonymous)::right" title='(anonymous struct)::right' data-use='w' data-ref="(anonymous)::right">right</a> = (<em>int</em>)<a class="local col8 ref" href="#178flag" title='flag' data-ref="178flag">flag</a> + <var>2</var>;</td></tr>
+<tr><th id="653">653</th><td>    <a class="local col9 ref" href="#179prect" title='prect' data-ref="179prect">prect</a>-&gt;<a class="tu ref" href="#(anonymous)::bottom" title='(anonymous struct)::bottom' data-use='w' data-ref="(anonymous)::bottom">bottom</a> = (<em>int</em>)<a class="local col8 ref" href="#178flag" title='flag' data-ref="178flag">flag</a> + <var>3</var>;</td></tr>
+<tr><th id="654">654</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="655">655</th><td>}</td></tr>
+<tr><th id="656">656</th><td></td></tr>
+<tr><th id="657">657</th><td><a class="macro" href="#10" title="void" data-ref="_M/EXPORT">EXPORT</a>(<em>void</em>) <dfn class="decl def" id="TwoOutArgs" title='TwoOutArgs' data-ref="TwoOutArgs">TwoOutArgs</dfn>(<em>int</em> <dfn class="local col0 decl" id="180a" title='a' data-type='int' data-ref="180a">a</dfn>, <em>int</em> *<dfn class="local col1 decl" id="181pi" title='pi' data-type='int *' data-ref="181pi">pi</dfn>, <em>int</em> <dfn class="local col2 decl" id="182b" title='b' data-type='int' data-ref="182b">b</dfn>, <em>int</em> *<dfn class="local col3 decl" id="183pj" title='pj' data-type='int *' data-ref="183pj">pj</dfn>)</td></tr>
+<tr><th id="658">658</th><td>{</td></tr>
+<tr><th id="659">659</th><td>    *<a class="local col1 ref" href="#181pi" title='pi' data-ref="181pi">pi</a> += <a class="local col0 ref" href="#180a" title='a' data-ref="180a">a</a>;</td></tr>
+<tr><th id="660">660</th><td>    *<a class="local col3 ref" href="#183pj" title='pj' data-ref="183pj">pj</a> += <a class="local col2 ref" href="#182b" title='b' data-ref="182b">b</a>;</td></tr>
+<tr><th id="661">661</th><td>}</td></tr>
+<tr><th id="662">662</th><td></td></tr>
+<tr><th id="663">663</th><td><u>#<span data-ppcond="663">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="664">664</th><td>EXPORT(S2H) <b>__stdcall</b> s_ret_2h_func(S2H inp) { <b>return</b> ret_2h_func(inp); }</td></tr>
+<tr><th id="665">665</th><td>EXPORT(S8I) <b>__stdcall</b> s_ret_8i_func(S8I inp) { <b>return</b> ret_8i_func(inp); }</td></tr>
+<tr><th id="666">666</th><td><u>#<span data-ppcond="663">endif</span></u></td></tr>
+<tr><th id="667">667</th><td></td></tr>
+<tr><th id="668">668</th><td><u>#<span data-ppcond="668">ifdef</span> <span class="macro" data-ref="_M/MS_WIN32">MS_WIN32</span></u></td></tr>
+<tr><th id="669">669</th><td><i>/* Should port this */</i></td></tr>
+<tr><th id="670">670</th><td><u>#include &lt;stdlib.h&gt;</u></td></tr>
+<tr><th id="671">671</th><td><u>#include &lt;search.h&gt;</u></td></tr>
+<tr><th id="672">672</th><td></td></tr>
+<tr><th id="673">673</th><td>EXPORT (HRESULT) KeepObject(IUnknown *punk)</td></tr>
+<tr><th id="674">674</th><td>{</td></tr>
+<tr><th id="675">675</th><td>    <em>static</em> IUnknown *pobj;</td></tr>
+<tr><th id="676">676</th><td>    <b>if</b> (punk)</td></tr>
+<tr><th id="677">677</th><td>        punk-&gt;lpVtbl-&gt;AddRef(punk);</td></tr>
+<tr><th id="678">678</th><td>    <b>if</b> (pobj)</td></tr>
+<tr><th id="679">679</th><td>        pobj-&gt;lpVtbl-&gt;Release(pobj);</td></tr>
+<tr><th id="680">680</th><td>    pobj = punk;</td></tr>
+<tr><th id="681">681</th><td>    <b>return</b> S_OK;</td></tr>
+<tr><th id="682">682</th><td>}</td></tr>
+<tr><th id="683">683</th><td></td></tr>
+<tr><th id="684">684</th><td><u>#<span data-ppcond="668">endif</span></u></td></tr>
+<tr><th id="685">685</th><td></td></tr>
+<tr><th id="686">686</th><td></td></tr>
+<tr><th id="687">687</th><td><em>static</em> <b>struct</b> <a class="type" href="../../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="_ctypes_testmodule" title='_ctypes_testmodule' data-type='struct PyModuleDef' data-ref="_ctypes_testmodule">_ctypes_testmodule</dfn> = {</td></tr>
+<tr><th id="688">688</th><td>    <a class="macro" href="../../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="689">689</th><td>    <q>"_ctypes_test"</q>,</td></tr>
+<tr><th id="690">690</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="691">691</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="692">692</th><td>    <a class="tu ref" href="#module_methods" title='module_methods' data-ref="module_methods">module_methods</a>,</td></tr>
+<tr><th id="693">693</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="694">694</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="695">695</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="696">696</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="697">697</th><td>};</td></tr>
+<tr><th id="698">698</th><td></td></tr>
+<tr><th id="699">699</th><td><a class="macro" href="../../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="700">700</th><td><dfn class="decl def" id="PyInit__ctypes_test" title='PyInit__ctypes_test' data-ref="PyInit__ctypes_test">PyInit__ctypes_test</dfn>(<em>void</em>)</td></tr>
+<tr><th id="701">701</th><td>{</td></tr>
+<tr><th id="702">702</th><td>    <b>return</b> <a class="macro" href="../../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;_ctypes_testmodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#_ctypes_testmodule" title='_ctypes_testmodule' data-use='a' data-ref="_ctypes_testmodule">_ctypes_testmodule</a>);</td></tr>
+<tr><th id="703">703</th><td>}</td></tr>
+<tr><th id="704">704</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

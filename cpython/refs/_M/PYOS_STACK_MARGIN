@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythonrun.h' l='166'/>
+<doc f='codebrowser/Include/pythonrun.h' l='163'>/* Stack size, in &quot;pointers&quot; (so we get extra safety margins
+   on 64-bit platforms).  On a 32-bit platform, this translates
+   to an 8k margin. */</doc>

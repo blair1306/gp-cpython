@@ -1,0 +1,41 @@
+<dec f='codebrowser/Include/weakrefobject.h' l='77'/>
+<doc f='codebrowser/Include/weakrefobject.h' l='70'>/* Explanation for the Py_REFCNT() check: when a weakref&apos;s target is part
+   of a long chain of deallocations which triggers the trashcan mechanism,
+   clearing the weakrefs can be delayed long after the target&apos;s refcount
+   has dropped to zero.  In the meantime, code accessing the weakref will
+   be able to &quot;see&quot; the target object even though it is supposed to be
+   unreachable.  See issue #16602. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='245' u='c'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='564' u='c'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='954' u='c'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1183' u='c'/>
+<use f='codebrowser/Modules/_weakref.c' l='45' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='264' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='3215' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='7225' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='135' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='148' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='152' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='163' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='166' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='173' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='174' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='180' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='181' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='200' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='201' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='210' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='211' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='398' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='474' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='475' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='484' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='532' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='554' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='565' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='577' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='579' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='589' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='597' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='863' u='c'/>
+<use f='codebrowser/Python/import.c' l='441' u='c'/>

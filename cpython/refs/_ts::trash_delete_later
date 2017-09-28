@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/pystate.h' l='149' type='PyObject *'/>
+<offset>1344</offset>
+<use f='codebrowser/Modules/_elementtree.c' l='643' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='1016' macro='1' u='r'/>
+<use f='codebrowser/Objects/dictobject.c' l='1871' macro='1' u='r'/>
+<use f='codebrowser/Objects/frameobject.c' l='454' macro='1' u='r'/>
+<use f='codebrowser/Objects/listobject.c' l='336' macro='1' u='r'/>
+<use f='codebrowser/Objects/object.c' l='2061' u='r' c='_PyTrash_thread_deposit_object'/>
+<use f='codebrowser/Objects/object.c' l='2062' u='w' c='_PyTrash_thread_deposit_object'/>
+<use f='codebrowser/Objects/object.c' l='2109' u='r' c='_PyTrash_thread_destroy_chain'/>
+<use f='codebrowser/Objects/object.c' l='2110' u='r' c='_PyTrash_thread_destroy_chain'/>
+<use f='codebrowser/Objects/object.c' l='2113' u='w' c='_PyTrash_thread_destroy_chain'/>
+<use f='codebrowser/Objects/odictobject.c' l='1463' macro='1' u='r'/>
+<use f='codebrowser/Objects/setobject.c' l='571' macro='1' u='r'/>
+<use f='codebrowser/Objects/tupleobject.c' l='265' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='1259' macro='1' u='r'/>
+<use f='codebrowser/Python/pystate.c' l='279' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/traceback.c' l='57' macro='1' u='r'/>

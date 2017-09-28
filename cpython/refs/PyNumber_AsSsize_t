@@ -1,0 +1,67 @@
+<dec f='codebrowser/Include/abstract.h' l='726' type='Py_ssize_t PyNumber_AsSsize_t(PyObject * o, PyObject * exc)'/>
+<doc f='codebrowser/Include/abstract.h' l='720'>/* Returns the object &apos;o&apos; converted to Py_ssize_t by going through
+   PyNumber_Index() first.
+
+   If an overflow error occurs while converting the int to Py_ssize_t, then the
+   second argument &apos;exc&apos; is the error-type to return.  If it is NULL, then the
+   overflow error is cleared and the value is clipped. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4333' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4476' u='c' c='Array_ass_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4979' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4999' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5019' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5029' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1522' u='c' c='byref'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1728' u='c' c='element_subscr'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1780' u='c' c='element_ass_subscr'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1014' u='c' c='lru_cache_new'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1501' u='c' c='_bufferedreader_raw_read'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1858' u='c' c='_bufferedwriter_raw_write'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='891' u='c' c='_io__RawIOBase_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2860' u='c' c='textiowrapper_chunk_size_set'/>
+<use f='codebrowser/Modules/_sre.c' l='1978' u='c' c='match_getindex'/>
+<use f='codebrowser/Modules/_struct.c' l='1895' u='c' c='s_pack_into'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2329' u='c' c='array_subscr'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2393' u='c' c='array_ass_subscr'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1420' u='c' c='islice_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1432' u='c' c='islice_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1436' u='c' c='islice_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1456' u='c' c='islice_new'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='766' u='c' c='mmap_subscript'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='869' u='c' c='mmap_ass_subscript'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='891' u='c' c='mmap_ass_subscript'/>
+<use f='codebrowser/Objects/abstract.c' l='160' u='c' c='PyObject_GetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='189' u='c' c='PyObject_SetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='221' u='c' c='PyObject_DelItem'/>
+<use f='codebrowser/Objects/abstract.c' l='957' u='c' c='sequence_repeat'/>
+<def f='codebrowser/Objects/abstract.c' l='1279' ll='1321' type='Py_ssize_t PyNumber_AsSsize_t(PyObject * item, PyObject * err)'/>
+<doc f='codebrowser/Objects/abstract.c' l='1277'>/* Return an error on Overflow only if err is not NULL*/</doc>
+<use f='codebrowser/Objects/bytearrayobject.c' l='387' u='c' c='bytearray_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='604' u='c' c='bytearray_ass_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='799' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='439' u='c' c='parse_args_finds_byte'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='660' u='c' c='_Py_bytes_contains'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1668' u='c' c='bytes_subscript'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2607' u='c' c='bytes_new'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2667' u='c' c='_PyBytes_FromList'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2667' u='c' c='_PyBytes_FromTuple'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2730' u='c' c='_PyBytes_FromIterator'/>
+<use f='codebrowser/Objects/exceptions.c' l='870' u='c' c='oserror_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='1188' u='c' c='OSError_written_set'/>
+<use f='codebrowser/Objects/floatobject.c' l='1065' u='c' c='float___round___impl'/>
+<use f='codebrowser/Objects/listobject.c' l='2476' u='c' c='list_subscript'/>
+<use f='codebrowser/Objects/listobject.c' l='2529' u='c' c='list_ass_subscript'/>
+<use f='codebrowser/Objects/longobject.c' l='4839' u='c' c='long_new_impl'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2215' u='c' c='ptr_from_tuple'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2381' u='c' c='memory_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2457' u='c' c='memory_ass_sub'/>
+<use f='codebrowser/Objects/rangeobject.c' l='580' u='c' c='range_repr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='748' u='c' c='tuplesubscript'/>
+<use f='codebrowser/Objects/typeobject.c' l='5413' u='c' c='wrap_indexargfunc'/>
+<use f='codebrowser/Objects/typeobject.c' l='5424' u='c' c='getindex'/>
+<use f='codebrowser/Objects/typeobject.c' l='5941' u='c' c='slot_sq_length'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14003' u='c' c='unicode_subscript'/>
+<use f='codebrowser/Python/ceval.c' l='4904' u='c' c='_PyEval_SliceIndex'/>
+<use f='codebrowser/Python/ceval.c' l='4924' u='c' c='_PyEval_SliceIndexNotNone'/>
+<use f='codebrowser/Python/marshal.c' l='709' u='c' c='r_string'/>
+<use f='codebrowser/Python/modsupport.c' l='24' u='c' c='_Py_convert_optional_to_ssize_t'/>

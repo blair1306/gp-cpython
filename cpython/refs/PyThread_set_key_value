@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pythread.h' l='83' type='int PyThread_set_key_value(int , void * )'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='205' u='c' c='set_reentrant'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='209' u='c' c='set_reentrant'/>
+<use f='codebrowser/Python/pystate.c' l='821' u='c' c='_PyGILState_Reinit'/>
+<use f='codebrowser/Python/pystate.c' l='852' u='c' c='_PyGILState_NoteThreadState'/>
+<def f='codebrowser/Python/thread_pthread.h' l='640' ll='646' type='int PyThread_set_key_value(int key, void * value)'/>

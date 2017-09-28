@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='920' macro='1' type='int PyExpat_XML_SetHashSalt(XML_Parser parser, unsigned long hash_salt)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1862' macro='1' type='int PyExpat_XML_SetHashSalt(XML_Parser parser, unsigned long hash_salt)'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1868' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1193' macro='1' u='c'/>

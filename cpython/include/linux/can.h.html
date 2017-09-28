@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>can.h source code [include/linux/can.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="can_filter,can_frame,canfd_frame,sockaddr_can "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'include/linux/can.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>include</a>/<a href='./'>linux</a>/<a href='can.h.html'>can.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * linux/can.h</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Definitions for CAN network layer (socket addr / CAN frame / CAN filter)</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * Authors: Oliver Hartkopp &lt;oliver.hartkopp@volkswagen.de&gt;</i></td></tr>
+<tr><th id="7">7</th><td><i> *          Urs Thuermann   &lt;urs.thuermann@volkswagen.de&gt;</i></td></tr>
+<tr><th id="8">8</th><td><i> * Copyright (c) 2002-2007 Volkswagen Group Electronic Research</i></td></tr>
+<tr><th id="9">9</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="12">12</th><td><i> * modification, are permitted provided that the following conditions</i></td></tr>
+<tr><th id="13">13</th><td><i> * are met:</i></td></tr>
+<tr><th id="14">14</th><td><i> * 1. Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="15">15</th><td><i> *    notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="16">16</th><td><i> * 2. Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="17">17</th><td><i> *    notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="18">18</th><td><i> *    documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="19">19</th><td><i> * 3. Neither the name of Volkswagen nor the names of its contributors</i></td></tr>
+<tr><th id="20">20</th><td><i> *    may be used to endorse or promote products derived from this software</i></td></tr>
+<tr><th id="21">21</th><td><i> *    without specific prior written permission.</i></td></tr>
+<tr><th id="22">22</th><td><i> *</i></td></tr>
+<tr><th id="23">23</th><td><i> * Alternatively, provided that this notice is retained in full, this</i></td></tr>
+<tr><th id="24">24</th><td><i> * software may be distributed under the terms of the GNU General</i></td></tr>
+<tr><th id="25">25</th><td><i> * Public License ("GPL") version 2, in which case the provisions of the</i></td></tr>
+<tr><th id="26">26</th><td><i> * GPL apply INSTEAD OF those given above.</i></td></tr>
+<tr><th id="27">27</th><td><i> *</i></td></tr>
+<tr><th id="28">28</th><td><i> * The provided data structures and external interfaces from this code</i></td></tr>
+<tr><th id="29">29</th><td><i> * are not restricted to be used by modules with a GPL compatible license.</i></td></tr>
+<tr><th id="30">30</th><td><i> *</i></td></tr>
+<tr><th id="31">31</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</i></td></tr>
+<tr><th id="32">32</th><td><i> * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</i></td></tr>
+<tr><th id="33">33</th><td><i> * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</i></td></tr>
+<tr><th id="34">34</th><td><i> * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</i></td></tr>
+<tr><th id="35">35</th><td><i> * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</i></td></tr>
+<tr><th id="36">36</th><td><i> * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</i></td></tr>
+<tr><th id="37">37</th><td><i> * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</i></td></tr>
+<tr><th id="38">38</th><td><i> * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</i></td></tr>
+<tr><th id="39">39</th><td><i> * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</i></td></tr>
+<tr><th id="40">40</th><td><i> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</i></td></tr>
+<tr><th id="41">41</th><td><i> * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH</i></td></tr>
+<tr><th id="42">42</th><td><i> * DAMAGE.</i></td></tr>
+<tr><th id="43">43</th><td><i> */</i></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="45">ifndef</span> <span class="macro" data-ref="_M/_CAN_H">_CAN_H</span></u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/_CAN_H" data-ref="_M/_CAN_H">_CAN_H</dfn></u></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><u>#include <a href="types.h.html">&lt;linux/types.h&gt;</a></u></td></tr>
+<tr><th id="49">49</th><td><u>#include <a href="socket.h.html">&lt;linux/socket.h&gt;</a></u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/* controller area network (CAN) kernel definitions */</i></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><i>/* special address description flags for the CAN_ID */</i></td></tr>
+<tr><th id="54">54</th><td><u>#define <dfn class="macro" id="_M/CAN_EFF_FLAG" data-ref="_M/CAN_EFF_FLAG">CAN_EFF_FLAG</dfn> 0x80000000U /* EFF/SFF is set in the MSB */</u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/CAN_RTR_FLAG" data-ref="_M/CAN_RTR_FLAG">CAN_RTR_FLAG</dfn> 0x40000000U /* remote transmission request */</u></td></tr>
+<tr><th id="56">56</th><td><u>#define <dfn class="macro" id="_M/CAN_ERR_FLAG" data-ref="_M/CAN_ERR_FLAG">CAN_ERR_FLAG</dfn> 0x20000000U /* error message frame */</u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><i>/* valid bits in CAN ID for frame formats */</i></td></tr>
+<tr><th id="59">59</th><td><u>#define <dfn class="macro" id="_M/CAN_SFF_MASK" data-ref="_M/CAN_SFF_MASK">CAN_SFF_MASK</dfn> 0x000007FFU /* standard frame format (SFF) */</u></td></tr>
+<tr><th id="60">60</th><td><u>#define <dfn class="macro" id="_M/CAN_EFF_MASK" data-ref="_M/CAN_EFF_MASK">CAN_EFF_MASK</dfn> 0x1FFFFFFFU /* extended frame format (EFF) */</u></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/CAN_ERR_MASK" data-ref="_M/CAN_ERR_MASK">CAN_ERR_MASK</dfn> 0x1FFFFFFFU /* omit EFF, RTR, ERR flags */</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>/*</i></td></tr>
+<tr><th id="64">64</th><td><i> * Controller Area Network Identifier structure</i></td></tr>
+<tr><th id="65">65</th><td><i> *</i></td></tr>
+<tr><th id="66">66</th><td><i> * bit 0-28	: CAN identifier (11/29 bit)</i></td></tr>
+<tr><th id="67">67</th><td><i> * bit 29	: error message frame flag (0 = data frame, 1 = error message)</i></td></tr>
+<tr><th id="68">68</th><td><i> * bit 30	: remote transmission request flag (1 = rtr frame)</i></td></tr>
+<tr><th id="69">69</th><td><i> * bit 31	: frame format flag (0 = standard 11 bit, 1 = extended 29 bit)</i></td></tr>
+<tr><th id="70">70</th><td><i> */</i></td></tr>
+<tr><th id="71">71</th><td><b>typedef</b> <a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="typedef" id="canid_t" title='canid_t' data-type='__u32' data-ref="canid_t">canid_t</dfn>;</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/CAN_SFF_ID_BITS" data-ref="_M/CAN_SFF_ID_BITS">CAN_SFF_ID_BITS</dfn>		11</u></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/CAN_EFF_ID_BITS" data-ref="_M/CAN_EFF_ID_BITS">CAN_EFF_ID_BITS</dfn>		29</u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><i>/*</i></td></tr>
+<tr><th id="77">77</th><td><i> * Controller Area Network Error Message Frame Mask structure</i></td></tr>
+<tr><th id="78">78</th><td><i> *</i></td></tr>
+<tr><th id="79">79</th><td><i> * bit 0-28	: error class mask (see include/linux/can/error.h)</i></td></tr>
+<tr><th id="80">80</th><td><i> * bit 29-31	: set to zero</i></td></tr>
+<tr><th id="81">81</th><td><i> */</i></td></tr>
+<tr><th id="82">82</th><td><b>typedef</b> <a class="typedef" href="../asm-generic/int-ll64.h.html#__u32" title='__u32' data-type='unsigned int' data-ref="__u32">__u32</a> <dfn class="typedef" id="can_err_mask_t" title='can_err_mask_t' data-type='__u32' data-ref="can_err_mask_t">can_err_mask_t</dfn>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><i>/* CAN payload length and DLC definitions according to ISO 11898-1 */</i></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/CAN_MAX_DLC" data-ref="_M/CAN_MAX_DLC">CAN_MAX_DLC</dfn> 8</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/CAN_MAX_DLEN" data-ref="_M/CAN_MAX_DLEN">CAN_MAX_DLEN</dfn> 8</u></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><i>/* CAN FD payload length and DLC definitions according to ISO 11898-7 */</i></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/CANFD_MAX_DLC" data-ref="_M/CANFD_MAX_DLC">CANFD_MAX_DLC</dfn> 15</u></td></tr>
+<tr><th id="90">90</th><td><u>#define <dfn class="macro" id="_M/CANFD_MAX_DLEN" data-ref="_M/CANFD_MAX_DLEN">CANFD_MAX_DLEN</dfn> 64</u></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="93">93</th><td><i class="doc"> * struct can_frame - basic CAN frame structure</i></td></tr>
+<tr><th id="94">94</th><td><i class="doc"> *<span class="command"> @can</span>_id:  CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition</i></td></tr>
+<tr><th id="95">95</th><td><i class="doc"> *<span class="command"> @can</span>_dlc: frame payload length in byte (0 .. 8) aka data length code</i></td></tr>
+<tr><th id="96">96</th><td><i class="doc"> *           N.B. the DLC field from ISO 11898-1 Chapter 8.4.2.3 has a 1:1</i></td></tr>
+<tr><th id="97">97</th><td><i class="doc"> *           mapping of the 'data length code' to the real payload length</i></td></tr>
+<tr><th id="98">98</th><td><i class="doc"> * @__pad:   padding</i></td></tr>
+<tr><th id="99">99</th><td><i class="doc"> * @__res0:  reserved / padding</i></td></tr>
+<tr><th id="100">100</th><td><i class="doc"> * @__res1:  reserved / padding</i></td></tr>
+<tr><th id="101">101</th><td><i class="doc"> * <span class="command">@data</span>:    CAN frame payload (up to 8 byte)</i></td></tr>
+<tr><th id="102">102</th><td><i class="doc"> */</i></td></tr>
+<tr><th id="103">103</th><td><b>struct</b> <dfn class="type def" id="can_frame" title='can_frame' data-ref="can_frame">can_frame</dfn> {</td></tr>
+<tr><th id="104">104</th><td>	<a class="typedef" href="#canid_t" title='canid_t' data-type='__u32' data-ref="canid_t">canid_t</a> <dfn class="decl" id="can_frame::can_id" title='can_frame::can_id' data-ref="can_frame::can_id">can_id</dfn>;  <i>/* 32 bit CAN_ID + EFF/RTR/ERR flags */</i></td></tr>
+<tr><th id="105">105</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="can_frame::can_dlc" title='can_frame::can_dlc' data-ref="can_frame::can_dlc">can_dlc</dfn>; <i>/* frame payload length in byte (0 .. CAN_MAX_DLEN) */</i></td></tr>
+<tr><th id="106">106</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="can_frame::__pad" title='can_frame::__pad' data-ref="can_frame::__pad">__pad</dfn>;   <i>/* padding */</i></td></tr>
+<tr><th id="107">107</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="can_frame::__res0" title='can_frame::__res0' data-ref="can_frame::__res0">__res0</dfn>;  <i>/* reserved / padding */</i></td></tr>
+<tr><th id="108">108</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="can_frame::__res1" title='can_frame::__res1' data-ref="can_frame::__res1">__res1</dfn>;  <i>/* reserved / padding */</i></td></tr>
+<tr><th id="109">109</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="can_frame::data" title='can_frame::data' data-ref="can_frame::data">data</dfn>[<a class="macro" href="#86" title="8" data-ref="_M/CAN_MAX_DLEN">CAN_MAX_DLEN</a>] <b>__attribute__</b>((aligned(<var>8</var>)));</td></tr>
+<tr><th id="110">110</th><td>};</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><i>/*</i></td></tr>
+<tr><th id="113">113</th><td><i> * defined bits for canfd_frame.flags</i></td></tr>
+<tr><th id="114">114</th><td><i> *</i></td></tr>
+<tr><th id="115">115</th><td><i> * The use of struct canfd_frame implies the Extended Data Length (EDL) bit to</i></td></tr>
+<tr><th id="116">116</th><td><i> * be set in the CAN frame bitstream on the wire. The EDL bit switch turns</i></td></tr>
+<tr><th id="117">117</th><td><i> * the CAN controllers bitstream processor into the CAN FD mode which creates</i></td></tr>
+<tr><th id="118">118</th><td><i> * two new options within the CAN FD frame specification:</i></td></tr>
+<tr><th id="119">119</th><td><i> *</i></td></tr>
+<tr><th id="120">120</th><td><i> * Bit Rate Switch - to indicate a second bitrate is/was used for the payload</i></td></tr>
+<tr><th id="121">121</th><td><i> * Error State Indicator - represents the error state of the transmitting node</i></td></tr>
+<tr><th id="122">122</th><td><i> *</i></td></tr>
+<tr><th id="123">123</th><td><i> * As the CANFD_ESI bit is internally generated by the transmitting CAN</i></td></tr>
+<tr><th id="124">124</th><td><i> * controller only the CANFD_BRS bit is relevant for real CAN controllers when</i></td></tr>
+<tr><th id="125">125</th><td><i> * building a CAN FD frame for transmission. Setting the CANFD_ESI bit can make</i></td></tr>
+<tr><th id="126">126</th><td><i> * sense for virtual CAN interfaces to test applications with echoed frames.</i></td></tr>
+<tr><th id="127">127</th><td><i> */</i></td></tr>
+<tr><th id="128">128</th><td><u>#define <dfn class="macro" id="_M/CANFD_BRS" data-ref="_M/CANFD_BRS">CANFD_BRS</dfn> 0x01 /* bit rate switch (second bitrate for payload data) */</u></td></tr>
+<tr><th id="129">129</th><td><u>#define <dfn class="macro" id="_M/CANFD_ESI" data-ref="_M/CANFD_ESI">CANFD_ESI</dfn> 0x02 /* error state indicator of the transmitting node */</u></td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="132">132</th><td><i class="doc"> * struct canfd_frame - CAN flexible data rate frame structure</i></td></tr>
+<tr><th id="133">133</th><td><i class="doc"> *<span class="command"> @can</span>_id: CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition</i></td></tr>
+<tr><th id="134">134</th><td><i class="doc"> *<span class="command"> @len</span>:    frame payload length in byte (0 .. CANFD_MAX_DLEN)</i></td></tr>
+<tr><th id="135">135</th><td><i class="doc"> *<span class="command"> @flags</span>:  additional flags for CAN FD</i></td></tr>
+<tr><th id="136">136</th><td><i class="doc"> * @__res0: reserved / padding</i></td></tr>
+<tr><th id="137">137</th><td><i class="doc"> * @__res1: reserved / padding</i></td></tr>
+<tr><th id="138">138</th><td><i class="doc"> * <span class="command">@data</span>:   CAN FD frame payload (up to CANFD_MAX_DLEN byte)</i></td></tr>
+<tr><th id="139">139</th><td><i class="doc"> */</i></td></tr>
+<tr><th id="140">140</th><td><b>struct</b> <dfn class="type def" id="canfd_frame" title='canfd_frame' data-ref="canfd_frame">canfd_frame</dfn> {</td></tr>
+<tr><th id="141">141</th><td>	<a class="typedef" href="#canid_t" title='canid_t' data-type='__u32' data-ref="canid_t">canid_t</a> <dfn class="decl" id="canfd_frame::can_id" title='canfd_frame::can_id' data-ref="canfd_frame::can_id">can_id</dfn>;  <i>/* 32 bit CAN_ID + EFF/RTR/ERR flags */</i></td></tr>
+<tr><th id="142">142</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="canfd_frame::len" title='canfd_frame::len' data-ref="canfd_frame::len">len</dfn>;     <i>/* frame payload length in byte */</i></td></tr>
+<tr><th id="143">143</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="canfd_frame::flags" title='canfd_frame::flags' data-ref="canfd_frame::flags">flags</dfn>;   <i>/* additional flags for CAN FD */</i></td></tr>
+<tr><th id="144">144</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="canfd_frame::__res0" title='canfd_frame::__res0' data-ref="canfd_frame::__res0">__res0</dfn>;  <i>/* reserved / padding */</i></td></tr>
+<tr><th id="145">145</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="canfd_frame::__res1" title='canfd_frame::__res1' data-ref="canfd_frame::__res1">__res1</dfn>;  <i>/* reserved / padding */</i></td></tr>
+<tr><th id="146">146</th><td>	<a class="typedef" href="../asm-generic/int-ll64.h.html#__u8" title='__u8' data-type='unsigned char' data-ref="__u8">__u8</a>    <dfn class="decl" id="canfd_frame::data" title='canfd_frame::data' data-ref="canfd_frame::data">data</dfn>[<a class="macro" href="#90" title="64" data-ref="_M/CANFD_MAX_DLEN">CANFD_MAX_DLEN</a>] <b>__attribute__</b>((aligned(<var>8</var>)));</td></tr>
+<tr><th id="147">147</th><td>};</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><u>#define <dfn class="macro" id="_M/CAN_MTU" data-ref="_M/CAN_MTU">CAN_MTU</dfn>		(sizeof(struct can_frame))</u></td></tr>
+<tr><th id="150">150</th><td><u>#define <dfn class="macro" id="_M/CANFD_MTU" data-ref="_M/CANFD_MTU">CANFD_MTU</dfn>	(sizeof(struct canfd_frame))</u></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><i>/* particular protocols of the protocol family PF_CAN */</i></td></tr>
+<tr><th id="153">153</th><td><u>#define <dfn class="macro" id="_M/CAN_RAW" data-ref="_M/CAN_RAW">CAN_RAW</dfn>		1 /* RAW sockets */</u></td></tr>
+<tr><th id="154">154</th><td><u>#define <dfn class="macro" id="_M/CAN_BCM" data-ref="_M/CAN_BCM">CAN_BCM</dfn>		2 /* Broadcast Manager */</u></td></tr>
+<tr><th id="155">155</th><td><u>#define <dfn class="macro" id="_M/CAN_TP16" data-ref="_M/CAN_TP16">CAN_TP16</dfn>	3 /* VAG Transport Protocol v1.6 */</u></td></tr>
+<tr><th id="156">156</th><td><u>#define <dfn class="macro" id="_M/CAN_TP20" data-ref="_M/CAN_TP20">CAN_TP20</dfn>	4 /* VAG Transport Protocol v2.0 */</u></td></tr>
+<tr><th id="157">157</th><td><u>#define <dfn class="macro" id="_M/CAN_MCNET" data-ref="_M/CAN_MCNET">CAN_MCNET</dfn>	5 /* Bosch MCNet */</u></td></tr>
+<tr><th id="158">158</th><td><u>#define <dfn class="macro" id="_M/CAN_ISOTP" data-ref="_M/CAN_ISOTP">CAN_ISOTP</dfn>	6 /* ISO 15765-2 Transport Protocol */</u></td></tr>
+<tr><th id="159">159</th><td><u>#define <dfn class="macro" id="_M/CAN_NPROTO" data-ref="_M/CAN_NPROTO">CAN_NPROTO</dfn>	7</u></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><u>#define <dfn class="macro" id="_M/SOL_CAN_BASE" data-ref="_M/SOL_CAN_BASE">SOL_CAN_BASE</dfn> 100</u></td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="164">164</th><td><i class="doc"> * struct sockaddr_can - the sockaddr structure for CAN sockets</i></td></tr>
+<tr><th id="165">165</th><td><i class="doc"> *<span class="command"> @can</span>_family:  address family number AF_CAN.</i></td></tr>
+<tr><th id="166">166</th><td><i class="doc"> *<span class="command"> @can</span>_ifindex: CAN network interface index.</i></td></tr>
+<tr><th id="167">167</th><td><i class="doc"> *<span class="command"> @can</span>_addr:    protocol specific address information</i></td></tr>
+<tr><th id="168">168</th><td><i class="doc"> */</i></td></tr>
+<tr><th id="169">169</th><td><b>struct</b> <dfn class="type def" id="sockaddr_can" title='sockaddr_can' data-ref="sockaddr_can">sockaddr_can</dfn> {</td></tr>
+<tr><th id="170">170</th><td>	<a class="typedef" href="socket.h.html#__kernel_sa_family_t" title='__kernel_sa_family_t' data-type='unsigned short' data-ref="__kernel_sa_family_t">__kernel_sa_family_t</a> <dfn class="decl" id="sockaddr_can::can_family" title='sockaddr_can::can_family' data-ref="sockaddr_can::can_family">can_family</dfn>;</td></tr>
+<tr><th id="171">171</th><td>	<em>int</em>         <dfn class="decl" id="sockaddr_can::can_ifindex" title='sockaddr_can::can_ifindex' data-ref="sockaddr_can::can_ifindex">can_ifindex</dfn>;</td></tr>
+<tr><th id="172">172</th><td>	<b>union</b> {</td></tr>
+<tr><th id="173">173</th><td>		<i>/* transport protocol class address information (e.g. ISOTP) */</i></td></tr>
+<tr><th id="174">174</th><td>		<b>struct</b> { <a class="typedef" href="#canid_t" title='canid_t' data-type='__u32' data-ref="canid_t">canid_t</a> <dfn class="decl" id="sockaddr_can::(anonymousunion)::(anonymous)::rx_id" title='sockaddr_can::(anonymous union)::(anonymous struct)::rx_id' data-ref="sockaddr_can::(anonymousunion)::(anonymous)::rx_id">rx_id</dfn>, <dfn class="decl" id="sockaddr_can::(anonymousunion)::(anonymous)::tx_id" title='sockaddr_can::(anonymous union)::(anonymous struct)::tx_id' data-ref="sockaddr_can::(anonymousunion)::(anonymous)::tx_id">tx_id</dfn>; } <dfn class="decl" id="sockaddr_can::(anonymous)::tp" title='sockaddr_can::(anonymous union)::tp' data-ref="sockaddr_can::(anonymous)::tp">tp</dfn>;</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td>		<i>/* reserved for future CAN protocols address information */</i></td></tr>
+<tr><th id="177">177</th><td>	} <dfn class="decl" id="sockaddr_can::can_addr" title='sockaddr_can::can_addr' data-ref="sockaddr_can::can_addr">can_addr</dfn>;</td></tr>
+<tr><th id="178">178</th><td>};</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><i class="doc">/**</i></td></tr>
+<tr><th id="181">181</th><td><i class="doc"> * struct can_filter - CAN ID based filter in can_register().</i></td></tr>
+<tr><th id="182">182</th><td><i class="doc"> *<span class="command"> @can</span>_id:   relevant bits of CAN ID which are not masked out.</i></td></tr>
+<tr><th id="183">183</th><td><i class="doc"> *<span class="command"> @can</span>_mask: CAN mask (see description)</i></td></tr>
+<tr><th id="184">184</th><td><i class="doc"> *</i></td></tr>
+<tr><th id="185">185</th><td><i class="doc"> * Description:</i></td></tr>
+<tr><th id="186">186</th><td><i class="doc"> * A filter matches, when</i></td></tr>
+<tr><th id="187">187</th><td><i class="doc"> *</i></td></tr>
+<tr><th id="188">188</th><td><i class="doc"> *          &lt;received_can_id&gt; &amp; mask == can_id &amp; mask</i></td></tr>
+<tr><th id="189">189</th><td><i class="doc"> *</i></td></tr>
+<tr><th id="190">190</th><td><i class="doc"> * The filter can be inverted (CAN_INV_FILTER bit set in can_id) or it can</i></td></tr>
+<tr><th id="191">191</th><td><i class="doc"> * filter for error message frames (CAN_ERR_FLAG bit set in mask).</i></td></tr>
+<tr><th id="192">192</th><td><i class="doc"> */</i></td></tr>
+<tr><th id="193">193</th><td><b>struct</b> <dfn class="type def" id="can_filter" title='can_filter' data-ref="can_filter">can_filter</dfn> {</td></tr>
+<tr><th id="194">194</th><td>	<a class="typedef" href="#canid_t" title='canid_t' data-type='__u32' data-ref="canid_t">canid_t</a> <dfn class="decl" id="can_filter::can_id" title='can_filter::can_id' data-ref="can_filter::can_id">can_id</dfn>;</td></tr>
+<tr><th id="195">195</th><td>	<a class="typedef" href="#canid_t" title='canid_t' data-type='__u32' data-ref="canid_t">canid_t</a> <dfn class="decl" id="can_filter::can_mask" title='can_filter::can_mask' data-ref="can_filter::can_mask">can_mask</dfn>;</td></tr>
+<tr><th id="196">196</th><td>};</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><u>#define <dfn class="macro" id="_M/CAN_INV_FILTER" data-ref="_M/CAN_INV_FILTER">CAN_INV_FILTER</dfn> 0x20000000U /* to be set in can_filter.can_id */</u></td></tr>
+<tr><th id="199">199</th><td><u>#define <dfn class="macro" id="_M/CAN_RAW_FILTER_MAX" data-ref="_M/CAN_RAW_FILTER_MAX">CAN_RAW_FILTER_MAX</dfn> 512 /* maximum number of can_filter set via setsockopt() */</u></td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><u>#<span data-ppcond="45">endif</span> /* !_UAPI_CAN_H */</u></td></tr>
+<tr><th id="202">202</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../../codebrowser/Modules/_ssl.c.html'>codebrowser/Modules/_ssl.c</a><br/>Generated on <em>2017-Aug-29</em> from project include<br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/dictobject.h' l='94' type='void PyDict_Clear(PyObject * mp)'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1121' u='c' c='lru_cache_cache_clear'/>
+<use f='codebrowser/Modules/_json.c' l='1181' u='c' c='scanner_call'/>
+<use f='codebrowser/Modules/_struct.c' l='2077' u='c' c='cache_struct_converter'/>
+<def f='codebrowser/Objects/dictobject.c' l='1565' ll='1599' type='void PyDict_Clear(PyObject * op)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2804' u='c' c='dict_clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='2913' u='c' c='dict_tp_clear'/>
+<use f='codebrowser/Objects/odictobject.c' l='1238' u='c' c='odict_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='3426' u='c' c='type_clear'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15393' u='c' c='_Py_ReleaseInternedUnicodeStrings'/>
+<use f='codebrowser/Python/_warnings.c' l='227' u='c' c='already_warned'/>
+<use f='codebrowser/Python/import.c' l='406' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='412' u='c' c='PyImport_Cleanup'/>

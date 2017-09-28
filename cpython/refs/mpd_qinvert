@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='477' type='void mpd_qinvert(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4219' u='c' c='dec_mpd_qinvert'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5277' u='c' c='ctx_mpd_qinvert'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2698' ll='2743' type='void mpd_qinvert(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2697'>/* Logical Xor */</doc>

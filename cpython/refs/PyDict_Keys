@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/dictobject.h' l='104' type='PyObject * PyDict_Keys(PyObject * mp)'/>
+<use f='codebrowser/Modules/_csv.c' l='1425' u='c' c='csv_list_dialects'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1546' u='c' c='_elementtree_Element_keys_impl'/>
+<use f='codebrowser/Objects/abstract.c' l='2157' u='c' c='PyMapping_Keys'/>
+<def f='codebrowser/Objects/dictobject.c' l='2528' ll='2536' type='PyObject * PyDict_Keys(PyObject * mp)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='730' u='c' c='module_dir'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='87' u='c' c='namespace_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='3311' u='c' c='type___dir___impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='4583' u='c' c='object___dir___impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15352' u='c' c='_Py_ReleaseInternedUnicodeStrings'/>
+<use f='codebrowser/Python/compile.c' l='443' u='c' c='dictbytype'/>

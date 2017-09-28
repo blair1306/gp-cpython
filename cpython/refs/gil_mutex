@@ -1,0 +1,8 @@
+<def f='codebrowser/Python/ceval_gil.h' l='120' type='pthread_mutex_t'/>
+<use f='codebrowser/Python/ceval_gil.h' l='137' u='a' c='create_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='156' u='a' c='destroy_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='184' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='188' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='214' u='a' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='224' u='a' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='258' u='a' c='take_gil'/>

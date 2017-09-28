@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='619' type='long fpathconf(int __fd, int __name)'/>
+<doc f='include/unistd.h' l='618'>/* Get file-specific configuration about descriptor FD.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='9664' u='c' c='os_fpathconf_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9695' u='c' c='os_pathconf_impl'/>

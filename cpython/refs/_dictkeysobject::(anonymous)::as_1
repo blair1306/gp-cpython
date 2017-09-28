@@ -1,0 +1,36 @@
+<dec f='codebrowser/Objects/dict-common.h' l='63' type='int8_t [8]'/>
+<use f='codebrowser/Objects/dictobject.c' l='318' u='r' c='dk_get_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='348' u='r' c='dk_set_index'/>
+<use f='codebrowser/Objects/dictobject.c' l='424' u='w'/>
+<use f='codebrowser/Objects/dictobject.c' l='424' u='w'/>
+<use f='codebrowser/Objects/dictobject.c' l='546' u='a' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='free_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='lookdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='lookdict_unicode'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='lookdict_unicode_nodummy'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='lookdict_split'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='_PyDict_MaybeUntrack'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='delitem_common'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='_PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='_PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_keys'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_values'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_items'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_equal'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dict_traverse'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictiter_iternextkey'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictiter_iternextkey'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictiter_iternextvalue'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictiter_iternextitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='300' u='a' c='dictiter_iternextitem'/>
+<offset>0</offset>

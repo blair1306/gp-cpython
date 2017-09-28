@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_sha3/kcp/KeccakP-1600-SnP-opt64.h' l='47' macro='1' type='size_t _PySHA3_KeccakF1600_FastLoop_Absorb(void * state, unsigned int laneCount, const unsigned char * data, size_t dataByteLen)'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='61' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sha3/kcp/KeccakSponge.inc' l='181' macro='1' u='c'/>
+<def f='codebrowser/Modules/_sha3/kcp/KeccakP-1600-opt64.c' l='455' macro='1' type='size_t _PySHA3_KeccakF1600_FastLoop_Absorb(void * state, unsigned int laneCount, const unsigned char * data, size_t dataByteLen)'/>
+<doc f='codebrowser/Modules/_sha3/kcp/KeccakP-1600-opt64.c' l='453'>/* ---------------------------------------------------------------- */</doc>

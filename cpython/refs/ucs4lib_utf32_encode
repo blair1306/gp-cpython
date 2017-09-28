@@ -1,0 +1,2 @@
+<def f='codebrowser/Objects/stringlib/codecs.h' l='748' macro='1' type='Py_ssize_t ucs4lib_utf32_encode(const Py_UCS4 * in, Py_ssize_t len, uint32_t ** outptr, int native_ordering)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5443' u='c' c='_PyUnicode_EncodeUTF32'/>

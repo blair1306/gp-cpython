@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pycapsule.h' l='28' type='PyObject * PyCapsule_New(void * pointer, const char * name, PyCapsule_Destructor destructor)'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='159' u='c' c='_ctypes_get_errobj'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='674' u='c' c='ConvParam'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1384' u='c' c='Z_set'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3321' u='c' c='PyInit__curses'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5849' u='c' c='PyInit__datetime'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2508' u='c' c='test_capsule'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2515' u='c' c='test_capsule'/>
+<use f='codebrowser/Modules/cjkcodecs/cjkcodecs.h' l='288' u='c' c='getcodec'/>
+<use f='codebrowser/Modules/cjkcodecs/cjkcodecs.h' l='313' u='c' c='register_maps'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1888' u='c' c='PyInit_pyexpat'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6543' u='c' c='PyInit__socket'/>
+<use f='codebrowser/Modules/unicodedata.c' l='1362' u='c' c='PyInit_unicodedata'/>
+<def f='codebrowser/Objects/capsule.c' l='43' ll='64' type='PyObject * PyCapsule_New(void * pointer, const char * name, PyCapsule_Destructor destructor)'/>
+<use f='codebrowser/Python/compile.c' l='614' u='c' c='compiler_enter_scope'/>

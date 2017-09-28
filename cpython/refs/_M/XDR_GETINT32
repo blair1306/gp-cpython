@@ -1,0 +1,11 @@
+<dec f='include/rpc/xdr.h' l='165'/>
+<doc f='include/rpc/xdr.h' l='155'>/*
+ * Operations defined on a XDR handle
+ *
+ * XDR          *xdrs;
+ * int32_t      *int32p;
+ * long         *longp;
+ * caddr_t       addr;
+ * u_int         len;
+ * u_int         pos;
+ */</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/sysmodule.h' l='17' type='void PySys_SetArgv(int , wchar_t ** )'/>
+<use f='codebrowser/Modules/main.c' l='822' u='c' c='Py_Main'/>
+<use f='codebrowser/Python/frozenmain.c' l='84' u='c' c='Py_FrozenMain'/>
+<def f='codebrowser/Python/sysmodule.c' l='2342' ll='2346' type='void PySys_SetArgv(int argc, wchar_t ** argv)'/>

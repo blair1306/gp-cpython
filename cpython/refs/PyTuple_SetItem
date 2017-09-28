@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/tupleobject.h' l='46' type='int PyTuple_SetItem(PyObject * , Py_ssize_t , PyObject * )'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='627' u='c' c='functools_reduce'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='628' u='c' c='functools_reduce'/>
+<use f='codebrowser/Modules/audioop.c' l='1420' u='c' c='audioop_ratecv_impl'/>
+<use f='codebrowser/Modules/parsermodule.c' l='434' u='r' c='parser_st2tuple'/>
+<use f='codebrowser/Objects/longobject.c' l='4036' u='c' c='long_divmod'/>
+<use f='codebrowser/Objects/longobject.c' l='4037' u='c' c='long_divmod'/>
+<def f='codebrowser/Objects/tupleobject.c' l='166' ll='184' type='int PyTuple_SetItem(PyObject * op, Py_ssize_t i, PyObject * newitem)'/>

@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='547'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='544'>/* Fast check to determine whether an object is ready. Equivalent to
+   PyUnicode_IS_COMPACT(op) || ((PyUnicodeObject*)(op))-&gt;data.any) */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1998' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='395' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='568' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='599' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='666' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='908' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='970' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1048' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1148' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1165' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1412' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1416' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2293' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2337' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4035' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4207' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9850' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10114' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11025' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14222' u='c'/>
+<use f='codebrowser/Python/ast.c' l='650' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='772' u='c'/>

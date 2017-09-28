@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>multiprocessing.c source code [codebrowser/Modules/_multiprocessing/multiprocessing.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_multiprocessing/multiprocessing.c'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>_multiprocessing</a>/<a href='multiprocessing.c.html'>multiprocessing.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Extension module used by multiprocessing package</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * multiprocessing.c</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * Copyright (c) 2006-2008, R Oudkerk</i></td></tr>
+<tr><th id="7">7</th><td><i> * Licensed to PSF under a Contributor Agreement.</i></td></tr>
+<tr><th id="8">8</th><td><i> */</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="multiprocessing.h.html">"multiprocessing.h"</a></u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i>/*</i></td></tr>
+<tr><th id="14">14</th><td><i> * Function which raises exceptions based on error codes</i></td></tr>
+<tr><th id="15">15</th><td><i> */</i></td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="_PyMp_SetError" title='_PyMp_SetError' data-ref="_PyMp_SetError">_PyMp_SetError</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20Type" title='Type' data-type='PyObject *' data-ref="20Type">Type</dfn>, <em>int</em> <dfn class="local col1 decl" id="21num" title='num' data-type='int' data-ref="21num">num</dfn>)</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <b>switch</b> (<a class="local col1 ref" href="#21num" title='num' data-ref="21num">num</a>) {</td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="21">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="22">22</th><td>    <b>case</b> MP_STANDARD_ERROR:</td></tr>
+<tr><th id="23">23</th><td>        <b>if</b> (Type == NULL)</td></tr>
+<tr><th id="24">24</th><td>            Type = PyExc_OSError;</td></tr>
+<tr><th id="25">25</th><td>        PyErr_SetExcFromWindowsErr(Type, <var>0</var>);</td></tr>
+<tr><th id="26">26</th><td>        <b>break</b>;</td></tr>
+<tr><th id="27">27</th><td>    <b>case</b> MP_SOCKET_ERROR:</td></tr>
+<tr><th id="28">28</th><td>        <b>if</b> (Type == NULL)</td></tr>
+<tr><th id="29">29</th><td>            Type = PyExc_OSError;</td></tr>
+<tr><th id="30">30</th><td>        PyErr_SetExcFromWindowsErr(Type, WSAGetLastError());</td></tr>
+<tr><th id="31">31</th><td>        <b>break</b>;</td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="21">else</span> /* !MS_WINDOWS */</u></td></tr>
+<tr><th id="33">33</th><td>    <b>case</b> <a class="macro" href="multiprocessing.h.html#89" title="(-1)" data-ref="_M/MP_STANDARD_ERROR">MP_STANDARD_ERROR</a>:</td></tr>
+<tr><th id="34">34</th><td>    <b>case</b> <a class="macro" href="multiprocessing.h.html#91" title="(-1002)" data-ref="_M/MP_SOCKET_ERROR">MP_SOCKET_ERROR</a>:</td></tr>
+<tr><th id="35">35</th><td>        <b>if</b> (<a class="local col0 ref" href="#20Type" title='Type' data-ref="20Type">Type</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="36">36</th><td>            <a class="local col0 ref" href="#20Type" title='Type' data-ref="20Type">Type</a> = <a class="ref" href="../../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>;</td></tr>
+<tr><th id="37">37</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="local col0 ref" href="#20Type" title='Type' data-ref="20Type">Type</a>);</td></tr>
+<tr><th id="38">38</th><td>        <b>break</b>;</td></tr>
+<tr><th id="39">39</th><td><u>#<span data-ppcond="21">endif</span> /* !MS_WINDOWS */</u></td></tr>
+<tr><th id="40">40</th><td>    <b>case</b> <a class="macro" href="multiprocessing.h.html#90" title="(-1001)" data-ref="_M/MP_MEMORY_ERROR">MP_MEMORY_ERROR</a>:</td></tr>
+<tr><th id="41">41</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_NoMemory" title='PyErr_NoMemory' data-ref="PyErr_NoMemory">PyErr_NoMemory</a>();</td></tr>
+<tr><th id="42">42</th><td>        <b>break</b>;</td></tr>
+<tr><th id="43">43</th><td>    <b>case</b> <a class="macro" href="multiprocessing.h.html#92" title="(-1003)" data-ref="_M/MP_EXCEPTION_HAS_BEEN_SET">MP_EXCEPTION_HAS_BEEN_SET</a>:</td></tr>
+<tr><th id="44">44</th><td>        <b>break</b>;</td></tr>
+<tr><th id="45">45</th><td>    <b>default</b>:</td></tr>
+<tr><th id="46">46</th><td>        <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_RuntimeError" title='PyExc_RuntimeError' data-ref="PyExc_RuntimeError">PyExc_RuntimeError</a>,</td></tr>
+<tr><th id="47">47</th><td>                     <q>"unknown error number %d"</q>, <a class="local col1 ref" href="#21num" title='num' data-ref="21num">num</a>);</td></tr>
+<tr><th id="48">48</th><td>    }</td></tr>
+<tr><th id="49">49</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="50">50</th><td>}</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><u>#<span data-ppcond="52">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="53">53</th><td><em>static</em> PyObject *</td></tr>
+<tr><th id="54">54</th><td>multiprocessing_closesocket(PyObject *self, PyObject *args)</td></tr>
+<tr><th id="55">55</th><td>{</td></tr>
+<tr><th id="56">56</th><td>    HANDLE handle;</td></tr>
+<tr><th id="57">57</th><td>    <em>int</em> ret;</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>    <b>if</b> (!PyArg_ParseTuple(args, F_HANDLE <q>":closesocket"</q> , &amp;handle))</td></tr>
+<tr><th id="60">60</th><td>        <b>return</b> NULL;</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td>    Py_BEGIN_ALLOW_THREADS</td></tr>
+<tr><th id="63">63</th><td>    ret = closesocket((SOCKET) handle);</td></tr>
+<tr><th id="64">64</th><td>    Py_END_ALLOW_THREADS</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>    <b>if</b> (ret)</td></tr>
+<tr><th id="67">67</th><td>        <b>return</b> PyErr_SetExcFromWindowsErr(PyExc_OSError, WSAGetLastError());</td></tr>
+<tr><th id="68">68</th><td>    Py_RETURN_NONE;</td></tr>
+<tr><th id="69">69</th><td>}</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><em>static</em> PyObject *</td></tr>
+<tr><th id="72">72</th><td>multiprocessing_recv(PyObject *self, PyObject *args)</td></tr>
+<tr><th id="73">73</th><td>{</td></tr>
+<tr><th id="74">74</th><td>    HANDLE handle;</td></tr>
+<tr><th id="75">75</th><td>    <em>int</em> size, nread;</td></tr>
+<tr><th id="76">76</th><td>    PyObject *buf;</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td>    <b>if</b> (!PyArg_ParseTuple(args, F_HANDLE <q>"i:recv"</q> , &amp;handle, &amp;size))</td></tr>
+<tr><th id="79">79</th><td>        <b>return</b> NULL;</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td>    buf = PyBytes_FromStringAndSize(NULL, size);</td></tr>
+<tr><th id="82">82</th><td>    <b>if</b> (!buf)</td></tr>
+<tr><th id="83">83</th><td>        <b>return</b> NULL;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>    Py_BEGIN_ALLOW_THREADS</td></tr>
+<tr><th id="86">86</th><td>    nread = recv((SOCKET) handle, PyBytes_AS_STRING(buf), size, <var>0</var>);</td></tr>
+<tr><th id="87">87</th><td>    Py_END_ALLOW_THREADS</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>    <b>if</b> (nread &lt; <var>0</var>) {</td></tr>
+<tr><th id="90">90</th><td>        Py_DECREF(buf);</td></tr>
+<tr><th id="91">91</th><td>        <b>return</b> PyErr_SetExcFromWindowsErr(PyExc_OSError, WSAGetLastError());</td></tr>
+<tr><th id="92">92</th><td>    }</td></tr>
+<tr><th id="93">93</th><td>    _PyBytes_Resize(&amp;buf, nread);</td></tr>
+<tr><th id="94">94</th><td>    <b>return</b> buf;</td></tr>
+<tr><th id="95">95</th><td>}</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td><em>static</em> PyObject *</td></tr>
+<tr><th id="98">98</th><td>multiprocessing_send(PyObject *self, PyObject *args)</td></tr>
+<tr><th id="99">99</th><td>{</td></tr>
+<tr><th id="100">100</th><td>    HANDLE handle;</td></tr>
+<tr><th id="101">101</th><td>    Py_buffer buf;</td></tr>
+<tr><th id="102">102</th><td>    <em>int</em> ret, length;</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>    <b>if</b> (!PyArg_ParseTuple(args, F_HANDLE <q>"y*:send"</q> , &amp;handle, &amp;buf))</td></tr>
+<tr><th id="105">105</th><td>        <b>return</b> NULL;</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td>    length = (<em>int</em>)Py_MIN(buf.len, INT_MAX);</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td>    Py_BEGIN_ALLOW_THREADS</td></tr>
+<tr><th id="110">110</th><td>    ret = send((SOCKET) handle, buf.buf, length, <var>0</var>);</td></tr>
+<tr><th id="111">111</th><td>    Py_END_ALLOW_THREADS</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td>    PyBuffer_Release(&amp;buf);</td></tr>
+<tr><th id="114">114</th><td>    <b>if</b> (ret &lt; <var>0</var>)</td></tr>
+<tr><th id="115">115</th><td>        <b>return</b> PyErr_SetExcFromWindowsErr(PyExc_OSError, WSAGetLastError());</td></tr>
+<tr><th id="116">116</th><td>    <b>return</b> PyLong_FromLong(ret);</td></tr>
+<tr><th id="117">117</th><td>}</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><u>#<span data-ppcond="52">endif</span></u></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><i  data-doc="module_methods">/*</i></td></tr>
+<tr><th id="122">122</th><td><i  data-doc="module_methods"> * Function table</i></td></tr>
+<tr><th id="123">123</th><td><i  data-doc="module_methods"> */</i></td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td><em>static</em> <a class="typedef" href="../../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="module_methods" title='module_methods' data-type='PyMethodDef [2]' data-ref="module_methods">module_methods</dfn>[] = {</td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="126">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="127">127</th><td>    {<q>"closesocket"</q>, multiprocessing_closesocket, METH_VARARGS, <q>""</q>},</td></tr>
+<tr><th id="128">128</th><td>    {<q>"recv"</q>, multiprocessing_recv, METH_VARARGS, <q>""</q>},</td></tr>
+<tr><th id="129">129</th><td>    {<q>"send"</q>, multiprocessing_send, METH_VARARGS, <q>""</q>},</td></tr>
+<tr><th id="130">130</th><td><u>#<span data-ppcond="126">endif</span></u></td></tr>
+<tr><th id="131">131</th><td><u>#<span data-ppcond="131">if</span> !defined(<span class="macro" data-ref="_M/POSIX_SEMAPHORES_NOT_ENABLED">POSIX_SEMAPHORES_NOT_ENABLED</span>) &amp;&amp; !defined(<span class="macro" data-ref="_M/__ANDROID__">__ANDROID__</span>)</u></td></tr>
+<tr><th id="132">132</th><td>    {<q>"sem_unlink"</q>, <a class="ref" href="multiprocessing.h.html#_PyMp_sem_unlink" title='_PyMp_sem_unlink' data-ref="_PyMp_sem_unlink">_PyMp_sem_unlink</a>, <a class="macro" href="../../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <q>""</q>},</td></tr>
+<tr><th id="133">133</th><td><u>#<span data-ppcond="131">endif</span></u></td></tr>
+<tr><th id="134">134</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}</td></tr>
+<tr><th id="135">135</th><td>};</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><i  data-doc="multiprocessing_module">/*</i></td></tr>
+<tr><th id="139">139</th><td><i  data-doc="multiprocessing_module"> * Initialize</i></td></tr>
+<tr><th id="140">140</th><td><i  data-doc="multiprocessing_module"> */</i></td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><em>static</em> <b>struct</b> <a class="type" href="../../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="multiprocessing_module" title='multiprocessing_module' data-type='struct PyModuleDef' data-ref="multiprocessing_module">multiprocessing_module</dfn> = {</td></tr>
+<tr><th id="143">143</th><td>    <a class="macro" href="../../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="144">144</th><td>    <q>"_multiprocessing"</q>,</td></tr>
+<tr><th id="145">145</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="146">146</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="147">147</th><td>    <a class="tu ref" href="#module_methods" title='module_methods' data-ref="module_methods">module_methods</a>,</td></tr>
+<tr><th id="148">148</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="149">149</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="150">150</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="151">151</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="152">152</th><td>};</td></tr>
+<tr><th id="153">153</th><td></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><a class="macro" href="../../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="156">156</th><td><dfn class="decl def" id="PyInit__multiprocessing" title='PyInit__multiprocessing' data-ref="PyInit__multiprocessing">PyInit__multiprocessing</dfn>(<em>void</em>)</td></tr>
+<tr><th id="157">157</th><td>{</td></tr>
+<tr><th id="158">158</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="22module" title='module' data-type='PyObject *' data-ref="22module">module</dfn>, *<dfn class="local col3 decl" id="23temp" title='temp' data-type='PyObject *' data-ref="23temp">temp</dfn>, *<dfn class="local col4 decl" id="24value" title='value' data-type='PyObject *' data-ref="24value">value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td>    <i>/* Initialize module */</i></td></tr>
+<tr><th id="161">161</th><td>    <a class="local col2 ref" href="#22module" title='module' data-ref="22module">module</a> = <a class="macro" href="../../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;multiprocessing_module, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#multiprocessing_module" title='multiprocessing_module' data-use='a' data-ref="multiprocessing_module">multiprocessing_module</a>);</td></tr>
+<tr><th id="162">162</th><td>    <b>if</b> (!<a class="local col2 ref" href="#22module" title='module' data-ref="22module">module</a>)</td></tr>
+<tr><th id="163">163</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><u>#<span data-ppcond="165">if</span> defined(<span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span>) ||                                              \</u></td></tr>
+<tr><th id="166">166</th><td><u>  (defined(<a class="macro" href="../../pyconfig.h.html#783" data-ref="_M/HAVE_SEM_OPEN">HAVE_SEM_OPEN</a>) &amp;&amp; !defined(<span class="macro" data-ref="_M/POSIX_SEMAPHORES_NOT_ENABLED">POSIX_SEMAPHORES_NOT_ENABLED</span>))</u></td></tr>
+<tr><th id="167">167</th><td>    <i>/* Add _PyMp_SemLock type to module */</i></td></tr>
+<tr><th id="168">168</th><td>    <b>if</b> (<a class="ref" href="../../Include/object.h.html#PyType_Ready" title='PyType_Ready' data-ref="PyType_Ready">PyType_Ready</a>(&amp;<a class="ref" href="multiprocessing.h.html#_PyMp_SemLockType" title='_PyMp_SemLockType' data-ref="_PyMp_SemLockType">_PyMp_SemLockType</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="169">169</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="170">170</th><td>    <a class="macro" href="../../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(&amp;_PyMp_SemLockType))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(&amp;<a class="ref" href="multiprocessing.h.html#_PyMp_SemLockType" title='_PyMp_SemLockType' data-ref="_PyMp_SemLockType">_PyMp_SemLockType</a>);</td></tr>
+<tr><th id="171">171</th><td>    {</td></tr>
+<tr><th id="172">172</th><td>        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25py_sem_value_max" title='py_sem_value_max' data-type='PyObject *' data-ref="25py_sem_value_max">py_sem_value_max</dfn>;</td></tr>
+<tr><th id="173">173</th><td>        <i>/* Some systems define SEM_VALUE_MAX as an unsigned value that</i></td></tr>
+<tr><th id="174">174</th><td><i>         * causes it to be negative when used as an int (NetBSD).</i></td></tr>
+<tr><th id="175">175</th><td><i>         *</i></td></tr>
+<tr><th id="176">176</th><td><i>         * Issue #28152: Use (0) instead of 0 to fix a warning on dead code</i></td></tr>
+<tr><th id="177">177</th><td><i>         * when using clang -Wunreachable-code. */</i></td></tr>
+<tr><th id="178">178</th><td>        <b>if</b> ((<em>int</em>)(<a class="macro" href="../../../include/x86_64-linux-gnu/bits/local_lim.h.html#99" title="(2147483647)" data-ref="_M/SEM_VALUE_MAX">SEM_VALUE_MAX</a>) &lt; (<var>0</var>))</td></tr>
+<tr><th id="179">179</th><td>            <a class="local col5 ref" href="#25py_sem_value_max" title='py_sem_value_max' data-ref="25py_sem_value_max">py_sem_value_max</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<span class="macro" title="2147483647" data-ref="_M/INT_MAX">INT_MAX</span>);</td></tr>
+<tr><th id="180">180</th><td>        <b>else</b></td></tr>
+<tr><th id="181">181</th><td>            <a class="local col5 ref" href="#25py_sem_value_max" title='py_sem_value_max' data-ref="25py_sem_value_max">py_sem_value_max</a> = <a class="ref" href="../../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="macro" href="../../../include/x86_64-linux-gnu/bits/local_lim.h.html#99" title="(2147483647)" data-ref="_M/SEM_VALUE_MAX">SEM_VALUE_MAX</a>);</td></tr>
+<tr><th id="182">182</th><td>        <b>if</b> (<a class="local col5 ref" href="#25py_sem_value_max" title='py_sem_value_max' data-ref="25py_sem_value_max">py_sem_value_max</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="183">183</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="184">184</th><td>        <a class="ref" href="../../Include/dictobject.h.html#PyDict_SetItemString" title='PyDict_SetItemString' data-ref="PyDict_SetItemString">PyDict_SetItemString</a>(<a class="ref" href="multiprocessing.h.html#_PyMp_SemLockType" title='_PyMp_SemLockType' data-ref="_PyMp_SemLockType">_PyMp_SemLockType</a>.<a class="ref" href="../../Include/object.h.html#_typeobject::tp_dict" title='_typeobject::tp_dict' data-ref="_typeobject::tp_dict">tp_dict</a>, <q>"SEM_VALUE_MAX"</q>,</td></tr>
+<tr><th id="185">185</th><td>                             <a class="local col5 ref" href="#25py_sem_value_max" title='py_sem_value_max' data-ref="25py_sem_value_max">py_sem_value_max</a>);</td></tr>
+<tr><th id="186">186</th><td>    }</td></tr>
+<tr><th id="187">187</th><td>    <a class="ref" href="../../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col2 ref" href="#22module" title='module' data-ref="22module">module</a>, <q>"SemLock"</q>, (<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*)&amp;<a class="ref" href="multiprocessing.h.html#_PyMp_SemLockType" title='_PyMp_SemLockType' data-ref="_PyMp_SemLockType">_PyMp_SemLockType</a>);</td></tr>
+<tr><th id="188">188</th><td><u>#<span data-ppcond="165">endif</span></u></td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td>    <i>/* Add configuration macros */</i></td></tr>
+<tr><th id="191">191</th><td>    <a class="local col3 ref" href="#23temp" title='temp' data-ref="23temp">temp</a> = <a class="ref" href="../../Include/dictobject.h.html#PyDict_New" title='PyDict_New' data-ref="PyDict_New">PyDict_New</a>();</td></tr>
+<tr><th id="192">192</th><td>    <b>if</b> (!<a class="local col3 ref" href="#23temp" title='temp' data-ref="23temp">temp</a>)</td></tr>
+<tr><th id="193">193</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td><u>#define <dfn class="macro" id="_M/ADD_FLAG" data-ref="_M/ADD_FLAG">ADD_FLAG</dfn>(name)                                            \</u></td></tr>
+<tr><th id="196">196</th><td><u>    <a class="local col4 ref" href="#24value" title='value' data-ref="24value">value</a> = Py_BuildValue("i", name);                             \</u></td></tr>
+<tr><th id="197">197</th><td><u>    if (<a class="local col4 ref" href="#24value" title='value' data-ref="24value">value</a> == NULL) { Py_DECREF(<a class="local col3 ref" href="#23temp" title='temp' data-ref="23temp">temp</a>); return NULL; }          \</u></td></tr>
+<tr><th id="198">198</th><td><u>    if (<a class="ref" href="../../Include/dictobject.h.html#PyDict_SetItemString" title='PyDict_SetItemString' data-ref="PyDict_SetItemString">PyDict_SetItemString</a>(<a class="local col3 ref" href="#23temp" title='temp' data-ref="23temp">temp</a>, #name, <a class="local col4 ref" href="#24value" title='value' data-ref="24value">value</a>) &lt; 0) {           \</u></td></tr>
+<tr><th id="199">199</th><td><u>        Py_DECREF(<a class="local col3 ref" href="#23temp" title='temp' data-ref="23temp">temp</a>); Py_DECREF(<a class="local col4 ref" href="#24value" title='value' data-ref="24value">value</a>); return NULL; }         \</u></td></tr>
+<tr><th id="200">200</th><td><u>    Py_DECREF(<a class="local col4 ref" href="#24value" title='value' data-ref="24value">value</a>)</u></td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td><u>#<span data-ppcond="202">if</span> defined(<a class="macro" href="../../pyconfig.h.html#783" data-ref="_M/HAVE_SEM_OPEN">HAVE_SEM_OPEN</a>) &amp;&amp; !defined(<span class="macro" data-ref="_M/POSIX_SEMAPHORES_NOT_ENABLED">POSIX_SEMAPHORES_NOT_ENABLED</span>)</u></td></tr>
+<tr><th id="203">203</th><td>    <a class="macro" href="#195" title="value = _Py_BuildValue_SizeT(&quot;i&quot;, 1); if (value == ((void*)0)) { do { PyObject *_py_decref_tmp = (PyObject *)(temp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 203, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); return ((void*)0); } if (PyDict_SetItemString(temp, &quot;HAVE_SEM_OPEN&quot;, value) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(temp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 203, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); do { PyObject *_py_decref_tmp = (PyObject *)(value); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 203, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); return ((void*)0); } do { PyObject *_py_decref_tmp = (PyObject *)(value); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 203, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/ADD_FLAG">ADD_FLAG</a>(<a class="macro" href="../../pyconfig.h.html#783" title="1" data-ref="_M/HAVE_SEM_OPEN">HAVE_SEM_OPEN</a>);</td></tr>
+<tr><th id="204">204</th><td><u>#<span data-ppcond="202">endif</span></u></td></tr>
+<tr><th id="205">205</th><td><u>#<span data-ppcond="205">ifdef</span> <a class="macro" href="../../pyconfig.h.html#786" data-ref="_M/HAVE_SEM_TIMEDWAIT">HAVE_SEM_TIMEDWAIT</a></u></td></tr>
+<tr><th id="206">206</th><td>    <a class="macro" href="#195" title="value = _Py_BuildValue_SizeT(&quot;i&quot;, 1); if (value == ((void*)0)) { do { PyObject *_py_decref_tmp = (PyObject *)(temp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 206, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); return ((void*)0); } if (PyDict_SetItemString(temp, &quot;HAVE_SEM_TIMEDWAIT&quot;, value) &lt; 0) { do { PyObject *_py_decref_tmp = (PyObject *)(temp); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 206, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); do { PyObject *_py_decref_tmp = (PyObject *)(value); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 206, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0); return ((void*)0); } do { PyObject *_py_decref_tmp = (PyObject *)(value); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/_multiprocessing/multiprocessing.c&quot;, 206, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/ADD_FLAG">ADD_FLAG</a>(<a class="macro" href="../../pyconfig.h.html#786" title="1" data-ref="_M/HAVE_SEM_TIMEDWAIT">HAVE_SEM_TIMEDWAIT</a>);</td></tr>
+<tr><th id="207">207</th><td><u>#<span data-ppcond="205">endif</span></u></td></tr>
+<tr><th id="208">208</th><td><u>#<span data-ppcond="208">ifdef</span> <span class="macro" data-ref="_M/HAVE_BROKEN_SEM_GETVALUE">HAVE_BROKEN_SEM_GETVALUE</span></u></td></tr>
+<tr><th id="209">209</th><td>    ADD_FLAG(HAVE_BROKEN_SEM_GETVALUE);</td></tr>
+<tr><th id="210">210</th><td><u>#<span data-ppcond="208">endif</span></u></td></tr>
+<tr><th id="211">211</th><td><u>#<span data-ppcond="211">ifdef</span> <span class="macro" data-ref="_M/HAVE_BROKEN_SEM_UNLINK">HAVE_BROKEN_SEM_UNLINK</span></u></td></tr>
+<tr><th id="212">212</th><td>    ADD_FLAG(HAVE_BROKEN_SEM_UNLINK);</td></tr>
+<tr><th id="213">213</th><td><u>#<span data-ppcond="211">endif</span></u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td>    <b>if</b> (<a class="ref" href="../../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col2 ref" href="#22module" title='module' data-ref="22module">module</a>, <q>"flags"</q>, <a class="local col3 ref" href="#23temp" title='temp' data-ref="23temp">temp</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="216">216</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td>    <b>return</b> <a class="local col2 ref" href="#22module" title='module' data-ref="22module">module</a>;</td></tr>
+<tr><th id="219">219</th><td>}</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

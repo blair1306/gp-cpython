@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/dictobject.h' l='51' type='PyTypeObject'/>
+<use f='codebrowser/Objects/dictobject.c' l='3105' u='a' c='dict_iter'/>
+<def f='codebrowser/Objects/dictobject.c' l='3365' ll='3396' type='PyTypeObject'/>
+<use f='codebrowser/Objects/dictobject.c' l='3600' u='a' c='dictiter_reduce'/>
+<use f='codebrowser/Objects/dictobject.c' l='3799' u='a' c='dictkeys_iter'/>

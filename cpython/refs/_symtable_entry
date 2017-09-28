@@ -1,0 +1,25 @@
+<def f='codebrowser/Include/symtable.h' l='37' ll='65'/>
+<size>120</size>
+<mbr r='_symtable_entry::ob_base' o='0' t='PyObject'/>
+<mbr r='_symtable_entry::ste_id' o='256' t='PyObject *'/>
+<mbr r='_symtable_entry::ste_symbols' o='320' t='PyObject *'/>
+<mbr r='_symtable_entry::ste_name' o='384' t='PyObject *'/>
+<mbr r='_symtable_entry::ste_varnames' o='448' t='PyObject *'/>
+<mbr r='_symtable_entry::ste_children' o='512' t='PyObject *'/>
+<mbr r='_symtable_entry::ste_directives' o='576' t='PyObject *'/>
+<mbr r='_symtable_entry::ste_type' o='640' t='_Py_block_ty'/>
+<mbr r='_symtable_entry::ste_nested' o='672' t='int'/>
+<mbr r='_symtable_entry::ste_free' o='704' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_child_free' o='705' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_generator' o='706' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_coroutine' o='707' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_varargs' o='708' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_varkeywords' o='709' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_returns_value' o='710' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_needs_class_closure' o='711' t='unsigned int'/>
+<mbr r='_symtable_entry::ste_lineno' o='736' t='int'/>
+<mbr r='_symtable_entry::ste_col_offset' o='768' t='int'/>
+<mbr r='_symtable_entry::ste_opt_lineno' o='800' t='int'/>
+<mbr r='_symtable_entry::ste_opt_col_offset' o='832' t='int'/>
+<mbr r='_symtable_entry::ste_tmpname' o='864' t='int'/>
+<mbr r='_symtable_entry::ste_table' o='896' t='struct symtable *'/>

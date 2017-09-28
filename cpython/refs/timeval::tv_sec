@@ -1,0 +1,27 @@
+<dec f='include/x86_64-linux-gnu/bits/time.h' l='32' type='__time_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/time.h' l='32'>/* Seconds.  */</doc>
+<use f='codebrowser/Modules/_lsprof.c' l='48' u='r' c='hpTimer'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='301' u='r' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2607' u='w' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2607' u='r' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2610' u='w' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2613' u='r' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3944' u='r' c='test_PyTime_AsTimeval'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6862' u='r' c='wait_helper'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6862' u='r' c='wait_helper'/>
+<use f='codebrowser/Modules/resource.c' l='19' u='r' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/resource.c' l='19' u='r' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/selectmodule.c' l='226' u='r' c='select_select'/>
+<use f='codebrowser/Modules/signalmodule.c' l='140' u='w' c='timeval_from_double'/>
+<use f='codebrowser/Modules/signalmodule.c' l='143' u='r' c='timeval_from_double'/>
+<use f='codebrowser/Modules/signalmodule.c' l='151' u='r' c='double_from_timeval'/>
+<use f='codebrowser/Modules/timemodule.c' l='1021' u='r' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1022' u='r' c='py_process_time'/>
+<use f='codebrowser/Python/condvar.h' l='65' u='w' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/condvar.h' l='100' u='r' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/pytime.c' l='456' u='w' c='_PyTime_AsTimevalStruct_impl'/>
+<use f='codebrowser/Python/pytime.c' l='460' u='r' c='_PyTime_AsTimevalStruct_impl'/>
+<use f='codebrowser/Python/thread_pthread.h' l='115' u='w' c='PyThread_acquire_lock_timed'/>
+<use f='codebrowser/Python/thread_pthread.h' l='116' u='w' c='PyThread_acquire_lock_timed'/>
+<use f='codebrowser/Python/thread_pthread.h' l='118' u='r' c='PyThread_acquire_lock_timed'/>

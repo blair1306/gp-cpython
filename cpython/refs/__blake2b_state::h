@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='64' type='uint64_t [8]'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='180' u='w' c='blake2b_init0'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='191' u='r' c='PyBlake2_blake2b_init_param'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='298' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='299' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='300' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='301' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='320' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='320' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='321' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='321' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='324' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='324' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='325' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='325' u='a' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='381' u='a' c='PyBlake2_blake2b_final'/>
+<offset>0</offset>

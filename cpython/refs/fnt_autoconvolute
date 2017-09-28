@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/convolute.h' l='44' type='int fnt_autoconvolute(mpd_uint_t * c1, mpd_size_t n, int modnum)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='113' ll='172' type='int fnt_autoconvolute(mpd_uint_t * c1, mpd_size_t n, int modnum)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='112'>/* Autoconvolute the data in c1. Result is in c1. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5516' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5517' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5518' u='c' c='_mpd_fntmul'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/genobject.h' l='94' type='int PyAsyncGen_ClearFreeLists()'/>
+<use f='codebrowser/Modules/gcmodule.c' l='903' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/genobject.c' l='1504' ll='1524' type='int PyAsyncGen_ClearFreeLists()'/>
+<use f='codebrowser/Objects/genobject.c' l='1529' u='c' c='PyAsyncGen_Fini'/>

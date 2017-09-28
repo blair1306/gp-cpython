@@ -1,0 +1,11 @@
+<def f='include/linux/can.h' l='169' ll='178'/>
+<size>16</size>
+<doc f='include/linux/can.h' l='163'>/**
+ * struct sockaddr_can - the sockaddr structure for CAN sockets
+ * @can_family:  address family number AF_CAN.
+ * @can_ifindex: CAN network interface index.
+ * @can_addr:    protocol specific address information
+ */</doc>
+<mbr r='sockaddr_can::can_family' o='0' t='__kernel_sa_family_t'/>
+<mbr r='sockaddr_can::can_ifindex' o='32' t='int'/>
+<mbr r='sockaddr_can::can_addr' o='64' t='union (anonymous union at /usr/include/linux/can.h:172:2)'/>

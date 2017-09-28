@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='781' macro='1' type='enum XML_Status PyExpat_XML_Parse(XML_Parser parser, const char * s, int len, int isFinal)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1877' macro='1' type='enum XML_Status PyExpat_XML_Parse(XML_Parser parser, const char * s, int len, int isFinal)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='742' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='750' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1872' macro='1' u='r'/>

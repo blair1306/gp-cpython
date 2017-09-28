@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='446' type='void mpd_qsset_ssize(mpd_t * result, mpd_ssize_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4565' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4570' u='c' c='_dec_hash'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='445'>/* quietly assign a C integer type to an mpd_t with a static coefficient */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1065' ll='1087' type='void mpd_qsset_ssize(mpd_t * result, mpd_ssize_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1103' u='c' c='mpd_qsset_i32'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1120' u='c' c='mpd_qsset_i64'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1138' u='c' c='mpd_qset_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3459' u='c' c='mpd_qadd_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3487' u='c' c='mpd_qsub_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4028' u='c' c='mpd_qdiv_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5854' u='c' c='mpd_qmul_ssize'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1064'>/* quietly set a static decimal from an mpd_ssize_t */</doc>

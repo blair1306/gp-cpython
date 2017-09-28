@@ -1,0 +1,11 @@
+<def f='codebrowser/Include/object.h' l='106' ll='110'/>
+<size>32</size>
+<doc f='codebrowser/Include/object.h' l='101'>/* Nothing is actually declared to be a PyObject, but every pointer to
+ * a Python object can be cast to a PyObject*.  This is inheritance built
+ * by hand.  Similarly every pointer to a variable-size Python object can,
+ * in addition, be cast to PyVarObject*.
+ */</doc>
+<mbr r='_object::_ob_next' o='0' t='struct _object *'/>
+<mbr r='_object::_ob_prev' o='64' t='struct _object *'/>
+<mbr r='_object::ob_refcnt' o='128' t='Py_ssize_t'/>
+<mbr r='_object::ob_type' o='192' t='struct _typeobject *'/>

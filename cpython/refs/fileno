@@ -1,0 +1,32 @@
+<dec f='include/stdio.h' l='858' type='int fileno(FILE * __stream)'/>
+<doc f='include/stdio.h' l='857'>/* Return the system file descriptor for STREAM.  */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1739' u='c' c='PyCursesWindow_PutWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2292' u='c' c='PyCurses_GetWin'/>
+<use f='codebrowser/Modules/main.c' l='828' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='889' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11096' u='c' c='get_terminal_size'/>
+<use f='codebrowser/Modules/readline.c' l='1224' u='c' c='readline_until_enter_or_signal'/>
+<use f='codebrowser/Modules/readline.c' l='1224' u='c' c='readline_until_enter_or_signal'/>
+<use f='codebrowser/Modules/readline.c' l='1226' u='c' c='readline_until_enter_or_signal'/>
+<use f='codebrowser/Objects/fileobject.c' l='339' u='c' c='PyFile_NewStdPrinter'/>
+<use f='codebrowser/Objects/fileobject.c' l='339' u='c' c='PyFile_NewStdPrinter'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2166' u='c' c='_PyObject_DebugDumpAddress'/>
+<use f='codebrowser/Parser/myreadline.c' l='339' u='c' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='339' u='c' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/tokenizer.c' l='509' u='c' c='fp_setreadl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1896' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1909' u='c' c='builtin_input_impl'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='77' u='c' c='_PyImport_FindSharedFuncptr'/>
+<use f='codebrowser/Python/fileutils.c' l='1050' u='c' c='_Py_wfopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1068' u='c' c='_Py_fopen'/>
+<use f='codebrowser/Python/fileutils.c' l='1153' u='c' c='_Py_fopen_obj'/>
+<use f='codebrowser/Python/frozenmain.c' l='96' u='c' c='Py_FrozenMain'/>
+<use f='codebrowser/Python/marshal.c' l='1517' u='c' c='getfilesize'/>
+<use f='codebrowser/Python/pylifecycle.c' l='686' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1208' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1648' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1661' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1671' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1797' u='c' c='Py_FatalError'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1985' u='c' c='Py_FdIsInteractive'/>
+<use f='codebrowser/Python/sysmodule.c' l='1945' u='c' c='_PySys_BeginInit'/>

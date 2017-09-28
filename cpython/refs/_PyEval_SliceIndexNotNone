@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/ceval.h' l='227' type='int _PyEval_SliceIndexNotNone(PyObject * , Py_ssize_t * )'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1061' c='deque_index'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1062' c='deque_index'/>
+<use f='codebrowser/Objects/clinic/listobject.c.h' l='191' c='list_index'/>
+<use f='codebrowser/Objects/clinic/listobject.c.h' l='191' c='list_index'/>
+<use f='codebrowser/Objects/clinic/tupleobject.c.h' l='29' c='tuple_index'/>
+<use f='codebrowser/Objects/clinic/tupleobject.c.h' l='29' c='tuple_index'/>
+<def f='codebrowser/Python/ceval.c' l='4919' ll='4936' type='int _PyEval_SliceIndexNotNone(PyObject * v, Py_ssize_t * pi)'/>

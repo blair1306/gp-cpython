@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/dictobject.h' l='113' type='int _PyDict_Contains(PyObject * mp, PyObject * key, Py_hash_t hash)'/>
+<def f='codebrowser/Objects/dictobject.c' l='3042' ll='3053' type='int _PyDict_Contains(PyObject * op, PyObject * key, Py_hash_t hash)'/>
+<doc f='codebrowser/Objects/dictobject.c' l='3041'>/* Internal version of PyDict_Contains used when the hash value is already known */</doc>
+<use f='codebrowser/Objects/setobject.c' l='1583' u='c' c='set_difference'/>

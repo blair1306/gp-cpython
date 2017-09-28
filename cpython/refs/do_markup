@@ -1,0 +1,8 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='860' ll='896' type='int do_markup(SubString * input, PyObject * args, PyObject * kwargs, _PyUnicodeWriter * writer, int recursion_depth, AutoNumber * auto_number)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='920' u='c' c='build_string'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='854'>/*
+    do_markup is the top-level loop for the format() method.  It
+    searches through the format string for escapes to markup codes, and
+    calls other functions to move non-markup text to the output,
+    and to perform the markup to the output.
+*/</doc>

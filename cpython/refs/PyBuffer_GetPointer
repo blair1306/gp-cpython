@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/abstract.h' l='524' type='void * PyBuffer_GetPointer(Py_buffer * view, Py_ssize_t * indices)'/>
+<doc f='codebrowser/Include/abstract.h' l='522'>/* Get the memory area pointed to by the indices for the buffer given.
+   Note that view-&gt;ndim is the assumed size of indices. */</doc>
+<use f='codebrowser/Modules/_testbuffer.c' l='2348' u='c' c='get_pointer'/>
+<def f='codebrowser/Objects/abstract.c' l='433' ll='446' type='void * PyBuffer_GetPointer(Py_buffer * view, Py_ssize_t * indices)'/>
+<use f='codebrowser/Objects/abstract.c' l='523' u='c' c='PyBuffer_FromContiguous'/>
+<use f='codebrowser/Objects/abstract.c' l='593' u='c' c='PyObject_CopyData'/>
+<use f='codebrowser/Objects/abstract.c' l='594' u='c' c='PyObject_CopyData'/>

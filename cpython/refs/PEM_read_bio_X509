@@ -1,0 +1,2 @@
+<dec f='include/openssl/pem.h' l='451' macro='1' type='X509 * PEM_read_bio_X509(BIO * bp, X509 ** x, pem_password_cb * cb, void * u)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3375' u='c' c='_add_ca_certs'/>

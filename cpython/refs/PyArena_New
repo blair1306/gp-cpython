@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/pyarena.h' l='36' type='PyArena * PyArena_New()'/>
+<doc f='codebrowser/Include/pyarena.h' l='14'>/* PyArena_New() and PyArena_Free() create a new arena and free it,
+     respectively.  Once an arena has been created, it can be used
+     to allocate memory via PyArena_Malloc().  Pointers to PyObject can
+     also be registered with the arena via PyArena_AddPyObject(), and the
+     arena will ensure that the PyObjects stay alive at least until
+     PyArena_Free() is called.  When an arena is freed, all the memory it
+     allocated is freed, the arena releases internal references to registered
+     PyObject*, and none of its pointers are valid.
+     XXX (tim) What does &quot;none of its pointers are valid&quot; mean?  Does it
+     XXX mean that pointers previously obtained via PyArena_Malloc() are
+     XXX no longer valid?  (That&apos;s clearly true, but not sure that&apos;s what
+     XXX the text is trying to say.)
+
+     PyArena_New() returns an arena pointer.  On error, it
+     returns a negative number and sets an exception.
+     XXX (tim):  Not true.  On error, PyArena_New() actually returns NULL,
+     XXX and looks like it may or may not set an exception (e.g., if the
+     XXX internal PyList_New(0) returns NULL, PyArena_New() passes that on
+     XXX and an exception is set; OTOH, if the internal
+     XXX block_new(DEFAULT_BLOCK_SIZE) returns NULL, that&apos;s passed on but
+     XXX an exception is not set in that case).
+  */</doc>
+<use f='codebrowser/Modules/parsermodule.c' l='508' u='c' c='parser_compilest'/>
+<use f='codebrowser/Python/bltinmodule.c' l='742' u='c' c='builtin_compile_impl'/>
+<use f='codebrowser/Python/compile.c' l='369' u='c' c='PyNode_Compile'/>
+<def f='codebrowser/Python/pyarena.c' l='127' ll='154' type='PyArena * PyArena_New()'/>
+<use f='codebrowser/Python/pythonrun.c' l='207' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='900' u='c' c='PyRun_StringFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='924' u='c' c='PyRun_FileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='1030' u='c' c='Py_CompileStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1078' u='c' c='Py_SymtableStringObject'/>

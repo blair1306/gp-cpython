@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/methodobject.h' l='96' type='PyObject *'/>
+<offset>320</offset>
+<doc f='codebrowser/Include/methodobject.h' l='96'>/* Passed as &apos;self&apos; arg to the C func, can be NULL */</doc>
+<use f='codebrowser/Modules/_elementtree.c' l='3197' macro='1' u='r'/>
+<use f='codebrowser/Modules/_lsprof.c' l='168' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Modules/_lsprof.c' l='199' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Objects/call.c' l='580' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='726' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='740' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='31' u='r' c='PyCFunction_NewEx'/>
+<use f='codebrowser/Objects/methodobject.c' l='43' u='w' c='PyCFunction_NewEx'/>
+<use f='codebrowser/Objects/methodobject.c' l='67' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='89' u='r' c='meth_dealloc'/>
+<use f='codebrowser/Objects/methodobject.c' l='92' u='w' c='meth_dealloc'/>
+<use f='codebrowser/Objects/methodobject.c' l='108' u='r' c='meth_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='108' u='r' c='meth_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='108' u='r' c='meth_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='113' u='r' c='meth_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='153' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='153' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='153' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='156' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='156' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='156' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='177' u='r' c='meth_traverse'/>
+<use f='codebrowser/Objects/methodobject.c' l='177' u='r' c='meth_traverse'/>
+<use f='codebrowser/Objects/methodobject.c' l='187' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='213' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/methodobject.c' l='213' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/methodobject.c' l='213' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/methodobject.c' l='218' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/methodobject.c' l='219' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/methodobject.c' l='237' u='r' c='meth_richcompare'/>
+<use f='codebrowser/Objects/methodobject.c' l='237' u='r' c='meth_richcompare'/>
+<use f='codebrowser/Objects/methodobject.c' l='252' u='r' c='meth_hash'/>
+<use f='codebrowser/Objects/methodobject.c' l='255' u='r' c='meth_hash'/>
+<use f='codebrowser/Objects/methodobject.c' l='313' u='r' c='PyCFunction_ClearFreeList'/>

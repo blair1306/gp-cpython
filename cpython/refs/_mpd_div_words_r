@@ -1,0 +1,32 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='98' ll='140' type='void _mpd_div_words_r(mpd_uint_t * q, mpd_uint_t * r, mpd_uint_t hi, mpd_uint_t lo)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='157' u='c' c='_mpd_singlemul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='167' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='172' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='178' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='185' u='c' c='_mpd_mul_2_le2'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='231' u='c' c='_mpd_shortmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='261' u='c' c='_mpd_basemul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='369' u='c' c='_mpd_basedivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='601' u='c' c='_mpd_shortmul_c'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='76'>/*
+ * Algorithm from: Division by Invariant Integers using Multiplication,
+ * T. Granlund and P. L. Montgomery, Proceedings of the SIGPLAN &apos;94
+ * Conference on Programming Language Design and Implementation.
+ *
+ * http://gmplib.org/~tege/divcnst-pldi94.pdf
+ *
+ * Variables from the paper and their translations (See section 8):
+ *
+ *  N := 64
+ *  d := MPD_RADIX
+ *  l := 64
+ *  m&apos; := floor((2**(64+64) - 1)/MPD_RADIX) - 2**64
+ *
+ * Since N-l == 0:
+ *
+ *  dnorm := d
+ *  n2 := hi
+ *  n10 := lo
+ *
+ * ACL2 proof: mpd-div-words-r-correct
+ */</doc>

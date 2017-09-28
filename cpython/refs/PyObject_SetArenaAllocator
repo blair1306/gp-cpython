@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/objimpl.h' l='222' type='void PyObject_SetArenaAllocator(PyObjectArenaAllocator * allocator)'/>
+<doc f='codebrowser/Include/objimpl.h' l='221'>/* Set the arena allocator. */</doc>
+<def f='codebrowser/Objects/obmalloc.c' l='369' ll='373' type='void PyObject_SetArenaAllocator(PyObjectArenaAllocator * allocator)'/>

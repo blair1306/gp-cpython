@@ -1,0 +1,33 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='178' type='GETFUNC'/>
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='201' type='GETFUNC'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1491' u='r' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1495' u='r' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1887' u='w' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1996' u='w' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2286' u='w' c='make_funcptrtype_dict'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2858' u='r' c='PyCData_get'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2859' u='r' c='PyCData_get'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4323' u='r' c='Array_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4359' u='r' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4384' u='r' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4697' u='r' c='Simple_get_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4698' u='r' c='Simple_get_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4835' u='r' c='Pointer_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5047' u='r' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5068' u='r' c='Pointer_subscript'/>
+<offset>1024</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='178'>/* getter function if proto is NULL */</doc>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='201'>/* Only for simple objects */</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='169' u='r' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='170' u='r' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='902' u='r' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='903' u='r' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='908' u='r' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='123' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='129' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='139' u='w' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='238' u='r' c='PyCField_get'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='263' u='w' c='MakeFields'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='263' u='r' c='MakeFields'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='487' u='r' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='489' u='r' c='PyCStructUnionType_update_stgdict'/>

@@ -1,0 +1,9 @@
+<dec f='include/time.h' l='140' type='int'/>
+<offset>160</offset>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2578' u='r' c='date_local_from_object'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4285' u='r' c='local'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4307' u='r' c='datetime_from_timet_and_us'/>
+<use f='codebrowser/Modules/timemodule.c' l='291' u='r' c='tmtotuple'/>
+<use f='codebrowser/Modules/timemodule.c' l='435' u='w' c='gettmarg'/>
+<use f='codebrowser/Modules/timemodule.c' l='768' u='r' c='_asctime'/>
+<use f='codebrowser/Modules/zipimport.c' l='1398' u='w' c='parse_dostime'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2143' type='Py_ssize_t _PyUnicode_InsertThousandsGrouping(PyObject * unicode, Py_ssize_t index, Py_ssize_t n_buffer, void * digits, Py_ssize_t n_digits, Py_ssize_t min_width, const char * grouping, PyObject * thousands_sep, Py_UCS4 * maxchar)'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9321' ll='9402' type='Py_ssize_t _PyUnicode_InsertThousandsGrouping(PyObject * unicode, Py_ssize_t index, Py_ssize_t n_buffer, void * digits, Py_ssize_t n_digits, Py_ssize_t min_width, const char * grouping, PyObject * thousands_sep, Py_UCS4 * maxchar)'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='540' u='c' c='calc_number_widths'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='647' u='c' c='fill_number'/>

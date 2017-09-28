@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='500' type='void mpd_qround_to_int(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3353' u='c' c='dec_as_long'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3531' u='c' c='PyDec_ToIntegralValue'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5043' u='c' c='ctx_mpd_qround_to_int'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6727' u='c' c='mpd_qpowmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6732' u='c' c='mpd_qpowmod'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7167' ll='7172' type='void mpd_qround_to_int(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>

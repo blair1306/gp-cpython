@@ -1,0 +1,13 @@
+<dec f='codebrowser/Objects/stringlib/find.h' l='83'/>
+<use f='codebrowser/Objects/stringlib/find.h' l='94' u='c'/>
+<use f='codebrowser/Objects/stringlib/find.h' l='97' u='c'/>
+<use f='codebrowser/Objects/stringlib/find.h' l='98' u='c'/>
+<use f='codebrowser/Objects/stringlib/find.h' l='119' u='w'/>
+<doc f='codebrowser/Objects/stringlib/find.h' l='74'>/*
+This function is a helper for the &quot;find&quot; family (find, rfind, index,
+rindex) and for count, startswith and endswith, because they all have
+the same behaviour for the arguments.
+
+It does not touch the variables received until it knows everything
+is ok.
+*/</doc>

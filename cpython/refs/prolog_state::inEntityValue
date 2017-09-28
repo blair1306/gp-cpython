@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/expat/xmlrole.h' l='98' type='int'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1340' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1406' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4127' u='r' c='externalParEntInitProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5725' u='r' c='storeEntityValue'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5726' u='w' c='storeEntityValue'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5887' u='w' c='storeEntityValue'/>
+<offset>192</offset>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='1344' u='w' c='PyExpat_XmlPrologStateInit'/>

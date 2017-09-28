@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/abstract.h' l='816' type='PyObject * PyNumber_InPlaceXor(PyObject * o1, PyObject * o2)'/>
+<doc f='codebrowser/Include/abstract.h' l='812'>/* Returns the bitwise exclusive or of o1 by o2, possibly in-place, or NULL
+   on failure.
+
+   This is the equivalent of the Python expression: o1 ^= o2. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='418' u='c' c='_operator_ixor_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='1069' macro='1' type='PyObject * PyNumber_InPlaceXor(PyObject * v, PyObject * w)'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='525' u='c' c='proxy_ixor'/>
+<use f='codebrowser/Python/ceval.c' l='1677' u='c' c='_PyEval_EvalFrameDefault'/>

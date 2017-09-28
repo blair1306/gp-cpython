@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/frameobject.h' l='40' type='PyObject *'/>
+<offset>1024</offset>
+<doc f='codebrowser/Include/frameobject.h' l='39'>/* Borrowed reference to a generator, or NULL */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='528' u='r' c='frame_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='529' u='r' c='frame_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='530' u='r' c='frame_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='730' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/genobject.c' l='112' u='w' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='293' u='w' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='807' u='w' c='gen_new_with_qualname'/>

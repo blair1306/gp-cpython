@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/objimpl.h' l='331' type='PyObject * _PyObject_GC_Malloc(size_t size)'/>
+<def f='codebrowser/Modules/gcmodule.c' l='1763' ll='1767' type='PyObject * _PyObject_GC_Malloc(size_t basicsize)'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1778' u='c' c='_PyObject_GC_New'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1795' u='c' c='_PyObject_GC_NewVar'/>
+<use f='codebrowser/Objects/typeobject.c' l='962' u='c' c='PyType_GenericAlloc'/>

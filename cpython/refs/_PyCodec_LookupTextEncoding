@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/codecs.h' l='115' type='PyObject * _PyCodec_LookupTextEncoding(const char * encoding, const char * alternate_command)'/>
+<doc f='codebrowser/Include/codecs.h' l='102'>/* Text codec specific encoding and decoding API.
+
+   Checks the encoding against a list of codecs which do not
+   implement a str&lt;-&gt;bytes encoding before attempting the
+   operation.
+
+   Please note that these APIs are internal and should not
+   be used in Python C extensions.
+
+   XXX (ncoghlan): should we make these, or something like them, public
+   in Python 3.5+?
+
+ */</doc>
+<use f='codebrowser/Modules/_io/textio.c' l='947' u='c' c='_io_TextIOWrapper___init___impl'/>
+<def f='codebrowser/Python/codecs.c' l='525' ll='567' type='PyObject * _PyCodec_LookupTextEncoding(const char * encoding, const char * alternate_command)'/>
+<use f='codebrowser/Python/codecs.c' l='578' u='c' c='codec_getitem_checked'/>
+<doc f='codebrowser/Python/codecs.c' l='524'>/* Text encoding/decoding API */</doc>

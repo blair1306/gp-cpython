@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>python.c source code [codebrowser/Programs/python.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="main "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Programs/python.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Programs</a>/<a href='python.c.html'>python.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Minimal main program -- everything is loaded from the library */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../../include/locale.h.html">&lt;locale.h&gt;</a></u></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><u>#<span data-ppcond="6">ifdef</span> <span class="macro" data-ref="_M/__FreeBSD__">__FreeBSD__</span></u></td></tr>
+<tr><th id="7">7</th><td><u>#include &lt;fenv.h&gt;</u></td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="6">endif</span></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#<span data-ppcond="10">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="11">11</th><td><em>int</em></td></tr>
+<tr><th id="12">12</th><td>wmain(<em>int</em> argc, wchar_t **argv)</td></tr>
+<tr><th id="13">13</th><td>{</td></tr>
+<tr><th id="14">14</th><td>    <b>return</b> Py_Main(argc, argv);</td></tr>
+<tr><th id="15">15</th><td>}</td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="10">else</span></u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><i>/* Access private pylifecycle helper API to better handle the legacy C locale</i></td></tr>
+<tr><th id="19">19</th><td><i> *</i></td></tr>
+<tr><th id="20">20</th><td><i> * The legacy C locale assumes ASCII as the default text encoding, which</i></td></tr>
+<tr><th id="21">21</th><td><i> * causes problems not only for the CPython runtime, but also other</i></td></tr>
+<tr><th id="22">22</th><td><i> * components like GNU readline.</i></td></tr>
+<tr><th id="23">23</th><td><i> *</i></td></tr>
+<tr><th id="24">24</th><td><i> * Accordingly, when the CLI detects it, it attempts to coerce it to a</i></td></tr>
+<tr><th id="25">25</th><td><i> * more capable UTF-8 based alternative.</i></td></tr>
+<tr><th id="26">26</th><td><i> *</i></td></tr>
+<tr><th id="27">27</th><td><i> * See the documentation of the PYTHONCOERCECLOCALE setting for more details.</i></td></tr>
+<tr><th id="28">28</th><td><i> *</i></td></tr>
+<tr><th id="29">29</th><td><i> */</i></td></tr>
+<tr><th id="30">30</th><td><b>extern</b> <em>int</em> <dfn class="decl" id="_Py_LegacyLocaleDetected" title='_Py_LegacyLocaleDetected' data-ref="_Py_LegacyLocaleDetected">_Py_LegacyLocaleDetected</dfn>(<em>void</em>);</td></tr>
+<tr><th id="31">31</th><td><b>extern</b> <em>void</em> <dfn class="decl" id="_Py_CoerceLegacyLocale" title='_Py_CoerceLegacyLocale' data-ref="_Py_CoerceLegacyLocale">_Py_CoerceLegacyLocale</dfn>(<em>void</em>);</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><em>int</em></td></tr>
+<tr><th id="34">34</th><td><dfn class="decl def" id="main" title='main' data-ref="main">main</dfn>(<em>int</em> <dfn class="local col1 decl" id="1argc" title='argc' data-type='int' data-ref="1argc">argc</dfn>, <em>char</em> **<dfn class="local col2 decl" id="2argv" title='argv' data-type='char **' data-ref="2argv">argv</dfn>)</td></tr>
+<tr><th id="35">35</th><td>{</td></tr>
+<tr><th id="36">36</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **<dfn class="local col3 decl" id="3argv_copy" title='argv_copy' data-type='wchar_t **' data-ref="3argv_copy">argv_copy</dfn>;</td></tr>
+<tr><th id="37">37</th><td>    <i>/* We need a second copy, as Python might modify the first one. */</i></td></tr>
+<tr><th id="38">38</th><td>    <span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **<dfn class="local col4 decl" id="4argv_copy2" title='argv_copy2' data-type='wchar_t **' data-ref="4argv_copy2">argv_copy2</dfn>;</td></tr>
+<tr><th id="39">39</th><td>    <em>int</em> <dfn class="local col5 decl" id="5i" title='i' data-type='int' data-ref="5i">i</dfn>, <dfn class="local col6 decl" id="6res" title='res' data-type='int' data-ref="6res">res</dfn>;</td></tr>
+<tr><th id="40">40</th><td>    <em>char</em> *<dfn class="local col7 decl" id="7oldloc" title='oldloc' data-type='char *' data-ref="7oldloc">oldloc</dfn>;</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>    <i>/* Force malloc() allocator to bootstrap Python */</i></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="43">ifdef</span> <a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a></u></td></tr>
+<tr><th id="44">44</th><td>    (<em>void</em>)<a class="ref" href="../Include/pymem.h.html#_PyMem_SetupAllocators" title='_PyMem_SetupAllocators' data-ref="_PyMem_SetupAllocators">_PyMem_SetupAllocators</a>(<q>"malloc_debug"</q>);</td></tr>
+<tr><th id="45">45</th><td><u>#  <span data-ppcond="43">else</span></u></td></tr>
+<tr><th id="46">46</th><td>    (<em>void</em>)_PyMem_SetupAllocators(<q>"malloc"</q>);</td></tr>
+<tr><th id="47">47</th><td><u>#  <span data-ppcond="43">endif</span></u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td>    <a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a> = (<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **)<a class="ref" href="../Include/pymem.h.html#PyMem_RawMalloc" title='PyMem_RawMalloc' data-ref="PyMem_RawMalloc">PyMem_RawMalloc</a>(<b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>*) * (<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>+<var>1</var>));</td></tr>
+<tr><th id="50">50</th><td>    <a class="local col4 ref" href="#4argv_copy2" title='argv_copy2' data-ref="4argv_copy2">argv_copy2</a> = (<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span> **)<a class="ref" href="../Include/pymem.h.html#PyMem_RawMalloc" title='PyMem_RawMalloc' data-ref="PyMem_RawMalloc">PyMem_RawMalloc</a>(<b>sizeof</b>(<span class='typedef' title='wchar_t' data-type='int' data-ref="wchar_t">wchar_t</span>*) * (<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>+<var>1</var>));</td></tr>
+<tr><th id="51">51</th><td>    <b>if</b> (!<a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a> || !<a class="local col4 ref" href="#4argv_copy2" title='argv_copy2' data-ref="4argv_copy2">argv_copy2</a>) {</td></tr>
+<tr><th id="52">52</th><td>        <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"out of memory\n"</q>);</td></tr>
+<tr><th id="53">53</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="54">54</th><td>    }</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>    <i>/* 754 requires that FP exceptions run in "no stop" mode by default,</i></td></tr>
+<tr><th id="57">57</th><td><i>     * and until C vendors implement C99's ways to control FP exceptions,</i></td></tr>
+<tr><th id="58">58</th><td><i>     * Python requires non-stop mode.  Alas, some platforms enable FP</i></td></tr>
+<tr><th id="59">59</th><td><i>     * exceptions by default.  Here we disable them.</i></td></tr>
+<tr><th id="60">60</th><td><i>     */</i></td></tr>
+<tr><th id="61">61</th><td><u>#<span data-ppcond="61">ifdef</span> <span class="macro" data-ref="_M/__FreeBSD__">__FreeBSD__</span></u></td></tr>
+<tr><th id="62">62</th><td>    fedisableexcept(FE_OVERFLOW);</td></tr>
+<tr><th id="63">63</th><td><u>#<span data-ppcond="61">endif</span></u></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td>    <a class="local col7 ref" href="#7oldloc" title='oldloc' data-ref="7oldloc">oldloc</a> = <a class="ref" href="../Include/pymem.h.html#_PyMem_RawStrdup" title='_PyMem_RawStrdup' data-ref="_PyMem_RawStrdup">_PyMem_RawStrdup</a>(<a class="ref" href="../../include/locale.h.html#setlocale" title='setlocale' data-ref="setlocale">setlocale</a>(<a class="macro" href="../../include/locale.h.html#41" title="6" data-ref="_M/LC_ALL">LC_ALL</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>));</td></tr>
+<tr><th id="66">66</th><td>    <b>if</b> (!<a class="local col7 ref" href="#7oldloc" title='oldloc' data-ref="7oldloc">oldloc</a>) {</td></tr>
+<tr><th id="67">67</th><td>        <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"out of memory\n"</q>);</td></tr>
+<tr><th id="68">68</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="69">69</th><td>    }</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><u>#<span data-ppcond="71">ifdef</span> <span class="macro" data-ref="_M/__ANDROID__">__ANDROID__</span></u></td></tr>
+<tr><th id="72">72</th><td>    <i>/* Passing "" to setlocale() on Android requests the C locale rather</i></td></tr>
+<tr><th id="73">73</th><td><i>     * than checking environment variables, so request C.UTF-8 explicitly</i></td></tr>
+<tr><th id="74">74</th><td><i>     */</i></td></tr>
+<tr><th id="75">75</th><td>    setlocale(LC_ALL, <q>"C.UTF-8"</q>);</td></tr>
+<tr><th id="76">76</th><td><u>#<span data-ppcond="71">else</span></u></td></tr>
+<tr><th id="77">77</th><td>    <i>/* Reconfigure the locale to the default for this process */</i></td></tr>
+<tr><th id="78">78</th><td>    <a class="ref" href="../../include/locale.h.html#setlocale" title='setlocale' data-ref="setlocale">setlocale</a>(<a class="macro" href="../../include/locale.h.html#41" title="6" data-ref="_M/LC_ALL">LC_ALL</a>, <q>""</q>);</td></tr>
+<tr><th id="79">79</th><td><u>#<span data-ppcond="71">endif</span></u></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td>    <b>if</b> (<a class="ref" href="#_Py_LegacyLocaleDetected" title='_Py_LegacyLocaleDetected' data-ref="_Py_LegacyLocaleDetected">_Py_LegacyLocaleDetected</a>()) {</td></tr>
+<tr><th id="82">82</th><td>        <a class="ref" href="#_Py_CoerceLegacyLocale" title='_Py_CoerceLegacyLocale' data-ref="_Py_CoerceLegacyLocale">_Py_CoerceLegacyLocale</a>();</td></tr>
+<tr><th id="83">83</th><td>    }</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>    <i>/* Convert from char to wchar_t based on the locale settings */</i></td></tr>
+<tr><th id="86">86</th><td>    <b>for</b> (<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a> = <var>0</var>; <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a> &lt; <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>; <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>++) {</td></tr>
+<tr><th id="87">87</th><td>        <a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>] = <a class="ref" href="../Include/fileutils.h.html#Py_DecodeLocale" title='Py_DecodeLocale' data-ref="Py_DecodeLocale">Py_DecodeLocale</a>(<a class="local col2 ref" href="#2argv" title='argv' data-ref="2argv">argv</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>], <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="88">88</th><td>        <b>if</b> (!<a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>]) {</td></tr>
+<tr><th id="89">89</th><td>            <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col7 ref" href="#7oldloc" title='oldloc' data-ref="7oldloc">oldloc</a>);</td></tr>
+<tr><th id="90">90</th><td>            <a class="ref" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>, <q>"Fatal Python error: "</q></td></tr>
+<tr><th id="91">91</th><td>                            <q>"unable to decode the command line argument #%i\n"</q>,</td></tr>
+<tr><th id="92">92</th><td>                            <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a> + <var>1</var>);</td></tr>
+<tr><th id="93">93</th><td>            <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="94">94</th><td>        }</td></tr>
+<tr><th id="95">95</th><td>        <a class="local col4 ref" href="#4argv_copy2" title='argv_copy2' data-ref="4argv_copy2">argv_copy2</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>] = <a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>];</td></tr>
+<tr><th id="96">96</th><td>    }</td></tr>
+<tr><th id="97">97</th><td>    <a class="local col4 ref" href="#4argv_copy2" title='argv_copy2' data-ref="4argv_copy2">argv_copy2</a>[<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>] = <a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a>[<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>] = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>    <a class="ref" href="../../include/locale.h.html#setlocale" title='setlocale' data-ref="setlocale">setlocale</a>(<a class="macro" href="../../include/locale.h.html#41" title="6" data-ref="_M/LC_ALL">LC_ALL</a>, <a class="local col7 ref" href="#7oldloc" title='oldloc' data-ref="7oldloc">oldloc</a>);</td></tr>
+<tr><th id="100">100</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col7 ref" href="#7oldloc" title='oldloc' data-ref="7oldloc">oldloc</a>);</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td>    <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref" href="../Include/pylifecycle.h.html#Py_Main" title='Py_Main' data-ref="Py_Main">Py_Main</a>(<a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>, <a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a>);</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>    <i>/* Force again malloc() allocator to release memory blocks allocated</i></td></tr>
+<tr><th id="105">105</th><td><i>       before Py_Main() */</i></td></tr>
+<tr><th id="106">106</th><td><u>#<span data-ppcond="106">ifdef</span> <a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a></u></td></tr>
+<tr><th id="107">107</th><td>    (<em>void</em>)<a class="ref" href="../Include/pymem.h.html#_PyMem_SetupAllocators" title='_PyMem_SetupAllocators' data-ref="_PyMem_SetupAllocators">_PyMem_SetupAllocators</a>(<q>"malloc_debug"</q>);</td></tr>
+<tr><th id="108">108</th><td><u>#  <span data-ppcond="106">else</span></u></td></tr>
+<tr><th id="109">109</th><td>    (<em>void</em>)_PyMem_SetupAllocators(<q>"malloc"</q>);</td></tr>
+<tr><th id="110">110</th><td><u>#  <span data-ppcond="106">endif</span></u></td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td>    <b>for</b> (<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a> = <var>0</var>; <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a> &lt; <a class="local col1 ref" href="#1argc" title='argc' data-ref="1argc">argc</a>; <a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>++) {</td></tr>
+<tr><th id="113">113</th><td>        <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col4 ref" href="#4argv_copy2" title='argv_copy2' data-ref="4argv_copy2">argv_copy2</a>[<a class="local col5 ref" href="#5i" title='i' data-ref="5i">i</a>]);</td></tr>
+<tr><th id="114">114</th><td>    }</td></tr>
+<tr><th id="115">115</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col3 ref" href="#3argv_copy" title='argv_copy' data-ref="3argv_copy">argv_copy</a>);</td></tr>
+<tr><th id="116">116</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_RawFree" title='PyMem_RawFree' data-ref="PyMem_RawFree">PyMem_RawFree</a>(<a class="local col4 ref" href="#4argv_copy2" title='argv_copy2' data-ref="4argv_copy2">argv_copy2</a>);</td></tr>
+<tr><th id="117">117</th><td>    <b>return</b> <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>;</td></tr>
+<tr><th id="118">118</th><td>}</td></tr>
+<tr><th id="119">119</th><td><u>#<span data-ppcond="10">endif</span></u></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

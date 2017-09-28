@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='780' type='Py_UNICODE * PyUnicode_AsUnicodeAndSize(PyObject * unicode, Py_ssize_t * size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='775'>/* Return a read-only pointer to the Unicode object&apos;s internal
+   Py_UNICODE buffer and save the length at size.
+   If the wchar_t/Py_UNICODE representation is not yet available, this
+   function will calculate it. */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='713' u='c' c='_codecs_unicode_internal_encode_impl'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1282' u='c' c='WCharArray_set_value'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1245' u='c' c='U_set'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2977' u='c' c='PyUnicode_AsWideChar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3006' u='c' c='PyUnicode_AsWideCharString'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4014' ll='4129' type='Py_UNICODE * PyUnicode_AsUnicodeAndSize(PyObject * unicode, Py_ssize_t * size)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4134' u='c' c='PyUnicode_AsUnicode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4143' u='c' c='_PyUnicode_AsUnicode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15654' u='c' c='PyUnicode_AsUnicodeCopy'/>
+<use f='codebrowser/Python/getargs.c' l='1060' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='1075' u='c' c='convertsimple'/>

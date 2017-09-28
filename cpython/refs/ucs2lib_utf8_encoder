@@ -1,0 +1,2 @@
+<def f='codebrowser/Objects/stringlib/codecs.h' l='260' macro='1' type='PyObject * ucs2lib_utf8_encoder(PyObject * unicode, Py_UCS2 * data, Py_ssize_t size, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5192' u='c' c='_PyUnicode_AsUTF8String'/>

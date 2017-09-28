@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/classobject.h' l='46' type='PyObject * PyInstanceMethod_New(PyObject * )'/>
+<def f='codebrowser/Objects/classobject.c' l='411' ll='421' type='PyObject * PyInstanceMethod_New(PyObject * func)'/>
+<use f='codebrowser/Objects/classobject.c' l='605' u='c' c='instancemethod_new'/>
+<doc f='codebrowser/Objects/classobject.c' l='407'>/* ------------------------------------------------------------------------
+ * instance method
+ */</doc>

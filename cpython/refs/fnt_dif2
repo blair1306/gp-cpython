@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/difradix2.h' l='42' type='void fnt_dif2(mpd_uint_t * a, mpd_size_t n, struct fnt_params * tparams)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='72' ll='171' type='void fnt_dif2(mpd_uint_t * a, mpd_size_t n, struct fnt_params * tparams)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='71'>/* Fast Number Theoretic Transform, decimation in frequency. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='55' u='c' c='std_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='74' u='c' c='std_inv_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='80' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='114' u='c' c='six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='168' u='c' c='inv_six_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='202' u='c' c='inv_six_step_fnt'/>

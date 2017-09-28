@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/ceval.h' l='130' type='const char * PyEval_GetFuncDesc(PyObject * )'/>
+<use f='codebrowser/Python/ceval.c' l='2745' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2751' u='c' c='_PyEval_EvalFrameDefault'/>
+<def f='codebrowser/Python/ceval.c' l='4759' ll='4770' type='const char * PyEval_GetFuncDesc(PyObject * func)'/>
+<use f='codebrowser/Python/ceval.c' l='5171' u='c' c='check_args_iterable'/>
+<use f='codebrowser/Python/ceval.c' l='5185' u='c' c='format_kwargs_mapping_error'/>

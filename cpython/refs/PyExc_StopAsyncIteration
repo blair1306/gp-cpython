@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='153' type='PyObject *'/>
+<def f='codebrowser/Objects/exceptions.c' l='468' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2511' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2583' macro='1' u='r'/>
+<use f='codebrowser/Objects/genobject.c' l='152' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='204' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='271' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='1538' u='r' c='async_gen_unwrap_value'/>
+<use f='codebrowser/Objects/genobject.c' l='1541' u='r' c='async_gen_unwrap_value'/>
+<use f='codebrowser/Objects/genobject.c' l='1941' u='r' c='async_gen_athrow_send'/>

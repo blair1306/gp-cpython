@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/descrobject.h' l='86' type='PyObject * PyDescr_NewClassMethod(PyTypeObject * , PyMethodDef * )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2059' u='c' c='PyCSimpleType_new'/>
+<def f='codebrowser/Objects/descrobject.c' l='738' ll='748' type='PyObject * PyDescr_NewClassMethod(PyTypeObject * type, PyMethodDef * method)'/>
+<use f='codebrowser/Objects/typeobject.c' l='4668' u='c' c='add_methods'/>

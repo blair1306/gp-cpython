@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/codecs.h' l='223' type='PyObject * PyCodec_XMLCharRefReplaceErrors(PyObject * exc)'/>
+<doc f='codebrowser/Include/codecs.h' l='222'>/* replace the unicode encode error with XML character references */</doc>
+<def f='codebrowser/Python/codecs.c' l='760' ll='856' type='PyObject * PyCodec_XMLCharRefReplaceErrors(PyObject * exc)'/>
+<use f='codebrowser/Python/codecs.c' l='1390' u='c' c='xmlcharrefreplace_errors'/>

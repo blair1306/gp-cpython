@@ -1,0 +1,9 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='56' type='int'/>
+<offset>7360</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='56'>/* whether erred in decoding  */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='143' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='199' u='w' c='error_ret'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1024' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1071' u='r' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1321' u='r' c='verify_identifier'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1903' u='r' c='PyTokenizer_Get'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='82' type='int PyTokenizer_Get(struct tok_state * , char ** , char ** )'/>
+<use f='codebrowser/Parser/parsetok.c' l='208' u='c' c='parsetok'/>
+<def f='codebrowser/Parser/tokenizer.c' l='1899' ll='1908' type='int PyTokenizer_Get(struct tok_state * tok, char ** p_start, char ** p_end)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1960' u='c' c='PyTokenizer_FindEncodingFilename'/>

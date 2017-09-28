@@ -1,0 +1,6 @@
+<dec f='include/netinet/in.h' l='260' type='uint32_t'/>
+<offset>192</offset>
+<doc f='include/netinet/in.h' l='260'>/* IPv6 scope-id */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='1242' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1672' u='w' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6082' u='w' c='socket_getnameinfo'/>

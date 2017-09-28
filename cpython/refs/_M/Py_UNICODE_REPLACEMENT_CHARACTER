@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='580'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='575'>/* This Unicode character will be used as replacement character during
+   decoding if the errors argument is set to &quot;replace&quot;. Note: the
+   Unicode character U+FFFD is the official REPLACEMENT CHARACTER in
+   Unicode 3.0. */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='390' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1145' u='c'/>
+<use f='codebrowser/Python/codecs.c' l='732' u='c'/>
+<use f='codebrowser/Python/codecs.c' l='744' u='c'/>
+<use f='codebrowser/Python/codecs.c' l='750' u='c'/>

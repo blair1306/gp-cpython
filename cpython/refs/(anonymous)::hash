@@ -1,0 +1,91 @@
+<dec f='codebrowser/Include/pyhash.h' l='88' type='Py_hash_t (*const)(const void *, Py_ssize_t)'/>
+<dec f='codebrowser/Include/unicodeobject.h' l='277' type='Py_hash_t'/>
+<dec f='codebrowser/Include/memoryobject.h' l='60' type='Py_hash_t'/>
+<dec f='codebrowser/Include/setobject.h' l='28' type='Py_hash_t'/>
+<dec f='codebrowser/Include/setobject.h' l='60' type='Py_hash_t'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/unicodeobject.h' l='277'>/* Hash value; -1 if not set */</doc>
+<doc f='codebrowser/Include/memoryobject.h' l='60'>/* hash value for read-only views */</doc>
+<doc f='codebrowser/Include/setobject.h' l='28'>/* Cached hash code of the key */</doc>
+<doc f='codebrowser/Include/setobject.h' l='60'>/* Only used by frozenset objects */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2303' u='r' c='_count_elements'/>
+<use f='codebrowser/Objects/dictobject.c' l='1253' u='r' c='PyDict_GetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='1328' u='r' c='PyDict_GetItemWithError'/>
+<use f='codebrowser/Objects/dictobject.c' l='1367' u='r' c='_PyDict_LoadGlobal'/>
+<use f='codebrowser/Objects/dictobject.c' l='1407' u='r' c='PyDict_SetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='1468' u='r' c='PyDict_DelItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='1746' u='r' c='_PyDict_Pop'/>
+<use f='codebrowser/Objects/dictobject.c' l='1972' u='r' c='dict_subscript'/>
+<use f='codebrowser/Objects/dictobject.c' l='2648' u='r' c='dict___contains__'/>
+<use f='codebrowser/Objects/dictobject.c' l='2680' u='r' c='dict_get_impl'/>
+<use f='codebrowser/Objects/dictobject.c' l='2708' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='3030' u='r' c='PyDict_Contains'/>
+<use f='codebrowser/Objects/memoryobject.c' l='628' u='w' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2830' u='r' c='memory_hash'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2867' u='w' c='memory_hash'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2873' u='r' c='memory_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='65' u='r' c='set_lookkey'/>
+<use f='codebrowser/Objects/setobject.c' l='91' u='r' c='set_lookkey'/>
+<use f='codebrowser/Objects/setobject.c' l='93' u='r' c='set_lookkey'/>
+<use f='codebrowser/Objects/setobject.c' l='157' u='r' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='182' u='r' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='188' u='r' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='190' u='r' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='211' u='r' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='229' u='w' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='236' u='w' c='set_add_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='283' u='w' c='set_insert_clean'/>
+<use f='codebrowser/Objects/setobject.c' l='361' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='368' u='r' c='set_table_resize'/>
+<use f='codebrowser/Objects/setobject.c' l='405' u='w' c='set_discard_entry'/>
+<use f='codebrowser/Objects/setobject.c' l='417' u='r' c='set_add_key'/>
+<use f='codebrowser/Objects/setobject.c' l='431' u='r' c='set_contains_key'/>
+<use f='codebrowser/Objects/setobject.c' l='445' u='r' c='set_discard_key'/>
+<use f='codebrowser/Objects/setobject.c' l='461' u='w' c='set_empty_to_minsize'/>
+<use f='codebrowser/Objects/setobject.c' l='661' u='w' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='661' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='679' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='690' u='r' c='set_merge'/>
+<use f='codebrowser/Objects/setobject.c' l='718' u='w' c='set_pop'/>
+<use f='codebrowser/Objects/setobject.c' l='762' u='r' c='frozenset_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='763' u='r' c='frozenset_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='776' u='r' c='frozenset_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='796' u='w' c='frozenset_hash'/>
+<use f='codebrowser/Objects/setobject.c' l='1055' u='w' c='make_new_set'/>
+<use f='codebrowser/Objects/setobject.c' l='1161' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1161' u='w' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1161' u='r' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1161' u='w' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1163' u='w' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1164' u='w' c='set_swap_bodies'/>
+<use f='codebrowser/Objects/setobject.c' l='1282' u='r' c='set_intersection'/>
+<use f='codebrowser/Objects/setobject.c' l='1433' u='r' c='set_isdisjoint'/>
+<use f='codebrowser/Objects/setobject.c' l='1489' u='r' c='set_difference_update_internal'/>
+<use f='codebrowser/Objects/setobject.c' l='1582' u='r' c='set_difference'/>
+<use f='codebrowser/Objects/setobject.c' l='1601' u='r' c='set_difference'/>
+<use f='codebrowser/Objects/setobject.c' l='1708' u='r' c='set_symmetric_difference_update'/>
+<use f='codebrowser/Objects/setobject.c' l='1792' u='r' c='set_issubset'/>
+<use f='codebrowser/Objects/setobject.c' l='1834' u='r' c='set_richcompare'/>
+<use f='codebrowser/Objects/setobject.c' l='1835' u='r' c='set_richcompare'/>
+<use f='codebrowser/Objects/setobject.c' l='1836' u='r' c='set_richcompare'/>
+<use f='codebrowser/Objects/setobject.c' l='1836' u='r' c='set_richcompare'/>
+<use f='codebrowser/Objects/setobject.c' l='2018' u='w' c='set_init'/>
+<use f='codebrowser/Objects/setobject.c' l='2362' u='r' c='_PySet_NextEntry'/>
+<use f='codebrowser/Objects/typeobject.c' l='31' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='31' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='3008' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='408' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='w' c='_PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='unicode_modifiable'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='_PyUnicode_EqualToASCIIId'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='_PyUnicode_EqualToASCIIId'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='_PyUnicode_EqualToASCIIId'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='unicode_hash'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='unicode_hash'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='w' c='unicode_hash'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='w' c='unicode_hash'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='w' c='unicode_subtype_new'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='w' c='unicode_subtype_new'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='117' u='r' c='unicode_subtype_new'/>
+<use f='codebrowser/Python/pyhash.c' l='186' u='r' c='_Py_HashBytes'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='496' type='int mpd_compare_total(mpd_t * result, const mpd_t * a, const mpd_t * b)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4267' u='c' c='dec_mpd_compare_total'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5340' u='c' c='ctx_mpd_compare_total'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2329' ll='2337' type='int mpd_compare_total(mpd_t * result, const mpd_t * a, const mpd_t * b)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2324'>/*
+ * Compare a and b according to a total order, convert the usual integer result
+ * to a decimal and store it in &apos;result&apos;. For convenience, the integer result
+ * of the comparison is returned.
+ */</doc>

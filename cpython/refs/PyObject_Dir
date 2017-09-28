@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/object.h' l='586' type='PyObject * PyObject_Dir(PyObject * )'/>
+<doc f='codebrowser/Include/object.h' l='581'>/* PyObject_Dir(obj) acts like Python builtins.dir(obj), returning a
+   list of strings.  PyObject_Dir(NULL) is like builtins.dir(),
+   returning the names of the current locals.  In this case, if there are
+   no current locals, NULL is returned, and PyErr_Occurred() is false.
+*/</doc>
+<def f='codebrowser/Objects/object.c' l='1425' ll='1429' type='PyObject * PyObject_Dir(PyObject * obj)'/>
+<doc f='codebrowser/Objects/object.c' l='1421'>/* Implementation of dir() -- if obj is NULL, returns the names in the current
+   (local) scope.  Otherwise, performs introspection of the object: returns a
+   sorted list of attribute names (supposedly) accessible from the object
+*/</doc>
+<use f='codebrowser/Python/bltinmodule.c' l='784' u='c' c='builtin_dir'/>

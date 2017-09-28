@@ -1,0 +1,6 @@
+<dec f='include/openssl/ssl.h' l='2163' type='BIO * SSL_get_wbio(const SSL * s)'/>
+<use f='codebrowser/Modules/_ssl.c' l='683' u='c' c='newPySSLSocket'/>
+<use f='codebrowser/Modules/_ssl.c' l='732' u='c' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1972' u='c' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2130' u='c' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2224' u='c' c='_ssl__SSLSocket_shutdown_impl'/>

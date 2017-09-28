@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pystate.h' l='135' type='PyObject *'/>
+<offset>768</offset>
+<use f='codebrowser/Python/errors.c' l='44' u='r' c='PyErr_Restore'/>
+<use f='codebrowser/Python/errors.c' l='48' u='w' c='PyErr_Restore'/>
+<use f='codebrowser/Python/errors.c' l='319' u='r' c='PyErr_Fetch'/>
+<use f='codebrowser/Python/errors.c' l='323' u='w' c='PyErr_Fetch'/>
+<use f='codebrowser/Python/pystate.c' l='267' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='456' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='456' u='w' c='PyThreadState_Clear'/>

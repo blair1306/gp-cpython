@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/import.h' l='52' type='PyObject * PyImport_ImportModuleNoBlock(const char * name)'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2818' u='c' c='update_lines_cols'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1358' u='c' c='wrap_strftime'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1388' u='c' c='time_time'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1411' u='c' c='build_struct_time'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4480' u='c' c='datetime_strptime'/>
+<use f='codebrowser/Modules/cjkcodecs/cjkcodecs.h' l='249' u='c' c='getmultibytecodec'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1202' u='c' c='PyInit_parser'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6847' u='c' c='wait_helper'/>
+<use f='codebrowser/Modules/timemodule.c' l='726' u='c' c='time_strptime'/>
+<use f='codebrowser/Modules/timemodule.c' l='879' u='c' c='time_tzset'/>
+<use f='codebrowser/Modules/zipimport.c' l='1118' u='c' c='get_decompress_func'/>
+<use f='codebrowser/Objects/capsule.c' l='218' u='c' c='PyCapsule_Import'/>
+<use f='codebrowser/Parser/tokenizer.c' l='522' u='c' c='fp_setreadl'/>
+<use f='codebrowser/Python/ast.c' l='627' u='c' c='init_normalization'/>
+<use f='codebrowser/Python/codecs.c' l='1531' u='c' c='_PyCodecRegistry_Init'/>
+<def f='codebrowser/Python/import.c' l='1270' ll='1274' type='PyObject * PyImport_ImportModuleNoBlock(const char * name)'/>
+<doc f='codebrowser/Python/import.c' l='1261'>/* Import a module without blocking
+ *
+ * At first it tries to fetch the module from sys.modules. If the module was
+ * never loaded before it loads it with PyImport_ImportModule() unless another
+ * thread holds the import lock. In the latter case the function raises an
+ * ImportError instead of blocking.
+ *
+ * Returns the module object with incremented ref count.
+ */</doc>
+<use f='codebrowser/Python/traceback.c' l='283' u='c' c='_Py_DisplaySourceLine'/>

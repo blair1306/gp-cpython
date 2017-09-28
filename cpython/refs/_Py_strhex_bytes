@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pystrhex.h' l='12' type='PyObject * _Py_strhex_bytes(const char * argbuf, const Py_ssize_t arglen)'/>
+<doc f='codebrowser/Include/pystrhex.h' l='11'>/* Returns a bytes() containing the ASCII hex representation of argbuf. */</doc>
+<use f='codebrowser/Modules/binascii.c' l='1115' u='c' c='binascii_b2a_hex_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='1130' u='c' c='binascii_hexlify_impl'/>
+<def f='codebrowser/Python/pystrhex.c' l='58' ll='61' macro='1' type='PyObject * _Py_strhex_bytes(const char * argbuf, const Py_ssize_t arglen)'/>
+<doc f='codebrowser/Python/pystrhex.c' l='56'>/* Same as above but returns a bytes() instead of str() to avoid the
+ * need to decode the str() when bytes are needed. */</doc>

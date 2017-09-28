@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='453' type='mpd_uint_t mpd_qget_uint(const mpd_t * dec, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1325' ll='1329' type='mpd_uint_t mpd_qget_uint(const mpd_t * a, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1452' u='c' c='mpd_qget_u64'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1466' u='c' c='mpd_qget_u32'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1318'>/*
+ * Sets Invalid_operation for:
+ *   - specials
+ *   - negative numbers (except negative zero)
+ *   - non-integers
+ *   - overflow
+ */</doc>

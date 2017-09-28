@@ -1,0 +1,5 @@
+<dec f='include/openssl/bio.h' l='664' type='int BIO_gets(BIO * bp, char * buf, int size)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1085' u='c' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/_ssl.c' l='1315' u='c' c='_decode_certificate'/>
+<use f='codebrowser/Modules/_ssl.c' l='1332' u='c' c='_decode_certificate'/>
+<use f='codebrowser/Modules/_ssl.c' l='1349' u='c' c='_decode_certificate'/>

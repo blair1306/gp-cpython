@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/object.h' l='561' type='void PyObject_CallFinalizer(PyObject * )'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='282' u='c' c='_PyIOBase_finalize'/>
+<def f='codebrowser/Objects/object.c' l='283' ll='300' type='void PyObject_CallFinalizer(PyObject * self)'/>
+<use f='codebrowser/Objects/object.c' l='314' u='c' c='PyObject_CallFinalizerFromDealloc'/>

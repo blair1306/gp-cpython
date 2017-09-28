@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pyerrors.h' l='249' type='PyObject * PyErr_SetFromErrnoWithFilename(PyObject * exc, const char * filename)'/>
+<use f='codebrowser/Modules/main.c' l='147' u='c' c='RunStartupFile'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='131' u='c' c='newossobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='137' u='c' c='newossobject'/>
+<use f='codebrowser/Parser/tokenizer.c' l='518' u='c' c='fp_setreadl'/>
+<def f='codebrowser/Python/errors.c' l='560' ll='567' type='PyObject * PyErr_SetFromErrnoWithFilename(PyObject * exc, const char * filename)'/>
+<use f='codebrowser/Python/fileutils.c' l='969' u='c' c='_Py_open_impl'/>

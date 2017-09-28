@@ -1,0 +1,11 @@
+<dec f='codebrowser/Python/pyarena.c' l='50' type='block *'/>
+<use f='codebrowser/Python/pyarena.c' l='134' u='w' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='135' u='r' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='136' u='r' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='142' u='r' c='PyArena_New'/>
+<use f='codebrowser/Python/pyarena.c' l='169' u='r' c='PyArena_Free'/>
+<offset>0</offset>
+<doc f='codebrowser/Python/pyarena.c' l='46'>/* Pointer to the first block allocated for the arena, never NULL.
+       It is used only to find the first block when the arena is
+       being freed.
+     */</doc>

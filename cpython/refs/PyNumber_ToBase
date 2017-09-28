@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/abstract.h' l='828' type='PyObject * PyNumber_ToBase(PyObject * n, int base)'/>
+<doc f='codebrowser/Include/abstract.h' l='824'>/* Returns the integer n converted to a string with a base, with a base
+   marker of 0b, 0o or 0x prefixed if applicable.
+
+   If n is not an int object, it is converted with PyNumber_Index first. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='1463' ll='1480' type='PyObject * PyNumber_ToBase(PyObject * n, int base)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14206' u='c' c='_PyUnicode_FormatLong'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14210' u='c' c='_PyUnicode_FormatLong'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14215' u='c' c='_PyUnicode_FormatLong'/>
+<use f='codebrowser/Python/bltinmodule.c' l='395' u='c' c='builtin_bin'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1427' u='c' c='builtin_hex'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1656' u='c' c='builtin_oct'/>

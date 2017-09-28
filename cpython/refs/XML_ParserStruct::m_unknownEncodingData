@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='568' type='void *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='665' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='665' u='r' c='PyExpat_XML_ParserReset'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='665' u='r' c='PyExpat_XML_ParserFree'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='665' u='w' c='handleUnknownEncoding'/>
+<offset>3840</offset>

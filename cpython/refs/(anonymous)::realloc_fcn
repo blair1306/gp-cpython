@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='199' type='void *(*)(void *, size_t)'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1004' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1004' u='r' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1014' u='w' c='parserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='PyExpat_XML_MemRealloc'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='storeRawNames'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='storeAtts'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='addBinding'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='defineAttribute'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='7005' u='r' c='poolGrow'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='625' u='r' c='nextScaffoldPart'/>

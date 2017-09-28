@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='545' type='PyObject * _PyObject_NextNotImplemented(PyObject * )'/>
+<use f='codebrowser/Modules/_pickle.c' l='3518' macro='1' u='a'/>
+<use f='codebrowser/Modules/_pickle.c' l='3527' macro='1' u='a'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1931' macro='1' u='a'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1931' macro='1' u='a'/>
+<use f='codebrowser/Objects/abstract.c' l='2504' macro='1' u='a'/>
+<use f='codebrowser/Objects/genobject.c' l='908' macro='1' u='a'/>
+<def f='codebrowser/Objects/object.c' l='1019' ll='1026' type='PyObject * _PyObject_NextNotImplemented(PyObject * self)'/>
+<doc f='codebrowser/Objects/object.c' l='1014'>/* Helper used when the __next__ method is removed from a type:
+   tp_iternext is never NULL and can be safely called without checking
+   on every iteration.
+ */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='6964' u='r' c='update_one_slot'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1307' macro='1' u='a'/>

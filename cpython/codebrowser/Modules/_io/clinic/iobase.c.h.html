@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>iobase.c.h source code [codebrowser/Modules/_io/clinic/iobase.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_io/clinic/iobase.c.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_io</a>/<a href='./'>clinic</a>/<a href='iobase.c.h.html'>iobase.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_tell__doc__[] = &quot;tell($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return current stream position.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_tell__doc__" title='_io__IOBase_tell__doc__' data-ref="_io__IOBase_tell__doc__">_io__IOBase_tell__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"tell($self, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return current stream position."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_TELL_METHODDEF" data-ref="_M/_IO__IOBASE_TELL_METHODDEF">_IO__IOBASE_TELL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"tell", (PyCFunction)_io__IOBase_tell, METH_NOARGS, _io__IOBase_tell__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_tell_impl" title='_io__IOBase_tell_impl' data-ref="_io__IOBase_tell_impl" id="_io__IOBase_tell_impl">_io__IOBase_tell_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="82self" title='self' data-type='PyObject *' data-ref="82self">self</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="_io__IOBase_tell" title='_io__IOBase_tell' data-ref="_io__IOBase_tell">_io__IOBase_tell</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="83self" title='self' data-type='PyObject *' data-ref="83self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_tell_impl" title='_io__IOBase_tell_impl' data-ref="_io__IOBase_tell_impl">_io__IOBase_tell_impl</a>(<a class="local col3 ref" href="#83self" title='self' data-ref="83self">self</a>);</td></tr>
+<tr><th id="21">21</th><td>}</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_flush__doc__[] = &quot;flush($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Flush write buffers, if applicable.\n&quot;&quot;\n&quot;&quot;This is not implemented for read-only and non-blocking streams.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_flush__doc__" title='_io__IOBase_flush__doc__' data-ref="_io__IOBase_flush__doc__">_io__IOBase_flush__doc__</dfn>,</td></tr>
+<tr><th id="24">24</th><td><q>"flush($self, /)\n"</q></td></tr>
+<tr><th id="25">25</th><td><q>"--\n"</q></td></tr>
+<tr><th id="26">26</th><td><q>"\n"</q></td></tr>
+<tr><th id="27">27</th><td><q>"Flush write buffers, if applicable.\n"</q></td></tr>
+<tr><th id="28">28</th><td><q>"\n"</q></td></tr>
+<tr><th id="29">29</th><td><q>"This is not implemented for read-only and non-blocking streams."</q>);</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_FLUSH_METHODDEF" data-ref="_M/_IO__IOBASE_FLUSH_METHODDEF">_IO__IOBASE_FLUSH_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="32">32</th><td><u>    {"flush", (PyCFunction)_io__IOBase_flush, METH_NOARGS, _io__IOBase_flush__doc__},</u></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="35">35</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_flush_impl" title='_io__IOBase_flush_impl' data-ref="_io__IOBase_flush_impl" id="_io__IOBase_flush_impl">_io__IOBase_flush_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="84self" title='self' data-type='PyObject *' data-ref="84self">self</dfn>);</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="38">38</th><td><dfn class="decl def" id="_io__IOBase_flush" title='_io__IOBase_flush' data-ref="_io__IOBase_flush">_io__IOBase_flush</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="85self" title='self' data-type='PyObject *' data-ref="85self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="39">39</th><td>{</td></tr>
+<tr><th id="40">40</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_flush_impl" title='_io__IOBase_flush_impl' data-ref="_io__IOBase_flush_impl">_io__IOBase_flush_impl</a>(<a class="local col5 ref" href="#85self" title='self' data-ref="85self">self</a>);</td></tr>
+<tr><th id="41">41</th><td>}</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_close__doc__[] = &quot;close($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Flush and close the IO object.\n&quot;&quot;\n&quot;&quot;This method has no effect if the file is already closed.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_close__doc__" title='_io__IOBase_close__doc__' data-ref="_io__IOBase_close__doc__">_io__IOBase_close__doc__</dfn>,</td></tr>
+<tr><th id="44">44</th><td><q>"close($self, /)\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"--\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"Flush and close the IO object.\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"This method has no effect if the file is already closed."</q>);</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_CLOSE_METHODDEF" data-ref="_M/_IO__IOBASE_CLOSE_METHODDEF">_IO__IOBASE_CLOSE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="52">52</th><td><u>    {"close", (PyCFunction)_io__IOBase_close, METH_NOARGS, _io__IOBase_close__doc__},</u></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="55">55</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_close_impl" title='_io__IOBase_close_impl' data-ref="_io__IOBase_close_impl" id="_io__IOBase_close_impl">_io__IOBase_close_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="86self" title='self' data-type='PyObject *' data-ref="86self">self</dfn>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="58">58</th><td><dfn class="decl def" id="_io__IOBase_close" title='_io__IOBase_close' data-ref="_io__IOBase_close">_io__IOBase_close</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="87self" title='self' data-type='PyObject *' data-ref="87self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="59">59</th><td>{</td></tr>
+<tr><th id="60">60</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_close_impl" title='_io__IOBase_close_impl' data-ref="_io__IOBase_close_impl">_io__IOBase_close_impl</a>(<a class="local col7 ref" href="#87self" title='self' data-ref="87self">self</a>);</td></tr>
+<tr><th id="61">61</th><td>}</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_seekable__doc__[] = &quot;seekable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether object supports random access.\n&quot;&quot;\n&quot;&quot;If False, seek(), tell() and truncate() will raise OSError.\n&quot;&quot;This method may need to do a test seek().&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_seekable__doc__" title='_io__IOBase_seekable__doc__' data-ref="_io__IOBase_seekable__doc__">_io__IOBase_seekable__doc__</dfn>,</td></tr>
+<tr><th id="64">64</th><td><q>"seekable($self, /)\n"</q></td></tr>
+<tr><th id="65">65</th><td><q>"--\n"</q></td></tr>
+<tr><th id="66">66</th><td><q>"\n"</q></td></tr>
+<tr><th id="67">67</th><td><q>"Return whether object supports random access.\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"If False, seek(), tell() and truncate() will raise OSError.\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"This method may need to do a test seek()."</q>);</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_SEEKABLE_METHODDEF" data-ref="_M/_IO__IOBASE_SEEKABLE_METHODDEF">_IO__IOBASE_SEEKABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="73">73</th><td><u>    {"seekable", (PyCFunction)_io__IOBase_seekable, METH_NOARGS, _io__IOBase_seekable__doc__},</u></td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="76">76</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_seekable_impl" title='_io__IOBase_seekable_impl' data-ref="_io__IOBase_seekable_impl" id="_io__IOBase_seekable_impl">_io__IOBase_seekable_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="88self" title='self' data-type='PyObject *' data-ref="88self">self</dfn>);</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="79">79</th><td><dfn class="decl def" id="_io__IOBase_seekable" title='_io__IOBase_seekable' data-ref="_io__IOBase_seekable">_io__IOBase_seekable</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="89self" title='self' data-type='PyObject *' data-ref="89self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="80">80</th><td>{</td></tr>
+<tr><th id="81">81</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_seekable_impl" title='_io__IOBase_seekable_impl' data-ref="_io__IOBase_seekable_impl">_io__IOBase_seekable_impl</a>(<a class="local col9 ref" href="#89self" title='self' data-ref="89self">self</a>);</td></tr>
+<tr><th id="82">82</th><td>}</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_readable__doc__[] = &quot;readable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether object was opened for reading.\n&quot;&quot;\n&quot;&quot;If False, read() will raise OSError.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_readable__doc__" title='_io__IOBase_readable__doc__' data-ref="_io__IOBase_readable__doc__">_io__IOBase_readable__doc__</dfn>,</td></tr>
+<tr><th id="85">85</th><td><q>"readable($self, /)\n"</q></td></tr>
+<tr><th id="86">86</th><td><q>"--\n"</q></td></tr>
+<tr><th id="87">87</th><td><q>"\n"</q></td></tr>
+<tr><th id="88">88</th><td><q>"Return whether object was opened for reading.\n"</q></td></tr>
+<tr><th id="89">89</th><td><q>"\n"</q></td></tr>
+<tr><th id="90">90</th><td><q>"If False, read() will raise OSError."</q>);</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_READABLE_METHODDEF" data-ref="_M/_IO__IOBASE_READABLE_METHODDEF">_IO__IOBASE_READABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="93">93</th><td><u>    {"readable", (PyCFunction)_io__IOBase_readable, METH_NOARGS, _io__IOBase_readable__doc__},</u></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="96">96</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_readable_impl" title='_io__IOBase_readable_impl' data-ref="_io__IOBase_readable_impl" id="_io__IOBase_readable_impl">_io__IOBase_readable_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="90self" title='self' data-type='PyObject *' data-ref="90self">self</dfn>);</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="99">99</th><td><dfn class="decl def" id="_io__IOBase_readable" title='_io__IOBase_readable' data-ref="_io__IOBase_readable">_io__IOBase_readable</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="91self" title='self' data-type='PyObject *' data-ref="91self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="100">100</th><td>{</td></tr>
+<tr><th id="101">101</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_readable_impl" title='_io__IOBase_readable_impl' data-ref="_io__IOBase_readable_impl">_io__IOBase_readable_impl</a>(<a class="local col1 ref" href="#91self" title='self' data-ref="91self">self</a>);</td></tr>
+<tr><th id="102">102</th><td>}</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_writable__doc__[] = &quot;writable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether object was opened for writing.\n&quot;&quot;\n&quot;&quot;If False, write() will raise OSError.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_writable__doc__" title='_io__IOBase_writable__doc__' data-ref="_io__IOBase_writable__doc__">_io__IOBase_writable__doc__</dfn>,</td></tr>
+<tr><th id="105">105</th><td><q>"writable($self, /)\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"--\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"\n"</q></td></tr>
+<tr><th id="108">108</th><td><q>"Return whether object was opened for writing.\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"\n"</q></td></tr>
+<tr><th id="110">110</th><td><q>"If False, write() will raise OSError."</q>);</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_WRITABLE_METHODDEF" data-ref="_M/_IO__IOBASE_WRITABLE_METHODDEF">_IO__IOBASE_WRITABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="113">113</th><td><u>    {"writable", (PyCFunction)_io__IOBase_writable, METH_NOARGS, _io__IOBase_writable__doc__},</u></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="116">116</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_writable_impl" title='_io__IOBase_writable_impl' data-ref="_io__IOBase_writable_impl" id="_io__IOBase_writable_impl">_io__IOBase_writable_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="92self" title='self' data-type='PyObject *' data-ref="92self">self</dfn>);</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="119">119</th><td><dfn class="decl def" id="_io__IOBase_writable" title='_io__IOBase_writable' data-ref="_io__IOBase_writable">_io__IOBase_writable</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="93self" title='self' data-type='PyObject *' data-ref="93self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="120">120</th><td>{</td></tr>
+<tr><th id="121">121</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_writable_impl" title='_io__IOBase_writable_impl' data-ref="_io__IOBase_writable_impl">_io__IOBase_writable_impl</a>(<a class="local col3 ref" href="#93self" title='self' data-ref="93self">self</a>);</td></tr>
+<tr><th id="122">122</th><td>}</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_fileno__doc__[] = &quot;fileno($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns underlying file descriptor if one exists.\n&quot;&quot;\n&quot;&quot;OSError is raised if the IO object does not use a file descriptor.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_fileno__doc__" title='_io__IOBase_fileno__doc__' data-ref="_io__IOBase_fileno__doc__">_io__IOBase_fileno__doc__</dfn>,</td></tr>
+<tr><th id="125">125</th><td><q>"fileno($self, /)\n"</q></td></tr>
+<tr><th id="126">126</th><td><q>"--\n"</q></td></tr>
+<tr><th id="127">127</th><td><q>"\n"</q></td></tr>
+<tr><th id="128">128</th><td><q>"Returns underlying file descriptor if one exists.\n"</q></td></tr>
+<tr><th id="129">129</th><td><q>"\n"</q></td></tr>
+<tr><th id="130">130</th><td><q>"OSError is raised if the IO object does not use a file descriptor."</q>);</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_FILENO_METHODDEF" data-ref="_M/_IO__IOBASE_FILENO_METHODDEF">_IO__IOBASE_FILENO_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="133">133</th><td><u>    {"fileno", (PyCFunction)_io__IOBase_fileno, METH_NOARGS, _io__IOBase_fileno__doc__},</u></td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="136">136</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_fileno_impl" title='_io__IOBase_fileno_impl' data-ref="_io__IOBase_fileno_impl" id="_io__IOBase_fileno_impl">_io__IOBase_fileno_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="94self" title='self' data-type='PyObject *' data-ref="94self">self</dfn>);</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="139">139</th><td><dfn class="decl def" id="_io__IOBase_fileno" title='_io__IOBase_fileno' data-ref="_io__IOBase_fileno">_io__IOBase_fileno</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="95self" title='self' data-type='PyObject *' data-ref="95self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="140">140</th><td>{</td></tr>
+<tr><th id="141">141</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_fileno_impl" title='_io__IOBase_fileno_impl' data-ref="_io__IOBase_fileno_impl">_io__IOBase_fileno_impl</a>(<a class="local col5 ref" href="#95self" title='self' data-ref="95self">self</a>);</td></tr>
+<tr><th id="142">142</th><td>}</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_isatty__doc__[] = &quot;isatty($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether this is an \&apos;interactive\&apos; stream.\n&quot;&quot;\n&quot;&quot;Return False if it can\&apos;t be determined.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_isatty__doc__" title='_io__IOBase_isatty__doc__' data-ref="_io__IOBase_isatty__doc__">_io__IOBase_isatty__doc__</dfn>,</td></tr>
+<tr><th id="145">145</th><td><q>"isatty($self, /)\n"</q></td></tr>
+<tr><th id="146">146</th><td><q>"--\n"</q></td></tr>
+<tr><th id="147">147</th><td><q>"\n"</q></td></tr>
+<tr><th id="148">148</th><td><q>"Return whether this is an \'interactive\' stream.\n"</q></td></tr>
+<tr><th id="149">149</th><td><q>"\n"</q></td></tr>
+<tr><th id="150">150</th><td><q>"Return False if it can\'t be determined."</q>);</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_ISATTY_METHODDEF" data-ref="_M/_IO__IOBASE_ISATTY_METHODDEF">_IO__IOBASE_ISATTY_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="153">153</th><td><u>    {"isatty", (PyCFunction)_io__IOBase_isatty, METH_NOARGS, _io__IOBase_isatty__doc__},</u></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="156">156</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_isatty_impl" title='_io__IOBase_isatty_impl' data-ref="_io__IOBase_isatty_impl" id="_io__IOBase_isatty_impl">_io__IOBase_isatty_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="96self" title='self' data-type='PyObject *' data-ref="96self">self</dfn>);</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="159">159</th><td><dfn class="decl def" id="_io__IOBase_isatty" title='_io__IOBase_isatty' data-ref="_io__IOBase_isatty">_io__IOBase_isatty</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="97self" title='self' data-type='PyObject *' data-ref="97self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="160">160</th><td>{</td></tr>
+<tr><th id="161">161</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__IOBase_isatty_impl" title='_io__IOBase_isatty_impl' data-ref="_io__IOBase_isatty_impl">_io__IOBase_isatty_impl</a>(<a class="local col7 ref" href="#97self" title='self' data-ref="97self">self</a>);</td></tr>
+<tr><th id="162">162</th><td>}</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_readline__doc__[] = &quot;readline($self, size=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Read and return a line from the stream.\n&quot;&quot;\n&quot;&quot;If size is specified, at most size bytes will be read.\n&quot;&quot;\n&quot;&quot;The line terminator is always b\&apos;\\n\&apos; for binary files; for text\n&quot;&quot;files, the newlines argument to open can be used to select the line\n&quot;&quot;terminator(s) recognized.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_readline__doc__" title='_io__IOBase_readline__doc__' data-ref="_io__IOBase_readline__doc__">_io__IOBase_readline__doc__</dfn>,</td></tr>
+<tr><th id="165">165</th><td><q>"readline($self, size=-1, /)\n"</q></td></tr>
+<tr><th id="166">166</th><td><q>"--\n"</q></td></tr>
+<tr><th id="167">167</th><td><q>"\n"</q></td></tr>
+<tr><th id="168">168</th><td><q>"Read and return a line from the stream.\n"</q></td></tr>
+<tr><th id="169">169</th><td><q>"\n"</q></td></tr>
+<tr><th id="170">170</th><td><q>"If size is specified, at most size bytes will be read.\n"</q></td></tr>
+<tr><th id="171">171</th><td><q>"\n"</q></td></tr>
+<tr><th id="172">172</th><td><q>"The line terminator is always b\'\\n\' for binary files; for text\n"</q></td></tr>
+<tr><th id="173">173</th><td><q>"files, the newlines argument to open can be used to select the line\n"</q></td></tr>
+<tr><th id="174">174</th><td><q>"terminator(s) recognized."</q>);</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_READLINE_METHODDEF" data-ref="_M/_IO__IOBASE_READLINE_METHODDEF">_IO__IOBASE_READLINE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="177">177</th><td><u>    {"readline", (PyCFunction)_io__IOBase_readline, METH_FASTCALL, _io__IOBase_readline__doc__},</u></td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="180">180</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_readline_impl" title='_io__IOBase_readline_impl' data-ref="_io__IOBase_readline_impl" id="_io__IOBase_readline_impl">_io__IOBase_readline_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="98self" title='self' data-type='PyObject *' data-ref="98self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="99limit" title='limit' data-type='Py_ssize_t' data-ref="99limit">limit</dfn>);</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="183">183</th><td><dfn class="decl def" id="_io__IOBase_readline" title='_io__IOBase_readline' data-ref="_io__IOBase_readline">_io__IOBase_readline</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="100self" title='self' data-type='PyObject *' data-ref="100self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="101args" title='args' data-type='PyObject **' data-ref="101args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="102nargs" title='nargs' data-type='Py_ssize_t' data-ref="102nargs">nargs</dfn>)</td></tr>
+<tr><th id="184">184</th><td>{</td></tr>
+<tr><th id="185">185</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="103return_value" title='return_value' data-type='PyObject *' data-ref="103return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="186">186</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="104limit" title='limit' data-type='Py_ssize_t' data-ref="104limit">limit</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col1 ref" href="#101args" title='args' data-ref="101args">args</a>, <a class="local col2 ref" href="#102nargs" title='nargs' data-ref="102nargs">nargs</a>, <q>"|O&amp;:readline"</q>,</td></tr>
+<tr><th id="189">189</th><td>        <a class="ref" href="../../../Include/abstract.h.html#_Py_convert_optional_to_ssize_t" title='_Py_convert_optional_to_ssize_t' data-ref="_Py_convert_optional_to_ssize_t">_Py_convert_optional_to_ssize_t</a>, &amp;<a class="local col4 ref" href="#104limit" title='limit' data-ref="104limit">limit</a>)) {</td></tr>
+<tr><th id="190">190</th><td>        <b>goto</b> <a class="lbl" href="#105exit" data-ref="105exit">exit</a>;</td></tr>
+<tr><th id="191">191</th><td>    }</td></tr>
+<tr><th id="192">192</th><td>    <a class="local col3 ref" href="#103return_value" title='return_value' data-ref="103return_value">return_value</a> = <a class="ref" href="../iobase.c.html#_io__IOBase_readline_impl" title='_io__IOBase_readline_impl' data-ref="_io__IOBase_readline_impl">_io__IOBase_readline_impl</a>(<a class="local col0 ref" href="#100self" title='self' data-ref="100self">self</a>, <a class="local col4 ref" href="#104limit" title='limit' data-ref="104limit">limit</a>);</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><dfn class="lbl" id="105exit" data-ref="105exit">exit</dfn>:</td></tr>
+<tr><th id="195">195</th><td>    <b>return</b> <a class="local col3 ref" href="#103return_value" title='return_value' data-ref="103return_value">return_value</a>;</td></tr>
+<tr><th id="196">196</th><td>}</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_readlines__doc__[] = &quot;readlines($self, hint=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a list of lines from the stream.\n&quot;&quot;\n&quot;&quot;hint can be specified to control the number of lines read: no more\n&quot;&quot;lines will be read if the total size (in bytes/characters) of all\n&quot;&quot;lines so far exceeds hint.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_readlines__doc__" title='_io__IOBase_readlines__doc__' data-ref="_io__IOBase_readlines__doc__">_io__IOBase_readlines__doc__</dfn>,</td></tr>
+<tr><th id="199">199</th><td><q>"readlines($self, hint=-1, /)\n"</q></td></tr>
+<tr><th id="200">200</th><td><q>"--\n"</q></td></tr>
+<tr><th id="201">201</th><td><q>"\n"</q></td></tr>
+<tr><th id="202">202</th><td><q>"Return a list of lines from the stream.\n"</q></td></tr>
+<tr><th id="203">203</th><td><q>"\n"</q></td></tr>
+<tr><th id="204">204</th><td><q>"hint can be specified to control the number of lines read: no more\n"</q></td></tr>
+<tr><th id="205">205</th><td><q>"lines will be read if the total size (in bytes/characters) of all\n"</q></td></tr>
+<tr><th id="206">206</th><td><q>"lines so far exceeds hint."</q>);</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_READLINES_METHODDEF" data-ref="_M/_IO__IOBASE_READLINES_METHODDEF">_IO__IOBASE_READLINES_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="209">209</th><td><u>    {"readlines", (PyCFunction)_io__IOBase_readlines, METH_FASTCALL, _io__IOBase_readlines__doc__},</u></td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="212">212</th><td><a class="decl" href="../iobase.c.html#_io__IOBase_readlines_impl" title='_io__IOBase_readlines_impl' data-ref="_io__IOBase_readlines_impl" id="_io__IOBase_readlines_impl">_io__IOBase_readlines_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="106self" title='self' data-type='PyObject *' data-ref="106self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="107hint" title='hint' data-type='Py_ssize_t' data-ref="107hint">hint</dfn>);</td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="215">215</th><td><dfn class="decl def" id="_io__IOBase_readlines" title='_io__IOBase_readlines' data-ref="_io__IOBase_readlines">_io__IOBase_readlines</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="108self" title='self' data-type='PyObject *' data-ref="108self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col9 decl" id="109args" title='args' data-type='PyObject **' data-ref="109args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="110nargs" title='nargs' data-type='Py_ssize_t' data-ref="110nargs">nargs</dfn>)</td></tr>
+<tr><th id="216">216</th><td>{</td></tr>
+<tr><th id="217">217</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="111return_value" title='return_value' data-type='PyObject *' data-ref="111return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="218">218</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="112hint" title='hint' data-type='Py_ssize_t' data-ref="112hint">hint</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col9 ref" href="#109args" title='args' data-ref="109args">args</a>, <a class="local col0 ref" href="#110nargs" title='nargs' data-ref="110nargs">nargs</a>, <q>"|O&amp;:readlines"</q>,</td></tr>
+<tr><th id="221">221</th><td>        <a class="ref" href="../../../Include/abstract.h.html#_Py_convert_optional_to_ssize_t" title='_Py_convert_optional_to_ssize_t' data-ref="_Py_convert_optional_to_ssize_t">_Py_convert_optional_to_ssize_t</a>, &amp;<a class="local col2 ref" href="#112hint" title='hint' data-ref="112hint">hint</a>)) {</td></tr>
+<tr><th id="222">222</th><td>        <b>goto</b> <a class="lbl" href="#113exit" data-ref="113exit">exit</a>;</td></tr>
+<tr><th id="223">223</th><td>    }</td></tr>
+<tr><th id="224">224</th><td>    <a class="local col1 ref" href="#111return_value" title='return_value' data-ref="111return_value">return_value</a> = <a class="ref" href="../iobase.c.html#_io__IOBase_readlines_impl" title='_io__IOBase_readlines_impl' data-ref="_io__IOBase_readlines_impl">_io__IOBase_readlines_impl</a>(<a class="local col8 ref" href="#108self" title='self' data-ref="108self">self</a>, <a class="local col2 ref" href="#112hint" title='hint' data-ref="112hint">hint</a>);</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td><dfn class="lbl" id="113exit" data-ref="113exit">exit</dfn>:</td></tr>
+<tr><th id="227">227</th><td>    <b>return</b> <a class="local col1 ref" href="#111return_value" title='return_value' data-ref="111return_value">return_value</a>;</td></tr>
+<tr><th id="228">228</th><td>}</td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__IOBase_writelines__doc__[] = &quot;writelines($self, lines, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__IOBase_writelines__doc__" title='_io__IOBase_writelines__doc__' data-ref="_io__IOBase_writelines__doc__">_io__IOBase_writelines__doc__</dfn>,</td></tr>
+<tr><th id="231">231</th><td><q>"writelines($self, lines, /)\n"</q></td></tr>
+<tr><th id="232">232</th><td><q>"--\n"</q></td></tr>
+<tr><th id="233">233</th><td><q>"\n"</q>);</td></tr>
+<tr><th id="234">234</th><td></td></tr>
+<tr><th id="235">235</th><td><u>#define <dfn class="macro" id="_M/_IO__IOBASE_WRITELINES_METHODDEF" data-ref="_M/_IO__IOBASE_WRITELINES_METHODDEF">_IO__IOBASE_WRITELINES_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="236">236</th><td><u>    {"writelines", (PyCFunction)_io__IOBase_writelines, METH_O, _io__IOBase_writelines__doc__},</u></td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__RawIOBase_read__doc__[] = &quot;read($self, size=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__RawIOBase_read__doc__" title='_io__RawIOBase_read__doc__' data-ref="_io__RawIOBase_read__doc__">_io__RawIOBase_read__doc__</dfn>,</td></tr>
+<tr><th id="239">239</th><td><q>"read($self, size=-1, /)\n"</q></td></tr>
+<tr><th id="240">240</th><td><q>"--\n"</q></td></tr>
+<tr><th id="241">241</th><td><q>"\n"</q>);</td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><u>#define <dfn class="macro" id="_M/_IO__RAWIOBASE_READ_METHODDEF" data-ref="_M/_IO__RAWIOBASE_READ_METHODDEF">_IO__RAWIOBASE_READ_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="244">244</th><td><u>    {"read", (PyCFunction)_io__RawIOBase_read, METH_FASTCALL, _io__RawIOBase_read__doc__},</u></td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="247">247</th><td><a class="decl" href="../iobase.c.html#_io__RawIOBase_read_impl" title='_io__RawIOBase_read_impl' data-ref="_io__RawIOBase_read_impl" id="_io__RawIOBase_read_impl">_io__RawIOBase_read_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="114self" title='self' data-type='PyObject *' data-ref="114self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="115n" title='n' data-type='Py_ssize_t' data-ref="115n">n</dfn>);</td></tr>
+<tr><th id="248">248</th><td></td></tr>
+<tr><th id="249">249</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="250">250</th><td><dfn class="decl def" id="_io__RawIOBase_read" title='_io__RawIOBase_read' data-ref="_io__RawIOBase_read">_io__RawIOBase_read</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="116self" title='self' data-type='PyObject *' data-ref="116self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col7 decl" id="117args" title='args' data-type='PyObject **' data-ref="117args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="118nargs" title='nargs' data-type='Py_ssize_t' data-ref="118nargs">nargs</dfn>)</td></tr>
+<tr><th id="251">251</th><td>{</td></tr>
+<tr><th id="252">252</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="119return_value" title='return_value' data-type='PyObject *' data-ref="119return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="253">253</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="120n" title='n' data-type='Py_ssize_t' data-ref="120n">n</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="254">254</th><td></td></tr>
+<tr><th id="255">255</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col7 ref" href="#117args" title='args' data-ref="117args">args</a>, <a class="local col8 ref" href="#118nargs" title='nargs' data-ref="118nargs">nargs</a>, <q>"|n:read"</q>,</td></tr>
+<tr><th id="256">256</th><td>        &amp;<a class="local col0 ref" href="#120n" title='n' data-ref="120n">n</a>)) {</td></tr>
+<tr><th id="257">257</th><td>        <b>goto</b> <a class="lbl" href="#121exit" data-ref="121exit">exit</a>;</td></tr>
+<tr><th id="258">258</th><td>    }</td></tr>
+<tr><th id="259">259</th><td>    <a class="local col9 ref" href="#119return_value" title='return_value' data-ref="119return_value">return_value</a> = <a class="ref" href="../iobase.c.html#_io__RawIOBase_read_impl" title='_io__RawIOBase_read_impl' data-ref="_io__RawIOBase_read_impl">_io__RawIOBase_read_impl</a>(<a class="local col6 ref" href="#116self" title='self' data-ref="116self">self</a>, <a class="local col0 ref" href="#120n" title='n' data-ref="120n">n</a>);</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td><dfn class="lbl" id="121exit" data-ref="121exit">exit</dfn>:</td></tr>
+<tr><th id="262">262</th><td>    <b>return</b> <a class="local col9 ref" href="#119return_value" title='return_value' data-ref="119return_value">return_value</a>;</td></tr>
+<tr><th id="263">263</th><td>}</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io__RawIOBase_readall__doc__[] = &quot;readall($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Read until EOF, using multiple read() call.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io__RawIOBase_readall__doc__" title='_io__RawIOBase_readall__doc__' data-ref="_io__RawIOBase_readall__doc__">_io__RawIOBase_readall__doc__</dfn>,</td></tr>
+<tr><th id="266">266</th><td><q>"readall($self, /)\n"</q></td></tr>
+<tr><th id="267">267</th><td><q>"--\n"</q></td></tr>
+<tr><th id="268">268</th><td><q>"\n"</q></td></tr>
+<tr><th id="269">269</th><td><q>"Read until EOF, using multiple read() call."</q>);</td></tr>
+<tr><th id="270">270</th><td></td></tr>
+<tr><th id="271">271</th><td><u>#define <dfn class="macro" id="_M/_IO__RAWIOBASE_READALL_METHODDEF" data-ref="_M/_IO__RAWIOBASE_READALL_METHODDEF">_IO__RAWIOBASE_READALL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="272">272</th><td><u>    {"readall", (PyCFunction)_io__RawIOBase_readall, METH_NOARGS, _io__RawIOBase_readall__doc__},</u></td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="275">275</th><td><a class="decl" href="../iobase.c.html#_io__RawIOBase_readall_impl" title='_io__RawIOBase_readall_impl' data-ref="_io__RawIOBase_readall_impl" id="_io__RawIOBase_readall_impl">_io__RawIOBase_readall_impl</a>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="122self" title='self' data-type='PyObject *' data-ref="122self">self</dfn>);</td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="278">278</th><td><dfn class="decl def" id="_io__RawIOBase_readall" title='_io__RawIOBase_readall' data-ref="_io__RawIOBase_readall">_io__RawIOBase_readall</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="123self" title='self' data-type='PyObject *' data-ref="123self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="279">279</th><td>{</td></tr>
+<tr><th id="280">280</th><td>    <b>return</b> <a class="ref" href="../iobase.c.html#_io__RawIOBase_readall_impl" title='_io__RawIOBase_readall_impl' data-ref="_io__RawIOBase_readall_impl">_io__RawIOBase_readall_impl</a>(<a class="local col3 ref" href="#123self" title='self' data-ref="123self">self</a>);</td></tr>
+<tr><th id="281">281</th><td>}</td></tr>
+<tr><th id="282">282</th><td><i>/*[clinic end generated code: output=1dc5cc1a9977d73f input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="283">283</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../iobase.c.html'>codebrowser/Modules/_io/iobase.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

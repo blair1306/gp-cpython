@@ -1,0 +1,6 @@
+<dec f='include/curses.h' l='825' type='int wgetnstr(WINDOW * , char * , int )'/>
+<doc f='include/curses.h' l='825'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1226' u='c' c='PyCursesWindow_GetStr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1237' u='c' c='PyCursesWindow_GetStr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1247' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1265' macro='1' u='c'/>

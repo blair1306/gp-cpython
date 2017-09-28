@@ -1,0 +1,5 @@
+<dec f='include/curses.h' l='1617' type='mmask_t'/>
+<offset>128</offset>
+<doc f='include/curses.h' l='1617'>/* button state bits */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2257' u='r' c='PyCurses_GetMouse'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2269' u='a' c='PyCurses_UngetMouse'/>

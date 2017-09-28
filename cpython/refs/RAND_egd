@@ -1,0 +1,2 @@
+<dec f='include/openssl/rand.h' l='110' type='int RAND_egd(const char * path)'/>
+<use f='codebrowser/Modules/_ssl.c' l='4615' u='c' c='_ssl_RAND_egd_impl'/>

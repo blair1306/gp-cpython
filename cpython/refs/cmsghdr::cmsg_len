@@ -1,0 +1,14 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='248' type='size_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='248'>/* Length of data in cmsg_data plus length
+				   of cmsghdr structure.
+				   !! The type should be socklen_t but the
+				   definition of the kernel is incompatible
+				   with this.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='2265' u='r' c='cmsg_min_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2330' u='r' c='get_cmsg_data_len'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2332' u='r' c='get_cmsg_data_len'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4147' u='w' c='sock_sendmsg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4311' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4325' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4341' u='w' c='sock_sendmsg_afalg'/>

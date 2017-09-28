@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/abstract.h' l='840' type='Py_ssize_t PySequence_Size(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='839'>/* Return the size of sequence object o, or -1 on failure. */</doc>
+<use f='codebrowser/Modules/_bisectmodule.c' l='23' u='c' c='internal_bisect_right'/>
+<use f='codebrowser/Modules/_bisectmodule.c' l='127' u='c' c='internal_bisect_left'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4495' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='144' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='342' u='c' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='373' macro='1' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='362' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='358' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='440' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1662' macro='1' u='c'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5012' u='c' c='os_execv_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5074' u='c' c='os_execve_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6802' u='c' c='os_setgroups'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8123' u='c' c='os_readv_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8588' u='c' c='os_writev_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='1494' ll='1513' type='Py_ssize_t PySequence_Size(PyObject * s)'/>
+<use f='codebrowser/Objects/abstract.c' l='1519' u='c' c='PySequence_Length'/>
+<use f='codebrowser/Objects/abstract.c' l='2552' u='c' c='_PySequence_BytesToCharpArray'/>
+<use f='codebrowser/Objects/enumobject.c' l='285' u='c' c='reversed_new_impl'/>
+<use f='codebrowser/Objects/enumobject.c' l='342' u='c' c='reversed_len'/>
+<use f='codebrowser/Objects/enumobject.c' l='367' u='c' c='reversed_setstate'/>
+<use f='codebrowser/Objects/iterobject.c' l='85' u='c' c='iter_len'/>
+<use f='codebrowser/Objects/typeobject.c' l='3269' u='c' c='merge_class_dict'/>
+<use f='codebrowser/Python/Python-ast.c' l='552' u='c' c='ast_type_init'/>
+<use f='codebrowser/Python/getargs.c' l='535' u='c' c='converttuple'/>

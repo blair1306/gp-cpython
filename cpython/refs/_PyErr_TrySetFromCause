@@ -1,0 +1,44 @@
+<dec f='codebrowser/Include/pyerrors.h' l='348' type='PyObject * _PyErr_TrySetFromCause(const char * prefix_format)'/>
+<doc f='codebrowser/Include/pyerrors.h' l='335'>/* Helper that attempts to replace the current exception with one of the
+ * same type but with a prefix added to the exception text. The resulting
+ * exception description looks like:
+ *
+ *     prefix (exc_type: original_exc_str)
+ *
+ * Only some exceptions can be safely replaced. If the function determines
+ * it isn&apos;t safe to perform the replacement, it will leave the original
+ * unmodified exception in place.
+ *
+ * Returns a borrowed reference to the new exception (if any), NULL if the
+ * existing exception was left in place.
+ */</doc>
+<def f='codebrowser/Objects/exceptions.c' l='2744' ll='2845' type='PyObject * _PyErr_TrySetFromCause(const char * format)'/>
+<doc f='codebrowser/Objects/exceptions.c' l='2716'>/* Helper to do the equivalent of &quot;raise X from Y&quot; in C, but always using
+ * the current exception rather than passing one in.
+ *
+ * We currently limit this to *only* exceptions that use the BaseException
+ * tp_init and tp_new methods, since we can be reasonably sure we can wrap
+ * those correctly without losing data and without losing backwards
+ * compatibility.
+ *
+ * We also aim to rule out *all* exceptions that might be storing additional
+ * state, whether by having a size difference relative to BaseException,
+ * additional arguments passed in during construction or by having a
+ * non-empty instance dict.
+ *
+ * We need to be very careful with what we wrap, since changing types to
+ * a broader exception type would be backwards incompatible for
+ * existing codecs, and with different init or new method implementations
+ * may either not support instantiation with PyErr_Format or lose
+ * information when instantiated that way.
+ *
+ * XXX (ncoghlan): This could be made more comprehensive by exploiting the
+ * fact that exceptions are expected to support pickling. If more builtin
+ * exceptions (e.g. AttributeError) start to be converted to rich
+ * exceptions with additional attributes, that&apos;s probably a better approach
+ * to pursue over adding special cases for particular stateful subclasses.
+ *
+ * Returns a borrowed reference to the new exception (if any), NULL if the
+ * existing exception was left in place.
+ */</doc>
+<use f='codebrowser/Python/codecs.c' l='402' u='c' c='wrap_codec_error'/>

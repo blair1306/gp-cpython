@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='494' type='int mpd_cmp_total(const mpd_t * a, const mpd_t * b)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2277' ll='2322' type='int mpd_cmp_total(const mpd_t * a, const mpd_t * b)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2334' u='c' c='mpd_compare_total'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2351' u='c' c='mpd_cmp_total_mag'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2276'>/* Compare the operands using a total order. */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Objects/stringlib/unicode_format.h' l='34' type='PyObject * build_string(SubString * input, PyObject * args, PyObject * kwargs, int recursion_depth, AutoNumber * auto_number)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='828' u='c' c='output_markup'/>
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='903' ll='927' type='PyObject * build_string(SubString * input, PyObject * args, PyObject * kwargs, int recursion_depth, AutoNumber * auto_number)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='952' u='c' c='do_string_format'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='32'>/* forward declaration for recursion */</doc>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='899'>/*
+    build_string allocates the output string and then
+    calls do_markup to do the heavy lifting.
+*/</doc>

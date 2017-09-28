@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/Python-ast.h' l='404' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2498' u='w' c='_Py_ExceptHandler'/>
+<use f='codebrowser/Python/Python-ast.c' l='3784' u='r' c='ast2obj_excepthandler'/>
+<use f='codebrowser/Python/ast.c' l='479' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='480' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2567' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2575' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2577' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/symtable.c' l='1615' u='r' c='symtable_visit_excepthandler'/>
+<use f='codebrowser/Python/symtable.c' l='1616' u='r' c='symtable_visit_excepthandler'/>

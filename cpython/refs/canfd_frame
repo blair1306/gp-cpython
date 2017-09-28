@@ -1,0 +1,17 @@
+<def f='include/linux/can.h' l='140' ll='147'/>
+<size>72</size>
+<doc f='include/linux/can.h' l='131'>/**
+ * struct canfd_frame - CAN flexible data rate frame structure
+ * @can_id: CAN ID of the frame and CAN_*_FLAG flags, see canid_t definition
+ * @len:    frame payload length in byte (0 .. CANFD_MAX_DLEN)
+ * @flags:  additional flags for CAN FD
+ * @__res0: reserved / padding
+ * @__res1: reserved / padding
+ * @data:   CAN FD frame payload (up to CANFD_MAX_DLEN byte)
+ */</doc>
+<mbr r='canfd_frame::can_id' o='0' t='canid_t'/>
+<mbr r='canfd_frame::len' o='32' t='__u8'/>
+<mbr r='canfd_frame::flags' o='40' t='__u8'/>
+<mbr r='canfd_frame::__res0' o='48' t='__u8'/>
+<mbr r='canfd_frame::__res1' o='56' t='__u8'/>
+<mbr r='canfd_frame::data' o='64' t='__u8 [64]'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/codecs.h' l='177' type='PyObject * PyCodec_IncrementalDecoder(const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/codecs.h' l='175'>/* Get an IncrementalDecoder object function for the given encoding. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2069' u='c' c='codec_incrementaldecoder'/>
+<def f='codebrowser/Python/codecs.c' l='370' ll='374' type='PyObject * PyCodec_IncrementalDecoder(const char * encoding, const char * errors)'/>

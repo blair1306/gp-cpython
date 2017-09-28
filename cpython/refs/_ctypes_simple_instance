@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='358' type='int _ctypes_simple_instance(PyObject * obj)'/>
+<def f='codebrowser/Modules/_ctypes/_ctypes.c' l='2840' ll='2847' type='int _ctypes_simple_instance(PyObject * obj)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2858' u='c' c='PyCData_get'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4710' u='c' c='Simple_from_outparm'/>
+<doc f='codebrowser/Modules/_ctypes/_ctypes.c' l='2835'>/*
+  This function returns TRUE for c_int, c_void_p, and these kind of
+  classes.  FALSE otherwise FALSE also for subclasses of c_int and
+  such.
+*/</doc>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='169' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='902' u='c' c='GetResult'/>

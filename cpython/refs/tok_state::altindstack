@@ -1,0 +1,8 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='53' type='int [100]'/>
+<offset>4128</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='53'>/* Stack of alternate indents */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='141' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1417' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1430' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1437' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1451' u='r' c='tok_get'/>

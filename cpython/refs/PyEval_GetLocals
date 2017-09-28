@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/ceval.h' l='46' type='PyObject * PyEval_GetLocals()'/>
+<use f='codebrowser/Objects/object.c' l='1369' u='c' c='_dir_locals'/>
+<use f='codebrowser/Python/bltinmodule.c' l='858' u='c' c='builtin_eval_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='929' u='c' c='builtin_exec_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1498' u='c' c='builtin_locals_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2168' u='c' c='builtin_vars'/>
+<def f='codebrowser/Python/ceval.c' l='4688' ll='4702' type='PyObject * PyEval_GetLocals()'/>

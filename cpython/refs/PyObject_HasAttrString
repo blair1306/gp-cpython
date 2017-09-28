@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/object.h' l='532' type='int PyObject_HasAttrString(PyObject * , const char * )'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='354' u='c' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='358' u='c' c='PyCStructUnionType_update_stgdict'/>
+<def f='codebrowser/Objects/object.c' l='796' ll='806' type='int PyObject_HasAttrString(PyObject * v, const char * name)'/>
+<use f='codebrowser/Python/_warnings.c' l='76' u='c' c='get_warnings_attr'/>

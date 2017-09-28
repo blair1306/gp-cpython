@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/termios.h' l='32' type='tcflag_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/termios.h' l='32'>/* control mode flags */</doc>
+<use f='codebrowser/Modules/termios.c' l='112' u='r' c='termios_tcgetattr'/>
+<use f='codebrowser/Modules/termios.c' l='161' u='w' c='termios_tcsetattr'/>

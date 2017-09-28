@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fourstep.c source code [codebrowser/Modules/_decimal/libmpdec/fourstep.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_decimal/libmpdec/fourstep.c'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_decimal</a>/<a href='./'>libmpdec</a>/<a href='fourstep.c.html'>fourstep.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2008-2016 Stefan Krah. All rights reserved.</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="5">5</th><td><i> * modification, are permitted provided that the following conditions</i></td></tr>
+<tr><th id="6">6</th><td><i> * are met:</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * 1. Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="9">9</th><td><i> *    notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * 2. Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *    notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="13">13</th><td><i> *    documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="14">14</th><td><i> *</i></td></tr>
+<tr><th id="15">15</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS" AND</i></td></tr>
+<tr><th id="16">16</th><td><i> * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="17">17</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="18">18</th><td><i> * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE</i></td></tr>
+<tr><th id="19">19</th><td><i> * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</i></td></tr>
+<tr><th id="20">20</th><td><i> * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</i></td></tr>
+<tr><th id="21">21</th><td><i> * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</i></td></tr>
+<tr><th id="22">22</th><td><i> * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</i></td></tr>
+<tr><th id="23">23</th><td><i> * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</i></td></tr>
+<tr><th id="24">24</th><td><i> * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</i></td></tr>
+<tr><th id="25">25</th><td><i> * SUCH DAMAGE.</i></td></tr>
+<tr><th id="26">26</th><td><i> */</i></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#include <a href="mpdecimal.h.html">"mpdecimal.h"</a></u></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../../../../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="numbertheory.h.html">"numbertheory.h"</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="sixstep.h.html">"sixstep.h"</a></u></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="transpose.h.html">"transpose.h"</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="umodarith.h.html">"umodarith.h"</a></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="fourstep.h.html">"fourstep.h"</a></u></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>/* Bignum: Cache efficient Matrix Fourier Transform for arrays of the</i></td></tr>
+<tr><th id="39">39</th><td><i>   form 3 * 2**n (See literature/matrix-transform.txt). */</i></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="42">ifndef</span> <span class="macro" data-ref="_M/PPRO">PPRO</span></u></td></tr>
+<tr><th id="43">43</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="44">44</th><td><dfn class="tu decl def" id="std_size3_ntt" title='std_size3_ntt' data-type='void std_size3_ntt(mpd_uint_t * x1, mpd_uint_t * x2, mpd_uint_t * x3, mpd_uint_t * w3table, mpd_uint_t umod)' data-ref="std_size3_ntt">std_size3_ntt</dfn>(<a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col4 decl" id="14x1" title='x1' data-type='mpd_uint_t *' data-ref="14x1">x1</dfn>, <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col5 decl" id="15x2" title='x2' data-type='mpd_uint_t *' data-ref="15x2">x2</dfn>, <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col6 decl" id="16x3" title='x3' data-type='mpd_uint_t *' data-ref="16x3">x3</dfn>,</td></tr>
+<tr><th id="45">45</th><td>              <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col7 decl" id="17w3table" title='w3table' data-type='mpd_uint_t *' data-ref="17w3table">w3table</dfn>[<var>3</var>], <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col8 decl" id="18umod" title='umod' data-type='mpd_uint_t' data-ref="18umod">umod</dfn>)</td></tr>
+<tr><th id="46">46</th><td>{</td></tr>
+<tr><th id="47">47</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col9 decl" id="19r1" title='r1' data-type='mpd_uint_t' data-ref="19r1">r1</dfn>, <dfn class="local col0 decl" id="20r2" title='r2' data-type='mpd_uint_t' data-ref="20r2">r2</dfn>;</td></tr>
+<tr><th id="48">48</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col1 decl" id="21w" title='w' data-type='mpd_uint_t' data-ref="21w">w</dfn>;</td></tr>
+<tr><th id="49">49</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col2 decl" id="22s" title='s' data-type='mpd_uint_t' data-ref="22s">s</dfn>, <dfn class="local col3 decl" id="23tmp" title='tmp' data-type='mpd_uint_t' data-ref="23tmp">tmp</dfn>;</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>    <i>/* k = 0 -&gt; w = 1 */</i></td></tr>
+<tr><th id="53">53</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = *<a class="local col4 ref" href="#14x1" title='x1' data-ref="14x1">x1</a>;</td></tr>
+<tr><th id="54">54</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = <a class="ref" href="umodarith.h.html#addmod" title='addmod' data-ref="addmod">addmod</a>(<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>, *<a class="local col5 ref" href="#15x2" title='x2' data-ref="15x2">x2</a>, <a class="local col8 ref" href="#18umod" title='umod' data-ref="18umod">umod</a>);</td></tr>
+<tr><th id="55">55</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = <a class="ref" href="umodarith.h.html#addmod" title='addmod' data-ref="addmod">addmod</a>(<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>, *<a class="local col6 ref" href="#16x3" title='x3' data-ref="16x3">x3</a>, <a class="local col8 ref" href="#18umod" title='umod' data-ref="18umod">umod</a>);</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td>    <a class="local col9 ref" href="#19r1" title='r1' data-ref="19r1">r1</a> = <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>;</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>    <i>/* k = 1 */</i></td></tr>
+<tr><th id="60">60</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = *<a class="local col4 ref" href="#14x1" title='x1' data-ref="14x1">x1</a>;</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td>    <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a> = <a class="local col7 ref" href="#17w3table" title='w3table' data-ref="17w3table">w3table</a>[<var>1</var>];</td></tr>
+<tr><th id="63">63</th><td>    <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a> = <a class="macro" href="constants.h.html#43" title="x64_mulmod(*x2, w, umod)" data-ref="_M/MULMOD">MULMOD</a>(*<a class="local col5 ref" href="#15x2" title='x2' data-ref="15x2">x2</a>, <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a>);</td></tr>
+<tr><th id="64">64</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = <a class="ref" href="umodarith.h.html#addmod" title='addmod' data-ref="addmod">addmod</a>(<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>, <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a>, <a class="local col8 ref" href="#18umod" title='umod' data-ref="18umod">umod</a>);</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>    <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a> = <a class="local col7 ref" href="#17w3table" title='w3table' data-ref="17w3table">w3table</a>[<var>2</var>];</td></tr>
+<tr><th id="67">67</th><td>    <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a> = <a class="macro" href="constants.h.html#43" title="x64_mulmod(*x3, w, umod)" data-ref="_M/MULMOD">MULMOD</a>(*<a class="local col6 ref" href="#16x3" title='x3' data-ref="16x3">x3</a>, <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a>);</td></tr>
+<tr><th id="68">68</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = <a class="ref" href="umodarith.h.html#addmod" title='addmod' data-ref="addmod">addmod</a>(<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>, <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a>, <a class="local col8 ref" href="#18umod" title='umod' data-ref="18umod">umod</a>);</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td>    <a class="local col0 ref" href="#20r2" title='r2' data-ref="20r2">r2</a> = <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>;</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td>    <i>/* k = 2 */</i></td></tr>
+<tr><th id="73">73</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = *<a class="local col4 ref" href="#14x1" title='x1' data-ref="14x1">x1</a>;</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td>    <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a> = <a class="local col7 ref" href="#17w3table" title='w3table' data-ref="17w3table">w3table</a>[<var>2</var>];</td></tr>
+<tr><th id="76">76</th><td>    <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a> = <a class="macro" href="constants.h.html#43" title="x64_mulmod(*x2, w, umod)" data-ref="_M/MULMOD">MULMOD</a>(*<a class="local col5 ref" href="#15x2" title='x2' data-ref="15x2">x2</a>, <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a>);</td></tr>
+<tr><th id="77">77</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = <a class="ref" href="umodarith.h.html#addmod" title='addmod' data-ref="addmod">addmod</a>(<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>, <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a>, <a class="local col8 ref" href="#18umod" title='umod' data-ref="18umod">umod</a>);</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>    <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a> = <a class="local col7 ref" href="#17w3table" title='w3table' data-ref="17w3table">w3table</a>[<var>1</var>];</td></tr>
+<tr><th id="80">80</th><td>    <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a> = <a class="macro" href="constants.h.html#43" title="x64_mulmod(*x3, w, umod)" data-ref="_M/MULMOD">MULMOD</a>(*<a class="local col6 ref" href="#16x3" title='x3' data-ref="16x3">x3</a>, <a class="local col1 ref" href="#21w" title='w' data-ref="21w">w</a>);</td></tr>
+<tr><th id="81">81</th><td>    <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a> = <a class="ref" href="umodarith.h.html#addmod" title='addmod' data-ref="addmod">addmod</a>(<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>, <a class="local col3 ref" href="#23tmp" title='tmp' data-ref="23tmp">tmp</a>, <a class="local col8 ref" href="#18umod" title='umod' data-ref="18umod">umod</a>);</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td>    *<a class="local col6 ref" href="#16x3" title='x3' data-ref="16x3">x3</a> = <a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>;</td></tr>
+<tr><th id="84">84</th><td>    *<a class="local col5 ref" href="#15x2" title='x2' data-ref="15x2">x2</a> = <a class="local col0 ref" href="#20r2" title='r2' data-ref="20r2">r2</a>;</td></tr>
+<tr><th id="85">85</th><td>    *<a class="local col4 ref" href="#14x1" title='x1' data-ref="14x1">x1</a> = <a class="local col9 ref" href="#19r1" title='r1' data-ref="19r1">r1</a>;</td></tr>
+<tr><th id="86">86</th><td>}</td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="42">else</span> /* PPRO */</u></td></tr>
+<tr><th id="88">88</th><td><em>static</em> <b>inline</b> <em>void</em></td></tr>
+<tr><th id="89">89</th><td>ppro_size3_ntt(mpd_uint_t *x1, mpd_uint_t *x2, mpd_uint_t *x3, mpd_uint_t w3table[<var>3</var>],</td></tr>
+<tr><th id="90">90</th><td>               mpd_uint_t umod, <em>double</em> *dmod, uint32_t dinvmod[<var>3</var>])</td></tr>
+<tr><th id="91">91</th><td>{</td></tr>
+<tr><th id="92">92</th><td>    mpd_uint_t r1, r2;</td></tr>
+<tr><th id="93">93</th><td>    mpd_uint_t w;</td></tr>
+<tr><th id="94">94</th><td>    mpd_uint_t s, tmp;</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>    <i>/* k = 0 -&gt; w = 1 */</i></td></tr>
+<tr><th id="98">98</th><td>    s = *x1;</td></tr>
+<tr><th id="99">99</th><td>    s = addmod(s, *x2, umod);</td></tr>
+<tr><th id="100">100</th><td>    s = addmod(s, *x3, umod);</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td>    r1 = s;</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>    <i>/* k = 1 */</i></td></tr>
+<tr><th id="105">105</th><td>    s = *x1;</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td>    w = w3table[<var>1</var>];</td></tr>
+<tr><th id="108">108</th><td>    tmp = ppro_mulmod(*x2, w, dmod, dinvmod);</td></tr>
+<tr><th id="109">109</th><td>    s = addmod(s, tmp, umod);</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td>    w = w3table[<var>2</var>];</td></tr>
+<tr><th id="112">112</th><td>    tmp = ppro_mulmod(*x3, w, dmod, dinvmod);</td></tr>
+<tr><th id="113">113</th><td>    s = addmod(s, tmp, umod);</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td>    r2 = s;</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td>    <i>/* k = 2 */</i></td></tr>
+<tr><th id="118">118</th><td>    s = *x1;</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td>    w = w3table[<var>2</var>];</td></tr>
+<tr><th id="121">121</th><td>    tmp = ppro_mulmod(*x2, w, dmod, dinvmod);</td></tr>
+<tr><th id="122">122</th><td>    s = addmod(s, tmp, umod);</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>    w = w3table[<var>1</var>];</td></tr>
+<tr><th id="125">125</th><td>    tmp = ppro_mulmod(*x3, w, dmod, dinvmod);</td></tr>
+<tr><th id="126">126</th><td>    s = addmod(s, tmp, umod);</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>    *x3 = s;</td></tr>
+<tr><th id="129">129</th><td>    *x2 = r2;</td></tr>
+<tr><th id="130">130</th><td>    *x1 = r1;</td></tr>
+<tr><th id="131">131</th><td>}</td></tr>
+<tr><th id="132">132</th><td><u>#<span data-ppcond="42">endif</span></u></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><i>/* forward transform, sign = -1; transform length = 3 * 2**n */</i></td></tr>
+<tr><th id="136">136</th><td><em>int</em></td></tr>
+<tr><th id="137">137</th><td><dfn class="decl def" id="four_step_fnt" title='four_step_fnt' data-ref="four_step_fnt">four_step_fnt</dfn>(<a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col4 decl" id="24a" title='a' data-type='mpd_uint_t *' data-ref="24a">a</dfn>, <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col5 decl" id="25n" title='n' data-type='mpd_size_t' data-ref="25n">n</dfn>, <em>int</em> <dfn class="local col6 decl" id="26modnum" title='modnum' data-type='int' data-ref="26modnum">modnum</dfn>)</td></tr>
+<tr><th id="138">138</th><td>{</td></tr>
+<tr><th id="139">139</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col7 decl" id="27R" title='R' data-type='mpd_size_t' data-ref="27R">R</dfn> = <var>3</var>; <i>/* number of rows */</i></td></tr>
+<tr><th id="140">140</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col8 decl" id="28C" title='C' data-type='mpd_size_t' data-ref="28C">C</dfn> = <a class="local col5 ref" href="#25n" title='n' data-ref="25n">n</a> / <var>3</var>; <i>/* number of columns */</i></td></tr>
+<tr><th id="141">141</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col9 decl" id="29w3table" title='w3table' data-type='mpd_uint_t [3]' data-ref="29w3table">w3table</dfn>[<var>3</var>];</td></tr>
+<tr><th id="142">142</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col0 decl" id="30kernel" title='kernel' data-type='mpd_uint_t' data-ref="30kernel">kernel</dfn>, <dfn class="local col1 decl" id="31w0" title='w0' data-type='mpd_uint_t' data-ref="31w0">w0</dfn>, <dfn class="local col2 decl" id="32w1" title='w1' data-type='mpd_uint_t' data-ref="32w1">w1</dfn>, <dfn class="local col3 decl" id="33wstep" title='wstep' data-type='mpd_uint_t' data-ref="33wstep">wstep</dfn>;</td></tr>
+<tr><th id="143">143</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col4 decl" id="34s" title='s' data-type='mpd_uint_t *' data-ref="34s">s</dfn>, *<dfn class="local col5 decl" id="35p0" title='p0' data-type='mpd_uint_t *' data-ref="35p0">p0</dfn>, *<dfn class="local col6 decl" id="36p1" title='p1' data-type='mpd_uint_t *' data-ref="36p1">p1</dfn>, *<dfn class="local col7 decl" id="37p2" title='p2' data-type='mpd_uint_t *' data-ref="37p2">p2</dfn>;</td></tr>
+<tr><th id="144">144</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col8 decl" id="38umod" title='umod' data-type='mpd_uint_t' data-ref="38umod">umod</dfn>;</td></tr>
+<tr><th id="145">145</th><td><u>#<span data-ppcond="145">ifdef</span> <span class="macro" data-ref="_M/PPRO">PPRO</span></u></td></tr>
+<tr><th id="146">146</th><td>    <em>double</em> dmod;</td></tr>
+<tr><th id="147">147</th><td>    uint32_t dinvmod[<var>3</var>];</td></tr>
+<tr><th id="148">148</th><td><u>#<span data-ppcond="145">endif</span></u></td></tr>
+<tr><th id="149">149</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col9 decl" id="39i" title='i' data-type='mpd_size_t' data-ref="39i">i</dfn>, <dfn class="local col0 decl" id="40k" title='k' data-type='mpd_size_t' data-ref="40k">k</dfn>;</td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td>    <a class="macro" href="../../../../include/assert.h.html#88" title="((n &gt;= 48) ? (void) (0) : __assert_fail (&quot;n &gt;= 48&quot;, &quot;/home/jon/workspace/cpython/Modules/_decimal/libmpdec/fourstep.c&quot;, 152, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col5 ref" href="#25n" title='n' data-ref="25n">n</a> &gt;= <var>48</var>);</td></tr>
+<tr><th id="153">153</th><td>    <a class="macro" href="../../../../include/assert.h.html#88" title="((n &lt;= 3*4294967296ULL) ? (void) (0) : __assert_fail (&quot;n &lt;= 3*MPD_MAXTRANSFORM_2N&quot;, &quot;/home/jon/workspace/cpython/Modules/_decimal/libmpdec/fourstep.c&quot;, 153, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col5 ref" href="#25n" title='n' data-ref="25n">n</a> &lt;= <var>3</var>*<a class="macro" href="mpdecimal.h.html#166" title="4294967296ULL" data-ref="_M/MPD_MAXTRANSFORM_2N">MPD_MAXTRANSFORM_2N</a>);</td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td>    <i>/* Length R transform on the columns. */</i></td></tr>
+<tr><th id="157">157</th><td>    <a class="macro" href="constants.h.html#47" title="std_setmodulus(modnum, &amp;umod)" data-ref="_M/SETMODULUS">SETMODULUS</a>(<a class="local col6 ref" href="#26modnum" title='modnum' data-ref="26modnum">modnum</a>);</td></tr>
+<tr><th id="158">158</th><td>    <a class="ref" href="numbertheory.h.html#_mpd_init_w3table" title='_mpd_init_w3table' data-ref="_mpd_init_w3table">_mpd_init_w3table</a>(<a class="local col9 ref" href="#29w3table" title='w3table' data-ref="29w3table">w3table</a>, -<var>1</var>, <a class="local col6 ref" href="#26modnum" title='modnum' data-ref="26modnum">modnum</a>);</td></tr>
+<tr><th id="159">159</th><td>    <b>for</b> (<a class="local col5 ref" href="#35p0" title='p0' data-ref="35p0">p0</a>=<a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>, <a class="local col6 ref" href="#36p1" title='p1' data-ref="36p1">p1</a>=<a class="local col5 ref" href="#35p0" title='p0' data-ref="35p0">p0</a>+<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>, <a class="local col7 ref" href="#37p2" title='p2' data-ref="37p2">p2</a>=<a class="local col5 ref" href="#35p0" title='p0' data-ref="35p0">p0</a>+<var>2</var>*<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>; <a class="local col5 ref" href="#35p0" title='p0' data-ref="35p0">p0</a>&lt;<a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>+<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>; <a class="local col5 ref" href="#35p0" title='p0' data-ref="35p0">p0</a>++,<a class="local col6 ref" href="#36p1" title='p1' data-ref="36p1">p1</a>++,<a class="local col7 ref" href="#37p2" title='p2' data-ref="37p2">p2</a>++) {</td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td>        <a class="macro" href="constants.h.html#48" title="std_size3_ntt(p0, p1, p2, w3table, umod)" data-ref="_M/SIZE3_NTT">SIZE3_NTT</a>(<a class="local col5 ref" href="#35p0" title='p0' data-ref="35p0">p0</a>, <a class="local col6 ref" href="#36p1" title='p1' data-ref="36p1">p1</a>, <a class="local col7 ref" href="#37p2" title='p2' data-ref="37p2">p2</a>, <a class="local col9 ref" href="#29w3table" title='w3table' data-ref="29w3table">w3table</a>);</td></tr>
+<tr><th id="162">162</th><td>    }</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td>    <i>/* Multiply each matrix element (addressed by i*C+k) by r**(i*k). */</i></td></tr>
+<tr><th id="165">165</th><td>    <a class="local col0 ref" href="#30kernel" title='kernel' data-ref="30kernel">kernel</a> = <a class="ref" href="numbertheory.h.html#_mpd_getkernel" title='_mpd_getkernel' data-ref="_mpd_getkernel">_mpd_getkernel</a>(<a class="local col5 ref" href="#25n" title='n' data-ref="25n">n</a>, -<var>1</var>, <a class="local col6 ref" href="#26modnum" title='modnum' data-ref="26modnum">modnum</a>);</td></tr>
+<tr><th id="166">166</th><td>    <b>for</b> (<a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a> = <var>1</var>; <a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a> &lt; <a class="local col7 ref" href="#27R" title='R' data-ref="27R">R</a>; <a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a>++) {</td></tr>
+<tr><th id="167">167</th><td>        <a class="local col1 ref" href="#31w0" title='w0' data-ref="31w0">w0</a> = <var>1</var>;                  <i>/* r**(i*0): initial value for k=0 */</i></td></tr>
+<tr><th id="168">168</th><td>        <a class="local col2 ref" href="#32w1" title='w1' data-ref="32w1">w1</a> = <a class="macro" href="constants.h.html#46" title="x64_powmod(kernel, i, umod)" data-ref="_M/POWMOD">POWMOD</a>(<a class="local col0 ref" href="#30kernel" title='kernel' data-ref="30kernel">kernel</a>, <a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a>);  <i>/* r**(i*1): initial value for k=1 */</i></td></tr>
+<tr><th id="169">169</th><td>        <a class="local col3 ref" href="#33wstep" title='wstep' data-ref="33wstep">wstep</a> = <a class="macro" href="constants.h.html#43" title="x64_mulmod(w1, w1, umod)" data-ref="_M/MULMOD">MULMOD</a>(<a class="local col2 ref" href="#32w1" title='w1' data-ref="32w1">w1</a>, <a class="local col2 ref" href="#32w1" title='w1' data-ref="32w1">w1</a>);  <i>/* r**(2*i) */</i></td></tr>
+<tr><th id="170">170</th><td>        <b>for</b> (<a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a> = <var>0</var>; <a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a> &lt; <a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>-<var>1</var>; <a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a> += <var>2</var>) {</td></tr>
+<tr><th id="171">171</th><td>            <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col1 decl" id="41x0" title='x0' data-type='mpd_uint_t' data-ref="41x0">x0</dfn> = <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>[<a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a>*<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>+<a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a>];</td></tr>
+<tr><th id="172">172</th><td>            <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col2 decl" id="42x1" title='x1' data-type='mpd_uint_t' data-ref="42x1">x1</dfn> = <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>[<a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a>*<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>+<a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a>+<var>1</var>];</td></tr>
+<tr><th id="173">173</th><td>            <a class="macro" href="constants.h.html#45" title="x64_mulmod2(&amp;x0, w0, &amp;x1, w1, umod)" data-ref="_M/MULMOD2">MULMOD2</a>(&amp;<a class="local col1 ref" href="#41x0" title='x0' data-ref="41x0">x0</a>, <a class="local col1 ref" href="#31w0" title='w0' data-ref="31w0">w0</a>, &amp;<a class="local col2 ref" href="#42x1" title='x1' data-ref="42x1">x1</a>, <a class="local col2 ref" href="#32w1" title='w1' data-ref="32w1">w1</a>);</td></tr>
+<tr><th id="174">174</th><td>            <a class="macro" href="constants.h.html#44" title="x64_mulmod2c(&amp;w0, &amp;w1, wstep, umod)" data-ref="_M/MULMOD2C">MULMOD2C</a>(&amp;<a class="local col1 ref" href="#31w0" title='w0' data-ref="31w0">w0</a>, &amp;<a class="local col2 ref" href="#32w1" title='w1' data-ref="32w1">w1</a>, <a class="local col3 ref" href="#33wstep" title='wstep' data-ref="33wstep">wstep</a>);  <i>/* r**(i*(k+2)) = r**(i*k) * r**(2*i) */</i></td></tr>
+<tr><th id="175">175</th><td>            <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>[<a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a>*<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>+<a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a>] = <a class="local col1 ref" href="#41x0" title='x0' data-ref="41x0">x0</a>;</td></tr>
+<tr><th id="176">176</th><td>            <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>[<a class="local col9 ref" href="#39i" title='i' data-ref="39i">i</a>*<a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>+<a class="local col0 ref" href="#40k" title='k' data-ref="40k">k</a>+<var>1</var>] = <a class="local col2 ref" href="#42x1" title='x1' data-ref="42x1">x1</a>;</td></tr>
+<tr><th id="177">177</th><td>        }</td></tr>
+<tr><th id="178">178</th><td>    }</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td>    <i>/* Length C transform on the rows. */</i></td></tr>
+<tr><th id="181">181</th><td>    <b>for</b> (<a class="local col4 ref" href="#34s" title='s' data-ref="34s">s</a> = <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>; <a class="local col4 ref" href="#34s" title='s' data-ref="34s">s</a> &lt; <a class="local col4 ref" href="#24a" title='a' data-ref="24a">a</a>+<a class="local col5 ref" href="#25n" title='n' data-ref="25n">n</a>; <a class="local col4 ref" href="#34s" title='s' data-ref="34s">s</a> += <a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>) {</td></tr>
+<tr><th id="182">182</th><td>        <b>if</b> (!<a class="ref" href="sixstep.h.html#six_step_fnt" title='six_step_fnt' data-ref="six_step_fnt">six_step_fnt</a>(<a class="local col4 ref" href="#34s" title='s' data-ref="34s">s</a>, <a class="local col8 ref" href="#28C" title='C' data-ref="28C">C</a>, <a class="local col6 ref" href="#26modnum" title='modnum' data-ref="26modnum">modnum</a>)) {</td></tr>
+<tr><th id="183">183</th><td>            <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="184">184</th><td>        }</td></tr>
+<tr><th id="185">185</th><td>    }</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td><u>#<span data-ppcond="187">if</span> 0</u></td></tr>
+<tr><th id="188">188</th><td>    <i>/* An unordered transform is sufficient for convolution. */</i></td></tr>
+<tr><th id="189">189</th><td>    <i>/* Transpose the matrix. */</i></td></tr>
+<tr><th id="190">190</th><td>    transpose_3xpow2(a, R, C);</td></tr>
+<tr><th id="191">191</th><td><u>#<span data-ppcond="187">endif</span></u></td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="194">194</th><td>}</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><i>/* backward transform, sign = 1; transform length = 3 * 2**n */</i></td></tr>
+<tr><th id="197">197</th><td><em>int</em></td></tr>
+<tr><th id="198">198</th><td><dfn class="decl def" id="inv_four_step_fnt" title='inv_four_step_fnt' data-ref="inv_four_step_fnt">inv_four_step_fnt</dfn>(<a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col3 decl" id="43a" title='a' data-type='mpd_uint_t *' data-ref="43a">a</dfn>, <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col4 decl" id="44n" title='n' data-type='mpd_size_t' data-ref="44n">n</dfn>, <em>int</em> <dfn class="local col5 decl" id="45modnum" title='modnum' data-type='int' data-ref="45modnum">modnum</dfn>)</td></tr>
+<tr><th id="199">199</th><td>{</td></tr>
+<tr><th id="200">200</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col6 decl" id="46R" title='R' data-type='mpd_size_t' data-ref="46R">R</dfn> = <var>3</var>; <i>/* number of rows */</i></td></tr>
+<tr><th id="201">201</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col7 decl" id="47C" title='C' data-type='mpd_size_t' data-ref="47C">C</dfn> = <a class="local col4 ref" href="#44n" title='n' data-ref="44n">n</a> / <var>3</var>; <i>/* number of columns */</i></td></tr>
+<tr><th id="202">202</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col8 decl" id="48w3table" title='w3table' data-type='mpd_uint_t [3]' data-ref="48w3table">w3table</dfn>[<var>3</var>];</td></tr>
+<tr><th id="203">203</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col9 decl" id="49kernel" title='kernel' data-type='mpd_uint_t' data-ref="49kernel">kernel</dfn>, <dfn class="local col0 decl" id="50w0" title='w0' data-type='mpd_uint_t' data-ref="50w0">w0</dfn>, <dfn class="local col1 decl" id="51w1" title='w1' data-type='mpd_uint_t' data-ref="51w1">w1</dfn>, <dfn class="local col2 decl" id="52wstep" title='wstep' data-type='mpd_uint_t' data-ref="52wstep">wstep</dfn>;</td></tr>
+<tr><th id="204">204</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> *<dfn class="local col3 decl" id="53s" title='s' data-type='mpd_uint_t *' data-ref="53s">s</dfn>, *<dfn class="local col4 decl" id="54p0" title='p0' data-type='mpd_uint_t *' data-ref="54p0">p0</dfn>, *<dfn class="local col5 decl" id="55p1" title='p1' data-type='mpd_uint_t *' data-ref="55p1">p1</dfn>, *<dfn class="local col6 decl" id="56p2" title='p2' data-type='mpd_uint_t *' data-ref="56p2">p2</dfn>;</td></tr>
+<tr><th id="205">205</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col7 decl" id="57umod" title='umod' data-type='mpd_uint_t' data-ref="57umod">umod</dfn>;</td></tr>
+<tr><th id="206">206</th><td><u>#<span data-ppcond="206">ifdef</span> <span class="macro" data-ref="_M/PPRO">PPRO</span></u></td></tr>
+<tr><th id="207">207</th><td>    <em>double</em> dmod;</td></tr>
+<tr><th id="208">208</th><td>    uint32_t dinvmod[<var>3</var>];</td></tr>
+<tr><th id="209">209</th><td><u>#<span data-ppcond="206">endif</span></u></td></tr>
+<tr><th id="210">210</th><td>    <a class="typedef" href="mpdecimal.h.html#mpd_size_t" title='mpd_size_t' data-type='size_t' data-ref="mpd_size_t">mpd_size_t</a> <dfn class="local col8 decl" id="58i" title='i' data-type='mpd_size_t' data-ref="58i">i</dfn>, <dfn class="local col9 decl" id="59k" title='k' data-type='mpd_size_t' data-ref="59k">k</dfn>;</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td>    <a class="macro" href="../../../../include/assert.h.html#88" title="((n &gt;= 48) ? (void) (0) : __assert_fail (&quot;n &gt;= 48&quot;, &quot;/home/jon/workspace/cpython/Modules/_decimal/libmpdec/fourstep.c&quot;, 213, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col4 ref" href="#44n" title='n' data-ref="44n">n</a> &gt;= <var>48</var>);</td></tr>
+<tr><th id="214">214</th><td>    <a class="macro" href="../../../../include/assert.h.html#88" title="((n &lt;= 3*4294967296ULL) ? (void) (0) : __assert_fail (&quot;n &lt;= 3*MPD_MAXTRANSFORM_2N&quot;, &quot;/home/jon/workspace/cpython/Modules/_decimal/libmpdec/fourstep.c&quot;, 214, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col4 ref" href="#44n" title='n' data-ref="44n">n</a> &lt;= <var>3</var>*<a class="macro" href="mpdecimal.h.html#166" title="4294967296ULL" data-ref="_M/MPD_MAXTRANSFORM_2N">MPD_MAXTRANSFORM_2N</a>);</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td><u>#<span data-ppcond="217">if</span> 0</u></td></tr>
+<tr><th id="218">218</th><td>    <i>/* An unordered transform is sufficient for convolution. */</i></td></tr>
+<tr><th id="219">219</th><td>    <i>/* Transpose the matrix, producing an R*C matrix. */</i></td></tr>
+<tr><th id="220">220</th><td>    transpose_3xpow2(a, C, R);</td></tr>
+<tr><th id="221">221</th><td><u>#<span data-ppcond="217">endif</span></u></td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td>    <i>/* Length C transform on the rows. */</i></td></tr>
+<tr><th id="224">224</th><td>    <b>for</b> (<a class="local col3 ref" href="#53s" title='s' data-ref="53s">s</a> = <a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>; <a class="local col3 ref" href="#53s" title='s' data-ref="53s">s</a> &lt; <a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>+<a class="local col4 ref" href="#44n" title='n' data-ref="44n">n</a>; <a class="local col3 ref" href="#53s" title='s' data-ref="53s">s</a> += <a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>) {</td></tr>
+<tr><th id="225">225</th><td>        <b>if</b> (!<a class="ref" href="sixstep.h.html#inv_six_step_fnt" title='inv_six_step_fnt' data-ref="inv_six_step_fnt">inv_six_step_fnt</a>(<a class="local col3 ref" href="#53s" title='s' data-ref="53s">s</a>, <a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>, <a class="local col5 ref" href="#45modnum" title='modnum' data-ref="45modnum">modnum</a>)) {</td></tr>
+<tr><th id="226">226</th><td>            <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="227">227</th><td>        }</td></tr>
+<tr><th id="228">228</th><td>    }</td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td>    <i>/* Multiply each matrix element (addressed by i*C+k) by r**(i*k). */</i></td></tr>
+<tr><th id="231">231</th><td>    <a class="macro" href="constants.h.html#47" title="std_setmodulus(modnum, &amp;umod)" data-ref="_M/SETMODULUS">SETMODULUS</a>(<a class="local col5 ref" href="#45modnum" title='modnum' data-ref="45modnum">modnum</a>);</td></tr>
+<tr><th id="232">232</th><td>    <a class="local col9 ref" href="#49kernel" title='kernel' data-ref="49kernel">kernel</a> = <a class="ref" href="numbertheory.h.html#_mpd_getkernel" title='_mpd_getkernel' data-ref="_mpd_getkernel">_mpd_getkernel</a>(<a class="local col4 ref" href="#44n" title='n' data-ref="44n">n</a>, <var>1</var>, <a class="local col5 ref" href="#45modnum" title='modnum' data-ref="45modnum">modnum</a>);</td></tr>
+<tr><th id="233">233</th><td>    <b>for</b> (<a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a> = <var>1</var>; <a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a> &lt; <a class="local col6 ref" href="#46R" title='R' data-ref="46R">R</a>; <a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a>++) {</td></tr>
+<tr><th id="234">234</th><td>        <a class="local col0 ref" href="#50w0" title='w0' data-ref="50w0">w0</a> = <var>1</var>;</td></tr>
+<tr><th id="235">235</th><td>        <a class="local col1 ref" href="#51w1" title='w1' data-ref="51w1">w1</a> = <a class="macro" href="constants.h.html#46" title="x64_powmod(kernel, i, umod)" data-ref="_M/POWMOD">POWMOD</a>(<a class="local col9 ref" href="#49kernel" title='kernel' data-ref="49kernel">kernel</a>, <a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a>);</td></tr>
+<tr><th id="236">236</th><td>        <a class="local col2 ref" href="#52wstep" title='wstep' data-ref="52wstep">wstep</a> = <a class="macro" href="constants.h.html#43" title="x64_mulmod(w1, w1, umod)" data-ref="_M/MULMOD">MULMOD</a>(<a class="local col1 ref" href="#51w1" title='w1' data-ref="51w1">w1</a>, <a class="local col1 ref" href="#51w1" title='w1' data-ref="51w1">w1</a>);</td></tr>
+<tr><th id="237">237</th><td>        <b>for</b> (<a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a> = <var>0</var>; <a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a> &lt; <a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>; <a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a> += <var>2</var>) {</td></tr>
+<tr><th id="238">238</th><td>            <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col0 decl" id="60x0" title='x0' data-type='mpd_uint_t' data-ref="60x0">x0</dfn> = <a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>[<a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a>*<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>+<a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a>];</td></tr>
+<tr><th id="239">239</th><td>            <a class="typedef" href="mpdecimal.h.html#mpd_uint_t" title='mpd_uint_t' data-type='uint64_t' data-ref="mpd_uint_t">mpd_uint_t</a> <dfn class="local col1 decl" id="61x1" title='x1' data-type='mpd_uint_t' data-ref="61x1">x1</dfn> = <a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>[<a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a>*<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>+<a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a>+<var>1</var>];</td></tr>
+<tr><th id="240">240</th><td>            <a class="macro" href="constants.h.html#45" title="x64_mulmod2(&amp;x0, w0, &amp;x1, w1, umod)" data-ref="_M/MULMOD2">MULMOD2</a>(&amp;<a class="local col0 ref" href="#60x0" title='x0' data-ref="60x0">x0</a>, <a class="local col0 ref" href="#50w0" title='w0' data-ref="50w0">w0</a>, &amp;<a class="local col1 ref" href="#61x1" title='x1' data-ref="61x1">x1</a>, <a class="local col1 ref" href="#51w1" title='w1' data-ref="51w1">w1</a>);</td></tr>
+<tr><th id="241">241</th><td>            <a class="macro" href="constants.h.html#44" title="x64_mulmod2c(&amp;w0, &amp;w1, wstep, umod)" data-ref="_M/MULMOD2C">MULMOD2C</a>(&amp;<a class="local col0 ref" href="#50w0" title='w0' data-ref="50w0">w0</a>, &amp;<a class="local col1 ref" href="#51w1" title='w1' data-ref="51w1">w1</a>, <a class="local col2 ref" href="#52wstep" title='wstep' data-ref="52wstep">wstep</a>);</td></tr>
+<tr><th id="242">242</th><td>            <a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>[<a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a>*<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>+<a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a>] = <a class="local col0 ref" href="#60x0" title='x0' data-ref="60x0">x0</a>;</td></tr>
+<tr><th id="243">243</th><td>            <a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>[<a class="local col8 ref" href="#58i" title='i' data-ref="58i">i</a>*<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>+<a class="local col9 ref" href="#59k" title='k' data-ref="59k">k</a>+<var>1</var>] = <a class="local col1 ref" href="#61x1" title='x1' data-ref="61x1">x1</a>;</td></tr>
+<tr><th id="244">244</th><td>        }</td></tr>
+<tr><th id="245">245</th><td>    }</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td>    <i>/* Length R transform on the columns. */</i></td></tr>
+<tr><th id="248">248</th><td>    <a class="ref" href="numbertheory.h.html#_mpd_init_w3table" title='_mpd_init_w3table' data-ref="_mpd_init_w3table">_mpd_init_w3table</a>(<a class="local col8 ref" href="#48w3table" title='w3table' data-ref="48w3table">w3table</a>, <var>1</var>, <a class="local col5 ref" href="#45modnum" title='modnum' data-ref="45modnum">modnum</a>);</td></tr>
+<tr><th id="249">249</th><td>    <b>for</b> (<a class="local col4 ref" href="#54p0" title='p0' data-ref="54p0">p0</a>=<a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>, <a class="local col5 ref" href="#55p1" title='p1' data-ref="55p1">p1</a>=<a class="local col4 ref" href="#54p0" title='p0' data-ref="54p0">p0</a>+<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>, <a class="local col6 ref" href="#56p2" title='p2' data-ref="56p2">p2</a>=<a class="local col4 ref" href="#54p0" title='p0' data-ref="54p0">p0</a>+<var>2</var>*<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>; <a class="local col4 ref" href="#54p0" title='p0' data-ref="54p0">p0</a>&lt;<a class="local col3 ref" href="#43a" title='a' data-ref="43a">a</a>+<a class="local col7 ref" href="#47C" title='C' data-ref="47C">C</a>; <a class="local col4 ref" href="#54p0" title='p0' data-ref="54p0">p0</a>++,<a class="local col5 ref" href="#55p1" title='p1' data-ref="55p1">p1</a>++,<a class="local col6 ref" href="#56p2" title='p2' data-ref="56p2">p2</a>++) {</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>        <a class="macro" href="constants.h.html#48" title="std_size3_ntt(p0, p1, p2, w3table, umod)" data-ref="_M/SIZE3_NTT">SIZE3_NTT</a>(<a class="local col4 ref" href="#54p0" title='p0' data-ref="54p0">p0</a>, <a class="local col5 ref" href="#55p1" title='p1' data-ref="55p1">p1</a>, <a class="local col6 ref" href="#56p2" title='p2' data-ref="56p2">p2</a>, <a class="local col8 ref" href="#48w3table" title='w3table' data-ref="48w3table">w3table</a>);</td></tr>
+<tr><th id="252">252</th><td>    }</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="255">255</th><td>}</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,16 @@
+<dec f='include/lzma/base.h' l='554' type='void lzma_end(lzma_stream * strm)'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='803' u='c' c='Compressor_dealloc'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1246' u='c' c='Decompressor_dealloc'/>
+<doc f='include/lzma/base.h' l='541'>/**
+ * \brief       Free memory allocated for the coder data structures
+ *
+ * \param       strm    Pointer to lzma_stream that is at least initialized
+ *                      with LZMA_STREAM_INIT.
+ *
+ * After lzma_end(strm), strm-&gt;internal is guaranteed to be NULL. No other
+ * members of the lzma_stream structure are touched.
+ *
+ * \note        zlib indicates an error if application end()s unfinished
+ *              stream structure. liblzma doesn&apos;t do this, and assumes that
+ *              application knows what it is doing.
+ */</doc>

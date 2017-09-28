@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/methodobject.h' l='58' type='PyCFunction'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/methodobject.h' l='58'>/* The C function that implements it */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5640' u='r' c='cfunc_noargs'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3198' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='458' u='r' c='_PyMethodDef_RawFastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='602' u='r' c='_PyMethodDef_RawFastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='739' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='57' macro='1' u='r'/>
+<use f='codebrowser/Objects/methodobject.c' l='239' u='r' c='meth_richcompare'/>
+<use f='codebrowser/Objects/methodobject.c' l='239' u='r' c='meth_richcompare'/>
+<use f='codebrowser/Objects/methodobject.c' l='259' u='r' c='meth_hash'/>
+<use f='codebrowser/Objects/typeobject.c' l='6985' macro='1' u='r'/>

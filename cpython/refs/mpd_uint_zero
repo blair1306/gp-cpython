@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='823' type='void mpd_uint_zero(mpd_uint_t * dest, mpd_size_t len)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='466' u='c' c='_mpd_baseshiftl'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='442' ll='450' macro='1' type='void mpd_uint_zero(mpd_uint_t * dest, mpd_size_t len)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='530' u='c' c='mpd_qresize_zero'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5308' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5313' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5319' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5338' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5346' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5534' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5541' u='c' c='_mpd_fntmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5605' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5612' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5620' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5643' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5653' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5761' u='c' c='_mpd_qmul'/>

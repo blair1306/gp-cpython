@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='90' type='void _PyImport_AcquireLock()'/>
+<use f='codebrowser/Modules/posixmodule.c' l='437' u='c' c='PyOS_BeforeFork'/>
+<def f='codebrowser/Python/import.c' l='153' ll='178' type='void _PyImport_AcquireLock()'/>
+<use f='codebrowser/Python/import.c' l='262' u='c' c='_imp_acquire_lock_impl'/>

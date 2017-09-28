@@ -1,0 +1,5 @@
+<def f='codebrowser/Modules/_decimal/_decimal.c' l='2049' ll='2067' macro='1' type='void _dec_settriple(PyObject * dec, uint8_t sign, uint32_t v, mpd_ssize_t exp)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2131' u='c' c='dec_from_long'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2145' u='c' c='dec_from_long'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4174' u='c' c='dec_mpd_radix'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4683' u='c' c='dec_imag'/>

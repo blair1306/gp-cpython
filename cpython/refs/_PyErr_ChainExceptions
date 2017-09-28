@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pyerrors.h' l='130' type='void _PyErr_ChainExceptions(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='486' u='c' c='_io_open_impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='540' u='c' c='buffered_close'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2245' u='c' c='bufferedrwpair_close'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='164' u='c' c='_io_FileIO_close_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2535' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2762' u='c' c='_io_TextIOWrapper_close_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='1736' u='c' c='_PyODict_SetItem_KnownHash'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='927' u='c' c='PyObject_ClearWeakRefs'/>
+<def f='codebrowser/Python/errors.c' l='368' ll='390' type='void _PyErr_ChainExceptions(PyObject * exc, PyObject * val, PyObject * tb)'/>
+<doc f='codebrowser/Python/errors.c' l='365'>/* Like PyErr_Restore(), but if an exception is already set,
+   set the context associated with it.
+ */</doc>
+<use f='codebrowser/Python/traceback.c' l='139' u='c' c='PyTraceBack_Here'/>
+<use f='codebrowser/Python/traceback.c' l='181' u='c' c='_PyTraceback_Add'/>

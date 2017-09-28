@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/ceval.h' l='58' type='int Py_MakePendingCalls()'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='76' u='c' c='acquire_timed'/>
+<use f='codebrowser/Modules/main.c' l='320' u='c' c='run_file'/>
+<def f='codebrowser/Python/ceval.c' l='399' ll='465' type='int Py_MakePendingCalls()'/>
+<use f='codebrowser/Python/ceval.c' l='1101' u='c' c='_PyEval_EvalFrameDefault'/>

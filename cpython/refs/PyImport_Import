@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/import.h' l='76' type='PyObject * PyImport_Import(PyObject * name)'/>
+<use f='codebrowser/Modules/_pickle.c' l='3159' u='c' c='save_global'/>
+<use f='codebrowser/Modules/_pickle.c' l='6490' u='c' c='_pickle_Unpickler_find_class_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='718' u='c' c='call'/>
+<use f='codebrowser/Objects/object.c' l='1006' u='c' c='_PyObject_GetBuiltin'/>
+<use f='codebrowser/Objects/typeobject.c' l='3924' u='c' c='import_copyreg'/>
+<use f='codebrowser/Python/_warnings.c' l='58' u='c' c='get_warnings_attr'/>
+<use f='codebrowser/Python/import.c' l='1256' u='c' c='PyImport_ImportModule'/>
+<def f='codebrowser/Python/import.c' l='1696' ll='1775' type='PyObject * PyImport_Import(PyObject * module_name)'/>
+<doc f='codebrowser/Python/import.c' l='1687'>/* Higher-level import emulator which emulates the &quot;import&quot; statement
+   more accurately -- it invokes the __import__() function from the
+   builtins of the current globals.  This means that the import is
+   done using whatever import hooks are installed in the current
+   environment.
+   A dummy list [&quot;__doc__&quot;] is passed as the 4th argument so that
+   e.g. PyImport_Import(PyUnicode_FromString(&quot;win32com.client.gencache&quot;))
+   will return &lt;module &quot;gencache&quot;&gt; instead of &lt;module &quot;win32com&quot;&gt;. */</doc>

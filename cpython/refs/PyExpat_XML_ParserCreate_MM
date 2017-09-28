@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='234' macro='1' type='XML_Parser PyExpat_XML_ParserCreate_MM(const XML_Char * encoding, const XML_Memory_Handling_Suite * memsuite, const XML_Char * namespaceSeparator)'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='735' macro='1' u='c'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='743' macro='1' u='c'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='982' macro='1' type='XML_Parser PyExpat_XML_ParserCreate_MM(const XML_Char * encodingName, const XML_Memory_Handling_Suite * memsuite, const XML_Char * nameSep)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1183' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1873' macro='1' u='r'/>

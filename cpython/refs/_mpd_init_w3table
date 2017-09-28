@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/numbertheory.h' l='52' type='void _mpd_init_w3table(mpd_uint_t * w3table, int sign, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='158' u='c' c='four_step_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='248' u='c' c='inv_four_step_fnt'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='114' ll='130' type='void _mpd_init_w3table(mpd_uint_t * w3table, int sign, int modnum)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='113'>/* Initialize wtable of size three. */</doc>

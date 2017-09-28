@@ -1,0 +1,14 @@
+<dec f='include/lzma/delta.h' l='59' type='uint32_t'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='276' u='w' c='parse_filter_spec_delta'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='446' u='r' c='build_filter_spec'/>
+<offset>32</offset>
+<doc f='include/lzma/delta.h' l='49'>/**
+	 * \brief       Delta distance
+	 *
+	 * With the only currently supported type, LZMA_DELTA_TYPE_BYTE,
+	 * the distance is as bytes.
+	 *
+	 * Examples:
+	 *  - 16-bit stereo audio: distance = 4 bytes
+	 *  - 24-bit RGB image data: distance = 3 bytes
+	 */</doc>

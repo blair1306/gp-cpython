@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/sre.h' l='46' type='PyObject *'/>
+<dec f='codebrowser/Modules/sre.h' l='71' type='PyObject *'/>
+<use f='codebrowser/Modules/_sre.c' l='447' u='w' c='state_init'/>
+<use f='codebrowser/Modules/_sre.c' l='478' u='r' c='state_fini'/>
+<use f='codebrowser/Modules/_sre.c' l='1922' u='r' c='match_dealloc'/>
+<use f='codebrowser/Modules/_sre.c' l='1948' u='r' c='match_getslice_by_index'/>
+<use f='codebrowser/Modules/_sre.c' l='1954' u='r' c='match_getslice_by_index'/>
+<use f='codebrowser/Modules/_sre.c' l='1962' u='r' c='match_getslice_by_index'/>
+<use f='codebrowser/Modules/_sre.c' l='2380' u='r' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2381' u='w' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2381' u='r' c='pattern_new_match'/>
+<offset>256</offset>
+<doc f='codebrowser/Modules/sre.h' l='46'>/* link to the target string (must be first) */</doc>
+<doc f='codebrowser/Modules/sre.h' l='70'>/* attributes for the match object */</doc>

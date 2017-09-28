@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/marshal.h' l='17' type='long PyMarshal_ReadLongFromFile(FILE * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3810' u='c' c='pymarshal_read_long_from_file'/>
+<def f='codebrowser/Python/marshal.c' l='1496' ll='1510' type='long PyMarshal_ReadLongFromFile(FILE * fp)'/>
+<use f='codebrowser/Python/pythonrun.c' l='996' u='c' c='run_pyc_file'/>
+<use f='codebrowser/Python/pythonrun.c' l='1004' u='c' c='run_pyc_file'/>
+<use f='codebrowser/Python/pythonrun.c' l='1005' u='c' c='run_pyc_file'/>

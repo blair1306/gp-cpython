@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bootstrap_hash.c source code [codebrowser/Python/bootstrap_hash.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/bootstrap_hash.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='bootstrap_hash.c.html'>bootstrap_hash.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="2">2</th><td><u>#<span data-ppcond="2">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="3">3</th><td><u>#  include &lt;windows.h&gt;</u></td></tr>
+<tr><th id="4">4</th><td><i>/* All sample MSDN wincrypt programs include the header below. It is at least</i></td></tr>
+<tr><th id="5">5</th><td><i> * required with Min GW. */</i></td></tr>
+<tr><th id="6">6</th><td><u>#  include &lt;wincrypt.h&gt;</u></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="2">else</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#  include <a href="../../include/fcntl.h.html">&lt;fcntl.h&gt;</a></u></td></tr>
+<tr><th id="9">9</th><td><u>#  <span data-ppcond="9">ifdef</span> <a class="macro" href="../pyconfig.h.html#1053" data-ref="_M/HAVE_SYS_STAT_H">HAVE_SYS_STAT_H</a></u></td></tr>
+<tr><th id="10">10</th><td><u>#    include <a href="../../include/x86_64-linux-gnu/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="11">11</th><td><u>#  <span data-ppcond="9">endif</span></u></td></tr>
+<tr><th id="12">12</th><td><u>#  <span data-ppcond="12">ifdef</span> <a class="macro" href="../pyconfig.h.html#573" data-ref="_M/HAVE_LINUX_RANDOM_H">HAVE_LINUX_RANDOM_H</a></u></td></tr>
+<tr><th id="13">13</th><td><u>#    include <a href="../../include/linux/random.h.html">&lt;linux/random.h&gt;</a></u></td></tr>
+<tr><th id="14">14</th><td><u>#  <span data-ppcond="12">endif</span></u></td></tr>
+<tr><th id="15">15</th><td><u>#  <span data-ppcond="15">if</span> defined(<span class="macro" data-ref="_M/HAVE_SYS_RANDOM_H">HAVE_SYS_RANDOM_H</span>) &amp;&amp; (defined(<span class="macro" data-ref="_M/HAVE_GETRANDOM">HAVE_GETRANDOM</span>) || defined(<span class="macro" data-ref="_M/HAVE_GETENTROPY">HAVE_GETENTROPY</span>))</u></td></tr>
+<tr><th id="16">16</th><td><u>#    include &lt;sys/random.h&gt;</u></td></tr>
+<tr><th id="17">17</th><td><u>#  <span data-ppcond="15">endif</span></u></td></tr>
+<tr><th id="18">18</th><td><u>#  <span data-ppcond="18">if</span> !defined(<span class="macro" data-ref="_M/HAVE_GETRANDOM">HAVE_GETRANDOM</span>) &amp;&amp; defined(<a class="macro" href="../pyconfig.h.html#434" data-ref="_M/HAVE_GETRANDOM_SYSCALL">HAVE_GETRANDOM_SYSCALL</a>)</u></td></tr>
+<tr><th id="19">19</th><td><u>#    include <a href="../../include/x86_64-linux-gnu/sys/syscall.h.html">&lt;sys/syscall.h&gt;</a></u></td></tr>
+<tr><th id="20">20</th><td><u>#  <span data-ppcond="18">endif</span></u></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="2">endif</span></u></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifdef</span> <a class="macro" href="../pyconfig.h.html#1255" data-ref="_M/Py_DEBUG">Py_DEBUG</a></u></td></tr>
+<tr><th id="24">24</th><td><em>int</em> <dfn class="decl def" id="_Py_HashSecret_Initialized" title='_Py_HashSecret_Initialized' data-ref="_Py_HashSecret_Initialized">_Py_HashSecret_Initialized</dfn> = <var>0</var>;</td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="23">else</span></u></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <em>int</em> _Py_HashSecret_Initialized = <var>0</var>;</td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="30">30</th><td><em>static</em> HCRYPTPROV hCryptProv = <var>0</var>;</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="33">33</th><td>win32_urandom_init(<em>int</em> raise)</td></tr>
+<tr><th id="34">34</th><td>{</td></tr>
+<tr><th id="35">35</th><td>    <i>/* Acquire context */</i></td></tr>
+<tr><th id="36">36</th><td>    <b>if</b> (!CryptAcquireContext(&amp;hCryptProv, NULL, NULL,</td></tr>
+<tr><th id="37">37</th><td>                             PROV_RSA_FULL, CRYPT_VERIFYCONTEXT))</td></tr>
+<tr><th id="38">38</th><td>        <b>goto</b> error;</td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>error:</td></tr>
+<tr><th id="43">43</th><td>    <b>if</b> (raise) {</td></tr>
+<tr><th id="44">44</th><td>        PyErr_SetFromWindowsErr(<var>0</var>);</td></tr>
+<tr><th id="45">45</th><td>    }</td></tr>
+<tr><th id="46">46</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="47">47</th><td>}</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>/* Fill buffer with size pseudo-random bytes generated by the Windows CryptoGen</i></td></tr>
+<tr><th id="50">50</th><td><i>   API. Return 0 on success, or raise an exception and return -1 on error. */</i></td></tr>
+<tr><th id="51">51</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="52">52</th><td>win32_urandom(<em>unsigned</em> <em>char</em> *buffer, Py_ssize_t size, <em>int</em> raise)</td></tr>
+<tr><th id="53">53</th><td>{</td></tr>
+<tr><th id="54">54</th><td>    Py_ssize_t chunk;</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>    <b>if</b> (hCryptProv == <var>0</var>)</td></tr>
+<tr><th id="57">57</th><td>    {</td></tr>
+<tr><th id="58">58</th><td>        <b>if</b> (win32_urandom_init(raise) == -<var>1</var>) {</td></tr>
+<tr><th id="59">59</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="60">60</th><td>        }</td></tr>
+<tr><th id="61">61</th><td>    }</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td>    <b>while</b> (size &gt; <var>0</var>)</td></tr>
+<tr><th id="64">64</th><td>    {</td></tr>
+<tr><th id="65">65</th><td>        chunk = size &gt; INT_MAX ? INT_MAX : size;</td></tr>
+<tr><th id="66">66</th><td>        <b>if</b> (!CryptGenRandom(hCryptProv, (DWORD)chunk, buffer))</td></tr>
+<tr><th id="67">67</th><td>        {</td></tr>
+<tr><th id="68">68</th><td>            <i>/* CryptGenRandom() failed */</i></td></tr>
+<tr><th id="69">69</th><td>            <b>if</b> (raise) {</td></tr>
+<tr><th id="70">70</th><td>                PyErr_SetFromWindowsErr(<var>0</var>);</td></tr>
+<tr><th id="71">71</th><td>            }</td></tr>
+<tr><th id="72">72</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="73">73</th><td>        }</td></tr>
+<tr><th id="74">74</th><td>        buffer += chunk;</td></tr>
+<tr><th id="75">75</th><td>        size -= chunk;</td></tr>
+<tr><th id="76">76</th><td>    }</td></tr>
+<tr><th id="77">77</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="78">78</th><td>}</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#<span data-ppcond="29">else</span> /* !MS_WINDOWS */</u></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><u>#<span data-ppcond="82">if</span> defined(<span class="macro" data-ref="_M/HAVE_GETRANDOM">HAVE_GETRANDOM</span>) || defined(<a class="macro" href="../pyconfig.h.html#434" data-ref="_M/HAVE_GETRANDOM_SYSCALL">HAVE_GETRANDOM_SYSCALL</a>)</u></td></tr>
+<tr><th id="83">83</th><td><u>#define <dfn class="macro" id="_M/PY_GETRANDOM" data-ref="_M/PY_GETRANDOM">PY_GETRANDOM</dfn> 1</u></td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i  data-doc="py_getrandom">/* Call getrandom() to get random bytes:</i></td></tr>
+<tr><th id="86">86</th><td><i  data-doc="py_getrandom"></i></td></tr>
+<tr><th id="87">87</th><td><i  data-doc="py_getrandom">   - Return 1 on success</i></td></tr>
+<tr><th id="88">88</th><td><i  data-doc="py_getrandom">   - Return 0 if getrandom() is not available (failed with ENOSYS or EPERM),</i></td></tr>
+<tr><th id="89">89</th><td><i  data-doc="py_getrandom">     or if getrandom(GRND_NONBLOCK) failed with EAGAIN (system urandom not</i></td></tr>
+<tr><th id="90">90</th><td><i  data-doc="py_getrandom">     initialized yet) and raise=0.</i></td></tr>
+<tr><th id="91">91</th><td><i  data-doc="py_getrandom">   - Raise an exception (if raise is non-zero) and return -1 on error:</i></td></tr>
+<tr><th id="92">92</th><td><i  data-doc="py_getrandom">     if getrandom() failed with EINTR, raise is non-zero and the Python signal</i></td></tr>
+<tr><th id="93">93</th><td><i  data-doc="py_getrandom">     handler raised an exception, or if getrandom() failed with a different</i></td></tr>
+<tr><th id="94">94</th><td><i  data-doc="py_getrandom">     error.</i></td></tr>
+<tr><th id="95">95</th><td><i  data-doc="py_getrandom"></i></td></tr>
+<tr><th id="96">96</th><td><i  data-doc="py_getrandom">   getrandom() is retried if it failed with EINTR: interrupted by a signal. */</i></td></tr>
+<tr><th id="97">97</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="98">98</th><td><dfn class="tu decl def" id="py_getrandom" title='py_getrandom' data-type='int py_getrandom(void * buffer, Py_ssize_t size, int blocking, int raise)' data-ref="py_getrandom">py_getrandom</dfn>(<em>void</em> *<dfn class="local col1 decl" id="1buffer" title='buffer' data-type='void *' data-ref="1buffer">buffer</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="2size" title='size' data-type='Py_ssize_t' data-ref="2size">size</dfn>, <em>int</em> <dfn class="local col3 decl" id="3blocking" title='blocking' data-type='int' data-ref="3blocking">blocking</dfn>, <em>int</em> <dfn class="local col4 decl" id="4raise" title='raise' data-type='int' data-ref="4raise">raise</dfn>)</td></tr>
+<tr><th id="99">99</th><td>{</td></tr>
+<tr><th id="100">100</th><td>    <i>/* Is getrandom() supported by the running kernel? Set to 0 if getrandom()</i></td></tr>
+<tr><th id="101">101</th><td><i>       failed with ENOSYS or EPERM. Need Linux kernel 3.17 or newer, or Solaris</i></td></tr>
+<tr><th id="102">102</th><td><i>       11.3 or newer */</i></td></tr>
+<tr><th id="103">103</th><td>    <em>static</em> <em>int</em> <dfn class="local col5 decl" id="5getrandom_works" title='getrandom_works' data-type='int' data-ref="5getrandom_works">getrandom_works</dfn> = <var>1</var>;</td></tr>
+<tr><th id="104">104</th><td>    <em>int</em> <dfn class="local col6 decl" id="6flags" title='flags' data-type='int' data-ref="6flags">flags</dfn>;</td></tr>
+<tr><th id="105">105</th><td>    <em>char</em> *<dfn class="local col7 decl" id="7dest" title='dest' data-type='char *' data-ref="7dest">dest</dfn>;</td></tr>
+<tr><th id="106">106</th><td>    <em>long</em> <dfn class="local col8 decl" id="8n" title='n' data-type='long' data-ref="8n">n</dfn>;</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <b>if</b> (!<a class="local col5 ref" href="#5getrandom_works" title='getrandom_works' data-ref="5getrandom_works">getrandom_works</a>) {</td></tr>
+<tr><th id="109">109</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="110">110</th><td>    }</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td>    <a class="local col6 ref" href="#6flags" title='flags' data-ref="6flags">flags</a> = <a class="local col3 ref" href="#3blocking" title='blocking' data-ref="3blocking">blocking</a> ? <var>0</var> : <a class="macro" href="../../include/linux/random.h.html#49" title="0x0001" data-ref="_M/GRND_NONBLOCK">GRND_NONBLOCK</a>;</td></tr>
+<tr><th id="113">113</th><td>    <a class="local col7 ref" href="#7dest" title='dest' data-ref="7dest">dest</a> = <a class="local col1 ref" href="#1buffer" title='buffer' data-ref="1buffer">buffer</a>;</td></tr>
+<tr><th id="114">114</th><td>    <b>while</b> (<var>0</var> &lt; <a class="local col2 ref" href="#2size" title='size' data-ref="2size">size</a>) {</td></tr>
+<tr><th id="115">115</th><td><u>#<span data-ppcond="115">ifdef</span> <span class="macro" data-ref="_M/sun">sun</span></u></td></tr>
+<tr><th id="116">116</th><td>        <i>/* Issue #26735: On Solaris, getrandom() is limited to returning up</i></td></tr>
+<tr><th id="117">117</th><td><i>           to 1024 bytes. Call it multiple times if more bytes are</i></td></tr>
+<tr><th id="118">118</th><td><i>           requested. */</i></td></tr>
+<tr><th id="119">119</th><td>        n = Py_MIN(size, <var>1024</var>);</td></tr>
+<tr><th id="120">120</th><td><u>#<span data-ppcond="115">else</span></u></td></tr>
+<tr><th id="121">121</th><td>        <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a> = <a class="macro" href="../Include/pymacro.h.html#5" title="(((size) &gt; (9223372036854775807L)) ? (9223372036854775807L) : (size))" data-ref="_M/Py_MIN">Py_MIN</a>(<a class="local col2 ref" href="#2size" title='size' data-ref="2size">size</a>, <span class="macro" title="9223372036854775807L" data-ref="_M/LONG_MAX">LONG_MAX</span>);</td></tr>
+<tr><th id="122">122</th><td><u>#<span data-ppcond="115">endif</span></u></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>        <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <var>0</var>;</td></tr>
+<tr><th id="125">125</th><td><u>#<span data-ppcond="125">ifdef</span> <span class="macro" data-ref="_M/HAVE_GETRANDOM">HAVE_GETRANDOM</span></u></td></tr>
+<tr><th id="126">126</th><td>        <b>if</b> (raise) {</td></tr>
+<tr><th id="127">127</th><td>            Py_BEGIN_ALLOW_THREADS</td></tr>
+<tr><th id="128">128</th><td>            n = getrandom(dest, n, flags);</td></tr>
+<tr><th id="129">129</th><td>            Py_END_ALLOW_THREADS</td></tr>
+<tr><th id="130">130</th><td>        }</td></tr>
+<tr><th id="131">131</th><td>        <b>else</b> {</td></tr>
+<tr><th id="132">132</th><td>            n = getrandom(dest, n, flags);</td></tr>
+<tr><th id="133">133</th><td>        }</td></tr>
+<tr><th id="134">134</th><td><u>#<span data-ppcond="125">else</span></u></td></tr>
+<tr><th id="135">135</th><td>        <i>/* On Linux, use the syscall() function because the GNU libc doesn't</i></td></tr>
+<tr><th id="136">136</th><td><i>           expose the Linux getrandom() syscall yet. See:</i></td></tr>
+<tr><th id="137">137</th><td><i>           <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=17252">https://sourceware.org/bugzilla/show_bug.cgi?id=17252</a> */</i></td></tr>
+<tr><th id="138">138</th><td>        <b>if</b> (<a class="local col4 ref" href="#4raise" title='raise' data-ref="4raise">raise</a>) {</td></tr>
+<tr><th id="139">139</th><td>            <a class="macro" href="../Include/ceval.h.html#208" title="{ PyThreadState *_save; _save = PyEval_SaveThread();" data-ref="_M/Py_BEGIN_ALLOW_THREADS">Py_BEGIN_ALLOW_THREADS</a></td></tr>
+<tr><th id="140">140</th><td>            <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a> = <a class="ref" href="../../include/unistd.h.html#syscall" title='syscall' data-ref="syscall">syscall</a>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/syscall.h.html#475" title="318" data-ref="_M/SYS_getrandom">SYS_getrandom</a>, <a class="local col7 ref" href="#7dest" title='dest' data-ref="7dest">dest</a>, <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a>, <a class="local col6 ref" href="#6flags" title='flags' data-ref="6flags">flags</a>);</td></tr>
+<tr><th id="141">141</th><td>            <a class="macro" href="../Include/ceval.h.html#213" title="PyEval_RestoreThread(_save); }" data-ref="_M/Py_END_ALLOW_THREADS">Py_END_ALLOW_THREADS</a></td></tr>
+<tr><th id="142">142</th><td>        }</td></tr>
+<tr><th id="143">143</th><td>        <b>else</b> {</td></tr>
+<tr><th id="144">144</th><td>            <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a> = <a class="ref" href="../../include/unistd.h.html#syscall" title='syscall' data-ref="syscall">syscall</a>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/syscall.h.html#475" title="318" data-ref="_M/SYS_getrandom">SYS_getrandom</a>, <a class="local col7 ref" href="#7dest" title='dest' data-ref="7dest">dest</a>, <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a>, <a class="local col6 ref" href="#6flags" title='flags' data-ref="6flags">flags</a>);</td></tr>
+<tr><th id="145">145</th><td>        }</td></tr>
+<tr><th id="146">146</th><td><u>#<span data-ppcond="125">endif</span></u></td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td>        <b>if</b> (<a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="149">149</th><td>            <i>/* ENOSYS: the syscall is not supported by the kernel.</i></td></tr>
+<tr><th id="150">150</th><td><i>               EPERM: the syscall is blocked by a security policy (ex: SECCOMP)</i></td></tr>
+<tr><th id="151">151</th><td><i>               or something else. */</i></td></tr>
+<tr><th id="152">152</th><td>            <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno.h.html#17" title="38" data-ref="_M/ENOSYS">ENOSYS</a> || <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#4" title="1" data-ref="_M/EPERM">EPERM</a>) {</td></tr>
+<tr><th id="153">153</th><td>                <a class="local col5 ref" href="#5getrandom_works" title='getrandom_works' data-ref="5getrandom_works">getrandom_works</a> = <var>0</var>;</td></tr>
+<tr><th id="154">154</th><td>                <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="155">155</th><td>            }</td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td>            <i>/* getrandom(GRND_NONBLOCK) fails with EAGAIN if the system urandom</i></td></tr>
+<tr><th id="158">158</th><td><i>               is not initialiazed yet. For _PyRandom_Init(), we ignore the</i></td></tr>
+<tr><th id="159">159</th><td><i>               error and fall back on reading /dev/urandom which never blocks,</i></td></tr>
+<tr><th id="160">160</th><td><i>               even if the system urandom is not initialized yet:</i></td></tr>
+<tr><th id="161">161</th><td><i>               see the PEP 524. */</i></td></tr>
+<tr><th id="162">162</th><td>            <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#14" title="11" data-ref="_M/EAGAIN">EAGAIN</a> &amp;&amp; !<a class="local col4 ref" href="#4raise" title='raise' data-ref="4raise">raise</a> &amp;&amp; !<a class="local col3 ref" href="#3blocking" title='blocking' data-ref="3blocking">blocking</a>) {</td></tr>
+<tr><th id="163">163</th><td>                <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="164">164</th><td>            }</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td>            <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#7" title="4" data-ref="_M/EINTR">EINTR</a>) {</td></tr>
+<tr><th id="167">167</th><td>                <b>if</b> (<a class="local col4 ref" href="#4raise" title='raise' data-ref="4raise">raise</a>) {</td></tr>
+<tr><th id="168">168</th><td>                    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_CheckSignals" title='PyErr_CheckSignals' data-ref="PyErr_CheckSignals">PyErr_CheckSignals</a>()) {</td></tr>
+<tr><th id="169">169</th><td>                        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="170">170</th><td>                    }</td></tr>
+<tr><th id="171">171</th><td>                }</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>                <i>/* retry getrandom() if it was interrupted by a signal */</i></td></tr>
+<tr><th id="174">174</th><td>                <b>continue</b>;</td></tr>
+<tr><th id="175">175</th><td>            }</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td>            <b>if</b> (<a class="local col4 ref" href="#4raise" title='raise' data-ref="4raise">raise</a>) {</td></tr>
+<tr><th id="178">178</th><td>                <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="179">179</th><td>            }</td></tr>
+<tr><th id="180">180</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="181">181</th><td>        }</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td>        <a class="local col7 ref" href="#7dest" title='dest' data-ref="7dest">dest</a> += <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a>;</td></tr>
+<tr><th id="184">184</th><td>        <a class="local col2 ref" href="#2size" title='size' data-ref="2size">size</a> -= <a class="local col8 ref" href="#8n" title='n' data-ref="8n">n</a>;</td></tr>
+<tr><th id="185">185</th><td>    }</td></tr>
+<tr><th id="186">186</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="187">187</th><td>}</td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><u>#<span data-ppcond="82">elif</span> defined(HAVE_GETENTROPY)</u></td></tr>
+<tr><th id="190">190</th><td><u>#define PY_GETENTROPY 1</u></td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><i>/* Fill buffer with size pseudo-random bytes generated by getentropy():</i></td></tr>
+<tr><th id="193">193</th><td><i></i></td></tr>
+<tr><th id="194">194</th><td><i>   - Return 1 on success</i></td></tr>
+<tr><th id="195">195</th><td><i>   - Return 0 if getentropy() syscall is not available (failed with ENOSYS or</i></td></tr>
+<tr><th id="196">196</th><td><i>     EPERM).</i></td></tr>
+<tr><th id="197">197</th><td><i>   - Raise an exception (if raise is non-zero) and return -1 on error:</i></td></tr>
+<tr><th id="198">198</th><td><i>     if getentropy() failed with EINTR, raise is non-zero and the Python signal</i></td></tr>
+<tr><th id="199">199</th><td><i>     handler raised an exception, or if getentropy() failed with a different</i></td></tr>
+<tr><th id="200">200</th><td><i>     error.</i></td></tr>
+<tr><th id="201">201</th><td><i></i></td></tr>
+<tr><th id="202">202</th><td><i>   getentropy() is retried if it failed with EINTR: interrupted by a signal. */</i></td></tr>
+<tr><th id="203">203</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="204">204</th><td>py_getentropy(<em>char</em> *buffer, Py_ssize_t size, <em>int</em> raise)</td></tr>
+<tr><th id="205">205</th><td>{</td></tr>
+<tr><th id="206">206</th><td>    <i>/* Is getentropy() supported by the running kernel? Set to 0 if</i></td></tr>
+<tr><th id="207">207</th><td><i>       getentropy() failed with ENOSYS or EPERM. */</i></td></tr>
+<tr><th id="208">208</th><td>    <em>static</em> <em>int</em> getentropy_works = <var>1</var>;</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td>    <b>if</b> (!getentropy_works) {</td></tr>
+<tr><th id="211">211</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="212">212</th><td>    }</td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td>    <b>while</b> (size &gt; <var>0</var>) {</td></tr>
+<tr><th id="215">215</th><td>        <i>/* getentropy() is limited to returning up to 256 bytes. Call it</i></td></tr>
+<tr><th id="216">216</th><td><i>           multiple times if more bytes are requested. */</i></td></tr>
+<tr><th id="217">217</th><td>        Py_ssize_t len = Py_MIN(size, <var>256</var>);</td></tr>
+<tr><th id="218">218</th><td>        <em>int</em> res;</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td>        <b>if</b> (raise) {</td></tr>
+<tr><th id="221">221</th><td>            Py_BEGIN_ALLOW_THREADS</td></tr>
+<tr><th id="222">222</th><td>            res = getentropy(buffer, len);</td></tr>
+<tr><th id="223">223</th><td>            Py_END_ALLOW_THREADS</td></tr>
+<tr><th id="224">224</th><td>        }</td></tr>
+<tr><th id="225">225</th><td>        <b>else</b> {</td></tr>
+<tr><th id="226">226</th><td>            res = getentropy(buffer, len);</td></tr>
+<tr><th id="227">227</th><td>        }</td></tr>
+<tr><th id="228">228</th><td></td></tr>
+<tr><th id="229">229</th><td>        <b>if</b> (res &lt; <var>0</var>) {</td></tr>
+<tr><th id="230">230</th><td>            <i>/* ENOSYS: the syscall is not supported by the running kernel.</i></td></tr>
+<tr><th id="231">231</th><td><i>               EPERM: the syscall is blocked by a security policy (ex: SECCOMP)</i></td></tr>
+<tr><th id="232">232</th><td><i>               or something else. */</i></td></tr>
+<tr><th id="233">233</th><td>            <b>if</b> (errno == ENOSYS || errno == EPERM) {</td></tr>
+<tr><th id="234">234</th><td>                getentropy_works = <var>0</var>;</td></tr>
+<tr><th id="235">235</th><td>                <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="236">236</th><td>            }</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td>            <b>if</b> (errno == EINTR) {</td></tr>
+<tr><th id="239">239</th><td>                <b>if</b> (raise) {</td></tr>
+<tr><th id="240">240</th><td>                    <b>if</b> (PyErr_CheckSignals()) {</td></tr>
+<tr><th id="241">241</th><td>                        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="242">242</th><td>                    }</td></tr>
+<tr><th id="243">243</th><td>                }</td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td>                <i>/* retry getentropy() if it was interrupted by a signal */</i></td></tr>
+<tr><th id="246">246</th><td>                <b>continue</b>;</td></tr>
+<tr><th id="247">247</th><td>            }</td></tr>
+<tr><th id="248">248</th><td></td></tr>
+<tr><th id="249">249</th><td>            <b>if</b> (raise) {</td></tr>
+<tr><th id="250">250</th><td>                PyErr_SetFromErrno(PyExc_OSError);</td></tr>
+<tr><th id="251">251</th><td>            }</td></tr>
+<tr><th id="252">252</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="253">253</th><td>        }</td></tr>
+<tr><th id="254">254</th><td></td></tr>
+<tr><th id="255">255</th><td>        buffer += len;</td></tr>
+<tr><th id="256">256</th><td>        size -= len;</td></tr>
+<tr><th id="257">257</th><td>    }</td></tr>
+<tr><th id="258">258</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="259">259</th><td>}</td></tr>
+<tr><th id="260">260</th><td><u>#<span data-ppcond="82">endif</span> /* defined(HAVE_GETENTROPY) &amp;&amp; !defined(sun) */</u></td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td><em>static</em> <b>struct</b> {</td></tr>
+<tr><th id="264">264</th><td>    <em>int</em> <dfn class="local col9 decl" id="9fd" title='fd' data-type='int' data-ref="9fd">fd</dfn>;</td></tr>
+<tr><th id="265">265</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#dev_t" title='dev_t' data-type='__dev_t' data-ref="dev_t">dev_t</a> <dfn class="local col0 decl" id="10st_dev" title='st_dev' data-type='dev_t' data-ref="10st_dev">st_dev</dfn>;</td></tr>
+<tr><th id="266">266</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ino_t" title='ino_t' data-type='__ino64_t' data-ref="ino_t">ino_t</a> <dfn class="local col1 decl" id="11st_ino" title='st_ino' data-type='ino_t' data-ref="11st_ino">st_ino</dfn>;</td></tr>
+<tr><th id="267">267</th><td>} <dfn class="tu decl def" id="urandom_cache" title='urandom_cache' data-type='struct (anonymous struct at /home/jon/workspace/cpython/Python/bootstrap_hash.c:263:8)' data-ref="urandom_cache">urandom_cache</dfn> = { -<var>1</var> };</td></tr>
+<tr><th id="268">268</th><td></td></tr>
+<tr><th id="269">269</th><td><i  data-doc="dev_urandom">/* Read random bytes from the /dev/urandom device:</i></td></tr>
+<tr><th id="270">270</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="271">271</th><td><i  data-doc="dev_urandom">   - Return 0 on success</i></td></tr>
+<tr><th id="272">272</th><td><i  data-doc="dev_urandom">   - Raise an exception (if raise is non-zero) and return -1 on error</i></td></tr>
+<tr><th id="273">273</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="274">274</th><td><i  data-doc="dev_urandom">   Possible causes of errors:</i></td></tr>
+<tr><th id="275">275</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="276">276</th><td><i  data-doc="dev_urandom">   - open() failed with ENOENT, ENXIO, ENODEV, EACCES: the /dev/urandom device</i></td></tr>
+<tr><th id="277">277</th><td><i  data-doc="dev_urandom">     was not found. For example, it was removed manually or not exposed in a</i></td></tr>
+<tr><th id="278">278</th><td><i  data-doc="dev_urandom">     chroot or container.</i></td></tr>
+<tr><th id="279">279</th><td><i  data-doc="dev_urandom">   - open() failed with a different error</i></td></tr>
+<tr><th id="280">280</th><td><i  data-doc="dev_urandom">   - fstat() failed</i></td></tr>
+<tr><th id="281">281</th><td><i  data-doc="dev_urandom">   - read() failed or returned 0</i></td></tr>
+<tr><th id="282">282</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="283">283</th><td><i  data-doc="dev_urandom">   read() is retried if it failed with EINTR: interrupted by a signal.</i></td></tr>
+<tr><th id="284">284</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="285">285</th><td><i  data-doc="dev_urandom">   The file descriptor of the device is kept open between calls to avoid using</i></td></tr>
+<tr><th id="286">286</th><td><i  data-doc="dev_urandom">   many file descriptors when run in parallel from multiple threads:</i></td></tr>
+<tr><th id="287">287</th><td><i  data-doc="dev_urandom">   see the issue #18756.</i></td></tr>
+<tr><th id="288">288</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="289">289</th><td><i  data-doc="dev_urandom">   st_dev and st_ino fields of the file descriptor (from fstat()) are cached to</i></td></tr>
+<tr><th id="290">290</th><td><i  data-doc="dev_urandom">   check if the file descriptor was replaced by a different file (which is</i></td></tr>
+<tr><th id="291">291</th><td><i  data-doc="dev_urandom">   likely a bug in the application): see the issue #21207.</i></td></tr>
+<tr><th id="292">292</th><td><i  data-doc="dev_urandom"></i></td></tr>
+<tr><th id="293">293</th><td><i  data-doc="dev_urandom">   If the file descriptor was closed or replaced, open a new file descriptor</i></td></tr>
+<tr><th id="294">294</th><td><i  data-doc="dev_urandom">   but don't close the old file descriptor: it probably points to something</i></td></tr>
+<tr><th id="295">295</th><td><i  data-doc="dev_urandom">   important for some third-party code. */</i></td></tr>
+<tr><th id="296">296</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="297">297</th><td><dfn class="tu decl def" id="dev_urandom" title='dev_urandom' data-type='int dev_urandom(char * buffer, Py_ssize_t size, int raise)' data-ref="dev_urandom">dev_urandom</dfn>(<em>char</em> *<dfn class="local col2 decl" id="12buffer" title='buffer' data-type='char *' data-ref="12buffer">buffer</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="13size" title='size' data-type='Py_ssize_t' data-ref="13size">size</dfn>, <em>int</em> <dfn class="local col4 decl" id="14raise" title='raise' data-type='int' data-ref="14raise">raise</dfn>)</td></tr>
+<tr><th id="298">298</th><td>{</td></tr>
+<tr><th id="299">299</th><td>    <em>int</em> <dfn class="local col5 decl" id="15fd" title='fd' data-type='int' data-ref="15fd">fd</dfn>;</td></tr>
+<tr><th id="300">300</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="16n" title='n' data-type='Py_ssize_t' data-ref="16n">n</dfn>;</td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td>    <b>if</b> (<a class="local col4 ref" href="#14raise" title='raise' data-ref="14raise">raise</a>) {</td></tr>
+<tr><th id="303">303</th><td>        <b>struct</b> <a class="macro" href="../Include/fileutils.h.html#41" title="stat" data-ref="_M/_Py_stat_struct">_Py_stat_struct</a> <dfn class="local col7 decl" id="17st" title='st' data-type='struct stat' data-ref="17st">st</dfn>;</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td>        <b>if</b> (<a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="306">306</th><td>            <i>/* Does the fd point to the same thing as before? (issue #21207) */</i></td></tr>
+<tr><th id="307">307</th><td>            <b>if</b> (<a class="ref" href="../Include/fileutils.h.html#_Py_fstat_noraise" title='_Py_fstat_noraise' data-ref="_Py_fstat_noraise">_Py_fstat_noraise</a>(<a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a>, &amp;<a class="local col7 ref" href="#17st" title='st' data-ref="17st">st</a>)</td></tr>
+<tr><th id="308">308</th><td>                || <a class="local col7 ref" href="#17st" title='st' data-ref="17st">st</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_dev" title='stat::st_dev' data-ref="stat::st_dev">st_dev</a> != <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col0 ref" href="#10st_dev" title='st_dev' data-ref="10st_dev">st_dev</a></td></tr>
+<tr><th id="309">309</th><td>                || <a class="local col7 ref" href="#17st" title='st' data-ref="17st">st</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_ino" title='stat::st_ino' data-ref="stat::st_ino">st_ino</a> != <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col1 ref" href="#11st_ino" title='st_ino' data-ref="11st_ino">st_ino</a>) {</td></tr>
+<tr><th id="310">310</th><td>                <i>/* Something changed: forget the cached fd (but don't close it,</i></td></tr>
+<tr><th id="311">311</th><td><i>                   since it probably points to something important for some</i></td></tr>
+<tr><th id="312">312</th><td><i>                   third-party code). */</i></td></tr>
+<tr><th id="313">313</th><td>                <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> = -<var>1</var>;</td></tr>
+<tr><th id="314">314</th><td>            }</td></tr>
+<tr><th id="315">315</th><td>        }</td></tr>
+<tr><th id="316">316</th><td>        <b>if</b> (<a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> &gt;= <var>0</var>)</td></tr>
+<tr><th id="317">317</th><td>            <a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a> = <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a>;</td></tr>
+<tr><th id="318">318</th><td>        <b>else</b> {</td></tr>
+<tr><th id="319">319</th><td>            <a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a> = <a class="ref" href="../Include/fileutils.h.html#_Py_open" title='_Py_open' data-ref="_Py_open">_Py_open</a>(<q>"/dev/urandom"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a>);</td></tr>
+<tr><th id="320">320</th><td>            <b>if</b> (<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="321">321</th><td>                <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#5" title="2" data-ref="_M/ENOENT">ENOENT</a> || <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#9" title="6" data-ref="_M/ENXIO">ENXIO</a> ||</td></tr>
+<tr><th id="322">322</th><td>                    <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#22" title="19" data-ref="_M/ENODEV">ENODEV</a> || <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#16" title="13" data-ref="_M/EACCES">EACCES</a>) {</td></tr>
+<tr><th id="323">323</th><td>                    <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_NotImplementedError" title='PyExc_NotImplementedError' data-ref="PyExc_NotImplementedError">PyExc_NotImplementedError</a>,</td></tr>
+<tr><th id="324">324</th><td>                                    <q>"/dev/urandom (or equivalent) not found"</q>);</td></tr>
+<tr><th id="325">325</th><td>                }</td></tr>
+<tr><th id="326">326</th><td>                <i>/* otherwise, keep the OSError exception raised by _Py_open() */</i></td></tr>
+<tr><th id="327">327</th><td>                <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="328">328</th><td>            }</td></tr>
+<tr><th id="329">329</th><td>            <b>if</b> (<a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="330">330</th><td>                <i>/* urandom_fd was initialized by another thread while we were</i></td></tr>
+<tr><th id="331">331</th><td><i>                   not holding the GIL, keep it. */</i></td></tr>
+<tr><th id="332">332</th><td>                <a class="ref" href="../../include/unistd.h.html#close" title='close' data-ref="close">close</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>);</td></tr>
+<tr><th id="333">333</th><td>                <a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a> = <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a>;</td></tr>
+<tr><th id="334">334</th><td>            }</td></tr>
+<tr><th id="335">335</th><td>            <b>else</b> {</td></tr>
+<tr><th id="336">336</th><td>                <b>if</b> (<a class="ref" href="../Include/fileutils.h.html#_Py_fstat" title='_Py_fstat' data-ref="_Py_fstat">_Py_fstat</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>, &amp;<a class="local col7 ref" href="#17st" title='st' data-ref="17st">st</a>)) {</td></tr>
+<tr><th id="337">337</th><td>                    <a class="ref" href="../../include/unistd.h.html#close" title='close' data-ref="close">close</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>);</td></tr>
+<tr><th id="338">338</th><td>                    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="339">339</th><td>                }</td></tr>
+<tr><th id="340">340</th><td>                <b>else</b> {</td></tr>
+<tr><th id="341">341</th><td>                    <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> = <a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>;</td></tr>
+<tr><th id="342">342</th><td>                    <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col0 ref" href="#10st_dev" title='st_dev' data-ref="10st_dev">st_dev</a> = <a class="local col7 ref" href="#17st" title='st' data-ref="17st">st</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_dev" title='stat::st_dev' data-ref="stat::st_dev">st_dev</a>;</td></tr>
+<tr><th id="343">343</th><td>                    <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col1 ref" href="#11st_ino" title='st_ino' data-ref="11st_ino">st_ino</a> = <a class="local col7 ref" href="#17st" title='st' data-ref="17st">st</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/stat.h.html#stat::st_ino" title='stat::st_ino' data-ref="stat::st_ino">st_ino</a>;</td></tr>
+<tr><th id="344">344</th><td>                }</td></tr>
+<tr><th id="345">345</th><td>            }</td></tr>
+<tr><th id="346">346</th><td>        }</td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td>        <b>do</b> {</td></tr>
+<tr><th id="349">349</th><td>            <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> = <a class="ref" href="../Include/fileutils.h.html#_Py_read" title='_Py_read' data-ref="_Py_read">_Py_read</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>, <a class="local col2 ref" href="#12buffer" title='buffer' data-ref="12buffer">buffer</a>, (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span>)<a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a>);</td></tr>
+<tr><th id="350">350</th><td>            <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> == -<var>1</var>)</td></tr>
+<tr><th id="351">351</th><td>                <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="352">352</th><td>            <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> == <var>0</var>) {</td></tr>
+<tr><th id="353">353</th><td>                <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_RuntimeError" title='PyExc_RuntimeError' data-ref="PyExc_RuntimeError">PyExc_RuntimeError</a>,</td></tr>
+<tr><th id="354">354</th><td>                        <q>"Failed to read %zi bytes from /dev/urandom"</q>,</td></tr>
+<tr><th id="355">355</th><td>                        <a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a>);</td></tr>
+<tr><th id="356">356</th><td>                <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="357">357</th><td>            }</td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td>            <a class="local col2 ref" href="#12buffer" title='buffer' data-ref="12buffer">buffer</a> += <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>;</td></tr>
+<tr><th id="360">360</th><td>            <a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a> -= <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>;</td></tr>
+<tr><th id="361">361</th><td>        } <b>while</b> (<var>0</var> &lt; <a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a>);</td></tr>
+<tr><th id="362">362</th><td>    }</td></tr>
+<tr><th id="363">363</th><td>    <b>else</b> {</td></tr>
+<tr><th id="364">364</th><td>        <a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a> = <a class="ref" href="../Include/fileutils.h.html#_Py_open_noraise" title='_Py_open_noraise' data-ref="_Py_open_noraise">_Py_open_noraise</a>(<q>"/dev/urandom"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/fcntl-linux.h.html#43" title="00" data-ref="_M/O_RDONLY">O_RDONLY</a>);</td></tr>
+<tr><th id="365">365</th><td>        <b>if</b> (<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="366">366</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="367">367</th><td>        }</td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td>        <b>while</b> (<var>0</var> &lt; <a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a>)</td></tr>
+<tr><th id="370">370</th><td>        {</td></tr>
+<tr><th id="371">371</th><td>            <b>do</b> {</td></tr>
+<tr><th id="372">372</th><td>                <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> = <a class="ref" href="../../include/unistd.h.html#read" title='read' data-ref="read">read</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>, <a class="local col2 ref" href="#12buffer" title='buffer' data-ref="12buffer">buffer</a>, (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span>)<a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a>);</td></tr>
+<tr><th id="373">373</th><td>            } <b>while</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &lt; <var>0</var> &amp;&amp; <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#7" title="4" data-ref="_M/EINTR">EINTR</a>);</td></tr>
+<tr><th id="374">374</th><td></td></tr>
+<tr><th id="375">375</th><td>            <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &lt;= <var>0</var>) {</td></tr>
+<tr><th id="376">376</th><td>                <i>/* stop on error or if read(size) returned 0 */</i></td></tr>
+<tr><th id="377">377</th><td>                <a class="ref" href="../../include/unistd.h.html#close" title='close' data-ref="close">close</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>);</td></tr>
+<tr><th id="378">378</th><td>                <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="379">379</th><td>            }</td></tr>
+<tr><th id="380">380</th><td></td></tr>
+<tr><th id="381">381</th><td>            <a class="local col2 ref" href="#12buffer" title='buffer' data-ref="12buffer">buffer</a> += <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>;</td></tr>
+<tr><th id="382">382</th><td>            <a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a> -= <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>;</td></tr>
+<tr><th id="383">383</th><td>        }</td></tr>
+<tr><th id="384">384</th><td>        <a class="ref" href="../../include/unistd.h.html#close" title='close' data-ref="close">close</a>(<a class="local col5 ref" href="#15fd" title='fd' data-ref="15fd">fd</a>);</td></tr>
+<tr><th id="385">385</th><td>    }</td></tr>
+<tr><th id="386">386</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="387">387</th><td>}</td></tr>
+<tr><th id="388">388</th><td></td></tr>
+<tr><th id="389">389</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="390">390</th><td><dfn class="tu decl def" id="dev_urandom_close" title='dev_urandom_close' data-type='void dev_urandom_close()' data-ref="dev_urandom_close">dev_urandom_close</dfn>(<em>void</em>)</td></tr>
+<tr><th id="391">391</th><td>{</td></tr>
+<tr><th id="392">392</th><td>    <b>if</b> (<a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="393">393</th><td>        <a class="ref" href="../../include/unistd.h.html#close" title='close' data-ref="close">close</a>(<a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a>);</td></tr>
+<tr><th id="394">394</th><td>        <a class="tu ref" href="#urandom_cache" title='urandom_cache' data-use='m' data-ref="urandom_cache">urandom_cache</a>.<a class="local col9 ref" href="#9fd" title='fd' data-ref="9fd">fd</a> = -<var>1</var>;</td></tr>
+<tr><th id="395">395</th><td>    }</td></tr>
+<tr><th id="396">396</th><td>}</td></tr>
+<tr><th id="397">397</th><td><u>#<span data-ppcond="29">endif</span> /* !MS_WINDOWS */</u></td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td></td></tr>
+<tr><th id="400">400</th><td><i  data-doc="lcg_urandom">/* Fill buffer with pseudo-random bytes generated by a linear congruent</i></td></tr>
+<tr><th id="401">401</th><td><i  data-doc="lcg_urandom">   generator (LCG):</i></td></tr>
+<tr><th id="402">402</th><td><i  data-doc="lcg_urandom"></i></td></tr>
+<tr><th id="403">403</th><td><i  data-doc="lcg_urandom">       x(n+1) = (x(n) * 214013 + 2531011) % 2^32</i></td></tr>
+<tr><th id="404">404</th><td><i  data-doc="lcg_urandom"></i></td></tr>
+<tr><th id="405">405</th><td><i  data-doc="lcg_urandom">   Use bits 23..16 of x(n) to generate a byte. */</i></td></tr>
+<tr><th id="406">406</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="407">407</th><td><dfn class="tu decl def" id="lcg_urandom" title='lcg_urandom' data-type='void lcg_urandom(unsigned int x0, unsigned char * buffer, size_t size)' data-ref="lcg_urandom">lcg_urandom</dfn>(<em>unsigned</em> <em>int</em> <dfn class="local col8 decl" id="18x0" title='x0' data-type='unsigned int' data-ref="18x0">x0</dfn>, <em>unsigned</em> <em>char</em> *<dfn class="local col9 decl" id="19buffer" title='buffer' data-type='unsigned char *' data-ref="19buffer">buffer</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="20size" title='size' data-type='size_t' data-ref="20size">size</dfn>)</td></tr>
+<tr><th id="408">408</th><td>{</td></tr>
+<tr><th id="409">409</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col1 decl" id="21index" title='index' data-type='size_t' data-ref="21index">index</dfn>;</td></tr>
+<tr><th id="410">410</th><td>    <em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="22x" title='x' data-type='unsigned int' data-ref="22x">x</dfn>;</td></tr>
+<tr><th id="411">411</th><td></td></tr>
+<tr><th id="412">412</th><td>    <a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a> = <a class="local col8 ref" href="#18x0" title='x0' data-ref="18x0">x0</a>;</td></tr>
+<tr><th id="413">413</th><td>    <b>for</b> (<a class="local col1 ref" href="#21index" title='index' data-ref="21index">index</a>=<var>0</var>; <a class="local col1 ref" href="#21index" title='index' data-ref="21index">index</a> &lt; <a class="local col0 ref" href="#20size" title='size' data-ref="20size">size</a>; <a class="local col1 ref" href="#21index" title='index' data-ref="21index">index</a>++) {</td></tr>
+<tr><th id="414">414</th><td>        <a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a> *= <var>214013</var>;</td></tr>
+<tr><th id="415">415</th><td>        <a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a> += <var>2531011</var>;</td></tr>
+<tr><th id="416">416</th><td>        <i>/* modulo 2 ^ (8 * sizeof(int)) */</i></td></tr>
+<tr><th id="417">417</th><td>        <a class="local col9 ref" href="#19buffer" title='buffer' data-ref="19buffer">buffer</a>[<a class="local col1 ref" href="#21index" title='index' data-ref="21index">index</a>] = (<a class="local col2 ref" href="#22x" title='x' data-ref="22x">x</a> &gt;&gt; <var>16</var>) &amp; <var>0xff</var>;</td></tr>
+<tr><th id="418">418</th><td>    }</td></tr>
+<tr><th id="419">419</th><td>}</td></tr>
+<tr><th id="420">420</th><td></td></tr>
+<tr><th id="421">421</th><td><i  data-doc="pyurandom">/* Read random bytes:</i></td></tr>
+<tr><th id="422">422</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="423">423</th><td><i  data-doc="pyurandom">   - Return 0 on success</i></td></tr>
+<tr><th id="424">424</th><td><i  data-doc="pyurandom">   - Raise an exception (if raise is non-zero) and return -1 on error</i></td></tr>
+<tr><th id="425">425</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="426">426</th><td><i  data-doc="pyurandom">   Used sources of entropy ordered by preference, preferred source first:</i></td></tr>
+<tr><th id="427">427</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="428">428</th><td><i  data-doc="pyurandom">   - CryptGenRandom() on Windows</i></td></tr>
+<tr><th id="429">429</th><td><i  data-doc="pyurandom">   - getrandom() function (ex: Linux and Solaris): call py_getrandom()</i></td></tr>
+<tr><th id="430">430</th><td><i  data-doc="pyurandom">   - getentropy() function (ex: OpenBSD): call py_getentropy()</i></td></tr>
+<tr><th id="431">431</th><td><i  data-doc="pyurandom">   - /dev/urandom device</i></td></tr>
+<tr><th id="432">432</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="433">433</th><td><i  data-doc="pyurandom">   Read from the /dev/urandom device if getrandom() or getentropy() function</i></td></tr>
+<tr><th id="434">434</th><td><i  data-doc="pyurandom">   is not available or does not work.</i></td></tr>
+<tr><th id="435">435</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="436">436</th><td><i  data-doc="pyurandom">   Prefer getrandom() over getentropy() because getrandom() supports blocking</i></td></tr>
+<tr><th id="437">437</th><td><i  data-doc="pyurandom">   and non-blocking mode: see the PEP 524. Python requires non-blocking RNG at</i></td></tr>
+<tr><th id="438">438</th><td><i  data-doc="pyurandom">   startup to initialize its hash secret, but os.urandom() must block until the</i></td></tr>
+<tr><th id="439">439</th><td><i  data-doc="pyurandom">   system urandom is initialized (at least on Linux 3.17 and newer).</i></td></tr>
+<tr><th id="440">440</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="441">441</th><td><i  data-doc="pyurandom">   Prefer getrandom() and getentropy() over reading directly /dev/urandom</i></td></tr>
+<tr><th id="442">442</th><td><i  data-doc="pyurandom">   because these functions don't need file descriptors and so avoid ENFILE or</i></td></tr>
+<tr><th id="443">443</th><td><i  data-doc="pyurandom">   EMFILE errors (too many open files): see the issue #18756.</i></td></tr>
+<tr><th id="444">444</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="445">445</th><td><i  data-doc="pyurandom">   Only the getrandom() function supports non-blocking mode.</i></td></tr>
+<tr><th id="446">446</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="447">447</th><td><i  data-doc="pyurandom">   Only use RNG running in the kernel. They are more secure because it is</i></td></tr>
+<tr><th id="448">448</th><td><i  data-doc="pyurandom">   harder to get the internal state of a RNG running in the kernel land than a</i></td></tr>
+<tr><th id="449">449</th><td><i  data-doc="pyurandom">   RNG running in the user land. The kernel has a direct access to the hardware</i></td></tr>
+<tr><th id="450">450</th><td><i  data-doc="pyurandom">   and has access to hardware RNG, they are used as entropy sources.</i></td></tr>
+<tr><th id="451">451</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="452">452</th><td><i  data-doc="pyurandom">   Note: the OpenSSL RAND_pseudo_bytes() function does not automatically reseed</i></td></tr>
+<tr><th id="453">453</th><td><i  data-doc="pyurandom">   its RNG on fork(), two child processes (with the same pid) generate the same</i></td></tr>
+<tr><th id="454">454</th><td><i  data-doc="pyurandom">   random numbers: see issue #18747. Kernel RNGs don't have this issue,</i></td></tr>
+<tr><th id="455">455</th><td><i  data-doc="pyurandom">   they have access to good quality entropy sources.</i></td></tr>
+<tr><th id="456">456</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="457">457</th><td><i  data-doc="pyurandom">   If raise is zero:</i></td></tr>
+<tr><th id="458">458</th><td><i  data-doc="pyurandom"></i></td></tr>
+<tr><th id="459">459</th><td><i  data-doc="pyurandom">   - Don't raise an exception on error</i></td></tr>
+<tr><th id="460">460</th><td><i  data-doc="pyurandom">   - Don't call the Python signal handler (don't call PyErr_CheckSignals()) if</i></td></tr>
+<tr><th id="461">461</th><td><i  data-doc="pyurandom">     a function fails with EINTR: retry directly the interrupted function</i></td></tr>
+<tr><th id="462">462</th><td><i  data-doc="pyurandom">   - Don't release the GIL to call functions.</i></td></tr>
+<tr><th id="463">463</th><td><i  data-doc="pyurandom">*/</i></td></tr>
+<tr><th id="464">464</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="465">465</th><td><dfn class="tu decl def" id="pyurandom" title='pyurandom' data-type='int pyurandom(void * buffer, Py_ssize_t size, int blocking, int raise)' data-ref="pyurandom">pyurandom</dfn>(<em>void</em> *<dfn class="local col3 decl" id="23buffer" title='buffer' data-type='void *' data-ref="23buffer">buffer</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="24size" title='size' data-type='Py_ssize_t' data-ref="24size">size</dfn>, <em>int</em> <dfn class="local col5 decl" id="25blocking" title='blocking' data-type='int' data-ref="25blocking">blocking</dfn>, <em>int</em> <dfn class="local col6 decl" id="26raise" title='raise' data-type='int' data-ref="26raise">raise</dfn>)</td></tr>
+<tr><th id="466">466</th><td>{</td></tr>
+<tr><th id="467">467</th><td><u>#<span data-ppcond="467">if</span> defined(<a class="macro" href="#83" data-ref="_M/PY_GETRANDOM">PY_GETRANDOM</a>) || defined(<span class="macro" data-ref="_M/PY_GETENTROPY">PY_GETENTROPY</span>)</u></td></tr>
+<tr><th id="468">468</th><td>    <em>int</em> <dfn class="local col7 decl" id="27res" title='res' data-type='int' data-ref="27res">res</dfn>;</td></tr>
+<tr><th id="469">469</th><td><u>#<span data-ppcond="467">endif</span></u></td></tr>
+<tr><th id="470">470</th><td></td></tr>
+<tr><th id="471">471</th><td>    <b>if</b> (<a class="local col4 ref" href="#24size" title='size' data-ref="24size">size</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="472">472</th><td>        <b>if</b> (<a class="local col6 ref" href="#26raise" title='raise' data-ref="26raise">raise</a>) {</td></tr>
+<tr><th id="473">473</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="474">474</th><td>                         <q>"negative argument not allowed"</q>);</td></tr>
+<tr><th id="475">475</th><td>        }</td></tr>
+<tr><th id="476">476</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="477">477</th><td>    }</td></tr>
+<tr><th id="478">478</th><td></td></tr>
+<tr><th id="479">479</th><td>    <b>if</b> (<a class="local col4 ref" href="#24size" title='size' data-ref="24size">size</a> == <var>0</var>) {</td></tr>
+<tr><th id="480">480</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="481">481</th><td>    }</td></tr>
+<tr><th id="482">482</th><td></td></tr>
+<tr><th id="483">483</th><td><u>#<span data-ppcond="483">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="484">484</th><td>    <b>return</b> win32_urandom((<em>unsigned</em> <em>char</em> *)buffer, size, raise);</td></tr>
+<tr><th id="485">485</th><td><u>#<span data-ppcond="483">else</span></u></td></tr>
+<tr><th id="486">486</th><td></td></tr>
+<tr><th id="487">487</th><td><u>#<span data-ppcond="487">if</span> defined(<a class="macro" href="#83" data-ref="_M/PY_GETRANDOM">PY_GETRANDOM</a>) || defined(<span class="macro" data-ref="_M/PY_GETENTROPY">PY_GETENTROPY</span>)</u></td></tr>
+<tr><th id="488">488</th><td><u>#<span data-ppcond="488">ifdef</span> <a class="macro" href="#83" data-ref="_M/PY_GETRANDOM">PY_GETRANDOM</a></u></td></tr>
+<tr><th id="489">489</th><td>    <a class="local col7 ref" href="#27res" title='res' data-ref="27res">res</a> = <a class="tu ref" href="#py_getrandom" title='py_getrandom' data-use='c' data-ref="py_getrandom">py_getrandom</a>(<a class="local col3 ref" href="#23buffer" title='buffer' data-ref="23buffer">buffer</a>, <a class="local col4 ref" href="#24size" title='size' data-ref="24size">size</a>, <a class="local col5 ref" href="#25blocking" title='blocking' data-ref="25blocking">blocking</a>, <a class="local col6 ref" href="#26raise" title='raise' data-ref="26raise">raise</a>);</td></tr>
+<tr><th id="490">490</th><td><u>#<span data-ppcond="488">else</span></u></td></tr>
+<tr><th id="491">491</th><td>    res = py_getentropy(buffer, size, raise);</td></tr>
+<tr><th id="492">492</th><td><u>#<span data-ppcond="488">endif</span></u></td></tr>
+<tr><th id="493">493</th><td>    <b>if</b> (<a class="local col7 ref" href="#27res" title='res' data-ref="27res">res</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="494">494</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="495">495</th><td>    }</td></tr>
+<tr><th id="496">496</th><td>    <b>if</b> (<a class="local col7 ref" href="#27res" title='res' data-ref="27res">res</a> == <var>1</var>) {</td></tr>
+<tr><th id="497">497</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="498">498</th><td>    }</td></tr>
+<tr><th id="499">499</th><td>    <i>/* getrandom() or getentropy() function is not available: failed with</i></td></tr>
+<tr><th id="500">500</th><td><i>       ENOSYS or EPERM. Fall back on reading from /dev/urandom. */</i></td></tr>
+<tr><th id="501">501</th><td><u>#<span data-ppcond="487">endif</span></u></td></tr>
+<tr><th id="502">502</th><td></td></tr>
+<tr><th id="503">503</th><td>    <b>return</b> <a class="tu ref" href="#dev_urandom" title='dev_urandom' data-use='c' data-ref="dev_urandom">dev_urandom</a>(<a class="local col3 ref" href="#23buffer" title='buffer' data-ref="23buffer">buffer</a>, <a class="local col4 ref" href="#24size" title='size' data-ref="24size">size</a>, <a class="local col6 ref" href="#26raise" title='raise' data-ref="26raise">raise</a>);</td></tr>
+<tr><th id="504">504</th><td><u>#<span data-ppcond="483">endif</span></u></td></tr>
+<tr><th id="505">505</th><td>}</td></tr>
+<tr><th id="506">506</th><td></td></tr>
+<tr><th id="507">507</th><td><i>/* Fill buffer with size pseudo-random bytes from the operating system random</i></td></tr>
+<tr><th id="508">508</th><td><i>   number generator (RNG). It is suitable for most cryptographic purposes</i></td></tr>
+<tr><th id="509">509</th><td><i>   except long living private keys for asymmetric encryption.</i></td></tr>
+<tr><th id="510">510</th><td><i></i></td></tr>
+<tr><th id="511">511</th><td><i>   On Linux 3.17 and newer, the getrandom() syscall is used in blocking mode:</i></td></tr>
+<tr><th id="512">512</th><td><i>   block until the system urandom entropy pool is initialized (128 bits are</i></td></tr>
+<tr><th id="513">513</th><td><i>   collected by the kernel).</i></td></tr>
+<tr><th id="514">514</th><td><i></i></td></tr>
+<tr><th id="515">515</th><td><i>   Return 0 on success. Raise an exception and return -1 on error. */</i></td></tr>
+<tr><th id="516">516</th><td><em>int</em></td></tr>
+<tr><th id="517">517</th><td><dfn class="decl def" id="_PyOS_URandom" title='_PyOS_URandom' data-ref="_PyOS_URandom">_PyOS_URandom</dfn>(<em>void</em> *<dfn class="local col8 decl" id="28buffer" title='buffer' data-type='void *' data-ref="28buffer">buffer</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="29size" title='size' data-type='Py_ssize_t' data-ref="29size">size</dfn>)</td></tr>
+<tr><th id="518">518</th><td>{</td></tr>
+<tr><th id="519">519</th><td>    <b>return</b> <a class="tu ref" href="#pyurandom" title='pyurandom' data-use='c' data-ref="pyurandom">pyurandom</a>(<a class="local col8 ref" href="#28buffer" title='buffer' data-ref="28buffer">buffer</a>, <a class="local col9 ref" href="#29size" title='size' data-ref="29size">size</a>, <var>1</var>, <var>1</var>);</td></tr>
+<tr><th id="520">520</th><td>}</td></tr>
+<tr><th id="521">521</th><td></td></tr>
+<tr><th id="522">522</th><td><i>/* Fill buffer with size pseudo-random bytes from the operating system random</i></td></tr>
+<tr><th id="523">523</th><td><i>   number generator (RNG). It is not suitable for cryptographic purpose.</i></td></tr>
+<tr><th id="524">524</th><td><i></i></td></tr>
+<tr><th id="525">525</th><td><i>   On Linux 3.17 and newer (when getrandom() syscall is used), if the system</i></td></tr>
+<tr><th id="526">526</th><td><i>   urandom is not initialized yet, the function returns "weak" entropy read</i></td></tr>
+<tr><th id="527">527</th><td><i>   from /dev/urandom.</i></td></tr>
+<tr><th id="528">528</th><td><i></i></td></tr>
+<tr><th id="529">529</th><td><i>   Return 0 on success. Raise an exception and return -1 on error. */</i></td></tr>
+<tr><th id="530">530</th><td><em>int</em></td></tr>
+<tr><th id="531">531</th><td><dfn class="decl def" id="_PyOS_URandomNonblock" title='_PyOS_URandomNonblock' data-ref="_PyOS_URandomNonblock">_PyOS_URandomNonblock</dfn>(<em>void</em> *<dfn class="local col0 decl" id="30buffer" title='buffer' data-type='void *' data-ref="30buffer">buffer</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="31size" title='size' data-type='Py_ssize_t' data-ref="31size">size</dfn>)</td></tr>
+<tr><th id="532">532</th><td>{</td></tr>
+<tr><th id="533">533</th><td>    <b>return</b> <a class="tu ref" href="#pyurandom" title='pyurandom' data-use='c' data-ref="pyurandom">pyurandom</a>(<a class="local col0 ref" href="#30buffer" title='buffer' data-ref="30buffer">buffer</a>, <a class="local col1 ref" href="#31size" title='size' data-ref="31size">size</a>, <var>0</var>, <var>1</var>);</td></tr>
+<tr><th id="534">534</th><td>}</td></tr>
+<tr><th id="535">535</th><td></td></tr>
+<tr><th id="536">536</th><td><em>int</em> <dfn class="decl def" id="Py_ReadHashSeed" title='Py_ReadHashSeed' data-ref="Py_ReadHashSeed">Py_ReadHashSeed</dfn>(<em>char</em> *<dfn class="local col2 decl" id="32seed_text" title='seed_text' data-type='char *' data-ref="32seed_text">seed_text</dfn>,</td></tr>
+<tr><th id="537">537</th><td>                    <em>int</em> *<dfn class="local col3 decl" id="33use_hash_seed" title='use_hash_seed' data-type='int *' data-ref="33use_hash_seed">use_hash_seed</dfn>,</td></tr>
+<tr><th id="538">538</th><td>                    <em>unsigned</em> <em>long</em> *<dfn class="local col4 decl" id="34hash_seed" title='hash_seed' data-type='unsigned long *' data-ref="34hash_seed">hash_seed</dfn>)</td></tr>
+<tr><th id="539">539</th><td>{</td></tr>
+<tr><th id="540">540</th><td>    <a class="macro" href="../Include/pymacro.h.html#42" title="do { (void)(sizeof(char [1 - 2*!(sizeof(_Py_HashSecret_t) == sizeof(_Py_HashSecret.uc))]) - 1); } while(0)" data-ref="_M/Py_BUILD_ASSERT">Py_BUILD_ASSERT</a>(<b>sizeof</b>(<a class="typedef" href="../Include/pyhash.h.html#_Py_HashSecret_t" title='_Py_HashSecret_t' data-type='union _Py_HashSecret_t' data-ref="_Py_HashSecret_t">_Py_HashSecret_t</a>) == <b>sizeof</b>(<a class="ref" href="../Include/pyhash.h.html#_Py_HashSecret" title='_Py_HashSecret' data-ref="_Py_HashSecret">_Py_HashSecret</a>.<a class="ref" href="../Include/pyhash.h.html#(anonymous)::uc" title='(anonymous union)::uc' data-ref="(anonymous)::uc">uc</a>));</td></tr>
+<tr><th id="541">541</th><td>    <i>/* Convert a text seed to a numeric one */</i></td></tr>
+<tr><th id="542">542</th><td>    <b>if</b> (<a class="local col2 ref" href="#32seed_text" title='seed_text' data-ref="32seed_text">seed_text</a> &amp;&amp; *<a class="local col2 ref" href="#32seed_text" title='seed_text' data-ref="32seed_text">seed_text</a> != <kbd>'\0'</kbd> &amp;&amp; <a class="ref" href="../../include/string.h.html#strcmp" title='strcmp' data-ref="strcmp">strcmp</a>(<a class="local col2 ref" href="#32seed_text" title='seed_text' data-ref="32seed_text">seed_text</a>, <q>"random"</q>) != <var>0</var>) {</td></tr>
+<tr><th id="543">543</th><td>        <em>char</em> *<dfn class="local col5 decl" id="35endptr" title='endptr' data-type='char *' data-ref="35endptr">endptr</dfn> = <a class="local col2 ref" href="#32seed_text" title='seed_text' data-ref="32seed_text">seed_text</a>;</td></tr>
+<tr><th id="544">544</th><td>        <em>unsigned</em> <em>long</em> <dfn class="local col6 decl" id="36seed" title='seed' data-type='unsigned long' data-ref="36seed">seed</dfn>;</td></tr>
+<tr><th id="545">545</th><td>        <a class="local col6 ref" href="#36seed" title='seed' data-ref="36seed">seed</a> = <a class="ref" href="../../include/stdlib.h.html#strtoul" title='strtoul' data-ref="strtoul">strtoul</a>(<a class="local col2 ref" href="#32seed_text" title='seed_text' data-ref="32seed_text">seed_text</a>, &amp;<a class="local col5 ref" href="#35endptr" title='endptr' data-ref="35endptr">endptr</a>, <var>10</var>);</td></tr>
+<tr><th id="546">546</th><td>        <b>if</b> (*<a class="local col5 ref" href="#35endptr" title='endptr' data-ref="35endptr">endptr</a> != <kbd>'\0'</kbd></td></tr>
+<tr><th id="547">547</th><td>            || <a class="local col6 ref" href="#36seed" title='seed' data-ref="36seed">seed</a> &gt; <var>4294967295UL</var></td></tr>
+<tr><th id="548">548</th><td>            || (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#37" title="34" data-ref="_M/ERANGE">ERANGE</a> &amp;&amp; <a class="local col6 ref" href="#36seed" title='seed' data-ref="36seed">seed</a> == <span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span>))</td></tr>
+<tr><th id="549">549</th><td>        {</td></tr>
+<tr><th id="550">550</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="551">551</th><td>        }</td></tr>
+<tr><th id="552">552</th><td>        <i>/* Use a specific hash */</i></td></tr>
+<tr><th id="553">553</th><td>        *<a class="local col3 ref" href="#33use_hash_seed" title='use_hash_seed' data-ref="33use_hash_seed">use_hash_seed</a> = <var>1</var>;</td></tr>
+<tr><th id="554">554</th><td>        *<a class="local col4 ref" href="#34hash_seed" title='hash_seed' data-ref="34hash_seed">hash_seed</a> = <a class="local col6 ref" href="#36seed" title='seed' data-ref="36seed">seed</a>;</td></tr>
+<tr><th id="555">555</th><td>    }</td></tr>
+<tr><th id="556">556</th><td>    <b>else</b> {</td></tr>
+<tr><th id="557">557</th><td>        <i>/* Use a random hash */</i></td></tr>
+<tr><th id="558">558</th><td>        *<a class="local col3 ref" href="#33use_hash_seed" title='use_hash_seed' data-ref="33use_hash_seed">use_hash_seed</a> = <var>0</var>;</td></tr>
+<tr><th id="559">559</th><td>        *<a class="local col4 ref" href="#34hash_seed" title='hash_seed' data-ref="34hash_seed">hash_seed</a> = <var>0</var>;</td></tr>
+<tr><th id="560">560</th><td>    }</td></tr>
+<tr><th id="561">561</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="562">562</th><td>}</td></tr>
+<tr><th id="563">563</th><td></td></tr>
+<tr><th id="564">564</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="565">565</th><td><dfn class="tu decl def" id="init_hash_secret" title='init_hash_secret' data-type='void init_hash_secret(int use_hash_seed, unsigned long hash_seed)' data-ref="init_hash_secret">init_hash_secret</dfn>(<em>int</em> <dfn class="local col7 decl" id="37use_hash_seed" title='use_hash_seed' data-type='int' data-ref="37use_hash_seed">use_hash_seed</dfn>,</td></tr>
+<tr><th id="566">566</th><td>                 <em>unsigned</em> <em>long</em> <dfn class="local col8 decl" id="38hash_seed" title='hash_seed' data-type='unsigned long' data-ref="38hash_seed">hash_seed</dfn>)</td></tr>
+<tr><th id="567">567</th><td>{</td></tr>
+<tr><th id="568">568</th><td>    <em>void</em> *<dfn class="local col9 decl" id="39secret" title='secret' data-type='void *' data-ref="39secret">secret</dfn> = &amp;<a class="ref" href="../Include/pyhash.h.html#_Py_HashSecret" title='_Py_HashSecret' data-ref="_Py_HashSecret">_Py_HashSecret</a>;</td></tr>
+<tr><th id="569">569</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="40secret_size" title='secret_size' data-type='Py_ssize_t' data-ref="40secret_size">secret_size</dfn> = <b>sizeof</b>(<a class="typedef" href="../Include/pyhash.h.html#_Py_HashSecret_t" title='_Py_HashSecret_t' data-type='union _Py_HashSecret_t' data-ref="_Py_HashSecret_t">_Py_HashSecret_t</a>);</td></tr>
+<tr><th id="570">570</th><td></td></tr>
+<tr><th id="571">571</th><td>    <b>if</b> (<a class="ref" href="../Include/pyhash.h.html#_Py_HashSecret_Initialized" title='_Py_HashSecret_Initialized' data-ref="_Py_HashSecret_Initialized">_Py_HashSecret_Initialized</a>)</td></tr>
+<tr><th id="572">572</th><td>        <b>return</b>;</td></tr>
+<tr><th id="573">573</th><td>    <a class="ref" href="../Include/pyhash.h.html#_Py_HashSecret_Initialized" title='_Py_HashSecret_Initialized' data-ref="_Py_HashSecret_Initialized">_Py_HashSecret_Initialized</a> = <var>1</var>;</td></tr>
+<tr><th id="574">574</th><td></td></tr>
+<tr><th id="575">575</th><td>    <b>if</b> (<a class="local col7 ref" href="#37use_hash_seed" title='use_hash_seed' data-ref="37use_hash_seed">use_hash_seed</a>) {</td></tr>
+<tr><th id="576">576</th><td>        <b>if</b> (<a class="local col8 ref" href="#38hash_seed" title='hash_seed' data-ref="38hash_seed">hash_seed</a> == <var>0</var>) {</td></tr>
+<tr><th id="577">577</th><td>            <i>/* disable the randomized hash */</i></td></tr>
+<tr><th id="578">578</th><td>            <a class="ref" href="../../include/string.h.html#memset" title='memset' data-ref="memset">memset</a>(<a class="local col9 ref" href="#39secret" title='secret' data-ref="39secret">secret</a>, <var>0</var>, <a class="local col0 ref" href="#40secret_size" title='secret_size' data-ref="40secret_size">secret_size</a>);</td></tr>
+<tr><th id="579">579</th><td>        }</td></tr>
+<tr><th id="580">580</th><td>        <b>else</b> {</td></tr>
+<tr><th id="581">581</th><td>            <i>/* use the specified hash seed */</i></td></tr>
+<tr><th id="582">582</th><td>            <a class="tu ref" href="#lcg_urandom" title='lcg_urandom' data-use='c' data-ref="lcg_urandom">lcg_urandom</a>(<a class="local col8 ref" href="#38hash_seed" title='hash_seed' data-ref="38hash_seed">hash_seed</a>, <a class="local col9 ref" href="#39secret" title='secret' data-ref="39secret">secret</a>, <a class="local col0 ref" href="#40secret_size" title='secret_size' data-ref="40secret_size">secret_size</a>);</td></tr>
+<tr><th id="583">583</th><td>        }</td></tr>
+<tr><th id="584">584</th><td>    }</td></tr>
+<tr><th id="585">585</th><td>    <b>else</b> {</td></tr>
+<tr><th id="586">586</th><td>        <i>/* use a random hash seed */</i></td></tr>
+<tr><th id="587">587</th><td>        <em>int</em> <dfn class="local col1 decl" id="41res" title='res' data-type='int' data-ref="41res">res</dfn>;</td></tr>
+<tr><th id="588">588</th><td></td></tr>
+<tr><th id="589">589</th><td>        <i>/* _PyRandom_Init() is called very early in the Python initialization</i></td></tr>
+<tr><th id="590">590</th><td><i>           and so exceptions cannot be used (use raise=0).</i></td></tr>
+<tr><th id="591">591</th><td><i></i></td></tr>
+<tr><th id="592">592</th><td><i>           _PyRandom_Init() must not block Python initialization: call</i></td></tr>
+<tr><th id="593">593</th><td><i>           pyurandom() is non-blocking mode (blocking=0): see the PEP 524. */</i></td></tr>
+<tr><th id="594">594</th><td>        <a class="local col1 ref" href="#41res" title='res' data-ref="41res">res</a> = <a class="tu ref" href="#pyurandom" title='pyurandom' data-use='c' data-ref="pyurandom">pyurandom</a>(<a class="local col9 ref" href="#39secret" title='secret' data-ref="39secret">secret</a>, <a class="local col0 ref" href="#40secret_size" title='secret_size' data-ref="40secret_size">secret_size</a>, <var>0</var>, <var>0</var>);</td></tr>
+<tr><th id="595">595</th><td>        <b>if</b> (<a class="local col1 ref" href="#41res" title='res' data-ref="41res">res</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="596">596</th><td>            <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"failed to get random numbers to initialize Python"</q>);</td></tr>
+<tr><th id="597">597</th><td>        }</td></tr>
+<tr><th id="598">598</th><td>    }</td></tr>
+<tr><th id="599">599</th><td>}</td></tr>
+<tr><th id="600">600</th><td></td></tr>
+<tr><th id="601">601</th><td><em>void</em></td></tr>
+<tr><th id="602">602</th><td><dfn class="decl def" id="_Py_HashRandomization_Init" title='_Py_HashRandomization_Init' data-ref="_Py_HashRandomization_Init">_Py_HashRandomization_Init</dfn>(<a class="typedef" href="../Include/pystate.h.html#_PyCoreConfig" title='_PyCoreConfig' data-type='struct _PyCoreConfig' data-ref="_PyCoreConfig">_PyCoreConfig</a> *<dfn class="local col2 decl" id="42core_config" title='core_config' data-type='_PyCoreConfig *' data-ref="42core_config">core_config</dfn>)</td></tr>
+<tr><th id="603">603</th><td>{</td></tr>
+<tr><th id="604">604</th><td>    <em>char</em> *<dfn class="local col3 decl" id="43seed_text" title='seed_text' data-type='char *' data-ref="43seed_text">seed_text</dfn>;</td></tr>
+<tr><th id="605">605</th><td>    <em>int</em> <dfn class="local col4 decl" id="44use_hash_seed" title='use_hash_seed' data-type='int' data-ref="44use_hash_seed">use_hash_seed</dfn> = <a class="local col2 ref" href="#42core_config" title='core_config' data-ref="42core_config">core_config</a>-&gt;<a class="ref" href="../Include/pystate.h.html#(anonymous)::use_hash_seed" title='(anonymous struct)::use_hash_seed' data-ref="(anonymous)::use_hash_seed">use_hash_seed</a>;</td></tr>
+<tr><th id="606">606</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col5 decl" id="45hash_seed" title='hash_seed' data-type='unsigned long' data-ref="45hash_seed">hash_seed</dfn> = <a class="local col2 ref" href="#42core_config" title='core_config' data-ref="42core_config">core_config</a>-&gt;<a class="ref" href="../Include/pystate.h.html#(anonymous)::hash_seed" title='(anonymous struct)::hash_seed' data-ref="(anonymous)::hash_seed">hash_seed</a>;</td></tr>
+<tr><th id="607">607</th><td></td></tr>
+<tr><th id="608">608</th><td>    <b>if</b> (<a class="local col4 ref" href="#44use_hash_seed" title='use_hash_seed' data-ref="44use_hash_seed">use_hash_seed</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="609">609</th><td>        <a class="local col3 ref" href="#43seed_text" title='seed_text' data-ref="43seed_text">seed_text</a> = <a class="macro" href="../Include/pydebug.h.html#34" title="(Py_IgnoreEnvironmentFlag ? ((void*)0) : getenv(&quot;PYTHONHASHSEED&quot;))" data-ref="_M/Py_GETENV">Py_GETENV</a>(<q>"PYTHONHASHSEED"</q>);</td></tr>
+<tr><th id="610">610</th><td>        <b>if</b> (<a class="ref" href="#Py_ReadHashSeed" title='Py_ReadHashSeed' data-ref="Py_ReadHashSeed">Py_ReadHashSeed</a>(<a class="local col3 ref" href="#43seed_text" title='seed_text' data-ref="43seed_text">seed_text</a>, &amp;<a class="local col4 ref" href="#44use_hash_seed" title='use_hash_seed' data-ref="44use_hash_seed">use_hash_seed</a>, &amp;<a class="local col5 ref" href="#45hash_seed" title='hash_seed' data-ref="45hash_seed">hash_seed</a>) &lt; <var>0</var>) {</td></tr>
+<tr><th id="611">611</th><td>            <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"PYTHONHASHSEED must be \"random\" or an integer "</q></td></tr>
+<tr><th id="612">612</th><td>                          <q>"in range [0; 4294967295]"</q>);</td></tr>
+<tr><th id="613">613</th><td>        }</td></tr>
+<tr><th id="614">614</th><td>        <a class="local col2 ref" href="#42core_config" title='core_config' data-ref="42core_config">core_config</a>-&gt;<a class="ref" href="../Include/pystate.h.html#(anonymous)::use_hash_seed" title='(anonymous struct)::use_hash_seed' data-ref="(anonymous)::use_hash_seed">use_hash_seed</a> = <a class="local col4 ref" href="#44use_hash_seed" title='use_hash_seed' data-ref="44use_hash_seed">use_hash_seed</a>;</td></tr>
+<tr><th id="615">615</th><td>        <a class="local col2 ref" href="#42core_config" title='core_config' data-ref="42core_config">core_config</a>-&gt;<a class="ref" href="../Include/pystate.h.html#(anonymous)::hash_seed" title='(anonymous struct)::hash_seed' data-ref="(anonymous)::hash_seed">hash_seed</a> = <a class="local col5 ref" href="#45hash_seed" title='hash_seed' data-ref="45hash_seed">hash_seed</a>;</td></tr>
+<tr><th id="616">616</th><td>    }</td></tr>
+<tr><th id="617">617</th><td>    <a class="tu ref" href="#init_hash_secret" title='init_hash_secret' data-use='c' data-ref="init_hash_secret">init_hash_secret</a>(<a class="local col4 ref" href="#44use_hash_seed" title='use_hash_seed' data-ref="44use_hash_seed">use_hash_seed</a>, <a class="local col5 ref" href="#45hash_seed" title='hash_seed' data-ref="45hash_seed">hash_seed</a>);</td></tr>
+<tr><th id="618">618</th><td>}</td></tr>
+<tr><th id="619">619</th><td></td></tr>
+<tr><th id="620">620</th><td><em>void</em></td></tr>
+<tr><th id="621">621</th><td><dfn class="decl def" id="_Py_HashRandomization_Fini" title='_Py_HashRandomization_Fini' data-ref="_Py_HashRandomization_Fini">_Py_HashRandomization_Fini</dfn>(<em>void</em>)</td></tr>
+<tr><th id="622">622</th><td>{</td></tr>
+<tr><th id="623">623</th><td><u>#<span data-ppcond="623">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="624">624</th><td>    <b>if</b> (hCryptProv) {</td></tr>
+<tr><th id="625">625</th><td>        CryptReleaseContext(hCryptProv, <var>0</var>);</td></tr>
+<tr><th id="626">626</th><td>        hCryptProv = <var>0</var>;</td></tr>
+<tr><th id="627">627</th><td>    }</td></tr>
+<tr><th id="628">628</th><td><u>#<span data-ppcond="623">else</span></u></td></tr>
+<tr><th id="629">629</th><td>    <a class="tu ref" href="#dev_urandom_close" title='dev_urandom_close' data-use='c' data-ref="dev_urandom_close">dev_urandom_close</a>();</td></tr>
+<tr><th id="630">630</th><td><u>#<span data-ppcond="623">endif</span></u></td></tr>
+<tr><th id="631">631</th><td>}</td></tr>
+<tr><th id="632">632</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

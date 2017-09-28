@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/Python-ast.h' l='191' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1674' u='w' c='_Py_ImportFrom'/>
+<use f='codebrowser/Python/Python-ast.c' l='3030' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='494' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2765' u='r' c='compiler_from_import'/>

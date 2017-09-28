@@ -1,0 +1,10 @@
+<def f='codebrowser/Modules/_elementtree.c' l='2059' ll='2062'/>
+<size>16</size>
+<doc f='codebrowser/Modules/_elementtree.c' l='2051'>/* ElementIterObject represents the iteration state over an XML element in
+ * pre-order traversal. To keep track of which sub-element should be returned
+ * next, a stack of parents is maintained. This is a standard stack-based
+ * iterative pre-order traversal of a tree.
+ * The stack is managed using a continuous array.
+ * Each stack item contains the saved parent to which we should return after
+ * the current one is exhausted, and the next child to examine in that parent.
+ */</doc>

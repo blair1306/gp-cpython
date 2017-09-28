@@ -1,0 +1,31 @@
+<dec f='include/x86_64-linux-gnu/bits/time.h' l='33' type='__suseconds_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/time.h' l='33'>/* Microseconds.  */</doc>
+<use f='codebrowser/Modules/_lsprof.c' l='49' u='r' c='hpTimer'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='302' u='r' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2608' u='w' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2608' u='r' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2609' u='r' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2611' u='w' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2613' u='r' c='print_delta'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3947' u='r' c='test_PyTime_AsTimeval'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='898' u='r' c='gather_time_entropy'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6862' u='r' c='wait_helper'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6862' u='r' c='wait_helper'/>
+<use f='codebrowser/Modules/resource.c' l='19' u='r' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/resource.c' l='19' u='r' c='resource_getrusage_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='141' u='w' c='timeval_from_double'/>
+<use f='codebrowser/Modules/signalmodule.c' l='143' u='r' c='timeval_from_double'/>
+<use f='codebrowser/Modules/signalmodule.c' l='144' u='w' c='timeval_from_double'/>
+<use f='codebrowser/Modules/signalmodule.c' l='151' u='r' c='double_from_timeval'/>
+<use f='codebrowser/Modules/timemodule.c' l='1021' u='r' c='py_process_time'/>
+<use f='codebrowser/Modules/timemodule.c' l='1022' u='r' c='py_process_time'/>
+<use f='codebrowser/Python/condvar.h' l='64' u='w' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/condvar.h' l='65' u='r' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/condvar.h' l='66' u='w' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/condvar.h' l='101' u='r' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/pytime.c' l='458' u='w' c='_PyTime_AsTimevalStruct_impl'/>
+<use f='codebrowser/Python/thread_pthread.h' l='114' u='w' c='PyThread_acquire_lock_timed'/>
+<use f='codebrowser/Python/thread_pthread.h' l='116' u='r' c='PyThread_acquire_lock_timed'/>
+<use f='codebrowser/Python/thread_pthread.h' l='117' u='w' c='PyThread_acquire_lock_timed'/>
+<use f='codebrowser/Python/thread_pthread.h' l='119' u='r' c='PyThread_acquire_lock_timed'/>

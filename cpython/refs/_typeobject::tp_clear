@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/object.h' l='388' type='inquiry'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='928' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1231' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1301' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1823' u='w'/>
+<offset>1664</offset>
+<doc f='codebrowser/Include/object.h' l='387'>/* delete references to contained objects */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2155' u='r' c='defdict_tp_clear'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='781' u='r' c='CDataType_clear'/>
+<use f='codebrowser/Modules/gcmodule.c' l='872' u='r' c='delete_garbage'/>
+<use f='codebrowser/Objects/typeobject.c' l='1081' u='r' c='subtype_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='2724' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4746' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4750' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4751' u='w' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4751' u='r' c='inherit_special'/>

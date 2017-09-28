@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1320' type='PyObject * _PyUnicode_AsUTF8String(PyObject * unicode, const char * errors)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='762' u='c' c='_codecs_utf_8_encode_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='767' u='c' c='utf8_encode'/>
+<use f='codebrowser/Objects/fileobject.c' l='376' u='c' c='stdprinter_write'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3565' u='c' c='PyUnicode_AsEncodedString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3581' u='c' c='PyUnicode_AsEncodedString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3987' u='c' c='PyUnicode_AsUTF8AndSize'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='5161' ll='5196' type='PyObject * _PyUnicode_AsUTF8String(PyObject * unicode, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5208' u='c' c='PyUnicode_EncodeUTF8'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5216' u='c' c='PyUnicode_AsUTF8String'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='5154'>/* Primary internal function which creates utf8 encoded bytes objects.
+
+   Allocation strategy:  if the string is short, convert into a stack buffer
+   and allocate exactly as much space needed at the end.  Else allocate the
+   maximum possible needed (4 result bytes per Unicode character), and return
+   the excess memory at the end.
+*/</doc>

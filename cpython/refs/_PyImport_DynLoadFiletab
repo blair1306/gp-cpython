@@ -1,0 +1,8 @@
+<dec f='codebrowser/Python/importdl.h' l='9' type='const char *[]'/>
+<def f='codebrowser/Python/dynload_shlib.c' l='35' ll='44' type='const char *[4]'/>
+<doc f='codebrowser/Python/dynload_shlib.c' l='29'>/* The .so extension module ABI tag, supplied by the Makefile via
+   Makefile.pre.in and configure.  This is used to discriminate between
+   incompatible .so files so that extensions for different Python builds can
+   live in the same directory.  E.g. foomodule.cpython-32.so
+*/</doc>
+<use f='codebrowser/Python/import.c' l='1795' u='r' c='_imp_extension_suffixes_impl'/>

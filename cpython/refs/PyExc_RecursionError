@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pyerrors.h' l='178' type='PyObject *'/>
+<use f='codebrowser/Modules/_sre.c' l='535' u='r' c='pattern_error'/>
+<def f='codebrowser/Objects/exceptions.c' l='1280' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2521' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2598' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='620' u='r' c='_Py_CheckRecursiveCall'/>
+<use f='codebrowser/Python/errors.c' l='300' u='r' c='PyErr_NormalizeException'/>
+<use f='codebrowser/Python/errors.c' l='301' u='r' c='PyErr_NormalizeException'/>
+<use f='codebrowser/Python/symtable.c' l='1131' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1390' u='r' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/sysmodule.c' l='628' u='r' c='sys_setrecursionlimit'/>

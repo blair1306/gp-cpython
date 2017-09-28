@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='820' type='int wdelch(WINDOW * )'/>
+<doc f='include/curses.h' l='820'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1005' u='c' c='PyCursesWindow_DelCh'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1010' macro='1' u='c'/>

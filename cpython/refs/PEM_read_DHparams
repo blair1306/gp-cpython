@@ -1,0 +1,2 @@
+<dec f='include/openssl/pem.h' l='477' macro='1' type='DH * PEM_read_DHparams(FILE * fp, DH ** x, pem_password_cb * cb, void * u)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3559' u='c' c='_ssl__SSLContext_load_dh_params'/>

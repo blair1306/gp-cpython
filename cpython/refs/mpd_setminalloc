@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='326' type='void mpd_setminalloc(mpd_ssize_t n)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5672' u='c' c='PyInit__decimal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/context.c' l='48' ll='63' type='void mpd_setminalloc(mpd_ssize_t n)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='81' u='c' c='mpd_init'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/context.c' l='44'>/* Set guaranteed minimum number of coefficient words. The function may
+   be used once at program start. Setting MPD_MINALLOC to out-of-bounds
+   values is a catastrophic error, so in that case the function exits rather
+   than relying on the user to check a return value. */</doc>

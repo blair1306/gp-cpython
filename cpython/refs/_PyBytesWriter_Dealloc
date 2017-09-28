@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/bytesobject.h' l='180' type='void _PyBytesWriter_Dealloc(_PyBytesWriter * writer)'/>
+<doc f='codebrowser/Include/bytesobject.h' l='179'>/* Deallocate memory of a writer (clear its internal buffer). */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='2168' u='c' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/binascii.c' l='514' u='c' c='binascii_a2b_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='638' u='c' c='binascii_a2b_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='660' u='c' c='binascii_a2b_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='900' u='c' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='357' u='c' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1064' u='c' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1239' u='c' c='_PyBytes_DecodeEscape'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2425' u='c' c='_PyBytes_FromHex'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2755' u='c' c='_PyBytes_FromIterator'/>
+<def f='codebrowser/Objects/bytesobject.c' l='3174' ll='3178' type='void _PyBytesWriter_Dealloc(_PyBytesWriter * writer)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3308' u='c' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3327' u='c' c='_PyBytesWriter_Prepare'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='459' u='c' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='459' u='c' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6877' u='c' c='unicode_encode_ucs1'/>

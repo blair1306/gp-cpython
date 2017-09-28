@@ -1,0 +1,617 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_stat.c source code [codebrowser/Modules/_stat.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_stat.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='_stat.c.html'>_stat.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* stat.h interface</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * The module defines all S_IF*, S_I*, UF_*, SF_* and ST_* constants to</i></td></tr>
+<tr><th id="4">4</th><td><i> * sensible default values as well as defines S_IS*() macros in order to keep</i></td></tr>
+<tr><th id="5">5</th><td><i> * backward compatibility with the old stat.py module.</i></td></tr>
+<tr><th id="6">6</th><td><i> *</i></td></tr>
+<tr><th id="7">7</th><td><i> * New constants and macros such as S_IFDOOR / S_ISDOOR() are always defined</i></td></tr>
+<tr><th id="8">8</th><td><i> * as int 0.</i></td></tr>
+<tr><th id="9">9</th><td><i> *</i></td></tr>
+<tr><th id="10">10</th><td><i> * NOTE: POSIX only defines the values of the S_I* permission bits.</i></td></tr>
+<tr><th id="11">11</th><td><i> *</i></td></tr>
+<tr><th id="12">12</th><td><i> */</i></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/PY_SSIZE_T_CLEAN" data-ref="_M/PY_SSIZE_T_CLEAN">PY_SSIZE_T_CLEAN</dfn></u></td></tr>
+<tr><th id="15">15</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><u>#<span data-ppcond="17">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="18">18</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="19">19</th><td><u>#<span data-ppcond="17">endif</span></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><u>#<span data-ppcond="21">ifdef</span> <a class="macro" href="../pyconfig.h.html#1071" data-ref="_M/HAVE_SYS_TYPES_H">HAVE_SYS_TYPES_H</a></u></td></tr>
+<tr><th id="22">22</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/types.h.html">&lt;sys/types.h&gt;</a></u></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="21">endif</span> /* HAVE_SYS_TYPES_H */</u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="25">ifdef</span> <a class="macro" href="../pyconfig.h.html#1053" data-ref="_M/HAVE_SYS_STAT_H">HAVE_SYS_STAT_H</a></u></td></tr>
+<tr><th id="26">26</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/stat.h.html">&lt;sys/stat.h&gt;</a></u></td></tr>
+<tr><th id="27">27</th><td><u>#<span data-ppcond="25">endif</span> /* HAVE_SYS_STAT_H */</u></td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="29">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="30">30</th><td><u>#include &lt;windows.h&gt;</u></td></tr>
+<tr><th id="31">31</th><td><b>typedef</b> <em>unsigned</em> <em>short</em> mode_t;</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>/* FILE_ATTRIBUTE_INTEGRITY_STREAM and FILE_ATTRIBUTE_NO_SCRUB_DATA</i></td></tr>
+<tr><th id="34">34</th><td><i>   are not present in VC2010, so define them manually */</i></td></tr>
+<tr><th id="35">35</th><td><u>#ifndef FILE_ATTRIBUTE_INTEGRITY_STREAM</u></td></tr>
+<tr><th id="36">36</th><td><u>#  define FILE_ATTRIBUTE_INTEGRITY_STREAM 0x8000</u></td></tr>
+<tr><th id="37">37</th><td><u>#endif</u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#ifndef FILE_ATTRIBUTE_NO_SCRUB_DATA</u></td></tr>
+<tr><th id="40">40</th><td><u>#  define FILE_ATTRIBUTE_NO_SCRUB_DATA 0x20000</u></td></tr>
+<tr><th id="41">41</th><td><u>#endif</u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="29">endif</span> /* MS_WINDOWS */</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/* From Python's stat.py */</i></td></tr>
+<tr><th id="46">46</th><td><u>#<span data-ppcond="46">ifndef</span> <span class="macro" data-ref="_M/S_IMODE">S_IMODE</span></u></td></tr>
+<tr><th id="47">47</th><td><u>#  define <dfn class="macro" id="_M/S_IMODE" data-ref="_M/S_IMODE">S_IMODE</dfn> 07777</u></td></tr>
+<tr><th id="48">48</th><td><u>#<span data-ppcond="46">endif</span></u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><i>/* S_IFXXX constants (file types)</i></td></tr>
+<tr><th id="51">51</th><td><i> *</i></td></tr>
+<tr><th id="52">52</th><td><i> * Only the names are defined by POSIX but not their value. All common file</i></td></tr>
+<tr><th id="53">53</th><td><i> * types seems to have the same numeric value on all platforms, though.</i></td></tr>
+<tr><th id="54">54</th><td><i> *</i></td></tr>
+<tr><th id="55">55</th><td><i> * pyport.h guarantees S_IFMT, S_IFDIR, S_IFCHR, S_IFREG and S_IFLNK</i></td></tr>
+<tr><th id="56">56</th><td><i> */</i></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u>#<span data-ppcond="58">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#110" data-ref="_M/S_IFBLK">S_IFBLK</a></u></td></tr>
+<tr><th id="59">59</th><td><u>#  define S_IFBLK 0060000</u></td></tr>
+<tr><th id="60">60</th><td><u>#<span data-ppcond="58">endif</span></u></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#<span data-ppcond="62">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#113" data-ref="_M/S_IFIFO">S_IFIFO</a></u></td></tr>
+<tr><th id="63">63</th><td><u>#  define S_IFIFO 0010000</u></td></tr>
+<tr><th id="64">64</th><td><u>#<span data-ppcond="62">endif</span></u></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><u>#<span data-ppcond="66">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#120" data-ref="_M/S_IFSOCK">S_IFSOCK</a></u></td></tr>
+<tr><th id="67">67</th><td><u>#  define S_IFSOCK 0140000</u></td></tr>
+<tr><th id="68">68</th><td><u>#<span data-ppcond="66">endif</span></u></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><u>#<span data-ppcond="70">ifndef</span> <span class="macro" data-ref="_M/S_IFDOOR">S_IFDOOR</span></u></td></tr>
+<tr><th id="71">71</th><td><u>#  define <dfn class="macro" id="_M/S_IFDOOR" data-ref="_M/S_IFDOOR">S_IFDOOR</dfn> 0</u></td></tr>
+<tr><th id="72">72</th><td><u>#<span data-ppcond="70">endif</span></u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><u>#<span data-ppcond="74">ifndef</span> <span class="macro" data-ref="_M/S_IFPORT">S_IFPORT</span></u></td></tr>
+<tr><th id="75">75</th><td><u>#  define <dfn class="macro" id="_M/S_IFPORT" data-ref="_M/S_IFPORT">S_IFPORT</dfn> 0</u></td></tr>
+<tr><th id="76">76</th><td><u>#<span data-ppcond="74">endif</span></u></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><u>#<span data-ppcond="78">ifndef</span> <span class="macro" data-ref="_M/S_IFWHT">S_IFWHT</span></u></td></tr>
+<tr><th id="79">79</th><td><u>#  define <dfn class="macro" id="_M/S_IFWHT" data-ref="_M/S_IFWHT">S_IFWHT</dfn> 0</u></td></tr>
+<tr><th id="80">80</th><td><u>#<span data-ppcond="78">endif</span></u></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><i>/* S_ISXXX()</i></td></tr>
+<tr><th id="84">84</th><td><i> * pyport.h defines S_ISDIR(), S_ISREG() and S_ISCHR()</i></td></tr>
+<tr><th id="85">85</th><td><i> */</i></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><u>#<span data-ppcond="87">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#130" data-ref="_M/S_ISBLK">S_ISBLK</a></u></td></tr>
+<tr><th id="88">88</th><td><u>#  define S_ISBLK(mode) (((mode) &amp; S_IFMT) == S_IFBLK)</u></td></tr>
+<tr><th id="89">89</th><td><u>#<span data-ppcond="87">endif</span></u></td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><u>#<span data-ppcond="91">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#133" data-ref="_M/S_ISFIFO">S_ISFIFO</a></u></td></tr>
+<tr><th id="92">92</th><td><u>#  define S_ISFIFO(mode) (((mode) &amp; S_IFMT) == S_IFIFO)</u></td></tr>
+<tr><th id="93">93</th><td><u>#<span data-ppcond="91">endif</span></u></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><u>#<span data-ppcond="95">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#136" data-ref="_M/S_ISLNK">S_ISLNK</a></u></td></tr>
+<tr><th id="96">96</th><td><u>#  define S_ISLNK(mode) (((mode) &amp; S_IFMT) == S_IFLNK)</u></td></tr>
+<tr><th id="97">97</th><td><u>#<span data-ppcond="95">endif</span></u></td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><u>#<span data-ppcond="99">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#145" data-ref="_M/S_ISSOCK">S_ISSOCK</a></u></td></tr>
+<tr><th id="100">100</th><td><u>#  define S_ISSOCK(mode) (((mode) &amp; S_IFMT) == S_IFSOCK)</u></td></tr>
+<tr><th id="101">101</th><td><u>#<span data-ppcond="99">endif</span></u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><u>#<span data-ppcond="103">ifndef</span> <span class="macro" data-ref="_M/S_ISDOOR">S_ISDOOR</span></u></td></tr>
+<tr><th id="104">104</th><td><u>#  define <dfn class="macro" id="_M/S_ISDOOR" data-ref="_M/S_ISDOOR">S_ISDOOR</dfn>(mode) 0</u></td></tr>
+<tr><th id="105">105</th><td><u>#<span data-ppcond="103">endif</span></u></td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><u>#<span data-ppcond="107">ifndef</span> <span class="macro" data-ref="_M/S_ISPORT">S_ISPORT</span></u></td></tr>
+<tr><th id="108">108</th><td><u>#  define <dfn class="macro" id="_M/S_ISPORT" data-ref="_M/S_ISPORT">S_ISPORT</dfn>(mode) 0</u></td></tr>
+<tr><th id="109">109</th><td><u>#<span data-ppcond="107">endif</span></u></td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><u>#<span data-ppcond="111">ifndef</span> <span class="macro" data-ref="_M/S_ISWHT">S_ISWHT</span></u></td></tr>
+<tr><th id="112">112</th><td><u>#  define <dfn class="macro" id="_M/S_ISWHT" data-ref="_M/S_ISWHT">S_ISWHT</dfn>(mode) 0</u></td></tr>
+<tr><th id="113">113</th><td><u>#<span data-ppcond="111">endif</span></u></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><i>/* S_I* file permission</i></td></tr>
+<tr><th id="117">117</th><td><i> *</i></td></tr>
+<tr><th id="118">118</th><td><i> * The permission bit value are defined by POSIX standards.</i></td></tr>
+<tr><th id="119">119</th><td><i> */</i></td></tr>
+<tr><th id="120">120</th><td><u>#<span data-ppcond="120">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#163" data-ref="_M/S_ISUID">S_ISUID</a></u></td></tr>
+<tr><th id="121">121</th><td><u>#  define S_ISUID 04000</u></td></tr>
+<tr><th id="122">122</th><td><u>#<span data-ppcond="120">endif</span></u></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><u>#<span data-ppcond="124">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#164" data-ref="_M/S_ISGID">S_ISGID</a></u></td></tr>
+<tr><th id="125">125</th><td><u>#  define S_ISGID 02000</u></td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="124">endif</span></u></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><i>/* what is S_ENFMT? */</i></td></tr>
+<tr><th id="129">129</th><td><u>#<span data-ppcond="129">ifndef</span> <span class="macro" data-ref="_M/S_ENFMT">S_ENFMT</span></u></td></tr>
+<tr><th id="130">130</th><td><u>#  define <dfn class="macro" id="_M/S_ENFMT" data-ref="_M/S_ENFMT">S_ENFMT</dfn> S_ISGID</u></td></tr>
+<tr><th id="131">131</th><td><u>#<span data-ppcond="129">endif</span></u></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><u>#<span data-ppcond="133">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#168" data-ref="_M/S_ISVTX">S_ISVTX</a></u></td></tr>
+<tr><th id="134">134</th><td><u>#  define S_ISVTX 01000</u></td></tr>
+<tr><th id="135">135</th><td><u>#<span data-ppcond="133">endif</span></u></td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td><u>#<span data-ppcond="137">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#178" data-ref="_M/S_IREAD">S_IREAD</a></u></td></tr>
+<tr><th id="138">138</th><td><u>#  define S_IREAD 00400</u></td></tr>
+<tr><th id="139">139</th><td><u>#<span data-ppcond="137">endif</span></u></td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><u>#<span data-ppcond="141">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#179" data-ref="_M/S_IWRITE">S_IWRITE</a></u></td></tr>
+<tr><th id="142">142</th><td><u>#  define S_IWRITE 00200</u></td></tr>
+<tr><th id="143">143</th><td><u>#<span data-ppcond="141">endif</span></u></td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td><u>#<span data-ppcond="145">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#180" data-ref="_M/S_IEXEC">S_IEXEC</a></u></td></tr>
+<tr><th id="146">146</th><td><u>#  define S_IEXEC 00100</u></td></tr>
+<tr><th id="147">147</th><td><u>#<span data-ppcond="145">endif</span></u></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><u>#<span data-ppcond="149">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#175" data-ref="_M/S_IRWXU">S_IRWXU</a></u></td></tr>
+<tr><th id="150">150</th><td><u>#  define S_IRWXU 00700</u></td></tr>
+<tr><th id="151">151</th><td><u>#<span data-ppcond="149">endif</span></u></td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><u>#<span data-ppcond="153">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#171" data-ref="_M/S_IRUSR">S_IRUSR</a></u></td></tr>
+<tr><th id="154">154</th><td><u>#  define S_IRUSR 00400</u></td></tr>
+<tr><th id="155">155</th><td><u>#<span data-ppcond="153">endif</span></u></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><u>#<span data-ppcond="157">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#172" data-ref="_M/S_IWUSR">S_IWUSR</a></u></td></tr>
+<tr><th id="158">158</th><td><u>#  define S_IWUSR 00200</u></td></tr>
+<tr><th id="159">159</th><td><u>#<span data-ppcond="157">endif</span></u></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td><u>#<span data-ppcond="161">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#173" data-ref="_M/S_IXUSR">S_IXUSR</a></u></td></tr>
+<tr><th id="162">162</th><td><u>#  define S_IXUSR 00100</u></td></tr>
+<tr><th id="163">163</th><td><u>#<span data-ppcond="161">endif</span></u></td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><u>#<span data-ppcond="165">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#187" data-ref="_M/S_IRWXG">S_IRWXG</a></u></td></tr>
+<tr><th id="166">166</th><td><u>#  define S_IRWXG 00070</u></td></tr>
+<tr><th id="167">167</th><td><u>#<span data-ppcond="165">endif</span></u></td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><u>#<span data-ppcond="169">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#183" data-ref="_M/S_IRGRP">S_IRGRP</a></u></td></tr>
+<tr><th id="170">170</th><td><u>#  define S_IRGRP 00040</u></td></tr>
+<tr><th id="171">171</th><td><u>#<span data-ppcond="169">endif</span></u></td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td><u>#<span data-ppcond="173">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#184" data-ref="_M/S_IWGRP">S_IWGRP</a></u></td></tr>
+<tr><th id="174">174</th><td><u>#  define S_IWGRP 00020</u></td></tr>
+<tr><th id="175">175</th><td><u>#<span data-ppcond="173">endif</span></u></td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><u>#<span data-ppcond="177">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#185" data-ref="_M/S_IXGRP">S_IXGRP</a></u></td></tr>
+<tr><th id="178">178</th><td><u>#  define S_IXGRP 00010</u></td></tr>
+<tr><th id="179">179</th><td><u>#<span data-ppcond="177">endif</span></u></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><u>#<span data-ppcond="181">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#193" data-ref="_M/S_IRWXO">S_IRWXO</a></u></td></tr>
+<tr><th id="182">182</th><td><u>#  define S_IRWXO 00007</u></td></tr>
+<tr><th id="183">183</th><td><u>#<span data-ppcond="181">endif</span></u></td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><u>#<span data-ppcond="185">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#189" data-ref="_M/S_IROTH">S_IROTH</a></u></td></tr>
+<tr><th id="186">186</th><td><u>#  define S_IROTH 00004</u></td></tr>
+<tr><th id="187">187</th><td><u>#<span data-ppcond="185">endif</span></u></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><u>#<span data-ppcond="189">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#190" data-ref="_M/S_IWOTH">S_IWOTH</a></u></td></tr>
+<tr><th id="190">190</th><td><u>#  define S_IWOTH 00002</u></td></tr>
+<tr><th id="191">191</th><td><u>#<span data-ppcond="189">endif</span></u></td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><u>#<span data-ppcond="193">ifndef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#191" data-ref="_M/S_IXOTH">S_IXOTH</a></u></td></tr>
+<tr><th id="194">194</th><td><u>#  define S_IXOTH 00001</u></td></tr>
+<tr><th id="195">195</th><td><u>#<span data-ppcond="193">endif</span></u></td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><i>/* Names for file flags */</i></td></tr>
+<tr><th id="199">199</th><td><u>#<span data-ppcond="199">ifndef</span> <span class="macro" data-ref="_M/UF_NODUMP">UF_NODUMP</span></u></td></tr>
+<tr><th id="200">200</th><td><u>#  define <dfn class="macro" id="_M/UF_NODUMP" data-ref="_M/UF_NODUMP">UF_NODUMP</dfn> 0x00000001</u></td></tr>
+<tr><th id="201">201</th><td><u>#<span data-ppcond="199">endif</span></u></td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td><u>#<span data-ppcond="203">ifndef</span> <span class="macro" data-ref="_M/UF_IMMUTABLE">UF_IMMUTABLE</span></u></td></tr>
+<tr><th id="204">204</th><td><u>#  define <dfn class="macro" id="_M/UF_IMMUTABLE" data-ref="_M/UF_IMMUTABLE">UF_IMMUTABLE</dfn> 0x00000002</u></td></tr>
+<tr><th id="205">205</th><td><u>#<span data-ppcond="203">endif</span></u></td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><u>#<span data-ppcond="207">ifndef</span> <span class="macro" data-ref="_M/UF_APPEND">UF_APPEND</span></u></td></tr>
+<tr><th id="208">208</th><td><u>#  define <dfn class="macro" id="_M/UF_APPEND" data-ref="_M/UF_APPEND">UF_APPEND</dfn> 0x00000004</u></td></tr>
+<tr><th id="209">209</th><td><u>#<span data-ppcond="207">endif</span></u></td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><u>#<span data-ppcond="211">ifndef</span> <span class="macro" data-ref="_M/UF_OPAQUE">UF_OPAQUE</span></u></td></tr>
+<tr><th id="212">212</th><td><u>#  define <dfn class="macro" id="_M/UF_OPAQUE" data-ref="_M/UF_OPAQUE">UF_OPAQUE</dfn> 0x00000008</u></td></tr>
+<tr><th id="213">213</th><td><u>#<span data-ppcond="211">endif</span></u></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><u>#<span data-ppcond="215">ifndef</span> <span class="macro" data-ref="_M/UF_NOUNLINK">UF_NOUNLINK</span></u></td></tr>
+<tr><th id="216">216</th><td><u>#  define <dfn class="macro" id="_M/UF_NOUNLINK" data-ref="_M/UF_NOUNLINK">UF_NOUNLINK</dfn> 0x00000010</u></td></tr>
+<tr><th id="217">217</th><td><u>#<span data-ppcond="215">endif</span></u></td></tr>
+<tr><th id="218">218</th><td></td></tr>
+<tr><th id="219">219</th><td><u>#<span data-ppcond="219">ifndef</span> <span class="macro" data-ref="_M/UF_COMPRESSED">UF_COMPRESSED</span></u></td></tr>
+<tr><th id="220">220</th><td><u>#  define <dfn class="macro" id="_M/UF_COMPRESSED" data-ref="_M/UF_COMPRESSED">UF_COMPRESSED</dfn> 0x00000020</u></td></tr>
+<tr><th id="221">221</th><td><u>#<span data-ppcond="219">endif</span></u></td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td><u>#<span data-ppcond="223">ifndef</span> <span class="macro" data-ref="_M/UF_HIDDEN">UF_HIDDEN</span></u></td></tr>
+<tr><th id="224">224</th><td><u>#  define <dfn class="macro" id="_M/UF_HIDDEN" data-ref="_M/UF_HIDDEN">UF_HIDDEN</dfn> 0x00008000</u></td></tr>
+<tr><th id="225">225</th><td><u>#<span data-ppcond="223">endif</span></u></td></tr>
+<tr><th id="226">226</th><td></td></tr>
+<tr><th id="227">227</th><td><u>#<span data-ppcond="227">ifndef</span> <span class="macro" data-ref="_M/SF_ARCHIVED">SF_ARCHIVED</span></u></td></tr>
+<tr><th id="228">228</th><td><u>#  define <dfn class="macro" id="_M/SF_ARCHIVED" data-ref="_M/SF_ARCHIVED">SF_ARCHIVED</dfn> 0x00010000</u></td></tr>
+<tr><th id="229">229</th><td><u>#<span data-ppcond="227">endif</span></u></td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td><u>#<span data-ppcond="231">ifndef</span> <span class="macro" data-ref="_M/SF_IMMUTABLE">SF_IMMUTABLE</span></u></td></tr>
+<tr><th id="232">232</th><td><u>#  define <dfn class="macro" id="_M/SF_IMMUTABLE" data-ref="_M/SF_IMMUTABLE">SF_IMMUTABLE</dfn> 0x00020000</u></td></tr>
+<tr><th id="233">233</th><td><u>#<span data-ppcond="231">endif</span></u></td></tr>
+<tr><th id="234">234</th><td></td></tr>
+<tr><th id="235">235</th><td><u>#<span data-ppcond="235">ifndef</span> <span class="macro" data-ref="_M/SF_APPEND">SF_APPEND</span></u></td></tr>
+<tr><th id="236">236</th><td><u>#  define <dfn class="macro" id="_M/SF_APPEND" data-ref="_M/SF_APPEND">SF_APPEND</dfn> 0x00040000</u></td></tr>
+<tr><th id="237">237</th><td><u>#<span data-ppcond="235">endif</span></u></td></tr>
+<tr><th id="238">238</th><td></td></tr>
+<tr><th id="239">239</th><td><u>#<span data-ppcond="239">ifndef</span> <span class="macro" data-ref="_M/SF_NOUNLINK">SF_NOUNLINK</span></u></td></tr>
+<tr><th id="240">240</th><td><u>#  define <dfn class="macro" id="_M/SF_NOUNLINK" data-ref="_M/SF_NOUNLINK">SF_NOUNLINK</dfn> 0x00100000</u></td></tr>
+<tr><th id="241">241</th><td><u>#<span data-ppcond="239">endif</span></u></td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><u>#<span data-ppcond="243">ifndef</span> <span class="macro" data-ref="_M/SF_SNAPSHOT">SF_SNAPSHOT</span></u></td></tr>
+<tr><th id="244">244</th><td><u>#  define <dfn class="macro" id="_M/SF_SNAPSHOT" data-ref="_M/SF_SNAPSHOT">SF_SNAPSHOT</dfn> 0x00200000</u></td></tr>
+<tr><th id="245">245</th><td><u>#<span data-ppcond="243">endif</span></u></td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><em>static</em> <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a></td></tr>
+<tr><th id="248">248</th><td><dfn class="tu decl def" id="_PyLong_AsMode_t" title='_PyLong_AsMode_t' data-type='mode_t _PyLong_AsMode_t(PyObject * op)' data-ref="_PyLong_AsMode_t">_PyLong_AsMode_t</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="1op" title='op' data-type='PyObject *' data-ref="1op">op</dfn>)</td></tr>
+<tr><th id="249">249</th><td>{</td></tr>
+<tr><th id="250">250</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col2 decl" id="2value" title='value' data-type='unsigned long' data-ref="2value">value</dfn>;</td></tr>
+<tr><th id="251">251</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col3 decl" id="3mode" title='mode' data-type='mode_t' data-ref="3mode">mode</dfn>;</td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td>    <a class="local col2 ref" href="#2value" title='value' data-ref="2value">value</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_AsUnsignedLong" title='PyLong_AsUnsignedLong' data-ref="PyLong_AsUnsignedLong">PyLong_AsUnsignedLong</a>(<a class="local col1 ref" href="#1op" title='op' data-ref="1op">op</a>);</td></tr>
+<tr><th id="254">254</th><td>    <b>if</b> ((<a class="local col2 ref" href="#2value" title='value' data-ref="2value">value</a> == (<em>unsigned</em> <em>long</em>)-<var>1</var>) &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="255">255</th><td>        <b>return</b> (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)-<var>1</var>;</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td>    <a class="local col3 ref" href="#3mode" title='mode' data-ref="3mode">mode</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)<a class="local col2 ref" href="#2value" title='value' data-ref="2value">value</a>;</td></tr>
+<tr><th id="258">258</th><td>    <b>if</b> ((<em>unsigned</em> <em>long</em>)<a class="local col3 ref" href="#3mode" title='mode' data-ref="3mode">mode</a> != <a class="local col2 ref" href="#2value" title='value' data-ref="2value">value</a>) {</td></tr>
+<tr><th id="259">259</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OverflowError" title='PyExc_OverflowError' data-ref="PyExc_OverflowError">PyExc_OverflowError</a>, <q>"mode out of range"</q>);</td></tr>
+<tr><th id="260">260</th><td>        <b>return</b> (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)-<var>1</var>;</td></tr>
+<tr><th id="261">261</th><td>    }</td></tr>
+<tr><th id="262">262</th><td>    <b>return</b> <a class="local col3 ref" href="#3mode" title='mode' data-ref="3mode">mode</a>;</td></tr>
+<tr><th id="263">263</th><td>}</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td><u>#define <dfn class="macro" id="_M/stat_S_ISFUNC" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</dfn>(isfunc, doc)                             \</u></td></tr>
+<tr><th id="267">267</th><td><u>    static <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *                                          \</u></td></tr>
+<tr><th id="268">268</th><td><u>    stat_ ##isfunc (<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='PyObject *' data-ref="4self"><dfn class="local col7 decl" id="7self" title='self' data-type='PyObject *' data-ref="7self"><dfn class="local col0 decl" id="10self" title='self' data-type='PyObject *' data-ref="10self"><dfn class="local col3 decl" id="13self" title='self' data-type='PyObject *' data-ref="13self"><dfn class="local col6 decl" id="16self" title='self' data-type='PyObject *' data-ref="16self"><dfn class="local col9 decl" id="19self" title='self' data-type='PyObject *' data-ref="19self"><dfn class="local col2 decl" id="22self" title='self' data-type='PyObject *' data-ref="22self"><dfn class="local col5 decl" id="25self" title='self' data-type='PyObject *' data-ref="25self"><dfn class="local col8 decl" id="28self" title='self' data-type='PyObject *' data-ref="28self"><dfn class="local col1 decl" id="31self" title='self' data-type='PyObject *' data-ref="31self">self</dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5omode" title='omode' data-type='PyObject *' data-ref="5omode"><dfn class="local col8 decl" id="8omode" title='omode' data-type='PyObject *' data-ref="8omode"><dfn class="local col1 decl" id="11omode" title='omode' data-type='PyObject *' data-ref="11omode"><dfn class="local col4 decl" id="14omode" title='omode' data-type='PyObject *' data-ref="14omode"><dfn class="local col7 decl" id="17omode" title='omode' data-type='PyObject *' data-ref="17omode"><dfn class="local col0 decl" id="20omode" title='omode' data-type='PyObject *' data-ref="20omode"><dfn class="local col3 decl" id="23omode" title='omode' data-type='PyObject *' data-ref="23omode"><dfn class="local col6 decl" id="26omode" title='omode' data-type='PyObject *' data-ref="26omode"><dfn class="local col9 decl" id="29omode" title='omode' data-type='PyObject *' data-ref="29omode"><dfn class="local col2 decl" id="32omode" title='omode' data-type='PyObject *' data-ref="32omode">omode</dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn>)           \</u></td></tr>
+<tr><th id="269">269</th><td><u>    {                                                          \</u></td></tr>
+<tr><th id="270">270</th><td><u>       <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col6 decl" id="6mode" title='mode' data-type='mode_t' data-ref="6mode"><dfn class="local col9 decl" id="9mode" title='mode' data-type='mode_t' data-ref="9mode"><dfn class="local col2 decl" id="12mode" title='mode' data-type='mode_t' data-ref="12mode"><dfn class="local col5 decl" id="15mode" title='mode' data-type='mode_t' data-ref="15mode"><dfn class="local col8 decl" id="18mode" title='mode' data-type='mode_t' data-ref="18mode"><dfn class="local col1 decl" id="21mode" title='mode' data-type='mode_t' data-ref="21mode"><dfn class="local col4 decl" id="24mode" title='mode' data-type='mode_t' data-ref="24mode"><dfn class="local col7 decl" id="27mode" title='mode' data-type='mode_t' data-ref="27mode"><dfn class="local col0 decl" id="30mode" title='mode' data-type='mode_t' data-ref="30mode"><dfn class="local col3 decl" id="33mode" title='mode' data-type='mode_t' data-ref="33mode">mode</dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn></dfn> = <a class="tu ref" href="#_PyLong_AsMode_t" title='_PyLong_AsMode_t' data-use='c' data-ref="_PyLong_AsMode_t">_PyLong_AsMode_t</a>(<a class="local col5 ref" href="#277" title='omode' data-ref="5omode"><a class="local col8 ref" href="#281" title='omode' data-ref="8omode"><a class="local col1 ref" href="#285" title='omode' data-ref="11omode"><a class="local col4 ref" href="#289" title='omode' data-ref="14omode"><a class="local col7 ref" href="#293" title='omode' data-ref="17omode"><a class="local col0 ref" href="#297" title='omode' data-ref="20omode"><a class="local col3 ref" href="#301" title='omode' data-ref="23omode"><a class="local col6 ref" href="#305" title='omode' data-ref="26omode"><a class="local col9 ref" href="#309" title='omode' data-ref="29omode"><a class="local col2 ref" href="#313" title='omode' data-ref="32omode">omode</a></a></a></a></a></a></a></a></a></a>);                   \</u></td></tr>
+<tr><th id="271">271</th><td><u>       if ((<a class="local col6 ref" href="#277" title='mode' data-ref="6mode"><a class="local col9 ref" href="#281" title='mode' data-ref="9mode"><a class="local col2 ref" href="#285" title='mode' data-ref="12mode"><a class="local col5 ref" href="#289" title='mode' data-ref="15mode"><a class="local col8 ref" href="#293" title='mode' data-ref="18mode"><a class="local col1 ref" href="#297" title='mode' data-ref="21mode"><a class="local col4 ref" href="#301" title='mode' data-ref="24mode"><a class="local col7 ref" href="#305" title='mode' data-ref="27mode"><a class="local col0 ref" href="#309" title='mode' data-ref="30mode"><a class="local col3 ref" href="#313" title='mode' data-ref="33mode">mode</a></a></a></a></a></a></a></a></a></a> == (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)-1) &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())           \</u></td></tr>
+<tr><th id="272">272</th><td><u>           return NULL;                                        \</u></td></tr>
+<tr><th id="273">273</th><td><u>       return <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(isfunc(<a class="local col6 ref" href="#277" title='mode' data-ref="6mode"><a class="local col9 ref" href="#281" title='mode' data-ref="9mode"><a class="local col2 ref" href="#285" title='mode' data-ref="12mode"><a class="local col5 ref" href="#289" title='mode' data-ref="15mode"><a class="local col8 ref" href="#293" title='mode' data-ref="18mode"><a class="local col1 ref" href="#297" title='mode' data-ref="21mode"><a class="local col4 ref" href="#301" title='mode' data-ref="24mode">mode</a></a></a></a></a></a></a>));                   \</u></td></tr>
+<tr><th id="274">274</th><td><u>    }                                                          \</u></td></tr>
+<tr><th id="275">275</th><td><u>    PyDoc_STRVAR(stat_ ## isfunc ## _doc, doc)</u></td></tr>
+<tr><th id="276">276</th><td></td></tr>
+<tr><th id="277">277</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISDIR (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0040000))); } static char stat_S_ISDIR_doc[] = &quot;S_ISDIR(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a directory.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISDIR,</td></tr>
+<tr><th id="278">278</th><td>    <q>"S_ISDIR(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="279">279</th><td>    <q>"Return True if mode is from a directory."</q>);</td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISCHR (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0020000))); } static char stat_S_ISCHR_doc[] = &quot;S_ISCHR(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a character special device file.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISCHR,</td></tr>
+<tr><th id="282">282</th><td>    <q>"S_ISCHR(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="283">283</th><td>    <q>"Return True if mode is from a character special device file."</q>);</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISBLK (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0060000))); } static char stat_S_ISBLK_doc[] = &quot;S_ISBLK(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a block special device file.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISBLK,</td></tr>
+<tr><th id="286">286</th><td>    <q>"S_ISBLK(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="287">287</th><td>    <q>"Return True if mode is from a block special device file."</q>);</td></tr>
+<tr><th id="288">288</th><td></td></tr>
+<tr><th id="289">289</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISREG (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0100000))); } static char stat_S_ISREG_doc[] = &quot;S_ISREG(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a regular file.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISREG,</td></tr>
+<tr><th id="290">290</th><td>    <q>"S_ISREG(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="291">291</th><td>    <q>"Return True if mode is from a regular file."</q>);</td></tr>
+<tr><th id="292">292</th><td></td></tr>
+<tr><th id="293">293</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISFIFO (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0010000))); } static char stat_S_ISFIFO_doc[] = &quot;S_ISFIFO(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a FIFO (named pipe).&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISFIFO,</td></tr>
+<tr><th id="294">294</th><td>    <q>"S_ISFIFO(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="295">295</th><td>    <q>"Return True if mode is from a FIFO (named pipe)."</q>);</td></tr>
+<tr><th id="296">296</th><td></td></tr>
+<tr><th id="297">297</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISLNK (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0120000))); } static char stat_S_ISLNK_doc[] = &quot;S_ISLNK(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a symbolic link.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISLNK,</td></tr>
+<tr><th id="298">298</th><td>    <q>"S_ISLNK(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="299">299</th><td>    <q>"Return True if mode is from a symbolic link."</q>);</td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISSOCK (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(((((mode)) &amp; 0170000) == (0140000))); } static char stat_S_ISSOCK_doc[] = &quot;S_ISSOCK(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a socket.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISSOCK,</td></tr>
+<tr><th id="302">302</th><td>    <q>"S_ISSOCK(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="303">303</th><td>    <q>"Return True if mode is from a socket."</q>);</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISDOOR (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(0); } static char stat_S_ISDOOR_doc[] = &quot;S_ISDOOR(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a door.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISDOOR,</td></tr>
+<tr><th id="306">306</th><td>    <q>"S_ISDOOR(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="307">307</th><td>    <q>"Return True if mode is from a door."</q>);</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISPORT (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(0); } static char stat_S_ISPORT_doc[] = &quot;S_ISPORT(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from an event port.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISPORT,</td></tr>
+<tr><th id="310">310</th><td>    <q>"S_ISPORT(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="311">311</th><td>    <q>"Return True if mode is from an event port."</q>);</td></tr>
+<tr><th id="312">312</th><td></td></tr>
+<tr><th id="313">313</th><td><a class="macro" href="#266" title="static PyObject * stat_S_ISWHT (PyObject *self, PyObject *omode) { mode_t mode = _PyLong_AsMode_t(omode); if ((mode == (mode_t)-1) &amp;&amp; PyErr_Occurred()) return ((void*)0); return PyBool_FromLong(0); } static char stat_S_ISWHT_doc[] = &quot;S_ISWHT(mode) -&gt; bool\n\n&quot; &quot;Return True if mode is from a whiteout.&quot;" data-ref="_M/stat_S_ISFUNC">stat_S_ISFUNC</a>(S_ISWHT,</td></tr>
+<tr><th id="314">314</th><td>    <q>"S_ISWHT(mode) -&gt; bool\n\n"</q></td></tr>
+<tr><th id="315">315</th><td>    <q>"Return True if mode is from a whiteout."</q>);</td></tr>
+<tr><th id="316">316</th><td></td></tr>
+<tr><th id="317">317</th><td></td></tr>
+<tr><th id="318">318</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char stat_S_IMODE_doc[] = &quot;Return the portion of the file&apos;s mode that can be set by os.chmod().&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="stat_S_IMODE_doc" title='stat_S_IMODE_doc' data-ref="stat_S_IMODE_doc">stat_S_IMODE_doc</dfn>,</td></tr>
+<tr><th id="319">319</th><td><q>"Return the portion of the file's mode that can be set by os.chmod()."</q>);</td></tr>
+<tr><th id="320">320</th><td></td></tr>
+<tr><th id="321">321</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="322">322</th><td><dfn class="tu decl def" id="stat_S_IMODE" title='stat_S_IMODE' data-type='PyObject * stat_S_IMODE(PyObject * self, PyObject * omode)' data-ref="stat_S_IMODE">stat_S_IMODE</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34self" title='self' data-type='PyObject *' data-ref="34self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="35omode" title='omode' data-type='PyObject *' data-ref="35omode">omode</dfn>)</td></tr>
+<tr><th id="323">323</th><td>{</td></tr>
+<tr><th id="324">324</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col6 decl" id="36mode" title='mode' data-type='mode_t' data-ref="36mode">mode</dfn> = <a class="tu ref" href="#_PyLong_AsMode_t" title='_PyLong_AsMode_t' data-use='c' data-ref="_PyLong_AsMode_t">_PyLong_AsMode_t</a>(<a class="local col5 ref" href="#35omode" title='omode' data-ref="35omode">omode</a>);</td></tr>
+<tr><th id="325">325</th><td>    <b>if</b> ((<a class="local col6 ref" href="#36mode" title='mode' data-ref="36mode">mode</a> == (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)-<var>1</var>) &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="326">326</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="327">327</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromUnsignedLong" title='PyLong_FromUnsignedLong' data-ref="PyLong_FromUnsignedLong">PyLong_FromUnsignedLong</a>(<a class="local col6 ref" href="#36mode" title='mode' data-ref="36mode">mode</a> &amp; <a class="macro" href="#47" title="07777" data-ref="_M/S_IMODE">S_IMODE</a>);</td></tr>
+<tr><th id="328">328</th><td>}</td></tr>
+<tr><th id="329">329</th><td></td></tr>
+<tr><th id="330">330</th><td></td></tr>
+<tr><th id="331">331</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char stat_S_IFMT_doc[] = &quot;Return the portion of the file&apos;s mode that describes the file type.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="stat_S_IFMT_doc" title='stat_S_IFMT_doc' data-ref="stat_S_IFMT_doc">stat_S_IFMT_doc</dfn>,</td></tr>
+<tr><th id="332">332</th><td><q>"Return the portion of the file's mode that describes the file type."</q>);</td></tr>
+<tr><th id="333">333</th><td></td></tr>
+<tr><th id="334">334</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="335">335</th><td><dfn class="tu decl def" id="stat_S_IFMT" title='stat_S_IFMT' data-type='PyObject * stat_S_IFMT(PyObject * self, PyObject * omode)' data-ref="stat_S_IFMT">stat_S_IFMT</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37self" title='self' data-type='PyObject *' data-ref="37self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="38omode" title='omode' data-type='PyObject *' data-ref="38omode">omode</dfn>)</td></tr>
+<tr><th id="336">336</th><td>{</td></tr>
+<tr><th id="337">337</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col9 decl" id="39mode" title='mode' data-type='mode_t' data-ref="39mode">mode</dfn> = <a class="tu ref" href="#_PyLong_AsMode_t" title='_PyLong_AsMode_t' data-use='c' data-ref="_PyLong_AsMode_t">_PyLong_AsMode_t</a>(<a class="local col8 ref" href="#38omode" title='omode' data-ref="38omode">omode</a>);</td></tr>
+<tr><th id="338">338</th><td>    <b>if</b> ((<a class="local col9 ref" href="#39mode" title='mode' data-ref="39mode">mode</a> == (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)-<var>1</var>) &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="339">339</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="340">340</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromUnsignedLong" title='PyLong_FromUnsignedLong' data-ref="PyLong_FromUnsignedLong">PyLong_FromUnsignedLong</a>(<a class="local col9 ref" href="#39mode" title='mode' data-ref="39mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#107" title="0170000" data-ref="_M/S_IFMT">S_IFMT</a>);</td></tr>
+<tr><th id="341">341</th><td>}</td></tr>
+<tr><th id="342">342</th><td></td></tr>
+<tr><th id="343">343</th><td><i  data-doc="filetype">/* file type chars according to</i></td></tr>
+<tr><th id="344">344</th><td><i  data-doc="filetype">   <a href="http://en.wikibooks.org/wiki/C_Programming/POSIX_Reference/sys/stat.h">http://en.wikibooks.org/wiki/C_Programming/POSIX_Reference/sys/stat.h</a> */</i></td></tr>
+<tr><th id="345">345</th><td></td></tr>
+<tr><th id="346">346</th><td><em>static</em> <em>char</em></td></tr>
+<tr><th id="347">347</th><td><dfn class="tu decl def" id="filetype" title='filetype' data-type='char filetype(mode_t mode)' data-ref="filetype">filetype</dfn>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col0 decl" id="40mode" title='mode' data-type='mode_t' data-ref="40mode">mode</dfn>)</td></tr>
+<tr><th id="348">348</th><td>{</td></tr>
+<tr><th id="349">349</th><td>    <i>/* common cases first */</i></td></tr>
+<tr><th id="350">350</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#131" title="((((mode)) &amp; 0170000) == (0100000))" data-ref="_M/S_ISREG">S_ISREG</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>))  <b>return</b> <kbd>'-'</kbd>;</td></tr>
+<tr><th id="351">351</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#128" title="((((mode)) &amp; 0170000) == (0040000))" data-ref="_M/S_ISDIR">S_ISDIR</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>))  <b>return</b> <kbd>'d'</kbd>;</td></tr>
+<tr><th id="352">352</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#136" title="((((mode)) &amp; 0170000) == (0120000))" data-ref="_M/S_ISLNK">S_ISLNK</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>))  <b>return</b> <kbd>'l'</kbd>;</td></tr>
+<tr><th id="353">353</th><td>    <i>/* special files */</i></td></tr>
+<tr><th id="354">354</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#130" title="((((mode)) &amp; 0170000) == (0060000))" data-ref="_M/S_ISBLK">S_ISBLK</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>))  <b>return</b> <kbd>'b'</kbd>;</td></tr>
+<tr><th id="355">355</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#129" title="((((mode)) &amp; 0170000) == (0020000))" data-ref="_M/S_ISCHR">S_ISCHR</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>))  <b>return</b> <kbd>'c'</kbd>;</td></tr>
+<tr><th id="356">356</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#133" title="((((mode)) &amp; 0170000) == (0010000))" data-ref="_M/S_ISFIFO">S_ISFIFO</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>)) <b>return</b> <kbd>'p'</kbd>;</td></tr>
+<tr><th id="357">357</th><td>    <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#145" title="((((mode)) &amp; 0170000) == (0140000))" data-ref="_M/S_ISSOCK">S_ISSOCK</a>(<a class="local col0 ref" href="#40mode" title='mode' data-ref="40mode">mode</a>)) <b>return</b> <kbd>'s'</kbd>;</td></tr>
+<tr><th id="358">358</th><td>    <i>/* non-standard types */</i></td></tr>
+<tr><th id="359">359</th><td>    <b>if</b> (<a class="macro" href="#104" title="0" data-ref="_M/S_ISDOOR">S_ISDOOR</a>(mode)) <b>return</b> <kbd>'D'</kbd>;</td></tr>
+<tr><th id="360">360</th><td>    <b>if</b> (<a class="macro" href="#108" title="0" data-ref="_M/S_ISPORT">S_ISPORT</a>(mode)) <b>return</b> <kbd>'P'</kbd>;</td></tr>
+<tr><th id="361">361</th><td>    <b>if</b> (<a class="macro" href="#112" title="0" data-ref="_M/S_ISWHT">S_ISWHT</a>(mode))  <b>return</b> <kbd>'w'</kbd>;</td></tr>
+<tr><th id="362">362</th><td>    <i>/* unknown */</i></td></tr>
+<tr><th id="363">363</th><td>    <b>return</b> <kbd>'?'</kbd>;</td></tr>
+<tr><th id="364">364</th><td>}</td></tr>
+<tr><th id="365">365</th><td></td></tr>
+<tr><th id="366">366</th><td><em>static</em> <em>void</em></td></tr>
+<tr><th id="367">367</th><td><dfn class="tu decl def" id="fileperm" title='fileperm' data-type='void fileperm(mode_t mode, char * buf)' data-ref="fileperm">fileperm</dfn>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col1 decl" id="41mode" title='mode' data-type='mode_t' data-ref="41mode">mode</dfn>, <em>char</em> *<dfn class="local col2 decl" id="42buf" title='buf' data-type='char *' data-ref="42buf">buf</dfn>)</td></tr>
+<tr><th id="368">368</th><td>{</td></tr>
+<tr><th id="369">369</th><td>    <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>0</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#171" title="0400" data-ref="_M/S_IRUSR">S_IRUSR</a> ? <kbd>'r'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="370">370</th><td>    <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>1</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#172" title="0200" data-ref="_M/S_IWUSR">S_IWUSR</a> ? <kbd>'w'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="371">371</th><td>    <b>if</b> (<a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#163" title="04000" data-ref="_M/S_ISUID">S_ISUID</a>) {</td></tr>
+<tr><th id="372">372</th><td>        <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>2</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#173" title="0100" data-ref="_M/S_IXUSR">S_IXUSR</a> ? <kbd>'s'</kbd> : <kbd>'S'</kbd>;</td></tr>
+<tr><th id="373">373</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="374">374</th><td>        <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>2</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#173" title="0100" data-ref="_M/S_IXUSR">S_IXUSR</a> ? <kbd>'x'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="375">375</th><td>    }</td></tr>
+<tr><th id="376">376</th><td>    <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>3</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#183" title="(0400 &gt;&gt; 3)" data-ref="_M/S_IRGRP">S_IRGRP</a> ? <kbd>'r'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="377">377</th><td>    <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>4</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#184" title="(0200 &gt;&gt; 3)" data-ref="_M/S_IWGRP">S_IWGRP</a> ? <kbd>'w'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="378">378</th><td>    <b>if</b> (<a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#164" title="02000" data-ref="_M/S_ISGID">S_ISGID</a>) {</td></tr>
+<tr><th id="379">379</th><td>        <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>5</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#185" title="(0100 &gt;&gt; 3)" data-ref="_M/S_IXGRP">S_IXGRP</a> ? <kbd>'s'</kbd> : <kbd>'S'</kbd>;</td></tr>
+<tr><th id="380">380</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="381">381</th><td>        <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>5</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#185" title="(0100 &gt;&gt; 3)" data-ref="_M/S_IXGRP">S_IXGRP</a> ? <kbd>'x'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="382">382</th><td>    }</td></tr>
+<tr><th id="383">383</th><td>    <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>6</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#189" title="((0400 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IROTH">S_IROTH</a> ? <kbd>'r'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="384">384</th><td>    <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>7</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#190" title="((0200 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IWOTH">S_IWOTH</a> ? <kbd>'w'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="385">385</th><td>    <b>if</b> (<a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#168" title="01000" data-ref="_M/S_ISVTX">S_ISVTX</a>) {</td></tr>
+<tr><th id="386">386</th><td>        <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>8</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#191" title="((0100 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IXOTH">S_IXOTH</a> ? <kbd>'t'</kbd> : <kbd>'T'</kbd>;</td></tr>
+<tr><th id="387">387</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="388">388</th><td>        <a class="local col2 ref" href="#42buf" title='buf' data-ref="42buf">buf</a>[<var>8</var>] = <a class="local col1 ref" href="#41mode" title='mode' data-ref="41mode">mode</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#191" title="((0100 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IXOTH">S_IXOTH</a> ? <kbd>'x'</kbd> : <kbd>'-'</kbd>;</td></tr>
+<tr><th id="389">389</th><td>    }</td></tr>
+<tr><th id="390">390</th><td>}</td></tr>
+<tr><th id="391">391</th><td></td></tr>
+<tr><th id="392">392</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char stat_filemode_doc[] = &quot;Convert a file&apos;s mode to a string of the form &apos;-rwxrwxrwx&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="stat_filemode_doc" title='stat_filemode_doc' data-ref="stat_filemode_doc">stat_filemode_doc</dfn>,</td></tr>
+<tr><th id="393">393</th><td><q>"Convert a file's mode to a string of the form '-rwxrwxrwx'"</q>);</td></tr>
+<tr><th id="394">394</th><td></td></tr>
+<tr><th id="395">395</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="396">396</th><td><dfn class="tu decl def" id="stat_filemode" title='stat_filemode' data-type='PyObject * stat_filemode(PyObject * self, PyObject * omode)' data-ref="stat_filemode">stat_filemode</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="43self" title='self' data-type='PyObject *' data-ref="43self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="44omode" title='omode' data-type='PyObject *' data-ref="44omode">omode</dfn>)</td></tr>
+<tr><th id="397">397</th><td>{</td></tr>
+<tr><th id="398">398</th><td>    <em>char</em> <dfn class="local col5 decl" id="45buf" title='buf' data-type='char [10]' data-ref="45buf">buf</dfn>[<var>10</var>];</td></tr>
+<tr><th id="399">399</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a> <dfn class="local col6 decl" id="46mode" title='mode' data-type='mode_t' data-ref="46mode">mode</dfn>;</td></tr>
+<tr><th id="400">400</th><td></td></tr>
+<tr><th id="401">401</th><td>    <a class="local col6 ref" href="#46mode" title='mode' data-ref="46mode">mode</a> = <a class="tu ref" href="#_PyLong_AsMode_t" title='_PyLong_AsMode_t' data-use='c' data-ref="_PyLong_AsMode_t">_PyLong_AsMode_t</a>(<a class="local col4 ref" href="#44omode" title='omode' data-ref="44omode">omode</a>);</td></tr>
+<tr><th id="402">402</th><td>    <b>if</b> ((<a class="local col6 ref" href="#46mode" title='mode' data-ref="46mode">mode</a> == (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#mode_t" title='mode_t' data-type='__mode_t' data-ref="mode_t">mode_t</a>)-<var>1</var>) &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="403">403</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="404">404</th><td></td></tr>
+<tr><th id="405">405</th><td>    <a class="local col5 ref" href="#45buf" title='buf' data-ref="45buf">buf</a>[<var>0</var>] = <a class="tu ref" href="#filetype" title='filetype' data-use='c' data-ref="filetype">filetype</a>(<a class="local col6 ref" href="#46mode" title='mode' data-ref="46mode">mode</a>);</td></tr>
+<tr><th id="406">406</th><td>    <a class="tu ref" href="#fileperm" title='fileperm' data-use='c' data-ref="fileperm">fileperm</a>(<a class="local col6 ref" href="#46mode" title='mode' data-ref="46mode">mode</a>, &amp;<a class="local col5 ref" href="#45buf" title='buf' data-ref="45buf">buf</a>[<var>1</var>]);</td></tr>
+<tr><th id="407">407</th><td>    <b>return</b> <a class="ref" href="../Include/unicodeobject.h.html#PyUnicode_FromStringAndSize" title='PyUnicode_FromStringAndSize' data-ref="PyUnicode_FromStringAndSize">PyUnicode_FromStringAndSize</a>(<a class="local col5 ref" href="#45buf" title='buf' data-ref="45buf">buf</a>, <var>10</var>);</td></tr>
+<tr><th id="408">408</th><td>}</td></tr>
+<tr><th id="409">409</th><td></td></tr>
+<tr><th id="410">410</th><td></td></tr>
+<tr><th id="411">411</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="stat_methods" title='stat_methods' data-type='PyMethodDef [14]' data-ref="stat_methods">stat_methods</dfn>[] = {</td></tr>
+<tr><th id="412">412</th><td>    {<q>"S_ISDIR"</q>,         <a class="tu ref" href="#277" title='stat_S_ISDIR' data-ref="stat_S_ISDIR">stat_S_ISDIR</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#277" title='stat_S_ISDIR_doc' data-ref="stat_S_ISDIR_doc">stat_S_ISDIR_doc</a>},</td></tr>
+<tr><th id="413">413</th><td>    {<q>"S_ISCHR"</q>,         <a class="tu ref" href="#281" title='stat_S_ISCHR' data-ref="stat_S_ISCHR">stat_S_ISCHR</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#281" title='stat_S_ISCHR_doc' data-ref="stat_S_ISCHR_doc">stat_S_ISCHR_doc</a>},</td></tr>
+<tr><th id="414">414</th><td>    {<q>"S_ISBLK"</q>,         <a class="tu ref" href="#285" title='stat_S_ISBLK' data-ref="stat_S_ISBLK">stat_S_ISBLK</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#285" title='stat_S_ISBLK_doc' data-ref="stat_S_ISBLK_doc">stat_S_ISBLK_doc</a>},</td></tr>
+<tr><th id="415">415</th><td>    {<q>"S_ISREG"</q>,         <a class="tu ref" href="#289" title='stat_S_ISREG' data-ref="stat_S_ISREG">stat_S_ISREG</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#289" title='stat_S_ISREG_doc' data-ref="stat_S_ISREG_doc">stat_S_ISREG_doc</a>},</td></tr>
+<tr><th id="416">416</th><td>    {<q>"S_ISFIFO"</q>,        <a class="tu ref" href="#293" title='stat_S_ISFIFO' data-ref="stat_S_ISFIFO">stat_S_ISFIFO</a>, <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#293" title='stat_S_ISFIFO_doc' data-ref="stat_S_ISFIFO_doc">stat_S_ISFIFO_doc</a>},</td></tr>
+<tr><th id="417">417</th><td>    {<q>"S_ISLNK"</q>,         <a class="tu ref" href="#297" title='stat_S_ISLNK' data-ref="stat_S_ISLNK">stat_S_ISLNK</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#297" title='stat_S_ISLNK_doc' data-ref="stat_S_ISLNK_doc">stat_S_ISLNK_doc</a>},</td></tr>
+<tr><th id="418">418</th><td>    {<q>"S_ISSOCK"</q>,        <a class="tu ref" href="#301" title='stat_S_ISSOCK' data-ref="stat_S_ISSOCK">stat_S_ISSOCK</a>, <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#301" title='stat_S_ISSOCK_doc' data-ref="stat_S_ISSOCK_doc">stat_S_ISSOCK_doc</a>},</td></tr>
+<tr><th id="419">419</th><td>    {<q>"S_ISDOOR"</q>,        <a class="tu ref" href="#305" title='stat_S_ISDOOR' data-ref="stat_S_ISDOOR">stat_S_ISDOOR</a>, <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#305" title='stat_S_ISDOOR_doc' data-ref="stat_S_ISDOOR_doc">stat_S_ISDOOR_doc</a>},</td></tr>
+<tr><th id="420">420</th><td>    {<q>"S_ISPORT"</q>,        <a class="tu ref" href="#309" title='stat_S_ISPORT' data-ref="stat_S_ISPORT">stat_S_ISPORT</a>, <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#309" title='stat_S_ISPORT_doc' data-ref="stat_S_ISPORT_doc">stat_S_ISPORT_doc</a>},</td></tr>
+<tr><th id="421">421</th><td>    {<q>"S_ISWHT"</q>,         <a class="tu ref" href="#313" title='stat_S_ISWHT' data-ref="stat_S_ISWHT">stat_S_ISWHT</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#313" title='stat_S_ISWHT_doc' data-ref="stat_S_ISWHT_doc">stat_S_ISWHT_doc</a>},</td></tr>
+<tr><th id="422">422</th><td>    {<q>"S_IMODE"</q>,         <a class="tu ref" href="#stat_S_IMODE" title='stat_S_IMODE' data-ref="stat_S_IMODE">stat_S_IMODE</a>,  <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#318" title='stat_S_IMODE_doc' data-ref="stat_S_IMODE_doc">stat_S_IMODE_doc</a>},</td></tr>
+<tr><th id="423">423</th><td>    {<q>"S_IFMT"</q>,          <a class="tu ref" href="#stat_S_IFMT" title='stat_S_IFMT' data-ref="stat_S_IFMT">stat_S_IFMT</a>,   <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#331" title='stat_S_IFMT_doc' data-ref="stat_S_IFMT_doc">stat_S_IFMT_doc</a>},</td></tr>
+<tr><th id="424">424</th><td>    {<q>"filemode"</q>,        <a class="tu ref" href="#stat_filemode" title='stat_filemode' data-ref="stat_filemode">stat_filemode</a>, <a class="macro" href="../Include/methodobject.h.html#75" title="0x0008" data-ref="_M/METH_O">METH_O</a>, <a class="ref" href="#392" title='stat_filemode_doc' data-ref="stat_filemode_doc">stat_filemode_doc</a>},</td></tr>
+<tr><th id="425">425</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,              <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}           <i>/* sentinel */</i></td></tr>
+<tr><th id="426">426</th><td>};</td></tr>
+<tr><th id="427">427</th><td></td></tr>
+<tr><th id="428">428</th><td></td></tr>
+<tr><th id="429">429</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char module_doc[] = &quot;S_IFMT_: file type bits\nS_IFDIR: directory\nS_IFCHR: character device\nS_IFBLK: block device\nS_IFREG: regular file\nS_IFIFO: fifo (named pipe)\nS_IFLNK: symbolic link\nS_IFSOCK: socket file\nS_IFDOOR: door\nS_IFPORT: event port\nS_IFWHT: whiteout\n\n&quot;&quot;S_ISUID: set UID bit\nS_ISGID: set GID bit\nS_ENFMT: file locking enforcement\nS_ISVTX: sticky bit\nS_IREAD: Unix V7 synonym for S_IRUSR\nS_IWRITE: Unix V7 synonym for S_IWUSR\nS_IEXEC: Unix V7 synonym for S_IXUSR\nS_IRWXU: mask for owner permissions\nS_IRUSR: read by owner\nS_IWUSR: write by owner\nS_IXUSR: execute by owner\nS_IRWXG: mask for group permissions\nS_IRGRP: read by group\nS_IWGRP: write by group\nS_IXGRP: execute by group\nS_IRWXO: mask for others (not in group) permissions\nS_IROTH: read by others\nS_IWOTH: write by others\nS_IXOTH: execute by others\n\n&quot;&quot;UF_NODUMP: do not dump file\nUF_IMMUTABLE: file may not be changed\nUF_APPEND: file may only be appended to\nUF_OPAQUE: directory is opaque when viewed through a union stack\nUF_NOUNLINK: file may not be renamed or deleted\nUF_COMPRESSED: OS X: file is hfs-compressed\nUF_HIDDEN: OS X: file should not be displayed\nSF_ARCHIVED: file may be archived\nSF_IMMUTABLE: file may not be changed\nSF_APPEND: file may only be appended to\nSF_NOUNLINK: file may not be renamed or deleted\nSF_SNAPSHOT: file is a snapshot file\n\n&quot;&quot;ST_MODE\nST_INO\nST_DEV\nST_NLINK\nST_UID\nST_GID\nST_SIZE\nST_ATIME\nST_MTIME\nST_CTIME\n\n&quot;&quot;FILE_ATTRIBUTE_*: Windows file attribute constants\n                   (only present on Windows)\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="module_doc" title='module_doc' data-ref="module_doc">module_doc</dfn>,</td></tr>
+<tr><th id="430">430</th><td><q>"S_IFMT_: file type bits\n\</q></td></tr>
+<tr><th id="431">431</th><td><q>S_IFDIR: directory\n\</q></td></tr>
+<tr><th id="432">432</th><td><q>S_IFCHR: character device\n\</q></td></tr>
+<tr><th id="433">433</th><td><q>S_IFBLK: block device\n\</q></td></tr>
+<tr><th id="434">434</th><td><q>S_IFREG: regular file\n\</q></td></tr>
+<tr><th id="435">435</th><td><q>S_IFIFO: fifo (named pipe)\n\</q></td></tr>
+<tr><th id="436">436</th><td><q>S_IFLNK: symbolic link\n\</q></td></tr>
+<tr><th id="437">437</th><td><q>S_IFSOCK: socket file\n\</q></td></tr>
+<tr><th id="438">438</th><td><q>S_IFDOOR: door\n\</q></td></tr>
+<tr><th id="439">439</th><td><q>S_IFPORT: event port\n\</q></td></tr>
+<tr><th id="440">440</th><td><q>S_IFWHT: whiteout\n\</q></td></tr>
+<tr><th id="441">441</th><td><q>\n"</q></td></tr>
+<tr><th id="442">442</th><td></td></tr>
+<tr><th id="443">443</th><td><q>"S_ISUID: set UID bit\n\</q></td></tr>
+<tr><th id="444">444</th><td><q>S_ISGID: set GID bit\n\</q></td></tr>
+<tr><th id="445">445</th><td><q>S_ENFMT: file locking enforcement\n\</q></td></tr>
+<tr><th id="446">446</th><td><q>S_ISVTX: sticky bit\n\</q></td></tr>
+<tr><th id="447">447</th><td><q>S_IREAD: Unix V7 synonym for S_IRUSR\n\</q></td></tr>
+<tr><th id="448">448</th><td><q>S_IWRITE: Unix V7 synonym for S_IWUSR\n\</q></td></tr>
+<tr><th id="449">449</th><td><q>S_IEXEC: Unix V7 synonym for S_IXUSR\n\</q></td></tr>
+<tr><th id="450">450</th><td><q>S_IRWXU: mask for owner permissions\n\</q></td></tr>
+<tr><th id="451">451</th><td><q>S_IRUSR: read by owner\n\</q></td></tr>
+<tr><th id="452">452</th><td><q>S_IWUSR: write by owner\n\</q></td></tr>
+<tr><th id="453">453</th><td><q>S_IXUSR: execute by owner\n\</q></td></tr>
+<tr><th id="454">454</th><td><q>S_IRWXG: mask for group permissions\n\</q></td></tr>
+<tr><th id="455">455</th><td><q>S_IRGRP: read by group\n\</q></td></tr>
+<tr><th id="456">456</th><td><q>S_IWGRP: write by group\n\</q></td></tr>
+<tr><th id="457">457</th><td><q>S_IXGRP: execute by group\n\</q></td></tr>
+<tr><th id="458">458</th><td><q>S_IRWXO: mask for others (not in group) permissions\n\</q></td></tr>
+<tr><th id="459">459</th><td><q>S_IROTH: read by others\n\</q></td></tr>
+<tr><th id="460">460</th><td><q>S_IWOTH: write by others\n\</q></td></tr>
+<tr><th id="461">461</th><td><q>S_IXOTH: execute by others\n\</q></td></tr>
+<tr><th id="462">462</th><td><q>\n"</q></td></tr>
+<tr><th id="463">463</th><td></td></tr>
+<tr><th id="464">464</th><td><q>"UF_NODUMP: do not dump file\n\</q></td></tr>
+<tr><th id="465">465</th><td><q>UF_IMMUTABLE: file may not be changed\n\</q></td></tr>
+<tr><th id="466">466</th><td><q>UF_APPEND: file may only be appended to\n\</q></td></tr>
+<tr><th id="467">467</th><td><q>UF_OPAQUE: directory is opaque when viewed through a union stack\n\</q></td></tr>
+<tr><th id="468">468</th><td><q>UF_NOUNLINK: file may not be renamed or deleted\n\</q></td></tr>
+<tr><th id="469">469</th><td><q>UF_COMPRESSED: OS X: file is hfs-compressed\n\</q></td></tr>
+<tr><th id="470">470</th><td><q>UF_HIDDEN: OS X: file should not be displayed\n\</q></td></tr>
+<tr><th id="471">471</th><td><q>SF_ARCHIVED: file may be archived\n\</q></td></tr>
+<tr><th id="472">472</th><td><q>SF_IMMUTABLE: file may not be changed\n\</q></td></tr>
+<tr><th id="473">473</th><td><q>SF_APPEND: file may only be appended to\n\</q></td></tr>
+<tr><th id="474">474</th><td><q>SF_NOUNLINK: file may not be renamed or deleted\n\</q></td></tr>
+<tr><th id="475">475</th><td><q>SF_SNAPSHOT: file is a snapshot file\n\</q></td></tr>
+<tr><th id="476">476</th><td><q>\n"</q></td></tr>
+<tr><th id="477">477</th><td></td></tr>
+<tr><th id="478">478</th><td><q>"ST_MODE\n\</q></td></tr>
+<tr><th id="479">479</th><td><q>ST_INO\n\</q></td></tr>
+<tr><th id="480">480</th><td><q>ST_DEV\n\</q></td></tr>
+<tr><th id="481">481</th><td><q>ST_NLINK\n\</q></td></tr>
+<tr><th id="482">482</th><td><q>ST_UID\n\</q></td></tr>
+<tr><th id="483">483</th><td><q>ST_GID\n\</q></td></tr>
+<tr><th id="484">484</th><td><q>ST_SIZE\n\</q></td></tr>
+<tr><th id="485">485</th><td><q>ST_ATIME\n\</q></td></tr>
+<tr><th id="486">486</th><td><q>ST_MTIME\n\</q></td></tr>
+<tr><th id="487">487</th><td><q>ST_CTIME\n\</q></td></tr>
+<tr><th id="488">488</th><td><q>\n"</q></td></tr>
+<tr><th id="489">489</th><td></td></tr>
+<tr><th id="490">490</th><td><q>"FILE_ATTRIBUTE_*: Windows file attribute constants\n\</q></td></tr>
+<tr><th id="491">491</th><td><q>                   (only present on Windows)\n\</q></td></tr>
+<tr><th id="492">492</th><td><q>"</q>);</td></tr>
+<tr><th id="493">493</th><td></td></tr>
+<tr><th id="494">494</th><td></td></tr>
+<tr><th id="495">495</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="statmodule" title='statmodule' data-type='struct PyModuleDef' data-ref="statmodule">statmodule</dfn> = {</td></tr>
+<tr><th id="496">496</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="497">497</th><td>    <q>"_stat"</q>,</td></tr>
+<tr><th id="498">498</th><td>    <a class="ref" href="#429" title='module_doc' data-ref="module_doc">module_doc</a>,</td></tr>
+<tr><th id="499">499</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="500">500</th><td>    <a class="tu ref" href="#stat_methods" title='stat_methods' data-ref="stat_methods">stat_methods</a>,</td></tr>
+<tr><th id="501">501</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="502">502</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="503">503</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="504">504</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="505">505</th><td>};</td></tr>
+<tr><th id="506">506</th><td></td></tr>
+<tr><th id="507">507</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="508">508</th><td><dfn class="decl def" id="PyInit__stat" title='PyInit__stat' data-ref="PyInit__stat">PyInit__stat</dfn>(<em>void</em>)</td></tr>
+<tr><th id="509">509</th><td>{</td></tr>
+<tr><th id="510">510</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47m" title='m' data-type='PyObject *' data-ref="47m">m</dfn>;</td></tr>
+<tr><th id="511">511</th><td>    <a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a> = <a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;statmodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#statmodule" title='statmodule' data-use='a' data-ref="statmodule">statmodule</a>);</td></tr>
+<tr><th id="512">512</th><td>    <b>if</b> (<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="513">513</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="514">514</th><td></td></tr>
+<tr><th id="515">515</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFDIR&quot;, 0040000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#108" title="0040000" data-ref="_M/S_IFDIR">S_IFDIR</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="516">516</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFCHR&quot;, 0020000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#109" title="0020000" data-ref="_M/S_IFCHR">S_IFCHR</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="517">517</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFBLK&quot;, 0060000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#110" title="0060000" data-ref="_M/S_IFBLK">S_IFBLK</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="518">518</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFREG&quot;, 0100000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#111" title="0100000" data-ref="_M/S_IFREG">S_IFREG</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="519">519</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFIFO&quot;, 0010000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#113" title="0010000" data-ref="_M/S_IFIFO">S_IFIFO</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="520">520</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFLNK&quot;, 0120000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#116" title="0120000" data-ref="_M/S_IFLNK">S_IFLNK</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="521">521</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFSOCK&quot;, 0140000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#120" title="0140000" data-ref="_M/S_IFSOCK">S_IFSOCK</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="522">522</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFDOOR&quot;, 0)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#71" title="0" data-ref="_M/S_IFDOOR">S_IFDOOR</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="523">523</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFPORT&quot;, 0)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#75" title="0" data-ref="_M/S_IFPORT">S_IFPORT</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="524">524</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IFWHT&quot;, 0)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#79" title="0" data-ref="_M/S_IFWHT">S_IFWHT</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="525">525</th><td></td></tr>
+<tr><th id="526">526</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_ISUID&quot;, 04000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#163" title="04000" data-ref="_M/S_ISUID">S_ISUID</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="527">527</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_ISGID&quot;, 02000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#164" title="02000" data-ref="_M/S_ISGID">S_ISGID</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="528">528</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_ISVTX&quot;, 01000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#168" title="01000" data-ref="_M/S_ISVTX">S_ISVTX</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="529">529</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_ENFMT&quot;, 02000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#130" title="02000" data-ref="_M/S_ENFMT">S_ENFMT</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="530">530</th><td></td></tr>
+<tr><th id="531">531</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IREAD&quot;, 0400)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#178" title="0400" data-ref="_M/S_IREAD">S_IREAD</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="532">532</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IWRITE&quot;, 0200)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#179" title="0200" data-ref="_M/S_IWRITE">S_IWRITE</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="533">533</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IEXEC&quot;, 0100)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#180" title="0100" data-ref="_M/S_IEXEC">S_IEXEC</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="534">534</th><td></td></tr>
+<tr><th id="535">535</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IRWXU&quot;, (0400|0200|0100))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#175" title="(0400|0200|0100)" data-ref="_M/S_IRWXU">S_IRWXU</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="536">536</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IRUSR&quot;, 0400)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#171" title="0400" data-ref="_M/S_IRUSR">S_IRUSR</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="537">537</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IWUSR&quot;, 0200)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#172" title="0200" data-ref="_M/S_IWUSR">S_IWUSR</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="538">538</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IXUSR&quot;, 0100)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#173" title="0100" data-ref="_M/S_IXUSR">S_IXUSR</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="539">539</th><td></td></tr>
+<tr><th id="540">540</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IRWXG&quot;, ((0400|0200|0100) &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#187" title="((0400|0200|0100) &gt;&gt; 3)" data-ref="_M/S_IRWXG">S_IRWXG</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="541">541</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IRGRP&quot;, (0400 &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#183" title="(0400 &gt;&gt; 3)" data-ref="_M/S_IRGRP">S_IRGRP</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="542">542</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IWGRP&quot;, (0200 &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#184" title="(0200 &gt;&gt; 3)" data-ref="_M/S_IWGRP">S_IWGRP</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="543">543</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IXGRP&quot;, (0100 &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#185" title="(0100 &gt;&gt; 3)" data-ref="_M/S_IXGRP">S_IXGRP</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="544">544</th><td></td></tr>
+<tr><th id="545">545</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IRWXO&quot;, (((0400|0200|0100) &gt;&gt; 3) &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#193" title="(((0400|0200|0100) &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IRWXO">S_IRWXO</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="546">546</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IROTH&quot;, ((0400 &gt;&gt; 3) &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#189" title="((0400 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IROTH">S_IROTH</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="547">547</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IWOTH&quot;, ((0200 &gt;&gt; 3) &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#190" title="((0200 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IWOTH">S_IWOTH</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="548">548</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;S_IXOTH&quot;, ((0100 &gt;&gt; 3) &gt;&gt; 3))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/stat.h.html#191" title="((0100 &gt;&gt; 3) &gt;&gt; 3)" data-ref="_M/S_IXOTH">S_IXOTH</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="549">549</th><td></td></tr>
+<tr><th id="550">550</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_NODUMP&quot;, 0x00000001)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#200" title="0x00000001" data-ref="_M/UF_NODUMP">UF_NODUMP</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="551">551</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_IMMUTABLE&quot;, 0x00000002)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#204" title="0x00000002" data-ref="_M/UF_IMMUTABLE">UF_IMMUTABLE</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="552">552</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_APPEND&quot;, 0x00000004)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#208" title="0x00000004" data-ref="_M/UF_APPEND">UF_APPEND</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="553">553</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_OPAQUE&quot;, 0x00000008)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#212" title="0x00000008" data-ref="_M/UF_OPAQUE">UF_OPAQUE</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="554">554</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_NOUNLINK&quot;, 0x00000010)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#216" title="0x00000010" data-ref="_M/UF_NOUNLINK">UF_NOUNLINK</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="555">555</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_COMPRESSED&quot;, 0x00000020)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#220" title="0x00000020" data-ref="_M/UF_COMPRESSED">UF_COMPRESSED</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="556">556</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;UF_HIDDEN&quot;, 0x00008000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#224" title="0x00008000" data-ref="_M/UF_HIDDEN">UF_HIDDEN</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="557">557</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;SF_ARCHIVED&quot;, 0x00010000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#228" title="0x00010000" data-ref="_M/SF_ARCHIVED">SF_ARCHIVED</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="558">558</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;SF_IMMUTABLE&quot;, 0x00020000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#232" title="0x00020000" data-ref="_M/SF_IMMUTABLE">SF_IMMUTABLE</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="559">559</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;SF_APPEND&quot;, 0x00040000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#236" title="0x00040000" data-ref="_M/SF_APPEND">SF_APPEND</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="560">560</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;SF_NOUNLINK&quot;, 0x00100000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#240" title="0x00100000" data-ref="_M/SF_NOUNLINK">SF_NOUNLINK</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="561">561</th><td>    <b>if</b> (<a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;SF_SNAPSHOT&quot;, 0x00200000)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <a class="macro" href="#244" title="0x00200000" data-ref="_M/SF_SNAPSHOT">SF_SNAPSHOT</a>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="562">562</th><td></td></tr>
+<tr><th id="563">563</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_MODE"</q>, <var>0</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="564">564</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_INO"</q>, <var>1</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="565">565</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_DEV"</q>, <var>2</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="566">566</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_NLINK"</q>, <var>3</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="567">567</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_UID"</q>, <var>4</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="568">568</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_GID"</q>, <var>5</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="569">569</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_SIZE"</q>, <var>6</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="570">570</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_ATIME"</q>, <var>7</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="571">571</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_MTIME"</q>, <var>8</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="572">572</th><td>    <b>if</b> (<a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>, <q>"ST_CTIME"</q>, <var>9</var>)) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="573">573</th><td></td></tr>
+<tr><th id="574">574</th><td><u>#<span data-ppcond="574">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="575">575</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_ARCHIVE)) <b>return</b> NULL;</td></tr>
+<tr><th id="576">576</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_COMPRESSED)) <b>return</b> NULL;</td></tr>
+<tr><th id="577">577</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_DEVICE)) <b>return</b> NULL;</td></tr>
+<tr><th id="578">578</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_DIRECTORY)) <b>return</b> NULL;</td></tr>
+<tr><th id="579">579</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_ENCRYPTED)) <b>return</b> NULL;</td></tr>
+<tr><th id="580">580</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_HIDDEN)) <b>return</b> NULL;</td></tr>
+<tr><th id="581">581</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_INTEGRITY_STREAM)) <b>return</b> NULL;</td></tr>
+<tr><th id="582">582</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_NORMAL)) <b>return</b> NULL;</td></tr>
+<tr><th id="583">583</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_NOT_CONTENT_INDEXED)) <b>return</b> NULL;</td></tr>
+<tr><th id="584">584</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_NO_SCRUB_DATA)) <b>return</b> NULL;</td></tr>
+<tr><th id="585">585</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_OFFLINE)) <b>return</b> NULL;</td></tr>
+<tr><th id="586">586</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_READONLY)) <b>return</b> NULL;</td></tr>
+<tr><th id="587">587</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_REPARSE_POINT)) <b>return</b> NULL;</td></tr>
+<tr><th id="588">588</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_SPARSE_FILE)) <b>return</b> NULL;</td></tr>
+<tr><th id="589">589</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_SYSTEM)) <b>return</b> NULL;</td></tr>
+<tr><th id="590">590</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_TEMPORARY)) <b>return</b> NULL;</td></tr>
+<tr><th id="591">591</th><td>    <b>if</b> (PyModule_AddIntMacro(m, FILE_ATTRIBUTE_VIRTUAL)) <b>return</b> NULL;</td></tr>
+<tr><th id="592">592</th><td><u>#<span data-ppcond="574">endif</span></u></td></tr>
+<tr><th id="593">593</th><td></td></tr>
+<tr><th id="594">594</th><td>    <b>return</b> <a class="local col7 ref" href="#47m" title='m' data-ref="47m">m</a>;</td></tr>
+<tr><th id="595">595</th><td>}</td></tr>
+<tr><th id="596">596</th><td></td></tr>
+<tr><th id="597">597</th><td><u>#<span data-ppcond="597">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="598">598</th><td>}</td></tr>
+<tr><th id="599">599</th><td><u>#<span data-ppcond="597">endif</span></u></td></tr>
+<tr><th id="600">600</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/import.h' l='127' type='const unsigned char *'/>
+<offset>64</offset>
+<use f='codebrowser/Python/import.c' l='1128' u='r' c='get_frozen_object'/>
+<use f='codebrowser/Python/import.c' l='1137' u='r' c='get_frozen_object'/>
+<use f='codebrowser/Python/import.c' l='1179' u='r' c='PyImport_ImportFrozenModuleObject'/>
+<use f='codebrowser/Python/import.c' l='1189' u='r' c='PyImport_ImportFrozenModuleObject'/>

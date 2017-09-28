@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='90' type='int _PySys_EndInit(PyObject * sysdict)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='784' u='c' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1202' u='c' c='Py_NewInterpreter'/>
+<def f='codebrowser/Python/sysmodule.c' l='2103' ll='2150' type='int _PySys_EndInit(PyObject * sysdict)'/>

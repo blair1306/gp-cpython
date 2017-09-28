@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpalloc.h' l='41' type='int mpd_switch_to_dyn_zero(mpd_t * result, mpd_ssize_t size, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='242' ll='261' type='int mpd_switch_to_dyn_zero(mpd_t * result, mpd_ssize_t nwords, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='236'>/*
+ * Input: &apos;result&apos; is a static mpd_t with a static coefficient.
+ *
+ * Convert the coefficient to a dynamic one that is initialized to zero. If
+ * malloc fails, set &apos;result&apos; to NaN and update &apos;status&apos; with MPD_Malloc_error.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='522' u='c' c='mpd_qresize_zero'/>

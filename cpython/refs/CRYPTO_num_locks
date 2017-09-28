@@ -1,0 +1,3 @@
+<dec f='include/openssl/crypto.h' l='435' type='int CRYPTO_num_locks()'/>
+<doc f='include/openssl/crypto.h' l='435'>/* return CRYPTO_NUM_LOCKS (shared libs!) */</doc>
+<use f='codebrowser/Modules/_ssl.c' l='5082' u='c' c='_setup_ssl_threads'/>

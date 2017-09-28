@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='326' type='void _ctypes_extend_error(PyObject * exc_class, const char * fmt)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2890' u='c' c='_PyCData_set'/>
+<def f='codebrowser/Modules/_ctypes/callproc.c' l='928' ll='964' type='void _ctypes_extend_error(PyObject * exc_class, const char * fmt)'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1116' u='c' c='_ctypes_callproc'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1123' u='c' c='_ctypes_callproc'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1129' u='c' c='_ctypes_callproc'/>
+<doc f='codebrowser/Modules/_ctypes/callproc.c' l='924'>/*
+ * Raise a new exception &apos;exc_class&apos;, adding additional text to the original
+ * exception string.
+ */</doc>

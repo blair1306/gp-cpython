@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/dictobject.h' l='79' type='PyObject * PyDict_SetDefault(PyObject * mp, PyObject * key, PyObject * defaultobj)'/>
+<def f='codebrowser/Objects/dictobject.c' l='2695' ll='2775' type='PyObject * PyDict_SetDefault(PyObject * d, PyObject * key, PyObject * defaultobj)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2796' u='c' c='dict_setdefault_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15305' u='c' c='PyUnicode_InternInPlace'/>

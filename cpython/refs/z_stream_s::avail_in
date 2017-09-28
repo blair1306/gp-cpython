@@ -1,0 +1,15 @@
+<dec f='include/zlib.h' l='87' type='uInt'/>
+<offset>64</offset>
+<doc f='include/zlib.h' l='87'>/* number of bytes available at next_in */</doc>
+<use f='codebrowser/Modules/zlibmodule.c' l='145' u='w' c='arrange_input_buffer'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='146' u='r' c='arrange_input_buffer'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='268' u='r' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='354' u='w' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='479' u='w' c='zlib_compressobj_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='575' u='w' c='zlib_decompressobj_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='688' u='r' c='zlib_Compress_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='711' u='r' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='729' u='w' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='733' u='r' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='888' u='w' c='zlib_Compress_flush_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='907' u='r' c='zlib_Compress_flush_impl'/>

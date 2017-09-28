@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/methodobject.h' l='88'/>
+<doc f='codebrowser/Include/methodobject.h' l='83'>/* METH_COEXIST allows a method to be entered even though a slot has
+   already filled the entry.  When defined, the flag allows a separate
+   method, &quot;__contains__&quot; for example, to coexist with a defined
+   slot like sq_contains. */</doc>
+<use f='codebrowser/Objects/call.c' l='459' u='c'/>
+<use f='codebrowser/Objects/call.c' l='603' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='2994' u='c'/>
+<use f='codebrowser/Objects/listobject.c' l='2441' u='c'/>
+<use f='codebrowser/Objects/setobject.c' l='2049' u='c'/>
+<use f='codebrowser/Objects/setobject.c' l='2178' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='4660' u='c'/>

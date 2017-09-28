@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/ceval.h' l='47' type='struct _frame * PyEval_GetFrame()'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1547' u='c' c='PyErr_CheckSignals'/>
+<use f='codebrowser/Python/ceval.c' l='4681' u='c' c='PyEval_GetBuiltins'/>
+<use f='codebrowser/Python/ceval.c' l='4691' u='c' c='PyEval_GetLocals'/>
+<use f='codebrowser/Python/ceval.c' l='4707' u='c' c='PyEval_GetGlobals'/>
+<def f='codebrowser/Python/ceval.c' l='4715' ll='4720' type='struct _frame * PyEval_GetFrame()'/>
+<use f='codebrowser/Python/ceval.c' l='4725' u='c' c='PyEval_MergeCompilerFlags'/>

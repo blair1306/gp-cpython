@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/longobject.h' l='107' type='int _PyLong_Sign(PyObject * v)'/>
+<doc f='codebrowser/Include/longobject.h' l='103'>/* _PyLong_Sign.  Return 0 if v is 0, -1 if v &lt; 0, +1 if v &gt; 0.
+   v must not be NULL, and must be a normalized long.
+   There are no error cases.
+*/</doc>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='526' u='c' c='PyNumber_AsOff_t'/>
+<use f='codebrowser/Modules/_pickle.c' l='1868' u='c' c='save_long'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2107' u='c' c='test_long_numbits'/>
+<use f='codebrowser/Objects/abstract.c' l='1306' u='c' c='PyNumber_AsSsize_t'/>
+<use f='codebrowser/Objects/floatobject.c' l='377' u='c' c='float_richcompare'/>
+<def f='codebrowser/Objects/longobject.c' l='712' ll='721' type='int _PyLong_Sign(PyObject * vv)'/>
+<use f='codebrowser/Objects/longobject.c' l='1042' u='c' c='PyLong_AsVoidPtr'/>
+<use f='codebrowser/Objects/rangeobject.c' l='32' u='c' c='validate_step'/>
+<use f='codebrowser/Objects/sliceobject.c' l='388' u='c' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='424' u='c' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='463' u='c' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='523' u='c' c='slice_indices'/>

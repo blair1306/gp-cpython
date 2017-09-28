@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/ceval.h' l='189' type='void PyEval_InitThreads()'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5414' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2269' u='c' c='test_thread_state'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3651' u='c' c='call_in_temporary_c_thread'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1069' u='c' c='thread_PyThread_start_new_thread'/>
+<use f='codebrowser/Programs/_testembed.c' l='55' u='c' c='test_repeated_init_and_subinterpreters'/>
+<def f='codebrowser/Python/ceval.c' l='174' ll='184' type='void PyEval_InitThreads()'/>
+<use f='codebrowser/Python/pystate.c' l='903' u='c' c='PyGILState_Ensure'/>

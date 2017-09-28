@@ -1,0 +1,5 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/bits.h' l='128' ll='145' type='int mpd_bsf(mpd_size_t a)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/bits.h' l='125'>/*
+ * Bit scan forward. Assumptions: a != 0.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/difradix2.c' l='65' u='c' c='bitreverse_permute'/>

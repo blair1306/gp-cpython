@@ -1,0 +1,5 @@
+<def f='codebrowser/Modules/_curses_panel.c' l='105' ll='108'/>
+<size>16</size>
+<doc f='codebrowser/Modules/_curses_panel.c' l='102'>/* We keep a linked list of PyCursesPanelObjects, lop. A list should
+   suffice, I don&apos;t expect more than a handful or at most a few
+   dozens of panel objects within a typical program. */</doc>

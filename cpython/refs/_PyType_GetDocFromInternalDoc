@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/object.h' l='513' type='PyObject * _PyType_GetDocFromInternalDoc(const char * , const char * )'/>
+<use f='codebrowser/Objects/descrobject.c' l='384' u='c' c='method_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='495' u='c' c='wrapperdescr_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='1142' u='c' c='wrapper_doc'/>
+<use f='codebrowser/Objects/methodobject.c' l='130' u='c' c='meth_get__doc__'/>
+<def f='codebrowser/Objects/typeobject.c' l='160' ll='170' type='PyObject * _PyType_GetDocFromInternalDoc(const char * name, const char * internal_doc)'/>
+<use f='codebrowser/Objects/typeobject.c' l='796' u='c' c='type_get_doc'/>

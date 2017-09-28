@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='218' type='void PyThreadState_Delete(PyThreadState * )'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1240' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pystate.c' l='183' u='c' c='zapthreads'/>
+<def f='codebrowser/Python/pystate.c' l='498' ll='508' type='void PyThreadState_Delete(PyThreadState * tstate)'/>

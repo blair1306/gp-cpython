@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/longobject.h' l='91' type='unsigned long long PyLong_AsUnsignedLongLong(PyObject * )'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='172' u='c' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='172' u='c' c='py_blake2s_new_impl'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='175' u='c' c='uint32_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='175' u='c' c='lzma_vli_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='175' u='c' c='lzma_mode_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='175' u='c' c='lzma_mf_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='321' u='c' c='lzma_filter_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1162' u='c' c='_lzma_LZMADecompressor___init___impl'/>
+<use f='codebrowser/Modules/_struct.c' l='212' u='c' c='get_ulonglong'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='49' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='118' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='194' macro='1' u='c'/>
+<use f='codebrowser/Modules/arraymodule.c' l='472' u='c' c='QQ_setitem'/>
+<use f='codebrowser/Modules/posixmodule.c' l='747' u='c' c='_Py_Dev_Converter'/>
+<def f='codebrowser/Objects/longobject.c' l='1267' ll='1297' type='unsigned long long PyLong_AsUnsignedLongLong(PyObject * vv)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1264'>/* Get a C unsigned long long int from an int object.
+   Return -1 and set an error if overflow occurs. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1597' u='c' c='pylong_as_llu'/>
+<use f='codebrowser/Python/structmember.c' l='279' u='c' c='PyMember_SetOne'/>

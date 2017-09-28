@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='418' type='int mpd_lsnprint_signals(char * dest, int nmemb, uint32_t flags, const char ** signal_string)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1336' u='c' c='context_repr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1341' u='c' c='context_repr'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1509' ll='1550' type='int mpd_lsnprint_signals(char * dest, int nmemb, uint32_t flags, const char ** signal_string)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1508'>/* print signals to buffer, in list form */</doc>

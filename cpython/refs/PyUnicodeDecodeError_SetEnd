@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyerrors.h' l='459' type='int PyUnicodeDecodeError_SetEnd(PyObject * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='412' u='c' c='multibytecodec_decerror'/>
+<def f='codebrowser/Objects/exceptions.c' l='1755' ll='1760' type='int PyUnicodeDecodeError_SetEnd(PyObject * exc, Py_ssize_t end)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4244' u='c' c='make_decode_exception'/>

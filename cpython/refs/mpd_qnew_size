@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='820' type='mpd_t * mpd_qnew_size(mpd_ssize_t size)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='156' ll='181' type='mpd_t * mpd_qnew_size(mpd_ssize_t nwords)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='188' u='c' c='mpd_qnew'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='154'>/* Allocate a new decimal with a coefficient of length &apos;nwords&apos;. In case
+   of an error the return value is NULL. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1960' u='c' c='mpd_qncopy'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='144' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='591' u='r' c='iomodule_traverse'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='591' u='r' c='iomodule_traverse'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='603' u='r' c='iomodule_clear'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='603' u='w' c='iomodule_clear'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='660' u='w' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='663' u='r' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='665' u='r' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='667' u='r' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='774' u='r' c='PyInit__io'/>
+<offset>128</offset>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='126' u='r' c='bufferediobase_unsupported'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='537' u='r' c='err_mode'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='82' u='r' c='iobase_unsupported'/>
+<use f='codebrowser/Modules/_io/textio.c' l='57' u='r' c='_unsupported'/>
+<use f='codebrowser/Modules/_io/textio.c' l='885' u='r' c='_io_TextIOWrapper___init___impl'/>

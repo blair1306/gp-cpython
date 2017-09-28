@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1893' type='void PyUnicode_AppendAndDel(PyObject ** pleft, PyObject * right)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1890'>/* Concat two strings, put the result in *pleft and drop the right object
+   (sets *pleft to NULL on error) */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='943' u='c' c='_ctypes_extend_error'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='944' u='c' c='_ctypes_extend_error'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='951' u='c' c='_ctypes_extend_error'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='954' u='c' c='_ctypes_extend_error'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='3788' u='c' c='time_isoformat'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4805' u='c' c='datetime_isoformat'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1648' u='c' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2597' u='c' c='textiowrapper_repr'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2613' u='c' c='textiowrapper_repr'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='11425' ll='11430' type='void PyUnicode_AppendAndDel(PyObject ** pleft, PyObject * right)'/>
+<use f='codebrowser/Python/ast.c' l='4882' u='c' c='FstringParser_ConcatAndDel'/>

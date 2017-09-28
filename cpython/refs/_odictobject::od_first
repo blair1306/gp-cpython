@@ -1,0 +1,29 @@
+<dec f='codebrowser/Objects/odictobject.c' l='490' type='_ODictNode *'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_resize'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_find_node_hash'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_find_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_add_head'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_add_head'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_add_head'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='w' c='_odict_add_head'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='w' c='_odict_add_tail'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_remove_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='w' c='_odict_remove_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_clear_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_clear_nodes'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='w' c='_odict_clear_nodes'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_keys_equal'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='_odict_keys_equal'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='odict_sizeof'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='OrderedDict_popitem_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='OrderedDict_popitem_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='odict_copy'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='odict_copy'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='OrderedDict_move_to_end_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='OrderedDict_move_to_end_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='OrderedDict_move_to_end_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='odict_repr'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='odict_traverse'/>
+<use f='codebrowser/Objects/odictobject.c' l='526' u='r' c='odictiter_new'/>
+<offset>512</offset>
+<doc f='codebrowser/Objects/odictobject.c' l='490'>/* first node in the linked list, if any */</doc>

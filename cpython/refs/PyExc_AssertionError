@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pyerrors.h' l='160' type='PyObject *'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1017' u='r' c='FutureIter_iternext'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1954' u='r' c='task_step_impl'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='342' u='r' c='semlock_release'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2205' u='r' c='test_datetime_capi'/>
+<def f='codebrowser/Objects/exceptions.c' l='2188' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2537' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2614' macro='1' u='r'/>

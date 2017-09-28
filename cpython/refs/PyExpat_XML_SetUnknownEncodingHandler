@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='642' macro='1' type='void PyExpat_XML_SetUnknownEncodingHandler(XML_Parser parser, XML_UnknownEncodingHandler handler, void * encodingHandlerData)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1803' macro='1' type='void PyExpat_XML_SetUnknownEncodingHandler(XML_Parser parser, XML_UnknownEncodingHandler handler, void * data)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1197' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1881' macro='1' u='r'/>

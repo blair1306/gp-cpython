@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/object.h' l='524' type='PyObject * PyObject_Repr(PyObject * )'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2130' u='c' c='defdict_repr'/>
+<use f='codebrowser/Modules/_lsprof.c' l='208' u='c' c='normalizeUserObj'/>
+<use f='codebrowser/Modules/_operator.c' l='1571' u='c' c='methodcaller_repr'/>
+<use f='codebrowser/Modules/_pickle.c' l='1945' u='c' c='save_long'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1680' u='c' c='_PyGC_DumpShutdownStats'/>
+<use f='codebrowser/Objects/dictobject.c' l='1919' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/dictobject.c' l='1930' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/exceptions.c' l='1540' u='c' c='KeyError_str'/>
+<use f='codebrowser/Objects/fileobject.c' l='131' u='c' c='PyFile_WriteObject'/>
+<use f='codebrowser/Objects/listobject.c' l='373' u='c' c='list_repr'/>
+<use f='codebrowser/Objects/object.c' l='380' u='c' c='PyObject_Print'/>
+<def f='codebrowser/Objects/object.c' l='460' ll='500' type='PyObject * PyObject_Repr(PyObject * v)'/>
+<use f='codebrowser/Objects/object.c' l='525' u='c' c='PyObject_Str'/>
+<use f='codebrowser/Objects/object.c' l='562' u='c' c='PyObject_ASCII'/>
+<use f='codebrowser/Objects/setobject.c' l='597' u='c' c='set_repr'/>
+<use f='codebrowser/Objects/structseq.c' l='202' u='c' c='structseq_repr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='312' u='c' c='tuplerepr'/>
+<use f='codebrowser/Objects/typeobject.c' l='1577' u='c' c='class_name'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2834' u='c' c='unicode_fromformat_arg'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='764' u='c' c='do_conversion'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14680' u='c' c='unicode_format_arg_format'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2049' u='c' c='builtin_repr'/>
+<use f='codebrowser/Python/ceval.c' l='3489' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3835' u='c' c='missing_arguments'/>
+<use f='codebrowser/Python/compile.c' l='1511' u='c' c='get_ref_type'/>
+<use f='codebrowser/Python/compile.c' l='1512' u='c' c='get_ref_type'/>
+<use f='codebrowser/Python/compile.c' l='1513' u='c' c='get_ref_type'/>
+<use f='codebrowser/Python/compile.c' l='1514' u='c' c='get_ref_type'/>
+<use f='codebrowser/Python/compile.c' l='1566' u='c' c='compiler_make_closure'/>
+<use f='codebrowser/Python/compile.c' l='1570' u='c' c='compiler_make_closure'/>
+<use f='codebrowser/Python/sysmodule.c' l='117' u='c' c='sys_displayhook_unencodable'/>

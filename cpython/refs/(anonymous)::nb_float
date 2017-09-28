@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/object.h' l='263' type='unaryfunc'/>
+<offset>1152</offset>
+<use f='codebrowser/Objects/abstract.c' l='746' u='r' c='PyNumber_Check'/>
+<use f='codebrowser/Objects/abstract.c' l='1430' u='r' c='PyNumber_Float'/>
+<use f='codebrowser/Objects/abstract.c' l='1431' u='r' c='PyNumber_Float'/>
+<use f='codebrowser/Objects/complexobject.c' l='994' u='r' c='complex_new_impl'/>
+<use f='codebrowser/Objects/complexobject.c' l='1006' u='r' c='complex_new_impl'/>
+<use f='codebrowser/Objects/complexobject.c' l='1062' u='r' c='complex_new_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='250' u='r' c='PyFloat_AsDouble'/>
+<use f='codebrowser/Objects/floatobject.c' l='256' u='r' c='PyFloat_AsDouble'/>
+<use f='codebrowser/Objects/typeobject.c' l='4865' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4865' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4865' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4865' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4865' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4865' u='r' c='inherit_slots'/>

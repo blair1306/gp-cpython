@@ -1,0 +1,23 @@
+<def f='codebrowser/Python/dtoa.c' l='320' ll='325'/>
+<size>32</size>
+<doc f='codebrowser/Python/dtoa.c' l='298'>/* struct Bigint is used to represent arbitrary-precision integers.  These
+   integers are stored in sign-magnitude format, with the magnitude stored as
+   an array of base 2**32 digits.  Bigints are always normalized: if x is a
+   Bigint then x-&gt;wds &gt;= 1, and either x-&gt;wds == 1 or x[wds-1] is nonzero.
+
+   The Bigint fields are as follows:
+
+     - next is a header used by Balloc and Bfree to keep track of lists
+         of freed Bigints;  it&apos;s also used for the linked list of
+         powers of 5 of the form 5**2**i used by pow5mult.
+     - k indicates which pool this Bigint was allocated from
+     - maxwds is the maximum number of words space was allocated for
+       (usually maxwds == 2**k)
+     - sign is 1 for negative Bigints, 0 for positive.  The sign is unused
+       (ignored on inputs, set to 0 on outputs) in almost all operations
+       involving Bigints: a notable exception is the diff function, which
+       ignores signs on inputs but sets the sign of the output correctly.
+     - wds is the actual number of significant words
+     - x contains the vector of words (digits) for this Bigint, from least
+       significant (x[0]) to most significant (x[wds-1]).
+*/</doc>

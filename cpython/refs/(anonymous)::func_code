@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/funcobject.h' l='23' type='PyObject *'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/funcobject.h' l='23'>/* A code object, the __code__ attribute */</doc>
+<use f='codebrowser/Objects/call.c' l='301' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='388' macro='1' u='r'/>
+<use f='codebrowser/Objects/funcobject.c' l='27' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='81' u='r' c='PyFunction_GetCode'/>
+<use f='codebrowser/Objects/funcobject.c' l='245' u='r' c='func_get_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='246' u='r' c='func_get_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='273' u='r' c='func_set_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='273' u='w' c='func_set_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='530' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='554' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='554' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/bltinmodule.c' l='160' macro='1' u='r'/>

@@ -1,0 +1,39 @@
+<dec f='codebrowser/Objects/dict-common.h' l='47' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/dictobject.c' l='452' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='453' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='454' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='545' u='w' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='556' u='r' c='free_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='900' u='r' c='_PyDict_MaybeUntrack'/>
+<use f='codebrowser/Objects/dictobject.c' l='979' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='994' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='995' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='999' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1000' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1008' u='w' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1129' u='r' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1154' u='w' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1588' u='r' c='PyDict_Clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='1628' u='r' c='_PyDict_Next'/>
+<use f='codebrowser/Objects/dictobject.c' l='1856' u='r' c='dict_dealloc'/>
+<use f='codebrowser/Objects/dictobject.c' l='2039' u='r' c='dict_keys'/>
+<use f='codebrowser/Objects/dictobject.c' l='2083' u='r' c='dict_values'/>
+<use f='codebrowser/Objects/dictobject.c' l='2141' u='r' c='dict_items'/>
+<use f='codebrowser/Objects/dictobject.c' l='2349' u='r' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='2385' u='r' c='dict_merge'/>
+<use f='codebrowser/Objects/dictobject.c' l='2571' u='r' c='dict_equal'/>
+<use f='codebrowser/Objects/dictobject.c' l='2725' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2742' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2743' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2750' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2751' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2759' u='w' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2855' u='r' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='2872' u='w' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='2885' u='r' c='dict_traverse'/>
+<use f='codebrowser/Objects/dictobject.c' l='3344' u='r' c='dictiter_iternextkey'/>
+<use f='codebrowser/Objects/dictobject.c' l='3425' u='r' c='dictiter_iternextvalue'/>
+<use f='codebrowser/Objects/dictobject.c' l='3507' u='r' c='dictiter_iternextitem'/>
+<offset>256</offset>
+<doc f='codebrowser/Objects/dict-common.h' l='46'>/* Number of used entries in dk_entries. */</doc>
+<use f='codebrowser/Objects/odictobject.c' l='551' u='r' c='_odict_get_index_raw'/>

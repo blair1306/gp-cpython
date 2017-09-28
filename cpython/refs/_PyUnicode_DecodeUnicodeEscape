@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1508' type='PyObject * _PyUnicode_DecodeUnicodeEscape(const char * string, Py_ssize_t length, const char * errors, const char ** first_invalid_escape)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1506'>/* Helper for PyUnicode_DecodeUnicodeEscape that detects invalid escape
+   chars. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='5899' ll='6124' type='PyObject * _PyUnicode_DecodeUnicodeEscape(const char * s, Py_ssize_t size, const char * errors, const char ** first_invalid_escape)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6132' u='c' c='PyUnicode_DecodeUnicodeEscape'/>
+<use f='codebrowser/Python/ast.c' l='4239' u='c' c='decode_unicode_with_escapes'/>

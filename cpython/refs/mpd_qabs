@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='505' type='void mpd_qabs(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3982' u='c' c='nm_mpd_qabs'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5034' u='c' c='ctx_mpd_qabs'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3187' ll='3203' type='void mpd_qabs(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3182'>/*
+ * The absolute value of a. If a is negative, the result is the same
+ * as the result of the minus operation. Otherwise, the result is the
+ * result of the plus operation.
+ */</doc>

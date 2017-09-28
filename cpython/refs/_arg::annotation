@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/Python-ast.h' l='425' type='expr_ty'/>
+<offset>64</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2537' u='w' c='_Py_arg'/>
+<use f='codebrowser/Python/Python-ast.c' l='3882' u='r' c='ast2obj_arg'/>
+<use f='codebrowser/Python/ast.c' l='79' u='r' c='validate_args'/>
+<use f='codebrowser/Python/ast.c' l='79' u='r' c='validate_args'/>
+<use f='codebrowser/Python/ast.c' l='112' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/ast.c' l='113' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/ast.c' l='118' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/ast.c' l='119' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/compile.c' l='1687' u='r' c='compiler_visit_argannotations'/>
+<use f='codebrowser/Python/compile.c' l='1712' u='r' c='compiler_visit_annotations'/>
+<use f='codebrowser/Python/compile.c' l='1714' u='r' c='compiler_visit_annotations'/>
+<use f='codebrowser/Python/compile.c' l='1718' u='r' c='compiler_visit_annotations'/>
+<use f='codebrowser/Python/compile.c' l='1720' u='r' c='compiler_visit_annotations'/>
+<use f='codebrowser/Python/symtable.c' l='1564' u='r' c='symtable_visit_argannotations'/>
+<use f='codebrowser/Python/symtable.c' l='1565' u='r' c='symtable_visit_argannotations'/>
+<use f='codebrowser/Python/symtable.c' l='1577' u='r' c='symtable_visit_annotations'/>
+<use f='codebrowser/Python/symtable.c' l='1578' u='r' c='symtable_visit_annotations'/>
+<use f='codebrowser/Python/symtable.c' l='1579' u='r' c='symtable_visit_annotations'/>
+<use f='codebrowser/Python/symtable.c' l='1580' u='r' c='symtable_visit_annotations'/>

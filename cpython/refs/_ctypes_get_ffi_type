@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='336' type='ffi_type * _ctypes_get_ffi_type(PyObject * obj)'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='361' u='c' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='389' u='c' c='_ctypes_alloc_callback'/>
+<def f='codebrowser/Modules/_ctypes/callproc.c' l='705' ll='725' type='ffi_type * _ctypes_get_ffi_type(PyObject * obj)'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1135' u='c' c='_ctypes_callproc'/>

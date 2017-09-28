@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='132' type='int _PyOS_URandom(void * buffer, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/pylifecycle.h' l='131'>/* Random */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='11045' u='c' c='os_urandom_impl'/>
+<def f='codebrowser/Python/bootstrap_hash.c' l='516' ll='520' type='int _PyOS_URandom(void * buffer, Py_ssize_t size)'/>
+<doc f='codebrowser/Python/bootstrap_hash.c' l='507'>/* Fill buffer with size pseudo-random bytes from the operating system random
+   number generator (RNG). It is suitable for most cryptographic purposes
+   except long living private keys for asymmetric encryption.
+
+   On Linux 3.17 and newer, the getrandom() syscall is used in blocking mode:
+   block until the system urandom entropy pool is initialized (128 bits are
+   collected by the kernel).
+
+   Return 0 on success. Raise an exception and return -1 on error. */</doc>

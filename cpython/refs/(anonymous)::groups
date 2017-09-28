@@ -1,0 +1,26 @@
+<dec f='codebrowser/Modules/sre.h' l='29' type='Py_ssize_t'/>
+<dec f='codebrowser/Modules/sre.h' l='51' type='Py_ssize_t'/>
+<use f='codebrowser/Modules/_sre.c' l='403' u='r' c='state_init'/>
+<use f='codebrowser/Modules/_sre.c' l='403' u='r' c='state_init'/>
+<use f='codebrowser/Modules/_sre.c' l='781' u='r' c='_sre_SRE_Pattern_findall_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='796' u='r' c='_sre_SRE_Pattern_findall_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='799' u='r' c='_sre_SRE_Pattern_findall_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='970' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1430' u='w' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='1905' u='r' c='_validate'/>
+<use f='codebrowser/Modules/_sre.c' l='1937' u='r' c='match_getslice_by_index'/>
+<use f='codebrowser/Modules/_sre.c' l='2075' u='r' c='_sre_SRE_Match_groups_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2079' u='r' c='_sre_SRE_Match_groups_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2152' u='r' c='_sre_SRE_Match_start_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2179' u='r' c='_sre_SRE_Match_end_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2233' u='r' c='_sre_SRE_Match_span_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2252' u='r' c='match_regs'/>
+<use f='codebrowser/Modules/_sre.c' l='2256' u='r' c='match_regs'/>
+<use f='codebrowser/Modules/_sre.c' l='2373' u='r' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2373' u='r' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2384' u='w' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2384' u='r' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2394' u='r' c='pattern_new_match'/>
+<offset>704</offset>
+<doc f='codebrowser/Modules/sre.h' l='29'>/* must be first! */</doc>
+<doc f='codebrowser/Modules/sre.h' l='51'>/* number of groups (start/end marks) */</doc>

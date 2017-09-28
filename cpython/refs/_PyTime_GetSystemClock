@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pytime.h' l='142' type='_PyTime_t _PyTime_GetSystemClock()'/>
+<doc f='codebrowser/Include/pytime.h' l='138'>/* Get the current time from the system clock.
+
+   The function cannot fail. _PyTime_Init() ensures that the system clock
+   works. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4372' u='c' c='datetime_best_possible'/>
+<use f='codebrowser/Modules/_randommodule.c' l='221' u='c' c='random_seed_time_pid'/>
+<def f='codebrowser/Python/pytime.c' l='613' ll='625' type='_PyTime_t _PyTime_GetSystemClock()'/>

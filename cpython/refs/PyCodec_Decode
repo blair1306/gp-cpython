@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/codecs.h' l='95' type='PyObject * PyCodec_Decode(PyObject * object, const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/codecs.h' l='85'>/* Generic codec based decoding API.
+
+   object is passed through the decoder function found for the given
+   encoding using the error handling method defined by errors. errors
+   may be NULL to use the default method defined for the codec.
+
+   Raises a LookupError in case no encoder can be found.
+
+ */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='138' u='c' c='_codecs_decode_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3260' u='c' c='PyUnicode_AsDecodedObject'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3284' u='c' c='PyUnicode_AsDecodedUnicode'/>
+<def f='codebrowser/Python/codecs.c' l='511' ll='522' type='PyObject * PyCodec_Decode(PyObject * object, const char * encoding, const char * errors)'/>

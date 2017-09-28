@@ -1,0 +1,8 @@
+<dec f='include/openssl/evp.h' l='602' type='int EVP_DigestInit(EVP_MD_CTX * ctx, const EVP_MD * type)'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='478' u='c' c='EVPnew'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_md5'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha1'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha224'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha256'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha384'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha512'/>

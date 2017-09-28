@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='440' type='void *'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/object.h' l='440'>/* function pointer */</doc>
+<use f='codebrowser/Modules/_ssl.c' l='5195' u='w' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='186' u='w' c='execfunc'/>
+<use f='codebrowser/Objects/typeobject.c' l='2814' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2816' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2864' u='r' c='PyType_FromSpecWithBases'/>
+<use f='codebrowser/Objects/typeobject.c' l='2869' u='r' c='PyType_FromSpecWithBases'/>

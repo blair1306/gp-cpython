@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='230' type='void *'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='230'>/* Address to send to/receive from.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='3451' u='w' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4045' u='w' c='sock_sendmsg'/>

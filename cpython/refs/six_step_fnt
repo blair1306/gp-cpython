@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/sixstep.h' l='41' type='int six_step_fnt(mpd_uint_t * a, mpd_size_t n, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='64' u='r' c='fnt_convolute'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='131' u='r' c='fnt_autoconvolute'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/fourstep.c' l='182' u='c' c='four_step_fnt'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='46' ll='127' type='int six_step_fnt(mpd_uint_t * a, mpd_size_t n, int modnum)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/sixstep.c' l='45'>/* forward transform with sign = -1 */</doc>

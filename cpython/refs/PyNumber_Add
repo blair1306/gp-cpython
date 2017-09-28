@@ -1,0 +1,38 @@
+<dec f='codebrowser/Include/abstract.h' l='616' type='PyObject * PyNumber_Add(PyObject * o1, PyObject * o2)'/>
+<doc f='codebrowser/Include/abstract.h' l='613'>/* Returns the result of adding o1 and o2, or NULL on failure.
+
+   This is the equivalent of the Python expression: o1 + o2. */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2317' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2338' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1522' u='c' c='delta_to_microseconds'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1540' u='c' c='delta_to_microseconds'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2090' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2123' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2145' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2258' u='c' c='delta_new'/>
+<use f='codebrowser/Modules/_operator.c' l='51' u='c' c='_operator_add_impl'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='494' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='658' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2702' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2715' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3484' u='c' c='accumulate_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='4051' u='c' c='count_nextlong'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1985' u='c' c='fill_time'/>
+<def f='codebrowser/Objects/abstract.c' l='937' ll='950' type='PyObject * PyNumber_Add(PyObject * v, PyObject * w)'/>
+<use f='codebrowser/Objects/enumobject.c' l='114' u='c' c='enum_next_long'/>
+<use f='codebrowser/Objects/rangeobject.c' l='195' u='c' c='compute_range_length'/>
+<use f='codebrowser/Objects/rangeobject.c' l='228' u='c' c='compute_item'/>
+<use f='codebrowser/Objects/rangeobject.c' l='251' u='c' c='compute_range_item'/>
+<use f='codebrowser/Objects/rangeobject.c' l='908' u='c' c='longrangeiter_reduce'/>
+<use f='codebrowser/Objects/rangeobject.c' l='978' u='c' c='longrangeiter_next'/>
+<use f='codebrowser/Objects/rangeobject.c' l='988' u='c' c='longrangeiter_next'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1171' u='c' c='range_reverse'/>
+<use f='codebrowser/Objects/sliceobject.c' l='403' u='c' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='426' u='c' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/sliceobject.c' l='465' u='c' c='_PySlice_GetLongIndices'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='496' u='c' c='proxy_add'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2282' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2325' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2356' u='c' c='builtin_sum_impl'/>
+<use f='codebrowser/Python/ceval.c' l='1417' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/peephole.c' l='263' u='c' c='fold_binops_on_constants'/>

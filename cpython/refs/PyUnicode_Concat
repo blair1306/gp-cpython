@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1877' type='PyObject * PyUnicode_Concat(PyObject * left, PyObject * right)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1875'>/* Concat two strings giving a new Unicode string. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1855' u='c' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1869' u='c' c='_textiowrapper_readline'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='11296' ll='11342' type='PyObject * PyUnicode_Concat(PyObject * left, PyObject * right)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13987'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13987'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='11294'>/* Concat to string or Unicode object giving a new Unicode object. */</doc>
+<use f='codebrowser/Python/ceval.c' l='3793' u='c' c='format_missing'/>
+<use f='codebrowser/Python/compile.c' l='707' u='c' c='compiler_set_qualname'/>
+<use f='codebrowser/Python/compile.c' l='724' u='c' c='compiler_set_qualname'/>

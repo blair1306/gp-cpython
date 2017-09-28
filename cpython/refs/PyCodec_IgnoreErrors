@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/codecs.h' l='217' type='PyObject * PyCodec_IgnoreErrors(PyObject * exc)'/>
+<doc f='codebrowser/Include/codecs.h' l='216'>/* ignore the unicode error, skipping the faulty input */</doc>
+<def f='codebrowser/Python/codecs.c' l='681' ll='702' type='PyObject * PyCodec_IgnoreErrors(PyObject * exc)'/>
+<use f='codebrowser/Python/codecs.c' l='1378' u='c' c='ignore_errors'/>

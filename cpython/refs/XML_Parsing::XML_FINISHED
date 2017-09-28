@@ -1,0 +1,19 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='841' type='2'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1888' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1934' u='r' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2039' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2073' u='r' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2098' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2194' u='r' c='PyExpat_XML_StopParser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2196' c='PyExpat_XML_StopParser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2210' u='r' c='PyExpat_XML_StopParser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2243' u='r' c='PyExpat_XML_ResumeParser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2646' c='externalEntityInitProcessor3'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3137' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3748' u='r' c='doCdataSection'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3819' c='doCdataSection'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3896' u='r' c='doIgnoreSection'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='4180' u='r' c='entityValueInitProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5307' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5334' u='r' c='epilogProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5377' c='epilogProcessor'/>

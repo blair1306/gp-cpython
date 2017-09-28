@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='619' type='enum XML_ParamEntityParsing'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='w' c='PyExpat_XML_SetParamEntityParsing'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='r' c='processXmlDecl'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='w' c='processXmlDecl'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='728' u='r' c='doProlog'/>
+<offset>7392</offset>

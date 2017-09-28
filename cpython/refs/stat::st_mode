@@ -1,0 +1,13 @@
+<dec f='include/x86_64-linux-gnu/bits/stat.h' l='62' type='__mode_t'/>
+<offset>192</offset>
+<doc f='include/x86_64-linux-gnu/bits/stat.h' l='62'>/* File mode.  */</doc>
+<use f='codebrowser/Modules/_io/fileio.c' l='454' u='r' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/getpath.c' l='149' u='r' c='isfile'/>
+<use f='codebrowser/Modules/getpath.c' l='177' u='r' c='isxfile'/>
+<use f='codebrowser/Modules/getpath.c' l='179' u='r' c='isxfile'/>
+<use f='codebrowser/Modules/getpath.c' l='191' u='r' c='isdir'/>
+<use f='codebrowser/Modules/main.c' l='890' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1119' u='r' c='new_mmap_object'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2023' u='r' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/zipimport.c' l='134' u='r' c='zipimport_zipimporter___init___impl'/>
+<use f='codebrowser/Python/sysmodule.c' l='1946' u='r' c='_PySys_BeginInit'/>

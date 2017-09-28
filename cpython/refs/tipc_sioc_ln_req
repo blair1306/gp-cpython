@@ -1,0 +1,5 @@
+<def f='include/linux/tipc.h' l='227' ll='231'/>
+<size>68</size>
+<mbr r='tipc_sioc_ln_req::peer' o='0' t='__u32'/>
+<mbr r='tipc_sioc_ln_req::bearer_id' o='32' t='__u32'/>
+<mbr r='tipc_sioc_ln_req::linkname' o='64' t='char [60]'/>

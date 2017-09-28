@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/bytes_methods.h' l='18' type='void _Py_bytes_lower(char * result, const char * cptr, Py_ssize_t len)'/>
+<use f='codebrowser/Objects/stringlib/ctype.h' l='59' u='c' c='stringlib_lower'/>
+<doc f='codebrowser/Include/bytes_methods.h' l='17'>/* These store their len sized answer in the given preallocated *result arg. */</doc>
+<def f='codebrowser/Objects/bytes_methods.c' l='247' ll='255' type='void _Py_bytes_lower(char * result, const char * cptr, Py_ssize_t len)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9667' u='c' c='ascii_upper_or_lower'/>

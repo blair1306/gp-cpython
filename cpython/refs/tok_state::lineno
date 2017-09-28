@@ -1,0 +1,13 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='39' type='int'/>
+<use f='codebrowser/Parser/parsetok.c' l='264' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='319' u='r' c='parsetok'/>
+<offset>3904</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='39'>/* Current line number */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='136' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='616' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='641' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='935' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='980' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='998' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1043' u='w' c='tok_nextc'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1959' u='r' c='PyTokenizer_FindEncodingFilename'/>

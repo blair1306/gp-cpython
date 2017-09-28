@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/symtable.h' l='44' type='PyObject *'/>
+<offset>576</offset>
+<doc f='codebrowser/Include/symtable.h' l='44'>/* locations of global and nonlocal statements */</doc>
+<use f='codebrowser/Python/symtable.c' l='53' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='110' u='r' c='ste_dealloc'/>
+<use f='codebrowser/Python/symtable.c' l='376' u='r' c='error_at_directive'/>
+<use f='codebrowser/Python/symtable.c' l='377' u='r' c='error_at_directive'/>
+<use f='codebrowser/Python/symtable.c' l='377' u='r' c='error_at_directive'/>
+<use f='codebrowser/Python/symtable.c' l='378' u='r' c='error_at_directive'/>
+<use f='codebrowser/Python/symtable.c' l='1110' u='r' c='symtable_record_directive'/>
+<use f='codebrowser/Python/symtable.c' l='1111' u='w' c='symtable_record_directive'/>
+<use f='codebrowser/Python/symtable.c' l='1112' u='r' c='symtable_record_directive'/>
+<use f='codebrowser/Python/symtable.c' l='1121' u='r' c='symtable_record_directive'/>

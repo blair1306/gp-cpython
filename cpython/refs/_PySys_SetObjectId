@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/sysmodule.h' l='14' type='int _PySys_SetObjectId(_Py_Identifier * key, PyObject * )'/>
+<use f='codebrowser/Python/pylifecycle.c' l='689' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1211' u='c' c='Py_NewInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1657' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1666' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1693' u='c' c='initstdio'/>
+<use f='codebrowser/Python/pythonrun.c' l='104' u='c' c='PyRun_InteractiveLoopFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='109' u='c' c='PyRun_InteractiveLoopFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='629' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='630' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='631' u='c' c='PyErr_PrintEx'/>
+<def f='codebrowser/Python/sysmodule.c' l='66' ll='79' type='int _PySys_SetObjectId(_Py_Identifier * key, PyObject * v)'/>
+<use f='codebrowser/Python/sysmodule.c' l='2194' u='c' c='PySys_SetPath'/>

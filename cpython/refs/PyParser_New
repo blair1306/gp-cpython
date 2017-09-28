@@ -1,0 +1,4 @@
+<dec f='codebrowser/Parser/parser.h' l='33' type='parser_state * PyParser_New(grammar * g, int start)'/>
+<def f='codebrowser/Parser/parser.c' l='71' ll='93' type='parser_state * PyParser_New(grammar * g, int start)'/>
+<doc f='codebrowser/Parser/parser.c' l='69'>/* PARSER CREATION */</doc>
+<use f='codebrowser/Parser/parsetok.c' l='191' u='c' c='parsetok'/>

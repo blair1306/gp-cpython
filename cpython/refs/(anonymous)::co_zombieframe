@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/code.h' l='45' type='void *'/>
+<offset>1088</offset>
+<doc f='codebrowser/Include/code.h' l='45'>/* for optimization only (see frameobject.c) */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='206' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='444' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='445' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='443' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='444' u='w' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='654' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='655' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='656' u='w' c='_PyFrame_New_NoTrack'/>

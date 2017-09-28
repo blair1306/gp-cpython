@@ -1,0 +1,7 @@
+<dec f='include/x86_64-linux-gnu/ffi.h' l='82'/>
+<use f='include/x86_64-linux-gnu/ffi.h' l='155' u='c'/>
+<use f='include/x86_64-linux-gnu/ffi.h' l='162' u='c'/>
+<use f='include/x86_64-linux-gnu/ffi.h' l='253' u='c'/>
+<doc f='include/x86_64-linux-gnu/ffi.h' l='78'>/* LONG_LONG_MAX is not always defined (not if STRICT_ANSI, for example).
+   But we can find it either under the correct ANSI name, or under GNU
+   C&apos;s internal name.  */</doc>

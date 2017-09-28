@@ -1,0 +1,5 @@
+<dec f='include/net/if.h' l='200' type='void if_freenameindex(struct if_nameindex * __ptr)'/>
+<doc f='include/net/if.h' l='199'>/* Free the data returned from if_nameindex.  */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='6170' u='c' c='socket_if_nameindex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6181' u='c' c='socket_if_nameindex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6187' u='c' c='socket_if_nameindex'/>

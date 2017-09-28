@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>stringio.c.h source code [codebrowser/Modules/_io/clinic/stringio.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/_io/clinic/stringio.c.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>codebrowser</a>/<a href='../..'>Modules</a>/<a href='..'>_io</a>/<a href='./'>clinic</a>/<a href='stringio.c.h.html'>stringio.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_getvalue__doc__[] = &quot;getvalue($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Retrieve the entire contents of the object.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_getvalue__doc__" title='_io_StringIO_getvalue__doc__' data-ref="_io_StringIO_getvalue__doc__">_io_StringIO_getvalue__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"getvalue($self, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Retrieve the entire contents of the object."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_GETVALUE_METHODDEF" data-ref="_M/_IO_STRINGIO_GETVALUE_METHODDEF">_IO_STRINGIO_GETVALUE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"getvalue", (PyCFunction)_io_StringIO_getvalue, METH_NOARGS, _io_StringIO_getvalue__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="15">15</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_getvalue_impl" title='_io_StringIO_getvalue_impl' data-ref="_io_StringIO_getvalue_impl" id="_io_StringIO_getvalue_impl">_io_StringIO_getvalue_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col0 decl" id="90self" title='self' data-type='stringio *' data-ref="90self">self</dfn>);</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="18">18</th><td><dfn class="decl def" id="_io_StringIO_getvalue" title='_io_StringIO_getvalue' data-ref="_io_StringIO_getvalue">_io_StringIO_getvalue</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col1 decl" id="91self" title='self' data-type='stringio *' data-ref="91self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="19">19</th><td>{</td></tr>
+<tr><th id="20">20</th><td>    <b>return</b> <a class="ref" href="../stringio.c.html#_io_StringIO_getvalue_impl" title='_io_StringIO_getvalue_impl' data-ref="_io_StringIO_getvalue_impl">_io_StringIO_getvalue_impl</a>(<a class="local col1 ref" href="#91self" title='self' data-ref="91self">self</a>);</td></tr>
+<tr><th id="21">21</th><td>}</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_tell__doc__[] = &quot;tell($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Tell the current file position.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_tell__doc__" title='_io_StringIO_tell__doc__' data-ref="_io_StringIO_tell__doc__">_io_StringIO_tell__doc__</dfn>,</td></tr>
+<tr><th id="24">24</th><td><q>"tell($self, /)\n"</q></td></tr>
+<tr><th id="25">25</th><td><q>"--\n"</q></td></tr>
+<tr><th id="26">26</th><td><q>"\n"</q></td></tr>
+<tr><th id="27">27</th><td><q>"Tell the current file position."</q>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_TELL_METHODDEF" data-ref="_M/_IO_STRINGIO_TELL_METHODDEF">_IO_STRINGIO_TELL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="30">30</th><td><u>    {"tell", (PyCFunction)_io_StringIO_tell, METH_NOARGS, _io_StringIO_tell__doc__},</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="33">33</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_tell_impl" title='_io_StringIO_tell_impl' data-ref="_io_StringIO_tell_impl" id="_io_StringIO_tell_impl">_io_StringIO_tell_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col2 decl" id="92self" title='self' data-type='stringio *' data-ref="92self">self</dfn>);</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="36">36</th><td><dfn class="decl def" id="_io_StringIO_tell" title='_io_StringIO_tell' data-ref="_io_StringIO_tell">_io_StringIO_tell</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col3 decl" id="93self" title='self' data-type='stringio *' data-ref="93self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="37">37</th><td>{</td></tr>
+<tr><th id="38">38</th><td>    <b>return</b> <a class="ref" href="../stringio.c.html#_io_StringIO_tell_impl" title='_io_StringIO_tell_impl' data-ref="_io_StringIO_tell_impl">_io_StringIO_tell_impl</a>(<a class="local col3 ref" href="#93self" title='self' data-ref="93self">self</a>);</td></tr>
+<tr><th id="39">39</th><td>}</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_read__doc__[] = &quot;read($self, size=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Read at most size characters, returned as a string.\n&quot;&quot;\n&quot;&quot;If the argument is negative or omitted, read until EOF\n&quot;&quot;is reached. Return an empty string at EOF.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_read__doc__" title='_io_StringIO_read__doc__' data-ref="_io_StringIO_read__doc__">_io_StringIO_read__doc__</dfn>,</td></tr>
+<tr><th id="42">42</th><td><q>"read($self, size=-1, /)\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"--\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"Read at most size characters, returned as a string.\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"If the argument is negative or omitted, read until EOF\n"</q></td></tr>
+<tr><th id="48">48</th><td><q>"is reached. Return an empty string at EOF."</q>);</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_READ_METHODDEF" data-ref="_M/_IO_STRINGIO_READ_METHODDEF">_IO_STRINGIO_READ_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="51">51</th><td><u>    {"read", (PyCFunction)_io_StringIO_read, METH_FASTCALL, _io_StringIO_read__doc__},</u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="54">54</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_read_impl" title='_io_StringIO_read_impl' data-ref="_io_StringIO_read_impl" id="_io_StringIO_read_impl">_io_StringIO_read_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col4 decl" id="94self" title='self' data-type='stringio *' data-ref="94self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="95size" title='size' data-type='Py_ssize_t' data-ref="95size">size</dfn>);</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="57">57</th><td><dfn class="decl def" id="_io_StringIO_read" title='_io_StringIO_read' data-ref="_io_StringIO_read">_io_StringIO_read</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col6 decl" id="96self" title='self' data-type='stringio *' data-ref="96self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col7 decl" id="97args" title='args' data-type='PyObject **' data-ref="97args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="98nargs" title='nargs' data-type='Py_ssize_t' data-ref="98nargs">nargs</dfn>)</td></tr>
+<tr><th id="58">58</th><td>{</td></tr>
+<tr><th id="59">59</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="99return_value" title='return_value' data-type='PyObject *' data-ref="99return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="60">60</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="100size" title='size' data-type='Py_ssize_t' data-ref="100size">size</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col7 ref" href="#97args" title='args' data-ref="97args">args</a>, <a class="local col8 ref" href="#98nargs" title='nargs' data-ref="98nargs">nargs</a>, <q>"|O&amp;:read"</q>,</td></tr>
+<tr><th id="63">63</th><td>        <a class="ref" href="../../../Include/abstract.h.html#_Py_convert_optional_to_ssize_t" title='_Py_convert_optional_to_ssize_t' data-ref="_Py_convert_optional_to_ssize_t">_Py_convert_optional_to_ssize_t</a>, &amp;<a class="local col0 ref" href="#100size" title='size' data-ref="100size">size</a>)) {</td></tr>
+<tr><th id="64">64</th><td>        <b>goto</b> <a class="lbl" href="#101exit" data-ref="101exit">exit</a>;</td></tr>
+<tr><th id="65">65</th><td>    }</td></tr>
+<tr><th id="66">66</th><td>    <a class="local col9 ref" href="#99return_value" title='return_value' data-ref="99return_value">return_value</a> = <a class="ref" href="../stringio.c.html#_io_StringIO_read_impl" title='_io_StringIO_read_impl' data-ref="_io_StringIO_read_impl">_io_StringIO_read_impl</a>(<a class="local col6 ref" href="#96self" title='self' data-ref="96self">self</a>, <a class="local col0 ref" href="#100size" title='size' data-ref="100size">size</a>);</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><dfn class="lbl" id="101exit" data-ref="101exit">exit</dfn>:</td></tr>
+<tr><th id="69">69</th><td>    <b>return</b> <a class="local col9 ref" href="#99return_value" title='return_value' data-ref="99return_value">return_value</a>;</td></tr>
+<tr><th id="70">70</th><td>}</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_readline__doc__[] = &quot;readline($self, size=-1, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Read until newline or EOF.\n&quot;&quot;\n&quot;&quot;Returns an empty string if EOF is hit immediately.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_readline__doc__" title='_io_StringIO_readline__doc__' data-ref="_io_StringIO_readline__doc__">_io_StringIO_readline__doc__</dfn>,</td></tr>
+<tr><th id="73">73</th><td><q>"readline($self, size=-1, /)\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"--\n"</q></td></tr>
+<tr><th id="75">75</th><td><q>"\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"Read until newline or EOF.\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"Returns an empty string if EOF is hit immediately."</q>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_READLINE_METHODDEF" data-ref="_M/_IO_STRINGIO_READLINE_METHODDEF">_IO_STRINGIO_READLINE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="81">81</th><td><u>    {"readline", (PyCFunction)_io_StringIO_readline, METH_FASTCALL, _io_StringIO_readline__doc__},</u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="84">84</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_readline_impl" title='_io_StringIO_readline_impl' data-ref="_io_StringIO_readline_impl" id="_io_StringIO_readline_impl">_io_StringIO_readline_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col2 decl" id="102self" title='self' data-type='stringio *' data-ref="102self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="103size" title='size' data-type='Py_ssize_t' data-ref="103size">size</dfn>);</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="87">87</th><td><dfn class="decl def" id="_io_StringIO_readline" title='_io_StringIO_readline' data-ref="_io_StringIO_readline">_io_StringIO_readline</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col4 decl" id="104self" title='self' data-type='stringio *' data-ref="104self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="105args" title='args' data-type='PyObject **' data-ref="105args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="106nargs" title='nargs' data-type='Py_ssize_t' data-ref="106nargs">nargs</dfn>)</td></tr>
+<tr><th id="88">88</th><td>{</td></tr>
+<tr><th id="89">89</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="107return_value" title='return_value' data-type='PyObject *' data-ref="107return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="90">90</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="108size" title='size' data-type='Py_ssize_t' data-ref="108size">size</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col5 ref" href="#105args" title='args' data-ref="105args">args</a>, <a class="local col6 ref" href="#106nargs" title='nargs' data-ref="106nargs">nargs</a>, <q>"|O&amp;:readline"</q>,</td></tr>
+<tr><th id="93">93</th><td>        <a class="ref" href="../../../Include/abstract.h.html#_Py_convert_optional_to_ssize_t" title='_Py_convert_optional_to_ssize_t' data-ref="_Py_convert_optional_to_ssize_t">_Py_convert_optional_to_ssize_t</a>, &amp;<a class="local col8 ref" href="#108size" title='size' data-ref="108size">size</a>)) {</td></tr>
+<tr><th id="94">94</th><td>        <b>goto</b> <a class="lbl" href="#109exit" data-ref="109exit">exit</a>;</td></tr>
+<tr><th id="95">95</th><td>    }</td></tr>
+<tr><th id="96">96</th><td>    <a class="local col7 ref" href="#107return_value" title='return_value' data-ref="107return_value">return_value</a> = <a class="ref" href="../stringio.c.html#_io_StringIO_readline_impl" title='_io_StringIO_readline_impl' data-ref="_io_StringIO_readline_impl">_io_StringIO_readline_impl</a>(<a class="local col4 ref" href="#104self" title='self' data-ref="104self">self</a>, <a class="local col8 ref" href="#108size" title='size' data-ref="108size">size</a>);</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><dfn class="lbl" id="109exit" data-ref="109exit">exit</dfn>:</td></tr>
+<tr><th id="99">99</th><td>    <b>return</b> <a class="local col7 ref" href="#107return_value" title='return_value' data-ref="107return_value">return_value</a>;</td></tr>
+<tr><th id="100">100</th><td>}</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_truncate__doc__[] = &quot;truncate($self, pos=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Truncate size to pos.\n&quot;&quot;\n&quot;&quot;The pos argument defaults to the current file position, as\n&quot;&quot;returned by tell().  The current file position is unchanged.\n&quot;&quot;Returns the new absolute position.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_truncate__doc__" title='_io_StringIO_truncate__doc__' data-ref="_io_StringIO_truncate__doc__">_io_StringIO_truncate__doc__</dfn>,</td></tr>
+<tr><th id="103">103</th><td><q>"truncate($self, pos=None, /)\n"</q></td></tr>
+<tr><th id="104">104</th><td><q>"--\n"</q></td></tr>
+<tr><th id="105">105</th><td><q>"\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"Truncate size to pos.\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"\n"</q></td></tr>
+<tr><th id="108">108</th><td><q>"The pos argument defaults to the current file position, as\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"returned by tell().  The current file position is unchanged.\n"</q></td></tr>
+<tr><th id="110">110</th><td><q>"Returns the new absolute position."</q>);</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_TRUNCATE_METHODDEF" data-ref="_M/_IO_STRINGIO_TRUNCATE_METHODDEF">_IO_STRINGIO_TRUNCATE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="113">113</th><td><u>    {"truncate", (PyCFunction)_io_StringIO_truncate, METH_FASTCALL, _io_StringIO_truncate__doc__},</u></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="116">116</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_truncate_impl" title='_io_StringIO_truncate_impl' data-ref="_io_StringIO_truncate_impl" id="_io_StringIO_truncate_impl">_io_StringIO_truncate_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col0 decl" id="110self" title='self' data-type='stringio *' data-ref="110self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="111size" title='size' data-type='Py_ssize_t' data-ref="111size">size</dfn>);</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="119">119</th><td><dfn class="decl def" id="_io_StringIO_truncate" title='_io_StringIO_truncate' data-ref="_io_StringIO_truncate">_io_StringIO_truncate</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col2 decl" id="112self" title='self' data-type='stringio *' data-ref="112self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="113args" title='args' data-type='PyObject **' data-ref="113args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="114nargs" title='nargs' data-type='Py_ssize_t' data-ref="114nargs">nargs</dfn>)</td></tr>
+<tr><th id="120">120</th><td>{</td></tr>
+<tr><th id="121">121</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="115return_value" title='return_value' data-type='PyObject *' data-ref="115return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="122">122</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="116size" title='size' data-type='Py_ssize_t' data-ref="116size">size</dfn> = <a class="local col2 ref" href="#112self" title='self' data-ref="112self">self</a>-&gt;<a class="tu ref" href="../stringio.c.html#(anonymous)::pos" title='(anonymous struct)::pos' data-use='r' data-ref="(anonymous)::pos">pos</a>;</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col3 ref" href="#113args" title='args' data-ref="113args">args</a>, <a class="local col4 ref" href="#114nargs" title='nargs' data-ref="114nargs">nargs</a>, <q>"|O&amp;:truncate"</q>,</td></tr>
+<tr><th id="125">125</th><td>        <a class="ref" href="../../../Include/abstract.h.html#_Py_convert_optional_to_ssize_t" title='_Py_convert_optional_to_ssize_t' data-ref="_Py_convert_optional_to_ssize_t">_Py_convert_optional_to_ssize_t</a>, &amp;<a class="local col6 ref" href="#116size" title='size' data-ref="116size">size</a>)) {</td></tr>
+<tr><th id="126">126</th><td>        <b>goto</b> <a class="lbl" href="#117exit" data-ref="117exit">exit</a>;</td></tr>
+<tr><th id="127">127</th><td>    }</td></tr>
+<tr><th id="128">128</th><td>    <a class="local col5 ref" href="#115return_value" title='return_value' data-ref="115return_value">return_value</a> = <a class="ref" href="../stringio.c.html#_io_StringIO_truncate_impl" title='_io_StringIO_truncate_impl' data-ref="_io_StringIO_truncate_impl">_io_StringIO_truncate_impl</a>(<a class="local col2 ref" href="#112self" title='self' data-ref="112self">self</a>, <a class="local col6 ref" href="#116size" title='size' data-ref="116size">size</a>);</td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><dfn class="lbl" id="117exit" data-ref="117exit">exit</dfn>:</td></tr>
+<tr><th id="131">131</th><td>    <b>return</b> <a class="local col5 ref" href="#115return_value" title='return_value' data-ref="115return_value">return_value</a>;</td></tr>
+<tr><th id="132">132</th><td>}</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_seek__doc__[] = &quot;seek($self, pos, whence=0, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Change stream position.\n&quot;&quot;\n&quot;&quot;Seek to character offset pos relative to position indicated by whence:\n&quot;&quot;    0  Start of stream (the default).  pos should be &gt;= 0;\n&quot;&quot;    1  Current position - pos must be 0;\n&quot;&quot;    2  End of stream - pos must be 0.\n&quot;&quot;Returns the new absolute position.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_seek__doc__" title='_io_StringIO_seek__doc__' data-ref="_io_StringIO_seek__doc__">_io_StringIO_seek__doc__</dfn>,</td></tr>
+<tr><th id="135">135</th><td><q>"seek($self, pos, whence=0, /)\n"</q></td></tr>
+<tr><th id="136">136</th><td><q>"--\n"</q></td></tr>
+<tr><th id="137">137</th><td><q>"\n"</q></td></tr>
+<tr><th id="138">138</th><td><q>"Change stream position.\n"</q></td></tr>
+<tr><th id="139">139</th><td><q>"\n"</q></td></tr>
+<tr><th id="140">140</th><td><q>"Seek to character offset pos relative to position indicated by whence:\n"</q></td></tr>
+<tr><th id="141">141</th><td><q>"    0  Start of stream (the default).  pos should be &gt;= 0;\n"</q></td></tr>
+<tr><th id="142">142</th><td><q>"    1  Current position - pos must be 0;\n"</q></td></tr>
+<tr><th id="143">143</th><td><q>"    2  End of stream - pos must be 0.\n"</q></td></tr>
+<tr><th id="144">144</th><td><q>"Returns the new absolute position."</q>);</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_SEEK_METHODDEF" data-ref="_M/_IO_STRINGIO_SEEK_METHODDEF">_IO_STRINGIO_SEEK_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="147">147</th><td><u>    {"seek", (PyCFunction)_io_StringIO_seek, METH_FASTCALL, _io_StringIO_seek__doc__},</u></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="150">150</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_seek_impl" title='_io_StringIO_seek_impl' data-ref="_io_StringIO_seek_impl" id="_io_StringIO_seek_impl">_io_StringIO_seek_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col8 decl" id="118self" title='self' data-type='stringio *' data-ref="118self">self</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="119pos" title='pos' data-type='Py_ssize_t' data-ref="119pos">pos</dfn>, <em>int</em> <dfn class="local col0 decl" id="120whence" title='whence' data-type='int' data-ref="120whence">whence</dfn>);</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="153">153</th><td><dfn class="decl def" id="_io_StringIO_seek" title='_io_StringIO_seek' data-ref="_io_StringIO_seek">_io_StringIO_seek</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col1 decl" id="121self" title='self' data-type='stringio *' data-ref="121self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col2 decl" id="122args" title='args' data-type='PyObject **' data-ref="122args">args</dfn>, <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="123nargs" title='nargs' data-type='Py_ssize_t' data-ref="123nargs">nargs</dfn>)</td></tr>
+<tr><th id="154">154</th><td>{</td></tr>
+<tr><th id="155">155</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="124return_value" title='return_value' data-type='PyObject *' data-ref="124return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="156">156</th><td>    <a class="typedef" href="../../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="125pos" title='pos' data-type='Py_ssize_t' data-ref="125pos">pos</dfn>;</td></tr>
+<tr><th id="157">157</th><td>    <em>int</em> <dfn class="local col6 decl" id="126whence" title='whence' data-type='int' data-ref="126whence">whence</dfn> = <var>0</var>;</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col2 ref" href="#122args" title='args' data-ref="122args">args</a>, <a class="local col3 ref" href="#123nargs" title='nargs' data-ref="123nargs">nargs</a>, <q>"n|i:seek"</q>,</td></tr>
+<tr><th id="160">160</th><td>        &amp;<a class="local col5 ref" href="#125pos" title='pos' data-ref="125pos">pos</a>, &amp;<a class="local col6 ref" href="#126whence" title='whence' data-ref="126whence">whence</a>)) {</td></tr>
+<tr><th id="161">161</th><td>        <b>goto</b> <a class="lbl" href="#127exit" data-ref="127exit">exit</a>;</td></tr>
+<tr><th id="162">162</th><td>    }</td></tr>
+<tr><th id="163">163</th><td>    <a class="local col4 ref" href="#124return_value" title='return_value' data-ref="124return_value">return_value</a> = <a class="ref" href="../stringio.c.html#_io_StringIO_seek_impl" title='_io_StringIO_seek_impl' data-ref="_io_StringIO_seek_impl">_io_StringIO_seek_impl</a>(<a class="local col1 ref" href="#121self" title='self' data-ref="121self">self</a>, <a class="local col5 ref" href="#125pos" title='pos' data-ref="125pos">pos</a>, <a class="local col6 ref" href="#126whence" title='whence' data-ref="126whence">whence</a>);</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><dfn class="lbl" id="127exit" data-ref="127exit">exit</dfn>:</td></tr>
+<tr><th id="166">166</th><td>    <b>return</b> <a class="local col4 ref" href="#124return_value" title='return_value' data-ref="124return_value">return_value</a>;</td></tr>
+<tr><th id="167">167</th><td>}</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_write__doc__[] = &quot;write($self, s, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Write string to file.\n&quot;&quot;\n&quot;&quot;Returns the number of characters written, which is always equal to\n&quot;&quot;the length of the string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_write__doc__" title='_io_StringIO_write__doc__' data-ref="_io_StringIO_write__doc__">_io_StringIO_write__doc__</dfn>,</td></tr>
+<tr><th id="170">170</th><td><q>"write($self, s, /)\n"</q></td></tr>
+<tr><th id="171">171</th><td><q>"--\n"</q></td></tr>
+<tr><th id="172">172</th><td><q>"\n"</q></td></tr>
+<tr><th id="173">173</th><td><q>"Write string to file.\n"</q></td></tr>
+<tr><th id="174">174</th><td><q>"\n"</q></td></tr>
+<tr><th id="175">175</th><td><q>"Returns the number of characters written, which is always equal to\n"</q></td></tr>
+<tr><th id="176">176</th><td><q>"the length of the string."</q>);</td></tr>
+<tr><th id="177">177</th><td></td></tr>
+<tr><th id="178">178</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_WRITE_METHODDEF" data-ref="_M/_IO_STRINGIO_WRITE_METHODDEF">_IO_STRINGIO_WRITE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="179">179</th><td><u>    {"write", (PyCFunction)_io_StringIO_write, METH_O, _io_StringIO_write__doc__},</u></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_close__doc__[] = &quot;close($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Close the IO object.\n&quot;&quot;\n&quot;&quot;Attempting any further operation after the object is closed\n&quot;&quot;will raise a ValueError.\n&quot;&quot;\n&quot;&quot;This method has no effect if the file is already closed.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_close__doc__" title='_io_StringIO_close__doc__' data-ref="_io_StringIO_close__doc__">_io_StringIO_close__doc__</dfn>,</td></tr>
+<tr><th id="182">182</th><td><q>"close($self, /)\n"</q></td></tr>
+<tr><th id="183">183</th><td><q>"--\n"</q></td></tr>
+<tr><th id="184">184</th><td><q>"\n"</q></td></tr>
+<tr><th id="185">185</th><td><q>"Close the IO object.\n"</q></td></tr>
+<tr><th id="186">186</th><td><q>"\n"</q></td></tr>
+<tr><th id="187">187</th><td><q>"Attempting any further operation after the object is closed\n"</q></td></tr>
+<tr><th id="188">188</th><td><q>"will raise a ValueError.\n"</q></td></tr>
+<tr><th id="189">189</th><td><q>"\n"</q></td></tr>
+<tr><th id="190">190</th><td><q>"This method has no effect if the file is already closed."</q>);</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_CLOSE_METHODDEF" data-ref="_M/_IO_STRINGIO_CLOSE_METHODDEF">_IO_STRINGIO_CLOSE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="193">193</th><td><u>    {"close", (PyCFunction)_io_StringIO_close, METH_NOARGS, _io_StringIO_close__doc__},</u></td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="196">196</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_close_impl" title='_io_StringIO_close_impl' data-ref="_io_StringIO_close_impl" id="_io_StringIO_close_impl">_io_StringIO_close_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col8 decl" id="128self" title='self' data-type='stringio *' data-ref="128self">self</dfn>);</td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="199">199</th><td><dfn class="decl def" id="_io_StringIO_close" title='_io_StringIO_close' data-ref="_io_StringIO_close">_io_StringIO_close</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col9 decl" id="129self" title='self' data-type='stringio *' data-ref="129self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="200">200</th><td>{</td></tr>
+<tr><th id="201">201</th><td>    <b>return</b> <a class="ref" href="../stringio.c.html#_io_StringIO_close_impl" title='_io_StringIO_close_impl' data-ref="_io_StringIO_close_impl">_io_StringIO_close_impl</a>(<a class="local col9 ref" href="#129self" title='self' data-ref="129self">self</a>);</td></tr>
+<tr><th id="202">202</th><td>}</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO___init____doc__[] = &quot;StringIO(initial_value=\&apos;\&apos;, newline=\&apos;\\n\&apos;)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Text I/O implementation using an in-memory buffer.\n&quot;&quot;\n&quot;&quot;The initial_value argument sets the value of object.  The newline\n&quot;&quot;argument is like the one of TextIOWrapper\&apos;s constructor.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO___init____doc__" title='_io_StringIO___init____doc__' data-ref="_io_StringIO___init____doc__">_io_StringIO___init____doc__</dfn>,</td></tr>
+<tr><th id="205">205</th><td><q>"StringIO(initial_value=\'\', newline=\'\\n\')\n"</q></td></tr>
+<tr><th id="206">206</th><td><q>"--\n"</q></td></tr>
+<tr><th id="207">207</th><td><q>"\n"</q></td></tr>
+<tr><th id="208">208</th><td><q>"Text I/O implementation using an in-memory buffer.\n"</q></td></tr>
+<tr><th id="209">209</th><td><q>"\n"</q></td></tr>
+<tr><th id="210">210</th><td><q>"The initial_value argument sets the value of object.  The newline\n"</q></td></tr>
+<tr><th id="211">211</th><td><q>"argument is like the one of TextIOWrapper\'s constructor."</q>);</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="214">214</th><td><a class="decl" href="../stringio.c.html#_io_StringIO___init___impl" title='_io_StringIO___init___impl' data-ref="_io_StringIO___init___impl" id="_io_StringIO___init___impl">_io_StringIO___init___impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col0 decl" id="130self" title='self' data-type='stringio *' data-ref="130self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="131value" title='value' data-type='PyObject *' data-ref="131value">value</dfn>,</td></tr>
+<tr><th id="215">215</th><td>                           <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="132newline_obj" title='newline_obj' data-type='PyObject *' data-ref="132newline_obj">newline_obj</dfn>);</td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="218">218</th><td><dfn class="decl def" id="_io_StringIO___init__" title='_io_StringIO___init__' data-ref="_io_StringIO___init__">_io_StringIO___init__</dfn>(<a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="133self" title='self' data-type='PyObject *' data-ref="133self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="134args" title='args' data-type='PyObject *' data-ref="134args">args</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="135kwargs" title='kwargs' data-type='PyObject *' data-ref="135kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="219">219</th><td>{</td></tr>
+<tr><th id="220">220</th><td>    <em>int</em> <dfn class="local col6 decl" id="136return_value" title='return_value' data-type='int' data-ref="136return_value">return_value</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="221">221</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col7 decl" id="137_keywords" title='_keywords' data-type='const char *const [3]' data-ref="137_keywords">_keywords</dfn>[] = {<q>"initial_value"</q>, <q>"newline"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="222">222</th><td>    <em>static</em> <a class="typedef" href="../../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col8 decl" id="138_parser" title='_parser' data-type='_PyArg_Parser' data-ref="138_parser">_parser</dfn> = {<q>"|OO:StringIO"</q>, <a class="local col7 ref" href="#137_keywords" title='_keywords' data-ref="137_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="223">223</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="139value" title='value' data-type='PyObject *' data-ref="139value">value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="224">224</th><td>    <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="140newline_obj" title='newline_obj' data-type='PyObject *' data-ref="140newline_obj">newline_obj</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td>    <b>if</b> (!<a class="macro" href="../../../Include/modsupport.h.html#94" title="_PyArg_ParseTupleAndKeywordsFast_SizeT" data-ref="_M/_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col4 ref" href="#134args" title='args' data-ref="134args">args</a>, <a class="local col5 ref" href="#135kwargs" title='kwargs' data-ref="135kwargs">kwargs</a>, &amp;<a class="local col8 ref" href="#138_parser" title='_parser' data-ref="138_parser">_parser</a>,</td></tr>
+<tr><th id="227">227</th><td>        &amp;<a class="local col9 ref" href="#139value" title='value' data-ref="139value">value</a>, &amp;<a class="local col0 ref" href="#140newline_obj" title='newline_obj' data-ref="140newline_obj">newline_obj</a>)) {</td></tr>
+<tr><th id="228">228</th><td>        <b>goto</b> <a class="lbl" href="#141exit" data-ref="141exit">exit</a>;</td></tr>
+<tr><th id="229">229</th><td>    }</td></tr>
+<tr><th id="230">230</th><td>    <a class="local col6 ref" href="#136return_value" title='return_value' data-ref="136return_value">return_value</a> = <a class="ref" href="../stringio.c.html#_io_StringIO___init___impl" title='_io_StringIO___init___impl' data-ref="_io_StringIO___init___impl">_io_StringIO___init___impl</a>((<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *)<a class="local col3 ref" href="#133self" title='self' data-ref="133self">self</a>, <a class="local col9 ref" href="#139value" title='value' data-ref="139value">value</a>, <a class="local col0 ref" href="#140newline_obj" title='newline_obj' data-ref="140newline_obj">newline_obj</a>);</td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td><dfn class="lbl" id="141exit" data-ref="141exit">exit</dfn>:</td></tr>
+<tr><th id="233">233</th><td>    <b>return</b> <a class="local col6 ref" href="#136return_value" title='return_value' data-ref="136return_value">return_value</a>;</td></tr>
+<tr><th id="234">234</th><td>}</td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_readable__doc__[] = &quot;readable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns True if the IO object can be read.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_readable__doc__" title='_io_StringIO_readable__doc__' data-ref="_io_StringIO_readable__doc__">_io_StringIO_readable__doc__</dfn>,</td></tr>
+<tr><th id="237">237</th><td><q>"readable($self, /)\n"</q></td></tr>
+<tr><th id="238">238</th><td><q>"--\n"</q></td></tr>
+<tr><th id="239">239</th><td><q>"\n"</q></td></tr>
+<tr><th id="240">240</th><td><q>"Returns True if the IO object can be read."</q>);</td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_READABLE_METHODDEF" data-ref="_M/_IO_STRINGIO_READABLE_METHODDEF">_IO_STRINGIO_READABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="243">243</th><td><u>    {"readable", (PyCFunction)_io_StringIO_readable, METH_NOARGS, _io_StringIO_readable__doc__},</u></td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="246">246</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_readable_impl" title='_io_StringIO_readable_impl' data-ref="_io_StringIO_readable_impl" id="_io_StringIO_readable_impl">_io_StringIO_readable_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col2 decl" id="142self" title='self' data-type='stringio *' data-ref="142self">self</dfn>);</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="249">249</th><td><dfn class="decl def" id="_io_StringIO_readable" title='_io_StringIO_readable' data-ref="_io_StringIO_readable">_io_StringIO_readable</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col3 decl" id="143self" title='self' data-type='stringio *' data-ref="143self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="250">250</th><td>{</td></tr>
+<tr><th id="251">251</th><td>    <b>return</b> <a class="ref" href="../stringio.c.html#_io_StringIO_readable_impl" title='_io_StringIO_readable_impl' data-ref="_io_StringIO_readable_impl">_io_StringIO_readable_impl</a>(<a class="local col3 ref" href="#143self" title='self' data-ref="143self">self</a>);</td></tr>
+<tr><th id="252">252</th><td>}</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_writable__doc__[] = &quot;writable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns True if the IO object can be written.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_writable__doc__" title='_io_StringIO_writable__doc__' data-ref="_io_StringIO_writable__doc__">_io_StringIO_writable__doc__</dfn>,</td></tr>
+<tr><th id="255">255</th><td><q>"writable($self, /)\n"</q></td></tr>
+<tr><th id="256">256</th><td><q>"--\n"</q></td></tr>
+<tr><th id="257">257</th><td><q>"\n"</q></td></tr>
+<tr><th id="258">258</th><td><q>"Returns True if the IO object can be written."</q>);</td></tr>
+<tr><th id="259">259</th><td></td></tr>
+<tr><th id="260">260</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_WRITABLE_METHODDEF" data-ref="_M/_IO_STRINGIO_WRITABLE_METHODDEF">_IO_STRINGIO_WRITABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="261">261</th><td><u>    {"writable", (PyCFunction)_io_StringIO_writable, METH_NOARGS, _io_StringIO_writable__doc__},</u></td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="264">264</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_writable_impl" title='_io_StringIO_writable_impl' data-ref="_io_StringIO_writable_impl" id="_io_StringIO_writable_impl">_io_StringIO_writable_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col4 decl" id="144self" title='self' data-type='stringio *' data-ref="144self">self</dfn>);</td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="267">267</th><td><dfn class="decl def" id="_io_StringIO_writable" title='_io_StringIO_writable' data-ref="_io_StringIO_writable">_io_StringIO_writable</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col5 decl" id="145self" title='self' data-type='stringio *' data-ref="145self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="268">268</th><td>{</td></tr>
+<tr><th id="269">269</th><td>    <b>return</b> <a class="ref" href="../stringio.c.html#_io_StringIO_writable_impl" title='_io_StringIO_writable_impl' data-ref="_io_StringIO_writable_impl">_io_StringIO_writable_impl</a>(<a class="local col5 ref" href="#145self" title='self' data-ref="145self">self</a>);</td></tr>
+<tr><th id="270">270</th><td>}</td></tr>
+<tr><th id="271">271</th><td></td></tr>
+<tr><th id="272">272</th><td><a class="macro" href="../../../Include/pymacro.h.html#71" title="static char _io_StringIO_seekable__doc__[] = &quot;seekable($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns True if the IO object can be seeked.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="_io_StringIO_seekable__doc__" title='_io_StringIO_seekable__doc__' data-ref="_io_StringIO_seekable__doc__">_io_StringIO_seekable__doc__</dfn>,</td></tr>
+<tr><th id="273">273</th><td><q>"seekable($self, /)\n"</q></td></tr>
+<tr><th id="274">274</th><td><q>"--\n"</q></td></tr>
+<tr><th id="275">275</th><td><q>"\n"</q></td></tr>
+<tr><th id="276">276</th><td><q>"Returns True if the IO object can be seeked."</q>);</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td><u>#define <dfn class="macro" id="_M/_IO_STRINGIO_SEEKABLE_METHODDEF" data-ref="_M/_IO_STRINGIO_SEEKABLE_METHODDEF">_IO_STRINGIO_SEEKABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="279">279</th><td><u>    {"seekable", (PyCFunction)_io_StringIO_seekable, METH_NOARGS, _io_StringIO_seekable__doc__},</u></td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="282">282</th><td><a class="decl" href="../stringio.c.html#_io_StringIO_seekable_impl" title='_io_StringIO_seekable_impl' data-ref="_io_StringIO_seekable_impl" id="_io_StringIO_seekable_impl">_io_StringIO_seekable_impl</a>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col6 decl" id="146self" title='self' data-type='stringio *' data-ref="146self">self</dfn>);</td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td><em>static</em> <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="285">285</th><td><dfn class="decl def" id="_io_StringIO_seekable" title='_io_StringIO_seekable' data-ref="_io_StringIO_seekable">_io_StringIO_seekable</dfn>(<a class="typedef" href="../stringio.c.html#stringio" title='stringio' data-type='struct stringio' data-ref="stringio">stringio</a> *<dfn class="local col7 decl" id="147self" title='self' data-type='stringio *' data-ref="147self">self</dfn>, <a class="typedef" href="../../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="286">286</th><td>{</td></tr>
+<tr><th id="287">287</th><td>    <b>return</b> <a class="ref" href="../stringio.c.html#_io_StringIO_seekable_impl" title='_io_StringIO_seekable_impl' data-ref="_io_StringIO_seekable_impl">_io_StringIO_seekable_impl</a>(<a class="local col7 ref" href="#147self" title='self' data-ref="147self">self</a>);</td></tr>
+<tr><th id="288">288</th><td>}</td></tr>
+<tr><th id="289">289</th><td><i>/*[clinic end generated code: output=a5e963d90b4eedc0 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="290">290</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../stringio.c.html'>codebrowser/Modules/_io/stringio.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

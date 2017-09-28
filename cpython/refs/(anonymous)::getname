@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/ucnhash.h' l='22' type='int (*)(PyObject *, Py_UCS4, char *, int, int)'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/ucnhash.h' l='18'>/* Get name for a given character code.  Returns non-zero if
+       success, zero if not.  Does not set Python exceptions.
+       If self is NULL, data come from the default version of the database.
+       If it is not NULL, it should be a unicodedata.ucd_X_Y_Z object */</doc>
+<use f='codebrowser/Python/codecs.c' l='997' u='r' c='PyCodec_NameReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1020' u='r' c='PyCodec_NameReplaceErrors'/>

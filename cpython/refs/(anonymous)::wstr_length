@@ -1,0 +1,43 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='345' type='Py_ssize_t'/>
+<offset>640</offset>
+<doc f='codebrowser/Include/unicodeobject.h' l='345'>/* Number of code points in wstr, possible
+                                 * surrogates count as two code points. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1667' macro='1' u='r'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1667' macro='1' u='r'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1716' macro='1' u='r'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1716' macro='1' u='r'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2716' macro='1' u='r'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2716' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='442' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='450' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='resize_compact'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='resize_compact'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='resize_inplace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='resize_inplace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='resize_copy'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='_PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1225' u='r' c='_PyUnicode_Dump'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1863' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='PyUnicode_AsUnicodeAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4127' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4163' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='PyUnicode_CompareWithASCIIString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='r' c='non_ready_unicode_equal_to_ascii_string'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13898' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='unicode_subtype_new'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='111' u='w' c='unicode_subtype_new'/>
+<use f='codebrowser/Python/traceback.c' l='588' u='r' c='_Py_DumpASCII'/>

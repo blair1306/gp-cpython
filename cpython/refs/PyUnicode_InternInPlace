@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1015' type='void PyUnicode_InternInPlace(PyObject ** )'/>
+<use f='codebrowser/Modules/_operator.c' l='1171' u='c' c='attrgetter_new'/>
+<use f='codebrowser/Modules/_operator.c' l='1197' u='c' c='attrgetter_new'/>
+<use f='codebrowser/Modules/_operator.c' l='1211' u='c' c='attrgetter_new'/>
+<use f='codebrowser/Modules/_operator.c' l='1491' u='c' c='methodcaller_new'/>
+<use f='codebrowser/Modules/_pickle.c' l='6085' u='c' c='load_build'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1050' u='c' c='tracemalloc_init'/>
+<use f='codebrowser/Objects/codeobject.c' l='53' u='c' c='intern_strings'/>
+<use f='codebrowser/Objects/codeobject.c' l='69' u='c' c='intern_string_constants'/>
+<use f='codebrowser/Objects/dictobject.c' l='3208' u='c' c='PyDict_SetItemString'/>
+<use f='codebrowser/Objects/object.c' l='930' u='c' c='PyObject_SetAttr'/>
+<use f='codebrowser/Objects/typeobject.c' l='494' u='c' c='type_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='3136' u='c' c='type_setattro'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2121' u='c' c='_PyUnicode_FromId'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='15279' ll='15320' type='void PyUnicode_InternInPlace(PyObject ** p)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15325' u='c' c='PyUnicode_InternImmortal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15338' u='c' c='PyUnicode_InternFromString'/>
+<use f='codebrowser/Python/ast.c' l='666' u='c' c='new_identifier'/>
+<use f='codebrowser/Python/ast.c' l='3254' u='c' c='alias_for_import_name'/>
+<use f='codebrowser/Python/codecs.c' l='122' u='c' c='_PyCodec_Lookup'/>
+<use f='codebrowser/Python/getargs.c' l='1972' u='c' c='parser_init'/>
+<use f='codebrowser/Python/marshal.c' l='1146' u='c' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1178' u='c' c='r_object'/>
+<use f='codebrowser/Python/sysmodule.c' l='331' u='c' c='sys_intern'/>

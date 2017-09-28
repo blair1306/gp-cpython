@@ -1,0 +1,8 @@
+<def f='codebrowser/Modules/_testcapimodule.c' l='2318' ll='2337' type='PyObject * pending_threadfunc(PyObject * self, PyObject * arg)'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4411'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4411'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4411'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4411'/>
+<doc f='codebrowser/Modules/_testcapimodule.c' l='2315'>/* The following requests n callbacks to _pending_callback.  It can be
+ * run from any python thread.
+ */</doc>

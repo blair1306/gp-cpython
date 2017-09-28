@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/object.h' l='261' type='unaryfunc'/>
+<offset>1024</offset>
+<use f='codebrowser/Objects/abstract.c' l='745' u='r' c='PyNumber_Check'/>
+<use f='codebrowser/Objects/abstract.c' l='1342' u='r' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='1363' u='r' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/longobject.c' l='156' u='r' c='_PyLong_FromNbInt'/>
+<use f='codebrowser/Objects/longobject.c' l='165' u='r' c='_PyLong_FromNbInt'/>
+<use f='codebrowser/Objects/typeobject.c' l='4864' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4864' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4864' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4864' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4864' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4864' u='r' c='inherit_slots'/>

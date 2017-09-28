@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/abstract.h' l='667' type='PyObject * PyNumber_Negative(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='664'>/* Returns the negation of o on success, or NULL on failure.
+
+ This is the equivalent of the Python expression: -o. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='145' u='c' c='_operator_neg'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='90' u='c' c='test_long_api_inner'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='150' u='c' c='test_long_api_inner'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='90' u='c' c='test_longlong_api_inner'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='150' u='c' c='test_longlong_api_inner'/>
+<def f='codebrowser/Objects/abstract.c' l='1169' ll='1183' type='PyObject * PyNumber_Negative(PyObject * o)'/>
+<doc f='codebrowser/Objects/abstract.c' l='1167'>/* Unary operators and functions */</doc>
+<use f='codebrowser/Objects/floatobject.c' l='450' u='c' c='float_richcompare'/>
+<use f='codebrowser/Objects/rangeobject.c' l='172' u='c' c='compute_range_length'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1177' u='c' c='range_reverse'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='504' u='c' c='proxy_neg'/>
+<use f='codebrowser/Python/ceval.c' l='1285' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/peephole.c' l='335' u='c' c='fold_unaryops_on_constants'/>

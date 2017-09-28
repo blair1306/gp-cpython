@@ -1,0 +1,15 @@
+<dec f='include/openssl/evp.h' l='926' type='const EVP_MD * EVP_get_digestbyname(const char * name)'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='532' u='c' c='EVP_new'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='657' u='c' c='pbkdf2_hmac'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='940' u='c' c='EVP_new_md5'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_md5'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='940' u='c' c='EVP_new_sha1'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha1'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='940' u='c' c='EVP_new_sha224'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha224'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='940' u='c' c='EVP_new_sha256'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha256'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='940' u='c' c='EVP_new_sha384'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha384'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='940' u='c' c='EVP_new_sha512'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='941' u='c' c='EVP_new_sha512'/>

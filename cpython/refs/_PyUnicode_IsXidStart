@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2180' type='int _PyUnicode_IsXidStart(Py_UCS4 ch)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='86' ll='91' type='int _PyUnicode_IsXidStart(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='83'>/* Returns 1 for Unicode characters having the XID_Start property, 0
+   otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='12166' u='c' c='PyUnicode_IsIdentifier'/>

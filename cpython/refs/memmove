@@ -1,0 +1,41 @@
+<dec f='include/string.h' l='46' type='void * memmove(void * __dest, const void * __src, size_t __n)'/>
+<doc f='include/string.h' l='44'>/* Copy N bytes of SRC to DEST, guaranteeing
+   correct behavior for overlapping strings.  */</doc>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='374' u='c' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2s.c' l='351' u='c' c='PyBlake2_blake2s_final'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1456' u='c' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2672' u='c' c='PyCData_setstate'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5552' u='r' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1633' u='c' c='resize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1180' u='c' c='_mpd_add_pad'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1851' u='c' c='element_ass_subscr'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1860' u='c' c='element_ass_subscr'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1973' u='c' c='_io_BufferedWriter_write_impl'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='988' u='c' c='decompress'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='485' u='c' c='copy_rec'/>
+<use f='codebrowser/Modules/arraymodule.c' l='647' u='c' c='ins1'/>
+<use f='codebrowser/Modules/arraymodule.c' l='942' u='c' c='array_del_slice'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2471' u='c' c='array_ass_subscr'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2482' u='c' c='array_ass_subscr'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2507' u='c' c='array_ass_subscr'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2513' u='c' c='array_ass_subscr'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2124' u='c' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='644' u='c' c='mmap_move_method'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='472' u='c' c='bytearray_setslice_linear'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='515' u='c' c='bytearray_setslice_linear'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='703' u='c' c='bytearray_ass_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='709' u='c' c='bytearray_ass_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1553' u='c' c='bytearray_insert_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1719' u='c' c='bytearray_pop_impl'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1751' u='c' c='bytearray_remove_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='328' u='c' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/listobject.c' l='654' u='c' c='list_ass_slice'/>
+<use f='codebrowser/Objects/listobject.c' l='656' u='c' c='list_ass_slice'/>
+<use f='codebrowser/Objects/listobject.c' l='667' u='c' c='list_ass_slice'/>
+<use f='codebrowser/Objects/listobject.c' l='1078' u='c' c='sortslice_memmove'/>
+<use f='codebrowser/Objects/listobject.c' l='1080' u='c' c='sortslice_memmove'/>
+<use f='codebrowser/Objects/listobject.c' l='2594' u='c' c='list_ass_subscript'/>
+<use f='codebrowser/Objects/listobject.c' l='2600' u='c' c='list_ass_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='330' u='c' c='copy_base'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2765' u='c' c='unicode_fromformat_arg'/>
+<use f='codebrowser/Python/ast.c' l='3538' u='c' c='docstring_from_stmts'/>

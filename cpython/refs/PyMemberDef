@@ -1,0 +1,12 @@
+<def f='codebrowser/Include/structmember.h' l='18' ll='24'/>
+<size>40</size>
+<doc f='codebrowser/Include/structmember.h' l='12'>/* An array of PyMemberDef structures defines the name, type and offset
+   of selected members of a C structure.  These can be read by
+   PyMember_GetOne() and set by PyMember_SetOne() (except if their READONLY
+   flag is set).  The array must be terminated with an entry whose name
+   pointer is NULL. */</doc>
+<mbr r='PyMemberDef::name' o='0' t='const char *'/>
+<mbr r='PyMemberDef::type' o='64' t='int'/>
+<mbr r='PyMemberDef::offset' o='128' t='Py_ssize_t'/>
+<mbr r='PyMemberDef::flags' o='192' t='int'/>
+<mbr r='PyMemberDef::doc' o='256' t='const char *'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/moduleobject.h' l='45' type='PyObject *(*)(void)'/>
+<offset>256</offset>
+<use f='codebrowser/Python/import.c' l='618' u='r' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='620' u='r' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='1082' u='w' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/importdl.c' l='210' u='w' c='_PyImport_LoadDynamicModuleWithSpec'/>

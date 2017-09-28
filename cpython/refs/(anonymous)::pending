@@ -1,0 +1,30 @@
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='79' type='PyObject *'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='87' type='unsigned char [8]'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='79' type='PyObject *'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='87' type='unsigned char [8]'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='87' type='unsigned char [8]'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='79' type='PyObject *'/>
+<offset>448</offset>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='766' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='769' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='770' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='772' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='773' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='777' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='777' u='w' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='796' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='796' u='w' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='809' u='w' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='810' u='r' c='encoder_encode_stateful'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='840' u='r' c='decoder_append_pending'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='916' u='r' c='_multibytecodec_MultibyteIncrementalEncoder_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='916' u='w' c='_multibytecodec_MultibyteIncrementalEncoder_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='950' u='w' c='mbiencoder_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1079' u='r' c='_multibytecodec_MultibyteIncrementalDecoder_decode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1094' u='r' c='_multibytecodec_MultibyteIncrementalDecoder_decode_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1307' u='r' c='mbstreamreader_iread'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1690' u='r' c='_multibytecodec_MultibyteStreamWriter_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1694' u='r' c='_multibytecodec_MultibyteStreamWriter_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1700' u='r' c='_multibytecodec_MultibyteStreamWriter_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1700' u='w' c='_multibytecodec_MultibyteStreamWriter_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1745' u='w' c='mbstreamwriter_new'/>

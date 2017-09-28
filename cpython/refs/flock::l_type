@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl.h' l='37' type='short'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/fcntl.h' l='37'>/* Type of lock: F_RDLCK, F_WRLCK, or F_UNLCK.	*/</doc>
+<use f='codebrowser/Modules/fcntlmodule.c' l='376' u='w' c='fcntl_lockf_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='378' u='w' c='fcntl_lockf_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='380' u='w' c='fcntl_lockf_impl'/>

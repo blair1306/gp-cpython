@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pyerrors.h' l='391' type='PyObject * PyUnicodeDecodeError_Create(const char * encoding, const char * object, Py_ssize_t length, Py_ssize_t start, Py_ssize_t end, const char * reason)'/>
+<doc f='codebrowser/Include/pyerrors.h' l='390'>/* create a UnicodeDecodeError object */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='403' u='c' c='multibytecodec_decerror'/>
+<def f='codebrowser/Objects/exceptions.c' l='2069' ll='2076' type='PyObject * PyUnicodeDecodeError_Create(const char * encoding, const char * object, Py_ssize_t length, Py_ssize_t start, Py_ssize_t end, const char * reason)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4238' u='c' c='make_decode_exception'/>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>complexobject.c.h source code [codebrowser/Objects/clinic/complexobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/complexobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='complexobject.c.h.html'>complexobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char complex_new__doc__[] = &quot;complex(real=0, imag=0)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Create a complex number from a real part and an optional imaginary part.\n&quot;&quot;\n&quot;&quot;This is equivalent to (real + imag*1j) where imag defaults to 0.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="complex_new__doc__" title='complex_new__doc__' data-ref="complex_new__doc__">complex_new__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"complex(real=0, imag=0)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Create a complex number from a real part and an optional imaginary part.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"This is equivalent to (real + imag*1j) where imag defaults to 0."</q>);</td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="14">14</th><td><a class="decl" href="../complexobject.c.html#complex_new_impl" title='complex_new_impl' data-ref="complex_new_impl" id="complex_new_impl">complex_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col1 decl" id="1type" title='type' data-type='PyTypeObject *' data-ref="1type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2r" title='r' data-type='PyObject *' data-ref="2r">r</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3i" title='i' data-type='PyObject *' data-ref="3i">i</dfn>);</td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="17">17</th><td><dfn class="decl def" id="complex_new" title='complex_new' data-ref="complex_new">complex_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col4 decl" id="4type" title='type' data-type='PyTypeObject *' data-ref="4type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject *' data-ref="5args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="6kwargs" title='kwargs' data-type='PyObject *' data-ref="6kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="18">18</th><td>{</td></tr>
+<tr><th id="19">19</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7return_value" title='return_value' data-type='PyObject *' data-ref="7return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="20">20</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col8 decl" id="8_keywords" title='_keywords' data-type='const char *const [3]' data-ref="8_keywords">_keywords</dfn>[] = {<q>"real"</q>, <q>"imag"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="21">21</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col9 decl" id="9_parser" title='_parser' data-type='_PyArg_Parser' data-ref="9_parser">_parser</dfn> = {<q>"|OO:complex"</q>, <a class="local col8 ref" href="#8_keywords" title='_keywords' data-ref="8_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="22">22</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10r" title='r' data-type='PyObject *' data-ref="10r">r</dfn> = <a class="ref" href="../../Include/longobject.h.html#_PyLong_Zero" title='_PyLong_Zero' data-ref="_PyLong_Zero">_PyLong_Zero</a>;</td></tr>
+<tr><th id="23">23</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11i" title='i' data-type='PyObject *' data-ref="11i">i</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <a class="local col6 ref" href="#6kwargs" title='kwargs' data-ref="6kwargs">kwargs</a>, &amp;<a class="local col9 ref" href="#9_parser" title='_parser' data-ref="9_parser">_parser</a>,</td></tr>
+<tr><th id="26">26</th><td>        &amp;<a class="local col0 ref" href="#10r" title='r' data-ref="10r">r</a>, &amp;<a class="local col1 ref" href="#11i" title='i' data-ref="11i">i</a>)) {</td></tr>
+<tr><th id="27">27</th><td>        <b>goto</b> <a class="lbl" href="#12exit" data-ref="12exit">exit</a>;</td></tr>
+<tr><th id="28">28</th><td>    }</td></tr>
+<tr><th id="29">29</th><td>    <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a> = <a class="ref" href="../complexobject.c.html#complex_new_impl" title='complex_new_impl' data-ref="complex_new_impl">complex_new_impl</a>(<a class="local col4 ref" href="#4type" title='type' data-ref="4type">type</a>, <a class="local col0 ref" href="#10r" title='r' data-ref="10r">r</a>, <a class="local col1 ref" href="#11i" title='i' data-ref="11i">i</a>);</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><dfn class="lbl" id="12exit" data-ref="12exit">exit</dfn>:</td></tr>
+<tr><th id="32">32</th><td>    <b>return</b> <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a>;</td></tr>
+<tr><th id="33">33</th><td>}</td></tr>
+<tr><th id="34">34</th><td><i>/*[clinic end generated code: output=5017b2458bdc4ecd input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../complexobject.c.html'>codebrowser/Objects/complexobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

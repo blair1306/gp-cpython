@@ -1,0 +1,2 @@
+<dec f='include/openssl/bio.h' l='663' type='int BIO_read(BIO * b, void * data, int len)'/>
+<use f='codebrowser/Modules/_ssl.c' l='4165' u='c' c='_ssl_MemoryBIO_read_impl'/>

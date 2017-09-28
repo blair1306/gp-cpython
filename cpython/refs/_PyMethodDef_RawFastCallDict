@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/methodobject.h' l='101' type='PyObject * _PyMethodDef_RawFastCallDict(PyMethodDef * method, PyObject * self, PyObject ** args, Py_ssize_t nargs, PyObject * kwargs)'/>
+<def f='codebrowser/Objects/call.c' l='444' ll='567' type='PyObject * _PyMethodDef_RawFastCallDict(PyMethodDef * method, PyObject * self, PyObject ** args, Py_ssize_t nargs, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/call.c' l='579' u='c' c='_PyCFunction_FastCallDict'/>
+<doc f='codebrowser/Objects/call.c' l='442'>/* --- PyCFunction call functions --------------------------------- */</doc>
+<use f='codebrowser/Objects/descrobject.c' l='248' u='c' c='methoddescr_call'/>

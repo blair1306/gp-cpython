@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='49' type='void _Py_PyAtExit(void (*)(void) func)'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='344' u='c' c='PyInit_atexit'/>
+<def f='codebrowser/Python/pylifecycle.c' l='1860' ll='1863' type='void _Py_PyAtExit(void (*)(void) func)'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='1859'>/* For the atexit module. */</doc>

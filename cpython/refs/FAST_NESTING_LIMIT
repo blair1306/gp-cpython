@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_pickle.c' l='107' type='50'/>
+<use f='codebrowser/Modules/_pickle.c' l='1724' u='r' c='fast_save_enter'/>
+<use f='codebrowser/Modules/_pickle.c' l='1761' u='r' c='fast_save_leave'/>
+<doc f='codebrowser/Modules/_pickle.c' l='105'>/* Nesting limit until Pickler, when running in &quot;fast mode&quot;, starts
+       checking for self-referential data-structures. */</doc>

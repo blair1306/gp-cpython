@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/abstract.h' l='961' type='Py_ssize_t _PySequence_IterSearch(PyObject * seq, PyObject * obj, int operation)'/>
+<doc f='codebrowser/Include/abstract.h' l='950'>/* Iterate over seq.
+
+   Result depends on the operation:
+
+   PY_ITERSEARCH_COUNT:  return # of times obj appears in seq; -1 if
+     error.
+   PY_ITERSEARCH_INDEX:  return 0-based index of first occurrence of
+     obj in seq; set ValueError and return -1 if none found;
+     also return -1 on error.
+   PY_ITERSEARCH_CONTAINS:  return 1 if obj in seq, else 0; -1 on
+     error. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='1930' ll='2010' type='Py_ssize_t _PySequence_IterSearch(PyObject * seq, PyObject * obj, int operation)'/>
+<use f='codebrowser/Objects/abstract.c' l='2016' u='c' c='PySequence_Count'/>
+<use f='codebrowser/Objects/abstract.c' l='2029' u='c' c='PySequence_Contains'/>
+<use f='codebrowser/Objects/abstract.c' l='2044' u='c' c='PySequence_Index'/>
+<doc f='codebrowser/Objects/abstract.c' l='1924'>/* Iterate over seq.  Result depends on the operation:
+   PY_ITERSEARCH_COUNT:  -1 if error, else # of times obj appears in seq.
+   PY_ITERSEARCH_INDEX:  0-based index of first occurrence of obj in seq;
+    set ValueError and return -1 if none found; also return -1 on error.
+   Py_ITERSEARCH_CONTAINS:  return 1 if obj in seq, else 0; -1 on error.
+*/</doc>
+<use f='codebrowser/Objects/rangeobject.c' l='387' u='c' c='range_contains'/>
+<use f='codebrowser/Objects/rangeobject.c' l='522' u='c' c='range_count'/>
+<use f='codebrowser/Objects/rangeobject.c' l='536' u='c' c='range_index'/>
+<use f='codebrowser/Objects/typeobject.c' l='6017' u='c' c='slot_sq_contains'/>

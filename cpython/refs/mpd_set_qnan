@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='772' type='void mpd_set_qnan(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='223' u='c' c='mpd_switch_to_dyn'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='250' u='c' c='mpd_switch_to_dyn_zero'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='287' u='c' c='mpd_realloc_dyn'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='618' ll='623' macro='1' type='void mpd_set_qnan(mpd_t * result)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1058' u='c' c='mpd_seterror'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1544' u='c' c='mpd_qcheck_nan'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1573' u='c' c='mpd_qcheck_nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1609' u='c' c='mpd_qcheck_3nans'/>

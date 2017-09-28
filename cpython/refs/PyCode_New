@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/code.h' l='103' type='PyCodeObject * PyCode_New(int , int , int , int , int , PyObject * , PyObject * , PyObject * , PyObject * , PyObject * , PyObject * , PyObject * , PyObject * , int , PyObject * )'/>
+<doc f='codebrowser/Include/code.h' l='102'>/* Public interface */</doc>
+<def f='codebrowser/Objects/codeobject.c' l='104' ll='210' type='PyCodeObject * PyCode_New(int argcount, int kwonlyargcount, int nlocals, int stacksize, int flags, PyObject * code, PyObject * consts, PyObject * names, PyObject * varnames, PyObject * freevars, PyObject * cellvars, PyObject * filename, PyObject * name, int firstlineno, PyObject * lnotab)'/>
+<use f='codebrowser/Objects/codeobject.c' l='237' u='c' c='PyCode_NewEmpty'/>
+<use f='codebrowser/Objects/codeobject.c' l='402' u='c' c='code_new'/>
+<use f='codebrowser/Python/compile.c' l='5340' u='c' c='makecode'/>
+<use f='codebrowser/Python/marshal.c' l='1415' u='c' c='r_object'/>

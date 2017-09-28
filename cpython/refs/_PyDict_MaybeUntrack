@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/dictobject.h' l='115' type='void _PyDict_MaybeUntrack(PyObject * mp)'/>
+<use f='codebrowser/Modules/gcmodule.c' l='526' u='c' c='untrack_dicts'/>
+<def f='codebrowser/Objects/dictobject.c' l='887' ll='921' type='void _PyDict_MaybeUntrack(PyObject * op)'/>

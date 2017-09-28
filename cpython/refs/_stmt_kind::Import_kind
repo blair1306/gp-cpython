@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/Python-ast.h' l='72' type='18'/>
+<use f='codebrowser/Python/Python-ast.c' l='1656' u='r' c='_Py_Import'/>
+<use f='codebrowser/Python/Python-ast.c' l='3008' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='491' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2950' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1269' c='symtable_visit_stmt'/>

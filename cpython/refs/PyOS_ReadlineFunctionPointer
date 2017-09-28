@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pythonrun.h' l='158' type='char *(*)(FILE *, FILE *, const char *)'/>
+<use f='codebrowser/Modules/readline.c' l='1380' u='w' c='PyInit_readline'/>
+<def f='codebrowser/Parser/myreadline.c' l='300' type='char *(*)(FILE *, FILE *, const char *)'/>
+<use f='codebrowser/Parser/myreadline.c' l='318' u='r' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='319' u='w' c='PyOS_Readline'/>
+<use f='codebrowser/Parser/myreadline.c' l='342' u='r' c='PyOS_Readline'/>
+<doc f='codebrowser/Parser/myreadline.c' l='295'>/* By initializing this function pointer, systems embedding Python can
+   override the readline function.
+
+   Note: Python expects in return a buffer allocated with PyMem_Malloc. */</doc>

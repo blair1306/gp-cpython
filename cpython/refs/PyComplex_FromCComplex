@@ -1,0 +1,35 @@
+<dec f='codebrowser/Include/complexobject.h' l='45' type='PyObject * PyComplex_FromCComplex(Py_complex )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1252' u='c' c='getargs_D'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='40' u='c' c='cmath_acos'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='82' u='c' c='cmath_acosh'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='124' u='c' c='cmath_asin'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='166' u='c' c='cmath_asinh'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='208' u='c' c='cmath_atan'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='250' u='c' c='cmath_atanh'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='292' u='c' c='cmath_cos'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='334' u='c' c='cmath_cosh'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='376' u='c' c='cmath_exp'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='418' u='c' c='cmath_log10'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='460' u='c' c='cmath_sin'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='502' u='c' c='cmath_sinh'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='544' u='c' c='cmath_sqrt'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='586' u='c' c='cmath_tan'/>
+<use f='codebrowser/Modules/clinic/cmathmodule.c.h' l='628' u='c' c='cmath_tanh'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='976' u='c' c='cmath_log_impl'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='1123' u='c' c='cmath_rect_impl'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='1292' u='c' c='PyInit_cmath'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='1295' u='c' c='PyInit_cmath'/>
+<def f='codebrowser/Objects/complexobject.c' l='222' ll='234' type='PyObject * PyComplex_FromCComplex(Py_complex cval)'/>
+<use f='codebrowser/Objects/complexobject.c' l='251' u='c' c='PyComplex_FromDoubles'/>
+<use f='codebrowser/Objects/complexobject.c' l='471' u='c' c='complex_add'/>
+<use f='codebrowser/Objects/complexobject.c' l='484' u='c' c='complex_sub'/>
+<use f='codebrowser/Objects/complexobject.c' l='497' u='c' c='complex_mul'/>
+<use f='codebrowser/Objects/complexobject.c' l='515' u='c' c='complex_div'/>
+<use f='codebrowser/Objects/complexobject.c' l='570' u='c' c='complex_pow'/>
+<use f='codebrowser/Objects/complexobject.c' l='587' u='c' c='complex_neg'/>
+<use f='codebrowser/Objects/complexobject.c' l='598' u='c' c='complex_pos'/>
+<use f='codebrowser/Objects/complexobject.c' l='703' u='c' c='complex_conjugate'/>
+<use f='codebrowser/Python/ast.c' l='4103' u='c' c='parsenumber_raw'/>
+<use f='codebrowser/Python/marshal.c' l='1063' u='c' c='r_object'/>
+<use f='codebrowser/Python/marshal.c' l='1084' u='c' c='r_object'/>
+<use f='codebrowser/Python/modsupport.c' l='367' u='c' c='do_mkvalue'/>

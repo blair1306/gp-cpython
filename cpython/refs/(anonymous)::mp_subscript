@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='303' type='binaryfunc'/>
+<offset>64</offset>
+<use f='codebrowser/Objects/abstract.c' l='151' u='r' c='PyObject_GetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='152' u='r' c='PyObject_GetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1670' u='r' c='PySequence_GetSlice'/>
+<use f='codebrowser/Objects/abstract.c' l='1675' u='r' c='PySequence_GetSlice'/>
+<use f='codebrowser/Objects/abstract.c' l='2053' u='r' c='PyMapping_Check'/>
+<use f='codebrowser/Objects/bytesobject.c' l='624' u='r' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/typeobject.c' l='4913' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4913' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4913' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4913' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4913' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4913' u='r' c='inherit_slots'/>

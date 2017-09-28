@@ -1,0 +1,3 @@
+<dec f='include/openssl/evp.h' l='601' type='int EVP_MD_CTX_copy(EVP_MD_CTX * out, const EVP_MD_CTX * in)'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='170' u='c' c='locked_EVP_MD_CTX_copy'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='476' u='c' c='EVPnew'/>

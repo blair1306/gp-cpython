@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ucs1lib.h source code [codebrowser/Objects/stringlib/ucs1lib.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/stringlib/ucs1lib.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>stringlib</a>/<a href='ucs1lib.h.html'>ucs1lib.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* this is sort of a hack.  there's at least one place (formatting</i></td></tr>
+<tr><th id="2">2</th><td><i>   floats) where some stringlib code takes a different path if it's</i></td></tr>
+<tr><th id="3">3</th><td><i>   compiled as unicode. */</i></td></tr>
+<tr><th id="4">4</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_IS_UNICODE" data-ref="_M/STRINGLIB_IS_UNICODE">STRINGLIB_IS_UNICODE</dfn>     1</u></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><u>#define <dfn class="macro" id="_M/FASTSEARCH" data-ref="_M/FASTSEARCH">FASTSEARCH</dfn>               ucs1lib_fastsearch</u></td></tr>
+<tr><th id="7">7</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB" data-ref="_M/STRINGLIB">STRINGLIB</dfn>(F)             ucs1lib_##F</u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_OBJECT" data-ref="_M/STRINGLIB_OBJECT">STRINGLIB_OBJECT</dfn>         PyUnicodeObject</u></td></tr>
+<tr><th id="9">9</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_SIZEOF_CHAR" data-ref="_M/STRINGLIB_SIZEOF_CHAR">STRINGLIB_SIZEOF_CHAR</dfn>    1</u></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_MAX_CHAR" data-ref="_M/STRINGLIB_MAX_CHAR">STRINGLIB_MAX_CHAR</dfn>       0xFFu</u></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_CHAR" data-ref="_M/STRINGLIB_CHAR">STRINGLIB_CHAR</dfn>           Py_UCS1</u></td></tr>
+<tr><th id="12">12</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_TYPE_NAME" data-ref="_M/STRINGLIB_TYPE_NAME">STRINGLIB_TYPE_NAME</dfn>      "unicode"</u></td></tr>
+<tr><th id="13">13</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_PARSE_CODE" data-ref="_M/STRINGLIB_PARSE_CODE">STRINGLIB_PARSE_CODE</dfn>     "U"</u></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_EMPTY" data-ref="_M/STRINGLIB_EMPTY">STRINGLIB_EMPTY</dfn>          unicode_empty</u></td></tr>
+<tr><th id="15">15</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_ISSPACE" data-ref="_M/STRINGLIB_ISSPACE">STRINGLIB_ISSPACE</dfn>        Py_UNICODE_ISSPACE</u></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_ISLINEBREAK" data-ref="_M/STRINGLIB_ISLINEBREAK">STRINGLIB_ISLINEBREAK</dfn>    BLOOM_LINEBREAK</u></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_ISDECIMAL" data-ref="_M/STRINGLIB_ISDECIMAL">STRINGLIB_ISDECIMAL</dfn>      Py_UNICODE_ISDECIMAL</u></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_TODECIMAL" data-ref="_M/STRINGLIB_TODECIMAL">STRINGLIB_TODECIMAL</dfn>      Py_UNICODE_TODECIMAL</u></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_STR" data-ref="_M/STRINGLIB_STR">STRINGLIB_STR</dfn>            PyUnicode_1BYTE_DATA</u></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_LEN" data-ref="_M/STRINGLIB_LEN">STRINGLIB_LEN</dfn>            PyUnicode_GET_LENGTH</u></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_NEW" data-ref="_M/STRINGLIB_NEW">STRINGLIB_NEW</dfn>            _PyUnicode_FromUCS1</u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_CHECK" data-ref="_M/STRINGLIB_CHECK">STRINGLIB_CHECK</dfn>          PyUnicode_Check</u></td></tr>
+<tr><th id="23">23</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_CHECK_EXACT" data-ref="_M/STRINGLIB_CHECK_EXACT">STRINGLIB_CHECK_EXACT</dfn>    PyUnicode_CheckExact</u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_TOSTR" data-ref="_M/STRINGLIB_TOSTR">STRINGLIB_TOSTR</dfn>          PyObject_Str</u></td></tr>
+<tr><th id="26">26</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_TOASCII" data-ref="_M/STRINGLIB_TOASCII">STRINGLIB_TOASCII</dfn>        PyObject_ASCII</u></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/_Py_InsertThousandsGrouping" data-ref="_M/_Py_InsertThousandsGrouping">_Py_InsertThousandsGrouping</dfn> _PyUnicode_ucs1_InsertThousandsGrouping</u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../unicodeobject.c.html'>codebrowser/Objects/unicodeobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

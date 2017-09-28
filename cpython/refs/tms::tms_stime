@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/times.h' l='37' type='clock_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/sys/times.h' l='37'>/* System CPU time.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='7552' u='r' c='os_times_impl'/>
+<use f='codebrowser/Modules/timemodule.c' l='1051' u='r' c='py_process_time'/>

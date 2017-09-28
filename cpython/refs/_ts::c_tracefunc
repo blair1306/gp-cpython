@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/pystate.h' l='129' type='Py_tracefunc'/>
+<offset>448</offset>
+<use f='codebrowser/Python/ceval.c' l='971' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='985' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1145' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1151' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2018' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2020' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3039' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3040' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3578' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3579' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3707' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3709' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3717' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4541' u='r' c='call_trace'/>
+<use f='codebrowser/Python/ceval.c' l='4556' u='r' c='_PyEval_CallTracing'/>
+<use f='codebrowser/Python/ceval.c' l='4603' u='r' c='PyEval_SetProfile'/>
+<use f='codebrowser/Python/ceval.c' l='4608' u='r' c='PyEval_SetProfile'/>
+<use f='codebrowser/Python/ceval.c' l='4616' u='r' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/ceval.c' l='4618' u='w' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/ceval.c' l='4623' u='w' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/pystate.c' l='274' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='463' u='w' c='PyThreadState_Clear'/>

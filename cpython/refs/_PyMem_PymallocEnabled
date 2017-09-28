@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pymem.h' l='25' type='int _PyMem_PymallocEnabled()'/>
+<def f='codebrowser/Objects/obmalloc.c' l='287' ll='296' type='int _PyMem_PymallocEnabled()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1110' u='c' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/sysmodule.c' l='1297' u='c' c='sys_debugmallocstats'/>

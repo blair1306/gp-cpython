@@ -1,0 +1,15 @@
+<dec f='codebrowser/pyconfig.h' l='1393'/>
+<use f='codebrowser/Include/Python.h' l='58' u='a'/>
+<use f='codebrowser/Include/Python.h' l='61' u='a'/>
+<use f='codebrowser/Include/pymem.h' l='24' u='a'/>
+<use f='codebrowser/Include/objimpl.h' l='110' u='a'/>
+<doc f='codebrowser/pyconfig.h' l='1392'>/* Define if you want to compile in Python-specific mallocs */</doc>
+<use f='codebrowser/Objects/obmalloc.c' l='45' u='a'/>
+<use f='codebrowser/Objects/obmalloc.c' l='154' u='a'/>
+<use f='codebrowser/Objects/obmalloc.c' l='212' u='a'/>
+<use f='codebrowser/Objects/obmalloc.c' l='241' u='a'/>
+<use f='codebrowser/Objects/obmalloc.c' l='280' u='a'/>
+<use f='codebrowser/Objects/obmalloc.c' l='507' u='a'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2221' u='a'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1109' u='a'/>
+<use f='codebrowser/Python/sysmodule.c' l='1296' u='a'/>

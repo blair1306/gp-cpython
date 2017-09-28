@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/posixmodule.h' l='15' type='PyObject * _PyLong_FromUid(uid_t )'/>
+<def f='codebrowser/Modules/posixmodule.c' l='509' ll='515' type='PyObject * _PyLong_FromUid(uid_t uid)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2036' u='c' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6083' u='c' c='os_geteuid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6532' u='c' c='os_getuid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7013' u='c' c='os_waitid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10728' u='c' c='os_getresuid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10729' u='c' c='os_getresuid_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='10730' u='c' c='os_getresuid_impl'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='83' u='c' c='mkpwent'/>
+<use f='codebrowser/Modules/pwdmodule.c' l='129' u='c' c='pwd_getpwuid'/>
+<use f='codebrowser/Modules/signalmodule.c' l='978' u='c' c='fill_siginfo'/>

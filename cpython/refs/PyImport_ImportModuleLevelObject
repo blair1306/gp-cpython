@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/import.h' l='63' type='PyObject * PyImport_ImportModuleLevelObject(PyObject * name, PyObject * globals, PyObject * locals, PyObject * fromlist, int level)'/>
+<use f='codebrowser/Python/bltinmodule.c' l='221' u='c' c='builtin___import__'/>
+<use f='codebrowser/Python/ceval.c' l='5013' u='c' c='import_name'/>
+<def f='codebrowser/Python/import.c' l='1479' ll='1644' type='PyObject * PyImport_ImportModuleLevelObject(PyObject * name, PyObject * globals, PyObject * locals, PyObject * fromlist, int level)'/>
+<use f='codebrowser/Python/import.c' l='1602' u='c' c='PyImport_ImportModuleLevelObject'/>
+<use f='codebrowser/Python/import.c' l='1654' u='c' c='PyImport_ImportModuleLevel'/>

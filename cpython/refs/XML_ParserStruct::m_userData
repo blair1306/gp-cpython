@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='524' type='void *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='w' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='r' c='PyExpat_XML_ExternalEntityParserCreate'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='r' c='PyExpat_XML_SetUserData'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='w' c='PyExpat_XML_SetUserData'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='628' u='w' c='PyExpat_XML_SetUserData'/>
+<offset>0</offset>
+<doc f='codebrowser/Modules/expat/xmlparse.c' l='522'>/* The first member must be userData so that the XML_GetUserData
+     macro works. */</doc>

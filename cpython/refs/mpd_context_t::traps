@@ -1,0 +1,21 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='264' type='uint32_t'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='485' u='r' c='dec_addstatus'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='493' u='r' c='dec_addstatus'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='497' u='r' c='dec_addstatus'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1160' u='w' c='context_clear_traps'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1218' u='a' c='context_new'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1341' u='r' c='context_repr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1359' u='w' c='init_basic_context'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1372' u='w' c='init_extended_context'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1446' u='r' c='context_reduce'/>
+<offset>192</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='264'>/* status events that should be trapped */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='91' u='w' c='mpd_maxcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='105' u='w' c='mpd_defaultcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='119' u='w' c='mpd_basiccontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='137' u='w' c='mpd_ieee_context'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='173' u='r' c='mpd_gettraps'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='241' u='w' c='mpd_qsettraps'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='280' u='r' c='mpd_addstatus_raise'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='281' u='r' c='mpd_addstatus_raise'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='724' u='w' c='mpd_workcontext'/>

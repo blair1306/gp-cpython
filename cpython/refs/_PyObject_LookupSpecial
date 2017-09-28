@@ -1,0 +1,40 @@
+<dec f='codebrowser/Include/object.h' l='506' type='PyObject * _PyObject_LookupSpecial(PyObject * , _Py_Identifier * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3076' u='c' c='slot_tp_del'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1092' u='c' c='math_ceil'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1150' u='c' c='math_floor'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1738' u='c' c='math_trunc'/>
+<use f='codebrowser/Modules/posixmodule.c' l='988' u='c' c='path_converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12293' u='c' c='PyOS_FSPath'/>
+<use f='codebrowser/Objects/abstract.c' l='103' u='c' c='PyObject_LengthHint'/>
+<use f='codebrowser/Objects/abstract.c' l='713' u='c' c='PyObject_Format'/>
+<use f='codebrowser/Objects/abstract.c' l='1349' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='2380' u='c' c='PyObject_IsInstance'/>
+<use f='codebrowser/Objects/abstract.c' l='2454' u='c' c='PyObject_IsSubclass'/>
+<use f='codebrowser/Objects/bytesobject.c' l='552' u='c' c='format_obj'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2582' u='c' c='bytes_new'/>
+<use f='codebrowser/Objects/complexobject.c' l='282' u='c' c='try_complex_special_method'/>
+<use f='codebrowser/Objects/dictobject.c' l='1985' u='c' c='dict_subscript'/>
+<use f='codebrowser/Objects/enumobject.c' l='262' u='c' c='reversed_new_impl'/>
+<use f='codebrowser/Objects/object.c' l='597' u='c' c='PyObject_Bytes'/>
+<use f='codebrowser/Objects/object.c' l='1396' u='c' c='_dir_object'/>
+<def f='codebrowser/Objects/typeobject.c' l='1416' ll='1430' type='PyObject * _PyObject_LookupSpecial(PyObject * self, _Py_Identifier * attrid)'/>
+<use f='codebrowser/Objects/typeobject.c' l='4140' u='c' c='_PyObject_GetNewArguments'/>
+<use f='codebrowser/Objects/typeobject.c' l='4193' u='c' c='_PyObject_GetNewArguments'/>
+<use f='codebrowser/Objects/typeobject.c' l='7143' u='c' c='set_names'/>
+<doc f='codebrowser/Objects/typeobject.c' l='1401'>/* Routines to do a method lookup in the type without looking in the
+   instance dictionary (so we can&apos;t use PyObject_GetAttr) but still
+   binding it to the instance.
+
+   Variants:
+
+   - _PyObject_LookupSpecial() returns NULL without raising an exception
+     when the _PyType_Lookup() call fails;
+
+   - lookup_maybe_method() and lookup_method() are internal routines similar
+     to _PyObject_LookupSpecial(), but can return unbound PyFunction
+     to avoid temporary method object. Pass self as first argument when
+     unbound == 1.
+*/</doc>
+<use f='codebrowser/Python/bltinmodule.c' l='2072' u='c' c='builtin_round'/>
+<use f='codebrowser/Python/ceval.c' l='4215' u='c' c='special_lookup'/>
+<use f='codebrowser/Python/sysmodule.c' l='1079' u='c' c='_PySys_GetSizeOf'/>

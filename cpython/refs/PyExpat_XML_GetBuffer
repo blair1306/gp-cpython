@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='784' macro='1' type='void * PyExpat_XML_GetBuffer(XML_Parser parser, int len)'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2017' macro='1' u='c'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='2086' macro='1' type='void * PyExpat_XML_GetBuffer(XML_Parser parser, int len)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='826' macro='1' u='c'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='531' type='int PyBuffer_ToContiguous(void * buf, Py_buffer * view, Py_ssize_t len, char order)'/>
+<doc f='codebrowser/Include/abstract.h' l='530'>/* Implementation in memoryobject.c */</doc>
+<use f='codebrowser/Modules/_testbuffer.c' l='2459' u='c' c='py_buffer_to_contiguous'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='827' u='c' c='bytearray_init'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2640' u='c' c='_PyBytes_FromBuffer'/>
+<def f='codebrowser/Objects/memoryobject.c' l='970' ll='1009' type='int PyBuffer_ToContiguous(void * buf, Py_buffer * src, Py_ssize_t len, char order)'/>

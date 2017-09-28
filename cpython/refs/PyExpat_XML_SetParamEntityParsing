@@ -1,0 +1,3 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='910' macro='1' type='int PyExpat_XML_SetParamEntityParsing(XML_Parser parser, enum XML_ParamEntityParsing parsing)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1845' macro='1' type='int PyExpat_XML_SetParamEntityParsing(XML_Parser parser, enum XML_ParamEntityParsing peParsing)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1002' macro='1' u='c'/>

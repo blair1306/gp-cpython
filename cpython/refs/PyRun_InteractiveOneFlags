@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pythonrun.h' l='23' type='int PyRun_InteractiveOneFlags(FILE * fp, const char * filename, PyCompilerFlags * flags)'/>
+<def f='codebrowser/Python/pythonrun.c' l='247' ll='261' type='int PyRun_InteractiveOneFlags(FILE * fp, const char * filename_str, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1541' u='c' c='PyRun_InteractiveOne'/>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1182' type='PyObject * PyUnicode_Decode(const char * s, Py_ssize_t size, const char * encoding, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1179'>/* Create a Unicode object by decoding the encoded string s of the
+   given size. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='4943' u='c' c='load_counted_binstring'/>
+<use f='codebrowser/Modules/_ssl.c' l='640' u='c' c='newPySSLSocket'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1542' u='c' c='test_s_code'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1650' u='c' c='test_u_code'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1128' u='c' c='PyUnknownEncodingHandler'/>
+<use f='codebrowser/Modules/zipimport.c' l='1045' u='c' c='read_directory'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3080' u='c' c='PyUnicode_FromEncodedObject'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3105' u='c' c='PyUnicode_FromEncodedObject'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3159' ll='3239' type='PyObject * PyUnicode_Decode(const char * s, Py_ssize_t size, const char * encoding, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3847' u='c' c='PyUnicode_DecodeFSDefaultAndSize'/>
+<use f='codebrowser/Parser/tokenizer.c' l='698' u='c' c='translate_into_utf8'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1998' u='c' c='builtin_input_impl'/>

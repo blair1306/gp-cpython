@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pyerrors.h' l='150' type='PyObject *'/>
+<def f='codebrowser/Objects/exceptions.c' l='397' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2508' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2580' macro='1' u='r'/>
+<doc f='codebrowser/Objects/exceptions.c' l='394'>/* the CPython API expects exceptions to be (PyObject *) - both a hold-over
+from the previous implmentation and also allowing Python objects to be used
+in the API */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='4784' u='r' c='inherit_special'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/import.h' l='113' type='struct _inittab *'/>
+<def f='codebrowser/Python/import.c' l='30' type='struct _inittab *'/>
+<use f='codebrowser/Python/import.c' l='939' u='r' c='is_builtin'/>
+<use f='codebrowser/Python/import.c' l='940' u='r' c='is_builtin'/>
+<use f='codebrowser/Python/import.c' l='941' u='r' c='is_builtin'/>
+<use f='codebrowser/Python/import.c' l='1058' u='r' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/import.c' l='2097' u='r' c='PyImport_ExtendInittab'/>
+<use f='codebrowser/Python/import.c' l='2107' u='r' c='PyImport_ExtendInittab'/>
+<use f='codebrowser/Python/import.c' l='2108' u='r' c='PyImport_ExtendInittab'/>
+<use f='codebrowser/Python/import.c' l='2109' u='w' c='PyImport_ExtendInittab'/>
+<use f='codebrowser/Python/sysmodule.c' l='1464' u='r' c='list_builtin_module_names'/>
+<use f='codebrowser/Python/sysmodule.c' l='1466' u='r' c='list_builtin_module_names'/>

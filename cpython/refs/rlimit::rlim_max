@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/resource.h' l='144' type='rlim_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/resource.h' l='143'>/* The hard limit.  */</doc>
+<use f='codebrowser/Modules/resource.c' l='148' u='w' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='149' u='r' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='163' u='w' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='163' u='r' c='py2rlimit'/>
+<use f='codebrowser/Modules/resource.c' l='177' u='r' c='rlimit2py'/>
+<use f='codebrowser/Modules/resource.c' l='179' u='r' c='rlimit2py'/>

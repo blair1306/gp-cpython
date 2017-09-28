@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/ceval.h' l='44' type='PyObject * PyEval_GetBuiltins()'/>
+<use f='codebrowser/Modules/_pickle.c' l='209' u='c' c='_Pickle_InitState'/>
+<use f='codebrowser/Objects/classobject.c' l='87' u='c' c='method_reduce'/>
+<use f='codebrowser/Objects/descrobject.c' l='438' u='c' c='descr_reduce'/>
+<use f='codebrowser/Objects/descrobject.c' l='1107' u='c' c='wrapper_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='111' u='c' c='meth_reduce'/>
+<use f='codebrowser/Objects/typeobject.c' l='3573' u='c' c='object_new'/>
+<use f='codebrowser/Python/bltinmodule.c' l='875' u='c' c='builtin_eval_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='955' u='c' c='builtin_exec_impl'/>
+<def f='codebrowser/Python/ceval.c' l='4678' ll='4686' type='PyObject * PyEval_GetBuiltins()'/>
+<use f='codebrowser/Python/import.c' l='803' u='c' c='module_dict_for_exec'/>

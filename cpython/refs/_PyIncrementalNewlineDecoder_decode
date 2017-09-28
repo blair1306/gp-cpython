@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='50' type='PyObject * _PyIncrementalNewlineDecoder_decode(PyObject * self, PyObject * input, int final)'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='49'>/* Shortcut to the core of the IncrementalNewlineDecoder.decode method */</doc>
+<use f='codebrowser/Modules/_io/stringio.c' l='185' u='c' c='write_str'/>
+<def f='codebrowser/Modules/_io/textio.c' l='303' ll='502' type='PyObject * _PyIncrementalNewlineDecoder_decode(PyObject * myself, PyObject * input, int final)'/>
+<use f='codebrowser/Modules/_io/textio.c' l='515' u='c' c='_io_IncrementalNewlineDecoder_decode_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1560' u='c' c='textiowrapper_read_chunk'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1632' u='c' c='_io_TextIOWrapper_read_impl'/>

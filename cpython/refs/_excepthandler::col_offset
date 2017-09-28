@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/Python-ast.h' l='411' type='int'/>
+<offset>288</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2502' u='w' c='_Py_ExceptHandler'/>
+<use f='codebrowser/Python/Python-ast.c' l='3806' u='r' c='ast2obj_excepthandler'/>
+<use f='codebrowser/Python/compile.c' l='2571' u='r' c='compiler_try_except'/>

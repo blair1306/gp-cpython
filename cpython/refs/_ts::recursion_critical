@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pystate.h' l='120' type='char'/>
+<offset>296</offset>
+<doc f='codebrowser/Include/pystate.h' l='120'>/* The current calls must not cause
+                                a stack overflow. */</doc>
+<use f='codebrowser/Objects/abstract.c' l='2232' macro='1' u='r'/>
+<use f='codebrowser/Objects/abstract.c' l='2232' macro='1' u='w'/>
+<use f='codebrowser/Objects/abstract.c' l='2234' macro='1' u='w'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15304' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15304' macro='1' u='w'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15306' macro='1' u='w'/>
+<use f='codebrowser/Python/ceval.c' l='607' u='r' c='_Py_CheckRecursiveCall'/>
+<use f='codebrowser/Python/pystate.c' l='252' u='w' c='new_threadstate'/>

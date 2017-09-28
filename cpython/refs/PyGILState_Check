@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/pystate.h' l='313' type='int PyGILState_Check()'/>
+<doc f='codebrowser/Include/pystate.h' l='309'>/* Helper/diagnostic function - return 1 if the current thread
+   currently holds the GIL, 0 otherwise.
+
+   The function returns 1 if _PyGILState_check_enabled is non-zero. */</doc>
+<use f='codebrowser/Modules/_tracemalloc.c' l='487' u='c' c='traceback_new'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='967' u='c' c='tracemalloc_clear_traces'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1727' u='c' c='_PyTraceMalloc_Init'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1782' u='c' c='_PyTraceMalloc_Fini'/>
+<use f='codebrowser/Modules/socketmodule.c' l='663' u='c' c='internal_select'/>
+<use f='codebrowser/Modules/socketmodule.c' l='765' u='c' c='sock_call_ex'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1971' u='c' c='_PyMem_DebugCheckGIL'/>
+<use f='codebrowser/Python/ceval.c' l='406' u='c' c='Py_MakePendingCalls'/>
+<use f='codebrowser/Python/fileutils.c' l='684' u='c' c='_Py_fstat'/>
+<use f='codebrowser/Python/fileutils.c' l='1004' u='c' c='_Py_open'/>
+<use f='codebrowser/Python/fileutils.c' l='1129' u='c' c='_Py_fopen_obj'/>
+<use f='codebrowser/Python/fileutils.c' l='1181' u='c' c='_Py_read'/>
+<use f='codebrowser/Python/fileutils.c' l='1322' u='c' c='_Py_write'/>
+<use f='codebrowser/Python/fileutils.c' l='1475' u='c' c='_Py_dup'/>
+<def f='codebrowser/Python/pystate.c' l='869' ll='885' type='int PyGILState_Check()'/>

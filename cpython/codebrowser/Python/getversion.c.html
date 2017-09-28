@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>getversion.c source code [codebrowser/Python/getversion.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/getversion.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='getversion.c.html'>getversion.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Return the full version string. */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="../Include/patchlevel.h.html">"patchlevel.h"</a></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><em>const</em> <em>char</em> *</td></tr>
+<tr><th id="9">9</th><td><dfn class="decl def" id="Py_GetVersion" title='Py_GetVersion' data-ref="Py_GetVersion">Py_GetVersion</dfn>(<em>void</em>)</td></tr>
+<tr><th id="10">10</th><td>{</td></tr>
+<tr><th id="11">11</th><td>	<em>static</em> <em>char</em> <dfn class="local col1 decl" id="1version" title='version' data-type='char [250]' data-ref="1version">version</dfn>[<var>250</var>];</td></tr>
+<tr><th id="12">12</th><td>	<a class="ref" href="../Include/pyerrors.h.html#PyOS_snprintf" title='PyOS_snprintf' data-ref="PyOS_snprintf">PyOS_snprintf</a>(<a class="local col1 ref" href="#1version" title='version' data-ref="1version">version</a>, <b>sizeof</b>(<a class="local col1 ref" href="#1version" title='version' data-ref="1version">version</a>), <q>"%.80s (%.80s) %.80s"</q>,</td></tr>
+<tr><th id="13">13</th><td>		      <a class="macro" href="../Include/patchlevel.h.html#26" title="&quot;3.7.0a0&quot;" data-ref="_M/PY_VERSION">PY_VERSION</a>, <a class="ref" href="../Include/pylifecycle.h.html#Py_GetBuildInfo" title='Py_GetBuildInfo' data-ref="Py_GetBuildInfo">Py_GetBuildInfo</a>(), <a class="ref" href="../Include/pylifecycle.h.html#Py_GetCompiler" title='Py_GetCompiler' data-ref="Py_GetCompiler">Py_GetCompiler</a>());</td></tr>
+<tr><th id="14">14</th><td>	<b>return</b> <a class="local col1 ref" href="#1version" title='version' data-ref="1version">version</a>;</td></tr>
+<tr><th id="15">15</th><td>}</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

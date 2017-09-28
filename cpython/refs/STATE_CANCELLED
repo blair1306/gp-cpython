@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_asynciomodule.c' l='38' type='1'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='245' u='r' c='future_get_result'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='314' u='r' c='future_cancel'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='422' u='r' c='_asyncio_Future_exception_impl'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='589' u='r' c='_asyncio_Future_cancelled_impl'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='724' c='FutureObj_get_state'/>

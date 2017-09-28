@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/Python-ast.h' l='260' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='265' type='expr_ty'/>
+<dec f='codebrowser/Include/Python-ast.h' l='276' type='expr_ty'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1947' u='w' c='_Py_ListComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1968' u='w' c='_Py_SetComp'/>
+<use f='codebrowser/Python/Python-ast.c' l='2016' u='w' c='_Py_GeneratorExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='3209' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3223' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3256' u='r' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='257' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='257' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='257' u='r' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='4066' u='r' c='compiler_genexp'/>
+<use f='codebrowser/Python/compile.c' l='4081' u='r' c='compiler_listcomp'/>
+<use f='codebrowser/Python/compile.c' l='4096' u='r' c='compiler_setcomp'/>
+<use f='codebrowser/Python/symtable.c' l='1763' u='r' c='symtable_visit_genexp'/>
+<use f='codebrowser/Python/symtable.c' l='1771' u='r' c='symtable_visit_listcomp'/>
+<use f='codebrowser/Python/symtable.c' l='1779' u='r' c='symtable_visit_setcomp'/>

@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2421' type='char * SSL_CIPHER_description(const SSL_CIPHER * , char * buf, int size)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1593' u='c' c='cipher_to_dict'/>

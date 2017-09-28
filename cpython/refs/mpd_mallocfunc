@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='806' type='void *(*)(size_t)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5668' u='w' c='PyInit__decimal'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='804'>/******************************************************************************/</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='46' type='void *(*)(size_t)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='73' u='r' c='mpd_callocfunc_em'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='95' u='r' c='mpd_alloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='150' u='r' c='mpd_sh_alloc'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='45'>/* Custom allocation and free functions */</doc>

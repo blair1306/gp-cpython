@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='323' type='int PyCData_set(PyObject * dst, PyObject * type, SETFUNC setfunc, PyObject * value, Py_ssize_t index, Py_ssize_t size, char * ptr)'/>
+<def f='codebrowser/Modules/_ctypes/_ctypes.c' l='2974' ll='2996' type='int PyCData_set(PyObject * dst, PyObject * type, SETFUNC setfunc, PyObject * value, Py_ssize_t index, Py_ssize_t size, char * ptr)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4460' u='c' c='Array_ass_item'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4873' u='c' c='Pointer_ass_item'/>
+<doc f='codebrowser/Modules/_ctypes/_ctypes.c' l='2970'>/*
+ * Set a slice in object &apos;dst&apos;, which has the type &apos;type&apos;,
+ * to the value &apos;value&apos;.
+ */</doc>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='220' u='c' c='PyCField_set'/>

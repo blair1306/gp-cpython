@@ -1,0 +1,18 @@
+<dec f='include/lzma/base.h' l='462' type='const uint8_t *'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='514' u='w' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='958' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='963' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='971' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='985' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='988' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='990' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='992' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='997' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1004' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1012' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1018' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1048' u='r' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1049' u='w' c='decompress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1181' u='w' c='_lzma_LZMADecompressor___init___impl'/>
+<offset>0</offset>
+<doc f='include/lzma/base.h' l='462'>/**&lt; Pointer to the next input byte. */</doc>

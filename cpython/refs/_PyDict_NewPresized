@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/dictobject.h' l='114' type='PyObject * _PyDict_NewPresized(Py_ssize_t minused)'/>
+<use f='codebrowser/Objects/call.c' l='1323' u='c' c='_PyStack_AsDict'/>
+<def f='codebrowser/Objects/dictobject.c' l='1202' ll='1229' type='PyObject * _PyDict_NewPresized(Py_ssize_t minused)'/>
+<use f='codebrowser/Python/ceval.c' l='2587' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2675' u='c' c='_PyEval_EvalFrameDefault'/>

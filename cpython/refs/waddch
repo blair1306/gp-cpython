@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='799' type='int waddch(WINDOW * , const chtype )'/>
+<doc f='include/curses.h' l='799'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='635' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='637' u='c' c='curses_window_addch_impl'/>

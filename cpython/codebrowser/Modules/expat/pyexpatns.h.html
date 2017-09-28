@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>pyexpatns.h source code [codebrowser/Modules/expat/pyexpatns.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/expat/pyexpatns.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>expat</a>/<a href='pyexpatns.h.html'>pyexpatns.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Copyright (c) 2005-2006 ActiveState Software Inc.</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * Namespace all expat exported symbols to avoid dynamic loading symbol</i></td></tr>
+<tr><th id="4">4</th><td><i> * collisions when embedding Python.</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * The Problem:</i></td></tr>
+<tr><th id="7">7</th><td><i> * - you embed Python in some app</i></td></tr>
+<tr><th id="8">8</th><td><i> * - the app dynamically loads libexpat of version X</i></td></tr>
+<tr><th id="9">9</th><td><i> * - the embedded Python imports pyexpat (which was built against</i></td></tr>
+<tr><th id="10">10</th><td><i> *   libexpat version X+n)</i></td></tr>
+<tr><th id="11">11</th><td><i> * --&gt; pyexpat gets the expat symbols from the already loaded and *older*</i></td></tr>
+<tr><th id="12">12</th><td><i> *     libexpat: crash (Specifically the crash we observed was in</i></td></tr>
+<tr><th id="13">13</th><td><i> *     getting an old XML_ErrorString (from xmlparse.c) and then calling</i></td></tr>
+<tr><th id="14">14</th><td><i> *     it with newer values in the XML_Error enum:</i></td></tr>
+<tr><th id="15">15</th><td><i> *</i></td></tr>
+<tr><th id="16">16</th><td><i> *       // pyexpat.c, line 1970</i></td></tr>
+<tr><th id="17">17</th><td><i> *       ...</i></td></tr>
+<tr><th id="18">18</th><td><i> *       // Added in Expat 1.95.7.</i></td></tr>
+<tr><th id="19">19</th><td><i> *       MYCONST(XML_ERROR_UNBOUND_PREFIX);</i></td></tr>
+<tr><th id="20">20</th><td><i> *       ...</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *</i></td></tr>
+<tr><th id="23">23</th><td><i> * The Solution:</i></td></tr>
+<tr><th id="24">24</th><td><i> * Prefix all exported symbols with "PyExpat_". This is similar to</i></td></tr>
+<tr><th id="25">25</th><td><i> * what Mozilla does for some common libs:</i></td></tr>
+<tr><th id="26">26</th><td><i> * <a href="http://lxr.mozilla.org/seamonkey/source/modules/libimg/png/mozpngconf.h#115">http://lxr.mozilla.org/seamonkey/source/modules/libimg/png/mozpngconf.h#115</a></i></td></tr>
+<tr><th id="27">27</th><td><i> *</i></td></tr>
+<tr><th id="28">28</th><td><i> * The list of relevant exported symbols can be had with this command:</i></td></tr>
+<tr><th id="29">29</th><td><i> * </i></td></tr>
+<tr><th id="30">30</th><td><i>       nm pyexpat.so \</i></td></tr>
+<tr><th id="31">31</th><td><i>           | grep -v " [a-zBUA] " \</i></td></tr>
+<tr><th id="32">32</th><td><i>           | grep -v "_fini\|_init\|initpyexpat"</i></td></tr>
+<tr><th id="33">33</th><td><i> *</i></td></tr>
+<tr><th id="34">34</th><td><i> * If any of those symbols are NOT prefixed with "PyExpat_" then</i></td></tr>
+<tr><th id="35">35</th><td><i> * a #define should be added for it here.</i></td></tr>
+<tr><th id="36">36</th><td><i> */</i></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="38">ifndef</span> <span class="macro" data-ref="_M/PYEXPATNS_H">PYEXPATNS_H</span></u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/PYEXPATNS_H" data-ref="_M/PYEXPATNS_H">PYEXPATNS_H</dfn></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/XML_DefaultCurrent" data-ref="_M/XML_DefaultCurrent">XML_DefaultCurrent</dfn>              PyExpat_XML_DefaultCurrent</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/XML_ErrorString" data-ref="_M/XML_ErrorString">XML_ErrorString</dfn>                 PyExpat_XML_ErrorString</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/XML_ExpatVersion" data-ref="_M/XML_ExpatVersion">XML_ExpatVersion</dfn>                PyExpat_XML_ExpatVersion</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/XML_ExpatVersionInfo" data-ref="_M/XML_ExpatVersionInfo">XML_ExpatVersionInfo</dfn>            PyExpat_XML_ExpatVersionInfo</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/XML_ExternalEntityParserCreate" data-ref="_M/XML_ExternalEntityParserCreate">XML_ExternalEntityParserCreate</dfn>  PyExpat_XML_ExternalEntityParserCreate</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/XML_FreeContentModel" data-ref="_M/XML_FreeContentModel">XML_FreeContentModel</dfn>            PyExpat_XML_FreeContentModel</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/XML_GetBase" data-ref="_M/XML_GetBase">XML_GetBase</dfn>                     PyExpat_XML_GetBase</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/XML_GetBuffer" data-ref="_M/XML_GetBuffer">XML_GetBuffer</dfn>                   PyExpat_XML_GetBuffer</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/XML_GetCurrentByteCount" data-ref="_M/XML_GetCurrentByteCount">XML_GetCurrentByteCount</dfn>         PyExpat_XML_GetCurrentByteCount</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/XML_GetCurrentByteIndex" data-ref="_M/XML_GetCurrentByteIndex">XML_GetCurrentByteIndex</dfn>         PyExpat_XML_GetCurrentByteIndex</u></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/XML_GetCurrentColumnNumber" data-ref="_M/XML_GetCurrentColumnNumber">XML_GetCurrentColumnNumber</dfn>      PyExpat_XML_GetCurrentColumnNumber</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/XML_GetCurrentLineNumber" data-ref="_M/XML_GetCurrentLineNumber">XML_GetCurrentLineNumber</dfn>        PyExpat_XML_GetCurrentLineNumber</u></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/XML_GetErrorCode" data-ref="_M/XML_GetErrorCode">XML_GetErrorCode</dfn>                PyExpat_XML_GetErrorCode</u></td></tr>
+<tr><th id="54">54</th><td><u>#define <dfn class="macro" id="_M/XML_GetFeatureList" data-ref="_M/XML_GetFeatureList">XML_GetFeatureList</dfn>              PyExpat_XML_GetFeatureList</u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/XML_GetIdAttributeIndex" data-ref="_M/XML_GetIdAttributeIndex">XML_GetIdAttributeIndex</dfn>         PyExpat_XML_GetIdAttributeIndex</u></td></tr>
+<tr><th id="56">56</th><td><u>#define <dfn class="macro" id="_M/XML_GetInputContext" data-ref="_M/XML_GetInputContext">XML_GetInputContext</dfn>             PyExpat_XML_GetInputContext</u></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/XML_GetParsingStatus" data-ref="_M/XML_GetParsingStatus">XML_GetParsingStatus</dfn>            PyExpat_XML_GetParsingStatus</u></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/XML_GetSpecifiedAttributeCount" data-ref="_M/XML_GetSpecifiedAttributeCount">XML_GetSpecifiedAttributeCount</dfn>  PyExpat_XML_GetSpecifiedAttributeCount</u></td></tr>
+<tr><th id="59">59</th><td><u>#define <dfn class="macro" id="_M/XmlGetUtf16InternalEncoding" data-ref="_M/XmlGetUtf16InternalEncoding">XmlGetUtf16InternalEncoding</dfn>     PyExpat_XmlGetUtf16InternalEncoding</u></td></tr>
+<tr><th id="60">60</th><td><u>#define <dfn class="macro" id="_M/XmlGetUtf16InternalEncodingNS" data-ref="_M/XmlGetUtf16InternalEncodingNS">XmlGetUtf16InternalEncodingNS</dfn>   PyExpat_XmlGetUtf16InternalEncodingNS</u></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/XmlGetUtf8InternalEncoding" data-ref="_M/XmlGetUtf8InternalEncoding">XmlGetUtf8InternalEncoding</dfn>      PyExpat_XmlGetUtf8InternalEncoding</u></td></tr>
+<tr><th id="62">62</th><td><u>#define <dfn class="macro" id="_M/XmlGetUtf8InternalEncodingNS" data-ref="_M/XmlGetUtf8InternalEncodingNS">XmlGetUtf8InternalEncodingNS</dfn>    PyExpat_XmlGetUtf8InternalEncodingNS</u></td></tr>
+<tr><th id="63">63</th><td><u>#define <dfn class="macro" id="_M/XmlInitEncoding" data-ref="_M/XmlInitEncoding">XmlInitEncoding</dfn>                 PyExpat_XmlInitEncoding</u></td></tr>
+<tr><th id="64">64</th><td><u>#define <dfn class="macro" id="_M/XmlInitEncodingNS" data-ref="_M/XmlInitEncodingNS">XmlInitEncodingNS</dfn>               PyExpat_XmlInitEncodingNS</u></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/XmlInitUnknownEncoding" data-ref="_M/XmlInitUnknownEncoding">XmlInitUnknownEncoding</dfn>          PyExpat_XmlInitUnknownEncoding</u></td></tr>
+<tr><th id="66">66</th><td><u>#define <dfn class="macro" id="_M/XmlInitUnknownEncodingNS" data-ref="_M/XmlInitUnknownEncodingNS">XmlInitUnknownEncodingNS</dfn>        PyExpat_XmlInitUnknownEncodingNS</u></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/XML_MemFree" data-ref="_M/XML_MemFree">XML_MemFree</dfn>                     PyExpat_XML_MemFree</u></td></tr>
+<tr><th id="68">68</th><td><u>#define <dfn class="macro" id="_M/XML_MemMalloc" data-ref="_M/XML_MemMalloc">XML_MemMalloc</dfn>                   PyExpat_XML_MemMalloc</u></td></tr>
+<tr><th id="69">69</th><td><u>#define <dfn class="macro" id="_M/XML_MemRealloc" data-ref="_M/XML_MemRealloc">XML_MemRealloc</dfn>                  PyExpat_XML_MemRealloc</u></td></tr>
+<tr><th id="70">70</th><td><u>#define <dfn class="macro" id="_M/XML_Parse" data-ref="_M/XML_Parse">XML_Parse</dfn>                       PyExpat_XML_Parse</u></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/XML_ParseBuffer" data-ref="_M/XML_ParseBuffer">XML_ParseBuffer</dfn>                 PyExpat_XML_ParseBuffer</u></td></tr>
+<tr><th id="72">72</th><td><u>#define <dfn class="macro" id="_M/XML_ParserCreate" data-ref="_M/XML_ParserCreate">XML_ParserCreate</dfn>                PyExpat_XML_ParserCreate</u></td></tr>
+<tr><th id="73">73</th><td><u>#define <dfn class="macro" id="_M/XML_ParserCreate_MM" data-ref="_M/XML_ParserCreate_MM">XML_ParserCreate_MM</dfn>             PyExpat_XML_ParserCreate_MM</u></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/XML_ParserCreateNS" data-ref="_M/XML_ParserCreateNS">XML_ParserCreateNS</dfn>              PyExpat_XML_ParserCreateNS</u></td></tr>
+<tr><th id="75">75</th><td><u>#define <dfn class="macro" id="_M/XML_ParserFree" data-ref="_M/XML_ParserFree">XML_ParserFree</dfn>                  PyExpat_XML_ParserFree</u></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/XML_ParserReset" data-ref="_M/XML_ParserReset">XML_ParserReset</dfn>                 PyExpat_XML_ParserReset</u></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/XmlParseXmlDecl" data-ref="_M/XmlParseXmlDecl">XmlParseXmlDecl</dfn>                 PyExpat_XmlParseXmlDecl</u></td></tr>
+<tr><th id="78">78</th><td><u>#define <dfn class="macro" id="_M/XmlParseXmlDeclNS" data-ref="_M/XmlParseXmlDeclNS">XmlParseXmlDeclNS</dfn>               PyExpat_XmlParseXmlDeclNS</u></td></tr>
+<tr><th id="79">79</th><td><u>#define <dfn class="macro" id="_M/XmlPrologStateInit" data-ref="_M/XmlPrologStateInit">XmlPrologStateInit</dfn>              PyExpat_XmlPrologStateInit</u></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/XmlPrologStateInitExternalEntity" data-ref="_M/XmlPrologStateInitExternalEntity">XmlPrologStateInitExternalEntity</dfn>    PyExpat_XmlPrologStateInitExternalEntity</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/XML_ResumeParser" data-ref="_M/XML_ResumeParser">XML_ResumeParser</dfn>                PyExpat_XML_ResumeParser</u></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/XML_SetAttlistDeclHandler" data-ref="_M/XML_SetAttlistDeclHandler">XML_SetAttlistDeclHandler</dfn>       PyExpat_XML_SetAttlistDeclHandler</u></td></tr>
+<tr><th id="83">83</th><td><u>#define <dfn class="macro" id="_M/XML_SetBase" data-ref="_M/XML_SetBase">XML_SetBase</dfn>                     PyExpat_XML_SetBase</u></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/XML_SetCdataSectionHandler" data-ref="_M/XML_SetCdataSectionHandler">XML_SetCdataSectionHandler</dfn>      PyExpat_XML_SetCdataSectionHandler</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/XML_SetCharacterDataHandler" data-ref="_M/XML_SetCharacterDataHandler">XML_SetCharacterDataHandler</dfn>     PyExpat_XML_SetCharacterDataHandler</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/XML_SetCommentHandler" data-ref="_M/XML_SetCommentHandler">XML_SetCommentHandler</dfn>           PyExpat_XML_SetCommentHandler</u></td></tr>
+<tr><th id="87">87</th><td><u>#define <dfn class="macro" id="_M/XML_SetDefaultHandler" data-ref="_M/XML_SetDefaultHandler">XML_SetDefaultHandler</dfn>           PyExpat_XML_SetDefaultHandler</u></td></tr>
+<tr><th id="88">88</th><td><u>#define <dfn class="macro" id="_M/XML_SetDefaultHandlerExpand" data-ref="_M/XML_SetDefaultHandlerExpand">XML_SetDefaultHandlerExpand</dfn>     PyExpat_XML_SetDefaultHandlerExpand</u></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/XML_SetDoctypeDeclHandler" data-ref="_M/XML_SetDoctypeDeclHandler">XML_SetDoctypeDeclHandler</dfn>       PyExpat_XML_SetDoctypeDeclHandler</u></td></tr>
+<tr><th id="90">90</th><td><u>#define <dfn class="macro" id="_M/XML_SetElementDeclHandler" data-ref="_M/XML_SetElementDeclHandler">XML_SetElementDeclHandler</dfn>       PyExpat_XML_SetElementDeclHandler</u></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/XML_SetElementHandler" data-ref="_M/XML_SetElementHandler">XML_SetElementHandler</dfn>           PyExpat_XML_SetElementHandler</u></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/XML_SetEncoding" data-ref="_M/XML_SetEncoding">XML_SetEncoding</dfn>                 PyExpat_XML_SetEncoding</u></td></tr>
+<tr><th id="93">93</th><td><u>#define <dfn class="macro" id="_M/XML_SetEndCdataSectionHandler" data-ref="_M/XML_SetEndCdataSectionHandler">XML_SetEndCdataSectionHandler</dfn>   PyExpat_XML_SetEndCdataSectionHandler</u></td></tr>
+<tr><th id="94">94</th><td><u>#define <dfn class="macro" id="_M/XML_SetEndDoctypeDeclHandler" data-ref="_M/XML_SetEndDoctypeDeclHandler">XML_SetEndDoctypeDeclHandler</dfn>    PyExpat_XML_SetEndDoctypeDeclHandler</u></td></tr>
+<tr><th id="95">95</th><td><u>#define <dfn class="macro" id="_M/XML_SetEndElementHandler" data-ref="_M/XML_SetEndElementHandler">XML_SetEndElementHandler</dfn>        PyExpat_XML_SetEndElementHandler</u></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/XML_SetEndNamespaceDeclHandler" data-ref="_M/XML_SetEndNamespaceDeclHandler">XML_SetEndNamespaceDeclHandler</dfn>  PyExpat_XML_SetEndNamespaceDeclHandler</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/XML_SetEntityDeclHandler" data-ref="_M/XML_SetEntityDeclHandler">XML_SetEntityDeclHandler</dfn>        PyExpat_XML_SetEntityDeclHandler</u></td></tr>
+<tr><th id="98">98</th><td><u>#define <dfn class="macro" id="_M/XML_SetExternalEntityRefHandler" data-ref="_M/XML_SetExternalEntityRefHandler">XML_SetExternalEntityRefHandler</dfn> PyExpat_XML_SetExternalEntityRefHandler</u></td></tr>
+<tr><th id="99">99</th><td><u>#define <dfn class="macro" id="_M/XML_SetExternalEntityRefHandlerArg" data-ref="_M/XML_SetExternalEntityRefHandlerArg">XML_SetExternalEntityRefHandlerArg</dfn>  PyExpat_XML_SetExternalEntityRefHandlerArg</u></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/XML_SetHashSalt" data-ref="_M/XML_SetHashSalt">XML_SetHashSalt</dfn>                 PyExpat_XML_SetHashSalt</u></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/XML_SetNamespaceDeclHandler" data-ref="_M/XML_SetNamespaceDeclHandler">XML_SetNamespaceDeclHandler</dfn>     PyExpat_XML_SetNamespaceDeclHandler</u></td></tr>
+<tr><th id="102">102</th><td><u>#define <dfn class="macro" id="_M/XML_SetNotationDeclHandler" data-ref="_M/XML_SetNotationDeclHandler">XML_SetNotationDeclHandler</dfn>      PyExpat_XML_SetNotationDeclHandler</u></td></tr>
+<tr><th id="103">103</th><td><u>#define <dfn class="macro" id="_M/XML_SetNotStandaloneHandler" data-ref="_M/XML_SetNotStandaloneHandler">XML_SetNotStandaloneHandler</dfn>     PyExpat_XML_SetNotStandaloneHandler</u></td></tr>
+<tr><th id="104">104</th><td><u>#define <dfn class="macro" id="_M/XML_SetParamEntityParsing" data-ref="_M/XML_SetParamEntityParsing">XML_SetParamEntityParsing</dfn>       PyExpat_XML_SetParamEntityParsing</u></td></tr>
+<tr><th id="105">105</th><td><u>#define <dfn class="macro" id="_M/XML_SetProcessingInstructionHandler" data-ref="_M/XML_SetProcessingInstructionHandler">XML_SetProcessingInstructionHandler</dfn> PyExpat_XML_SetProcessingInstructionHandler</u></td></tr>
+<tr><th id="106">106</th><td><u>#define <dfn class="macro" id="_M/XML_SetReturnNSTriplet" data-ref="_M/XML_SetReturnNSTriplet">XML_SetReturnNSTriplet</dfn>          PyExpat_XML_SetReturnNSTriplet</u></td></tr>
+<tr><th id="107">107</th><td><u>#define <dfn class="macro" id="_M/XML_SetSkippedEntityHandler" data-ref="_M/XML_SetSkippedEntityHandler">XML_SetSkippedEntityHandler</dfn>     PyExpat_XML_SetSkippedEntityHandler</u></td></tr>
+<tr><th id="108">108</th><td><u>#define <dfn class="macro" id="_M/XML_SetStartCdataSectionHandler" data-ref="_M/XML_SetStartCdataSectionHandler">XML_SetStartCdataSectionHandler</dfn> PyExpat_XML_SetStartCdataSectionHandler</u></td></tr>
+<tr><th id="109">109</th><td><u>#define <dfn class="macro" id="_M/XML_SetStartDoctypeDeclHandler" data-ref="_M/XML_SetStartDoctypeDeclHandler">XML_SetStartDoctypeDeclHandler</dfn>  PyExpat_XML_SetStartDoctypeDeclHandler</u></td></tr>
+<tr><th id="110">110</th><td><u>#define <dfn class="macro" id="_M/XML_SetStartElementHandler" data-ref="_M/XML_SetStartElementHandler">XML_SetStartElementHandler</dfn>      PyExpat_XML_SetStartElementHandler</u></td></tr>
+<tr><th id="111">111</th><td><u>#define <dfn class="macro" id="_M/XML_SetStartNamespaceDeclHandler" data-ref="_M/XML_SetStartNamespaceDeclHandler">XML_SetStartNamespaceDeclHandler</dfn>    PyExpat_XML_SetStartNamespaceDeclHandler</u></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/XML_SetUnknownEncodingHandler" data-ref="_M/XML_SetUnknownEncodingHandler">XML_SetUnknownEncodingHandler</dfn>   PyExpat_XML_SetUnknownEncodingHandler</u></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/XML_SetUnparsedEntityDeclHandler" data-ref="_M/XML_SetUnparsedEntityDeclHandler">XML_SetUnparsedEntityDeclHandler</dfn>    PyExpat_XML_SetUnparsedEntityDeclHandler</u></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/XML_SetUserData" data-ref="_M/XML_SetUserData">XML_SetUserData</dfn>                 PyExpat_XML_SetUserData</u></td></tr>
+<tr><th id="115">115</th><td><u>#define <dfn class="macro" id="_M/XML_SetXmlDeclHandler" data-ref="_M/XML_SetXmlDeclHandler">XML_SetXmlDeclHandler</dfn>           PyExpat_XML_SetXmlDeclHandler</u></td></tr>
+<tr><th id="116">116</th><td><u>#define <dfn class="macro" id="_M/XmlSizeOfUnknownEncoding" data-ref="_M/XmlSizeOfUnknownEncoding">XmlSizeOfUnknownEncoding</dfn>        PyExpat_XmlSizeOfUnknownEncoding</u></td></tr>
+<tr><th id="117">117</th><td><u>#define <dfn class="macro" id="_M/XML_StopParser" data-ref="_M/XML_StopParser">XML_StopParser</dfn>                  PyExpat_XML_StopParser</u></td></tr>
+<tr><th id="118">118</th><td><u>#define <dfn class="macro" id="_M/XML_UseForeignDTD" data-ref="_M/XML_UseForeignDTD">XML_UseForeignDTD</dfn>               PyExpat_XML_UseForeignDTD</u></td></tr>
+<tr><th id="119">119</th><td><u>#define <dfn class="macro" id="_M/XML_UseParserAsHandlerArg" data-ref="_M/XML_UseParserAsHandlerArg">XML_UseParserAsHandlerArg</dfn>       PyExpat_XML_UseParserAsHandlerArg</u></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/XmlUtf16Encode" data-ref="_M/XmlUtf16Encode">XmlUtf16Encode</dfn>                  PyExpat_XmlUtf16Encode</u></td></tr>
+<tr><th id="121">121</th><td><u>#define <dfn class="macro" id="_M/XmlUtf8Encode" data-ref="_M/XmlUtf8Encode">XmlUtf8Encode</dfn>                   PyExpat_XmlUtf8Encode</u></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><u>#<span data-ppcond="38">endif</span> /* !PYEXPATNS_H */</u></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../_elementtree.c.html'>codebrowser/Modules/_elementtree.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

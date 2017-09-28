@@ -1,0 +1,8 @@
+<dec f='include/curses.h' l='853' type='int wtouchln(WINDOW * , int , int , int )'/>
+<doc f='include/curses.h' l='853'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='468' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='469' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='987' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='991' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1887' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1891' u='c' c='PyCursesWindow_TouchLine'/>

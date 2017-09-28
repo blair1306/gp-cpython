@@ -1,0 +1,5 @@
+<dec f='include/libintl.h' l='39' type='char * gettext(const char * __msgid)'/>
+<use f='codebrowser/Modules/_localemodule.c' l='481' u='c' c='PyIntl_gettext'/>
+<doc f='include/libintl.h' l='36'>/* Look up MSGID in the current default message catalog for the current
+   LC_MESSAGES locale.  If not found, returns MSGID itself (the default
+   text).  */</doc>

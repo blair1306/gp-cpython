@@ -1,0 +1,6 @@
+<dec f='include/grp.h' l='108' type='struct group * getgrnam(const char * __name)'/>
+<use f='codebrowser/Modules/grpmodule.c' l='158' u='c' c='grp_getgrnam_impl'/>
+<doc f='include/grp.h' l='104'>/* Search for an entry with a matching group name.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>

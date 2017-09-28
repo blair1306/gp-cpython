@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='964' type='int _PyUnicodeWriter_WriteStr(_PyUnicodeWriter * writer, PyObject * str)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='961'>/* Append a Unicode string.
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='434' u='c' c='multibytecodec_decerror'/>
+<use f='codebrowser/Objects/dictobject.c' l='1922' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/dictobject.c' l='1933' u='c' c='dict_repr'/>
+<use f='codebrowser/Objects/listobject.c' l='378' u='c' c='list_repr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='317' u='c' c='tuplerepr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2536' u='c' c='unicode_fromformat_write_str'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4436' u='c' c='unicode_decode_call_errorhandler_writer'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='7972' u='c' c='charmap_decode_mapping'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8800' u='c' c='charmaptranslate_output'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9020' u='c' c='_PyUnicode_TranslateCharmap'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='13647' ll='13676' type='int _PyUnicodeWriter_WriteStr(_PyUnicodeWriter * writer, PyObject * str)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13696' u='c' c='_PyUnicodeWriter_WriteSubstring'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='536' u='c' c='render_field'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14779' u='c' c='unicode_format_arg_output'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='801' u='c' c='format_string_internal'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1405' u='c' c='format_obj'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1424' u='c' c='_PyUnicode_FormatAdvancedWriter'/>

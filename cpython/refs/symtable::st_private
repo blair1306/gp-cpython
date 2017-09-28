@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/symtable.h' l='30' type='PyObject *'/>
+<offset>448</offset>
+<doc f='codebrowser/Include/symtable.h' l='30'>/* name of current class or NULL */</doc>
+<use f='codebrowser/Python/symtable.c' l='220' u='w' c='symtable_new'/>
+<use f='codebrowser/Python/symtable.c' l='967' u='r' c='symtable_lookup'/>
+<use f='codebrowser/Python/symtable.c' l='983' u='r' c='symtable_add_def'/>
+<use f='codebrowser/Python/symtable.c' l='1115' u='r' c='symtable_record_directive'/>
+<use f='codebrowser/Python/symtable.c' l='1168' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1169' u='w' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1171' u='w' c='symtable_visit_stmt'/>

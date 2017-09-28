@@ -1,0 +1,4 @@
+<dec f='include/readline/history.h' l='72' type='void using_history()'/>
+<use f='codebrowser/Modules/readline.c' l='1120' u='c' c='setup_readline'/>
+<doc f='include/readline/history.h' l='70'>/* Begin a session in which the history functions might be used.  This
+   just initializes the interactive variables. */</doc>

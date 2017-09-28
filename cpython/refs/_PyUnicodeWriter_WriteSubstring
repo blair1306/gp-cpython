@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='971' type='int _PyUnicodeWriter_WriteSubstring(_PyUnicodeWriter * writer, PyObject * str, Py_ssize_t start, Py_ssize_t end)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='968'>/* Append a substring of a Unicode string.
+   Return 0 on success, raise an exception and return -1 on error. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='13678' ll='13711' type='int _PyUnicodeWriter_WriteSubstring(_PyUnicodeWriter * writer, PyObject * str, Py_ssize_t start, Py_ssize_t end)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='881' u='c' c='do_markup'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15004' u='c' c='PyUnicode_Format'/>

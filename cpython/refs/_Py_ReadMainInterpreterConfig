@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='26' type='int _Py_ReadMainInterpreterConfig(_PyMainInterpreterConfig * )'/>
+<use f='codebrowser/Modules/main.c' l='784' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='721' ll='729' type='int _Py_ReadMainInterpreterConfig(_PyMainInterpreterConfig * config)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='838' u='c' c='_Py_InitializeEx_Private'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='709'>/* Read configuration settings from standard locations
+ *
+ * This function doesn&apos;t make any changes to the interpreter state - it
+ * merely populates any missing configuration settings. This allows an
+ * embedding application to completely override a config option by
+ * setting it before calling this function, or else modify the default
+ * setting before passing the fully populated config to Py_EndInitialization.
+ *
+ * More advanced selective initialization tricks are possible by calling
+ * this function multiple times with various preconfigured settings.
+ */</doc>

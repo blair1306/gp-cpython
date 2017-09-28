@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/dictobject.h' l='172' type='int _PyObjectDict_SetItem(PyTypeObject * tp, PyObject ** dictptr, PyObject * name, PyObject * value)'/>
+<def f='codebrowser/Objects/dictobject.c' l='4213' ll='4287' type='int _PyObjectDict_SetItem(PyTypeObject * tp, PyObject ** dictptr, PyObject * key, PyObject * value)'/>
+<use f='codebrowser/Objects/object.c' l='1260' u='c' c='_PyObject_GenericSetAttrWithDict'/>

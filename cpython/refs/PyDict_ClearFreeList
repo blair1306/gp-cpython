@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/dictobject.h' l='124' type='int PyDict_ClearFreeList()'/>
+<use f='codebrowser/Modules/gcmodule.c' l='901' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/dictobject.c' l='255' ll='269' type='int PyDict_ClearFreeList()'/>
+<use f='codebrowser/Objects/dictobject.c' l='283' u='c' c='PyDict_Fini'/>

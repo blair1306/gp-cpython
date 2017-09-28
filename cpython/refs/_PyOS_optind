@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/pygetopt.h' l='10' type='int'/>
+<use f='codebrowser/Modules/main.c' l='518' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='519' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='521' u='r' c='read_command_line'/>
+<use f='codebrowser/Modules/main.c' l='803' u='w' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='804' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='809' u='w' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='810' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='819' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='819' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='822' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='822' u='r' c='Py_Main'/>
+<def f='codebrowser/Python/getopt.c' l='41' type='int'/>
+<use f='codebrowser/Python/getopt.c' l='49' u='w' c='_PyOS_ResetGetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='61' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='70' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='71' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='74' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='75' u='w' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='79' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='80' u='w' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='84' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='85' u='w' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='90' u='w' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='115' u='r' c='_PyOS_GetOpt'/>
+<use f='codebrowser/Python/getopt.c' l='122' u='w' c='_PyOS_GetOpt'/>
+<doc f='codebrowser/Python/getopt.c' l='41'>/* index into argv array   */</doc>

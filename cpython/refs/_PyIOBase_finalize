@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='43' type='int _PyIOBase_finalize(PyObject * self)'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='39'>/* Helper for finalization.
+   This function will revive an object ready to be deallocated and try to
+   close() it. It returns 0 if the object can be destroyed, or -1 if it
+   is alive again. */</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='393' u='c' c='buffered_dealloc'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='516' u='c' c='fileio_dealloc'/>
+<def f='codebrowser/Modules/_io/iobase.c' l='271' ll='285' type='int _PyIOBase_finalize(PyObject * self)'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='311' u='c' c='iobase_dealloc'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1194' u='c' c='textiowrapper_dealloc'/>

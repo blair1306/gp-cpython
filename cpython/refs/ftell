@@ -1,0 +1,12 @@
+<dec f='include/stdio.h' l='754' type='long ftell(FILE * __stream)'/>
+<doc f='include/stdio.h' l='750'>/* Return the current position of STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3786' u='c' c='pymarshal_read_short_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3811' u='c' c='pymarshal_read_long_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3837' u='c' c='pymarshal_read_last_object_from_file'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3861' u='c' c='pymarshal_read_object_from_file'/>
+<use f='codebrowser/Modules/zipimport.c' l='928' u='c' c='read_directory'/>
+<use f='codebrowser/Parser/tokenizer.c' l='515' u='c' c='fp_setreadl'/>
+<use f='codebrowser/Python/pythonrun.c' l='293' u='c' c='maybe_pyc_file'/>

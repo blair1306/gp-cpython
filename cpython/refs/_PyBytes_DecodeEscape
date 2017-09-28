@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/bytesobject.h' l='79' type='PyObject * _PyBytes_DecodeEscape(const char * , Py_ssize_t , const char * , Py_ssize_t , const char * , const char ** )'/>
+<doc f='codebrowser/Include/bytesobject.h' l='78'>/* Helper for PyBytes_DecodeEscape that detects invalid escape chars. */</doc>
+<def f='codebrowser/Objects/bytesobject.c' l='1120' ll='1241' type='PyObject * _PyBytes_DecodeEscape(const char * s, Py_ssize_t len, const char * errors, Py_ssize_t unicode, const char * recode_encoding, const char ** first_invalid_escape)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1250' u='c' c='PyBytes_DecodeEscape'/>
+<use f='codebrowser/Python/ast.c' l='4259' u='c' c='decode_bytes_with_escapes'/>

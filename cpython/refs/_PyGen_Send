@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/genobject.h' l='46' type='PyObject * _PyGen_Send(PyGenObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1993' u='c' c='task_step_impl'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4178' u='c' c='raise_SIGINT_then_send_None'/>
+<def f='codebrowser/Objects/genobject.c' l='305' ll='309' type='PyObject * _PyGen_Send(PyGenObject * gen, PyObject * arg)'/>
+<use f='codebrowser/Objects/genobject.c' l='737'/>
+<use f='codebrowser/Objects/genobject.c' l='737'/>
+<use f='codebrowser/Objects/genobject.c' l='737'/>
+<use f='codebrowser/Objects/genobject.c' l='737'/>
+<use f='codebrowser/Objects/genobject.c' l='983'/>
+<use f='codebrowser/Objects/genobject.c' l='983'/>
+<use f='codebrowser/Objects/genobject.c' l='983'/>
+<use f='codebrowser/Objects/genobject.c' l='983'/>
+<use f='codebrowser/Python/ceval.c' l='2007' u='c' c='_PyEval_EvalFrameDefault'/>

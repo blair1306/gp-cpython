@@ -1,0 +1,32 @@
+<dec f='codebrowser/Include/frameobject.h' l='28' type='PyObject **'/>
+<offset>704</offset>
+<doc f='codebrowser/Include/frameobject.h' l='25'>/* Next free slot in f_valuestack.  Frame creation sets to f_valuestack.
+       Frame evaluation usually NULLs it, but a frame that yields sets it
+       to the current stack top. */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='316' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='317' u='w' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='428' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='429' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='480' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='481' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='498' u='r' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='499' u='w' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='700' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/genobject.c' l='35' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='139' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='179' u='w' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='200' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='280' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='354' u='r' c='_PyGen_yf'/>
+<use f='codebrowser/Objects/genobject.c' l='368' u='r' c='_PyGen_yf'/>
+<use f='codebrowser/Objects/genobject.c' l='469' u='w' c='_gen_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='844' u='r' c='PyGen_NeedsFinalizing'/>
+<use f='codebrowser/Objects/genobject.c' l='1860' u='r' c='async_gen_athrow_send'/>
+<use f='codebrowser/Python/ceval.c' l='1038' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1040' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1149' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1157' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1158' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='1159' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2029' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2050' u='w' c='_PyEval_EvalFrameDefault'/>

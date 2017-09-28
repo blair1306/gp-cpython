@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/setobject.h' l='61' type='Py_ssize_t'/>
+<offset>576</offset>
+<doc f='codebrowser/Include/setobject.h' l='61'>/* Search finger for pop() */</doc>
+<use f='codebrowser/Objects/setobject.c' l='701' u='r' c='set_pop'/>
+<use f='codebrowser/Objects/setobject.c' l='720' u='w' c='set_pop'/>
+<use f='codebrowser/Objects/setobject.c' l='1056' u='w' c='make_new_set'/>

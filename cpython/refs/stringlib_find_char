@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/stringlib/fastsearch.h' l='42' macro='1' type='Py_ssize_t stringlib_find_char(const char * s, Py_ssize_t n, char ch)'/>
+<use f='codebrowser/Objects/stringlib/fastsearch.h' l='183' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1743' u='c' c='bytearray_remove_impl'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='501' u='c' c='find_internal'/>

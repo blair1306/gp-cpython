@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/abstract.h' l='896' type='PyObject * PySequence_Tuple(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='893'>/* Returns the sequence &apos;o&apos; as a tuple on success, and NULL on failure.
+
+   This is equivalent to the Python expression: tuple(o). */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2238' u='c' c='converters_from_argtypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3325' u='c' c='PyCFuncPtr_FromDll'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='343' u='c' c='partial_setstate'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='1717' u='c' c='starmap_next'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2074' u='c' c='product_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2398' u='c' c='combinations_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='2738' u='c' c='cwr_new'/>
+<use f='codebrowser/Modules/itertoolsmodule.c' l='3068' u='c' c='permutations_new'/>
+<use f='codebrowser/Modules/resource.c' l='132' u='c' c='py2rlimit'/>
+<def f='codebrowser/Objects/abstract.c' l='1790' ll='1872' type='PyObject * PySequence_Tuple(PyObject * v)'/>
+<use f='codebrowser/Objects/codeobject.c' l='81' u='c' c='intern_string_constants'/>
+<use f='codebrowser/Objects/exceptions.c' l='201' u='c' c='BaseException_set_args'/>
+<use f='codebrowser/Objects/exceptions.c' l='1330' u='c' c='SyntaxError_init'/>
+<use f='codebrowser/Objects/tupleobject.c' l='707' u='c' c='tuple_new_impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='1901' u='c' c='mro_invoke'/>
+<use f='codebrowser/Objects/typeobject.c' l='2418' u='c' c='type_new'/>
+<use f='codebrowser/Python/ceval.c' l='3404' u='c' c='_PyEval_EvalFrameDefault'/>

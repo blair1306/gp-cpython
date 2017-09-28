@@ -1,0 +1,36 @@
+<dec f='codebrowser/Include/pyerrors.h' l='23' type='PyObject *'/>
+<dec f='codebrowser/Include/pyerrors.h' l='55' type='PyObject *'/>
+<offset>768</offset>
+<dec f='codebrowser/Include/parsetok.h' l='14' type='PyObject *'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/parsetok.h' l='13'>/* The filename is useless for pgen, see comment in tok_state structure */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='876' u='w' c='oserror_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='1050' u='r' c='OSError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='1050' u='w' c='OSError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='1072' u='r' c='OSError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='1072' u='r' c='OSError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='1105' u='r' c='OSError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1110' u='r' c='OSError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1116' u='r' c='OSError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1133' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1147' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1148' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1342' u='r' c='SyntaxError_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='1342' u='w' c='SyntaxError_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='1374' u='r' c='SyntaxError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='1374' u='w' c='SyntaxError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='1394' u='r' c='SyntaxError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='1394' u='r' c='SyntaxError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='1445' u='r' c='SyntaxError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1445' u='r' c='SyntaxError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1446' u='r' c='SyntaxError_str'/>
+<use f='codebrowser/Parser/parsetok.c' l='64' u='r' c='PyParser_ParseStringObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='65' u='r' c='PyParser_ParseStringObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='131' u='r' c='PyParser_ParseFileObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='132' u='r' c='PyParser_ParseFileObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='372' u='w' c='initerr'/>
+<use f='codebrowser/Parser/parsetok.c' l='375' u='w' c='initerr'/>
+<use f='codebrowser/Parser/parsetok.c' l='376' u='r' c='initerr'/>
+<use f='codebrowser/Python/pythonrun.c' l='1268' u='r' c='err_free'/>
+<use f='codebrowser/Python/pythonrun.c' l='1268' u='w' c='err_free'/>
+<use f='codebrowser/Python/pythonrun.c' l='1376' u='r' c='err_input'/>

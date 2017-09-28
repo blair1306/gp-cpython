@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='250' type='ternaryfunc'/>
+<offset>320</offset>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5678' u='r' c='PyInit__decimal'/>
+<use f='codebrowser/Objects/floatobject.c' l='759' u='r' c='float_pow'/>
+<use f='codebrowser/Objects/longobject.c' l='4091' u='r' c='long_pow'/>
+<use f='codebrowser/Objects/typeobject.c' l='4853' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4853' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4853' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4853' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4853' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4853' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='6058' u='r' c='slot_nb_power_binary'/>
+<use f='codebrowser/Objects/typeobject.c' l='6058' u='r' c='slot_nb_power_binary'/>
+<use f='codebrowser/Objects/typeobject.c' l='6071' u='r' c='slot_nb_power'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='1010' type='int'/>
+<offset>32</offset>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2460' u='w' c='PyExpat_XML_ExpatVersionInfo'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1688' u='r' c='PyInit_pyexpat'/>

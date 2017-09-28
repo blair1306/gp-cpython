@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/hashtable.h' l='121' type='_Py_hashtable_t * _Py_hashtable_new_full(size_t key_size, size_t data_size, size_t init_size, _Py_hashtable_hash_func hash_func, _Py_hashtable_compare_func compare_func, _Py_hashtable_allocator_t * allocator)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='296' u='c' c='hashtable_new'/>
+<def f='codebrowser/Modules/hashtable.c' l='140' ll='179' type='_Py_hashtable_t * _Py_hashtable_new_full(size_t key_size, size_t data_size, size_t init_size, _Py_hashtable_hash_func hash_func, _Py_hashtable_compare_func compare_func, _Py_hashtable_allocator_t * allocator)'/>
+<use f='codebrowser/Modules/hashtable.c' l='187' u='c' c='_Py_hashtable_new'/>
+<use f='codebrowser/Modules/hashtable.c' l='503' u='c' c='_Py_hashtable_copy'/>

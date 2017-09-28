@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/Python-ast.h' l='395' type='asdl_seq *'/>
+<offset>128</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2484' u='w' c='_Py_comprehension'/>
+<use f='codebrowser/Python/Python-ast.c' l='3754' u='r' c='ast2obj_comprehension'/>
+<use f='codebrowser/Python/ast.c' l='32' u='r' c='validate_comprehension'/>
+<use f='codebrowser/Python/ast.c' l='1912' u='w' c='ast_for_comprehension'/>
+<use f='codebrowser/Python/compile.c' l='3772' u='r' c='compiler_sync_comprehension_generator'/>
+<use f='codebrowser/Python/compile.c' l='3772' u='r' c='compiler_sync_comprehension_generator'/>
+<use f='codebrowser/Python/compile.c' l='3774' u='r' c='compiler_sync_comprehension_generator'/>
+<use f='codebrowser/Python/compile.c' l='3903' u='r' c='compiler_async_comprehension_generator'/>
+<use f='codebrowser/Python/compile.c' l='3903' u='r' c='compiler_async_comprehension_generator'/>
+<use f='codebrowser/Python/compile.c' l='3905' u='r' c='compiler_async_comprehension_generator'/>
+<use f='codebrowser/Python/symtable.c' l='1680' u='r' c='symtable_visit_comprehension'/>
+<use f='codebrowser/Python/symtable.c' l='1750' u='r' c='symtable_handle_comprehension'/>

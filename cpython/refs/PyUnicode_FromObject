@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='875' type='PyObject * PyUnicode_FromObject(PyObject * obj)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='866'>/* Copy an instance of a Unicode subtype to a new true Unicode object if
+   necessary. If obj is already a true Unicode object (not a subtype), return
+   the reference with *incremented* refcount.
+
+   The API returns NULL in case of an error. The caller is responsible
+   for decref&apos;ing the returned objects.
+
+*/</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='3041' ll='3061' type='PyObject * PyUnicode_FromObject(PyObject * obj)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8949' u='c' c='_PyUnicode_TranslateCharmap'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11317' u='c' c='PyUnicode_Concat'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11319' u='c' c='PyUnicode_Concat'/>

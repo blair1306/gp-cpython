@@ -1,0 +1,4 @@
+<dec f='include/readline/history.h' l='203' type='int append_history(int , const char * )'/>
+<use f='codebrowser/Modules/readline.c' l='281' u='c' c='append_history_file'/>
+<doc f='include/readline/history.h' l='201'>/* Append NELEMENT entries to FILENAME.  The entries appended are from
+   the end of the list minus NELEMENTs up to the end of the list. */</doc>

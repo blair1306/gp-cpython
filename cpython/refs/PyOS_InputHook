@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pythonrun.h' l='157' type='int (*)(void)'/>
+<use f='codebrowser/Modules/readline.c' l='1215' u='r' c='readline_until_enter_or_signal'/>
+<use f='codebrowser/Modules/readline.c' l='1229' u='r' c='readline_until_enter_or_signal'/>
+<use f='codebrowser/Modules/readline.c' l='1229' u='r' c='readline_until_enter_or_signal'/>
+<def f='codebrowser/Parser/myreadline.c' l='26' type='int (*)(void)'/>
+<use f='codebrowser/Parser/myreadline.c' l='40' u='r' c='my_fgets'/>
+<use f='codebrowser/Parser/myreadline.c' l='41' u='r' c='my_fgets'/>

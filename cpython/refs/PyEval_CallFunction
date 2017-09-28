@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/ceval.h' l='25' type='PyObject * PyEval_CallFunction(PyObject * callable, const char * format)'/>
+<def f='codebrowser/Objects/call.c' l='982' ll='993' type='PyObject * PyEval_CallFunction(PyObject * callable, const char * format)'/>
+<doc f='codebrowser/Objects/call.c' l='979'>/* PyEval_CallFunction is exact copy of PyObject_CallFunction.
+ * This function is kept for backward compatibility.
+ */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='596' type='BINDING *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='707' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='707' u='r' c='PyExpat_XML_ParserReset'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='707' u='r' c='PyExpat_XML_ParserFree'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='707' u='a' c='setContext'/>
+<offset>5696</offset>

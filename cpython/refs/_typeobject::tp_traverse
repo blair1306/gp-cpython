@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/object.h' l='385' type='traverseproc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='927' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1131' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1230' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1300' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1822' u='w'/>
+<offset>1600</offset>
+<doc f='codebrowser/Include/object.h' l='384'>/* call function for all accessible objects */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2148' u='r' c='defdict_traverse'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='790' u='r' c='CDataType_traverse'/>
+<use f='codebrowser/Modules/gcmodule.c' l='405' u='r' c='subtract_refs'/>
+<use f='codebrowser/Modules/gcmodule.c' l='490' u='r' c='move_unreachable'/>
+<use f='codebrowser/Modules/gcmodule.c' l='588' u='r' c='move_legacy_finalizer_reachable'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1357' u='r' c='gc_referrers_for'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1414' u='r' c='gc_get_referents'/>
+<use f='codebrowser/Objects/odictobject.c' l='1560' u='r' c='odict_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='1024' u='r' c='subtype_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='2723' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4746' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4748' u='r' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4749' u='w' c='inherit_special'/>
+<use f='codebrowser/Objects/typeobject.c' l='4749' u='r' c='inherit_special'/>

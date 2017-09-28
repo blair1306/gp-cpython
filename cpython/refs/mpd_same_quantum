@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='482' type='int mpd_same_quantum(const mpd_t * a, const mpd_t * b)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4321' u='c' c='dec_mpd_same_quantum'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5396' u='c' c='ctx_mpd_same_quantum'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7201' ll='7210' type='int mpd_same_quantum(const mpd_t * a, const mpd_t * b)'/>

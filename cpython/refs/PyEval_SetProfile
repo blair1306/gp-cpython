@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/ceval.h' l='32' type='void PyEval_SetProfile(Py_tracefunc , PyObject * )'/>
+<use f='codebrowser/Modules/_lsprof.c' l='693' u='c' c='profiler_enable'/>
+<use f='codebrowser/Modules/_lsprof.c' l='724' u='c' c='profiler_disable'/>
+<use f='codebrowser/Modules/_lsprof.c' l='748' u='c' c='profiler_dealloc'/>
+<def f='codebrowser/Python/ceval.c' l='4594' ll='4609' type='void PyEval_SetProfile(Py_tracefunc func, PyObject * arg)'/>
+<use f='codebrowser/Python/sysmodule.c' l='413' u='c' c='profile_trampoline'/>
+<use f='codebrowser/Python/sysmodule.c' l='492' u='c' c='sys_setprofile'/>
+<use f='codebrowser/Python/sysmodule.c' l='494' u='c' c='sys_setprofile'/>

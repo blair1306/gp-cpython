@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/grammar.h' l='80' type='const char * PyGrammar_LabelRepr(label * lb)'/>
+<use f='codebrowser/Parser/firstsets.c' l='107' u='c' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='124' u='c' c='_Py_addlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='173' u='c' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='272' u='c' c='translabel'/>
+<def f='codebrowser/Parser/grammar1.c' l='33' ll='61' type='const char * PyGrammar_LabelRepr(label * lb)'/>
+<use f='codebrowser/Parser/parser.c' l='351' u='c' c='_Py_dumptree'/>
+<use f='codebrowser/Parser/pgen.c' l='334' u='c' c='dumpstate'/>
+<use f='codebrowser/Parser/pgen.c' l='535' u='c' c='printssdfa'/>

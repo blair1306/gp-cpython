@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/dictobject.h' l='98' type='PyDictKeysObject * _PyDict_NewKeysForClass()'/>
+<def f='codebrowser/Objects/dictobject.c' l='4176' ll='4185' type='PyDictKeysObject * _PyDict_NewKeysForClass()'/>
+<doc f='codebrowser/Objects/dictobject.c' l='4174'>/* Returns NULL if cannot allocate a new PyDictKeysObject,
+   but does not set an error */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='2752' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2891' u='c' c='PyType_FromSpecWithBases'/>

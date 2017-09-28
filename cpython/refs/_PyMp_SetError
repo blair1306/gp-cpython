@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_multiprocessing/multiprocessing.h' l='94' type='PyObject * _PyMp_SetError(PyObject * Type, int num)'/>
+<def f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='17' ll='50' type='PyObject * _PyMp_SetError(PyObject * Type, int num)'/>
+<doc f='codebrowser/Modules/_multiprocessing/multiprocessing.c' l='13'>/*
+ * Function which raises exceptions based on error codes
+ */</doc>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='466' u='c' c='semlock_new'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='532' u='c' c='semlock_getvalue'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='557' u='c' c='semlock_iszero'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='671' u='c' c='_PyMp_sem_unlink'/>

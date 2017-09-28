@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pyerrors.h' l='365' type='void PyErr_SyntaxLocation(const char * filename, int lineno)'/>
+<doc f='codebrowser/Include/pyerrors.h' l='364'>/* Support for adding program text to SyntaxErrors */</doc>
+<def f='codebrowser/Python/errors.c' l='1009' ll='1013' type='void PyErr_SyntaxLocation(const char * filename, int lineno)'/>

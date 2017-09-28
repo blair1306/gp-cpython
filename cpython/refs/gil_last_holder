@@ -1,0 +1,8 @@
+<def f='codebrowser/Python/ceval_gil.h' l='114' type='_Py_atomic_address'/>
+<use f='codebrowser/Python/ceval_gil.h' l='145' u='a' c='create_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='181' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='194' u='a' c='drop_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='242' u='a' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='243' u='a' c='take_gil'/>
+<doc f='codebrowser/Python/ceval_gil.h' l='112'>/* Last PyThreadState holding / having held the GIL. This helps us know
+   whether anyone else was scheduled after we dropped the GIL. */</doc>

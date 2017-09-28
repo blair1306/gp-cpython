@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2061' type='int _PyUnicode_EqualToASCIIId(PyObject * left, _Py_Identifier * right)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2057'>/* Test whether a unicode is equal to ASCII identifier.  Return 1 if true,
+   0 otherwise.  The right argument must be ASCII identifier.
+   Any error occurs inside will be cleared before return. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='3547' u='c' c='save_reduce'/>
+<use f='codebrowser/Modules/_pickle.c' l='3551' u='c' c='save_reduce'/>
+<use f='codebrowser/Objects/longobject.c' l='5220' u='c' c='int_to_bytes_impl'/>
+<use f='codebrowser/Objects/longobject.c' l='5222' u='c' c='int_to_bytes_impl'/>
+<use f='codebrowser/Objects/longobject.c' l='5280' u='c' c='int_from_bytes_impl'/>
+<use f='codebrowser/Objects/longobject.c' l='5282' u='c' c='int_from_bytes_impl'/>
+<use f='codebrowser/Objects/typeobject.c' l='892' u='c' c='type_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='2439' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2470' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2484' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2485' u='c' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='3630' u='c' c='object_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='7377' u='c' c='super_getattro'/>
+<use f='codebrowser/Objects/typeobject.c' l='7589' u='c' c='super_init'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='11118' ll='11160' type='int _PyUnicode_EqualToASCIIId(PyObject * left, _Py_Identifier * right)'/>
+<use f='codebrowser/Python/errors.c' l='969' u='c' c='PyErr_WriteUnraisable'/>
+<use f='codebrowser/Python/pythonrun.c' l='756' u='c' c='print_exception'/>

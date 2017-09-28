@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pytime.h' l='61' type='int _PyTime_ObjectToTimespec(PyObject * obj, time_t * sec, long * nsec, _PyTime_round_t )'/>
+<doc f='codebrowser/Include/pytime.h' l='58'>/* Convert a number of seconds, int or float, to a timespec structure.
+   nsec is in the range [0; 999999999] and rounded towards zero.
+   For example, -1.2 is converted to (-2, 800000000). */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3056' u='c' c='test_pytime_object_to_timespec'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4673' u='c' c='os_utime_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4675' u='c' c='os_utime_impl'/>
+<def f='codebrowser/Python/pytime.c' l='177' ll='185' type='int _PyTime_ObjectToTimespec(PyObject * obj, time_t * sec, long * nsec, _PyTime_round_t round)'/>

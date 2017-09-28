@@ -1,0 +1,17 @@
+<dec f='include/lzma/index.h' l='114' type='struct (anonymous struct at /usr/include/lzma/index.h:44:2)'/>
+<offset>0</offset>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='103' type='PyObject *'/>
+<dec f='codebrowser/Modules/cjkcodecs/multibytecodec.h' l='108' type='PyObject *'/>
+<offset>512</offset>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1276' u='r' c='mbstreamreader_iread'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1279' u='r' c='mbstreamreader_iread'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1511' u='w' c='mbstreamreader_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1542' u='r' c='mbstreamreader_traverse'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1542' u='r' c='mbstreamreader_traverse'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1551' u='r' c='mbstreamreader_dealloc'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1614' u='r' c='mbstreamwriter_iwrite'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1708' u='r' c='_multibytecodec_MultibyteStreamWriter_reset_impl'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1743' u='w' c='mbstreamwriter_new'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1774' u='r' c='mbstreamwriter_traverse'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1774' u='r' c='mbstreamwriter_traverse'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='1783' u='r' c='mbstreamwriter_dealloc'/>

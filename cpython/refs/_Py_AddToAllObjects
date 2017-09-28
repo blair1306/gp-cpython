@@ -1,0 +1,46 @@
+<dec f='codebrowser/Include/object.h' l='761' type='void _Py_AddToAllObjects(PyObject * , int force)'/>
+<def f='codebrowser/Objects/object.c' l='70' ll='87' type='void _Py_AddToAllObjects(PyObject * op, int force)'/>
+<use f='codebrowser/Objects/object.c' l='1833' u='c' c='_Py_NewReference'/>
+<doc f='codebrowser/Objects/object.c' l='59'>/* Insert op at the front of the list of all objects.  If force is true,
+ * op is added even if _ob_prev and _ob_next are non-NULL already.  If
+ * force is false amd _ob_prev or _ob_next are non-NULL, do nothing.
+ * force should be true if and only if op points to freshly allocated,
+ * uninitialized memory, or you&apos;ve unlinked op from the list and are
+ * relinking it into the front.
+ * Note that objects are normally added to the list via _Py_NewReference,
+ * which is called by PyObject_Init.  Not all objects are initialized that
+ * way, though; exceptions include statically allocated type objects, and
+ * statically allocated singletons (like Py_True and Py_None).
+ */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='5011' u='c' c='PyType_Ready'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>
+<use f='codebrowser/Python/bltinmodule.c' l='2700' u='c' c='_PyBuiltin_Init'/>

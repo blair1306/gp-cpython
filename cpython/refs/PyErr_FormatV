@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyerrors.h' l='264' type='PyObject * PyErr_FormatV(PyObject * exception, const char * format, struct __va_list_tag * vargs)'/>
+<use f='codebrowser/Python/errors.c' l='407' u='c' c='_PyErr_FormatVFromCause'/>
+<def f='codebrowser/Python/errors.c' l='802' ll='816' type='PyObject * PyErr_FormatV(PyObject * exception, const char * format, struct __va_list_tag * vargs)'/>
+<use f='codebrowser/Python/errors.c' l='828' u='c' c='PyErr_Format'/>

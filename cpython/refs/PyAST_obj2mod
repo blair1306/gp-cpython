@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/Python-ast.h' l='641' type='mod_ty PyAST_obj2mod(PyObject * ast, PyArena * arena, int mode)'/>
+<def f='codebrowser/Python/Python-ast.c' l='8128' ll='8156' type='mod_ty PyAST_obj2mod(PyObject * ast, PyArena * arena, int mode)'/>
+<doc f='codebrowser/Python/Python-ast.c' l='8127'>/* mode is 0 for &quot;exec&quot;, 1 for &quot;eval&quot; and 2 for &quot;single&quot; input */</doc>
+<use f='codebrowser/Python/bltinmodule.c' l='745' u='c' c='builtin_compile_impl'/>

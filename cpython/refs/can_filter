@@ -1,0 +1,17 @@
+<def f='include/linux/can.h' l='193' ll='196'/>
+<size>8</size>
+<doc f='include/linux/can.h' l='180'>/**
+ * struct can_filter - CAN ID based filter in can_register().
+ * @can_id:   relevant bits of CAN ID which are not masked out.
+ * @can_mask: CAN mask (see description)
+ *
+ * Description:
+ * A filter matches, when
+ *
+ *          &lt;received_can_id&gt; &amp; mask == can_id &amp; mask
+ *
+ * The filter can be inverted (CAN_INV_FILTER bit set in can_id) or it can
+ * filter for error message frames (CAN_ERR_FLAG bit set in mask).
+ */</doc>
+<mbr r='can_filter::can_id' o='0' t='canid_t'/>
+<mbr r='can_filter::can_mask' o='32' t='canid_t'/>

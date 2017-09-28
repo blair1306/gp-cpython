@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_cursesmodule.c' l='119' type='int setupterm(char * , int , int * )'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2534' u='c' c='PyCurses_setupterm'/>
+<doc f='codebrowser/Modules/_cursesmodule.c' l='115'>/*  These prototypes are in &lt;term.h&gt;, but including this header
+    #defines many common symbols (such as &quot;lines&quot;) which breaks the
+    curses module in other ways.  So the code will just specify
+    explicit prototypes here. */</doc>

@@ -1,0 +1,24 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='847' type='XML_Bool'/>
+<offset>32</offset>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='w' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='w' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='PyExpat_XML_ResumeParser'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='contentProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalEntityInitProcessor2'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalEntityInitProcessor2'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalEntityInitProcessor2'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalEntityInitProcessor3'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalEntityInitProcessor3'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalEntityContentProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='cdataSectionProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='ignoreSectionProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='entityValueInitProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='entityValueInitProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalParEntProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='externalParEntProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='entityValueProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='prologProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='epilogProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='epilogProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='internalEntityProcessor'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='724' u='r' c='internalEntityProcessor'/>

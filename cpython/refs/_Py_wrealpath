@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/fileutils.h' l='99' type='wchar_t * _Py_wrealpath(const wchar_t * path, wchar_t * resolved_path, size_t resolved_path_size)'/>
+<def f='codebrowser/Python/fileutils.c' l='1396' ll='1428' type='wchar_t * _Py_wrealpath(const wchar_t * path, wchar_t * resolved_path, size_t resolved_path_size)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1392'>/* Return the canonicalized absolute pathname. Encode path to the locale
+   encoding, decode the result from the locale encoding.
+   Return NULL on error. */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='2307' u='c' c='sys_update_path'/>

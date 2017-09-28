@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/cellobject.h' l='20' type='int PyCell_Set(PyObject * , PyObject * )'/>
+<def f='codebrowser/Objects/cellobject.c' l='31' ll='44' type='int PyCell_Set(PyObject * op, PyObject * obj)'/>
+<use f='codebrowser/Objects/frameobject.c' l='857' u='c' c='dict_to_map'/>
+<use f='codebrowser/Objects/typeobject.c' l='2739' u='c' c='type_new'/>
+<use f='codebrowser/Python/bltinmodule.c' l='191' u='c' c='builtin___build_class__'/>

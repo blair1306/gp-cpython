@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/dictobject.h' l='31' type='uint64_t'/>
+<offset>320</offset>
+<doc f='codebrowser/Include/dictobject.h' l='29'>/* Dictionary version: globally unique, value change each time
+       the dictionary is modified */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4152' u='r' c='dict_get_version'/>
+<use f='codebrowser/Objects/dictobject.c' l='593' u='w' c='new_dict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1006' u='w' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1027' u='w' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1448' u='w' c='delitem_common'/>
+<use f='codebrowser/Objects/dictobject.c' l='1585' u='w' c='PyDict_Clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='1719' u='w' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='2757' u='w' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2770' u='w' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2874' u='w' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='3086' u='w' c='dict_new'/>

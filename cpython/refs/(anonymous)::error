@@ -1,0 +1,25 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='268' type='PyObject *'/>
+<offset>64</offset>
+<dec f='codebrowser/Include/parsetok.h' l='11' type='int'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='6502' u='w' c='PyInit__socket'/>
+<use f='codebrowser/Parser/parsetok.c' l='59' u='w' c='PyParser_ParseStringObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='81' u='w' c='PyParser_ParseStringFlagsFilenameEx'/>
+<use f='codebrowser/Parser/parsetok.c' l='127' u='w' c='PyParser_ParseFileObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='149' u='w' c='PyParser_ParseFileFlagsEx'/>
+<use f='codebrowser/Parser/parsetok.c' l='192' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='210' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='231' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='243' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='251' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='262' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='266' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='274' u='r' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='295' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='318' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='340' u='w' c='parsetok'/>
+<use f='codebrowser/Parser/parsetok.c' l='363' u='w' c='initerr'/>
+<use f='codebrowser/Parser/parsetok.c' l='377' u='w' c='initerr'/>
+<use f='codebrowser/Python/pythonrun.c' l='1177' u='r' c='PyParser_ASTFromFileObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1282' u='r' c='err_input'/>
+<use f='codebrowser/Python/pythonrun.c' l='1354' u='r' c='err_input'/>

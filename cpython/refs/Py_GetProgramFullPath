@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='66' type='wchar_t * Py_GetProgramFullPath()'/>
+<doc f='codebrowser/Include/pylifecycle.h' l='65'>/* In getpath.c */</doc>
+<def f='codebrowser/Modules/getpath.c' l='868' ll='874' type='wchar_t * Py_GetProgramFullPath()'/>
+<use f='codebrowser/Python/sysmodule.c' l='2125' u='c' c='_PySys_EndInit'/>

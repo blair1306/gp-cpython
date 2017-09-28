@@ -1,0 +1,3 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='437' type='void mpd_qset_i32(mpd_t * result, int32_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1151' ll='1156' type='void mpd_qset_i32(mpd_t * result, int32_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1150'>/* quietly set a decimal from an int32_t */</doc>

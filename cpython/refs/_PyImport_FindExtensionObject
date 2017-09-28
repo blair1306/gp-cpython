@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/import.h' l='102' type='PyObject * _PyImport_FindExtensionObject(PyObject * , PyObject * )'/>
+<def f='codebrowser/Python/import.c' l='590' ll='639' type='PyObject * _PyImport_FindExtensionObject(PyObject * name, PyObject * filename)'/>
+<use f='codebrowser/Python/import.c' l='648' u='c' c='_PyImport_FindBuiltin'/>
+<use f='codebrowser/Python/import.c' l='1045' u='c' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/import.c' l='1961' u='c' c='_imp_create_dynamic_impl'/>

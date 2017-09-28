@@ -1,0 +1,27 @@
+<dec f='codebrowser/Include/longobject.h' l='27' type='unsigned long PyLong_AsUnsignedLong(PyObject * )'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='160' u='c' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='160' u='c' c='py_blake2s_new_impl'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='647' u='c' c='ConvParam'/>
+<use f='codebrowser/Modules/_randommodule.c' l='365' u='c' c='random_setstate'/>
+<use f='codebrowser/Modules/_sre.c' l='1394' u='c' c='_sre_compile_impl'/>
+<use f='codebrowser/Modules/_stat.c' l='253' u='c' c='_PyLong_AsMode_t'/>
+<use f='codebrowser/Modules/_struct.c' l='166' u='c' c='get_ulong'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='49' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='118' macro='1' u='c'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='194' macro='1' u='c'/>
+<use f='codebrowser/Modules/arraymodule.c' l='359' u='c' c='II_setitem'/>
+<use f='codebrowser/Modules/arraymodule.c' l='419' u='c' c='LL_setitem'/>
+<use f='codebrowser/Modules/posixmodule.c' l='586' u='c' c='_Py_Uid_Converter'/>
+<use f='codebrowser/Modules/posixmodule.c' l='693' u='c' c='_Py_Gid_Converter'/>
+<use f='codebrowser/Modules/selectmodule.c' l='382' u='c' c='ushort_converter'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5577' u='c' c='socket_ntohl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5648' u='c' c='socket_htonl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6228' u='c' c='socket_if_indextoname'/>
+<def f='codebrowser/Objects/longobject.c' l='571' ll='610' type='unsigned long PyLong_AsUnsignedLong(PyObject * vv)'/>
+<use f='codebrowser/Objects/longobject.c' l='1045' u='c' c='PyLong_AsVoidPtr'/>
+<doc f='codebrowser/Objects/longobject.c' l='568'>/* Get a C unsigned long int from an int object.
+   Returns -1 and sets an error condition if overflow occurs. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1567' u='c' c='pylong_as_lu'/>
+<use f='codebrowser/Python/structmember.c' l='187' u='c' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='211' u='c' c='PyMember_SetOne'/>

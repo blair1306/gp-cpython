@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>osdefs.h source code [codebrowser/Include/osdefs.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Include/osdefs.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Include</a>/<a href='osdefs.h.html'>osdefs.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_OSDEFS_H">Py_OSDEFS_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_OSDEFS_H" data-ref="_M/Py_OSDEFS_H">Py_OSDEFS_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td><u>#<span data-ppcond="3">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="4">4</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="5">5</th><td><u>#<span data-ppcond="3">endif</span></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* Operating system dependencies */</i></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#<span data-ppcond="10">ifdef</span> <span class="macro" data-ref="_M/MS_WINDOWS">MS_WINDOWS</span></u></td></tr>
+<tr><th id="11">11</th><td><u>#define SEP L'\\'</u></td></tr>
+<tr><th id="12">12</th><td><u>#define ALTSEP L'/'</u></td></tr>
+<tr><th id="13">13</th><td><u>#define MAXPATHLEN 256</u></td></tr>
+<tr><th id="14">14</th><td><u>#define DELIM L';'</u></td></tr>
+<tr><th id="15">15</th><td><u>#<span data-ppcond="10">endif</span></u></td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><i>/* Filename separator */</i></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="18">ifndef</span> <span class="macro" data-ref="_M/SEP">SEP</span></u></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/SEP" data-ref="_M/SEP">SEP</dfn> L'/'</u></td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="18">endif</span></u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><i>/* Max pathname length */</i></td></tr>
+<tr><th id="23">23</th><td><u>#<span data-ppcond="23">ifdef</span> <span class="macro" data-ref="_M/__hpux">__hpux</span></u></td></tr>
+<tr><th id="24">24</th><td><u>#include &lt;sys/param.h&gt;</u></td></tr>
+<tr><th id="25">25</th><td><u>#include &lt;limits.h&gt;</u></td></tr>
+<tr><th id="26">26</th><td><u>#ifndef PATH_MAX</u></td></tr>
+<tr><th id="27">27</th><td><u>#define PATH_MAX MAXPATHLEN</u></td></tr>
+<tr><th id="28">28</th><td><u>#endif</u></td></tr>
+<tr><th id="29">29</th><td><u>#<span data-ppcond="23">endif</span></u></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="31">ifndef</span> <span class="macro" data-ref="_M/MAXPATHLEN">MAXPATHLEN</span></u></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">if</span> defined(<a class="macro" href="../../include/linux/limits.h.html#12" data-ref="_M/PATH_MAX">PATH_MAX</a>) &amp;&amp; <a class="macro" href="../../include/linux/limits.h.html#12" title="4096" data-ref="_M/PATH_MAX">PATH_MAX</a> &gt; 1024</u></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/MAXPATHLEN" data-ref="_M/MAXPATHLEN">MAXPATHLEN</dfn> PATH_MAX</u></td></tr>
+<tr><th id="34">34</th><td><u>#<span data-ppcond="32">else</span></u></td></tr>
+<tr><th id="35">35</th><td><u>#define MAXPATHLEN 1024</u></td></tr>
+<tr><th id="36">36</th><td><u>#<span data-ppcond="32">endif</span></u></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="31">endif</span></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>/* Search path entry delimiter */</i></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifndef</span> <span class="macro" data-ref="_M/DELIM">DELIM</span></u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/DELIM" data-ref="_M/DELIM">DELIM</dfn> L':'</u></td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="40">endif</span></u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><u>#<span data-ppcond="44">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="45">45</th><td>}</td></tr>
+<tr><th id="46">46</th><td><u>#<span data-ppcond="44">endif</span></u></td></tr>
+<tr><th id="47">47</th><td><u>#<span data-ppcond="1">endif</span> /* !Py_OSDEFS_H */</u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../Modules/_tracemalloc.c.html'>codebrowser/Modules/_tracemalloc.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

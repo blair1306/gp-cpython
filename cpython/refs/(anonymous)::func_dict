@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/funcobject.h' l='30' type='PyObject *'/>
+<offset>704</offset>
+<doc f='codebrowser/Include/funcobject.h' l='30'>/* The __dict__ attribute, a dict or NULL */</doc>
+<use f='codebrowser/Objects/funcobject.c' l='47' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='537' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='561' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='561' u='r' c='func_traverse'/>

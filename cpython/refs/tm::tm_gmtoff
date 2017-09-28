@@ -1,0 +1,6 @@
+<dec f='include/time.h' l='146' type='long'/>
+<offset>320</offset>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5094' u='r' c='local_timezone_from_timestamp'/>
+<use f='codebrowser/Modules/timemodule.c' l='303' u='r' c='tmtotuple'/>
+<use f='codebrowser/Modules/timemodule.c' l='445' u='w' c='gettmarg'/>
+<use f='codebrowser/Modules/timemodule.c' l='1190' u='r' c='get_gmtoff'/>

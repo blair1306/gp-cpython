@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/sysmodule.h' l='37' type='size_t _PySys_GetSizeOf(PyObject * )'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='946' u='c' c='bytesio_sizeof'/>
+<use f='codebrowser/Modules/_pickle.c' l='4075' u='c' c='_pickle_Pickler___sizeof___impl'/>
+<def f='codebrowser/Python/sysmodule.c' l='1068' ll='1108' type='size_t _PySys_GetSizeOf(PyObject * o)'/>
+<use f='codebrowser/Python/sysmodule.c' l='1121' u='c' c='sys_getsizeof'/>

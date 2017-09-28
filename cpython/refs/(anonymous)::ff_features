@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/compile.h' l='35' type='int'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/compile.h' l='35'>/* flags set by future statements */</doc>
+<use f='codebrowser/Python/compile.c' l='327' u='r' c='PyAST_CompileObject'/>
+<use f='codebrowser/Python/compile.c' l='328' u='w' c='PyAST_CompileObject'/>
+<use f='codebrowser/Python/future.c' l='42' u='w' c='future_check_features'/>
+<use f='codebrowser/Python/future.c' l='44' u='w' c='future_check_features'/>
+<use f='codebrowser/Python/future.c' l='128' u='w' c='PyFuture_FromASTObject'/>

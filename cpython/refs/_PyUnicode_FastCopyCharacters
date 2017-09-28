@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='646' type='void _PyUnicode_FastCopyCharacters(PyObject * to, Py_ssize_t to_start, PyObject * from, Py_ssize_t from_start, Py_ssize_t how_many)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='643'>/* Unsafe version of PyUnicode_CopyCharacters(): don&apos;t check arguments and so
+   may crash if parameters are invalid (e.g. if the output string
+   is too short). */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='1055' u='c' c='resize_copy'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='1542' ll='1548' type='void _PyUnicode_FastCopyCharacters(PyObject * to, Py_ssize_t to_start, PyObject * from, Py_ssize_t from_start, Py_ssize_t how_many)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2364' u='c' c='unicode_adjust_maxchar'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2557' u='c' c='unicode_fromformat_write_str'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9641' u='c' c='fixup'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9647' u='c' c='fixup'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10061' u='c' c='_PyUnicode_JoinArray'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10067' u='c' c='_PyUnicode_JoinArray'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10193' u='c' c='pad'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10536' u='c' c='replace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11338' u='c' c='PyUnicode_Concat'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11339' u='c' c='PyUnicode_Concat'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11402' u='c' c='PyUnicode_Append'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11413' u='c' c='PyUnicode_Append'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11414' u='c' c='PyUnicode_Append'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12714' u='c' c='unicode_repr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13581' u='c' c='_PyUnicodeWriter_PrepareInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13598' u='c' c='_PyUnicodeWriter_PrepareInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13672' u='c' c='_PyUnicodeWriter_WriteStr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13707' u='c' c='_PyUnicodeWriter_WriteSubstring'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14891' u='c' c='unicode_format_arg_output'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='615' u='c' c='fill_number'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='675' u='c' c='fill_number'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='683' u='c' c='fill_number'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='831' u='c' c='format_string_internal'/>

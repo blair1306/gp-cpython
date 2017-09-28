@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/descrobject.h' l='75' type='PyTypeObject'/>
+<def f='codebrowser/Objects/descrobject.c' l='557' ll='592' type='PyTypeObject'/>
+<use f='codebrowser/Objects/descrobject.c' l='743' u='a' c='PyDescr_NewClassMethod'/>
+<doc f='codebrowser/Objects/descrobject.c' l='556'>/* This is for METH_CLASS in C, not for &quot;f = classmethod(f)&quot; in Python! */</doc>
+<use f='codebrowser/Objects/object.c' l='1806' u='a' c='_Py_ReadyTypes'/>

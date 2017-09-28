@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/pyarena.h' l='37' type='void PyArena_Free(PyArena * )'/>
+<use f='codebrowser/Modules/parsermodule.c' l='522' u='c' c='parser_compilest'/>
+<use f='codebrowser/Python/bltinmodule.c' l='747' u='c' c='builtin_compile_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='751' u='c' c='builtin_compile_impl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='756' u='c' c='builtin_compile_impl'/>
+<use f='codebrowser/Python/compile.c' l='375' u='c' c='PyNode_Compile'/>
+<def f='codebrowser/Python/pyarena.c' l='156' ll='177' type='void PyArena_Free(PyArena * arena)'/>
+<use f='codebrowser/Python/pythonrun.c' l='221' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='231' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='236' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='907' u='c' c='PyRun_StringFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='940' u='c' c='PyRun_FileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='1036' u='c' c='Py_CompileStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1041' u='c' c='Py_CompileStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1045' u='c' c='Py_CompileStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1085' u='c' c='Py_SymtableStringObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1089' u='c' c='Py_SymtableStringObject'/>

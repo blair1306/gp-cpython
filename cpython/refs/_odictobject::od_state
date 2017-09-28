@@ -1,0 +1,8 @@
+<dec f='codebrowser/Objects/odictobject.c' l='499' type='size_t'/>
+<use f='codebrowser/Objects/odictobject.c' l='655' u='w' c='_odict_add_head'/>
+<use f='codebrowser/Objects/odictobject.c' l='668' u='w' c='_odict_add_tail'/>
+<use f='codebrowser/Objects/odictobject.c' l='730' u='w' c='_odict_remove_node'/>
+<use f='codebrowser/Objects/odictobject.c' l='1815' u='r' c='odictiter_nextkey'/>
+<use f='codebrowser/Objects/odictobject.c' l='2019' u='r' c='odictiter_new'/>
+<offset>832</offset>
+<doc f='codebrowser/Objects/odictobject.c' l='499'>/* incremented whenever the LL changes */</doc>

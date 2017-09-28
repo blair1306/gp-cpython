@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>rotatingtree.c source code [codebrowser/Modules/rotatingtree.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/rotatingtree.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='rotatingtree.c.html'>rotatingtree.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="rotatingtree.h.html">"rotatingtree.h"</a></u></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#define <dfn class="macro" id="_M/KEY_LOWER_THAN" data-ref="_M/KEY_LOWER_THAN">KEY_LOWER_THAN</dfn>(key1, key2)  ((char*)(key1) &lt; (char*)(key2))</u></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><i  data-doc="random_value">/* The randombits() function below is a fast-and-dirty generator that</i></td></tr>
+<tr><th id="6">6</th><td><i  data-doc="random_value"> * is probably irregular enough for our purposes.  Note that it's biased:</i></td></tr>
+<tr><th id="7">7</th><td><i  data-doc="random_value"> * I think that ones are slightly more probable than zeroes.  It's not</i></td></tr>
+<tr><th id="8">8</th><td><i  data-doc="random_value"> * important here, though.</i></td></tr>
+<tr><th id="9">9</th><td><i  data-doc="random_value"> */</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><em>static</em> <em>unsigned</em> <em>int</em> <dfn class="tu decl def" id="random_value" title='random_value' data-type='unsigned int' data-ref="random_value">random_value</dfn> = <var>1</var>;</td></tr>
+<tr><th id="12">12</th><td><em>static</em> <em>unsigned</em> <em>int</em> <dfn class="tu decl def" id="random_stream" title='random_stream' data-type='unsigned int' data-ref="random_stream">random_stream</dfn> = <var>0</var>;</td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="15">15</th><td><dfn class="tu decl def" id="randombits" title='randombits' data-type='int randombits(int bits)' data-ref="randombits">randombits</dfn>(<em>int</em> <dfn class="local col1 decl" id="1bits" title='bits' data-type='int' data-ref="1bits">bits</dfn>)</td></tr>
+<tr><th id="16">16</th><td>{</td></tr>
+<tr><th id="17">17</th><td>    <em>int</em> <dfn class="local col2 decl" id="2result" title='result' data-type='int' data-ref="2result">result</dfn>;</td></tr>
+<tr><th id="18">18</th><td>    <b>if</b> (<a class="tu ref" href="#random_stream" title='random_stream' data-use='r' data-ref="random_stream">random_stream</a> &lt; (<var>1U</var> &lt;&lt; <a class="local col1 ref" href="#1bits" title='bits' data-ref="1bits">bits</a>)) {</td></tr>
+<tr><th id="19">19</th><td>        <a class="tu ref" href="#random_value" title='random_value' data-use='w' data-ref="random_value">random_value</a> *= <var>1082527</var>;</td></tr>
+<tr><th id="20">20</th><td>        <a class="tu ref" href="#random_stream" title='random_stream' data-use='w' data-ref="random_stream">random_stream</a> = <a class="tu ref" href="#random_value" title='random_value' data-use='r' data-ref="random_value">random_value</a>;</td></tr>
+<tr><th id="21">21</th><td>    }</td></tr>
+<tr><th id="22">22</th><td>    <a class="local col2 ref" href="#2result" title='result' data-ref="2result">result</a> = <a class="tu ref" href="#random_stream" title='random_stream' data-use='r' data-ref="random_stream">random_stream</a> &amp; ((<var>1</var>&lt;&lt;<a class="local col1 ref" href="#1bits" title='bits' data-ref="1bits">bits</a>)-<var>1</var>);</td></tr>
+<tr><th id="23">23</th><td>    <a class="tu ref" href="#random_stream" title='random_stream' data-use='w' data-ref="random_stream">random_stream</a> &gt;&gt;= <a class="local col1 ref" href="#1bits" title='bits' data-ref="1bits">bits</a>;</td></tr>
+<tr><th id="24">24</th><td>    <b>return</b> <a class="local col2 ref" href="#2result" title='result' data-ref="2result">result</a>;</td></tr>
+<tr><th id="25">25</th><td>}</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><i>/* Insert a new node into the tree.</i></td></tr>
+<tr><th id="29">29</th><td><i>   (*root) is modified to point to the new root. */</i></td></tr>
+<tr><th id="30">30</th><td><em>void</em></td></tr>
+<tr><th id="31">31</th><td><dfn class="decl def" id="RotatingTree_Add" title='RotatingTree_Add' data-ref="RotatingTree_Add">RotatingTree_Add</dfn>(<a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> **<dfn class="local col3 decl" id="3root" title='root' data-type='rotating_node_t **' data-ref="3root">root</dfn>, <a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col4 decl" id="4node" title='node' data-type='rotating_node_t *' data-ref="4node">node</dfn>)</td></tr>
+<tr><th id="32">32</th><td>{</td></tr>
+<tr><th id="33">33</th><td>    <b>while</b> (*<a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="34">34</th><td>        <b>if</b> (<a class="macro" href="#3" title="((char*)(node-&gt;key) &lt; (char*)((*root)-&gt;key))" data-ref="_M/KEY_LOWER_THAN">KEY_LOWER_THAN</a>(<a class="local col4 ref" href="#4node" title='node' data-ref="4node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</a>, (*<a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a>)-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</a>))</td></tr>
+<tr><th id="35">35</th><td>            <a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a> = &amp;((*<a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a>)-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a>);</td></tr>
+<tr><th id="36">36</th><td>        <b>else</b></td></tr>
+<tr><th id="37">37</th><td>            <a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a> = &amp;((*<a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a>)-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a>);</td></tr>
+<tr><th id="38">38</th><td>    }</td></tr>
+<tr><th id="39">39</th><td>    <a class="local col4 ref" href="#4node" title='node' data-ref="4node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="40">40</th><td>    <a class="local col4 ref" href="#4node" title='node' data-ref="4node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="41">41</th><td>    *<a class="local col3 ref" href="#3root" title='root' data-ref="3root">root</a> = <a class="local col4 ref" href="#4node" title='node' data-ref="4node">node</a>;</td></tr>
+<tr><th id="42">42</th><td>}</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i>/* Locate the node with the given key.  This is the most complicated</i></td></tr>
+<tr><th id="45">45</th><td><i>   function because it occasionally rebalances the tree to move the</i></td></tr>
+<tr><th id="46">46</th><td><i>   resulting node closer to the root. */</i></td></tr>
+<tr><th id="47">47</th><td><a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *</td></tr>
+<tr><th id="48">48</th><td><dfn class="decl def" id="RotatingTree_Get" title='RotatingTree_Get' data-ref="RotatingTree_Get">RotatingTree_Get</dfn>(<a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> **<dfn class="local col5 decl" id="5root" title='root' data-type='rotating_node_t **' data-ref="5root">root</dfn>, <em>void</em> *<dfn class="local col6 decl" id="6key" title='key' data-type='void *' data-ref="6key">key</dfn>)</td></tr>
+<tr><th id="49">49</th><td>{</td></tr>
+<tr><th id="50">50</th><td>    <b>if</b> (<a class="tu ref" href="#randombits" title='randombits' data-use='c' data-ref="randombits">randombits</a>(<var>3</var>) != <var>4</var>) {</td></tr>
+<tr><th id="51">51</th><td>        <i>/* Fast path, no rebalancing */</i></td></tr>
+<tr><th id="52">52</th><td>        <a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col7 decl" id="7node" title='node' data-type='rotating_node_t *' data-ref="7node">node</dfn> = *<a class="local col5 ref" href="#5root" title='root' data-ref="5root">root</a>;</td></tr>
+<tr><th id="53">53</th><td>        <b>while</b> (<a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="54">54</th><td>            <b>if</b> (<a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</a> == <a class="local col6 ref" href="#6key" title='key' data-ref="6key">key</a>)</td></tr>
+<tr><th id="55">55</th><td>                <b>return</b> <a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a>;</td></tr>
+<tr><th id="56">56</th><td>            <b>if</b> (<a class="macro" href="#3" title="((char*)(key) &lt; (char*)(node-&gt;key))" data-ref="_M/KEY_LOWER_THAN">KEY_LOWER_THAN</a>(<a class="local col6 ref" href="#6key" title='key' data-ref="6key">key</a>, <a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</a>))</td></tr>
+<tr><th id="57">57</th><td>                <a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a> = <a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a>;</td></tr>
+<tr><th id="58">58</th><td>            <b>else</b></td></tr>
+<tr><th id="59">59</th><td>                <a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a> = <a class="local col7 ref" href="#7node" title='node' data-ref="7node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a>;</td></tr>
+<tr><th id="60">60</th><td>        }</td></tr>
+<tr><th id="61">61</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="62">62</th><td>    }</td></tr>
+<tr><th id="63">63</th><td>    <b>else</b> {</td></tr>
+<tr><th id="64">64</th><td>        <a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> **<dfn class="local col8 decl" id="8pnode" title='pnode' data-type='rotating_node_t **' data-ref="8pnode">pnode</dfn> = <a class="local col5 ref" href="#5root" title='root' data-ref="5root">root</a>;</td></tr>
+<tr><th id="65">65</th><td>        <a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col9 decl" id="9node" title='node' data-type='rotating_node_t *' data-ref="9node">node</dfn> = *<a class="local col8 ref" href="#8pnode" title='pnode' data-ref="8pnode">pnode</a>;</td></tr>
+<tr><th id="66">66</th><td>        <a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col0 decl" id="10next" title='next' data-type='rotating_node_t *' data-ref="10next">next</dfn>;</td></tr>
+<tr><th id="67">67</th><td>        <em>int</em> <dfn class="local col1 decl" id="11rotate" title='rotate' data-type='int' data-ref="11rotate">rotate</dfn>;</td></tr>
+<tr><th id="68">68</th><td>        <b>if</b> (<a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="69">69</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="70">70</th><td>        <b>while</b> (<var>1</var>) {</td></tr>
+<tr><th id="71">71</th><td>            <b>if</b> (<a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</a> == <a class="local col6 ref" href="#6key" title='key' data-ref="6key">key</a>)</td></tr>
+<tr><th id="72">72</th><td>                <b>return</b> <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>;</td></tr>
+<tr><th id="73">73</th><td>            <a class="local col1 ref" href="#11rotate" title='rotate' data-ref="11rotate">rotate</a> = !<a class="tu ref" href="#randombits" title='randombits' data-use='c' data-ref="randombits">randombits</a>(<var>1</var>);</td></tr>
+<tr><th id="74">74</th><td>            <b>if</b> (<a class="macro" href="#3" title="((char*)(key) &lt; (char*)(node-&gt;key))" data-ref="_M/KEY_LOWER_THAN">KEY_LOWER_THAN</a>(<a class="local col6 ref" href="#6key" title='key' data-ref="6key">key</a>, <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</a>)) {</td></tr>
+<tr><th id="75">75</th><td>                <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a> = <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a>;</td></tr>
+<tr><th id="76">76</th><td>                <b>if</b> (<a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="77">77</th><td>                    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="78">78</th><td>                <b>if</b> (<a class="local col1 ref" href="#11rotate" title='rotate' data-ref="11rotate">rotate</a>) {</td></tr>
+<tr><th id="79">79</th><td>                    <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a> = <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a>;</td></tr>
+<tr><th id="80">80</th><td>                    <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a> = <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>;</td></tr>
+<tr><th id="81">81</th><td>                    *<a class="local col8 ref" href="#8pnode" title='pnode' data-ref="8pnode">pnode</a> = <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>;</td></tr>
+<tr><th id="82">82</th><td>                }</td></tr>
+<tr><th id="83">83</th><td>                <b>else</b></td></tr>
+<tr><th id="84">84</th><td>                    <a class="local col8 ref" href="#8pnode" title='pnode' data-ref="8pnode">pnode</a> = &amp;(<a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a>);</td></tr>
+<tr><th id="85">85</th><td>            }</td></tr>
+<tr><th id="86">86</th><td>            <b>else</b> {</td></tr>
+<tr><th id="87">87</th><td>                <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a> = <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a>;</td></tr>
+<tr><th id="88">88</th><td>                <b>if</b> (<a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="89">89</th><td>                    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="90">90</th><td>                <b>if</b> (<a class="local col1 ref" href="#11rotate" title='rotate' data-ref="11rotate">rotate</a>) {</td></tr>
+<tr><th id="91">91</th><td>                    <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a> = <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a>;</td></tr>
+<tr><th id="92">92</th><td>                    <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a> = <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>;</td></tr>
+<tr><th id="93">93</th><td>                    *<a class="local col8 ref" href="#8pnode" title='pnode' data-ref="8pnode">pnode</a> = <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>;</td></tr>
+<tr><th id="94">94</th><td>                }</td></tr>
+<tr><th id="95">95</th><td>                <b>else</b></td></tr>
+<tr><th id="96">96</th><td>                    <a class="local col8 ref" href="#8pnode" title='pnode' data-ref="8pnode">pnode</a> = &amp;(<a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a>);</td></tr>
+<tr><th id="97">97</th><td>            }</td></tr>
+<tr><th id="98">98</th><td>            <a class="local col9 ref" href="#9node" title='node' data-ref="9node">node</a> = <a class="local col0 ref" href="#10next" title='next' data-ref="10next">next</a>;</td></tr>
+<tr><th id="99">99</th><td>        }</td></tr>
+<tr><th id="100">100</th><td>    }</td></tr>
+<tr><th id="101">101</th><td>}</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>/* Enumerate all nodes in the tree.  The callback enumfn() should return</i></td></tr>
+<tr><th id="104">104</th><td><i>   zero to continue the enumeration, or non-zero to interrupt it.</i></td></tr>
+<tr><th id="105">105</th><td><i>   A non-zero value is directly returned by RotatingTree_Enum(). */</i></td></tr>
+<tr><th id="106">106</th><td><em>int</em></td></tr>
+<tr><th id="107">107</th><td><dfn class="decl def" id="RotatingTree_Enum" title='RotatingTree_Enum' data-ref="RotatingTree_Enum">RotatingTree_Enum</dfn>(<a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col2 decl" id="12root" title='root' data-type='rotating_node_t *' data-ref="12root">root</dfn>, <a class="typedef" href="rotatingtree.h.html#rotating_tree_enum_fn" title='rotating_tree_enum_fn' data-type='int (*)(rotating_node_t *, void *)' data-ref="rotating_tree_enum_fn">rotating_tree_enum_fn</a> <dfn class="local col3 decl" id="13enumfn" title='enumfn' data-type='rotating_tree_enum_fn' data-ref="13enumfn">enumfn</dfn>,</td></tr>
+<tr><th id="108">108</th><td>                  <em>void</em> *<dfn class="local col4 decl" id="14arg" title='arg' data-type='void *' data-ref="14arg">arg</dfn>)</td></tr>
+<tr><th id="109">109</th><td>{</td></tr>
+<tr><th id="110">110</th><td>    <em>int</em> <dfn class="local col5 decl" id="15result" title='result' data-type='int' data-ref="15result">result</dfn>;</td></tr>
+<tr><th id="111">111</th><td>    <a class="typedef" href="rotatingtree.h.html#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col6 decl" id="16node" title='node' data-type='rotating_node_t *' data-ref="16node">node</dfn>;</td></tr>
+<tr><th id="112">112</th><td>    <b>while</b> (<a class="local col2 ref" href="#12root" title='root' data-ref="12root">root</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="113">113</th><td>        <a class="local col5 ref" href="#15result" title='result' data-ref="15result">result</a> = <a class="ref" href="#RotatingTree_Enum" title='RotatingTree_Enum' data-ref="RotatingTree_Enum">RotatingTree_Enum</a>(<a class="local col2 ref" href="#12root" title='root' data-ref="12root">root</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</a>, <a class="local col3 ref" href="#13enumfn" title='enumfn' data-ref="13enumfn">enumfn</a>, <a class="local col4 ref" href="#14arg" title='arg' data-ref="14arg">arg</a>);</td></tr>
+<tr><th id="114">114</th><td>        <b>if</b> (<a class="local col5 ref" href="#15result" title='result' data-ref="15result">result</a> != <var>0</var>) <b>return</b> <a class="local col5 ref" href="#15result" title='result' data-ref="15result">result</a>;</td></tr>
+<tr><th id="115">115</th><td>        <a class="local col6 ref" href="#16node" title='node' data-ref="16node">node</a> = <a class="local col2 ref" href="#12root" title='root' data-ref="12root">root</a>-&gt;<a class="ref" href="rotatingtree.h.html#rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</a>;</td></tr>
+<tr><th id="116">116</th><td>        <a class="local col5 ref" href="#15result" title='result' data-ref="15result">result</a> = <a class="local col3 ref" href="#13enumfn" title='enumfn' data-ref="13enumfn">enumfn</a>(<a class="local col2 ref" href="#12root" title='root' data-ref="12root">root</a>, <a class="local col4 ref" href="#14arg" title='arg' data-ref="14arg">arg</a>);</td></tr>
+<tr><th id="117">117</th><td>        <b>if</b> (<a class="local col5 ref" href="#15result" title='result' data-ref="15result">result</a> != <var>0</var>) <b>return</b> <a class="local col5 ref" href="#15result" title='result' data-ref="15result">result</a>;</td></tr>
+<tr><th id="118">118</th><td>        <a class="local col2 ref" href="#12root" title='root' data-ref="12root">root</a> = <a class="local col6 ref" href="#16node" title='node' data-ref="16node">node</a>;</td></tr>
+<tr><th id="119">119</th><td>    }</td></tr>
+<tr><th id="120">120</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="121">121</th><td>}</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

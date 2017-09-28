@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/pyerrors.h' l='230' type='PyObject *'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='275' u='r' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ssl.c' l='1076' u='r' c='_get_peer_alt_names'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3475' u='r' c='sock_recvmsg_guts'/>
+<def f='codebrowser/Objects/exceptions.c' l='2373' macro='1' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2551' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2628' macro='1' u='r'/>
+<use f='codebrowser/Objects/genobject.c' l='68' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/moduleobject.c' l='122' u='r' c='check_api_version'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3623' u='r' c='PyUnicode_AsEncodedString'/>
+<use f='codebrowser/Python/_warnings.c' l='930' u='r' c='warn_unicode'/>
+<use f='codebrowser/Python/_warnings.c' l='1024' u='r' c='PyErr_WarnExplicitObject'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='96' u='r' c='PyMember_SetOne'/>

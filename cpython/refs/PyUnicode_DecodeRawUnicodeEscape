@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1531' type='PyObject * PyUnicode_DecodeRawUnicodeEscape(const char * string, Py_ssize_t length, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1529'>/* --- Raw-Unicode-Escape Codecs ------------------------------------------ */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='548' u='c' c='_codecs_raw_unicode_escape_decode_impl'/>
+<use f='codebrowser/Modules/_pickle.c' l='4994' u='c' c='load_unicode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='6284' ll='6402' type='PyObject * PyUnicode_DecodeRawUnicodeEscape(const char * s, Py_ssize_t size, const char * errors)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='6282'>/* --- Raw Unicode Escape Codec ------------------------------------------- */</doc>

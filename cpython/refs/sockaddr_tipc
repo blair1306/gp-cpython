@@ -1,0 +1,6 @@
+<def f='include/linux/tipc.h' l='178' ll='190'/>
+<size>16</size>
+<mbr r='sockaddr_tipc::family' o='0' t='unsigned short'/>
+<mbr r='sockaddr_tipc::addrtype' o='16' t='unsigned char'/>
+<mbr r='sockaddr_tipc::scope' o='24' t='signed char'/>
+<mbr r='sockaddr_tipc::addr' o='32' t='union (anonymous union at /usr/include/linux/tipc.h:182:2)'/>

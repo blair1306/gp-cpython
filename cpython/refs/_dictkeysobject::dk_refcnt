@@ -1,0 +1,25 @@
+<dec f='codebrowser/Objects/dict-common.h' l='23' type='Py_ssize_t'/>
+<use f='codebrowser/Objects/dictobject.c' l='458' u='r' c='_PyDict_CheckConsistency'/>
+<use f='codebrowser/Objects/dictobject.c' l='541' u='w' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='new_dict'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='new_dict_with_shared_keys'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1142' u='r' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1172' u='r' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='305' u='w' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='305' u='w' c='PyDict_Clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='PyDict_Clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='1595' u='r' c='PyDict_Clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='PyDict_Clear'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='dict_dealloc'/>
+<use f='codebrowser/Objects/dictobject.c' l='1864' u='r' c='dict_dealloc'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='dict_dealloc'/>
+<use f='codebrowser/Objects/dictobject.c' l='305' u='w' c='PyDict_Copy'/>
+<use f='codebrowser/Objects/dictobject.c' l='2932' u='r' c='_PyDict_SizeOf'/>
+<use f='codebrowser/Objects/dictobject.c' l='305' u='w' c='PyObject_GenericGetDict'/>
+<use f='codebrowser/Objects/dictobject.c' l='305' u='w' c='_PyObjectDict_SetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='_PyObjectDict_SetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='4261' u='r' c='_PyObjectDict_SetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='_PyObjectDict_SetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='306' u='w' c='_PyDictKeys_DecRef'/>
+<offset>0</offset>

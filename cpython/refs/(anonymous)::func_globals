@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/funcobject.h' l='24' type='PyObject *'/>
+<offset>320</offset>
+<doc f='codebrowser/Include/funcobject.h' l='24'>/* A dictionary (other mappings won&apos;t do) */</doc>
+<use f='codebrowser/Objects/call.c' l='302' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='389' macro='1' u='r'/>
+<use f='codebrowser/Objects/funcobject.c' l='29' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='91' u='r' c='PyFunction_GetGlobals'/>
+<use f='codebrowser/Objects/funcobject.c' l='531' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='555' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='555' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/bltinmodule.c' l='160' macro='1' u='r'/>

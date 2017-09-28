@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='209' type='void _PyState_ClearModules()'/>
+<use f='codebrowser/Python/import.c' l='417' u='c' c='PyImport_Cleanup'/>
+<def f='codebrowser/Python/pystate.c' l='418' ll='440' type='void _PyState_ClearModules()'/>
+<doc f='codebrowser/Python/pystate.c' l='417'>/* used by import.c:PyImport_Cleanup */</doc>

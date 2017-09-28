@@ -1,0 +1,6 @@
+<dec f='include/curses.h' l='824' type='int wgetch(WINDOW * )'/>
+<doc f='include/curses.h' l='824'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1117' u='c' c='PyCursesWindow_GetCh'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1124' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1143' u='c' c='PyCursesWindow_GetKey'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1150' macro='1' u='c'/>

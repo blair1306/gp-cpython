@@ -1,0 +1,4 @@
+<dec f='include/readline/readline.h' l='794' type='int'/>
+<use f='codebrowser/Modules/readline.c' l='1055' u='w' c='flex_complete'/>
+<doc f='include/readline/readline.h' l='792'>/* If set to non-zero by an application completion function,
+   rl_completion_append_character will not be appended. */</doc>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythonrun.h' l='76' type='struct _node * PyParser_SimpleParseStringFlags(const char * , int , int )'/>
+<def f='codebrowser/Python/pythonrun.c' l='1219' ll='1229' type='struct _node * PyParser_SimpleParseStringFlags(const char * str, int start, int flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1447' u='c' c='PyParser_SimpleParseString'/>
+<doc f='codebrowser/Python/pythonrun.c' l='1217'>/* Simplified interface to parsestring -- return node or set exception */</doc>

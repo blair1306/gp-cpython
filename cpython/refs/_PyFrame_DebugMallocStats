@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/frameobject.h' l='90' type='void _PyFrame_DebugMallocStats(FILE * out)'/>
+<def f='codebrowser/Objects/frameobject.c' l='1004' ll='1010' type='void _PyFrame_DebugMallocStats(FILE * out)'/>
+<doc f='codebrowser/Objects/frameobject.c' l='1003'>/* Print summary info about the state of the optimized allocator */</doc>
+<use f='codebrowser/Objects/object.c' l='1948' u='c' c='_PyObject_DebugTypeStats'/>

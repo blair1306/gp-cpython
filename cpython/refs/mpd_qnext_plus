@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='513' type='void mpd_qnext_plus(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4103' u='c' c='dec_mpd_qnext_plus'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5040' u='c' c='ctx_mpd_qnext_plus'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6021' ll='6065' type='void mpd_qnext_plus(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6088' u='c' c='mpd_qnext_toward'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6020'>/* The smallest representable number that is larger than the operand. */</doc>

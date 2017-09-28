@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/object.h' l='254' type='inquiry'/>
+<offset>576</offset>
+<use f='codebrowser/Objects/object.c' l='1324' u='r' c='PyObject_IsTrue'/>
+<use f='codebrowser/Objects/object.c' l='1325' u='r' c='PyObject_IsTrue'/>
+<use f='codebrowser/Objects/rangeobject.c' l='635' u='w'/>
+<use f='codebrowser/Objects/typeobject.c' l='4857' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4857' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4857' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4857' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4857' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4857' u='r' c='inherit_slots'/>

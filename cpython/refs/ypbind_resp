@@ -1,0 +1,4 @@
+<def f='include/rpcsvc/yp_prot.h' l='253' ll='259'/>
+<size>12</size>
+<mbr r='ypbind_resp::ypbind_status' o='0' t='enum ypbind_resptype'/>
+<mbr r='ypbind_resp::ypbind_respbody' o='32' t='union (anonymous union at /usr/include/rpcsvc/yp_prot.h:255:3)'/>

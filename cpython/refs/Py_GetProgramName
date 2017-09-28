@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='11' type='wchar_t * Py_GetProgramName()'/>
+<dec f='codebrowser/Modules/getpath.c' l='461' type='wchar_t * Py_GetProgramName()'/>
+<use f='codebrowser/Modules/getpath.c' l='471' u='c' c='calculate_path'/>
+<dec f='codebrowser/Modules/getpath.c' l='834' type='wchar_t * Py_GetProgramName()'/>
+<use f='codebrowser/Modules/getpath.c' l='835' u='c' c='Py_SetPath'/>
+<def f='codebrowser/Python/pylifecycle.c' l='1292' ll='1296' type='wchar_t * Py_GetProgramName()'/>

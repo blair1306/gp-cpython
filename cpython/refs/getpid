@@ -1,0 +1,8 @@
+<dec f='include/unistd.h' l='631' type='__pid_t getpid()'/>
+<doc f='include/unistd.h' l='630'>/* Get the process ID of the calling process.  */</doc>
+<use f='codebrowser/Modules/_randommodule.c' l='225' u='c' c='random_seed_time_pid'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='947' u='c' c='generate_hash_secret_salt'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6115' u='c' c='os_getpid_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='321' u='c' c='signal_handler'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1222' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1633' u='c' c='_PySignal_AfterFork'/>

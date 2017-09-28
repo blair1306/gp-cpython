@@ -1,0 +1,36 @@
+<dec f='codebrowser/Include/cellobject.h' l='11' type='PyObject *'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/cellobject.h' l='11'>/* Content of the cell or NULL when empty */</doc>
+<use f='codebrowser/Objects/cellobject.c' l='13' u='w' c='PyCell_New'/>
+<use f='codebrowser/Objects/cellobject.c' l='27' u='r' c='PyCell_Get'/>
+<use f='codebrowser/Objects/cellobject.c' l='28' macro='1' u='r'/>
+<use f='codebrowser/Objects/cellobject.c' l='39' macro='1' u='r'/>
+<use f='codebrowser/Objects/cellobject.c' l='41' macro='1' u='w'/>
+<use f='codebrowser/Objects/cellobject.c' l='50' u='r' c='cell_dealloc'/>
+<use f='codebrowser/Objects/cellobject.c' l='73' u='r' c='cell_richcompare'/>
+<use f='codebrowser/Objects/cellobject.c' l='74' u='r' c='cell_richcompare'/>
+<use f='codebrowser/Objects/cellobject.c' l='109' u='r' c='cell_repr'/>
+<use f='codebrowser/Objects/cellobject.c' l='113' u='r' c='cell_repr'/>
+<use f='codebrowser/Objects/cellobject.c' l='114' u='r' c='cell_repr'/>
+<use f='codebrowser/Objects/cellobject.c' l='120' u='r' c='cell_traverse'/>
+<use f='codebrowser/Objects/cellobject.c' l='120' u='r' c='cell_traverse'/>
+<use f='codebrowser/Objects/cellobject.c' l='127' u='r' c='cell_clear'/>
+<use f='codebrowser/Objects/cellobject.c' l='127' u='w' c='cell_clear'/>
+<use f='codebrowser/Objects/cellobject.c' l='134' u='r' c='cell_get_contents'/>
+<use f='codebrowser/Objects/cellobject.c' l='139' u='r' c='cell_get_contents'/>
+<use f='codebrowser/Objects/cellobject.c' l='140' u='r' c='cell_get_contents'/>
+<use f='codebrowser/Objects/cellobject.c' l='147' u='r' c='cell_set_contents'/>
+<use f='codebrowser/Objects/cellobject.c' l='147' u='w' c='cell_set_contents'/>
+<use f='codebrowser/Objects/frameobject.c' l='797' macro='1' u='r'/>
+<use f='codebrowser/Objects/frameobject.c' l='856' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='7570' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='7598' macro='1' u='r'/>
+<use f='codebrowser/Python/bltinmodule.c' l='167' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='2389' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='2391' macro='1' u='w'/>
+<use f='codebrowser/Python/ceval.c' l='2428' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='2441' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='2454' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='2455' macro='1' u='w'/>
+<use f='codebrowser/Python/ceval.c' l='5253' macro='1' u='r'/>
+<use f='codebrowser/Python/ceval.c' l='5254' macro='1' u='w'/>

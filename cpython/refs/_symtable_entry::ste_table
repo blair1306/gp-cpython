@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/symtable.h' l='64' type='struct symtable *'/>
+<offset>896</offset>
+<use f='codebrowser/Python/symtable.c' l='43' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='104' u='w' c='ste_dealloc'/>
+<use f='codebrowser/Python/symtable.c' l='382' u='r' c='error_at_directive'/>

@@ -1,0 +1,63 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1037' type='PyObject * PyUnicode_FromWideChar(const wchar_t * w, Py_ssize_t size)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1032'>/* Create a Unicode Object from the wchar_t buffer w of the given
+   size.
+
+   The buffer is copied into the new object. */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1259' u='c' c='WCharArray_get_value'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4391' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4406' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5075' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5084' u='c' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5387' u='c' c='wstring_at'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1202' u='c' c='u_get'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1226' u='c' c='U_get'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='1399' u='c' c='Z_get'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3168' u='c' c='dotsep_as_utf8'/>
+<use f='codebrowser/Modules/_localemodule.c' l='289' u='c' c='PyLocale_strxfrm'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1413' u='c' c='getargs_u'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1423' u='c' c='getargs_u_hash'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1433' u='c' c='getargs_Z'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1446' u='c' c='getargs_Z_hash'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1741' u='c' c='test_widechar'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1772' u='c' c='test_widechar'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1827' u='c' c='unicode_aswidechar'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1849' u='c' c='unicode_aswidecharstring'/>
+<use f='codebrowser/Modules/arraymodule.c' l='1755' u='c' c='array_array_tounicode_impl'/>
+<use f='codebrowser/Modules/main.c' l='198' u='c' c='RunModule'/>
+<use f='codebrowser/Modules/main.c' l='236' u='c' c='AsImportPathEntry'/>
+<use f='codebrowser/Modules/main.c' l='295' u='c' c='run_command'/>
+<use f='codebrowser/Modules/main.c' l='326' u='c' c='run_file'/>
+<use f='codebrowser/Modules/main.c' l='488' u='c' c='read_command_line'/>
+<use f='codebrowser/Modules/timemodule.c' l='691' u='c' c='time_strftime'/>
+<use f='codebrowser/Objects/longobject.c' l='2494' u='c' c='PyLong_FromUnicode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2016' u='c' c='PyUnicode_FromUnicode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2019' ll='2085' type='PyObject * PyUnicode_FromWideChar(const wchar_t * u, Py_ssize_t size)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3310' u='c' c='PyUnicode_Encode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3498' u='c' c='PyUnicode_EncodeLocale'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3750' u='c' c='PyUnicode_DecodeLocaleAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3780' u='c' c='PyUnicode_DecodeLocaleAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3793' u='c' c='PyUnicode_DecodeLocaleAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4849' u='c' c='PyUnicode_EncodeUTF7'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5205' u='c' c='PyUnicode_EncodeUTF8'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5529' u='c' c='PyUnicode_EncodeUTF32'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5881' u='c' c='PyUnicode_EncodeUTF16'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6272' u='c' c='PyUnicode_EncodeUnicodeEscape'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6489' u='c' c='PyUnicode_EncodeRawUnicodeEscape'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6890' u='c' c='PyUnicode_EncodeLatin1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='7031' u='c' c='PyUnicode_EncodeASCII'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8607' u='c' c='PyUnicode_EncodeCharmap'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9047' u='c' c='PyUnicode_TranslateCharmap'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9175' u='c' c='PyUnicode_EncodeDecimal'/>
+<use f='codebrowser/Python/modsupport.c' l='357' u='c' c='do_mkvalue'/>
+<use f='codebrowser/Python/sysmodule.c' l='1510' u='c' c='PySys_AddWarnOption'/>
+<use f='codebrowser/Python/sysmodule.c' l='1548' u='c' c='PySys_AddXOption'/>
+<use f='codebrowser/Python/sysmodule.c' l='1553' u='c' c='PySys_AddXOption'/>
+<use f='codebrowser/Python/sysmodule.c' l='1554' u='c' c='PySys_AddXOption'/>
+<use f='codebrowser/Python/sysmodule.c' l='2124' u='c' c='_PySys_EndInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2127' u='c' c='_PySys_EndInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2129' u='c' c='_PySys_EndInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2131' u='c' c='_PySys_EndInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2133' u='c' c='_PySys_EndInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2175' u='c' c='makepathobject'/>
+<use f='codebrowser/Python/sysmodule.c' l='2213' u='c' c='makeargvobject'/>
+<use f='codebrowser/Python/sysmodule.c' l='2321' u='c' c='sys_update_path'/>

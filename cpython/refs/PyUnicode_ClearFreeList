@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1099' type='int PyUnicode_ClearFreeList()'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1092'>/* Clear the free list used by the Unicode implementation.
+
+   This can be used to release memory used for objects on the free
+   list back to the Python memory allocator.
+
+*/</doc>
+<use f='codebrowser/Modules/gcmodule.c' l='898' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='15260' ll='15264' type='int PyUnicode_ClearFreeList()'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15276' u='c' c='_PyUnicode_Fini'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='15258'>/* Finalize the Unicode implementation */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='132' macro='1' type='int PyBlake2_blake2b_final(blake2b_state * S, uint8_t * out, uint8_t outlen)'/>
+<def f='codebrowser/Modules/_blake2/impl/blake2b.c' l='361' macro='1' type='int PyBlake2_blake2b_final(blake2b_state * S, uint8_t * out, uint8_t outlen)'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='411' macro='1' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='331' macro='1' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='352' macro='1' u='c'/>

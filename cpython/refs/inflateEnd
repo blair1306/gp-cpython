@@ -1,0 +1,9 @@
+<dec f='include/zlib.h' l='508' type='int inflateEnd(z_streamp strm)'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='366' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='378' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='392' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='397' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='408' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='413' u='c' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='639' u='c' c='Decomp_dealloc'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1127' u='c' c='zlib_Decompress_flush_impl'/>

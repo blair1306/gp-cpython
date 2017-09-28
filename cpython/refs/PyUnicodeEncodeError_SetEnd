@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyerrors.h' l='458' type='int PyUnicodeEncodeError_SetEnd(PyObject * , Py_ssize_t )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='456'>/* assign a new value to the end attribute
+   return 0 on success, -1 on failure */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='286' u='c' c='multibytecodec_encerror'/>
+<def f='codebrowser/Objects/exceptions.c' l='1747' ll='1752' type='int PyUnicodeEncodeError_SetEnd(PyObject * exc, Py_ssize_t end)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6626' u='c' c='make_encode_exception'/>

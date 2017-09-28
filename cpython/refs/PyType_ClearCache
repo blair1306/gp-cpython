@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/object.h' l='509' type='unsigned int PyType_ClearCache()'/>
+<def f='codebrowser/Objects/typeobject.c' l='194' ll='221' type='unsigned int PyType_ClearCache()'/>
+<use f='codebrowser/Objects/typeobject.c' l='226' u='c' c='_PyType_Fini'/>
+<use f='codebrowser/Python/sysmodule.c' l='1333' u='c' c='sys_clear_type_cache'/>

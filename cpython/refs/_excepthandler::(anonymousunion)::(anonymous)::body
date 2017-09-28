@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/Python-ast.h' l='406' type='asdl_seq *'/>
+<offset>128</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2500' u='w' c='_Py_ExceptHandler'/>
+<use f='codebrowser/Python/Python-ast.c' l='3794' u='r' c='ast2obj_excepthandler'/>
+<use f='codebrowser/Python/ast.c' l='481' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='1397' u='r' c='find_ann'/>
+<use f='codebrowser/Python/compile.c' l='2611' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/compile.c' l='2644' u='r' c='compiler_try_except'/>
+<use f='codebrowser/Python/symtable.c' l='1620' u='r' c='symtable_visit_excepthandler'/>

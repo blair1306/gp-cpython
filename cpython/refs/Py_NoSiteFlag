@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pydebug.h' l='16' type='int'/>
+<use f='codebrowser/Modules/main.c' l='538' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='796' u='r' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='87' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='818' u='r' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1227' u='r' c='Py_NewInterpreter'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='87'>/* Suppress &apos;import site&apos; */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='1731' u='r' c='make_flags'/>

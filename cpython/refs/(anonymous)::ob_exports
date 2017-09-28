@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/bytearrayobject.h' l='29' type='int'/>
+<offset>512</offset>
+<doc f='codebrowser/Include/bytearrayobject.h' l='28'>/* XXX(nnorwitz): should ob_exports be Py_ssize_t? */</doc>
+<doc f='codebrowser/Include/bytearrayobject.h' l='29'>/* How many buffer exports */</doc>
+<use f='codebrowser/Objects/bytearrayobject.c' l='73' u='w' c='bytearray_getbuffer'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='80' u='w' c='bytearray_releasebuffer'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='86' u='r' c='_canresize'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='144' u='w' c='PyByteArray_FromStringAndSize'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1062' u='r' c='bytearray_dealloc'/>

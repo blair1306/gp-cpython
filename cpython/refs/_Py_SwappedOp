@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/object.h' l='938' type='int []'/>
+<use f='codebrowser/Objects/floatobject.c' l='421' u='r' c='float_richcompare'/>
+<def f='codebrowser/Objects/object.c' l='648' type='int [6]'/>
+<use f='codebrowser/Objects/object.c' l='665' u='r' c='do_richcompare'/>
+<use f='codebrowser/Objects/object.c' l='677' u='r' c='do_richcompare'/>
+<doc f='codebrowser/Objects/object.c' l='647'>/* Map rich comparison operators to their swapped version, e.g. LT &lt;--&gt; GT */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/object.h' l='474' type='PyObject *'/>
+<offset>6848</offset>
+<use f='codebrowser/Objects/typeobject.c' l='2542' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2663' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2666' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='3186' u='r' c='type_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='3740' u='r' c='same_slots_added'/>
+<use f='codebrowser/Objects/typeobject.c' l='3741' u='r' c='same_slots_added'/>

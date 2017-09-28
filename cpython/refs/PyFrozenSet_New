@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/setobject.h' l='82' type='PyObject * PyFrozenSet_New(PyObject * )'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='902' u='c' c='generate_hash_name_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='5153' u='c' c='load_frozenset'/>
+<use f='codebrowser/Objects/codeobject.c' l='87' u='c' c='intern_string_constants'/>
+<use f='codebrowser/Objects/codeobject.c' l='587' u='c' c='_PyCode_ConstantKey'/>
+<def f='codebrowser/Objects/setobject.c' l='2281' ll='2285' type='PyObject * PyFrozenSet_New(PyObject * iterable)'/>
+<use f='codebrowser/Objects/setobject.c' l='2434' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2461' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2494' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2516' u='c' c='test_c_api'/>
+<use f='codebrowser/Python/marshal.c' l='1294' u='c' c='r_object'/>
+<use f='codebrowser/Python/peephole.c' l='204' u='c' c='fold_tuple_on_constants'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/bytesobject.h' l='60' type='PyObject * PyBytes_Repr(PyObject * , int )'/>
+<def f='codebrowser/Objects/bytesobject.c' l='1333' ll='1404' type='PyObject * PyBytes_Repr(PyObject * obj, int smartquotes)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1409' u='c' c='bytes_repr'/>

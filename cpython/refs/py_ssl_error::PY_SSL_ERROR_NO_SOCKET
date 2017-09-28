@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_ssl.c' l='258' type='9'/>
+<use f='codebrowser/Modules/_ssl.c' l='724' u='r' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1956' u='r' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2094' u='r' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2216' u='r' c='_ssl__SSLSocket_shutdown_impl'/>
+<doc f='codebrowser/Modules/_ssl.c' l='258'>/* socket has been GC&apos;d */</doc>

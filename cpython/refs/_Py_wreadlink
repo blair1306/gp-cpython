@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/fileutils.h' l='92' type='int _Py_wreadlink(const wchar_t * path, wchar_t * buf, size_t bufsiz)'/>
+<use f='codebrowser/Modules/getpath.c' l='612' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='623' u='c' c='calculate_path'/>
+<def f='codebrowser/Python/fileutils.c' l='1351' ll='1387' type='int _Py_wreadlink(const wchar_t * path, wchar_t * buf, size_t bufsiz)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1348'>/* Read value of symbolic link. Encode the path to the locale encoding, decode
+   the result from the locale encoding. Return -1 on error. */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='2256' u='c' c='sys_update_path'/>

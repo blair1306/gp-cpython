@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='113' type='void PyFloat_Fini()'/>
+<def f='codebrowser/Objects/floatobject.c' l='2025' ll='2029' type='void PyFloat_Fini()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1066' u='c' c='Py_FinalizeEx'/>

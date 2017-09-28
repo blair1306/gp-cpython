@@ -1,0 +1,10 @@
+<dec f='include/lzma/base.h' l='150' type='7'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='98' c='catch_lzma_error'/>
+<doc f='include/lzma/base.h' l='141'>/**
+		 * \brief       Memory usage limit was reached
+		 *
+		 * Decoder would need more memory than allowed by the
+		 * specified memory usage limit. To continue decoding,
+		 * the memory usage limit has to be increased with
+		 * lzma_memlimit_set().
+		 */</doc>

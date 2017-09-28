@@ -1,0 +1,3 @@
+<dec f='include/curses.h' l='724' type='int nodelay(WINDOW * , _Bool )'/>
+<doc f='include/curses.h' l='724'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='506' u='c' c='PyCursesWindow_nodelay'/>

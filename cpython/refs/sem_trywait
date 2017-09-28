@@ -1,0 +1,4 @@
+<dec f='include/semaphore.h' l='66' type='int sem_trywait(sem_t * __sem)'/>
+<doc f='include/semaphore.h' l='65'>/* Test whether SEM is posted.  */</doc>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='312' u='c' c='semlock_acquire'/>
+<use f='codebrowser/Python/thread_pthread.h' l='352' u='c' c='PyThread_acquire_lock_timed'/>

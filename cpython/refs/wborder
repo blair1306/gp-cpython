@@ -1,0 +1,4 @@
+<dec f='include/curses.h' l='813' type='int wborder(WINDOW * , chtype , chtype , chtype , chtype , chtype , chtype , chtype , chtype )'/>
+<doc f='include/curses.h' l='813'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='909' u='c' c='PyCursesWindow_Border'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='925' macro='1' u='c'/>

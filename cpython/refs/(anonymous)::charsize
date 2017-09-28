@@ -1,0 +1,27 @@
+<dec f='codebrowser/Modules/sre.h' l='74' type='int'/>
+<use f='codebrowser/Modules/_sre.c' l='439' u='w' c='state_init'/>
+<use f='codebrowser/Modules/_sre.c' l='443' u='r' c='state_init'/>
+<use f='codebrowser/Modules/_sre.c' l='444' u='r' c='state_init'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='state_getslice'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='state_getslice'/>
+<use f='codebrowser/Modules/_sre.c' l='568' u='r' c='sre_match'/>
+<use f='codebrowser/Modules/_sre.c' l='570' u='r' c='sre_match'/>
+<use f='codebrowser/Modules/_sre.c' l='572' u='r' c='sre_match'/>
+<use f='codebrowser/Modules/_sre.c' l='579' u='r' c='sre_search'/>
+<use f='codebrowser/Modules/_sre.c' l='581' u='r' c='sre_search'/>
+<use f='codebrowser/Modules/_sre.c' l='583' u='r' c='sre_search'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='_sre_SRE_Pattern_findall_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='_sre_SRE_Pattern_findall_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='816' u='r' c='_sre_SRE_Pattern_findall_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='953' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='_sre_SRE_Pattern_split_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='pattern_subx'/>
+<use f='codebrowser/Modules/_sre.c' l='486' u='r' c='pattern_subx'/>
+<use f='codebrowser/Modules/_sre.c' l='1143' u='r' c='pattern_subx'/>
+<use f='codebrowser/Modules/_sre.c' l='2389' u='r' c='pattern_new_match'/>
+<use f='codebrowser/Modules/_sre.c' l='2464' u='r' c='_sre_SRE_Scanner_match_impl'/>
+<use f='codebrowser/Modules/_sre.c' l='2504' u='r' c='_sre_SRE_Scanner_search_impl'/>
+<offset>480</offset>
+<doc f='codebrowser/Modules/sre.h' l='74'>/* character size */</doc>

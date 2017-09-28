@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/moduleobject.h' l='20' type='PyObject * PyModule_New(const char * name)'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='522' u='c' c='createfunc_unreported_exception'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1708' u='c' c='PyInit_pyexpat'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1718' u='c' c='PyInit_pyexpat'/>
+<def f='codebrowser/Objects/moduleobject.c' l='101' ll='111' type='PyObject * PyModule_New(const char * name)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='197' u='c' c='PyModule_Create2TraceRefs'/>

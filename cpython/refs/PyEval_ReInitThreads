@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/ceval.h' l='197' type='void PyEval_ReInitThreads()'/>
+<use f='codebrowser/Modules/posixmodule.c' l='457' u='c' c='PyOS_AfterFork_Child'/>
+<def f='codebrowser/Python/ceval.c' l='243' ll='257' type='void PyEval_ReInitThreads()'/>
+<doc f='codebrowser/Python/ceval.c' l='238'>/* This function is called from PyOS_AfterFork_Child to destroy all threads
+ * which are not running in the child process, and clear internal locks
+ * which might be held by those threads.
+ */</doc>

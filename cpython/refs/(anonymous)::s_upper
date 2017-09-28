@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/grammar.h' l='43' type='int'/>
+<offset>160</offset>
+<doc f='codebrowser/Include/grammar.h' l='43'>/* Highest label index */</doc>
+<use f='codebrowser/Parser/acceler.c' l='120' u='w' c='fixstate'/>
+<use f='codebrowser/Parser/grammar.c' l='80' u='w' c='_Py_addstate'/>
+<use f='codebrowser/Parser/parser.c' l='250' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='323' u='r' c='PyParser_AddToken'/>

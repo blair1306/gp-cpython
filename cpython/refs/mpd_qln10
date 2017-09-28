@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='547' type='void mpd_qln10(mpd_t * result, mpd_ssize_t prec, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4538' ll='4589' type='void mpd_qln10(mpd_t * result, mpd_ssize_t prec, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4828' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4972' u='c' c='_mpd_qlog10'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4530'>/*
+ * Set &apos;result&apos; to log(10).
+ *   Ulp error: abs(result - log(10)) &lt; ulp(log(10))
+ *   Relative error: abs(result - log(10)) &lt; 5 * 10**-prec * log(10)
+ *
+ * NOTE: The relative error is not derived from the ulp error, but
+ * calculated separately using the fact that 23/10 &lt; log(10) &lt; 24/10.
+ */</doc>

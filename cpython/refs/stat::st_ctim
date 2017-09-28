@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/stat.h' l='93' type='struct timespec'/>
+<offset>832</offset>
+<doc f='include/x86_64-linux-gnu/bits/stat.h' l='93'>/* Time of last status change.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='2045' u='m' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2059' macro='1' u='m'/>

@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/sys/mman.h' l='76' type='int munmap(void * __addr, size_t __len)'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='135' u='c' c='mmap_object_dealloc'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='179' u='c' c='mmap_close_method'/>
+<doc f='include/x86_64-linux-gnu/sys/mman.h' l='74'>/* Deallocate any mapping for the region starting at ADDR and extending LEN
+   bytes.  Returns 0 if successful, -1 for errors (and sets errno).  */</doc>
+<use f='codebrowser/Objects/obmalloc.c' l='135' u='c' c='_PyObject_ArenaMunmap'/>

@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/object.h' l='453' type='PyObject * PyType_FromSpecWithBases(PyType_Spec * , PyObject * )'/>
+<def f='codebrowser/Objects/typeobject.c' l='2777' ll='2919' type='PyObject * PyType_FromSpecWithBases(PyType_Spec * spec, PyObject * bases)'/>
+<use f='codebrowser/Objects/typeobject.c' l='2924' u='c' c='PyType_FromSpec'/>

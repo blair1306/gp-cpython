@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/cellobject.h' l='18' type='PyObject * PyCell_New(PyObject * )'/>
+<def f='codebrowser/Objects/cellobject.c' l='5' ll='18' type='PyObject * PyCell_New(PyObject * obj)'/>
+<use f='codebrowser/Python/ceval.c' l='4110' u='c' c='_PyEval_EvalCodeWithName'/>
+<use f='codebrowser/Python/ceval.c' l='4115' u='c' c='_PyEval_EvalCodeWithName'/>

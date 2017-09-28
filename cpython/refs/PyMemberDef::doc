@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/structmember.h' l='23' type='const char *'/>
+<offset>256</offset>
+<use f='codebrowser/Objects/descrobject.c' l='465' u='r' c='member_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='468' u='r' c='member_get_doc'/>
+<use f='codebrowser/Objects/structseq.c' l='372' u='w' c='PyStructSequence_InitType2'/>

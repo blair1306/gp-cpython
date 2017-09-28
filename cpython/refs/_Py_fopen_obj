@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/fileutils.h' l='72' type='FILE * _Py_fopen_obj(PyObject * path, const char * mode)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3553' u='c' c='_ssl__SSLContext_load_dh_params'/>
+<use f='codebrowser/Modules/zipimport.c' l='916' u='c' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1161' u='c' c='get_data'/>
+<use f='codebrowser/Python/errors.c' l='1154' u='c' c='PyErr_ProgramTextObject'/>
+<def f='codebrowser/Python/fileutils.c' l='1088' ll='1158' type='FILE * _Py_fopen_obj(PyObject * path, const char * mode)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1075'>/* Open a file. Call _wfopen() on Windows, or encode the path to the filesystem
+   encoding and call fopen() otherwise.
+
+   Return the new file object on success. Raise an exception and return NULL
+   on error.
+
+   The file descriptor is created non-inheritable.
+
+   When interrupted by a signal (open() fails with EINTR), retry the syscall,
+   except if the Python signal handler raises an exception.
+
+   Release the GIL to call _wfopen() or fopen(). The caller must hold
+   the GIL. */</doc>
+<use f='codebrowser/Python/import.c' l='1970' u='c' c='_imp_create_dynamic_impl'/>

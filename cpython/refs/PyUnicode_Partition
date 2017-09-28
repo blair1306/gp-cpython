@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1927' type='PyObject * PyUnicode_Partition(PyObject * s, PyObject * sep)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1925'>/* Partition a string using a given separator. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='12934' ll='12989' type='PyObject * PyUnicode_Partition(PyObject * str_obj, PyObject * sep_obj)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13069' u='c' c='unicode_partition'/>

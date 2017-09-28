@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='721' type='mpd_ssize_t mpd_digits_to_size(mpd_ssize_t digits)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='720'>/* coefficient size needed to store &apos;digits&apos; */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='238' ll='245' macro='1' type='mpd_ssize_t mpd_digits_to_size(mpd_ssize_t digits)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2411' u='c' c='mpd_qshiftl'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2473' u='c' c='mpd_qsshiftr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2510' u='c' c='mpd_qshiftr_inplace'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2548' u='c' c='mpd_qshiftr'/>

@@ -1,0 +1,12 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='1237' ll='1286' type='PyObject * formatter_field_name_split(PyObject * ignored, PyObject * self)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15677'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15677'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15677'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15677'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='1230'>/* unicode_formatter_field_name_split is used to implement
+   string.Formatter.vformat.  it takes a PEP 3101 &quot;field name&quot;, and
+   returns a tuple of (first, rest): &quot;first&quot;, the part before the
+   first &apos;.&apos; or &apos;[&apos;; and &quot;rest&quot;, an iterator for the rest of the field
+   name.  it&apos;s a wrapper around stringlib/string_format.h&apos;s
+   field_name_split.  The iterator it returns is a
+   FieldNameIterator */</doc>

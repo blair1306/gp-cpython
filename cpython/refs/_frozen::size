@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/import.h' l='128' type='int'/>
+<offset>128</offset>
+<use f='codebrowser/Python/import.c' l='1134' u='r' c='get_frozen_object'/>
+<use f='codebrowser/Python/import.c' l='1153' u='r' c='is_frozen_package'/>
+<use f='codebrowser/Python/import.c' l='1185' u='r' c='PyImport_ImportFrozenModuleObject'/>
+<use f='codebrowser/Python/import.c' l='1904' u='r' c='_imp_is_frozen_impl'/>

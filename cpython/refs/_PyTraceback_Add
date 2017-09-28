@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/traceback.h' l='27' type='void _PyTraceback_Add(const char * , const char * , int )'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='214' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='214' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='919' u='c' c='GetResult'/>
+<use f='codebrowser/Modules/pyexpat.c' l='226' u='c' c='call_with_frame'/>
+<def f='codebrowser/Python/traceback.c' l='148' ll='182' type='void _PyTraceback_Add(const char * funcname, const char * filename, int lineno)'/>
+<doc f='codebrowser/Python/traceback.c' l='147'>/* Insert a frame into the traceback for (funcname, filename, lineno). */</doc>

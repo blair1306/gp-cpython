@@ -1,0 +1,15 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='46' type='64'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='196' u='r' c='PyBlake2_blake2b_init_param'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='220' u='r' c='PyBlake2_blake2b_init'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='242' u='r' c='PyBlake2_blake2b_init_key'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='363' u='r' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='397' u='r' c='PyBlake2_blake2b'/>
+<use f='codebrowser/Modules/_blake2/clinic/blake2b_impl.c.h' l='28' u='r' c='py_blake2b_new'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='114' u='r' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='117' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='195' u='r' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='198' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='326' c='_blake2b_blake2b_digest_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='347' c='_blake2b_blake2b_hexdigest_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2module.c' l='77' u='r' c='PyInit__blake2'/>
+<use f='codebrowser/Modules/_blake2/blake2module.c' l='82' u='r' c='PyInit__blake2'/>

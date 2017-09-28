@@ -1,0 +1,8 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='220' ll='234' type='void _mpd_div_words(mpd_uint_t * q, mpd_uint_t * r, mpd_uint_t hi, mpd_uint_t lo, mpd_uint_t d)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='660' u='c' c='mulmod_size_t'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='286' u='c' c='_mpd_shortdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='624' u='c' c='_mpd_shortmul_b'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='650' u='c' c='_mpd_shortdiv_b'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='107' u='c' c='dw_reduce'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='89' u='c' c='_crt_div3'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='90' u='c' c='_crt_div3'/>

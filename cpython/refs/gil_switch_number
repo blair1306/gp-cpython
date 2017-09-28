@@ -1,0 +1,5 @@
+<def f='codebrowser/Python/ceval_gil.h' l='111' type='unsigned long'/>
+<use f='codebrowser/Python/ceval_gil.h' l='223' u='r' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='229' u='r' c='take_gil'/>
+<use f='codebrowser/Python/ceval_gil.h' l='244' u='w' c='take_gil'/>
+<doc f='codebrowser/Python/ceval_gil.h' l='110'>/* Number of GIL switches since the beginning. */</doc>

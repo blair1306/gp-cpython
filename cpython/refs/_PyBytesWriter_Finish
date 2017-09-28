@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/bytesobject.h' l='176' type='PyObject * _PyBytesWriter_Finish(_PyBytesWriter * writer, void * str)'/>
+<doc f='codebrowser/Include/bytesobject.h' l='173'>/* Get the buffer content and reset the writer.
+   Return a bytes object, or a bytearray object if use_bytearray is non-zero.
+   Raise an exception and return NULL on error. */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='2165' u='c' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/binascii.c' l='397' u='c' c='binascii_b2a_uu_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='518' u='c' c='binascii_a2b_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='589' u='c' c='binascii_b2a_base64_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='664' u='c' c='binascii_a2b_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='729' u='c' c='binascii_rlecode_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='784' u='c' c='binascii_b2a_hqx_impl'/>
+<use f='codebrowser/Modules/binascii.c' l='897' u='c' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='348' u='c' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='354' u='c' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1061' u='c' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1236' u='c' c='_PyBytes_DecodeEscape'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2419' u='c' c='_PyBytes_FromHex'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2752' u='c' c='_PyBytes_FromIterator'/>
+<def f='codebrowser/Objects/bytesobject.c' l='3372' ll='3414' type='PyObject * _PyBytesWriter_Finish(_PyBytesWriter * writer, void * str)'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='452' u='c' c='asciilib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='452' u='c' c='ucs1lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='452' u='c' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='452' u='c' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6873' u='c' c='unicode_encode_ucs1'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/marshal.h' l='22' type='PyObject * PyMarshal_ReadObjectFromString(const char * , Py_ssize_t )'/>
+<use f='codebrowser/Modules/zipimport.c' l='1309' u='c' c='unmarshal_code'/>
+<use f='codebrowser/Python/import.c' l='1137' u='c' c='get_frozen_object'/>
+<use f='codebrowser/Python/import.c' l='1189' u='c' c='PyImport_ImportFrozenModuleObject'/>
+<use f='codebrowser/Python/marshal.c' l='1544' u='c' c='PyMarshal_ReadLastObjectFromFile'/>
+<def f='codebrowser/Python/marshal.c' l='1579' ll='1599' type='PyObject * PyMarshal_ReadObjectFromString(const char * str, Py_ssize_t len)'/>

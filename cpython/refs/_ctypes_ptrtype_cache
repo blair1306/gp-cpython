@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='360' type='PyObject *'/>
+<def f='codebrowser/Modules/_ctypes/_ctypes.c' l='122' type='PyObject *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5420' u='w' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5421' u='r' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5424' u='r' c='PyInit__ctypes'/>
+<doc f='codebrowser/Modules/_ctypes/_ctypes.c' l='121'>/* This dict maps ctypes types to POINTER types */</doc>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1687' u='r' c='POINTER'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1732' u='r' c='POINTER'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1747' u='r' c='pointer'/>

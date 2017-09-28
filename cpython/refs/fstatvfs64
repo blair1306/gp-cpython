@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/statvfs.h' l='77' type='int fstatvfs(int __fildes, struct statvfs * __buf)'/>
+<dec f='include/x86_64-linux-gnu/sys/statvfs.h' l='84' type='int fstatvfs64(int __fildes, struct statvfs64 * __buf)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9400' u='c' c='os_fstatvfs_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9443' u='c' c='os_statvfs_impl'/>

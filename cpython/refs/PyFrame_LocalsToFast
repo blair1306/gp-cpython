@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/frameobject.h' l='83' type='void PyFrame_LocalsToFast(PyFrameObject * , int )'/>
+<doc f='codebrowser/Include/frameobject.h' l='81'>/* Conversions between &quot;fast locals&quot; and locals in dictionary */</doc>
+<def f='codebrowser/Objects/frameobject.c' l='940' ll='979' type='void PyFrame_LocalsToFast(PyFrameObject * f, int clear)'/>
+<use f='codebrowser/Python/ceval.c' l='2845' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/sysmodule.c' l='395' u='c' c='call_trampoline'/>

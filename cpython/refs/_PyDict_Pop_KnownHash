@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/dictobject.h' l='120' type='PyObject * _PyDict_Pop_KnownHash(PyObject * , PyObject * , Py_hash_t , PyObject * )'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='915' u='c' c='bounded_lru_cache_wrapper'/>
+<def f='codebrowser/Objects/dictobject.c' l='1675' ll='1730' type='PyObject * _PyDict_Pop_KnownHash(PyObject * dict, PyObject * key, Py_hash_t hash, PyObject * deflt)'/>
+<use f='codebrowser/Objects/dictobject.c' l='1751' u='c' c='_PyDict_Pop'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1674'>/* Internal version of dict.pop(). */</doc>

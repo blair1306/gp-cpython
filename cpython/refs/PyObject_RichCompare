@@ -1,0 +1,24 @@
+<dec f='codebrowser/Include/object.h' l='528' type='PyObject * PyObject_RichCompare(PyObject * , PyObject * , int )'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='558' u='c' c='keyobject_richcompare'/>
+<use f='codebrowser/Modules/_operator.c' l='574' u='c' c='_operator_eq_impl'/>
+<use f='codebrowser/Modules/_operator.c' l='587' u='c' c='_operator_ne_impl'/>
+<use f='codebrowser/Modules/_operator.c' l='600' u='c' c='_operator_lt_impl'/>
+<use f='codebrowser/Modules/_operator.c' l='613' u='c' c='_operator_le_impl'/>
+<use f='codebrowser/Modules/_operator.c' l='626' u='c' c='_operator_gt_impl'/>
+<use f='codebrowser/Modules/_operator.c' l='639' u='c' c='_operator_ge_impl'/>
+<use f='codebrowser/Modules/arraymodule.c' l='770' u='c' c='array_richcompare'/>
+<use f='codebrowser/Objects/cellobject.c' l='76' u='c' c='cell_richcompare'/>
+<use f='codebrowser/Objects/complexobject.c' l='648' u='c' c='complex_richcompare'/>
+<use f='codebrowser/Objects/descrobject.c' l='934' u='c' c='mappingproxy_richcompare'/>
+<use f='codebrowser/Objects/descrobject.c' l='1044' u='c' c='wrapper_richcompare'/>
+<use f='codebrowser/Objects/listobject.c' l='2383' u='c' c='list_richcompare'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='163' u='c' c='namespace_richcompare'/>
+<def f='codebrowser/Objects/object.c' l='706' ll='722' type='PyObject * PyObject_RichCompare(PyObject * v, PyObject * w, int op)'/>
+<use f='codebrowser/Objects/object.c' l='741' u='c' c='PyObject_RichCompareBool'/>
+<doc f='codebrowser/Objects/object.c' l='703'>/* Perform a rich comparison with object result.  This wraps do_richcompare()
+   with a check for NULL arguments and a recursion check. */</doc>
+<use f='codebrowser/Objects/sliceobject.c' l='605' u='c' c='slice_richcompare'/>
+<use f='codebrowser/Objects/tupleobject.c' l='677' u='c' c='tuplerichcompare'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='210' u='c' c='weakref_richcompare'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='492' u='c' c='proxy_richcompare'/>
+<use f='codebrowser/Python/ceval.c' l='4987' u='c' c='cmp_outcome'/>

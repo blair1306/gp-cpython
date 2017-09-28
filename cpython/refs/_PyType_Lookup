@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/object.h' l='504' type='PyObject * _PyType_Lookup(PyTypeObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_lsprof.c' l='204' u='c' c='normalizeUserObj'/>
+<use f='codebrowser/Objects/classobject.c' l='145' u='c' c='method_getattro'/>
+<use f='codebrowser/Objects/classobject.c' l='468' u='c' c='instancemethod_getattro'/>
+<use f='codebrowser/Objects/object.c' l='1060' u='c' c='_PyObject_GetMethod'/>
+<use f='codebrowser/Objects/object.c' l='1141' u='c' c='_PyObject_GenericGetAttrWithDict'/>
+<use f='codebrowser/Objects/object.c' l='1234' u='c' c='_PyObject_GenericSetAttrWithDict'/>
+<def f='codebrowser/Objects/typeobject.c' l='2943' ll='3018' type='PyObject * _PyType_Lookup(PyTypeObject * type, PyObject * name)'/>
+<use f='codebrowser/Objects/typeobject.c' l='3027' u='c' c='_PyType_LookupId'/>
+<use f='codebrowser/Objects/typeobject.c' l='3056' u='c' c='type_getattro'/>
+<use f='codebrowser/Objects/typeobject.c' l='3074' u='c' c='type_getattro'/>
+<use f='codebrowser/Objects/typeobject.c' l='6961' u='c' c='update_one_slot'/>
+<doc f='codebrowser/Objects/typeobject.c' l='2941'>/* Internal API to look for a name through the MRO.
+   This returns a borrowed reference, and doesn&apos;t set an exception! */</doc>

@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/pystate.h' l='126' type='int'/>
+<offset>352</offset>
+<use f='codebrowser/Python/ceval.c' l='970' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3706' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4539' u='w' c='call_trace'/>
+<use f='codebrowser/Python/ceval.c' l='4541' u='w' c='call_trace'/>
+<use f='codebrowser/Python/ceval.c' l='4552' u='r' c='_PyEval_CallTracing'/>
+<use f='codebrowser/Python/ceval.c' l='4556' u='w' c='_PyEval_CallTracing'/>
+<use f='codebrowser/Python/ceval.c' l='4560' u='w' c='_PyEval_CallTracing'/>
+<use f='codebrowser/Python/ceval.c' l='4603' u='w' c='PyEval_SetProfile'/>
+<use f='codebrowser/Python/ceval.c' l='4608' u='w' c='PyEval_SetProfile'/>
+<use f='codebrowser/Python/ceval.c' l='4621' u='w' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/ceval.c' l='4626' u='w' c='PyEval_SetTrace'/>
+<use f='codebrowser/Python/ceval.c' l='4773' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4824' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4773' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4773' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/pystate.c' l='254' u='w' c='new_threadstate'/>

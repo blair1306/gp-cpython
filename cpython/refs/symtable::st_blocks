@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/symtable.h' l='23' type='PyObject *'/>
+<offset>192</offset>
+<doc f='codebrowser/Include/symtable.h' l='23'>/* dict: map AST node addresses
+                                     *       to symbol table entries */</doc>
+<use f='codebrowser/Python/symtable.c' l='84' u='r' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='213' u='w' c='symtable_new'/>
+<use f='codebrowser/Python/symtable.c' l='217' u='w' c='symtable_new'/>
+<use f='codebrowser/Python/symtable.c' l='334' u='r' c='PySymtable_Free'/>
+<use f='codebrowser/Python/symtable.c' l='347' u='r' c='PySymtable_Lookup'/>

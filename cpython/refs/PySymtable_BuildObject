@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/symtable.h' l='77' type='struct symtable * PySymtable_BuildObject(mod_ty mod, PyObject * filename, PyFutureFeatures * future)'/>
+<use f='codebrowser/Python/compile.c' l='334' u='c' c='PyAST_CompileObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='1088' u='c' c='Py_SymtableStringObject'/>
+<def f='codebrowser/Python/symtable.c' l='239' ll='315' type='struct symtable * PySymtable_BuildObject(mod_ty mod, PyObject * filename, PyFutureFeatures * future)'/>
+<use f='codebrowser/Python/symtable.c' l='325' u='c' c='PySymtable_Build'/>

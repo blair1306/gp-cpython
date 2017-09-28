@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/ceval.h' l='16' type='PyObject * PyEval_CallObjectWithKeywords(PyObject * callable, PyObject * args, PyObject * kwargs)'/>
+<doc f='codebrowser/Include/ceval.h' l='10'>/* PyEval_CallObjectWithKeywords(), PyEval_CallObject(), PyEval_CallFunction
+ * and PyEval_CallMethod are kept for backward compatibility: PyObject_Call(),
+ * PyObject_CallFunction() and PyObject_CallMethod() are recommended to call
+ * a callable object.
+ */</doc>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='1998' macro='1' u='c'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='629' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='224' macro='1' u='c'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1557' macro='1' u='c'/>
+<def f='codebrowser/Objects/call.c' l='794' ll='823' type='PyObject * PyEval_CallObjectWithKeywords(PyObject * callable, PyObject * args, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/call.c' l='829' u='c' c='PyObject_CallObject'/>
+<doc f='codebrowser/Objects/call.c' l='792'>/* External interface to call any callable object.
+   The args must be a tuple or NULL.  The kwargs must be a dict or NULL. */</doc>
+<use f='codebrowser/Python/codecs.c' l='154' macro='1' u='c'/>
+<use f='codebrowser/Python/codecs.c' l='424' macro='1' u='c'/>
+<use f='codebrowser/Python/codecs.c' l='470' macro='1' u='c'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/codecs.h' l='206' type='int PyCodec_RegisterError(const char * name, PyObject * error)'/>
+<doc f='codebrowser/Include/codecs.h' l='200'>/* Register the error handling callback function error under the given
+   name. This function will be called by the codec when it encounters
+   unencodable characters/undecodable bytes and doesn&apos;t know the
+   callback name, when name is specified as the error parameter
+   in the call to the encode/decode function.
+   Return 0 on success, -1 on error */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='1046' u='c' c='_codecs_register_error_impl'/>
+<def f='codebrowser/Python/codecs.c' l='630' ll='641' type='int PyCodec_RegisterError(const char * name, PyObject * error)'/>
+<use f='codebrowser/Python/codecs.c' l='1519' u='c' c='_PyCodecRegistry_Init'/>
+<doc f='codebrowser/Python/codecs.c' l='624'>/* Register the error handling callback function error under the name
+   name. This function will be called by the codec when it encounters
+   an unencodable characters/undecodable bytes and doesn&apos;t know the
+   callback name, when name is specified as the error parameter
+   in the call to the encode/decode function.
+   Return 0 on success, -1 on error */</doc>

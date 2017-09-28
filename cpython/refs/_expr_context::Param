@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/Python-ast.h' l='12' type='6'/>
+<use f='codebrowser/Python/Python-ast.c' l='3546' c='ast2obj_expr_context'/>
+<use f='codebrowser/Python/Python-ast.c' l='7013' u='r' c='obj2ast_expr_context'/>
+<use f='codebrowser/Python/ast.c' l='99' c='expr_context_name'/>
+<use f='codebrowser/Python/compile.c' l='3135' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3150' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3167' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3182' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='4463' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4491' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4783' c='compiler_handle_subscr'/>

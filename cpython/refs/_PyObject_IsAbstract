@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/object.h' l='537' type='int _PyObject_IsAbstract(PyObject * )'/>
+<use f='codebrowser/Objects/descrobject.c' l='1559' u='c' c='property_get___isabstractmethod__'/>
+<use f='codebrowser/Objects/descrobject.c' l='1567' u='c' c='property_get___isabstractmethod__'/>
+<use f='codebrowser/Objects/descrobject.c' l='1575' u='c' c='property_get___isabstractmethod__'/>
+<use f='codebrowser/Objects/funcobject.c' l='722' u='c' c='cm_get___isabstractmethod__'/>
+<use f='codebrowser/Objects/funcobject.c' l='903' u='c' c='sm_get___isabstractmethod__'/>
+<def f='codebrowser/Objects/object.c' l='824' ll='844' type='int _PyObject_IsAbstract(PyObject * obj)'/>

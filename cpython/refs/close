@@ -1,0 +1,58 @@
+<dec f='include/unistd.h' l='356' type='int close(int __fd)'/>
+<doc f='include/unistd.h' l='352'>/* Close the file descriptor FD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/Modules/_io/fileio.c' l='116' u='c' c='internal_close'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='230' u='c' c='_close_fds_by_brute_force'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='236' u='c' c='_close_fds_by_brute_force'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='297' u='c' c='_close_open_fds_safe'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='301' u='c' c='_close_open_fds_safe'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='416' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='418' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='420' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='421' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='457' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='459' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='461' u='c' c='child_exec'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='133' u='c' c='mmap_object_dealloc'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='176' u='c' c='mmap_close_method'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1182' u='c' c='new_mmap_object'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='130' u='c' c='newossobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='136' u='c' c='newossobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='142' u='c' c='newossobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='158' u='c' c='oss_dealloc'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='189' u='c' c='newossmixerobject'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='203' u='c' c='oss_mixer_dealloc'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='523' u='c' c='oss_close'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='743' u='c' c='oss_mixer_close'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3611' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6013' u='c' c='os_openpty_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='6015' u='c' c='os_openpty_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7736' u='c' c='os_open_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7764' u='c' c='os_close_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7791' u='c' c='os_closerange_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7892' u='c' c='os_dup2_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8507' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8508' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8512' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8513' u='c' c='os_pipe_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12257' u='c' c='os_scandir_impl'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1244' u='c' c='pyepoll_internal_close'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='sock_accept'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='sock_accept'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='sock_close'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3534' u='c' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='sock_finalize'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='sock_initobj'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='sock_initobj'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='socket_dup'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='socket_socketpair'/>
+<use f='codebrowser/Modules/socketmodule.c' l='388' u='c' c='socket_socketpair'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='332' u='c' c='dev_urandom'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='337' u='c' c='dev_urandom'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='377' u='c' c='dev_urandom'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='384' u='c' c='dev_urandom'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='393' u='c' c='dev_urandom_close'/>
+<use f='codebrowser/Python/fileutils.c' l='981' u='c' c='_Py_open_impl'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1452' u='c' c='is_valid_fd'/>

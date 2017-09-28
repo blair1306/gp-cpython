@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pytime.h' l='125' type='int _PyTime_AsTimevalTime_t(_PyTime_t t, time_t * secs, int * us, _PyTime_round_t round)'/>
+<doc f='codebrowser/Include/pytime.h' l='119'>/* Convert a timestamp to a number of seconds (secs) and microseconds (us).
+   us is always positive. This function is similar to _PyTime_AsTimeval()
+   except that secs is always a time_t type, whereas the timeval structure
+   uses a C long for tv_sec on Windows.
+   Raise an exception and return -1 if the conversion overflowed,
+   return 0 on success. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='4376' u='c' c='datetime_best_possible'/>
+<def f='codebrowser/Python/pytime.c' l='481' ll='497' type='int _PyTime_AsTimevalTime_t(_PyTime_t t, time_t * p_secs, int * us, _PyTime_round_t round)'/>

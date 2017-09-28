@@ -1,0 +1,38 @@
+<dec f='codebrowser/Include/methodobject.h' l='57' type='const char *'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/methodobject.h' l='57'>/* The name of the built-in function/method */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2065' u='r' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5635' u='r' c='cfunc_noargs'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5636' u='r' c='cfunc_noargs'/>
+<use f='codebrowser/Modules/_lsprof.c' l='187' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Modules/_lsprof.c' l='193' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Modules/_lsprof.c' l='200' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Modules/_lsprof.c' l='218' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Modules/_lsprof.c' l='221' u='r' c='normalizeUserObj'/>
+<use f='codebrowser/Objects/abstract.c' l='825' u='r' c='binary_op'/>
+<use f='codebrowser/Objects/call.c' l='476' u='r' c='_PyMethodDef_RawFastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='491' u='r' c='_PyMethodDef_RawFastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='562' u='r' c='_PyMethodDef_RawFastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='621' u='r' c='_PyMethodDef_RawFastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='636' u='r' c='_PyMethodDef_RawFastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='708' u='r' c='_PyMethodDef_RawFastCallKeywords'/>
+<use f='codebrowser/Objects/call.c' l='755' u='r' c='cfunction_call_varargs'/>
+<use f='codebrowser/Objects/descrobject.c' l='384' u='r' c='method_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='390' u='r' c='method_get_text_signature'/>
+<use f='codebrowser/Objects/descrobject.c' l='732' u='r' c='PyDescr_NewMethod'/>
+<use f='codebrowser/Objects/descrobject.c' l='744' u='r' c='PyDescr_NewClassMethod'/>
+<use f='codebrowser/Objects/methodobject.c' l='109' u='r' c='meth_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='113' u='r' c='meth_reduce'/>
+<use f='codebrowser/Objects/methodobject.c' l='124' u='r' c='meth_get__text_signature__'/>
+<use f='codebrowser/Objects/methodobject.c' l='130' u='r' c='meth_get__doc__'/>
+<use f='codebrowser/Objects/methodobject.c' l='136' u='r' c='meth_get__name__'/>
+<use f='codebrowser/Objects/methodobject.c' l='154' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='169' u='r' c='meth_get__qualname__'/>
+<use f='codebrowser/Objects/methodobject.c' l='215' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/methodobject.c' l='217' u='r' c='meth_repr'/>
+<use f='codebrowser/Objects/moduleobject.c' l='139' u='r' c='_add_methods_to_object'/>
+<use f='codebrowser/Objects/moduleobject.c' l='151' u='r' c='_add_methods_to_object'/>
+<use f='codebrowser/Objects/typeobject.c' l='4655' u='r' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='4659' u='r' c='add_methods'/>
+<use f='codebrowser/Objects/typeobject.c' l='4687' u='r' c='add_methods'/>
+<use f='codebrowser/Python/ceval.c' l='4754' u='r' c='PyEval_GetFuncName'/>

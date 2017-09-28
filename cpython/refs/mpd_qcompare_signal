@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='493' type='int mpd_qcompare_signal(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4109' u='c' c='dec_mpd_qcompare_signal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5050' u='c' c='ctx_mpd_qcompare_signal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2258' ll='2274' type='int mpd_qcompare_signal(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2257'>/* Same as mpd_compare(), but signal for all NaNs, i.e. also for quiet NaNs. */</doc>

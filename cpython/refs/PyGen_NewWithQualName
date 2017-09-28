@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/genobject.h' l='41' type='PyObject * PyGen_NewWithQualName(struct _frame * , PyObject * name, PyObject * qualname)'/>
+<def f='codebrowser/Objects/genobject.c' l='826' ll='830' type='PyObject * PyGen_NewWithQualName(PyFrameObject * f, PyObject * name, PyObject * qualname)'/>
+<use f='codebrowser/Python/ceval.c' l='4156' u='c' c='_PyEval_EvalCodeWithName'/>

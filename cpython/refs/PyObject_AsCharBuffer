@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/abstract.h' l='470' type='int PyObject_AsCharBuffer(PyObject * obj, const char ** buffer, Py_ssize_t * buffer_len)'/>
+<doc f='codebrowser/Include/abstract.h' l='464'>/* Takes an arbitrary object which must support the (character, single segment)
+   buffer interface and returns a pointer to a read-only memory location
+   useable as character based input for subsequent processing.
+
+   Return 0 on success.  buffer and buffer_len are only set in case no error
+   occurs. Otherwise, -1 is returned and an exception set. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='293' ll='299' type='int PyObject_AsCharBuffer(PyObject * obj, const char ** buffer, Py_ssize_t * buffer_len)'/>

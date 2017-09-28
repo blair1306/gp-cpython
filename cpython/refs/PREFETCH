@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_pickle.c' l='113' type='131072'/>
+<use f='codebrowser/Modules/_pickle.c' l='1156' u='r' c='_Unpickler_ReadFromFile'/>
+<use f='codebrowser/Modules/_pickle.c' l='1157' u='r' c='_Unpickler_ReadFromFile'/>
+<doc f='codebrowser/Modules/_pickle.c' l='112'>/* Prefetch size when unpickling (disabled on unpeekable streams) */</doc>

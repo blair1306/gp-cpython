@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<dec f='codebrowser/Include/pyerrors.h' l='14' type='char'/>
+<offset>576</offset>
+<use f='codebrowser/Objects/exceptions.c' l='42' u='w' c='BaseException_new'/>
+<use f='codebrowser/Objects/exceptions.c' l='327' u='w' c='PyException_SetCause'/>
+<use f='codebrowser/Python/pythonrun.c' l='833' u='r' c='print_exception_recursive'/>

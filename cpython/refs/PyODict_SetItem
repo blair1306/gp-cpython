@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/odictobject.h' l='29' type='int PyODict_SetItem(PyObject * od, PyObject * key, PyObject * item)'/>
+<use f='codebrowser/Objects/odictobject.c' l='845' u='c' c='odict_mp_ass_sub'/>
+<use f='codebrowser/Objects/odictobject.c' l='1033' u='c' c='OrderedDict_setdefault_impl'/>
+<def f='codebrowser/Objects/odictobject.c' l='1742' ll='1749' type='int PyODict_SetItem(PyObject * od, PyObject * key, PyObject * value)'/>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>marshal.c.h source code [codebrowser/Python/clinic/marshal.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/clinic/marshal.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Python</a>/<a href='./'>clinic</a>/<a href='marshal.c.h.html'>marshal.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char marshal_dump__doc__[] = &quot;dump($module, value, file, version=version, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Write the value on the open file.\n&quot;&quot;\n&quot;&quot;  value\n&quot;&quot;    Must be a supported type.\n&quot;&quot;  file\n&quot;&quot;    Must be a writeable binary file.\n&quot;&quot;  version\n&quot;&quot;    Indicates the data format that dump should use.\n&quot;&quot;\n&quot;&quot;If the value has (or contains an object that has) an unsupported type, a\n&quot;&quot;ValueError exception is raised - but garbage data will also be written\n&quot;&quot;to the file. The object will not be properly read back by load().&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="marshal_dump__doc__" title='marshal_dump__doc__' data-ref="marshal_dump__doc__">marshal_dump__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"dump($module, value, file, version=version, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Write the value on the open file.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"  value\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"    Must be a supported type.\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"  file\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"    Must be a writeable binary file.\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"  version\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"    Indicates the data format that dump should use.\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"If the value has (or contains an object that has) an unsupported type, a\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"ValueError exception is raised - but garbage data will also be written\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"to the file. The object will not be properly read back by load()."</q>);</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/MARSHAL_DUMP_METHODDEF" data-ref="_M/MARSHAL_DUMP_METHODDEF">MARSHAL_DUMP_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="23">23</th><td><u>    {"dump", (PyCFunction)marshal_dump, METH_FASTCALL, marshal_dump__doc__},</u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="26">26</th><td><a class="decl" href="../marshal.c.html#marshal_dump_impl" title='marshal_dump_impl' data-ref="marshal_dump_impl" id="marshal_dump_impl">marshal_dump_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="1module" title='module' data-type='PyObject *' data-ref="1module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2value" title='value' data-type='PyObject *' data-ref="2value">value</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3file" title='file' data-type='PyObject *' data-ref="3file">file</dfn>,</td></tr>
+<tr><th id="27">27</th><td>                  <em>int</em> <dfn class="local col4 decl" id="4version" title='version' data-type='int' data-ref="4version">version</dfn>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="30">30</th><td><dfn class="decl def" id="marshal_dump" title='marshal_dump' data-ref="marshal_dump">marshal_dump</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5module" title='module' data-type='PyObject *' data-ref="5module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="6args" title='args' data-type='PyObject **' data-ref="6args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="7nargs" title='nargs' data-type='Py_ssize_t' data-ref="7nargs">nargs</dfn>)</td></tr>
+<tr><th id="31">31</th><td>{</td></tr>
+<tr><th id="32">32</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="8return_value" title='return_value' data-type='PyObject *' data-ref="8return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="33">33</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9value" title='value' data-type='PyObject *' data-ref="9value">value</dfn>;</td></tr>
+<tr><th id="34">34</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10file" title='file' data-type='PyObject *' data-ref="10file">file</dfn>;</td></tr>
+<tr><th id="35">35</th><td>    <em>int</em> <dfn class="local col1 decl" id="11version" title='version' data-type='int' data-ref="11version">version</dfn> = <a class="macro" href="../../Include/marshal.h.html#10" title="4" data-ref="_M/Py_MARSHAL_VERSION">Py_MARSHAL_VERSION</a>;</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col6 ref" href="#6args" title='args' data-ref="6args">args</a>, <a class="local col7 ref" href="#7nargs" title='nargs' data-ref="7nargs">nargs</a>, <q>"OO|i:dump"</q>,</td></tr>
+<tr><th id="38">38</th><td>        &amp;<a class="local col9 ref" href="#9value" title='value' data-ref="9value">value</a>, &amp;<a class="local col0 ref" href="#10file" title='file' data-ref="10file">file</a>, &amp;<a class="local col1 ref" href="#11version" title='version' data-ref="11version">version</a>)) {</td></tr>
+<tr><th id="39">39</th><td>        <b>goto</b> <a class="lbl" href="#12exit" data-ref="12exit">exit</a>;</td></tr>
+<tr><th id="40">40</th><td>    }</td></tr>
+<tr><th id="41">41</th><td>    <a class="local col8 ref" href="#8return_value" title='return_value' data-ref="8return_value">return_value</a> = <a class="ref" href="../marshal.c.html#marshal_dump_impl" title='marshal_dump_impl' data-ref="marshal_dump_impl">marshal_dump_impl</a>(<a class="local col5 ref" href="#5module" title='module' data-ref="5module">module</a>, <a class="local col9 ref" href="#9value" title='value' data-ref="9value">value</a>, <a class="local col0 ref" href="#10file" title='file' data-ref="10file">file</a>, <a class="local col1 ref" href="#11version" title='version' data-ref="11version">version</a>);</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><dfn class="lbl" id="12exit" data-ref="12exit">exit</dfn>:</td></tr>
+<tr><th id="44">44</th><td>    <b>return</b> <a class="local col8 ref" href="#8return_value" title='return_value' data-ref="8return_value">return_value</a>;</td></tr>
+<tr><th id="45">45</th><td>}</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char marshal_load__doc__[] = &quot;load($module, file, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Read one value from the open file and return it.\n&quot;&quot;\n&quot;&quot;  file\n&quot;&quot;    Must be readable binary file.\n&quot;&quot;\n&quot;&quot;If no valid value is read (e.g. because the data has a different Python\n&quot;&quot;version\&apos;s incompatible marshal format), raise EOFError, ValueError or\n&quot;&quot;TypeError.\n&quot;&quot;\n&quot;&quot;Note: If an object containing an unsupported type was marshalled with\n&quot;&quot;dump(), load() will substitute None for the unmarshallable type.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="marshal_load__doc__" title='marshal_load__doc__' data-ref="marshal_load__doc__">marshal_load__doc__</dfn>,</td></tr>
+<tr><th id="48">48</th><td><q>"load($module, file, /)\n"</q></td></tr>
+<tr><th id="49">49</th><td><q>"--\n"</q></td></tr>
+<tr><th id="50">50</th><td><q>"\n"</q></td></tr>
+<tr><th id="51">51</th><td><q>"Read one value from the open file and return it.\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"  file\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"    Must be readable binary file.\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"If no valid value is read (e.g. because the data has a different Python\n"</q></td></tr>
+<tr><th id="57">57</th><td><q>"version\'s incompatible marshal format), raise EOFError, ValueError or\n"</q></td></tr>
+<tr><th id="58">58</th><td><q>"TypeError.\n"</q></td></tr>
+<tr><th id="59">59</th><td><q>"\n"</q></td></tr>
+<tr><th id="60">60</th><td><q>"Note: If an object containing an unsupported type was marshalled with\n"</q></td></tr>
+<tr><th id="61">61</th><td><q>"dump(), load() will substitute None for the unmarshallable type."</q>);</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><u>#define <dfn class="macro" id="_M/MARSHAL_LOAD_METHODDEF" data-ref="_M/MARSHAL_LOAD_METHODDEF">MARSHAL_LOAD_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="64">64</th><td><u>    {"load", (PyCFunction)marshal_load, METH_O, marshal_load__doc__},</u></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char marshal_dumps__doc__[] = &quot;dumps($module, value, version=version, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the bytes object that would be written to a file by dump(value, file).\n&quot;&quot;\n&quot;&quot;  value\n&quot;&quot;    Must be a supported type.\n&quot;&quot;  version\n&quot;&quot;    Indicates the data format that dumps should use.\n&quot;&quot;\n&quot;&quot;Raise a ValueError exception if value has (or contains an object that has) an\n&quot;&quot;unsupported type.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="marshal_dumps__doc__" title='marshal_dumps__doc__' data-ref="marshal_dumps__doc__">marshal_dumps__doc__</dfn>,</td></tr>
+<tr><th id="67">67</th><td><q>"dumps($module, value, version=version, /)\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"--\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"\n"</q></td></tr>
+<tr><th id="70">70</th><td><q>"Return the bytes object that would be written to a file by dump(value, file).\n"</q></td></tr>
+<tr><th id="71">71</th><td><q>"\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"  value\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"    Must be a supported type.\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"  version\n"</q></td></tr>
+<tr><th id="75">75</th><td><q>"    Indicates the data format that dumps should use.\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"Raise a ValueError exception if value has (or contains an object that has) an\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"unsupported type."</q>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/MARSHAL_DUMPS_METHODDEF" data-ref="_M/MARSHAL_DUMPS_METHODDEF">MARSHAL_DUMPS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="81">81</th><td><u>    {"dumps", (PyCFunction)marshal_dumps, METH_FASTCALL, marshal_dumps__doc__},</u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="84">84</th><td><a class="decl" href="../marshal.c.html#marshal_dumps_impl" title='marshal_dumps_impl' data-ref="marshal_dumps_impl" id="marshal_dumps_impl">marshal_dumps_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="13module" title='module' data-type='PyObject *' data-ref="13module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14value" title='value' data-type='PyObject *' data-ref="14value">value</dfn>, <em>int</em> <dfn class="local col5 decl" id="15version" title='version' data-type='int' data-ref="15version">version</dfn>);</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="87">87</th><td><dfn class="decl def" id="marshal_dumps" title='marshal_dumps' data-ref="marshal_dumps">marshal_dumps</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16module" title='module' data-type='PyObject *' data-ref="16module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col7 decl" id="17args" title='args' data-type='PyObject **' data-ref="17args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="18nargs" title='nargs' data-type='Py_ssize_t' data-ref="18nargs">nargs</dfn>)</td></tr>
+<tr><th id="88">88</th><td>{</td></tr>
+<tr><th id="89">89</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19return_value" title='return_value' data-type='PyObject *' data-ref="19return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="90">90</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20value" title='value' data-type='PyObject *' data-ref="20value">value</dfn>;</td></tr>
+<tr><th id="91">91</th><td>    <em>int</em> <dfn class="local col1 decl" id="21version" title='version' data-type='int' data-ref="21version">version</dfn> = <a class="macro" href="../../Include/marshal.h.html#10" title="4" data-ref="_M/Py_MARSHAL_VERSION">Py_MARSHAL_VERSION</a>;</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#95" title="_PyArg_ParseStack_SizeT" data-ref="_M/_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col7 ref" href="#17args" title='args' data-ref="17args">args</a>, <a class="local col8 ref" href="#18nargs" title='nargs' data-ref="18nargs">nargs</a>, <q>"O|i:dumps"</q>,</td></tr>
+<tr><th id="94">94</th><td>        &amp;<a class="local col0 ref" href="#20value" title='value' data-ref="20value">value</a>, &amp;<a class="local col1 ref" href="#21version" title='version' data-ref="21version">version</a>)) {</td></tr>
+<tr><th id="95">95</th><td>        <b>goto</b> <a class="lbl" href="#22exit" data-ref="22exit">exit</a>;</td></tr>
+<tr><th id="96">96</th><td>    }</td></tr>
+<tr><th id="97">97</th><td>    <a class="local col9 ref" href="#19return_value" title='return_value' data-ref="19return_value">return_value</a> = <a class="ref" href="../marshal.c.html#marshal_dumps_impl" title='marshal_dumps_impl' data-ref="marshal_dumps_impl">marshal_dumps_impl</a>(<a class="local col6 ref" href="#16module" title='module' data-ref="16module">module</a>, <a class="local col0 ref" href="#20value" title='value' data-ref="20value">value</a>, <a class="local col1 ref" href="#21version" title='version' data-ref="21version">version</a>);</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><dfn class="lbl" id="22exit" data-ref="22exit">exit</dfn>:</td></tr>
+<tr><th id="100">100</th><td>    <b>return</b> <a class="local col9 ref" href="#19return_value" title='return_value' data-ref="19return_value">return_value</a>;</td></tr>
+<tr><th id="101">101</th><td>}</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char marshal_loads__doc__[] = &quot;loads($module, bytes, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Convert the bytes-like object to a value.\n&quot;&quot;\n&quot;&quot;If no valid value is found, raise EOFError, ValueError or TypeError.  Extra\n&quot;&quot;bytes in the input are ignored.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="marshal_loads__doc__" title='marshal_loads__doc__' data-ref="marshal_loads__doc__">marshal_loads__doc__</dfn>,</td></tr>
+<tr><th id="104">104</th><td><q>"loads($module, bytes, /)\n"</q></td></tr>
+<tr><th id="105">105</th><td><q>"--\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"Convert the bytes-like object to a value.\n"</q></td></tr>
+<tr><th id="108">108</th><td><q>"\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"If no valid value is found, raise EOFError, ValueError or TypeError.  Extra\n"</q></td></tr>
+<tr><th id="110">110</th><td><q>"bytes in the input are ignored."</q>);</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><u>#define <dfn class="macro" id="_M/MARSHAL_LOADS_METHODDEF" data-ref="_M/MARSHAL_LOADS_METHODDEF">MARSHAL_LOADS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="113">113</th><td><u>    {"loads", (PyCFunction)marshal_loads, METH_O, marshal_loads__doc__},</u></td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="116">116</th><td><a class="decl" href="../marshal.c.html#marshal_loads_impl" title='marshal_loads_impl' data-ref="marshal_loads_impl" id="marshal_loads_impl">marshal_loads_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="23module" title='module' data-type='PyObject *' data-ref="23module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col4 decl" id="24bytes" title='bytes' data-type='Py_buffer *' data-ref="24bytes">bytes</dfn>);</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="119">119</th><td><dfn class="decl def" id="marshal_loads" title='marshal_loads' data-ref="marshal_loads">marshal_loads</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25module" title='module' data-type='PyObject *' data-ref="25module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="26arg" title='arg' data-type='PyObject *' data-ref="26arg">arg</dfn>)</td></tr>
+<tr><th id="120">120</th><td>{</td></tr>
+<tr><th id="121">121</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="27return_value" title='return_value' data-type='PyObject *' data-ref="27return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="122">122</th><td>    <a class="typedef" href="../../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col8 decl" id="28bytes" title='bytes' data-type='Py_buffer' data-ref="28bytes">bytes</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td>    <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#15" title="_PyArg_Parse_SizeT" data-ref="_M/PyArg_Parse">PyArg_Parse</a>(<a class="local col6 ref" href="#26arg" title='arg' data-ref="26arg">arg</a>, <q>"y*:loads"</q>, &amp;<a class="local col8 ref" href="#28bytes" title='bytes' data-ref="28bytes">bytes</a>)) {</td></tr>
+<tr><th id="125">125</th><td>        <b>goto</b> <a class="lbl" href="#29exit" data-ref="29exit">exit</a>;</td></tr>
+<tr><th id="126">126</th><td>    }</td></tr>
+<tr><th id="127">127</th><td>    <a class="local col7 ref" href="#27return_value" title='return_value' data-ref="27return_value">return_value</a> = <a class="ref" href="../marshal.c.html#marshal_loads_impl" title='marshal_loads_impl' data-ref="marshal_loads_impl">marshal_loads_impl</a>(<a class="local col5 ref" href="#25module" title='module' data-ref="25module">module</a>, &amp;<a class="local col8 ref" href="#28bytes" title='bytes' data-ref="28bytes">bytes</a>);</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><dfn class="lbl" id="29exit" data-ref="29exit">exit</dfn>:</td></tr>
+<tr><th id="130">130</th><td>    <i>/* Cleanup for bytes */</i></td></tr>
+<tr><th id="131">131</th><td>    <b>if</b> (<a class="local col8 ref" href="#28bytes" title='bytes' data-ref="28bytes">bytes</a>.<a class="ref" href="../../Include/object.h.html#bufferinfo::obj" title='bufferinfo::obj' data-ref="bufferinfo::obj">obj</a>) {</td></tr>
+<tr><th id="132">132</th><td>       <a class="ref" href="../../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col8 ref" href="#28bytes" title='bytes' data-ref="28bytes">bytes</a>);</td></tr>
+<tr><th id="133">133</th><td>    }</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td>    <b>return</b> <a class="local col7 ref" href="#27return_value" title='return_value' data-ref="27return_value">return_value</a>;</td></tr>
+<tr><th id="136">136</th><td>}</td></tr>
+<tr><th id="137">137</th><td><i>/*[clinic end generated code: output=15e284a34abfd26a input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../marshal.c.html'>codebrowser/Python/marshal.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

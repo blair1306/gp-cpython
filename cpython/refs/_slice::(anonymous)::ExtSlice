@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/Python-ast.h' l='383' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:381:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2443' u='m' c='_Py_ExtSlice'/>
+<use f='codebrowser/Python/Python-ast.c' l='3587' u='m' c='ast2obj_slice'/>
+<use f='codebrowser/Python/ast.c' l='48' u='m' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='50' u='m' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='50' u='m' c='validate_slice'/>
+<use f='codebrowser/Python/ast.c' l='51' u='m' c='validate_slice'/>
+<use f='codebrowser/Python/compile.c' l='4625' u='m' c='check_ann_subscr'/>
+<use f='codebrowser/Python/compile.c' l='4625' u='m' c='check_ann_subscr'/>
+<use f='codebrowser/Python/compile.c' l='4627' u='m' c='check_ann_subscr'/>
+<use f='codebrowser/Python/compile.c' l='4868' u='m' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/compile.c' l='4868' u='m' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/compile.c' l='4871' u='m' c='compiler_visit_slice'/>
+<use f='codebrowser/Python/symtable.c' l='1709' u='m' c='symtable_visit_slice'/>

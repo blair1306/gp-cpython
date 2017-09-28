@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/abstract.h' l='943' type='int PySequence_Contains(PyObject * seq, PyObject * ob)'/>
+<doc f='codebrowser/Include/abstract.h' l='939'>/* Return 1 if &apos;ob&apos; is in the sequence &apos;seq&apos;; 0 if &apos;ob&apos; is not in the sequence
+   &apos;seq&apos;; -1 on error.
+
+   Use __contains__ if possible, else _PySequence_IterSearch(). */</doc>
+<use f='codebrowser/Modules/_operator.c' l='474' u='c' c='_operator_contains_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='2022' ll='2031' type='int PySequence_Contains(PyObject * seq, PyObject * ob)'/>
+<use f='codebrowser/Objects/abstract.c' l='2038' u='c' c='PySequence_In'/>
+<doc f='codebrowser/Objects/abstract.c' l='2019'>/* Return -1 if error; 1 if ob in seq; 0 if ob not in seq.
+ * Use sq_contains if possible, else defer to _PySequence_IterSearch().
+ */</doc>
+<use f='codebrowser/Objects/descrobject.c' l='823' u='c' c='mappingproxy_contains'/>
+<use f='codebrowser/Objects/dictobject.c' l='3707' u='c' c='all_contained_in'/>
+<use f='codebrowser/Objects/dictobject.c' l='3953' u='c' c='dictviews_isdisjoint'/>
+<use f='codebrowser/Objects/odictobject.c' l='1043' u='c' c='OrderedDict_setdefault_impl'/>
+<use f='codebrowser/Objects/odictobject.c' l='1123' u='c' c='_odict_popkey_hash'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='554' u='c' c='proxy_contains'/>
+<use f='codebrowser/Python/ceval.c' l='4954' u='c' c='cmp_outcome'/>
+<use f='codebrowser/Python/ceval.c' l='4959' u='c' c='cmp_outcome'/>
+<use f='codebrowser/Python/getargs.c' l='2222' u='c' c='vgetargskeywordsfast_impl'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='343' type='int mpd_qsetprec(mpd_context_t * ctx, mpd_ssize_t prec)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='797' u='c' c='context_setprec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='72' u='c' c='mpd_init'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/context.c' l='195' ll='203' type='int mpd_qsetprec(mpd_context_t * ctx, mpd_ssize_t prec)'/>

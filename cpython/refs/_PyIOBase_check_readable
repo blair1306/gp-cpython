@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='34' type='PyObject * _PyIOBase_check_readable(PyObject * self, PyObject * args)'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='30'>/* These functions are used as METH_NOARGS methods, are normally called
+ * with args=NULL, and return a new reference.
+ * BUT when args=Py_True is passed, they return a borrowed reference.
+ */</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1453' u='c' c='_io_BufferedReader___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2111' u='c' c='_io_BufferedRWPair___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2304' u='c' c='_io_BufferedRandom___init___impl'/>
+<def f='codebrowser/Modules/_io/iobase.c' l='376' ll='391' type='PyObject * _PyIOBase_check_readable(PyObject * self, PyObject * args)'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='767'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='767'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='767'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='767'/>
+<doc f='codebrowser/Modules/_io/iobase.c' l='375'>/* May be called with any object */</doc>

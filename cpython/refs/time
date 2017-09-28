@@ -1,0 +1,5 @@
+<dec f='include/time.h' l='192' type='time_t time(time_t * __timer)'/>
+<use f='codebrowser/Modules/timemodule.c' l='331' u='c' c='parse_time_t_args'/>
+<use f='codebrowser/Modules/timemodule.c' l='585' u='c' c='time_strftime'/>
+<use f='codebrowser/Modules/timemodule.c' l='780' u='c' c='time_asctime'/>
+<use f='codebrowser/Modules/timemodule.c' l='1235' u='c' c='PyInit_timezone'/>

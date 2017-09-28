@@ -1,0 +1,13 @@
+<dec f='include/x86_64-linux-gnu/sys/select.h' l='106' type='int select(int __nfds, fd_set *restrict __readfds, fd_set *restrict __writefds, fd_set *restrict __exceptfds, struct timeval *restrict __timeout)'/>
+<doc f='include/x86_64-linux-gnu/sys/select.h' l='98'>/* Check the first NFDS descriptors each in READFDS (if not NULL) for read
+   readiness, in WRITEFDS (if not NULL) for write readiness, and in EXCEPTFDS
+   (if not NULL) for exceptional conditions.  If TIMEOUT is not NULL, time out
+   after waiting the interval specified therein.  Returns the number of ready
+   descriptors, or -1 for errors.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='codebrowser/Modules/ossaudiodev.c' l='488' u='c' c='oss_writeall'/>
+<use f='codebrowser/Modules/readline.c' l='1226' u='c' c='readline_until_enter_or_signal'/>
+<use f='codebrowser/Modules/selectmodule.c' l='269' u='c' c='select_select'/>
+<use f='codebrowser/Modules/timemodule.c' l='1455' u='c' c='pysleep'/>

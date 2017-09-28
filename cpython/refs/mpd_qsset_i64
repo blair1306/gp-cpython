@@ -1,0 +1,3 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='700' type='void mpd_qsset_i64(mpd_t * result, int64_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1116' ll='1121' type='void mpd_qsset_i64(mpd_t * result, int64_t a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1115'>/* quietly set a static decimal from an int64_t */</doc>

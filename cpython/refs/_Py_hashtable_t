@@ -1,0 +1,11 @@
+<def f='codebrowser/Modules/hashtable.h' l='92' ll='102'/>
+<size>72</size>
+<doc f='codebrowser/Modules/hashtable.h' l='90'>/* _Py_hashtable: table */</doc>
+<mbr r='_Py_hashtable_t::num_buckets' o='0' t='size_t'/>
+<mbr r='_Py_hashtable_t::entries' o='64' t='size_t'/>
+<mbr r='_Py_hashtable_t::buckets' o='128' t='_Py_slist_t *'/>
+<mbr r='_Py_hashtable_t::key_size' o='192' t='size_t'/>
+<mbr r='_Py_hashtable_t::data_size' o='256' t='size_t'/>
+<mbr r='_Py_hashtable_t::hash_func' o='320' t='_Py_hashtable_hash_func'/>
+<mbr r='_Py_hashtable_t::compare_func' o='384' t='_Py_hashtable_compare_func'/>
+<mbr r='_Py_hashtable_t::alloc' o='448' t='_Py_hashtable_allocator_t'/>

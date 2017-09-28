@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='44' type='void _mpd_baseaddto(mpd_uint_t * w, const mpd_uint_t * u, mpd_size_t n)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='84' ll='105' type='void _mpd_baseaddto(mpd_uint_t * w, const mpd_uint_t * u, mpd_size_t n)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='80'>/*
+ * Add the contents of u to w. Carries are propagated further. The caller
+ * has to make sure that w is big enough.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5316' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5321' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5329' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5333' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5342' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5349' u='c' c='_karatsuba_rec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5617' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5624' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5632' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5636' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5649' u='c' c='_karatsuba_rec_fnt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5658' u='c' c='_karatsuba_rec_fnt'/>

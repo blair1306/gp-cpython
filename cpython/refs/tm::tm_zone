@@ -1,0 +1,7 @@
+<dec f='include/time.h' l='147' type='const char *'/>
+<offset>384</offset>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5093' u='r' c='local_timezone_from_timestamp'/>
+<use f='codebrowser/Modules/timemodule.c' l='302' u='r' c='tmtotuple'/>
+<use f='codebrowser/Modules/timemodule.c' l='443' u='w' c='gettmarg'/>
+<use f='codebrowser/Modules/timemodule.c' l='1179' u='r' c='get_zone'/>
+<use f='codebrowser/Modules/timemodule.c' l='1179' u='r' c='get_zone'/>

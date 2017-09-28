@@ -1,0 +1,14 @@
+<dec f='include/zlib.h' l='86' type='Bytef *'/>
+<offset>0</offset>
+<doc f='include/zlib.h' l='86'>/* next input byte */</doc>
+<use f='codebrowser/Modules/zlibmodule.c' l='227' u='w' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='355' u='w' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='478' u='w' c='zlib_compressobj_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='574' u='w' c='zlib_decompressobj_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='665' u='w' c='zlib_Compress_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='715' u='r' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='727' u='r' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='737' u='r' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='739' u='r' c='save_unconsumed_input'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='783' u='w' c='zlib_Decompress_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1084' u='w' c='zlib_Decompress_flush_impl'/>

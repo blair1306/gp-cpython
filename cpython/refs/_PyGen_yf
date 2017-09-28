@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/genobject.h' l='47' type='PyObject * _PyGen_yf(PyGenObject * )'/>
+<def f='codebrowser/Objects/genobject.c' l='348' ll='373' type='PyObject * _PyGen_yf(PyGenObject * gen)'/>
+<use f='codebrowser/Objects/genobject.c' l='379' u='c' c='gen_close'/>
+<use f='codebrowser/Objects/genobject.c' l='419' u='c' c='_gen_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='713' u='c' c='gen_getyieldfrom'/>
+<use f='codebrowser/Objects/genobject.c' l='948' u='c' c='coro_get_cr_await'/>
+<use f='codebrowser/Python/ceval.c' l='1978' u='c' c='_PyEval_EvalFrameDefault'/>

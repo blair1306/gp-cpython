@@ -1,0 +1,7 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='117' ll='127' type='mpd_uint_t dw_submod(mpd_uint_t a, mpd_uint_t hi, mpd_uint_t lo, mpd_uint_t m)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/umodarith.h' l='112'>/*
+ * Subtract double word from a.
+ * Restrictions: a &lt; m
+ * ACL2 proof: umodarith.lisp: section dw-submod
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='162' u='c' c='crt3'/>

@@ -1,0 +1,10 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='591' ll='598' type='mpd_size_t add_size_t(mpd_size_t a, mpd_size_t b)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/typearith.h' l='585'>/* The following macros do call exit() in case of an overflow.
+   If the library is used correctly (i.e. with valid context
+   parameters), such overflows cannot occur. The macros are used
+   as sanity checks in a couple of strategic places and should
+   be viewed as a handwritten version of gcc&apos;s -ftrapv option. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5251' u='c' c='_kmul_resultsize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5252' u='c' c='_kmul_resultsize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5272' u='c' c='_kmul_worksize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5496' u='c' c='_mpd_fntmul'/>

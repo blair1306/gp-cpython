@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='403' type='char * mpd_to_sci(const mpd_t * dec, int fmt)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3116' u='c' c='dec_repr'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3716' u='c' c='PyDec_AsTuple'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='402'>/* output to a string */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/io.c' l='631' ll='640' type='char * mpd_to_sci(const mpd_t * dec, int fmt)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1558' u='c' c='mpd_fprint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1573' u='c' c='mpd_print'/>

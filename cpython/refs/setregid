@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='725' type='int setregid(__gid_t __rgid, __gid_t __egid)'/>
+<doc f='include/unistd.h' l='723'>/* Set the real group ID of the calling process to RGID,
+   and the effective group ID of the calling process to EGID.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='6754' u='c' c='os_setregid_impl'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/fileutils.h' l='64' type='FILE * _Py_wfopen(const wchar_t * path, const wchar_t * mode)'/>
+<use f='codebrowser/Modules/getpath.c' l='407' u='c' c='search_for_exec_prefix'/>
+<use f='codebrowser/Modules/getpath.c' l='646' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/getpath.c' l='652' u='c' c='calculate_path'/>
+<use f='codebrowser/Modules/main.c' l='860' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/fileutils.c' l='1027' ll='1055' type='FILE * _Py_wfopen(const wchar_t * path, const wchar_t * mode)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1021'>/* Open a file. Use _wfopen() on Windows, encode the path to the locale
+   encoding and use fopen() otherwise.
+
+   The file descriptor is created non-inheritable.
+
+   If interrupted by a signal, fail with EINTR. */</doc>

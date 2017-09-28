@@ -1,0 +1,6 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='206' ll='213' type='int _mpd_isallnine(const mpd_uint_t * data, mpd_ssize_t len)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='202'>/*
+ * Test if all full words from data[len-1] to data[0] are MPD_RADIX-1
+ * (all nines). Return true if len == 0.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='986' u='c' c='mpd_coeff_isallnine'/>

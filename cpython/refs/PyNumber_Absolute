@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/abstract.h' l='677' type='PyObject * PyNumber_Absolute(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='674'>/* Returns the absolute value of &apos;o&apos;, or NULL on failure.
+
+   This is the equivalent of the Python expression: abs(o). */</doc>
+<use f='codebrowser/Modules/_operator.c' l='171' u='c' c='_operator_abs'/>
+<use f='codebrowser/Modules/_randommodule.c' l='263' u='c' c='random_seed'/>
+<def f='codebrowser/Objects/abstract.c' l='1217' ll='1231' type='PyObject * PyNumber_Absolute(PyObject * o)'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='506' u='c' c='proxy_abs'/>
+<use f='codebrowser/Python/bltinmodule.c' l='256' u='c' c='builtin_abs'/>

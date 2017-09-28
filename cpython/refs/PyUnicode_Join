@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1980' type='PyObject * PyUnicode_Join(PyObject * separator, PyObject * seq)'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='786' u='c' c='FutureObj_repr'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1977'>/* Join a sequence of strings using the given separator and return
+   the resulting Unicode string. */</doc>
+<use f='codebrowser/Modules/_elementtree.c' l='141' u='c' c='list_join'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1696' u='c' c='_io_TextIOWrapper_read_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1961' u='c' c='_textiowrapper_readline'/>
+<use f='codebrowser/Modules/_json.c' l='76' u='c' c='join_list_unicode'/>
+<use f='codebrowser/Modules/_operator.c' l='1322' u='c' c='dotjoinattr'/>
+<use f='codebrowser/Modules/_operator.c' l='1602' u='c' c='methodcaller_repr'/>
+<use f='codebrowser/Modules/_sre.c' l='1179' u='c' c='pattern_subx'/>
+<use f='codebrowser/Modules/_sre.c' l='1327' u='c' c='pattern_repr'/>
+<use f='codebrowser/Objects/accu.c' l='12' u='c' c='join_list_unicode'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='123' u='c' c='namespace_repr'/>
+<use f='codebrowser/Objects/typeobject.c' l='3587' u='c' c='object_new'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='9888' ll='9910' type='PyObject * PyUnicode_Join(PyObject * separator, PyObject * seq)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12245' u='c' c='unicode_join'/>
+<use f='codebrowser/Python/ceval.c' l='3787' u='c' c='format_missing'/>

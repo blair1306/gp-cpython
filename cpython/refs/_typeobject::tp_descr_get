@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/object.h' l='407' type='descrgetfunc'/>
+<offset>2304</offset>
+<use f='codebrowser/Objects/classobject.c' l='6' u='r' c='method_getattro'/>
+<use f='codebrowser/Objects/classobject.c' l='6' u='r' c='instancemethod_getattro'/>
+<use f='codebrowser/Objects/object.c' l='1067' u='r' c='_PyObject_GetMethod'/>
+<use f='codebrowser/Objects/object.c' l='1146' u='r' c='_PyObject_GenericGetAttrWithDict'/>
+<use f='codebrowser/Objects/typeobject.c' l='803' u='r' c='type_get_doc'/>
+<use f='codebrowser/Objects/typeobject.c' l='804' u='r' c='type_get_doc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1424' u='r' c='_PyObject_LookupSpecial'/>
+<use f='codebrowser/Objects/typeobject.c' l='1447' u='r' c='lookup_maybe_method'/>
+<use f='codebrowser/Objects/typeobject.c' l='2130' u='r' c='subtype_dict'/>
+<use f='codebrowser/Objects/typeobject.c' l='3059' u='r' c='type_getattro'/>
+<use f='codebrowser/Objects/typeobject.c' l='3077' u='r' c='type_getattro'/>
+<use f='codebrowser/Objects/typeobject.c' l='4957' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4957' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4957' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4957' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4957' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4957' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='6289' u='r' c='call_attribute'/>
+<use f='codebrowser/Objects/typeobject.c' l='6446' u='r' c='slot_tp_descr_get'/>
+<use f='codebrowser/Objects/typeobject.c' l='6447' u='w' c='slot_tp_descr_get'/>
+<use f='codebrowser/Objects/typeobject.c' l='7413' u='r' c='super_getattro'/>

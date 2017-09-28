@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/longobject.h' l='84' type='double PyLong_AsDouble(PyObject * )'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2135' u='c' c='accum'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='832' u='c' c='test_long_as_double'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1902' u='c' c='loghelper'/>
+<use f='codebrowser/Objects/complexobject.c' l='444' u='c' c='to_complex'/>
+<use f='codebrowser/Objects/floatobject.c' l='303' u='c' c='convert_to_double'/>
+<use f='codebrowser/Objects/floatobject.c' l='406' u='c' c='float_richcompare'/>
+<def f='codebrowser/Objects/longobject.c' l='2858' ll='2886' type='double PyLong_AsDouble(PyObject * v)'/>
+<use f='codebrowser/Objects/longobject.c' l='4803' u='c' c='long_float'/>
+<doc f='codebrowser/Objects/longobject.c' l='2855'>/* Get a C double from an int object.  Rounds to the nearest double,
+   using the round-half-to-even rule in the case of a tie. */</doc>

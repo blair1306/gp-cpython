@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyexpat.h' l='22' type='enum XML_Status (*)(XML_Parser, const char *, int, int)'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3413' u='r' c='expat_parse'/>
+<offset>448</offset>
+<use f='codebrowser/Modules/pyexpat.c' l='1872' u='w' c='PyInit_pyexpat'/>

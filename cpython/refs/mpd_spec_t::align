@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='394' type='char'/>
+<offset>136</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='394'>/* alignment */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='782' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='798' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='807' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='824' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1014' u='r' c='_mpd_add_sep_dot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1141' u='r' c='_mpd_add_pad'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1261' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1265' u='w' c='mpd_qformat_spec'/>

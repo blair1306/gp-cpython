@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pyerrors.h' l='373' type='void PyErr_SyntaxLocationObject(PyObject * filename, int lineno, int col_offset)'/>
+<def f='codebrowser/Python/errors.c' l='1020' ll='1082' type='void PyErr_SyntaxLocationObject(PyObject * filename, int lineno, int col_offset)'/>
+<use f='codebrowser/Python/errors.c' l='1095' u='c' c='PyErr_SyntaxLocationEx'/>
+<doc f='codebrowser/Python/errors.c' l='1016'>/* Set file and line information for the current exception.
+   If the exception is not a SyntaxError, also sets additional attributes
+   to make printing of exceptions believe it is a syntax error. */</doc>
+<use f='codebrowser/Python/future.c' l='48' u='c' c='future_check_features'/>
+<use f='codebrowser/Python/future.c' l='53' u='c' c='future_check_features'/>
+<use f='codebrowser/Python/future.c' l='99' u='c' c='future_parse'/>
+<use f='codebrowser/Python/symtable.c' l='382' u='c' c='error_at_directive'/>
+<use f='codebrowser/Python/symtable.c' l='994' u='c' c='symtable_add_def'/>
+<use f='codebrowser/Python/symtable.c' l='1201' u='c' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1294' u='c' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1324' u='c' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1665' u='c' c='symtable_visit_alias'/>

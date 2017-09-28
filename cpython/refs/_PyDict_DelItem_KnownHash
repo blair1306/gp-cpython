@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/dictobject.h' l='89' type='int _PyDict_DelItem_KnownHash(PyObject * mp, PyObject * key, Py_hash_t hash)'/>
+<use f='codebrowser/Objects/dictobject.c' l='1474' u='c' c='PyDict_DelItem'/>
+<def f='codebrowser/Objects/dictobject.c' l='1477' ll='1509' type='int _PyDict_DelItem_KnownHash(PyObject * op, PyObject * key, Py_hash_t hash)'/>
+<use f='codebrowser/Objects/odictobject.c' l='1115' u='c' c='_odict_popkey_hash'/>
+<use f='codebrowser/Objects/odictobject.c' l='1735' u='c' c='_PyODict_SetItem_KnownHash'/>
+<use f='codebrowser/Objects/odictobject.c' l='1761' u='c' c='PyODict_DelItem'/>

@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/grammar.h' l='31' type='short'/>
+<use f='codebrowser/Modules/parsermodule.c' l='697' u='r' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='711' u='r' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='731' u='r' c='validate_node'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/grammar.h' l='31'>/* Label of this arc */</doc>
+<use f='codebrowser/Parser/acceler.c' l='80' u='r' c='fixstate'/>
+<use f='codebrowser/Parser/firstsets.c' l='72' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='81' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='82' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='98' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='100' u='w' c='_Py_addarc'/>

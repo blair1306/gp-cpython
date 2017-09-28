@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/pyerrors.h' l='56' type='PyObject *'/>
+<offset>832</offset>
+<use f='codebrowser/Objects/exceptions.c' l='880' u='w' c='oserror_init'/>
+<use f='codebrowser/Objects/exceptions.c' l='1051' u='r' c='OSError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='1051' u='w' c='OSError_clear'/>
+<use f='codebrowser/Objects/exceptions.c' l='1073' u='r' c='OSError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='1073' u='r' c='OSError_traverse'/>
+<use f='codebrowser/Objects/exceptions.c' l='1106' u='r' c='OSError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1111' u='r' c='OSError_str'/>
+<use f='codebrowser/Objects/exceptions.c' l='1134' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1150' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1160' u='r' c='OSError_reduce'/>
+<use f='codebrowser/Objects/exceptions.c' l='1161' u='r' c='OSError_reduce'/>

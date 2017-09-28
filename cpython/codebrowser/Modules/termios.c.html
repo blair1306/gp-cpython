@@ -1,0 +1,985 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>termios.c source code [codebrowser/Modules/termios.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="constant "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/termios.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='termios.c.html'>termios.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* termiosmodule.c -- POSIX terminal I/O module implementation.  */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><i>/* Apparently, on SGI, termios.h won't define CTRL if _XOPEN_SOURCE</i></td></tr>
+<tr><th id="6">6</th><td><i>   is defined, so we define it here. */</i></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">if</span> defined(<span class="macro" data-ref="_M/__sgi">__sgi</span>)</u></td></tr>
+<tr><th id="8">8</th><td><u>#define CTRL(c) ((c)&amp;037)</u></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../../include/termios.h.html">&lt;termios.h&gt;</a></u></td></tr>
+<tr><th id="12">12</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/ioctl.h.html">&lt;sys/ioctl.h&gt;</a></u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><i>/* HP-UX requires that this be included to pick up MDCD, MCTS, MDSR,</i></td></tr>
+<tr><th id="15">15</th><td><i> * MDTR, MRI, and MRTS (appearantly used internally by some things</i></td></tr>
+<tr><th id="16">16</th><td><i> * defined as macros; these are not used here directly).</i></td></tr>
+<tr><th id="17">17</th><td><i> */</i></td></tr>
+<tr><th id="18">18</th><td><u>#<span data-ppcond="18">ifdef</span> <span class="macro" data-ref="_M/HAVE_SYS_MODEM_H">HAVE_SYS_MODEM_H</span></u></td></tr>
+<tr><th id="19">19</th><td><u>#include &lt;sys/modem.h&gt;</u></td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="18">endif</span></u></td></tr>
+<tr><th id="21">21</th><td><i>/* HP-UX requires that this be included to pick up TIOCGPGRP and friends */</i></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="22">ifdef</span> <span class="macro" data-ref="_M/HAVE_SYS_BSDTTY_H">HAVE_SYS_BSDTTY_H</span></u></td></tr>
+<tr><th id="23">23</th><td><u>#include &lt;sys/bsdtty.h&gt;</u></td></tr>
+<tr><th id="24">24</th><td><u>#<span data-ppcond="22">endif</span></u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios__doc__[] = &quot;This module provides an interface to the Posix calls for tty I/O control.\nFor a complete description of these calls, see the Posix or Unix manual\npages. It is only available for those Unix versions that support Posix\ntermios style tty I/O control.\n\nAll functions in this module take a file descriptor fd as their first\nargument. This can be an integer file descriptor, such as returned by\nsys.stdin.fileno(), or a file object, such as sys.stdin itself.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios__doc__" title='termios__doc__' data-ref="termios__doc__">termios__doc__</dfn>,</td></tr>
+<tr><th id="27">27</th><td><q>"This module provides an interface to the Posix calls for tty I/O control.\n\</q></td></tr>
+<tr><th id="28">28</th><td><q>For a complete description of these calls, see the Posix or Unix manual\n\</q></td></tr>
+<tr><th id="29">29</th><td><q>pages. It is only available for those Unix versions that support Posix\n\</q></td></tr>
+<tr><th id="30">30</th><td><q>termios style tty I/O control.\n\</q></td></tr>
+<tr><th id="31">31</th><td><q>\n\</q></td></tr>
+<tr><th id="32">32</th><td><q>All functions in this module take a file descriptor fd as their first\n\</q></td></tr>
+<tr><th id="33">33</th><td><q>argument. This can be an integer file descriptor, such as returned by\n\</q></td></tr>
+<tr><th id="34">34</th><td><q>sys.stdin.fileno(), or a file object, such as sys.stdin itself."</q>);</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="tu decl def" id="TermiosError" title='TermiosError' data-type='PyObject *' data-ref="TermiosError">TermiosError</dfn>;</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><em>static</em> <em>int</em> <dfn class="tu decl def" id="fdconv" title='fdconv' data-type='int fdconv(PyObject * obj, void * p)' data-ref="fdconv">fdconv</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>* <dfn class="local col1 decl" id="1obj" title='obj' data-type='PyObject *' data-ref="1obj">obj</dfn>, <em>void</em>* <dfn class="local col2 decl" id="2p" title='p' data-type='void *' data-ref="2p">p</dfn>)</td></tr>
+<tr><th id="39">39</th><td>{</td></tr>
+<tr><th id="40">40</th><td>    <em>int</em> <dfn class="local col3 decl" id="3fd" title='fd' data-type='int' data-ref="3fd">fd</dfn>;</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td>    <a class="local col3 ref" href="#3fd" title='fd' data-ref="3fd">fd</a> = <a class="ref" href="../Include/fileobject.h.html#PyObject_AsFileDescriptor" title='PyObject_AsFileDescriptor' data-ref="PyObject_AsFileDescriptor">PyObject_AsFileDescriptor</a>(<a class="local col1 ref" href="#1obj" title='obj' data-ref="1obj">obj</a>);</td></tr>
+<tr><th id="43">43</th><td>    <b>if</b> (<a class="local col3 ref" href="#3fd" title='fd' data-ref="3fd">fd</a> &gt;= <var>0</var>) {</td></tr>
+<tr><th id="44">44</th><td>        *(<em>int</em>*)<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a> = <a class="local col3 ref" href="#3fd" title='fd' data-ref="3fd">fd</a>;</td></tr>
+<tr><th id="45">45</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="46">46</th><td>    }</td></tr>
+<tr><th id="47">47</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="48">48</th><td>}</td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios_tcgetattr__doc__[] = &quot;tcgetattr(fd) -&gt; list_of_attrs\n\nGet the tty attributes for file descriptor fd, as follows:\n[iflag, oflag, cflag, lflag, ispeed, ospeed, cc] where cc is a list\nof the tty special characters (each a string of length 1, except the items\nwith indices VMIN and VTIME, which are integers when these fields are\ndefined).  The interpretation of the flags and the speeds as well as the\nindexing in the cc array must be done using the symbolic constants defined\nin this module.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios_tcgetattr__doc__" title='termios_tcgetattr__doc__' data-ref="termios_tcgetattr__doc__">termios_tcgetattr__doc__</dfn>,</td></tr>
+<tr><th id="51">51</th><td><q>"tcgetattr(fd) -&gt; list_of_attrs\n\</q></td></tr>
+<tr><th id="52">52</th><td><q>\n\</q></td></tr>
+<tr><th id="53">53</th><td><q>Get the tty attributes for file descriptor fd, as follows:\n\</q></td></tr>
+<tr><th id="54">54</th><td><q>[iflag, oflag, cflag, lflag, ispeed, ospeed, cc] where cc is a list\n\</q></td></tr>
+<tr><th id="55">55</th><td><q>of the tty special characters (each a string of length 1, except the items\n\</q></td></tr>
+<tr><th id="56">56</th><td><q>with indices VMIN and VTIME, which are integers when these fields are\n\</q></td></tr>
+<tr><th id="57">57</th><td><q>defined).  The interpretation of the flags and the speeds as well as the\n\</q></td></tr>
+<tr><th id="58">58</th><td><q>indexing in the cc array must be done using the symbolic constants defined\n\</q></td></tr>
+<tr><th id="59">59</th><td><q>in this module."</q>);</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="62">62</th><td><dfn class="tu decl def" id="termios_tcgetattr" title='termios_tcgetattr' data-type='PyObject * termios_tcgetattr(PyObject * self, PyObject * args)' data-ref="termios_tcgetattr">termios_tcgetattr</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="4self" title='self' data-type='PyObject *' data-ref="4self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject *' data-ref="5args">args</dfn>)</td></tr>
+<tr><th id="63">63</th><td>{</td></tr>
+<tr><th id="64">64</th><td>    <em>int</em> <dfn class="local col6 decl" id="6fd" title='fd' data-type='int' data-ref="6fd">fd</dfn>;</td></tr>
+<tr><th id="65">65</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios" title='termios' data-ref="termios">termios</a> <dfn class="local col7 decl" id="7mode" title='mode' data-type='struct termios' data-ref="7mode">mode</dfn>;</td></tr>
+<tr><th id="66">66</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="8cc" title='cc' data-type='PyObject *' data-ref="8cc">cc</dfn>;</td></tr>
+<tr><th id="67">67</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#speed_t" title='speed_t' data-type='unsigned int' data-ref="speed_t">speed_t</a> <dfn class="local col9 decl" id="9ispeed" title='ispeed' data-type='speed_t' data-ref="9ispeed">ispeed</dfn>, <dfn class="local col0 decl" id="10ospeed" title='ospeed' data-type='speed_t' data-ref="10ospeed">ospeed</dfn>;</td></tr>
+<tr><th id="68">68</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11v" title='v' data-type='PyObject *' data-ref="11v">v</dfn>;</td></tr>
+<tr><th id="69">69</th><td>    <em>int</em> <dfn class="local col2 decl" id="12i" title='i' data-type='int' data-ref="12i">i</dfn>;</td></tr>
+<tr><th id="70">70</th><td>    <em>char</em> <dfn class="local col3 decl" id="13ch" title='ch' data-type='char' data-ref="13ch">ch</dfn>;</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <q>"O&amp;:tcgetattr"</q>,</td></tr>
+<tr><th id="73">73</th><td>                          <a class="tu ref" href="#fdconv" title='fdconv' data-ref="fdconv">fdconv</a>, (<em>void</em>*)&amp;<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd">fd</a>))</td></tr>
+<tr><th id="74">74</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcgetattr" title='tcgetattr' data-ref="tcgetattr">tcgetattr</a>(<a class="local col6 ref" href="#6fd" title='fd' data-ref="6fd">fd</a>, &amp;<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>) == -<var>1</var>)</td></tr>
+<tr><th id="77">77</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>    <a class="local col9 ref" href="#9ispeed" title='ispeed' data-ref="9ispeed">ispeed</a> = <a class="ref" href="../../include/termios.h.html#cfgetispeed" title='cfgetispeed' data-ref="cfgetispeed">cfgetispeed</a>(&amp;<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>);</td></tr>
+<tr><th id="80">80</th><td>    <a class="local col0 ref" href="#10ospeed" title='ospeed' data-ref="10ospeed">ospeed</a> = <a class="ref" href="../../include/termios.h.html#cfgetospeed" title='cfgetospeed' data-ref="cfgetospeed">cfgetospeed</a>(&amp;<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>);</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>    <a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a> = <a class="ref" href="../Include/listobject.h.html#PyList_New" title='PyList_New' data-ref="PyList_New">PyList_New</a>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" title="32" data-ref="_M/NCCS">NCCS</a>);</td></tr>
+<tr><th id="83">83</th><td>    <b>if</b> (<a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="84">84</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="85">85</th><td>    <b>for</b> (<a class="local col2 ref" href="#12i" title='i' data-ref="12i">i</a> = <var>0</var>; <a class="local col2 ref" href="#12i" title='i' data-ref="12i">i</a> &lt; <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" title="32" data-ref="_M/NCCS">NCCS</a>; <a class="local col2 ref" href="#12i" title='i' data-ref="12i">i</a>++) {</td></tr>
+<tr><th id="86">86</th><td>        <a class="local col3 ref" href="#13ch" title='ch' data-ref="13ch">ch</a> = (<em>char</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cc" title='termios::c_cc' data-ref="termios::c_cc">c_cc</a>[<a class="local col2 ref" href="#12i" title='i' data-ref="12i">i</a>];</td></tr>
+<tr><th id="87">87</th><td>        <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> = <a class="ref" href="../Include/bytesobject.h.html#PyBytes_FromStringAndSize" title='PyBytes_FromStringAndSize' data-ref="PyBytes_FromStringAndSize">PyBytes_FromStringAndSize</a>(&amp;<a class="local col3 ref" href="#13ch" title='ch' data-ref="13ch">ch</a>, <var>1</var>);</td></tr>
+<tr><th id="88">88</th><td>        <b>if</b> (<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="89">89</th><td>            <b>goto</b> <a class="lbl" href="#14err" data-ref="14err">err</a>;</td></tr>
+<tr><th id="90">90</th><td>        <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a>, <a class="local col2 ref" href="#12i" title='i' data-ref="12i">i</a>, <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>);</td></tr>
+<tr><th id="91">91</th><td>    }</td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td>    <i>/* Convert the MIN and TIME slots to integer.  On some systems, the</i></td></tr>
+<tr><th id="94">94</th><td><i>       MIN and TIME slots are the same as the EOF and EOL slots.  So we</i></td></tr>
+<tr><th id="95">95</th><td><i>       only do this in noncanonical input mode.  */</i></td></tr>
+<tr><th id="96">96</th><td>    <b>if</b> ((<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_lflag" title='termios::c_lflag' data-ref="termios::c_lflag">c_lflag</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#179" title="0000002" data-ref="_M/ICANON">ICANON</a>) == <var>0</var>) {</td></tr>
+<tr><th id="97">97</th><td>        <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cc" title='termios::c_cc' data-ref="termios::c_cc">c_cc</a>[<a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#49" title="6" data-ref="_M/VMIN">VMIN</a>]);</td></tr>
+<tr><th id="98">98</th><td>        <b>if</b> (<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="99">99</th><td>            <b>goto</b> <a class="lbl" href="#14err" data-ref="14err">err</a>;</td></tr>
+<tr><th id="100">100</th><td>        <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#49" title="6" data-ref="_M/VMIN">VMIN</a>, <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>);</td></tr>
+<tr><th id="101">101</th><td>        <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cc" title='termios::c_cc' data-ref="termios::c_cc">c_cc</a>[<a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#48" title="5" data-ref="_M/VTIME">VTIME</a>]);</td></tr>
+<tr><th id="102">102</th><td>        <b>if</b> (<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="103">103</th><td>            <b>goto</b> <a class="lbl" href="#14err" data-ref="14err">err</a>;</td></tr>
+<tr><th id="104">104</th><td>        <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#48" title="5" data-ref="_M/VTIME">VTIME</a>, <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>);</td></tr>
+<tr><th id="105">105</th><td>    }</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td>    <b>if</b> (!(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a> = <a class="ref" href="../Include/listobject.h.html#PyList_New" title='PyList_New' data-ref="PyList_New">PyList_New</a>(<var>7</var>)))</td></tr>
+<tr><th id="108">108</th><td>        <b>goto</b> <a class="lbl" href="#14err" data-ref="14err">err</a>;</td></tr>
+<tr><th id="109">109</th><td></td></tr>
+<tr><th id="110">110</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>0</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_iflag" title='termios::c_iflag' data-ref="termios::c_iflag">c_iflag</a>));</td></tr>
+<tr><th id="111">111</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>1</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_oflag" title='termios::c_oflag' data-ref="termios::c_oflag">c_oflag</a>));</td></tr>
+<tr><th id="112">112</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>2</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cflag" title='termios::c_cflag' data-ref="termios::c_cflag">c_cflag</a>));</td></tr>
+<tr><th id="113">113</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>3</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col7 ref" href="#7mode" title='mode' data-ref="7mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_lflag" title='termios::c_lflag' data-ref="termios::c_lflag">c_lflag</a>));</td></tr>
+<tr><th id="114">114</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>4</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col9 ref" href="#9ispeed" title='ispeed' data-ref="9ispeed">ispeed</a>));</td></tr>
+<tr><th id="115">115</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>5</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>)<a class="local col0 ref" href="#10ospeed" title='ospeed' data-ref="10ospeed">ospeed</a>));</td></tr>
+<tr><th id="116">116</th><td>    <a class="ref" href="../Include/listobject.h.html#PyList_SetItem" title='PyList_SetItem' data-ref="PyList_SetItem">PyList_SetItem</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>, <var>6</var>, <a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a>);</td></tr>
+<tr><th id="117">117</th><td>    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()){</td></tr>
+<tr><th id="118">118</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(v); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/termios.c&quot;, 118, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>);</td></tr>
+<tr><th id="119">119</th><td>        <b>goto</b> <a class="lbl" href="#14err" data-ref="14err">err</a>;</td></tr>
+<tr><th id="120">120</th><td>    }</td></tr>
+<tr><th id="121">121</th><td>    <b>return</b> <a class="local col1 ref" href="#11v" title='v' data-ref="11v">v</a>;</td></tr>
+<tr><th id="122">122</th><td>  <dfn class="lbl" id="14err" data-ref="14err">err</dfn>:</td></tr>
+<tr><th id="123">123</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(cc); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/termios.c&quot;, 123, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col8 ref" href="#8cc" title='cc' data-ref="8cc">cc</a>);</td></tr>
+<tr><th id="124">124</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="125">125</th><td>}</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios_tcsetattr__doc__[] = &quot;tcsetattr(fd, when, attributes) -&gt; None\n\nSet the tty attributes for file descriptor fd.\nThe attributes to be set are taken from the attributes argument, which\nis a list like the one returned by tcgetattr(). The when argument\ndetermines when the attributes are changed: termios.TCSANOW to\nchange immediately, termios.TCSADRAIN to change after transmitting all\nqueued output, or termios.TCSAFLUSH to change after transmitting all\nqueued output and discarding all queued input. &quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios_tcsetattr__doc__" title='termios_tcsetattr__doc__' data-ref="termios_tcsetattr__doc__">termios_tcsetattr__doc__</dfn>,</td></tr>
+<tr><th id="128">128</th><td><q>"tcsetattr(fd, when, attributes) -&gt; None\n\</q></td></tr>
+<tr><th id="129">129</th><td><q>\n\</q></td></tr>
+<tr><th id="130">130</th><td><q>Set the tty attributes for file descriptor fd.\n\</q></td></tr>
+<tr><th id="131">131</th><td><q>The attributes to be set are taken from the attributes argument, which\n\</q></td></tr>
+<tr><th id="132">132</th><td><q>is a list like the one returned by tcgetattr(). The when argument\n\</q></td></tr>
+<tr><th id="133">133</th><td><q>determines when the attributes are changed: termios.TCSANOW to\n\</q></td></tr>
+<tr><th id="134">134</th><td><q>change immediately, termios.TCSADRAIN to change after transmitting all\n\</q></td></tr>
+<tr><th id="135">135</th><td><q>queued output, or termios.TCSAFLUSH to change after transmitting all\n\</q></td></tr>
+<tr><th id="136">136</th><td><q>queued output and discarding all queued input. "</q>);</td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="139">139</th><td><dfn class="tu decl def" id="termios_tcsetattr" title='termios_tcsetattr' data-type='PyObject * termios_tcsetattr(PyObject * self, PyObject * args)' data-ref="termios_tcsetattr">termios_tcsetattr</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15self" title='self' data-type='PyObject *' data-ref="15self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16args" title='args' data-type='PyObject *' data-ref="16args">args</dfn>)</td></tr>
+<tr><th id="140">140</th><td>{</td></tr>
+<tr><th id="141">141</th><td>    <em>int</em> <dfn class="local col7 decl" id="17fd" title='fd' data-type='int' data-ref="17fd">fd</dfn>, <dfn class="local col8 decl" id="18when" title='when' data-type='int' data-ref="18when">when</dfn>;</td></tr>
+<tr><th id="142">142</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios" title='termios' data-ref="termios">termios</a> <dfn class="local col9 decl" id="19mode" title='mode' data-type='struct termios' data-ref="19mode">mode</dfn>;</td></tr>
+<tr><th id="143">143</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#speed_t" title='speed_t' data-type='unsigned int' data-ref="speed_t">speed_t</a> <dfn class="local col0 decl" id="20ispeed" title='ispeed' data-type='speed_t' data-ref="20ispeed">ispeed</dfn>, <dfn class="local col1 decl" id="21ospeed" title='ospeed' data-type='speed_t' data-ref="21ospeed">ospeed</dfn>;</td></tr>
+<tr><th id="144">144</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="22term" title='term' data-type='PyObject *' data-ref="22term">term</dfn>, *<dfn class="local col3 decl" id="23cc" title='cc' data-type='PyObject *' data-ref="23cc">cc</dfn>, *<dfn class="local col4 decl" id="24v" title='v' data-type='PyObject *' data-ref="24v">v</dfn>;</td></tr>
+<tr><th id="145">145</th><td>    <em>int</em> <dfn class="local col5 decl" id="25i" title='i' data-type='int' data-ref="25i">i</dfn>;</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col6 ref" href="#16args" title='args' data-ref="16args">args</a>, <q>"O&amp;iO:tcsetattr"</q>,</td></tr>
+<tr><th id="148">148</th><td>                          <a class="tu ref" href="#fdconv" title='fdconv' data-ref="fdconv">fdconv</a>, &amp;<a class="local col7 ref" href="#17fd" title='fd' data-ref="17fd">fd</a>, &amp;<a class="local col8 ref" href="#18when" title='when' data-ref="18when">when</a>, &amp;<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>))</td></tr>
+<tr><th id="149">149</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="150">150</th><td>    <b>if</b> (!<a class="macro" href="../Include/listobject.h.html#48" title="((((((PyObject*)(term))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 25))) != 0)" data-ref="_M/PyList_Check">PyList_Check</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>) || <a class="ref" href="../Include/listobject.h.html#PyList_Size" title='PyList_Size' data-ref="PyList_Size">PyList_Size</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>) != <var>7</var>) {</td></tr>
+<tr><th id="151">151</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="152">152</th><td>                     <q>"tcsetattr, arg 3: must be 7 element list"</q>);</td></tr>
+<tr><th id="153">153</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="154">154</th><td>    }</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td>    <i>/* Get the old mode, in case there are any hidden fields... */</i></td></tr>
+<tr><th id="157">157</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcgetattr" title='tcgetattr' data-ref="tcgetattr">tcgetattr</a>(<a class="local col7 ref" href="#17fd" title='fd' data-ref="17fd">fd</a>, &amp;<a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>) == -<var>1</var>)</td></tr>
+<tr><th id="158">158</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="159">159</th><td>    <a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_iflag" title='termios::c_iflag' data-ref="termios::c_iflag">c_iflag</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#tcflag_t" title='tcflag_t' data-type='unsigned int' data-ref="tcflag_t">tcflag_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>0</var>));</td></tr>
+<tr><th id="160">160</th><td>    <a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_oflag" title='termios::c_oflag' data-ref="termios::c_oflag">c_oflag</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#tcflag_t" title='tcflag_t' data-type='unsigned int' data-ref="tcflag_t">tcflag_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>1</var>));</td></tr>
+<tr><th id="161">161</th><td>    <a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cflag" title='termios::c_cflag' data-ref="termios::c_cflag">c_cflag</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#tcflag_t" title='tcflag_t' data-type='unsigned int' data-ref="tcflag_t">tcflag_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>2</var>));</td></tr>
+<tr><th id="162">162</th><td>    <a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_lflag" title='termios::c_lflag' data-ref="termios::c_lflag">c_lflag</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#tcflag_t" title='tcflag_t' data-type='unsigned int' data-ref="tcflag_t">tcflag_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>3</var>));</td></tr>
+<tr><th id="163">163</th><td>    <a class="local col0 ref" href="#20ispeed" title='ispeed' data-ref="20ispeed">ispeed</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#speed_t" title='speed_t' data-type='unsigned int' data-ref="speed_t">speed_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>4</var>));</td></tr>
+<tr><th id="164">164</th><td>    <a class="local col1 ref" href="#21ospeed" title='ospeed' data-ref="21ospeed">ospeed</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#speed_t" title='speed_t' data-type='unsigned int' data-ref="speed_t">speed_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>5</var>));</td></tr>
+<tr><th id="165">165</th><td>    <a class="local col3 ref" href="#23cc" title='cc' data-ref="23cc">cc</a> = <a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col2 ref" href="#22term" title='term' data-ref="22term">term</a>, <var>6</var>);</td></tr>
+<tr><th id="166">166</th><td>    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="167">167</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td>    <b>if</b> (!<a class="macro" href="../Include/listobject.h.html#48" title="((((((PyObject*)(cc))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 25))) != 0)" data-ref="_M/PyList_Check">PyList_Check</a>(<a class="local col3 ref" href="#23cc" title='cc' data-ref="23cc">cc</a>) || <a class="ref" href="../Include/listobject.h.html#PyList_Size" title='PyList_Size' data-ref="PyList_Size">PyList_Size</a>(<a class="local col3 ref" href="#23cc" title='cc' data-ref="23cc">cc</a>) != <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" title="32" data-ref="_M/NCCS">NCCS</a>) {</td></tr>
+<tr><th id="170">170</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="171">171</th><td>            <q>"tcsetattr: attributes[6] must be %d element list"</q>,</td></tr>
+<tr><th id="172">172</th><td>                 <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" title="32" data-ref="_M/NCCS">NCCS</a>);</td></tr>
+<tr><th id="173">173</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="174">174</th><td>    }</td></tr>
+<tr><th id="175">175</th><td></td></tr>
+<tr><th id="176">176</th><td>    <b>for</b> (<a class="local col5 ref" href="#25i" title='i' data-ref="25i">i</a> = <var>0</var>; <a class="local col5 ref" href="#25i" title='i' data-ref="25i">i</a> &lt; <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" title="32" data-ref="_M/NCCS">NCCS</a>; <a class="local col5 ref" href="#25i" title='i' data-ref="25i">i</a>++) {</td></tr>
+<tr><th id="177">177</th><td>        <a class="local col4 ref" href="#24v" title='v' data-ref="24v">v</a> = <a class="ref" href="../Include/listobject.h.html#PyList_GetItem" title='PyList_GetItem' data-ref="PyList_GetItem">PyList_GetItem</a>(<a class="local col3 ref" href="#23cc" title='cc' data-ref="23cc">cc</a>, <a class="local col5 ref" href="#25i" title='i' data-ref="25i">i</a>);</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td>        <b>if</b> (<a class="macro" href="../Include/bytesobject.h.html#47" title="((((((PyObject*)(v))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 27))) != 0)" data-ref="_M/PyBytes_Check">PyBytes_Check</a>(<a class="local col4 ref" href="#24v" title='v' data-ref="24v">v</a>) &amp;&amp; <a class="ref" href="../Include/bytesobject.h.html#PyBytes_Size" title='PyBytes_Size' data-ref="PyBytes_Size">PyBytes_Size</a>(<a class="local col4 ref" href="#24v" title='v' data-ref="24v">v</a>) == <var>1</var>)</td></tr>
+<tr><th id="180">180</th><td>            <a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cc" title='termios::c_cc' data-ref="termios::c_cc">c_cc</a>[<a class="local col5 ref" href="#25i" title='i' data-ref="25i">i</a>] = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#cc_t" title='cc_t' data-type='unsigned char' data-ref="cc_t">cc_t</a>) * <a class="ref" href="../Include/bytesobject.h.html#PyBytes_AsString" title='PyBytes_AsString' data-ref="PyBytes_AsString">PyBytes_AsString</a>(<a class="local col4 ref" href="#24v" title='v' data-ref="24v">v</a>);</td></tr>
+<tr><th id="181">181</th><td>        <b>else</b> <b>if</b> (<a class="macro" href="../Include/longobject.h.html#14" title="((((((PyObject*)(v))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 24))) != 0)" data-ref="_M/PyLong_Check">PyLong_Check</a>(<a class="local col4 ref" href="#24v" title='v' data-ref="24v">v</a>))</td></tr>
+<tr><th id="182">182</th><td>            <a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/termios.h.html#termios::c_cc" title='termios::c_cc' data-ref="termios::c_cc">c_cc</a>[<a class="local col5 ref" href="#25i" title='i' data-ref="25i">i</a>] = (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#cc_t" title='cc_t' data-type='unsigned char' data-ref="cc_t">cc_t</a>) <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="local col4 ref" href="#24v" title='v' data-ref="24v">v</a>);</td></tr>
+<tr><th id="183">183</th><td>        <b>else</b> {</td></tr>
+<tr><th id="184">184</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="185">185</th><td>     <q>"tcsetattr: elements of attributes must be characters or integers"</q>);</td></tr>
+<tr><th id="186">186</th><td>                        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="187">187</th><td>                }</td></tr>
+<tr><th id="188">188</th><td>    }</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#cfsetispeed" title='cfsetispeed' data-ref="cfsetispeed">cfsetispeed</a>(&amp;<a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>, (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#speed_t" title='speed_t' data-type='unsigned int' data-ref="speed_t">speed_t</a>) <a class="local col0 ref" href="#20ispeed" title='ispeed' data-ref="20ispeed">ispeed</a>) == -<var>1</var>)</td></tr>
+<tr><th id="191">191</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="192">192</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#cfsetospeed" title='cfsetospeed' data-ref="cfsetospeed">cfsetospeed</a>(&amp;<a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>, (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/termios.h.html#speed_t" title='speed_t' data-type='unsigned int' data-ref="speed_t">speed_t</a>) <a class="local col1 ref" href="#21ospeed" title='ospeed' data-ref="21ospeed">ospeed</a>) == -<var>1</var>)</td></tr>
+<tr><th id="193">193</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="194">194</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcsetattr" title='tcsetattr' data-ref="tcsetattr">tcsetattr</a>(<a class="local col7 ref" href="#17fd" title='fd' data-ref="17fd">fd</a>, <a class="local col8 ref" href="#18when" title='when' data-ref="18when">when</a>, &amp;<a class="local col9 ref" href="#19mode" title='mode' data-ref="19mode">mode</a>) == -<var>1</var>)</td></tr>
+<tr><th id="195">195</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="198">198</th><td>}</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios_tcsendbreak__doc__[] = &quot;tcsendbreak(fd, duration) -&gt; None\n\nSend a break on file descriptor fd.\nA zero duration sends a break for 0.25-0.5 seconds; a nonzero duration\nhas a system dependent meaning.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios_tcsendbreak__doc__" title='termios_tcsendbreak__doc__' data-ref="termios_tcsendbreak__doc__">termios_tcsendbreak__doc__</dfn>,</td></tr>
+<tr><th id="201">201</th><td><q>"tcsendbreak(fd, duration) -&gt; None\n\</q></td></tr>
+<tr><th id="202">202</th><td><q>\n\</q></td></tr>
+<tr><th id="203">203</th><td><q>Send a break on file descriptor fd.\n\</q></td></tr>
+<tr><th id="204">204</th><td><q>A zero duration sends a break for 0.25-0.5 seconds; a nonzero duration\n\</q></td></tr>
+<tr><th id="205">205</th><td><q>has a system dependent meaning."</q>);</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="208">208</th><td><dfn class="tu decl def" id="termios_tcsendbreak" title='termios_tcsendbreak' data-type='PyObject * termios_tcsendbreak(PyObject * self, PyObject * args)' data-ref="termios_tcsendbreak">termios_tcsendbreak</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="26self" title='self' data-type='PyObject *' data-ref="26self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="27args" title='args' data-type='PyObject *' data-ref="27args">args</dfn>)</td></tr>
+<tr><th id="209">209</th><td>{</td></tr>
+<tr><th id="210">210</th><td>    <em>int</em> <dfn class="local col8 decl" id="28fd" title='fd' data-type='int' data-ref="28fd">fd</dfn>, <dfn class="local col9 decl" id="29duration" title='duration' data-type='int' data-ref="29duration">duration</dfn>;</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col7 ref" href="#27args" title='args' data-ref="27args">args</a>, <q>"O&amp;i:tcsendbreak"</q>,</td></tr>
+<tr><th id="213">213</th><td>                          <a class="tu ref" href="#fdconv" title='fdconv' data-ref="fdconv">fdconv</a>, &amp;<a class="local col8 ref" href="#28fd" title='fd' data-ref="28fd">fd</a>, &amp;<a class="local col9 ref" href="#29duration" title='duration' data-ref="29duration">duration</a>))</td></tr>
+<tr><th id="214">214</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="215">215</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcsendbreak" title='tcsendbreak' data-ref="tcsendbreak">tcsendbreak</a>(<a class="local col8 ref" href="#28fd" title='fd' data-ref="28fd">fd</a>, <a class="local col9 ref" href="#29duration" title='duration' data-ref="29duration">duration</a>) == -<var>1</var>)</td></tr>
+<tr><th id="216">216</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="219">219</th><td>}</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios_tcdrain__doc__[] = &quot;tcdrain(fd) -&gt; None\n\nWait until all output written to file descriptor fd has been transmitted.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios_tcdrain__doc__" title='termios_tcdrain__doc__' data-ref="termios_tcdrain__doc__">termios_tcdrain__doc__</dfn>,</td></tr>
+<tr><th id="222">222</th><td><q>"tcdrain(fd) -&gt; None\n\</q></td></tr>
+<tr><th id="223">223</th><td><q>\n\</q></td></tr>
+<tr><th id="224">224</th><td><q>Wait until all output written to file descriptor fd has been transmitted."</q>);</td></tr>
+<tr><th id="225">225</th><td></td></tr>
+<tr><th id="226">226</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="227">227</th><td><dfn class="tu decl def" id="termios_tcdrain" title='termios_tcdrain' data-type='PyObject * termios_tcdrain(PyObject * self, PyObject * args)' data-ref="termios_tcdrain">termios_tcdrain</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="30self" title='self' data-type='PyObject *' data-ref="30self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31args" title='args' data-type='PyObject *' data-ref="31args">args</dfn>)</td></tr>
+<tr><th id="228">228</th><td>{</td></tr>
+<tr><th id="229">229</th><td>    <em>int</em> <dfn class="local col2 decl" id="32fd" title='fd' data-type='int' data-ref="32fd">fd</dfn>;</td></tr>
+<tr><th id="230">230</th><td></td></tr>
+<tr><th id="231">231</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col1 ref" href="#31args" title='args' data-ref="31args">args</a>, <q>"O&amp;:tcdrain"</q>,</td></tr>
+<tr><th id="232">232</th><td>                          <a class="tu ref" href="#fdconv" title='fdconv' data-ref="fdconv">fdconv</a>, &amp;<a class="local col2 ref" href="#32fd" title='fd' data-ref="32fd">fd</a>))</td></tr>
+<tr><th id="233">233</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="234">234</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcdrain" title='tcdrain' data-ref="tcdrain">tcdrain</a>(<a class="local col2 ref" href="#32fd" title='fd' data-ref="32fd">fd</a>) == -<var>1</var>)</td></tr>
+<tr><th id="235">235</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="238">238</th><td>}</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios_tcflush__doc__[] = &quot;tcflush(fd, queue) -&gt; None\n\nDiscard queued data on file descriptor fd.\nThe queue selector specifies which queue: termios.TCIFLUSH for the input\nqueue, termios.TCOFLUSH for the output queue, or termios.TCIOFLUSH for\nboth queues. &quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios_tcflush__doc__" title='termios_tcflush__doc__' data-ref="termios_tcflush__doc__">termios_tcflush__doc__</dfn>,</td></tr>
+<tr><th id="241">241</th><td><q>"tcflush(fd, queue) -&gt; None\n\</q></td></tr>
+<tr><th id="242">242</th><td><q>\n\</q></td></tr>
+<tr><th id="243">243</th><td><q>Discard queued data on file descriptor fd.\n\</q></td></tr>
+<tr><th id="244">244</th><td><q>The queue selector specifies which queue: termios.TCIFLUSH for the input\n\</q></td></tr>
+<tr><th id="245">245</th><td><q>queue, termios.TCOFLUSH for the output queue, or termios.TCIOFLUSH for\n\</q></td></tr>
+<tr><th id="246">246</th><td><q>both queues. "</q>);</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="249">249</th><td><dfn class="tu decl def" id="termios_tcflush" title='termios_tcflush' data-type='PyObject * termios_tcflush(PyObject * self, PyObject * args)' data-ref="termios_tcflush">termios_tcflush</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33self" title='self' data-type='PyObject *' data-ref="33self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="34args" title='args' data-type='PyObject *' data-ref="34args">args</dfn>)</td></tr>
+<tr><th id="250">250</th><td>{</td></tr>
+<tr><th id="251">251</th><td>    <em>int</em> <dfn class="local col5 decl" id="35fd" title='fd' data-type='int' data-ref="35fd">fd</dfn>, <dfn class="local col6 decl" id="36queue" title='queue' data-type='int' data-ref="36queue">queue</dfn>;</td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col4 ref" href="#34args" title='args' data-ref="34args">args</a>, <q>"O&amp;i:tcflush"</q>,</td></tr>
+<tr><th id="254">254</th><td>                          <a class="tu ref" href="#fdconv" title='fdconv' data-ref="fdconv">fdconv</a>, &amp;<a class="local col5 ref" href="#35fd" title='fd' data-ref="35fd">fd</a>, &amp;<a class="local col6 ref" href="#36queue" title='queue' data-ref="36queue">queue</a>))</td></tr>
+<tr><th id="255">255</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="256">256</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcflush" title='tcflush' data-ref="tcflush">tcflush</a>(<a class="local col5 ref" href="#35fd" title='fd' data-ref="35fd">fd</a>, <a class="local col6 ref" href="#36queue" title='queue' data-ref="36queue">queue</a>) == -<var>1</var>)</td></tr>
+<tr><th id="257">257</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="260">260</th><td>}</td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char termios_tcflow__doc__[] = &quot;tcflow(fd, action) -&gt; None\n\nSuspend or resume input or output on file descriptor fd.\nThe action argument can be termios.TCOOFF to suspend output,\ntermios.TCOON to restart output, termios.TCIOFF to suspend input,\nor termios.TCION to restart input.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="termios_tcflow__doc__" title='termios_tcflow__doc__' data-ref="termios_tcflow__doc__">termios_tcflow__doc__</dfn>,</td></tr>
+<tr><th id="263">263</th><td><q>"tcflow(fd, action) -&gt; None\n\</q></td></tr>
+<tr><th id="264">264</th><td><q>\n\</q></td></tr>
+<tr><th id="265">265</th><td><q>Suspend or resume input or output on file descriptor fd.\n\</q></td></tr>
+<tr><th id="266">266</th><td><q>The action argument can be termios.TCOOFF to suspend output,\n\</q></td></tr>
+<tr><th id="267">267</th><td><q>termios.TCOON to restart output, termios.TCIOFF to suspend input,\n\</q></td></tr>
+<tr><th id="268">268</th><td><q>or termios.TCION to restart input."</q>);</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="271">271</th><td><dfn class="tu decl def" id="termios_tcflow" title='termios_tcflow' data-type='PyObject * termios_tcflow(PyObject * self, PyObject * args)' data-ref="termios_tcflow">termios_tcflow</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37self" title='self' data-type='PyObject *' data-ref="37self">self</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="38args" title='args' data-type='PyObject *' data-ref="38args">args</dfn>)</td></tr>
+<tr><th id="272">272</th><td>{</td></tr>
+<tr><th id="273">273</th><td>    <em>int</em> <dfn class="local col9 decl" id="39fd" title='fd' data-type='int' data-ref="39fd">fd</dfn>, <dfn class="local col0 decl" id="40action" title='action' data-type='int' data-ref="40action">action</dfn>;</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>    <b>if</b> (!<a class="ref" href="../Include/modsupport.h.html#PyArg_ParseTuple" title='PyArg_ParseTuple' data-ref="PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col8 ref" href="#38args" title='args' data-ref="38args">args</a>, <q>"O&amp;i:tcflow"</q>,</td></tr>
+<tr><th id="276">276</th><td>                          <a class="tu ref" href="#fdconv" title='fdconv' data-ref="fdconv">fdconv</a>, &amp;<a class="local col9 ref" href="#39fd" title='fd' data-ref="39fd">fd</a>, &amp;<a class="local col0 ref" href="#40action" title='action' data-ref="40action">action</a>))</td></tr>
+<tr><th id="277">277</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="278">278</th><td>    <b>if</b> (<a class="ref" href="../../include/termios.h.html#tcflow" title='tcflow' data-ref="tcflow">tcflow</a>(<a class="local col9 ref" href="#39fd" title='fd' data-ref="39fd">fd</a>, <a class="local col0 ref" href="#40action" title='action' data-ref="40action">action</a>) == -<var>1</var>)</td></tr>
+<tr><th id="279">279</th><td>        <b>return</b> <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="280">280</th><td></td></tr>
+<tr><th id="281">281</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="282">282</th><td>}</td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="termios_methods" title='termios_methods' data-type='PyMethodDef [7]' data-ref="termios_methods">termios_methods</dfn>[] =</td></tr>
+<tr><th id="285">285</th><td>{</td></tr>
+<tr><th id="286">286</th><td>    {<q>"tcgetattr"</q>, <a class="tu ref" href="#termios_tcgetattr" title='termios_tcgetattr' data-ref="termios_tcgetattr">termios_tcgetattr</a>,</td></tr>
+<tr><th id="287">287</th><td>     <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#50" title='termios_tcgetattr__doc__' data-ref="termios_tcgetattr__doc__">termios_tcgetattr__doc__</a>},</td></tr>
+<tr><th id="288">288</th><td>    {<q>"tcsetattr"</q>, <a class="tu ref" href="#termios_tcsetattr" title='termios_tcsetattr' data-ref="termios_tcsetattr">termios_tcsetattr</a>,</td></tr>
+<tr><th id="289">289</th><td>     <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#127" title='termios_tcsetattr__doc__' data-ref="termios_tcsetattr__doc__">termios_tcsetattr__doc__</a>},</td></tr>
+<tr><th id="290">290</th><td>    {<q>"tcsendbreak"</q>, <a class="tu ref" href="#termios_tcsendbreak" title='termios_tcsendbreak' data-ref="termios_tcsendbreak">termios_tcsendbreak</a>,</td></tr>
+<tr><th id="291">291</th><td>     <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#200" title='termios_tcsendbreak__doc__' data-ref="termios_tcsendbreak__doc__">termios_tcsendbreak__doc__</a>},</td></tr>
+<tr><th id="292">292</th><td>    {<q>"tcdrain"</q>, <a class="tu ref" href="#termios_tcdrain" title='termios_tcdrain' data-ref="termios_tcdrain">termios_tcdrain</a>,</td></tr>
+<tr><th id="293">293</th><td>     <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#221" title='termios_tcdrain__doc__' data-ref="termios_tcdrain__doc__">termios_tcdrain__doc__</a>},</td></tr>
+<tr><th id="294">294</th><td>    {<q>"tcflush"</q>, <a class="tu ref" href="#termios_tcflush" title='termios_tcflush' data-ref="termios_tcflush">termios_tcflush</a>,</td></tr>
+<tr><th id="295">295</th><td>     <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#240" title='termios_tcflush__doc__' data-ref="termios_tcflush__doc__">termios_tcflush__doc__</a>},</td></tr>
+<tr><th id="296">296</th><td>    {<q>"tcflow"</q>, <a class="tu ref" href="#termios_tcflow" title='termios_tcflow' data-ref="termios_tcflow">termios_tcflow</a>,</td></tr>
+<tr><th id="297">297</th><td>     <a class="macro" href="../Include/methodobject.h.html#71" title="0x0001" data-ref="_M/METH_VARARGS">METH_VARARGS</a>, <a class="ref" href="#262" title='termios_tcflow__doc__' data-ref="termios_tcflow__doc__">termios_tcflow__doc__</a>},</td></tr>
+<tr><th id="298">298</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}</td></tr>
+<tr><th id="299">299</th><td>};</td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td><u>#<span data-ppcond="302">if</span> defined(<span class="macro" data-ref="_M/VSWTCH">VSWTCH</span>) &amp;&amp; !defined(<a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#50" data-ref="_M/VSWTC">VSWTC</a>)</u></td></tr>
+<tr><th id="303">303</th><td><u>#define VSWTC VSWTCH</u></td></tr>
+<tr><th id="304">304</th><td><u>#<span data-ppcond="302">endif</span></u></td></tr>
+<tr><th id="305">305</th><td></td></tr>
+<tr><th id="306">306</th><td><u>#<span data-ppcond="306">if</span> defined(<a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#50" data-ref="_M/VSWTC">VSWTC</a>) &amp;&amp; !defined(<span class="macro" data-ref="_M/VSWTCH">VSWTCH</span>)</u></td></tr>
+<tr><th id="307">307</th><td><u>#define <dfn class="macro" id="_M/VSWTCH" data-ref="_M/VSWTCH">VSWTCH</dfn> VSWTC</u></td></tr>
+<tr><th id="308">308</th><td><u>#<span data-ppcond="306">endif</span></u></td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td><em>static</em> <b>struct</b> <dfn class="type def" id="constant" title='constant' data-ref="constant"><a class="type" href="#constant" title='constant' data-ref="constant">constant</a></dfn> {</td></tr>
+<tr><th id="311">311</th><td>    <em>char</em> *<dfn class="tu decl" id="constant::name" title='constant::name' data-type='char *' data-ref="constant::name">name</dfn>;</td></tr>
+<tr><th id="312">312</th><td>    <em>long</em> <dfn class="tu decl" id="constant::value" title='constant::value' data-type='long' data-ref="constant::value">value</dfn>;</td></tr>
+<tr><th id="313">313</th><td>} <dfn class="tu decl def" id="termios_constants" title='termios_constants' data-type='struct constant [233]' data-ref="termios_constants">termios_constants</dfn>[] = {</td></tr>
+<tr><th id="314">314</th><td>    <i>/* cfgetospeed(), cfsetospeed() constants */</i></td></tr>
+<tr><th id="315">315</th><td>    {<q>"B0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#121" title="0000000" data-ref="_M/B0">B0</a>},</td></tr>
+<tr><th id="316">316</th><td>    {<q>"B50"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#122" title="0000001" data-ref="_M/B50">B50</a>},</td></tr>
+<tr><th id="317">317</th><td>    {<q>"B75"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#123" title="0000002" data-ref="_M/B75">B75</a>},</td></tr>
+<tr><th id="318">318</th><td>    {<q>"B110"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#124" title="0000003" data-ref="_M/B110">B110</a>},</td></tr>
+<tr><th id="319">319</th><td>    {<q>"B134"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#125" title="0000004" data-ref="_M/B134">B134</a>},</td></tr>
+<tr><th id="320">320</th><td>    {<q>"B150"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#126" title="0000005" data-ref="_M/B150">B150</a>},</td></tr>
+<tr><th id="321">321</th><td>    {<q>"B200"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#127" title="0000006" data-ref="_M/B200">B200</a>},</td></tr>
+<tr><th id="322">322</th><td>    {<q>"B300"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#128" title="0000007" data-ref="_M/B300">B300</a>},</td></tr>
+<tr><th id="323">323</th><td>    {<q>"B600"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#129" title="0000010" data-ref="_M/B600">B600</a>},</td></tr>
+<tr><th id="324">324</th><td>    {<q>"B1200"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#130" title="0000011" data-ref="_M/B1200">B1200</a>},</td></tr>
+<tr><th id="325">325</th><td>    {<q>"B1800"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#131" title="0000012" data-ref="_M/B1800">B1800</a>},</td></tr>
+<tr><th id="326">326</th><td>    {<q>"B2400"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#132" title="0000013" data-ref="_M/B2400">B2400</a>},</td></tr>
+<tr><th id="327">327</th><td>    {<q>"B4800"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#133" title="0000014" data-ref="_M/B4800">B4800</a>},</td></tr>
+<tr><th id="328">328</th><td>    {<q>"B9600"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#134" title="0000015" data-ref="_M/B9600">B9600</a>},</td></tr>
+<tr><th id="329">329</th><td>    {<q>"B19200"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#135" title="0000016" data-ref="_M/B19200">B19200</a>},</td></tr>
+<tr><th id="330">330</th><td>    {<q>"B38400"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#136" title="0000017" data-ref="_M/B38400">B38400</a>},</td></tr>
+<tr><th id="331">331</th><td><u>#<span data-ppcond="331">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#155" data-ref="_M/B57600">B57600</a></u></td></tr>
+<tr><th id="332">332</th><td>    {<q>"B57600"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#155" title="0010001" data-ref="_M/B57600">B57600</a>},</td></tr>
+<tr><th id="333">333</th><td><u>#<span data-ppcond="331">endif</span></u></td></tr>
+<tr><th id="334">334</th><td><u>#<span data-ppcond="334">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#156" data-ref="_M/B115200">B115200</a></u></td></tr>
+<tr><th id="335">335</th><td>    {<q>"B115200"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#156" title="0010002" data-ref="_M/B115200">B115200</a>},</td></tr>
+<tr><th id="336">336</th><td><u>#<span data-ppcond="334">endif</span></u></td></tr>
+<tr><th id="337">337</th><td><u>#<span data-ppcond="337">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#157" data-ref="_M/B230400">B230400</a></u></td></tr>
+<tr><th id="338">338</th><td>    {<q>"B230400"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#157" title="0010003" data-ref="_M/B230400">B230400</a>},</td></tr>
+<tr><th id="339">339</th><td><u>#<span data-ppcond="337">endif</span></u></td></tr>
+<tr><th id="340">340</th><td><u>#<span data-ppcond="340">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#158" data-ref="_M/B460800">B460800</a></u></td></tr>
+<tr><th id="341">341</th><td>    {<q>"B460800"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#158" title="0010004" data-ref="_M/B460800">B460800</a>},</td></tr>
+<tr><th id="342">342</th><td><u>#<span data-ppcond="340">endif</span></u></td></tr>
+<tr><th id="343">343</th><td><u>#<span data-ppcond="343">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#159" data-ref="_M/B500000">B500000</a></u></td></tr>
+<tr><th id="344">344</th><td>    {<q>"B500000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#159" title="0010005" data-ref="_M/B500000">B500000</a>},</td></tr>
+<tr><th id="345">345</th><td><u>#<span data-ppcond="343">endif</span></u></td></tr>
+<tr><th id="346">346</th><td><u>#<span data-ppcond="346">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#160" data-ref="_M/B576000">B576000</a></u></td></tr>
+<tr><th id="347">347</th><td>    {<q>"B576000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#160" title="0010006" data-ref="_M/B576000">B576000</a>},</td></tr>
+<tr><th id="348">348</th><td><u>#<span data-ppcond="346">endif</span></u></td></tr>
+<tr><th id="349">349</th><td><u>#<span data-ppcond="349">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#161" data-ref="_M/B921600">B921600</a></u></td></tr>
+<tr><th id="350">350</th><td>    {<q>"B921600"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#161" title="0010007" data-ref="_M/B921600">B921600</a>},</td></tr>
+<tr><th id="351">351</th><td><u>#<span data-ppcond="349">endif</span></u></td></tr>
+<tr><th id="352">352</th><td><u>#<span data-ppcond="352">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#162" data-ref="_M/B1000000">B1000000</a></u></td></tr>
+<tr><th id="353">353</th><td>    {<q>"B1000000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#162" title="0010010" data-ref="_M/B1000000">B1000000</a>},</td></tr>
+<tr><th id="354">354</th><td><u>#<span data-ppcond="352">endif</span></u></td></tr>
+<tr><th id="355">355</th><td><u>#<span data-ppcond="355">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#163" data-ref="_M/B1152000">B1152000</a></u></td></tr>
+<tr><th id="356">356</th><td>    {<q>"B1152000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#163" title="0010011" data-ref="_M/B1152000">B1152000</a>},</td></tr>
+<tr><th id="357">357</th><td><u>#<span data-ppcond="355">endif</span></u></td></tr>
+<tr><th id="358">358</th><td><u>#<span data-ppcond="358">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#164" data-ref="_M/B1500000">B1500000</a></u></td></tr>
+<tr><th id="359">359</th><td>    {<q>"B1500000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#164" title="0010012" data-ref="_M/B1500000">B1500000</a>},</td></tr>
+<tr><th id="360">360</th><td><u>#<span data-ppcond="358">endif</span></u></td></tr>
+<tr><th id="361">361</th><td><u>#<span data-ppcond="361">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#165" data-ref="_M/B2000000">B2000000</a></u></td></tr>
+<tr><th id="362">362</th><td>    {<q>"B2000000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#165" title="0010013" data-ref="_M/B2000000">B2000000</a>},</td></tr>
+<tr><th id="363">363</th><td><u>#<span data-ppcond="361">endif</span></u></td></tr>
+<tr><th id="364">364</th><td><u>#<span data-ppcond="364">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#166" data-ref="_M/B2500000">B2500000</a></u></td></tr>
+<tr><th id="365">365</th><td>    {<q>"B2500000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#166" title="0010014" data-ref="_M/B2500000">B2500000</a>},</td></tr>
+<tr><th id="366">366</th><td><u>#<span data-ppcond="364">endif</span></u></td></tr>
+<tr><th id="367">367</th><td><u>#<span data-ppcond="367">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#167" data-ref="_M/B3000000">B3000000</a></u></td></tr>
+<tr><th id="368">368</th><td>    {<q>"B3000000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#167" title="0010015" data-ref="_M/B3000000">B3000000</a>},</td></tr>
+<tr><th id="369">369</th><td><u>#<span data-ppcond="367">endif</span></u></td></tr>
+<tr><th id="370">370</th><td><u>#<span data-ppcond="370">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#168" data-ref="_M/B3500000">B3500000</a></u></td></tr>
+<tr><th id="371">371</th><td>    {<q>"B3500000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#168" title="0010016" data-ref="_M/B3500000">B3500000</a>},</td></tr>
+<tr><th id="372">372</th><td><u>#<span data-ppcond="370">endif</span></u></td></tr>
+<tr><th id="373">373</th><td><u>#<span data-ppcond="373">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#169" data-ref="_M/B4000000">B4000000</a></u></td></tr>
+<tr><th id="374">374</th><td>    {<q>"B4000000"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#169" title="0010017" data-ref="_M/B4000000">B4000000</a>},</td></tr>
+<tr><th id="375">375</th><td><u>#<span data-ppcond="373">endif</span></u></td></tr>
+<tr><th id="376">376</th><td></td></tr>
+<tr><th id="377">377</th><td><u>#<span data-ppcond="377">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#153" data-ref="_M/CBAUDEX">CBAUDEX</a></u></td></tr>
+<tr><th id="378">378</th><td>    {<q>"CBAUDEX"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#153" title="0010000" data-ref="_M/CBAUDEX">CBAUDEX</a>},</td></tr>
+<tr><th id="379">379</th><td><u>#<span data-ppcond="377">endif</span></u></td></tr>
+<tr><th id="380">380</th><td></td></tr>
+<tr><th id="381">381</th><td>    <i>/* tcsetattr() constants */</i></td></tr>
+<tr><th id="382">382</th><td>    {<q>"TCSANOW"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#213" title="0" data-ref="_M/TCSANOW">TCSANOW</a>},</td></tr>
+<tr><th id="383">383</th><td>    {<q>"TCSADRAIN"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#214" title="1" data-ref="_M/TCSADRAIN">TCSADRAIN</a>},</td></tr>
+<tr><th id="384">384</th><td>    {<q>"TCSAFLUSH"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#215" title="2" data-ref="_M/TCSAFLUSH">TCSAFLUSH</a>},</td></tr>
+<tr><th id="385">385</th><td><u>#<span data-ppcond="385">ifdef</span> <span class="macro" data-ref="_M/TCSASOFT">TCSASOFT</span></u></td></tr>
+<tr><th id="386">386</th><td>    {<q>"TCSASOFT"</q>, TCSASOFT},</td></tr>
+<tr><th id="387">387</th><td><u>#<span data-ppcond="385">endif</span></u></td></tr>
+<tr><th id="388">388</th><td></td></tr>
+<tr><th id="389">389</th><td>    <i>/* tcflush() constants */</i></td></tr>
+<tr><th id="390">390</th><td>    {<q>"TCIFLUSH"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#208" title="0" data-ref="_M/TCIFLUSH">TCIFLUSH</a>},</td></tr>
+<tr><th id="391">391</th><td>    {<q>"TCOFLUSH"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#209" title="1" data-ref="_M/TCOFLUSH">TCOFLUSH</a>},</td></tr>
+<tr><th id="392">392</th><td>    {<q>"TCIOFLUSH"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#210" title="2" data-ref="_M/TCIOFLUSH">TCIOFLUSH</a>},</td></tr>
+<tr><th id="393">393</th><td></td></tr>
+<tr><th id="394">394</th><td>    <i>/* tcflow() constants */</i></td></tr>
+<tr><th id="395">395</th><td>    {<q>"TCOOFF"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#202" title="0" data-ref="_M/TCOOFF">TCOOFF</a>},</td></tr>
+<tr><th id="396">396</th><td>    {<q>"TCOON"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#203" title="1" data-ref="_M/TCOON">TCOON</a>},</td></tr>
+<tr><th id="397">397</th><td>    {<q>"TCIOFF"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#204" title="2" data-ref="_M/TCIOFF">TCIOFF</a>},</td></tr>
+<tr><th id="398">398</th><td>    {<q>"TCION"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#205" title="3" data-ref="_M/TCION">TCION</a>},</td></tr>
+<tr><th id="399">399</th><td></td></tr>
+<tr><th id="400">400</th><td>    <i>/* struct termios.c_iflag constants */</i></td></tr>
+<tr><th id="401">401</th><td>    {<q>"IGNBRK"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#62" title="0000001" data-ref="_M/IGNBRK">IGNBRK</a>},</td></tr>
+<tr><th id="402">402</th><td>    {<q>"BRKINT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#63" title="0000002" data-ref="_M/BRKINT">BRKINT</a>},</td></tr>
+<tr><th id="403">403</th><td>    {<q>"IGNPAR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#64" title="0000004" data-ref="_M/IGNPAR">IGNPAR</a>},</td></tr>
+<tr><th id="404">404</th><td>    {<q>"PARMRK"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#65" title="0000010" data-ref="_M/PARMRK">PARMRK</a>},</td></tr>
+<tr><th id="405">405</th><td>    {<q>"INPCK"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#66" title="0000020" data-ref="_M/INPCK">INPCK</a>},</td></tr>
+<tr><th id="406">406</th><td>    {<q>"ISTRIP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#67" title="0000040" data-ref="_M/ISTRIP">ISTRIP</a>},</td></tr>
+<tr><th id="407">407</th><td>    {<q>"INLCR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#68" title="0000100" data-ref="_M/INLCR">INLCR</a>},</td></tr>
+<tr><th id="408">408</th><td>    {<q>"IGNCR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#69" title="0000200" data-ref="_M/IGNCR">IGNCR</a>},</td></tr>
+<tr><th id="409">409</th><td>    {<q>"ICRNL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#70" title="0000400" data-ref="_M/ICRNL">ICRNL</a>},</td></tr>
+<tr><th id="410">410</th><td><u>#<span data-ppcond="410">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#71" data-ref="_M/IUCLC">IUCLC</a></u></td></tr>
+<tr><th id="411">411</th><td>    {<q>"IUCLC"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#71" title="0001000" data-ref="_M/IUCLC">IUCLC</a>},</td></tr>
+<tr><th id="412">412</th><td><u>#<span data-ppcond="410">endif</span></u></td></tr>
+<tr><th id="413">413</th><td>    {<q>"IXON"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#72" title="0002000" data-ref="_M/IXON">IXON</a>},</td></tr>
+<tr><th id="414">414</th><td>    {<q>"IXANY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#73" title="0004000" data-ref="_M/IXANY">IXANY</a>},</td></tr>
+<tr><th id="415">415</th><td>    {<q>"IXOFF"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#74" title="0010000" data-ref="_M/IXOFF">IXOFF</a>},</td></tr>
+<tr><th id="416">416</th><td><u>#<span data-ppcond="416">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#75" data-ref="_M/IMAXBEL">IMAXBEL</a></u></td></tr>
+<tr><th id="417">417</th><td>    {<q>"IMAXBEL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#75" title="0020000" data-ref="_M/IMAXBEL">IMAXBEL</a>},</td></tr>
+<tr><th id="418">418</th><td><u>#<span data-ppcond="416">endif</span></u></td></tr>
+<tr><th id="419">419</th><td></td></tr>
+<tr><th id="420">420</th><td>    <i>/* struct termios.c_oflag constants */</i></td></tr>
+<tr><th id="421">421</th><td>    {<q>"OPOST"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#79" title="0000001" data-ref="_M/OPOST">OPOST</a>},</td></tr>
+<tr><th id="422">422</th><td><u>#<span data-ppcond="422">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#80" data-ref="_M/OLCUC">OLCUC</a></u></td></tr>
+<tr><th id="423">423</th><td>    {<q>"OLCUC"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#80" title="0000002" data-ref="_M/OLCUC">OLCUC</a>},</td></tr>
+<tr><th id="424">424</th><td><u>#<span data-ppcond="422">endif</span></u></td></tr>
+<tr><th id="425">425</th><td><u>#<span data-ppcond="425">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#81" data-ref="_M/ONLCR">ONLCR</a></u></td></tr>
+<tr><th id="426">426</th><td>    {<q>"ONLCR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#81" title="0000004" data-ref="_M/ONLCR">ONLCR</a>},</td></tr>
+<tr><th id="427">427</th><td><u>#<span data-ppcond="425">endif</span></u></td></tr>
+<tr><th id="428">428</th><td><u>#<span data-ppcond="428">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#82" data-ref="_M/OCRNL">OCRNL</a></u></td></tr>
+<tr><th id="429">429</th><td>    {<q>"OCRNL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#82" title="0000010" data-ref="_M/OCRNL">OCRNL</a>},</td></tr>
+<tr><th id="430">430</th><td><u>#<span data-ppcond="428">endif</span></u></td></tr>
+<tr><th id="431">431</th><td><u>#<span data-ppcond="431">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#83" data-ref="_M/ONOCR">ONOCR</a></u></td></tr>
+<tr><th id="432">432</th><td>    {<q>"ONOCR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#83" title="0000020" data-ref="_M/ONOCR">ONOCR</a>},</td></tr>
+<tr><th id="433">433</th><td><u>#<span data-ppcond="431">endif</span></u></td></tr>
+<tr><th id="434">434</th><td><u>#<span data-ppcond="434">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#84" data-ref="_M/ONLRET">ONLRET</a></u></td></tr>
+<tr><th id="435">435</th><td>    {<q>"ONLRET"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#84" title="0000040" data-ref="_M/ONLRET">ONLRET</a>},</td></tr>
+<tr><th id="436">436</th><td><u>#<span data-ppcond="434">endif</span></u></td></tr>
+<tr><th id="437">437</th><td><u>#<span data-ppcond="437">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#85" data-ref="_M/OFILL">OFILL</a></u></td></tr>
+<tr><th id="438">438</th><td>    {<q>"OFILL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#85" title="0000100" data-ref="_M/OFILL">OFILL</a>},</td></tr>
+<tr><th id="439">439</th><td><u>#<span data-ppcond="437">endif</span></u></td></tr>
+<tr><th id="440">440</th><td><u>#<span data-ppcond="440">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#86" data-ref="_M/OFDEL">OFDEL</a></u></td></tr>
+<tr><th id="441">441</th><td>    {<q>"OFDEL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#86" title="0000200" data-ref="_M/OFDEL">OFDEL</a>},</td></tr>
+<tr><th id="442">442</th><td><u>#<span data-ppcond="440">endif</span></u></td></tr>
+<tr><th id="443">443</th><td><u>#<span data-ppcond="443">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#88" data-ref="_M/NLDLY">NLDLY</a></u></td></tr>
+<tr><th id="444">444</th><td>    {<q>"NLDLY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#88" title="0000400" data-ref="_M/NLDLY">NLDLY</a>},</td></tr>
+<tr><th id="445">445</th><td><u>#<span data-ppcond="443">endif</span></u></td></tr>
+<tr><th id="446">446</th><td><u>#<span data-ppcond="446">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#91" data-ref="_M/CRDLY">CRDLY</a></u></td></tr>
+<tr><th id="447">447</th><td>    {<q>"CRDLY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#91" title="0003000" data-ref="_M/CRDLY">CRDLY</a>},</td></tr>
+<tr><th id="448">448</th><td><u>#<span data-ppcond="446">endif</span></u></td></tr>
+<tr><th id="449">449</th><td><u>#<span data-ppcond="449">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#96" data-ref="_M/TABDLY">TABDLY</a></u></td></tr>
+<tr><th id="450">450</th><td>    {<q>"TABDLY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#96" title="0014000" data-ref="_M/TABDLY">TABDLY</a>},</td></tr>
+<tr><th id="451">451</th><td><u>#<span data-ppcond="449">endif</span></u></td></tr>
+<tr><th id="452">452</th><td><u>#<span data-ppcond="452">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#101" data-ref="_M/BSDLY">BSDLY</a></u></td></tr>
+<tr><th id="453">453</th><td>    {<q>"BSDLY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#101" title="0020000" data-ref="_M/BSDLY">BSDLY</a>},</td></tr>
+<tr><th id="454">454</th><td><u>#<span data-ppcond="452">endif</span></u></td></tr>
+<tr><th id="455">455</th><td><u>#<span data-ppcond="455">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#109" data-ref="_M/VTDLY">VTDLY</a></u></td></tr>
+<tr><th id="456">456</th><td>    {<q>"VTDLY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#109" title="0040000" data-ref="_M/VTDLY">VTDLY</a>},</td></tr>
+<tr><th id="457">457</th><td><u>#<span data-ppcond="455">endif</span></u></td></tr>
+<tr><th id="458">458</th><td><u>#<span data-ppcond="458">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#104" data-ref="_M/FFDLY">FFDLY</a></u></td></tr>
+<tr><th id="459">459</th><td>    {<q>"FFDLY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#104" title="0100000" data-ref="_M/FFDLY">FFDLY</a>},</td></tr>
+<tr><th id="460">460</th><td><u>#<span data-ppcond="458">endif</span></u></td></tr>
+<tr><th id="461">461</th><td></td></tr>
+<tr><th id="462">462</th><td>    <i>/* struct termios.c_oflag-related values (delay mask) */</i></td></tr>
+<tr><th id="463">463</th><td><u>#<span data-ppcond="463">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#89" data-ref="_M/NL0">NL0</a></u></td></tr>
+<tr><th id="464">464</th><td>    {<q>"NL0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#89" title="0000000" data-ref="_M/NL0">NL0</a>},</td></tr>
+<tr><th id="465">465</th><td><u>#<span data-ppcond="463">endif</span></u></td></tr>
+<tr><th id="466">466</th><td><u>#<span data-ppcond="466">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#90" data-ref="_M/NL1">NL1</a></u></td></tr>
+<tr><th id="467">467</th><td>    {<q>"NL1"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#90" title="0000400" data-ref="_M/NL1">NL1</a>},</td></tr>
+<tr><th id="468">468</th><td><u>#<span data-ppcond="466">endif</span></u></td></tr>
+<tr><th id="469">469</th><td><u>#<span data-ppcond="469">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#92" data-ref="_M/CR0">CR0</a></u></td></tr>
+<tr><th id="470">470</th><td>    {<q>"CR0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#92" title="0000000" data-ref="_M/CR0">CR0</a>},</td></tr>
+<tr><th id="471">471</th><td><u>#<span data-ppcond="469">endif</span></u></td></tr>
+<tr><th id="472">472</th><td><u>#<span data-ppcond="472">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#93" data-ref="_M/CR1">CR1</a></u></td></tr>
+<tr><th id="473">473</th><td>    {<q>"CR1"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#93" title="0001000" data-ref="_M/CR1">CR1</a>},</td></tr>
+<tr><th id="474">474</th><td><u>#<span data-ppcond="472">endif</span></u></td></tr>
+<tr><th id="475">475</th><td><u>#<span data-ppcond="475">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#94" data-ref="_M/CR2">CR2</a></u></td></tr>
+<tr><th id="476">476</th><td>    {<q>"CR2"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#94" title="0002000" data-ref="_M/CR2">CR2</a>},</td></tr>
+<tr><th id="477">477</th><td><u>#<span data-ppcond="475">endif</span></u></td></tr>
+<tr><th id="478">478</th><td><u>#<span data-ppcond="478">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#95" data-ref="_M/CR3">CR3</a></u></td></tr>
+<tr><th id="479">479</th><td>    {<q>"CR3"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#95" title="0003000" data-ref="_M/CR3">CR3</a>},</td></tr>
+<tr><th id="480">480</th><td><u>#<span data-ppcond="478">endif</span></u></td></tr>
+<tr><th id="481">481</th><td><u>#<span data-ppcond="481">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#97" data-ref="_M/TAB0">TAB0</a></u></td></tr>
+<tr><th id="482">482</th><td>    {<q>"TAB0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#97" title="0000000" data-ref="_M/TAB0">TAB0</a>},</td></tr>
+<tr><th id="483">483</th><td><u>#<span data-ppcond="481">endif</span></u></td></tr>
+<tr><th id="484">484</th><td><u>#<span data-ppcond="484">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#98" data-ref="_M/TAB1">TAB1</a></u></td></tr>
+<tr><th id="485">485</th><td>    {<q>"TAB1"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#98" title="0004000" data-ref="_M/TAB1">TAB1</a>},</td></tr>
+<tr><th id="486">486</th><td><u>#<span data-ppcond="484">endif</span></u></td></tr>
+<tr><th id="487">487</th><td><u>#<span data-ppcond="487">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#99" data-ref="_M/TAB2">TAB2</a></u></td></tr>
+<tr><th id="488">488</th><td>    {<q>"TAB2"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#99" title="0010000" data-ref="_M/TAB2">TAB2</a>},</td></tr>
+<tr><th id="489">489</th><td><u>#<span data-ppcond="487">endif</span></u></td></tr>
+<tr><th id="490">490</th><td><u>#<span data-ppcond="490">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#100" data-ref="_M/TAB3">TAB3</a></u></td></tr>
+<tr><th id="491">491</th><td>    {<q>"TAB3"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#100" title="0014000" data-ref="_M/TAB3">TAB3</a>},</td></tr>
+<tr><th id="492">492</th><td><u>#<span data-ppcond="490">endif</span></u></td></tr>
+<tr><th id="493">493</th><td><u>#<span data-ppcond="493">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#114" data-ref="_M/XTABS">XTABS</a></u></td></tr>
+<tr><th id="494">494</th><td>    {<q>"XTABS"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#114" title="0014000" data-ref="_M/XTABS">XTABS</a>},</td></tr>
+<tr><th id="495">495</th><td><u>#<span data-ppcond="493">endif</span></u></td></tr>
+<tr><th id="496">496</th><td><u>#<span data-ppcond="496">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#102" data-ref="_M/BS0">BS0</a></u></td></tr>
+<tr><th id="497">497</th><td>    {<q>"BS0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#102" title="0000000" data-ref="_M/BS0">BS0</a>},</td></tr>
+<tr><th id="498">498</th><td><u>#<span data-ppcond="496">endif</span></u></td></tr>
+<tr><th id="499">499</th><td><u>#<span data-ppcond="499">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#103" data-ref="_M/BS1">BS1</a></u></td></tr>
+<tr><th id="500">500</th><td>    {<q>"BS1"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#103" title="0020000" data-ref="_M/BS1">BS1</a>},</td></tr>
+<tr><th id="501">501</th><td><u>#<span data-ppcond="499">endif</span></u></td></tr>
+<tr><th id="502">502</th><td><u>#<span data-ppcond="502">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#110" data-ref="_M/VT0">VT0</a></u></td></tr>
+<tr><th id="503">503</th><td>    {<q>"VT0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#110" title="0000000" data-ref="_M/VT0">VT0</a>},</td></tr>
+<tr><th id="504">504</th><td><u>#<span data-ppcond="502">endif</span></u></td></tr>
+<tr><th id="505">505</th><td><u>#<span data-ppcond="505">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#111" data-ref="_M/VT1">VT1</a></u></td></tr>
+<tr><th id="506">506</th><td>    {<q>"VT1"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#111" title="0040000" data-ref="_M/VT1">VT1</a>},</td></tr>
+<tr><th id="507">507</th><td><u>#<span data-ppcond="505">endif</span></u></td></tr>
+<tr><th id="508">508</th><td><u>#<span data-ppcond="508">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#105" data-ref="_M/FF0">FF0</a></u></td></tr>
+<tr><th id="509">509</th><td>    {<q>"FF0"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#105" title="0000000" data-ref="_M/FF0">FF0</a>},</td></tr>
+<tr><th id="510">510</th><td><u>#<span data-ppcond="508">endif</span></u></td></tr>
+<tr><th id="511">511</th><td><u>#<span data-ppcond="511">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#106" data-ref="_M/FF1">FF1</a></u></td></tr>
+<tr><th id="512">512</th><td>    {<q>"FF1"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#106" title="0100000" data-ref="_M/FF1">FF1</a>},</td></tr>
+<tr><th id="513">513</th><td><u>#<span data-ppcond="511">endif</span></u></td></tr>
+<tr><th id="514">514</th><td></td></tr>
+<tr><th id="515">515</th><td>    <i>/* struct termios.c_cflag constants */</i></td></tr>
+<tr><th id="516">516</th><td>    {<q>"CSIZE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#141" title="0000060" data-ref="_M/CSIZE">CSIZE</a>},</td></tr>
+<tr><th id="517">517</th><td>    {<q>"CSTOPB"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#146" title="0000100" data-ref="_M/CSTOPB">CSTOPB</a>},</td></tr>
+<tr><th id="518">518</th><td>    {<q>"CREAD"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#147" title="0000200" data-ref="_M/CREAD">CREAD</a>},</td></tr>
+<tr><th id="519">519</th><td>    {<q>"PARENB"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#148" title="0000400" data-ref="_M/PARENB">PARENB</a>},</td></tr>
+<tr><th id="520">520</th><td>    {<q>"PARODD"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#149" title="0001000" data-ref="_M/PARODD">PARODD</a>},</td></tr>
+<tr><th id="521">521</th><td>    {<q>"HUPCL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#150" title="0002000" data-ref="_M/HUPCL">HUPCL</a>},</td></tr>
+<tr><th id="522">522</th><td>    {<q>"CLOCAL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#151" title="0004000" data-ref="_M/CLOCAL">CLOCAL</a>},</td></tr>
+<tr><th id="523">523</th><td><u>#<span data-ppcond="523">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#172" data-ref="_M/CIBAUD">CIBAUD</a></u></td></tr>
+<tr><th id="524">524</th><td>    {<q>"CIBAUD"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#172" title="002003600000" data-ref="_M/CIBAUD">CIBAUD</a>},</td></tr>
+<tr><th id="525">525</th><td><u>#<span data-ppcond="523">endif</span></u></td></tr>
+<tr><th id="526">526</th><td><u>#<span data-ppcond="526">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#174" data-ref="_M/CRTSCTS">CRTSCTS</a></u></td></tr>
+<tr><th id="527">527</th><td>    {<q>"CRTSCTS"</q>, (<em>long</em>)<a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#174" title="020000000000" data-ref="_M/CRTSCTS">CRTSCTS</a>},</td></tr>
+<tr><th id="528">528</th><td><u>#<span data-ppcond="526">endif</span></u></td></tr>
+<tr><th id="529">529</th><td></td></tr>
+<tr><th id="530">530</th><td>    <i>/* struct termios.c_cflag-related values (character size) */</i></td></tr>
+<tr><th id="531">531</th><td>    {<q>"CS5"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#142" title="0000000" data-ref="_M/CS5">CS5</a>},</td></tr>
+<tr><th id="532">532</th><td>    {<q>"CS6"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#143" title="0000020" data-ref="_M/CS6">CS6</a>},</td></tr>
+<tr><th id="533">533</th><td>    {<q>"CS7"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#144" title="0000040" data-ref="_M/CS7">CS7</a>},</td></tr>
+<tr><th id="534">534</th><td>    {<q>"CS8"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#145" title="0000060" data-ref="_M/CS8">CS8</a>},</td></tr>
+<tr><th id="535">535</th><td></td></tr>
+<tr><th id="536">536</th><td>    <i>/* struct termios.c_lflag constants */</i></td></tr>
+<tr><th id="537">537</th><td>    {<q>"ISIG"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#178" title="0000001" data-ref="_M/ISIG">ISIG</a>},</td></tr>
+<tr><th id="538">538</th><td>    {<q>"ICANON"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#179" title="0000002" data-ref="_M/ICANON">ICANON</a>},</td></tr>
+<tr><th id="539">539</th><td><u>#<span data-ppcond="539">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#181" data-ref="_M/XCASE">XCASE</a></u></td></tr>
+<tr><th id="540">540</th><td>    {<q>"XCASE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#181" title="0000004" data-ref="_M/XCASE">XCASE</a>},</td></tr>
+<tr><th id="541">541</th><td><u>#<span data-ppcond="539">endif</span></u></td></tr>
+<tr><th id="542">542</th><td>    {<q>"ECHO"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#183" title="0000010" data-ref="_M/ECHO">ECHO</a>},</td></tr>
+<tr><th id="543">543</th><td>    {<q>"ECHOE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#184" title="0000020" data-ref="_M/ECHOE">ECHOE</a>},</td></tr>
+<tr><th id="544">544</th><td>    {<q>"ECHOK"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#185" title="0000040" data-ref="_M/ECHOK">ECHOK</a>},</td></tr>
+<tr><th id="545">545</th><td>    {<q>"ECHONL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#186" title="0000100" data-ref="_M/ECHONL">ECHONL</a>},</td></tr>
+<tr><th id="546">546</th><td><u>#<span data-ppcond="546">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#190" data-ref="_M/ECHOCTL">ECHOCTL</a></u></td></tr>
+<tr><th id="547">547</th><td>    {<q>"ECHOCTL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#190" title="0001000" data-ref="_M/ECHOCTL">ECHOCTL</a>},</td></tr>
+<tr><th id="548">548</th><td><u>#<span data-ppcond="546">endif</span></u></td></tr>
+<tr><th id="549">549</th><td><u>#<span data-ppcond="549">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#191" data-ref="_M/ECHOPRT">ECHOPRT</a></u></td></tr>
+<tr><th id="550">550</th><td>    {<q>"ECHOPRT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#191" title="0002000" data-ref="_M/ECHOPRT">ECHOPRT</a>},</td></tr>
+<tr><th id="551">551</th><td><u>#<span data-ppcond="549">endif</span></u></td></tr>
+<tr><th id="552">552</th><td><u>#<span data-ppcond="552">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#192" data-ref="_M/ECHOKE">ECHOKE</a></u></td></tr>
+<tr><th id="553">553</th><td>    {<q>"ECHOKE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#192" title="0004000" data-ref="_M/ECHOKE">ECHOKE</a>},</td></tr>
+<tr><th id="554">554</th><td><u>#<span data-ppcond="552">endif</span></u></td></tr>
+<tr><th id="555">555</th><td><u>#<span data-ppcond="555">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#193" data-ref="_M/FLUSHO">FLUSHO</a></u></td></tr>
+<tr><th id="556">556</th><td>    {<q>"FLUSHO"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#193" title="0010000" data-ref="_M/FLUSHO">FLUSHO</a>},</td></tr>
+<tr><th id="557">557</th><td><u>#<span data-ppcond="555">endif</span></u></td></tr>
+<tr><th id="558">558</th><td>    {<q>"NOFLSH"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#187" title="0000200" data-ref="_M/NOFLSH">NOFLSH</a>},</td></tr>
+<tr><th id="559">559</th><td>    {<q>"TOSTOP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#188" title="0000400" data-ref="_M/TOSTOP">TOSTOP</a>},</td></tr>
+<tr><th id="560">560</th><td><u>#<span data-ppcond="560">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#194" data-ref="_M/PENDIN">PENDIN</a></u></td></tr>
+<tr><th id="561">561</th><td>    {<q>"PENDIN"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#194" title="0040000" data-ref="_M/PENDIN">PENDIN</a>},</td></tr>
+<tr><th id="562">562</th><td><u>#<span data-ppcond="560">endif</span></u></td></tr>
+<tr><th id="563">563</th><td>    {<q>"IEXTEN"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#196" title="0100000" data-ref="_M/IEXTEN">IEXTEN</a>},</td></tr>
+<tr><th id="564">564</th><td></td></tr>
+<tr><th id="565">565</th><td>    <i>/* indexes into the control chars array returned by tcgetattr() */</i></td></tr>
+<tr><th id="566">566</th><td>    {<q>"VINTR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#43" title="0" data-ref="_M/VINTR">VINTR</a>},</td></tr>
+<tr><th id="567">567</th><td>    {<q>"VQUIT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#44" title="1" data-ref="_M/VQUIT">VQUIT</a>},</td></tr>
+<tr><th id="568">568</th><td>    {<q>"VERASE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#45" title="2" data-ref="_M/VERASE">VERASE</a>},</td></tr>
+<tr><th id="569">569</th><td>    {<q>"VKILL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#46" title="3" data-ref="_M/VKILL">VKILL</a>},</td></tr>
+<tr><th id="570">570</th><td>    {<q>"VEOF"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#47" title="4" data-ref="_M/VEOF">VEOF</a>},</td></tr>
+<tr><th id="571">571</th><td>    {<q>"VTIME"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#48" title="5" data-ref="_M/VTIME">VTIME</a>},</td></tr>
+<tr><th id="572">572</th><td>    {<q>"VMIN"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#49" title="6" data-ref="_M/VMIN">VMIN</a>},</td></tr>
+<tr><th id="573">573</th><td><u>#<span data-ppcond="573">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#50" data-ref="_M/VSWTC">VSWTC</a></u></td></tr>
+<tr><th id="574">574</th><td>    <i>/* The #defines above ensure that if either is defined, both are,</i></td></tr>
+<tr><th id="575">575</th><td><i>     * but both may be omitted by the system headers.  ;-(  */</i></td></tr>
+<tr><th id="576">576</th><td>    {<q>"VSWTC"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#50" title="7" data-ref="_M/VSWTC">VSWTC</a>},</td></tr>
+<tr><th id="577">577</th><td>    {<q>"VSWTCH"</q>, <a class="macro" href="#307" title="7" data-ref="_M/VSWTCH">VSWTCH</a>},</td></tr>
+<tr><th id="578">578</th><td><u>#<span data-ppcond="573">endif</span></u></td></tr>
+<tr><th id="579">579</th><td>    {<q>"VSTART"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#51" title="8" data-ref="_M/VSTART">VSTART</a>},</td></tr>
+<tr><th id="580">580</th><td>    {<q>"VSTOP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#52" title="9" data-ref="_M/VSTOP">VSTOP</a>},</td></tr>
+<tr><th id="581">581</th><td>    {<q>"VSUSP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#53" title="10" data-ref="_M/VSUSP">VSUSP</a>},</td></tr>
+<tr><th id="582">582</th><td>    {<q>"VEOL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#54" title="11" data-ref="_M/VEOL">VEOL</a>},</td></tr>
+<tr><th id="583">583</th><td><u>#<span data-ppcond="583">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#55" data-ref="_M/VREPRINT">VREPRINT</a></u></td></tr>
+<tr><th id="584">584</th><td>    {<q>"VREPRINT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#55" title="12" data-ref="_M/VREPRINT">VREPRINT</a>},</td></tr>
+<tr><th id="585">585</th><td><u>#<span data-ppcond="583">endif</span></u></td></tr>
+<tr><th id="586">586</th><td><u>#<span data-ppcond="586">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#56" data-ref="_M/VDISCARD">VDISCARD</a></u></td></tr>
+<tr><th id="587">587</th><td>    {<q>"VDISCARD"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#56" title="13" data-ref="_M/VDISCARD">VDISCARD</a>},</td></tr>
+<tr><th id="588">588</th><td><u>#<span data-ppcond="586">endif</span></u></td></tr>
+<tr><th id="589">589</th><td><u>#<span data-ppcond="589">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#57" data-ref="_M/VWERASE">VWERASE</a></u></td></tr>
+<tr><th id="590">590</th><td>    {<q>"VWERASE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#57" title="14" data-ref="_M/VWERASE">VWERASE</a>},</td></tr>
+<tr><th id="591">591</th><td><u>#<span data-ppcond="589">endif</span></u></td></tr>
+<tr><th id="592">592</th><td><u>#<span data-ppcond="592">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#58" data-ref="_M/VLNEXT">VLNEXT</a></u></td></tr>
+<tr><th id="593">593</th><td>    {<q>"VLNEXT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#58" title="15" data-ref="_M/VLNEXT">VLNEXT</a>},</td></tr>
+<tr><th id="594">594</th><td><u>#<span data-ppcond="592">endif</span></u></td></tr>
+<tr><th id="595">595</th><td><u>#<span data-ppcond="595">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#59" data-ref="_M/VEOL2">VEOL2</a></u></td></tr>
+<tr><th id="596">596</th><td>    {<q>"VEOL2"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#59" title="16" data-ref="_M/VEOL2">VEOL2</a>},</td></tr>
+<tr><th id="597">597</th><td><u>#<span data-ppcond="595">endif</span></u></td></tr>
+<tr><th id="598">598</th><td></td></tr>
+<tr><th id="599">599</th><td></td></tr>
+<tr><th id="600">600</th><td><u>#<span data-ppcond="600">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#158" data-ref="_M/B460800">B460800</a></u></td></tr>
+<tr><th id="601">601</th><td>    {<q>"B460800"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#158" title="0010004" data-ref="_M/B460800">B460800</a>},</td></tr>
+<tr><th id="602">602</th><td><u>#<span data-ppcond="600">endif</span></u></td></tr>
+<tr><th id="603">603</th><td><u>#<span data-ppcond="603">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#119" data-ref="_M/CBAUD">CBAUD</a></u></td></tr>
+<tr><th id="604">604</th><td>    {<q>"CBAUD"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#119" title="0010017" data-ref="_M/CBAUD">CBAUD</a>},</td></tr>
+<tr><th id="605">605</th><td><u>#<span data-ppcond="603">endif</span></u></td></tr>
+<tr><th id="606">606</th><td><u>#<span data-ppcond="606">ifdef</span> <span class="macro" data-ref="_M/CDEL">CDEL</span></u></td></tr>
+<tr><th id="607">607</th><td>    {<q>"CDEL"</q>, CDEL},</td></tr>
+<tr><th id="608">608</th><td><u>#<span data-ppcond="606">endif</span></u></td></tr>
+<tr><th id="609">609</th><td><u>#<span data-ppcond="609">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#74" data-ref="_M/CDSUSP">CDSUSP</a></u></td></tr>
+<tr><th id="610">610</th><td>    {<q>"CDSUSP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#74" title="(&apos;y&apos;&amp;037)" data-ref="_M/CDSUSP">CDSUSP</a>},</td></tr>
+<tr><th id="611">611</th><td><u>#<span data-ppcond="609">endif</span></u></td></tr>
+<tr><th id="612">612</th><td><u>#<span data-ppcond="612">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#56" data-ref="_M/CEOF">CEOF</a></u></td></tr>
+<tr><th id="613">613</th><td>    {<q>"CEOF"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#56" title="(&apos;d&apos;&amp;037)" data-ref="_M/CEOF">CEOF</a>},</td></tr>
+<tr><th id="614">614</th><td><u>#<span data-ppcond="612">endif</span></u></td></tr>
+<tr><th id="615">615</th><td><u>#<span data-ppcond="615">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#58" data-ref="_M/CEOL">CEOL</a></u></td></tr>
+<tr><th id="616">616</th><td>    {<q>"CEOL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#58" title="&apos;\0&apos;" data-ref="_M/CEOL">CEOL</a>},</td></tr>
+<tr><th id="617">617</th><td><u>#<span data-ppcond="615">endif</span></u></td></tr>
+<tr><th id="618">618</th><td><u>#<span data-ppcond="618">ifdef</span> <span class="macro" data-ref="_M/CEOL2">CEOL2</span></u></td></tr>
+<tr><th id="619">619</th><td>    {<q>"CEOL2"</q>, CEOL2},</td></tr>
+<tr><th id="620">620</th><td><u>#<span data-ppcond="618">endif</span></u></td></tr>
+<tr><th id="621">621</th><td><u>#<span data-ppcond="621">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#81" data-ref="_M/CEOT">CEOT</a></u></td></tr>
+<tr><th id="622">622</th><td>    {<q>"CEOT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#81" title="(&apos;d&apos;&amp;037)" data-ref="_M/CEOT">CEOT</a>},</td></tr>
+<tr><th id="623">623</th><td><u>#<span data-ppcond="621">endif</span></u></td></tr>
+<tr><th id="624">624</th><td><u>#<span data-ppcond="624">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#62" data-ref="_M/CERASE">CERASE</a></u></td></tr>
+<tr><th id="625">625</th><td>    {<q>"CERASE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#62" title="0177" data-ref="_M/CERASE">CERASE</a>},</td></tr>
+<tr><th id="626">626</th><td><u>#<span data-ppcond="624">endif</span></u></td></tr>
+<tr><th id="627">627</th><td><u>#<span data-ppcond="627">ifdef</span> <span class="macro" data-ref="_M/CESC">CESC</span></u></td></tr>
+<tr><th id="628">628</th><td>    {<q>"CESC"</q>, CESC},</td></tr>
+<tr><th id="629">629</th><td><u>#<span data-ppcond="627">endif</span></u></td></tr>
+<tr><th id="630">630</th><td><u>#<span data-ppcond="630">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#85" data-ref="_M/CFLUSH">CFLUSH</a></u></td></tr>
+<tr><th id="631">631</th><td>    {<q>"CFLUSH"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#85" title="(&apos;o&apos;&amp;037)" data-ref="_M/CFLUSH">CFLUSH</a>},</td></tr>
+<tr><th id="632">632</th><td><u>#<span data-ppcond="630">endif</span></u></td></tr>
+<tr><th id="633">633</th><td><u>#<span data-ppcond="633">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#63" data-ref="_M/CINTR">CINTR</a></u></td></tr>
+<tr><th id="634">634</th><td>    {<q>"CINTR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#63" title="(&apos;c&apos;&amp;037)" data-ref="_M/CINTR">CINTR</a>},</td></tr>
+<tr><th id="635">635</th><td><u>#<span data-ppcond="633">endif</span></u></td></tr>
+<tr><th id="636">636</th><td><u>#<span data-ppcond="636">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#69" data-ref="_M/CKILL">CKILL</a></u></td></tr>
+<tr><th id="637">637</th><td>    {<q>"CKILL"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#69" title="(&apos;u&apos;&amp;037)" data-ref="_M/CKILL">CKILL</a>},</td></tr>
+<tr><th id="638">638</th><td><u>#<span data-ppcond="636">endif</span></u></td></tr>
+<tr><th id="639">639</th><td><u>#<span data-ppcond="639">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#77" data-ref="_M/CLNEXT">CLNEXT</a></u></td></tr>
+<tr><th id="640">640</th><td>    {<q>"CLNEXT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#77" title="(&apos;v&apos;&amp;037)" data-ref="_M/CLNEXT">CLNEXT</a>},</td></tr>
+<tr><th id="641">641</th><td><u>#<span data-ppcond="639">endif</span></u></td></tr>
+<tr><th id="642">642</th><td><u>#<span data-ppcond="642">ifdef</span> <span class="macro" data-ref="_M/CNUL">CNUL</span></u></td></tr>
+<tr><th id="643">643</th><td>    {<q>"CNUL"</q>, CNUL},</td></tr>
+<tr><th id="644">644</th><td><u>#<span data-ppcond="642">endif</span></u></td></tr>
+<tr><th id="645">645</th><td><u>#<span data-ppcond="645">ifdef</span> <span class="macro" data-ref="_M/COMMON">COMMON</span></u></td></tr>
+<tr><th id="646">646</th><td>    {<q>"COMMON"</q>, COMMON},</td></tr>
+<tr><th id="647">647</th><td><u>#<span data-ppcond="645">endif</span></u></td></tr>
+<tr><th id="648">648</th><td><u>#<span data-ppcond="648">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#71" data-ref="_M/CQUIT">CQUIT</a></u></td></tr>
+<tr><th id="649">649</th><td>    {<q>"CQUIT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#71" title="034" data-ref="_M/CQUIT">CQUIT</a>},</td></tr>
+<tr><th id="650">650</th><td><u>#<span data-ppcond="648">endif</span></u></td></tr>
+<tr><th id="651">651</th><td><u>#<span data-ppcond="651">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#84" data-ref="_M/CRPRNT">CRPRNT</a></u></td></tr>
+<tr><th id="652">652</th><td>    {<q>"CRPRNT"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#84" title="(&apos;r&apos;&amp;037)" data-ref="_M/CRPRNT">CRPRNT</a>},</td></tr>
+<tr><th id="653">653</th><td><u>#<span data-ppcond="651">endif</span></u></td></tr>
+<tr><th id="654">654</th><td><u>#<span data-ppcond="654">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#75" data-ref="_M/CSTART">CSTART</a></u></td></tr>
+<tr><th id="655">655</th><td>    {<q>"CSTART"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#75" title="(&apos;q&apos;&amp;037)" data-ref="_M/CSTART">CSTART</a>},</td></tr>
+<tr><th id="656">656</th><td><u>#<span data-ppcond="654">endif</span></u></td></tr>
+<tr><th id="657">657</th><td><u>#<span data-ppcond="657">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#76" data-ref="_M/CSTOP">CSTOP</a></u></td></tr>
+<tr><th id="658">658</th><td>    {<q>"CSTOP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#76" title="(&apos;s&apos;&amp;037)" data-ref="_M/CSTOP">CSTOP</a>},</td></tr>
+<tr><th id="659">659</th><td><u>#<span data-ppcond="657">endif</span></u></td></tr>
+<tr><th id="660">660</th><td><u>#<span data-ppcond="660">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#72" data-ref="_M/CSUSP">CSUSP</a></u></td></tr>
+<tr><th id="661">661</th><td>    {<q>"CSUSP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#72" title="(&apos;z&apos;&amp;037)" data-ref="_M/CSUSP">CSUSP</a>},</td></tr>
+<tr><th id="662">662</th><td><u>#<span data-ppcond="660">endif</span></u></td></tr>
+<tr><th id="663">663</th><td><u>#<span data-ppcond="663">ifdef</span> <span class="macro" data-ref="_M/CSWTCH">CSWTCH</span></u></td></tr>
+<tr><th id="664">664</th><td>    {<q>"CSWTCH"</q>, CSWTCH},</td></tr>
+<tr><th id="665">665</th><td><u>#<span data-ppcond="663">endif</span></u></td></tr>
+<tr><th id="666">666</th><td><u>#<span data-ppcond="666">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#79" data-ref="_M/CWERASE">CWERASE</a></u></td></tr>
+<tr><th id="667">667</th><td>    {<q>"CWERASE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/sys/ttydefaults.h.html#79" title="(&apos;w&apos;&amp;037)" data-ref="_M/CWERASE">CWERASE</a>},</td></tr>
+<tr><th id="668">668</th><td><u>#<span data-ppcond="666">endif</span></u></td></tr>
+<tr><th id="669">669</th><td><u>#<span data-ppcond="669">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#138" data-ref="_M/EXTA">EXTA</a></u></td></tr>
+<tr><th id="670">670</th><td>    {<q>"EXTA"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#138" title="0000016" data-ref="_M/EXTA">EXTA</a>},</td></tr>
+<tr><th id="671">671</th><td><u>#<span data-ppcond="669">endif</span></u></td></tr>
+<tr><th id="672">672</th><td><u>#<span data-ppcond="672">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#139" data-ref="_M/EXTB">EXTB</a></u></td></tr>
+<tr><th id="673">673</th><td>    {<q>"EXTB"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#139" title="0000017" data-ref="_M/EXTB">EXTB</a>},</td></tr>
+<tr><th id="674">674</th><td><u>#<span data-ppcond="672">endif</span></u></td></tr>
+<tr><th id="675">675</th><td><u>#<span data-ppcond="675">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#83" data-ref="_M/FIOASYNC">FIOASYNC</a></u></td></tr>
+<tr><th id="676">676</th><td>    {<q>"FIOASYNC"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#83" title="0x5452" data-ref="_M/FIOASYNC">FIOASYNC</a>},</td></tr>
+<tr><th id="677">677</th><td><u>#<span data-ppcond="675">endif</span></u></td></tr>
+<tr><th id="678">678</th><td><u>#<span data-ppcond="678">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#82" data-ref="_M/FIOCLEX">FIOCLEX</a></u></td></tr>
+<tr><th id="679">679</th><td>    {<q>"FIOCLEX"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#82" title="0x5451" data-ref="_M/FIOCLEX">FIOCLEX</a>},</td></tr>
+<tr><th id="680">680</th><td><u>#<span data-ppcond="678">endif</span></u></td></tr>
+<tr><th id="681">681</th><td><u>#<span data-ppcond="681">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#52" data-ref="_M/FIONBIO">FIONBIO</a></u></td></tr>
+<tr><th id="682">682</th><td>    {<q>"FIONBIO"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#52" title="0x5421" data-ref="_M/FIONBIO">FIONBIO</a>},</td></tr>
+<tr><th id="683">683</th><td><u>#<span data-ppcond="681">endif</span></u></td></tr>
+<tr><th id="684">684</th><td><u>#<span data-ppcond="684">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#81" data-ref="_M/FIONCLEX">FIONCLEX</a></u></td></tr>
+<tr><th id="685">685</th><td>    {<q>"FIONCLEX"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#81" title="0x5450" data-ref="_M/FIONCLEX">FIONCLEX</a>},</td></tr>
+<tr><th id="686">686</th><td><u>#<span data-ppcond="684">endif</span></u></td></tr>
+<tr><th id="687">687</th><td><u>#<span data-ppcond="687">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#45" data-ref="_M/FIONREAD">FIONREAD</a></u></td></tr>
+<tr><th id="688">688</th><td>    {<q>"FIONREAD"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#45" title="0x541B" data-ref="_M/FIONREAD">FIONREAD</a>},</td></tr>
+<tr><th id="689">689</th><td><u>#<span data-ppcond="687">endif</span></u></td></tr>
+<tr><th id="690">690</th><td><u>#<span data-ppcond="690">ifdef</span> <span class="macro" data-ref="_M/IBSHIFT">IBSHIFT</span></u></td></tr>
+<tr><th id="691">691</th><td>    {<q>"IBSHIFT"</q>, IBSHIFT},</td></tr>
+<tr><th id="692">692</th><td><u>#<span data-ppcond="690">endif</span></u></td></tr>
+<tr><th id="693">693</th><td><u>#<span data-ppcond="693">ifdef</span> <span class="macro" data-ref="_M/INIT_C_CC">INIT_C_CC</span></u></td></tr>
+<tr><th id="694">694</th><td>    {<q>"INIT_C_CC"</q>, INIT_C_CC},</td></tr>
+<tr><th id="695">695</th><td><u>#<span data-ppcond="693">endif</span></u></td></tr>
+<tr><th id="696">696</th><td><u>#<span data-ppcond="696">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctl.h.html#93" data-ref="_M/IOCSIZE_MASK">IOCSIZE_MASK</a></u></td></tr>
+<tr><th id="697">697</th><td>    {<q>"IOCSIZE_MASK"</q>, <a class="macro" href="../../include/asm-generic/ioctl.h.html#93" title="(((1 &lt;&lt; 14)-1) &lt;&lt; ((0+8)+8))" data-ref="_M/IOCSIZE_MASK">IOCSIZE_MASK</a>},</td></tr>
+<tr><th id="698">698</th><td><u>#<span data-ppcond="696">endif</span></u></td></tr>
+<tr><th id="699">699</th><td><u>#<span data-ppcond="699">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctl.h.html#94" data-ref="_M/IOCSIZE_SHIFT">IOCSIZE_SHIFT</a></u></td></tr>
+<tr><th id="700">700</th><td>    {<q>"IOCSIZE_SHIFT"</q>, <a class="macro" href="../../include/asm-generic/ioctl.h.html#94" title="(((0+8)+8))" data-ref="_M/IOCSIZE_SHIFT">IOCSIZE_SHIFT</a>},</td></tr>
+<tr><th id="701">701</th><td><u>#<span data-ppcond="699">endif</span></u></td></tr>
+<tr><th id="702">702</th><td><u>#<span data-ppcond="702">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#35" data-ref="_M/NCC">NCC</a></u></td></tr>
+<tr><th id="703">703</th><td>    {<q>"NCC"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#35" title="8" data-ref="_M/NCC">NCC</a>},</td></tr>
+<tr><th id="704">704</th><td><u>#<span data-ppcond="702">endif</span></u></td></tr>
+<tr><th id="705">705</th><td><u>#<span data-ppcond="705">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" data-ref="_M/NCCS">NCCS</a></u></td></tr>
+<tr><th id="706">706</th><td>    {<q>"NCCS"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/termios.h.html#27" title="32" data-ref="_M/NCCS">NCCS</a>},</td></tr>
+<tr><th id="707">707</th><td><u>#<span data-ppcond="705">endif</span></u></td></tr>
+<tr><th id="708">708</th><td><u>#<span data-ppcond="708">ifdef</span> <span class="macro" data-ref="_M/NSWTCH">NSWTCH</span></u></td></tr>
+<tr><th id="709">709</th><td>    {<q>"NSWTCH"</q>, NSWTCH},</td></tr>
+<tr><th id="710">710</th><td><u>#<span data-ppcond="708">endif</span></u></td></tr>
+<tr><th id="711">711</th><td><u>#<span data-ppcond="711">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#64" data-ref="_M/N_MOUSE">N_MOUSE</a></u></td></tr>
+<tr><th id="712">712</th><td>    {<q>"N_MOUSE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#64" title="2" data-ref="_M/N_MOUSE">N_MOUSE</a>},</td></tr>
+<tr><th id="713">713</th><td><u>#<span data-ppcond="711">endif</span></u></td></tr>
+<tr><th id="714">714</th><td><u>#<span data-ppcond="714">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#65" data-ref="_M/N_PPP">N_PPP</a></u></td></tr>
+<tr><th id="715">715</th><td>    {<q>"N_PPP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#65" title="3" data-ref="_M/N_PPP">N_PPP</a>},</td></tr>
+<tr><th id="716">716</th><td><u>#<span data-ppcond="714">endif</span></u></td></tr>
+<tr><th id="717">717</th><td><u>#<span data-ppcond="717">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#63" data-ref="_M/N_SLIP">N_SLIP</a></u></td></tr>
+<tr><th id="718">718</th><td>    {<q>"N_SLIP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#63" title="1" data-ref="_M/N_SLIP">N_SLIP</a>},</td></tr>
+<tr><th id="719">719</th><td><u>#<span data-ppcond="717">endif</span></u></td></tr>
+<tr><th id="720">720</th><td><u>#<span data-ppcond="720">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#66" data-ref="_M/N_STRIP">N_STRIP</a></u></td></tr>
+<tr><th id="721">721</th><td>    {<q>"N_STRIP"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#66" title="4" data-ref="_M/N_STRIP">N_STRIP</a>},</td></tr>
+<tr><th id="722">722</th><td><u>#<span data-ppcond="720">endif</span></u></td></tr>
+<tr><th id="723">723</th><td><u>#<span data-ppcond="723">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#62" data-ref="_M/N_TTY">N_TTY</a></u></td></tr>
+<tr><th id="724">724</th><td>    {<q>"N_TTY"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#62" title="0" data-ref="_M/N_TTY">N_TTY</a>},</td></tr>
+<tr><th id="725">725</th><td><u>#<span data-ppcond="723">endif</span></u></td></tr>
+<tr><th id="726">726</th><td><u>#<span data-ppcond="726">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#29" data-ref="_M/TCFLSH">TCFLSH</a></u></td></tr>
+<tr><th id="727">727</th><td>    {<q>"TCFLSH"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#29" title="0x540B" data-ref="_M/TCFLSH">TCFLSH</a>},</td></tr>
+<tr><th id="728">728</th><td><u>#<span data-ppcond="726">endif</span></u></td></tr>
+<tr><th id="729">729</th><td><u>#<span data-ppcond="729">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#23" data-ref="_M/TCGETA">TCGETA</a></u></td></tr>
+<tr><th id="730">730</th><td>    {<q>"TCGETA"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#23" title="0x5405" data-ref="_M/TCGETA">TCGETA</a>},</td></tr>
+<tr><th id="731">731</th><td><u>#<span data-ppcond="729">endif</span></u></td></tr>
+<tr><th id="732">732</th><td><u>#<span data-ppcond="732">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#19" data-ref="_M/TCGETS">TCGETS</a></u></td></tr>
+<tr><th id="733">733</th><td>    {<q>"TCGETS"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#19" title="0x5401" data-ref="_M/TCGETS">TCGETS</a>},</td></tr>
+<tr><th id="734">734</th><td><u>#<span data-ppcond="732">endif</span></u></td></tr>
+<tr><th id="735">735</th><td><u>#<span data-ppcond="735">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#27" data-ref="_M/TCSBRK">TCSBRK</a></u></td></tr>
+<tr><th id="736">736</th><td>    {<q>"TCSBRK"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#27" title="0x5409" data-ref="_M/TCSBRK">TCSBRK</a>},</td></tr>
+<tr><th id="737">737</th><td><u>#<span data-ppcond="735">endif</span></u></td></tr>
+<tr><th id="738">738</th><td><u>#<span data-ppcond="738">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#56" data-ref="_M/TCSBRKP">TCSBRKP</a></u></td></tr>
+<tr><th id="739">739</th><td>    {<q>"TCSBRKP"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#56" title="0x5425" data-ref="_M/TCSBRKP">TCSBRKP</a>},</td></tr>
+<tr><th id="740">740</th><td><u>#<span data-ppcond="738">endif</span></u></td></tr>
+<tr><th id="741">741</th><td><u>#<span data-ppcond="741">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#24" data-ref="_M/TCSETA">TCSETA</a></u></td></tr>
+<tr><th id="742">742</th><td>    {<q>"TCSETA"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#24" title="0x5406" data-ref="_M/TCSETA">TCSETA</a>},</td></tr>
+<tr><th id="743">743</th><td><u>#<span data-ppcond="741">endif</span></u></td></tr>
+<tr><th id="744">744</th><td><u>#<span data-ppcond="744">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#26" data-ref="_M/TCSETAF">TCSETAF</a></u></td></tr>
+<tr><th id="745">745</th><td>    {<q>"TCSETAF"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#26" title="0x5408" data-ref="_M/TCSETAF">TCSETAF</a>},</td></tr>
+<tr><th id="746">746</th><td><u>#<span data-ppcond="744">endif</span></u></td></tr>
+<tr><th id="747">747</th><td><u>#<span data-ppcond="747">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#25" data-ref="_M/TCSETAW">TCSETAW</a></u></td></tr>
+<tr><th id="748">748</th><td>    {<q>"TCSETAW"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#25" title="0x5407" data-ref="_M/TCSETAW">TCSETAW</a>},</td></tr>
+<tr><th id="749">749</th><td><u>#<span data-ppcond="747">endif</span></u></td></tr>
+<tr><th id="750">750</th><td><u>#<span data-ppcond="750">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#20" data-ref="_M/TCSETS">TCSETS</a></u></td></tr>
+<tr><th id="751">751</th><td>    {<q>"TCSETS"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#20" title="0x5402" data-ref="_M/TCSETS">TCSETS</a>},</td></tr>
+<tr><th id="752">752</th><td><u>#<span data-ppcond="750">endif</span></u></td></tr>
+<tr><th id="753">753</th><td><u>#<span data-ppcond="753">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#22" data-ref="_M/TCSETSF">TCSETSF</a></u></td></tr>
+<tr><th id="754">754</th><td>    {<q>"TCSETSF"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#22" title="0x5404" data-ref="_M/TCSETSF">TCSETSF</a>},</td></tr>
+<tr><th id="755">755</th><td><u>#<span data-ppcond="753">endif</span></u></td></tr>
+<tr><th id="756">756</th><td><u>#<span data-ppcond="756">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#21" data-ref="_M/TCSETSW">TCSETSW</a></u></td></tr>
+<tr><th id="757">757</th><td>    {<q>"TCSETSW"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#21" title="0x5403" data-ref="_M/TCSETSW">TCSETSW</a>},</td></tr>
+<tr><th id="758">758</th><td><u>#<span data-ppcond="756">endif</span></u></td></tr>
+<tr><th id="759">759</th><td><u>#<span data-ppcond="759">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#28" data-ref="_M/TCXONC">TCXONC</a></u></td></tr>
+<tr><th id="760">760</th><td>    {<q>"TCXONC"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#28" title="0x540A" data-ref="_M/TCXONC">TCXONC</a>},</td></tr>
+<tr><th id="761">761</th><td><u>#<span data-ppcond="759">endif</span></u></td></tr>
+<tr><th id="762">762</th><td><u>#<span data-ppcond="762">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#48" data-ref="_M/TIOCCONS">TIOCCONS</a></u></td></tr>
+<tr><th id="763">763</th><td>    {<q>"TIOCCONS"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#48" title="0x541D" data-ref="_M/TIOCCONS">TIOCCONS</a>},</td></tr>
+<tr><th id="764">764</th><td><u>#<span data-ppcond="762">endif</span></u></td></tr>
+<tr><th id="765">765</th><td><u>#<span data-ppcond="765">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#30" data-ref="_M/TIOCEXCL">TIOCEXCL</a></u></td></tr>
+<tr><th id="766">766</th><td>    {<q>"TIOCEXCL"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#30" title="0x540C" data-ref="_M/TIOCEXCL">TIOCEXCL</a>},</td></tr>
+<tr><th id="767">767</th><td><u>#<span data-ppcond="765">endif</span></u></td></tr>
+<tr><th id="768">768</th><td><u>#<span data-ppcond="768">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#55" data-ref="_M/TIOCGETD">TIOCGETD</a></u></td></tr>
+<tr><th id="769">769</th><td>    {<q>"TIOCGETD"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#55" title="0x5424" data-ref="_M/TIOCGETD">TIOCGETD</a>},</td></tr>
+<tr><th id="770">770</th><td><u>#<span data-ppcond="768">endif</span></u></td></tr>
+<tr><th id="771">771</th><td><u>#<span data-ppcond="771">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#95" data-ref="_M/TIOCGICOUNT">TIOCGICOUNT</a></u></td></tr>
+<tr><th id="772">772</th><td>    {<q>"TIOCGICOUNT"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#95" title="0x545D" data-ref="_M/TIOCGICOUNT">TIOCGICOUNT</a>},</td></tr>
+<tr><th id="773">773</th><td><u>#<span data-ppcond="771">endif</span></u></td></tr>
+<tr><th id="774">774</th><td><u>#<span data-ppcond="774">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#87" data-ref="_M/TIOCGLCKTRMIOS">TIOCGLCKTRMIOS</a></u></td></tr>
+<tr><th id="775">775</th><td>    {<q>"TIOCGLCKTRMIOS"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#87" title="0x5456" data-ref="_M/TIOCGLCKTRMIOS">TIOCGLCKTRMIOS</a>},</td></tr>
+<tr><th id="776">776</th><td><u>#<span data-ppcond="774">endif</span></u></td></tr>
+<tr><th id="777">777</th><td><u>#<span data-ppcond="777">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#33" data-ref="_M/TIOCGPGRP">TIOCGPGRP</a></u></td></tr>
+<tr><th id="778">778</th><td>    {<q>"TIOCGPGRP"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#33" title="0x540F" data-ref="_M/TIOCGPGRP">TIOCGPGRP</a>},</td></tr>
+<tr><th id="779">779</th><td><u>#<span data-ppcond="777">endif</span></u></td></tr>
+<tr><th id="780">780</th><td><u>#<span data-ppcond="780">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#49" data-ref="_M/TIOCGSERIAL">TIOCGSERIAL</a></u></td></tr>
+<tr><th id="781">781</th><td>    {<q>"TIOCGSERIAL"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#49" title="0x541E" data-ref="_M/TIOCGSERIAL">TIOCGSERIAL</a>},</td></tr>
+<tr><th id="782">782</th><td><u>#<span data-ppcond="780">endif</span></u></td></tr>
+<tr><th id="783">783</th><td><u>#<span data-ppcond="783">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#43" data-ref="_M/TIOCGSOFTCAR">TIOCGSOFTCAR</a></u></td></tr>
+<tr><th id="784">784</th><td>    {<q>"TIOCGSOFTCAR"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#43" title="0x5419" data-ref="_M/TIOCGSOFTCAR">TIOCGSOFTCAR</a>},</td></tr>
+<tr><th id="785">785</th><td><u>#<span data-ppcond="783">endif</span></u></td></tr>
+<tr><th id="786">786</th><td><u>#<span data-ppcond="786">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#37" data-ref="_M/TIOCGWINSZ">TIOCGWINSZ</a></u></td></tr>
+<tr><th id="787">787</th><td>    {<q>"TIOCGWINSZ"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#37" title="0x5413" data-ref="_M/TIOCGWINSZ">TIOCGWINSZ</a>},</td></tr>
+<tr><th id="788">788</th><td><u>#<span data-ppcond="786">endif</span></u></td></tr>
+<tr><th id="789">789</th><td><u>#<span data-ppcond="789">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#46" data-ref="_M/TIOCINQ">TIOCINQ</a></u></td></tr>
+<tr><th id="790">790</th><td>    {<q>"TIOCINQ"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#46" title="0x541B" data-ref="_M/TIOCINQ">TIOCINQ</a>},</td></tr>
+<tr><th id="791">791</th><td><u>#<span data-ppcond="789">endif</span></u></td></tr>
+<tr><th id="792">792</th><td><u>#<span data-ppcond="792">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#47" data-ref="_M/TIOCLINUX">TIOCLINUX</a></u></td></tr>
+<tr><th id="793">793</th><td>    {<q>"TIOCLINUX"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#47" title="0x541C" data-ref="_M/TIOCLINUX">TIOCLINUX</a>},</td></tr>
+<tr><th id="794">794</th><td><u>#<span data-ppcond="792">endif</span></u></td></tr>
+<tr><th id="795">795</th><td><u>#<span data-ppcond="795">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#41" data-ref="_M/TIOCMBIC">TIOCMBIC</a></u></td></tr>
+<tr><th id="796">796</th><td>    {<q>"TIOCMBIC"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#41" title="0x5417" data-ref="_M/TIOCMBIC">TIOCMBIC</a>},</td></tr>
+<tr><th id="797">797</th><td><u>#<span data-ppcond="795">endif</span></u></td></tr>
+<tr><th id="798">798</th><td><u>#<span data-ppcond="798">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#40" data-ref="_M/TIOCMBIS">TIOCMBIS</a></u></td></tr>
+<tr><th id="799">799</th><td>    {<q>"TIOCMBIS"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#40" title="0x5416" data-ref="_M/TIOCMBIS">TIOCMBIS</a>},</td></tr>
+<tr><th id="800">800</th><td><u>#<span data-ppcond="798">endif</span></u></td></tr>
+<tr><th id="801">801</th><td><u>#<span data-ppcond="801">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#39" data-ref="_M/TIOCMGET">TIOCMGET</a></u></td></tr>
+<tr><th id="802">802</th><td>    {<q>"TIOCMGET"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#39" title="0x5415" data-ref="_M/TIOCMGET">TIOCMGET</a>},</td></tr>
+<tr><th id="803">803</th><td><u>#<span data-ppcond="801">endif</span></u></td></tr>
+<tr><th id="804">804</th><td><u>#<span data-ppcond="804">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#94" data-ref="_M/TIOCMIWAIT">TIOCMIWAIT</a></u></td></tr>
+<tr><th id="805">805</th><td>    {<q>"TIOCMIWAIT"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#94" title="0x545C" data-ref="_M/TIOCMIWAIT">TIOCMIWAIT</a>},</td></tr>
+<tr><th id="806">806</th><td><u>#<span data-ppcond="804">endif</span></u></td></tr>
+<tr><th id="807">807</th><td><u>#<span data-ppcond="807">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#42" data-ref="_M/TIOCMSET">TIOCMSET</a></u></td></tr>
+<tr><th id="808">808</th><td>    {<q>"TIOCMSET"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#42" title="0x5418" data-ref="_M/TIOCMSET">TIOCMSET</a>},</td></tr>
+<tr><th id="809">809</th><td><u>#<span data-ppcond="807">endif</span></u></td></tr>
+<tr><th id="810">810</th><td><u>#<span data-ppcond="810">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#53" data-ref="_M/TIOCM_CAR">TIOCM_CAR</a></u></td></tr>
+<tr><th id="811">811</th><td>    {<q>"TIOCM_CAR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#53" title="0x040" data-ref="_M/TIOCM_CAR">TIOCM_CAR</a>},</td></tr>
+<tr><th id="812">812</th><td><u>#<span data-ppcond="810">endif</span></u></td></tr>
+<tr><th id="813">813</th><td><u>#<span data-ppcond="813">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#56" data-ref="_M/TIOCM_CD">TIOCM_CD</a></u></td></tr>
+<tr><th id="814">814</th><td>    {<q>"TIOCM_CD"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#56" title="0x040" data-ref="_M/TIOCM_CD">TIOCM_CD</a>},</td></tr>
+<tr><th id="815">815</th><td><u>#<span data-ppcond="813">endif</span></u></td></tr>
+<tr><th id="816">816</th><td><u>#<span data-ppcond="816">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#52" data-ref="_M/TIOCM_CTS">TIOCM_CTS</a></u></td></tr>
+<tr><th id="817">817</th><td>    {<q>"TIOCM_CTS"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#52" title="0x020" data-ref="_M/TIOCM_CTS">TIOCM_CTS</a>},</td></tr>
+<tr><th id="818">818</th><td><u>#<span data-ppcond="816">endif</span></u></td></tr>
+<tr><th id="819">819</th><td><u>#<span data-ppcond="819">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#55" data-ref="_M/TIOCM_DSR">TIOCM_DSR</a></u></td></tr>
+<tr><th id="820">820</th><td>    {<q>"TIOCM_DSR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#55" title="0x100" data-ref="_M/TIOCM_DSR">TIOCM_DSR</a>},</td></tr>
+<tr><th id="821">821</th><td><u>#<span data-ppcond="819">endif</span></u></td></tr>
+<tr><th id="822">822</th><td><u>#<span data-ppcond="822">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#48" data-ref="_M/TIOCM_DTR">TIOCM_DTR</a></u></td></tr>
+<tr><th id="823">823</th><td>    {<q>"TIOCM_DTR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#48" title="0x002" data-ref="_M/TIOCM_DTR">TIOCM_DTR</a>},</td></tr>
+<tr><th id="824">824</th><td><u>#<span data-ppcond="822">endif</span></u></td></tr>
+<tr><th id="825">825</th><td><u>#<span data-ppcond="825">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#47" data-ref="_M/TIOCM_LE">TIOCM_LE</a></u></td></tr>
+<tr><th id="826">826</th><td>    {<q>"TIOCM_LE"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#47" title="0x001" data-ref="_M/TIOCM_LE">TIOCM_LE</a>},</td></tr>
+<tr><th id="827">827</th><td><u>#<span data-ppcond="825">endif</span></u></td></tr>
+<tr><th id="828">828</th><td><u>#<span data-ppcond="828">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#57" data-ref="_M/TIOCM_RI">TIOCM_RI</a></u></td></tr>
+<tr><th id="829">829</th><td>    {<q>"TIOCM_RI"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#57" title="0x080" data-ref="_M/TIOCM_RI">TIOCM_RI</a>},</td></tr>
+<tr><th id="830">830</th><td><u>#<span data-ppcond="828">endif</span></u></td></tr>
+<tr><th id="831">831</th><td><u>#<span data-ppcond="831">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#54" data-ref="_M/TIOCM_RNG">TIOCM_RNG</a></u></td></tr>
+<tr><th id="832">832</th><td>    {<q>"TIOCM_RNG"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#54" title="0x080" data-ref="_M/TIOCM_RNG">TIOCM_RNG</a>},</td></tr>
+<tr><th id="833">833</th><td><u>#<span data-ppcond="831">endif</span></u></td></tr>
+<tr><th id="834">834</th><td><u>#<span data-ppcond="834">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#49" data-ref="_M/TIOCM_RTS">TIOCM_RTS</a></u></td></tr>
+<tr><th id="835">835</th><td>    {<q>"TIOCM_RTS"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#49" title="0x004" data-ref="_M/TIOCM_RTS">TIOCM_RTS</a>},</td></tr>
+<tr><th id="836">836</th><td><u>#<span data-ppcond="834">endif</span></u></td></tr>
+<tr><th id="837">837</th><td><u>#<span data-ppcond="837">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#51" data-ref="_M/TIOCM_SR">TIOCM_SR</a></u></td></tr>
+<tr><th id="838">838</th><td>    {<q>"TIOCM_SR"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#51" title="0x010" data-ref="_M/TIOCM_SR">TIOCM_SR</a>},</td></tr>
+<tr><th id="839">839</th><td><u>#<span data-ppcond="837">endif</span></u></td></tr>
+<tr><th id="840">840</th><td><u>#<span data-ppcond="840">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#50" data-ref="_M/TIOCM_ST">TIOCM_ST</a></u></td></tr>
+<tr><th id="841">841</th><td>    {<q>"TIOCM_ST"</q>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#50" title="0x008" data-ref="_M/TIOCM_ST">TIOCM_ST</a>},</td></tr>
+<tr><th id="842">842</th><td><u>#<span data-ppcond="840">endif</span></u></td></tr>
+<tr><th id="843">843</th><td><u>#<span data-ppcond="843">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#53" data-ref="_M/TIOCNOTTY">TIOCNOTTY</a></u></td></tr>
+<tr><th id="844">844</th><td>    {<q>"TIOCNOTTY"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#53" title="0x5422" data-ref="_M/TIOCNOTTY">TIOCNOTTY</a>},</td></tr>
+<tr><th id="845">845</th><td><u>#<span data-ppcond="843">endif</span></u></td></tr>
+<tr><th id="846">846</th><td><u>#<span data-ppcond="846">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#31" data-ref="_M/TIOCNXCL">TIOCNXCL</a></u></td></tr>
+<tr><th id="847">847</th><td>    {<q>"TIOCNXCL"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#31" title="0x540D" data-ref="_M/TIOCNXCL">TIOCNXCL</a>},</td></tr>
+<tr><th id="848">848</th><td><u>#<span data-ppcond="846">endif</span></u></td></tr>
+<tr><th id="849">849</th><td><u>#<span data-ppcond="849">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#35" data-ref="_M/TIOCOUTQ">TIOCOUTQ</a></u></td></tr>
+<tr><th id="850">850</th><td>    {<q>"TIOCOUTQ"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#35" title="0x5411" data-ref="_M/TIOCOUTQ">TIOCOUTQ</a>},</td></tr>
+<tr><th id="851">851</th><td><u>#<span data-ppcond="849">endif</span></u></td></tr>
+<tr><th id="852">852</th><td><u>#<span data-ppcond="852">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#51" data-ref="_M/TIOCPKT">TIOCPKT</a></u></td></tr>
+<tr><th id="853">853</th><td>    {<q>"TIOCPKT"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#51" title="0x5420" data-ref="_M/TIOCPKT">TIOCPKT</a>},</td></tr>
+<tr><th id="854">854</th><td><u>#<span data-ppcond="852">endif</span></u></td></tr>
+<tr><th id="855">855</th><td><u>#<span data-ppcond="855">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#106" data-ref="_M/TIOCPKT_DATA">TIOCPKT_DATA</a></u></td></tr>
+<tr><th id="856">856</th><td>    {<q>"TIOCPKT_DATA"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#106" title="0" data-ref="_M/TIOCPKT_DATA">TIOCPKT_DATA</a>},</td></tr>
+<tr><th id="857">857</th><td><u>#<span data-ppcond="855">endif</span></u></td></tr>
+<tr><th id="858">858</th><td><u>#<span data-ppcond="858">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#112" data-ref="_M/TIOCPKT_DOSTOP">TIOCPKT_DOSTOP</a></u></td></tr>
+<tr><th id="859">859</th><td>    {<q>"TIOCPKT_DOSTOP"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#112" title="32" data-ref="_M/TIOCPKT_DOSTOP">TIOCPKT_DOSTOP</a>},</td></tr>
+<tr><th id="860">860</th><td><u>#<span data-ppcond="858">endif</span></u></td></tr>
+<tr><th id="861">861</th><td><u>#<span data-ppcond="861">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#107" data-ref="_M/TIOCPKT_FLUSHREAD">TIOCPKT_FLUSHREAD</a></u></td></tr>
+<tr><th id="862">862</th><td>    {<q>"TIOCPKT_FLUSHREAD"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#107" title="1" data-ref="_M/TIOCPKT_FLUSHREAD">TIOCPKT_FLUSHREAD</a>},</td></tr>
+<tr><th id="863">863</th><td><u>#<span data-ppcond="861">endif</span></u></td></tr>
+<tr><th id="864">864</th><td><u>#<span data-ppcond="864">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#108" data-ref="_M/TIOCPKT_FLUSHWRITE">TIOCPKT_FLUSHWRITE</a></u></td></tr>
+<tr><th id="865">865</th><td>    {<q>"TIOCPKT_FLUSHWRITE"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#108" title="2" data-ref="_M/TIOCPKT_FLUSHWRITE">TIOCPKT_FLUSHWRITE</a>},</td></tr>
+<tr><th id="866">866</th><td><u>#<span data-ppcond="864">endif</span></u></td></tr>
+<tr><th id="867">867</th><td><u>#<span data-ppcond="867">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#111" data-ref="_M/TIOCPKT_NOSTOP">TIOCPKT_NOSTOP</a></u></td></tr>
+<tr><th id="868">868</th><td>    {<q>"TIOCPKT_NOSTOP"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#111" title="16" data-ref="_M/TIOCPKT_NOSTOP">TIOCPKT_NOSTOP</a>},</td></tr>
+<tr><th id="869">869</th><td><u>#<span data-ppcond="867">endif</span></u></td></tr>
+<tr><th id="870">870</th><td><u>#<span data-ppcond="870">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#110" data-ref="_M/TIOCPKT_START">TIOCPKT_START</a></u></td></tr>
+<tr><th id="871">871</th><td>    {<q>"TIOCPKT_START"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#110" title="8" data-ref="_M/TIOCPKT_START">TIOCPKT_START</a>},</td></tr>
+<tr><th id="872">872</th><td><u>#<span data-ppcond="870">endif</span></u></td></tr>
+<tr><th id="873">873</th><td><u>#<span data-ppcond="873">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#109" data-ref="_M/TIOCPKT_STOP">TIOCPKT_STOP</a></u></td></tr>
+<tr><th id="874">874</th><td>    {<q>"TIOCPKT_STOP"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#109" title="4" data-ref="_M/TIOCPKT_STOP">TIOCPKT_STOP</a>},</td></tr>
+<tr><th id="875">875</th><td><u>#<span data-ppcond="873">endif</span></u></td></tr>
+<tr><th id="876">876</th><td><u>#<span data-ppcond="876">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#32" data-ref="_M/TIOCSCTTY">TIOCSCTTY</a></u></td></tr>
+<tr><th id="877">877</th><td>    {<q>"TIOCSCTTY"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#32" title="0x540E" data-ref="_M/TIOCSCTTY">TIOCSCTTY</a>},</td></tr>
+<tr><th id="878">878</th><td><u>#<span data-ppcond="876">endif</span></u></td></tr>
+<tr><th id="879">879</th><td><u>#<span data-ppcond="879">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#84" data-ref="_M/TIOCSERCONFIG">TIOCSERCONFIG</a></u></td></tr>
+<tr><th id="880">880</th><td>    {<q>"TIOCSERCONFIG"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#84" title="0x5453" data-ref="_M/TIOCSERCONFIG">TIOCSERCONFIG</a>},</td></tr>
+<tr><th id="881">881</th><td><u>#<span data-ppcond="879">endif</span></u></td></tr>
+<tr><th id="882">882</th><td><u>#<span data-ppcond="882">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#90" data-ref="_M/TIOCSERGETLSR">TIOCSERGETLSR</a></u></td></tr>
+<tr><th id="883">883</th><td>    {<q>"TIOCSERGETLSR"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#90" title="0x5459" data-ref="_M/TIOCSERGETLSR">TIOCSERGETLSR</a>},</td></tr>
+<tr><th id="884">884</th><td><u>#<span data-ppcond="882">endif</span></u></td></tr>
+<tr><th id="885">885</th><td><u>#<span data-ppcond="885">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#91" data-ref="_M/TIOCSERGETMULTI">TIOCSERGETMULTI</a></u></td></tr>
+<tr><th id="886">886</th><td>    {<q>"TIOCSERGETMULTI"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#91" title="0x545A" data-ref="_M/TIOCSERGETMULTI">TIOCSERGETMULTI</a>},</td></tr>
+<tr><th id="887">887</th><td><u>#<span data-ppcond="885">endif</span></u></td></tr>
+<tr><th id="888">888</th><td><u>#<span data-ppcond="888">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#89" data-ref="_M/TIOCSERGSTRUCT">TIOCSERGSTRUCT</a></u></td></tr>
+<tr><th id="889">889</th><td>    {<q>"TIOCSERGSTRUCT"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#89" title="0x5458" data-ref="_M/TIOCSERGSTRUCT">TIOCSERGSTRUCT</a>},</td></tr>
+<tr><th id="890">890</th><td><u>#<span data-ppcond="888">endif</span></u></td></tr>
+<tr><th id="891">891</th><td><u>#<span data-ppcond="891">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#85" data-ref="_M/TIOCSERGWILD">TIOCSERGWILD</a></u></td></tr>
+<tr><th id="892">892</th><td>    {<q>"TIOCSERGWILD"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#85" title="0x5454" data-ref="_M/TIOCSERGWILD">TIOCSERGWILD</a>},</td></tr>
+<tr><th id="893">893</th><td><u>#<span data-ppcond="891">endif</span></u></td></tr>
+<tr><th id="894">894</th><td><u>#<span data-ppcond="894">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#92" data-ref="_M/TIOCSERSETMULTI">TIOCSERSETMULTI</a></u></td></tr>
+<tr><th id="895">895</th><td>    {<q>"TIOCSERSETMULTI"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#92" title="0x545B" data-ref="_M/TIOCSERSETMULTI">TIOCSERSETMULTI</a>},</td></tr>
+<tr><th id="896">896</th><td><u>#<span data-ppcond="894">endif</span></u></td></tr>
+<tr><th id="897">897</th><td><u>#<span data-ppcond="897">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#86" data-ref="_M/TIOCSERSWILD">TIOCSERSWILD</a></u></td></tr>
+<tr><th id="898">898</th><td>    {<q>"TIOCSERSWILD"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#86" title="0x5455" data-ref="_M/TIOCSERSWILD">TIOCSERSWILD</a>},</td></tr>
+<tr><th id="899">899</th><td><u>#<span data-ppcond="897">endif</span></u></td></tr>
+<tr><th id="900">900</th><td><u>#<span data-ppcond="900">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#115" data-ref="_M/TIOCSER_TEMT">TIOCSER_TEMT</a></u></td></tr>
+<tr><th id="901">901</th><td>    {<q>"TIOCSER_TEMT"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#115" title="0x01" data-ref="_M/TIOCSER_TEMT">TIOCSER_TEMT</a>},</td></tr>
+<tr><th id="902">902</th><td><u>#<span data-ppcond="900">endif</span></u></td></tr>
+<tr><th id="903">903</th><td><u>#<span data-ppcond="903">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#54" data-ref="_M/TIOCSETD">TIOCSETD</a></u></td></tr>
+<tr><th id="904">904</th><td>    {<q>"TIOCSETD"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#54" title="0x5423" data-ref="_M/TIOCSETD">TIOCSETD</a>},</td></tr>
+<tr><th id="905">905</th><td><u>#<span data-ppcond="903">endif</span></u></td></tr>
+<tr><th id="906">906</th><td><u>#<span data-ppcond="906">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#88" data-ref="_M/TIOCSLCKTRMIOS">TIOCSLCKTRMIOS</a></u></td></tr>
+<tr><th id="907">907</th><td>    {<q>"TIOCSLCKTRMIOS"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#88" title="0x5457" data-ref="_M/TIOCSLCKTRMIOS">TIOCSLCKTRMIOS</a>},</td></tr>
+<tr><th id="908">908</th><td><u>#<span data-ppcond="906">endif</span></u></td></tr>
+<tr><th id="909">909</th><td><u>#<span data-ppcond="909">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#34" data-ref="_M/TIOCSPGRP">TIOCSPGRP</a></u></td></tr>
+<tr><th id="910">910</th><td>    {<q>"TIOCSPGRP"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#34" title="0x5410" data-ref="_M/TIOCSPGRP">TIOCSPGRP</a>},</td></tr>
+<tr><th id="911">911</th><td><u>#<span data-ppcond="909">endif</span></u></td></tr>
+<tr><th id="912">912</th><td><u>#<span data-ppcond="912">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#50" data-ref="_M/TIOCSSERIAL">TIOCSSERIAL</a></u></td></tr>
+<tr><th id="913">913</th><td>    {<q>"TIOCSSERIAL"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#50" title="0x541F" data-ref="_M/TIOCSSERIAL">TIOCSSERIAL</a>},</td></tr>
+<tr><th id="914">914</th><td><u>#<span data-ppcond="912">endif</span></u></td></tr>
+<tr><th id="915">915</th><td><u>#<span data-ppcond="915">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#44" data-ref="_M/TIOCSSOFTCAR">TIOCSSOFTCAR</a></u></td></tr>
+<tr><th id="916">916</th><td>    {<q>"TIOCSSOFTCAR"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#44" title="0x541A" data-ref="_M/TIOCSSOFTCAR">TIOCSSOFTCAR</a>},</td></tr>
+<tr><th id="917">917</th><td><u>#<span data-ppcond="915">endif</span></u></td></tr>
+<tr><th id="918">918</th><td><u>#<span data-ppcond="918">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#36" data-ref="_M/TIOCSTI">TIOCSTI</a></u></td></tr>
+<tr><th id="919">919</th><td>    {<q>"TIOCSTI"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#36" title="0x5412" data-ref="_M/TIOCSTI">TIOCSTI</a>},</td></tr>
+<tr><th id="920">920</th><td><u>#<span data-ppcond="918">endif</span></u></td></tr>
+<tr><th id="921">921</th><td><u>#<span data-ppcond="921">ifdef</span> <a class="macro" href="../../include/asm-generic/ioctls.h.html#38" data-ref="_M/TIOCSWINSZ">TIOCSWINSZ</a></u></td></tr>
+<tr><th id="922">922</th><td>    {<q>"TIOCSWINSZ"</q>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#38" title="0x5414" data-ref="_M/TIOCSWINSZ">TIOCSWINSZ</a>},</td></tr>
+<tr><th id="923">923</th><td><u>#<span data-ppcond="921">endif</span></u></td></tr>
+<tr><th id="924">924</th><td><u>#<span data-ppcond="924">ifdef</span> <span class="macro" data-ref="_M/TIOCTTYGSTRUCT">TIOCTTYGSTRUCT</span></u></td></tr>
+<tr><th id="925">925</th><td>    {<q>"TIOCTTYGSTRUCT"</q>, TIOCTTYGSTRUCT},</td></tr>
+<tr><th id="926">926</th><td><u>#<span data-ppcond="924">endif</span></u></td></tr>
+<tr><th id="927">927</th><td></td></tr>
+<tr><th id="928">928</th><td>    <i>/* sentinel */</i></td></tr>
+<tr><th id="929">929</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>0</var>}</td></tr>
+<tr><th id="930">930</th><td>};</td></tr>
+<tr><th id="931">931</th><td></td></tr>
+<tr><th id="932">932</th><td></td></tr>
+<tr><th id="933">933</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="termiosmodule" title='termiosmodule' data-type='struct PyModuleDef' data-ref="termiosmodule">termiosmodule</dfn> = {</td></tr>
+<tr><th id="934">934</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="935">935</th><td>    <q>"termios"</q>,</td></tr>
+<tr><th id="936">936</th><td>    <a class="ref" href="#26" title='termios__doc__' data-ref="termios__doc__">termios__doc__</a>,</td></tr>
+<tr><th id="937">937</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="938">938</th><td>    <a class="tu ref" href="#termios_methods" title='termios_methods' data-ref="termios_methods">termios_methods</a>,</td></tr>
+<tr><th id="939">939</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="940">940</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="941">941</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="942">942</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="943">943</th><td>};</td></tr>
+<tr><th id="944">944</th><td></td></tr>
+<tr><th id="945">945</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="946">946</th><td><dfn class="decl def" id="PyInit_termios" title='PyInit_termios' data-ref="PyInit_termios">PyInit_termios</dfn>(<em>void</em>)</td></tr>
+<tr><th id="947">947</th><td>{</td></tr>
+<tr><th id="948">948</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41m" title='m' data-type='PyObject *' data-ref="41m">m</dfn>;</td></tr>
+<tr><th id="949">949</th><td>    <b>struct</b> <a class="type" href="#constant" title='constant' data-ref="constant">constant</a> *<dfn class="local col2 decl" id="42constant" title='constant' data-type='struct constant *' data-ref="42constant">constant</dfn> = <a class="tu ref" href="#termios_constants" title='termios_constants' data-use='r' data-ref="termios_constants">termios_constants</a>;</td></tr>
+<tr><th id="950">950</th><td></td></tr>
+<tr><th id="951">951</th><td>    <a class="local col1 ref" href="#41m" title='m' data-ref="41m">m</a> = <a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;termiosmodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#termiosmodule" title='termiosmodule' data-use='a' data-ref="termiosmodule">termiosmodule</a>);</td></tr>
+<tr><th id="952">952</th><td>    <b>if</b> (<a class="local col1 ref" href="#41m" title='m' data-ref="41m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="953">953</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="954">954</th><td></td></tr>
+<tr><th id="955">955</th><td>    <b>if</b> (<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="956">956</th><td>        <a class="tu ref" href="#TermiosError" title='TermiosError' data-use='w' data-ref="TermiosError">TermiosError</a> = <a class="ref" href="../Include/pyerrors.h.html#PyErr_NewException" title='PyErr_NewException' data-ref="PyErr_NewException">PyErr_NewException</a>(<q>"termios.error"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="957">957</th><td>    }</td></tr>
+<tr><th id="958">958</th><td>    <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(TermiosError))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="959">959</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col1 ref" href="#41m" title='m' data-ref="41m">m</a>, <q>"error"</q>, <a class="tu ref" href="#TermiosError" title='TermiosError' data-use='r' data-ref="TermiosError">TermiosError</a>);</td></tr>
+<tr><th id="960">960</th><td></td></tr>
+<tr><th id="961">961</th><td>    <b>while</b> (<a class="local col2 ref" href="#42constant" title='constant' data-ref="42constant">constant</a>-&gt;<a class="tu ref" href="#constant::name" title='constant::name' data-use='r' data-ref="constant::name">name</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="962">962</th><td>        <a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col1 ref" href="#41m" title='m' data-ref="41m">m</a>, <a class="local col2 ref" href="#42constant" title='constant' data-ref="42constant">constant</a>-&gt;<a class="tu ref" href="#constant::name" title='constant::name' data-use='r' data-ref="constant::name">name</a>, <a class="local col2 ref" href="#42constant" title='constant' data-ref="42constant">constant</a>-&gt;<a class="tu ref" href="#constant::value" title='constant::value' data-use='r' data-ref="constant::value">value</a>);</td></tr>
+<tr><th id="963">963</th><td>        ++<a class="local col2 ref" href="#42constant" title='constant' data-ref="42constant">constant</a>;</td></tr>
+<tr><th id="964">964</th><td>    }</td></tr>
+<tr><th id="965">965</th><td>    <b>return</b> <a class="local col1 ref" href="#41m" title='m' data-ref="41m">m</a>;</td></tr>
+<tr><th id="966">966</th><td>}</td></tr>
+<tr><th id="967">967</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

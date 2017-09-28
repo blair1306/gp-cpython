@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pytime.h' l='166' type='int _PyTime_GetSystemClockWithInfo(_PyTime_t * t, _Py_clock_info_t * info)'/>
+<doc f='codebrowser/Include/pytime.h' l='162'>/* Get the current time from the system clock.
+ * Fill clock information if info is not NULL.
+ * Raise an exception and return -1 on error, return 0 on success.
+ */</doc>
+<use f='codebrowser/Modules/timemodule.c' l='1420' u='c' c='floattime'/>
+<def f='codebrowser/Python/pytime.c' l='627' ll='631' type='int _PyTime_GetSystemClockWithInfo(_PyTime_t * t, _Py_clock_info_t * info)'/>
+<use f='codebrowser/Python/pytime.c' l='780' u='c' c='_PyTime_Init'/>

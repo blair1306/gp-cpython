@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='398' type='const char *'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3257' u='w' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3281' u='r' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3282' u='r' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3284' u='r' c='dec_format'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3288' u='w' c='dec_format'/>
+<offset>256</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='398'>/* thousands separator */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='765' u='r' c='mpd_validate_lconv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='785' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='844' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='871' u='r' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='878' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='983' u='r' c='_mpd_add_sep_dot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1040' u='r' c='_mpd_add_sep_dot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1106' u='r' c='_mpd_apply_lconv'/>

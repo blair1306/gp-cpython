@@ -1,0 +1,22 @@
+<dec f='codebrowser/Parser/parser.h' l='19' type='stackentry *'/>
+<offset>0</offset>
+<doc f='codebrowser/Parser/parser.h' l='19'>/* Top entry */</doc>
+<use f='codebrowser/Parser/parser.c' l='32' u='w' c='s_reset'/>
+<use f='codebrowser/Parser/parser.c' l='41' u='r' c='s_push'/>
+<use f='codebrowser/Parser/parser.c' l='45' u='w' c='s_push'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='r' c='s_pop'/>
+<use f='codebrowser/Parser/parser.c' l='59' u='w' c='s_pop'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='r' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='112' u='r' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='115' u='r' c='shift'/>
+<use f='codebrowser/Parser/parser.c' l='124' u='r' c='push'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='r' c='push'/>
+<use f='codebrowser/Parser/parser.c' l='129' u='r' c='push'/>
+<use f='codebrowser/Parser/parser.c' l='243' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='244' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='247' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='277' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='282' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='296' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='35' u='r' c='PyParser_AddToken'/>

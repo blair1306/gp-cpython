@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/abstract.h' l='918'/>
+<doc f='codebrowser/Include/abstract.h' l='916'>/* Return the &apos;i&apos;-th element of the sequence &apos;o&apos;, assuming that o was returned
+   by PySequence_Fast, and that i is within bounds. */</doc>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='220' u='c'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='299' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1136' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1930' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3666' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1748' u='c'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='635' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='352' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='360' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='442' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='861' u='c'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='2336' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1603' u='c'/>
+<use f='codebrowser/Modules/selectmodule.c' l='102' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3656' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3988' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4083' u='c'/>
+<use f='codebrowser/Objects/stringlib/join.h' l='60' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='2279' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='2280' u='c'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1244' u='c'/>
+<use f='codebrowser/Objects/structseq.c' l='147' u='c'/>

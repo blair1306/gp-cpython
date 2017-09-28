@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='504' type='int fchdir(int __fd)'/>
+<doc f='include/unistd.h' l='503'>/* Change the process&apos;s working directory to the one FD is open on.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='2721' u='c' c='os_chdir_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2753' u='r' c='os_fchdir_impl'/>

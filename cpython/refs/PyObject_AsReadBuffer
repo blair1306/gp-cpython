@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/abstract.h' l='488' type='int PyObject_AsReadBuffer(PyObject * obj, const void ** buffer, Py_ssize_t * buffer_len)'/>
+<doc f='codebrowser/Include/abstract.h' l='482'>/* Same as PyObject_AsCharBuffer() except that this API expects (readable,
+   single segment) buffer interface and returns a pointer to a read-only memory
+   location which can contain arbitrary data.
+
+   0 is returned on success.  buffer and buffer_len are only set in case no
+   error occurs.  Otherwise, -1 is returned and an exception set. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='301' ll='306' type='int PyObject_AsReadBuffer(PyObject * obj, const void ** buffer, Py_ssize_t * buffer_len)'/>

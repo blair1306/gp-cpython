@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/memoryobject.h' l='64' type='PyObject *'/>
+<dec f='codebrowser/Include/setobject.h' l='64' type='PyObject *'/>
+<offset>1664</offset>
+<doc f='codebrowser/Include/setobject.h' l='64'>/* List of weak references */</doc>
+<dec f='codebrowser/Modules/sre.h' l='35' type='PyObject *'/>
+<use f='codebrowser/Modules/_sre.c' l='557' u='r' c='pattern_dealloc'/>
+<use f='codebrowser/Modules/_sre.c' l='1385' u='w' c='_sre_compile_impl'/>
+<offset>640</offset>
+<doc f='codebrowser/Modules/sre.h' l='35'>/* List of weak references */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='635' u='w' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1061' u='r' c='memory_dealloc'/>
+<use f='codebrowser/Objects/setobject.c' l='559' u='r' c='set_dealloc'/>
+<use f='codebrowser/Objects/setobject.c' l='1057' u='w' c='make_new_set'/>

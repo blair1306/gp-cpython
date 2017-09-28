@@ -1,0 +1,15 @@
+<dec f='include/x86_64-linux-gnu/bits/dirent.h' l='33' type='char [256]'/>
+<offset>152</offset>
+<doc f='include/x86_64-linux-gnu/bits/dirent.h' l='33'>/* We must not include limits.h! */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3634' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='271' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3636' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='271' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3639' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='271' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3641' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='271' u='r' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='271' u='r' c='ScandirIterator_iternext'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12026' u='r' c='ScandirIterator_iternext'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12027' u='r' c='ScandirIterator_iternext'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12029' u='r' c='ScandirIterator_iternext'/>

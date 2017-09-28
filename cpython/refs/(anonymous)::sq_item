@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/object.h' l='291' type='ssizeargfunc'/>
+<offset>192</offset>
+<use f='codebrowser/Modules/posixmodule.c' l='4964' macro='1' u='r'/>
+<use f='codebrowser/Objects/abstract.c' l='165' u='r' c='PyObject_GetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1491' u='r' c='PySequence_Check'/>
+<use f='codebrowser/Objects/abstract.c' l='1643' u='r' c='PySequence_GetItem'/>
+<use f='codebrowser/Objects/abstract.c' l='1654' u='r' c='PySequence_GetItem'/>
+<use f='codebrowser/Objects/typeobject.c' l='4901' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4901' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4901' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4901' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4901' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4901' u='r' c='inherit_slots'/>

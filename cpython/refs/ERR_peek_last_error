@@ -1,0 +1,6 @@
+<dec f='include/openssl/err.h' l='329' type='unsigned long ERR_peek_last_error()'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='84' u='c' c='_setException'/>
+<use f='codebrowser/Modules/_ssl.c' l='530' u='c' c='PySSL_SetError'/>
+<use f='codebrowser/Modules/_ssl.c' l='606' u='c' c='_setSSLError'/>
+<use f='codebrowser/Modules/_ssl.c' l='3386' u='c' c='_add_ca_certs'/>
+<use f='codebrowser/Modules/_ssl.c' l='3398' u='c' c='_add_ca_certs'/>

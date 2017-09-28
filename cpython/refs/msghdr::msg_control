@@ -1,0 +1,13 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='236' type='void *'/>
+<offset>256</offset>
+<doc f='include/x86_64-linux-gnu/bits/socket.h' l='236'>/* Ancillary data (eg BSD filedesc passing). */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='2268' u='r' c='cmsg_min_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2293' u='r' c='cmsg_min_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2310' u='r' c='get_cmsg_data_space'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3455' u='w' c='sock_recvmsg_guts'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3468' macro='1' u='r'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3521' macro='1' u='r'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4116' u='w' c='sock_sendmsg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4132' macro='1' u='r'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4292' u='w' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4303' macro='1' u='r'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/object.h' l='1040' type='void _PyTrash_destroy_chain()'/>
+<def f='codebrowser/Objects/object.c' l='2068' ll='2089' type='void _PyTrash_destroy_chain()'/>
+<doc f='codebrowser/Objects/object.c' l='2065'>/* Dealloccate all the objects in the _PyTrash_delete_later list.  Called when
+ * the call-stack unwinds again.
+ */</doc>

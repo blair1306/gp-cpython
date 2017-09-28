@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='92' type='void _PyExc_Init(PyObject * bltinmod)'/>
+<def f='codebrowser/Objects/exceptions.c' l='2503' ll='2706' type='void _PyExc_Init(PyObject * bltinmod)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='671' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1192' u='c' c='Py_NewInterpreter'/>

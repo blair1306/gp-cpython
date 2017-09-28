@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/funcobject.h' l='68' type='PyObject * _PyFunction_FastCallKeywords(PyObject * func, PyObject ** stack, Py_ssize_t nargs, PyObject * kwnames)'/>
+<use f='codebrowser/Objects/call.c' l='152' u='c' c='_PyObject_FastCallKeywords'/>
+<def f='codebrowser/Objects/call.c' l='384' ll='439' type='PyObject * _PyFunction_FastCallKeywords(PyObject * func, PyObject ** stack, Py_ssize_t nargs, PyObject * kwnames)'/>
+<use f='codebrowser/Python/ceval.c' l='4859' u='c' c='call_function'/>

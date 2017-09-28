@@ -1,0 +1,6 @@
+<dec f='codebrowser/Python/pylifecycle.c' l='75' type='void _PyGILState_Init(PyInterpreterState * , PyThreadState * )'/>
+<use f='codebrowser/Python/pylifecycle.c' l='633' u='c' c='_Py_InitializeCore'/>
+<def f='codebrowser/Python/pystate.c' l='775' ll='787' type='void _PyGILState_Init(PyInterpreterState * i, PyThreadState * t)'/>
+<doc f='codebrowser/Python/pystate.c' l='772'>/* Internal initialization/finalization functions called by
+   Py_Initialize/Py_FinalizeEx
+*/</doc>

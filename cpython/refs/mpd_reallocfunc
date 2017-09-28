@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='808' type='void *(*)(void *, size_t)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5669' u='w' c='PyInit__decimal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='47' type='void *(*)(void *, size_t)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='125' u='r' c='mpd_realloc'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='269' type='int'/>
+<offset>352</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='269'>/* all functions correctly rounded */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='95' u='w' c='mpd_maxcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='109' u='w' c='mpd_defaultcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='123' u='w' c='mpd_basiccontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='141' u='w' c='mpd_ieee_context'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='191' u='r' c='mpd_getcr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='271' u='w' c='mpd_qsetcr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='728' u='w' c='mpd_workcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='728' u='r' c='mpd_workcontext'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4347' u='r' c='mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4904' u='r' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5053' u='r' c='mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6501' u='w' c='_mpd_qpow_real'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6501' u='r' c='_mpd_qpow_real'/>

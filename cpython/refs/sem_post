@@ -1,0 +1,4 @@
+<dec f='include/semaphore.h' l='69' type='int sem_post(sem_t * __sem)'/>
+<doc f='include/semaphore.h' l='68'>/* Post SEM.  */</doc>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='390' u='c' c='semlock_release'/>
+<use f='codebrowser/Python/thread_pthread.h' l='396' u='c' c='PyThread_release_lock'/>

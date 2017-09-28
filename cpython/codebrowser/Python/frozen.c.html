@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>frozen.c source code [codebrowser/Python/frozen.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/frozen.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='frozen.c.html'>frozen.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Dummy frozen modules initializer */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="importlib.h.html">"importlib.h"</a></u></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="importlib_external.h.html">"importlib_external.h"</a></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><i>/* In order to test the support for frozen modules, by default we</i></td></tr>
+<tr><th id="9">9</th><td><i>   define a single frozen module, __hello__.  Loading it will print</i></td></tr>
+<tr><th id="10">10</th><td><i>   some famous words... */</i></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><i  data-doc="M___hello__">/* To regenerate this data after the bytecode or marshal format has changed,</i></td></tr>
+<tr><th id="13">13</th><td><i  data-doc="M___hello__">   go to ../Tools/freeze/ and freeze the flag.py file; then copy and paste</i></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="M___hello__">   the appropriate bytes from M___main__.c. */</i></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><em>static</em> <em>unsigned</em> <em>char</em> <dfn class="tu decl def" id="M___hello__" title='M___hello__' data-type='unsigned char [139]' data-ref="M___hello__">M___hello__</dfn>[] = {</td></tr>
+<tr><th id="17">17</th><td>    <var>227</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>2</var>,<var>0</var>,<var>0</var>,</td></tr>
+<tr><th id="18">18</th><td>    <var>0</var>,<var>64</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>115</var>,<var>16</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>100</var>,<var>0</var>,<var>90</var>,<var>0</var>,<var>101</var>,<var>1</var>,</td></tr>
+<tr><th id="19">19</th><td>    <var>100</var>,<var>1</var>,<var>131</var>,<var>1</var>,<var>1</var>,<var>0</var>,<var>100</var>,<var>2</var>,<var>83</var>,<var>0</var>,<var>41</var>,<var>3</var>,<var>84</var>,<var>122</var>,<var>12</var>,<var>72</var>,</td></tr>
+<tr><th id="20">20</th><td>    <var>101</var>,<var>108</var>,<var>108</var>,<var>111</var>,<var>32</var>,<var>119</var>,<var>111</var>,<var>114</var>,<var>108</var>,<var>100</var>,<var>33</var>,<var>78</var>,<var>41</var>,<var>2</var>,<var>218</var>,<var>11</var>,</td></tr>
+<tr><th id="21">21</th><td>    <var>105</var>,<var>110</var>,<var>105</var>,<var>116</var>,<var>105</var>,<var>97</var>,<var>108</var>,<var>105</var>,<var>122</var>,<var>101</var>,<var>100</var>,<var>218</var>,<var>5</var>,<var>112</var>,<var>114</var>,<var>105</var>,</td></tr>
+<tr><th id="22">22</th><td>    <var>110</var>,<var>116</var>,<var>169</var>,<var>0</var>,<var>114</var>,<var>3</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>114</var>,<var>3</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>250</var>,<var>22</var>,</td></tr>
+<tr><th id="23">23</th><td>    <var>46</var>,<var>47</var>,<var>84</var>,<var>111</var>,<var>111</var>,<var>108</var>,<var>115</var>,<var>47</var>,<var>102</var>,<var>114</var>,<var>101</var>,<var>101</var>,<var>122</var>,<var>101</var>,<var>47</var>,<var>102</var>,</td></tr>
+<tr><th id="24">24</th><td>    <var>108</var>,<var>97</var>,<var>103</var>,<var>46</var>,<var>112</var>,<var>121</var>,<var>218</var>,<var>8</var>,<var>60</var>,<var>109</var>,<var>111</var>,<var>100</var>,<var>117</var>,<var>108</var>,<var>101</var>,<var>62</var>,</td></tr>
+<tr><th id="25">25</th><td>    <var>1</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>115</var>,<var>2</var>,<var>0</var>,<var>0</var>,<var>0</var>,<var>4</var>,<var>1</var>,</td></tr>
+<tr><th id="26">26</th><td>};</td></tr>
+<tr><th id="27">27</th><td></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/SIZE" data-ref="_M/SIZE">SIZE</dfn> (int)sizeof(<a class="tu ref" href="#M___hello__" title='M___hello__' data-ref="M___hello__"><a class="tu ref" href="#M___hello__" title='M___hello__' data-use='r' data-ref="M___hello__"><a class="tu ref" href="#M___hello__" title='M___hello__' data-use='r' data-ref="M___hello__"><a class="tu ref" href="#M___hello__" title='M___hello__' data-use='r' data-ref="M___hello__"><a class="tu ref" href="#M___hello__" title='M___hello__' data-use='r' data-ref="M___hello__">M___hello__</a></a></a></a></a>)</u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><em>static</em> <em>const</em> <b>struct</b> <a class="type" href="../Include/import.h.html#_frozen" title='_frozen' data-ref="_frozen">_frozen</a> <dfn class="tu decl def" id="_PyImport_FrozenModules" title='_PyImport_FrozenModules' data-type='const struct _frozen [6]' data-ref="_PyImport_FrozenModules">_PyImport_FrozenModules</dfn>[] = {</td></tr>
+<tr><th id="31">31</th><td>    <i>/* importlib */</i></td></tr>
+<tr><th id="32">32</th><td>    {<q>"_frozen_importlib"</q>, <a class="ref" href="importlib.h.html#_Py_M__importlib" title='_Py_M__importlib' data-ref="_Py_M__importlib">_Py_M__importlib</a>, (<em>int</em>)<b>sizeof</b>(<a class="ref" href="importlib.h.html#_Py_M__importlib" title='_Py_M__importlib' data-ref="_Py_M__importlib">_Py_M__importlib</a>)},</td></tr>
+<tr><th id="33">33</th><td>    {<q>"_frozen_importlib_external"</q>, <a class="ref" href="importlib_external.h.html#_Py_M__importlib_external" title='_Py_M__importlib_external' data-ref="_Py_M__importlib_external">_Py_M__importlib_external</a>,</td></tr>
+<tr><th id="34">34</th><td>        (<em>int</em>)<b>sizeof</b>(<a class="ref" href="importlib_external.h.html#_Py_M__importlib_external" title='_Py_M__importlib_external' data-ref="_Py_M__importlib_external">_Py_M__importlib_external</a>)},</td></tr>
+<tr><th id="35">35</th><td>    <i>/* Test module */</i></td></tr>
+<tr><th id="36">36</th><td>    {<q>"__hello__"</q>, <a class="tu ref" href="#M___hello__" title='M___hello__' data-ref="M___hello__">M___hello__</a>, <a class="macro" href="#28" title="(int)sizeof(M___hello__)" data-ref="_M/SIZE">SIZE</a>},</td></tr>
+<tr><th id="37">37</th><td>    <i>/* Test package (negative size indicates package-ness) */</i></td></tr>
+<tr><th id="38">38</th><td>    {<q>"__phello__"</q>, <a class="tu ref" href="#M___hello__" title='M___hello__' data-ref="M___hello__">M___hello__</a>, -<a class="macro" href="#28" title="(int)sizeof(M___hello__)" data-ref="_M/SIZE">SIZE</a>},</td></tr>
+<tr><th id="39">39</th><td>    {<q>"__phello__.spam"</q>, <a class="tu ref" href="#M___hello__" title='M___hello__' data-ref="M___hello__">M___hello__</a>, <a class="macro" href="#28" title="(int)sizeof(M___hello__)" data-ref="_M/SIZE">SIZE</a>},</td></tr>
+<tr><th id="40">40</th><td>    {<var>0</var>, <var>0</var>, <var>0</var>} <i>/* sentinel */</i></td></tr>
+<tr><th id="41">41</th><td>};</td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>/* Embedding apps may change this pointer to point to their favorite</i></td></tr>
+<tr><th id="44">44</th><td><i>   collection of frozen modules: */</i></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><em>const</em> <b>struct</b> <a class="type" href="../Include/import.h.html#_frozen" title='_frozen' data-ref="_frozen">_frozen</a> *<dfn class="decl def" id="PyImport_FrozenModules" title='PyImport_FrozenModules' data-ref="PyImport_FrozenModules">PyImport_FrozenModules</dfn> = <a class="tu ref" href="#_PyImport_FrozenModules" title='_PyImport_FrozenModules' data-ref="_PyImport_FrozenModules">_PyImport_FrozenModules</a>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

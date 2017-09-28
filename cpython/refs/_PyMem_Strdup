@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pymem.h' l='109' type='char * _PyMem_Strdup(const char * str)'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='548' u='c' c='PyCursesWindow_New'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1969' u='c' c='PyCursesWindow_set_encoding'/>
+<use f='codebrowser/Modules/_pickle.c' l='1449' u='c' c='_Unpickler_SetInputEncoding'/>
+<use f='codebrowser/Modules/_pickle.c' l='1450' u='c' c='_Unpickler_SetInputEncoding'/>
+<use f='codebrowser/Modules/faulthandler.c' l='624' u='c' c='format_timeout'/>
+<def f='codebrowser/Objects/obmalloc.c' l='459' ll='471' type='char * _PyMem_Strdup(const char * str)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1624' u='c' c='initstdio'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='12' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='367' u='a' c='_io_open_impl'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='686' u='m' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='687' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='687' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='687' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='687' u='a' c='PyInit__io'/>
+<doc f='codebrowser/Modules/_io/_iomodule.h' l='11'>/* Concrete classes */</doc>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1467' u='a' c='_io_BufferedReader___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1818' u='a' c='_io_BufferedWriter___init___impl'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2322' u='a' c='_io_BufferedRandom___init___impl'/>
+<def f='codebrowser/Modules/_io/fileio.c' l='70' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='74' u='a' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='74' u='a' c='_io_FileIO___init___impl'/>
+<def f='codebrowser/Modules/_io/fileio.c' l='1186' ll='1236' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1061' u='a' c='_io_TextIOWrapper___init___impl'/>

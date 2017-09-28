@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>funcobject.c.h source code [codebrowser/Objects/clinic/funcobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/funcobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='funcobject.c.h.html'>funcobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char func_new__doc__[] = &quot;function(code, globals, name=None, argdefs=None, closure=None)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Create a function object.\n&quot;&quot;\n&quot;&quot;  code\n&quot;&quot;    a code object\n&quot;&quot;  globals\n&quot;&quot;    the globals dictionary\n&quot;&quot;  name\n&quot;&quot;    a string that overrides the name from the code object\n&quot;&quot;  argdefs\n&quot;&quot;    a tuple that specifies the default argument values\n&quot;&quot;  closure\n&quot;&quot;    a tuple that supplies the bindings for free variables&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="func_new__doc__" title='func_new__doc__' data-ref="func_new__doc__">func_new__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"function(code, globals, name=None, argdefs=None, closure=None)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Create a function object.\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"  code\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"    a code object\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"  globals\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"    the globals dictionary\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"  name\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"    a string that overrides the name from the code object\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"  argdefs\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"    a tuple that specifies the default argument values\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"  closure\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"    a tuple that supplies the bindings for free variables"</q>);</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="23">23</th><td><a class="decl" href="../funcobject.c.html#func_new_impl" title='func_new_impl' data-ref="func_new_impl" id="func_new_impl">func_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col6 decl" id="46type" title='type' data-type='PyTypeObject *' data-ref="46type">type</dfn>, <a class="typedef" href="../../Include/code.h.html#PyCodeObject" title='PyCodeObject' data-type='struct PyCodeObject' data-ref="PyCodeObject">PyCodeObject</a> *<dfn class="local col7 decl" id="47code" title='code' data-type='PyCodeObject *' data-ref="47code">code</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="48globals" title='globals' data-type='PyObject *' data-ref="48globals">globals</dfn>,</td></tr>
+<tr><th id="24">24</th><td>              <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="49name" title='name' data-type='PyObject *' data-ref="49name">name</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="50defaults" title='defaults' data-type='PyObject *' data-ref="50defaults">defaults</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51closure" title='closure' data-type='PyObject *' data-ref="51closure">closure</dfn>);</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="27">27</th><td><dfn class="decl def" id="func_new" title='func_new' data-ref="func_new">func_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col2 decl" id="52type" title='type' data-type='PyTypeObject *' data-ref="52type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53args" title='args' data-type='PyObject *' data-ref="53args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="54kwargs" title='kwargs' data-type='PyObject *' data-ref="54kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="28">28</th><td>{</td></tr>
+<tr><th id="29">29</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55return_value" title='return_value' data-type='PyObject *' data-ref="55return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="30">30</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col6 decl" id="56_keywords" title='_keywords' data-type='const char *const [6]' data-ref="56_keywords">_keywords</dfn>[] = {<q>"code"</q>, <q>"globals"</q>, <q>"name"</q>, <q>"argdefs"</q>, <q>"closure"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="31">31</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col7 decl" id="57_parser" title='_parser' data-type='_PyArg_Parser' data-ref="57_parser">_parser</dfn> = {<q>"O!O!|OOO:function"</q>, <a class="local col6 ref" href="#56_keywords" title='_keywords' data-ref="56_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="32">32</th><td>    <a class="typedef" href="../../Include/code.h.html#PyCodeObject" title='PyCodeObject' data-type='struct PyCodeObject' data-ref="PyCodeObject">PyCodeObject</a> *<dfn class="local col8 decl" id="58code" title='code' data-type='PyCodeObject *' data-ref="58code">code</dfn>;</td></tr>
+<tr><th id="33">33</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="59globals" title='globals' data-type='PyObject *' data-ref="59globals">globals</dfn>;</td></tr>
+<tr><th id="34">34</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="60name" title='name' data-type='PyObject *' data-ref="60name">name</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="35">35</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="61defaults" title='defaults' data-type='PyObject *' data-ref="61defaults">defaults</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="36">36</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62closure" title='closure' data-type='PyObject *' data-ref="62closure">closure</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col3 ref" href="#53args" title='args' data-ref="53args">args</a>, <a class="local col4 ref" href="#54kwargs" title='kwargs' data-ref="54kwargs">kwargs</a>, &amp;<a class="local col7 ref" href="#57_parser" title='_parser' data-ref="57_parser">_parser</a>,</td></tr>
+<tr><th id="39">39</th><td>        &amp;<a class="ref" href="../../Include/code.h.html#PyCode_Type" title='PyCode_Type' data-ref="PyCode_Type">PyCode_Type</a>, &amp;<a class="local col8 ref" href="#58code" title='code' data-ref="58code">code</a>, &amp;<a class="ref" href="../../Include/dictobject.h.html#PyDict_Type" title='PyDict_Type' data-ref="PyDict_Type">PyDict_Type</a>, &amp;<a class="local col9 ref" href="#59globals" title='globals' data-ref="59globals">globals</a>, &amp;<a class="local col0 ref" href="#60name" title='name' data-ref="60name">name</a>, &amp;<a class="local col1 ref" href="#61defaults" title='defaults' data-ref="61defaults">defaults</a>, &amp;<a class="local col2 ref" href="#62closure" title='closure' data-ref="62closure">closure</a>)) {</td></tr>
+<tr><th id="40">40</th><td>        <b>goto</b> <a class="lbl" href="#63exit" data-ref="63exit">exit</a>;</td></tr>
+<tr><th id="41">41</th><td>    }</td></tr>
+<tr><th id="42">42</th><td>    <a class="local col5 ref" href="#55return_value" title='return_value' data-ref="55return_value">return_value</a> = <a class="ref" href="../funcobject.c.html#func_new_impl" title='func_new_impl' data-ref="func_new_impl">func_new_impl</a>(<a class="local col2 ref" href="#52type" title='type' data-ref="52type">type</a>, <a class="local col8 ref" href="#58code" title='code' data-ref="58code">code</a>, <a class="local col9 ref" href="#59globals" title='globals' data-ref="59globals">globals</a>, <a class="local col0 ref" href="#60name" title='name' data-ref="60name">name</a>, <a class="local col1 ref" href="#61defaults" title='defaults' data-ref="61defaults">defaults</a>, <a class="local col2 ref" href="#62closure" title='closure' data-ref="62closure">closure</a>);</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><dfn class="lbl" id="63exit" data-ref="63exit">exit</dfn>:</td></tr>
+<tr><th id="45">45</th><td>    <b>return</b> <a class="local col5 ref" href="#55return_value" title='return_value' data-ref="55return_value">return_value</a>;</td></tr>
+<tr><th id="46">46</th><td>}</td></tr>
+<tr><th id="47">47</th><td><i>/*[clinic end generated code: output=a6ab29e4dd33010a input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../funcobject.c.html'>codebrowser/Objects/funcobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

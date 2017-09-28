@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pytime.h' l='110' type='int _PyTime_AsTimeval(_PyTime_t t, struct timeval * tv, _PyTime_round_t round)'/>
+<doc f='codebrowser/Include/pytime.h' l='106'>/* Convert a timestamp to a timeval structure (microsecond resolution).
+   tv_usec is always positive.
+   Raise an exception and return -1 if the conversion overflowed,
+   return 0 on success. */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3941' u='c' c='test_PyTime_AsTimeval'/>
+<use f='codebrowser/Modules/selectmodule.c' l='224' u='c' c='select_select'/>
+<use f='codebrowser/Modules/timemodule.c' l='1451' u='c' c='pysleep'/>
+<def f='codebrowser/Python/pytime.c' l='469' ll='473' type='int _PyTime_AsTimeval(_PyTime_t t, struct timeval * tv, _PyTime_round_t round)'/>

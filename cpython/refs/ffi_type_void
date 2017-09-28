@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/ffi.h' l='184' type='ffi_type'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='251' u='a' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='370' u='a' c='_ctypes_alloc_callback'/>
+<def f='codebrowser/Modules/_ctypes/cfield.c' l='1637' type='ffi_type'/>
+<doc f='codebrowser/Modules/_ctypes/cfield.c' l='1636'>/* align and size are bogus for void, but they must not be zero */</doc>

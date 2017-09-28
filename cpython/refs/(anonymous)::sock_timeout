@@ -1,0 +1,30 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='211' type='_PyTime_t'/>
+<use f='codebrowser/Modules/_ssl.c' l='681' u='r' c='newPySSLSocket'/>
+<use f='codebrowser/Modules/_ssl.c' l='730' u='r' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='398' u='r' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1883' u='r' c='PySSL_select'/>
+<use f='codebrowser/Modules/_ssl.c' l='1970' u='r' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='398' u='r' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2128' u='r' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='398' u='r' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2222' u='r' c='_ssl__SSLSocket_shutdown_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='398' u='r' c='_ssl__SSLSocket_shutdown_impl'/>
+<offset>448</offset>
+<doc f='codebrowser/Modules/socketmodule.h' l='211'>/* Operation timeout in seconds;
+                                        0.0 means non-blocking */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='858' u='r' c='sock_call_ex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='884' u='r' c='sock_call'/>
+<use f='codebrowser/Modules/socketmodule.c' l='905' u='w' c='init_sockobject'/>
+<use f='codebrowser/Modules/socketmodule.c' l='909' u='w' c='init_sockobject'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2479' u='w' c='sock_setblocking'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2548' u='w' c='sock_settimeout'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2568' u='r' c='sock_gettimeout'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2572' u='r' c='sock_gettimeout'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2844' u='r' c='internal_connect'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2847' u='r' c='internal_connect'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2865' u='r' c='internal_connect'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2871' u='r' c='internal_connect'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3779' u='r' c='sock_sendall'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3780' u='r' c='sock_sendall'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3803' u='r' c='sock_sendall'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4657' u='w' c='sock_new'/>

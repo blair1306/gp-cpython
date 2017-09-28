@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='212' type='PyThreadState * PyThreadState_New(PyInterpreterState * )'/>
+<use f='codebrowser/Python/pylifecycle.c' l='620' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1160' u='c' c='Py_NewInterpreter'/>
+<def f='codebrowser/Python/pystate.c' l='304' ll='308' type='PyThreadState * PyThreadState_New(PyInterpreterState * interp)'/>
+<use f='codebrowser/Python/pystate.c' l='906' u='c' c='PyGILState_Ensure'/>

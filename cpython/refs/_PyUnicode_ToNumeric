@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2244' type='double _PyUnicode_ToNumeric(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/unicodedata.c' l='233' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodetype_db.h' l='4039' ll='5769' type='double _PyUnicode_ToNumeric(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodetype_db.h' l='4036'>/* Returns the numeric value as double for Unicode characters
+ * having this property, -1.0 otherwise.
+ */</doc>

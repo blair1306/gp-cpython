@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/genobject.h' l='44' type='int _PyGen_SetStopIterationValue(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1025' u='c' c='FutureIter_iternext'/>
+<use f='codebrowser/Objects/genobject.c' l='213' u='c' c='gen_send_ex'/>
+<def f='codebrowser/Objects/genobject.c' l='571' ll='599' type='int _PyGen_SetStopIterationValue(PyObject * value)'/>
+<use f='codebrowser/Objects/genobject.c' l='1154' u='c' c='aiter_wrapper_iternext'/>
+<use f='codebrowser/Objects/genobject.c' l='1552' u='c' c='async_gen_unwrap_value'/>
+<doc f='codebrowser/Objects/genobject.c' l='565'>/*
+ * Set StopIteration with specified value.  Value can be arbitrary object
+ * or NULL.
+ *
+ * Returns 0 if StopIteration is set and -1 if any other exception is set.
+ */</doc>

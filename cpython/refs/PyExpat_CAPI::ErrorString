@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyexpat.h' l='18' type='const XML_LChar *(*)(enum XML_Error)'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2867' u='r' c='expat_set_error'/>
+<offset>192</offset>
+<doc f='codebrowser/Include/pyexpat.h' l='16'>/* pointers to selected expat functions.  add new functions at
+       the end, if needed */</doc>
+<use f='codebrowser/Modules/pyexpat.c' l='1868' u='w' c='PyInit_pyexpat'/>

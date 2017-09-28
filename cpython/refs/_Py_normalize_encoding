@@ -1,0 +1,8 @@
+<def f='codebrowser/Objects/unicodeobject.c' l='3113' ll='3157' type='int _Py_normalize_encoding(const char * encoding, char * lower, size_t lower_len)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3174' u='c' c='PyUnicode_Decode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3569' u='c' c='PyUnicode_AsEncodedString'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='3110'>/* Normalize an encoding name: similar to encodings.normalize_encoding(), but
+   also convert to lowercase. Return 1 on success, or 0 on error (encoding is
+   longer than lower_len-1). */</doc>
+<dec f='codebrowser/Python/fileutils.c' l='74' type='int _Py_normalize_encoding(const char * , char * , size_t )'/>
+<use f='codebrowser/Python/fileutils.c' l='143' u='c' c='check_force_ascii'/>

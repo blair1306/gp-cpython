@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='165' type='GETFUNC'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1491' u='r' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1495' u='r' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1996' u='r' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4359' u='r' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4384' u='r' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5047' u='r' c='Pointer_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5068' u='r' c='Pointer_subscript'/>
+<offset>128</offset>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='908' u='r' c='GetResult'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='123' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='125' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='129' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='131' u='r' c='PyCField_FromDesc'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='487' u='r' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='489' u='r' c='PyCStructUnionType_update_stgdict'/>

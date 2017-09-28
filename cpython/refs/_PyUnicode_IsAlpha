@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2264' type='int _PyUnicode_IsAlpha(Py_UCS4 ch)'/>
+<use f='codebrowser/Modules/_sre.c' l='180' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='182' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='84' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='86' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='93' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='84' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='86' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='93' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='95' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='84' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='86' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='93' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='95' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodectype.c' l='291' ll='296' type='int _PyUnicode_IsAlpha(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='288'>/* Returns 1 for Unicode characters having the category &apos;Ll&apos;, &apos;Lu&apos;, &apos;Lt&apos;,
+   &apos;Lo&apos; or &apos;Lm&apos;,  0 otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='11965' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11972' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12005' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12014' macro='1' u='c'/>

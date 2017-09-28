@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/sliceobject.h' l='55' type='Py_ssize_t PySlice_AdjustIndices(Py_ssize_t length, Py_ssize_t * start, Py_ssize_t * stop, Py_ssize_t step)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4350' u='c' c='Array_subscript'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4490' u='c' c='Array_ass_subscript'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1747' u='c' c='element_subscr'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1803' u='c' c='element_ass_subscr'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1721' u='c' c='init_slice'/>
+<use f='codebrowser/Modules/_testbuffer.c' l='1941' u='c' c='slice_indices'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2346' u='c' c='array_subscr'/>
+<use f='codebrowser/Modules/arraymodule.c' l='2418' u='c' c='array_ass_subscr'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='784' u='c' c='mmap_subscript'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='910' u='c' c='mmap_ass_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='406' u='c' c='bytearray_subscript'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='636' u='c' c='bytearray_ass_subscript'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1689' u='c' c='bytes_subscript'/>
+<use f='codebrowser/Objects/listobject.c' l='2492' u='c' c='list_subscript'/>
+<use f='codebrowser/Objects/listobject.c' l='2542' u='c' c='list_ass_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2291' u='c' c='init_slice'/>
+<def f='codebrowser/Objects/sliceobject.c' l='238' ll='278' type='Py_ssize_t PySlice_AdjustIndices(Py_ssize_t length, Py_ssize_t * start, Py_ssize_t * stop, Py_ssize_t step)'/>
+<use f='codebrowser/Objects/sliceobject.c' l='289' u='c' c='PySlice_GetIndicesEx'/>
+<use f='codebrowser/Objects/tupleobject.c' l='764' u='c' c='tuplesubscript'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14019' u='c' c='unicode_subscript'/>

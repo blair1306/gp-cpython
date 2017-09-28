@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/genobject.h' l='75' type='int'/>
+<offset>704</offset>
+<doc f='codebrowser/Include/genobject.h' l='72'>/* Flag is set to 1 when hooks set up by sys.set_asyncgen_hooks
+       were called on the generator, to avoid calling them more
+       than once. */</doc>
+<use f='codebrowser/Objects/genobject.c' l='1323' u='r' c='async_gen_init_hooks'/>
+<use f='codebrowser/Objects/genobject.c' l='1327' u='w' c='async_gen_init_hooks'/>
+<use f='codebrowser/Objects/genobject.c' l='1499' u='w' c='PyAsyncGen_New'/>

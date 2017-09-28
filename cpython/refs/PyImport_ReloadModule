@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='77' type='PyObject * PyImport_ReloadModule(PyObject * m)'/>
+<def f='codebrowser/Python/import.c' l='1664' ll='1684' type='PyObject * PyImport_ReloadModule(PyObject * m)'/>
+<doc f='codebrowser/Python/import.c' l='1661'>/* Re-import a module of any kind and return its module object, WITH
+   INCREMENTED REFERENCE COUNT */</doc>

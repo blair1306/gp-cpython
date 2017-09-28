@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/object.h' l='371' type='reprfunc'/>
+<offset>1216</offset>
+<use f='codebrowser/Modules/_json.c' l='1462' u='r' c='encoder_listencode_obj'/>
+<use f='codebrowser/Modules/_json.c' l='1626' u='r' c='encoder_listencode_dict'/>
+<use f='codebrowser/Objects/object.c' l='524' u='r' c='PyObject_Str'/>
+<use f='codebrowser/Objects/object.c' l='538' u='r' c='PyObject_Str'/>
+<use f='codebrowser/Objects/typeobject.c' l='4940' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4940' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4940' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4940' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4940' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4940' u='r' c='inherit_slots'/>

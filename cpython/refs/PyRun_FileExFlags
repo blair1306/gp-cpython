@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pythonrun.h' l='90' type='PyObject * PyRun_FileExFlags(FILE * fp, const char * filename, int start, PyObject * globals, PyObject * locals, int closeit, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='398' u='c' c='PyRun_SimpleFileExFlags'/>
+<def f='codebrowser/Python/pythonrun.c' l='911' ll='942' type='PyObject * PyRun_FileExFlags(FILE * fp, const char * filename_str, int start, PyObject * globals, PyObject * locals, int closeit, PyCompilerFlags * flags)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1475' u='c' c='PyRun_File'/>
+<use f='codebrowser/Python/pythonrun.c' l='1482' u='c' c='PyRun_FileEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='1490' u='c' c='PyRun_FileFlags'/>

@@ -1,0 +1,30 @@
+<dec f='include/curses.h' l='1615' type='short'/>
+<offset>0</offset>
+<doc f='include/curses.h' l='1615'>/* ID to distinguish multiple devices */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2255' u='r' c='PyCurses_GetMouse'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2267' u='a' c='PyCurses_UngetMouse'/>
+<dec f='include/lzma/filter.h' l='54' type='lzma_vli'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='321' u='w' c='lzma_filter_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='326' u='r' c='lzma_filter_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='343' u='r' c='lzma_filter_converter'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='353' u='r' c='free_filter_chain'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='379' u='w' c='parse_filter_chain_spec'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='384' u='w' c='parse_filter_chain_spec'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='425' u='r' c='build_filter_spec'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='427' u='r' c='build_filter_spec'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='460' u='r' c='build_filter_spec'/>
+<use f='codebrowser/Modules/clinic/_lzmamodule.c.h' l='217' u='r' c='_lzma__encode_filter_properties'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='653' u='r' c='Compressor_init_alone'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='654' u='r' c='Compressor_init_alone'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1405' u='w' c='_lzma__decode_filter_properties_impl'/>
+<offset>0</offset>
+<doc f='include/lzma/filter.h' l='44'>/**
+	 * \brief       Filter ID
+	 *
+	 * Use constants whose name begin with `LZMA_FILTER_&apos; to specify
+	 * different filters. In an array of lzma_filter structures, use
+	 * LZMA_VLI_UNKNOWN to indicate end of filters.
+	 *
+	 * \note        This is not an enum, because on some systems enums
+	 *              cannot be 64-bit.
+	 */</doc>

@@ -1,0 +1,36 @@
+<dec f='codebrowser/Include/pytime.h' l='151' type='_PyTime_t _PyTime_GetMonotonicClock()'/>
+<doc f='codebrowser/Include/pytime.h' l='144'>/* Get the time of a monotonic clock, i.e. a clock that cannot go backwards.
+   The clock is not affected by system clock updates. The reference point of
+   the returned value is undefined, so that only the difference between the
+   results of consecutive calls is valid.
+
+   The function cannot fail. _PyTime_Init() ensures that a monotonic clock
+   is available and works. */</doc>
+<use f='codebrowser/Modules/_randommodule.c' l='227' u='c' c='random_seed_time_pid'/>
+<use f='codebrowser/Modules/_ssl.c' l='738' u='c' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='752' u='c' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1978' u='c' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2005' u='c' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2136' u='c' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2148' u='c' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2230' u='c' c='_ssl__SSLSocket_shutdown_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2262' u='c' c='_ssl__SSLSocket_shutdown_impl'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='59' u='c' c='acquire_timed'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='83' u='c' c='acquire_timed'/>
+<use f='codebrowser/Modules/gcmodule.c' l='931' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1039' u='c' c='collect'/>
+<use f='codebrowser/Modules/selectmodule.c' l='264' u='c' c='select_select'/>
+<use f='codebrowser/Modules/selectmodule.c' l='280' u='c' c='select_select'/>
+<use f='codebrowser/Modules/selectmodule.c' l='557' u='c' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='592' u='c' c='poll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1530' u='c' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1563' u='c' c='pyepoll_poll'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1071' u='c' c='signal_sigtimedwait_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1095' u='c' c='signal_sigtimedwait_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='779' u='c' c='sock_call_ex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='783' u='c' c='sock_call_ex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3799' u='c' c='sock_sendall'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3803' u='c' c='sock_sendall'/>
+<use f='codebrowser/Modules/timemodule.c' l='1447' u='c' c='pysleep'/>
+<use f='codebrowser/Modules/timemodule.c' l='1499' u='c' c='pysleep'/>
+<def f='codebrowser/Python/pytime.c' l='753' ll='766' type='_PyTime_t _PyTime_GetMonotonicClock()'/>

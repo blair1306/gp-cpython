@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/hashlib.h' l='63'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='237' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='296' u='c'/>
+<doc f='codebrowser/Modules/hashlib.h' l='61'>/* TODO(gps): We should probably make this a module or EVPobject attribute
+ * to allow the user to optimize based on the platform they&apos;re using. */</doc>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='237' u='c'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='296' u='c'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='271' u='c'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='486' u='c'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='228' u='c'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='377' u='c'/>

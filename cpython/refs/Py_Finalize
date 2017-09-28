@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='36' type='void Py_Finalize()'/>
+<use f='codebrowser/Programs/_testembed.c' l='76' u='c' c='test_repeated_init_and_subinterpreters'/>
+<use f='codebrowser/Programs/_testembed.c' l='109' u='c' c='check_stdio_details'/>
+<use f='codebrowser/Programs/_testembed.c' l='130' u='c' c='test_forced_io_encoding'/>
+<def f='codebrowser/Python/pylifecycle.c' l='1121' ll='1125' type='void Py_Finalize()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1422' u='c' c='initsite'/>

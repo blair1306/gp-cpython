@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='48' type='mpd_uint_t _mpd_baseincr(mpd_uint_t * u, mpd_size_t n)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='136' ll='153' type='mpd_uint_t _mpd_baseincr(mpd_uint_t * u, mpd_size_t n)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='135'>/* Increment u. The calling function has to handle a possible carry. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1666' u='c' c='_mpd_apply_round'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1691' u='c' c='_mpd_apply_round_excess'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1713' u='c' c='_mpd_apply_round_fit'/>

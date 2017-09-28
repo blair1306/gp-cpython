@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/parsetok.h' l='38' type='node * PyParser_ParseString(const char * , grammar * , int , perrdetail * )'/>
+<def f='codebrowser/Parser/parsetok.c' l='19' ll='23' type='node * PyParser_ParseString(const char * s, grammar * g, int start, perrdetail * err_ret)'/>
+<doc f='codebrowser/Parser/parsetok.c' l='18'>/* Parse input coming from a string.  Return error code, print some errors. */</doc>

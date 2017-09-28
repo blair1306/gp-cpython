@@ -1,0 +1,18 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='184' type='double floor(double __x)'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1372' u='c' c='PyInit__thread'/>
+<use f='codebrowser/Modules/audioop.c' l='510' u='c' c='audioop_avg_impl'/>
+<use f='codebrowser/Modules/audioop.c' l='928' u='c' c='audioop_mul_impl'/>
+<use f='codebrowser/Modules/audioop.c' l='977' u='c' c='audioop_tomono_impl'/>
+<use f='codebrowser/Modules/audioop.c' l='1024' u='c' c='audioop_tostereo_impl'/>
+<use f='codebrowser/Modules/audioop.c' l='1025' u='c' c='audioop_tostereo_impl'/>
+<use f='codebrowser/Modules/audioop.c' l='1083' u='c' c='audioop_add_impl'/>
+<use f='codebrowser/Modules/mathmodule.c' l='286' u='c' c='m_tgamma'/>
+<use f='codebrowser/Modules/mathmodule.c' l='381' u='c' c='m_lgamma'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1154' u='r' c='math_floor'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1665' u='c' c='math_factorial'/>
+<use f='codebrowser/Modules/signalmodule.c' l='140' u='c' c='timeval_from_double'/>
+<use f='codebrowser/Objects/floatobject.c' l='654' u='c' c='float_divmod'/>
+<use f='codebrowser/Objects/floatobject.c' l='755' u='c' c='float_pow'/>
+<use f='codebrowser/Objects/floatobject.c' l='846' u='c' c='float_is_integer_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1567' u='c' c='float_as_integer_ratio_impl'/>
+<use f='codebrowser/Python/pytime.c' l='92' u='c' c='_PyTime_Round'/>

@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/methodobject.h' l='61' type='const char *'/>
+<offset>192</offset>
+<doc f='codebrowser/Include/methodobject.h' l='61'>/* The __doc__ attribute, or NULL */</doc>
+<use f='codebrowser/Objects/descrobject.c' l='384' u='r' c='method_get_doc'/>
+<use f='codebrowser/Objects/descrobject.c' l='390' u='r' c='method_get_text_signature'/>
+<use f='codebrowser/Objects/methodobject.c' l='124' u='r' c='meth_get__text_signature__'/>
+<use f='codebrowser/Objects/methodobject.c' l='130' u='r' c='meth_get__doc__'/>

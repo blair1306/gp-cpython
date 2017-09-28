@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='243' type='1'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3997' u='r' c='nm_dec_as_long'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4662' u='r' c='dec_trunc'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='243'>/* round toward 0 (truncate)       */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1623' c='_mpd_rnd_incr'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1758' c='_mpd_check_exp'/>

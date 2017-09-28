@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='815' type='void * mpd_realloc(void * ptr, mpd_size_t nmemb, mpd_size_t size, uint8_t * err)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1150' u='c' c='_mpd_add_pad'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='113' ll='132' type='void * mpd_realloc(void * ptr, mpd_size_t nmemb, mpd_size_t size, uint8_t * err)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='282' u='c' c='mpd_realloc_dyn'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='112'>/* realloc with overflow checking */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='548' u='c' c='mpd_minalloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7889' u='c' c='mpd_resize_u16'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7897' u='c' c='mpd_resize_u32'/>

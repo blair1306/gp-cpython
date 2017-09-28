@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='351' type='void mpd_addstatus_raise(mpd_context_t * ctx, uint32_t flags)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='73' u='c' c='mpd_init'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/context.c' l='276' ll='284' type='void mpd_addstatus_raise(mpd_context_t * ctx, uint32_t flags)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='200' u='c' c='mpd_new'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='561' u='c' c='mpd_resize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='572' u='c' c='mpd_resize_zero'/>

@@ -1,0 +1,8 @@
+<dec f='include/string.h' l='133' type='char * strcat(char *restrict __dest, const char *restrict __src)'/>
+<doc f='include/string.h' l='132'>/* Append SRC onto DEST.  */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='345' u='c' c='_ctypes_alloc_format_string'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='376' u='c' c='_ctypes_alloc_format_string_with_shape'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='383' u='c' c='_ctypes_alloc_format_string_with_shape'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2453' u='c' c='dectuple_as_str'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2457' u='c' c='dectuple_as_str'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2460' u='c' c='dectuple_as_str'/>

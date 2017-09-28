@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='91' type='void _PyImport_Init()'/>
+<def f='codebrowser/Python/import.c' l='43' ll='53' type='void _PyImport_Init()'/>
+<doc f='codebrowser/Python/import.c' l='41'>/* Initialize things */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='693' u='c' c='_Py_InitializeCore'/>

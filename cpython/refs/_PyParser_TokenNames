@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/token.h' l='85' type='const char *[]'/>
+<use f='codebrowser/Modules/parsermodule.c' l='722' u='r' c='validate_node'/>
+<use f='codebrowser/Parser/grammar.c' l='190' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar1.c' l='50' u='r' c='PyGrammar_LabelRepr'/>
+<use f='codebrowser/Parser/grammar1.c' l='53' u='r' c='PyGrammar_LabelRepr'/>
+<use f='codebrowser/Parser/parser.c' l='233' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='376' u='r' c='_Py_showtree'/>
+<def f='codebrowser/Parser/tokenizer.c' l='50' ll='113' type='const char *[61]'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1983' u='r' c='_Py_tok_dump'/>
+<doc f='codebrowser/Parser/tokenizer.c' l='48'>/* Token names */</doc>

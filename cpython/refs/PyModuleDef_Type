@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/moduleobject.h' l='40' type='PyTypeObject'/>
+<def f='codebrowser/Objects/moduleobject.c' l='23' ll='28' type='PyTypeObject'/>
+<use f='codebrowser/Objects/moduleobject.c' l='34' u='a' c='PyModuleDef_Init'/>
+<use f='codebrowser/Objects/moduleobject.c' l='39' u='a' c='PyModuleDef_Init'/>
+<use f='codebrowser/Python/import.c' l='1072' u='a' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/import.c' l='1072' u='a' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/importdl.c' l='184' u='a' c='_PyImport_LoadDynamicModuleWithSpec'/>
+<use f='codebrowser/Python/importdl.c' l='184' u='a' c='_PyImport_LoadDynamicModuleWithSpec'/>

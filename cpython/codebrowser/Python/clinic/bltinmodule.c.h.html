@@ -1,0 +1,697 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bltinmodule.c.h source code [codebrowser/Python/clinic/bltinmodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/clinic/bltinmodule.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Python</a>/<a href='./'>clinic</a>/<a href='bltinmodule.c.h.html'>bltinmodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_abs__doc__[] = &quot;abs($module, x, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the absolute value of the argument.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_abs__doc__" title='builtin_abs__doc__' data-ref="builtin_abs__doc__">builtin_abs__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"abs($module, x, /)\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"--\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"Return the absolute value of the argument."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ABS_METHODDEF" data-ref="_M/BUILTIN_ABS_METHODDEF">BUILTIN_ABS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="12">12</th><td><u>    {"abs", (PyCFunction)builtin_abs, METH_O, builtin_abs__doc__},</u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_all__doc__[] = &quot;all($module, iterable, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if bool(x) is True for all values x in the iterable.\n&quot;&quot;\n&quot;&quot;If the iterable is empty, return True.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_all__doc__" title='builtin_all__doc__' data-ref="builtin_all__doc__">builtin_all__doc__</dfn>,</td></tr>
+<tr><th id="15">15</th><td><q>"all($module, iterable, /)\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"--\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"Return True if bool(x) is True for all values x in the iterable.\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"If the iterable is empty, return True."</q>);</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ALL_METHODDEF" data-ref="_M/BUILTIN_ALL_METHODDEF">BUILTIN_ALL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="23">23</th><td><u>    {"all", (PyCFunction)builtin_all, METH_O, builtin_all__doc__},</u></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_any__doc__[] = &quot;any($module, iterable, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return True if bool(x) is True for any x in the iterable.\n&quot;&quot;\n&quot;&quot;If the iterable is empty, return False.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_any__doc__" title='builtin_any__doc__' data-ref="builtin_any__doc__">builtin_any__doc__</dfn>,</td></tr>
+<tr><th id="26">26</th><td><q>"any($module, iterable, /)\n"</q></td></tr>
+<tr><th id="27">27</th><td><q>"--\n"</q></td></tr>
+<tr><th id="28">28</th><td><q>"\n"</q></td></tr>
+<tr><th id="29">29</th><td><q>"Return True if bool(x) is True for any x in the iterable.\n"</q></td></tr>
+<tr><th id="30">30</th><td><q>"\n"</q></td></tr>
+<tr><th id="31">31</th><td><q>"If the iterable is empty, return False."</q>);</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ANY_METHODDEF" data-ref="_M/BUILTIN_ANY_METHODDEF">BUILTIN_ANY_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="34">34</th><td><u>    {"any", (PyCFunction)builtin_any, METH_O, builtin_any__doc__},</u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_ascii__doc__[] = &quot;ascii($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return an ASCII-only representation of an object.\n&quot;&quot;\n&quot;&quot;As repr(), return a string containing a printable representation of an\n&quot;&quot;object, but escape the non-ASCII characters in the string returned by\n&quot;&quot;repr() using \\\\x, \\\\u or \\\\U escapes. This generates a string similar\n&quot;&quot;to that returned by repr() in Python 2.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_ascii__doc__" title='builtin_ascii__doc__' data-ref="builtin_ascii__doc__">builtin_ascii__doc__</dfn>,</td></tr>
+<tr><th id="37">37</th><td><q>"ascii($module, obj, /)\n"</q></td></tr>
+<tr><th id="38">38</th><td><q>"--\n"</q></td></tr>
+<tr><th id="39">39</th><td><q>"\n"</q></td></tr>
+<tr><th id="40">40</th><td><q>"Return an ASCII-only representation of an object.\n"</q></td></tr>
+<tr><th id="41">41</th><td><q>"\n"</q></td></tr>
+<tr><th id="42">42</th><td><q>"As repr(), return a string containing a printable representation of an\n"</q></td></tr>
+<tr><th id="43">43</th><td><q>"object, but escape the non-ASCII characters in the string returned by\n"</q></td></tr>
+<tr><th id="44">44</th><td><q>"repr() using \\\\x, \\\\u or \\\\U escapes. This generates a string similar\n"</q></td></tr>
+<tr><th id="45">45</th><td><q>"to that returned by repr() in Python 2."</q>);</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ASCII_METHODDEF" data-ref="_M/BUILTIN_ASCII_METHODDEF">BUILTIN_ASCII_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="48">48</th><td><u>    {"ascii", (PyCFunction)builtin_ascii, METH_O, builtin_ascii__doc__},</u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_bin__doc__[] = &quot;bin($module, number, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the binary representation of an integer.\n&quot;&quot;\n&quot;&quot;   &gt;&gt;&gt; bin(2796202)\n&quot;&quot;   \&apos;0b1010101010101010101010\&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_bin__doc__" title='builtin_bin__doc__' data-ref="builtin_bin__doc__">builtin_bin__doc__</dfn>,</td></tr>
+<tr><th id="51">51</th><td><q>"bin($module, number, /)\n"</q></td></tr>
+<tr><th id="52">52</th><td><q>"--\n"</q></td></tr>
+<tr><th id="53">53</th><td><q>"\n"</q></td></tr>
+<tr><th id="54">54</th><td><q>"Return the binary representation of an integer.\n"</q></td></tr>
+<tr><th id="55">55</th><td><q>"\n"</q></td></tr>
+<tr><th id="56">56</th><td><q>"   &gt;&gt;&gt; bin(2796202)\n"</q></td></tr>
+<tr><th id="57">57</th><td><q>"   \'0b1010101010101010101010\'"</q>);</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_BIN_METHODDEF" data-ref="_M/BUILTIN_BIN_METHODDEF">BUILTIN_BIN_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="60">60</th><td><u>    {"bin", (PyCFunction)builtin_bin, METH_O, builtin_bin__doc__},</u></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_callable__doc__[] = &quot;callable($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether the object is callable (i.e., some kind of function).\n&quot;&quot;\n&quot;&quot;Note that classes are callable, as are instances of classes with a\n&quot;&quot;__call__() method.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_callable__doc__" title='builtin_callable__doc__' data-ref="builtin_callable__doc__">builtin_callable__doc__</dfn>,</td></tr>
+<tr><th id="63">63</th><td><q>"callable($module, obj, /)\n"</q></td></tr>
+<tr><th id="64">64</th><td><q>"--\n"</q></td></tr>
+<tr><th id="65">65</th><td><q>"\n"</q></td></tr>
+<tr><th id="66">66</th><td><q>"Return whether the object is callable (i.e., some kind of function).\n"</q></td></tr>
+<tr><th id="67">67</th><td><q>"\n"</q></td></tr>
+<tr><th id="68">68</th><td><q>"Note that classes are callable, as are instances of classes with a\n"</q></td></tr>
+<tr><th id="69">69</th><td><q>"__call__() method."</q>);</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_CALLABLE_METHODDEF" data-ref="_M/BUILTIN_CALLABLE_METHODDEF">BUILTIN_CALLABLE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="72">72</th><td><u>    {"callable", (PyCFunction)builtin_callable, METH_O, builtin_callable__doc__},</u></td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_format__doc__[] = &quot;format($module, value, format_spec=\&apos;\&apos;, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return value.__format__(format_spec)\n&quot;&quot;\n&quot;&quot;format_spec defaults to the empty string.\n&quot;&quot;See the Format Specification Mini-Language section of help(\&apos;FORMATTING\&apos;) for\n&quot;&quot;details.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_format__doc__" title='builtin_format__doc__' data-ref="builtin_format__doc__">builtin_format__doc__</dfn>,</td></tr>
+<tr><th id="75">75</th><td><q>"format($module, value, format_spec=\'\', /)\n"</q></td></tr>
+<tr><th id="76">76</th><td><q>"--\n"</q></td></tr>
+<tr><th id="77">77</th><td><q>"\n"</q></td></tr>
+<tr><th id="78">78</th><td><q>"Return value.__format__(format_spec)\n"</q></td></tr>
+<tr><th id="79">79</th><td><q>"\n"</q></td></tr>
+<tr><th id="80">80</th><td><q>"format_spec defaults to the empty string.\n"</q></td></tr>
+<tr><th id="81">81</th><td><q>"See the Format Specification Mini-Language section of help(\'FORMATTING\') for\n"</q></td></tr>
+<tr><th id="82">82</th><td><q>"details."</q>);</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_FORMAT_METHODDEF" data-ref="_M/BUILTIN_FORMAT_METHODDEF">BUILTIN_FORMAT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="85">85</th><td><u>    {"format", (PyCFunction)builtin_format, METH_FASTCALL, builtin_format__doc__},</u></td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="88">88</th><td><a class="decl" href="../bltinmodule.c.html#builtin_format_impl" title='builtin_format_impl' data-ref="builtin_format_impl" id="builtin_format_impl">builtin_format_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="1module" title='module' data-type='PyObject *' data-ref="1module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2value" title='value' data-type='PyObject *' data-ref="2value">value</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3format_spec" title='format_spec' data-type='PyObject *' data-ref="3format_spec">format_spec</dfn>);</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="91">91</th><td><dfn class="decl def" id="builtin_format" title='builtin_format' data-ref="builtin_format">builtin_format</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="4module" title='module' data-type='PyObject *' data-ref="4module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject **' data-ref="5args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="6nargs" title='nargs' data-type='Py_ssize_t' data-ref="6nargs">nargs</dfn>)</td></tr>
+<tr><th id="92">92</th><td>{</td></tr>
+<tr><th id="93">93</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7return_value" title='return_value' data-type='PyObject *' data-ref="7return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="8value" title='value' data-type='PyObject *' data-ref="8value">value</dfn>;</td></tr>
+<tr><th id="95">95</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="9format_spec" title='format_spec' data-type='PyObject *' data-ref="9format_spec">format_spec</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStack" title='_PyArg_ParseStack' data-ref="_PyArg_ParseStack">_PyArg_ParseStack</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <a class="local col6 ref" href="#6nargs" title='nargs' data-ref="6nargs">nargs</a>, <q>"O|U:format"</q>,</td></tr>
+<tr><th id="98">98</th><td>        &amp;<a class="local col8 ref" href="#8value" title='value' data-ref="8value">value</a>, &amp;<a class="local col9 ref" href="#9format_spec" title='format_spec' data-ref="9format_spec">format_spec</a>)) {</td></tr>
+<tr><th id="99">99</th><td>        <b>goto</b> <a class="lbl" href="#10exit" data-ref="10exit">exit</a>;</td></tr>
+<tr><th id="100">100</th><td>    }</td></tr>
+<tr><th id="101">101</th><td>    <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_format_impl" title='builtin_format_impl' data-ref="builtin_format_impl">builtin_format_impl</a>(<a class="local col4 ref" href="#4module" title='module' data-ref="4module">module</a>, <a class="local col8 ref" href="#8value" title='value' data-ref="8value">value</a>, <a class="local col9 ref" href="#9format_spec" title='format_spec' data-ref="9format_spec">format_spec</a>);</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><dfn class="lbl" id="10exit" data-ref="10exit">exit</dfn>:</td></tr>
+<tr><th id="104">104</th><td>    <b>return</b> <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a>;</td></tr>
+<tr><th id="105">105</th><td>}</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_chr__doc__[] = &quot;chr($module, i, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a Unicode string of one character with ordinal i; 0 &lt;= i &lt;= 0x10ffff.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_chr__doc__" title='builtin_chr__doc__' data-ref="builtin_chr__doc__">builtin_chr__doc__</dfn>,</td></tr>
+<tr><th id="108">108</th><td><q>"chr($module, i, /)\n"</q></td></tr>
+<tr><th id="109">109</th><td><q>"--\n"</q></td></tr>
+<tr><th id="110">110</th><td><q>"\n"</q></td></tr>
+<tr><th id="111">111</th><td><q>"Return a Unicode string of one character with ordinal i; 0 &lt;= i &lt;= 0x10ffff."</q>);</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_CHR_METHODDEF" data-ref="_M/BUILTIN_CHR_METHODDEF">BUILTIN_CHR_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="114">114</th><td><u>    {"chr", (PyCFunction)builtin_chr, METH_O, builtin_chr__doc__},</u></td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="117">117</th><td><a class="decl" href="../bltinmodule.c.html#builtin_chr_impl" title='builtin_chr_impl' data-ref="builtin_chr_impl" id="builtin_chr_impl">builtin_chr_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11module" title='module' data-type='PyObject *' data-ref="11module">module</dfn>, <em>int</em> <dfn class="local col2 decl" id="12i" title='i' data-type='int' data-ref="12i">i</dfn>);</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="120">120</th><td><dfn class="decl def" id="builtin_chr" title='builtin_chr' data-ref="builtin_chr">builtin_chr</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="13module" title='module' data-type='PyObject *' data-ref="13module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14arg" title='arg' data-type='PyObject *' data-ref="14arg">arg</dfn>)</td></tr>
+<tr><th id="121">121</th><td>{</td></tr>
+<tr><th id="122">122</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15return_value" title='return_value' data-type='PyObject *' data-ref="15return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="123">123</th><td>    <em>int</em> <dfn class="local col6 decl" id="16i" title='i' data-type='int' data-ref="16i">i</dfn>;</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col4 ref" href="#14arg" title='arg' data-ref="14arg">arg</a>, <q>"i:chr"</q>, &amp;<a class="local col6 ref" href="#16i" title='i' data-ref="16i">i</a>)) {</td></tr>
+<tr><th id="126">126</th><td>        <b>goto</b> <a class="lbl" href="#17exit" data-ref="17exit">exit</a>;</td></tr>
+<tr><th id="127">127</th><td>    }</td></tr>
+<tr><th id="128">128</th><td>    <a class="local col5 ref" href="#15return_value" title='return_value' data-ref="15return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_chr_impl" title='builtin_chr_impl' data-ref="builtin_chr_impl">builtin_chr_impl</a>(<a class="local col3 ref" href="#13module" title='module' data-ref="13module">module</a>, <a class="local col6 ref" href="#16i" title='i' data-ref="16i">i</a>);</td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><dfn class="lbl" id="17exit" data-ref="17exit">exit</dfn>:</td></tr>
+<tr><th id="131">131</th><td>    <b>return</b> <a class="local col5 ref" href="#15return_value" title='return_value' data-ref="15return_value">return_value</a>;</td></tr>
+<tr><th id="132">132</th><td>}</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_compile__doc__[] = &quot;compile($module, /, source, filename, mode, flags=0,\n&quot;&quot;        dont_inherit=False, optimize=-1)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Compile source into a code object that can be executed by exec() or eval().\n&quot;&quot;\n&quot;&quot;The source code may represent a Python module, statement or expression.\n&quot;&quot;The filename will be used for run-time error messages.\n&quot;&quot;The mode must be \&apos;exec\&apos; to compile a module, \&apos;single\&apos; to compile a\n&quot;&quot;single (interactive) statement, or \&apos;eval\&apos; to compile an expression.\n&quot;&quot;The flags argument, if present, controls which future statements influence\n&quot;&quot;the compilation of the code.\n&quot;&quot;The dont_inherit argument, if true, stops the compilation inheriting\n&quot;&quot;the effects of any future statements in effect in the code calling\n&quot;&quot;compile; if absent or false these statements do influence the compilation,\n&quot;&quot;in addition to any features explicitly specified.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_compile__doc__" title='builtin_compile__doc__' data-ref="builtin_compile__doc__">builtin_compile__doc__</dfn>,</td></tr>
+<tr><th id="135">135</th><td><q>"compile($module, /, source, filename, mode, flags=0,\n"</q></td></tr>
+<tr><th id="136">136</th><td><q>"        dont_inherit=False, optimize=-1)\n"</q></td></tr>
+<tr><th id="137">137</th><td><q>"--\n"</q></td></tr>
+<tr><th id="138">138</th><td><q>"\n"</q></td></tr>
+<tr><th id="139">139</th><td><q>"Compile source into a code object that can be executed by exec() or eval().\n"</q></td></tr>
+<tr><th id="140">140</th><td><q>"\n"</q></td></tr>
+<tr><th id="141">141</th><td><q>"The source code may represent a Python module, statement or expression.\n"</q></td></tr>
+<tr><th id="142">142</th><td><q>"The filename will be used for run-time error messages.\n"</q></td></tr>
+<tr><th id="143">143</th><td><q>"The mode must be \'exec\' to compile a module, \'single\' to compile a\n"</q></td></tr>
+<tr><th id="144">144</th><td><q>"single (interactive) statement, or \'eval\' to compile an expression.\n"</q></td></tr>
+<tr><th id="145">145</th><td><q>"The flags argument, if present, controls which future statements influence\n"</q></td></tr>
+<tr><th id="146">146</th><td><q>"the compilation of the code.\n"</q></td></tr>
+<tr><th id="147">147</th><td><q>"The dont_inherit argument, if true, stops the compilation inheriting\n"</q></td></tr>
+<tr><th id="148">148</th><td><q>"the effects of any future statements in effect in the code calling\n"</q></td></tr>
+<tr><th id="149">149</th><td><q>"compile; if absent or false these statements do influence the compilation,\n"</q></td></tr>
+<tr><th id="150">150</th><td><q>"in addition to any features explicitly specified."</q>);</td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_COMPILE_METHODDEF" data-ref="_M/BUILTIN_COMPILE_METHODDEF">BUILTIN_COMPILE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="153">153</th><td><u>    {"compile", (PyCFunction)builtin_compile, METH_FASTCALL|METH_KEYWORDS, builtin_compile__doc__},</u></td></tr>
+<tr><th id="154">154</th><td></td></tr>
+<tr><th id="155">155</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="156">156</th><td><a class="decl" href="../bltinmodule.c.html#builtin_compile_impl" title='builtin_compile_impl' data-ref="builtin_compile_impl" id="builtin_compile_impl">builtin_compile_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18module" title='module' data-type='PyObject *' data-ref="18module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19source" title='source' data-type='PyObject *' data-ref="19source">source</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20filename" title='filename' data-type='PyObject *' data-ref="20filename">filename</dfn>,</td></tr>
+<tr><th id="157">157</th><td>                     <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="21mode" title='mode' data-type='const char *' data-ref="21mode">mode</dfn>, <em>int</em> <dfn class="local col2 decl" id="22flags" title='flags' data-type='int' data-ref="22flags">flags</dfn>, <em>int</em> <dfn class="local col3 decl" id="23dont_inherit" title='dont_inherit' data-type='int' data-ref="23dont_inherit">dont_inherit</dfn>,</td></tr>
+<tr><th id="158">158</th><td>                     <em>int</em> <dfn class="local col4 decl" id="24optimize" title='optimize' data-type='int' data-ref="24optimize">optimize</dfn>);</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="161">161</th><td><dfn class="decl def" id="builtin_compile" title='builtin_compile' data-ref="builtin_compile">builtin_compile</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="25module" title='module' data-type='PyObject *' data-ref="25module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="26args" title='args' data-type='PyObject **' data-ref="26args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="27nargs" title='nargs' data-type='Py_ssize_t' data-ref="27nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28kwnames" title='kwnames' data-type='PyObject *' data-ref="28kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="162">162</th><td>{</td></tr>
+<tr><th id="163">163</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29return_value" title='return_value' data-type='PyObject *' data-ref="29return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="164">164</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col0 decl" id="30_keywords" title='_keywords' data-type='const char *const [7]' data-ref="30_keywords">_keywords</dfn>[] = {<q>"source"</q>, <q>"filename"</q>, <q>"mode"</q>, <q>"flags"</q>, <q>"dont_inherit"</q>, <q>"optimize"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="165">165</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col1 decl" id="31_parser" title='_parser' data-type='_PyArg_Parser' data-ref="31_parser">_parser</dfn> = {<q>"OO&amp;s|iii:compile"</q>, <a class="local col0 ref" href="#30_keywords" title='_keywords' data-ref="30_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="166">166</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="32source" title='source' data-type='PyObject *' data-ref="32source">source</dfn>;</td></tr>
+<tr><th id="167">167</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33filename" title='filename' data-type='PyObject *' data-ref="33filename">filename</dfn>;</td></tr>
+<tr><th id="168">168</th><td>    <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="34mode" title='mode' data-type='const char *' data-ref="34mode">mode</dfn>;</td></tr>
+<tr><th id="169">169</th><td>    <em>int</em> <dfn class="local col5 decl" id="35flags" title='flags' data-type='int' data-ref="35flags">flags</dfn> = <var>0</var>;</td></tr>
+<tr><th id="170">170</th><td>    <em>int</em> <dfn class="local col6 decl" id="36dont_inherit" title='dont_inherit' data-type='int' data-ref="36dont_inherit">dont_inherit</dfn> = <var>0</var>;</td></tr>
+<tr><th id="171">171</th><td>    <em>int</em> <dfn class="local col7 decl" id="37optimize" title='optimize' data-type='int' data-ref="37optimize">optimize</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStackAndKeywords" title='_PyArg_ParseStackAndKeywords' data-ref="_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col6 ref" href="#26args" title='args' data-ref="26args">args</a>, <a class="local col7 ref" href="#27nargs" title='nargs' data-ref="27nargs">nargs</a>, <a class="local col8 ref" href="#28kwnames" title='kwnames' data-ref="28kwnames">kwnames</a>, &amp;<a class="local col1 ref" href="#31_parser" title='_parser' data-ref="31_parser">_parser</a>,</td></tr>
+<tr><th id="174">174</th><td>        &amp;<a class="local col2 ref" href="#32source" title='source' data-ref="32source">source</a>, <a class="ref" href="../../Include/unicodeobject.h.html#PyUnicode_FSDecoder" title='PyUnicode_FSDecoder' data-ref="PyUnicode_FSDecoder">PyUnicode_FSDecoder</a>, &amp;<a class="local col3 ref" href="#33filename" title='filename' data-ref="33filename">filename</a>, &amp;<a class="local col4 ref" href="#34mode" title='mode' data-ref="34mode">mode</a>, &amp;<a class="local col5 ref" href="#35flags" title='flags' data-ref="35flags">flags</a>, &amp;<a class="local col6 ref" href="#36dont_inherit" title='dont_inherit' data-ref="36dont_inherit">dont_inherit</a>, &amp;<a class="local col7 ref" href="#37optimize" title='optimize' data-ref="37optimize">optimize</a>)) {</td></tr>
+<tr><th id="175">175</th><td>        <b>goto</b> <a class="lbl" href="#38exit" data-ref="38exit">exit</a>;</td></tr>
+<tr><th id="176">176</th><td>    }</td></tr>
+<tr><th id="177">177</th><td>    <a class="local col9 ref" href="#29return_value" title='return_value' data-ref="29return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_compile_impl" title='builtin_compile_impl' data-ref="builtin_compile_impl">builtin_compile_impl</a>(<a class="local col5 ref" href="#25module" title='module' data-ref="25module">module</a>, <a class="local col2 ref" href="#32source" title='source' data-ref="32source">source</a>, <a class="local col3 ref" href="#33filename" title='filename' data-ref="33filename">filename</a>, <a class="local col4 ref" href="#34mode" title='mode' data-ref="34mode">mode</a>, <a class="local col5 ref" href="#35flags" title='flags' data-ref="35flags">flags</a>, <a class="local col6 ref" href="#36dont_inherit" title='dont_inherit' data-ref="36dont_inherit">dont_inherit</a>, <a class="local col7 ref" href="#37optimize" title='optimize' data-ref="37optimize">optimize</a>);</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><dfn class="lbl" id="38exit" data-ref="38exit">exit</dfn>:</td></tr>
+<tr><th id="180">180</th><td>    <b>return</b> <a class="local col9 ref" href="#29return_value" title='return_value' data-ref="29return_value">return_value</a>;</td></tr>
+<tr><th id="181">181</th><td>}</td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_divmod__doc__[] = &quot;divmod($module, x, y, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the tuple (x//y, x%y).  Invariant: div*y + mod == x.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_divmod__doc__" title='builtin_divmod__doc__' data-ref="builtin_divmod__doc__">builtin_divmod__doc__</dfn>,</td></tr>
+<tr><th id="184">184</th><td><q>"divmod($module, x, y, /)\n"</q></td></tr>
+<tr><th id="185">185</th><td><q>"--\n"</q></td></tr>
+<tr><th id="186">186</th><td><q>"\n"</q></td></tr>
+<tr><th id="187">187</th><td><q>"Return the tuple (x//y, x%y).  Invariant: div*y + mod == x."</q>);</td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_DIVMOD_METHODDEF" data-ref="_M/BUILTIN_DIVMOD_METHODDEF">BUILTIN_DIVMOD_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="190">190</th><td><u>    {"divmod", (PyCFunction)builtin_divmod, METH_FASTCALL, builtin_divmod__doc__},</u></td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="193">193</th><td><a class="decl" href="../bltinmodule.c.html#builtin_divmod_impl" title='builtin_divmod_impl' data-ref="builtin_divmod_impl" id="builtin_divmod_impl">builtin_divmod_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="39module" title='module' data-type='PyObject *' data-ref="39module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="40x" title='x' data-type='PyObject *' data-ref="40x">x</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41y" title='y' data-type='PyObject *' data-ref="41y">y</dfn>);</td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="196">196</th><td><dfn class="decl def" id="builtin_divmod" title='builtin_divmod' data-ref="builtin_divmod">builtin_divmod</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="42module" title='module' data-type='PyObject *' data-ref="42module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="43args" title='args' data-type='PyObject **' data-ref="43args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="44nargs" title='nargs' data-type='Py_ssize_t' data-ref="44nargs">nargs</dfn>)</td></tr>
+<tr><th id="197">197</th><td>{</td></tr>
+<tr><th id="198">198</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45return_value" title='return_value' data-type='PyObject *' data-ref="45return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="199">199</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46x" title='x' data-type='PyObject *' data-ref="46x">x</dfn>;</td></tr>
+<tr><th id="200">200</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47y" title='y' data-type='PyObject *' data-ref="47y">y</dfn>;</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col3 ref" href="#43args" title='args' data-ref="43args">args</a>, <a class="local col4 ref" href="#44nargs" title='nargs' data-ref="44nargs">nargs</a>, <q>"divmod"</q>,</td></tr>
+<tr><th id="203">203</th><td>        <var>2</var>, <var>2</var>,</td></tr>
+<tr><th id="204">204</th><td>        &amp;<a class="local col6 ref" href="#46x" title='x' data-ref="46x">x</a>, &amp;<a class="local col7 ref" href="#47y" title='y' data-ref="47y">y</a>)) {</td></tr>
+<tr><th id="205">205</th><td>        <b>goto</b> <a class="lbl" href="#48exit" data-ref="48exit">exit</a>;</td></tr>
+<tr><th id="206">206</th><td>    }</td></tr>
+<tr><th id="207">207</th><td>    <a class="local col5 ref" href="#45return_value" title='return_value' data-ref="45return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_divmod_impl" title='builtin_divmod_impl' data-ref="builtin_divmod_impl">builtin_divmod_impl</a>(<a class="local col2 ref" href="#42module" title='module' data-ref="42module">module</a>, <a class="local col6 ref" href="#46x" title='x' data-ref="46x">x</a>, <a class="local col7 ref" href="#47y" title='y' data-ref="47y">y</a>);</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><dfn class="lbl" id="48exit" data-ref="48exit">exit</dfn>:</td></tr>
+<tr><th id="210">210</th><td>    <b>return</b> <a class="local col5 ref" href="#45return_value" title='return_value' data-ref="45return_value">return_value</a>;</td></tr>
+<tr><th id="211">211</th><td>}</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_eval__doc__[] = &quot;eval($module, source, globals=None, locals=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Evaluate the given source in the context of globals and locals.\n&quot;&quot;\n&quot;&quot;The source may be a string representing a Python expression\n&quot;&quot;or a code object as returned by compile().\n&quot;&quot;The globals must be a dictionary and locals can be any mapping,\n&quot;&quot;defaulting to the current globals and locals.\n&quot;&quot;If only globals is given, locals defaults to it.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_eval__doc__" title='builtin_eval__doc__' data-ref="builtin_eval__doc__">builtin_eval__doc__</dfn>,</td></tr>
+<tr><th id="214">214</th><td><q>"eval($module, source, globals=None, locals=None, /)\n"</q></td></tr>
+<tr><th id="215">215</th><td><q>"--\n"</q></td></tr>
+<tr><th id="216">216</th><td><q>"\n"</q></td></tr>
+<tr><th id="217">217</th><td><q>"Evaluate the given source in the context of globals and locals.\n"</q></td></tr>
+<tr><th id="218">218</th><td><q>"\n"</q></td></tr>
+<tr><th id="219">219</th><td><q>"The source may be a string representing a Python expression\n"</q></td></tr>
+<tr><th id="220">220</th><td><q>"or a code object as returned by compile().\n"</q></td></tr>
+<tr><th id="221">221</th><td><q>"The globals must be a dictionary and locals can be any mapping,\n"</q></td></tr>
+<tr><th id="222">222</th><td><q>"defaulting to the current globals and locals.\n"</q></td></tr>
+<tr><th id="223">223</th><td><q>"If only globals is given, locals defaults to it."</q>);</td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_EVAL_METHODDEF" data-ref="_M/BUILTIN_EVAL_METHODDEF">BUILTIN_EVAL_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="226">226</th><td><u>    {"eval", (PyCFunction)builtin_eval, METH_FASTCALL, builtin_eval__doc__},</u></td></tr>
+<tr><th id="227">227</th><td></td></tr>
+<tr><th id="228">228</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="229">229</th><td><a class="decl" href="../bltinmodule.c.html#builtin_eval_impl" title='builtin_eval_impl' data-ref="builtin_eval_impl" id="builtin_eval_impl">builtin_eval_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="49module" title='module' data-type='PyObject *' data-ref="49module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="50source" title='source' data-type='PyObject *' data-ref="50source">source</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51globals" title='globals' data-type='PyObject *' data-ref="51globals">globals</dfn>,</td></tr>
+<tr><th id="230">230</th><td>                  <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="52locals" title='locals' data-type='PyObject *' data-ref="52locals">locals</dfn>);</td></tr>
+<tr><th id="231">231</th><td></td></tr>
+<tr><th id="232">232</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="233">233</th><td><dfn class="decl def" id="builtin_eval" title='builtin_eval' data-ref="builtin_eval">builtin_eval</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53module" title='module' data-type='PyObject *' data-ref="53module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="54args" title='args' data-type='PyObject **' data-ref="54args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="55nargs" title='nargs' data-type='Py_ssize_t' data-ref="55nargs">nargs</dfn>)</td></tr>
+<tr><th id="234">234</th><td>{</td></tr>
+<tr><th id="235">235</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56return_value" title='return_value' data-type='PyObject *' data-ref="56return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="236">236</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="57source" title='source' data-type='PyObject *' data-ref="57source">source</dfn>;</td></tr>
+<tr><th id="237">237</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58globals" title='globals' data-type='PyObject *' data-ref="58globals">globals</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="238">238</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="59locals" title='locals' data-type='PyObject *' data-ref="59locals">locals</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="239">239</th><td></td></tr>
+<tr><th id="240">240</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col4 ref" href="#54args" title='args' data-ref="54args">args</a>, <a class="local col5 ref" href="#55nargs" title='nargs' data-ref="55nargs">nargs</a>, <q>"eval"</q>,</td></tr>
+<tr><th id="241">241</th><td>        <var>1</var>, <var>3</var>,</td></tr>
+<tr><th id="242">242</th><td>        &amp;<a class="local col7 ref" href="#57source" title='source' data-ref="57source">source</a>, &amp;<a class="local col8 ref" href="#58globals" title='globals' data-ref="58globals">globals</a>, &amp;<a class="local col9 ref" href="#59locals" title='locals' data-ref="59locals">locals</a>)) {</td></tr>
+<tr><th id="243">243</th><td>        <b>goto</b> <a class="lbl" href="#60exit" data-ref="60exit">exit</a>;</td></tr>
+<tr><th id="244">244</th><td>    }</td></tr>
+<tr><th id="245">245</th><td>    <a class="local col6 ref" href="#56return_value" title='return_value' data-ref="56return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_eval_impl" title='builtin_eval_impl' data-ref="builtin_eval_impl">builtin_eval_impl</a>(<a class="local col3 ref" href="#53module" title='module' data-ref="53module">module</a>, <a class="local col7 ref" href="#57source" title='source' data-ref="57source">source</a>, <a class="local col8 ref" href="#58globals" title='globals' data-ref="58globals">globals</a>, <a class="local col9 ref" href="#59locals" title='locals' data-ref="59locals">locals</a>);</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><dfn class="lbl" id="60exit" data-ref="60exit">exit</dfn>:</td></tr>
+<tr><th id="248">248</th><td>    <b>return</b> <a class="local col6 ref" href="#56return_value" title='return_value' data-ref="56return_value">return_value</a>;</td></tr>
+<tr><th id="249">249</th><td>}</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_exec__doc__[] = &quot;exec($module, source, globals=None, locals=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Execute the given source in the context of globals and locals.\n&quot;&quot;\n&quot;&quot;The source may be a string representing one or more Python statements\n&quot;&quot;or a code object as returned by compile().\n&quot;&quot;The globals must be a dictionary and locals can be any mapping,\n&quot;&quot;defaulting to the current globals and locals.\n&quot;&quot;If only globals is given, locals defaults to it.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_exec__doc__" title='builtin_exec__doc__' data-ref="builtin_exec__doc__">builtin_exec__doc__</dfn>,</td></tr>
+<tr><th id="252">252</th><td><q>"exec($module, source, globals=None, locals=None, /)\n"</q></td></tr>
+<tr><th id="253">253</th><td><q>"--\n"</q></td></tr>
+<tr><th id="254">254</th><td><q>"\n"</q></td></tr>
+<tr><th id="255">255</th><td><q>"Execute the given source in the context of globals and locals.\n"</q></td></tr>
+<tr><th id="256">256</th><td><q>"\n"</q></td></tr>
+<tr><th id="257">257</th><td><q>"The source may be a string representing one or more Python statements\n"</q></td></tr>
+<tr><th id="258">258</th><td><q>"or a code object as returned by compile().\n"</q></td></tr>
+<tr><th id="259">259</th><td><q>"The globals must be a dictionary and locals can be any mapping,\n"</q></td></tr>
+<tr><th id="260">260</th><td><q>"defaulting to the current globals and locals.\n"</q></td></tr>
+<tr><th id="261">261</th><td><q>"If only globals is given, locals defaults to it."</q>);</td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_EXEC_METHODDEF" data-ref="_M/BUILTIN_EXEC_METHODDEF">BUILTIN_EXEC_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="264">264</th><td><u>    {"exec", (PyCFunction)builtin_exec, METH_FASTCALL, builtin_exec__doc__},</u></td></tr>
+<tr><th id="265">265</th><td></td></tr>
+<tr><th id="266">266</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="267">267</th><td><a class="decl" href="../bltinmodule.c.html#builtin_exec_impl" title='builtin_exec_impl' data-ref="builtin_exec_impl" id="builtin_exec_impl">builtin_exec_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="61module" title='module' data-type='PyObject *' data-ref="61module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="62source" title='source' data-type='PyObject *' data-ref="62source">source</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="63globals" title='globals' data-type='PyObject *' data-ref="63globals">globals</dfn>,</td></tr>
+<tr><th id="268">268</th><td>                  <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="64locals" title='locals' data-type='PyObject *' data-ref="64locals">locals</dfn>);</td></tr>
+<tr><th id="269">269</th><td></td></tr>
+<tr><th id="270">270</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="271">271</th><td><dfn class="decl def" id="builtin_exec" title='builtin_exec' data-ref="builtin_exec">builtin_exec</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="65module" title='module' data-type='PyObject *' data-ref="65module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="66args" title='args' data-type='PyObject **' data-ref="66args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="67nargs" title='nargs' data-type='Py_ssize_t' data-ref="67nargs">nargs</dfn>)</td></tr>
+<tr><th id="272">272</th><td>{</td></tr>
+<tr><th id="273">273</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68return_value" title='return_value' data-type='PyObject *' data-ref="68return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="274">274</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="69source" title='source' data-type='PyObject *' data-ref="69source">source</dfn>;</td></tr>
+<tr><th id="275">275</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70globals" title='globals' data-type='PyObject *' data-ref="70globals">globals</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="276">276</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="71locals" title='locals' data-type='PyObject *' data-ref="71locals">locals</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="277">277</th><td></td></tr>
+<tr><th id="278">278</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col6 ref" href="#66args" title='args' data-ref="66args">args</a>, <a class="local col7 ref" href="#67nargs" title='nargs' data-ref="67nargs">nargs</a>, <q>"exec"</q>,</td></tr>
+<tr><th id="279">279</th><td>        <var>1</var>, <var>3</var>,</td></tr>
+<tr><th id="280">280</th><td>        &amp;<a class="local col9 ref" href="#69source" title='source' data-ref="69source">source</a>, &amp;<a class="local col0 ref" href="#70globals" title='globals' data-ref="70globals">globals</a>, &amp;<a class="local col1 ref" href="#71locals" title='locals' data-ref="71locals">locals</a>)) {</td></tr>
+<tr><th id="281">281</th><td>        <b>goto</b> <a class="lbl" href="#72exit" data-ref="72exit">exit</a>;</td></tr>
+<tr><th id="282">282</th><td>    }</td></tr>
+<tr><th id="283">283</th><td>    <a class="local col8 ref" href="#68return_value" title='return_value' data-ref="68return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_exec_impl" title='builtin_exec_impl' data-ref="builtin_exec_impl">builtin_exec_impl</a>(<a class="local col5 ref" href="#65module" title='module' data-ref="65module">module</a>, <a class="local col9 ref" href="#69source" title='source' data-ref="69source">source</a>, <a class="local col0 ref" href="#70globals" title='globals' data-ref="70globals">globals</a>, <a class="local col1 ref" href="#71locals" title='locals' data-ref="71locals">locals</a>);</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td><dfn class="lbl" id="72exit" data-ref="72exit">exit</dfn>:</td></tr>
+<tr><th id="286">286</th><td>    <b>return</b> <a class="local col8 ref" href="#68return_value" title='return_value' data-ref="68return_value">return_value</a>;</td></tr>
+<tr><th id="287">287</th><td>}</td></tr>
+<tr><th id="288">288</th><td></td></tr>
+<tr><th id="289">289</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_globals__doc__[] = &quot;globals($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the dictionary containing the current scope\&apos;s global variables.\n&quot;&quot;\n&quot;&quot;NOTE: Updates to this dictionary *will* affect name lookups in the current\n&quot;&quot;global scope and vice-versa.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_globals__doc__" title='builtin_globals__doc__' data-ref="builtin_globals__doc__">builtin_globals__doc__</dfn>,</td></tr>
+<tr><th id="290">290</th><td><q>"globals($module, /)\n"</q></td></tr>
+<tr><th id="291">291</th><td><q>"--\n"</q></td></tr>
+<tr><th id="292">292</th><td><q>"\n"</q></td></tr>
+<tr><th id="293">293</th><td><q>"Return the dictionary containing the current scope\'s global variables.\n"</q></td></tr>
+<tr><th id="294">294</th><td><q>"\n"</q></td></tr>
+<tr><th id="295">295</th><td><q>"NOTE: Updates to this dictionary *will* affect name lookups in the current\n"</q></td></tr>
+<tr><th id="296">296</th><td><q>"global scope and vice-versa."</q>);</td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_GLOBALS_METHODDEF" data-ref="_M/BUILTIN_GLOBALS_METHODDEF">BUILTIN_GLOBALS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="299">299</th><td><u>    {"globals", (PyCFunction)builtin_globals, METH_NOARGS, builtin_globals__doc__},</u></td></tr>
+<tr><th id="300">300</th><td></td></tr>
+<tr><th id="301">301</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="302">302</th><td><a class="decl" href="../bltinmodule.c.html#builtin_globals_impl" title='builtin_globals_impl' data-ref="builtin_globals_impl" id="builtin_globals_impl">builtin_globals_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="73module" title='module' data-type='PyObject *' data-ref="73module">module</dfn>);</td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="305">305</th><td><dfn class="decl def" id="builtin_globals" title='builtin_globals' data-ref="builtin_globals">builtin_globals</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="74module" title='module' data-type='PyObject *' data-ref="74module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="306">306</th><td>{</td></tr>
+<tr><th id="307">307</th><td>    <b>return</b> <a class="ref" href="../bltinmodule.c.html#builtin_globals_impl" title='builtin_globals_impl' data-ref="builtin_globals_impl">builtin_globals_impl</a>(<a class="local col4 ref" href="#74module" title='module' data-ref="74module">module</a>);</td></tr>
+<tr><th id="308">308</th><td>}</td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_hasattr__doc__[] = &quot;hasattr($module, obj, name, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether the object has an attribute with the given name.\n&quot;&quot;\n&quot;&quot;This is done by calling getattr(obj, name) and catching AttributeError.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_hasattr__doc__" title='builtin_hasattr__doc__' data-ref="builtin_hasattr__doc__">builtin_hasattr__doc__</dfn>,</td></tr>
+<tr><th id="311">311</th><td><q>"hasattr($module, obj, name, /)\n"</q></td></tr>
+<tr><th id="312">312</th><td><q>"--\n"</q></td></tr>
+<tr><th id="313">313</th><td><q>"\n"</q></td></tr>
+<tr><th id="314">314</th><td><q>"Return whether the object has an attribute with the given name.\n"</q></td></tr>
+<tr><th id="315">315</th><td><q>"\n"</q></td></tr>
+<tr><th id="316">316</th><td><q>"This is done by calling getattr(obj, name) and catching AttributeError."</q>);</td></tr>
+<tr><th id="317">317</th><td></td></tr>
+<tr><th id="318">318</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_HASATTR_METHODDEF" data-ref="_M/BUILTIN_HASATTR_METHODDEF">BUILTIN_HASATTR_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="319">319</th><td><u>    {"hasattr", (PyCFunction)builtin_hasattr, METH_FASTCALL, builtin_hasattr__doc__},</u></td></tr>
+<tr><th id="320">320</th><td></td></tr>
+<tr><th id="321">321</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="322">322</th><td><a class="decl" href="../bltinmodule.c.html#builtin_hasattr_impl" title='builtin_hasattr_impl' data-ref="builtin_hasattr_impl" id="builtin_hasattr_impl">builtin_hasattr_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="75module" title='module' data-type='PyObject *' data-ref="75module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="76obj" title='obj' data-type='PyObject *' data-ref="76obj">obj</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="77name" title='name' data-type='PyObject *' data-ref="77name">name</dfn>);</td></tr>
+<tr><th id="323">323</th><td></td></tr>
+<tr><th id="324">324</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="325">325</th><td><dfn class="decl def" id="builtin_hasattr" title='builtin_hasattr' data-ref="builtin_hasattr">builtin_hasattr</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="78module" title='module' data-type='PyObject *' data-ref="78module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col9 decl" id="79args" title='args' data-type='PyObject **' data-ref="79args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="80nargs" title='nargs' data-type='Py_ssize_t' data-ref="80nargs">nargs</dfn>)</td></tr>
+<tr><th id="326">326</th><td>{</td></tr>
+<tr><th id="327">327</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="81return_value" title='return_value' data-type='PyObject *' data-ref="81return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="328">328</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="82obj" title='obj' data-type='PyObject *' data-ref="82obj">obj</dfn>;</td></tr>
+<tr><th id="329">329</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="83name" title='name' data-type='PyObject *' data-ref="83name">name</dfn>;</td></tr>
+<tr><th id="330">330</th><td></td></tr>
+<tr><th id="331">331</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col9 ref" href="#79args" title='args' data-ref="79args">args</a>, <a class="local col0 ref" href="#80nargs" title='nargs' data-ref="80nargs">nargs</a>, <q>"hasattr"</q>,</td></tr>
+<tr><th id="332">332</th><td>        <var>2</var>, <var>2</var>,</td></tr>
+<tr><th id="333">333</th><td>        &amp;<a class="local col2 ref" href="#82obj" title='obj' data-ref="82obj">obj</a>, &amp;<a class="local col3 ref" href="#83name" title='name' data-ref="83name">name</a>)) {</td></tr>
+<tr><th id="334">334</th><td>        <b>goto</b> <a class="lbl" href="#84exit" data-ref="84exit">exit</a>;</td></tr>
+<tr><th id="335">335</th><td>    }</td></tr>
+<tr><th id="336">336</th><td>    <a class="local col1 ref" href="#81return_value" title='return_value' data-ref="81return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_hasattr_impl" title='builtin_hasattr_impl' data-ref="builtin_hasattr_impl">builtin_hasattr_impl</a>(<a class="local col8 ref" href="#78module" title='module' data-ref="78module">module</a>, <a class="local col2 ref" href="#82obj" title='obj' data-ref="82obj">obj</a>, <a class="local col3 ref" href="#83name" title='name' data-ref="83name">name</a>);</td></tr>
+<tr><th id="337">337</th><td></td></tr>
+<tr><th id="338">338</th><td><dfn class="lbl" id="84exit" data-ref="84exit">exit</dfn>:</td></tr>
+<tr><th id="339">339</th><td>    <b>return</b> <a class="local col1 ref" href="#81return_value" title='return_value' data-ref="81return_value">return_value</a>;</td></tr>
+<tr><th id="340">340</th><td>}</td></tr>
+<tr><th id="341">341</th><td></td></tr>
+<tr><th id="342">342</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_id__doc__[] = &quot;id($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the identity of an object.\n&quot;&quot;\n&quot;&quot;This is guaranteed to be unique among simultaneously existing objects.\n&quot;&quot;(CPython uses the object\&apos;s memory address.)&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_id__doc__" title='builtin_id__doc__' data-ref="builtin_id__doc__">builtin_id__doc__</dfn>,</td></tr>
+<tr><th id="343">343</th><td><q>"id($module, obj, /)\n"</q></td></tr>
+<tr><th id="344">344</th><td><q>"--\n"</q></td></tr>
+<tr><th id="345">345</th><td><q>"\n"</q></td></tr>
+<tr><th id="346">346</th><td><q>"Return the identity of an object.\n"</q></td></tr>
+<tr><th id="347">347</th><td><q>"\n"</q></td></tr>
+<tr><th id="348">348</th><td><q>"This is guaranteed to be unique among simultaneously existing objects.\n"</q></td></tr>
+<tr><th id="349">349</th><td><q>"(CPython uses the object\'s memory address.)"</q>);</td></tr>
+<tr><th id="350">350</th><td></td></tr>
+<tr><th id="351">351</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ID_METHODDEF" data-ref="_M/BUILTIN_ID_METHODDEF">BUILTIN_ID_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="352">352</th><td><u>    {"id", (PyCFunction)builtin_id, METH_O, builtin_id__doc__},</u></td></tr>
+<tr><th id="353">353</th><td></td></tr>
+<tr><th id="354">354</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_setattr__doc__[] = &quot;setattr($module, obj, name, value, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Sets the named attribute on the given object to the specified value.\n&quot;&quot;\n&quot;&quot;setattr(x, \&apos;y\&apos;, v) is equivalent to ``x.y = v\&apos;\&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_setattr__doc__" title='builtin_setattr__doc__' data-ref="builtin_setattr__doc__">builtin_setattr__doc__</dfn>,</td></tr>
+<tr><th id="355">355</th><td><q>"setattr($module, obj, name, value, /)\n"</q></td></tr>
+<tr><th id="356">356</th><td><q>"--\n"</q></td></tr>
+<tr><th id="357">357</th><td><q>"\n"</q></td></tr>
+<tr><th id="358">358</th><td><q>"Sets the named attribute on the given object to the specified value.\n"</q></td></tr>
+<tr><th id="359">359</th><td><q>"\n"</q></td></tr>
+<tr><th id="360">360</th><td><q>"setattr(x, \'y\', v) is equivalent to ``x.y = v\'\'"</q>);</td></tr>
+<tr><th id="361">361</th><td></td></tr>
+<tr><th id="362">362</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_SETATTR_METHODDEF" data-ref="_M/BUILTIN_SETATTR_METHODDEF">BUILTIN_SETATTR_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="363">363</th><td><u>    {"setattr", (PyCFunction)builtin_setattr, METH_FASTCALL, builtin_setattr__doc__},</u></td></tr>
+<tr><th id="364">364</th><td></td></tr>
+<tr><th id="365">365</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="366">366</th><td><a class="decl" href="../bltinmodule.c.html#builtin_setattr_impl" title='builtin_setattr_impl' data-ref="builtin_setattr_impl" id="builtin_setattr_impl">builtin_setattr_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="85module" title='module' data-type='PyObject *' data-ref="85module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="86obj" title='obj' data-type='PyObject *' data-ref="86obj">obj</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="87name" title='name' data-type='PyObject *' data-ref="87name">name</dfn>,</td></tr>
+<tr><th id="367">367</th><td>                     <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="88value" title='value' data-type='PyObject *' data-ref="88value">value</dfn>);</td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="370">370</th><td><dfn class="decl def" id="builtin_setattr" title='builtin_setattr' data-ref="builtin_setattr">builtin_setattr</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="89module" title='module' data-type='PyObject *' data-ref="89module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col0 decl" id="90args" title='args' data-type='PyObject **' data-ref="90args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="91nargs" title='nargs' data-type='Py_ssize_t' data-ref="91nargs">nargs</dfn>)</td></tr>
+<tr><th id="371">371</th><td>{</td></tr>
+<tr><th id="372">372</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="92return_value" title='return_value' data-type='PyObject *' data-ref="92return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="373">373</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="93obj" title='obj' data-type='PyObject *' data-ref="93obj">obj</dfn>;</td></tr>
+<tr><th id="374">374</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="94name" title='name' data-type='PyObject *' data-ref="94name">name</dfn>;</td></tr>
+<tr><th id="375">375</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="95value" title='value' data-type='PyObject *' data-ref="95value">value</dfn>;</td></tr>
+<tr><th id="376">376</th><td></td></tr>
+<tr><th id="377">377</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col0 ref" href="#90args" title='args' data-ref="90args">args</a>, <a class="local col1 ref" href="#91nargs" title='nargs' data-ref="91nargs">nargs</a>, <q>"setattr"</q>,</td></tr>
+<tr><th id="378">378</th><td>        <var>3</var>, <var>3</var>,</td></tr>
+<tr><th id="379">379</th><td>        &amp;<a class="local col3 ref" href="#93obj" title='obj' data-ref="93obj">obj</a>, &amp;<a class="local col4 ref" href="#94name" title='name' data-ref="94name">name</a>, &amp;<a class="local col5 ref" href="#95value" title='value' data-ref="95value">value</a>)) {</td></tr>
+<tr><th id="380">380</th><td>        <b>goto</b> <a class="lbl" href="#96exit" data-ref="96exit">exit</a>;</td></tr>
+<tr><th id="381">381</th><td>    }</td></tr>
+<tr><th id="382">382</th><td>    <a class="local col2 ref" href="#92return_value" title='return_value' data-ref="92return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_setattr_impl" title='builtin_setattr_impl' data-ref="builtin_setattr_impl">builtin_setattr_impl</a>(<a class="local col9 ref" href="#89module" title='module' data-ref="89module">module</a>, <a class="local col3 ref" href="#93obj" title='obj' data-ref="93obj">obj</a>, <a class="local col4 ref" href="#94name" title='name' data-ref="94name">name</a>, <a class="local col5 ref" href="#95value" title='value' data-ref="95value">value</a>);</td></tr>
+<tr><th id="383">383</th><td></td></tr>
+<tr><th id="384">384</th><td><dfn class="lbl" id="96exit" data-ref="96exit">exit</dfn>:</td></tr>
+<tr><th id="385">385</th><td>    <b>return</b> <a class="local col2 ref" href="#92return_value" title='return_value' data-ref="92return_value">return_value</a>;</td></tr>
+<tr><th id="386">386</th><td>}</td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_delattr__doc__[] = &quot;delattr($module, obj, name, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Deletes the named attribute from the given object.\n&quot;&quot;\n&quot;&quot;delattr(x, \&apos;y\&apos;) is equivalent to ``del x.y\&apos;\&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_delattr__doc__" title='builtin_delattr__doc__' data-ref="builtin_delattr__doc__">builtin_delattr__doc__</dfn>,</td></tr>
+<tr><th id="389">389</th><td><q>"delattr($module, obj, name, /)\n"</q></td></tr>
+<tr><th id="390">390</th><td><q>"--\n"</q></td></tr>
+<tr><th id="391">391</th><td><q>"\n"</q></td></tr>
+<tr><th id="392">392</th><td><q>"Deletes the named attribute from the given object.\n"</q></td></tr>
+<tr><th id="393">393</th><td><q>"\n"</q></td></tr>
+<tr><th id="394">394</th><td><q>"delattr(x, \'y\') is equivalent to ``del x.y\'\'"</q>);</td></tr>
+<tr><th id="395">395</th><td></td></tr>
+<tr><th id="396">396</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_DELATTR_METHODDEF" data-ref="_M/BUILTIN_DELATTR_METHODDEF">BUILTIN_DELATTR_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="397">397</th><td><u>    {"delattr", (PyCFunction)builtin_delattr, METH_FASTCALL, builtin_delattr__doc__},</u></td></tr>
+<tr><th id="398">398</th><td></td></tr>
+<tr><th id="399">399</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="400">400</th><td><a class="decl" href="../bltinmodule.c.html#builtin_delattr_impl" title='builtin_delattr_impl' data-ref="builtin_delattr_impl" id="builtin_delattr_impl">builtin_delattr_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="97module" title='module' data-type='PyObject *' data-ref="97module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="98obj" title='obj' data-type='PyObject *' data-ref="98obj">obj</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="99name" title='name' data-type='PyObject *' data-ref="99name">name</dfn>);</td></tr>
+<tr><th id="401">401</th><td></td></tr>
+<tr><th id="402">402</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="403">403</th><td><dfn class="decl def" id="builtin_delattr" title='builtin_delattr' data-ref="builtin_delattr">builtin_delattr</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="100module" title='module' data-type='PyObject *' data-ref="100module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col1 decl" id="101args" title='args' data-type='PyObject **' data-ref="101args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="102nargs" title='nargs' data-type='Py_ssize_t' data-ref="102nargs">nargs</dfn>)</td></tr>
+<tr><th id="404">404</th><td>{</td></tr>
+<tr><th id="405">405</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="103return_value" title='return_value' data-type='PyObject *' data-ref="103return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="406">406</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="104obj" title='obj' data-type='PyObject *' data-ref="104obj">obj</dfn>;</td></tr>
+<tr><th id="407">407</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="105name" title='name' data-type='PyObject *' data-ref="105name">name</dfn>;</td></tr>
+<tr><th id="408">408</th><td></td></tr>
+<tr><th id="409">409</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col1 ref" href="#101args" title='args' data-ref="101args">args</a>, <a class="local col2 ref" href="#102nargs" title='nargs' data-ref="102nargs">nargs</a>, <q>"delattr"</q>,</td></tr>
+<tr><th id="410">410</th><td>        <var>2</var>, <var>2</var>,</td></tr>
+<tr><th id="411">411</th><td>        &amp;<a class="local col4 ref" href="#104obj" title='obj' data-ref="104obj">obj</a>, &amp;<a class="local col5 ref" href="#105name" title='name' data-ref="105name">name</a>)) {</td></tr>
+<tr><th id="412">412</th><td>        <b>goto</b> <a class="lbl" href="#106exit" data-ref="106exit">exit</a>;</td></tr>
+<tr><th id="413">413</th><td>    }</td></tr>
+<tr><th id="414">414</th><td>    <a class="local col3 ref" href="#103return_value" title='return_value' data-ref="103return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_delattr_impl" title='builtin_delattr_impl' data-ref="builtin_delattr_impl">builtin_delattr_impl</a>(<a class="local col0 ref" href="#100module" title='module' data-ref="100module">module</a>, <a class="local col4 ref" href="#104obj" title='obj' data-ref="104obj">obj</a>, <a class="local col5 ref" href="#105name" title='name' data-ref="105name">name</a>);</td></tr>
+<tr><th id="415">415</th><td></td></tr>
+<tr><th id="416">416</th><td><dfn class="lbl" id="106exit" data-ref="106exit">exit</dfn>:</td></tr>
+<tr><th id="417">417</th><td>    <b>return</b> <a class="local col3 ref" href="#103return_value" title='return_value' data-ref="103return_value">return_value</a>;</td></tr>
+<tr><th id="418">418</th><td>}</td></tr>
+<tr><th id="419">419</th><td></td></tr>
+<tr><th id="420">420</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_hash__doc__[] = &quot;hash($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the hash value for the given object.\n&quot;&quot;\n&quot;&quot;Two objects that compare equal must also have the same hash value, but the\n&quot;&quot;reverse is not necessarily true.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_hash__doc__" title='builtin_hash__doc__' data-ref="builtin_hash__doc__">builtin_hash__doc__</dfn>,</td></tr>
+<tr><th id="421">421</th><td><q>"hash($module, obj, /)\n"</q></td></tr>
+<tr><th id="422">422</th><td><q>"--\n"</q></td></tr>
+<tr><th id="423">423</th><td><q>"\n"</q></td></tr>
+<tr><th id="424">424</th><td><q>"Return the hash value for the given object.\n"</q></td></tr>
+<tr><th id="425">425</th><td><q>"\n"</q></td></tr>
+<tr><th id="426">426</th><td><q>"Two objects that compare equal must also have the same hash value, but the\n"</q></td></tr>
+<tr><th id="427">427</th><td><q>"reverse is not necessarily true."</q>);</td></tr>
+<tr><th id="428">428</th><td></td></tr>
+<tr><th id="429">429</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_HASH_METHODDEF" data-ref="_M/BUILTIN_HASH_METHODDEF">BUILTIN_HASH_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="430">430</th><td><u>    {"hash", (PyCFunction)builtin_hash, METH_O, builtin_hash__doc__},</u></td></tr>
+<tr><th id="431">431</th><td></td></tr>
+<tr><th id="432">432</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_hex__doc__[] = &quot;hex($module, number, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the hexadecimal representation of an integer.\n&quot;&quot;\n&quot;&quot;   &gt;&gt;&gt; hex(12648430)\n&quot;&quot;   \&apos;0xc0ffee\&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_hex__doc__" title='builtin_hex__doc__' data-ref="builtin_hex__doc__">builtin_hex__doc__</dfn>,</td></tr>
+<tr><th id="433">433</th><td><q>"hex($module, number, /)\n"</q></td></tr>
+<tr><th id="434">434</th><td><q>"--\n"</q></td></tr>
+<tr><th id="435">435</th><td><q>"\n"</q></td></tr>
+<tr><th id="436">436</th><td><q>"Return the hexadecimal representation of an integer.\n"</q></td></tr>
+<tr><th id="437">437</th><td><q>"\n"</q></td></tr>
+<tr><th id="438">438</th><td><q>"   &gt;&gt;&gt; hex(12648430)\n"</q></td></tr>
+<tr><th id="439">439</th><td><q>"   \'0xc0ffee\'"</q>);</td></tr>
+<tr><th id="440">440</th><td></td></tr>
+<tr><th id="441">441</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_HEX_METHODDEF" data-ref="_M/BUILTIN_HEX_METHODDEF">BUILTIN_HEX_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="442">442</th><td><u>    {"hex", (PyCFunction)builtin_hex, METH_O, builtin_hex__doc__},</u></td></tr>
+<tr><th id="443">443</th><td></td></tr>
+<tr><th id="444">444</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_len__doc__[] = &quot;len($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the number of items in a container.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_len__doc__" title='builtin_len__doc__' data-ref="builtin_len__doc__">builtin_len__doc__</dfn>,</td></tr>
+<tr><th id="445">445</th><td><q>"len($module, obj, /)\n"</q></td></tr>
+<tr><th id="446">446</th><td><q>"--\n"</q></td></tr>
+<tr><th id="447">447</th><td><q>"\n"</q></td></tr>
+<tr><th id="448">448</th><td><q>"Return the number of items in a container."</q>);</td></tr>
+<tr><th id="449">449</th><td></td></tr>
+<tr><th id="450">450</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_LEN_METHODDEF" data-ref="_M/BUILTIN_LEN_METHODDEF">BUILTIN_LEN_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="451">451</th><td><u>    {"len", (PyCFunction)builtin_len, METH_O, builtin_len__doc__},</u></td></tr>
+<tr><th id="452">452</th><td></td></tr>
+<tr><th id="453">453</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_locals__doc__[] = &quot;locals($module, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return a dictionary containing the current scope\&apos;s local variables.\n&quot;&quot;\n&quot;&quot;NOTE: Whether or not updates to this dictionary will affect name lookups in\n&quot;&quot;the local scope and vice-versa is *implementation dependent* and not\n&quot;&quot;covered by any backwards compatibility guarantees.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_locals__doc__" title='builtin_locals__doc__' data-ref="builtin_locals__doc__">builtin_locals__doc__</dfn>,</td></tr>
+<tr><th id="454">454</th><td><q>"locals($module, /)\n"</q></td></tr>
+<tr><th id="455">455</th><td><q>"--\n"</q></td></tr>
+<tr><th id="456">456</th><td><q>"\n"</q></td></tr>
+<tr><th id="457">457</th><td><q>"Return a dictionary containing the current scope\'s local variables.\n"</q></td></tr>
+<tr><th id="458">458</th><td><q>"\n"</q></td></tr>
+<tr><th id="459">459</th><td><q>"NOTE: Whether or not updates to this dictionary will affect name lookups in\n"</q></td></tr>
+<tr><th id="460">460</th><td><q>"the local scope and vice-versa is *implementation dependent* and not\n"</q></td></tr>
+<tr><th id="461">461</th><td><q>"covered by any backwards compatibility guarantees."</q>);</td></tr>
+<tr><th id="462">462</th><td></td></tr>
+<tr><th id="463">463</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_LOCALS_METHODDEF" data-ref="_M/BUILTIN_LOCALS_METHODDEF">BUILTIN_LOCALS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="464">464</th><td><u>    {"locals", (PyCFunction)builtin_locals, METH_NOARGS, builtin_locals__doc__},</u></td></tr>
+<tr><th id="465">465</th><td></td></tr>
+<tr><th id="466">466</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="467">467</th><td><a class="decl" href="../bltinmodule.c.html#builtin_locals_impl" title='builtin_locals_impl' data-ref="builtin_locals_impl" id="builtin_locals_impl">builtin_locals_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="107module" title='module' data-type='PyObject *' data-ref="107module">module</dfn>);</td></tr>
+<tr><th id="468">468</th><td></td></tr>
+<tr><th id="469">469</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="470">470</th><td><dfn class="decl def" id="builtin_locals" title='builtin_locals' data-ref="builtin_locals">builtin_locals</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="108module" title='module' data-type='PyObject *' data-ref="108module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="471">471</th><td>{</td></tr>
+<tr><th id="472">472</th><td>    <b>return</b> <a class="ref" href="../bltinmodule.c.html#builtin_locals_impl" title='builtin_locals_impl' data-ref="builtin_locals_impl">builtin_locals_impl</a>(<a class="local col8 ref" href="#108module" title='module' data-ref="108module">module</a>);</td></tr>
+<tr><th id="473">473</th><td>}</td></tr>
+<tr><th id="474">474</th><td></td></tr>
+<tr><th id="475">475</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_oct__doc__[] = &quot;oct($module, number, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the octal representation of an integer.\n&quot;&quot;\n&quot;&quot;   &gt;&gt;&gt; oct(342391)\n&quot;&quot;   \&apos;0o1234567\&apos;&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_oct__doc__" title='builtin_oct__doc__' data-ref="builtin_oct__doc__">builtin_oct__doc__</dfn>,</td></tr>
+<tr><th id="476">476</th><td><q>"oct($module, number, /)\n"</q></td></tr>
+<tr><th id="477">477</th><td><q>"--\n"</q></td></tr>
+<tr><th id="478">478</th><td><q>"\n"</q></td></tr>
+<tr><th id="479">479</th><td><q>"Return the octal representation of an integer.\n"</q></td></tr>
+<tr><th id="480">480</th><td><q>"\n"</q></td></tr>
+<tr><th id="481">481</th><td><q>"   &gt;&gt;&gt; oct(342391)\n"</q></td></tr>
+<tr><th id="482">482</th><td><q>"   \'0o1234567\'"</q>);</td></tr>
+<tr><th id="483">483</th><td></td></tr>
+<tr><th id="484">484</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_OCT_METHODDEF" data-ref="_M/BUILTIN_OCT_METHODDEF">BUILTIN_OCT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="485">485</th><td><u>    {"oct", (PyCFunction)builtin_oct, METH_O, builtin_oct__doc__},</u></td></tr>
+<tr><th id="486">486</th><td></td></tr>
+<tr><th id="487">487</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_ord__doc__[] = &quot;ord($module, c, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the Unicode code point for a one-character string.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_ord__doc__" title='builtin_ord__doc__' data-ref="builtin_ord__doc__">builtin_ord__doc__</dfn>,</td></tr>
+<tr><th id="488">488</th><td><q>"ord($module, c, /)\n"</q></td></tr>
+<tr><th id="489">489</th><td><q>"--\n"</q></td></tr>
+<tr><th id="490">490</th><td><q>"\n"</q></td></tr>
+<tr><th id="491">491</th><td><q>"Return the Unicode code point for a one-character string."</q>);</td></tr>
+<tr><th id="492">492</th><td></td></tr>
+<tr><th id="493">493</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ORD_METHODDEF" data-ref="_M/BUILTIN_ORD_METHODDEF">BUILTIN_ORD_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="494">494</th><td><u>    {"ord", (PyCFunction)builtin_ord, METH_O, builtin_ord__doc__},</u></td></tr>
+<tr><th id="495">495</th><td></td></tr>
+<tr><th id="496">496</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_pow__doc__[] = &quot;pow($module, x, y, z=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Equivalent to x**y (with two arguments) or x**y % z (with three arguments)\n&quot;&quot;\n&quot;&quot;Some types, such as ints, are able to use a more efficient algorithm when\n&quot;&quot;invoked using the three argument form.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_pow__doc__" title='builtin_pow__doc__' data-ref="builtin_pow__doc__">builtin_pow__doc__</dfn>,</td></tr>
+<tr><th id="497">497</th><td><q>"pow($module, x, y, z=None, /)\n"</q></td></tr>
+<tr><th id="498">498</th><td><q>"--\n"</q></td></tr>
+<tr><th id="499">499</th><td><q>"\n"</q></td></tr>
+<tr><th id="500">500</th><td><q>"Equivalent to x**y (with two arguments) or x**y % z (with three arguments)\n"</q></td></tr>
+<tr><th id="501">501</th><td><q>"\n"</q></td></tr>
+<tr><th id="502">502</th><td><q>"Some types, such as ints, are able to use a more efficient algorithm when\n"</q></td></tr>
+<tr><th id="503">503</th><td><q>"invoked using the three argument form."</q>);</td></tr>
+<tr><th id="504">504</th><td></td></tr>
+<tr><th id="505">505</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_POW_METHODDEF" data-ref="_M/BUILTIN_POW_METHODDEF">BUILTIN_POW_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="506">506</th><td><u>    {"pow", (PyCFunction)builtin_pow, METH_FASTCALL, builtin_pow__doc__},</u></td></tr>
+<tr><th id="507">507</th><td></td></tr>
+<tr><th id="508">508</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="509">509</th><td><a class="decl" href="../bltinmodule.c.html#builtin_pow_impl" title='builtin_pow_impl' data-ref="builtin_pow_impl" id="builtin_pow_impl">builtin_pow_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="109module" title='module' data-type='PyObject *' data-ref="109module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="110x" title='x' data-type='PyObject *' data-ref="110x">x</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="111y" title='y' data-type='PyObject *' data-ref="111y">y</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="112z" title='z' data-type='PyObject *' data-ref="112z">z</dfn>);</td></tr>
+<tr><th id="510">510</th><td></td></tr>
+<tr><th id="511">511</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="512">512</th><td><dfn class="decl def" id="builtin_pow" title='builtin_pow' data-ref="builtin_pow">builtin_pow</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="113module" title='module' data-type='PyObject *' data-ref="113module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="114args" title='args' data-type='PyObject **' data-ref="114args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="115nargs" title='nargs' data-type='Py_ssize_t' data-ref="115nargs">nargs</dfn>)</td></tr>
+<tr><th id="513">513</th><td>{</td></tr>
+<tr><th id="514">514</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="116return_value" title='return_value' data-type='PyObject *' data-ref="116return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="515">515</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="117x" title='x' data-type='PyObject *' data-ref="117x">x</dfn>;</td></tr>
+<tr><th id="516">516</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="118y" title='y' data-type='PyObject *' data-ref="118y">y</dfn>;</td></tr>
+<tr><th id="517">517</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="119z" title='z' data-type='PyObject *' data-ref="119z">z</dfn> = <a class="macro" href="../../Include/object.h.html#910" title="(&amp;_Py_NoneStruct)" data-ref="_M/Py_None">Py_None</a>;</td></tr>
+<tr><th id="518">518</th><td></td></tr>
+<tr><th id="519">519</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col4 ref" href="#114args" title='args' data-ref="114args">args</a>, <a class="local col5 ref" href="#115nargs" title='nargs' data-ref="115nargs">nargs</a>, <q>"pow"</q>,</td></tr>
+<tr><th id="520">520</th><td>        <var>2</var>, <var>3</var>,</td></tr>
+<tr><th id="521">521</th><td>        &amp;<a class="local col7 ref" href="#117x" title='x' data-ref="117x">x</a>, &amp;<a class="local col8 ref" href="#118y" title='y' data-ref="118y">y</a>, &amp;<a class="local col9 ref" href="#119z" title='z' data-ref="119z">z</a>)) {</td></tr>
+<tr><th id="522">522</th><td>        <b>goto</b> <a class="lbl" href="#120exit" data-ref="120exit">exit</a>;</td></tr>
+<tr><th id="523">523</th><td>    }</td></tr>
+<tr><th id="524">524</th><td>    <a class="local col6 ref" href="#116return_value" title='return_value' data-ref="116return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_pow_impl" title='builtin_pow_impl' data-ref="builtin_pow_impl">builtin_pow_impl</a>(<a class="local col3 ref" href="#113module" title='module' data-ref="113module">module</a>, <a class="local col7 ref" href="#117x" title='x' data-ref="117x">x</a>, <a class="local col8 ref" href="#118y" title='y' data-ref="118y">y</a>, <a class="local col9 ref" href="#119z" title='z' data-ref="119z">z</a>);</td></tr>
+<tr><th id="525">525</th><td></td></tr>
+<tr><th id="526">526</th><td><dfn class="lbl" id="120exit" data-ref="120exit">exit</dfn>:</td></tr>
+<tr><th id="527">527</th><td>    <b>return</b> <a class="local col6 ref" href="#116return_value" title='return_value' data-ref="116return_value">return_value</a>;</td></tr>
+<tr><th id="528">528</th><td>}</td></tr>
+<tr><th id="529">529</th><td></td></tr>
+<tr><th id="530">530</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_input__doc__[] = &quot;input($module, prompt=None, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Read a string from standard input.  The trailing newline is stripped.\n&quot;&quot;\n&quot;&quot;The prompt string, if given, is printed to standard output without a\n&quot;&quot;trailing newline before reading input.\n&quot;&quot;\n&quot;&quot;If the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.\n&quot;&quot;On *nix systems, readline is used if available.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_input__doc__" title='builtin_input__doc__' data-ref="builtin_input__doc__">builtin_input__doc__</dfn>,</td></tr>
+<tr><th id="531">531</th><td><q>"input($module, prompt=None, /)\n"</q></td></tr>
+<tr><th id="532">532</th><td><q>"--\n"</q></td></tr>
+<tr><th id="533">533</th><td><q>"\n"</q></td></tr>
+<tr><th id="534">534</th><td><q>"Read a string from standard input.  The trailing newline is stripped.\n"</q></td></tr>
+<tr><th id="535">535</th><td><q>"\n"</q></td></tr>
+<tr><th id="536">536</th><td><q>"The prompt string, if given, is printed to standard output without a\n"</q></td></tr>
+<tr><th id="537">537</th><td><q>"trailing newline before reading input.\n"</q></td></tr>
+<tr><th id="538">538</th><td><q>"\n"</q></td></tr>
+<tr><th id="539">539</th><td><q>"If the user hits EOF (*nix: Ctrl-D, Windows: Ctrl-Z+Return), raise EOFError.\n"</q></td></tr>
+<tr><th id="540">540</th><td><q>"On *nix systems, readline is used if available."</q>);</td></tr>
+<tr><th id="541">541</th><td></td></tr>
+<tr><th id="542">542</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_INPUT_METHODDEF" data-ref="_M/BUILTIN_INPUT_METHODDEF">BUILTIN_INPUT_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="543">543</th><td><u>    {"input", (PyCFunction)builtin_input, METH_FASTCALL, builtin_input__doc__},</u></td></tr>
+<tr><th id="544">544</th><td></td></tr>
+<tr><th id="545">545</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="546">546</th><td><a class="decl" href="../bltinmodule.c.html#builtin_input_impl" title='builtin_input_impl' data-ref="builtin_input_impl" id="builtin_input_impl">builtin_input_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="121module" title='module' data-type='PyObject *' data-ref="121module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="122prompt" title='prompt' data-type='PyObject *' data-ref="122prompt">prompt</dfn>);</td></tr>
+<tr><th id="547">547</th><td></td></tr>
+<tr><th id="548">548</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="549">549</th><td><dfn class="decl def" id="builtin_input" title='builtin_input' data-ref="builtin_input">builtin_input</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="123module" title='module' data-type='PyObject *' data-ref="123module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="124args" title='args' data-type='PyObject **' data-ref="124args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="125nargs" title='nargs' data-type='Py_ssize_t' data-ref="125nargs">nargs</dfn>)</td></tr>
+<tr><th id="550">550</th><td>{</td></tr>
+<tr><th id="551">551</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="126return_value" title='return_value' data-type='PyObject *' data-ref="126return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="552">552</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="127prompt" title='prompt' data-type='PyObject *' data-ref="127prompt">prompt</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="553">553</th><td></td></tr>
+<tr><th id="554">554</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col4 ref" href="#124args" title='args' data-ref="124args">args</a>, <a class="local col5 ref" href="#125nargs" title='nargs' data-ref="125nargs">nargs</a>, <q>"input"</q>,</td></tr>
+<tr><th id="555">555</th><td>        <var>0</var>, <var>1</var>,</td></tr>
+<tr><th id="556">556</th><td>        &amp;<a class="local col7 ref" href="#127prompt" title='prompt' data-ref="127prompt">prompt</a>)) {</td></tr>
+<tr><th id="557">557</th><td>        <b>goto</b> <a class="lbl" href="#128exit" data-ref="128exit">exit</a>;</td></tr>
+<tr><th id="558">558</th><td>    }</td></tr>
+<tr><th id="559">559</th><td>    <a class="local col6 ref" href="#126return_value" title='return_value' data-ref="126return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_input_impl" title='builtin_input_impl' data-ref="builtin_input_impl">builtin_input_impl</a>(<a class="local col3 ref" href="#123module" title='module' data-ref="123module">module</a>, <a class="local col7 ref" href="#127prompt" title='prompt' data-ref="127prompt">prompt</a>);</td></tr>
+<tr><th id="560">560</th><td></td></tr>
+<tr><th id="561">561</th><td><dfn class="lbl" id="128exit" data-ref="128exit">exit</dfn>:</td></tr>
+<tr><th id="562">562</th><td>    <b>return</b> <a class="local col6 ref" href="#126return_value" title='return_value' data-ref="126return_value">return_value</a>;</td></tr>
+<tr><th id="563">563</th><td>}</td></tr>
+<tr><th id="564">564</th><td></td></tr>
+<tr><th id="565">565</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_repr__doc__[] = &quot;repr($module, obj, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the canonical string representation of the object.\n&quot;&quot;\n&quot;&quot;For many object types, including most builtins, eval(repr(obj)) == obj.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_repr__doc__" title='builtin_repr__doc__' data-ref="builtin_repr__doc__">builtin_repr__doc__</dfn>,</td></tr>
+<tr><th id="566">566</th><td><q>"repr($module, obj, /)\n"</q></td></tr>
+<tr><th id="567">567</th><td><q>"--\n"</q></td></tr>
+<tr><th id="568">568</th><td><q>"\n"</q></td></tr>
+<tr><th id="569">569</th><td><q>"Return the canonical string representation of the object.\n"</q></td></tr>
+<tr><th id="570">570</th><td><q>"\n"</q></td></tr>
+<tr><th id="571">571</th><td><q>"For many object types, including most builtins, eval(repr(obj)) == obj."</q>);</td></tr>
+<tr><th id="572">572</th><td></td></tr>
+<tr><th id="573">573</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_REPR_METHODDEF" data-ref="_M/BUILTIN_REPR_METHODDEF">BUILTIN_REPR_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="574">574</th><td><u>    {"repr", (PyCFunction)builtin_repr, METH_O, builtin_repr__doc__},</u></td></tr>
+<tr><th id="575">575</th><td></td></tr>
+<tr><th id="576">576</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_sum__doc__[] = &quot;sum($module, iterable, start=0, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the sum of a \&apos;start\&apos; value (default: 0) plus an iterable of numbers\n&quot;&quot;\n&quot;&quot;When the iterable is empty, return the start value.\n&quot;&quot;This function is intended specifically for use with numeric values and may\n&quot;&quot;reject non-numeric types.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_sum__doc__" title='builtin_sum__doc__' data-ref="builtin_sum__doc__">builtin_sum__doc__</dfn>,</td></tr>
+<tr><th id="577">577</th><td><q>"sum($module, iterable, start=0, /)\n"</q></td></tr>
+<tr><th id="578">578</th><td><q>"--\n"</q></td></tr>
+<tr><th id="579">579</th><td><q>"\n"</q></td></tr>
+<tr><th id="580">580</th><td><q>"Return the sum of a \'start\' value (default: 0) plus an iterable of numbers\n"</q></td></tr>
+<tr><th id="581">581</th><td><q>"\n"</q></td></tr>
+<tr><th id="582">582</th><td><q>"When the iterable is empty, return the start value.\n"</q></td></tr>
+<tr><th id="583">583</th><td><q>"This function is intended specifically for use with numeric values and may\n"</q></td></tr>
+<tr><th id="584">584</th><td><q>"reject non-numeric types."</q>);</td></tr>
+<tr><th id="585">585</th><td></td></tr>
+<tr><th id="586">586</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_SUM_METHODDEF" data-ref="_M/BUILTIN_SUM_METHODDEF">BUILTIN_SUM_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="587">587</th><td><u>    {"sum", (PyCFunction)builtin_sum, METH_FASTCALL, builtin_sum__doc__},</u></td></tr>
+<tr><th id="588">588</th><td></td></tr>
+<tr><th id="589">589</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="590">590</th><td><a class="decl" href="../bltinmodule.c.html#builtin_sum_impl" title='builtin_sum_impl' data-ref="builtin_sum_impl" id="builtin_sum_impl">builtin_sum_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="129module" title='module' data-type='PyObject *' data-ref="129module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="130iterable" title='iterable' data-type='PyObject *' data-ref="130iterable">iterable</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="131start" title='start' data-type='PyObject *' data-ref="131start">start</dfn>);</td></tr>
+<tr><th id="591">591</th><td></td></tr>
+<tr><th id="592">592</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="593">593</th><td><dfn class="decl def" id="builtin_sum" title='builtin_sum' data-ref="builtin_sum">builtin_sum</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="132module" title='module' data-type='PyObject *' data-ref="132module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="133args" title='args' data-type='PyObject **' data-ref="133args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="134nargs" title='nargs' data-type='Py_ssize_t' data-ref="134nargs">nargs</dfn>)</td></tr>
+<tr><th id="594">594</th><td>{</td></tr>
+<tr><th id="595">595</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="135return_value" title='return_value' data-type='PyObject *' data-ref="135return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="596">596</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="136iterable" title='iterable' data-type='PyObject *' data-ref="136iterable">iterable</dfn>;</td></tr>
+<tr><th id="597">597</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="137start" title='start' data-type='PyObject *' data-ref="137start">start</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="598">598</th><td></td></tr>
+<tr><th id="599">599</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col3 ref" href="#133args" title='args' data-ref="133args">args</a>, <a class="local col4 ref" href="#134nargs" title='nargs' data-ref="134nargs">nargs</a>, <q>"sum"</q>,</td></tr>
+<tr><th id="600">600</th><td>        <var>1</var>, <var>2</var>,</td></tr>
+<tr><th id="601">601</th><td>        &amp;<a class="local col6 ref" href="#136iterable" title='iterable' data-ref="136iterable">iterable</a>, &amp;<a class="local col7 ref" href="#137start" title='start' data-ref="137start">start</a>)) {</td></tr>
+<tr><th id="602">602</th><td>        <b>goto</b> <a class="lbl" href="#138exit" data-ref="138exit">exit</a>;</td></tr>
+<tr><th id="603">603</th><td>    }</td></tr>
+<tr><th id="604">604</th><td>    <a class="local col5 ref" href="#135return_value" title='return_value' data-ref="135return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_sum_impl" title='builtin_sum_impl' data-ref="builtin_sum_impl">builtin_sum_impl</a>(<a class="local col2 ref" href="#132module" title='module' data-ref="132module">module</a>, <a class="local col6 ref" href="#136iterable" title='iterable' data-ref="136iterable">iterable</a>, <a class="local col7 ref" href="#137start" title='start' data-ref="137start">start</a>);</td></tr>
+<tr><th id="605">605</th><td></td></tr>
+<tr><th id="606">606</th><td><dfn class="lbl" id="138exit" data-ref="138exit">exit</dfn>:</td></tr>
+<tr><th id="607">607</th><td>    <b>return</b> <a class="local col5 ref" href="#135return_value" title='return_value' data-ref="135return_value">return_value</a>;</td></tr>
+<tr><th id="608">608</th><td>}</td></tr>
+<tr><th id="609">609</th><td></td></tr>
+<tr><th id="610">610</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_isinstance__doc__[] = &quot;isinstance($module, obj, class_or_tuple, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether an object is an instance of a class or of a subclass thereof.\n&quot;&quot;\n&quot;&quot;A tuple, as in ``isinstance(x, (A, B, ...))``, may be given as the target to\n&quot;&quot;check against. This is equivalent to ``isinstance(x, A) or isinstance(x, B)\n&quot;&quot;or ...`` etc.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_isinstance__doc__" title='builtin_isinstance__doc__' data-ref="builtin_isinstance__doc__">builtin_isinstance__doc__</dfn>,</td></tr>
+<tr><th id="611">611</th><td><q>"isinstance($module, obj, class_or_tuple, /)\n"</q></td></tr>
+<tr><th id="612">612</th><td><q>"--\n"</q></td></tr>
+<tr><th id="613">613</th><td><q>"\n"</q></td></tr>
+<tr><th id="614">614</th><td><q>"Return whether an object is an instance of a class or of a subclass thereof.\n"</q></td></tr>
+<tr><th id="615">615</th><td><q>"\n"</q></td></tr>
+<tr><th id="616">616</th><td><q>"A tuple, as in ``isinstance(x, (A, B, ...))``, may be given as the target to\n"</q></td></tr>
+<tr><th id="617">617</th><td><q>"check against. This is equivalent to ``isinstance(x, A) or isinstance(x, B)\n"</q></td></tr>
+<tr><th id="618">618</th><td><q>"or ...`` etc."</q>);</td></tr>
+<tr><th id="619">619</th><td></td></tr>
+<tr><th id="620">620</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ISINSTANCE_METHODDEF" data-ref="_M/BUILTIN_ISINSTANCE_METHODDEF">BUILTIN_ISINSTANCE_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="621">621</th><td><u>    {"isinstance", (PyCFunction)builtin_isinstance, METH_FASTCALL, builtin_isinstance__doc__},</u></td></tr>
+<tr><th id="622">622</th><td></td></tr>
+<tr><th id="623">623</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="624">624</th><td><a class="decl" href="../bltinmodule.c.html#builtin_isinstance_impl" title='builtin_isinstance_impl' data-ref="builtin_isinstance_impl" id="builtin_isinstance_impl">builtin_isinstance_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="139module" title='module' data-type='PyObject *' data-ref="139module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="140obj" title='obj' data-type='PyObject *' data-ref="140obj">obj</dfn>,</td></tr>
+<tr><th id="625">625</th><td>                        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="141class_or_tuple" title='class_or_tuple' data-type='PyObject *' data-ref="141class_or_tuple">class_or_tuple</dfn>);</td></tr>
+<tr><th id="626">626</th><td></td></tr>
+<tr><th id="627">627</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="628">628</th><td><dfn class="decl def" id="builtin_isinstance" title='builtin_isinstance' data-ref="builtin_isinstance">builtin_isinstance</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="142module" title='module' data-type='PyObject *' data-ref="142module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="143args" title='args' data-type='PyObject **' data-ref="143args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="144nargs" title='nargs' data-type='Py_ssize_t' data-ref="144nargs">nargs</dfn>)</td></tr>
+<tr><th id="629">629</th><td>{</td></tr>
+<tr><th id="630">630</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="145return_value" title='return_value' data-type='PyObject *' data-ref="145return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="631">631</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="146obj" title='obj' data-type='PyObject *' data-ref="146obj">obj</dfn>;</td></tr>
+<tr><th id="632">632</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="147class_or_tuple" title='class_or_tuple' data-type='PyObject *' data-ref="147class_or_tuple">class_or_tuple</dfn>;</td></tr>
+<tr><th id="633">633</th><td></td></tr>
+<tr><th id="634">634</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col3 ref" href="#143args" title='args' data-ref="143args">args</a>, <a class="local col4 ref" href="#144nargs" title='nargs' data-ref="144nargs">nargs</a>, <q>"isinstance"</q>,</td></tr>
+<tr><th id="635">635</th><td>        <var>2</var>, <var>2</var>,</td></tr>
+<tr><th id="636">636</th><td>        &amp;<a class="local col6 ref" href="#146obj" title='obj' data-ref="146obj">obj</a>, &amp;<a class="local col7 ref" href="#147class_or_tuple" title='class_or_tuple' data-ref="147class_or_tuple">class_or_tuple</a>)) {</td></tr>
+<tr><th id="637">637</th><td>        <b>goto</b> <a class="lbl" href="#148exit" data-ref="148exit">exit</a>;</td></tr>
+<tr><th id="638">638</th><td>    }</td></tr>
+<tr><th id="639">639</th><td>    <a class="local col5 ref" href="#145return_value" title='return_value' data-ref="145return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_isinstance_impl" title='builtin_isinstance_impl' data-ref="builtin_isinstance_impl">builtin_isinstance_impl</a>(<a class="local col2 ref" href="#142module" title='module' data-ref="142module">module</a>, <a class="local col6 ref" href="#146obj" title='obj' data-ref="146obj">obj</a>, <a class="local col7 ref" href="#147class_or_tuple" title='class_or_tuple' data-ref="147class_or_tuple">class_or_tuple</a>);</td></tr>
+<tr><th id="640">640</th><td></td></tr>
+<tr><th id="641">641</th><td><dfn class="lbl" id="148exit" data-ref="148exit">exit</dfn>:</td></tr>
+<tr><th id="642">642</th><td>    <b>return</b> <a class="local col5 ref" href="#145return_value" title='return_value' data-ref="145return_value">return_value</a>;</td></tr>
+<tr><th id="643">643</th><td>}</td></tr>
+<tr><th id="644">644</th><td></td></tr>
+<tr><th id="645">645</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char builtin_issubclass__doc__[] = &quot;issubclass($module, cls, class_or_tuple, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return whether \&apos;cls\&apos; is a derived from another class or is the same class.\n&quot;&quot;\n&quot;&quot;A tuple, as in ``issubclass(x, (A, B, ...))``, may be given as the target to\n&quot;&quot;check against. This is equivalent to ``issubclass(x, A) or issubclass(x, B)\n&quot;&quot;or ...`` etc.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="builtin_issubclass__doc__" title='builtin_issubclass__doc__' data-ref="builtin_issubclass__doc__">builtin_issubclass__doc__</dfn>,</td></tr>
+<tr><th id="646">646</th><td><q>"issubclass($module, cls, class_or_tuple, /)\n"</q></td></tr>
+<tr><th id="647">647</th><td><q>"--\n"</q></td></tr>
+<tr><th id="648">648</th><td><q>"\n"</q></td></tr>
+<tr><th id="649">649</th><td><q>"Return whether \'cls\' is a derived from another class or is the same class.\n"</q></td></tr>
+<tr><th id="650">650</th><td><q>"\n"</q></td></tr>
+<tr><th id="651">651</th><td><q>"A tuple, as in ``issubclass(x, (A, B, ...))``, may be given as the target to\n"</q></td></tr>
+<tr><th id="652">652</th><td><q>"check against. This is equivalent to ``issubclass(x, A) or issubclass(x, B)\n"</q></td></tr>
+<tr><th id="653">653</th><td><q>"or ...`` etc."</q>);</td></tr>
+<tr><th id="654">654</th><td></td></tr>
+<tr><th id="655">655</th><td><u>#define <dfn class="macro" id="_M/BUILTIN_ISSUBCLASS_METHODDEF" data-ref="_M/BUILTIN_ISSUBCLASS_METHODDEF">BUILTIN_ISSUBCLASS_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="656">656</th><td><u>    {"issubclass", (PyCFunction)builtin_issubclass, METH_FASTCALL, builtin_issubclass__doc__},</u></td></tr>
+<tr><th id="657">657</th><td></td></tr>
+<tr><th id="658">658</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="659">659</th><td><a class="decl" href="../bltinmodule.c.html#builtin_issubclass_impl" title='builtin_issubclass_impl' data-ref="builtin_issubclass_impl" id="builtin_issubclass_impl">builtin_issubclass_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="149module" title='module' data-type='PyObject *' data-ref="149module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="150cls" title='cls' data-type='PyObject *' data-ref="150cls">cls</dfn>,</td></tr>
+<tr><th id="660">660</th><td>                        <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="151class_or_tuple" title='class_or_tuple' data-type='PyObject *' data-ref="151class_or_tuple">class_or_tuple</dfn>);</td></tr>
+<tr><th id="661">661</th><td></td></tr>
+<tr><th id="662">662</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="663">663</th><td><dfn class="decl def" id="builtin_issubclass" title='builtin_issubclass' data-ref="builtin_issubclass">builtin_issubclass</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="152module" title='module' data-type='PyObject *' data-ref="152module">module</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col3 decl" id="153args" title='args' data-type='PyObject **' data-ref="153args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="154nargs" title='nargs' data-type='Py_ssize_t' data-ref="154nargs">nargs</dfn>)</td></tr>
+<tr><th id="664">664</th><td>{</td></tr>
+<tr><th id="665">665</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="155return_value" title='return_value' data-type='PyObject *' data-ref="155return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="666">666</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="156cls" title='cls' data-type='PyObject *' data-ref="156cls">cls</dfn>;</td></tr>
+<tr><th id="667">667</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="157class_or_tuple" title='class_or_tuple' data-type='PyObject *' data-ref="157class_or_tuple">class_or_tuple</dfn>;</td></tr>
+<tr><th id="668">668</th><td></td></tr>
+<tr><th id="669">669</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_UnpackStack" title='_PyArg_UnpackStack' data-ref="_PyArg_UnpackStack">_PyArg_UnpackStack</a>(<a class="local col3 ref" href="#153args" title='args' data-ref="153args">args</a>, <a class="local col4 ref" href="#154nargs" title='nargs' data-ref="154nargs">nargs</a>, <q>"issubclass"</q>,</td></tr>
+<tr><th id="670">670</th><td>        <var>2</var>, <var>2</var>,</td></tr>
+<tr><th id="671">671</th><td>        &amp;<a class="local col6 ref" href="#156cls" title='cls' data-ref="156cls">cls</a>, &amp;<a class="local col7 ref" href="#157class_or_tuple" title='class_or_tuple' data-ref="157class_or_tuple">class_or_tuple</a>)) {</td></tr>
+<tr><th id="672">672</th><td>        <b>goto</b> <a class="lbl" href="#158exit" data-ref="158exit">exit</a>;</td></tr>
+<tr><th id="673">673</th><td>    }</td></tr>
+<tr><th id="674">674</th><td>    <a class="local col5 ref" href="#155return_value" title='return_value' data-ref="155return_value">return_value</a> = <a class="ref" href="../bltinmodule.c.html#builtin_issubclass_impl" title='builtin_issubclass_impl' data-ref="builtin_issubclass_impl">builtin_issubclass_impl</a>(<a class="local col2 ref" href="#152module" title='module' data-ref="152module">module</a>, <a class="local col6 ref" href="#156cls" title='cls' data-ref="156cls">cls</a>, <a class="local col7 ref" href="#157class_or_tuple" title='class_or_tuple' data-ref="157class_or_tuple">class_or_tuple</a>);</td></tr>
+<tr><th id="675">675</th><td></td></tr>
+<tr><th id="676">676</th><td><dfn class="lbl" id="158exit" data-ref="158exit">exit</dfn>:</td></tr>
+<tr><th id="677">677</th><td>    <b>return</b> <a class="local col5 ref" href="#155return_value" title='return_value' data-ref="155return_value">return_value</a>;</td></tr>
+<tr><th id="678">678</th><td>}</td></tr>
+<tr><th id="679">679</th><td><i>/*[clinic end generated code: output=09752daa8cdd6ec7 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="680">680</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../bltinmodule.c.html'>codebrowser/Python/bltinmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

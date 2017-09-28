@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='45' type='mpd_uint_t _mpd_shortadd(mpd_uint_t * w, mpd_size_t m, mpd_uint_t v)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='111' ll='133' type='mpd_uint_t _mpd_shortadd(mpd_uint_t * w, mpd_size_t m, mpd_uint_t v)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='107'>/*
+ * Add v to w (len m). The calling function has to handle a possible
+ * final carry. Assumption: m &gt; 0.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7949' u='c' c='_coeff_from_u16'/>

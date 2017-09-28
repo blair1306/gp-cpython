@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pyerrors.h' l='452' type='int PyUnicodeEncodeError_GetEnd(PyObject * , Py_ssize_t * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='450'>/* get the value of the end attribute (the int *may not be NULL)
+ return 0 on success, -1 on failure */</doc>
+<def f='codebrowser/Objects/exceptions.c' l='1703' ll='1719' type='int PyUnicodeEncodeError_GetEnd(PyObject * exc, Py_ssize_t * end)'/>
+<use f='codebrowser/Objects/exceptions.c' l='1743' u='c' c='PyUnicodeTranslateError_GetEnd'/>
+<use f='codebrowser/Python/codecs.c' l='686' u='c' c='PyCodec_IgnoreErrors'/>
+<use f='codebrowser/Python/codecs.c' l='715' u='c' c='PyCodec_ReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='774' u='c' c='PyCodec_XMLCharRefReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='899' u='c' c='PyCodec_BackslashReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='983' u='c' c='PyCodec_NameReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1146' u='c' c='PyCodec_SurrogatePassErrors'/>
+<use f='codebrowser/Python/codecs.c' l='1306' u='c' c='PyCodec_SurrogateEscapeErrors'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/objimpl.h' l='143'/>
+<doc f='codebrowser/Include/objimpl.h' l='141'>/* Macros trading binary compatibility for speed. See also pymem.h.
+   Note that these macros expect non-NULL object pointers.*/</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='632' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='647' u='c'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1780' u='c'/>
+<use f='codebrowser/Objects/classobject.c' l='56' u='c'/>
+<use f='codebrowser/Objects/complexobject.c' l='231' u='c'/>
+<use f='codebrowser/Objects/floatobject.c' l='128' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='5514' u='c'/>
+<use f='codebrowser/Objects/methodobject.c' l='32' u='c'/>
+<use f='codebrowser/Objects/object.c' l='269' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='975' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1299' u='c'/>

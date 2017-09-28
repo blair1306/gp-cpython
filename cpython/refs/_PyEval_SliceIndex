@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/ceval.h' l='226' type='int _PyEval_SliceIndex(PyObject * , Py_ssize_t * )'/>
+<use f='codebrowser/Objects/stringlib/find.h' l='107' u='c' c='stringlib_parse_args_finds'/>
+<use f='codebrowser/Objects/stringlib/find.h' l='110' u='c' c='stringlib_parse_args_finds'/>
+<use f='codebrowser/Objects/sliceobject.c' l='206' u='c' c='PySlice_Unpack'/>
+<use f='codebrowser/Objects/sliceobject.c' l='225' u='c' c='PySlice_Unpack'/>
+<use f='codebrowser/Objects/sliceobject.c' l='232' u='c' c='PySlice_Unpack'/>
+<def f='codebrowser/Python/ceval.c' l='4898' ll='4917' type='int _PyEval_SliceIndex(PyObject * v, Py_ssize_t * pi)'/>
+<doc f='codebrowser/Python/ceval.c' l='4892'>/* Extract a slice index from a PyLong or an object with the
+   nb_index slot defined, and store in *pi.
+   Silently reduce values larger than PY_SSIZE_T_MAX to PY_SSIZE_T_MAX,
+   and silently boost values less than PY_SSIZE_T_MIN to PY_SSIZE_T_MIN.
+   Return 0 on error, 1 on success.
+*/</doc>

@@ -1,0 +1,26 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='529' type='void mpd_qmul(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2331' u='c' c='PyDecType_FromFloatExact'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2950' u='c' c='multiply_by_denominator'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3986' u='c' c='nm_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4585' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5057' u='c' c='ctx_mpd_qmul'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4578' u='c' c='mpd_qln10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4791' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4794' u='c' c='_mpd_qln'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5823' ll='5829' type='void mpd_qmul(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5838' u='c' c='_mpd_qmul_exact'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5855' u='c' c='mpd_qmul_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5869' u='c' c='mpd_qmul_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6133' u='c' c='_mpd_qpow_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6135' u='c' c='_mpd_qpow_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6173' u='c' c='_mpd_qpow_mpd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6180' u='c' c='_mpd_qpow_mpd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6528' u='c' c='_mpd_qpow_real'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7316' u='c' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7320' u='c' c='_mpd_qreciprocal'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7628' u='c' c='_mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7633' u='c' c='_mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7636' u='c' c='_mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7639' u='c' c='_mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7640' u='c' c='_mpd_qinvroot'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5822'>/* Multiply a and b. */</doc>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/frameobject.h' l='14' type='int'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/frameobject.h' l='14'>/* value stack level to pop to */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='316' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='756' u='w' c='PyFrame_BlockSetup'/>
+<use f='codebrowser/Python/ceval.c' l='946' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='947' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='938' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='946' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='947' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3212' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='946' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='947' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='938' u='r' c='_PyEval_EvalFrameDefault'/>

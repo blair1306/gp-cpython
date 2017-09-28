@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/complexobject.h' l='35' type='Py_complex'/>
+<offset>256</offset>
+<use f='codebrowser/Objects/complexobject.c' l='218' u='w' c='complex_subtype_from_c_complex'/>
+<use f='codebrowser/Objects/complexobject.c' l='232' u='w' c='PyComplex_FromCComplex'/>
+<use f='codebrowser/Objects/complexobject.c' l='258' u='m' c='PyComplex_RealAsDouble'/>
+<use f='codebrowser/Objects/complexobject.c' l='269' u='m' c='PyComplex_ImagAsDouble'/>
+<use f='codebrowser/Objects/complexobject.c' l='319' u='r' c='PyComplex_AsCComplex'/>
+<use f='codebrowser/Objects/complexobject.c' l='330' u='r' c='PyComplex_AsCComplex'/>
+<use f='codebrowser/Objects/complexobject.c' l='370' u='m' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='370' u='m' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='374' u='m' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='383' u='m' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='391' u='m' c='complex_repr'/>
+<use f='codebrowser/Objects/complexobject.c' l='412' u='m' c='complex_hash'/>
+<use f='codebrowser/Objects/complexobject.c' l='415' u='m' c='complex_hash'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_add'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_add'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_sub'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_sub'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_mul'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_mul'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_div'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_div'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_pow'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_pow'/>
+<use f='codebrowser/Objects/complexobject.c' l='585' u='m' c='complex_neg'/>
+<use f='codebrowser/Objects/complexobject.c' l='586' u='m' c='complex_neg'/>
+<use f='codebrowser/Objects/complexobject.c' l='598' u='r' c='complex_pos'/>
+<use f='codebrowser/Objects/complexobject.c' l='607' u='r' c='complex_abs'/>
+<use f='codebrowser/Objects/complexobject.c' l='621' u='m' c='complex_bool'/>
+<use f='codebrowser/Objects/complexobject.c' l='621' u='m' c='complex_bool'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_richcompare'/>
+<use f='codebrowser/Objects/complexobject.c' l='433' u='r' c='complex_richcompare'/>
+<use f='codebrowser/Objects/complexobject.c' l='701' u='r' c='complex_conjugate'/>
+<use f='codebrowser/Objects/complexobject.c' l='714' u='r' c='complex_getnewargs'/>
+<use f='codebrowser/Objects/complexobject.c' l='1029' u='r' c='complex_new_impl'/>
+<use f='codebrowser/Objects/complexobject.c' l='1056' u='r' c='complex_new_impl'/>

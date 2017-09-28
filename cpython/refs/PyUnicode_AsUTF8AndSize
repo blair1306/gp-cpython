@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1142' type='const char * PyUnicode_AsUTF8AndSize(PyObject * unicode, Py_ssize_t * size)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1958' u='c' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1240' u='c' c='wrap_strftime'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1308' u='c' c='wrap_strftime'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3202' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3476' u='c' c='_elementtree_XMLParser_feed'/>
+<use f='codebrowser/Modules/_pickle.c' l='1949' u='c' c='save_long'/>
+<use f='codebrowser/Modules/_pickle.c' l='2222' u='c' c='write_unicode_binary'/>
+<use f='codebrowser/Modules/parsermodule.c' l='926' u='c' c='build_node_children'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1041' u='c' c='build_node_tree'/>
+<use f='codebrowser/Modules/pyexpat.c' l='728' u='c' c='pyexpat_xmlparser_Parse_impl'/>
+<use f='codebrowser/Objects/complexobject.c' l='917' u='c' c='complex_subtype_from_string'/>
+<use f='codebrowser/Objects/fileobject.c' l='373' u='c' c='stdprinter_write'/>
+<use f='codebrowser/Objects/floatobject.c' l='179' u='c' c='PyFloat_FromString'/>
+<use f='codebrowser/Objects/floatobject.c' l='1332' u='c' c='float_fromhex'/>
+<use f='codebrowser/Objects/longobject.c' l='2513' u='c' c='PyLong_FromUnicodeObject'/>
+<use f='codebrowser/Objects/typeobject.c' l='439' u='c' c='type_set_name'/>
+<use f='codebrowser/Objects/typeobject.c' l='2557' u='c' c='type_new'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3973' ll='4006' type='const char * PyUnicode_AsUTF8AndSize(PyObject * unicode, Py_ssize_t * psize)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4011' u='c' c='PyUnicode_AsUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='452' u='c' c='fp_readl'/>
+<use f='codebrowser/Python/bltinmodule.c' l='620' u='c' c='source_as_string'/>
+<use f='codebrowser/Python/getargs.c' l='975' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='1003' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/getargs.c' l='1028' u='c' c='convertsimple'/>
+<use f='codebrowser/Python/structmember.c' l='255' u='c' c='PyMember_SetOne'/>

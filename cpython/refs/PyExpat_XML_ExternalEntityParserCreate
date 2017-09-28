@@ -1,0 +1,3 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='875' macro='1' type='XML_Parser PyExpat_XML_ExternalEntityParserCreate(XML_Parser parser, const XML_Char * context, const XML_Char * encoding)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1261' macro='1' type='XML_Parser PyExpat_XML_ExternalEntityParserCreate(XML_Parser oldParser, const XML_Char * context, const XML_Char * encodingName)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='939' macro='1' u='c'/>

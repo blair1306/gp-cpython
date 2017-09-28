@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/descrobject.h' l='79' type='PyTypeObject'/>
+<def f='codebrowser/Objects/descrobject.c' l='668' ll='703' type='PyTypeObject'/>
+<use f='codebrowser/Objects/descrobject.c' l='779' u='a' c='PyDescr_NewWrapper'/>
+<use f='codebrowser/Objects/descrobject.c' l='1239' u='a' c='PyWrapper_New'/>
+<use f='codebrowser/Objects/descrobject.c' l='1239' u='a' c='PyWrapper_New'/>
+<use f='codebrowser/Objects/object.c' l='1779' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Objects/typeobject.c' l='6329' u='a' c='slot_tp_getattr_hook'/>
+<use f='codebrowser/Objects/typeobject.c' l='6968' u='a' c='update_one_slot'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Objects/bytesobject.c' l='34' type='Py_ssize_t _PyBytesWriter_GetSize(_PyBytesWriter * writer, char * str)'/>
+<def f='codebrowser/Objects/bytesobject.c' l='3197' ll='3205' macro='1' type='Py_ssize_t _PyBytesWriter_GetSize(_PyBytesWriter * writer, char * str)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3258' u='c' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3380' u='c' c='_PyBytesWriter_Finish'/>

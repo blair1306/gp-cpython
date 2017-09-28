@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/grammar.h' l='56' type='bitset'/>
+<offset>256</offset>
+<use f='codebrowser/Parser/acceler.c' l='95' u='r' c='fixstate'/>
+<use f='codebrowser/Parser/firstsets.c' l='23' u='r' c='_Py_addfirstsets'/>
+<use f='codebrowser/Parser/firstsets.c' l='48' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='52' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='56' u='w' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='85' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='91' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='94' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='102' u='w' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='63' u='w' c='_Py_adddfa'/>

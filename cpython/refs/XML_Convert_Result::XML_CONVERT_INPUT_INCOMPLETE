@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='135' type='1'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='2878' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3097' u='r' c='doContent'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3771' u='r' c='doCdataSection'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='6005' u='r' c='reportDefault'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='6857' u='r' c='poolAppend'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='379' u='r' c='utf8_toUtf8'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='398' u='r' c='utf8_toUtf16'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='406' u='r' c='utf8_toUtf16'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='421' u='r' c='utf8_toUtf16'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='662' u='r' c='little2_toUtf8'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='679' u='r' c='little2_toUtf8'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='696' u='r' c='little2_toUtf16'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='662' u='r' c='big2_toUtf8'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='679' u='r' c='big2_toUtf8'/>
+<use f='codebrowser/Modules/expat/xmltok.c' l='696' u='r' c='big2_toUtf16'/>

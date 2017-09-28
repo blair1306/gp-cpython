@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='443' type='0'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='440'>/* String contains only wstr byte characters.  This is only possible
+   when the string was created with a legacy API and _PyUnicode_Ready()
+   has not been called yet.  */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='406' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='432' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='453' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1045' u='r' c='resize_copy'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1666' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1820' u='r' c='unicode_is_singleton'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1862' u='r' c='unicode_resize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5061' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6983' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10087' u='r' c='_PyUnicode_FastFill'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10087' u='r' c='pad'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10087' u='r' c='pad'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10087' u='r' c='unicode_expandtabs_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13507' u='r' c='_PyUnicodeWriter_Update'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13527' u='r' c='_PyUnicodeWriter_Init'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10087' u='r' c='unicode_format_arg_output'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='10087' u='r' c='unicode_format_arg_output'/>
+<use f='codebrowser/Python/traceback.c' l='584' u='r' c='_Py_DumpASCII'/>
+<use f='codebrowser/Python/traceback.c' l='611' u='r' c='_Py_DumpASCII'/>

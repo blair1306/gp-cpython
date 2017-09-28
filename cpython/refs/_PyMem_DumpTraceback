@@ -1,0 +1,6 @@
+<def f='codebrowser/Modules/_tracemalloc.c' l='1509' ll='1524' type='void _PyMem_DumpTraceback(int fd, const void * ptr)'/>
+<doc f='codebrowser/Modules/_tracemalloc.c' l='1507'>/* Dump the traceback where a memory block was allocated into file descriptor
+   fd. The function may block on TABLES_LOCK() but it is unlikely. */</doc>
+<dec f='codebrowser/Objects/obmalloc.c' l='7' type='void _PyMem_DumpTraceback(int fd, const void * ptr)'/>
+<use f='codebrowser/Objects/obmalloc.c' l='2166' u='c' c='_PyObject_DebugDumpAddress'/>
+<doc f='codebrowser/Objects/obmalloc.c' l='6'>/* Defined in tracemalloc.c */</doc>

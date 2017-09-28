@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/Python-ast.h' l='248' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:244:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1895' u='m' c='_Py_IfExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1896' u='m' c='_Py_IfExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='1897' u='m' c='_Py_IfExp'/>
+<use f='codebrowser/Python/Python-ast.c' l='3167' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3172' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/Python-ast.c' l='3177' u='m' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='239' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='240' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='241' u='m' c='validate_expr'/>
+<use f='codebrowser/Python/compile.c' l='2069' u='m' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='2071' u='m' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='2075' u='m' c='compiler_jump_if'/>
+<use f='codebrowser/Python/compile.c' l='2139' u='m' c='compiler_ifexp'/>
+<use f='codebrowser/Python/compile.c' l='2141' u='m' c='compiler_ifexp'/>
+<use f='codebrowser/Python/compile.c' l='2144' u='m' c='compiler_ifexp'/>
+<use f='codebrowser/Python/symtable.c' l='1423' u='m' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1424' u='m' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1425' u='m' c='symtable_visit_expr'/>

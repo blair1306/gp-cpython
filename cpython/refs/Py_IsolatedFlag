@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pydebug.h' l='25' type='int'/>
+<use f='codebrowser/Modules/main.c' l='534' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='829' u='r' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='96' type='int'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='96'>/* for -I, isolate from user&apos;s env */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='1739' u='r' c='make_flags'/>
+<use f='codebrowser/Python/sysmodule.c' l='2345' u='r' c='PySys_SetArgv'/>

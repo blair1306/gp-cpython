@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/object.h' l='522' type='void _PyObject_Dump(PyObject * )'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1705' u='c' c='_PyGC_Dump'/>
+<def f='codebrowser/Objects/object.c' l='425' ll='458' type='void _PyObject_Dump(PyObject * op)'/>
+<use f='codebrowser/Objects/object.c' l='1848' u='c' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1850' u='c' c='_Py_ForgetReference'/>
+<use f='codebrowser/Objects/object.c' l='1852' u='c' c='_Py_ForgetReference'/>
+<doc f='codebrowser/Objects/object.c' l='424'>/* For debugging convenience.  See Misc/gdbinit for some useful gdb hooks */</doc>
+<use f='codebrowser/Python/pythonrun.c' l='872' u='c' c='PyErr_Display'/>

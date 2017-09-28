@@ -1,0 +1,37 @@
+<dec f='codebrowser/Include/pyerrors.h' l='331' type='void PyErr_WriteUnraisable(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='861' u='c' c='FutureObj_finalize'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1762' u='c' c='TaskObj_finalize'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='155' u='c' c='_DictRemover_call'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='271' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='278' u='c' c='_CallPythonObject'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='97' u='c' c='fileio_dealloc_warn'/>
+<use f='codebrowser/Modules/_lsprof.c' l='125' u='c' c='CallExternalTimer'/>
+<use f='codebrowser/Modules/_lsprof.c' l='143' u='c' c='CallExternalTimer'/>
+<use f='codebrowser/Modules/_ssl.c' l='3792' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_ssl.c' l='3797' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_ssl.c' l='3809' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_ssl.c' l='3817' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3080' u='c' c='slot_tp_del'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='969' u='c' c='_localdummy_destroyed'/>
+<use f='codebrowser/Modules/gcmodule.c' l='721' u='c' c='handle_weakrefs'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1070' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1111' u='c' c='invoke_gc_callback'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1121' u='c' c='invoke_gc_callback'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1677' u='c' c='_PyGC_DumpShutdownStats'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1682' u='c' c='_PyGC_DumpShutdownStats'/>
+<use f='codebrowser/Modules/posixmodule.c' l='414' u='c' c='run_at_forkers'/>
+<use f='codebrowser/Modules/posixmodule.c' l='423' u='c' c='run_at_forkers'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12086' u='c' c='ScandirIterator_finalize'/>
+<use f='codebrowser/Modules/signalmodule.c' l='203' u='c' c='report_wakeup_write_error'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4587' u='c' c='sock_finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='49' u='c' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='79' u='c' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='334' u='c' c='gen_close_iter'/>
+<use f='codebrowser/Objects/typeobject.c' l='6541' u='c' c='slot_tp_finalize'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='875' u='c' c='handle_callback'/>
+<def f='codebrowser/Python/errors.c' l='921' ll='1004' type='void PyErr_WriteUnraisable(PyObject * obj)'/>
+<doc f='codebrowser/Python/errors.c' l='919'>/* Call when an exception has occurred but there is no way for Python
+   to handle it.  Examples: exception in __del__ or during GC. */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='891' u='c' c='flush_std_files'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1895' u='c' c='wait_for_thread_shutdown'/>
+<use f='codebrowser/Python/pystate.c' l='438' u='c' c='_PyState_ClearModules'/>

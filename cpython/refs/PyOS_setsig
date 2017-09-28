@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='128' type='PyOS_sighandler_t PyOS_setsig(int , PyOS_sighandler_t )'/>
+<use f='codebrowser/Modules/readline.c' l='1130' u='c' c='setup_readline'/>
+<use f='codebrowser/Modules/signalmodule.c' l='465' u='c' c='signal_signal_impl'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1291' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1497' u='c' c='finisignal'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1506' u='c' c='finisignal'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1940' u='c' c='initsigs'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1946' u='c' c='initsigs'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1965' u='c' c='_Py_RestoreSignals'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1971' u='c' c='_Py_RestoreSignals'/>
+<def f='codebrowser/Python/pylifecycle.c' l='2036' ll='2059' type='PyOS_sighandler_t PyOS_setsig(int sig, PyOS_sighandler_t handler)'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='2031'>/*
+ * All of the code in this function must only use async-signal-safe functions,
+ * listed at `man 7 signal` or
+ * http://www.opengroup.org/onlinepubs/009695399/functions/xsh_chap02_04.html.
+ */</doc>

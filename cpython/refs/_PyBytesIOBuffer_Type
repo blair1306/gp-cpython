@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='185' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='692' u='a' c='PyInit__io'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='280' u='a' c='_io_BytesIO_getbuffer_impl'/>
+<def f='codebrowser/Modules/_io/bytesio.c' l='1098' ll='1137' type='PyTypeObject'/>
+<dec f='codebrowser/Modules/_testcapimodule.c' l='2903' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2908' u='a' c='test_pep3118_obsolete_write_locks'/>

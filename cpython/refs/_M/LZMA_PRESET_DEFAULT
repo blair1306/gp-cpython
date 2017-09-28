@@ -1,0 +1,10 @@
+<dec f='include/lzma/container.h' l='31'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='207' u='c'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='729' u='c'/>
+<doc f='include/lzma/container.h' l='24'>/**
+ * \brief       Default compression preset
+ *
+ * It&apos;s not straightforward to recommend a default preset, because in some
+ * cases keeping the resource usage relatively low is more important that
+ * getting the maximum compression ratio.
+ */</doc>

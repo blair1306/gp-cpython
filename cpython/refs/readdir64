@@ -1,0 +1,4 @@
+<dec f='include/dirent.h' l='165' type='struct dirent * readdir(DIR * __dirp)'/>
+<dec f='include/dirent.h' l='173' type='struct dirent64 * readdir64(DIR * __dirp)'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3623' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12014' u='c' c='ScandirIterator_iternext'/>

@@ -1,0 +1,11 @@
+<dec f='include/lzma/lzma.h' l='81' type='18'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1493' macro='1' u='r'/>
+<doc f='include/lzma/lzma.h' l='71'>/**&lt;
+		 * \brief       Hash Chain with 2-, 3-, and 4-byte hashing
+		 *
+		 * Minimum nice_len: 4
+		 *
+		 * Memory usage:
+		 *  - dict_size &lt;= 32 MiB: dict_size * 7.5
+		 *  - dict_size &gt; 32 MiB: dict_size * 6.5
+		 */</doc>

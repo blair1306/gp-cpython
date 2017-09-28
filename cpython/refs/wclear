@@ -1,0 +1,3 @@
+<dec f='include/curses.h' l='815' type='int wclear(WINDOW * )'/>
+<doc f='include/curses.h' l='815'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='484' u='c' c='PyCursesWindow_wclear'/>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/ceval.h' l='86' type='int Py_GetRecursionLimit()'/>
+<def f='codebrowser/Python/ceval.c' l='576' ll='580' type='int Py_GetRecursionLimit()'/>
+<use f='codebrowser/Python/errors.c' l='297' u='c' c='PyErr_NormalizeException'/>
+<use f='codebrowser/Python/symtable.c' l='246' u='c' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/sysmodule.c' l='866' u='c' c='sys_getrecursionlimit'/>

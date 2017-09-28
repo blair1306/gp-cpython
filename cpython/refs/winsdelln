@@ -1,0 +1,5 @@
+<dec f='include/curses.h' l='833' type='int winsdelln(WINDOW * , int )'/>
+<doc f='include/curses.h' l='833'>/* implemented */</doc>
+<use f='codebrowser/Modules/_cursesmodule.c' l='471' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='473' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='510' u='c' c='PyCursesWindow_winsdelln'/>

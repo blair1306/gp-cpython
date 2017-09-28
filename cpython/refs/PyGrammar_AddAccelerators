@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/grammar.h' l='85' type='void PyGrammar_AddAccelerators(grammar * g)'/>
+<dec f='codebrowser/Parser/parser.h' l='37' type='void PyGrammar_AddAccelerators(grammar * g)'/>
+<def f='codebrowser/Parser/acceler.c' l='23' ll='32' type='void PyGrammar_AddAccelerators(grammar * g)'/>
+<use f='codebrowser/Parser/parser.c' l='77' u='c' c='PyParser_New'/>

@@ -1,0 +1,3 @@
+<dec f='include/unistd.h' l='634' type='__pid_t getppid()'/>
+<doc f='include/unistd.h' l='633'>/* Get the process ID of the calling process&apos;s parent.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='6472' u='c' c='os_getppid_impl'/>

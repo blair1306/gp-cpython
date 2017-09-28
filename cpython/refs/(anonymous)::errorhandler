@@ -1,0 +1,23 @@
+<dec f='codebrowser/Modules/socketmodule.h' l='208' type='PyObject *(*)(void)'/>
+<use f='codebrowser/Modules/_ssl.c' l='571' u='r' c='PySSL_SetError'/>
+<offset>384</offset>
+<doc f='codebrowser/Modules/socketmodule.h' l='208'>/* Error handler; checks
+                                        errno, returns NULL and
+                                        sets a Python exception */</doc>
+<use f='codebrowser/Modules/socketmodule.c' l='813' u='r' c='sock_call_ex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='872' u='r' c='sock_call_ex'/>
+<use f='codebrowser/Modules/socketmodule.c' l='902' u='w' c='init_sockobject'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1800' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1912' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1957' u='r' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2644' u='r' c='sock_setsockopt'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2684' u='r' c='sock_getsockopt'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2699' u='r' c='sock_getsockopt'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2728' u='r' c='sock_bind'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2764' u='r' c='sock_close'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2855' u='r' c='internal_connect'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2959' u='r' c='sock_getsockname'/>
+<use f='codebrowser/Modules/socketmodule.c' l='2988' u='r' c='sock_getpeername'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3023' u='r' c='sock_listen'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4389' u='r' c='sock_shutdown'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4658' u='w' c='sock_new'/>

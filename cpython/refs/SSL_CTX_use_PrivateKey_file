@@ -1,0 +1,2 @@
+<dec f='include/openssl/ssl.h' l='2199' type='int SSL_CTX_use_PrivateKey_file(SSL_CTX * ctx, const char * file, int type)'/>
+<use f='codebrowser/Modules/_ssl.c' l='3296' u='c' c='_ssl__SSLContext_load_cert_chain_impl'/>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='540' type='void mpd_qdivint(mpd_t * q, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3989' u='c' c='nm_mpd_qdivint'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5052' u='c' c='ctx_mpd_qdivint'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3976' ll='4017' type='void mpd_qdivint(mpd_t * q, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6181' u='c' c='_mpd_qpow_mpd'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6767' u='c' c='mpd_qpowmod'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='197' type='int64_t PyInterpreterState_GetID(PyInterpreterState * )'/>
+<doc f='codebrowser/Include/pystate.h' l='196'>/* New in 3.7 */</doc>
+<use f='codebrowser/Programs/_testembed.c' l='30' u='c' c='print_subinterp'/>
+<def f='codebrowser/Python/pystate.c' l='220' ll='228' type='int64_t PyInterpreterState_GetID(PyInterpreterState * interp)'/>

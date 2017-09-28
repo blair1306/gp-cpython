@@ -1,0 +1,8 @@
+<dec f='include/dirent.h' l='149' type='int closedir(DIR * __dirp)'/>
+<doc f='include/dirent.h' l='144'>/* Close the directory stream DIRP.
+   Return 0 if successful, -1 if not.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3661' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11994' u='c' c='ScandirIterator_closedir'/>

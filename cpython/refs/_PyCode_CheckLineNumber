@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/code.h' l='128' type='int _PyCode_CheckLineNumber(PyCodeObject * co, int lasti, PyAddrPair * bounds)'/>
+<doc f='codebrowser/Include/code.h' l='125'>/* Update *bounds to describe the first and one-past-the-last instructions in the
+   same line as lasti.  Return the number of that line.
+*/</doc>
+<def f='codebrowser/Objects/codeobject.c' l='779' ll='828' type='int _PyCode_CheckLineNumber(PyCodeObject * co, int lasti, PyAddrPair * bounds)'/>
+<doc f='codebrowser/Objects/codeobject.c' l='777'>/* Update *bounds to describe the first and one-past-the-last instructions in
+   the same line as lasti.  Return the number of that line. */</doc>
+<use f='codebrowser/Python/ceval.c' l='4578' u='c' c='maybe_call_line_trace'/>
+<use f='codebrowser/Python/ceval.c' l='5378' u='c' c='maybe_dtrace_line'/>

@@ -1,0 +1,17 @@
+<dec f='codebrowser/Include/symtable.h' l='13' type='0'/>
+<use f='codebrowser/Modules/symtablemodule.c' l='95' u='r' c='PyInit__symtable'/>
+<use f='codebrowser/Python/compile.c' l='2899' u='r' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/compile.c' l='3106' u='r' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='3110' u='r' c='compiler_nameop'/>
+<use f='codebrowser/Python/compile.c' l='4382' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4393' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='4405' u='r' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/compile.c' l='5258' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/symtable.c' l='68' u='r' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='773' u='r' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='828' u='r' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='1149' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1362' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1413' u='r' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1505' u='r' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1731' u='r' c='symtable_handle_comprehension'/>

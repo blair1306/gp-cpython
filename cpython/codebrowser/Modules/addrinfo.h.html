@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>addrinfo.h source code [codebrowser/Modules/addrinfo.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/addrinfo.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='addrinfo.h.html'>addrinfo.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (C) 1995, 1996, 1997, 1998, and 1999 WIDE Project.</i></td></tr>
+<tr><th id="3">3</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="6">6</th><td><i> * modification, are permitted provided that the following conditions</i></td></tr>
+<tr><th id="7">7</th><td><i> * are met:</i></td></tr>
+<tr><th id="8">8</th><td><i> * 1. Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="9">9</th><td><i> *    notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> * 2. Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="11">11</th><td><i> *    notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="12">12</th><td><i> *    documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="13">13</th><td><i> * 3. Neither the name of the project nor the names of its contributors</i></td></tr>
+<tr><th id="14">14</th><td><i> *    may be used to endorse or promote products derived from this software</i></td></tr>
+<tr><th id="15">15</th><td><i> *    without specific prior written permission.</i></td></tr>
+<tr><th id="16">16</th><td><i> *</i></td></tr>
+<tr><th id="17">17</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND</i></td></tr>
+<tr><th id="18">18</th><td><i> * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="19">19</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="20">20</th><td><i> * ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE</i></td></tr>
+<tr><th id="21">21</th><td><i> * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</i></td></tr>
+<tr><th id="22">22</th><td><i> * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</i></td></tr>
+<tr><th id="23">23</th><td><i> * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</i></td></tr>
+<tr><th id="24">24</th><td><i> * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</i></td></tr>
+<tr><th id="25">25</th><td><i> * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</i></td></tr>
+<tr><th id="26">26</th><td><i> * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</i></td></tr>
+<tr><th id="27">27</th><td><i> * SUCH DAMAGE.</i></td></tr>
+<tr><th id="28">28</th><td><i> */</i></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="30">ifndef</span> <a class="macro" href="../pyconfig.h.html#368" data-ref="_M/HAVE_GETADDRINFO">HAVE_GETADDRINFO</a></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i>/*</i></td></tr>
+<tr><th id="33">33</th><td><i> * Error return codes from getaddrinfo()</i></td></tr>
+<tr><th id="34">34</th><td><i> */</i></td></tr>
+<tr><th id="35">35</th><td><u>#ifdef EAI_ADDRFAMILY</u></td></tr>
+<tr><th id="36">36</th><td><i>/* If this is defined, there is a conflicting implementation</i></td></tr>
+<tr><th id="37">37</th><td><i>   in the C library, which can't be used for some reason.</i></td></tr>
+<tr><th id="38">38</th><td><i>   Make sure it won't interfere with this emulation. */</i></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#undef EAI_ADDRFAMILY</u></td></tr>
+<tr><th id="41">41</th><td><u>#undef EAI_AGAIN</u></td></tr>
+<tr><th id="42">42</th><td><u>#undef EAI_BADFLAGS</u></td></tr>
+<tr><th id="43">43</th><td><u>#undef EAI_FAIL</u></td></tr>
+<tr><th id="44">44</th><td><u>#undef EAI_FAMILY</u></td></tr>
+<tr><th id="45">45</th><td><u>#undef EAI_MEMORY</u></td></tr>
+<tr><th id="46">46</th><td><u>#undef EAI_NODATA</u></td></tr>
+<tr><th id="47">47</th><td><u>#undef EAI_NONAME</u></td></tr>
+<tr><th id="48">48</th><td><u>#undef EAI_SERVICE</u></td></tr>
+<tr><th id="49">49</th><td><u>#undef EAI_SOCKTYPE</u></td></tr>
+<tr><th id="50">50</th><td><u>#undef EAI_SYSTEM</u></td></tr>
+<tr><th id="51">51</th><td><u>#undef EAI_BADHINTS</u></td></tr>
+<tr><th id="52">52</th><td><u>#undef EAI_PROTOCOL</u></td></tr>
+<tr><th id="53">53</th><td><u>#undef EAI_MAX</u></td></tr>
+<tr><th id="54">54</th><td><u>#undef getaddrinfo</u></td></tr>
+<tr><th id="55">55</th><td><u>#define getaddrinfo fake_getaddrinfo</u></td></tr>
+<tr><th id="56">56</th><td><u>#endif /* EAI_ADDRFAMILY */</u></td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><u>#define EAI_ADDRFAMILY   1      /* address family for hostname not supported */</u></td></tr>
+<tr><th id="59">59</th><td><u>#define EAI_AGAIN        2      /* temporary failure in name resolution */</u></td></tr>
+<tr><th id="60">60</th><td><u>#define EAI_BADFLAGS     3      /* invalid value for ai_flags */</u></td></tr>
+<tr><th id="61">61</th><td><u>#define EAI_FAIL         4      /* non-recoverable failure in name resolution */</u></td></tr>
+<tr><th id="62">62</th><td><u>#define EAI_FAMILY       5      /* ai_family not supported */</u></td></tr>
+<tr><th id="63">63</th><td><u>#define EAI_MEMORY       6      /* memory allocation failure */</u></td></tr>
+<tr><th id="64">64</th><td><u>#define EAI_NODATA       7      /* no address associated with hostname */</u></td></tr>
+<tr><th id="65">65</th><td><u>#define EAI_NONAME       8      /* hostname nor servname provided, or not known */</u></td></tr>
+<tr><th id="66">66</th><td><u>#define EAI_SERVICE      9      /* servname not supported for ai_socktype */</u></td></tr>
+<tr><th id="67">67</th><td><u>#define EAI_SOCKTYPE    10      /* ai_socktype not supported */</u></td></tr>
+<tr><th id="68">68</th><td><u>#define EAI_SYSTEM      11      /* system error returned in errno */</u></td></tr>
+<tr><th id="69">69</th><td><u>#define EAI_BADHINTS    12</u></td></tr>
+<tr><th id="70">70</th><td><u>#define EAI_PROTOCOL    13</u></td></tr>
+<tr><th id="71">71</th><td><u>#define EAI_MAX         14</u></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/*</i></td></tr>
+<tr><th id="74">74</th><td><i> * Flag values for getaddrinfo()</i></td></tr>
+<tr><th id="75">75</th><td><i> */</i></td></tr>
+<tr><th id="76">76</th><td><u>#ifdef AI_PASSIVE</u></td></tr>
+<tr><th id="77">77</th><td><u>#undef AI_PASSIVE</u></td></tr>
+<tr><th id="78">78</th><td><u>#undef AI_CANONNAME</u></td></tr>
+<tr><th id="79">79</th><td><u>#undef AI_NUMERICHOST</u></td></tr>
+<tr><th id="80">80</th><td><u>#undef AI_MASK</u></td></tr>
+<tr><th id="81">81</th><td><u>#undef AI_ALL</u></td></tr>
+<tr><th id="82">82</th><td><u>#undef AI_V4MAPPED_CFG</u></td></tr>
+<tr><th id="83">83</th><td><u>#undef AI_ADDRCONFIG</u></td></tr>
+<tr><th id="84">84</th><td><u>#undef AI_V4MAPPED</u></td></tr>
+<tr><th id="85">85</th><td><u>#undef AI_DEFAULT</u></td></tr>
+<tr><th id="86">86</th><td><u>#endif /* AI_PASSIVE */</u></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><u>#define AI_PASSIVE      0x00000001 /* get address to use bind() */</u></td></tr>
+<tr><th id="89">89</th><td><u>#define AI_CANONNAME    0x00000002 /* fill ai_canonname */</u></td></tr>
+<tr><th id="90">90</th><td><u>#define AI_NUMERICHOST  0x00000004 /* prevent name resolution */</u></td></tr>
+<tr><th id="91">91</th><td><i>/* valid flags for addrinfo */</i></td></tr>
+<tr><th id="92">92</th><td><u>#define AI_MASK         (AI_PASSIVE | AI_CANONNAME | AI_NUMERICHOST)</u></td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><u>#define AI_ALL          0x00000100 /* IPv6 and IPv4-mapped (with AI_V4MAPPED) */</u></td></tr>
+<tr><th id="95">95</th><td><u>#define AI_V4MAPPED_CFG 0x00000200 /* accept IPv4-mapped if kernel supports */</u></td></tr>
+<tr><th id="96">96</th><td><u>#define AI_ADDRCONFIG   0x00000400 /* only if any address is assigned */</u></td></tr>
+<tr><th id="97">97</th><td><u>#define AI_V4MAPPED     0x00000800 /* accept IPv4-mapped IPv6 address */</u></td></tr>
+<tr><th id="98">98</th><td><i>/* special recommended flags for getipnodebyname */</i></td></tr>
+<tr><th id="99">99</th><td><u>#define AI_DEFAULT      (AI_V4MAPPED_CFG | AI_ADDRCONFIG)</u></td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><u>#<span data-ppcond="30">endif</span> /* !HAVE_GETADDRINFO */</u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><u>#<span data-ppcond="103">ifndef</span> <a class="macro" href="../pyconfig.h.html#407" data-ref="_M/HAVE_GETNAMEINFO">HAVE_GETNAMEINFO</a></u></td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td><i>/*</i></td></tr>
+<tr><th id="106">106</th><td><i> * Constants for getnameinfo()</i></td></tr>
+<tr><th id="107">107</th><td><i> */</i></td></tr>
+<tr><th id="108">108</th><td><u>#ifndef NI_MAXHOST</u></td></tr>
+<tr><th id="109">109</th><td><u>#define NI_MAXHOST      1025</u></td></tr>
+<tr><th id="110">110</th><td><u>#define NI_MAXSERV      32</u></td></tr>
+<tr><th id="111">111</th><td><u>#endif /* !NI_MAXHOST */</u></td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td><i>/*</i></td></tr>
+<tr><th id="114">114</th><td><i> * Flag values for getnameinfo()</i></td></tr>
+<tr><th id="115">115</th><td><i> */</i></td></tr>
+<tr><th id="116">116</th><td><u>#ifndef NI_NOFQDN</u></td></tr>
+<tr><th id="117">117</th><td><u>#define NI_NOFQDN       0x00000001</u></td></tr>
+<tr><th id="118">118</th><td><u>#define NI_NUMERICHOST  0x00000002</u></td></tr>
+<tr><th id="119">119</th><td><u>#define NI_NAMEREQD     0x00000004</u></td></tr>
+<tr><th id="120">120</th><td><u>#define NI_NUMERICSERV  0x00000008</u></td></tr>
+<tr><th id="121">121</th><td><u>#define NI_DGRAM        0x00000010</u></td></tr>
+<tr><th id="122">122</th><td><u>#endif /* !NI_NOFQDN */</u></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><u>#<span data-ppcond="103">endif</span> /* !HAVE_GETNAMEINFO */</u></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="126">ifndef</span> <a class="macro" href="../pyconfig.h.html#51" data-ref="_M/HAVE_ADDRINFO">HAVE_ADDRINFO</a></u></td></tr>
+<tr><th id="127">127</th><td><b>struct</b> addrinfo {</td></tr>
+<tr><th id="128">128</th><td>    <em>int</em>         ai_flags;       <i>/* AI_PASSIVE, AI_CANONNAME */</i></td></tr>
+<tr><th id="129">129</th><td>    <em>int</em>         ai_family;      <i>/* PF_xxx */</i></td></tr>
+<tr><th id="130">130</th><td>    <em>int</em>         ai_socktype;    <i>/* SOCK_xxx */</i></td></tr>
+<tr><th id="131">131</th><td>    <em>int</em>         ai_protocol;    <i>/* 0 or IPPROTO_xxx for IPv4 and IPv6 */</i></td></tr>
+<tr><th id="132">132</th><td>    size_t      ai_addrlen;     <i>/* length of ai_addr */</i></td></tr>
+<tr><th id="133">133</th><td>    <em>char</em>        *ai_canonname;  <i>/* canonical name for hostname */</i></td></tr>
+<tr><th id="134">134</th><td>    <b>struct</b> sockaddr *ai_addr;           <i>/* binary address */</i></td></tr>
+<tr><th id="135">135</th><td>    <b>struct</b> addrinfo *ai_next;           <i>/* next structure in linked list */</i></td></tr>
+<tr><th id="136">136</th><td>};</td></tr>
+<tr><th id="137">137</th><td><u>#<span data-ppcond="126">endif</span> /* !HAVE_ADDRINFO */</u></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><u>#<span data-ppcond="139">ifndef</span> <a class="macro" href="../pyconfig.h.html#888" data-ref="_M/HAVE_SOCKADDR_STORAGE">HAVE_SOCKADDR_STORAGE</a></u></td></tr>
+<tr><th id="140">140</th><td><i>/*</i></td></tr>
+<tr><th id="141">141</th><td><i> * RFC 2553: protocol-independent placeholder for socket addresses</i></td></tr>
+<tr><th id="142">142</th><td><i> */</i></td></tr>
+<tr><th id="143">143</th><td><u>#define _SS_MAXSIZE     128</u></td></tr>
+<tr><th id="144">144</th><td><u>#define _SS_ALIGNSIZE   (sizeof(long long))</u></td></tr>
+<tr><th id="145">145</th><td><u>#define _SS_PAD1SIZE    (_SS_ALIGNSIZE - sizeof(u_char) * 2)</u></td></tr>
+<tr><th id="146">146</th><td><u>#define _SS_PAD2SIZE    (_SS_MAXSIZE - sizeof(u_char) * 2 - \</u></td></tr>
+<tr><th id="147">147</th><td><u>                _SS_PAD1SIZE - _SS_ALIGNSIZE)</u></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><b>struct</b> sockaddr_storage {</td></tr>
+<tr><th id="150">150</th><td><u>#ifdef HAVE_SOCKADDR_SA_LEN</u></td></tr>
+<tr><th id="151">151</th><td>    <em>unsigned</em> <em>char</em> ss_len;               <i>/* address length */</i></td></tr>
+<tr><th id="152">152</th><td>    <em>unsigned</em> <em>char</em> ss_family;            <i>/* address family */</i></td></tr>
+<tr><th id="153">153</th><td><u>#else</u></td></tr>
+<tr><th id="154">154</th><td>    <em>unsigned</em> <em>short</em> ss_family;           <i>/* address family */</i></td></tr>
+<tr><th id="155">155</th><td><u>#endif /* HAVE_SOCKADDR_SA_LEN */</u></td></tr>
+<tr><th id="156">156</th><td>    <em>char</em>        __ss_pad1[_SS_PAD1SIZE];</td></tr>
+<tr><th id="157">157</th><td>    <em>long</em> <em>long</em> __ss_align;            <i>/* force desired structure storage alignment */</i></td></tr>
+<tr><th id="158">158</th><td>    <em>char</em>        __ss_pad2[_SS_PAD2SIZE];</td></tr>
+<tr><th id="159">159</th><td>};</td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="139">endif</span> /* !HAVE_SOCKADDR_STORAGE */</u></td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td><u>#<span data-ppcond="162">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="163">163</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="164">164</th><td><u>#<span data-ppcond="162">endif</span></u></td></tr>
+<tr><th id="165">165</th><td><b>extern</b> <em>void</em> <dfn class="decl" id="freehostent" title='freehostent' data-ref="freehostent">freehostent</dfn>(<b>struct</b> <a class="type" href="../../include/netdb.h.html#hostent" title='hostent' data-ref="hostent">hostent</a> *);</td></tr>
+<tr><th id="166">166</th><td><u>#<span data-ppcond="166">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="167">167</th><td>}</td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="166">endif</span></u></td></tr>
+<tr><th id="169">169</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='socketmodule.c.html'>codebrowser/Modules/socketmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

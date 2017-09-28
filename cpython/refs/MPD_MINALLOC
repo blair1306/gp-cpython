@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='322' type='mpd_ssize_t'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='61' u='w' c='mpd_setminalloc'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='43' type='mpd_ssize_t'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='161' u='r' c='mpd_qnew_size'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='161' u='r' c='mpd_qnew_size'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='188' u='r' c='mpd_qnew'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='41'>/* Guaranteed minimum allocation for a coefficient. May be changed once
+   at program start using mpd_setminalloc(). */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='493' u='r' c='mpd_qresize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='495' u='r' c='mpd_qresize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='495' u='r' c='mpd_qresize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='516' u='r' c='mpd_qresize_zero'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='518' u='r' c='mpd_qresize_zero'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='518' u='r' c='mpd_qresize_zero'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='546' u='r' c='mpd_minalloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='548' u='r' c='mpd_minalloc'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='551' u='r' c='mpd_minalloc'/>

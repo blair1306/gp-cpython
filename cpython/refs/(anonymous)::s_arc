@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/grammar.h' l='39' type='arc *'/>
+<use f='codebrowser/Modules/parsermodule.c' l='697' u='r' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='705' u='r' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='711' u='r' c='validate_node'/>
+<use f='codebrowser/Modules/parsermodule.c' l='731' u='r' c='validate_node'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/grammar.h' l='39'>/* Array of arcs */</doc>
+<use f='codebrowser/Parser/acceler.c' l='78' u='r' c='fixstate'/>
+<use f='codebrowser/Parser/firstsets.c' l='70' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='38' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='78' u='w' c='_Py_addstate'/>
+<use f='codebrowser/Parser/grammar.c' l='96' u='w' c='_Py_addarc'/>
+<use f='codebrowser/Parser/grammar.c' l='96' u='r' c='_Py_addarc'/>
+<use f='codebrowser/Parser/grammar.c' l='97' u='r' c='_Py_addarc'/>
+<use f='codebrowser/Parser/grammar.c' l='99' u='r' c='_Py_addarc'/>

@@ -1,0 +1,7 @@
+<dec f='include/zlib.h' l='97' type='alloc_func'/>
+<offset>512</offset>
+<doc f='include/zlib.h' l='97'>/* used to allocate the internal state */</doc>
+<use f='codebrowser/Modules/zlibmodule.c' l='225' u='w' c='zlib_compress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='352' u='w' c='zlib_decompress_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='476' u='w' c='zlib_compressobj_impl'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='572' u='w' c='zlib_decompressobj_impl'/>

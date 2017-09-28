@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/object.h' l='245' type='binaryfunc'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/object.h' l='241'>/* Number implementations must check *both*
+       arguments for proper type and implement the necessary conversions
+       in the slot functions themselves. */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='4848' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4848' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4848' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4848' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4848' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4848' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='6048' u='r' c='slot_nb_add'/>
+<use f='codebrowser/Objects/typeobject.c' l='6048' u='r' c='slot_nb_add'/>

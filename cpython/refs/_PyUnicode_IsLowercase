@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2168' type='int _PyUnicode_IsLowercase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2161'>/* These should not be used directly. Use the Py_UNICODE_IS* and
+   Py_UNICODE_TO* macros instead.
+
+   These APIs are implemented in Objects/unicodectype.c.
+
+*/</doc>
+<def f='codebrowser/Objects/unicodectype.c' l='170' ll='175' type='int _PyUnicode_IsLowercase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='167'>/* Returns 1 for Unicode characters having the category &apos;Ll&apos;, 0
+   otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='9748' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11778' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11790' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11833' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11887' macro='1' u='c'/>

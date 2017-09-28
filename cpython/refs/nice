@@ -1,0 +1,3 @@
+<dec f='include/unistd.h' l='601' type='int nice(int __inc)'/>
+<doc f='include/unistd.h' l='600'>/* Add INC to priority of the current process.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='3976' u='c' c='os_nice_impl'/>

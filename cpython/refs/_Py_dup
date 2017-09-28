@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/fileutils.h' l='114' type='int _Py_dup(int fd)'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='1170' u='c' c='new_mmap_object'/>
+<use f='codebrowser/Modules/posixmodule.c' l='3577' u='c' c='_posix_listdir'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7811' u='c' c='os_dup_impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='12231' u='c' c='os_scandir_impl'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5424' u='c' c='socket_dup'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1928' u='c' c='PyTokenizer_FindEncodingFilename'/>
+<def f='codebrowser/Python/fileutils.c' l='1466' ll='1539' type='int _Py_dup(int fd)'/>
+<doc f='codebrowser/Python/fileutils.c' l='1461'>/* Duplicate a file descriptor. The new file descriptor is created as
+   non-inheritable. Return a new file descriptor on success, raise an OSError
+   exception and return -1 on error.
+
+   The GIL is released to call dup(). The caller must hold the GIL. */</doc>

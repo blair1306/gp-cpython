@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hashtable.h source code [codebrowser/Modules/hashtable.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="_Py_hashtable_t,_Py_slist_item_s "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/hashtable.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='hashtable.h.html'>hashtable.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#<span data-ppcond="1">ifndef</span> <span class="macro" data-ref="_M/Py_HASHTABLE_H">Py_HASHTABLE_H</span></u></td></tr>
+<tr><th id="2">2</th><td><u>#define <dfn class="macro" id="_M/Py_HASHTABLE_H" data-ref="_M/Py_HASHTABLE_H">Py_HASHTABLE_H</dfn></u></td></tr>
+<tr><th id="3">3</th><td><i>/* The whole API is private */</i></td></tr>
+<tr><th id="4">4</th><td><u>#<span data-ppcond="4">ifndef</span> <span class="macro" data-ref="_M/Py_LIMITED_API">Py_LIMITED_API</span></u></td></tr>
+<tr><th id="5">5</th><td></td></tr>
+<tr><th id="6">6</th><td><i>/* Single linked list */</i></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="_Py_slist_item_s" title='_Py_slist_item_s' data-ref="_Py_slist_item_s"><a class="type" href="#_Py_slist_item_s" title='_Py_slist_item_s' data-ref="_Py_slist_item_s">_Py_slist_item_s</a></dfn> {</td></tr>
+<tr><th id="9">9</th><td>    <b>struct</b> <a class="type" href="#_Py_slist_item_s" title='_Py_slist_item_s' data-ref="_Py_slist_item_s">_Py_slist_item_s</a> *<dfn class="decl" id="_Py_slist_item_s::next" title='_Py_slist_item_s::next' data-ref="_Py_slist_item_s::next">next</dfn>;</td></tr>
+<tr><th id="10">10</th><td>} <dfn class="typedef" id="_Py_slist_item_t" title='_Py_slist_item_t' data-type='struct _Py_slist_item_s' data-ref="_Py_slist_item_t">_Py_slist_item_t</dfn>;</td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="13">13</th><td>    <a class="typedef" href="#_Py_slist_item_t" title='_Py_slist_item_t' data-type='struct _Py_slist_item_s' data-ref="_Py_slist_item_t">_Py_slist_item_t</a> *<dfn class="decl" id="(anonymous)::head" title='(anonymous struct)::head' data-ref="(anonymous)::head">head</dfn>;</td></tr>
+<tr><th id="14">14</th><td>} <dfn class="typedef" id="_Py_slist_t" title='_Py_slist_t' data-type='struct _Py_slist_t' data-ref="_Py_slist_t">_Py_slist_t</dfn>;</td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/_Py_SLIST_ITEM_NEXT" data-ref="_M/_Py_SLIST_ITEM_NEXT">_Py_SLIST_ITEM_NEXT</dfn>(ITEM) (((_Py_slist_item_t *)ITEM)-&gt;next)</u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/_Py_SLIST_HEAD" data-ref="_M/_Py_SLIST_HEAD">_Py_SLIST_HEAD</dfn>(SLIST) (((_Py_slist_t *)SLIST)-&gt;head)</u></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* _Py_hashtable: table entry */</i></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="24">24</th><td>    <i>/* used by _Py_hashtable_t.buckets to link entries */</i></td></tr>
+<tr><th id="25">25</th><td>    <a class="typedef" href="#_Py_slist_item_t" title='_Py_slist_item_t' data-type='struct _Py_slist_item_s' data-ref="_Py_slist_item_t">_Py_slist_item_t</a> <dfn class="decl" id="(anonymous)::_Py_slist_item" title='(anonymous struct)::_Py_slist_item' data-ref="(anonymous)::_Py_slist_item">_Py_slist_item</dfn>;</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_uhash_t" title='Py_uhash_t' data-type='size_t' data-ref="Py_uhash_t">Py_uhash_t</a> <dfn class="decl" id="(anonymous)::key_hash" title='(anonymous struct)::key_hash' data-ref="(anonymous)::key_hash">key_hash</dfn>;</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td>    <i>/* key (key_size bytes) and then data (data_size bytes) follows */</i></td></tr>
+<tr><th id="30">30</th><td>} <dfn class="typedef" id="_Py_hashtable_entry_t" title='_Py_hashtable_entry_t' data-type='struct _Py_hashtable_entry_t' data-ref="_Py_hashtable_entry_t">_Py_hashtable_entry_t</dfn>;</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_ENTRY_PKEY" data-ref="_M/_Py_HASHTABLE_ENTRY_PKEY">_Py_HASHTABLE_ENTRY_PKEY</dfn>(ENTRY) \</u></td></tr>
+<tr><th id="33">33</th><td><u>        ((const void *)((char *)(ENTRY) \</u></td></tr>
+<tr><th id="34">34</th><td><u>                        + sizeof(_Py_hashtable_entry_t)))</u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_ENTRY_PDATA" data-ref="_M/_Py_HASHTABLE_ENTRY_PDATA">_Py_HASHTABLE_ENTRY_PDATA</dfn>(TABLE, ENTRY) \</u></td></tr>
+<tr><th id="37">37</th><td><u>        ((const void *)((char *)(ENTRY) \</u></td></tr>
+<tr><th id="38">38</th><td><u>                        + sizeof(_Py_hashtable_entry_t) \</u></td></tr>
+<tr><th id="39">39</th><td><u>                        + (TABLE)-&gt;key_size))</u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><i>/* Get a key value from pkey: use memcpy() rather than a pointer dereference</i></td></tr>
+<tr><th id="42">42</th><td><i>   to avoid memory alignment issues. */</i></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_READ_KEY" data-ref="_M/_Py_HASHTABLE_READ_KEY">_Py_HASHTABLE_READ_KEY</dfn>(TABLE, PKEY, DST_KEY) \</u></td></tr>
+<tr><th id="44">44</th><td><u>    do { \</u></td></tr>
+<tr><th id="45">45</th><td><u>        assert(sizeof(DST_KEY) == (TABLE)-&gt;key_size); \</u></td></tr>
+<tr><th id="46">46</th><td><u>        memcpy(&amp;(DST_KEY), (PKEY), sizeof(DST_KEY)); \</u></td></tr>
+<tr><th id="47">47</th><td><u>    } while (0)</u></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_ENTRY_READ_KEY" data-ref="_M/_Py_HASHTABLE_ENTRY_READ_KEY">_Py_HASHTABLE_ENTRY_READ_KEY</dfn>(TABLE, ENTRY, KEY) \</u></td></tr>
+<tr><th id="50">50</th><td><u>    do { \</u></td></tr>
+<tr><th id="51">51</th><td><u>        assert(sizeof(KEY) == (TABLE)-&gt;key_size); \</u></td></tr>
+<tr><th id="52">52</th><td><u>        memcpy(&amp;(KEY), _Py_HASHTABLE_ENTRY_PKEY(ENTRY), sizeof(KEY)); \</u></td></tr>
+<tr><th id="53">53</th><td><u>    } while (0)</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_ENTRY_READ_DATA" data-ref="_M/_Py_HASHTABLE_ENTRY_READ_DATA">_Py_HASHTABLE_ENTRY_READ_DATA</dfn>(TABLE, ENTRY, DATA) \</u></td></tr>
+<tr><th id="56">56</th><td><u>    do { \</u></td></tr>
+<tr><th id="57">57</th><td><u>        assert(sizeof(DATA) == (TABLE)-&gt;data_size); \</u></td></tr>
+<tr><th id="58">58</th><td><u>        memcpy(&amp;(DATA), _Py_HASHTABLE_ENTRY_PDATA(TABLE, (ENTRY)), \</u></td></tr>
+<tr><th id="59">59</th><td><u>                  sizeof(DATA)); \</u></td></tr>
+<tr><th id="60">60</th><td><u>    } while (0)</u></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_ENTRY_WRITE_DATA" data-ref="_M/_Py_HASHTABLE_ENTRY_WRITE_DATA">_Py_HASHTABLE_ENTRY_WRITE_DATA</dfn>(TABLE, ENTRY, DATA) \</u></td></tr>
+<tr><th id="63">63</th><td><u>    do { \</u></td></tr>
+<tr><th id="64">64</th><td><u>        assert(sizeof(DATA) == (TABLE)-&gt;data_size); \</u></td></tr>
+<tr><th id="65">65</th><td><u>        memcpy((void *)_Py_HASHTABLE_ENTRY_PDATA((TABLE), (ENTRY)), \</u></td></tr>
+<tr><th id="66">66</th><td><u>                  &amp;(DATA), sizeof(DATA)); \</u></td></tr>
+<tr><th id="67">67</th><td><u>    } while (0)</u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><i>/* _Py_hashtable: prototypes */</i></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><i>/* Forward declaration */</i></td></tr>
+<tr><th id="73">73</th><td><b>struct</b> <a class="type" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a>;</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><b>typedef</b> <a class="typedef" href="../Include/pyport.h.html#Py_uhash_t" title='Py_uhash_t' data-type='size_t' data-ref="Py_uhash_t">Py_uhash_t</a> (*<dfn class="typedef" id="_Py_hashtable_hash_func" title='_Py_hashtable_hash_func' data-type='Py_uhash_t (*)(struct _Py_hashtable_t *, const void *)' data-ref="_Py_hashtable_hash_func">_Py_hashtable_hash_func</dfn>) (<b>struct</b> <a class="type" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col1 decl" id="1ht" title='ht' data-type='struct _Py_hashtable_t *' data-ref="1ht">ht</dfn>,</td></tr>
+<tr><th id="76">76</th><td>                                               <em>const</em> <em>void</em> *<dfn class="local col2 decl" id="2pkey" title='pkey' data-type='const void *' data-ref="2pkey">pkey</dfn>);</td></tr>
+<tr><th id="77">77</th><td><b>typedef</b> <em>int</em> (*<dfn class="typedef" id="_Py_hashtable_compare_func" title='_Py_hashtable_compare_func' data-type='int (*)(struct _Py_hashtable_t *, const void *, const _Py_hashtable_entry_t *)' data-ref="_Py_hashtable_compare_func">_Py_hashtable_compare_func</dfn>) (<b>struct</b> <a class="type" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col3 decl" id="3ht" title='ht' data-type='struct _Py_hashtable_t *' data-ref="3ht">ht</dfn>,</td></tr>
+<tr><th id="78">78</th><td>                                           <em>const</em> <em>void</em> *<dfn class="local col4 decl" id="4pkey" title='pkey' data-type='const void *' data-ref="4pkey">pkey</dfn>,</td></tr>
+<tr><th id="79">79</th><td>                                           <em>const</em> <a class="typedef" href="#_Py_hashtable_entry_t" title='_Py_hashtable_entry_t' data-type='struct _Py_hashtable_entry_t' data-ref="_Py_hashtable_entry_t">_Py_hashtable_entry_t</a> *<dfn class="local col5 decl" id="5he" title='he' data-type='const _Py_hashtable_entry_t *' data-ref="5he">he</dfn>);</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="82">82</th><td>    <i>/* allocate a memory block */</i></td></tr>
+<tr><th id="83">83</th><td>    <em>void</em>* (*<dfn class="decl" id="(anonymous)::malloc" title='(anonymous struct)::malloc' data-ref="(anonymous)::malloc">malloc</dfn>) (<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="6size" title='size' data-type='size_t' data-ref="6size">size</dfn>);</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>    <i>/* release a memory block */</i></td></tr>
+<tr><th id="86">86</th><td>    <em>void</em> (*<dfn class="decl" id="(anonymous)::free" title='(anonymous struct)::free' data-ref="(anonymous)::free">free</dfn>) (<em>void</em> *<dfn class="local col7 decl" id="7ptr" title='ptr' data-type='void *' data-ref="7ptr">ptr</dfn>);</td></tr>
+<tr><th id="87">87</th><td>} <dfn class="typedef" id="_Py_hashtable_allocator_t" title='_Py_hashtable_allocator_t' data-type='struct _Py_hashtable_allocator_t' data-ref="_Py_hashtable_allocator_t">_Py_hashtable_allocator_t</dfn>;</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>/* _Py_hashtable: table */</i></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="_Py_hashtable_t" title='_Py_hashtable_t' data-ref="_Py_hashtable_t"><a class="type" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a></dfn> {</td></tr>
+<tr><th id="93">93</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_Py_hashtable_t::num_buckets" title='_Py_hashtable_t::num_buckets' data-ref="_Py_hashtable_t::num_buckets">num_buckets</dfn>;</td></tr>
+<tr><th id="94">94</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_Py_hashtable_t::entries" title='_Py_hashtable_t::entries' data-ref="_Py_hashtable_t::entries">entries</dfn>; <i>/* Total number of entries in the table. */</i></td></tr>
+<tr><th id="95">95</th><td>    <a class="typedef" href="#_Py_slist_t" title='_Py_slist_t' data-type='struct _Py_slist_t' data-ref="_Py_slist_t">_Py_slist_t</a> *<dfn class="decl" id="_Py_hashtable_t::buckets" title='_Py_hashtable_t::buckets' data-ref="_Py_hashtable_t::buckets">buckets</dfn>;</td></tr>
+<tr><th id="96">96</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_Py_hashtable_t::key_size" title='_Py_hashtable_t::key_size' data-ref="_Py_hashtable_t::key_size">key_size</dfn>;</td></tr>
+<tr><th id="97">97</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl" id="_Py_hashtable_t::data_size" title='_Py_hashtable_t::data_size' data-ref="_Py_hashtable_t::data_size">data_size</dfn>;</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>    <a class="typedef" href="#_Py_hashtable_hash_func" title='_Py_hashtable_hash_func' data-type='Py_uhash_t (*)(struct _Py_hashtable_t *, const void *)' data-ref="_Py_hashtable_hash_func">_Py_hashtable_hash_func</a> <dfn class="decl" id="_Py_hashtable_t::hash_func" title='_Py_hashtable_t::hash_func' data-ref="_Py_hashtable_t::hash_func">hash_func</dfn>;</td></tr>
+<tr><th id="100">100</th><td>    <a class="typedef" href="#_Py_hashtable_compare_func" title='_Py_hashtable_compare_func' data-type='int (*)(struct _Py_hashtable_t *, const void *, const _Py_hashtable_entry_t *)' data-ref="_Py_hashtable_compare_func">_Py_hashtable_compare_func</a> <dfn class="decl" id="_Py_hashtable_t::compare_func" title='_Py_hashtable_t::compare_func' data-ref="_Py_hashtable_t::compare_func">compare_func</dfn>;</td></tr>
+<tr><th id="101">101</th><td>    <a class="typedef" href="#_Py_hashtable_allocator_t" title='_Py_hashtable_allocator_t' data-type='struct _Py_hashtable_allocator_t' data-ref="_Py_hashtable_allocator_t">_Py_hashtable_allocator_t</a> <dfn class="decl" id="_Py_hashtable_t::alloc" title='_Py_hashtable_t::alloc' data-ref="_Py_hashtable_t::alloc">alloc</dfn>;</td></tr>
+<tr><th id="102">102</th><td>} <dfn class="typedef" id="_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</dfn>;</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><i>/* hash a pointer (void*) */</i></td></tr>
+<tr><th id="105">105</th><td><a class="macro" href="../Include/pyport.h.html#676" title="Py_uhash_t" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="../Include/pyport.h.html#Py_uhash_t" title='Py_uhash_t' data-type='size_t' data-ref="Py_uhash_t">Py_uhash_t</a>) <dfn class="decl" id="_Py_hashtable_hash_ptr" title='_Py_hashtable_hash_ptr' data-ref="_Py_hashtable_hash_ptr">_Py_hashtable_hash_ptr</dfn>(</td></tr>
+<tr><th id="106">106</th><td>    <b>struct</b> <a class="type" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col8 decl" id="8ht" title='ht' data-type='struct _Py_hashtable_t *' data-ref="8ht">ht</dfn>,</td></tr>
+<tr><th id="107">107</th><td>    <em>const</em> <em>void</em> *<dfn class="local col9 decl" id="9pkey" title='pkey' data-type='const void *' data-ref="9pkey">pkey</dfn>);</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><i>/* comparison using memcmp() */</i></td></tr>
+<tr><th id="110">110</th><td><a class="macro" href="../Include/pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="_Py_hashtable_compare_direct" title='_Py_hashtable_compare_direct' data-ref="_Py_hashtable_compare_direct">_Py_hashtable_compare_direct</dfn>(</td></tr>
+<tr><th id="111">111</th><td>    <a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col0 decl" id="10ht" title='ht' data-type='_Py_hashtable_t *' data-ref="10ht">ht</dfn>,</td></tr>
+<tr><th id="112">112</th><td>    <em>const</em> <em>void</em> *<dfn class="local col1 decl" id="11pkey" title='pkey' data-type='const void *' data-ref="11pkey">pkey</dfn>,</td></tr>
+<tr><th id="113">113</th><td>    <em>const</em> <a class="typedef" href="#_Py_hashtable_entry_t" title='_Py_hashtable_entry_t' data-type='struct _Py_hashtable_entry_t' data-ref="_Py_hashtable_entry_t">_Py_hashtable_entry_t</a> *<dfn class="local col2 decl" id="12entry" title='entry' data-type='const _Py_hashtable_entry_t *' data-ref="12entry">entry</dfn>);</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><a class="macro" href="../Include/pyport.h.html#676" title="_Py_hashtable_t *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *) <dfn class="decl" id="_Py_hashtable_new" title='_Py_hashtable_new' data-ref="_Py_hashtable_new">_Py_hashtable_new</dfn>(</td></tr>
+<tr><th id="116">116</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="13key_size" title='key_size' data-type='size_t' data-ref="13key_size">key_size</dfn>,</td></tr>
+<tr><th id="117">117</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="14data_size" title='data_size' data-type='size_t' data-ref="14data_size">data_size</dfn>,</td></tr>
+<tr><th id="118">118</th><td>    <a class="typedef" href="#_Py_hashtable_hash_func" title='_Py_hashtable_hash_func' data-type='Py_uhash_t (*)(struct _Py_hashtable_t *, const void *)' data-ref="_Py_hashtable_hash_func">_Py_hashtable_hash_func</a> <dfn class="local col5 decl" id="15hash_func" title='hash_func' data-type='_Py_hashtable_hash_func' data-ref="15hash_func">hash_func</dfn>,</td></tr>
+<tr><th id="119">119</th><td>    <a class="typedef" href="#_Py_hashtable_compare_func" title='_Py_hashtable_compare_func' data-type='int (*)(struct _Py_hashtable_t *, const void *, const _Py_hashtable_entry_t *)' data-ref="_Py_hashtable_compare_func">_Py_hashtable_compare_func</a> <dfn class="local col6 decl" id="16compare_func" title='compare_func' data-type='_Py_hashtable_compare_func' data-ref="16compare_func">compare_func</dfn>);</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><a class="macro" href="../Include/pyport.h.html#676" title="_Py_hashtable_t *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *) <dfn class="decl" id="_Py_hashtable_new_full" title='_Py_hashtable_new_full' data-ref="_Py_hashtable_new_full">_Py_hashtable_new_full</dfn>(</td></tr>
+<tr><th id="122">122</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="17key_size" title='key_size' data-type='size_t' data-ref="17key_size">key_size</dfn>,</td></tr>
+<tr><th id="123">123</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="18data_size" title='data_size' data-type='size_t' data-ref="18data_size">data_size</dfn>,</td></tr>
+<tr><th id="124">124</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="19init_size" title='init_size' data-type='size_t' data-ref="19init_size">init_size</dfn>,</td></tr>
+<tr><th id="125">125</th><td>    <a class="typedef" href="#_Py_hashtable_hash_func" title='_Py_hashtable_hash_func' data-type='Py_uhash_t (*)(struct _Py_hashtable_t *, const void *)' data-ref="_Py_hashtable_hash_func">_Py_hashtable_hash_func</a> <dfn class="local col0 decl" id="20hash_func" title='hash_func' data-type='_Py_hashtable_hash_func' data-ref="20hash_func">hash_func</dfn>,</td></tr>
+<tr><th id="126">126</th><td>    <a class="typedef" href="#_Py_hashtable_compare_func" title='_Py_hashtable_compare_func' data-type='int (*)(struct _Py_hashtable_t *, const void *, const _Py_hashtable_entry_t *)' data-ref="_Py_hashtable_compare_func">_Py_hashtable_compare_func</a> <dfn class="local col1 decl" id="21compare_func" title='compare_func' data-type='_Py_hashtable_compare_func' data-ref="21compare_func">compare_func</dfn>,</td></tr>
+<tr><th id="127">127</th><td>    <a class="typedef" href="#_Py_hashtable_allocator_t" title='_Py_hashtable_allocator_t' data-type='struct _Py_hashtable_allocator_t' data-ref="_Py_hashtable_allocator_t">_Py_hashtable_allocator_t</a> *<dfn class="local col2 decl" id="22allocator" title='allocator' data-type='_Py_hashtable_allocator_t *' data-ref="22allocator">allocator</dfn>);</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><a class="macro" href="../Include/pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="_Py_hashtable_destroy" title='_Py_hashtable_destroy' data-ref="_Py_hashtable_destroy">_Py_hashtable_destroy</dfn>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col3 decl" id="23ht" title='ht' data-type='_Py_hashtable_t *' data-ref="23ht">ht</dfn>);</td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><i>/* Return a copy of the hash table */</i></td></tr>
+<tr><th id="132">132</th><td><a class="macro" href="../Include/pyport.h.html#676" title="_Py_hashtable_t *" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *) <dfn class="decl" id="_Py_hashtable_copy" title='_Py_hashtable_copy' data-ref="_Py_hashtable_copy">_Py_hashtable_copy</dfn>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col4 decl" id="24src" title='src' data-type='_Py_hashtable_t *' data-ref="24src">src</dfn>);</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><a class="macro" href="../Include/pyport.h.html#676" title="void" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>void</em>) <dfn class="decl" id="_Py_hashtable_clear" title='_Py_hashtable_clear' data-ref="_Py_hashtable_clear">_Py_hashtable_clear</dfn>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col5 decl" id="25ht" title='ht' data-type='_Py_hashtable_t *' data-ref="25ht">ht</dfn>);</td></tr>
+<tr><th id="135">135</th><td></td></tr>
+<tr><th id="136">136</th><td><b>typedef</b> <em>int</em> (*<dfn class="typedef" id="_Py_hashtable_foreach_func" title='_Py_hashtable_foreach_func' data-type='int (*)(_Py_hashtable_t *, _Py_hashtable_entry_t *, void *)' data-ref="_Py_hashtable_foreach_func">_Py_hashtable_foreach_func</dfn>) (<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col6 decl" id="26ht" title='ht' data-type='_Py_hashtable_t *' data-ref="26ht">ht</dfn>,</td></tr>
+<tr><th id="137">137</th><td>                                           <a class="typedef" href="#_Py_hashtable_entry_t" title='_Py_hashtable_entry_t' data-type='struct _Py_hashtable_entry_t' data-ref="_Py_hashtable_entry_t">_Py_hashtable_entry_t</a> *<dfn class="local col7 decl" id="27entry" title='entry' data-type='_Py_hashtable_entry_t *' data-ref="27entry">entry</dfn>,</td></tr>
+<tr><th id="138">138</th><td>                                           <em>void</em> *<dfn class="local col8 decl" id="28arg" title='arg' data-type='void *' data-ref="28arg">arg</dfn>);</td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><i>/* Call func() on each entry of the hashtable.</i></td></tr>
+<tr><th id="141">141</th><td><i>   Iteration stops if func() result is non-zero, in this case it's the result</i></td></tr>
+<tr><th id="142">142</th><td><i>   of the call. Otherwise, the function returns 0. */</i></td></tr>
+<tr><th id="143">143</th><td><a class="macro" href="../Include/pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="_Py_hashtable_foreach" title='_Py_hashtable_foreach' data-ref="_Py_hashtable_foreach">_Py_hashtable_foreach</dfn>(</td></tr>
+<tr><th id="144">144</th><td>    <a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col9 decl" id="29ht" title='ht' data-type='_Py_hashtable_t *' data-ref="29ht">ht</dfn>,</td></tr>
+<tr><th id="145">145</th><td>    <a class="typedef" href="#_Py_hashtable_foreach_func" title='_Py_hashtable_foreach_func' data-type='int (*)(_Py_hashtable_t *, _Py_hashtable_entry_t *, void *)' data-ref="_Py_hashtable_foreach_func">_Py_hashtable_foreach_func</a> <dfn class="local col0 decl" id="30func" title='func' data-type='_Py_hashtable_foreach_func' data-ref="30func">func</dfn>,</td></tr>
+<tr><th id="146">146</th><td>    <em>void</em> *<dfn class="local col1 decl" id="31arg" title='arg' data-type='void *' data-ref="31arg">arg</dfn>);</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><a class="macro" href="../Include/pyport.h.html#676" title="size_t" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span>) <dfn class="decl" id="_Py_hashtable_size" title='_Py_hashtable_size' data-ref="_Py_hashtable_size">_Py_hashtable_size</dfn>(<a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col2 decl" id="32ht" title='ht' data-type='_Py_hashtable_t *' data-ref="32ht">ht</dfn>);</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><i>/* Add a new entry to the hash. The key must not be present in the hash table.</i></td></tr>
+<tr><th id="151">151</th><td><i>   Return 0 on success, -1 on memory error.</i></td></tr>
+<tr><th id="152">152</th><td><i></i></td></tr>
+<tr><th id="153">153</th><td><i>   Don't call directly this function,</i></td></tr>
+<tr><th id="154">154</th><td><i>   but use _Py_HASHTABLE_SET() and _Py_HASHTABLE_SET_NODATA() macros */</i></td></tr>
+<tr><th id="155">155</th><td><a class="macro" href="../Include/pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="_Py_hashtable_set" title='_Py_hashtable_set' data-ref="_Py_hashtable_set">_Py_hashtable_set</dfn>(</td></tr>
+<tr><th id="156">156</th><td>    <a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col3 decl" id="33ht" title='ht' data-type='_Py_hashtable_t *' data-ref="33ht">ht</dfn>,</td></tr>
+<tr><th id="157">157</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="34key_size" title='key_size' data-type='size_t' data-ref="34key_size">key_size</dfn>,</td></tr>
+<tr><th id="158">158</th><td>    <em>const</em> <em>void</em> *<dfn class="local col5 decl" id="35pkey" title='pkey' data-type='const void *' data-ref="35pkey">pkey</dfn>,</td></tr>
+<tr><th id="159">159</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="36data_size" title='data_size' data-type='size_t' data-ref="36data_size">data_size</dfn>,</td></tr>
+<tr><th id="160">160</th><td>    <em>const</em> <em>void</em> *<dfn class="local col7 decl" id="37data" title='data' data-type='const void *' data-ref="37data">data</dfn>);</td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_SET" data-ref="_M/_Py_HASHTABLE_SET">_Py_HASHTABLE_SET</dfn>(TABLE, KEY, DATA) \</u></td></tr>
+<tr><th id="163">163</th><td><u>    _Py_hashtable_set(TABLE, sizeof(KEY), &amp;(KEY), sizeof(DATA), &amp;(DATA))</u></td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_SET_NODATA" data-ref="_M/_Py_HASHTABLE_SET_NODATA">_Py_HASHTABLE_SET_NODATA</dfn>(TABLE, KEY) \</u></td></tr>
+<tr><th id="166">166</th><td><u>    _Py_hashtable_set(TABLE, sizeof(KEY), &amp;(KEY), 0, NULL)</u></td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><i>/* Get an entry.</i></td></tr>
+<tr><th id="170">170</th><td><i>   Return NULL if the key does not exist.</i></td></tr>
+<tr><th id="171">171</th><td><i></i></td></tr>
+<tr><th id="172">172</th><td><i>   Don't call directly this function, but use _Py_HASHTABLE_GET_ENTRY()</i></td></tr>
+<tr><th id="173">173</th><td><i>   macro */</i></td></tr>
+<tr><th id="174">174</th><td><a class="macro" href="../Include/pyport.h.html#676" title="_Py_hashtable_entry_t*" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<a class="typedef" href="#_Py_hashtable_entry_t" title='_Py_hashtable_entry_t' data-type='struct _Py_hashtable_entry_t' data-ref="_Py_hashtable_entry_t">_Py_hashtable_entry_t</a>*) <dfn class="decl" id="_Py_hashtable_get_entry" title='_Py_hashtable_get_entry' data-ref="_Py_hashtable_get_entry">_Py_hashtable_get_entry</dfn>(</td></tr>
+<tr><th id="175">175</th><td>    <a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col8 decl" id="38ht" title='ht' data-type='_Py_hashtable_t *' data-ref="38ht">ht</dfn>,</td></tr>
+<tr><th id="176">176</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="39key_size" title='key_size' data-type='size_t' data-ref="39key_size">key_size</dfn>,</td></tr>
+<tr><th id="177">177</th><td>    <em>const</em> <em>void</em> *<dfn class="local col0 decl" id="40pkey" title='pkey' data-type='const void *' data-ref="40pkey">pkey</dfn>);</td></tr>
+<tr><th id="178">178</th><td></td></tr>
+<tr><th id="179">179</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_GET_ENTRY" data-ref="_M/_Py_HASHTABLE_GET_ENTRY">_Py_HASHTABLE_GET_ENTRY</dfn>(TABLE, KEY) \</u></td></tr>
+<tr><th id="180">180</th><td><u>    _Py_hashtable_get_entry(TABLE, sizeof(KEY), &amp;(KEY))</u></td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td><i>/* Get data from an entry. Copy entry data into data and return 1 if the entry</i></td></tr>
+<tr><th id="184">184</th><td><i>   exists, return 0 if the entry does not exist.</i></td></tr>
+<tr><th id="185">185</th><td><i></i></td></tr>
+<tr><th id="186">186</th><td><i>   Don't call directly this function, but use _Py_HASHTABLE_GET() macro */</i></td></tr>
+<tr><th id="187">187</th><td><a class="macro" href="../Include/pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="_Py_hashtable_get" title='_Py_hashtable_get' data-ref="_Py_hashtable_get">_Py_hashtable_get</dfn>(</td></tr>
+<tr><th id="188">188</th><td>    <a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col1 decl" id="41ht" title='ht' data-type='_Py_hashtable_t *' data-ref="41ht">ht</dfn>,</td></tr>
+<tr><th id="189">189</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col2 decl" id="42key_size" title='key_size' data-type='size_t' data-ref="42key_size">key_size</dfn>,</td></tr>
+<tr><th id="190">190</th><td>    <em>const</em> <em>void</em> *<dfn class="local col3 decl" id="43pkey" title='pkey' data-type='const void *' data-ref="43pkey">pkey</dfn>,</td></tr>
+<tr><th id="191">191</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="44data_size" title='data_size' data-type='size_t' data-ref="44data_size">data_size</dfn>,</td></tr>
+<tr><th id="192">192</th><td>    <em>void</em> *<dfn class="local col5 decl" id="45data" title='data' data-type='void *' data-ref="45data">data</dfn>);</td></tr>
+<tr><th id="193">193</th><td></td></tr>
+<tr><th id="194">194</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_GET" data-ref="_M/_Py_HASHTABLE_GET">_Py_HASHTABLE_GET</dfn>(TABLE, KEY, DATA) \</u></td></tr>
+<tr><th id="195">195</th><td><u>    _Py_hashtable_get(TABLE, sizeof(KEY), &amp;(KEY), sizeof(DATA), &amp;(DATA))</u></td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td></td></tr>
+<tr><th id="198">198</th><td><i>/* Don't call directly this function, but use _Py_HASHTABLE_POP() macro */</i></td></tr>
+<tr><th id="199">199</th><td><a class="macro" href="../Include/pyport.h.html#676" title="int" data-ref="_M/PyAPI_FUNC">PyAPI_FUNC</a>(<em>int</em>) <dfn class="decl" id="_Py_hashtable_pop" title='_Py_hashtable_pop' data-ref="_Py_hashtable_pop">_Py_hashtable_pop</dfn>(</td></tr>
+<tr><th id="200">200</th><td>    <a class="typedef" href="#_Py_hashtable_t" title='_Py_hashtable_t' data-type='struct _Py_hashtable_t' data-ref="_Py_hashtable_t">_Py_hashtable_t</a> *<dfn class="local col6 decl" id="46ht" title='ht' data-type='_Py_hashtable_t *' data-ref="46ht">ht</dfn>,</td></tr>
+<tr><th id="201">201</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="47key_size" title='key_size' data-type='size_t' data-ref="47key_size">key_size</dfn>,</td></tr>
+<tr><th id="202">202</th><td>    <em>const</em> <em>void</em> *<dfn class="local col8 decl" id="48pkey" title='pkey' data-type='const void *' data-ref="48pkey">pkey</dfn>,</td></tr>
+<tr><th id="203">203</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="49data_size" title='data_size' data-type='size_t' data-ref="49data_size">data_size</dfn>,</td></tr>
+<tr><th id="204">204</th><td>    <em>void</em> *<dfn class="local col0 decl" id="50data" title='data' data-type='void *' data-ref="50data">data</dfn>);</td></tr>
+<tr><th id="205">205</th><td></td></tr>
+<tr><th id="206">206</th><td><u>#define <dfn class="macro" id="_M/_Py_HASHTABLE_POP" data-ref="_M/_Py_HASHTABLE_POP">_Py_HASHTABLE_POP</dfn>(TABLE, KEY, DATA) \</u></td></tr>
+<tr><th id="207">207</th><td><u>    _Py_hashtable_pop(TABLE, sizeof(KEY), &amp;(KEY), sizeof(DATA), &amp;(DATA))</u></td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td><u>#<span data-ppcond="4">endif</span>   /* Py_LIMITED_API */</u></td></tr>
+<tr><th id="211">211</th><td><u>#<span data-ppcond="1">endif</span></u></td></tr>
+<tr><th id="212">212</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='_tracemalloc.c.html'>codebrowser/Modules/_tracemalloc.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

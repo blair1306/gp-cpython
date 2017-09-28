@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/pymem.h' l='163' type='0'/>
+<doc f='codebrowser/Include/pymem.h' l='162'>/* PyMem_RawMalloc(), PyMem_RawRealloc() and PyMem_RawFree() */</doc>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3322' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3341' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3360' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3374' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3392' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3412' u='r' c='test_pymem_setrawallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3504' u='r' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3509' u='r' c='fm_setup_hooks'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3523' u='r' c='fm_remove_hooks'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='996' u='r' c='tracemalloc_init'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1126' u='r' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1127' u='r' c='tracemalloc_start'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1161' u='r' c='tracemalloc_stop'/>
+<use f='codebrowser/Objects/obmalloc.c' l='234' u='r' c='_PyMem_SetupAllocators'/>
+<use f='codebrowser/Objects/obmalloc.c' l='249' u='r' c='_PyMem_SetupAllocators'/>
+<use f='codebrowser/Objects/obmalloc.c' l='311' u='r' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='312' u='r' c='PyMem_SetupDebugHooks'/>
+<use f='codebrowser/Objects/obmalloc.c' l='338' c='PyMem_GetAllocator'/>
+<use f='codebrowser/Objects/obmalloc.c' l='356' c='PyMem_SetAllocator'/>

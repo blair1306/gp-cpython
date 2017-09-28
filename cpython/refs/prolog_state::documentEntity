@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/expat/xmlrole.h' l='97' type='int'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5066' u='r' c='doProlog'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='5621' u='r' c='appendAttributeValue'/>
+<offset>160</offset>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='88' u='r' c='entity5'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='88' u='r' c='entity10'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='88' u='r' c='notation4'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='88' u='r' c='attlist1'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='88' u='r' c='declClose'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='1330' u='r' c='common'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='1342' u='w' c='PyExpat_XmlPrologStateInit'/>
+<use f='codebrowser/Modules/expat/xmlrole.c' l='1354' u='w' c='PyExpat_XmlPrologStateInitExternalEntity'/>

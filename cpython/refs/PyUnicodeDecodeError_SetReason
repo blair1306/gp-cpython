@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pyerrors.h' l='473' type='int PyUnicodeDecodeError_SetReason(PyObject * exc, const char * reason)'/>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='413' u='c' c='multibytecodec_decerror'/>
+<def f='codebrowser/Objects/exceptions.c' l='1799' ll='1804' type='int PyUnicodeDecodeError_SetReason(PyObject * exc, const char * reason)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4246' u='c' c='make_decode_exception'/>

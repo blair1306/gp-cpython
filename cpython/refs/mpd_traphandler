@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='323' type='void (*)(mpd_context_t *)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5667' u='w' c='PyInit__decimal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/context.c' l='41' type='void (*)(mpd_context_t *)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/context.c' l='282' u='r' c='mpd_addstatus_raise'/>

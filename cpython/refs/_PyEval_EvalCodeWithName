@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/eval.h' l='21' type='PyObject * _PyEval_EvalCodeWithName(PyObject * co, PyObject * globals, PyObject * locals, PyObject ** args, Py_ssize_t argcount, PyObject ** kwnames, PyObject ** kwargs, Py_ssize_t kwcount, int kwstep, PyObject ** defs, Py_ssize_t defcount, PyObject * kwdefs, PyObject * closure, PyObject * name, PyObject * qualname)'/>
+<use f='codebrowser/Objects/call.c' l='375' u='c' c='_PyFunction_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='432' u='c' c='_PyFunction_FastCallKeywords'/>
+<def f='codebrowser/Python/ceval.c' l='3908' ll='4195' type='PyObject * _PyEval_EvalCodeWithName(PyObject * _co, PyObject * globals, PyObject * locals, PyObject ** args, Py_ssize_t argcount, PyObject ** kwnames, PyObject ** kwargs, Py_ssize_t kwcount, int kwstep, PyObject ** defs, Py_ssize_t defcount, PyObject * kwdefs, PyObject * closure, PyObject * name, PyObject * qualname)'/>
+<use f='codebrowser/Python/ceval.c' l='4202' u='c' c='PyEval_EvalCodeEx'/>
+<doc f='codebrowser/Python/ceval.c' l='3904'>/* This is gonna seem *real weird*, but if you put some other code between
+   PyEval_EvalFrame() and PyEval_EvalCodeEx() you will need to adjust
+   the test in the if statements in Misc/gdbinit (pystack and pystackv). */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/descrobject.h' l='45' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Objects/descrobject.c' l='18' u='r' c='descr_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='425' u='r' c='descr_get_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='426' u='w' c='descr_get_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='427' u='r' c='descr_get_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='428' u='r' c='descr_get_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='720' u='w' c='descr_new'/>

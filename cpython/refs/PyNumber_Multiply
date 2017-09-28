@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/abstract.h' l='626' type='PyObject * PyNumber_Multiply(PyObject * o1, PyObject * o2)'/>
+<doc f='codebrowser/Include/abstract.h' l='623'>/* Returns the result of multiplying o1 and o2, or NULL on failure.
+
+   This is the equivalent of the Python expression: o1 * o2. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1512' u='c' c='delta_to_microseconds'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1530' u='c' c='delta_to_microseconds'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1644' u='c' c='multiply_int_timedelta'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1667' u='c' c='multiply_float_timedelta'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='1765' u='c' c='truedivide_timedelta_float'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2087' u='c' c='accum'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2118' u='c' c='accum'/>
+<use f='codebrowser/Modules/_operator.c' l='77' u='c' c='_operator_mul_impl'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1567' u='c' c='factorial_partial_product'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1605' u='c' c='factorial_odd_part'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1615' u='c' c='factorial_odd_part'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1981' u='c' c='fill_time'/>
+<def f='codebrowser/Objects/abstract.c' l='968' ll='985' type='PyObject * PyNumber_Multiply(PyObject * v, PyObject * w)'/>
+<use f='codebrowser/Objects/rangeobject.c' l='225' u='c' c='compute_item'/>
+<use f='codebrowser/Objects/rangeobject.c' l='310' u='c' c='compute_slice'/>
+<use f='codebrowser/Objects/rangeobject.c' l='905' u='c' c='longrangeiter_reduce'/>
+<use f='codebrowser/Objects/rangeobject.c' l='982' u='c' c='longrangeiter_next'/>
+<use f='codebrowser/Objects/rangeobject.c' l='1166' u='c' c='range_reverse'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='498' u='c' c='proxy_mul'/>
+<use f='codebrowser/Python/ceval.c' l='1336' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/peephole.c' l='251' u='c' c='fold_binops_on_constants'/>

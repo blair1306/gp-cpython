@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='200' type='int _PyState_AddModule(PyObject * , struct PyModuleDef * )'/>
+<use f='codebrowser/Python/import.c' l='549' u='c' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='629' u='c' c='_PyImport_FindExtensionObject'/>
+<def f='codebrowser/Python/pystate.c' l='343' ll='368' type='int _PyState_AddModule(PyObject * module, struct PyModuleDef * def)'/>
+<use f='codebrowser/Python/pystate.c' l='388' u='c' c='PyState_AddModule'/>

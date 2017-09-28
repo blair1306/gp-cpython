@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/symtable.h' l='46' type='int'/>
+<offset>672</offset>
+<doc f='codebrowser/Include/symtable.h' l='46'>/* true if block is nested */</doc>
+<use f='codebrowser/Python/compile.c' l='5260' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/symtable.c' l='56' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='67' u='r' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='69' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='531' u='r' c='analyze_name'/>

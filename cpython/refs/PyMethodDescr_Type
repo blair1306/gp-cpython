@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/descrobject.h' l='78' type='PyTypeObject'/>
+<use f='codebrowser/Objects/descrobject.c' l='261' u='a' c='_PyMethodDescr_FastCallKeywords'/>
+<def f='codebrowser/Objects/descrobject.c' l='519' ll='554' type='PyTypeObject'/>
+<use f='codebrowser/Objects/descrobject.c' l='731' u='a' c='PyDescr_NewMethod'/>
+<use f='codebrowser/Objects/object.c' l='1064' u='a' c='_PyObject_GetMethod'/>
+<use f='codebrowser/Objects/object.c' l='1809' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/ceval.c' l='4822' u='a' c='call_function'/>

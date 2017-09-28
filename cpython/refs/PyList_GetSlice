@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/listobject.h' l='58' type='PyObject * PyList_GetSlice(PyObject * , Py_ssize_t , Py_ssize_t )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='108' u='c' c='future_schedule_callbacks'/>
+<use f='codebrowser/Modules/posixmodule.c' l='412' u='c' c='run_at_forkers'/>
+<def f='codebrowser/Objects/listobject.c' l='462' ll='470' type='PyObject * PyList_GetSlice(PyObject * a, Py_ssize_t ilow, Py_ssize_t ihigh)'/>
+<use f='codebrowser/Python/sysmodule.c' l='2142' u='c' c='_PySys_EndInit'/>

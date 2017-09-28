@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/code.h' l='116' type='int PyCode_Addr2Line(PyCodeObject * , int )'/>
+<doc f='codebrowser/Include/code.h' l='113'>/* Return the line number associated with the specified bytecode index
+   in this code object.  If you just need the line number of a frame,
+   use PyFrame_GetLineNumber() instead. */</doc>
+<def f='codebrowser/Objects/codeobject.c' l='760' ll='775' type='int PyCode_Addr2Line(PyCodeObject * co, int addrq)'/>
+<doc f='codebrowser/Objects/codeobject.c' l='756'>/* Use co_lnotab to compute the line number from a bytecode index, addrq.  See
+   lnotab_notes.txt for the details of the lnotab representation.
+*/</doc>
+<use f='codebrowser/Objects/frameobject.c' l='36' u='c' c='PyFrame_GetLineNumber'/>
+<use f='codebrowser/Python/ceval.c' l='5346' u='c' c='dtrace_function_entry'/>
+<use f='codebrowser/Python/ceval.c' l='5360' u='c' c='dtrace_function_return'/>
+<use f='codebrowser/Python/traceback.c' l='661' u='c' c='dump_frame'/>

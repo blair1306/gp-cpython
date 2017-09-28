@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pystate.h' l='242' type='int PyThreadState_SetAsyncExc(unsigned long , PyObject * )'/>
+<def f='codebrowser/Python/pystate.c' l='639' ll='672' type='int PyThreadState_SetAsyncExc(unsigned long id, PyObject * exc)'/>
+<doc f='codebrowser/Python/pystate.c' l='631'>/* Asynchronously raise an exception in a thread.
+   Requested by Just van Rossum and Alex Martelli.
+   To prevent naive misuse, you must write your own extension
+   to call this, or use ctypes.  Must be called with the GIL held.
+   Returns the number of tstates modified (normally 1, but 0 if `id` didn&apos;t
+   match any known thread id).  Can be called with exc=NULL to clear an
+   existing async exception.  This raises no exceptions. */</doc>

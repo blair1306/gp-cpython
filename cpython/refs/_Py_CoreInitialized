@@ -1,0 +1,10 @@
+<def f='codebrowser/Python/pylifecycle.c' l='121' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='127' u='r' c='_Py_IsCoreInitialized'/>
+<use f='codebrowser/Python/pylifecycle.c' l='558' u='r' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='706' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='747' u='r' c='_Py_InitializeMainInterpreter'/>
+<use f='codebrowser/Python/pylifecycle.c' l='956' u='w' c='Py_FinalizeEx'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='117'>/* APIs to access the initialization flags
+ *
+ * Can be called prior to Py_Initialize.
+ */</doc>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2176' type='int _PyUnicode_IsTitlecase(Py_UCS4 ch)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='76' ll='81' type='int _PyUnicode_IsTitlecase(Py_UCS4 ch)'/>
+<doc f='codebrowser/Objects/unicodectype.c' l='73'>/* Returns 1 for Unicode characters having the category &apos;Lt&apos;, 0
+   otherwise. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='11788' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11833' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11868' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11881' macro='1' u='c'/>

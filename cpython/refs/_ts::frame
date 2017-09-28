@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/pystate.h' l='116' type='struct _frame *'/>
+<offset>192</offset>
+<use f='codebrowser/Modules/_tracemalloc.c' l='470' u='r' c='traceback_get_frames'/>
+<use f='codebrowser/Objects/frameobject.c' l='614' u='r' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/genobject.c' l='184' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='186' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='195' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/typeobject.c' l='7545' u='r' c='super_init'/>
+<use f='codebrowser/Python/_warnings.c' l='633' u='r' c='setup_context'/>
+<use f='codebrowser/Python/ceval.c' l='968' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3743' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='4775' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4785' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4791' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4775' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4785' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4791' u='r' c='call_function'/>
+<use f='codebrowser/Python/ceval.c' l='4775' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4785' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4791' u='r' c='do_call_core'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1265' u='r' c='Py_EndInterpreter'/>
+<use f='codebrowser/Python/pystate.c' l='235' u='r' c='threadstate_getframe'/>
+<use f='codebrowser/Python/pystate.c' l='249' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='445' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='449' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='449' u='w' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='732' u='r' c='_PyThread_CurrentFrames'/>
+<use f='codebrowser/Python/sysmodule.c' l='1202' u='r' c='sys_getframe'/>

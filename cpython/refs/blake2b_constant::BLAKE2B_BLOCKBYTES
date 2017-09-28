@@ -1,0 +1,20 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='45' type='128'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2.h' l='67' u='r'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2.h' l='84' u='r'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='250' c='PyBlake2_blake2b_init_key'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='251' u='r' c='PyBlake2_blake2b_init_key'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='253' u='r' c='PyBlake2_blake2b_init_key'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='254' u='r' c='PyBlake2_blake2b_init_key'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='259' c='PyBlake2_blake2b_compress'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='335' u='r' c='PyBlake2_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='341' u='r' c='PyBlake2_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='343' u='r' c='PyBlake2_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='343' u='r' c='PyBlake2_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='344' u='r' c='PyBlake2_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='369' u='r' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='371' u='r' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='373' u='r' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='374' u='r' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='379' u='r' c='PyBlake2_blake2b_final'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='226' c='py_blake2b_new_impl'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='379' u='r' c='py_blake2b_get_block_size'/>

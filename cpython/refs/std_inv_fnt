@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/fnt.h' l='42' type='int std_inv_fnt(mpd_uint_t * a, mpd_size_t n, int modnum)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='69' u='r' c='fnt_convolute'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/convolute.c' l='136' u='r' c='fnt_autoconvolute'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='62' ll='78' type='int std_inv_fnt(mpd_uint_t * a, mpd_size_t n, int modnum)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/fnt.c' l='61'>/* reverse transform, sign = 1 */</doc>

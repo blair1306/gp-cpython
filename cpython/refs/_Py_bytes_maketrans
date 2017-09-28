@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/bytes_methods.h' l='34' type='PyObject * _Py_bytes_maketrans(Py_buffer * frm, Py_buffer * to)'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1302' u='c' c='bytearray_maketrans_impl'/>
+<doc f='codebrowser/Include/bytes_methods.h' l='33'>/* The maketrans() static method. */</doc>
+<def f='codebrowser/Objects/bytes_methods.c' l='367' ll='390' type='PyObject * _Py_bytes_maketrans(Py_buffer * frm, Py_buffer * to)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2236' u='c' c='bytes_maketrans_impl'/>

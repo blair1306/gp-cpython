@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pythread.h' l='88' type='void PyThread_ReInitTLS()'/>
+<doc f='codebrowser/Include/pythread.h' l='87'>/* Cleanup after a fork */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='455' u='c' c='PyOS_AfterFork_Child'/>
+<def f='codebrowser/Python/thread_pthread.h' l='654' ll='656' type='void PyThread_ReInitTLS()'/>

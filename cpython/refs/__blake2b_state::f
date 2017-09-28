@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_blake2/impl/blake2.h' l='66' type='uint64_t [2]'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='72' u='w' c='blake2b_set_lastnode'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='78' u='w' c='blake2b_clear_lastnode'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='84' u='r' c='blake2b_is_lastblock'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='91' u='w' c='blake2b_set_lastblock'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='99' u='w' c='blake2b_clear_lastblock'/>
+<use f='codebrowser/Modules/_blake2/impl/blake2b.c' l='305' u='a' c='PyBlake2_blake2b_compress'/>
+<offset>640</offset>

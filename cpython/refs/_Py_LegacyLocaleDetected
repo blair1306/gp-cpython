@@ -1,0 +1,35 @@
+<dec f='codebrowser/Programs/python.c' l='30' type='int _Py_LegacyLocaleDetected()'/>
+<use f='codebrowser/Programs/python.c' l='81' u='c' c='main'/>
+<doc f='codebrowser/Programs/python.c' l='18'>/* Access private pylifecycle helper API to better handle the legacy C locale
+ *
+ * The legacy C locale assumes ASCII as the default text encoding, which
+ * causes problems not only for the CPython runtime, but also other
+ * components like GNU readline.
+ *
+ * Accordingly, when the CLI detects it, it attempts to coerce it to a
+ * more capable UTF-8 based alternative.
+ *
+ * See the documentation of the PYTHONCOERCECLOCALE setting for more details.
+ *
+ */</doc>
+<def f='codebrowser/Python/pylifecycle.c' l='354' ll='369' type='int _Py_LegacyLocaleDetected()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='389' u='c' c='_emit_stderr_warning_for_legacy_locale'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='334'>/* Helper functions to better handle the legacy C locale
+ *
+ * The legacy C locale assumes ASCII as the default text encoding, which
+ * causes problems not only for the CPython runtime, but also other
+ * components like GNU readline.
+ *
+ * Accordingly, when the CLI detects it, it attempts to coerce it to a
+ * more capable UTF-8 based alternative as follows:
+ *
+ *     if (_Py_LegacyLocaleDetected()) {
+ *         _Py_CoerceLegacyLocale();
+ *     }
+ *
+ * See the documentation of the PYTHONCOERCECLOCALE setting for more details.
+ *
+ * Locale coercion also impacts the default error handler for the standard
+ * streams: while the usual default is &quot;strict&quot;, the default for the legacy
+ * C locale and for any of the coercion target locales is &quot;surrogateescape&quot;.
+ */</doc>

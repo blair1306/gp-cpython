@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/pyerrors.h' l='127' type='PyObject * PyException_GetContext(PyObject * )'/>
+<doc f='codebrowser/Include/pyerrors.h' l='126'>/* Context manipulation (PEP 3134) */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='238' u='c' c='BaseException_get_context'/>
+<def f='codebrowser/Objects/exceptions.c' l='331' ll='336' type='PyObject * PyException_GetContext(PyObject * self)'/>
+<use f='codebrowser/Python/errors.c' l='112' u='c' c='PyErr_SetObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='820' u='c' c='print_exception_recursive'/>

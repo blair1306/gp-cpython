@@ -1,0 +1,7 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='159' type='PyObject *'/>
+<def f='codebrowser/Modules/_io/_iomodule.c' l='31' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='736' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='736' macro='1' u='w'/>
+<use f='codebrowser/Modules/_io/textio.c' l='320' u='r' c='_PyIncrementalNewlineDecoder_decode'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1565' u='r' c='textiowrapper_read_chunk'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1636' u='r' c='_io_TextIOWrapper_read_impl'/>

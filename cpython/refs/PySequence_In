@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='972' type='int PySequence_In(PyObject * o, PyObject * value)'/>
+<doc f='codebrowser/Include/abstract.h' l='968'>/* Determine if the sequence &apos;o&apos; contains &apos;value&apos;. If an item in &apos;o&apos; is equal
+   to &apos;value&apos;, return 1, otherwise return 0. On error, return -1.
+
+   This is equivalent to the Python expression: value in o. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='2035' ll='2039' type='int PySequence_In(PyObject * w, PyObject * v)'/>

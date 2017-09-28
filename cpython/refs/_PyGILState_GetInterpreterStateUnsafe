@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pystate.h' l='320' type='PyInterpreterState * _PyGILState_GetInterpreterStateUnsafe()'/>
+<doc f='codebrowser/Include/pystate.h' l='315'>/* Unsafe function to get the single PyInterpreterState used by this process&apos;
+   GILState implementation.
+
+   Return NULL before _PyGILState_Init() is called and after _PyGILState_Fini()
+   is called. */</doc>
+<def f='codebrowser/Python/pystate.c' l='789' ll='793' type='PyInterpreterState * _PyGILState_GetInterpreterStateUnsafe()'/>
+<use f='codebrowser/Python/traceback.c' l='770' u='c' c='_Py_DumpTracebackThreads'/>

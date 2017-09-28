@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='723' type='int mpd_exp_digits(mpd_ssize_t exp)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='722'>/* number of digits in the exponent, undefined for MPD_SSIZE_MIN */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='248' ll='253' type='int mpd_exp_digits(mpd_ssize_t exp)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4895' u='c' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5047' u='c' c='mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6398' u='c' c='_lower_bound_zeta'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6402' u='c' c='_lower_bound_zeta'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6447' u='c' c='_qcheck_pow_bounds'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6456' u='c' c='_qcheck_pow_bounds'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='247'>/* Number of digits in the exponent. Not defined for MPD_SSIZE_MIN. */</doc>

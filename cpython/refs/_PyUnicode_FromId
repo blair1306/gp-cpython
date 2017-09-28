@@ -1,0 +1,44 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2328' type='PyObject * _PyUnicode_FromId(_Py_Identifier * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='722' u='c' c='FutureObj_get_state'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='725' u='c' c='FutureObj_get_state'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='728' u='c' c='FutureObj_get_state'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='769' u='c' c='FutureObj_repr'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2327'>/* Return an interned Unicode object for an Identifier; may fail if there is no memory.*/</doc>
+<use f='codebrowser/Modules/_pickle.c' l='1569' u='c' c='get_dotted_path'/>
+<use f='codebrowser/Modules/_pickle.c' l='1707' u='c' c='whichmodule'/>
+<use f='codebrowser/Modules/_pickle.c' l='2043' u='c' c='save_bytes'/>
+<use f='codebrowser/Objects/dictobject.c' l='1346' u='c' c='_PyDict_GetItemIdWithError'/>
+<use f='codebrowser/Objects/dictobject.c' l='3166' u='c' c='_PyDict_GetItemId'/>
+<use f='codebrowser/Objects/dictobject.c' l='3194' u='c' c='_PyDict_SetItemId'/>
+<use f='codebrowser/Objects/dictobject.c' l='3217' u='c' c='_PyDict_DelItemId'/>
+<use f='codebrowser/Objects/object.c' l='850' u='c' c='_PyObject_GetAttrId'/>
+<use f='codebrowser/Objects/object.c' l='861' u='c' c='_PyObject_HasAttrId'/>
+<use f='codebrowser/Objects/object.c' l='872' u='c' c='_PyObject_SetAttrId'/>
+<use f='codebrowser/Objects/object.c' l='1003' u='c' c='_PyObject_GetBuiltin'/>
+<use f='codebrowser/Objects/structseq.c' l='426' u='c' c='_PyStructSequence_Init'/>
+<use f='codebrowser/Objects/structseq.c' l='427' u='c' c='_PyStructSequence_Init'/>
+<use f='codebrowser/Objects/structseq.c' l='428' u='c' c='_PyStructSequence_Init'/>
+<use f='codebrowser/Objects/typeobject.c' l='497' u='c' c='type_module'/>
+<use f='codebrowser/Objects/typeobject.c' l='524' u='c' c='type_abstractmethods'/>
+<use f='codebrowser/Objects/typeobject.c' l='551' u='c' c='type_set_abstractmethods'/>
+<use f='codebrowser/Objects/typeobject.c' l='3024' u='c' c='_PyType_LookupId'/>
+<use f='codebrowser/Objects/typeobject.c' l='3584' u='c' c='object_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='3907' u='c' c='import_copyreg'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2112' ll='2127' type='PyObject * _PyUnicode_FromId(_Py_Identifier * id)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11141' u='c' c='_PyUnicode_EqualToASCIIId'/>
+<use f='codebrowser/Python/Python-ast.c' l='683' u='c' c='make_type'/>
+<use f='codebrowser/Python/Python-ast.c' l='684' u='c' c='make_type'/>
+<use f='codebrowser/Python/Python-ast.c' l='685' u='c' c='make_type'/>
+<use f='codebrowser/Python/_warnings.c' l='861' u='c' c='warnings_warn_explicit'/>
+<use f='codebrowser/Python/_warnings.c' l='863' u='c' c='warnings_warn_explicit'/>
+<use f='codebrowser/Python/ceval.c' l='1739' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2128' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='2638' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/compile.c' l='568' u='c' c='compiler_enter_scope'/>
+<use f='codebrowser/Python/compile.c' l='704' u='c' c='compiler_set_qualname'/>
+<use f='codebrowser/Python/compile.c' l='719' u='c' c='compiler_set_qualname'/>
+<use f='codebrowser/Python/compile.c' l='2279' u='c' c='compiler_async_for'/>
+<use f='codebrowser/Python/compile.c' l='3835' u='c' c='compiler_async_comprehension_generator'/>
+<use f='codebrowser/Python/pythonrun.c' l='164' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='457' u='c' c='parse_syntax_error'/>
+<use f='codebrowser/Python/pythonrun.c' l='896' u='c' c='PyRun_StringFlags'/>

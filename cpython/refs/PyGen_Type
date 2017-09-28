@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/genobject.h' l='35' type='PyTypeObject'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1992' macro='1' u='a'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4164' u='a' c='raise_SIGINT_then_send_None'/>
+<use f='codebrowser/Objects/genobject.c' l='325' macro='1' u='a'/>
+<use f='codebrowser/Objects/genobject.c' l='440' macro='1' u='a'/>
+<def f='codebrowser/Objects/genobject.c' l='743' ll='795' type='PyTypeObject'/>
+<use f='codebrowser/Objects/genobject.c' l='829' u='a' c='PyGen_NewWithQualName'/>
+<use f='codebrowser/Objects/genobject.c' l='835' u='a' c='PyGen_New'/>
+<use f='codebrowser/Objects/genobject.c' l='866' macro='1' u='a'/>
+<use f='codebrowser/Objects/object.c' l='1773' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Python/ceval.c' l='2006' macro='1' u='a'/>
+<use f='codebrowser/Python/ceval.c' l='3013' macro='1' u='a'/>

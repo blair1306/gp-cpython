@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/pythonrun.h' l='130' type='void PyErr_Display(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2760' u='c' c='exception_print'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='103' u='c' c='atexit_callfuncs'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1777' u='c' c='_Py_FatalError_PrintExc'/>
+<use f='codebrowser/Python/pythonrun.c' l='662' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='664' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='672' u='c' c='PyErr_PrintEx'/>
+<def f='codebrowser/Python/pythonrun.c' l='853' ll='885' type='void PyErr_Display(PyObject * exception, PyObject * value, PyObject * tb)'/>
+<use f='codebrowser/Python/sysmodule.c' l='224' u='c' c='sys_excepthook'/>

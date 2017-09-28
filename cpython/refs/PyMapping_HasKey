@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/abstract.h' l='1051' type='int PyMapping_HasKey(PyObject * o, PyObject * key)'/>
+<doc f='codebrowser/Include/abstract.h' l='1046'>/* Return 1 if the mapping object has the key &apos;key&apos;, and 0 otherwise.
+
+   This is equivalent to the Python expression: key in o.
+
+   This function always succeeds. */</doc>
+<def f='codebrowser/Objects/abstract.c' l='2135' ll='2147' type='int PyMapping_HasKey(PyObject * o, PyObject * key)'/>

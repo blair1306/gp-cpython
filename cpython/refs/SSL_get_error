@@ -1,0 +1,6 @@
+<dec f='include/openssl/ssl.h' l='2342' type='int SSL_get_error(const SSL * s, int ret_code)'/>
+<use f='codebrowser/Modules/_ssl.c' l='533' u='c' c='PySSL_SetError'/>
+<use f='codebrowser/Modules/_ssl.c' l='745' u='c' c='_ssl__SSLSocket_do_handshake_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='1998' u='c' c='_ssl__SSLSocket_write_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2141' u='c' c='_ssl__SSLSocket_read_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='2265' u='c' c='_ssl__SSLSocket_shutdown_impl'/>

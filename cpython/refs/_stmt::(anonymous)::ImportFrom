@@ -1,0 +1,22 @@
+<dec f='codebrowser/Include/Python-ast.h' l='192' type='struct (anonymous struct at /home/jon/workspace/cpython/Include/Python-ast.h:188:9)'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1672' u='m' c='_Py_ImportFrom'/>
+<use f='codebrowser/Python/Python-ast.c' l='1673' u='m' c='_Py_ImportFrom'/>
+<use f='codebrowser/Python/Python-ast.c' l='1674' u='m' c='_Py_ImportFrom'/>
+<use f='codebrowser/Python/Python-ast.c' l='3020' u='m' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='3025' u='m' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='3030' u='m' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='494' u='m' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='498' u='m' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='2750' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2750' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2765' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2773' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2778' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2779' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2790' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2791' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/compile.c' l='2797' u='m' c='compiler_from_import'/>
+<use f='codebrowser/Python/future.c' l='21' u='m' c='future_check_features'/>
+<use f='codebrowser/Python/future.c' l='93' u='m' c='future_parse'/>
+<use f='codebrowser/Python/symtable.c' l='1273' u='m' c='symtable_visit_stmt'/>

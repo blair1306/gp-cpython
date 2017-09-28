@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='789' type='Py_ssize_t PyUnicode_GetLength(PyObject * unicode)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='787'>/* Get the length of the Unicode object. */</doc>
+<use f='codebrowser/Modules/_csv.c' l='241' u='c' c='_set_char'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='217' u='c' c='PyCurses_ConvertToChtype'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='2791' u='c' c='date_format'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='727' u='c' c='_io_StringIO___init___impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2287' u='c' c='_io_TextIOWrapper_seek_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2355' u='c' c='_io_TextIOWrapper_tell_impl'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1701' u='c' c='parse_sys_xoptions'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4169' ll='4179' type='Py_ssize_t PyUnicode_GetLength(PyObject * unicode)'/>
+<use f='codebrowser/Python/_warnings.c' l='261' u='c' c='normalize_module'/>
+<use f='codebrowser/Python/_warnings.c' l='696' u='c' c='setup_context'/>
+<use f='codebrowser/Python/importdl.c' l='44' u='c' c='get_encoded_name'/>
+<use f='codebrowser/Python/pythonrun.c' l='781' u='c' c='print_exception'/>

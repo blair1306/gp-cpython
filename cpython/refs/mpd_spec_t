@@ -1,0 +1,12 @@
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='390' ll='400'/>
+<size>48</size>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='389'>/* format specification */</doc>
+<mbr r='mpd_spec_t::min_width' o='0' t='mpd_ssize_t'/>
+<mbr r='mpd_spec_t::prec' o='64' t='mpd_ssize_t'/>
+<mbr r='mpd_spec_t::type' o='128' t='char'/>
+<mbr r='mpd_spec_t::align' o='136' t='char'/>
+<mbr r='mpd_spec_t::sign' o='144' t='char'/>
+<mbr r='mpd_spec_t::fill' o='152' t='char [5]'/>
+<mbr r='mpd_spec_t::dot' o='192' t='const char *'/>
+<mbr r='mpd_spec_t::sep' o='256' t='const char *'/>
+<mbr r='mpd_spec_t::grouping' o='320' t='const char *'/>

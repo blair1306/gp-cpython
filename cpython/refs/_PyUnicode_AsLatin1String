@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1577' type='PyObject * _PyUnicode_AsLatin1String(PyObject * unicode, const char * errors)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='922' u='c' c='_codecs_latin_1_encode_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='773' u='c' c='latin1_encode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3604' u='c' c='PyUnicode_AsEncodedString'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='6898' ll='6915' type='PyObject * _PyUnicode_AsLatin1String(PyObject * unicode, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6920' u='c' c='PyUnicode_AsLatin1String'/>

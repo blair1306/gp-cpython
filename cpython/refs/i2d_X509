@@ -1,0 +1,2 @@
+<dec f='include/openssl/x509.h' l='823' macro='1' type='int i2d_X509(X509 * a, unsigned char ** out)'/>
+<use f='codebrowser/Modules/_ssl.c' l='1431' u='c' c='_certificate_to_der'/>

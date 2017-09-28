@@ -1,0 +1,27 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/basearith.h' l='66' type='void _mpd_baseshiftl(mpd_uint_t * dest, mpd_uint_t * src, mpd_size_t n, mpd_size_t m, mpd_size_t shift)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='425' ll='467' type='void _mpd_baseshiftl(mpd_uint_t * dest, mpd_uint_t * src, mpd_size_t n, mpd_size_t m, mpd_size_t shift)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/basearith.c' l='401'>/*
+ * Left shift of src by &apos;shift&apos; digits; src may equal dest.
+ *
+ *  dest := area of n mpd_uint_t with space for srcdigits+shift digits.
+ *  src  := coefficient with length m.
+ *
+ * The case splits in the function are non-obvious. The following
+ * equations might help:
+ *
+ *  Let msdigits denote the number of digits in the most significant
+ *  word of src. Then 1 &lt;= msdigits &lt;= rdigits.
+ *
+ *   1) shift = q * rdigits + r
+ *   2) srcdigits = qsrc * rdigits + msdigits
+ *   3) destdigits = shift + srcdigits
+ *                 = q * rdigits + r + qsrc * rdigits + msdigits
+ *                 = q * rdigits + (qsrc * rdigits + (r + msdigits))
+ *
+ *  The result has q zero words, followed by the coefficient that
+ *  is left-shifted by r. The case r == 0 is trivial. For r &gt; 0, it
+ *  is important to keep in mind that we always read m source words,
+ *  but write m+1 destination words if r + msdigits &gt; rdigits, m words
+ *  otherwise.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2416' u='c' c='mpd_qshiftl'/>

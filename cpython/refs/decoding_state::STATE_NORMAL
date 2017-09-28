@@ -1,0 +1,6 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='18' type='2'/>
+<doc f='codebrowser/Parser/tokenizer.h' l='18'>/* have a codec associated with input */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='330' u='r' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='597' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='651' u='r' c='decoding_feof'/>
+<use f='codebrowser/Parser/tokenizer.c' l='885' u='r' c='PyTokenizer_FromFile'/>

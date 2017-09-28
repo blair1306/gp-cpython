@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/fileobject.h' l='17' type='int PyObject_AsFileDescriptor(PyObject * )'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2527' u='c' c='PyCurses_setupterm'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='26' u='c' c='conv_descriptor'/>
+<use f='codebrowser/Modules/posixmodule.c' l='1474' u='c' c='fildes_converter'/>
+<use f='codebrowser/Modules/selectmodule.c' l='106' u='c' c='seq2set'/>
+<use f='codebrowser/Modules/selectmodule.c' l='413' u='c' c='poll_register'/>
+<use f='codebrowser/Modules/selectmodule.c' l='455' u='c' c='poll_modify'/>
+<use f='codebrowser/Modules/selectmodule.c' l='495' u='c' c='poll_unregister'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1384' u='c' c='pyepoll_internal_ctl'/>
+<use f='codebrowser/Modules/termios.c' l='42' u='c' c='fdconv'/>
+<def f='codebrowser/Objects/fileobject.c' l='175' ll='218' type='int PyObject_AsFileDescriptor(PyObject * o)'/>
+<doc f='codebrowser/Objects/fileobject.c' l='168'>/* Try to get a file-descriptor from a Python object.  If the object
+   is an integer, its value is returned.  If not, the
+   object&apos;s fileno() method is called if it exists; the method must return
+   an integer, which is returned as the file descriptor value.
+   -1 is returned on failure.
+*/</doc>
+<use f='codebrowser/Python/traceback.c' l='299' u='c' c='_Py_DisplaySourceLine'/>

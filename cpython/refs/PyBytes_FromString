@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/bytesobject.h' l='52' type='PyObject * PyBytes_FromString(const char * )'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1275' u='c' c='PyCursesWindow_GetStr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1430' u='c' c='PyCursesWindow_InStr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2137' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2138' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2609' u='c' c='PyCurses_KeyName'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3003' u='c' c='PyCurses_tigetstr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3027' u='c' c='PyCurses_tparm'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3055' u='c' c='PyCurses_UnCtrl'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3330' u='c' c='PyInit__curses'/>
+<use f='codebrowser/Modules/_io/textio.c' l='550' u='c' c='_io_IncrementalNewlineDecoder_getstate_impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='959' u='c' c='_io_TextIOWrapper___init___impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='3790' u='c' c='_servername_callback'/>
+<use f='codebrowser/Modules/_ssl.c' l='4652' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4652' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4652' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_ssl.c' l='4652' u='c' c='_ssl_get_default_verify_paths_impl'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1309' u='c' c='getargs_s'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1341' u='c' c='getargs_z'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1382' u='c' c='getargs_y'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1462' u='c' c='getargs_es'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1478' u='c' c='getargs_et'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='231' u='c' c='mmap_read_line_method'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11865' u='c' c='DirEntry_from_posix_info'/>
+<def f='codebrowser/Objects/bytesobject.c' l='132' ll='176' type='PyObject * PyBytes_FromString(const char * str)'/>
+<use f='codebrowser/Objects/codeobject.c' l='221' u='c' c='PyCode_NewEmpty'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1938' u='c' c='struct_get_unpacker'/>
+<use f='codebrowser/Objects/object.c' l='590' u='c' c='PyObject_Bytes'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3458' u='c' c='PyUnicode_EncodeLocale'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/descrobject.h' l='102' type='PyObject * PyWrapper_New(PyObject * , PyObject * )'/>
+<use f='codebrowser/Objects/descrobject.c' l='170' u='c' c='wrapperdescr_get'/>
+<use f='codebrowser/Objects/descrobject.c' l='371' u='c' c='wrapperdescr_call'/>
+<def f='codebrowser/Objects/descrobject.c' l='1233' ll='1253' type='PyObject * PyWrapper_New(PyObject * d, PyObject * self)'/>

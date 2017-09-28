@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/traceback.h' l='94' type='void _Py_DumpASCII(int fd, PyObject * text)'/>
+<doc f='codebrowser/Include/traceback.h' l='87'>/* Write a Unicode object into the file descriptor fd. Encode the string to
+   ASCII using the backslashreplace error handler.
+
+   Do nothing if text is not a Unicode object. The function accepts Unicode
+   string which is not ready (PyUnicode_WCHAR_KIND).
+
+   This function is signal safe. */</doc>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1501' u='c' c='_PyMem_DumpFrame'/>
+<def f='codebrowser/Python/traceback.c' l='568' ll='636' type='void _Py_DumpASCII(int fd, PyObject * text)'/>
+<use f='codebrowser/Python/traceback.c' l='654' u='c' c='dump_frame'/>
+<use f='codebrowser/Python/traceback.c' l='673' u='c' c='dump_frame'/>

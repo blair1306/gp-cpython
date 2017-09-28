@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>symtablemodule.c source code [codebrowser/Modules/symtablemodule.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/symtablemodule.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='symtablemodule.c.html'>symtablemodule.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/code.h.html">"code.h"</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python-ast.h.html">"Python-ast.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../Include/symtable.h.html">"symtable.h"</a></u></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#include <a href="clinic/symtablemodule.c.h.html">"clinic/symtablemodule.c.h"</a></u></td></tr>
+<tr><th id="8">8</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="9">9</th><td><i>module _symtable</i></td></tr>
+<tr><th id="10">10</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="11">11</th><td><i>/*[clinic end generated code: output=da39a3ee5e6b4b0d input=f4685845a7100605]*/</i></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><i  data-doc="_symtable_symtable_impl">/*[clinic input]</i></td></tr>
+<tr><th id="15">15</th><td><i  data-doc="_symtable_symtable_impl">_symtable.symtable</i></td></tr>
+<tr><th id="16">16</th><td><i  data-doc="_symtable_symtable_impl"></i></td></tr>
+<tr><th id="17">17</th><td><i  data-doc="_symtable_symtable_impl">    str:       str</i></td></tr>
+<tr><th id="18">18</th><td><i  data-doc="_symtable_symtable_impl">    filename:  object(converter='PyUnicode_FSDecoder')</i></td></tr>
+<tr><th id="19">19</th><td><i  data-doc="_symtable_symtable_impl">    startstr:  str</i></td></tr>
+<tr><th id="20">20</th><td><i  data-doc="_symtable_symtable_impl">    /</i></td></tr>
+<tr><th id="21">21</th><td><i  data-doc="_symtable_symtable_impl"></i></td></tr>
+<tr><th id="22">22</th><td><i  data-doc="_symtable_symtable_impl">Return symbol and scope dictionaries used internally by compiler.</i></td></tr>
+<tr><th id="23">23</th><td><i  data-doc="_symtable_symtable_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="26">26</th><td><dfn class="tu decl def" id="_symtable_symtable_impl" title='_symtable_symtable_impl' data-type='PyObject * _symtable_symtable_impl(PyObject * module, const char * str, PyObject * filename, const char * startstr)' data-ref="_symtable_symtable_impl">_symtable_symtable_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19module" title='module' data-type='PyObject *' data-ref="19module">module</dfn>, <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="20str" title='str' data-type='const char *' data-ref="20str">str</dfn>,</td></tr>
+<tr><th id="27">27</th><td>                        <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="21filename" title='filename' data-type='PyObject *' data-ref="21filename">filename</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="22startstr" title='startstr' data-type='const char *' data-ref="22startstr">startstr</dfn>)</td></tr>
+<tr><th id="28">28</th><td><i>/*[clinic end generated code: output=914b369c9b785956 input=6c615e84d5f408e3]*/</i></td></tr>
+<tr><th id="29">29</th><td>{</td></tr>
+<tr><th id="30">30</th><td>    <b>struct</b> <a class="type" href="../Include/symtable.h.html#symtable" title='symtable' data-ref="symtable">symtable</a> *<dfn class="local col3 decl" id="23st" title='st' data-type='struct symtable *' data-ref="23st">st</dfn>;</td></tr>
+<tr><th id="31">31</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24t" title='t' data-type='PyObject *' data-ref="24t">t</dfn>;</td></tr>
+<tr><th id="32">32</th><td>    <em>int</em> <dfn class="local col5 decl" id="25start" title='start' data-type='int' data-ref="25start">start</dfn>;</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td>    <b>if</b> (<a class="ref" href="../../include/string.h.html#strcmp" title='strcmp' data-ref="strcmp">strcmp</a>(<a class="local col2 ref" href="#22startstr" title='startstr' data-ref="22startstr">startstr</a>, <q>"exec"</q>) == <var>0</var>)</td></tr>
+<tr><th id="35">35</th><td>        <a class="local col5 ref" href="#25start" title='start' data-ref="25start">start</a> = <a class="macro" href="../Include/compile.h.html#87" title="257" data-ref="_M/Py_file_input">Py_file_input</a>;</td></tr>
+<tr><th id="36">36</th><td>    <b>else</b> <b>if</b> (<a class="ref" href="../../include/string.h.html#strcmp" title='strcmp' data-ref="strcmp">strcmp</a>(<a class="local col2 ref" href="#22startstr" title='startstr' data-ref="22startstr">startstr</a>, <q>"eval"</q>) == <var>0</var>)</td></tr>
+<tr><th id="37">37</th><td>        <a class="local col5 ref" href="#25start" title='start' data-ref="25start">start</a> = <a class="macro" href="../Include/compile.h.html#88" title="258" data-ref="_M/Py_eval_input">Py_eval_input</a>;</td></tr>
+<tr><th id="38">38</th><td>    <b>else</b> <b>if</b> (<a class="ref" href="../../include/string.h.html#strcmp" title='strcmp' data-ref="strcmp">strcmp</a>(<a class="local col2 ref" href="#22startstr" title='startstr' data-ref="22startstr">startstr</a>, <q>"single"</q>) == <var>0</var>)</td></tr>
+<tr><th id="39">39</th><td>        <a class="local col5 ref" href="#25start" title='start' data-ref="25start">start</a> = <a class="macro" href="../Include/compile.h.html#86" title="256" data-ref="_M/Py_single_input">Py_single_input</a>;</td></tr>
+<tr><th id="40">40</th><td>    <b>else</b> {</td></tr>
+<tr><th id="41">41</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="42">42</th><td>           <q>"symtable() arg 3 must be 'exec' or 'eval' or 'single'"</q>);</td></tr>
+<tr><th id="43">43</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(filename); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/symtablemodule.c&quot;, 43, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#21filename" title='filename' data-ref="21filename">filename</a>);</td></tr>
+<tr><th id="44">44</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="45">45</th><td>    }</td></tr>
+<tr><th id="46">46</th><td>    <a class="local col3 ref" href="#23st" title='st' data-ref="23st">st</a> = <a class="ref" href="../Include/pythonrun.h.html#Py_SymtableStringObject" title='Py_SymtableStringObject' data-ref="Py_SymtableStringObject">Py_SymtableStringObject</a>(<a class="local col0 ref" href="#20str" title='str' data-ref="20str">str</a>, <a class="local col1 ref" href="#21filename" title='filename' data-ref="21filename">filename</a>, <a class="local col5 ref" href="#25start" title='start' data-ref="25start">start</a>);</td></tr>
+<tr><th id="47">47</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(filename); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/symtablemodule.c&quot;, 47, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col1 ref" href="#21filename" title='filename' data-ref="21filename">filename</a>);</td></tr>
+<tr><th id="48">48</th><td>    <b>if</b> (<a class="local col3 ref" href="#23st" title='st' data-ref="23st">st</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="49">49</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="50">50</th><td>    <a class="local col4 ref" href="#24t" title='t' data-ref="24t">t</a> = (<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *)<a class="local col3 ref" href="#23st" title='st' data-ref="23st">st</a>-&gt;<a class="ref" href="../Include/symtable.h.html#symtable::st_top" title='symtable::st_top' data-ref="symtable::st_top">st_top</a>;</td></tr>
+<tr><th id="51">51</th><td>    <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(t))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="local col4 ref" href="#24t" title='t' data-ref="24t">t</a>);</td></tr>
+<tr><th id="52">52</th><td>    <a class="ref" href="../Include/pymem.h.html#PyMem_Free" title='PyMem_Free' data-ref="PyMem_Free">PyMem_Free</a>((<em>void</em> *)<a class="local col3 ref" href="#23st" title='st' data-ref="23st">st</a>-&gt;<a class="ref" href="../Include/symtable.h.html#symtable::st_future" title='symtable::st_future' data-ref="symtable::st_future">st_future</a>);</td></tr>
+<tr><th id="53">53</th><td>    <a class="ref" href="../Include/symtable.h.html#PySymtable_Free" title='PySymtable_Free' data-ref="PySymtable_Free">PySymtable_Free</a>(<a class="local col3 ref" href="#23st" title='st' data-ref="23st">st</a>);</td></tr>
+<tr><th id="54">54</th><td>    <b>return</b> <a class="local col4 ref" href="#24t" title='t' data-ref="24t">t</a>;</td></tr>
+<tr><th id="55">55</th><td>}</td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><em>static</em> <a class="typedef" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-type='struct PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a> <dfn class="tu decl def" id="symtable_methods" title='symtable_methods' data-type='PyMethodDef [2]' data-ref="symtable_methods">symtable_methods</dfn>[] = {</td></tr>
+<tr><th id="58">58</th><td>    <a class="macro" href="clinic/symtablemodule.c.h.html#11" title="{&quot;symtable&quot;, (PyCFunction)_symtable_symtable, 0x0080, _symtable_symtable__doc__}," data-ref="_M/_SYMTABLE_SYMTABLE_METHODDEF">_SYMTABLE_SYMTABLE_METHODDEF</a></td></tr>
+<tr><th id="59">59</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,              <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}           <i>/* sentinel */</i></td></tr>
+<tr><th id="60">60</th><td>};</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="symtablemodule" title='symtablemodule' data-type='struct PyModuleDef' data-ref="symtablemodule">symtablemodule</dfn> = {</td></tr>
+<tr><th id="63">63</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="64">64</th><td>    <q>"_symtable"</q>,</td></tr>
+<tr><th id="65">65</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="66">66</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="67">67</th><td>    <a class="tu ref" href="#symtable_methods" title='symtable_methods' data-ref="symtable_methods">symtable_methods</a>,</td></tr>
+<tr><th id="68">68</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="69">69</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="70">70</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="71">71</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="72">72</th><td>};</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="75">75</th><td><dfn class="decl def" id="PyInit__symtable" title='PyInit__symtable' data-ref="PyInit__symtable">PyInit__symtable</dfn>(<em>void</em>)</td></tr>
+<tr><th id="76">76</th><td>{</td></tr>
+<tr><th id="77">77</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="26m" title='m' data-type='PyObject *' data-ref="26m">m</dfn>;</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td>    <b>if</b> (<a class="ref" href="../Include/object.h.html#PyType_Ready" title='PyType_Ready' data-ref="PyType_Ready">PyType_Ready</a>(&amp;<a class="ref" href="../Include/symtable.h.html#PySTEntry_Type" title='PySTEntry_Type' data-ref="PySTEntry_Type">PySTEntry_Type</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="80">80</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>    <a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a> = <a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;symtablemodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#symtablemodule" title='symtablemodule' data-use='a' data-ref="symtablemodule">symtablemodule</a>);</td></tr>
+<tr><th id="83">83</th><td>    <b>if</b> (<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="84">84</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="85">85</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;USE&quot;, 2&lt;&lt;3)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#91" title="2&lt;&lt;3" data-ref="_M/USE">USE</a>);</td></tr>
+<tr><th id="86">86</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_GLOBAL&quot;, 1)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#87" title="1" data-ref="_M/DEF_GLOBAL">DEF_GLOBAL</a>);</td></tr>
+<tr><th id="87">87</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_LOCAL&quot;, 2)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#88" title="2" data-ref="_M/DEF_LOCAL">DEF_LOCAL</a>);</td></tr>
+<tr><th id="88">88</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_PARAM&quot;, 2&lt;&lt;1)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#89" title="2&lt;&lt;1" data-ref="_M/DEF_PARAM">DEF_PARAM</a>);</td></tr>
+<tr><th id="89">89</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_FREE&quot;, 2&lt;&lt;4)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#92" title="2&lt;&lt;4" data-ref="_M/DEF_FREE">DEF_FREE</a>);</td></tr>
+<tr><th id="90">90</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_FREE_CLASS&quot;, 2&lt;&lt;5)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#93" title="2&lt;&lt;5" data-ref="_M/DEF_FREE_CLASS">DEF_FREE_CLASS</a>);</td></tr>
+<tr><th id="91">91</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_IMPORT&quot;, 2&lt;&lt;6)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#94" title="2&lt;&lt;6" data-ref="_M/DEF_IMPORT">DEF_IMPORT</a>);</td></tr>
+<tr><th id="92">92</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_BOUND&quot;, (2 | 2&lt;&lt;1 | 2&lt;&lt;6))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#97" title="(2 | 2&lt;&lt;1 | 2&lt;&lt;6)" data-ref="_M/DEF_BOUND">DEF_BOUND</a>);</td></tr>
+<tr><th id="93">93</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;DEF_ANNOT&quot;, 2&lt;&lt;7)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#95" title="2&lt;&lt;7" data-ref="_M/DEF_ANNOT">DEF_ANNOT</a>);</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <q>"TYPE_FUNCTION"</q>, <a class="enum" href="../Include/symtable.h.html#_block_type::FunctionBlock" title='_block_type::FunctionBlock' data-ref="_block_type::FunctionBlock">FunctionBlock</a>);</td></tr>
+<tr><th id="96">96</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <q>"TYPE_CLASS"</q>, <a class="enum" href="../Include/symtable.h.html#_block_type::ClassBlock" title='_block_type::ClassBlock' data-ref="_block_type::ClassBlock">ClassBlock</a>);</td></tr>
+<tr><th id="97">97</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <q>"TYPE_MODULE"</q>, <a class="enum" href="../Include/symtable.h.html#_block_type::ModuleBlock" title='_block_type::ModuleBlock' data-ref="_block_type::ModuleBlock">ModuleBlock</a>);</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;LOCAL&quot;, 1)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#106" title="1" data-ref="_M/LOCAL">LOCAL</a>);</td></tr>
+<tr><th id="100">100</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;GLOBAL_EXPLICIT&quot;, 2)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#107" title="2" data-ref="_M/GLOBAL_EXPLICIT">GLOBAL_EXPLICIT</a>);</td></tr>
+<tr><th id="101">101</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;GLOBAL_IMPLICIT&quot;, 3)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#108" title="3" data-ref="_M/GLOBAL_IMPLICIT">GLOBAL_IMPLICIT</a>);</td></tr>
+<tr><th id="102">102</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;FREE&quot;, 4)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#109" title="4" data-ref="_M/FREE">FREE</a>);</td></tr>
+<tr><th id="103">103</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;CELL&quot;, 5)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#110" title="5" data-ref="_M/CELL">CELL</a>);</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddIntConstant" title='PyModule_AddIntConstant' data-ref="PyModule_AddIntConstant">PyModule_AddIntConstant</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <q>"SCOPE_OFF"</q>, <a class="macro" href="../Include/symtable.h.html#103" title="11" data-ref="_M/SCOPE_OFFSET">SCOPE_OFFSET</a>);</td></tr>
+<tr><th id="106">106</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;SCOPE_MASK&quot;, (1 | 2 | 2&lt;&lt;1 | 2&lt;&lt;2))" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>, <a class="macro" href="../Include/symtable.h.html#104" title="(1 | 2 | 2&lt;&lt;1 | 2&lt;&lt;2)" data-ref="_M/SCOPE_MASK">SCOPE_MASK</a>);</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="109">109</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(m); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/symtablemodule.c&quot;, 109, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>);</td></tr>
+<tr><th id="110">110</th><td>        <a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a> = <var>0</var>;</td></tr>
+<tr><th id="111">111</th><td>    }</td></tr>
+<tr><th id="112">112</th><td>    <b>return</b> <a class="local col6 ref" href="#26m" title='m' data-ref="26m">m</a>;</td></tr>
+<tr><th id="113">113</th><td>}</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

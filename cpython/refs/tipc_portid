@@ -1,0 +1,7 @@
+<def f='include/linux/tipc.h' l='47' ll='50'/>
+<size>8</size>
+<doc f='include/linux/tipc.h' l='43'>/*
+ * TIPC addressing primitives
+ */</doc>
+<mbr r='tipc_portid::ref' o='0' t='__u32'/>
+<mbr r='tipc_portid::node' o='32' t='__u32'/>

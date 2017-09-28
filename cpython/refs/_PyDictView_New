@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/dictobject.h' l='102' type='PyObject * _PyDictView_New(PyObject * , PyTypeObject * )'/>
+<def f='codebrowser/Objects/dictobject.c' l='3658' ll='3680' type='PyObject * _PyDictView_New(PyObject * dict, PyTypeObject * type)'/>
+<use f='codebrowser/Objects/dictobject.c' l='4016' u='c' c='dictkeys_new'/>
+<use f='codebrowser/Objects/dictobject.c' l='4106' u='c' c='dictitems_new'/>
+<use f='codebrowser/Objects/dictobject.c' l='4171' u='c' c='dictvalues_new'/>
+<use f='codebrowser/Objects/odictobject.c' l='2091' u='c' c='odictkeys_new'/>
+<use f='codebrowser/Objects/odictobject.c' l='2158' u='c' c='odictitems_new'/>
+<use f='codebrowser/Objects/odictobject.c' l='2225' u='c' c='odictvalues_new'/>

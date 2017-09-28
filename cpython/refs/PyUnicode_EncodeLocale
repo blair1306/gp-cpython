@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1815' type='PyObject * PyUnicode_EncodeLocale(PyObject * unicode, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1810'>/* Encode a Unicode object to the current locale encoding. The encoder is
+   strict is *surrogateescape* is equal to zero, otherwise the
+   &quot;surrogateescape&quot; error handler is used. Return a bytes object. The string
+   cannot contain embedded null characters. */</doc>
+<use f='codebrowser/Modules/readline.c' l='135' u='c' c='encode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='3417' ll='3522' type='PyObject * PyUnicode_EncodeLocale(PyObject * unicode, const char * errors)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3546' u='c' c='PyUnicode_EncodeFSDefault'/>

@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/longobject.h' l='172' type='PyLongObject * _PyLong_FromNbInt(PyObject * )'/>
+<doc f='codebrowser/Include/longobject.h' l='167'>/* _PyLong_FromNbInt: Convert the given object to a PyLongObject
+   using the nb_int slot, if available.  Raise TypeError if either the
+   nb_int slot is not available or the result of the call to nb_int
+   returns something not of type int.
+*/</doc>
+<use f='codebrowser/Modules/arraymodule.c' l='343' u='c' c='get_int_unless_float'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='303' u='c' c='ssize_t_converter'/>
+<use f='codebrowser/Objects/abstract.c' l='1343' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='1371' u='c' c='PyNumber_Long'/>
+<def f='codebrowser/Objects/longobject.c' l='143' ll='185' type='PyLongObject * _PyLong_FromNbInt(PyObject * integral)'/>
+<use f='codebrowser/Objects/longobject.c' l='423' u='c' c='PyLong_AsLongAndOverflow'/>
+<use f='codebrowser/Objects/longobject.c' l='703' u='c' c='PyLong_AsUnsignedLongMask'/>
+<use f='codebrowser/Objects/longobject.c' l='1232' u='c' c='PyLong_AsLongLong'/>
+<use f='codebrowser/Objects/longobject.c' l='1347' u='c' c='PyLong_AsUnsignedLongLongMask'/>
+<use f='codebrowser/Objects/longobject.c' l='1387' u='c' c='PyLong_AsLongLongAndOverflow'/>
+<doc f='codebrowser/Objects/longobject.c' l='138'>/* _PyLong_FromNbInt: Convert the given object to a PyLongObject
+   using the nb_int slot, if available.  Raise TypeError if either the
+   nb_int slot is not available or the result of the call to nb_int
+   returns something not of type int.
+*/</doc>

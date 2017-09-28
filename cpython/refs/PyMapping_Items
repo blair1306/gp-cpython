@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/abstract.h' l='1064' type='PyObject * PyMapping_Items(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='1061'>/* On success, return a list or tuple of the items in mapping object &apos;o&apos;,
+   where each item is a tuple containing a key-value pair. On failure, return
+   NULL. */</doc>
+<use f='codebrowser/Modules/_json.c' l='1590' u='c' c='encoder_listencode_dict'/>
+<def f='codebrowser/Objects/abstract.c' l='2166' ll='2181' type='PyObject * PyMapping_Items(PyObject * o)'/>

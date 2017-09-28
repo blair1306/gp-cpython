@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='497' type='int mpd_compare_total_mag(mpd_t * result, const mpd_t * a, const mpd_t * b)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4268' u='c' c='dec_mpd_compare_total_mag'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5341' u='c' c='ctx_mpd_compare_total_mag'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2359' ll='2367' type='int mpd_compare_total_mag(mpd_t * result, const mpd_t * a, const mpd_t * b)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2354'>/*
+ * Compare the magnitude of a and b according to a total order, convert the
+ * the usual integer result to a decimal and store it in &apos;result&apos;.
+ * For convenience, the integer result of the comparison is returned.
+ */</doc>

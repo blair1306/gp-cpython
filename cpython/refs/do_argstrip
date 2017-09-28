@@ -1,0 +1,4 @@
+<def f='codebrowser/Objects/bytesobject.c' l='2014' ll='2021' macro='1' type='PyObject * do_argstrip(PyBytesObject * self, int striptype, PyObject * bytes)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2038' u='c' c='bytes_strip_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2056' u='c' c='bytes_lstrip_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2074' u='c' c='bytes_rstrip_impl'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='713' type='mpd_ssize_t mpd_etop(const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='782' u='c' c='context_getetop'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='206' ll='210' macro='1' type='mpd_ssize_t mpd_etop(const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1787' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1791' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5997' u='c' c='mpd_qnext_minus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6044' u='c' c='mpd_qnext_plus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6892' u='c' c='mpd_qreduce'/>

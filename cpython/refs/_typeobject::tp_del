@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/object.h' l='420' type='destructor'/>
+<offset>3136</offset>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3135' u='w' c='with_tp_del'/>
+<use f='codebrowser/Modules/gcmodule.c' l='535' u='r' c='has_legacy_finalizer'/>
+<use f='codebrowser/Objects/typeobject.c' l='1127' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1128' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1173' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1195' u='r' c='subtype_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='1197' u='r' c='subtype_dealloc'/>

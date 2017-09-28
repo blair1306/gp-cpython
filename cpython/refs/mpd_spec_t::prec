@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='392' type='mpd_ssize_t'/>
+<offset>64</offset>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='392'>/* fraction digits or significant digits */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='780' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='856' u='w' c='mpd_parse_fmt_str'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1290' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1291' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1298' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1298' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1307' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1310' u='r' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1316' u='r' c='mpd_qformat_spec'/>

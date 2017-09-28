@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='519' type='void mpd_qadd(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3984' u='c' c='nm_mpd_qadd'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5048' u='c' c='ctx_mpd_qadd'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3389' ll='3403' type='void mpd_qadd(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3412' u='c' c='_mpd_qadd_exact'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3460' u='c' c='mpd_qadd_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3474' u='c' c='mpd_qadd_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4394' u='c' c='mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4437' u='c' c='mpd_qfma'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4580' u='c' c='mpd_qln10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4798' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4830' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4928' u='c' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5077' u='c' c='mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6063' u='c' c='mpd_qnext_plus'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3388'>/* Add a and b. */</doc>

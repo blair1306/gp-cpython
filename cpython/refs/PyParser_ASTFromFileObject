@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pythonrun.h' l='58' type='struct _mod * PyParser_ASTFromFileObject(FILE * fp, PyObject * filename, const char * enc, int start, const char * ps1, const char * ps2, PyCompilerFlags * flags, int * errcode, PyArena * arena)'/>
+<use f='codebrowser/Python/pythonrun.c' l='214' u='c' c='PyRun_InteractiveOneObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='928' u='c' c='PyRun_FileExFlags'/>
+<def f='codebrowser/Python/pythonrun.c' l='1151' ll='1182' type='struct _mod * PyParser_ASTFromFileObject(FILE * fp, PyObject * filename, const char * enc, int start, const char * ps1, const char * ps2, PyCompilerFlags * flags, int * errcode, PyArena * arena)'/>
+<use f='codebrowser/Python/pythonrun.c' l='1195' u='c' c='PyParser_ASTFromFile'/>

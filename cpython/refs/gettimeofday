@@ -1,0 +1,25 @@
+<dec f='include/x86_64-linux-gnu/sys/time.h' l='71' type='int gettimeofday(struct timeval *restrict __tv, __timezone_ptr_t __tz)'/>
+<doc f='include/x86_64-linux-gnu/sys/time.h' l='66'>/* Get the current time of day and timezone information,
+   putting it into *TV and *TZ.  If TZ is NULL, *TZ is not filled.
+   Returns 0 on success, -1 on errors.
+   NOTE: This form of timezone information is obsolete.
+   Use the functions and variables declared in &lt;time.h&gt; instead.  */</doc>
+<use f='codebrowser/Modules/_lsprof.c' l='46' u='c' c='hpTimer'/>
+<use f='codebrowser/Modules/_multiprocessing/semaphore.c' l='295' u='c' c='semlock_acquire'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2625' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2631' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2636' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2642' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2650' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2659' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2668' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2677' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2685' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2694' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2700' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2705' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2713' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2718' u='c' c='profile_int'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='889' u='c' c='gather_time_entropy'/>
+<use f='codebrowser/Python/condvar.h' l='73' u='c' c='PyCOND_TIMEDWAIT'/>
+<use f='codebrowser/Python/thread_pthread.h' l='107' u='c' c='PyThread_acquire_lock_timed'/>

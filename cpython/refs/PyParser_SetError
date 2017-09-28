@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/parsetok.h' l='101' type='void PyParser_SetError(perrdetail * )'/>
+<use f='codebrowser/Modules/parsermodule.c' l='621' u='c' c='parser_do_parse'/>
+<doc f='codebrowser/Include/parsetok.h' l='99'>/* Note that the following functions are defined in pythonrun.c,
+   not in parsetok.c */</doc>
+<def f='codebrowser/Python/pythonrun.c' l='1259' ll='1263' type='void PyParser_SetError(perrdetail * err)'/>

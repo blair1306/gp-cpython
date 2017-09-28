@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/moduleobject.h' l='25' type='PyObject * PyModule_GetNameObject(PyObject * )'/>
+<use f='codebrowser/Modules/_lsprof.c' l='178' u='c' c='normalizeUserObj'/>
+<use f='codebrowser/Objects/moduleobject.c' l='419' u='c' c='PyModule_AddFunctions'/>
+<def f='codebrowser/Objects/moduleobject.c' l='457' ll='477' type='PyObject * PyModule_GetNameObject(PyObject * m)'/>
+<use f='codebrowser/Objects/moduleobject.c' l='482' u='c' c='PyModule_GetName'/>

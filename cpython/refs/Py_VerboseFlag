@@ -1,0 +1,35 @@
+<dec f='codebrowser/Include/pydebug.h' l='11' type='int'/>
+<use f='codebrowser/Modules/main.c' l='540' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='791' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/zipimport.c' l='566' u='r' c='zipimport_zipimporter_load_module_impl'/>
+<use f='codebrowser/Modules/zipimport.c' l='1076' u='r' c='read_directory'/>
+<use f='codebrowser/Modules/zipimport.c' l='1129' u='r' c='get_decompress_func'/>
+<use f='codebrowser/Modules/zipimport.c' l='1292' u='r' c='unmarshal_code'/>
+<use f='codebrowser/Modules/zipimport.c' l='1300' u='r' c='unmarshal_code'/>
+<use f='codebrowser/Modules/zipimport.c' l='1484' u='r' c='get_module_code'/>
+<use f='codebrowser/Objects/moduleobject.c' l='571' u='r' c='_PyModule_ClearDict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='591' u='r' c='_PyModule_ClearDict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='649' u='r' c='module_dealloc'/>
+<use f='codebrowser/Python/frozenmain.c' l='80' u='r' c='Py_FrozenMain'/>
+<use f='codebrowser/Python/import.c' l='101' u='r' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='107' u='r' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='117' u='r' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='128' u='r' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='354' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='359' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='364' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='398' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='449' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='458' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='461' u='r' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='634' u='r' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='1295' u='r' c='remove_importlib_frames'/>
+<def f='codebrowser/Python/pylifecycle.c' l='82' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='272' u='r' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='293' u='r' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='297' u='r' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='591' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='591' u='r' c='_Py_InitializeCore'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='82'>/* Needed by import.c */</doc>
+<use f='codebrowser/Python/pystate.c' l='445' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/sysmodule.c' l='1733' u='r' c='make_flags'/>

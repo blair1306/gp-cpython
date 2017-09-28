@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/import.h' l='84' type='int PyImport_ImportFrozenModule(const char * name)'/>
+<use f='codebrowser/Python/frozenmain.c' l='86' u='c' c='Py_FrozenMain'/>
+<def f='codebrowser/Python/import.c' l='1230' ll='1241' type='int PyImport_ImportFrozenModule(const char * name)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='269' u='c' c='initimport'/>

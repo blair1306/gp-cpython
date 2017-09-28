@@ -1,0 +1,4 @@
+<dec f='include/openssl/ssl.h' l='2231' type='const unsigned char * SSL_SESSION_get_id(const SSL_SESSION * s, unsigned int * len)'/>
+<use f='codebrowser/Modules/_ssl.c' l='4325' u='c' c='PySSLSession_richcompare'/>
+<use f='codebrowser/Modules/_ssl.c' l='4327' u='c' c='PySSLSession_richcompare'/>
+<use f='codebrowser/Modules/_ssl.c' l='4410' u='c' c='PySSLSession_get_session_id'/>

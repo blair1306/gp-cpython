@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1308' type='PyObject * PyUnicode_DecodeUTF8Stateful(const char * string, Py_ssize_t length, const char * errors, Py_ssize_t * consumed)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='319' u='c' c='_codecs_utf_8_decode_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2096' u='c' c='PyUnicode_FromStringAndSize'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2109' u='c' c='PyUnicode_FromString'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2116' u='c' c='_PyUnicode_FromId'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2575' u='c' c='unicode_fromformat_write_cstr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3170' u='c' c='PyUnicode_Decode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3186' u='c' c='PyUnicode_Decode'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4871' u='c' c='PyUnicode_DecodeUTF8'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4964' ll='5096' type='PyObject * PyUnicode_DecodeUTF8Stateful(const char * s, Py_ssize_t size, const char * errors, Py_ssize_t * consumed)'/>
+<use f='codebrowser/Python/ast.c' l='4399' u='c' c='fstring_find_literal'/>
+<use f='codebrowser/Python/ast.c' l='5143' u='c' c='parsestr'/>

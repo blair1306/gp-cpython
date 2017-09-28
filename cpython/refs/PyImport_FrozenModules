@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/import.h' l='134' type='const struct _frozen *'/>
+<def f='codebrowser/Python/frozen.c' l='46' type='const struct _frozen *'/>
+<doc f='codebrowser/Python/frozen.c' l='43'>/* Embedding apps may change this pointer to point to their favorite
+   collection of frozen modules: */</doc>
+<use f='codebrowser/Python/import.c' l='1107' u='r' c='find_frozen'/>

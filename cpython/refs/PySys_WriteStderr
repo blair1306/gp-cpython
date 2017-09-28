@@ -1,0 +1,33 @@
+<dec f='codebrowser/Include/sysmodule.h' l='23' type='void PySys_WriteStderr(const char * format)'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1004' u='c' c='t_bootstrap'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1012' u='c' c='t_bootstrap'/>
+<use f='codebrowser/Modules/atexitmodule.c' l='101' u='c' c='atexit_callfuncs'/>
+<use f='codebrowser/Modules/gcmodule.c' l='925' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='927' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='933' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1042' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1047' u='c' c='collect'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1684' u='c' c='_PyGC_DumpShutdownStats'/>
+<use f='codebrowser/Modules/main.c' l='145' u='c' c='RunStartupFile'/>
+<use f='codebrowser/Modules/main.c' l='176' u='c' c='RunInteractiveHook'/>
+<use f='codebrowser/Modules/main.c' l='254' u='c' c='AsImportPathEntry'/>
+<use f='codebrowser/Modules/main.c' l='307' u='c' c='run_command'/>
+<use f='codebrowser/Modules/signalmodule.c' l='201' u='c' c='report_wakeup_write_error'/>
+<use f='codebrowser/Modules/zipimport.c' l='1130' u='c' c='get_decompress_func'/>
+<use f='codebrowser/Objects/moduleobject.c' l='574' u='c' c='_PyModule_ClearDict'/>
+<use f='codebrowser/Objects/moduleobject.c' l='594' u='c' c='_PyModule_ClearDict'/>
+<dec f='codebrowser/Include/pgenheaders.h' l='14' type='void PySys_WriteStderr(const char * format)'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1095' u='c' c='tok_nextc'/>
+<use f='codebrowser/Python/import.c' l='102' u='c' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='108' u='c' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='118' u='c' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='129' u='c' c='_PyImportZip_Init'/>
+<use f='codebrowser/Python/import.c' l='355' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='360' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/import.c' l='365' u='c' c='PyImport_Cleanup'/>
+<use f='codebrowser/Python/pythonrun.c' l='593' u='c' c='handle_system_exit'/>
+<use f='codebrowser/Python/pythonrun.c' l='661' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='663' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/pythonrun.c' l='671' u='c' c='PyErr_PrintEx'/>
+<use f='codebrowser/Python/sysmodule.c' l='1949' u='c' c='_PySys_BeginInit'/>
+<def f='codebrowser/Python/sysmodule.c' l='2459' ll='2467' type='void PySys_WriteStderr(const char * format)'/>

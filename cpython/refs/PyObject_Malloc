@@ -1,0 +1,89 @@
+<dec f='codebrowser/Include/objimpl.h' l='97' type='void * PyObject_Malloc(size_t size)'/>
+<doc f='codebrowser/Include/objimpl.h' l='74'>/* Functions to call the same malloc/realloc/free as used by Python&apos;s
+   object allocator.  If WITH_PYMALLOC is enabled, these may differ from
+   the platform malloc/realloc/free.  The Python object allocator is
+   designed for fast, cache-conscious allocation of many &quot;small&quot; objects,
+   and with low hidden memory overhead.
+
+   PyObject_Malloc(0) returns a unique non-NULL pointer if possible.
+
+   PyObject_Realloc(NULL, n) acts like PyObject_Malloc(n).
+   PyObject_Realloc(p != NULL, 0) does not return  NULL, or free the memory
+   at p.
+
+   Returned pointers must be checked for NULL explicitly; no action is
+   performed on failure other than to return NULL (no warning it printed, no
+   exception is set, etc).
+
+   For allocating objects, use PyObject_{New, NewVar} instead whenever
+   possible.  The PyObject_{Malloc, Realloc, Free} family is exposed
+   so that you can exploit Python&apos;s small-block allocator for non-object
+   uses.  If you must use these routines to allocate object memory, make sure
+   the object gets initialized via PyObject_{Init, InitVar} after obtaining
+   the raw memory.
+*/</doc>
+<use f='codebrowser/Modules/_curses_panel.c' l='205' macro='1' u='c'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='545' macro='1' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='627' macro='1' u='c'/>
+<use f='codebrowser/Modules/_datetimemodule.c' l='642' macro='1' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='207' u='c' c='create_extra'/>
+<use f='codebrowser/Modules/_elementtree.c' l='450' u='c' c='element_resize'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2754'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2754'/>
+<use f='codebrowser/Modules/sre_lib.h' l='945' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='945' macro='1' u='c'/>
+<use f='codebrowser/Modules/sre_lib.h' l='945' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='1382' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='2372' macro='1' u='c'/>
+<use f='codebrowser/Modules/_sre.c' l='2517' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3241' u='c' c='test_pymem_alloc0'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3324' u='c' c='test_setallocators'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4063' u='c' c='pyobject_malloc_without_gil'/>
+<use f='codebrowser/Modules/gcmodule.c' l='1744' u='c' c='_PyObject_GC_Alloc'/>
+<use f='codebrowser/Modules/parsermodule.c' l='932' macro='1' u='c'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1048' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='19' u='r'/>
+<use f='codebrowser/Modules/pyexpat.c' l='19' u='r'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='132' u='c' c='PyByteArray_FromStringAndSize'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='221' u='c' c='PyByteArray_Resize'/>
+<use f='codebrowser/Objects/bytearrayobject.c' l='913' u='c' c='bytearray_repr'/>
+<use f='codebrowser/Objects/bytesobject.c' l='83' u='c' c='_PyBytes_FromSize'/>
+<use f='codebrowser/Objects/bytesobject.c' l='161' macro='1' u='c'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1505' macro='1' u='c'/>
+<use f='codebrowser/Objects/capsule.c' l='53' macro='1' u='c'/>
+<use f='codebrowser/Objects/codeobject.c' l='175' macro='1' u='c'/>
+<use f='codebrowser/Objects/complexobject.c' l='228' macro='1' u='c'/>
+<use f='codebrowser/Objects/dictobject.c' l='532' macro='1' u='c'/>
+<use f='codebrowser/Objects/floatobject.c' l='123' macro='1' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='208' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='266' macro='1' u='c'/>
+<use f='codebrowser/Objects/object.c' l='277' macro='1' u='c'/>
+<def f='codebrowser/Objects/obmalloc.c' l='473' ll='480' type='void * PyObject_Malloc(size_t size)'/>
+<use f='codebrowser/Objects/typeobject.c' l='964' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='2622' macro='1' u='c'/>
+<use f='codebrowser/Objects/typeobject.c' l='2871' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1120' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1296' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1679' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1720' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3990' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4087' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8194' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15127' macro='1' u='c'/>
+<use f='codebrowser/Parser/acceler.c' l='71' macro='1' u='c'/>
+<use f='codebrowser/Parser/acceler.c' l='114' macro='1' u='c'/>
+<use f='codebrowser/Parser/bitset.c' l='11' macro='1' u='c'/>
+<use f='codebrowser/Parser/firstsets.c' l='62' macro='1' u='c'/>
+<use f='codebrowser/Parser/grammar.c' l='19' macro='1' u='c'/>
+<use f='codebrowser/Parser/node.c' l='10' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='229' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='325' macro='1' u='c'/>
+<use f='codebrowser/Parser/parsetok.c' l='338' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='84' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='109' macro='1' u='c'/>
+<use f='codebrowser/Parser/pgen.c' l='410' macro='1' u='c'/>
+<use f='codebrowser/Python/compile.c' l='538' u='c' c='compiler_enter_scope'/>
+<use f='codebrowser/Python/compile.c' l='753' u='c' c='compiler_new_block'/>
+<use f='codebrowser/Python/compile.c' l='795' u='c' c='compiler_next_instr'/>
+<use f='codebrowser/Python/compile.c' l='5007' u='c' c='assemble_init'/>
+<use f='codebrowser/Python/future.c' l='123' u='c' c='PyFuture_FromASTObject'/>

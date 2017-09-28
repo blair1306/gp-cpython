@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='818' type='mpd_t * mpd_qnew()'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2305' u='c' c='PyDecType_FromFloatExact'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2311' u='c' c='PyDecType_FromFloatExact'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3346' u='c' c='dec_as_long'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4549' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4553' u='c' c='_dec_hash'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='185' ll='189' type='mpd_t * mpd_qnew()'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='198' u='c' c='mpd_new'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='183'>/* Allocate a new decimal with a coefficient of length MPD_MINALLOC.
+   In case of an error the return value is NULL. */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7373' u='c' c='_mpd_base_ndivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7379' u='c' c='_mpd_base_ndivmod'/>

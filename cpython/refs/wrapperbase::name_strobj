@@ -1,0 +1,18 @@
+<dec f='codebrowser/Include/descrobject.h' l='33' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Objects/typeobject.c' l='6917' u='r' c='resolve_slotdups'/>
+<use f='codebrowser/Objects/typeobject.c' l='6918' u='r' c='resolve_slotdups'/>
+<use f='codebrowser/Objects/typeobject.c' l='6961' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='6969' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='6969' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='6970' u='r' c='update_one_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='7050' u='w' c='init_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7051' u='r' c='init_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7051' u='r' c='init_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7062' u='r' c='clear_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7062' u='w' c='clear_slotdefs'/>
+<use f='codebrowser/Objects/typeobject.c' l='7089' u='r' c='update_slot'/>
+<use f='codebrowser/Objects/typeobject.c' l='7127' u='r' c='update_all_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='7286' u='r' c='add_operators'/>
+<use f='codebrowser/Objects/typeobject.c' l='7292' u='r' c='add_operators'/>
+<use f='codebrowser/Objects/typeobject.c' l='7299' u='r' c='add_operators'/>

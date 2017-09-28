@@ -1,0 +1,15 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='48' type='PyObject *'/>
+<use f='codebrowser/Parser/parsetok.c' l='65' u='w' c='PyParser_ParseStringObject'/>
+<use f='codebrowser/Parser/parsetok.c' l='132' u='w' c='PyParser_ParseFileObject'/>
+<offset>3968</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='44'>/* pgen doesn&apos;t have access to Python codecs, it cannot decode the input
+       filename. The bytes filename might be kept, but it is only used by
+       indenterror() and it is not really needed: pgen only compiles one file
+       (Grammar/Grammar). */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='149' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='641' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='901' u='r' c='PyTokenizer_Free'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1303' u='r' c='indenterror'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1948' u='w' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1951' u='w' c='PyTokenizer_FindEncodingFilename'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1952' u='r' c='PyTokenizer_FindEncodingFilename'/>

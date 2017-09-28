@@ -1,0 +1,14 @@
+<def f='codebrowser/Objects/object.c' l='1039' ll='1110' type='int _PyObject_GetMethod(PyObject * obj, PyObject * name, PyObject ** method)'/>
+<doc f='codebrowser/Objects/object.c' l='1029'>/* Specialized version of _PyObject_GenericGetAttrWithDict
+   specifically for the LOAD_METHOD opcode.
+
+   Return 1 if a method is found, 0 if it&apos;s a regular attribute
+   from __dict__ or something returned by using a descriptor
+   protocol.
+
+   `method` will point to the resolved attribute or NULL.  In the
+   latter case, an error will be set.
+*/</doc>
+<dec f='codebrowser/Python/ceval.c' l='34' type='int _PyObject_GetMethod(PyObject * , PyObject * , PyObject ** )'/>
+<use f='codebrowser/Python/ceval.c' l='3260' u='c' c='_PyEval_EvalFrameDefault'/>
+<doc f='codebrowser/Python/ceval.c' l='33'>/* Private API for the LOAD_METHOD opcode. */</doc>

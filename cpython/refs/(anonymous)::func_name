@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/funcobject.h' l='29' type='PyObject *'/>
+<offset>640</offset>
+<doc f='codebrowser/Include/funcobject.h' l='29'>/* The __name__ attribute, a string object */</doc>
+<use f='codebrowser/Objects/call.c' l='363' u='r' c='_PyFunction_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='421' u='r' c='_PyFunction_FastCallKeywords'/>
+<use f='codebrowser/Objects/funcobject.c' l='30' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='31' u='r' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='61' u='r' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='268' u='r' c='func_set_code'/>
+<use f='codebrowser/Objects/funcobject.c' l='280' u='r' c='func_get_name'/>
+<use f='codebrowser/Objects/funcobject.c' l='281' u='r' c='func_get_name'/>
+<use f='codebrowser/Objects/funcobject.c' l='295' u='r' c='func_set_name'/>
+<use f='codebrowser/Objects/funcobject.c' l='295' u='w' c='func_set_name'/>
+<use f='codebrowser/Objects/funcobject.c' l='510' u='r' c='func_new_impl'/>
+<use f='codebrowser/Objects/funcobject.c' l='510' u='w' c='func_new_impl'/>
+<use f='codebrowser/Objects/funcobject.c' l='533' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='560' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='560' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/ceval.c' l='4752' u='r' c='PyEval_GetFuncName'/>

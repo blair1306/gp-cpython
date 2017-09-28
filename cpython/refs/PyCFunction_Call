@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/methodobject.h' l='42' type='PyObject * PyCFunction_Call(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Objects/call.c' l='231' u='c' c='PyObject_Call'/>
+<def f='codebrowser/Objects/call.c' l='772' ll='787' type='PyObject * PyCFunction_Call(PyObject * func, PyObject * args, PyObject * kwargs)'/>
+<use f='codebrowser/Objects/methodobject.c' l='284'/>
+<use f='codebrowser/Objects/methodobject.c' l='284'/>
+<use f='codebrowser/Python/ceval.c' l='4884' u='c' c='do_call_core'/>
+<use f='codebrowser/Python/ceval.c' l='4884' u='c' c='do_call_core'/>

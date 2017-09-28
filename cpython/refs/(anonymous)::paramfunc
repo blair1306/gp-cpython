@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='202' type='PARAMFUNC'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='459' u='w' c='StructUnionType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='980' u='w' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1477' u='w' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2009' u='w' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2369' u='w' c='PyCFuncPtrType_new'/>
+<offset>1088</offset>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='618' u='r' c='ConvParam'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='620' u='r' c='ConvParam'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/intrcheck.h' l='16' type='void PyOS_AfterFork()'/>
+<doc f='codebrowser/Include/intrcheck.h' l='15'>/* Deprecated, please use PyOS_AfterFork_Child() instead */</doc>
+<def f='codebrowser/Modules/posixmodule.c' l='480' ll='486' type='void PyOS_AfterFork()'/>
+<doc f='codebrowser/Modules/posixmodule.c' l='479'>/* Legacy wrapper */</doc>

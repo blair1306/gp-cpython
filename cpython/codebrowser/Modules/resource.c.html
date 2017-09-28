@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>resource.c source code [codebrowser/Modules/resource.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/resource.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='resource.c.html'>resource.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/resource.h.html">&lt;sys/resource.h&gt;</a></u></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/time.h.html">&lt;sys/time.h&gt;</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="7">7</th><td><i>/* for sysconf */</i></td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="8">if</span> defined(<a class="macro" href="../pyconfig.h.html#1139" data-ref="_M/HAVE_UNISTD_H">HAVE_UNISTD_H</a>)</u></td></tr>
+<tr><th id="9">9</th><td><u>#include <a href="../../include/unistd.h.html">&lt;unistd.h&gt;</a></u></td></tr>
+<tr><th id="10">10</th><td><u>#<span data-ppcond="8">endif</span></u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td><i>/* On some systems, these aren't in any header file.</i></td></tr>
+<tr><th id="13">13</th><td><i>   On others they are, with inconsistent prototypes.</i></td></tr>
+<tr><th id="14">14</th><td><i>   We declare the (default) return type, to shut up gcc -Wall;</i></td></tr>
+<tr><th id="15">15</th><td><i>   but we can't declare the prototype, to avoid errors</i></td></tr>
+<tr><th id="16">16</th><td><i>   when the header files declare it different.</i></td></tr>
+<tr><th id="17">17</th><td><i>   Worse, on some Linuxes, getpagesize() returns a size_t... */</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><u>#define <dfn class="macro" id="_M/doubletime" data-ref="_M/doubletime">doubletime</dfn>(TV) ((double)(TV).<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_sec" title='timeval::tv_sec' data-ref="timeval::tv_sec">tv_sec</a> + (TV).<a class="ref" href="../../include/x86_64-linux-gnu/bits/time.h.html#timeval::tv_usec" title='timeval::tv_usec' data-ref="timeval::tv_usec">tv_usec</a> * 0.000001)</u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="22">22</th><td><i>module resource</i></td></tr>
+<tr><th id="23">23</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="24">24</th><td><i>/*[clinic end generated code: output=da39a3ee5e6b4b0d input=e89d38ed52609d7c]*/</i></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><i>/*[python input]</i></td></tr>
+<tr><th id="27">27</th><td><i>class pid_t_converter(CConverter):</i></td></tr>
+<tr><th id="28">28</th><td><i>    type = 'pid_t'</i></td></tr>
+<tr><th id="29">29</th><td><i>    format_unit = '" _Py_PARSE_PID "'</i></td></tr>
+<tr><th id="30">30</th><td><i>[python start generated code]*/</i></td></tr>
+<tr><th id="31">31</th><td><i>/*[python end generated code: output=da39a3ee5e6b4b0d input=0c1d19f640d57e48]*/</i></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="clinic/resource.c.h.html">"clinic/resource.c.h"</a></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><a class="macro" href="../Include/pymacro.h.html#71" title="static char struct_rusage__doc__[] = &quot;struct_rusage: Result from getrusage.\n\n&quot;&quot;This object may be accessed either as a tuple of\n&quot;&quot;    (utime,stime,maxrss,ixrss,idrss,isrss,minflt,majflt,\n&quot;&quot;    nswap,inblock,oublock,msgsnd,msgrcv,nsignals,nvcsw,nivcsw)\n&quot;&quot;or via the attributes ru_utime, ru_stime, ru_maxrss, and so on.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="struct_rusage__doc__" title='struct_rusage__doc__' data-ref="struct_rusage__doc__">struct_rusage__doc__</dfn>,</td></tr>
+<tr><th id="36">36</th><td><q>"struct_rusage: Result from getrusage.\n\n"</q></td></tr>
+<tr><th id="37">37</th><td><q>"This object may be accessed either as a tuple of\n"</q></td></tr>
+<tr><th id="38">38</th><td><q>"    (utime,stime,maxrss,ixrss,idrss,isrss,minflt,majflt,\n"</q></td></tr>
+<tr><th id="39">39</th><td><q>"    nswap,inblock,oublock,msgsnd,msgrcv,nsignals,nvcsw,nivcsw)\n"</q></td></tr>
+<tr><th id="40">40</th><td><q>"or via the attributes ru_utime, ru_stime, ru_maxrss, and so on."</q>);</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><em>static</em> <a class="typedef" href="../Include/structseq.h.html#PyStructSequence_Field" title='PyStructSequence_Field' data-type='struct PyStructSequence_Field' data-ref="PyStructSequence_Field">PyStructSequence_Field</a> <dfn class="tu decl def" id="struct_rusage_fields" title='struct_rusage_fields' data-type='PyStructSequence_Field [17]' data-ref="struct_rusage_fields">struct_rusage_fields</dfn>[] = {</td></tr>
+<tr><th id="43">43</th><td>    {<q>"ru_utime"</q>,        <q>"user time used"</q>},</td></tr>
+<tr><th id="44">44</th><td>    {<q>"ru_stime"</q>,        <q>"system time used"</q>},</td></tr>
+<tr><th id="45">45</th><td>    {<q>"ru_maxrss"</q>,       <q>"max. resident set size"</q>},</td></tr>
+<tr><th id="46">46</th><td>    {<q>"ru_ixrss"</q>,        <q>"shared memory size"</q>},</td></tr>
+<tr><th id="47">47</th><td>    {<q>"ru_idrss"</q>,        <q>"unshared data size"</q>},</td></tr>
+<tr><th id="48">48</th><td>    {<q>"ru_isrss"</q>,        <q>"unshared stack size"</q>},</td></tr>
+<tr><th id="49">49</th><td>    {<q>"ru_minflt"</q>,       <q>"page faults not requiring I/O"</q>},</td></tr>
+<tr><th id="50">50</th><td>    {<q>"ru_majflt"</q>,       <q>"page faults requiring I/O"</q>},</td></tr>
+<tr><th id="51">51</th><td>    {<q>"ru_nswap"</q>,        <q>"number of swap outs"</q>},</td></tr>
+<tr><th id="52">52</th><td>    {<q>"ru_inblock"</q>,      <q>"block input operations"</q>},</td></tr>
+<tr><th id="53">53</th><td>    {<q>"ru_oublock"</q>,      <q>"block output operations"</q>},</td></tr>
+<tr><th id="54">54</th><td>    {<q>"ru_msgsnd"</q>,       <q>"IPC messages sent"</q>},</td></tr>
+<tr><th id="55">55</th><td>    {<q>"ru_msgrcv"</q>,       <q>"IPC messages received"</q>},</td></tr>
+<tr><th id="56">56</th><td>    {<q>"ru_nsignals"</q>,     <q>"signals received"</q>},</td></tr>
+<tr><th id="57">57</th><td>    {<q>"ru_nvcsw"</q>,        <q>"voluntary context switches"</q>},</td></tr>
+<tr><th id="58">58</th><td>    {<q>"ru_nivcsw"</q>,       <q>"involuntary context switches"</q>},</td></tr>
+<tr><th id="59">59</th><td>    {<var>0</var>}</td></tr>
+<tr><th id="60">60</th><td>};</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><em>static</em> <a class="typedef" href="../Include/structseq.h.html#PyStructSequence_Desc" title='PyStructSequence_Desc' data-type='struct PyStructSequence_Desc' data-ref="PyStructSequence_Desc">PyStructSequence_Desc</a> <dfn class="tu decl def" id="struct_rusage_desc" title='struct_rusage_desc' data-type='PyStructSequence_Desc' data-ref="struct_rusage_desc">struct_rusage_desc</dfn> = {</td></tr>
+<tr><th id="63">63</th><td>    <q>"resource.struct_rusage"</q>,           <i>/* name */</i></td></tr>
+<tr><th id="64">64</th><td>    <a class="ref" href="#35" title='struct_rusage__doc__' data-ref="struct_rusage__doc__">struct_rusage__doc__</a>,       <i>/* doc */</i></td></tr>
+<tr><th id="65">65</th><td>    <a class="tu ref" href="#struct_rusage_fields" title='struct_rusage_fields' data-ref="struct_rusage_fields">struct_rusage_fields</a>,       <i>/* fields */</i></td></tr>
+<tr><th id="66">66</th><td>    <var>16</var>          <i>/* n_in_sequence */</i></td></tr>
+<tr><th id="67">67</th><td>};</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><em>static</em> <em>int</em> <dfn class="tu decl def" id="initialized" title='initialized' data-type='int' data-ref="initialized">initialized</dfn>;</td></tr>
+<tr><th id="70">70</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> <dfn class="tu decl def" id="StructRUsageType" title='StructRUsageType' data-type='PyTypeObject' data-ref="StructRUsageType">StructRUsageType</dfn>;</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><i  data-doc="resource_getrusage_impl">/*[clinic input]</i></td></tr>
+<tr><th id="73">73</th><td><i  data-doc="resource_getrusage_impl">resource.getrusage</i></td></tr>
+<tr><th id="74">74</th><td><i  data-doc="resource_getrusage_impl"></i></td></tr>
+<tr><th id="75">75</th><td><i  data-doc="resource_getrusage_impl">    who: int</i></td></tr>
+<tr><th id="76">76</th><td><i  data-doc="resource_getrusage_impl">    /</i></td></tr>
+<tr><th id="77">77</th><td><i  data-doc="resource_getrusage_impl"></i></td></tr>
+<tr><th id="78">78</th><td><i  data-doc="resource_getrusage_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="81">81</th><td><dfn class="tu decl def" id="resource_getrusage_impl" title='resource_getrusage_impl' data-type='PyObject * resource_getrusage_impl(PyObject * module, int who)' data-ref="resource_getrusage_impl">resource_getrusage_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="43module" title='module' data-type='PyObject *' data-ref="43module">module</dfn>, <em>int</em> <dfn class="local col4 decl" id="44who" title='who' data-type='int' data-ref="44who">who</dfn>)</td></tr>
+<tr><th id="82">82</th><td><i>/*[clinic end generated code: output=8fad2880ba6a9843 input=5c857bcc5b9ccb1b]*/</i></td></tr>
+<tr><th id="83">83</th><td>{</td></tr>
+<tr><th id="84">84</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage" title='rusage' data-ref="rusage">rusage</a> <dfn class="local col5 decl" id="45ru" title='ru' data-type='struct rusage' data-ref="45ru">ru</dfn>;</td></tr>
+<tr><th id="85">85</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46result" title='result' data-type='PyObject *' data-ref="46result">result</dfn>;</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td>    <b>if</b> (<a class="ref" href="../../include/x86_64-linux-gnu/sys/resource.h.html#getrusage" title='getrusage' data-ref="getrusage">getrusage</a>(<a class="local col4 ref" href="#44who" title='who' data-ref="44who">who</a>, &amp;<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>) == -<var>1</var>) {</td></tr>
+<tr><th id="88">88</th><td>        <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#25" title="22" data-ref="_M/EINVAL">EINVAL</a>) {</td></tr>
+<tr><th id="89">89</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="90">90</th><td>                            <q>"invalid who parameter"</q>);</td></tr>
+<tr><th id="91">91</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="92">92</th><td>        }</td></tr>
+<tr><th id="93">93</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="94">94</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="95">95</th><td>    }</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>    <a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a> = <a class="ref" href="../Include/structseq.h.html#PyStructSequence_New" title='PyStructSequence_New' data-ref="PyStructSequence_New">PyStructSequence_New</a>(&amp;<a class="tu ref" href="#StructRUsageType" title='StructRUsageType' data-use='a' data-ref="StructRUsageType">StructRUsageType</a>);</td></tr>
+<tr><th id="98">98</th><td>    <b>if</b> (!<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>)</td></tr>
+<tr><th id="99">99</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[0] = PyFloat_FromDouble(((double)(ru.ru_utime).tv_sec + (ru.ru_utime).tv_usec * 0.000001)))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>0</var>,</td></tr>
+<tr><th id="102">102</th><td>                    <a class="ref" href="../Include/floatobject.h.html#PyFloat_FromDouble" title='PyFloat_FromDouble' data-ref="PyFloat_FromDouble">PyFloat_FromDouble</a>(<a class="macro" href="#19" title="((double)(ru.ru_utime).tv_sec + (ru.ru_utime).tv_usec * 0.000001)" data-ref="_M/doubletime">doubletime</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::ru_utime" title='rusage::ru_utime' data-ref="rusage::ru_utime">ru_utime</a>)));</td></tr>
+<tr><th id="103">103</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[1] = PyFloat_FromDouble(((double)(ru.ru_stime).tv_sec + (ru.ru_stime).tv_usec * 0.000001)))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>1</var>,</td></tr>
+<tr><th id="104">104</th><td>                    <a class="ref" href="../Include/floatobject.h.html#PyFloat_FromDouble" title='PyFloat_FromDouble' data-ref="PyFloat_FromDouble">PyFloat_FromDouble</a>(<a class="macro" href="#19" title="((double)(ru.ru_stime).tv_sec + (ru.ru_stime).tv_usec * 0.000001)" data-ref="_M/doubletime">doubletime</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::ru_stime" title='rusage::ru_stime' data-ref="rusage::ru_stime">ru_stime</a>)));</td></tr>
+<tr><th id="105">105</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[2] = PyLong_FromLong(ru.ru_maxrss))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>2</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_maxrss" title='rusage::(anonymous union)::ru_maxrss' data-ref="rusage::(anonymous)::ru_maxrss">ru_maxrss</a>));</td></tr>
+<tr><th id="106">106</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[3] = PyLong_FromLong(ru.ru_ixrss))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>3</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_ixrss" title='rusage::(anonymous union)::ru_ixrss' data-ref="rusage::(anonymous)::ru_ixrss">ru_ixrss</a>));</td></tr>
+<tr><th id="107">107</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[4] = PyLong_FromLong(ru.ru_idrss))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>4</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_idrss" title='rusage::(anonymous union)::ru_idrss' data-ref="rusage::(anonymous)::ru_idrss">ru_idrss</a>));</td></tr>
+<tr><th id="108">108</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[5] = PyLong_FromLong(ru.ru_isrss))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>5</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_isrss" title='rusage::(anonymous union)::ru_isrss' data-ref="rusage::(anonymous)::ru_isrss">ru_isrss</a>));</td></tr>
+<tr><th id="109">109</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[6] = PyLong_FromLong(ru.ru_minflt))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>6</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_minflt" title='rusage::(anonymous union)::ru_minflt' data-ref="rusage::(anonymous)::ru_minflt">ru_minflt</a>));</td></tr>
+<tr><th id="110">110</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[7] = PyLong_FromLong(ru.ru_majflt))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>7</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_majflt" title='rusage::(anonymous union)::ru_majflt' data-ref="rusage::(anonymous)::ru_majflt">ru_majflt</a>));</td></tr>
+<tr><th id="111">111</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[8] = PyLong_FromLong(ru.ru_nswap))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>8</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_nswap" title='rusage::(anonymous union)::ru_nswap' data-ref="rusage::(anonymous)::ru_nswap">ru_nswap</a>));</td></tr>
+<tr><th id="112">112</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[9] = PyLong_FromLong(ru.ru_inblock))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>9</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_inblock" title='rusage::(anonymous union)::ru_inblock' data-ref="rusage::(anonymous)::ru_inblock">ru_inblock</a>));</td></tr>
+<tr><th id="113">113</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[10] = PyLong_FromLong(ru.ru_oublock))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>10</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_oublock" title='rusage::(anonymous union)::ru_oublock' data-ref="rusage::(anonymous)::ru_oublock">ru_oublock</a>));</td></tr>
+<tr><th id="114">114</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[11] = PyLong_FromLong(ru.ru_msgsnd))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>11</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_msgsnd" title='rusage::(anonymous union)::ru_msgsnd' data-ref="rusage::(anonymous)::ru_msgsnd">ru_msgsnd</a>));</td></tr>
+<tr><th id="115">115</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[12] = PyLong_FromLong(ru.ru_msgrcv))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>12</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_msgrcv" title='rusage::(anonymous union)::ru_msgrcv' data-ref="rusage::(anonymous)::ru_msgrcv">ru_msgrcv</a>));</td></tr>
+<tr><th id="116">116</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[13] = PyLong_FromLong(ru.ru_nsignals))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>13</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_nsignals" title='rusage::(anonymous union)::ru_nsignals' data-ref="rusage::(anonymous)::ru_nsignals">ru_nsignals</a>));</td></tr>
+<tr><th id="117">117</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[14] = PyLong_FromLong(ru.ru_nvcsw))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>14</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_nvcsw" title='rusage::(anonymous union)::ru_nvcsw' data-ref="rusage::(anonymous)::ru_nvcsw">ru_nvcsw</a>));</td></tr>
+<tr><th id="118">118</th><td>    <a class="macro" href="../Include/structseq.h.html#38" title="(((PyTupleObject *)(result))-&gt;ob_item[15] = PyLong_FromLong(ru.ru_nivcsw))" data-ref="_M/PyStructSequence_SET_ITEM">PyStructSequence_SET_ITEM</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>, <var>15</var>, <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>(<a class="local col5 ref" href="#45ru" title='ru' data-ref="45ru">ru</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rusage::(anonymous)::ru_nivcsw" title='rusage::(anonymous union)::ru_nivcsw' data-ref="rusage::(anonymous)::ru_nivcsw">ru_nivcsw</a>));</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td>    <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="121">121</th><td>        <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(result); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/resource.c&quot;, 121, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>);</td></tr>
+<tr><th id="122">122</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="123">123</th><td>    }</td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td>    <b>return</b> <a class="local col6 ref" href="#46result" title='result' data-ref="46result">result</a>;</td></tr>
+<tr><th id="126">126</th><td>}</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="129">129</th><td><dfn class="tu decl def" id="py2rlimit" title='py2rlimit' data-type='int py2rlimit(PyObject * limits, struct rlimit * rl_out)' data-ref="py2rlimit">py2rlimit</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="47limits" title='limits' data-type='PyObject *' data-ref="47limits">limits</dfn>, <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit" title='rlimit' data-ref="rlimit">rlimit</a> *<dfn class="local col8 decl" id="48rl_out" title='rl_out' data-type='struct rlimit *' data-ref="48rl_out">rl_out</dfn>)</td></tr>
+<tr><th id="130">130</th><td>{</td></tr>
+<tr><th id="131">131</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="49curobj" title='curobj' data-type='PyObject *' data-ref="49curobj">curobj</dfn>, *<dfn class="local col0 decl" id="50maxobj" title='maxobj' data-type='PyObject *' data-ref="50maxobj">maxobj</dfn>;</td></tr>
+<tr><th id="132">132</th><td>    <a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a> = <a class="ref" href="../Include/abstract.h.html#PySequence_Tuple" title='PySequence_Tuple' data-ref="PySequence_Tuple">PySequence_Tuple</a>(<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>);</td></tr>
+<tr><th id="133">133</th><td>    <b>if</b> (!<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>)</td></tr>
+<tr><th id="134">134</th><td>        <i>/* Here limits is a borrowed reference */</i></td></tr>
+<tr><th id="135">135</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="136">136</th><td></td></tr>
+<tr><th id="137">137</th><td>    <b>if</b> (<a class="macro" href="../Include/tupleobject.h.html#59" title="(((((((((PyObject*)(limits))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 26))) != 0)) ? (void) (0) : __assert_fail (&quot;PyTuple_Check(limits)&quot;, &quot;/home/jon/workspace/cpython/Modules/resource.c&quot;, 137, __PRETTY_FUNCTION__)),(((PyVarObject*)(limits))-&gt;ob_size))" data-ref="_M/PyTuple_GET_SIZE">PyTuple_GET_SIZE</a>(<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>) != <var>2</var>) {</td></tr>
+<tr><th id="138">138</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="139">139</th><td>                        <q>"expected a tuple of 2 integers"</q>);</td></tr>
+<tr><th id="140">140</th><td>        <b>goto</b> <a class="lbl" href="#51error" data-ref="51error">error</a>;</td></tr>
+<tr><th id="141">141</th><td>    }</td></tr>
+<tr><th id="142">142</th><td>    <a class="local col9 ref" href="#49curobj" title='curobj' data-ref="49curobj">curobj</a> = <a class="macro" href="../Include/tupleobject.h.html#58" title="(((PyTupleObject *)(limits))-&gt;ob_item[0])" data-ref="_M/PyTuple_GET_ITEM">PyTuple_GET_ITEM</a>(<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>, <var>0</var>);</td></tr>
+<tr><th id="143">143</th><td>    <a class="local col0 ref" href="#50maxobj" title='maxobj' data-ref="50maxobj">maxobj</a> = <a class="macro" href="../Include/tupleobject.h.html#58" title="(((PyTupleObject *)(limits))-&gt;ob_item[1])" data-ref="_M/PyTuple_GET_ITEM">PyTuple_GET_ITEM</a>(<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>, <var>1</var>);</td></tr>
+<tr><th id="144">144</th><td><u>#<span data-ppcond="144">if</span> !defined(<span class="macro" data-ref="_M/HAVE_LARGEFILE_SUPPORT">HAVE_LARGEFILE_SUPPORT</span>)</u></td></tr>
+<tr><th id="145">145</th><td>    <a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="local col9 ref" href="#49curobj" title='curobj' data-ref="49curobj">curobj</a>);</td></tr>
+<tr><th id="146">146</th><td>    <b>if</b> (<a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a> == (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlim_t" title='rlim_t' data-type='__rlim64_t' data-ref="rlim_t">rlim_t</a>)-<var>1</var> &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="147">147</th><td>        <b>goto</b> <a class="lbl" href="#51error" data-ref="51error">error</a>;</td></tr>
+<tr><th id="148">148</th><td>    <a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_max" title='rlimit::rlim_max' data-ref="rlimit::rlim_max">rlim_max</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_AsLong" title='PyLong_AsLong' data-ref="PyLong_AsLong">PyLong_AsLong</a>(<a class="local col0 ref" href="#50maxobj" title='maxobj' data-ref="50maxobj">maxobj</a>);</td></tr>
+<tr><th id="149">149</th><td>    <b>if</b> (<a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_max" title='rlimit::rlim_max' data-ref="rlimit::rlim_max">rlim_max</a> == (<a class="typedef" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlim_t" title='rlim_t' data-type='__rlim64_t' data-ref="rlim_t">rlim_t</a>)-<var>1</var> &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>())</td></tr>
+<tr><th id="150">150</th><td>        <b>goto</b> <a class="lbl" href="#51error" data-ref="51error">error</a>;</td></tr>
+<tr><th id="151">151</th><td><u>#<span data-ppcond="144">else</span></u></td></tr>
+<tr><th id="152">152</th><td>    <i>/* The limits are probably bigger than a long */</i></td></tr>
+<tr><th id="153">153</th><td>    rl_out-&gt;rlim_cur = PyLong_AsLongLong(curobj);</td></tr>
+<tr><th id="154">154</th><td>    <b>if</b> (rl_out-&gt;rlim_cur == (rlim_t)-<var>1</var> &amp;&amp; PyErr_Occurred())</td></tr>
+<tr><th id="155">155</th><td>        <b>goto</b> error;</td></tr>
+<tr><th id="156">156</th><td>    rl_out-&gt;rlim_max = PyLong_AsLongLong(maxobj);</td></tr>
+<tr><th id="157">157</th><td>    <b>if</b> (rl_out-&gt;rlim_max == (rlim_t)-<var>1</var> &amp;&amp; PyErr_Occurred())</td></tr>
+<tr><th id="158">158</th><td>        <b>goto</b> error;</td></tr>
+<tr><th id="159">159</th><td><u>#<span data-ppcond="144">endif</span></u></td></tr>
+<tr><th id="160">160</th><td></td></tr>
+<tr><th id="161">161</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(limits); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/resource.c&quot;, 161, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>);</td></tr>
+<tr><th id="162">162</th><td>    <a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a> = <a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#117" title="0xffffffffffffffffuLL" data-ref="_M/RLIM_INFINITY">RLIM_INFINITY</a>;</td></tr>
+<tr><th id="163">163</th><td>    <a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_max" title='rlimit::rlim_max' data-ref="rlimit::rlim_max">rlim_max</a> = <a class="local col8 ref" href="#48rl_out" title='rl_out' data-ref="48rl_out">rl_out</a>-&gt;<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_max" title='rlimit::rlim_max' data-ref="rlimit::rlim_max">rlim_max</a> &amp; <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#117" title="0xffffffffffffffffuLL" data-ref="_M/RLIM_INFINITY">RLIM_INFINITY</a>;</td></tr>
+<tr><th id="164">164</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td><dfn class="lbl" id="51error" data-ref="51error">error</dfn>:</td></tr>
+<tr><th id="167">167</th><td>    <a class="macro" href="../Include/object.h.html#787" title="do { PyObject *_py_decref_tmp = (PyObject *)(limits); if (_Py_RefTotal-- , --(_py_decref_tmp)-&gt;ob_refcnt != 0) { if (((PyObject*)_py_decref_tmp)-&gt;ob_refcnt &lt; 0) _Py_NegativeRefcount(&quot;/home/jon/workspace/cpython/Modules/resource.c&quot;, 167, (PyObject *)(_py_decref_tmp)); } else _Py_Dealloc(_py_decref_tmp); } while (0)" data-ref="_M/Py_DECREF">Py_DECREF</a>(<a class="local col7 ref" href="#47limits" title='limits' data-ref="47limits">limits</a>);</td></tr>
+<tr><th id="168">168</th><td>    <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="169">169</th><td>}</td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="172">172</th><td><dfn class="tu decl def" id="rlimit2py" title='rlimit2py' data-type='PyObject * rlimit2py(struct rlimit rl)' data-ref="rlimit2py">rlimit2py</dfn>(<b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit" title='rlimit' data-ref="rlimit">rlimit</a> <dfn class="local col2 decl" id="52rl" title='rl' data-type='struct rlimit' data-ref="52rl">rl</dfn>)</td></tr>
+<tr><th id="173">173</th><td>{</td></tr>
+<tr><th id="174">174</th><td>    <b>if</b> (<b>sizeof</b>(<a class="local col2 ref" href="#52rl" title='rl' data-ref="52rl">rl</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a>) &gt; <b>sizeof</b>(<em>long</em>)) {</td></tr>
+<tr><th id="175">175</th><td>        <b>return</b> <a class="ref" href="../Include/modsupport.h.html#Py_BuildValue" title='Py_BuildValue' data-ref="Py_BuildValue">Py_BuildValue</a>(<q>"LL"</q>,</td></tr>
+<tr><th id="176">176</th><td>                             (<em>long</em> <em>long</em>) <a class="local col2 ref" href="#52rl" title='rl' data-ref="52rl">rl</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a>,</td></tr>
+<tr><th id="177">177</th><td>                             (<em>long</em> <em>long</em>) <a class="local col2 ref" href="#52rl" title='rl' data-ref="52rl">rl</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_max" title='rlimit::rlim_max' data-ref="rlimit::rlim_max">rlim_max</a>);</td></tr>
+<tr><th id="178">178</th><td>    }</td></tr>
+<tr><th id="179">179</th><td>    <b>return</b> <a class="ref" href="../Include/modsupport.h.html#Py_BuildValue" title='Py_BuildValue' data-ref="Py_BuildValue">Py_BuildValue</a>(<q>"ll"</q>, (<em>long</em>) <a class="local col2 ref" href="#52rl" title='rl' data-ref="52rl">rl</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_cur" title='rlimit::rlim_cur' data-ref="rlimit::rlim_cur">rlim_cur</a>, (<em>long</em>) <a class="local col2 ref" href="#52rl" title='rl' data-ref="52rl">rl</a>.<a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit::rlim_max" title='rlimit::rlim_max' data-ref="rlimit::rlim_max">rlim_max</a>);</td></tr>
+<tr><th id="180">180</th><td>}</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><i  data-doc="resource_getrlimit_impl">/*[clinic input]</i></td></tr>
+<tr><th id="183">183</th><td><i  data-doc="resource_getrlimit_impl">resource.getrlimit</i></td></tr>
+<tr><th id="184">184</th><td><i  data-doc="resource_getrlimit_impl"></i></td></tr>
+<tr><th id="185">185</th><td><i  data-doc="resource_getrlimit_impl">    resource: int</i></td></tr>
+<tr><th id="186">186</th><td><i  data-doc="resource_getrlimit_impl">    /</i></td></tr>
+<tr><th id="187">187</th><td><i  data-doc="resource_getrlimit_impl"></i></td></tr>
+<tr><th id="188">188</th><td><i  data-doc="resource_getrlimit_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="191">191</th><td><dfn class="tu decl def" id="resource_getrlimit_impl" title='resource_getrlimit_impl' data-type='PyObject * resource_getrlimit_impl(PyObject * module, int resource)' data-ref="resource_getrlimit_impl">resource_getrlimit_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="53module" title='module' data-type='PyObject *' data-ref="53module">module</dfn>, <em>int</em> <dfn class="local col4 decl" id="54resource" title='resource' data-type='int' data-ref="54resource">resource</dfn>)</td></tr>
+<tr><th id="192">192</th><td><i>/*[clinic end generated code: output=98327b25061ffe39 input=a697cb0004cb3c36]*/</i></td></tr>
+<tr><th id="193">193</th><td>{</td></tr>
+<tr><th id="194">194</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit" title='rlimit' data-ref="rlimit">rlimit</a> <dfn class="local col5 decl" id="55rl" title='rl' data-type='struct rlimit' data-ref="55rl">rl</dfn>;</td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td>    <b>if</b> (<a class="local col4 ref" href="#54resource" title='resource' data-ref="54resource">resource</a> &lt; <var>0</var> || <a class="local col4 ref" href="#54resource" title='resource' data-ref="54resource">resource</a> &gt;= <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#110" title="__RLIM_NLIMITS" data-ref="_M/RLIM_NLIMITS">RLIM_NLIMITS</a>) {</td></tr>
+<tr><th id="197">197</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="198">198</th><td>                        <q>"invalid resource specified"</q>);</td></tr>
+<tr><th id="199">199</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="200">200</th><td>    }</td></tr>
+<tr><th id="201">201</th><td></td></tr>
+<tr><th id="202">202</th><td>    <b>if</b> (<a class="ref" href="../../include/x86_64-linux-gnu/sys/resource.h.html#54" title='getrlimit' data-ref="getrlimit64">getrlimit</a>(<a class="local col4 ref" href="#54resource" title='resource' data-ref="54resource">resource</a>, &amp;<a class="local col5 ref" href="#55rl" title='rl' data-ref="55rl">rl</a>) == -<var>1</var>) {</td></tr>
+<tr><th id="203">203</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="204">204</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="205">205</th><td>    }</td></tr>
+<tr><th id="206">206</th><td>    <b>return</b> <a class="tu ref" href="#rlimit2py" title='rlimit2py' data-use='c' data-ref="rlimit2py">rlimit2py</a>(<a class="local col5 ref" href="#55rl" title='rl' data-ref="55rl">rl</a>);</td></tr>
+<tr><th id="207">207</th><td>}</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><i  data-doc="resource_setrlimit_impl">/*[clinic input]</i></td></tr>
+<tr><th id="210">210</th><td><i  data-doc="resource_setrlimit_impl">resource.setrlimit</i></td></tr>
+<tr><th id="211">211</th><td><i  data-doc="resource_setrlimit_impl"></i></td></tr>
+<tr><th id="212">212</th><td><i  data-doc="resource_setrlimit_impl">    resource: int</i></td></tr>
+<tr><th id="213">213</th><td><i  data-doc="resource_setrlimit_impl">    limits: object</i></td></tr>
+<tr><th id="214">214</th><td><i  data-doc="resource_setrlimit_impl">    /</i></td></tr>
+<tr><th id="215">215</th><td><i  data-doc="resource_setrlimit_impl"></i></td></tr>
+<tr><th id="216">216</th><td><i  data-doc="resource_setrlimit_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="217">217</th><td></td></tr>
+<tr><th id="218">218</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="219">219</th><td><dfn class="tu decl def" id="resource_setrlimit_impl" title='resource_setrlimit_impl' data-type='PyObject * resource_setrlimit_impl(PyObject * module, int resource, PyObject * limits)' data-ref="resource_setrlimit_impl">resource_setrlimit_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56module" title='module' data-type='PyObject *' data-ref="56module">module</dfn>, <em>int</em> <dfn class="local col7 decl" id="57resource" title='resource' data-type='int' data-ref="57resource">resource</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="58limits" title='limits' data-type='PyObject *' data-ref="58limits">limits</dfn>)</td></tr>
+<tr><th id="220">220</th><td><i>/*[clinic end generated code: output=4e82ec3f34d013d1 input=6235a6ce23b4ca75]*/</i></td></tr>
+<tr><th id="221">221</th><td>{</td></tr>
+<tr><th id="222">222</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit" title='rlimit' data-ref="rlimit">rlimit</a> <dfn class="local col9 decl" id="59rl" title='rl' data-type='struct rlimit' data-ref="59rl">rl</dfn>;</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td>    <b>if</b> (<a class="local col7 ref" href="#57resource" title='resource' data-ref="57resource">resource</a> &lt; <var>0</var> || <a class="local col7 ref" href="#57resource" title='resource' data-ref="57resource">resource</a> &gt;= <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#110" title="__RLIM_NLIMITS" data-ref="_M/RLIM_NLIMITS">RLIM_NLIMITS</a>) {</td></tr>
+<tr><th id="225">225</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="226">226</th><td>                        <q>"invalid resource specified"</q>);</td></tr>
+<tr><th id="227">227</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="228">228</th><td>    }</td></tr>
+<tr><th id="229">229</th><td></td></tr>
+<tr><th id="230">230</th><td>    <b>if</b> (<a class="tu ref" href="#py2rlimit" title='py2rlimit' data-use='c' data-ref="py2rlimit">py2rlimit</a>(<a class="local col8 ref" href="#58limits" title='limits' data-ref="58limits">limits</a>, &amp;<a class="local col9 ref" href="#59rl" title='rl' data-ref="59rl">rl</a>) &lt; <var>0</var>) {</td></tr>
+<tr><th id="231">231</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="232">232</th><td>    }</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td>    <b>if</b> (<a class="ref" href="../../include/x86_64-linux-gnu/sys/resource.h.html#73" title='setrlimit' data-ref="setrlimit64">setrlimit</a>(<a class="local col7 ref" href="#57resource" title='resource' data-ref="57resource">resource</a>, &amp;<a class="local col9 ref" href="#59rl" title='rl' data-ref="59rl">rl</a>) == -<var>1</var>) {</td></tr>
+<tr><th id="235">235</th><td>        <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#25" title="22" data-ref="_M/EINVAL">EINVAL</a>)</td></tr>
+<tr><th id="236">236</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="237">237</th><td>                            <q>"current limit exceeds maximum limit"</q>);</td></tr>
+<tr><th id="238">238</th><td>        <b>else</b> <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#4" title="1" data-ref="_M/EPERM">EPERM</a>)</td></tr>
+<tr><th id="239">239</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="240">240</th><td>                            <q>"not allowed to raise maximum limit"</q>);</td></tr>
+<tr><th id="241">241</th><td>        <b>else</b></td></tr>
+<tr><th id="242">242</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="243">243</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="244">244</th><td>    }</td></tr>
+<tr><th id="245">245</th><td>    <a class="macro" href="../Include/object.h.html#913" title="return ( _Py_RefTotal++ , ((PyObject *)((&amp;_Py_NoneStruct)))-&gt;ob_refcnt++), (&amp;_Py_NoneStruct)" data-ref="_M/Py_RETURN_NONE">Py_RETURN_NONE</a>;</td></tr>
+<tr><th id="246">246</th><td>}</td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><u>#<span data-ppcond="248">ifdef</span> <a class="macro" href="../pyconfig.h.html#684" data-ref="_M/HAVE_PRLIMIT">HAVE_PRLIMIT</a></u></td></tr>
+<tr><th id="249">249</th><td><i  data-doc="resource_prlimit_impl">/*[clinic input]</i></td></tr>
+<tr><th id="250">250</th><td><i  data-doc="resource_prlimit_impl">resource.prlimit</i></td></tr>
+<tr><th id="251">251</th><td><i  data-doc="resource_prlimit_impl"></i></td></tr>
+<tr><th id="252">252</th><td><i  data-doc="resource_prlimit_impl">    pid: pid_t</i></td></tr>
+<tr><th id="253">253</th><td><i  data-doc="resource_prlimit_impl">    resource: int</i></td></tr>
+<tr><th id="254">254</th><td><i  data-doc="resource_prlimit_impl">    [</i></td></tr>
+<tr><th id="255">255</th><td><i  data-doc="resource_prlimit_impl">    limits: object</i></td></tr>
+<tr><th id="256">256</th><td><i  data-doc="resource_prlimit_impl">    ]</i></td></tr>
+<tr><th id="257">257</th><td><i  data-doc="resource_prlimit_impl">    /</i></td></tr>
+<tr><th id="258">258</th><td><i  data-doc="resource_prlimit_impl"></i></td></tr>
+<tr><th id="259">259</th><td><i  data-doc="resource_prlimit_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="262">262</th><td><dfn class="tu decl def" id="resource_prlimit_impl" title='resource_prlimit_impl' data-type='PyObject * resource_prlimit_impl(PyObject * module, pid_t pid, int resource, int group_right_1, PyObject * limits)' data-ref="resource_prlimit_impl">resource_prlimit_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="60module" title='module' data-type='PyObject *' data-ref="60module">module</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#pid_t" title='pid_t' data-type='__pid_t' data-ref="pid_t">pid_t</a> <dfn class="local col1 decl" id="61pid" title='pid' data-type='pid_t' data-ref="61pid">pid</dfn>, <em>int</em> <dfn class="local col2 decl" id="62resource" title='resource' data-type='int' data-ref="62resource">resource</dfn>,</td></tr>
+<tr><th id="263">263</th><td>                      <em>int</em> <dfn class="local col3 decl" id="63group_right_1" title='group_right_1' data-type='int' data-ref="63group_right_1">group_right_1</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="64limits" title='limits' data-type='PyObject *' data-ref="64limits">limits</dfn>)</td></tr>
+<tr><th id="264">264</th><td><i>/*[clinic end generated code: output=ee976b393187a7a3 input=b77743bdccc83564]*/</i></td></tr>
+<tr><th id="265">265</th><td>{</td></tr>
+<tr><th id="266">266</th><td>    <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/resource.h.html#rlimit" title='rlimit' data-ref="rlimit">rlimit</a> <dfn class="local col5 decl" id="65old_limit" title='old_limit' data-type='struct rlimit' data-ref="65old_limit">old_limit</dfn>, <dfn class="local col6 decl" id="66new_limit" title='new_limit' data-type='struct rlimit' data-ref="66new_limit">new_limit</dfn>;</td></tr>
+<tr><th id="267">267</th><td>    <em>int</em> <dfn class="local col7 decl" id="67retval" title='retval' data-type='int' data-ref="67retval">retval</dfn>;</td></tr>
+<tr><th id="268">268</th><td></td></tr>
+<tr><th id="269">269</th><td>    <b>if</b> (<a class="local col2 ref" href="#62resource" title='resource' data-ref="62resource">resource</a> &lt; <var>0</var> || <a class="local col2 ref" href="#62resource" title='resource' data-ref="62resource">resource</a> &gt;= <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#110" title="__RLIM_NLIMITS" data-ref="_M/RLIM_NLIMITS">RLIM_NLIMITS</a>) {</td></tr>
+<tr><th id="270">270</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="271">271</th><td>                        <q>"invalid resource specified"</q>);</td></tr>
+<tr><th id="272">272</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="273">273</th><td>    }</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>    <b>if</b> (<a class="local col3 ref" href="#63group_right_1" title='group_right_1' data-ref="63group_right_1">group_right_1</a>) {</td></tr>
+<tr><th id="276">276</th><td>        <b>if</b> (<a class="tu ref" href="#py2rlimit" title='py2rlimit' data-use='c' data-ref="py2rlimit">py2rlimit</a>(<a class="local col4 ref" href="#64limits" title='limits' data-ref="64limits">limits</a>, &amp;<a class="local col6 ref" href="#66new_limit" title='new_limit' data-ref="66new_limit">new_limit</a>) &lt; <var>0</var>) {</td></tr>
+<tr><th id="277">277</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="278">278</th><td>        }</td></tr>
+<tr><th id="279">279</th><td>        <a class="local col7 ref" href="#67retval" title='retval' data-ref="67retval">retval</a> = <a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#313" title='prlimit' data-ref="prlimit64">prlimit</a>(<a class="local col1 ref" href="#61pid" title='pid' data-ref="61pid">pid</a>, <a class="local col2 ref" href="#62resource" title='resource' data-ref="62resource">resource</a>, &amp;<a class="local col6 ref" href="#66new_limit" title='new_limit' data-ref="66new_limit">new_limit</a>, &amp;<a class="local col5 ref" href="#65old_limit" title='old_limit' data-ref="65old_limit">old_limit</a>);</td></tr>
+<tr><th id="280">280</th><td>    }</td></tr>
+<tr><th id="281">281</th><td>    <b>else</b> {</td></tr>
+<tr><th id="282">282</th><td>        <a class="local col7 ref" href="#67retval" title='retval' data-ref="67retval">retval</a> = <a class="ref" href="../../include/x86_64-linux-gnu/bits/resource.h.html#313" title='prlimit' data-ref="prlimit64">prlimit</a>(<a class="local col1 ref" href="#61pid" title='pid' data-ref="61pid">pid</a>, <a class="local col2 ref" href="#62resource" title='resource' data-ref="62resource">resource</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, &amp;<a class="local col5 ref" href="#65old_limit" title='old_limit' data-ref="65old_limit">old_limit</a>);</td></tr>
+<tr><th id="283">283</th><td>    }</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+<tr><th id="285">285</th><td>    <b>if</b> (<a class="local col7 ref" href="#67retval" title='retval' data-ref="67retval">retval</a> == -<var>1</var>) {</td></tr>
+<tr><th id="286">286</th><td>        <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> == <a class="macro" href="../../include/asm-generic/errno-base.h.html#25" title="22" data-ref="_M/EINVAL">EINVAL</a>) {</td></tr>
+<tr><th id="287">287</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="288">288</th><td>                            <q>"current limit exceeds maximum limit"</q>);</td></tr>
+<tr><th id="289">289</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="290">290</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetFromErrno" title='PyErr_SetFromErrno' data-ref="PyErr_SetFromErrno">PyErr_SetFromErrno</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="291">291</th><td>        }</td></tr>
+<tr><th id="292">292</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="293">293</th><td>    }</td></tr>
+<tr><th id="294">294</th><td>    <b>return</b> <a class="tu ref" href="#rlimit2py" title='rlimit2py' data-use='c' data-ref="rlimit2py">rlimit2py</a>(<a class="local col5 ref" href="#65old_limit" title='old_limit' data-ref="65old_limit">old_limit</a>);</td></tr>
+<tr><th id="295">295</th><td>}</td></tr>
+<tr><th id="296">296</th><td><u>#<span data-ppcond="248">endif</span> /* HAVE_PRLIMIT */</u></td></tr>
+<tr><th id="297">297</th><td></td></tr>
+<tr><th id="298">298</th><td><i  data-doc="resource_getpagesize_impl">/*[clinic input]</i></td></tr>
+<tr><th id="299">299</th><td><i  data-doc="resource_getpagesize_impl">resource.getpagesize -&gt; int</i></td></tr>
+<tr><th id="300">300</th><td><i  data-doc="resource_getpagesize_impl">[clinic start generated code]*/</i></td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="303">303</th><td><dfn class="tu decl def" id="resource_getpagesize_impl" title='resource_getpagesize_impl' data-type='int resource_getpagesize_impl(PyObject * module)' data-ref="resource_getpagesize_impl">resource_getpagesize_impl</dfn>(<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="68module" title='module' data-type='PyObject *' data-ref="68module">module</dfn>)</td></tr>
+<tr><th id="304">304</th><td><i>/*[clinic end generated code: output=9ba93eb0f3d6c3a9 input=546545e8c1f42085]*/</i></td></tr>
+<tr><th id="305">305</th><td>{</td></tr>
+<tr><th id="306">306</th><td>    <em>long</em> <dfn class="local col9 decl" id="69pagesize" title='pagesize' data-type='long' data-ref="69pagesize">pagesize</dfn> = <var>0</var>;</td></tr>
+<tr><th id="307">307</th><td><u>#<span data-ppcond="307">if</span> defined(<a class="macro" href="../pyconfig.h.html#410" data-ref="_M/HAVE_GETPAGESIZE">HAVE_GETPAGESIZE</a>)</u></td></tr>
+<tr><th id="308">308</th><td>    <a class="local col9 ref" href="#69pagesize" title='pagesize' data-ref="69pagesize">pagesize</a> = <a class="ref" href="../../include/unistd.h.html#getpagesize" title='getpagesize' data-ref="getpagesize">getpagesize</a>();</td></tr>
+<tr><th id="309">309</th><td><u>#<span data-ppcond="307">elif</span> defined(HAVE_SYSCONF)</u></td></tr>
+<tr><th id="310">310</th><td><u>#if defined(_SC_PAGE_SIZE)</u></td></tr>
+<tr><th id="311">311</th><td>    pagesize = sysconf(_SC_PAGE_SIZE);</td></tr>
+<tr><th id="312">312</th><td><u>#else</u></td></tr>
+<tr><th id="313">313</th><td>    <i>/* Irix 5.3 has _SC_PAGESIZE, but not _SC_PAGE_SIZE */</i></td></tr>
+<tr><th id="314">314</th><td>    pagesize = sysconf(_SC_PAGESIZE);</td></tr>
+<tr><th id="315">315</th><td><u>#endif</u></td></tr>
+<tr><th id="316">316</th><td><u>#<span data-ppcond="307">endif</span></u></td></tr>
+<tr><th id="317">317</th><td>    <b>return</b> <a class="local col9 ref" href="#69pagesize" title='pagesize' data-ref="69pagesize">pagesize</a>;</td></tr>
+<tr><th id="318">318</th><td>}</td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td><i  data-doc="resource_methods">/* List of functions */</i></td></tr>
+<tr><th id="321">321</th><td></td></tr>
+<tr><th id="322">322</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/methodobject.h.html#PyMethodDef" title='PyMethodDef' data-ref="PyMethodDef">PyMethodDef</a></td></tr>
+<tr><th id="323">323</th><td><dfn class="tu decl def" id="resource_methods" title='resource_methods' data-type='struct PyMethodDef [6]' data-ref="resource_methods">resource_methods</dfn>[] = {</td></tr>
+<tr><th id="324">324</th><td>    <a class="macro" href="clinic/resource.c.h.html#10" title="{&quot;getrusage&quot;, (PyCFunction)resource_getrusage, 0x0008, resource_getrusage__doc__}," data-ref="_M/RESOURCE_GETRUSAGE_METHODDEF">RESOURCE_GETRUSAGE_METHODDEF</a></td></tr>
+<tr><th id="325">325</th><td>    <a class="macro" href="clinic/resource.c.h.html#36" title="{&quot;getrlimit&quot;, (PyCFunction)resource_getrlimit, 0x0008, resource_getrlimit__doc__}," data-ref="_M/RESOURCE_GETRLIMIT_METHODDEF">RESOURCE_GETRLIMIT_METHODDEF</a></td></tr>
+<tr><th id="326">326</th><td>    <a class="macro" href="clinic/resource.c.h.html#90" title="{&quot;prlimit&quot;, (PyCFunction)resource_prlimit, 0x0001, resource_prlimit__doc__}," data-ref="_M/RESOURCE_PRLIMIT_METHODDEF">RESOURCE_PRLIMIT_METHODDEF</a></td></tr>
+<tr><th id="327">327</th><td>    <a class="macro" href="clinic/resource.c.h.html#62" title="{&quot;setrlimit&quot;, (PyCFunction)resource_setrlimit, 0x0080, resource_setrlimit__doc__}," data-ref="_M/RESOURCE_SETRLIMIT_METHODDEF">RESOURCE_SETRLIMIT_METHODDEF</a></td></tr>
+<tr><th id="328">328</th><td>    <a class="macro" href="clinic/resource.c.h.html#135" title="{&quot;getpagesize&quot;, (PyCFunction)resource_getpagesize, 0x0004, resource_getpagesize__doc__}," data-ref="_M/RESOURCE_GETPAGESIZE_METHODDEF">RESOURCE_GETPAGESIZE_METHODDEF</a></td></tr>
+<tr><th id="329">329</th><td>    {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}                             <i>/* sentinel */</i></td></tr>
+<tr><th id="330">330</th><td>};</td></tr>
+<tr><th id="331">331</th><td></td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td><i  data-doc="resourcemodule">/* Module initialization */</i></td></tr>
+<tr><th id="334">334</th><td></td></tr>
+<tr><th id="335">335</th><td></td></tr>
+<tr><th id="336">336</th><td><em>static</em> <b>struct</b> <a class="type" href="../Include/moduleobject.h.html#PyModuleDef" title='PyModuleDef' data-ref="PyModuleDef">PyModuleDef</a> <dfn class="tu decl def" id="resourcemodule" title='resourcemodule' data-type='struct PyModuleDef' data-ref="resourcemodule">resourcemodule</dfn> = {</td></tr>
+<tr><th id="337">337</th><td>    <a class="macro" href="../Include/moduleobject.h.html#50" title="{ { 0, 0, 1, ((void*)0) }, ((void*)0), 0, ((void*)0), }" data-ref="_M/PyModuleDef_HEAD_INIT">PyModuleDef_HEAD_INIT</a>,</td></tr>
+<tr><th id="338">338</th><td>    <q>"resource"</q>,</td></tr>
+<tr><th id="339">339</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="340">340</th><td>    -<var>1</var>,</td></tr>
+<tr><th id="341">341</th><td>    <a class="tu ref" href="#resource_methods" title='resource_methods' data-ref="resource_methods">resource_methods</a>,</td></tr>
+<tr><th id="342">342</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="343">343</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="344">344</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>,</td></tr>
+<tr><th id="345">345</th><td>    <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span></td></tr>
+<tr><th id="346">346</th><td>};</td></tr>
+<tr><th id="347">347</th><td></td></tr>
+<tr><th id="348">348</th><td><a class="macro" href="../Include/pyport.h.html#685" title="PyObject*" data-ref="_M/PyMODINIT_FUNC">PyMODINIT_FUNC</a></td></tr>
+<tr><th id="349">349</th><td><dfn class="decl def" id="PyInit_resource" title='PyInit_resource' data-ref="PyInit_resource">PyInit_resource</dfn>(<em>void</em>)</td></tr>
+<tr><th id="350">350</th><td>{</td></tr>
+<tr><th id="351">351</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70m" title='m' data-type='PyObject *' data-ref="70m">m</dfn>, *<dfn class="local col1 decl" id="71v" title='v' data-type='PyObject *' data-ref="71v">v</dfn>;</td></tr>
+<tr><th id="352">352</th><td></td></tr>
+<tr><th id="353">353</th><td>    <i>/* Create the module and add the functions */</i></td></tr>
+<tr><th id="354">354</th><td>    <a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a> = <a class="macro" href="../Include/modsupport.h.html#199" title="PyModule_Create2TraceRefs(&amp;resourcemodule, 1013)" data-ref="_M/PyModule_Create">PyModule_Create</a>(&amp;<a class="tu ref" href="#resourcemodule" title='resourcemodule' data-use='a' data-ref="resourcemodule">resourcemodule</a>);</td></tr>
+<tr><th id="355">355</th><td>    <b>if</b> (<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="356">356</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="357">357</th><td></td></tr>
+<tr><th id="358">358</th><td>    <i>/* Add some symbolic constants to the module */</i></td></tr>
+<tr><th id="359">359</th><td>    <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(PyExc_OSError))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="360">360</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <q>"error"</q>, <a class="ref" href="../Include/pyerrors.h.html#PyExc_OSError" title='PyExc_OSError' data-ref="PyExc_OSError">PyExc_OSError</a>);</td></tr>
+<tr><th id="361">361</th><td>    <b>if</b> (!<a class="tu ref" href="#initialized" title='initialized' data-use='r' data-ref="initialized">initialized</a>) {</td></tr>
+<tr><th id="362">362</th><td>        <b>if</b> (<a class="ref" href="../Include/structseq.h.html#PyStructSequence_InitType2" title='PyStructSequence_InitType2' data-ref="PyStructSequence_InitType2">PyStructSequence_InitType2</a>(&amp;<a class="tu ref" href="#StructRUsageType" title='StructRUsageType' data-use='a' data-ref="StructRUsageType">StructRUsageType</a>,</td></tr>
+<tr><th id="363">363</th><td>                                       &amp;<a class="tu ref" href="#struct_rusage_desc" title='struct_rusage_desc' data-use='a' data-ref="struct_rusage_desc">struct_rusage_desc</a>) &lt; <var>0</var>)</td></tr>
+<tr><th id="364">364</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="365">365</th><td>    }</td></tr>
+<tr><th id="366">366</th><td></td></tr>
+<tr><th id="367">367</th><td>    <a class="macro" href="../Include/object.h.html#783" title="( _Py_RefTotal++ , ((PyObject *)(&amp;StructRUsageType))-&gt;ob_refcnt++)" data-ref="_M/Py_INCREF">Py_INCREF</a>(&amp;<a class="tu ref" href="#StructRUsageType" title='StructRUsageType' data-use='a' data-ref="StructRUsageType">StructRUsageType</a>);</td></tr>
+<tr><th id="368">368</th><td>    <a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <q>"struct_rusage"</q>,</td></tr>
+<tr><th id="369">369</th><td>                       (<a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*) &amp;<a class="tu ref" href="#StructRUsageType" title='StructRUsageType' data-use='a' data-ref="StructRUsageType">StructRUsageType</a>);</td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td>    <i>/* insert constants */</i></td></tr>
+<tr><th id="372">372</th><td><u>#<span data-ppcond="372">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#35" data-ref="_M/RLIMIT_CPU">RLIMIT_CPU</a></u></td></tr>
+<tr><th id="373">373</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_CPU&quot;, RLIMIT_CPU)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#35" title="RLIMIT_CPU" data-ref="_M/RLIMIT_CPU">RLIMIT_CPU</a>);</td></tr>
+<tr><th id="374">374</th><td><u>#<span data-ppcond="372">endif</span></u></td></tr>
+<tr><th id="375">375</th><td></td></tr>
+<tr><th id="376">376</th><td><u>#<span data-ppcond="376">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#39" data-ref="_M/RLIMIT_FSIZE">RLIMIT_FSIZE</a></u></td></tr>
+<tr><th id="377">377</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_FSIZE&quot;, RLIMIT_FSIZE)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#39" title="RLIMIT_FSIZE" data-ref="_M/RLIMIT_FSIZE">RLIMIT_FSIZE</a>);</td></tr>
+<tr><th id="378">378</th><td><u>#<span data-ppcond="376">endif</span></u></td></tr>
+<tr><th id="379">379</th><td></td></tr>
+<tr><th id="380">380</th><td><u>#<span data-ppcond="380">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#43" data-ref="_M/RLIMIT_DATA">RLIMIT_DATA</a></u></td></tr>
+<tr><th id="381">381</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_DATA&quot;, RLIMIT_DATA)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#43" title="RLIMIT_DATA" data-ref="_M/RLIMIT_DATA">RLIMIT_DATA</a>);</td></tr>
+<tr><th id="382">382</th><td><u>#<span data-ppcond="380">endif</span></u></td></tr>
+<tr><th id="383">383</th><td></td></tr>
+<tr><th id="384">384</th><td><u>#<span data-ppcond="384">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#47" data-ref="_M/RLIMIT_STACK">RLIMIT_STACK</a></u></td></tr>
+<tr><th id="385">385</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_STACK&quot;, RLIMIT_STACK)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#47" title="RLIMIT_STACK" data-ref="_M/RLIMIT_STACK">RLIMIT_STACK</a>);</td></tr>
+<tr><th id="386">386</th><td><u>#<span data-ppcond="384">endif</span></u></td></tr>
+<tr><th id="387">387</th><td></td></tr>
+<tr><th id="388">388</th><td><u>#<span data-ppcond="388">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#51" data-ref="_M/RLIMIT_CORE">RLIMIT_CORE</a></u></td></tr>
+<tr><th id="389">389</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_CORE&quot;, RLIMIT_CORE)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#51" title="RLIMIT_CORE" data-ref="_M/RLIMIT_CORE">RLIMIT_CORE</a>);</td></tr>
+<tr><th id="390">390</th><td><u>#<span data-ppcond="388">endif</span></u></td></tr>
+<tr><th id="391">391</th><td></td></tr>
+<tr><th id="392">392</th><td><u>#<span data-ppcond="392">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#63" data-ref="_M/RLIMIT_NOFILE">RLIMIT_NOFILE</a></u></td></tr>
+<tr><th id="393">393</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_NOFILE&quot;, RLIMIT_NOFILE)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#63" title="RLIMIT_NOFILE" data-ref="_M/RLIMIT_NOFILE">RLIMIT_NOFILE</a>);</td></tr>
+<tr><th id="394">394</th><td><u>#<span data-ppcond="392">endif</span></u></td></tr>
+<tr><th id="395">395</th><td></td></tr>
+<tr><th id="396">396</th><td><u>#<span data-ppcond="396">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#64" data-ref="_M/RLIMIT_OFILE">RLIMIT_OFILE</a></u></td></tr>
+<tr><th id="397">397</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_OFILE&quot;, __RLIMIT_OFILE)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#64" title="__RLIMIT_OFILE" data-ref="_M/RLIMIT_OFILE">RLIMIT_OFILE</a>);</td></tr>
+<tr><th id="398">398</th><td><u>#<span data-ppcond="396">endif</span></u></td></tr>
+<tr><th id="399">399</th><td></td></tr>
+<tr><th id="400">400</th><td><u>#<span data-ppcond="400">ifdef</span> <span class="macro" data-ref="_M/RLIMIT_VMEM">RLIMIT_VMEM</span></u></td></tr>
+<tr><th id="401">401</th><td>    PyModule_AddIntMacro(m, RLIMIT_VMEM);</td></tr>
+<tr><th id="402">402</th><td><u>#<span data-ppcond="400">endif</span></u></td></tr>
+<tr><th id="403">403</th><td></td></tr>
+<tr><th id="404">404</th><td><u>#<span data-ppcond="404">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#68" data-ref="_M/RLIMIT_AS">RLIMIT_AS</a></u></td></tr>
+<tr><th id="405">405</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_AS&quot;, RLIMIT_AS)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#68" title="RLIMIT_AS" data-ref="_M/RLIMIT_AS">RLIMIT_AS</a>);</td></tr>
+<tr><th id="406">406</th><td><u>#<span data-ppcond="404">endif</span></u></td></tr>
+<tr><th id="407">407</th><td></td></tr>
+<tr><th id="408">408</th><td><u>#<span data-ppcond="408">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#58" data-ref="_M/RLIMIT_RSS">RLIMIT_RSS</a></u></td></tr>
+<tr><th id="409">409</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_RSS&quot;, __RLIMIT_RSS)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#58" title="__RLIMIT_RSS" data-ref="_M/RLIMIT_RSS">RLIMIT_RSS</a>);</td></tr>
+<tr><th id="410">410</th><td><u>#<span data-ppcond="408">endif</span></u></td></tr>
+<tr><th id="411">411</th><td></td></tr>
+<tr><th id="412">412</th><td><u>#<span data-ppcond="412">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#72" data-ref="_M/RLIMIT_NPROC">RLIMIT_NPROC</a></u></td></tr>
+<tr><th id="413">413</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_NPROC&quot;, __RLIMIT_NPROC)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#72" title="__RLIMIT_NPROC" data-ref="_M/RLIMIT_NPROC">RLIMIT_NPROC</a>);</td></tr>
+<tr><th id="414">414</th><td><u>#<span data-ppcond="412">endif</span></u></td></tr>
+<tr><th id="415">415</th><td></td></tr>
+<tr><th id="416">416</th><td><u>#<span data-ppcond="416">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#76" data-ref="_M/RLIMIT_MEMLOCK">RLIMIT_MEMLOCK</a></u></td></tr>
+<tr><th id="417">417</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_MEMLOCK&quot;, __RLIMIT_MEMLOCK)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#76" title="__RLIMIT_MEMLOCK" data-ref="_M/RLIMIT_MEMLOCK">RLIMIT_MEMLOCK</a>);</td></tr>
+<tr><th id="418">418</th><td><u>#<span data-ppcond="416">endif</span></u></td></tr>
+<tr><th id="419">419</th><td></td></tr>
+<tr><th id="420">420</th><td><u>#<span data-ppcond="420">ifdef</span> <span class="macro" data-ref="_M/RLIMIT_SBSIZE">RLIMIT_SBSIZE</span></u></td></tr>
+<tr><th id="421">421</th><td>    PyModule_AddIntMacro(m, RLIMIT_SBSIZE);</td></tr>
+<tr><th id="422">422</th><td><u>#<span data-ppcond="420">endif</span></u></td></tr>
+<tr><th id="423">423</th><td></td></tr>
+<tr><th id="424">424</th><td><i>/* Linux specific */</i></td></tr>
+<tr><th id="425">425</th><td><u>#<span data-ppcond="425">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#88" data-ref="_M/RLIMIT_MSGQUEUE">RLIMIT_MSGQUEUE</a></u></td></tr>
+<tr><th id="426">426</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_MSGQUEUE&quot;, __RLIMIT_MSGQUEUE)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#88" title="__RLIMIT_MSGQUEUE" data-ref="_M/RLIMIT_MSGQUEUE">RLIMIT_MSGQUEUE</a>);</td></tr>
+<tr><th id="427">427</th><td><u>#<span data-ppcond="425">endif</span></u></td></tr>
+<tr><th id="428">428</th><td></td></tr>
+<tr><th id="429">429</th><td><u>#<span data-ppcond="429">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#94" data-ref="_M/RLIMIT_NICE">RLIMIT_NICE</a></u></td></tr>
+<tr><th id="430">430</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_NICE&quot;, __RLIMIT_NICE)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#94" title="__RLIMIT_NICE" data-ref="_M/RLIMIT_NICE">RLIMIT_NICE</a>);</td></tr>
+<tr><th id="431">431</th><td><u>#<span data-ppcond="429">endif</span></u></td></tr>
+<tr><th id="432">432</th><td></td></tr>
+<tr><th id="433">433</th><td><u>#<span data-ppcond="433">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#99" data-ref="_M/RLIMIT_RTPRIO">RLIMIT_RTPRIO</a></u></td></tr>
+<tr><th id="434">434</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_RTPRIO&quot;, __RLIMIT_RTPRIO)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#99" title="__RLIMIT_RTPRIO" data-ref="_M/RLIMIT_RTPRIO">RLIMIT_RTPRIO</a>);</td></tr>
+<tr><th id="435">435</th><td><u>#<span data-ppcond="433">endif</span></u></td></tr>
+<tr><th id="436">436</th><td></td></tr>
+<tr><th id="437">437</th><td><u>#<span data-ppcond="437">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#105" data-ref="_M/RLIMIT_RTTIME">RLIMIT_RTTIME</a></u></td></tr>
+<tr><th id="438">438</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_RTTIME&quot;, __RLIMIT_RTTIME)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#105" title="__RLIMIT_RTTIME" data-ref="_M/RLIMIT_RTTIME">RLIMIT_RTTIME</a>);</td></tr>
+<tr><th id="439">439</th><td><u>#<span data-ppcond="437">endif</span></u></td></tr>
+<tr><th id="440">440</th><td></td></tr>
+<tr><th id="441">441</th><td><u>#<span data-ppcond="441">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#84" data-ref="_M/RLIMIT_SIGPENDING">RLIMIT_SIGPENDING</a></u></td></tr>
+<tr><th id="442">442</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RLIMIT_SIGPENDING&quot;, __RLIMIT_SIGPENDING)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#84" title="__RLIMIT_SIGPENDING" data-ref="_M/RLIMIT_SIGPENDING">RLIMIT_SIGPENDING</a>);</td></tr>
+<tr><th id="443">443</th><td><u>#<span data-ppcond="441">endif</span></u></td></tr>
+<tr><th id="444">444</th><td></td></tr>
+<tr><th id="445">445</th><td><i>/* target */</i></td></tr>
+<tr><th id="446">446</th><td><u>#<span data-ppcond="446">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#162" data-ref="_M/RUSAGE_SELF">RUSAGE_SELF</a></u></td></tr>
+<tr><th id="447">447</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RUSAGE_SELF&quot;, RUSAGE_SELF)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#162" title="RUSAGE_SELF" data-ref="_M/RUSAGE_SELF">RUSAGE_SELF</a>);</td></tr>
+<tr><th id="448">448</th><td><u>#<span data-ppcond="446">endif</span></u></td></tr>
+<tr><th id="449">449</th><td></td></tr>
+<tr><th id="450">450</th><td><u>#<span data-ppcond="450">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#166" data-ref="_M/RUSAGE_CHILDREN">RUSAGE_CHILDREN</a></u></td></tr>
+<tr><th id="451">451</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RUSAGE_CHILDREN&quot;, RUSAGE_CHILDREN)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#166" title="RUSAGE_CHILDREN" data-ref="_M/RUSAGE_CHILDREN">RUSAGE_CHILDREN</a>);</td></tr>
+<tr><th id="452">452</th><td><u>#<span data-ppcond="450">endif</span></u></td></tr>
+<tr><th id="453">453</th><td></td></tr>
+<tr><th id="454">454</th><td><u>#<span data-ppcond="454">ifdef</span> <span class="macro" data-ref="_M/RUSAGE_BOTH">RUSAGE_BOTH</span></u></td></tr>
+<tr><th id="455">455</th><td>    PyModule_AddIntMacro(m, RUSAGE_BOTH);</td></tr>
+<tr><th id="456">456</th><td><u>#<span data-ppcond="454">endif</span></u></td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td><u>#<span data-ppcond="458">ifdef</span> <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#172" data-ref="_M/RUSAGE_THREAD">RUSAGE_THREAD</a></u></td></tr>
+<tr><th id="459">459</th><td>    <a class="macro" href="../Include/modsupport.h.html#120" title="PyModule_AddIntConstant(m, &quot;RUSAGE_THREAD&quot;, RUSAGE_THREAD)" data-ref="_M/PyModule_AddIntMacro">PyModule_AddIntMacro</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#172" title="RUSAGE_THREAD" data-ref="_M/RUSAGE_THREAD">RUSAGE_THREAD</a>);</td></tr>
+<tr><th id="460">460</th><td><u>#<span data-ppcond="458">endif</span></u></td></tr>
+<tr><th id="461">461</th><td></td></tr>
+<tr><th id="462">462</th><td><i>/* FreeBSD specific */</i></td></tr>
+<tr><th id="463">463</th><td></td></tr>
+<tr><th id="464">464</th><td><u>#<span data-ppcond="464">ifdef</span> <span class="macro" data-ref="_M/RLIMIT_SWAP">RLIMIT_SWAP</span></u></td></tr>
+<tr><th id="465">465</th><td>    PyModule_AddIntMacro(m, RLIMIT_SWAP);</td></tr>
+<tr><th id="466">466</th><td><u>#<span data-ppcond="464">endif</span></u></td></tr>
+<tr><th id="467">467</th><td></td></tr>
+<tr><th id="468">468</th><td><u>#<span data-ppcond="468">ifdef</span> <span class="macro" data-ref="_M/RLIMIT_SBSIZE">RLIMIT_SBSIZE</span></u></td></tr>
+<tr><th id="469">469</th><td>    PyModule_AddIntMacro(m, RLIMIT_SBSIZE);</td></tr>
+<tr><th id="470">470</th><td><u>#<span data-ppcond="468">endif</span></u></td></tr>
+<tr><th id="471">471</th><td></td></tr>
+<tr><th id="472">472</th><td><u>#<span data-ppcond="472">ifdef</span> <span class="macro" data-ref="_M/RLIMIT_NPTS">RLIMIT_NPTS</span></u></td></tr>
+<tr><th id="473">473</th><td>    PyModule_AddIntMacro(m, RLIMIT_NPTS);</td></tr>
+<tr><th id="474">474</th><td><u>#<span data-ppcond="472">endif</span></u></td></tr>
+<tr><th id="475">475</th><td></td></tr>
+<tr><th id="476">476</th><td>    <b>if</b> (<b>sizeof</b>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#117" title="0xffffffffffffffffuLL" data-ref="_M/RLIM_INFINITY">RLIM_INFINITY</a>) &gt; <b>sizeof</b>(<em>long</em>)) {</td></tr>
+<tr><th id="477">477</th><td>        <a class="local col1 ref" href="#71v" title='v' data-ref="71v">v</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_FromLongLong" title='PyLong_FromLongLong' data-ref="PyLong_FromLongLong">PyLong_FromLongLong</a>((<em>long</em> <em>long</em>) <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#117" title="0xffffffffffffffffuLL" data-ref="_M/RLIM_INFINITY">RLIM_INFINITY</a>);</td></tr>
+<tr><th id="478">478</th><td>    } <b>else</b></td></tr>
+<tr><th id="479">479</th><td>    {</td></tr>
+<tr><th id="480">480</th><td>        <a class="local col1 ref" href="#71v" title='v' data-ref="71v">v</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_FromLong" title='PyLong_FromLong' data-ref="PyLong_FromLong">PyLong_FromLong</a>((<em>long</em>) <a class="macro" href="../../include/x86_64-linux-gnu/bits/resource.h.html#117" title="0xffffffffffffffffuLL" data-ref="_M/RLIM_INFINITY">RLIM_INFINITY</a>);</td></tr>
+<tr><th id="481">481</th><td>    }</td></tr>
+<tr><th id="482">482</th><td>    <b>if</b> (<a class="local col1 ref" href="#71v" title='v' data-ref="71v">v</a>) {</td></tr>
+<tr><th id="483">483</th><td>        <a class="ref" href="../Include/modsupport.h.html#PyModule_AddObject" title='PyModule_AddObject' data-ref="PyModule_AddObject">PyModule_AddObject</a>(<a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>, <q>"RLIM_INFINITY"</q>, <a class="local col1 ref" href="#71v" title='v' data-ref="71v">v</a>);</td></tr>
+<tr><th id="484">484</th><td>    }</td></tr>
+<tr><th id="485">485</th><td>    <a class="tu ref" href="#initialized" title='initialized' data-use='w' data-ref="initialized">initialized</a> = <var>1</var>;</td></tr>
+<tr><th id="486">486</th><td>    <b>return</b> <a class="local col0 ref" href="#70m" title='m' data-ref="70m">m</a>;</td></tr>
+<tr><th id="487">487</th><td>}</td></tr>
+<tr><th id="488">488</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

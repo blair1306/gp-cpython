@@ -1,0 +1,8 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='76' type='char *'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1792' u='r' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3399' u='r' c='PyCFuncPtr_FromDll'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3532' u='r' c='PyCFuncPtr_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3873' u='r' c='PyCFuncPtr_call'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='4029' u='r' c='PyCFuncPtr_bool'/>
+<offset>256</offset>
+<doc f='codebrowser/Modules/_ctypes/ctypes.h' l='76'>/* pointer to memory block */</doc>

@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/cellobject.h' l='14' type='PyTypeObject'/>
+<use f='codebrowser/Objects/cellobject.c' l='10' u='a' c='PyCell_New'/>
+<use f='codebrowser/Objects/cellobject.c' l='23' macro='1' u='a'/>
+<use f='codebrowser/Objects/cellobject.c' l='35' macro='1' u='a'/>
+<use f='codebrowser/Objects/cellobject.c' l='66' macro='1' u='a'/>
+<use f='codebrowser/Objects/cellobject.c' l='66' macro='1' u='a'/>
+<def f='codebrowser/Objects/cellobject.c' l='157' ll='188' type='PyTypeObject'/>
+<use f='codebrowser/Objects/frameobject.c' l='796' macro='1' u='a'/>
+<use f='codebrowser/Objects/frameobject.c' l='855' macro='1' u='a'/>
+<use f='codebrowser/Objects/funcobject.c' l='495' macro='1' u='a'/>
+<use f='codebrowser/Objects/object.c' l='1800' u='a' c='_Py_ReadyTypes'/>
+<use f='codebrowser/Objects/typeobject.c' l='2733' macro='1' u='a'/>
+<use f='codebrowser/Objects/typeobject.c' l='7569' macro='1' u='a'/>
+<use f='codebrowser/Objects/typeobject.c' l='7593' macro='1' u='a'/>
+<use f='codebrowser/Python/bltinmodule.c' l='166' macro='1' u='a'/>

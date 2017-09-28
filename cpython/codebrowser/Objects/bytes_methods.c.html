@@ -1,0 +1,843 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bytes_methods.c source code [codebrowser/Objects/bytes_methods.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/bytes_methods.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Objects</a>/<a href='bytes_methods.c.html'>bytes_methods.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#define <dfn class="macro" id="_M/PY_SSIZE_T_CLEAN" data-ref="_M/PY_SSIZE_T_CLEAN">PY_SSIZE_T_CLEAN</dfn></u></td></tr>
+<tr><th id="2">2</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="3">3</th><td><u>#include <a href="../Include/bytes_methods.h.html">"bytes_methods.h"</a></u></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_isspace__doc__[] = &quot;B.isspace() -&gt; bool\n\nReturn True if all characters in B are whitespace\nand there is at least one character in B, False otherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_isspace__doc__" title='_Py_isspace__doc__' data-ref="_Py_isspace__doc__">_Py_isspace__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"B.isspace() -&gt; bool\n\</q></td></tr>
+<tr><th id="7">7</th><td><q>\n\</q></td></tr>
+<tr><th id="8">8</th><td><q>Return True if all characters in B are whitespace\n\</q></td></tr>
+<tr><th id="9">9</th><td><q>and there is at least one character in B, False otherwise."</q>);</td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="12">12</th><td><dfn class="decl def" id="_Py_bytes_isspace" title='_Py_bytes_isspace' data-ref="_Py_bytes_isspace">_Py_bytes_isspace</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1cptr" title='cptr' data-type='const char *' data-ref="1cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="2len" title='len' data-type='Py_ssize_t' data-ref="2len">len</dfn>)</td></tr>
+<tr><th id="13">13</th><td>{</td></tr>
+<tr><th id="14">14</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col3 decl" id="3p" title='p' data-type='const unsigned char *' data-ref="3p">p</dfn></td></tr>
+<tr><th id="15">15</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col1 ref" href="#1cptr" title='cptr' data-ref="1cptr">cptr</a>;</td></tr>
+<tr><th id="16">16</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col4 decl" id="4e" title='e' data-type='const unsigned char *' data-ref="4e">e</dfn>;</td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="19">19</th><td>    <b>if</b> (<a class="local col2 ref" href="#2len" title='len' data-ref="2len">len</a> == <var>1</var> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#24" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x08)" data-ref="_M/Py_ISSPACE">Py_ISSPACE</a>(*<a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a>))</td></tr>
+<tr><th id="20">20</th><td>        <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="23">23</th><td>    <b>if</b> (<a class="local col2 ref" href="#2len" title='len' data-ref="2len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="24">24</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td>    <a class="local col4 ref" href="#4e" title='e' data-ref="4e">e</a> = <a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a> + <a class="local col2 ref" href="#2len" title='len' data-ref="2len">len</a>;</td></tr>
+<tr><th id="27">27</th><td>    <b>for</b> (; <a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a> &lt; <a class="local col4 ref" href="#4e" title='e' data-ref="4e">e</a>; <a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a>++) {</td></tr>
+<tr><th id="28">28</th><td>        <b>if</b> (!<a class="macro" href="../Include/pyctype.h.html#24" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x08)" data-ref="_M/Py_ISSPACE">Py_ISSPACE</a>(*<a class="local col3 ref" href="#3p" title='p' data-ref="3p">p</a>))</td></tr>
+<tr><th id="29">29</th><td>            <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="30">30</th><td>    }</td></tr>
+<tr><th id="31">31</th><td>    <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="32">32</th><td>}</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_isalpha__doc__[] = &quot;B.isalpha() -&gt; bool\n\nReturn True if all characters in B are alphabetic\nand there is at least one character in B, False otherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_isalpha__doc__" title='_Py_isalpha__doc__' data-ref="_Py_isalpha__doc__">_Py_isalpha__doc__</dfn>,</td></tr>
+<tr><th id="36">36</th><td><q>"B.isalpha() -&gt; bool\n\</q></td></tr>
+<tr><th id="37">37</th><td><q>\n\</q></td></tr>
+<tr><th id="38">38</th><td><q>Return True if all characters in B are alphabetic\n\</q></td></tr>
+<tr><th id="39">39</th><td><q>and there is at least one character in B, False otherwise."</q>);</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="42">42</th><td><dfn class="decl def" id="_Py_bytes_isalpha" title='_Py_bytes_isalpha' data-ref="_Py_bytes_isalpha">_Py_bytes_isalpha</dfn>(<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="5cptr" title='cptr' data-type='const char *' data-ref="5cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="6len" title='len' data-type='Py_ssize_t' data-ref="6len">len</dfn>)</td></tr>
+<tr><th id="43">43</th><td>{</td></tr>
+<tr><th id="44">44</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col7 decl" id="7p" title='p' data-type='const unsigned char *' data-ref="7p">p</dfn></td></tr>
+<tr><th id="45">45</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col5 ref" href="#5cptr" title='cptr' data-ref="5cptr">cptr</a>;</td></tr>
+<tr><th id="46">46</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col8 decl" id="8e" title='e' data-type='const unsigned char *' data-ref="8e">e</dfn>;</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="49">49</th><td>    <b>if</b> (<a class="local col6 ref" href="#6len" title='len' data-ref="6len">len</a> == <var>1</var> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#20" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; (0x01|0x02))" data-ref="_M/Py_ISALPHA">Py_ISALPHA</a>(*<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>))</td></tr>
+<tr><th id="50">50</th><td>        <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="53">53</th><td>    <b>if</b> (<a class="local col6 ref" href="#6len" title='len' data-ref="6len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="54">54</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>    <a class="local col8 ref" href="#8e" title='e' data-ref="8e">e</a> = <a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a> + <a class="local col6 ref" href="#6len" title='len' data-ref="6len">len</a>;</td></tr>
+<tr><th id="57">57</th><td>    <b>for</b> (; <a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a> &lt; <a class="local col8 ref" href="#8e" title='e' data-ref="8e">e</a>; <a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>++) {</td></tr>
+<tr><th id="58">58</th><td>        <b>if</b> (!<a class="macro" href="../Include/pyctype.h.html#20" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; (0x01|0x02))" data-ref="_M/Py_ISALPHA">Py_ISALPHA</a>(*<a class="local col7 ref" href="#7p" title='p' data-ref="7p">p</a>))</td></tr>
+<tr><th id="59">59</th><td>            <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="60">60</th><td>    }</td></tr>
+<tr><th id="61">61</th><td>    <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="62">62</th><td>}</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_isalnum__doc__[] = &quot;B.isalnum() -&gt; bool\n\nReturn True if all characters in B are alphanumeric\nand there is at least one character in B, False otherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_isalnum__doc__" title='_Py_isalnum__doc__' data-ref="_Py_isalnum__doc__">_Py_isalnum__doc__</dfn>,</td></tr>
+<tr><th id="66">66</th><td><q>"B.isalnum() -&gt; bool\n\</q></td></tr>
+<tr><th id="67">67</th><td><q>\n\</q></td></tr>
+<tr><th id="68">68</th><td><q>Return True if all characters in B are alphanumeric\n\</q></td></tr>
+<tr><th id="69">69</th><td><q>and there is at least one character in B, False otherwise."</q>);</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="72">72</th><td><dfn class="decl def" id="_Py_bytes_isalnum" title='_Py_bytes_isalnum' data-ref="_Py_bytes_isalnum">_Py_bytes_isalnum</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="9cptr" title='cptr' data-type='const char *' data-ref="9cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="10len" title='len' data-type='Py_ssize_t' data-ref="10len">len</dfn>)</td></tr>
+<tr><th id="73">73</th><td>{</td></tr>
+<tr><th id="74">74</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col1 decl" id="11p" title='p' data-type='const unsigned char *' data-ref="11p">p</dfn></td></tr>
+<tr><th id="75">75</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col9 ref" href="#9cptr" title='cptr' data-ref="9cptr">cptr</a>;</td></tr>
+<tr><th id="76">76</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col2 decl" id="12e" title='e' data-type='const unsigned char *' data-ref="12e">e</dfn>;</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="79">79</th><td>    <b>if</b> (<a class="local col0 ref" href="#10len" title='len' data-ref="10len">len</a> == <var>1</var> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#23" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; ((0x01|0x02)|0x04))" data-ref="_M/Py_ISALNUM">Py_ISALNUM</a>(*<a class="local col1 ref" href="#11p" title='p' data-ref="11p">p</a>))</td></tr>
+<tr><th id="80">80</th><td>        <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="83">83</th><td>    <b>if</b> (<a class="local col0 ref" href="#10len" title='len' data-ref="10len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="84">84</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td>    <a class="local col2 ref" href="#12e" title='e' data-ref="12e">e</a> = <a class="local col1 ref" href="#11p" title='p' data-ref="11p">p</a> + <a class="local col0 ref" href="#10len" title='len' data-ref="10len">len</a>;</td></tr>
+<tr><th id="87">87</th><td>    <b>for</b> (; <a class="local col1 ref" href="#11p" title='p' data-ref="11p">p</a> &lt; <a class="local col2 ref" href="#12e" title='e' data-ref="12e">e</a>; <a class="local col1 ref" href="#11p" title='p' data-ref="11p">p</a>++) {</td></tr>
+<tr><th id="88">88</th><td>        <b>if</b> (!<a class="macro" href="../Include/pyctype.h.html#23" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; ((0x01|0x02)|0x04))" data-ref="_M/Py_ISALNUM">Py_ISALNUM</a>(*<a class="local col1 ref" href="#11p" title='p' data-ref="11p">p</a>))</td></tr>
+<tr><th id="89">89</th><td>            <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="90">90</th><td>    }</td></tr>
+<tr><th id="91">91</th><td>    <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="92">92</th><td>}</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_isdigit__doc__[] = &quot;B.isdigit() -&gt; bool\n\nReturn True if all characters in B are digits\nand there is at least one character in B, False otherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_isdigit__doc__" title='_Py_isdigit__doc__' data-ref="_Py_isdigit__doc__">_Py_isdigit__doc__</dfn>,</td></tr>
+<tr><th id="96">96</th><td><q>"B.isdigit() -&gt; bool\n\</q></td></tr>
+<tr><th id="97">97</th><td><q>\n\</q></td></tr>
+<tr><th id="98">98</th><td><q>Return True if all characters in B are digits\n\</q></td></tr>
+<tr><th id="99">99</th><td><q>and there is at least one character in B, False otherwise."</q>);</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="102">102</th><td><dfn class="decl def" id="_Py_bytes_isdigit" title='_Py_bytes_isdigit' data-ref="_Py_bytes_isdigit">_Py_bytes_isdigit</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="13cptr" title='cptr' data-type='const char *' data-ref="13cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="14len" title='len' data-type='Py_ssize_t' data-ref="14len">len</dfn>)</td></tr>
+<tr><th id="103">103</th><td>{</td></tr>
+<tr><th id="104">104</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col5 decl" id="15p" title='p' data-type='const unsigned char *' data-ref="15p">p</dfn></td></tr>
+<tr><th id="105">105</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col3 ref" href="#13cptr" title='cptr' data-ref="13cptr">cptr</a>;</td></tr>
+<tr><th id="106">106</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col6 decl" id="16e" title='e' data-type='const unsigned char *' data-ref="16e">e</dfn>;</td></tr>
+<tr><th id="107">107</th><td></td></tr>
+<tr><th id="108">108</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="109">109</th><td>    <b>if</b> (<a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a> == <var>1</var> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#21" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x04)" data-ref="_M/Py_ISDIGIT">Py_ISDIGIT</a>(*<a class="local col5 ref" href="#15p" title='p' data-ref="15p">p</a>))</td></tr>
+<tr><th id="110">110</th><td>        <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="113">113</th><td>    <b>if</b> (<a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="114">114</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td>    <a class="local col6 ref" href="#16e" title='e' data-ref="16e">e</a> = <a class="local col5 ref" href="#15p" title='p' data-ref="15p">p</a> + <a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a>;</td></tr>
+<tr><th id="117">117</th><td>    <b>for</b> (; <a class="local col5 ref" href="#15p" title='p' data-ref="15p">p</a> &lt; <a class="local col6 ref" href="#16e" title='e' data-ref="16e">e</a>; <a class="local col5 ref" href="#15p" title='p' data-ref="15p">p</a>++) {</td></tr>
+<tr><th id="118">118</th><td>        <b>if</b> (!<a class="macro" href="../Include/pyctype.h.html#21" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x04)" data-ref="_M/Py_ISDIGIT">Py_ISDIGIT</a>(*<a class="local col5 ref" href="#15p" title='p' data-ref="15p">p</a>))</td></tr>
+<tr><th id="119">119</th><td>            <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="120">120</th><td>    }</td></tr>
+<tr><th id="121">121</th><td>    <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="122">122</th><td>}</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td></td></tr>
+<tr><th id="125">125</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_islower__doc__[] = &quot;B.islower() -&gt; bool\n\nReturn True if all cased characters in B are lowercase and there is\nat least one cased character in B, False otherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_islower__doc__" title='_Py_islower__doc__' data-ref="_Py_islower__doc__">_Py_islower__doc__</dfn>,</td></tr>
+<tr><th id="126">126</th><td><q>"B.islower() -&gt; bool\n\</q></td></tr>
+<tr><th id="127">127</th><td><q>\n\</q></td></tr>
+<tr><th id="128">128</th><td><q>Return True if all cased characters in B are lowercase and there is\n\</q></td></tr>
+<tr><th id="129">129</th><td><q>at least one cased character in B, False otherwise."</q>);</td></tr>
+<tr><th id="130">130</th><td></td></tr>
+<tr><th id="131">131</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="132">132</th><td><dfn class="decl def" id="_Py_bytes_islower" title='_Py_bytes_islower' data-ref="_Py_bytes_islower">_Py_bytes_islower</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="17cptr" title='cptr' data-type='const char *' data-ref="17cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="18len" title='len' data-type='Py_ssize_t' data-ref="18len">len</dfn>)</td></tr>
+<tr><th id="133">133</th><td>{</td></tr>
+<tr><th id="134">134</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col9 decl" id="19p" title='p' data-type='const unsigned char *' data-ref="19p">p</dfn></td></tr>
+<tr><th id="135">135</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col7 ref" href="#17cptr" title='cptr' data-ref="17cptr">cptr</a>;</td></tr>
+<tr><th id="136">136</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col0 decl" id="20e" title='e' data-type='const unsigned char *' data-ref="20e">e</dfn>;</td></tr>
+<tr><th id="137">137</th><td>    <em>int</em> <dfn class="local col1 decl" id="21cased" title='cased' data-type='int' data-ref="21cased">cased</dfn>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="140">140</th><td>    <b>if</b> (<a class="local col8 ref" href="#18len" title='len' data-ref="18len">len</a> == <var>1</var>)</td></tr>
+<tr><th id="141">141</th><td>        <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(*<a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>));</td></tr>
+<tr><th id="142">142</th><td></td></tr>
+<tr><th id="143">143</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="144">144</th><td>    <b>if</b> (<a class="local col8 ref" href="#18len" title='len' data-ref="18len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="145">145</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td>    <a class="local col0 ref" href="#20e" title='e' data-ref="20e">e</a> = <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a> + <a class="local col8 ref" href="#18len" title='len' data-ref="18len">len</a>;</td></tr>
+<tr><th id="148">148</th><td>    <a class="local col1 ref" href="#21cased" title='cased' data-ref="21cased">cased</a> = <var>0</var>;</td></tr>
+<tr><th id="149">149</th><td>    <b>for</b> (; <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a> &lt; <a class="local col0 ref" href="#20e" title='e' data-ref="20e">e</a>; <a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>++) {</td></tr>
+<tr><th id="150">150</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(*<a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>))</td></tr>
+<tr><th id="151">151</th><td>            <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="152">152</th><td>        <b>else</b> <b>if</b> (!<a class="local col1 ref" href="#21cased" title='cased' data-ref="21cased">cased</a> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(*<a class="local col9 ref" href="#19p" title='p' data-ref="19p">p</a>))</td></tr>
+<tr><th id="153">153</th><td>            <a class="local col1 ref" href="#21cased" title='cased' data-ref="21cased">cased</a> = <var>1</var>;</td></tr>
+<tr><th id="154">154</th><td>    }</td></tr>
+<tr><th id="155">155</th><td>    <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="local col1 ref" href="#21cased" title='cased' data-ref="21cased">cased</a>);</td></tr>
+<tr><th id="156">156</th><td>}</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_isupper__doc__[] = &quot;B.isupper() -&gt; bool\n\nReturn True if all cased characters in B are uppercase and there is\nat least one cased character in B, False otherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_isupper__doc__" title='_Py_isupper__doc__' data-ref="_Py_isupper__doc__">_Py_isupper__doc__</dfn>,</td></tr>
+<tr><th id="160">160</th><td><q>"B.isupper() -&gt; bool\n\</q></td></tr>
+<tr><th id="161">161</th><td><q>\n\</q></td></tr>
+<tr><th id="162">162</th><td><q>Return True if all cased characters in B are uppercase and there is\n\</q></td></tr>
+<tr><th id="163">163</th><td><q>at least one cased character in B, False otherwise."</q>);</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="166">166</th><td><dfn class="decl def" id="_Py_bytes_isupper" title='_Py_bytes_isupper' data-ref="_Py_bytes_isupper">_Py_bytes_isupper</dfn>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="22cptr" title='cptr' data-type='const char *' data-ref="22cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="23len" title='len' data-type='Py_ssize_t' data-ref="23len">len</dfn>)</td></tr>
+<tr><th id="167">167</th><td>{</td></tr>
+<tr><th id="168">168</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col4 decl" id="24p" title='p' data-type='const unsigned char *' data-ref="24p">p</dfn></td></tr>
+<tr><th id="169">169</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col2 ref" href="#22cptr" title='cptr' data-ref="22cptr">cptr</a>;</td></tr>
+<tr><th id="170">170</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col5 decl" id="25e" title='e' data-type='const unsigned char *' data-ref="25e">e</dfn>;</td></tr>
+<tr><th id="171">171</th><td>    <em>int</em> <dfn class="local col6 decl" id="26cased" title='cased' data-type='int' data-ref="26cased">cased</dfn>;</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="174">174</th><td>    <b>if</b> (<a class="local col3 ref" href="#23len" title='len' data-ref="23len">len</a> == <var>1</var>)</td></tr>
+<tr><th id="175">175</th><td>        <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(*<a class="local col4 ref" href="#24p" title='p' data-ref="24p">p</a>));</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="178">178</th><td>    <b>if</b> (<a class="local col3 ref" href="#23len" title='len' data-ref="23len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="179">179</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td>    <a class="local col5 ref" href="#25e" title='e' data-ref="25e">e</a> = <a class="local col4 ref" href="#24p" title='p' data-ref="24p">p</a> + <a class="local col3 ref" href="#23len" title='len' data-ref="23len">len</a>;</td></tr>
+<tr><th id="182">182</th><td>    <a class="local col6 ref" href="#26cased" title='cased' data-ref="26cased">cased</a> = <var>0</var>;</td></tr>
+<tr><th id="183">183</th><td>    <b>for</b> (; <a class="local col4 ref" href="#24p" title='p' data-ref="24p">p</a> &lt; <a class="local col5 ref" href="#25e" title='e' data-ref="25e">e</a>; <a class="local col4 ref" href="#24p" title='p' data-ref="24p">p</a>++) {</td></tr>
+<tr><th id="184">184</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(*<a class="local col4 ref" href="#24p" title='p' data-ref="24p">p</a>))</td></tr>
+<tr><th id="185">185</th><td>            <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="186">186</th><td>        <b>else</b> <b>if</b> (!<a class="local col6 ref" href="#26cased" title='cased' data-ref="26cased">cased</a> &amp;&amp; <a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(*<a class="local col4 ref" href="#24p" title='p' data-ref="24p">p</a>))</td></tr>
+<tr><th id="187">187</th><td>            <a class="local col6 ref" href="#26cased" title='cased' data-ref="26cased">cased</a> = <var>1</var>;</td></tr>
+<tr><th id="188">188</th><td>    }</td></tr>
+<tr><th id="189">189</th><td>    <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="local col6 ref" href="#26cased" title='cased' data-ref="26cased">cased</a>);</td></tr>
+<tr><th id="190">190</th><td>}</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td></td></tr>
+<tr><th id="193">193</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_istitle__doc__[] = &quot;B.istitle() -&gt; bool\n\nReturn True if B is a titlecased string and there is at least one\ncharacter in B, i.e. uppercase characters may only follow uncased\ncharacters and lowercase characters only cased ones. Return False\notherwise.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_istitle__doc__" title='_Py_istitle__doc__' data-ref="_Py_istitle__doc__">_Py_istitle__doc__</dfn>,</td></tr>
+<tr><th id="194">194</th><td><q>"B.istitle() -&gt; bool\n\</q></td></tr>
+<tr><th id="195">195</th><td><q>\n\</q></td></tr>
+<tr><th id="196">196</th><td><q>Return True if B is a titlecased string and there is at least one\n\</q></td></tr>
+<tr><th id="197">197</th><td><q>character in B, i.e. uppercase characters may only follow uncased\n\</q></td></tr>
+<tr><th id="198">198</th><td><q>characters and lowercase characters only cased ones. Return False\n\</q></td></tr>
+<tr><th id="199">199</th><td><q>otherwise."</q>);</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a>*</td></tr>
+<tr><th id="202">202</th><td><dfn class="decl def" id="_Py_bytes_istitle" title='_Py_bytes_istitle' data-ref="_Py_bytes_istitle">_Py_bytes_istitle</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="27cptr" title='cptr' data-type='const char *' data-ref="27cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="28len" title='len' data-type='Py_ssize_t' data-ref="28len">len</dfn>)</td></tr>
+<tr><th id="203">203</th><td>{</td></tr>
+<tr><th id="204">204</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col9 decl" id="29p" title='p' data-type='const unsigned char *' data-ref="29p">p</dfn></td></tr>
+<tr><th id="205">205</th><td>        = (<em>unsigned</em> <em>char</em> *) <a class="local col7 ref" href="#27cptr" title='cptr' data-ref="27cptr">cptr</a>;</td></tr>
+<tr><th id="206">206</th><td>    <em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col0 decl" id="30e" title='e' data-type='const unsigned char *' data-ref="30e">e</dfn>;</td></tr>
+<tr><th id="207">207</th><td>    <em>int</em> <dfn class="local col1 decl" id="31cased" title='cased' data-type='int' data-ref="31cased">cased</dfn>, <dfn class="local col2 decl" id="32previous_is_cased" title='previous_is_cased' data-type='int' data-ref="32previous_is_cased">previous_is_cased</dfn>;</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>    <i>/* Shortcut for single character strings */</i></td></tr>
+<tr><th id="210">210</th><td>    <b>if</b> (<a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a> == <var>1</var>)</td></tr>
+<tr><th id="211">211</th><td>        <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((*p) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(*<a class="local col9 ref" href="#29p" title='p' data-ref="29p">p</a>));</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td>    <i>/* Special case for empty strings */</i></td></tr>
+<tr><th id="214">214</th><td>    <b>if</b> (<a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a> == <var>0</var>)</td></tr>
+<tr><th id="215">215</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="216">216</th><td></td></tr>
+<tr><th id="217">217</th><td>    <a class="local col0 ref" href="#30e" title='e' data-ref="30e">e</a> = <a class="local col9 ref" href="#29p" title='p' data-ref="29p">p</a> + <a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a>;</td></tr>
+<tr><th id="218">218</th><td>    <a class="local col1 ref" href="#31cased" title='cased' data-ref="31cased">cased</a> = <var>0</var>;</td></tr>
+<tr><th id="219">219</th><td>    <a class="local col2 ref" href="#32previous_is_cased" title='previous_is_cased' data-ref="32previous_is_cased">previous_is_cased</a> = <var>0</var>;</td></tr>
+<tr><th id="220">220</th><td>    <b>for</b> (; <a class="local col9 ref" href="#29p" title='p' data-ref="29p">p</a> &lt; <a class="local col0 ref" href="#30e" title='e' data-ref="30e">e</a>; <a class="local col9 ref" href="#29p" title='p' data-ref="29p">p</a>++) {</td></tr>
+<tr><th id="221">221</th><td>        <em>const</em> <em>unsigned</em> <em>char</em> <dfn class="local col3 decl" id="33ch" title='ch' data-type='const unsigned char' data-ref="33ch">ch</dfn> = *<a class="local col9 ref" href="#29p" title='p' data-ref="29p">p</a>;</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((ch) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(<a class="local col3 ref" href="#33ch" title='ch' data-ref="33ch">ch</a>)) {</td></tr>
+<tr><th id="224">224</th><td>            <b>if</b> (<a class="local col2 ref" href="#32previous_is_cased" title='previous_is_cased' data-ref="32previous_is_cased">previous_is_cased</a>)</td></tr>
+<tr><th id="225">225</th><td>                <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="226">226</th><td>            <a class="local col2 ref" href="#32previous_is_cased" title='previous_is_cased' data-ref="32previous_is_cased">previous_is_cased</a> = <var>1</var>;</td></tr>
+<tr><th id="227">227</th><td>            <a class="local col1 ref" href="#31cased" title='cased' data-ref="31cased">cased</a> = <var>1</var>;</td></tr>
+<tr><th id="228">228</th><td>        }</td></tr>
+<tr><th id="229">229</th><td>        <b>else</b> <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((ch) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(<a class="local col3 ref" href="#33ch" title='ch' data-ref="33ch">ch</a>)) {</td></tr>
+<tr><th id="230">230</th><td>            <b>if</b> (!<a class="local col2 ref" href="#32previous_is_cased" title='previous_is_cased' data-ref="32previous_is_cased">previous_is_cased</a>)</td></tr>
+<tr><th id="231">231</th><td>                <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="232">232</th><td>            <a class="local col2 ref" href="#32previous_is_cased" title='previous_is_cased' data-ref="32previous_is_cased">previous_is_cased</a> = <var>1</var>;</td></tr>
+<tr><th id="233">233</th><td>            <a class="local col1 ref" href="#31cased" title='cased' data-ref="31cased">cased</a> = <var>1</var>;</td></tr>
+<tr><th id="234">234</th><td>        }</td></tr>
+<tr><th id="235">235</th><td>        <b>else</b></td></tr>
+<tr><th id="236">236</th><td>            <a class="local col2 ref" href="#32previous_is_cased" title='previous_is_cased' data-ref="32previous_is_cased">previous_is_cased</a> = <var>0</var>;</td></tr>
+<tr><th id="237">237</th><td>    }</td></tr>
+<tr><th id="238">238</th><td>    <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="local col1 ref" href="#31cased" title='cased' data-ref="31cased">cased</a>);</td></tr>
+<tr><th id="239">239</th><td>}</td></tr>
+<tr><th id="240">240</th><td></td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_lower__doc__[] = &quot;B.lower() -&gt; copy of B\n\nReturn a copy of B with all ASCII characters converted to lowercase.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_lower__doc__" title='_Py_lower__doc__' data-ref="_Py_lower__doc__">_Py_lower__doc__</dfn>,</td></tr>
+<tr><th id="243">243</th><td><q>"B.lower() -&gt; copy of B\n\</q></td></tr>
+<tr><th id="244">244</th><td><q>\n\</q></td></tr>
+<tr><th id="245">245</th><td><q>Return a copy of B with all ASCII characters converted to lowercase."</q>);</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><em>void</em></td></tr>
+<tr><th id="248">248</th><td><dfn class="decl def" id="_Py_bytes_lower" title='_Py_bytes_lower' data-ref="_Py_bytes_lower">_Py_bytes_lower</dfn>(<em>char</em> *<dfn class="local col4 decl" id="34result" title='result' data-type='char *' data-ref="34result">result</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="35cptr" title='cptr' data-type='const char *' data-ref="35cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="36len" title='len' data-type='Py_ssize_t' data-ref="36len">len</dfn>)</td></tr>
+<tr><th id="249">249</th><td>{</td></tr>
+<tr><th id="250">250</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="37i" title='i' data-type='Py_ssize_t' data-ref="37i">i</dfn>;</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td>    <b>for</b> (<a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a> = <var>0</var>; <a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a> &lt; <a class="local col6 ref" href="#36len" title='len' data-ref="36len">len</a>; <a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>++) {</td></tr>
+<tr><th id="253">253</th><td>        <a class="local col4 ref" href="#34result" title='result' data-ref="34result">result</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>] = <a class="macro" href="../Include/pyctype.h.html#29" title="(_Py_ctype_tolower[((unsigned char)(((unsigned char) cptr[i]) &amp; 0xff))])" data-ref="_M/Py_TOLOWER">Py_TOLOWER</a>((<em>unsigned</em> <em>char</em>) <a class="local col5 ref" href="#35cptr" title='cptr' data-ref="35cptr">cptr</a>[<a class="local col7 ref" href="#37i" title='i' data-ref="37i">i</a>]);</td></tr>
+<tr><th id="254">254</th><td>    }</td></tr>
+<tr><th id="255">255</th><td>}</td></tr>
+<tr><th id="256">256</th><td></td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_upper__doc__[] = &quot;B.upper() -&gt; copy of B\n\nReturn a copy of B with all ASCII characters converted to uppercase.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_upper__doc__" title='_Py_upper__doc__' data-ref="_Py_upper__doc__">_Py_upper__doc__</dfn>,</td></tr>
+<tr><th id="259">259</th><td><q>"B.upper() -&gt; copy of B\n\</q></td></tr>
+<tr><th id="260">260</th><td><q>\n\</q></td></tr>
+<tr><th id="261">261</th><td><q>Return a copy of B with all ASCII characters converted to uppercase."</q>);</td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td><em>void</em></td></tr>
+<tr><th id="264">264</th><td><dfn class="decl def" id="_Py_bytes_upper" title='_Py_bytes_upper' data-ref="_Py_bytes_upper">_Py_bytes_upper</dfn>(<em>char</em> *<dfn class="local col8 decl" id="38result" title='result' data-type='char *' data-ref="38result">result</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="39cptr" title='cptr' data-type='const char *' data-ref="39cptr">cptr</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="40len" title='len' data-type='Py_ssize_t' data-ref="40len">len</dfn>)</td></tr>
+<tr><th id="265">265</th><td>{</td></tr>
+<tr><th id="266">266</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="41i" title='i' data-type='Py_ssize_t' data-ref="41i">i</dfn>;</td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td>    <b>for</b> (<a class="local col1 ref" href="#41i" title='i' data-ref="41i">i</a> = <var>0</var>; <a class="local col1 ref" href="#41i" title='i' data-ref="41i">i</a> &lt; <a class="local col0 ref" href="#40len" title='len' data-ref="40len">len</a>; <a class="local col1 ref" href="#41i" title='i' data-ref="41i">i</a>++) {</td></tr>
+<tr><th id="269">269</th><td>        <a class="local col8 ref" href="#38result" title='result' data-ref="38result">result</a>[<a class="local col1 ref" href="#41i" title='i' data-ref="41i">i</a>] = <a class="macro" href="../Include/pyctype.h.html#30" title="(_Py_ctype_toupper[((unsigned char)(((unsigned char) cptr[i]) &amp; 0xff))])" data-ref="_M/Py_TOUPPER">Py_TOUPPER</a>((<em>unsigned</em> <em>char</em>) <a class="local col9 ref" href="#39cptr" title='cptr' data-ref="39cptr">cptr</a>[<a class="local col1 ref" href="#41i" title='i' data-ref="41i">i</a>]);</td></tr>
+<tr><th id="270">270</th><td>    }</td></tr>
+<tr><th id="271">271</th><td>}</td></tr>
+<tr><th id="272">272</th><td></td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_title__doc__[] = &quot;B.title() -&gt; copy of B\n\nReturn a titlecased version of B, i.e. ASCII words start with uppercase\ncharacters, all remaining cased characters have lowercase.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_title__doc__" title='_Py_title__doc__' data-ref="_Py_title__doc__">_Py_title__doc__</dfn>,</td></tr>
+<tr><th id="275">275</th><td><q>"B.title() -&gt; copy of B\n\</q></td></tr>
+<tr><th id="276">276</th><td><q>\n\</q></td></tr>
+<tr><th id="277">277</th><td><q>Return a titlecased version of B, i.e. ASCII words start with uppercase\n\</q></td></tr>
+<tr><th id="278">278</th><td><q>characters, all remaining cased characters have lowercase."</q>);</td></tr>
+<tr><th id="279">279</th><td></td></tr>
+<tr><th id="280">280</th><td><em>void</em></td></tr>
+<tr><th id="281">281</th><td><dfn class="decl def" id="_Py_bytes_title" title='_Py_bytes_title' data-ref="_Py_bytes_title">_Py_bytes_title</dfn>(<em>char</em> *<dfn class="local col2 decl" id="42result" title='result' data-type='char *' data-ref="42result">result</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="43s" title='s' data-type='const char *' data-ref="43s">s</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="44len" title='len' data-type='Py_ssize_t' data-ref="44len">len</dfn>)</td></tr>
+<tr><th id="282">282</th><td>{</td></tr>
+<tr><th id="283">283</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="45i" title='i' data-type='Py_ssize_t' data-ref="45i">i</dfn>;</td></tr>
+<tr><th id="284">284</th><td>    <em>int</em> <dfn class="local col6 decl" id="46previous_is_cased" title='previous_is_cased' data-type='int' data-ref="46previous_is_cased">previous_is_cased</dfn> = <var>0</var>;</td></tr>
+<tr><th id="285">285</th><td></td></tr>
+<tr><th id="286">286</th><td>    <b>for</b> (<a class="local col5 ref" href="#45i" title='i' data-ref="45i">i</a> = <var>0</var>; <a class="local col5 ref" href="#45i" title='i' data-ref="45i">i</a> &lt; <a class="local col4 ref" href="#44len" title='len' data-ref="44len">len</a>; <a class="local col5 ref" href="#45i" title='i' data-ref="45i">i</a>++) {</td></tr>
+<tr><th id="287">287</th><td>        <em>int</em> <dfn class="local col7 decl" id="47c" title='c' data-type='int' data-ref="47c">c</dfn> = <a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*s++) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col3 ref" href="#43s" title='s' data-ref="43s">s</a>++);</td></tr>
+<tr><th id="288">288</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((c) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(<a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a>)) {</td></tr>
+<tr><th id="289">289</th><td>            <b>if</b> (!<a class="local col6 ref" href="#46previous_is_cased" title='previous_is_cased' data-ref="46previous_is_cased">previous_is_cased</a>)</td></tr>
+<tr><th id="290">290</th><td>                <a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a> = <a class="macro" href="../Include/pyctype.h.html#30" title="(_Py_ctype_toupper[((unsigned char)((c) &amp; 0xff))])" data-ref="_M/Py_TOUPPER">Py_TOUPPER</a>(<a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a>);</td></tr>
+<tr><th id="291">291</th><td>            <a class="local col6 ref" href="#46previous_is_cased" title='previous_is_cased' data-ref="46previous_is_cased">previous_is_cased</a> = <var>1</var>;</td></tr>
+<tr><th id="292">292</th><td>        } <b>else</b> <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((c) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(<a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a>)) {</td></tr>
+<tr><th id="293">293</th><td>            <b>if</b> (<a class="local col6 ref" href="#46previous_is_cased" title='previous_is_cased' data-ref="46previous_is_cased">previous_is_cased</a>)</td></tr>
+<tr><th id="294">294</th><td>                <a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a> = <a class="macro" href="../Include/pyctype.h.html#29" title="(_Py_ctype_tolower[((unsigned char)((c) &amp; 0xff))])" data-ref="_M/Py_TOLOWER">Py_TOLOWER</a>(<a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a>);</td></tr>
+<tr><th id="295">295</th><td>            <a class="local col6 ref" href="#46previous_is_cased" title='previous_is_cased' data-ref="46previous_is_cased">previous_is_cased</a> = <var>1</var>;</td></tr>
+<tr><th id="296">296</th><td>        } <b>else</b></td></tr>
+<tr><th id="297">297</th><td>            <a class="local col6 ref" href="#46previous_is_cased" title='previous_is_cased' data-ref="46previous_is_cased">previous_is_cased</a> = <var>0</var>;</td></tr>
+<tr><th id="298">298</th><td>        *<a class="local col2 ref" href="#42result" title='result' data-ref="42result">result</a>++ = <a class="local col7 ref" href="#47c" title='c' data-ref="47c">c</a>;</td></tr>
+<tr><th id="299">299</th><td>    }</td></tr>
+<tr><th id="300">300</th><td>}</td></tr>
+<tr><th id="301">301</th><td></td></tr>
+<tr><th id="302">302</th><td></td></tr>
+<tr><th id="303">303</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_capitalize__doc__[] = &quot;B.capitalize() -&gt; copy of B\n\nReturn a copy of B with only its first character capitalized (ASCII)\nand the rest lower-cased.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_capitalize__doc__" title='_Py_capitalize__doc__' data-ref="_Py_capitalize__doc__">_Py_capitalize__doc__</dfn>,</td></tr>
+<tr><th id="304">304</th><td><q>"B.capitalize() -&gt; copy of B\n\</q></td></tr>
+<tr><th id="305">305</th><td><q>\n\</q></td></tr>
+<tr><th id="306">306</th><td><q>Return a copy of B with only its first character capitalized (ASCII)\n\</q></td></tr>
+<tr><th id="307">307</th><td><q>and the rest lower-cased."</q>);</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td><em>void</em></td></tr>
+<tr><th id="310">310</th><td><dfn class="decl def" id="_Py_bytes_capitalize" title='_Py_bytes_capitalize' data-ref="_Py_bytes_capitalize">_Py_bytes_capitalize</dfn>(<em>char</em> *<dfn class="local col8 decl" id="48result" title='result' data-type='char *' data-ref="48result">result</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="49s" title='s' data-type='const char *' data-ref="49s">s</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="50len" title='len' data-type='Py_ssize_t' data-ref="50len">len</dfn>)</td></tr>
+<tr><th id="311">311</th><td>{</td></tr>
+<tr><th id="312">312</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="51i" title='i' data-type='Py_ssize_t' data-ref="51i">i</dfn>;</td></tr>
+<tr><th id="313">313</th><td></td></tr>
+<tr><th id="314">314</th><td>    <b>if</b> (<var>0</var> &lt; <a class="local col0 ref" href="#50len" title='len' data-ref="50len">len</a>) {</td></tr>
+<tr><th id="315">315</th><td>        <em>int</em> <dfn class="local col2 decl" id="52c" title='c' data-type='int' data-ref="52c">c</dfn> = <a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*s++) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col9 ref" href="#49s" title='s' data-ref="49s">s</a>++);</td></tr>
+<tr><th id="316">316</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((c) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(<a class="local col2 ref" href="#52c" title='c' data-ref="52c">c</a>))</td></tr>
+<tr><th id="317">317</th><td>            *<a class="local col8 ref" href="#48result" title='result' data-ref="48result">result</a> = <a class="macro" href="../Include/pyctype.h.html#30" title="(_Py_ctype_toupper[((unsigned char)((c) &amp; 0xff))])" data-ref="_M/Py_TOUPPER">Py_TOUPPER</a>(<a class="local col2 ref" href="#52c" title='c' data-ref="52c">c</a>);</td></tr>
+<tr><th id="318">318</th><td>        <b>else</b></td></tr>
+<tr><th id="319">319</th><td>            *<a class="local col8 ref" href="#48result" title='result' data-ref="48result">result</a> = <a class="local col2 ref" href="#52c" title='c' data-ref="52c">c</a>;</td></tr>
+<tr><th id="320">320</th><td>        <a class="local col8 ref" href="#48result" title='result' data-ref="48result">result</a>++;</td></tr>
+<tr><th id="321">321</th><td>    }</td></tr>
+<tr><th id="322">322</th><td>    <b>for</b> (<a class="local col1 ref" href="#51i" title='i' data-ref="51i">i</a> = <var>1</var>; <a class="local col1 ref" href="#51i" title='i' data-ref="51i">i</a> &lt; <a class="local col0 ref" href="#50len" title='len' data-ref="50len">len</a>; <a class="local col1 ref" href="#51i" title='i' data-ref="51i">i</a>++) {</td></tr>
+<tr><th id="323">323</th><td>        <em>int</em> <dfn class="local col3 decl" id="53c" title='c' data-type='int' data-ref="53c">c</dfn> = <a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*s++) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col9 ref" href="#49s" title='s' data-ref="49s">s</a>++);</td></tr>
+<tr><th id="324">324</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((c) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(<a class="local col3 ref" href="#53c" title='c' data-ref="53c">c</a>))</td></tr>
+<tr><th id="325">325</th><td>            *<a class="local col8 ref" href="#48result" title='result' data-ref="48result">result</a> = <a class="macro" href="../Include/pyctype.h.html#29" title="(_Py_ctype_tolower[((unsigned char)((c) &amp; 0xff))])" data-ref="_M/Py_TOLOWER">Py_TOLOWER</a>(<a class="local col3 ref" href="#53c" title='c' data-ref="53c">c</a>);</td></tr>
+<tr><th id="326">326</th><td>        <b>else</b></td></tr>
+<tr><th id="327">327</th><td>            *<a class="local col8 ref" href="#48result" title='result' data-ref="48result">result</a> = <a class="local col3 ref" href="#53c" title='c' data-ref="53c">c</a>;</td></tr>
+<tr><th id="328">328</th><td>        <a class="local col8 ref" href="#48result" title='result' data-ref="48result">result</a>++;</td></tr>
+<tr><th id="329">329</th><td>    }</td></tr>
+<tr><th id="330">330</th><td>}</td></tr>
+<tr><th id="331">331</th><td></td></tr>
+<tr><th id="332">332</th><td></td></tr>
+<tr><th id="333">333</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_swapcase__doc__[] = &quot;B.swapcase() -&gt; copy of B\n\nReturn a copy of B with uppercase ASCII characters converted\nto lowercase ASCII and vice versa.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_swapcase__doc__" title='_Py_swapcase__doc__' data-ref="_Py_swapcase__doc__">_Py_swapcase__doc__</dfn>,</td></tr>
+<tr><th id="334">334</th><td><q>"B.swapcase() -&gt; copy of B\n\</q></td></tr>
+<tr><th id="335">335</th><td><q>\n\</q></td></tr>
+<tr><th id="336">336</th><td><q>Return a copy of B with uppercase ASCII characters converted\n\</q></td></tr>
+<tr><th id="337">337</th><td><q>to lowercase ASCII and vice versa."</q>);</td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td><em>void</em></td></tr>
+<tr><th id="340">340</th><td><dfn class="decl def" id="_Py_bytes_swapcase" title='_Py_bytes_swapcase' data-ref="_Py_bytes_swapcase">_Py_bytes_swapcase</dfn>(<em>char</em> *<dfn class="local col4 decl" id="54result" title='result' data-type='char *' data-ref="54result">result</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="55s" title='s' data-type='const char *' data-ref="55s">s</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="56len" title='len' data-type='Py_ssize_t' data-ref="56len">len</dfn>)</td></tr>
+<tr><th id="341">341</th><td>{</td></tr>
+<tr><th id="342">342</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="57i" title='i' data-type='Py_ssize_t' data-ref="57i">i</dfn>;</td></tr>
+<tr><th id="343">343</th><td></td></tr>
+<tr><th id="344">344</th><td>    <b>for</b> (<a class="local col7 ref" href="#57i" title='i' data-ref="57i">i</a> = <var>0</var>; <a class="local col7 ref" href="#57i" title='i' data-ref="57i">i</a> &lt; <a class="local col6 ref" href="#56len" title='len' data-ref="56len">len</a>; <a class="local col7 ref" href="#57i" title='i' data-ref="57i">i</a>++) {</td></tr>
+<tr><th id="345">345</th><td>        <em>int</em> <dfn class="local col8 decl" id="58c" title='c' data-type='int' data-ref="58c">c</dfn> = <a class="macro" href="../Include/pymacro.h.html#25" title="((unsigned char)((*s++) &amp; 0xff))" data-ref="_M/Py_CHARMASK">Py_CHARMASK</a>(*<a class="local col5 ref" href="#55s" title='s' data-ref="55s">s</a>++);</td></tr>
+<tr><th id="346">346</th><td>        <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#18" title="(_Py_ctype_table[((unsigned char)((c) &amp; 0xff))] &amp; 0x01)" data-ref="_M/Py_ISLOWER">Py_ISLOWER</a>(<a class="local col8 ref" href="#58c" title='c' data-ref="58c">c</a>)) {</td></tr>
+<tr><th id="347">347</th><td>            *<a class="local col4 ref" href="#54result" title='result' data-ref="54result">result</a> = <a class="macro" href="../Include/pyctype.h.html#30" title="(_Py_ctype_toupper[((unsigned char)((c) &amp; 0xff))])" data-ref="_M/Py_TOUPPER">Py_TOUPPER</a>(<a class="local col8 ref" href="#58c" title='c' data-ref="58c">c</a>);</td></tr>
+<tr><th id="348">348</th><td>        }</td></tr>
+<tr><th id="349">349</th><td>        <b>else</b> <b>if</b> (<a class="macro" href="../Include/pyctype.h.html#19" title="(_Py_ctype_table[((unsigned char)((c) &amp; 0xff))] &amp; 0x02)" data-ref="_M/Py_ISUPPER">Py_ISUPPER</a>(<a class="local col8 ref" href="#58c" title='c' data-ref="58c">c</a>)) {</td></tr>
+<tr><th id="350">350</th><td>            *<a class="local col4 ref" href="#54result" title='result' data-ref="54result">result</a> = <a class="macro" href="../Include/pyctype.h.html#29" title="(_Py_ctype_tolower[((unsigned char)((c) &amp; 0xff))])" data-ref="_M/Py_TOLOWER">Py_TOLOWER</a>(<a class="local col8 ref" href="#58c" title='c' data-ref="58c">c</a>);</td></tr>
+<tr><th id="351">351</th><td>        }</td></tr>
+<tr><th id="352">352</th><td>        <b>else</b></td></tr>
+<tr><th id="353">353</th><td>            *<a class="local col4 ref" href="#54result" title='result' data-ref="54result">result</a> = <a class="local col8 ref" href="#58c" title='c' data-ref="58c">c</a>;</td></tr>
+<tr><th id="354">354</th><td>        <a class="local col4 ref" href="#54result" title='result' data-ref="54result">result</a>++;</td></tr>
+<tr><th id="355">355</th><td>    }</td></tr>
+<tr><th id="356">356</th><td>}</td></tr>
+<tr><th id="357">357</th><td></td></tr>
+<tr><th id="358">358</th><td></td></tr>
+<tr><th id="359">359</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_maketrans__doc__[] = &quot;B.maketrans(frm, to) -&gt; translation table\n\nReturn a translation table (a bytes object of length 256) suitable\nfor use in the bytes or bytearray translate method where each byte\nin frm is mapped to the byte at the same position in to.\nThe bytes objects frm and to must be of the same length.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_maketrans__doc__" title='_Py_maketrans__doc__' data-ref="_Py_maketrans__doc__">_Py_maketrans__doc__</dfn>,</td></tr>
+<tr><th id="360">360</th><td><q>"B.maketrans(frm, to) -&gt; translation table\n\</q></td></tr>
+<tr><th id="361">361</th><td><q>\n\</q></td></tr>
+<tr><th id="362">362</th><td><q>Return a translation table (a bytes object of length 256) suitable\n\</q></td></tr>
+<tr><th id="363">363</th><td><q>for use in the bytes or bytearray translate method where each byte\n\</q></td></tr>
+<tr><th id="364">364</th><td><q>in frm is mapped to the byte at the same position in to.\n\</q></td></tr>
+<tr><th id="365">365</th><td><q>The bytes objects frm and to must be of the same length."</q>);</td></tr>
+<tr><th id="366">366</th><td></td></tr>
+<tr><th id="367">367</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="368">368</th><td><dfn class="decl def" id="_Py_bytes_maketrans" title='_Py_bytes_maketrans' data-ref="_Py_bytes_maketrans">_Py_bytes_maketrans</dfn>(<a class="typedef" href="../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col9 decl" id="59frm" title='frm' data-type='Py_buffer *' data-ref="59frm">frm</dfn>, <a class="typedef" href="../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> *<dfn class="local col0 decl" id="60to" title='to' data-type='Py_buffer *' data-ref="60to">to</dfn>)</td></tr>
+<tr><th id="369">369</th><td>{</td></tr>
+<tr><th id="370">370</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="61res" title='res' data-type='PyObject *' data-ref="61res">res</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="371">371</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="62i" title='i' data-type='Py_ssize_t' data-ref="62i">i</dfn>;</td></tr>
+<tr><th id="372">372</th><td>    <em>char</em> *<dfn class="local col3 decl" id="63p" title='p' data-type='char *' data-ref="63p">p</dfn>;</td></tr>
+<tr><th id="373">373</th><td></td></tr>
+<tr><th id="374">374</th><td>    <b>if</b> (<a class="local col9 ref" href="#59frm" title='frm' data-ref="59frm">frm</a>-&gt;<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a> != <a class="local col0 ref" href="#60to" title='to' data-ref="60to">to</a>-&gt;<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a>) {</td></tr>
+<tr><th id="375">375</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="376">376</th><td>                     <q>"maketrans arguments must have same length"</q>);</td></tr>
+<tr><th id="377">377</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="378">378</th><td>    }</td></tr>
+<tr><th id="379">379</th><td>    <a class="local col1 ref" href="#61res" title='res' data-ref="61res">res</a> = <a class="ref" href="../Include/bytesobject.h.html#PyBytes_FromStringAndSize" title='PyBytes_FromStringAndSize' data-ref="PyBytes_FromStringAndSize">PyBytes_FromStringAndSize</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <var>256</var>);</td></tr>
+<tr><th id="380">380</th><td>    <b>if</b> (!<a class="local col1 ref" href="#61res" title='res' data-ref="61res">res</a>)</td></tr>
+<tr><th id="381">381</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="382">382</th><td>    <a class="local col3 ref" href="#63p" title='p' data-ref="63p">p</a> = <a class="macro" href="../Include/bytesobject.h.html#87" title="(((((((((PyObject*)(res))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 27))) != 0)) ? (void) (0) : __assert_fail (&quot;PyBytes_Check(res)&quot;, &quot;/home/jon/workspace/cpython/Objects/bytes_methods.c&quot;, 382, __PRETTY_FUNCTION__)), (((PyBytesObject *)(res))-&gt;ob_sval))" data-ref="_M/PyBytes_AS_STRING">PyBytes_AS_STRING</a>(<a class="local col1 ref" href="#61res" title='res' data-ref="61res">res</a>);</td></tr>
+<tr><th id="383">383</th><td>    <b>for</b> (<a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a> = <var>0</var>; <a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a> &lt; <var>256</var>; <a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a>++)</td></tr>
+<tr><th id="384">384</th><td>        <a class="local col3 ref" href="#63p" title='p' data-ref="63p">p</a>[<a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a>] = (<em>char</em>) <a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a>;</td></tr>
+<tr><th id="385">385</th><td>    <b>for</b> (<a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a> = <var>0</var>; <a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a> &lt; <a class="local col9 ref" href="#59frm" title='frm' data-ref="59frm">frm</a>-&gt;<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a>; <a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a>++) {</td></tr>
+<tr><th id="386">386</th><td>        <a class="local col3 ref" href="#63p" title='p' data-ref="63p">p</a>[((<em>unsigned</em> <em>char</em> *)<a class="local col9 ref" href="#59frm" title='frm' data-ref="59frm">frm</a>-&gt;<a class="ref" href="../Include/object.h.html#bufferinfo::buf" title='bufferinfo::buf' data-ref="bufferinfo::buf">buf</a>)[<a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a>]] = ((<em>char</em> *)<a class="local col0 ref" href="#60to" title='to' data-ref="60to">to</a>-&gt;<a class="ref" href="../Include/object.h.html#bufferinfo::buf" title='bufferinfo::buf' data-ref="bufferinfo::buf">buf</a>)[<a class="local col2 ref" href="#62i" title='i' data-ref="62i">i</a>];</td></tr>
+<tr><th id="387">387</th><td>    }</td></tr>
+<tr><th id="388">388</th><td></td></tr>
+<tr><th id="389">389</th><td>    <b>return</b> <a class="local col1 ref" href="#61res" title='res' data-ref="61res">res</a>;</td></tr>
+<tr><th id="390">390</th><td>}</td></tr>
+<tr><th id="391">391</th><td></td></tr>
+<tr><th id="392">392</th><td><u>#define <dfn class="macro" id="_M/FASTSEARCH" data-ref="_M/FASTSEARCH">FASTSEARCH</dfn> fastsearch</u></td></tr>
+<tr><th id="393">393</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB" data-ref="_M/STRINGLIB">STRINGLIB</dfn>(F) stringlib_##F</u></td></tr>
+<tr><th id="394">394</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_CHAR" data-ref="_M/STRINGLIB_CHAR">STRINGLIB_CHAR</dfn> char</u></td></tr>
+<tr><th id="395">395</th><td><u>#define <dfn class="macro" id="_M/STRINGLIB_SIZEOF_CHAR" data-ref="_M/STRINGLIB_SIZEOF_CHAR">STRINGLIB_SIZEOF_CHAR</dfn> 1</u></td></tr>
+<tr><th id="396">396</th><td></td></tr>
+<tr><th id="397">397</th><td><u>#include <a href="stringlib/fastsearch.h.html">"stringlib/fastsearch.h"</a></u></td></tr>
+<tr><th id="398">398</th><td><u>#include <a href="stringlib/count.h.html">"stringlib/count.h"</a></u></td></tr>
+<tr><th id="399">399</th><td><u>#include <a href="stringlib/find.h.html">"stringlib/find.h"</a></u></td></tr>
+<tr><th id="400">400</th><td></td></tr>
+<tr><th id="401">401</th><td><i>/*</i></td></tr>
+<tr><th id="402">402</th><td><i>Wraps stringlib_parse_args_finds() and additionally checks the first</i></td></tr>
+<tr><th id="403">403</th><td><i>argument type.</i></td></tr>
+<tr><th id="404">404</th><td><i></i></td></tr>
+<tr><th id="405">405</th><td><i>In case the first argument is a bytes-like object, sets it to subobj,</i></td></tr>
+<tr><th id="406">406</th><td><i>and doesn't touch the byte parameter.</i></td></tr>
+<tr><th id="407">407</th><td><i>In case it is an integer in range(0, 256), writes the integer value</i></td></tr>
+<tr><th id="408">408</th><td><i>to byte, and sets subobj to NULL.</i></td></tr>
+<tr><th id="409">409</th><td><i></i></td></tr>
+<tr><th id="410">410</th><td><i>The other parameters are similar to those of</i></td></tr>
+<tr><th id="411">411</th><td><i>stringlib_parse_args_finds().</i></td></tr>
+<tr><th id="412">412</th><td><i>*/</i></td></tr>
+<tr><th id="413">413</th><td></td></tr>
+<tr><th id="414">414</th><td><a class="macro" href="../Include/pyport.h.html#178" title="static inline int" data-ref="_M/Py_LOCAL_INLINE">Py_LOCAL_INLINE</a>(<em>int</em>)</td></tr>
+<tr><th id="415">415</th><td><dfn class="decl def" id="parse_args_finds_byte" title='parse_args_finds_byte' data-ref="parse_args_finds_byte">parse_args_finds_byte</dfn>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="64function_name" title='function_name' data-type='const char *' data-ref="64function_name">function_name</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="65args" title='args' data-type='PyObject *' data-ref="65args">args</dfn>,</td></tr>
+<tr><th id="416">416</th><td>                      <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col6 decl" id="66subobj" title='subobj' data-type='PyObject **' data-ref="66subobj">subobj</dfn>, <em>char</em> *<dfn class="local col7 decl" id="67byte" title='byte' data-type='char *' data-ref="67byte">byte</dfn>,</td></tr>
+<tr><th id="417">417</th><td>                      <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> *<dfn class="local col8 decl" id="68start" title='start' data-type='Py_ssize_t *' data-ref="68start">start</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> *<dfn class="local col9 decl" id="69end" title='end' data-type='Py_ssize_t *' data-ref="69end">end</dfn>)</td></tr>
+<tr><th id="418">418</th><td>{</td></tr>
+<tr><th id="419">419</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="70tmp_subobj" title='tmp_subobj' data-type='PyObject *' data-ref="70tmp_subobj">tmp_subobj</dfn>;</td></tr>
+<tr><th id="420">420</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="71ival" title='ival' data-type='Py_ssize_t' data-ref="71ival">ival</dfn>;</td></tr>
+<tr><th id="421">421</th><td></td></tr>
+<tr><th id="422">422</th><td>    <b>if</b>(!<a class="ref" href="stringlib/find.h.html#86" title='stringlib_parse_args_finds' data-ref="stringlib_parse_args_finds">stringlib_parse_args_finds</a>(<a class="local col4 ref" href="#64function_name" title='function_name' data-ref="64function_name">function_name</a>, <a class="local col5 ref" href="#65args" title='args' data-ref="65args">args</a>, &amp;<a class="local col0 ref" href="#70tmp_subobj" title='tmp_subobj' data-ref="70tmp_subobj">tmp_subobj</a>,</td></tr>
+<tr><th id="423">423</th><td>                                   <a class="local col8 ref" href="#68start" title='start' data-ref="68start">start</a>, <a class="local col9 ref" href="#69end" title='end' data-ref="69end">end</a>))</td></tr>
+<tr><th id="424">424</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="425">425</th><td></td></tr>
+<tr><th id="426">426</th><td>    <b>if</b> (<a class="macro" href="../Include/abstract.h.html#510" title="(((tmp_subobj)-&gt;ob_type-&gt;tp_as_buffer != ((void*)0)) &amp;&amp; ((tmp_subobj)-&gt;ob_type-&gt;tp_as_buffer-&gt;bf_getbuffer != ((void*)0)))" data-ref="_M/PyObject_CheckBuffer">PyObject_CheckBuffer</a>(<a class="local col0 ref" href="#70tmp_subobj" title='tmp_subobj' data-ref="70tmp_subobj">tmp_subobj</a>)) {</td></tr>
+<tr><th id="427">427</th><td>        *<a class="local col6 ref" href="#66subobj" title='subobj' data-ref="66subobj">subobj</a> = <a class="local col0 ref" href="#70tmp_subobj" title='tmp_subobj' data-ref="70tmp_subobj">tmp_subobj</a>;</td></tr>
+<tr><th id="428">428</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="429">429</th><td>    }</td></tr>
+<tr><th id="430">430</th><td></td></tr>
+<tr><th id="431">431</th><td>    <b>if</b> (!<a class="macro" href="../Include/abstract.h.html#712" title="((tmp_subobj)-&gt;ob_type-&gt;tp_as_number != ((void*)0) &amp;&amp; (tmp_subobj)-&gt;ob_type-&gt;tp_as_number-&gt;nb_index != ((void*)0))" data-ref="_M/PyIndex_Check">PyIndex_Check</a>(<a class="local col0 ref" href="#70tmp_subobj" title='tmp_subobj' data-ref="70tmp_subobj">tmp_subobj</a>)) {</td></tr>
+<tr><th id="432">432</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="433">433</th><td>                     <q>"argument should be integer or bytes-like object, "</q></td></tr>
+<tr><th id="434">434</th><td>                     <q>"not '%.200s'"</q>,</td></tr>
+<tr><th id="435">435</th><td>                     <a class="macro" href="../Include/object.h.html#118" title="(((PyObject*)(tmp_subobj))-&gt;ob_type)" data-ref="_M/Py_TYPE">Py_TYPE</a>(<a class="local col0 ref" href="#70tmp_subobj" title='tmp_subobj' data-ref="70tmp_subobj">tmp_subobj</a>)-&gt;<a class="ref" href="../Include/object.h.html#_typeobject::tp_name" title='_typeobject::tp_name' data-ref="_typeobject::tp_name">tp_name</a>);</td></tr>
+<tr><th id="436">436</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="437">437</th><td>    }</td></tr>
+<tr><th id="438">438</th><td></td></tr>
+<tr><th id="439">439</th><td>    <a class="local col1 ref" href="#71ival" title='ival' data-ref="71ival">ival</a> = <a class="ref" href="../Include/abstract.h.html#PyNumber_AsSsize_t" title='PyNumber_AsSsize_t' data-ref="PyNumber_AsSsize_t">PyNumber_AsSsize_t</a>(<a class="local col0 ref" href="#70tmp_subobj" title='tmp_subobj' data-ref="70tmp_subobj">tmp_subobj</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="440">440</th><td>    <b>if</b> (<a class="local col1 ref" href="#71ival" title='ival' data-ref="71ival">ival</a> == -<var>1</var> &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="441">441</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="442">442</th><td>    }</td></tr>
+<tr><th id="443">443</th><td>    <b>if</b> (<a class="local col1 ref" href="#71ival" title='ival' data-ref="71ival">ival</a> &lt; <var>0</var> || <a class="local col1 ref" href="#71ival" title='ival' data-ref="71ival">ival</a> &gt; <var>255</var>) {</td></tr>
+<tr><th id="444">444</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>, <q>"byte must be in range(0, 256)"</q>);</td></tr>
+<tr><th id="445">445</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="446">446</th><td>    }</td></tr>
+<tr><th id="447">447</th><td></td></tr>
+<tr><th id="448">448</th><td>    *<a class="local col6 ref" href="#66subobj" title='subobj' data-ref="66subobj">subobj</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="449">449</th><td>    *<a class="local col7 ref" href="#67byte" title='byte' data-ref="67byte">byte</a> = (<em>char</em>)<a class="local col1 ref" href="#71ival" title='ival' data-ref="71ival">ival</a>;</td></tr>
+<tr><th id="450">450</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="451">451</th><td>}</td></tr>
+<tr><th id="452">452</th><td></td></tr>
+<tr><th id="453">453</th><td><i>/* helper macro to fixup start/end slice values */</i></td></tr>
+<tr><th id="454">454</th><td><u>#define <dfn class="macro" id="_M/ADJUST_INDICES" data-ref="_M/ADJUST_INDICES">ADJUST_INDICES</dfn>(start, end, len)         \</u></td></tr>
+<tr><th id="455">455</th><td><u>    if (end &gt; len)                          \</u></td></tr>
+<tr><th id="456">456</th><td><u>        end = len;                          \</u></td></tr>
+<tr><th id="457">457</th><td><u>    else if (end &lt; 0) {                     \</u></td></tr>
+<tr><th id="458">458</th><td><u>        end += len;                         \</u></td></tr>
+<tr><th id="459">459</th><td><u>        if (end &lt; 0)                        \</u></td></tr>
+<tr><th id="460">460</th><td><u>        end = 0;                        \</u></td></tr>
+<tr><th id="461">461</th><td><u>    }                                       \</u></td></tr>
+<tr><th id="462">462</th><td><u>    if (start &lt; 0) {                        \</u></td></tr>
+<tr><th id="463">463</th><td><u>        start += len;                       \</u></td></tr>
+<tr><th id="464">464</th><td><u>        if (start &lt; 0)                      \</u></td></tr>
+<tr><th id="465">465</th><td><u>        start = 0;                      \</u></td></tr>
+<tr><th id="466">466</th><td><u>    }</u></td></tr>
+<tr><th id="467">467</th><td></td></tr>
+<tr><th id="468">468</th><td><a class="macro" href="../Include/pyport.h.html#178" title="static inline Py_ssize_t" data-ref="_M/Py_LOCAL_INLINE">Py_LOCAL_INLINE</a>(<a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a>)</td></tr>
+<tr><th id="469">469</th><td><dfn class="decl def" id="find_internal" title='find_internal' data-ref="find_internal">find_internal</dfn>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="72str" title='str' data-type='const char *' data-ref="72str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="73len" title='len' data-type='Py_ssize_t' data-ref="73len">len</dfn>,</td></tr>
+<tr><th id="470">470</th><td>              <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="74function_name" title='function_name' data-type='const char *' data-ref="74function_name">function_name</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="75args" title='args' data-type='PyObject *' data-ref="75args">args</dfn>, <em>int</em> <dfn class="local col6 decl" id="76dir" title='dir' data-type='int' data-ref="76dir">dir</dfn>)</td></tr>
+<tr><th id="471">471</th><td>{</td></tr>
+<tr><th id="472">472</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="77subobj" title='subobj' data-type='PyObject *' data-ref="77subobj">subobj</dfn>;</td></tr>
+<tr><th id="473">473</th><td>    <em>char</em> <dfn class="local col8 decl" id="78byte" title='byte' data-type='char' data-ref="78byte">byte</dfn>;</td></tr>
+<tr><th id="474">474</th><td>    <a class="typedef" href="../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col9 decl" id="79subbuf" title='subbuf' data-type='Py_buffer' data-ref="79subbuf">subbuf</dfn>;</td></tr>
+<tr><th id="475">475</th><td>    <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="80sub" title='sub' data-type='const char *' data-ref="80sub">sub</dfn>;</td></tr>
+<tr><th id="476">476</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="81sub_len" title='sub_len' data-type='Py_ssize_t' data-ref="81sub_len">sub_len</dfn>;</td></tr>
+<tr><th id="477">477</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="82start" title='start' data-type='Py_ssize_t' data-ref="82start">start</dfn> = <var>0</var>, <dfn class="local col3 decl" id="83end" title='end' data-type='Py_ssize_t' data-ref="83end">end</dfn> = <a class="macro" href="../Include/pyport.h.html#109" title="((Py_ssize_t)(((size_t)-1)&gt;&gt;1))" data-ref="_M/PY_SSIZE_T_MAX">PY_SSIZE_T_MAX</a>;</td></tr>
+<tr><th id="478">478</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="84res" title='res' data-type='Py_ssize_t' data-ref="84res">res</dfn>;</td></tr>
+<tr><th id="479">479</th><td></td></tr>
+<tr><th id="480">480</th><td>    <b>if</b> (!<a class="ref" href="#parse_args_finds_byte" title='parse_args_finds_byte' data-ref="parse_args_finds_byte">parse_args_finds_byte</a>(<a class="local col4 ref" href="#74function_name" title='function_name' data-ref="74function_name">function_name</a>, <a class="local col5 ref" href="#75args" title='args' data-ref="75args">args</a>,</td></tr>
+<tr><th id="481">481</th><td>                               &amp;<a class="local col7 ref" href="#77subobj" title='subobj' data-ref="77subobj">subobj</a>, &amp;<a class="local col8 ref" href="#78byte" title='byte' data-ref="78byte">byte</a>, &amp;<a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>, &amp;<a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a>))</td></tr>
+<tr><th id="482">482</th><td>        <b>return</b> -<var>2</var>;</td></tr>
+<tr><th id="483">483</th><td></td></tr>
+<tr><th id="484">484</th><td>    <b>if</b> (<a class="local col7 ref" href="#77subobj" title='subobj' data-ref="77subobj">subobj</a>) {</td></tr>
+<tr><th id="485">485</th><td>        <b>if</b> (<a class="ref" href="../Include/abstract.h.html#PyObject_GetBuffer" title='PyObject_GetBuffer' data-ref="PyObject_GetBuffer">PyObject_GetBuffer</a>(<a class="local col7 ref" href="#77subobj" title='subobj' data-ref="77subobj">subobj</a>, &amp;<a class="local col9 ref" href="#79subbuf" title='subbuf' data-ref="79subbuf">subbuf</a>, <a class="macro" href="../Include/object.h.html#204" title="0" data-ref="_M/PyBUF_SIMPLE">PyBUF_SIMPLE</a>) != <var>0</var>)</td></tr>
+<tr><th id="486">486</th><td>            <b>return</b> -<var>2</var>;</td></tr>
+<tr><th id="487">487</th><td></td></tr>
+<tr><th id="488">488</th><td>        <a class="local col0 ref" href="#80sub" title='sub' data-ref="80sub">sub</a> = <a class="local col9 ref" href="#79subbuf" title='subbuf' data-ref="79subbuf">subbuf</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::buf" title='bufferinfo::buf' data-ref="bufferinfo::buf">buf</a>;</td></tr>
+<tr><th id="489">489</th><td>        <a class="local col1 ref" href="#81sub_len" title='sub_len' data-ref="81sub_len">sub_len</a> = <a class="local col9 ref" href="#79subbuf" title='subbuf' data-ref="79subbuf">subbuf</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a>;</td></tr>
+<tr><th id="490">490</th><td>    }</td></tr>
+<tr><th id="491">491</th><td>    <b>else</b> {</td></tr>
+<tr><th id="492">492</th><td>        <a class="local col0 ref" href="#80sub" title='sub' data-ref="80sub">sub</a> = &amp;<a class="local col8 ref" href="#78byte" title='byte' data-ref="78byte">byte</a>;</td></tr>
+<tr><th id="493">493</th><td>        <a class="local col1 ref" href="#81sub_len" title='sub_len' data-ref="81sub_len">sub_len</a> = <var>1</var>;</td></tr>
+<tr><th id="494">494</th><td>    }</td></tr>
+<tr><th id="495">495</th><td></td></tr>
+<tr><th id="496">496</th><td>    <a class="macro" href="#454" title="if (end &gt; len) end = len; else if (end &lt; 0) { end += len; if (end &lt; 0) end = 0; } if (start &lt; 0) { start += len; if (start &lt; 0) start = 0; }" data-ref="_M/ADJUST_INDICES">ADJUST_INDICES</a>(<a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>, <a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a>, <a class="local col3 ref" href="#73len" title='len' data-ref="73len">len</a>);</td></tr>
+<tr><th id="497">497</th><td>    <b>if</b> (<a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a> - <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a> &lt; <a class="local col1 ref" href="#81sub_len" title='sub_len' data-ref="81sub_len">sub_len</a>)</td></tr>
+<tr><th id="498">498</th><td>        <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> = -<var>1</var>;</td></tr>
+<tr><th id="499">499</th><td>    <b>else</b> <b>if</b> (<a class="local col1 ref" href="#81sub_len" title='sub_len' data-ref="81sub_len">sub_len</a> == <var>1</var>) {</td></tr>
+<tr><th id="500">500</th><td>        <b>if</b> (<a class="local col6 ref" href="#76dir" title='dir' data-ref="76dir">dir</a> &gt; <var>0</var>)</td></tr>
+<tr><th id="501">501</th><td>            <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> = <a class="ref" href="stringlib/fastsearch.h.html#42" title='stringlib_find_char' data-ref="stringlib_find_char">stringlib_find_char</a>(</td></tr>
+<tr><th id="502">502</th><td>                <a class="local col2 ref" href="#72str" title='str' data-ref="72str">str</a> + <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>, <a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a> - <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>,</td></tr>
+<tr><th id="503">503</th><td>                *<a class="local col0 ref" href="#80sub" title='sub' data-ref="80sub">sub</a>);</td></tr>
+<tr><th id="504">504</th><td>        <b>else</b></td></tr>
+<tr><th id="505">505</th><td>            <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> = <a class="ref" href="stringlib/fastsearch.h.html#99" title='stringlib_rfind_char' data-ref="stringlib_rfind_char">stringlib_rfind_char</a>(</td></tr>
+<tr><th id="506">506</th><td>                <a class="local col2 ref" href="#72str" title='str' data-ref="72str">str</a> + <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>, <a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a> - <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>,</td></tr>
+<tr><th id="507">507</th><td>                *<a class="local col0 ref" href="#80sub" title='sub' data-ref="80sub">sub</a>);</td></tr>
+<tr><th id="508">508</th><td>        <b>if</b> (<a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> &gt;= <var>0</var>)</td></tr>
+<tr><th id="509">509</th><td>            <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> += <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>;</td></tr>
+<tr><th id="510">510</th><td>    }</td></tr>
+<tr><th id="511">511</th><td>    <b>else</b> {</td></tr>
+<tr><th id="512">512</th><td>        <b>if</b> (<a class="local col6 ref" href="#76dir" title='dir' data-ref="76dir">dir</a> &gt; <var>0</var>)</td></tr>
+<tr><th id="513">513</th><td>            <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> = <a class="ref" href="stringlib/find.h.html#46" title='stringlib_find_slice' data-ref="stringlib_find_slice">stringlib_find_slice</a>(</td></tr>
+<tr><th id="514">514</th><td>                <a class="local col2 ref" href="#72str" title='str' data-ref="72str">str</a>, <a class="local col3 ref" href="#73len" title='len' data-ref="73len">len</a>,</td></tr>
+<tr><th id="515">515</th><td>                <a class="local col0 ref" href="#80sub" title='sub' data-ref="80sub">sub</a>, <a class="local col1 ref" href="#81sub_len" title='sub_len' data-ref="81sub_len">sub_len</a>, <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>, <a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a>);</td></tr>
+<tr><th id="516">516</th><td>        <b>else</b></td></tr>
+<tr><th id="517">517</th><td>            <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a> = <a class="ref" href="stringlib/find.h.html#54" title='stringlib_rfind_slice' data-ref="stringlib_rfind_slice">stringlib_rfind_slice</a>(</td></tr>
+<tr><th id="518">518</th><td>                <a class="local col2 ref" href="#72str" title='str' data-ref="72str">str</a>, <a class="local col3 ref" href="#73len" title='len' data-ref="73len">len</a>,</td></tr>
+<tr><th id="519">519</th><td>                <a class="local col0 ref" href="#80sub" title='sub' data-ref="80sub">sub</a>, <a class="local col1 ref" href="#81sub_len" title='sub_len' data-ref="81sub_len">sub_len</a>, <a class="local col2 ref" href="#82start" title='start' data-ref="82start">start</a>, <a class="local col3 ref" href="#83end" title='end' data-ref="83end">end</a>);</td></tr>
+<tr><th id="520">520</th><td>    }</td></tr>
+<tr><th id="521">521</th><td></td></tr>
+<tr><th id="522">522</th><td>    <b>if</b> (<a class="local col7 ref" href="#77subobj" title='subobj' data-ref="77subobj">subobj</a>)</td></tr>
+<tr><th id="523">523</th><td>        <a class="ref" href="../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col9 ref" href="#79subbuf" title='subbuf' data-ref="79subbuf">subbuf</a>);</td></tr>
+<tr><th id="524">524</th><td></td></tr>
+<tr><th id="525">525</th><td>    <b>return</b> <a class="local col4 ref" href="#84res" title='res' data-ref="84res">res</a>;</td></tr>
+<tr><th id="526">526</th><td>}</td></tr>
+<tr><th id="527">527</th><td></td></tr>
+<tr><th id="528">528</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_find__doc__[] = &quot;B.find(sub[, start[, end]]) -&gt; int\n\nReturn the lowest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nReturn -1 on failure.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_find__doc__" title='_Py_find__doc__' data-ref="_Py_find__doc__">_Py_find__doc__</dfn>,</td></tr>
+<tr><th id="529">529</th><td><q>"B.find(sub[, start[, end]]) -&gt; int\n\</q></td></tr>
+<tr><th id="530">530</th><td><q>\n\</q></td></tr>
+<tr><th id="531">531</th><td><q>Return the lowest index in B where subsection sub is found,\n\</q></td></tr>
+<tr><th id="532">532</th><td><q>such that sub is contained within B[start,end].  Optional\n\</q></td></tr>
+<tr><th id="533">533</th><td><q>arguments start and end are interpreted as in slice notation.\n\</q></td></tr>
+<tr><th id="534">534</th><td><q>\n\</q></td></tr>
+<tr><th id="535">535</th><td><q>Return -1 on failure."</q>);</td></tr>
+<tr><th id="536">536</th><td></td></tr>
+<tr><th id="537">537</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="538">538</th><td><dfn class="decl def" id="_Py_bytes_find" title='_Py_bytes_find' data-ref="_Py_bytes_find">_Py_bytes_find</dfn>(<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="85str" title='str' data-type='const char *' data-ref="85str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="86len" title='len' data-type='Py_ssize_t' data-ref="86len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="87args" title='args' data-type='PyObject *' data-ref="87args">args</dfn>)</td></tr>
+<tr><th id="539">539</th><td>{</td></tr>
+<tr><th id="540">540</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="88result" title='result' data-type='Py_ssize_t' data-ref="88result">result</dfn> = <a class="ref" href="#find_internal" title='find_internal' data-ref="find_internal">find_internal</a>(<a class="local col5 ref" href="#85str" title='str' data-ref="85str">str</a>, <a class="local col6 ref" href="#86len" title='len' data-ref="86len">len</a>, <q>"find"</q>, <a class="local col7 ref" href="#87args" title='args' data-ref="87args">args</a>, +<var>1</var>);</td></tr>
+<tr><th id="541">541</th><td>    <b>if</b> (<a class="local col8 ref" href="#88result" title='result' data-ref="88result">result</a> == -<var>2</var>)</td></tr>
+<tr><th id="542">542</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="543">543</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col8 ref" href="#88result" title='result' data-ref="88result">result</a>);</td></tr>
+<tr><th id="544">544</th><td>}</td></tr>
+<tr><th id="545">545</th><td></td></tr>
+<tr><th id="546">546</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_index__doc__[] = &quot;B.index(sub[, start[, end]]) -&gt; int\n\nReturn the lowest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nRaises ValueError when the subsection is not found.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_index__doc__" title='_Py_index__doc__' data-ref="_Py_index__doc__">_Py_index__doc__</dfn>,</td></tr>
+<tr><th id="547">547</th><td><q>"B.index(sub[, start[, end]]) -&gt; int\n\</q></td></tr>
+<tr><th id="548">548</th><td><q>\n\</q></td></tr>
+<tr><th id="549">549</th><td><q>Return the lowest index in B where subsection sub is found,\n\</q></td></tr>
+<tr><th id="550">550</th><td><q>such that sub is contained within B[start,end].  Optional\n\</q></td></tr>
+<tr><th id="551">551</th><td><q>arguments start and end are interpreted as in slice notation.\n\</q></td></tr>
+<tr><th id="552">552</th><td><q>\n\</q></td></tr>
+<tr><th id="553">553</th><td><q>Raises ValueError when the subsection is not found."</q>);</td></tr>
+<tr><th id="554">554</th><td></td></tr>
+<tr><th id="555">555</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="556">556</th><td><dfn class="decl def" id="_Py_bytes_index" title='_Py_bytes_index' data-ref="_Py_bytes_index">_Py_bytes_index</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="89str" title='str' data-type='const char *' data-ref="89str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="90len" title='len' data-type='Py_ssize_t' data-ref="90len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="91args" title='args' data-type='PyObject *' data-ref="91args">args</dfn>)</td></tr>
+<tr><th id="557">557</th><td>{</td></tr>
+<tr><th id="558">558</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="92result" title='result' data-type='Py_ssize_t' data-ref="92result">result</dfn> = <a class="ref" href="#find_internal" title='find_internal' data-ref="find_internal">find_internal</a>(<a class="local col9 ref" href="#89str" title='str' data-ref="89str">str</a>, <a class="local col0 ref" href="#90len" title='len' data-ref="90len">len</a>, <q>"index"</q>, <a class="local col1 ref" href="#91args" title='args' data-ref="91args">args</a>, +<var>1</var>);</td></tr>
+<tr><th id="559">559</th><td>    <b>if</b> (<a class="local col2 ref" href="#92result" title='result' data-ref="92result">result</a> == -<var>2</var>)</td></tr>
+<tr><th id="560">560</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="561">561</th><td>    <b>if</b> (<a class="local col2 ref" href="#92result" title='result' data-ref="92result">result</a> == -<var>1</var>) {</td></tr>
+<tr><th id="562">562</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="563">563</th><td>                        <q>"subsection not found"</q>);</td></tr>
+<tr><th id="564">564</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="565">565</th><td>    }</td></tr>
+<tr><th id="566">566</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col2 ref" href="#92result" title='result' data-ref="92result">result</a>);</td></tr>
+<tr><th id="567">567</th><td>}</td></tr>
+<tr><th id="568">568</th><td></td></tr>
+<tr><th id="569">569</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_rfind__doc__[] = &quot;B.rfind(sub[, start[, end]]) -&gt; int\n\nReturn the highest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nReturn -1 on failure.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_rfind__doc__" title='_Py_rfind__doc__' data-ref="_Py_rfind__doc__">_Py_rfind__doc__</dfn>,</td></tr>
+<tr><th id="570">570</th><td><q>"B.rfind(sub[, start[, end]]) -&gt; int\n\</q></td></tr>
+<tr><th id="571">571</th><td><q>\n\</q></td></tr>
+<tr><th id="572">572</th><td><q>Return the highest index in B where subsection sub is found,\n\</q></td></tr>
+<tr><th id="573">573</th><td><q>such that sub is contained within B[start,end].  Optional\n\</q></td></tr>
+<tr><th id="574">574</th><td><q>arguments start and end are interpreted as in slice notation.\n\</q></td></tr>
+<tr><th id="575">575</th><td><q>\n\</q></td></tr>
+<tr><th id="576">576</th><td><q>Return -1 on failure."</q>);</td></tr>
+<tr><th id="577">577</th><td></td></tr>
+<tr><th id="578">578</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="579">579</th><td><dfn class="decl def" id="_Py_bytes_rfind" title='_Py_bytes_rfind' data-ref="_Py_bytes_rfind">_Py_bytes_rfind</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="93str" title='str' data-type='const char *' data-ref="93str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="94len" title='len' data-type='Py_ssize_t' data-ref="94len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="95args" title='args' data-type='PyObject *' data-ref="95args">args</dfn>)</td></tr>
+<tr><th id="580">580</th><td>{</td></tr>
+<tr><th id="581">581</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="96result" title='result' data-type='Py_ssize_t' data-ref="96result">result</dfn> = <a class="ref" href="#find_internal" title='find_internal' data-ref="find_internal">find_internal</a>(<a class="local col3 ref" href="#93str" title='str' data-ref="93str">str</a>, <a class="local col4 ref" href="#94len" title='len' data-ref="94len">len</a>, <q>"rfind"</q>, <a class="local col5 ref" href="#95args" title='args' data-ref="95args">args</a>, -<var>1</var>);</td></tr>
+<tr><th id="582">582</th><td>    <b>if</b> (<a class="local col6 ref" href="#96result" title='result' data-ref="96result">result</a> == -<var>2</var>)</td></tr>
+<tr><th id="583">583</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="584">584</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col6 ref" href="#96result" title='result' data-ref="96result">result</a>);</td></tr>
+<tr><th id="585">585</th><td>}</td></tr>
+<tr><th id="586">586</th><td></td></tr>
+<tr><th id="587">587</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_rindex__doc__[] = &quot;B.rindex(sub[, start[, end]]) -&gt; int\n\nReturn the highest index in B where subsection sub is found,\nsuch that sub is contained within B[start,end].  Optional\narguments start and end are interpreted as in slice notation.\n\nRaise ValueError when the subsection is not found.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_rindex__doc__" title='_Py_rindex__doc__' data-ref="_Py_rindex__doc__">_Py_rindex__doc__</dfn>,</td></tr>
+<tr><th id="588">588</th><td><q>"B.rindex(sub[, start[, end]]) -&gt; int\n\</q></td></tr>
+<tr><th id="589">589</th><td><q>\n\</q></td></tr>
+<tr><th id="590">590</th><td><q>Return the highest index in B where subsection sub is found,\n\</q></td></tr>
+<tr><th id="591">591</th><td><q>such that sub is contained within B[start,end].  Optional\n\</q></td></tr>
+<tr><th id="592">592</th><td><q>arguments start and end are interpreted as in slice notation.\n\</q></td></tr>
+<tr><th id="593">593</th><td><q>\n\</q></td></tr>
+<tr><th id="594">594</th><td><q>Raise ValueError when the subsection is not found."</q>);</td></tr>
+<tr><th id="595">595</th><td></td></tr>
+<tr><th id="596">596</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="597">597</th><td><dfn class="decl def" id="_Py_bytes_rindex" title='_Py_bytes_rindex' data-ref="_Py_bytes_rindex">_Py_bytes_rindex</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="97str" title='str' data-type='const char *' data-ref="97str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="98len" title='len' data-type='Py_ssize_t' data-ref="98len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="99args" title='args' data-type='PyObject *' data-ref="99args">args</dfn>)</td></tr>
+<tr><th id="598">598</th><td>{</td></tr>
+<tr><th id="599">599</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="100result" title='result' data-type='Py_ssize_t' data-ref="100result">result</dfn> = <a class="ref" href="#find_internal" title='find_internal' data-ref="find_internal">find_internal</a>(<a class="local col7 ref" href="#97str" title='str' data-ref="97str">str</a>, <a class="local col8 ref" href="#98len" title='len' data-ref="98len">len</a>, <q>"rindex"</q>, <a class="local col9 ref" href="#99args" title='args' data-ref="99args">args</a>, -<var>1</var>);</td></tr>
+<tr><th id="600">600</th><td>    <b>if</b> (<a class="local col0 ref" href="#100result" title='result' data-ref="100result">result</a> == -<var>2</var>)</td></tr>
+<tr><th id="601">601</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="602">602</th><td>    <b>if</b> (<a class="local col0 ref" href="#100result" title='result' data-ref="100result">result</a> == -<var>1</var>) {</td></tr>
+<tr><th id="603">603</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>,</td></tr>
+<tr><th id="604">604</th><td>                        <q>"subsection not found"</q>);</td></tr>
+<tr><th id="605">605</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="606">606</th><td>    }</td></tr>
+<tr><th id="607">607</th><td>    <b>return</b> <a class="ref" href="../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col0 ref" href="#100result" title='result' data-ref="100result">result</a>);</td></tr>
+<tr><th id="608">608</th><td>}</td></tr>
+<tr><th id="609">609</th><td></td></tr>
+<tr><th id="610">610</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_count__doc__[] = &quot;B.count(sub[, start[, end]]) -&gt; int\n\nReturn the number of non-overlapping occurrences of subsection sub in\nbytes B[start:end].  Optional arguments start and end are interpreted\nas in slice notation.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_count__doc__" title='_Py_count__doc__' data-ref="_Py_count__doc__">_Py_count__doc__</dfn>,</td></tr>
+<tr><th id="611">611</th><td><q>"B.count(sub[, start[, end]]) -&gt; int\n\</q></td></tr>
+<tr><th id="612">612</th><td><q>\n\</q></td></tr>
+<tr><th id="613">613</th><td><q>Return the number of non-overlapping occurrences of subsection sub in\n\</q></td></tr>
+<tr><th id="614">614</th><td><q>bytes B[start:end].  Optional arguments start and end are interpreted\n\</q></td></tr>
+<tr><th id="615">615</th><td><q>as in slice notation."</q>);</td></tr>
+<tr><th id="616">616</th><td></td></tr>
+<tr><th id="617">617</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="618">618</th><td><dfn class="decl def" id="_Py_bytes_count" title='_Py_bytes_count' data-ref="_Py_bytes_count">_Py_bytes_count</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="101str" title='str' data-type='const char *' data-ref="101str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="102len" title='len' data-type='Py_ssize_t' data-ref="102len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="103args" title='args' data-type='PyObject *' data-ref="103args">args</dfn>)</td></tr>
+<tr><th id="619">619</th><td>{</td></tr>
+<tr><th id="620">620</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="104sub_obj" title='sub_obj' data-type='PyObject *' data-ref="104sub_obj">sub_obj</dfn>;</td></tr>
+<tr><th id="621">621</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="105sub" title='sub' data-type='const char *' data-ref="105sub">sub</dfn>;</td></tr>
+<tr><th id="622">622</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="106sub_len" title='sub_len' data-type='Py_ssize_t' data-ref="106sub_len">sub_len</dfn>;</td></tr>
+<tr><th id="623">623</th><td>    <em>char</em> <dfn class="local col7 decl" id="107byte" title='byte' data-type='char' data-ref="107byte">byte</dfn>;</td></tr>
+<tr><th id="624">624</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col8 decl" id="108start" title='start' data-type='Py_ssize_t' data-ref="108start">start</dfn> = <var>0</var>, <dfn class="local col9 decl" id="109end" title='end' data-type='Py_ssize_t' data-ref="109end">end</dfn> = <a class="macro" href="../Include/pyport.h.html#109" title="((Py_ssize_t)(((size_t)-1)&gt;&gt;1))" data-ref="_M/PY_SSIZE_T_MAX">PY_SSIZE_T_MAX</a>;</td></tr>
+<tr><th id="625">625</th><td></td></tr>
+<tr><th id="626">626</th><td>    <a class="typedef" href="../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col0 decl" id="110vsub" title='vsub' data-type='Py_buffer' data-ref="110vsub">vsub</dfn>;</td></tr>
+<tr><th id="627">627</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="111count_obj" title='count_obj' data-type='PyObject *' data-ref="111count_obj">count_obj</dfn>;</td></tr>
+<tr><th id="628">628</th><td></td></tr>
+<tr><th id="629">629</th><td>    <b>if</b> (!<a class="ref" href="#parse_args_finds_byte" title='parse_args_finds_byte' data-ref="parse_args_finds_byte">parse_args_finds_byte</a>(<q>"count"</q>, <a class="local col3 ref" href="#103args" title='args' data-ref="103args">args</a>,</td></tr>
+<tr><th id="630">630</th><td>                               &amp;<a class="local col4 ref" href="#104sub_obj" title='sub_obj' data-ref="104sub_obj">sub_obj</a>, &amp;<a class="local col7 ref" href="#107byte" title='byte' data-ref="107byte">byte</a>, &amp;<a class="local col8 ref" href="#108start" title='start' data-ref="108start">start</a>, &amp;<a class="local col9 ref" href="#109end" title='end' data-ref="109end">end</a>))</td></tr>
+<tr><th id="631">631</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="632">632</th><td></td></tr>
+<tr><th id="633">633</th><td>    <b>if</b> (<a class="local col4 ref" href="#104sub_obj" title='sub_obj' data-ref="104sub_obj">sub_obj</a>) {</td></tr>
+<tr><th id="634">634</th><td>        <b>if</b> (<a class="ref" href="../Include/abstract.h.html#PyObject_GetBuffer" title='PyObject_GetBuffer' data-ref="PyObject_GetBuffer">PyObject_GetBuffer</a>(<a class="local col4 ref" href="#104sub_obj" title='sub_obj' data-ref="104sub_obj">sub_obj</a>, &amp;<a class="local col0 ref" href="#110vsub" title='vsub' data-ref="110vsub">vsub</a>, <a class="macro" href="../Include/object.h.html#204" title="0" data-ref="_M/PyBUF_SIMPLE">PyBUF_SIMPLE</a>) != <var>0</var>)</td></tr>
+<tr><th id="635">635</th><td>            <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="636">636</th><td></td></tr>
+<tr><th id="637">637</th><td>        <a class="local col5 ref" href="#105sub" title='sub' data-ref="105sub">sub</a> = <a class="local col0 ref" href="#110vsub" title='vsub' data-ref="110vsub">vsub</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::buf" title='bufferinfo::buf' data-ref="bufferinfo::buf">buf</a>;</td></tr>
+<tr><th id="638">638</th><td>        <a class="local col6 ref" href="#106sub_len" title='sub_len' data-ref="106sub_len">sub_len</a> = <a class="local col0 ref" href="#110vsub" title='vsub' data-ref="110vsub">vsub</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a>;</td></tr>
+<tr><th id="639">639</th><td>    }</td></tr>
+<tr><th id="640">640</th><td>    <b>else</b> {</td></tr>
+<tr><th id="641">641</th><td>        <a class="local col5 ref" href="#105sub" title='sub' data-ref="105sub">sub</a> = &amp;<a class="local col7 ref" href="#107byte" title='byte' data-ref="107byte">byte</a>;</td></tr>
+<tr><th id="642">642</th><td>        <a class="local col6 ref" href="#106sub_len" title='sub_len' data-ref="106sub_len">sub_len</a> = <var>1</var>;</td></tr>
+<tr><th id="643">643</th><td>    }</td></tr>
+<tr><th id="644">644</th><td></td></tr>
+<tr><th id="645">645</th><td>    <a class="macro" href="#454" title="if (end &gt; len) end = len; else if (end &lt; 0) { end += len; if (end &lt; 0) end = 0; } if (start &lt; 0) { start += len; if (start &lt; 0) start = 0; }" data-ref="_M/ADJUST_INDICES">ADJUST_INDICES</a>(<a class="local col8 ref" href="#108start" title='start' data-ref="108start">start</a>, <a class="local col9 ref" href="#109end" title='end' data-ref="109end">end</a>, <a class="local col2 ref" href="#102len" title='len' data-ref="102len">len</a>);</td></tr>
+<tr><th id="646">646</th><td></td></tr>
+<tr><th id="647">647</th><td>    <a class="local col1 ref" href="#111count_obj" title='count_obj' data-ref="111count_obj">count_obj</a> = <a class="ref" href="../Include/longobject.h.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(</td></tr>
+<tr><th id="648">648</th><td>        <a class="ref" href="stringlib/count.h.html#8" title='stringlib_count' data-ref="stringlib_count">stringlib_count</a>(<a class="local col1 ref" href="#101str" title='str' data-ref="101str">str</a> + <a class="local col8 ref" href="#108start" title='start' data-ref="108start">start</a>, <a class="local col9 ref" href="#109end" title='end' data-ref="109end">end</a> - <a class="local col8 ref" href="#108start" title='start' data-ref="108start">start</a>, <a class="local col5 ref" href="#105sub" title='sub' data-ref="105sub">sub</a>, <a class="local col6 ref" href="#106sub_len" title='sub_len' data-ref="106sub_len">sub_len</a>, <a class="macro" href="../Include/pyport.h.html#109" title="((Py_ssize_t)(((size_t)-1)&gt;&gt;1))" data-ref="_M/PY_SSIZE_T_MAX">PY_SSIZE_T_MAX</a>)</td></tr>
+<tr><th id="649">649</th><td>        );</td></tr>
+<tr><th id="650">650</th><td></td></tr>
+<tr><th id="651">651</th><td>    <b>if</b> (<a class="local col4 ref" href="#104sub_obj" title='sub_obj' data-ref="104sub_obj">sub_obj</a>)</td></tr>
+<tr><th id="652">652</th><td>        <a class="ref" href="../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col0 ref" href="#110vsub" title='vsub' data-ref="110vsub">vsub</a>);</td></tr>
+<tr><th id="653">653</th><td></td></tr>
+<tr><th id="654">654</th><td>    <b>return</b> <a class="local col1 ref" href="#111count_obj" title='count_obj' data-ref="111count_obj">count_obj</a>;</td></tr>
+<tr><th id="655">655</th><td>}</td></tr>
+<tr><th id="656">656</th><td></td></tr>
+<tr><th id="657">657</th><td><em>int</em></td></tr>
+<tr><th id="658">658</th><td><dfn class="decl def" id="_Py_bytes_contains" title='_Py_bytes_contains' data-ref="_Py_bytes_contains">_Py_bytes_contains</dfn>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="112str" title='str' data-type='const char *' data-ref="112str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="113len" title='len' data-type='Py_ssize_t' data-ref="113len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="114arg" title='arg' data-type='PyObject *' data-ref="114arg">arg</dfn>)</td></tr>
+<tr><th id="659">659</th><td>{</td></tr>
+<tr><th id="660">660</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="115ival" title='ival' data-type='Py_ssize_t' data-ref="115ival">ival</dfn> = <a class="ref" href="../Include/abstract.h.html#PyNumber_AsSsize_t" title='PyNumber_AsSsize_t' data-ref="PyNumber_AsSsize_t">PyNumber_AsSsize_t</a>(<a class="local col4 ref" href="#114arg" title='arg' data-ref="114arg">arg</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="661">661</th><td>    <b>if</b> (<a class="local col5 ref" href="#115ival" title='ival' data-ref="115ival">ival</a> == -<var>1</var> &amp;&amp; <a class="ref" href="../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="662">662</th><td>        <a class="typedef" href="../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col6 decl" id="116varg" title='varg' data-type='Py_buffer' data-ref="116varg">varg</dfn>;</td></tr>
+<tr><th id="663">663</th><td>        <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="117pos" title='pos' data-type='Py_ssize_t' data-ref="117pos">pos</dfn>;</td></tr>
+<tr><th id="664">664</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_Clear" title='PyErr_Clear' data-ref="PyErr_Clear">PyErr_Clear</a>();</td></tr>
+<tr><th id="665">665</th><td>        <b>if</b> (<a class="ref" href="../Include/abstract.h.html#PyObject_GetBuffer" title='PyObject_GetBuffer' data-ref="PyObject_GetBuffer">PyObject_GetBuffer</a>(<a class="local col4 ref" href="#114arg" title='arg' data-ref="114arg">arg</a>, &amp;<a class="local col6 ref" href="#116varg" title='varg' data-ref="116varg">varg</a>, <a class="macro" href="../Include/object.h.html#204" title="0" data-ref="_M/PyBUF_SIMPLE">PyBUF_SIMPLE</a>) != <var>0</var>)</td></tr>
+<tr><th id="666">666</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="667">667</th><td>        <a class="local col7 ref" href="#117pos" title='pos' data-ref="117pos">pos</a> = <a class="ref" href="stringlib/find.h.html#8" title='stringlib_find' data-ref="stringlib_find">stringlib_find</a>(<a class="local col2 ref" href="#112str" title='str' data-ref="112str">str</a>, <a class="local col3 ref" href="#113len" title='len' data-ref="113len">len</a>,</td></tr>
+<tr><th id="668">668</th><td>                             <a class="local col6 ref" href="#116varg" title='varg' data-ref="116varg">varg</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::buf" title='bufferinfo::buf' data-ref="bufferinfo::buf">buf</a>, <a class="local col6 ref" href="#116varg" title='varg' data-ref="116varg">varg</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a>, <var>0</var>);</td></tr>
+<tr><th id="669">669</th><td>        <a class="ref" href="../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col6 ref" href="#116varg" title='varg' data-ref="116varg">varg</a>);</td></tr>
+<tr><th id="670">670</th><td>        <b>return</b> <a class="local col7 ref" href="#117pos" title='pos' data-ref="117pos">pos</a> &gt;= <var>0</var>;</td></tr>
+<tr><th id="671">671</th><td>    }</td></tr>
+<tr><th id="672">672</th><td>    <b>if</b> (<a class="local col5 ref" href="#115ival" title='ival' data-ref="115ival">ival</a> &lt; <var>0</var> || <a class="local col5 ref" href="#115ival" title='ival' data-ref="115ival">ival</a> &gt;= <var>256</var>) {</td></tr>
+<tr><th id="673">673</th><td>        <a class="ref" href="../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_ValueError" title='PyExc_ValueError' data-ref="PyExc_ValueError">PyExc_ValueError</a>, <q>"byte must be in range(0, 256)"</q>);</td></tr>
+<tr><th id="674">674</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="675">675</th><td>    }</td></tr>
+<tr><th id="676">676</th><td></td></tr>
+<tr><th id="677">677</th><td>    <b>return</b> <a class="ref" href="../../include/string.h.html#memchr" title='memchr' data-ref="memchr">memchr</a>(<a class="local col2 ref" href="#112str" title='str' data-ref="112str">str</a>, (<em>int</em>) <a class="local col5 ref" href="#115ival" title='ival' data-ref="115ival">ival</a>, <a class="local col3 ref" href="#113len" title='len' data-ref="113len">len</a>) != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="678">678</th><td>}</td></tr>
+<tr><th id="679">679</th><td></td></tr>
+<tr><th id="680">680</th><td></td></tr>
+<tr><th id="681">681</th><td><i  data-doc="tailmatch">/* Matches the end (direction &gt;= 0) or start (direction &lt; 0) of the buffer</i></td></tr>
+<tr><th id="682">682</th><td><i  data-doc="tailmatch"> * against substr, using the start and end arguments. Returns</i></td></tr>
+<tr><th id="683">683</th><td><i  data-doc="tailmatch"> * -1 on error, 0 if not found and 1 if found.</i></td></tr>
+<tr><th id="684">684</th><td><i  data-doc="tailmatch"> */</i></td></tr>
+<tr><th id="685">685</th><td><em>static</em> <em>int</em></td></tr>
+<tr><th id="686">686</th><td><dfn class="tu decl def" id="tailmatch" title='tailmatch' data-type='int tailmatch(const char * str, Py_ssize_t len, PyObject * substr, Py_ssize_t start, Py_ssize_t end, int direction)' data-ref="tailmatch">tailmatch</dfn>(<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="118str" title='str' data-type='const char *' data-ref="118str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="119len" title='len' data-type='Py_ssize_t' data-ref="119len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="120substr" title='substr' data-type='PyObject *' data-ref="120substr">substr</dfn>,</td></tr>
+<tr><th id="687">687</th><td>          <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col1 decl" id="121start" title='start' data-type='Py_ssize_t' data-ref="121start">start</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="122end" title='end' data-type='Py_ssize_t' data-ref="122end">end</dfn>, <em>int</em> <dfn class="local col3 decl" id="123direction" title='direction' data-type='int' data-ref="123direction">direction</dfn>)</td></tr>
+<tr><th id="688">688</th><td>{</td></tr>
+<tr><th id="689">689</th><td>    <a class="typedef" href="../Include/object.h.html#Py_buffer" title='Py_buffer' data-type='struct bufferinfo' data-ref="Py_buffer">Py_buffer</a> <dfn class="local col4 decl" id="124sub_view" title='sub_view' data-type='Py_buffer' data-ref="124sub_view">sub_view</dfn> = {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="690">690</th><td>    <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="125sub" title='sub' data-type='const char *' data-ref="125sub">sub</dfn>;</td></tr>
+<tr><th id="691">691</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col6 decl" id="126slen" title='slen' data-type='Py_ssize_t' data-ref="126slen">slen</dfn>;</td></tr>
+<tr><th id="692">692</th><td></td></tr>
+<tr><th id="693">693</th><td>    <b>if</b> (<a class="macro" href="../Include/bytesobject.h.html#47" title="((((((PyObject*)(substr))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 27))) != 0)" data-ref="_M/PyBytes_Check">PyBytes_Check</a>(<a class="local col0 ref" href="#120substr" title='substr' data-ref="120substr">substr</a>)) {</td></tr>
+<tr><th id="694">694</th><td>        <a class="local col5 ref" href="#125sub" title='sub' data-ref="125sub">sub</a> = <a class="macro" href="../Include/bytesobject.h.html#87" title="(((((((((PyObject*)(substr))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 27))) != 0)) ? (void) (0) : __assert_fail (&quot;PyBytes_Check(substr)&quot;, &quot;/home/jon/workspace/cpython/Objects/bytes_methods.c&quot;, 694, __PRETTY_FUNCTION__)), (((PyBytesObject *)(substr))-&gt;ob_sval))" data-ref="_M/PyBytes_AS_STRING">PyBytes_AS_STRING</a>(<a class="local col0 ref" href="#120substr" title='substr' data-ref="120substr">substr</a>);</td></tr>
+<tr><th id="695">695</th><td>        <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a> = <a class="macro" href="../Include/bytesobject.h.html#89" title="(((((((((PyObject*)(substr))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 27))) != 0)) ? (void) (0) : __assert_fail (&quot;PyBytes_Check(substr)&quot;, &quot;/home/jon/workspace/cpython/Objects/bytes_methods.c&quot;, 695, __PRETTY_FUNCTION__)),(((PyVarObject*)(substr))-&gt;ob_size))" data-ref="_M/PyBytes_GET_SIZE">PyBytes_GET_SIZE</a>(<a class="local col0 ref" href="#120substr" title='substr' data-ref="120substr">substr</a>);</td></tr>
+<tr><th id="696">696</th><td>    }</td></tr>
+<tr><th id="697">697</th><td>    <b>else</b> {</td></tr>
+<tr><th id="698">698</th><td>        <b>if</b> (<a class="ref" href="../Include/abstract.h.html#PyObject_GetBuffer" title='PyObject_GetBuffer' data-ref="PyObject_GetBuffer">PyObject_GetBuffer</a>(<a class="local col0 ref" href="#120substr" title='substr' data-ref="120substr">substr</a>, &amp;<a class="local col4 ref" href="#124sub_view" title='sub_view' data-ref="124sub_view">sub_view</a>, <a class="macro" href="../Include/object.h.html#204" title="0" data-ref="_M/PyBUF_SIMPLE">PyBUF_SIMPLE</a>) != <var>0</var>)</td></tr>
+<tr><th id="699">699</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="700">700</th><td>        <a class="local col5 ref" href="#125sub" title='sub' data-ref="125sub">sub</a> = <a class="local col4 ref" href="#124sub_view" title='sub_view' data-ref="124sub_view">sub_view</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::buf" title='bufferinfo::buf' data-ref="bufferinfo::buf">buf</a>;</td></tr>
+<tr><th id="701">701</th><td>        <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a> = <a class="local col4 ref" href="#124sub_view" title='sub_view' data-ref="124sub_view">sub_view</a>.<a class="ref" href="../Include/object.h.html#bufferinfo::len" title='bufferinfo::len' data-ref="bufferinfo::len">len</a>;</td></tr>
+<tr><th id="702">702</th><td>    }</td></tr>
+<tr><th id="703">703</th><td></td></tr>
+<tr><th id="704">704</th><td>    <a class="macro" href="#454" title="if (end &gt; len) end = len; else if (end &lt; 0) { end += len; if (end &lt; 0) end = 0; } if (start &lt; 0) { start += len; if (start &lt; 0) start = 0; }" data-ref="_M/ADJUST_INDICES">ADJUST_INDICES</a>(<a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>, <a class="local col2 ref" href="#122end" title='end' data-ref="122end">end</a>, <a class="local col9 ref" href="#119len" title='len' data-ref="119len">len</a>);</td></tr>
+<tr><th id="705">705</th><td></td></tr>
+<tr><th id="706">706</th><td>    <b>if</b> (<a class="local col3 ref" href="#123direction" title='direction' data-ref="123direction">direction</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="707">707</th><td>        <i>/* startswith */</i></td></tr>
+<tr><th id="708">708</th><td>        <b>if</b> (<a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a> + <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a> &gt; <a class="local col9 ref" href="#119len" title='len' data-ref="119len">len</a>)</td></tr>
+<tr><th id="709">709</th><td>            <b>goto</b> <a class="lbl" href="#127notfound" data-ref="127notfound">notfound</a>;</td></tr>
+<tr><th id="710">710</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="711">711</th><td>        <i>/* endswith */</i></td></tr>
+<tr><th id="712">712</th><td>        <b>if</b> (<a class="local col2 ref" href="#122end" title='end' data-ref="122end">end</a> - <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a> &lt; <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a> || <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a> &gt; <a class="local col9 ref" href="#119len" title='len' data-ref="119len">len</a>)</td></tr>
+<tr><th id="713">713</th><td>            <b>goto</b> <a class="lbl" href="#127notfound" data-ref="127notfound">notfound</a>;</td></tr>
+<tr><th id="714">714</th><td></td></tr>
+<tr><th id="715">715</th><td>        <b>if</b> (<a class="local col2 ref" href="#122end" title='end' data-ref="122end">end</a> - <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a> &gt; <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>)</td></tr>
+<tr><th id="716">716</th><td>            <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a> = <a class="local col2 ref" href="#122end" title='end' data-ref="122end">end</a> - <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a>;</td></tr>
+<tr><th id="717">717</th><td>    }</td></tr>
+<tr><th id="718">718</th><td>    <b>if</b> (<a class="local col2 ref" href="#122end" title='end' data-ref="122end">end</a> - <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a> &lt; <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a>)</td></tr>
+<tr><th id="719">719</th><td>        <b>goto</b> <a class="lbl" href="#127notfound" data-ref="127notfound">notfound</a>;</td></tr>
+<tr><th id="720">720</th><td>    <b>if</b> (<a class="ref" href="../../include/string.h.html#memcmp" title='memcmp' data-ref="memcmp">memcmp</a>(<a class="local col8 ref" href="#118str" title='str' data-ref="118str">str</a> + <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>, <a class="local col5 ref" href="#125sub" title='sub' data-ref="125sub">sub</a>, <a class="local col6 ref" href="#126slen" title='slen' data-ref="126slen">slen</a>) != <var>0</var>)</td></tr>
+<tr><th id="721">721</th><td>        <b>goto</b> <a class="lbl" href="#127notfound" data-ref="127notfound">notfound</a>;</td></tr>
+<tr><th id="722">722</th><td></td></tr>
+<tr><th id="723">723</th><td>    <a class="ref" href="../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col4 ref" href="#124sub_view" title='sub_view' data-ref="124sub_view">sub_view</a>);</td></tr>
+<tr><th id="724">724</th><td>    <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="725">725</th><td></td></tr>
+<tr><th id="726">726</th><td><dfn class="lbl" id="127notfound" data-ref="127notfound">notfound</dfn>:</td></tr>
+<tr><th id="727">727</th><td>    <a class="ref" href="../Include/abstract.h.html#PyBuffer_Release" title='PyBuffer_Release' data-ref="PyBuffer_Release">PyBuffer_Release</a>(&amp;<a class="local col4 ref" href="#124sub_view" title='sub_view' data-ref="124sub_view">sub_view</a>);</td></tr>
+<tr><th id="728">728</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="729">729</th><td>}</td></tr>
+<tr><th id="730">730</th><td></td></tr>
+<tr><th id="731">731</th><td><em>static</em> <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="732">732</th><td><dfn class="tu decl def" id="_Py_bytes_tailmatch" title='_Py_bytes_tailmatch' data-type='PyObject * _Py_bytes_tailmatch(const char * str, Py_ssize_t len, const char * function_name, PyObject * args, int direction)' data-ref="_Py_bytes_tailmatch">_Py_bytes_tailmatch</dfn>(<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="128str" title='str' data-type='const char *' data-ref="128str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="129len" title='len' data-type='Py_ssize_t' data-ref="129len">len</dfn>,</td></tr>
+<tr><th id="733">733</th><td>                    <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="130function_name" title='function_name' data-type='const char *' data-ref="130function_name">function_name</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="131args" title='args' data-type='PyObject *' data-ref="131args">args</dfn>,</td></tr>
+<tr><th id="734">734</th><td>                    <em>int</em> <dfn class="local col2 decl" id="132direction" title='direction' data-type='int' data-ref="132direction">direction</dfn>)</td></tr>
+<tr><th id="735">735</th><td>{</td></tr>
+<tr><th id="736">736</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col3 decl" id="133start" title='start' data-type='Py_ssize_t' data-ref="133start">start</dfn> = <var>0</var>;</td></tr>
+<tr><th id="737">737</th><td>    <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col4 decl" id="134end" title='end' data-type='Py_ssize_t' data-ref="134end">end</dfn> = <a class="macro" href="../Include/pyport.h.html#109" title="((Py_ssize_t)(((size_t)-1)&gt;&gt;1))" data-ref="_M/PY_SSIZE_T_MAX">PY_SSIZE_T_MAX</a>;</td></tr>
+<tr><th id="738">738</th><td>    <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="135subobj" title='subobj' data-type='PyObject *' data-ref="135subobj">subobj</dfn>;</td></tr>
+<tr><th id="739">739</th><td>    <em>int</em> <dfn class="local col6 decl" id="136result" title='result' data-type='int' data-ref="136result">result</dfn>;</td></tr>
+<tr><th id="740">740</th><td></td></tr>
+<tr><th id="741">741</th><td>    <b>if</b> (!<a class="ref" href="stringlib/find.h.html#86" title='stringlib_parse_args_finds' data-ref="stringlib_parse_args_finds">stringlib_parse_args_finds</a>(<a class="local col0 ref" href="#130function_name" title='function_name' data-ref="130function_name">function_name</a>, <a class="local col1 ref" href="#131args" title='args' data-ref="131args">args</a>, &amp;<a class="local col5 ref" href="#135subobj" title='subobj' data-ref="135subobj">subobj</a>, &amp;<a class="local col3 ref" href="#133start" title='start' data-ref="133start">start</a>, &amp;<a class="local col4 ref" href="#134end" title='end' data-ref="134end">end</a>))</td></tr>
+<tr><th id="742">742</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="743">743</th><td>    <b>if</b> (<a class="macro" href="../Include/tupleobject.h.html#39" title="((((((PyObject*)(subobj))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 26))) != 0)" data-ref="_M/PyTuple_Check">PyTuple_Check</a>(<a class="local col5 ref" href="#135subobj" title='subobj' data-ref="135subobj">subobj</a>)) {</td></tr>
+<tr><th id="744">744</th><td>        <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col7 decl" id="137i" title='i' data-type='Py_ssize_t' data-ref="137i">i</dfn>;</td></tr>
+<tr><th id="745">745</th><td>        <b>for</b> (<a class="local col7 ref" href="#137i" title='i' data-ref="137i">i</a> = <var>0</var>; <a class="local col7 ref" href="#137i" title='i' data-ref="137i">i</a> &lt; <a class="macro" href="../Include/tupleobject.h.html#59" title="(((((((((PyObject*)(subobj))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 26))) != 0)) ? (void) (0) : __assert_fail (&quot;PyTuple_Check(subobj)&quot;, &quot;/home/jon/workspace/cpython/Objects/bytes_methods.c&quot;, 745, __PRETTY_FUNCTION__)),(((PyVarObject*)(subobj))-&gt;ob_size))" data-ref="_M/PyTuple_GET_SIZE">PyTuple_GET_SIZE</a>(<a class="local col5 ref" href="#135subobj" title='subobj' data-ref="135subobj">subobj</a>); <a class="local col7 ref" href="#137i" title='i' data-ref="137i">i</a>++) {</td></tr>
+<tr><th id="746">746</th><td>            <a class="local col6 ref" href="#136result" title='result' data-ref="136result">result</a> = <a class="tu ref" href="#tailmatch" title='tailmatch' data-use='c' data-ref="tailmatch">tailmatch</a>(<a class="local col8 ref" href="#128str" title='str' data-ref="128str">str</a>, <a class="local col9 ref" href="#129len" title='len' data-ref="129len">len</a>, <a class="macro" href="../Include/tupleobject.h.html#58" title="(((PyTupleObject *)(subobj))-&gt;ob_item[i])" data-ref="_M/PyTuple_GET_ITEM">PyTuple_GET_ITEM</a>(<a class="local col5 ref" href="#135subobj" title='subobj' data-ref="135subobj">subobj</a>, <a class="local col7 ref" href="#137i" title='i' data-ref="137i">i</a>),</td></tr>
+<tr><th id="747">747</th><td>                               <a class="local col3 ref" href="#133start" title='start' data-ref="133start">start</a>, <a class="local col4 ref" href="#134end" title='end' data-ref="134end">end</a>, <a class="local col2 ref" href="#132direction" title='direction' data-ref="132direction">direction</a>);</td></tr>
+<tr><th id="748">748</th><td>            <b>if</b> (<a class="local col6 ref" href="#136result" title='result' data-ref="136result">result</a> == -<var>1</var>)</td></tr>
+<tr><th id="749">749</th><td>                <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="750">750</th><td>            <b>else</b> <b>if</b> (<a class="local col6 ref" href="#136result" title='result' data-ref="136result">result</a>) {</td></tr>
+<tr><th id="751">751</th><td>                <a class="macro" href="../Include/boolobject.h.html#25" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_TrueStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_TrueStruct)" data-ref="_M/Py_RETURN_TRUE">Py_RETURN_TRUE</a>;</td></tr>
+<tr><th id="752">752</th><td>            }</td></tr>
+<tr><th id="753">753</th><td>        }</td></tr>
+<tr><th id="754">754</th><td>        <a class="macro" href="../Include/boolobject.h.html#26" title="return ( _Py_RefTotal++ , ((PyObject *)(((PyObject *) &amp;_Py_FalseStruct)))-&gt;ob_refcnt++), ((PyObject *) &amp;_Py_FalseStruct)" data-ref="_M/Py_RETURN_FALSE">Py_RETURN_FALSE</a>;</td></tr>
+<tr><th id="755">755</th><td>    }</td></tr>
+<tr><th id="756">756</th><td>    <a class="local col6 ref" href="#136result" title='result' data-ref="136result">result</a> = <a class="tu ref" href="#tailmatch" title='tailmatch' data-use='c' data-ref="tailmatch">tailmatch</a>(<a class="local col8 ref" href="#128str" title='str' data-ref="128str">str</a>, <a class="local col9 ref" href="#129len" title='len' data-ref="129len">len</a>, <a class="local col5 ref" href="#135subobj" title='subobj' data-ref="135subobj">subobj</a>, <a class="local col3 ref" href="#133start" title='start' data-ref="133start">start</a>, <a class="local col4 ref" href="#134end" title='end' data-ref="134end">end</a>, <a class="local col2 ref" href="#132direction" title='direction' data-ref="132direction">direction</a>);</td></tr>
+<tr><th id="757">757</th><td>    <b>if</b> (<a class="local col6 ref" href="#136result" title='result' data-ref="136result">result</a> == -<var>1</var>) {</td></tr>
+<tr><th id="758">758</th><td>        <b>if</b> (<a class="ref" href="../Include/pyerrors.h.html#PyErr_ExceptionMatches" title='PyErr_ExceptionMatches' data-ref="PyErr_ExceptionMatches">PyErr_ExceptionMatches</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>))</td></tr>
+<tr><th id="759">759</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyErr_Format" title='PyErr_Format' data-ref="PyErr_Format">PyErr_Format</a>(<a class="ref" href="../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>,</td></tr>
+<tr><th id="760">760</th><td>                         <q>"%s first arg must be bytes or a tuple of bytes, "</q></td></tr>
+<tr><th id="761">761</th><td>                         <q>"not %s"</q>,</td></tr>
+<tr><th id="762">762</th><td>                         <a class="local col0 ref" href="#130function_name" title='function_name' data-ref="130function_name">function_name</a>, <a class="macro" href="../Include/object.h.html#118" title="(((PyObject*)(subobj))-&gt;ob_type)" data-ref="_M/Py_TYPE">Py_TYPE</a>(<a class="local col5 ref" href="#135subobj" title='subobj' data-ref="135subobj">subobj</a>)-&gt;<a class="ref" href="../Include/object.h.html#_typeobject::tp_name" title='_typeobject::tp_name' data-ref="_typeobject::tp_name">tp_name</a>);</td></tr>
+<tr><th id="763">763</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="764">764</th><td>    }</td></tr>
+<tr><th id="765">765</th><td>    <b>else</b></td></tr>
+<tr><th id="766">766</th><td>        <b>return</b> <a class="ref" href="../Include/boolobject.h.html#PyBool_FromLong" title='PyBool_FromLong' data-ref="PyBool_FromLong">PyBool_FromLong</a>(<a class="local col6 ref" href="#136result" title='result' data-ref="136result">result</a>);</td></tr>
+<tr><th id="767">767</th><td>}</td></tr>
+<tr><th id="768">768</th><td></td></tr>
+<tr><th id="769">769</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_startswith__doc__[] = &quot;B.startswith(prefix[, start[, end]]) -&gt; bool\n\nReturn True if B starts with the specified prefix, False otherwise.\nWith optional start, test B beginning at that position.\nWith optional end, stop comparing B at that position.\nprefix can also be a tuple of bytes to try.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_startswith__doc__" title='_Py_startswith__doc__' data-ref="_Py_startswith__doc__">_Py_startswith__doc__</dfn>,</td></tr>
+<tr><th id="770">770</th><td><q>"B.startswith(prefix[, start[, end]]) -&gt; bool\n\</q></td></tr>
+<tr><th id="771">771</th><td><q>\n\</q></td></tr>
+<tr><th id="772">772</th><td><q>Return True if B starts with the specified prefix, False otherwise.\n\</q></td></tr>
+<tr><th id="773">773</th><td><q>With optional start, test B beginning at that position.\n\</q></td></tr>
+<tr><th id="774">774</th><td><q>With optional end, stop comparing B at that position.\n\</q></td></tr>
+<tr><th id="775">775</th><td><q>prefix can also be a tuple of bytes to try."</q>);</td></tr>
+<tr><th id="776">776</th><td></td></tr>
+<tr><th id="777">777</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="778">778</th><td><dfn class="decl def" id="_Py_bytes_startswith" title='_Py_bytes_startswith' data-ref="_Py_bytes_startswith">_Py_bytes_startswith</dfn>(<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="138str" title='str' data-type='const char *' data-ref="138str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col9 decl" id="139len" title='len' data-type='Py_ssize_t' data-ref="139len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="140args" title='args' data-type='PyObject *' data-ref="140args">args</dfn>)</td></tr>
+<tr><th id="779">779</th><td>{</td></tr>
+<tr><th id="780">780</th><td>    <b>return</b> <a class="tu ref" href="#_Py_bytes_tailmatch" title='_Py_bytes_tailmatch' data-use='c' data-ref="_Py_bytes_tailmatch">_Py_bytes_tailmatch</a>(<a class="local col8 ref" href="#138str" title='str' data-ref="138str">str</a>, <a class="local col9 ref" href="#139len" title='len' data-ref="139len">len</a>, <q>"startswith"</q>, <a class="local col0 ref" href="#140args" title='args' data-ref="140args">args</a>, -<var>1</var>);</td></tr>
+<tr><th id="781">781</th><td>}</td></tr>
+<tr><th id="782">782</th><td></td></tr>
+<tr><th id="783">783</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_endswith__doc__[] = &quot;B.endswith(suffix[, start[, end]]) -&gt; bool\n\nReturn True if B ends with the specified suffix, False otherwise.\nWith optional start, test B beginning at that position.\nWith optional end, stop comparing B at that position.\nsuffix can also be a tuple of bytes to try.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_endswith__doc__" title='_Py_endswith__doc__' data-ref="_Py_endswith__doc__">_Py_endswith__doc__</dfn>,</td></tr>
+<tr><th id="784">784</th><td><q>"B.endswith(suffix[, start[, end]]) -&gt; bool\n\</q></td></tr>
+<tr><th id="785">785</th><td><q>\n\</q></td></tr>
+<tr><th id="786">786</th><td><q>Return True if B ends with the specified suffix, False otherwise.\n\</q></td></tr>
+<tr><th id="787">787</th><td><q>With optional start, test B beginning at that position.\n\</q></td></tr>
+<tr><th id="788">788</th><td><q>With optional end, stop comparing B at that position.\n\</q></td></tr>
+<tr><th id="789">789</th><td><q>suffix can also be a tuple of bytes to try."</q>);</td></tr>
+<tr><th id="790">790</th><td></td></tr>
+<tr><th id="791">791</th><td><a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="792">792</th><td><dfn class="decl def" id="_Py_bytes_endswith" title='_Py_bytes_endswith' data-ref="_Py_bytes_endswith">_Py_bytes_endswith</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="141str" title='str' data-type='const char *' data-ref="141str">str</dfn>, <a class="typedef" href="../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col2 decl" id="142len" title='len' data-type='Py_ssize_t' data-ref="142len">len</dfn>, <a class="typedef" href="../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="143args" title='args' data-type='PyObject *' data-ref="143args">args</dfn>)</td></tr>
+<tr><th id="793">793</th><td>{</td></tr>
+<tr><th id="794">794</th><td>    <b>return</b> <a class="tu ref" href="#_Py_bytes_tailmatch" title='_Py_bytes_tailmatch' data-use='c' data-ref="_Py_bytes_tailmatch">_Py_bytes_tailmatch</a>(<a class="local col1 ref" href="#141str" title='str' data-ref="141str">str</a>, <a class="local col2 ref" href="#142len" title='len' data-ref="142len">len</a>, <q>"endswith"</q>, <a class="local col3 ref" href="#143args" title='args' data-ref="143args">args</a>, +<var>1</var>);</td></tr>
+<tr><th id="795">795</th><td>}</td></tr>
+<tr><th id="796">796</th><td></td></tr>
+<tr><th id="797">797</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_expandtabs__doc__[] = &quot;B.expandtabs(tabsize=8) -&gt; copy of B\n\nReturn a copy of B where all tab characters are expanded using spaces.\nIf tabsize is not given, a tab size of 8 characters is assumed.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_expandtabs__doc__" title='_Py_expandtabs__doc__' data-ref="_Py_expandtabs__doc__">_Py_expandtabs__doc__</dfn>,</td></tr>
+<tr><th id="798">798</th><td><q>"B.expandtabs(tabsize=8) -&gt; copy of B\n\</q></td></tr>
+<tr><th id="799">799</th><td><q>\n\</q></td></tr>
+<tr><th id="800">800</th><td><q>Return a copy of B where all tab characters are expanded using spaces.\n\</q></td></tr>
+<tr><th id="801">801</th><td><q>If tabsize is not given, a tab size of 8 characters is assumed."</q>);</td></tr>
+<tr><th id="802">802</th><td></td></tr>
+<tr><th id="803">803</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_ljust__doc__[] = &quot;B.ljust(width[, fillchar]) -&gt; copy of B\n&quot;&quot;\n&quot;&quot;Return B left justified in a string of length width. Padding is\n&quot;&quot;done using the specified fill character (default is a space).&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_ljust__doc__" title='_Py_ljust__doc__' data-ref="_Py_ljust__doc__">_Py_ljust__doc__</dfn>,</td></tr>
+<tr><th id="804">804</th><td><q>"B.ljust(width[, fillchar]) -&gt; copy of B\n"</q></td></tr>
+<tr><th id="805">805</th><td><q>"\n"</q></td></tr>
+<tr><th id="806">806</th><td><q>"Return B left justified in a string of length width. Padding is\n"</q></td></tr>
+<tr><th id="807">807</th><td><q>"done using the specified fill character (default is a space)."</q>);</td></tr>
+<tr><th id="808">808</th><td></td></tr>
+<tr><th id="809">809</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_rjust__doc__[] = &quot;B.rjust(width[, fillchar]) -&gt; copy of B\n&quot;&quot;\n&quot;&quot;Return B right justified in a string of length width. Padding is\n&quot;&quot;done using the specified fill character (default is a space)&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_rjust__doc__" title='_Py_rjust__doc__' data-ref="_Py_rjust__doc__">_Py_rjust__doc__</dfn>,</td></tr>
+<tr><th id="810">810</th><td><q>"B.rjust(width[, fillchar]) -&gt; copy of B\n"</q></td></tr>
+<tr><th id="811">811</th><td><q>"\n"</q></td></tr>
+<tr><th id="812">812</th><td><q>"Return B right justified in a string of length width. Padding is\n"</q></td></tr>
+<tr><th id="813">813</th><td><q>"done using the specified fill character (default is a space)"</q>);</td></tr>
+<tr><th id="814">814</th><td></td></tr>
+<tr><th id="815">815</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_center__doc__[] = &quot;B.center(width[, fillchar]) -&gt; copy of B\n&quot;&quot;\n&quot;&quot;Return B centered in a string of length width.  Padding is\n&quot;&quot;done using the specified fill character (default is a space).&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_center__doc__" title='_Py_center__doc__' data-ref="_Py_center__doc__">_Py_center__doc__</dfn>,</td></tr>
+<tr><th id="816">816</th><td><q>"B.center(width[, fillchar]) -&gt; copy of B\n"</q></td></tr>
+<tr><th id="817">817</th><td><q>"\n"</q></td></tr>
+<tr><th id="818">818</th><td><q>"Return B centered in a string of length width.  Padding is\n"</q></td></tr>
+<tr><th id="819">819</th><td><q>"done using the specified fill character (default is a space)."</q>);</td></tr>
+<tr><th id="820">820</th><td></td></tr>
+<tr><th id="821">821</th><td><a class="macro" href="../Include/bytes_methods.h.html#64" title="const char _Py_zfill__doc__[] = &quot;B.zfill(width) -&gt; copy of B\n&quot;&quot;\n&quot;&quot;Pad a numeric string B with zeros on the left, to fill a field\n&quot;&quot;of the specified width.  B is never truncated.&quot;" data-ref="_M/PyDoc_STRVAR_shared">PyDoc_STRVAR_shared</a>(<dfn class="decl def" id="_Py_zfill__doc__" title='_Py_zfill__doc__' data-ref="_Py_zfill__doc__">_Py_zfill__doc__</dfn>,</td></tr>
+<tr><th id="822">822</th><td><q>"B.zfill(width) -&gt; copy of B\n"</q></td></tr>
+<tr><th id="823">823</th><td><q>"\n"</q></td></tr>
+<tr><th id="824">824</th><td><q>"Pad a numeric string B with zeros on the left, to fill a field\n"</q></td></tr>
+<tr><th id="825">825</th><td><q>"of the specified width.  B is never truncated."</q>);</td></tr>
+<tr><th id="826">826</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,57 @@
+<dec f='codebrowser/Objects/dict-common.h' l='41' type='dict_lookup_func'/>
+<use f='codebrowser/Objects/dictobject.c' l='544' u='w' c='new_keys_object'/>
+<use f='codebrowser/Objects/dictobject.c' l='740' u='w' c='lookdict_unicode'/>
+<use f='codebrowser/Objects/dictobject.c' l='785' u='w' c='lookdict_unicode_nodummy'/>
+<use f='codebrowser/Objects/dictobject.c' l='869' u='r' c='_PyDict_HasOnlyStringKeys'/>
+<use f='codebrowser/Objects/dictobject.c' l='967' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='971' u='r' c='insertdict'/>
+<use f='codebrowser/Objects/dictobject.c' l='1100' u='r' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1101' u='w' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1141' u='r' c='dictresize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1173' u='r' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='1176' u='r' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='1181' u='r' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='1195' u='w' c='make_keys_shared'/>
+<use f='codebrowser/Objects/dictobject.c' l='1272' u='r' c='PyDict_GetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='1279' u='r' c='PyDict_GetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='1304' u='r' c='_PyDict_GetItem_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1336' u='r' c='PyDict_GetItemWithError'/>
+<use f='codebrowser/Objects/dictobject.c' l='1375' u='r' c='_PyDict_LoadGlobal'/>
+<use f='codebrowser/Objects/dictobject.c' l='1382' u='r' c='_PyDict_LoadGlobal'/>
+<use f='codebrowser/Objects/dictobject.c' l='411' u='r' c='delitem_common'/>
+<use f='codebrowser/Objects/dictobject.c' l='412' u='w' c='delitem_common'/>
+<use f='codebrowser/Objects/dictobject.c' l='1491' u='r' c='_PyDict_DelItem_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1504' u='r' c='_PyDict_DelItem_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1534' u='r' c='_PyDict_DelItemIf'/>
+<use f='codebrowser/Objects/dictobject.c' l='1547' u='r' c='_PyDict_DelItemIf'/>
+<use f='codebrowser/Objects/dictobject.c' l='1694' u='r' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1711' u='r' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='411' u='r' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='412' u='w' c='_PyDict_Pop_KnownHash'/>
+<use f='codebrowser/Objects/dictobject.c' l='1977' u='r' c='dict_subscript'/>
+<use f='codebrowser/Objects/dictobject.c' l='2588' u='r' c='dict_equal'/>
+<use f='codebrowser/Objects/dictobject.c' l='2653' u='r' c='dict___contains__'/>
+<use f='codebrowser/Objects/dictobject.c' l='2685' u='r' c='dict_get_impl'/>
+<use f='codebrowser/Objects/dictobject.c' l='2719' u='r' c='PyDict_SetDefault'/>
+<use f='codebrowser/Objects/dictobject.c' l='2845' u='r' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='411' u='r' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='412' u='w' c='dict_popitem'/>
+<use f='codebrowser/Objects/dictobject.c' l='2887' u='r' c='dict_traverse'/>
+<use f='codebrowser/Objects/dictobject.c' l='3035' u='r' c='PyDict_Contains'/>
+<use f='codebrowser/Objects/dictobject.c' l='3049' u='r' c='_PyDict_Contains'/>
+<use f='codebrowser/Objects/dictobject.c' l='4183' u='w' c='_PyDict_NewKeysForClass'/>
+<offset>128</offset>
+<doc f='codebrowser/Objects/dict-common.h' l='28'>/* Function to lookup in the hash table (dk_indices):
+
+       - lookdict(): general-purpose, and may return DKIX_ERROR if (and
+         only if) a comparison raises an exception.
+
+       - lookdict_unicode(): specialized to Unicode string keys, comparison of
+         which can never raise an exception; that function can never return
+         DKIX_ERROR.
+
+       - lookdict_unicode_nodummy(): similar to lookdict_unicode() but further
+         specialized for Unicode string keys that cannot be the &lt;dummy&gt; value.
+
+       - lookdict_split(): Version of lookdict() for split tables. */</doc>
+<use f='codebrowser/Objects/odictobject.c' l='549' u='r' c='_odict_get_index_raw'/>

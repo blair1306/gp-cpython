@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pytime.h' l='40' type='time_t _PyLong_AsTime_t(PyObject * obj)'/>
+<doc f='codebrowser/Include/pytime.h' l='39'>/* Convert a PyLong to a time_t. */</doc>
+<use f='codebrowser/Modules/_datetimemodule.c' l='5165' u='c' c='local_timezone'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4587' u='c' c='split_py_long_to_s_and_ns'/>
+<def f='codebrowser/Python/pytime.c' l='38' ll='55' type='time_t _PyLong_AsTime_t(PyObject * obj)'/>
+<use f='codebrowser/Python/pytime.c' l='141' u='c' c='_PyTime_ObjectToDenominator'/>
+<use f='codebrowser/Python/pytime.c' l='170' u='c' c='_PyTime_ObjectToTime_t'/>

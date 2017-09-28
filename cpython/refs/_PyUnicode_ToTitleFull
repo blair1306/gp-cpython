@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2213' type='int _PyUnicode_ToTitleFull(Py_UCS4 ch, Py_UCS4 * res)'/>
+<def f='codebrowser/Objects/unicodectype.c' l='227' ll='241' type='int _PyUnicode_ToTitleFull(Py_UCS4 ch, Py_UCS4 * res)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9828' u='c' c='do_title'/>

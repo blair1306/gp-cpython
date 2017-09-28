@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>_cursesmodule.c.h source code [codebrowser/Modules/clinic/_cursesmodule.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/clinic/_cursesmodule.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Modules</a>/<a href='./'>clinic</a>/<a href='_cursesmodule.c.h.html'>_cursesmodule.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char curses_window_addch__doc__[] = &quot;addch([y, x,] ch, [attr])\n&quot;&quot;Paint character ch at (y, x) with attributes attr.\n&quot;&quot;\n&quot;&quot;  y\n&quot;&quot;    Y-coordinate.\n&quot;&quot;  x\n&quot;&quot;    X-coordinate.\n&quot;&quot;  ch\n&quot;&quot;    Character to add.\n&quot;&quot;  attr\n&quot;&quot;    Attributes for the character.\n&quot;&quot;\n&quot;&quot;Paint character ch at (y, x) with attributes attr,\n&quot;&quot;overwriting any character previously painted at that location.\n&quot;&quot;By default, the character position and attributes are the\n&quot;&quot;current settings for the window object.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="curses_window_addch__doc__" title='curses_window_addch__doc__' data-ref="curses_window_addch__doc__">curses_window_addch__doc__</dfn>,</td></tr>
+<tr><th id="6">6</th><td><q>"addch([y, x,] ch, [attr])\n"</q></td></tr>
+<tr><th id="7">7</th><td><q>"Paint character ch at (y, x) with attributes attr.\n"</q></td></tr>
+<tr><th id="8">8</th><td><q>"\n"</q></td></tr>
+<tr><th id="9">9</th><td><q>"  y\n"</q></td></tr>
+<tr><th id="10">10</th><td><q>"    Y-coordinate.\n"</q></td></tr>
+<tr><th id="11">11</th><td><q>"  x\n"</q></td></tr>
+<tr><th id="12">12</th><td><q>"    X-coordinate.\n"</q></td></tr>
+<tr><th id="13">13</th><td><q>"  ch\n"</q></td></tr>
+<tr><th id="14">14</th><td><q>"    Character to add.\n"</q></td></tr>
+<tr><th id="15">15</th><td><q>"  attr\n"</q></td></tr>
+<tr><th id="16">16</th><td><q>"    Attributes for the character.\n"</q></td></tr>
+<tr><th id="17">17</th><td><q>"\n"</q></td></tr>
+<tr><th id="18">18</th><td><q>"Paint character ch at (y, x) with attributes attr,\n"</q></td></tr>
+<tr><th id="19">19</th><td><q>"overwriting any character previously painted at that location.\n"</q></td></tr>
+<tr><th id="20">20</th><td><q>"By default, the character position and attributes are the\n"</q></td></tr>
+<tr><th id="21">21</th><td><q>"current settings for the window object."</q>);</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><u>#define <dfn class="macro" id="_M/CURSES_WINDOW_ADDCH_METHODDEF" data-ref="_M/CURSES_WINDOW_ADDCH_METHODDEF">CURSES_WINDOW_ADDCH_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="24">24</th><td><u>    {"addch", (PyCFunction)curses_window_addch, METH_VARARGS, curses_window_addch__doc__},</u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="27">27</th><td><a class="decl" href="../_cursesmodule.c.html#curses_window_addch_impl" title='curses_window_addch_impl' data-ref="curses_window_addch_impl" id="curses_window_addch_impl">curses_window_addch_impl</a>(<a class="typedef" href="../../Include/py_curses.h.html#PyCursesWindowObject" title='PyCursesWindowObject' data-type='struct PyCursesWindowObject' data-ref="PyCursesWindowObject">PyCursesWindowObject</a> *<dfn class="local col1 decl" id="11self" title='self' data-type='PyCursesWindowObject *' data-ref="11self">self</dfn>, <em>int</em> <dfn class="local col2 decl" id="12group_left_1" title='group_left_1' data-type='int' data-ref="12group_left_1">group_left_1</dfn>, <em>int</em> <dfn class="local col3 decl" id="13y" title='y' data-type='int' data-ref="13y">y</dfn>,</td></tr>
+<tr><th id="28">28</th><td>                         <em>int</em> <dfn class="local col4 decl" id="14x" title='x' data-type='int' data-ref="14x">x</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15ch" title='ch' data-type='PyObject *' data-ref="15ch">ch</dfn>, <em>int</em> <dfn class="local col6 decl" id="16group_right_1" title='group_right_1' data-type='int' data-ref="16group_right_1">group_right_1</dfn>, <em>long</em> <dfn class="local col7 decl" id="17attr" title='attr' data-type='long' data-ref="17attr">attr</dfn>);</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="31">31</th><td><dfn class="decl def" id="curses_window_addch" title='curses_window_addch' data-ref="curses_window_addch">curses_window_addch</dfn>(<a class="typedef" href="../../Include/py_curses.h.html#PyCursesWindowObject" title='PyCursesWindowObject' data-type='struct PyCursesWindowObject' data-ref="PyCursesWindowObject">PyCursesWindowObject</a> *<dfn class="local col8 decl" id="18self" title='self' data-type='PyCursesWindowObject *' data-ref="18self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19args" title='args' data-type='PyObject *' data-ref="19args">args</dfn>)</td></tr>
+<tr><th id="32">32</th><td>{</td></tr>
+<tr><th id="33">33</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20return_value" title='return_value' data-type='PyObject *' data-ref="20return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="34">34</th><td>    <em>int</em> <dfn class="local col1 decl" id="21group_left_1" title='group_left_1' data-type='int' data-ref="21group_left_1">group_left_1</dfn> = <var>0</var>;</td></tr>
+<tr><th id="35">35</th><td>    <em>int</em> <dfn class="local col2 decl" id="22y" title='y' data-type='int' data-ref="22y">y</dfn> = <var>0</var>;</td></tr>
+<tr><th id="36">36</th><td>    <em>int</em> <dfn class="local col3 decl" id="23x" title='x' data-type='int' data-ref="23x">x</dfn> = <var>0</var>;</td></tr>
+<tr><th id="37">37</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24ch" title='ch' data-type='PyObject *' data-ref="24ch">ch</dfn>;</td></tr>
+<tr><th id="38">38</th><td>    <em>int</em> <dfn class="local col5 decl" id="25group_right_1" title='group_right_1' data-type='int' data-ref="25group_right_1">group_right_1</dfn> = <var>0</var>;</td></tr>
+<tr><th id="39">39</th><td>    <em>long</em> <dfn class="local col6 decl" id="26attr" title='attr' data-type='long' data-ref="26attr">attr</dfn> = <var>0</var>;</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td>    <b>switch</b> (<a class="macro" href="../../Include/tupleobject.h.html#59" title="(((((((((PyObject*)(args))-&gt;ob_type))-&gt;tp_flags &amp; ((1UL &lt;&lt; 26))) != 0)) ? (void) (0) : __assert_fail (&quot;PyTuple_Check(args)&quot;, &quot;/home/jon/workspace/cpython/Modules/clinic/_cursesmodule.c.h&quot;, 41, __PRETTY_FUNCTION__)),(((PyVarObject*)(args))-&gt;ob_size))" data-ref="_M/PyTuple_GET_SIZE">PyTuple_GET_SIZE</a>(<a class="local col9 ref" href="#19args" title='args' data-ref="19args">args</a>)) {</td></tr>
+<tr><th id="42">42</th><td>        <b>case</b> <var>1</var>:</td></tr>
+<tr><th id="43">43</th><td>            <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#16" title="_PyArg_ParseTuple_SizeT" data-ref="_M/PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col9 ref" href="#19args" title='args' data-ref="19args">args</a>, <q>"O:addch"</q>, &amp;<a class="local col4 ref" href="#24ch" title='ch' data-ref="24ch">ch</a>)) {</td></tr>
+<tr><th id="44">44</th><td>                <b>goto</b> <a class="lbl" href="#27exit" data-ref="27exit">exit</a>;</td></tr>
+<tr><th id="45">45</th><td>            }</td></tr>
+<tr><th id="46">46</th><td>            <b>break</b>;</td></tr>
+<tr><th id="47">47</th><td>        <b>case</b> <var>2</var>:</td></tr>
+<tr><th id="48">48</th><td>            <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#16" title="_PyArg_ParseTuple_SizeT" data-ref="_M/PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col9 ref" href="#19args" title='args' data-ref="19args">args</a>, <q>"Ol:addch"</q>, &amp;<a class="local col4 ref" href="#24ch" title='ch' data-ref="24ch">ch</a>, &amp;<a class="local col6 ref" href="#26attr" title='attr' data-ref="26attr">attr</a>)) {</td></tr>
+<tr><th id="49">49</th><td>                <b>goto</b> <a class="lbl" href="#27exit" data-ref="27exit">exit</a>;</td></tr>
+<tr><th id="50">50</th><td>            }</td></tr>
+<tr><th id="51">51</th><td>            <a class="local col5 ref" href="#25group_right_1" title='group_right_1' data-ref="25group_right_1">group_right_1</a> = <var>1</var>;</td></tr>
+<tr><th id="52">52</th><td>            <b>break</b>;</td></tr>
+<tr><th id="53">53</th><td>        <b>case</b> <var>3</var>:</td></tr>
+<tr><th id="54">54</th><td>            <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#16" title="_PyArg_ParseTuple_SizeT" data-ref="_M/PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col9 ref" href="#19args" title='args' data-ref="19args">args</a>, <q>"iiO:addch"</q>, &amp;<a class="local col2 ref" href="#22y" title='y' data-ref="22y">y</a>, &amp;<a class="local col3 ref" href="#23x" title='x' data-ref="23x">x</a>, &amp;<a class="local col4 ref" href="#24ch" title='ch' data-ref="24ch">ch</a>)) {</td></tr>
+<tr><th id="55">55</th><td>                <b>goto</b> <a class="lbl" href="#27exit" data-ref="27exit">exit</a>;</td></tr>
+<tr><th id="56">56</th><td>            }</td></tr>
+<tr><th id="57">57</th><td>            <a class="local col1 ref" href="#21group_left_1" title='group_left_1' data-ref="21group_left_1">group_left_1</a> = <var>1</var>;</td></tr>
+<tr><th id="58">58</th><td>            <b>break</b>;</td></tr>
+<tr><th id="59">59</th><td>        <b>case</b> <var>4</var>:</td></tr>
+<tr><th id="60">60</th><td>            <b>if</b> (!<a class="macro" href="../../Include/modsupport.h.html#16" title="_PyArg_ParseTuple_SizeT" data-ref="_M/PyArg_ParseTuple">PyArg_ParseTuple</a>(<a class="local col9 ref" href="#19args" title='args' data-ref="19args">args</a>, <q>"iiOl:addch"</q>, &amp;<a class="local col2 ref" href="#22y" title='y' data-ref="22y">y</a>, &amp;<a class="local col3 ref" href="#23x" title='x' data-ref="23x">x</a>, &amp;<a class="local col4 ref" href="#24ch" title='ch' data-ref="24ch">ch</a>, &amp;<a class="local col6 ref" href="#26attr" title='attr' data-ref="26attr">attr</a>)) {</td></tr>
+<tr><th id="61">61</th><td>                <b>goto</b> <a class="lbl" href="#27exit" data-ref="27exit">exit</a>;</td></tr>
+<tr><th id="62">62</th><td>            }</td></tr>
+<tr><th id="63">63</th><td>            <a class="local col5 ref" href="#25group_right_1" title='group_right_1' data-ref="25group_right_1">group_right_1</a> = <var>1</var>;</td></tr>
+<tr><th id="64">64</th><td>            <a class="local col1 ref" href="#21group_left_1" title='group_left_1' data-ref="21group_left_1">group_left_1</a> = <var>1</var>;</td></tr>
+<tr><th id="65">65</th><td>            <b>break</b>;</td></tr>
+<tr><th id="66">66</th><td>        <b>default</b>:</td></tr>
+<tr><th id="67">67</th><td>            <a class="ref" href="../../Include/pyerrors.h.html#PyErr_SetString" title='PyErr_SetString' data-ref="PyErr_SetString">PyErr_SetString</a>(<a class="ref" href="../../Include/pyerrors.h.html#PyExc_TypeError" title='PyExc_TypeError' data-ref="PyExc_TypeError">PyExc_TypeError</a>, <q>"curses.window.addch requires 1 to 4 arguments"</q>);</td></tr>
+<tr><th id="68">68</th><td>            <b>goto</b> <a class="lbl" href="#27exit" data-ref="27exit">exit</a>;</td></tr>
+<tr><th id="69">69</th><td>    }</td></tr>
+<tr><th id="70">70</th><td>    <a class="local col0 ref" href="#20return_value" title='return_value' data-ref="20return_value">return_value</a> = <a class="ref" href="../_cursesmodule.c.html#curses_window_addch_impl" title='curses_window_addch_impl' data-ref="curses_window_addch_impl">curses_window_addch_impl</a>(<a class="local col8 ref" href="#18self" title='self' data-ref="18self">self</a>, <a class="local col1 ref" href="#21group_left_1" title='group_left_1' data-ref="21group_left_1">group_left_1</a>, <a class="local col2 ref" href="#22y" title='y' data-ref="22y">y</a>, <a class="local col3 ref" href="#23x" title='x' data-ref="23x">x</a>, <a class="local col4 ref" href="#24ch" title='ch' data-ref="24ch">ch</a>, <a class="local col5 ref" href="#25group_right_1" title='group_right_1' data-ref="25group_right_1">group_right_1</a>, <a class="local col6 ref" href="#26attr" title='attr' data-ref="26attr">attr</a>);</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><dfn class="lbl" id="27exit" data-ref="27exit">exit</dfn>:</td></tr>
+<tr><th id="73">73</th><td>    <b>return</b> <a class="local col0 ref" href="#20return_value" title='return_value' data-ref="20return_value">return_value</a>;</td></tr>
+<tr><th id="74">74</th><td>}</td></tr>
+<tr><th id="75">75</th><td><i>/*[clinic end generated code: output=13ffc5f8d79cbfbf input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="76">76</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../_cursesmodule.c.html'>codebrowser/Modules/_cursesmodule.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

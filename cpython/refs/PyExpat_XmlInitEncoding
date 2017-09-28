@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/expat/xmltok.h' l='283' macro='1' type='int PyExpat_XmlInitEncoding(INIT_ENCODING * , const ENCODING ** , const char * name)'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='1115' macro='1' u='c'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='3958' macro='1' u='c'/>
+<def f='codebrowser/Modules/expat/xmltok_ns.c' l='56' macro='1' type='int PyExpat_XmlInitEncoding(INIT_ENCODING * p, const ENCODING ** encPtr, const char * name)'/>

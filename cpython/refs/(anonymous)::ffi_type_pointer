@@ -1,0 +1,36 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='198' type='ffi_type'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='411' u='a' c='StructUnionType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='979' u='w' c='PyCPointerType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1480' u='w' c='PyCArrayType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1882' u='w' c='CreateSwappedType'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1991' u='w' c='PyCSimpleType_new'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2287' u='w' c='make_funcptrtype_dict'/>
+<offset>704</offset>
+<use f='codebrowser/Modules/_ctypes/callbacks.c' l='379' u='a' c='_ctypes_alloc_callback'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='724' u='a' c='_ctypes_get_ffi_type'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='47' u='m' c='PyCStgDict_dealloc'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='61' u='m' c='PyCStgDict_sizeof'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='73' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='78' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='110' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='113' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='114' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='118' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='119' u='m' c='PyCStgDict_clone'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='397' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='398' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='406' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='407' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='408' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='412' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='415' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='416' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='426' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='427' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='428' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='432' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='471' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='471' u='a' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='476' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='594' u='m' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='597' u='m' c='PyCStructUnionType_update_stgdict'/>

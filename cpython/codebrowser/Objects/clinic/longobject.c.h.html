@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>longobject.c.h source code [codebrowser/Objects/clinic/longobject.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/longobject.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='longobject.c.h.html'>longobject.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="6">6</th><td><a class="decl" href="../longobject.c.html#long_new_impl" title='long_new_impl' data-ref="long_new_impl" id="long_new_impl">long_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col1 decl" id="1type" title='type' data-type='PyTypeObject *' data-ref="1type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="2x" title='x' data-type='PyObject *' data-ref="2x">x</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="3obase" title='obase' data-type='PyObject *' data-ref="3obase">obase</dfn>);</td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="9">9</th><td><dfn class="decl def" id="long_new" title='long_new' data-ref="long_new">long_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col4 decl" id="4type" title='type' data-type='PyTypeObject *' data-ref="4type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="5args" title='args' data-type='PyObject *' data-ref="5args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="6kwargs" title='kwargs' data-type='PyObject *' data-ref="6kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="10">10</th><td>{</td></tr>
+<tr><th id="11">11</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="7return_value" title='return_value' data-type='PyObject *' data-ref="7return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="12">12</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col8 decl" id="8_keywords" title='_keywords' data-type='const char *const [3]' data-ref="8_keywords">_keywords</dfn>[] = {<q>""</q>, <q>"base"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="13">13</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col9 decl" id="9_parser" title='_parser' data-type='_PyArg_Parser' data-ref="9_parser">_parser</dfn> = {<q>"|OO:int"</q>, <a class="local col8 ref" href="#8_keywords" title='_keywords' data-ref="8_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="14">14</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="10x" title='x' data-type='PyObject *' data-ref="10x">x</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="15">15</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="11obase" title='obase' data-type='PyObject *' data-ref="11obase">obase</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col5 ref" href="#5args" title='args' data-ref="5args">args</a>, <a class="local col6 ref" href="#6kwargs" title='kwargs' data-ref="6kwargs">kwargs</a>, &amp;<a class="local col9 ref" href="#9_parser" title='_parser' data-ref="9_parser">_parser</a>,</td></tr>
+<tr><th id="18">18</th><td>        &amp;<a class="local col0 ref" href="#10x" title='x' data-ref="10x">x</a>, &amp;<a class="local col1 ref" href="#11obase" title='obase' data-ref="11obase">obase</a>)) {</td></tr>
+<tr><th id="19">19</th><td>        <b>goto</b> <a class="lbl" href="#12exit" data-ref="12exit">exit</a>;</td></tr>
+<tr><th id="20">20</th><td>    }</td></tr>
+<tr><th id="21">21</th><td>    <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a> = <a class="ref" href="../longobject.c.html#long_new_impl" title='long_new_impl' data-ref="long_new_impl">long_new_impl</a>(<a class="local col4 ref" href="#4type" title='type' data-ref="4type">type</a>, <a class="local col0 ref" href="#10x" title='x' data-ref="10x">x</a>, <a class="local col1 ref" href="#11obase" title='obase' data-ref="11obase">obase</a>);</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><dfn class="lbl" id="12exit" data-ref="12exit">exit</dfn>:</td></tr>
+<tr><th id="24">24</th><td>    <b>return</b> <a class="local col7 ref" href="#7return_value" title='return_value' data-ref="7return_value">return_value</a>;</td></tr>
+<tr><th id="25">25</th><td>}</td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char int___getnewargs____doc__[] = &quot;__getnewargs__($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="int___getnewargs____doc__" title='int___getnewargs____doc__' data-ref="int___getnewargs____doc__">int___getnewargs____doc__</dfn>,</td></tr>
+<tr><th id="28">28</th><td><q>"__getnewargs__($self, /)\n"</q></td></tr>
+<tr><th id="29">29</th><td><q>"--\n"</q></td></tr>
+<tr><th id="30">30</th><td><q>"\n"</q>);</td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#define <dfn class="macro" id="_M/INT___GETNEWARGS___METHODDEF" data-ref="_M/INT___GETNEWARGS___METHODDEF">INT___GETNEWARGS___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="33">33</th><td><u>    {"__getnewargs__", (PyCFunction)int___getnewargs__, METH_NOARGS, int___getnewargs____doc__},</u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="36">36</th><td><a class="decl" href="../longobject.c.html#int___getnewargs___impl" title='int___getnewargs___impl' data-ref="int___getnewargs___impl" id="int___getnewargs___impl">int___getnewargs___impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="13self" title='self' data-type='PyObject *' data-ref="13self">self</dfn>);</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="39">39</th><td><dfn class="decl def" id="int___getnewargs__" title='int___getnewargs__' data-ref="int___getnewargs__">int___getnewargs__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14self" title='self' data-type='PyObject *' data-ref="14self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="40">40</th><td>{</td></tr>
+<tr><th id="41">41</th><td>    <b>return</b> <a class="ref" href="../longobject.c.html#int___getnewargs___impl" title='int___getnewargs___impl' data-ref="int___getnewargs___impl">int___getnewargs___impl</a>(<a class="local col4 ref" href="#14self" title='self' data-ref="14self">self</a>);</td></tr>
+<tr><th id="42">42</th><td>}</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char int___format____doc__[] = &quot;__format__($self, format_spec, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="int___format____doc__" title='int___format____doc__' data-ref="int___format____doc__">int___format____doc__</dfn>,</td></tr>
+<tr><th id="45">45</th><td><q>"__format__($self, format_spec, /)\n"</q></td></tr>
+<tr><th id="46">46</th><td><q>"--\n"</q></td></tr>
+<tr><th id="47">47</th><td><q>"\n"</q>);</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/INT___FORMAT___METHODDEF" data-ref="_M/INT___FORMAT___METHODDEF">INT___FORMAT___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="50">50</th><td><u>    {"__format__", (PyCFunction)int___format__, METH_O, int___format____doc__},</u></td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="53">53</th><td><a class="decl" href="../longobject.c.html#int___format___impl" title='int___format___impl' data-ref="int___format___impl" id="int___format___impl">int___format___impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15self" title='self' data-type='PyObject *' data-ref="15self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="16format_spec" title='format_spec' data-type='PyObject *' data-ref="16format_spec">format_spec</dfn>);</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="56">56</th><td><dfn class="decl def" id="int___format__" title='int___format__' data-ref="int___format__">int___format__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="17self" title='self' data-type='PyObject *' data-ref="17self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18arg" title='arg' data-type='PyObject *' data-ref="18arg">arg</dfn>)</td></tr>
+<tr><th id="57">57</th><td>{</td></tr>
+<tr><th id="58">58</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19return_value" title='return_value' data-type='PyObject *' data-ref="19return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="59">59</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col0 decl" id="20format_spec" title='format_spec' data-type='PyObject *' data-ref="20format_spec">format_spec</dfn>;</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#PyArg_Parse" title='PyArg_Parse' data-ref="PyArg_Parse">PyArg_Parse</a>(<a class="local col8 ref" href="#18arg" title='arg' data-ref="18arg">arg</a>, <q>"U:__format__"</q>, &amp;<a class="local col0 ref" href="#20format_spec" title='format_spec' data-ref="20format_spec">format_spec</a>)) {</td></tr>
+<tr><th id="62">62</th><td>        <b>goto</b> <a class="lbl" href="#21exit" data-ref="21exit">exit</a>;</td></tr>
+<tr><th id="63">63</th><td>    }</td></tr>
+<tr><th id="64">64</th><td>    <a class="local col9 ref" href="#19return_value" title='return_value' data-ref="19return_value">return_value</a> = <a class="ref" href="../longobject.c.html#int___format___impl" title='int___format___impl' data-ref="int___format___impl">int___format___impl</a>(<a class="local col7 ref" href="#17self" title='self' data-ref="17self">self</a>, <a class="local col0 ref" href="#20format_spec" title='format_spec' data-ref="20format_spec">format_spec</a>);</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><dfn class="lbl" id="21exit" data-ref="21exit">exit</dfn>:</td></tr>
+<tr><th id="67">67</th><td>    <b>return</b> <a class="local col9 ref" href="#19return_value" title='return_value' data-ref="19return_value">return_value</a>;</td></tr>
+<tr><th id="68">68</th><td>}</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char int___sizeof____doc__[] = &quot;__sizeof__($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Returns size in memory, in bytes.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="int___sizeof____doc__" title='int___sizeof____doc__' data-ref="int___sizeof____doc__">int___sizeof____doc__</dfn>,</td></tr>
+<tr><th id="71">71</th><td><q>"__sizeof__($self, /)\n"</q></td></tr>
+<tr><th id="72">72</th><td><q>"--\n"</q></td></tr>
+<tr><th id="73">73</th><td><q>"\n"</q></td></tr>
+<tr><th id="74">74</th><td><q>"Returns size in memory, in bytes."</q>);</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><u>#define <dfn class="macro" id="_M/INT___SIZEOF___METHODDEF" data-ref="_M/INT___SIZEOF___METHODDEF">INT___SIZEOF___METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="77">77</th><td><u>    {"__sizeof__", (PyCFunction)int___sizeof__, METH_NOARGS, int___sizeof____doc__},</u></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><em>static</em> <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a></td></tr>
+<tr><th id="80">80</th><td><a class="decl" href="../longobject.c.html#int___sizeof___impl" title='int___sizeof___impl' data-ref="int___sizeof___impl" id="int___sizeof___impl">int___sizeof___impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="22self" title='self' data-type='PyObject *' data-ref="22self">self</dfn>);</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="83">83</th><td><dfn class="decl def" id="int___sizeof__" title='int___sizeof__' data-ref="int___sizeof__">int___sizeof__</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="23self" title='self' data-type='PyObject *' data-ref="23self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="84">84</th><td>{</td></tr>
+<tr><th id="85">85</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="24return_value" title='return_value' data-type='PyObject *' data-ref="24return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="86">86</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="25_return_value" title='_return_value' data-type='Py_ssize_t' data-ref="25_return_value">_return_value</dfn>;</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td>    <a class="local col5 ref" href="#25_return_value" title='_return_value' data-ref="25_return_value">_return_value</a> = <a class="ref" href="../longobject.c.html#int___sizeof___impl" title='int___sizeof___impl' data-ref="int___sizeof___impl">int___sizeof___impl</a>(<a class="local col3 ref" href="#23self" title='self' data-ref="23self">self</a>);</td></tr>
+<tr><th id="89">89</th><td>    <b>if</b> ((<a class="local col5 ref" href="#25_return_value" title='_return_value' data-ref="25_return_value">_return_value</a> == -<var>1</var>) &amp;&amp; <a class="ref" href="../../Include/pyerrors.h.html#PyErr_Occurred" title='PyErr_Occurred' data-ref="PyErr_Occurred">PyErr_Occurred</a>()) {</td></tr>
+<tr><th id="90">90</th><td>        <b>goto</b> <a class="lbl" href="#26exit" data-ref="26exit">exit</a>;</td></tr>
+<tr><th id="91">91</th><td>    }</td></tr>
+<tr><th id="92">92</th><td>    <a class="local col4 ref" href="#24return_value" title='return_value' data-ref="24return_value">return_value</a> = <a class="ref" href="../longobject.c.html#PyLong_FromSsize_t" title='PyLong_FromSsize_t' data-ref="PyLong_FromSsize_t">PyLong_FromSsize_t</a>(<a class="local col5 ref" href="#25_return_value" title='_return_value' data-ref="25_return_value">_return_value</a>);</td></tr>
+<tr><th id="93">93</th><td></td></tr>
+<tr><th id="94">94</th><td><dfn class="lbl" id="26exit" data-ref="26exit">exit</dfn>:</td></tr>
+<tr><th id="95">95</th><td>    <b>return</b> <a class="local col4 ref" href="#24return_value" title='return_value' data-ref="24return_value">return_value</a>;</td></tr>
+<tr><th id="96">96</th><td>}</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char int_bit_length__doc__[] = &quot;bit_length($self, /)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Number of bits necessary to represent self in binary.\n&quot;&quot;\n&quot;&quot;&gt;&gt;&gt; bin(37)\n&quot;&quot;\&apos;0b100101\&apos;\n&quot;&quot;&gt;&gt;&gt; (37).bit_length()\n&quot;&quot;6&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="int_bit_length__doc__" title='int_bit_length__doc__' data-ref="int_bit_length__doc__">int_bit_length__doc__</dfn>,</td></tr>
+<tr><th id="99">99</th><td><q>"bit_length($self, /)\n"</q></td></tr>
+<tr><th id="100">100</th><td><q>"--\n"</q></td></tr>
+<tr><th id="101">101</th><td><q>"\n"</q></td></tr>
+<tr><th id="102">102</th><td><q>"Number of bits necessary to represent self in binary.\n"</q></td></tr>
+<tr><th id="103">103</th><td><q>"\n"</q></td></tr>
+<tr><th id="104">104</th><td><q>"&gt;&gt;&gt; bin(37)\n"</q></td></tr>
+<tr><th id="105">105</th><td><q>"\'0b100101\'\n"</q></td></tr>
+<tr><th id="106">106</th><td><q>"&gt;&gt;&gt; (37).bit_length()\n"</q></td></tr>
+<tr><th id="107">107</th><td><q>"6"</q>);</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><u>#define <dfn class="macro" id="_M/INT_BIT_LENGTH_METHODDEF" data-ref="_M/INT_BIT_LENGTH_METHODDEF">INT_BIT_LENGTH_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="110">110</th><td><u>    {"bit_length", (PyCFunction)int_bit_length, METH_NOARGS, int_bit_length__doc__},</u></td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="113">113</th><td><a class="decl" href="../longobject.c.html#int_bit_length_impl" title='int_bit_length_impl' data-ref="int_bit_length_impl" id="int_bit_length_impl">int_bit_length_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="27self" title='self' data-type='PyObject *' data-ref="27self">self</dfn>);</td></tr>
+<tr><th id="114">114</th><td></td></tr>
+<tr><th id="115">115</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="116">116</th><td><dfn class="decl def" id="int_bit_length" title='int_bit_length' data-ref="int_bit_length">int_bit_length</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="28self" title='self' data-type='PyObject *' data-ref="28self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<a class="macro" href="../../Include/pymacro.h.html#93" title="_unused_ignored __attribute__((unused))" data-ref="_M/Py_UNUSED">Py_UNUSED</a>(ignored))</td></tr>
+<tr><th id="117">117</th><td>{</td></tr>
+<tr><th id="118">118</th><td>    <b>return</b> <a class="ref" href="../longobject.c.html#int_bit_length_impl" title='int_bit_length_impl' data-ref="int_bit_length_impl">int_bit_length_impl</a>(<a class="local col8 ref" href="#28self" title='self' data-ref="28self">self</a>);</td></tr>
+<tr><th id="119">119</th><td>}</td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char int_to_bytes__doc__[] = &quot;to_bytes($self, /, length, byteorder, *, signed=False)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return an array of bytes representing an integer.\n&quot;&quot;\n&quot;&quot;  length\n&quot;&quot;    Length of bytes object to use.  An OverflowError is raised if the\n&quot;&quot;    integer is not representable with the given number of bytes.\n&quot;&quot;  byteorder\n&quot;&quot;    The byte order used to represent the integer.  If byteorder is \&apos;big\&apos;,\n&quot;&quot;    the most significant byte is at the beginning of the byte array.  If\n&quot;&quot;    byteorder is \&apos;little\&apos;, the most significant byte is at the end of the\n&quot;&quot;    byte array.  To request the native byte order of the host system, use\n&quot;&quot;    `sys.byteorder\&apos; as the byte order value.\n&quot;&quot;  signed\n&quot;&quot;    Determines whether two\&apos;s complement is used to represent the integer.\n&quot;&quot;    If signed is False and a negative integer is given, an OverflowError\n&quot;&quot;    is raised.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="int_to_bytes__doc__" title='int_to_bytes__doc__' data-ref="int_to_bytes__doc__">int_to_bytes__doc__</dfn>,</td></tr>
+<tr><th id="122">122</th><td><q>"to_bytes($self, /, length, byteorder, *, signed=False)\n"</q></td></tr>
+<tr><th id="123">123</th><td><q>"--\n"</q></td></tr>
+<tr><th id="124">124</th><td><q>"\n"</q></td></tr>
+<tr><th id="125">125</th><td><q>"Return an array of bytes representing an integer.\n"</q></td></tr>
+<tr><th id="126">126</th><td><q>"\n"</q></td></tr>
+<tr><th id="127">127</th><td><q>"  length\n"</q></td></tr>
+<tr><th id="128">128</th><td><q>"    Length of bytes object to use.  An OverflowError is raised if the\n"</q></td></tr>
+<tr><th id="129">129</th><td><q>"    integer is not representable with the given number of bytes.\n"</q></td></tr>
+<tr><th id="130">130</th><td><q>"  byteorder\n"</q></td></tr>
+<tr><th id="131">131</th><td><q>"    The byte order used to represent the integer.  If byteorder is \'big\',\n"</q></td></tr>
+<tr><th id="132">132</th><td><q>"    the most significant byte is at the beginning of the byte array.  If\n"</q></td></tr>
+<tr><th id="133">133</th><td><q>"    byteorder is \'little\', the most significant byte is at the end of the\n"</q></td></tr>
+<tr><th id="134">134</th><td><q>"    byte array.  To request the native byte order of the host system, use\n"</q></td></tr>
+<tr><th id="135">135</th><td><q>"    `sys.byteorder\' as the byte order value.\n"</q></td></tr>
+<tr><th id="136">136</th><td><q>"  signed\n"</q></td></tr>
+<tr><th id="137">137</th><td><q>"    Determines whether two\'s complement is used to represent the integer.\n"</q></td></tr>
+<tr><th id="138">138</th><td><q>"    If signed is False and a negative integer is given, an OverflowError\n"</q></td></tr>
+<tr><th id="139">139</th><td><q>"    is raised."</q>);</td></tr>
+<tr><th id="140">140</th><td></td></tr>
+<tr><th id="141">141</th><td><u>#define <dfn class="macro" id="_M/INT_TO_BYTES_METHODDEF" data-ref="_M/INT_TO_BYTES_METHODDEF">INT_TO_BYTES_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="142">142</th><td><u>    {"to_bytes", (PyCFunction)int_to_bytes, METH_FASTCALL|METH_KEYWORDS, int_to_bytes__doc__},</u></td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="145">145</th><td><a class="decl" href="../longobject.c.html#int_to_bytes_impl" title='int_to_bytes_impl' data-ref="int_to_bytes_impl" id="int_to_bytes_impl">int_to_bytes_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="29self" title='self' data-type='PyObject *' data-ref="29self">self</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="30length" title='length' data-type='Py_ssize_t' data-ref="30length">length</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="31byteorder" title='byteorder' data-type='PyObject *' data-ref="31byteorder">byteorder</dfn>,</td></tr>
+<tr><th id="146">146</th><td>                  <em>int</em> <dfn class="local col2 decl" id="32is_signed" title='is_signed' data-type='int' data-ref="32is_signed">is_signed</dfn>);</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="149">149</th><td><dfn class="decl def" id="int_to_bytes" title='int_to_bytes' data-ref="int_to_bytes">int_to_bytes</dfn>(<a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="33self" title='self' data-type='PyObject *' data-ref="33self">self</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col4 decl" id="34args" title='args' data-type='PyObject **' data-ref="34args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col5 decl" id="35nargs" title='nargs' data-type='Py_ssize_t' data-ref="35nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="36kwnames" title='kwnames' data-type='PyObject *' data-ref="36kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="150">150</th><td>{</td></tr>
+<tr><th id="151">151</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="37return_value" title='return_value' data-type='PyObject *' data-ref="37return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="152">152</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col8 decl" id="38_keywords" title='_keywords' data-type='const char *const [4]' data-ref="38_keywords">_keywords</dfn>[] = {<q>"length"</q>, <q>"byteorder"</q>, <q>"signed"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="153">153</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col9 decl" id="39_parser" title='_parser' data-type='_PyArg_Parser' data-ref="39_parser">_parser</dfn> = {<q>"nU|$p:to_bytes"</q>, <a class="local col8 ref" href="#38_keywords" title='_keywords' data-ref="38_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="154">154</th><td>    <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="40length" title='length' data-type='Py_ssize_t' data-ref="40length">length</dfn>;</td></tr>
+<tr><th id="155">155</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="41byteorder" title='byteorder' data-type='PyObject *' data-ref="41byteorder">byteorder</dfn>;</td></tr>
+<tr><th id="156">156</th><td>    <em>int</em> <dfn class="local col2 decl" id="42is_signed" title='is_signed' data-type='int' data-ref="42is_signed">is_signed</dfn> = <var>0</var>;</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStackAndKeywords" title='_PyArg_ParseStackAndKeywords' data-ref="_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col4 ref" href="#34args" title='args' data-ref="34args">args</a>, <a class="local col5 ref" href="#35nargs" title='nargs' data-ref="35nargs">nargs</a>, <a class="local col6 ref" href="#36kwnames" title='kwnames' data-ref="36kwnames">kwnames</a>, &amp;<a class="local col9 ref" href="#39_parser" title='_parser' data-ref="39_parser">_parser</a>,</td></tr>
+<tr><th id="159">159</th><td>        &amp;<a class="local col0 ref" href="#40length" title='length' data-ref="40length">length</a>, &amp;<a class="local col1 ref" href="#41byteorder" title='byteorder' data-ref="41byteorder">byteorder</a>, &amp;<a class="local col2 ref" href="#42is_signed" title='is_signed' data-ref="42is_signed">is_signed</a>)) {</td></tr>
+<tr><th id="160">160</th><td>        <b>goto</b> <a class="lbl" href="#43exit" data-ref="43exit">exit</a>;</td></tr>
+<tr><th id="161">161</th><td>    }</td></tr>
+<tr><th id="162">162</th><td>    <a class="local col7 ref" href="#37return_value" title='return_value' data-ref="37return_value">return_value</a> = <a class="ref" href="../longobject.c.html#int_to_bytes_impl" title='int_to_bytes_impl' data-ref="int_to_bytes_impl">int_to_bytes_impl</a>(<a class="local col3 ref" href="#33self" title='self' data-ref="33self">self</a>, <a class="local col0 ref" href="#40length" title='length' data-ref="40length">length</a>, <a class="local col1 ref" href="#41byteorder" title='byteorder' data-ref="41byteorder">byteorder</a>, <a class="local col2 ref" href="#42is_signed" title='is_signed' data-ref="42is_signed">is_signed</a>);</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td><dfn class="lbl" id="43exit" data-ref="43exit">exit</dfn>:</td></tr>
+<tr><th id="165">165</th><td>    <b>return</b> <a class="local col7 ref" href="#37return_value" title='return_value' data-ref="37return_value">return_value</a>;</td></tr>
+<tr><th id="166">166</th><td>}</td></tr>
+<tr><th id="167">167</th><td></td></tr>
+<tr><th id="168">168</th><td><a class="macro" href="../../Include/pymacro.h.html#71" title="static char int_from_bytes__doc__[] = &quot;from_bytes($type, /, bytes, byteorder, *, signed=False)\n&quot;&quot;--\n&quot;&quot;\n&quot;&quot;Return the integer represented by the given array of bytes.\n&quot;&quot;\n&quot;&quot;  bytes\n&quot;&quot;    Holds the array of bytes to convert.  The argument must either\n&quot;&quot;    support the buffer protocol or be an iterable object producing bytes.\n&quot;&quot;    Bytes and bytearray are examples of built-in objects that support the\n&quot;&quot;    buffer protocol.\n&quot;&quot;  byteorder\n&quot;&quot;    The byte order used to represent the integer.  If byteorder is \&apos;big\&apos;,\n&quot;&quot;    the most significant byte is at the beginning of the byte array.  If\n&quot;&quot;    byteorder is \&apos;little\&apos;, the most significant byte is at the end of the\n&quot;&quot;    byte array.  To request the native byte order of the host system, use\n&quot;&quot;    `sys.byteorder\&apos; as the byte order value.\n&quot;&quot;  signed\n&quot;&quot;    Indicates whether two\&apos;s complement is used to represent the integer.&quot;" data-ref="_M/PyDoc_STRVAR">PyDoc_STRVAR</a>(<dfn class="decl def" id="int_from_bytes__doc__" title='int_from_bytes__doc__' data-ref="int_from_bytes__doc__">int_from_bytes__doc__</dfn>,</td></tr>
+<tr><th id="169">169</th><td><q>"from_bytes($type, /, bytes, byteorder, *, signed=False)\n"</q></td></tr>
+<tr><th id="170">170</th><td><q>"--\n"</q></td></tr>
+<tr><th id="171">171</th><td><q>"\n"</q></td></tr>
+<tr><th id="172">172</th><td><q>"Return the integer represented by the given array of bytes.\n"</q></td></tr>
+<tr><th id="173">173</th><td><q>"\n"</q></td></tr>
+<tr><th id="174">174</th><td><q>"  bytes\n"</q></td></tr>
+<tr><th id="175">175</th><td><q>"    Holds the array of bytes to convert.  The argument must either\n"</q></td></tr>
+<tr><th id="176">176</th><td><q>"    support the buffer protocol or be an iterable object producing bytes.\n"</q></td></tr>
+<tr><th id="177">177</th><td><q>"    Bytes and bytearray are examples of built-in objects that support the\n"</q></td></tr>
+<tr><th id="178">178</th><td><q>"    buffer protocol.\n"</q></td></tr>
+<tr><th id="179">179</th><td><q>"  byteorder\n"</q></td></tr>
+<tr><th id="180">180</th><td><q>"    The byte order used to represent the integer.  If byteorder is \'big\',\n"</q></td></tr>
+<tr><th id="181">181</th><td><q>"    the most significant byte is at the beginning of the byte array.  If\n"</q></td></tr>
+<tr><th id="182">182</th><td><q>"    byteorder is \'little\', the most significant byte is at the end of the\n"</q></td></tr>
+<tr><th id="183">183</th><td><q>"    byte array.  To request the native byte order of the host system, use\n"</q></td></tr>
+<tr><th id="184">184</th><td><q>"    `sys.byteorder\' as the byte order value.\n"</q></td></tr>
+<tr><th id="185">185</th><td><q>"  signed\n"</q></td></tr>
+<tr><th id="186">186</th><td><q>"    Indicates whether two\'s complement is used to represent the integer."</q>);</td></tr>
+<tr><th id="187">187</th><td></td></tr>
+<tr><th id="188">188</th><td><u>#define <dfn class="macro" id="_M/INT_FROM_BYTES_METHODDEF" data-ref="_M/INT_FROM_BYTES_METHODDEF">INT_FROM_BYTES_METHODDEF</dfn>    \</u></td></tr>
+<tr><th id="189">189</th><td><u>    {"from_bytes", (PyCFunction)int_from_bytes, METH_FASTCALL|METH_KEYWORDS|METH_CLASS, int_from_bytes__doc__},</u></td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="192">192</th><td><a class="decl" href="../longobject.c.html#int_from_bytes_impl" title='int_from_bytes_impl' data-ref="int_from_bytes_impl" id="int_from_bytes_impl">int_from_bytes_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col4 decl" id="44type" title='type' data-type='PyTypeObject *' data-ref="44type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="45bytes_obj" title='bytes_obj' data-type='PyObject *' data-ref="45bytes_obj">bytes_obj</dfn>,</td></tr>
+<tr><th id="193">193</th><td>                    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="46byteorder" title='byteorder' data-type='PyObject *' data-ref="46byteorder">byteorder</dfn>, <em>int</em> <dfn class="local col7 decl" id="47is_signed" title='is_signed' data-type='int' data-ref="47is_signed">is_signed</dfn>);</td></tr>
+<tr><th id="194">194</th><td></td></tr>
+<tr><th id="195">195</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="196">196</th><td><dfn class="decl def" id="int_from_bytes" title='int_from_bytes' data-ref="int_from_bytes">int_from_bytes</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col8 decl" id="48type" title='type' data-type='PyTypeObject *' data-ref="48type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> **<dfn class="local col9 decl" id="49args" title='args' data-type='PyObject **' data-ref="49args">args</dfn>, <a class="typedef" href="../../Include/pyport.h.html#Py_ssize_t" title='Py_ssize_t' data-type='ssize_t' data-ref="Py_ssize_t">Py_ssize_t</a> <dfn class="local col0 decl" id="50nargs" title='nargs' data-type='Py_ssize_t' data-ref="50nargs">nargs</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col1 decl" id="51kwnames" title='kwnames' data-type='PyObject *' data-ref="51kwnames">kwnames</dfn>)</td></tr>
+<tr><th id="197">197</th><td>{</td></tr>
+<tr><th id="198">198</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="52return_value" title='return_value' data-type='PyObject *' data-ref="52return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="199">199</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col3 decl" id="53_keywords" title='_keywords' data-type='const char *const [4]' data-ref="53_keywords">_keywords</dfn>[] = {<q>"bytes"</q>, <q>"byteorder"</q>, <q>"signed"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="200">200</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col4 decl" id="54_parser" title='_parser' data-type='_PyArg_Parser' data-ref="54_parser">_parser</dfn> = {<q>"OU|$p:from_bytes"</q>, <a class="local col3 ref" href="#53_keywords" title='_keywords' data-ref="53_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="201">201</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="55bytes_obj" title='bytes_obj' data-type='PyObject *' data-ref="55bytes_obj">bytes_obj</dfn>;</td></tr>
+<tr><th id="202">202</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col6 decl" id="56byteorder" title='byteorder' data-type='PyObject *' data-ref="56byteorder">byteorder</dfn>;</td></tr>
+<tr><th id="203">203</th><td>    <em>int</em> <dfn class="local col7 decl" id="57is_signed" title='is_signed' data-type='int' data-ref="57is_signed">is_signed</dfn> = <var>0</var>;</td></tr>
+<tr><th id="204">204</th><td></td></tr>
+<tr><th id="205">205</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseStackAndKeywords" title='_PyArg_ParseStackAndKeywords' data-ref="_PyArg_ParseStackAndKeywords">_PyArg_ParseStackAndKeywords</a>(<a class="local col9 ref" href="#49args" title='args' data-ref="49args">args</a>, <a class="local col0 ref" href="#50nargs" title='nargs' data-ref="50nargs">nargs</a>, <a class="local col1 ref" href="#51kwnames" title='kwnames' data-ref="51kwnames">kwnames</a>, &amp;<a class="local col4 ref" href="#54_parser" title='_parser' data-ref="54_parser">_parser</a>,</td></tr>
+<tr><th id="206">206</th><td>        &amp;<a class="local col5 ref" href="#55bytes_obj" title='bytes_obj' data-ref="55bytes_obj">bytes_obj</a>, &amp;<a class="local col6 ref" href="#56byteorder" title='byteorder' data-ref="56byteorder">byteorder</a>, &amp;<a class="local col7 ref" href="#57is_signed" title='is_signed' data-ref="57is_signed">is_signed</a>)) {</td></tr>
+<tr><th id="207">207</th><td>        <b>goto</b> <a class="lbl" href="#58exit" data-ref="58exit">exit</a>;</td></tr>
+<tr><th id="208">208</th><td>    }</td></tr>
+<tr><th id="209">209</th><td>    <a class="local col2 ref" href="#52return_value" title='return_value' data-ref="52return_value">return_value</a> = <a class="ref" href="../longobject.c.html#int_from_bytes_impl" title='int_from_bytes_impl' data-ref="int_from_bytes_impl">int_from_bytes_impl</a>(<a class="local col8 ref" href="#48type" title='type' data-ref="48type">type</a>, <a class="local col5 ref" href="#55bytes_obj" title='bytes_obj' data-ref="55bytes_obj">bytes_obj</a>, <a class="local col6 ref" href="#56byteorder" title='byteorder' data-ref="56byteorder">byteorder</a>, <a class="local col7 ref" href="#57is_signed" title='is_signed' data-ref="57is_signed">is_signed</a>);</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><dfn class="lbl" id="58exit" data-ref="58exit">exit</dfn>:</td></tr>
+<tr><th id="212">212</th><td>    <b>return</b> <a class="local col2 ref" href="#52return_value" title='return_value' data-ref="52return_value">return_value</a>;</td></tr>
+<tr><th id="213">213</th><td>}</td></tr>
+<tr><th id="214">214</th><td><i>/*[clinic end generated code: output=c9adfdc329651cc4 input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="215">215</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../longobject.c.html'>codebrowser/Objects/longobject.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

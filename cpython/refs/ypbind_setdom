@@ -1,0 +1,8 @@
+<def f='include/rpcsvc/yp_prot.h' l='271' ll='275'/>
+<size>24</size>
+<doc f='include/rpcsvc/yp_prot.h' l='268'>/*
+ * Request data structure for ypbind &quot;Set domain&quot; procedure.
+ */</doc>
+<mbr r='ypbind_setdom::ypsetdom_domain' o='0' t='char *'/>
+<mbr r='ypbind_setdom::ypsetdom_binding' o='64' t='struct ypbind_binding'/>
+<mbr r='ypbind_setdom::ypsetdom_vers' o='128' t='u_int'/>

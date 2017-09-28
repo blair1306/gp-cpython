@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/object.h' l='416' type='PyObject *'/>
+<offset>2880</offset>
+<doc f='codebrowser/Include/object.h' l='416'>/* method resolution order */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='141' u='r' c='_PyType_CheckConsistency'/>
+<use f='codebrowser/Objects/typeobject.c' l='141' u='r' c='_PyType_CheckConsistency'/>
+<use f='codebrowser/Objects/typeobject.c' l='603' u='r' c='mro_hierarchy'/>
+<use f='codebrowser/Objects/typeobject.c' l='617' u='w' c='mro_hierarchy'/>
+<use f='codebrowser/Objects/typeobject.c' l='695' u='r' c='type_set_bases'/>
+<use f='codebrowser/Objects/typeobject.c' l='755' u='r' c='type_set_bases'/>
+<use f='codebrowser/Objects/typeobject.c' l='757' u='w' c='type_set_bases'/>
+<use f='codebrowser/Objects/typeobject.c' l='1383' u='r' c='PyType_IsSubtype'/>
+<use f='codebrowser/Objects/typeobject.c' l='1778' u='r' c='mro_implementation'/>
+<use f='codebrowser/Objects/typeobject.c' l='1785' u='r' c='mro_implementation'/>
+<use f='codebrowser/Objects/typeobject.c' l='1945' u='r' c='mro_internal'/>
+<use f='codebrowser/Objects/typeobject.c' l='1948' u='r' c='mro_internal'/>
+<use f='codebrowser/Objects/typeobject.c' l='1958' u='w' c='mro_internal'/>
+<use f='codebrowser/Objects/typeobject.c' l='1960' u='r' c='mro_internal'/>
+<use f='codebrowser/Objects/typeobject.c' l='2964' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='2980' u='r' c='_PyType_Lookup'/>
+<use f='codebrowser/Objects/typeobject.c' l='3177' u='r' c='type_dealloc'/>
+<use f='codebrowser/Objects/typeobject.c' l='3373' u='r' c='type_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='3373' u='r' c='type_traverse'/>
+<use f='codebrowser/Objects/typeobject.c' l='3427' u='r' c='type_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='3427' u='w' c='type_clear'/>
+<use f='codebrowser/Objects/typeobject.c' l='5093' u='r' c='PyType_Ready'/>
+<use f='codebrowser/Objects/typeobject.c' l='7380' u='r' c='super_getattro'/>

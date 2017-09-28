@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/Python-ast.h' l='215' type='17'/>
+<use f='codebrowser/Python/Python-ast.c' l='2131' u='r' c='_Py_Num'/>
+<use f='codebrowser/Python/Python-ast.c' l='3339' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='297' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1069' c='set_context'/>
+<use f='codebrowser/Python/compile.c' l='1325' c='is_const'/>
+<use f='codebrowser/Python/compile.c' l='1342' c='get_const_value'/>
+<use f='codebrowser/Python/compile.c' l='4138' c='expr_constant'/>
+<use f='codebrowser/Python/compile.c' l='4424' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1481' c='symtable_visit_expr'/>

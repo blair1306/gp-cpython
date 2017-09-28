@@ -1,0 +1,8 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='67' type='const char *'/>
+<offset>7872</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='67'>/* Tokenizer&apos;s newline translated copy of the string. */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='128' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='760' u='w' c='decode_str'/>
+<use f='codebrowser/Parser/tokenizer.c' l='836' u='w' c='PyTokenizer_FromUTF8'/>
+<use f='codebrowser/Parser/tokenizer.c' l='905' u='r' c='PyTokenizer_Free'/>
+<use f='codebrowser/Parser/tokenizer.c' l='906' u='r' c='PyTokenizer_Free'/>

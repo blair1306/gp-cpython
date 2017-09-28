@@ -1,0 +1,33 @@
+<dec f='codebrowser/Include/descrobject.h' l='44' type='PyObject *'/>
+<offset>320</offset>
+<dec f='codebrowser/Include/grammar.h' l='52' type='char *'/>
+<use f='codebrowser/Modules/parsermodule.c' l='738' u='r' c='validate_node'/>
+<offset>64</offset>
+<doc f='codebrowser/Include/grammar.h' l='52'>/* For printing */</doc>
+<use f='codebrowser/Objects/descrobject.c' l='17' u='r' c='descr_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='25' u='r' c='descr_name'/>
+<use f='codebrowser/Objects/descrobject.c' l='25' u='r' c='descr_name'/>
+<use f='codebrowser/Objects/descrobject.c' l='26' u='r' c='descr_name'/>
+<use f='codebrowser/Objects/descrobject.c' l='34' u='r' c='descr_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='34' u='r' c='descr_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='35' u='r' c='descr_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='399' u='r' c='calculate_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='399' u='r' c='calculate_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='417' u='r' c='calculate_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='441' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='714' u='w' c='descr_new'/>
+<use f='codebrowser/Objects/descrobject.c' l='715' u='r' c='descr_new'/>
+<use f='codebrowser/Objects/descrobject.c' l='1109' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='4684' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='4708' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='4730' macro='1' u='r'/>
+<use f='codebrowser/Parser/firstsets.c' l='44' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='49' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='54' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='88' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='104' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='36' u='r' c='_Py_freegrammar'/>
+<use f='codebrowser/Parser/grammar.c' l='59' u='w' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='177' u='r' c='translabel'/>
+<use f='codebrowser/Parser/parser.c' l='247' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='281' u='r' c='PyParser_AddToken'/>

@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pydebug.h' l='23' type='int'/>
+<use f='codebrowser/Modules/main.c' l='539' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='550' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='698' u='r' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='94' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1482' u='r' c='create_stdio'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1524' u='r' c='create_stdio'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='94'>/* Unbuffered binary std{in,out,err} */</doc>

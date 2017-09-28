@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='816' type='void * mpd_sh_alloc(mpd_size_t struct_size, mpd_size_t nmemb, mpd_size_t size)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='135' ll='151' type='void * mpd_sh_alloc(mpd_size_t struct_size, mpd_size_t nmemb, mpd_size_t size)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='134'>/* struct hack malloc with overflow checking */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/numbertheory.c' l='91' u='c' c='_mpd_init_fnt_params'/>

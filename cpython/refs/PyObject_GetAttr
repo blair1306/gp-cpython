@@ -1,0 +1,36 @@
+<dec f='codebrowser/Include/object.h' l='533' type='PyObject * PyObject_GetAttr(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='229' u='c' c='MakeFields'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='300' u='c' c='MakeAnonFields'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='481' u='c' c='buffered_closed'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='493' u='c' c='buffered_closed_get'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2273' u='c' c='bufferedrwpair_closed_get'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='163' u='c' c='iobase_closed'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='240' u='c' c='iobase_finalize'/>
+<use f='codebrowser/Modules/_io/stringio.c' l='964' u='c' c='stringio_newlines'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2818' u='c' c='textiowrapper_closed_get'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2828' u='c' c='textiowrapper_newlines_get'/>
+<use f='codebrowser/Modules/_operator.c' l='1262' u='c' c='dotted_getattr'/>
+<use f='codebrowser/Modules/_operator.c' l='1271' u='c' c='dotted_getattr'/>
+<use f='codebrowser/Modules/_operator.c' l='1534' u='c' c='methodcaller_call'/>
+<use f='codebrowser/Modules/_pickle.c' l='1603' u='c' c='get_deep_attribute'/>
+<use f='codebrowser/Modules/_pickle.c' l='1640' u='c' c='getattribute'/>
+<use f='codebrowser/Modules/xxsubtype.c' l='246' u='c' c='spam_bench'/>
+<use f='codebrowser/Objects/call.c' l='1212' u='c' c='PyObject_CallMethodObjArgs'/>
+<use f='codebrowser/Objects/classobject.c' l='125' u='c' c='method_get_doc'/>
+<use f='codebrowser/Objects/classobject.c' l='158' u='c' c='method_getattro'/>
+<use f='codebrowser/Objects/classobject.c' l='450' u='c' c='instancemethod_get_doc'/>
+<use f='codebrowser/Objects/classobject.c' l='480' u='c' c='instancemethod_getattro'/>
+<use f='codebrowser/Objects/object.c' l='791' u='c' c='PyObject_GetAttrString'/>
+<use f='codebrowser/Objects/object.c' l='853' u='c' c='_PyObject_GetAttrId'/>
+<def f='codebrowser/Objects/object.c' l='879' ll='902' type='PyObject * PyObject_GetAttr(PyObject * v, PyObject * name)'/>
+<use f='codebrowser/Objects/object.c' l='907' u='c' c='PyObject_HasAttr'/>
+<use f='codebrowser/Objects/object.c' l='1053' u='c' c='_PyObject_GetMethod'/>
+<use f='codebrowser/Objects/typeobject.c' l='4062' u='c' c='_PyObject_GetState'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='151' u='c' c='getattr'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='464' u='c' c='proxy_getattr'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1007' u='c' c='builtin_getattr'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1070' u='c' c='builtin_hasattr_impl'/>
+<use f='codebrowser/Python/ceval.c' l='2793' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='5041' u='c' c='import_from'/>
+<use f='codebrowser/Python/ceval.c' l='5147' u='c' c='import_all_from'/>
+<use f='codebrowser/Python/import.c' l='1747' u='c' c='PyImport_Import'/>

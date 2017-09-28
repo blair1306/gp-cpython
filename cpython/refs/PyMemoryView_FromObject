@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/memoryobject.h' l='23' type='PyObject * PyMemoryView_FromObject(PyObject * base)'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='538' u='c' c='CDataType_from_buffer'/>
+<use f='codebrowser/Modules/_io/bytesio.c' l='291' u='c' c='_io_BytesIO_getbuffer_impl'/>
+<def f='codebrowser/Objects/memoryobject.c' l='775' ll='799' type='PyObject * PyMemoryView_FromObject(PyObject * v)'/>
+<use f='codebrowser/Objects/memoryobject.c' l='917' u='c' c='PyMemoryView_GetContiguous'/>
+<use f='codebrowser/Objects/memoryobject.c' l='957' u='c' c='memory_new'/>
+<doc f='codebrowser/Objects/memoryobject.c' l='772'>/* Create a memoryview from an object that implements the buffer protocol.
+   If the object is a memoryview, the new memoryview must be registered
+   with the same managed buffer. Otherwise, a new managed buffer is created. */</doc>

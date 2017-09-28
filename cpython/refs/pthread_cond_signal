@@ -1,0 +1,4 @@
+<dec f='include/pthread.h' l='977' type='int pthread_cond_signal(pthread_cond_t * __cond)'/>
+<doc f='include/pthread.h' l='976'>/* Wake up one thread waiting for condition variable COND.  */</doc>
+<use f='codebrowser/Python/ceval_gil.h' l='187' macro='1' u='c'/>
+<use f='codebrowser/Python/ceval_gil.h' l='248' macro='1' u='c'/>

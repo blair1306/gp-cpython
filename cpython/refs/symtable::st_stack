@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/symtable.h' l='25' type='PyObject *'/>
+<offset>256</offset>
+<doc f='codebrowser/Include/symtable.h' l='25'>/* list: stack of namespace info */</doc>
+<use f='codebrowser/Python/symtable.c' l='215' u='w' c='symtable_new'/>
+<use f='codebrowser/Python/symtable.c' l='335' u='r' c='PySymtable_Free'/>
+<use f='codebrowser/Python/symtable.c' l='926' u='r' c='symtable_exit_block'/>
+<use f='codebrowser/Python/symtable.c' l='926' u='r' c='symtable_exit_block'/>
+<use f='codebrowser/Python/symtable.c' l='928' u='r' c='symtable_exit_block'/>
+<use f='codebrowser/Python/symtable.c' l='931' u='r' c='symtable_exit_block'/>
+<use f='codebrowser/Python/symtable.c' l='945' u='r' c='symtable_enter_block'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/dictobject.h' l='84' type='int _PyDict_SetItem_KnownHash(PyObject * mp, PyObject * key, PyObject * item, Py_hash_t hash)'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2314' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_collectionsmodule.c' l='2320' u='c' c='_count_elements'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='845' u='c' c='infinite_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='946' u='c' c='bounded_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='972' u='c' c='bounded_lru_cache_wrapper'/>
+<use f='codebrowser/Modules/_sre.c' l='2123' u='c' c='_sre_SRE_Match_groupdict_impl'/>
+<def f='codebrowser/Objects/dictobject.c' l='1418' ll='1435' type='int _PyDict_SetItem_KnownHash(PyObject * op, PyObject * key, PyObject * value, Py_hash_t hash)'/>
+<use f='codebrowser/Objects/odictobject.c' l='1728' u='c' c='_PyODict_SetItem_KnownHash'/>

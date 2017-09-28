@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>rotatingtree.h source code [codebrowser/Modules/rotatingtree.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="rotating_node_s "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Modules/rotatingtree.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Modules</a>/<a href='rotatingtree.h.html'>rotatingtree.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* "Rotating trees" (Armin Rigo)</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * Google "splay trees" for the general idea.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * It's a dict-like data structure that works best when accesses are not</i></td></tr>
+<tr><th id="6">6</th><td><i> * random, but follow a strong pattern.  The one implemented here is for</i></td></tr>
+<tr><th id="7">7</th><td><i> * access patterns where the same small set of keys is looked up over</i></td></tr>
+<tr><th id="8">8</th><td><i> * and over again, and this set of keys evolves slowly over time.</i></td></tr>
+<tr><th id="9">9</th><td><i> */</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#define <dfn class="macro" id="_M/EMPTY_ROTATING_TREE" data-ref="_M/EMPTY_ROTATING_TREE">EMPTY_ROTATING_TREE</dfn>       ((rotating_node_t *)NULL)</u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><b>typedef</b> <b>struct</b> <a class="type" href="#rotating_node_s" title='rotating_node_s' data-ref="rotating_node_s">rotating_node_s</a> <dfn class="typedef" id="rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</dfn>;</td></tr>
+<tr><th id="16">16</th><td><b>typedef</b> <em>int</em> (*<dfn class="typedef" id="rotating_tree_enum_fn" title='rotating_tree_enum_fn' data-type='int (*)(rotating_node_t *, void *)' data-ref="rotating_tree_enum_fn">rotating_tree_enum_fn</dfn>) (<a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col1 decl" id="1node" title='node' data-type='rotating_node_t *' data-ref="1node">node</dfn>, <em>void</em> *<dfn class="local col2 decl" id="2arg" title='arg' data-type='void *' data-ref="2arg">arg</dfn>);</td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><b>struct</b> <dfn class="type def" id="rotating_node_s" title='rotating_node_s' data-ref="rotating_node_s">rotating_node_s</dfn> {</td></tr>
+<tr><th id="19">19</th><td>	<em>void</em> *<dfn class="decl" id="rotating_node_s::key" title='rotating_node_s::key' data-ref="rotating_node_s::key">key</dfn>;</td></tr>
+<tr><th id="20">20</th><td>	<a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="decl" id="rotating_node_s::left" title='rotating_node_s::left' data-ref="rotating_node_s::left">left</dfn>;</td></tr>
+<tr><th id="21">21</th><td>	<a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="decl" id="rotating_node_s::right" title='rotating_node_s::right' data-ref="rotating_node_s::right">right</dfn>;</td></tr>
+<tr><th id="22">22</th><td>};</td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><em>void</em> <dfn class="decl" id="RotatingTree_Add" title='RotatingTree_Add' data-ref="RotatingTree_Add">RotatingTree_Add</dfn>(<a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> **<dfn class="local col3 decl" id="3root" title='root' data-type='rotating_node_t **' data-ref="3root">root</dfn>, <a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col4 decl" id="4node" title='node' data-type='rotating_node_t *' data-ref="4node">node</dfn>);</td></tr>
+<tr><th id="25">25</th><td><a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a>* <dfn class="decl" id="RotatingTree_Get" title='RotatingTree_Get' data-ref="RotatingTree_Get">RotatingTree_Get</dfn>(<a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> **<dfn class="local col5 decl" id="5root" title='root' data-type='rotating_node_t **' data-ref="5root">root</dfn>, <em>void</em> *<dfn class="local col6 decl" id="6key" title='key' data-type='void *' data-ref="6key">key</dfn>);</td></tr>
+<tr><th id="26">26</th><td><em>int</em> <dfn class="decl" id="RotatingTree_Enum" title='RotatingTree_Enum' data-ref="RotatingTree_Enum">RotatingTree_Enum</dfn>(<a class="typedef" href="#rotating_node_t" title='rotating_node_t' data-type='struct rotating_node_s' data-ref="rotating_node_t">rotating_node_t</a> *<dfn class="local col7 decl" id="7root" title='root' data-type='rotating_node_t *' data-ref="7root">root</dfn>, <a class="typedef" href="#rotating_tree_enum_fn" title='rotating_tree_enum_fn' data-type='int (*)(rotating_node_t *, void *)' data-ref="rotating_tree_enum_fn">rotating_tree_enum_fn</a> <dfn class="local col8 decl" id="8enumfn" title='enumfn' data-type='rotating_tree_enum_fn' data-ref="8enumfn">enumfn</dfn>,</td></tr>
+<tr><th id="27">27</th><td>		      <em>void</em> *<dfn class="local col9 decl" id="9arg" title='arg' data-type='void *' data-ref="9arg">arg</dfn>);</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='_lsprof.c.html'>codebrowser/Modules/_lsprof.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

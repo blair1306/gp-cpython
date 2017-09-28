@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/abstract.h' l='428' type='Py_ssize_t PyObject_LengthHint(PyObject * o, Py_ssize_t )'/>
+<doc f='codebrowser/Include/abstract.h' l='425'>/* Guess the size of object &apos;o&apos; using len(o) or o.__length_hint__().
+   If neither of those return a non-negative value, then return the default
+   value.  If one of the calls fails, this function returns -1. */</doc>
+<use f='codebrowser/Modules/_operator.c' l='785' u='c' c='_operator_length_hint_impl'/>
+<def f='codebrowser/Objects/abstract.c' l='84' ll='139' type='Py_ssize_t PyObject_LengthHint(PyObject * o, Py_ssize_t defaultvalue)'/>
+<use f='codebrowser/Objects/abstract.c' l='1820' u='c' c='PySequence_Tuple'/>
+<doc f='codebrowser/Objects/abstract.c' l='78'>/* The length hint function returns a non-negative value from o.__len__()
+   or o.__length_hint__(). If those methods aren&apos;t found the defaultvalue is
+   returned.  If one of the calls fails with an exception other than TypeError
+   this function returns -1.
+*/</doc>
+<use f='codebrowser/Objects/bytearrayobject.c' l='1620' u='c' c='bytearray_extend'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2705' u='c' c='_PyBytes_FromIterator'/>
+<use f='codebrowser/Objects/listobject.c' l='881' u='c' c='list_extend'/>

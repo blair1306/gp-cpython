@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/tupleobject.h' l='65' type='int PyTuple_ClearFreeList()'/>
+<use f='codebrowser/Modules/gcmodule.c' l='897' u='c' c='clear_freelists'/>
+<def f='codebrowser/Objects/tupleobject.c' l='930' ll='950' type='int PyTuple_ClearFreeList()'/>
+<use f='codebrowser/Objects/tupleobject.c' l='960' u='c' c='PyTuple_Fini'/>

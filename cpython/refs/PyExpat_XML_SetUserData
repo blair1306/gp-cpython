@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/expat/expat.h' l='672' macro='1' type='void PyExpat_XML_SetUserData(XML_Parser parser, void * userData)'/>
+<def f='codebrowser/Modules/expat/xmlparse.c' l='1547' macro='1' type='void PyExpat_XML_SetUserData(XML_Parser parser, void * p)'/>
+<use f='codebrowser/Modules/pyexpat.c' l='958' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1196' macro='1' u='c'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1882' macro='1' u='r'/>

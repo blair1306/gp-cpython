@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/abstract.h' l='1036'/>
+<doc f='codebrowser/Include/abstract.h' l='1028'>/* Implemented as a macro:
+
+   int PyMapping_DelItem(PyObject *o, PyObject *key);
+
+   Remove the mapping for object &apos;key&apos; from the mapping object &apos;o&apos;.
+   Returns -1 on failure.
+
+   This is equivalent to the Python statement: del o[key]. */</doc>

@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/compile.h' l='36' type='int'/>
+<offset>32</offset>
+<doc f='codebrowser/Include/compile.h' l='36'>/* line number of last future statement */</doc>
+<use f='codebrowser/Python/compile.c' l='2778' u='r' c='compiler_from_import'/>
+<use f='codebrowser/Python/future.c' l='104' u='w' c='future_parse'/>
+<use f='codebrowser/Python/future.c' l='129' u='w' c='PyFuture_FromASTObject'/>

@@ -1,0 +1,9 @@
+<dec f='include/lzma/base.h' l='466' type='uint8_t *'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='516' u='w' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='523' u='r' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='535' u='w' c='compress'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='911' u='w' c='decompress_buf'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='919' u='r' c='decompress_buf'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='935' u='w' c='decompress_buf'/>
+<offset>192</offset>
+<doc f='include/lzma/base.h' l='466'>/**&lt; Pointer to the next output position. */</doc>

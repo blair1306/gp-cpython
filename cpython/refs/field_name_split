@@ -1,0 +1,9 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='316' ll='385' type='int field_name_split(PyObject * str, Py_ssize_t start, Py_ssize_t end, SubString * first, Py_ssize_t * first_idx, FieldNameIterator * rest, AutoNumber * auto_number)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='405' u='c' c='get_field_object'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1266' u='c' c='formatter_field_name_split'/>
+<doc f='codebrowser/Objects/stringlib/unicode_format.h' l='310'>/* input: field_name
+   output: &apos;first&apos; points to the part before the first &apos;[&apos; or &apos;.&apos;
+           &apos;first_idx&apos; is -1 if &apos;first&apos; is not an integer, otherwise
+                       it&apos;s the value of first converted to an integer
+           &apos;rest&apos; is an iterator to return the rest
+*/</doc>

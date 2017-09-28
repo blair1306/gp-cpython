@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl.h' l='44' type='__off64_t'/>
+<offset>128</offset>
+<doc f='include/x86_64-linux-gnu/bits/fcntl.h' l='44'>/* Size of the locked area; zero means until EOF.  */</doc>
+<use f='codebrowser/Modules/fcntlmodule.c' l='386' u='w' c='fcntl_lockf_impl'/>
+<use f='codebrowser/Modules/fcntlmodule.c' l='400' u='w' c='fcntl_lockf_impl'/>

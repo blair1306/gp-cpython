@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>grammar1.c source code [codebrowser/Parser/grammar1.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Parser/grammar1.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Parser</a>/<a href='grammar1.c.html'>grammar1.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td></td></tr>
+<tr><th id="2">2</th><td><i>/* Grammar subroutines needed by parser */</i></td></tr>
+<tr><th id="3">3</th><td></td></tr>
+<tr><th id="4">4</th><td><u>#include <a href="../Include/Python.h.html">"Python.h"</a></u></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../Include/pgenheaders.h.html">"pgenheaders.h"</a></u></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="../Include/grammar.h.html">"grammar.h"</a></u></td></tr>
+<tr><th id="7">7</th><td><u>#include <a href="../Include/token.h.html">"token.h"</a></u></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><i>/* Return the DFA for the given type */</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><a class="typedef" href="../Include/grammar.h.html#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> *</td></tr>
+<tr><th id="12">12</th><td><dfn class="decl def" id="PyGrammar_FindDFA" title='PyGrammar_FindDFA' data-ref="PyGrammar_FindDFA">PyGrammar_FindDFA</dfn>(<a class="typedef" href="../Include/grammar.h.html#grammar" title='grammar' data-type='struct grammar' data-ref="grammar">grammar</a> *<dfn class="local col1 decl" id="1g" title='g' data-type='grammar *' data-ref="1g">g</dfn>, <em>int</em> <dfn class="local col2 decl" id="2type" title='type' data-type='int' data-ref="2type">type</dfn>)</td></tr>
+<tr><th id="13">13</th><td>{</td></tr>
+<tr><th id="14">14</th><td>    <a class="typedef" href="../Include/grammar.h.html#dfa" title='dfa' data-type='struct dfa' data-ref="dfa">dfa</a> *<dfn class="local col3 decl" id="3d" title='d' data-type='dfa *' data-ref="3d">d</dfn>;</td></tr>
+<tr><th id="15">15</th><td><u>#<span data-ppcond="15">if</span> 1</u></td></tr>
+<tr><th id="16">16</th><td>    <i>/* Massive speed-up */</i></td></tr>
+<tr><th id="17">17</th><td>    <a class="local col3 ref" href="#3d" title='d' data-ref="3d">d</a> = &amp;<a class="local col1 ref" href="#1g" title='g' data-ref="1g">g</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::g_dfa" title='(anonymous struct)::g_dfa' data-ref="(anonymous)::g_dfa">g_dfa</a>[<a class="local col2 ref" href="#2type" title='type' data-ref="2type">type</a> - <a class="macro" href="../Include/token.h.html#78" title="256" data-ref="_M/NT_OFFSET">NT_OFFSET</a>];</td></tr>
+<tr><th id="18">18</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="((d-&gt;d_type == type) ? (void) (0) : __assert_fail (&quot;d-&gt;d_type == type&quot;, &quot;/home/jon/workspace/cpython/Parser/grammar1.c&quot;, 18, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col3 ref" href="#3d" title='d' data-ref="3d">d</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::d_type" title='(anonymous struct)::d_type' data-ref="(anonymous)::d_type">d_type</a> == <a class="local col2 ref" href="#2type" title='type' data-ref="2type">type</a>);</td></tr>
+<tr><th id="19">19</th><td>    <b>return</b> <a class="local col3 ref" href="#3d" title='d' data-ref="3d">d</a>;</td></tr>
+<tr><th id="20">20</th><td><u>#<span data-ppcond="15">else</span></u></td></tr>
+<tr><th id="21">21</th><td>    <i>/* Old, slow version */</i></td></tr>
+<tr><th id="22">22</th><td>    <em>int</em> i;</td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td>    <b>for</b> (i = g-&gt;g_ndfas, d = g-&gt;g_dfa; --i &gt;= <var>0</var>; d++) {</td></tr>
+<tr><th id="25">25</th><td>        <b>if</b> (d-&gt;d_type == type)</td></tr>
+<tr><th id="26">26</th><td>            <b>return</b> d;</td></tr>
+<tr><th id="27">27</th><td>    }</td></tr>
+<tr><th id="28">28</th><td>    assert(<var>0</var>);</td></tr>
+<tr><th id="29">29</th><td>    <i>/* NOTREACHED */</i></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="15">endif</span></u></td></tr>
+<tr><th id="31">31</th><td>}</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><em>const</em> <em>char</em> *</td></tr>
+<tr><th id="34">34</th><td><dfn class="decl def" id="PyGrammar_LabelRepr" title='PyGrammar_LabelRepr' data-ref="PyGrammar_LabelRepr">PyGrammar_LabelRepr</dfn>(<a class="typedef" href="../Include/grammar.h.html#label" title='label' data-type='struct label' data-ref="label">label</a> *<dfn class="local col4 decl" id="4lb" title='lb' data-type='label *' data-ref="4lb">lb</dfn>)</td></tr>
+<tr><th id="35">35</th><td>{</td></tr>
+<tr><th id="36">36</th><td>    <em>static</em> <em>char</em> <dfn class="local col5 decl" id="5buf" title='buf' data-type='char [100]' data-ref="5buf">buf</dfn>[<var>100</var>];</td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td>    <b>if</b> (<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</a> == <a class="macro" href="../Include/token.h.html#12" title="0" data-ref="_M/ENDMARKER">ENDMARKER</a>)</td></tr>
+<tr><th id="39">39</th><td>        <b>return</b> <q>"EMPTY"</q>;</td></tr>
+<tr><th id="40">40</th><td>    <b>else</b> <b>if</b> (<a class="macro" href="../Include/token.h.html#81" title="((lb-&gt;lb_type) &gt;= 256)" data-ref="_M/ISNONTERMINAL">ISNONTERMINAL</a>(<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</a>)) {</td></tr>
+<tr><th id="41">41</th><td>        <b>if</b> (<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_str" title='(anonymous struct)::lb_str' data-ref="(anonymous)::lb_str">lb_str</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="42">42</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyOS_snprintf" title='PyOS_snprintf' data-ref="PyOS_snprintf">PyOS_snprintf</a>(<a class="local col5 ref" href="#5buf" title='buf' data-ref="5buf">buf</a>, <b>sizeof</b>(<a class="local col5 ref" href="#5buf" title='buf' data-ref="5buf">buf</a>), <q>"NT%d"</q>, <a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</a>);</td></tr>
+<tr><th id="43">43</th><td>            <b>return</b> <a class="local col5 ref" href="#5buf" title='buf' data-ref="5buf">buf</a>;</td></tr>
+<tr><th id="44">44</th><td>        }</td></tr>
+<tr><th id="45">45</th><td>        <b>else</b></td></tr>
+<tr><th id="46">46</th><td>            <b>return</b> <a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_str" title='(anonymous struct)::lb_str' data-ref="(anonymous)::lb_str">lb_str</a>;</td></tr>
+<tr><th id="47">47</th><td>    }</td></tr>
+<tr><th id="48">48</th><td>    <b>else</b> <b>if</b> (<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</a> &lt; <a class="macro" href="../Include/token.h.html#74" title="60" data-ref="_M/N_TOKENS">N_TOKENS</a>) {</td></tr>
+<tr><th id="49">49</th><td>        <b>if</b> (<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_str" title='(anonymous struct)::lb_str' data-ref="(anonymous)::lb_str">lb_str</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="50">50</th><td>            <b>return</b> <a class="ref" href="../Include/token.h.html#_PyParser_TokenNames" title='_PyParser_TokenNames' data-ref="_PyParser_TokenNames">_PyParser_TokenNames</a>[<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</a>];</td></tr>
+<tr><th id="51">51</th><td>        <b>else</b> {</td></tr>
+<tr><th id="52">52</th><td>            <a class="ref" href="../Include/pyerrors.h.html#PyOS_snprintf" title='PyOS_snprintf' data-ref="PyOS_snprintf">PyOS_snprintf</a>(<a class="local col5 ref" href="#5buf" title='buf' data-ref="5buf">buf</a>, <b>sizeof</b>(<a class="local col5 ref" href="#5buf" title='buf' data-ref="5buf">buf</a>), <q>"%.32s(%.32s)"</q>,</td></tr>
+<tr><th id="53">53</th><td>                <a class="ref" href="../Include/token.h.html#_PyParser_TokenNames" title='_PyParser_TokenNames' data-ref="_PyParser_TokenNames">_PyParser_TokenNames</a>[<a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_type" title='(anonymous struct)::lb_type' data-ref="(anonymous)::lb_type">lb_type</a>], <a class="local col4 ref" href="#4lb" title='lb' data-ref="4lb">lb</a>-&gt;<a class="ref" href="../Include/grammar.h.html#(anonymous)::lb_str" title='(anonymous struct)::lb_str' data-ref="(anonymous)::lb_str">lb_str</a>);</td></tr>
+<tr><th id="54">54</th><td>            <b>return</b> <a class="local col5 ref" href="#5buf" title='buf' data-ref="5buf">buf</a>;</td></tr>
+<tr><th id="55">55</th><td>        }</td></tr>
+<tr><th id="56">56</th><td>    }</td></tr>
+<tr><th id="57">57</th><td>    <b>else</b> {</td></tr>
+<tr><th id="58">58</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"invalid label"</q>);</td></tr>
+<tr><th id="59">59</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="60">60</th><td>    }</td></tr>
+<tr><th id="61">61</th><td>}</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

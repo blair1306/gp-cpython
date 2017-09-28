@@ -1,0 +1,34 @@
+<dec f='codebrowser/Include/pydebug.h' l='20' type='int'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1730' macro='1' u='r'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1276' macro='1' u='r'/>
+<use f='codebrowser/Modules/getpath.c' l='465' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='134' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='544' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='549' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='555' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='601' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='609' u='w' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='648' macro='1' u='r'/>
+<use f='codebrowser/Modules/main.c' l='908' macro='1' u='r'/>
+<use f='codebrowser/Objects/obmalloc.c' l='1032' macro='1' u='r'/>
+<dec f='codebrowser/Parser/pgen.c' l='14' type='int'/>
+<doc f='codebrowser/Parser/pgen.c' l='14'>/* needed by Py_GETENV */</doc>
+<use f='codebrowser/Python/bootstrap_hash.c' l='609' macro='1' u='r'/>
+<use f='codebrowser/Python/frozenmain.c' l='38' macro='1' u='r'/>
+<use f='codebrowser/Python/frozenmain.c' l='40' macro='1' u='r'/>
+<def f='codebrowser/Python/pylifecycle.c' l='91' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='588' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='590' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='592' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='594' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='598' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='833' u='r' c='_Py_InitializeEx_Private'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1041' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1106' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1111' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1311' u='r' c='Py_GetPythonHome'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1312' macro='1' u='r'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1621' macro='1' u='r'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='91'>/* e.g. PYTHONPATH, PYTHONHOME */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='1732' u='r' c='make_flags'/>
+<use f='codebrowser/Python/thread.c' l='63' macro='1' u='r'/>

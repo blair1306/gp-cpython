@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pystate.h' l='84' type='PyObject *'/>
+<offset>17728</offset>
+<use f='codebrowser/Modules/posixmodule.c' l='462' u='r' c='PyOS_AfterFork_Child'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5388' u='a' c='os_register_at_fork_impl'/>
+<use f='codebrowser/Python/pystate.c' l='125' u='w' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='171' u='r' c='PyInterpreterState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='171' u='w' c='PyInterpreterState_Clear'/>

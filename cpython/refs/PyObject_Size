@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/abstract.h' l='413' type='Py_ssize_t PyObject_Size(PyObject * o)'/>
+<doc f='codebrowser/Include/abstract.h' l='407'>/* Return the size of object &apos;o&apos;.  If the object &apos;o&apos; provides both sequence and
+   mapping protocols, the sequence size is returned.
+
+   On error, -1 is returned.
+
+   This is the equivalent to the Python expression: len(o) */</doc>
+<use f='codebrowser/Modules/_io/iobase.c' l='621' u='c' c='iobase_iternext'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='688' u='c' c='_io__IOBase_readlines_impl'/>
+<use f='codebrowser/Modules/parsermodule.c' l='832' u='c' c='build_node_children'/>
+<use f='codebrowser/Modules/parsermodule.c' l='874' u='c' c='build_node_children'/>
+<def f='codebrowser/Objects/abstract.c' l='44' ll='62' type='Py_ssize_t PyObject_Size(PyObject * o)'/>
+<use f='codebrowser/Objects/abstract.c' l='68' u='c' c='PyObject_Length'/>
+<use f='codebrowser/Objects/abstract.c' l='70' u='c' c='PyObject_LengthHint'/>
+<use f='codebrowser/Objects/descrobject.c' l='802' u='c' c='mappingproxy_len'/>
+<use f='codebrowser/Objects/dictobject.c' l='3730' u='c' c='dictview_richcompare'/>
+<use f='codebrowser/Objects/dictobject.c' l='3733' u='c' c='dictview_richcompare'/>
+<use f='codebrowser/Objects/dictobject.c' l='3937' u='c' c='dictviews_isdisjoint'/>
+<use f='codebrowser/Objects/object.c' l='1939'/>
+<use f='codebrowser/Objects/odictobject.c' l='973' macro='1' u='c'/>
+<use f='codebrowser/Objects/odictobject.c' l='1629' macro='1' u='c'/>
+<use f='codebrowser/Objects/weakrefobject.c' l='565' macro='1' u='c'/>
+<use f='codebrowser/Parser/tokenizer.c' l='664' macro='1' u='c'/>
+<use f='codebrowser/Python/bltinmodule.c' l='1473' u='c' c='builtin_len'/>
+<use f='codebrowser/Python/marshal.c' l='515' u='c' c='w_complex_object'/>
+<use f='codebrowser/Python/peephole.c' l='299' u='c' c='fold_binops_on_constants'/>

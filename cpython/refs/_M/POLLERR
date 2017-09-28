@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/poll.h' l='47'/>
+<doc f='include/x86_64-linux-gnu/bits/poll.h' l='44'>/* Event types always implicitly polled for.  These bits need not be set in
+   `events&apos;, but they will appear in `revents&apos; to indicate the status of
+   the file descriptor.  */</doc>
+<use f='codebrowser/Modules/selectmodule.c' l='2439' u='c'/>
+<use f='codebrowser/Modules/socketmodule.c' l='683' u='c'/>

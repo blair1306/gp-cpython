@@ -1,0 +1,46 @@
+<dec f='codebrowser/Include/descrobject.h' l='43' type='PyTypeObject *'/>
+<offset>256</offset>
+<dec f='codebrowser/Include/grammar.h' l='51' type='int'/>
+<use f='codebrowser/Modules/parsermodule.c' l='689' u='r' c='validate_node'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/grammar.h' l='51'>/* Non-terminal this represents */</doc>
+<use f='codebrowser/Objects/descrobject.c' l='16' u='r' c='descr_dealloc'/>
+<use f='codebrowser/Objects/descrobject.c' l='37' u='r' c='descr_repr'/>
+<use f='codebrowser/Objects/descrobject.c' l='76' u='r' c='descr_check'/>
+<use f='codebrowser/Objects/descrobject.c' l='76' u='r' c='descr_check'/>
+<use f='codebrowser/Objects/descrobject.c' l='81' u='r' c='descr_check'/>
+<use f='codebrowser/Objects/descrobject.c' l='102' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='111' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='115' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='120' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='159' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='178' u='r' c='descr_setcheck'/>
+<use f='codebrowser/Objects/descrobject.c' l='178' u='r' c='descr_setcheck'/>
+<use f='codebrowser/Objects/descrobject.c' l='183' u='r' c='descr_setcheck'/>
+<use f='codebrowser/Objects/descrobject.c' l='214' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='232' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='237' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='243' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='271' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='276' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='282' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='308' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='317' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='321' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='327' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='355' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='360' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='366' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='405' u='r' c='calculate_qualname'/>
+<use f='codebrowser/Objects/descrobject.c' l='440' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='515' u='r' c='descr_traverse'/>
+<use f='codebrowser/Objects/descrobject.c' l='515' u='r' c='descr_traverse'/>
+<use f='codebrowser/Objects/descrobject.c' l='713' u='w' c='descr_new'/>
+<use f='codebrowser/Objects/descrobject.c' l='1125' macro='1' u='r'/>
+<use f='codebrowser/Objects/descrobject.c' l='1241' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='6975' macro='1' u='r'/>
+<use f='codebrowser/Parser/firstsets.c' l='66' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/grammar.c' l='58' u='w' c='_Py_adddfa'/>
+<use f='codebrowser/Parser/grammar.c' l='182' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='183' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar1.c' l='18' u='r' c='PyGrammar_FindDFA'/>

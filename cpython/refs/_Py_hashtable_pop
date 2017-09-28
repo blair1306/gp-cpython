@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/hashtable.h' l='199' type='int _Py_hashtable_pop(_Py_hashtable_t * ht, size_t key_size, const void * pkey, size_t data_size, void * data)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='593' macro='1' u='c'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='596' macro='1' u='c'/>
+<doc f='codebrowser/Modules/hashtable.h' l='198'>/* Don&apos;t call directly this function, but use _Py_HASHTABLE_POP() macro */</doc>
+<def f='codebrowser/Modules/hashtable.c' l='369' ll='375' type='int _Py_hashtable_pop(_Py_hashtable_t * ht, size_t key_size, const void * pkey, size_t data_size, void * data)'/>

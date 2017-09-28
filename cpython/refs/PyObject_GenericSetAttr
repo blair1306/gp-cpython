@@ -1,0 +1,35 @@
+<dec f='codebrowser/Include/object.h' l='548' type='int PyObject_GenericSetAttr(PyObject * , PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='811' u='c' c='UnionType_setattro'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1154' u='c' c='context_setattr'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='399'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='399'/>
+<use f='codebrowser/Modules/_pickle.c' l='4368'/>
+<use f='codebrowser/Modules/_pickle.c' l='4368'/>
+<use f='codebrowser/Modules/_pickle.c' l='6825'/>
+<use f='codebrowser/Modules/_pickle.c' l='6825'/>
+<use f='codebrowser/Modules/_struct.c' l='2020'/>
+<use f='codebrowser/Modules/_struct.c' l='2020'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4641'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4641'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4744'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4744'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4836'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4836'/>
+<use f='codebrowser/Objects/classobject.c' l='352'/>
+<use f='codebrowser/Objects/classobject.c' l='352'/>
+<use f='codebrowser/Objects/classobject.c' l='626'/>
+<use f='codebrowser/Objects/classobject.c' l='626'/>
+<use f='codebrowser/Objects/exceptions.c' l='371'/>
+<use f='codebrowser/Objects/exceptions.c' l='371'/>
+<use f='codebrowser/Objects/frameobject.c' l='583'/>
+<use f='codebrowser/Objects/frameobject.c' l='583'/>
+<use f='codebrowser/Objects/moduleobject.c' l='768'/>
+<use f='codebrowser/Objects/moduleobject.c' l='768'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='215'/>
+<use f='codebrowser/Objects/namespaceobject.c' l='215'/>
+<def f='codebrowser/Objects/object.c' l='1279' ll='1283' type='int PyObject_GenericSetAttr(PyObject * obj, PyObject * name, PyObject * value)'/>
+<use f='codebrowser/Objects/typeobject.c' l='2709' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4623'/>
+<use f='codebrowser/Objects/typeobject.c' l='4623'/>
+<use f='codebrowser/Python/Python-ast.c' l='640'/>
+<use f='codebrowser/Python/Python-ast.c' l='640'/>

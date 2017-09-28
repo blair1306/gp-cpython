@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/pydebug.h' l='14' type='int'/>
+<use f='codebrowser/Modules/main.c' l='532' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='543' u='r' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='545' u='w' c='apply_command_line_and_environment'/>
+<use f='codebrowser/Modules/main.c' l='825' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='847' u='w' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='907' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='910' u='w' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='913' u='r' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='915' u='w' c='Py_Main'/>
+<def f='codebrowser/Python/pylifecycle.c' l='85' type='int'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='85'>/* Needed to determine whether to exit at SystemExit */</doc>
+<use f='codebrowser/Python/pythonrun.c' l='556' u='r' c='handle_system_exit'/>
+<use f='codebrowser/Python/sysmodule.c' l='1726' u='r' c='make_flags'/>

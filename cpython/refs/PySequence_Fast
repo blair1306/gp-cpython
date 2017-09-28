@@ -1,0 +1,30 @@
+<dec f='codebrowser/Include/abstract.h' l='909' type='PyObject * PySequence_Fast(PyObject * o, const char * m)'/>
+<doc f='codebrowser/Include/abstract.h' l='902'>/* Return the sequence &apos;o&apos; as a list, unless it&apos;s already a tuple or list.
+
+   Use PySequence_Fast_GET_ITEM to access the members of this list, and
+   PySequence_Fast_GET_SIZE to get its length.
+
+   Returns NULL on failure.  If the object does not support iteration, raises a
+   TypeError exception with &apos;m&apos; as the message text. */</doc>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='214' u='c' c='MakeFields'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='293' u='c' c='MakeAnonFields'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1126' u='c' c='_elementtree_Element_extend'/>
+<use f='codebrowser/Modules/_elementtree.c' l='1874' u='c' c='element_ass_subscr'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3660' u='c' c='_elementtree_XMLParser__setevents_impl'/>
+<use f='codebrowser/Modules/_json.c' l='1712' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='622' u='c' c='subprocess_fork_exec'/>
+<use f='codebrowser/Modules/selectmodule.c' l='94' u='c' c='seq2set'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3638' u='c' c='sock_recvmsg_into'/>
+<use f='codebrowser/Modules/socketmodule.c' l='3959' u='c' c='sock_sendmsg_iovec'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4058' u='c' c='sock_sendmsg'/>
+<def f='codebrowser/Objects/abstract.c' l='1897' ll='1922' type='PyObject * PySequence_Fast(PyObject * v, const char * m)'/>
+<use f='codebrowser/Objects/abstract.c' l='2161' u='c' c='PyMapping_Keys'/>
+<use f='codebrowser/Objects/abstract.c' l='2178' u='c' c='PyMapping_Items'/>
+<use f='codebrowser/Objects/abstract.c' l='2195' u='c' c='PyMapping_Values'/>
+<use f='codebrowser/Objects/stringlib/join.h' l='22' u='c' c='stringlib_bytes_join'/>
+<use f='codebrowser/Objects/dictobject.c' l='2260' u='c' c='PyDict_MergeFromSeq2'/>
+<use f='codebrowser/Objects/listobject.c' l='613' u='c' c='list_ass_slice'/>
+<use f='codebrowser/Objects/listobject.c' l='841' u='c' c='list_extend'/>
+<use f='codebrowser/Objects/listobject.c' l='2628' u='c' c='list_ass_subscript'/>
+<use f='codebrowser/Objects/structseq.c' l='95' u='c' c='structseq_new_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9896' u='c' c='PyUnicode_Join'/>

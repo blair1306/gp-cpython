@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/classobject.h' l='23' type='PyObject * PyMethod_New(PyObject * , PyObject * )'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='1104' u='c' c='lru_cache_descr_get'/>
+<def f='codebrowser/Objects/classobject.c' l='45' ll='71' type='PyObject * PyMethod_New(PyObject * func, PyObject * self)'/>
+<use f='codebrowser/Objects/classobject.c' l='188' u='c' c='method_new'/>
+<use f='codebrowser/Objects/classobject.c' l='331' u='c' c='method_descr_get'/>
+<use f='codebrowser/Objects/classobject.c' l='510' u='c' c='instancemethod_descr_get'/>
+<doc f='codebrowser/Objects/classobject.c' l='40'>/* Method objects are used for bound instance methods returned by
+   instancename.methodname. ClassName.methodname returns an ordinary
+   function.
+*/</doc>
+<use f='codebrowser/Objects/funcobject.c' l='587' u='c' c='func_descr_get'/>
+<use f='codebrowser/Objects/funcobject.c' l='696' u='c' c='cm_descr_get'/>

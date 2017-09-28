@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1935' type='PyObject * PyUnicode_RPartition(PyObject * s, PyObject * sep)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1932'>/* Partition a string using a given separator, searching from the end of the
+   string. */</doc>
+<def f='codebrowser/Objects/unicodeobject.c' l='12992' ll='13047' type='PyObject * PyUnicode_RPartition(PyObject * str_obj, PyObject * sep_obj)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13089' u='c' c='unicode_rpartition'/>

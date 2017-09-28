@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/dictobject.h' l='135' type='int PyDict_Merge(PyObject * mp, PyObject * other, int override)'/>
+<doc f='codebrowser/Include/dictobject.h' l='130'>/* PyDict_Merge updates/merges from a mapping object (an object that
+   supports PyMapping_Keys() and PyObject_GetItem()).  If override is true,
+   the last occurrence of a key wins, else the first.  The Python
+   dict.update(other) is equivalent to PyDict_Merge(dict, other, 1).
+*/</doc>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='97' u='c' c='partial_new'/>
+<use f='codebrowser/Modules/_functoolsmodule.c' l='213' u='c' c='partial_call'/>
+<use f='codebrowser/Objects/dictobject.c' l='2197' u='c' c='dict_update_common'/>
+<use f='codebrowser/Objects/dictobject.c' l='2203' u='c' c='dict_update_common'/>
+<def f='codebrowser/Objects/dictobject.c' l='2453' ll='2458' type='int PyDict_Merge(PyObject * a, PyObject * b, int override)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2512' u='c' c='PyDict_Copy'/>

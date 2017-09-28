@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='346' type='int mpd_qsetround(mpd_context_t * ctx, int newround)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='919' u='c' c='context_setround'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3521' u='c' c='PyDec_ToIntegralValue'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3562' u='c' c='PyDec_ToIntegralExact'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4360' u='c' c='dec_mpd_qquantize'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/context.c' l='225' ll='233' type='int mpd_qsetround(mpd_context_t * ctx, int round)'/>

@@ -1,0 +1,13 @@
+<dec f='codebrowser/Include/genobject.h' l='32' macro='1' type='PyObject *'/>
+<offset>384</offset>
+<use f='codebrowser/Objects/genobject.c' l='22' u='r' c='gen_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='22' u='r' c='gen_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='64' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='65' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='115' u='r' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='115' u='w' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='227' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='228' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='809' u='w' c='gen_new_with_qualname'/>
+<use f='codebrowser/Objects/genobject.c' l='815' u='r' c='gen_new_with_qualname'/>
+<use f='codebrowser/Objects/genobject.c' l='867' u='r' c='gen_is_coroutine'/>

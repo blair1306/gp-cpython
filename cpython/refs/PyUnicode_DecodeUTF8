@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1302' type='PyObject * PyUnicode_DecodeUTF8(const char * string, Py_ssize_t length, const char * errors)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1300'>/* --- UTF-8 Codecs ------------------------------------------------------- */</doc>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3309' u='c' c='dec_format'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2836' u='c' c='makeuniversal'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2923' u='c' c='expat_default_handler'/>
+<use f='codebrowser/Modules/_elementtree.c' l='2980' u='c' c='expat_start_handler'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3038' u='c' c='expat_data_handler'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3130' u='c' c='expat_comment_handler'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3231' u='c' c='expat_pi_handler'/>
+<use f='codebrowser/Modules/_elementtree.c' l='3232' u='c' c='expat_pi_handler'/>
+<use f='codebrowser/Modules/_heapqmodule.c' l='643' u='c' c='PyInit__heapq'/>
+<use f='codebrowser/Modules/_pickle.c' l='5023' u='c' c='load_counted_binunicode'/>
+<use f='codebrowser/Modules/_pickle.c' l='5384' u='c' c='load_global'/>
+<use f='codebrowser/Modules/_pickle.c' l='5393' u='c' c='load_global'/>
+<use f='codebrowser/Modules/_ssl.c' l='814' u='c' c='_create_tuple_for_attribute'/>
+<use f='codebrowser/Modules/getpath.c' l='284' u='c' c='find_env_config_value'/>
+<use f='codebrowser/Modules/getpath.c' l='417' u='c' c='search_for_exec_prefix'/>
+<use f='codebrowser/Modules/pyexpat.c' l='166' u='c' c='conv_string_to_unicode'/>
+<use f='codebrowser/Modules/pyexpat.c' l='178' u='c' c='conv_string_len_to_unicode'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1096' u='c' c='_PyBytes_DecodeEscapeRecode'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4866' ll='4872' type='PyObject * PyUnicode_DecodeUTF8(const char * s, Py_ssize_t size, const char * errors)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='4864'>/* --- UTF-8 Codec -------------------------------------------------------- */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='1323' u='c' c='verify_identifier'/>
+<use f='codebrowser/Python/ast.c' l='646' u='c' c='new_identifier'/>
+<use f='codebrowser/Python/ast.c' l='3247' u='c' c='alias_for_import_name'/>
+<use f='codebrowser/Python/ast.c' l='4147' u='c' c='decode_utf8'/>
+<use f='codebrowser/Python/marshal.c' l='1170' u='c' c='r_object'/>
+<use f='codebrowser/Python/pythonrun.c' l='1364' u='c' c='err_input'/>
+<use f='codebrowser/Python/pythonrun.c' l='1371' u='c' c='err_input'/>

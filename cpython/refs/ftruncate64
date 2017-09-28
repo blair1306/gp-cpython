@@ -1,0 +1,5 @@
+<dec f='include/unistd.h' l='1022' type='int ftruncate(int __fd, __off64_t __length)'/>
+<dec f='include/unistd.h' l='1029' type='int ftruncate64(int __fd, __off64_t __length)'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='1024' u='c' c='_io_FileIO_truncate_impl'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='524' u='c' c='mmap_resize_method'/>
+<use f='codebrowser/Modules/posixmodule.c' l='8822' u='c' c='os_ftruncate_impl'/>

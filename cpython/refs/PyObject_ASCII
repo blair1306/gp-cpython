@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/object.h' l='526' type='PyObject * PyObject_ASCII(PyObject * )'/>
+<use f='codebrowser/Objects/bytesobject.c' l='831' u='c' c='_PyBytes_FormatEx'/>
+<def f='codebrowser/Objects/object.c' l='557' ll='582' type='PyObject * PyObject_ASCII(PyObject * v)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2850' u='c' c='unicode_fromformat_arg'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='768' u='c' c='do_conversion'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14682' u='c' c='unicode_format_arg_format'/>
+<use f='codebrowser/Python/bltinmodule.c' l='375' u='c' c='builtin_ascii'/>
+<use f='codebrowser/Python/ceval.c' l='3490' u='r' c='_PyEval_EvalFrameDefault'/>

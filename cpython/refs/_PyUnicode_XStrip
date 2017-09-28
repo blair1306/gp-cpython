@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='2132' type='PyObject * _PyUnicode_XStrip(PyObject * self, int striptype, PyObject * sepobj)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='2131'>/* Externally visible for str.strip(unicode) */</doc>
+<use f='codebrowser/Objects/exceptions.c' l='2888' u='c' c='_set_legacy_print_statement_msg'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='12308' ll='12356' type='PyObject * _PyUnicode_XStrip(PyObject * self, int striptype, PyObject * sepobj)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='12466' u='c' c='do_argstrip'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='12307'>/* externally visible for str.strip(unicode) */</doc>

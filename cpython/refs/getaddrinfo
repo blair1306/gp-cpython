@@ -1,0 +1,10 @@
+<dec f='include/netdb.h' l='662' type='int getaddrinfo(const char *restrict __name, const char *restrict __service, const struct addrinfo *restrict __req, struct addrinfo **restrict __pai)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='969' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1077' u='c' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5965' u='c' c='socket_getaddrinfo'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6054' u='c' c='socket_getnameinfo'/>
+<doc f='include/netdb.h' l='657'>/* Translate name of a service location and/or a service name to set of
+   socket addresses.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>

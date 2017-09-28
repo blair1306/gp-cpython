@@ -1,0 +1,4 @@
+<dec f='include/linux/tipc.h' l='60' type='__u32'/>
+<offset>64</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1339' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1866' u='w' c='getsockaddrarg'/>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>structseq.c.h source code [codebrowser/Objects/clinic/structseq.c.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Objects/clinic/structseq.c.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>codebrowser</a>/<a href='..'>Objects</a>/<a href='./'>clinic</a>/<a href='structseq.c.h.html'>structseq.c.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*[clinic input]</i></td></tr>
+<tr><th id="2">2</th><td><i>preserve</i></td></tr>
+<tr><th id="3">3</th><td><i>[clinic start generated code]*/</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="6">6</th><td><a class="decl" href="../structseq.c.html#structseq_new_impl" title='structseq_new_impl' data-ref="structseq_new_impl" id="structseq_new_impl">structseq_new_impl</a>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col3 decl" id="13type" title='type' data-type='PyTypeObject *' data-ref="13type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col4 decl" id="14arg" title='arg' data-type='PyObject *' data-ref="14arg">arg</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col5 decl" id="15dict" title='dict' data-type='PyObject *' data-ref="15dict">dict</dfn>);</td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><em>static</em> <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *</td></tr>
+<tr><th id="9">9</th><td><dfn class="decl def" id="structseq_new" title='structseq_new' data-ref="structseq_new">structseq_new</dfn>(<a class="typedef" href="../../Include/object.h.html#PyTypeObject" title='PyTypeObject' data-type='struct _typeobject' data-ref="PyTypeObject">PyTypeObject</a> *<dfn class="local col6 decl" id="16type" title='type' data-type='PyTypeObject *' data-ref="16type">type</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col7 decl" id="17args" title='args' data-type='PyObject *' data-ref="17args">args</dfn>, <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col8 decl" id="18kwargs" title='kwargs' data-type='PyObject *' data-ref="18kwargs">kwargs</dfn>)</td></tr>
+<tr><th id="10">10</th><td>{</td></tr>
+<tr><th id="11">11</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col9 decl" id="19return_value" title='return_value' data-type='PyObject *' data-ref="19return_value">return_value</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="12">12</th><td>    <em>static</em> <em>const</em> <em>char</em> * <em>const</em> <dfn class="local col0 decl" id="20_keywords" title='_keywords' data-type='const char *const [3]' data-ref="20_keywords">_keywords</dfn>[] = {<q>"sequence"</q>, <q>"dict"</q>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>};</td></tr>
+<tr><th id="13">13</th><td>    <em>static</em> <a class="typedef" href="../../Include/modsupport.h.html#_PyArg_Parser" title='_PyArg_Parser' data-type='struct _PyArg_Parser' data-ref="_PyArg_Parser">_PyArg_Parser</a> <dfn class="local col1 decl" id="21_parser" title='_parser' data-type='_PyArg_Parser' data-ref="21_parser">_parser</dfn> = {<q>"O|O:structseq"</q>, <a class="local col0 ref" href="#20_keywords" title='_keywords' data-ref="20_keywords">_keywords</a>, <var>0</var>};</td></tr>
+<tr><th id="14">14</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col2 decl" id="22arg" title='arg' data-type='PyObject *' data-ref="22arg">arg</dfn>;</td></tr>
+<tr><th id="15">15</th><td>    <a class="typedef" href="../../Include/object.h.html#PyObject" title='PyObject' data-type='struct _object' data-ref="PyObject">PyObject</a> *<dfn class="local col3 decl" id="23dict" title='dict' data-type='PyObject *' data-ref="23dict">dict</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td>    <b>if</b> (!<a class="ref" href="../../Include/modsupport.h.html#_PyArg_ParseTupleAndKeywordsFast" title='_PyArg_ParseTupleAndKeywordsFast' data-ref="_PyArg_ParseTupleAndKeywordsFast">_PyArg_ParseTupleAndKeywordsFast</a>(<a class="local col7 ref" href="#17args" title='args' data-ref="17args">args</a>, <a class="local col8 ref" href="#18kwargs" title='kwargs' data-ref="18kwargs">kwargs</a>, &amp;<a class="local col1 ref" href="#21_parser" title='_parser' data-ref="21_parser">_parser</a>,</td></tr>
+<tr><th id="18">18</th><td>        &amp;<a class="local col2 ref" href="#22arg" title='arg' data-ref="22arg">arg</a>, &amp;<a class="local col3 ref" href="#23dict" title='dict' data-ref="23dict">dict</a>)) {</td></tr>
+<tr><th id="19">19</th><td>        <b>goto</b> <a class="lbl" href="#24exit" data-ref="24exit">exit</a>;</td></tr>
+<tr><th id="20">20</th><td>    }</td></tr>
+<tr><th id="21">21</th><td>    <a class="local col9 ref" href="#19return_value" title='return_value' data-ref="19return_value">return_value</a> = <a class="ref" href="../structseq.c.html#structseq_new_impl" title='structseq_new_impl' data-ref="structseq_new_impl">structseq_new_impl</a>(<a class="local col6 ref" href="#16type" title='type' data-ref="16type">type</a>, <a class="local col2 ref" href="#22arg" title='arg' data-ref="22arg">arg</a>, <a class="local col3 ref" href="#23dict" title='dict' data-ref="23dict">dict</a>);</td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><dfn class="lbl" id="24exit" data-ref="24exit">exit</dfn>:</td></tr>
+<tr><th id="24">24</th><td>    <b>return</b> <a class="local col9 ref" href="#19return_value" title='return_value' data-ref="19return_value">return_value</a>;</td></tr>
+<tr><th id="25">25</th><td>}</td></tr>
+<tr><th id="26">26</th><td><i>/*[clinic end generated code: output=cd643eb89b5d312a input=a9049054013a1b77]*/</i></td></tr>
+<tr><th id="27">27</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='../structseq.c.html'>codebrowser/Objects/structseq.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

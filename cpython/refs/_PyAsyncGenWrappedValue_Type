@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/genobject.h' l='84' type='PyTypeObject'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='PyAsyncGen_ClearFreeLists'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='async_gen_unwrap_value'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='async_gen_wrapped_val_dealloc'/>
+<def f='codebrowser/Objects/genobject.c' l='1763' ll='1803' type='PyTypeObject'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='_PyAsyncGenValueWrapperNew'/>
+<use f='codebrowser/Objects/genobject.c' l='1819' u='a' c='_PyAsyncGenValueWrapperNew'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='async_gen_athrow_send'/>
+<use f='codebrowser/Objects/genobject.c' l='1294' u='a' c='async_gen_athrow_throw'/>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='480' type='void mpd_qscaleb(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4334' u='c' c='dec_mpd_qscaleb'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5380' u='c' c='ctx_mpd_qscaleb'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2938' ll='3001' type='void mpd_qscaleb(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2933'>/*
+ * b must be an integer with exponent 0 and in the range +-2*(emax + prec).
+ * XXX: In my opinion +-(2*emax + prec) would be more sensible.
+ * The result is a with the value of b added to its exponent.
+ */</doc>

@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/frameobject.h' l='49' type='int'/>
+<offset>1152</offset>
+<doc f='codebrowser/Include/frameobject.h' l='49'>/* index in f_blockstack */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='296' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='299' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='303' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='314' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='315' u='w' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='728' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Objects/frameobject.c' l='752' u='r' c='PyFrame_BlockSetup'/>
+<use f='codebrowser/Objects/frameobject.c' l='754' u='w' c='PyFrame_BlockSetup'/>
+<use f='codebrowser/Objects/frameobject.c' l='764' u='r' c='PyFrame_BlockPop'/>
+<use f='codebrowser/Objects/frameobject.c' l='766' u='w' c='PyFrame_BlockPop'/>
+<use f='codebrowser/Objects/genobject.c' l='848' u='r' c='PyGen_NeedsFinalizing'/>
+<use f='codebrowser/Python/ceval.c' l='3210' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3586' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3588' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3598' u='w' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3694' u='r' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='3699' u='r' c='_PyEval_EvalFrameDefault'/>

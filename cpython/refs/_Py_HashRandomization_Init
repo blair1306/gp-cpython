@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='97' type='void _Py_HashRandomization_Init(_PyCoreConfig * core_config)'/>
+<def f='codebrowser/Python/bootstrap_hash.c' l='601' ll='618' type='void _Py_HashRandomization_Init(_PyCoreConfig * core_config)'/>
+<use f='codebrowser/Python/pylifecycle.c' l='607' u='c' c='_Py_InitializeCore'/>

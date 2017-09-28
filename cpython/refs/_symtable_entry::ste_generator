@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/symtable.h' l='50' type='unsigned int'/>
+<offset>706</offset>
+<doc f='codebrowser/Include/symtable.h' l='50'>/* true if namespace is a generator */</doc>
+<use f='codebrowser/Python/compile.c' l='2182' u='r' c='compiler_lambda'/>
+<use f='codebrowser/Python/compile.c' l='2902' u='r' c='compiler_visit_stmt'/>
+<use f='codebrowser/Python/compile.c' l='5262' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/compile.c' l='5264' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/compile.c' l='5266' u='r' c='compute_code_flags'/>
+<use f='codebrowser/Python/symtable.c' l='71' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='1453' u='w' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1457' u='w' c='symtable_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1735' u='w' c='symtable_handle_comprehension'/>

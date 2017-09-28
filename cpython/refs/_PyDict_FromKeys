@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/dictobject.h' l='121' type='PyObject * _PyDict_FromKeys(PyObject * , PyObject * , PyObject * )'/>
+<def f='codebrowser/Objects/dictobject.c' l='1755' ll='1840' type='PyObject * _PyDict_FromKeys(PyObject * cls, PyObject * iterable, PyObject * value)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2181' u='c' c='dict_fromkeys_impl'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1754'>/* Internal version of dict.from_keys().  It is subclass-friendly. */</doc>
+<use f='codebrowser/Objects/odictobject.c' l='936' u='c' c='OrderedDict_fromkeys_impl'/>

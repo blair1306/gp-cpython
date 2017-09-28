@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ceval_gil.h source code [codebrowser/Python/ceval_gil.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'codebrowser/Python/ceval_gil.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>codebrowser</a>/<a href='./'>Python</a>/<a href='ceval_gil.h.html'>ceval_gil.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Implementation of the Global Interpreter Lock (GIL).</i></td></tr>
+<tr><th id="3">3</th><td><i> */</i></td></tr>
+<tr><th id="4">4</th><td></td></tr>
+<tr><th id="5">5</th><td><u>#include <a href="../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="6">6</th><td><u>#include <a href="../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><i>/* First some general settings */</i></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><i>/* microseconds (the Python API uses seconds, though) */</i></td></tr>
+<tr><th id="12">12</th><td><u>#define <dfn class="macro" id="_M/DEFAULT_INTERVAL" data-ref="_M/DEFAULT_INTERVAL">DEFAULT_INTERVAL</dfn> 5000</u></td></tr>
+<tr><th id="13">13</th><td><em>static</em> <em>unsigned</em> <em>long</em> <dfn class="decl def" id="gil_interval" title='gil_interval' data-ref="gil_interval">gil_interval</dfn> = <a class="macro" href="#12" title="5000" data-ref="_M/DEFAULT_INTERVAL">DEFAULT_INTERVAL</a>;</td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/INTERVAL" data-ref="_M/INTERVAL">INTERVAL</dfn> (<a class="ref" href="#gil_interval" title='gil_interval' data-ref="gil_interval">gil_interval</a> &gt;= 1 ? <a class="ref" href="#gil_interval" title='gil_interval' data-ref="gil_interval">gil_interval</a> : 1)</u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><i>/* Enable if you want to force the switching of threads at least every `gil_interval` */</i></td></tr>
+<tr><th id="17">17</th><td><u>#undef <span class="macro" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</span></u></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/FORCE_SWITCHING" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</dfn></u></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/*</i></td></tr>
+<tr><th id="22">22</th><td><i>   Notes about the implementation:</i></td></tr>
+<tr><th id="23">23</th><td><i></i></td></tr>
+<tr><th id="24">24</th><td><i>   - The GIL is just a boolean variable (gil_locked) whose access is protected</i></td></tr>
+<tr><th id="25">25</th><td><i>     by a mutex (gil_mutex), and whose changes are signalled by a condition</i></td></tr>
+<tr><th id="26">26</th><td><i>     variable (gil_cond). gil_mutex is taken for short periods of time,</i></td></tr>
+<tr><th id="27">27</th><td><i>     and therefore mostly uncontended.</i></td></tr>
+<tr><th id="28">28</th><td><i></i></td></tr>
+<tr><th id="29">29</th><td><i>   - In the GIL-holding thread, the main loop (PyEval_EvalFrameEx) must be</i></td></tr>
+<tr><th id="30">30</th><td><i>     able to release the GIL on demand by another thread. A volatile boolean</i></td></tr>
+<tr><th id="31">31</th><td><i>     variable (gil_drop_request) is used for that purpose, which is checked</i></td></tr>
+<tr><th id="32">32</th><td><i>     at every turn of the eval loop. That variable is set after a wait of</i></td></tr>
+<tr><th id="33">33</th><td><i>     `interval` microseconds on `gil_cond` has timed out.</i></td></tr>
+<tr><th id="34">34</th><td><i></i></td></tr>
+<tr><th id="35">35</th><td><i>      [Actually, another volatile boolean variable (eval_breaker) is used</i></td></tr>
+<tr><th id="36">36</th><td><i>       which ORs several conditions into one. Volatile booleans are</i></td></tr>
+<tr><th id="37">37</th><td><i>       sufficient as inter-thread signalling means since Python is run</i></td></tr>
+<tr><th id="38">38</th><td><i>       on cache-coherent architectures only.]</i></td></tr>
+<tr><th id="39">39</th><td><i></i></td></tr>
+<tr><th id="40">40</th><td><i>   - A thread wanting to take the GIL will first let pass a given amount of</i></td></tr>
+<tr><th id="41">41</th><td><i>     time (`interval` microseconds) before setting gil_drop_request. This</i></td></tr>
+<tr><th id="42">42</th><td><i>     encourages a defined switching period, but doesn't enforce it since</i></td></tr>
+<tr><th id="43">43</th><td><i>     opcodes can take an arbitrary time to execute.</i></td></tr>
+<tr><th id="44">44</th><td><i></i></td></tr>
+<tr><th id="45">45</th><td><i>     The `interval` value is available for the user to read and modify</i></td></tr>
+<tr><th id="46">46</th><td><i>     using the Python API `sys.{get,set}switchinterval()`.</i></td></tr>
+<tr><th id="47">47</th><td><i></i></td></tr>
+<tr><th id="48">48</th><td><i>   - When a thread releases the GIL and gil_drop_request is set, that thread</i></td></tr>
+<tr><th id="49">49</th><td><i>     ensures that another GIL-awaiting thread gets scheduled.</i></td></tr>
+<tr><th id="50">50</th><td><i>     It does so by waiting on a condition variable (switch_cond) until</i></td></tr>
+<tr><th id="51">51</th><td><i>     the value of gil_last_holder is changed to something else than its</i></td></tr>
+<tr><th id="52">52</th><td><i>     own thread state pointer, indicating that another thread was able to</i></td></tr>
+<tr><th id="53">53</th><td><i>     take the GIL.</i></td></tr>
+<tr><th id="54">54</th><td><i></i></td></tr>
+<tr><th id="55">55</th><td><i>     This is meant to prohibit the latency-adverse behaviour on multi-core</i></td></tr>
+<tr><th id="56">56</th><td><i>     machines where one thread would speculatively release the GIL, but still</i></td></tr>
+<tr><th id="57">57</th><td><i>     run and end up being the first to re-acquire it, making the "timeslices"</i></td></tr>
+<tr><th id="58">58</th><td><i>     much longer than expected.</i></td></tr>
+<tr><th id="59">59</th><td><i>     (Note: this mechanism is enabled with FORCE_SWITCHING above)</i></td></tr>
+<tr><th id="60">60</th><td><i>*/</i></td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#include <a href="condvar.h.html">"condvar.h"</a></u></td></tr>
+<tr><th id="63">63</th><td><u>#<span data-ppcond="63">ifndef</span> <a class="macro" href="condvar.h.html#58" data-ref="_M/Py_HAVE_CONDVAR">Py_HAVE_CONDVAR</a></u></td></tr>
+<tr><th id="64">64</th><td><u>#error You need either a POSIX-compatible or a Windows system!</u></td></tr>
+<tr><th id="65">65</th><td><u>#<span data-ppcond="63">endif</span></u></td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/MUTEX_T" data-ref="_M/MUTEX_T">MUTEX_T</dfn> PyMUTEX_T</u></td></tr>
+<tr><th id="68">68</th><td><u>#define <dfn class="macro" id="_M/MUTEX_INIT" data-ref="_M/MUTEX_INIT">MUTEX_INIT</dfn>(mut) \</u></td></tr>
+<tr><th id="69">69</th><td><u>    if (PyMUTEX_INIT(&amp;(mut))) { \</u></td></tr>
+<tr><th id="70">70</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyMUTEX_INIT(" #mut ") failed"); };</u></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/MUTEX_FINI" data-ref="_M/MUTEX_FINI">MUTEX_FINI</dfn>(mut) \</u></td></tr>
+<tr><th id="72">72</th><td><u>    if (PyMUTEX_FINI(&amp;(mut))) { \</u></td></tr>
+<tr><th id="73">73</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyMUTEX_FINI(" #mut ") failed"); };</u></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/MUTEX_LOCK" data-ref="_M/MUTEX_LOCK">MUTEX_LOCK</dfn>(mut) \</u></td></tr>
+<tr><th id="75">75</th><td><u>    if (PyMUTEX_LOCK(&amp;(mut))) { \</u></td></tr>
+<tr><th id="76">76</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyMUTEX_LOCK(" #mut ") failed"); };</u></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/MUTEX_UNLOCK" data-ref="_M/MUTEX_UNLOCK">MUTEX_UNLOCK</dfn>(mut) \</u></td></tr>
+<tr><th id="78">78</th><td><u>    if (PyMUTEX_UNLOCK(&amp;(mut))) { \</u></td></tr>
+<tr><th id="79">79</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyMUTEX_UNLOCK(" #mut ") failed"); };</u></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/COND_T" data-ref="_M/COND_T">COND_T</dfn> PyCOND_T</u></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/COND_INIT" data-ref="_M/COND_INIT">COND_INIT</dfn>(cond) \</u></td></tr>
+<tr><th id="83">83</th><td><u>    if (PyCOND_INIT(&amp;(cond))) { \</u></td></tr>
+<tr><th id="84">84</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyCOND_INIT(" #cond ") failed"); };</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/COND_FINI" data-ref="_M/COND_FINI">COND_FINI</dfn>(cond) \</u></td></tr>
+<tr><th id="86">86</th><td><u>    if (PyCOND_FINI(&amp;(cond))) { \</u></td></tr>
+<tr><th id="87">87</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyCOND_FINI(" #cond ") failed"); };</u></td></tr>
+<tr><th id="88">88</th><td><u>#define <dfn class="macro" id="_M/COND_SIGNAL" data-ref="_M/COND_SIGNAL">COND_SIGNAL</dfn>(cond) \</u></td></tr>
+<tr><th id="89">89</th><td><u>    if (PyCOND_SIGNAL(&amp;(cond))) { \</u></td></tr>
+<tr><th id="90">90</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyCOND_SIGNAL(" #cond ") failed"); };</u></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/COND_WAIT" data-ref="_M/COND_WAIT">COND_WAIT</dfn>(cond, mut) \</u></td></tr>
+<tr><th id="92">92</th><td><u>    if (PyCOND_WAIT(&amp;(cond), &amp;(mut))) { \</u></td></tr>
+<tr><th id="93">93</th><td><u>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyCOND_WAIT(" #cond ") failed"); };</u></td></tr>
+<tr><th id="94">94</th><td><u>#define <dfn class="macro" id="_M/COND_TIMED_WAIT" data-ref="_M/COND_TIMED_WAIT">COND_TIMED_WAIT</dfn>(cond, mut, microseconds, timeout_result) \</u></td></tr>
+<tr><th id="95">95</th><td><u>    { \</u></td></tr>
+<tr><th id="96">96</th><td><u>        int <dfn class="local col9 decl" id="19r" title='r' data-type='int' data-ref="19r">r</dfn> = <a class="ref" href="condvar.h.html#PyCOND_TIMEDWAIT" title='PyCOND_TIMEDWAIT' data-ref="PyCOND_TIMEDWAIT">PyCOND_TIMEDWAIT</a>(&amp;(cond), &amp;(mut), (microseconds)); \</u></td></tr>
+<tr><th id="97">97</th><td><u>        if (<a class="local col9 ref" href="#224" title='r' data-ref="19r">r</a> &lt; 0) \</u></td></tr>
+<tr><th id="98">98</th><td><u>            <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>("PyCOND_WAIT(" #cond ") failed"); \</u></td></tr>
+<tr><th id="99">99</th><td><u>        if (<a class="local col9 ref" href="#224" title='r' data-ref="19r">r</a>) /* 1 == timeout, 2 == impl. can't say, so assume timeout */ \</u></td></tr>
+<tr><th id="100">100</th><td><u>            timeout_result = 1; \</u></td></tr>
+<tr><th id="101">101</th><td><u>        else \</u></td></tr>
+<tr><th id="102">102</th><td><u>            timeout_result = 0; \</u></td></tr>
+<tr><th id="103">103</th><td><u>    }</u> \</td></tr>
+<tr><th id="104">104</th><td></td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><i>/* Whether the GIL is already taken (-1 if uninitialized). This is atomic</i></td></tr>
+<tr><th id="108">108</th><td><i>   because it can be read without any lock taken in ceval.c. */</i></td></tr>
+<tr><th id="109">109</th><td><em>static</em> <a class="typedef" href="../Include/pyatomic.h.html#_Py_atomic_int" title='_Py_atomic_int' data-type='struct _Py_atomic_int' data-ref="_Py_atomic_int">_Py_atomic_int</a> <dfn class="decl def" id="gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</dfn> = {-<var>1</var>};</td></tr>
+<tr><th id="110">110</th><td><i>/* Number of GIL switches since the beginning. */</i></td></tr>
+<tr><th id="111">111</th><td><em>static</em> <em>unsigned</em> <em>long</em> <dfn class="decl def" id="gil_switch_number" title='gil_switch_number' data-ref="gil_switch_number">gil_switch_number</dfn> = <var>0</var>;</td></tr>
+<tr><th id="112">112</th><td><i>/* Last PyThreadState holding / having held the GIL. This helps us know</i></td></tr>
+<tr><th id="113">113</th><td><i>   whether anyone else was scheduled after we dropped the GIL. */</i></td></tr>
+<tr><th id="114">114</th><td><em>static</em> <a class="typedef" href="../Include/pyatomic.h.html#_Py_atomic_address" title='_Py_atomic_address' data-type='struct _Py_atomic_address' data-ref="_Py_atomic_address">_Py_atomic_address</a> <dfn class="decl def" id="gil_last_holder" title='gil_last_holder' data-ref="gil_last_holder">gil_last_holder</dfn> = {<var>0</var>};</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><i>/* This condition variable allows one or several threads to wait until</i></td></tr>
+<tr><th id="117">117</th><td><i>   the GIL is released. In addition, the mutex also protects the above</i></td></tr>
+<tr><th id="118">118</th><td><i>   variables. */</i></td></tr>
+<tr><th id="119">119</th><td><em>static</em> <a class="macro" href="#81" title="pthread_cond_t" data-ref="_M/COND_T">COND_T</a> <dfn class="decl def" id="gil_cond" title='gil_cond' data-ref="gil_cond">gil_cond</dfn>;</td></tr>
+<tr><th id="120">120</th><td><em>static</em> <a class="macro" href="#67" title="pthread_mutex_t" data-ref="_M/MUTEX_T">MUTEX_T</a> <dfn class="decl def" id="gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</dfn>;</td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><u>#<span data-ppcond="122">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="123">123</th><td><i>/* This condition variable helps the GIL-releasing thread wait for</i></td></tr>
+<tr><th id="124">124</th><td><i>   a GIL-awaiting thread to be scheduled and take the GIL. */</i></td></tr>
+<tr><th id="125">125</th><td><em>static</em> <a class="macro" href="#81" title="pthread_cond_t" data-ref="_M/COND_T">COND_T</a> <dfn class="decl def" id="switch_cond" title='switch_cond' data-ref="switch_cond">switch_cond</dfn>;</td></tr>
+<tr><th id="126">126</th><td><em>static</em> <a class="macro" href="#67" title="pthread_mutex_t" data-ref="_M/MUTEX_T">MUTEX_T</a> <dfn class="decl def" id="switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</dfn>;</td></tr>
+<tr><th id="127">127</th><td><u>#<span data-ppcond="122">endif</span></u></td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td></td></tr>
+<tr><th id="130">130</th><td><em>static</em> <em>int</em> <dfn class="decl def" id="gil_created" title='gil_created' data-ref="gil_created">gil_created</dfn>(<em>void</em>)</td></tr>
+<tr><th id="131">131</th><td>{</td></tr>
+<tr><th id="132">132</th><td>    <b>return</b> <a class="macro" href="../Include/pyatomic.h.html#55" title="__c11_atomic_load(&amp;(&amp;gil_locked)-&gt;_value, _Py_memory_order_acquire)" data-ref="_M/_Py_atomic_load_explicit">_Py_atomic_load_explicit</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>, <a class="enum" href="../Include/pyatomic.h.html#_Py_memory_order::_Py_memory_order_acquire" title='_Py_memory_order::_Py_memory_order_acquire' data-ref="_Py_memory_order::_Py_memory_order_acquire">_Py_memory_order_acquire</a>) &gt;= <var>0</var>;</td></tr>
+<tr><th id="133">133</th><td>}</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td><em>static</em> <em>void</em> <dfn class="decl def" id="create_gil" title='create_gil' data-ref="create_gil">create_gil</dfn>(<em>void</em>)</td></tr>
+<tr><th id="136">136</th><td>{</td></tr>
+<tr><th id="137">137</th><td>    <a class="macro" href="#68" title="if (pthread_mutex_init((&amp;(gil_mutex)), ((void*)0))) { Py_FatalError(&quot;PyMUTEX_INIT(&quot; &quot;gil_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_INIT">MUTEX_INIT</a>(<a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>);</td></tr>
+<tr><th id="138">138</th><td><u>#<span data-ppcond="138">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="139">139</th><td>    <a class="macro" href="#68" title="if (pthread_mutex_init((&amp;(switch_mutex)), ((void*)0))) { Py_FatalError(&quot;PyMUTEX_INIT(&quot; &quot;switch_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_INIT">MUTEX_INIT</a>(<a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="140">140</th><td><u>#<span data-ppcond="138">endif</span></u></td></tr>
+<tr><th id="141">141</th><td>    <a class="macro" href="#82" title="if (pthread_cond_init((&amp;(gil_cond)), ((void*)0))) { Py_FatalError(&quot;PyCOND_INIT(&quot; &quot;gil_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_INIT">COND_INIT</a>(<a class="ref" href="#gil_cond" title='gil_cond' data-ref="gil_cond">gil_cond</a>);</td></tr>
+<tr><th id="142">142</th><td><u>#<span data-ppcond="142">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="143">143</th><td>    <a class="macro" href="#82" title="if (pthread_cond_init((&amp;(switch_cond)), ((void*)0))) { Py_FatalError(&quot;PyCOND_INIT(&quot; &quot;switch_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_INIT">COND_INIT</a>(<a class="ref" href="#switch_cond" title='switch_cond' data-ref="switch_cond">switch_cond</a>);</td></tr>
+<tr><th id="144">144</th><td><u>#<span data-ppcond="142">endif</span></u></td></tr>
+<tr><th id="145">145</th><td>    <a class="macro" href="../Include/pyatomic.h.html#530" title="__c11_atomic_store(&amp;(&amp;gil_last_holder)-&gt;_value, 0, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_store_relaxed">_Py_atomic_store_relaxed</a>(&amp;<a class="ref" href="#gil_last_holder" title='gil_last_holder' data-ref="gil_last_holder">gil_last_holder</a>, <var>0</var>);</td></tr>
+<tr><th id="146">146</th><td>    <a class="macro" href="../Include/dynamic_annotations.h.html#328" title="" data-ref="_M/_Py_ANNOTATE_RWLOCK_CREATE">_Py_ANNOTATE_RWLOCK_CREATE</a>(&amp;gil_locked);</td></tr>
+<tr><th id="147">147</th><td>    <a class="macro" href="../Include/pyatomic.h.html#52" title="__c11_atomic_store(&amp;(&amp;gil_locked)-&gt;_value, 0, _Py_memory_order_release)" data-ref="_M/_Py_atomic_store_explicit">_Py_atomic_store_explicit</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>, <var>0</var>, <a class="enum" href="../Include/pyatomic.h.html#_Py_memory_order::_Py_memory_order_release" title='_Py_memory_order::_Py_memory_order_release' data-ref="_Py_memory_order::_Py_memory_order_release">_Py_memory_order_release</a>);</td></tr>
+<tr><th id="148">148</th><td>}</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><em>static</em> <em>void</em> <dfn class="decl def" id="destroy_gil" title='destroy_gil' data-ref="destroy_gil">destroy_gil</dfn>(<em>void</em>)</td></tr>
+<tr><th id="151">151</th><td>{</td></tr>
+<tr><th id="152">152</th><td>    <i>/* some pthread-like implementations tie the mutex to the cond</i></td></tr>
+<tr><th id="153">153</th><td><i>     * and must have the cond destroyed first.</i></td></tr>
+<tr><th id="154">154</th><td><i>     */</i></td></tr>
+<tr><th id="155">155</th><td>    <a class="macro" href="#85" title="if (pthread_cond_destroy(&amp;(gil_cond))) { Py_FatalError(&quot;PyCOND_FINI(&quot; &quot;gil_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_FINI">COND_FINI</a>(<a class="ref" href="#gil_cond" title='gil_cond' data-ref="gil_cond">gil_cond</a>);</td></tr>
+<tr><th id="156">156</th><td>    <a class="macro" href="#71" title="if (pthread_mutex_destroy(&amp;(gil_mutex))) { Py_FatalError(&quot;PyMUTEX_FINI(&quot; &quot;gil_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_FINI">MUTEX_FINI</a>(<a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>);</td></tr>
+<tr><th id="157">157</th><td><u>#<span data-ppcond="157">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="158">158</th><td>    <a class="macro" href="#85" title="if (pthread_cond_destroy(&amp;(switch_cond))) { Py_FatalError(&quot;PyCOND_FINI(&quot; &quot;switch_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_FINI">COND_FINI</a>(<a class="ref" href="#switch_cond" title='switch_cond' data-ref="switch_cond">switch_cond</a>);</td></tr>
+<tr><th id="159">159</th><td>    <a class="macro" href="#71" title="if (pthread_mutex_destroy(&amp;(switch_mutex))) { Py_FatalError(&quot;PyMUTEX_FINI(&quot; &quot;switch_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_FINI">MUTEX_FINI</a>(<a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="160">160</th><td><u>#<span data-ppcond="157">endif</span></u></td></tr>
+<tr><th id="161">161</th><td>    <a class="macro" href="../Include/pyatomic.h.html#52" title="__c11_atomic_store(&amp;(&amp;gil_locked)-&gt;_value, -1, _Py_memory_order_release)" data-ref="_M/_Py_atomic_store_explicit">_Py_atomic_store_explicit</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>, -<var>1</var>, <a class="enum" href="../Include/pyatomic.h.html#_Py_memory_order::_Py_memory_order_release" title='_Py_memory_order::_Py_memory_order_release' data-ref="_Py_memory_order::_Py_memory_order_release">_Py_memory_order_release</a>);</td></tr>
+<tr><th id="162">162</th><td>    <a class="macro" href="../Include/dynamic_annotations.h.html#329" title="" data-ref="_M/_Py_ANNOTATE_RWLOCK_DESTROY">_Py_ANNOTATE_RWLOCK_DESTROY</a>(&amp;gil_locked);</td></tr>
+<tr><th id="163">163</th><td>}</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><em>static</em> <em>void</em> <dfn class="decl def" id="recreate_gil" title='recreate_gil' data-ref="recreate_gil">recreate_gil</dfn>(<em>void</em>)</td></tr>
+<tr><th id="166">166</th><td>{</td></tr>
+<tr><th id="167">167</th><td>    <a class="macro" href="../Include/dynamic_annotations.h.html#329" title="" data-ref="_M/_Py_ANNOTATE_RWLOCK_DESTROY">_Py_ANNOTATE_RWLOCK_DESTROY</a>(&amp;gil_locked);</td></tr>
+<tr><th id="168">168</th><td>    <i>/* XXX should we destroy the old OS resources here? */</i></td></tr>
+<tr><th id="169">169</th><td>    <a class="ref" href="#create_gil" title='create_gil' data-ref="create_gil">create_gil</a>();</td></tr>
+<tr><th id="170">170</th><td>}</td></tr>
+<tr><th id="171">171</th><td></td></tr>
+<tr><th id="172">172</th><td><em>static</em> <em>void</em> <dfn class="decl def" id="drop_gil" title='drop_gil' data-ref="drop_gil">drop_gil</dfn>(<a class="typedef" href="../Include/pystate.h.html#PyThreadState" title='PyThreadState' data-type='struct _ts' data-ref="PyThreadState">PyThreadState</a> *<dfn class="local col3 decl" id="13tstate" title='tstate' data-type='PyThreadState *' data-ref="13tstate">tstate</dfn>)</td></tr>
+<tr><th id="173">173</th><td>{</td></tr>
+<tr><th id="174">174</th><td>    <b>if</b> (!<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_locked)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>))</td></tr>
+<tr><th id="175">175</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"drop_gil: GIL is not locked"</q>);</td></tr>
+<tr><th id="176">176</th><td>    <i>/* tstate is allowed to be NULL (early interpreter init) */</i></td></tr>
+<tr><th id="177">177</th><td>    <b>if</b> (<a class="local col3 ref" href="#13tstate" title='tstate' data-ref="13tstate">tstate</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="178">178</th><td>        <i>/* Sub-interpreter support: threads might have been switched</i></td></tr>
+<tr><th id="179">179</th><td><i>           under our feet using PyThreadState_Swap(). Fix the GIL last</i></td></tr>
+<tr><th id="180">180</th><td><i>           holder variable so that our heuristics work. */</i></td></tr>
+<tr><th id="181">181</th><td>        <a class="macro" href="../Include/pyatomic.h.html#530" title="__c11_atomic_store(&amp;(&amp;gil_last_holder)-&gt;_value, (uintptr_t)tstate, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_store_relaxed">_Py_atomic_store_relaxed</a>(&amp;<a class="ref" href="#gil_last_holder" title='gil_last_holder' data-ref="gil_last_holder">gil_last_holder</a>, (<a class="typedef" href="../../include/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t">uintptr_t</a>)<a class="local col3 ref" href="#13tstate" title='tstate' data-ref="13tstate">tstate</a>);</td></tr>
+<tr><th id="182">182</th><td>    }</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td>    <a class="macro" href="#74" title="if (pthread_mutex_lock(&amp;(gil_mutex))) { Py_FatalError(&quot;PyMUTEX_LOCK(&quot; &quot;gil_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_LOCK">MUTEX_LOCK</a>(<a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>);</td></tr>
+<tr><th id="185">185</th><td>    <a class="macro" href="../Include/dynamic_annotations.h.html#331" title="" data-ref="_M/_Py_ANNOTATE_RWLOCK_RELEASED">_Py_ANNOTATE_RWLOCK_RELEASED</a>(&amp;gil_locked, <i>/*is_write=*/</i><var>1</var>);</td></tr>
+<tr><th id="186">186</th><td>    <a class="macro" href="../Include/pyatomic.h.html#530" title="__c11_atomic_store(&amp;(&amp;gil_locked)-&gt;_value, 0, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_store_relaxed">_Py_atomic_store_relaxed</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>, <var>0</var>);</td></tr>
+<tr><th id="187">187</th><td>    <a class="macro" href="#88" title="if (pthread_cond_signal(&amp;(gil_cond))) { Py_FatalError(&quot;PyCOND_SIGNAL(&quot; &quot;gil_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_SIGNAL">COND_SIGNAL</a>(<a class="ref" href="#gil_cond" title='gil_cond' data-ref="gil_cond">gil_cond</a>);</td></tr>
+<tr><th id="188">188</th><td>    <a class="macro" href="#77" title="if (pthread_mutex_unlock(&amp;(gil_mutex))) { Py_FatalError(&quot;PyMUTEX_UNLOCK(&quot; &quot;gil_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_UNLOCK">MUTEX_UNLOCK</a>(<a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>);</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><u>#<span data-ppcond="190">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="191">191</th><td>    <b>if</b> (<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_drop_request)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="tu ref" href="ceval.c.html#gil_drop_request" title='gil_drop_request' data-use='a' data-ref="gil_drop_request">gil_drop_request</a>) &amp;&amp; <a class="local col3 ref" href="#13tstate" title='tstate' data-ref="13tstate">tstate</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="192">192</th><td>        <a class="macro" href="#74" title="if (pthread_mutex_lock(&amp;(switch_mutex))) { Py_FatalError(&quot;PyMUTEX_LOCK(&quot; &quot;switch_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_LOCK">MUTEX_LOCK</a>(<a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="193">193</th><td>        <i>/* Not switched yet =&gt; wait */</i></td></tr>
+<tr><th id="194">194</th><td>        <b>if</b> ((<a class="typedef" href="../Include/pystate.h.html#PyThreadState" title='PyThreadState' data-type='struct _ts' data-ref="PyThreadState">PyThreadState</a>*)<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_last_holder)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="ref" href="#gil_last_holder" title='gil_last_holder' data-ref="gil_last_holder">gil_last_holder</a>) == <a class="local col3 ref" href="#13tstate" title='tstate' data-ref="13tstate">tstate</a>) {</td></tr>
+<tr><th id="195">195</th><td>        <a class="macro" href="ceval.c.html#114" title="do { __c11_atomic_store(&amp;(&amp;gil_drop_request)-&gt;_value, 0, _Py_memory_order_relaxed); __c11_atomic_store(&amp;(&amp;eval_breaker)-&gt;_value, __c11_atomic_load(&amp;(&amp;gil_drop_request)-&gt;_value, _Py_memory_order_relaxed) | __c11_atomic_load(&amp;(&amp;pendingcalls_to_do)-&gt;_value, _Py_memory_order_relaxed) | pending_async_exc, _Py_memory_order_relaxed); } while (0)" data-ref="_M/RESET_GIL_DROP_REQUEST">RESET_GIL_DROP_REQUEST</a>();</td></tr>
+<tr><th id="196">196</th><td>            <i>/* NOTE: if COND_WAIT does not atomically start waiting when</i></td></tr>
+<tr><th id="197">197</th><td><i>               releasing the mutex, another thread can run through, take</i></td></tr>
+<tr><th id="198">198</th><td><i>               the GIL and drop it again, and reset the condition</i></td></tr>
+<tr><th id="199">199</th><td><i>               before we even had a chance to wait for it. */</i></td></tr>
+<tr><th id="200">200</th><td>            <a class="macro" href="#91" title="if (pthread_cond_wait((&amp;(switch_cond)), (&amp;(switch_mutex)))) { Py_FatalError(&quot;PyCOND_WAIT(&quot; &quot;switch_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_WAIT">COND_WAIT</a>(<a class="ref" href="#switch_cond" title='switch_cond' data-ref="switch_cond">switch_cond</a>, <a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="201">201</th><td>    }</td></tr>
+<tr><th id="202">202</th><td>        <a class="macro" href="#77" title="if (pthread_mutex_unlock(&amp;(switch_mutex))) { Py_FatalError(&quot;PyMUTEX_UNLOCK(&quot; &quot;switch_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_UNLOCK">MUTEX_UNLOCK</a>(<a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="203">203</th><td>    }</td></tr>
+<tr><th id="204">204</th><td><u>#<span data-ppcond="190">endif</span></u></td></tr>
+<tr><th id="205">205</th><td>}</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><em>static</em> <em>void</em> <dfn class="decl def" id="take_gil" title='take_gil' data-ref="take_gil">take_gil</dfn>(<a class="typedef" href="../Include/pystate.h.html#PyThreadState" title='PyThreadState' data-type='struct _ts' data-ref="PyThreadState">PyThreadState</a> *<dfn class="local col4 decl" id="14tstate" title='tstate' data-type='PyThreadState *' data-ref="14tstate">tstate</dfn>)</td></tr>
+<tr><th id="208">208</th><td>{</td></tr>
+<tr><th id="209">209</th><td>    <em>int</em> <dfn class="local col5 decl" id="15err" title='err' data-type='int' data-ref="15err">err</dfn>;</td></tr>
+<tr><th id="210">210</th><td>    <b>if</b> (<a class="local col4 ref" href="#14tstate" title='tstate' data-ref="14tstate">tstate</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)</td></tr>
+<tr><th id="211">211</th><td>        <a class="ref" href="../Include/pyerrors.h.html#Py_FatalError" title='Py_FatalError' data-ref="Py_FatalError">Py_FatalError</a>(<q>"take_gil: NULL tstate"</q>);</td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td>    <a class="local col5 ref" href="#15err" title='err' data-ref="15err">err</a> = <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a>;</td></tr>
+<tr><th id="214">214</th><td>    <a class="macro" href="#74" title="if (pthread_mutex_lock(&amp;(gil_mutex))) { Py_FatalError(&quot;PyMUTEX_LOCK(&quot; &quot;gil_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_LOCK">MUTEX_LOCK</a>(<a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>);</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td>    <b>if</b> (!<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_locked)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>))</td></tr>
+<tr><th id="217">217</th><td>        <b>goto</b> <a class="lbl" href="#16_ready" data-ref="16_ready">_ready</a>;</td></tr>
+<tr><th id="218">218</th><td></td></tr>
+<tr><th id="219">219</th><td>    <b>while</b> (<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_locked)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>)) {</td></tr>
+<tr><th id="220">220</th><td>        <em>int</em> <dfn class="local col7 decl" id="17timed_out" title='timed_out' data-type='int' data-ref="17timed_out">timed_out</dfn> = <var>0</var>;</td></tr>
+<tr><th id="221">221</th><td>        <em>unsigned</em> <em>long</em> <dfn class="local col8 decl" id="18saved_switchnum" title='saved_switchnum' data-type='unsigned long' data-ref="18saved_switchnum">saved_switchnum</dfn>;</td></tr>
+<tr><th id="222">222</th><td></td></tr>
+<tr><th id="223">223</th><td>        <a class="local col8 ref" href="#18saved_switchnum" title='saved_switchnum' data-ref="18saved_switchnum">saved_switchnum</a> = <a class="ref" href="#gil_switch_number" title='gil_switch_number' data-ref="gil_switch_number">gil_switch_number</a>;</td></tr>
+<tr><th id="224">224</th><td>        <a class="macro" href="#94" title="{ int r = PyCOND_TIMEDWAIT(&amp;(gil_cond), &amp;(gil_mutex), ((gil_interval &gt;= 1 ? gil_interval : 1))); if (r &lt; 0) Py_FatalError(&quot;PyCOND_WAIT(&quot; &quot;gil_cond&quot; &quot;) failed&quot;); if (r) timed_out = 1; else timed_out = 0; }" data-ref="_M/COND_TIMED_WAIT">COND_TIMED_WAIT</a>(<a class="ref" href="#gil_cond" title='gil_cond' data-ref="gil_cond">gil_cond</a>, <a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>, <a class="macro" href="#14" title="(gil_interval &gt;= 1 ? gil_interval : 1)" data-ref="_M/INTERVAL">INTERVAL</a>, <a class="local col7 ref" href="#17timed_out" title='timed_out' data-ref="17timed_out">timed_out</a>);</td></tr>
+<tr><th id="225">225</th><td>        <i>/* If we timed out and no switch occurred in the meantime, it is time</i></td></tr>
+<tr><th id="226">226</th><td><i>           to ask the GIL-holding thread to drop it. */</i></td></tr>
+<tr><th id="227">227</th><td>        <b>if</b> (<a class="local col7 ref" href="#17timed_out" title='timed_out' data-ref="17timed_out">timed_out</a> &amp;&amp;</td></tr>
+<tr><th id="228">228</th><td>            <a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_locked)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>) &amp;&amp;</td></tr>
+<tr><th id="229">229</th><td>            <a class="ref" href="#gil_switch_number" title='gil_switch_number' data-ref="gil_switch_number">gil_switch_number</a> == <a class="local col8 ref" href="#18saved_switchnum" title='saved_switchnum' data-ref="18saved_switchnum">saved_switchnum</a>) {</td></tr>
+<tr><th id="230">230</th><td>            <a class="macro" href="ceval.c.html#108" title="do { __c11_atomic_store(&amp;(&amp;gil_drop_request)-&gt;_value, 1, _Py_memory_order_relaxed); __c11_atomic_store(&amp;(&amp;eval_breaker)-&gt;_value, 1, _Py_memory_order_relaxed); } while (0)" data-ref="_M/SET_GIL_DROP_REQUEST">SET_GIL_DROP_REQUEST</a>();</td></tr>
+<tr><th id="231">231</th><td>        }</td></tr>
+<tr><th id="232">232</th><td>    }</td></tr>
+<tr><th id="233">233</th><td><dfn class="lbl" id="16_ready" data-ref="16_ready">_ready</dfn>:</td></tr>
+<tr><th id="234">234</th><td><u>#<span data-ppcond="234">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="235">235</th><td>    <i>/* This mutex must be taken before modifying gil_last_holder (see drop_gil()). */</i></td></tr>
+<tr><th id="236">236</th><td>    <a class="macro" href="#74" title="if (pthread_mutex_lock(&amp;(switch_mutex))) { Py_FatalError(&quot;PyMUTEX_LOCK(&quot; &quot;switch_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_LOCK">MUTEX_LOCK</a>(<a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="237">237</th><td><u>#<span data-ppcond="234">endif</span></u></td></tr>
+<tr><th id="238">238</th><td>    <i>/* We now hold the GIL */</i></td></tr>
+<tr><th id="239">239</th><td>    <a class="macro" href="../Include/pyatomic.h.html#530" title="__c11_atomic_store(&amp;(&amp;gil_locked)-&gt;_value, 1, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_store_relaxed">_Py_atomic_store_relaxed</a>(&amp;<a class="ref" href="#gil_locked" title='gil_locked' data-ref="gil_locked">gil_locked</a>, <var>1</var>);</td></tr>
+<tr><th id="240">240</th><td>    <a class="macro" href="../Include/dynamic_annotations.h.html#330" title="" data-ref="_M/_Py_ANNOTATE_RWLOCK_ACQUIRED">_Py_ANNOTATE_RWLOCK_ACQUIRED</a>(&amp;gil_locked, <i>/*is_write=*/</i><var>1</var>);</td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td>    <b>if</b> (<a class="local col4 ref" href="#14tstate" title='tstate' data-ref="14tstate">tstate</a> != (<a class="typedef" href="../Include/pystate.h.html#PyThreadState" title='PyThreadState' data-type='struct _ts' data-ref="PyThreadState">PyThreadState</a>*)<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_last_holder)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="ref" href="#gil_last_holder" title='gil_last_holder' data-ref="gil_last_holder">gil_last_holder</a>)) {</td></tr>
+<tr><th id="243">243</th><td>        <a class="macro" href="../Include/pyatomic.h.html#530" title="__c11_atomic_store(&amp;(&amp;gil_last_holder)-&gt;_value, (uintptr_t)tstate, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_store_relaxed">_Py_atomic_store_relaxed</a>(&amp;<a class="ref" href="#gil_last_holder" title='gil_last_holder' data-ref="gil_last_holder">gil_last_holder</a>, (<a class="typedef" href="../../include/stdint.h.html#uintptr_t" title='uintptr_t' data-type='unsigned long' data-ref="uintptr_t">uintptr_t</a>)<a class="local col4 ref" href="#14tstate" title='tstate' data-ref="14tstate">tstate</a>);</td></tr>
+<tr><th id="244">244</th><td>        ++<a class="ref" href="#gil_switch_number" title='gil_switch_number' data-ref="gil_switch_number">gil_switch_number</a>;</td></tr>
+<tr><th id="245">245</th><td>    }</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td><u>#<span data-ppcond="247">ifdef</span> <a class="macro" href="#18" data-ref="_M/FORCE_SWITCHING">FORCE_SWITCHING</a></u></td></tr>
+<tr><th id="248">248</th><td>    <a class="macro" href="#88" title="if (pthread_cond_signal(&amp;(switch_cond))) { Py_FatalError(&quot;PyCOND_SIGNAL(&quot; &quot;switch_cond&quot; &quot;) failed&quot;); };" data-ref="_M/COND_SIGNAL">COND_SIGNAL</a>(<a class="ref" href="#switch_cond" title='switch_cond' data-ref="switch_cond">switch_cond</a>);</td></tr>
+<tr><th id="249">249</th><td>    <a class="macro" href="#77" title="if (pthread_mutex_unlock(&amp;(switch_mutex))) { Py_FatalError(&quot;PyMUTEX_UNLOCK(&quot; &quot;switch_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_UNLOCK">MUTEX_UNLOCK</a>(<a class="ref" href="#switch_mutex" title='switch_mutex' data-ref="switch_mutex">switch_mutex</a>);</td></tr>
+<tr><th id="250">250</th><td><u>#<span data-ppcond="247">endif</span></u></td></tr>
+<tr><th id="251">251</th><td>    <b>if</b> (<a class="macro" href="../Include/pyatomic.h.html#532" title="__c11_atomic_load(&amp;(&amp;gil_drop_request)-&gt;_value, _Py_memory_order_relaxed)" data-ref="_M/_Py_atomic_load_relaxed">_Py_atomic_load_relaxed</a>(&amp;<a class="tu ref" href="ceval.c.html#gil_drop_request" title='gil_drop_request' data-use='a' data-ref="gil_drop_request">gil_drop_request</a>)) {</td></tr>
+<tr><th id="252">252</th><td>        <a class="macro" href="ceval.c.html#114" title="do { __c11_atomic_store(&amp;(&amp;gil_drop_request)-&gt;_value, 0, _Py_memory_order_relaxed); __c11_atomic_store(&amp;(&amp;eval_breaker)-&gt;_value, __c11_atomic_load(&amp;(&amp;gil_drop_request)-&gt;_value, _Py_memory_order_relaxed) | __c11_atomic_load(&amp;(&amp;pendingcalls_to_do)-&gt;_value, _Py_memory_order_relaxed) | pending_async_exc, _Py_memory_order_relaxed); } while (0)" data-ref="_M/RESET_GIL_DROP_REQUEST">RESET_GIL_DROP_REQUEST</a>();</td></tr>
+<tr><th id="253">253</th><td>    }</td></tr>
+<tr><th id="254">254</th><td>    <b>if</b> (<a class="local col4 ref" href="#14tstate" title='tstate' data-ref="14tstate">tstate</a>-&gt;<a class="ref" href="../Include/pystate.h.html#_ts::async_exc" title='_ts::async_exc' data-ref="_ts::async_exc">async_exc</a> != <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="255">255</th><td>        <a class="ref" href="ceval.c.html#_PyEval_SignalAsyncExc" title='_PyEval_SignalAsyncExc' data-ref="_PyEval_SignalAsyncExc">_PyEval_SignalAsyncExc</a>();</td></tr>
+<tr><th id="256">256</th><td>    }</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td>    <a class="macro" href="#77" title="if (pthread_mutex_unlock(&amp;(gil_mutex))) { Py_FatalError(&quot;PyMUTEX_UNLOCK(&quot; &quot;gil_mutex&quot; &quot;) failed&quot;); };" data-ref="_M/MUTEX_UNLOCK">MUTEX_UNLOCK</a>(<a class="ref" href="#gil_mutex" title='gil_mutex' data-ref="gil_mutex">gil_mutex</a>);</td></tr>
+<tr><th id="259">259</th><td>    <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="local col5 ref" href="#15err" title='err' data-ref="15err">err</a>;</td></tr>
+<tr><th id="260">260</th><td>}</td></tr>
+<tr><th id="261">261</th><td></td></tr>
+<tr><th id="262">262</th><td><em>void</em> <dfn class="decl def" id="_PyEval_SetSwitchInterval" title='_PyEval_SetSwitchInterval' data-ref="_PyEval_SetSwitchInterval">_PyEval_SetSwitchInterval</dfn>(<em>unsigned</em> <em>long</em> <dfn class="local col0 decl" id="20microseconds" title='microseconds' data-type='unsigned long' data-ref="20microseconds">microseconds</dfn>)</td></tr>
+<tr><th id="263">263</th><td>{</td></tr>
+<tr><th id="264">264</th><td>    <a class="ref" href="#gil_interval" title='gil_interval' data-ref="gil_interval">gil_interval</a> = <a class="local col0 ref" href="#20microseconds" title='microseconds' data-ref="20microseconds">microseconds</a>;</td></tr>
+<tr><th id="265">265</th><td>}</td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td><em>unsigned</em> <em>long</em> <dfn class="decl def" id="_PyEval_GetSwitchInterval" title='_PyEval_GetSwitchInterval' data-ref="_PyEval_GetSwitchInterval">_PyEval_GetSwitchInterval</dfn>()</td></tr>
+<tr><th id="268">268</th><td>{</td></tr>
+<tr><th id="269">269</th><td>    <b>return</b> <a class="ref" href="#gil_interval" title='gil_interval' data-ref="gil_interval">gil_interval</a>;</td></tr>
+<tr><th id="270">270</th><td>}</td></tr>
+<tr><th id="271">271</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='ceval.c.html'>codebrowser/Python/ceval.c</a><br/>Generated on <em>2017-Aug-29</em> from project codebrowser revision <em>v3.6.0b2-99580-g07f1658</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

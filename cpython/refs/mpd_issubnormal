@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='739' type='int mpd_issubnormal(const mpd_t * dec, const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4132' u='c' c='dec_mpd_issubnormal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5172' u='c' c='ctx_mpd_issubnormal'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='350' ll='357' type='int mpd_issubnormal(const mpd_t * dec, const mpd_context_t * ctx)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7074' u='c' c='_mpd_qrescale'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='349'>/* Subnormal */</doc>

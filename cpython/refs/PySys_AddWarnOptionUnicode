@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/sysmodule.h' l='30' type='void PySys_AddWarnOptionUnicode(PyObject * )'/>
+<use f='codebrowser/Modules/main.c' l='673' u='c' c='Py_Main'/>
+<use f='codebrowser/Modules/main.c' l='684' u='c' c='Py_Main'/>
+<def f='codebrowser/Python/sysmodule.c' l='1494' ll='1504' type='void PySys_AddWarnOptionUnicode(PyObject * unicode)'/>
+<use f='codebrowser/Python/sysmodule.c' l='1513' u='c' c='PySys_AddWarnOption'/>

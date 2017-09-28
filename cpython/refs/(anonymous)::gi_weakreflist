@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/genobject.h' l='32' macro='1' type='PyObject *'/>
+<offset>448</offset>
+<use f='codebrowser/Objects/genobject.c' l='96' u='r' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='811' u='w' c='gen_new_with_qualname'/>

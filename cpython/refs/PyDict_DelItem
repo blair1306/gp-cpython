@@ -1,0 +1,28 @@
+<dec f='codebrowser/Include/dictobject.h' l='87' type='int PyDict_DelItem(PyObject * mp, PyObject * key)'/>
+<use f='codebrowser/Modules/_csv.c' l='1457' u='c' c='csv_unregister_dialect'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='153' u='c' c='_DictRemover_call'/>
+<use f='codebrowser/Modules/_elementtree.c' l='333' u='c' c='get_attrib_from_keywords'/>
+<use f='codebrowser/Modules/_json.c' l='1526' u='c' c='encoder_listencode_obj'/>
+<use f='codebrowser/Modules/_json.c' l='1669' u='c' c='encoder_listencode_dict'/>
+<use f='codebrowser/Modules/_json.c' l='1757' u='c' c='encoder_listencode_list'/>
+<use f='codebrowser/Modules/_pickle.c' l='1765' u='c' c='fast_save_leave'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='789' u='c' c='local_clear'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='834' u='c' c='_ldict'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='966' u='c' c='_localdummy_destroyed'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9130' u='c' c='os_unsetenv_impl'/>
+<use f='codebrowser/Modules/selectmodule.c' l='504' u='c' c='poll_unregister'/>
+<def f='codebrowser/Objects/dictobject.c' l='1462' ll='1475' type='int PyDict_DelItem(PyObject * op, PyObject * key)'/>
+<use f='codebrowser/Objects/dictobject.c' l='2006' u='c' c='dict_ass_sub'/>
+<use f='codebrowser/Objects/dictobject.c' l='3220' u='c' c='_PyDict_DelItemId'/>
+<use f='codebrowser/Objects/dictobject.c' l='3231' u='c' c='PyDict_DelItemString'/>
+<use f='codebrowser/Objects/dictobject.c' l='4233' u='c' c='_PyObjectDict_SetItem'/>
+<use f='codebrowser/Objects/dictobject.c' l='4281' u='c' c='_PyObjectDict_SetItem'/>
+<use f='codebrowser/Objects/object.c' l='1265' u='c' c='_PyObject_GenericSetAttrWithDict'/>
+<use f='codebrowser/Objects/typeobject.c' l='5256' u='c' c='remove_subclass'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1790' u='c' c='unicode_dealloc'/>
+<use f='codebrowser/Python/ceval.c' l='2268' u='c' c='_PyEval_EvalFrameDefault'/>
+<use f='codebrowser/Python/ceval.c' l='5266' u='c' c='unicode_concatenate'/>
+<use f='codebrowser/Python/codecs.c' l='209' u='c' c='_PyCodec_Forget'/>
+<use f='codebrowser/Python/import.c' l='550' u='c' c='_PyImport_FixupExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='630' u='c' c='_PyImport_FindExtensionObject'/>
+<use f='codebrowser/Python/import.c' l='704' u='c' c='remove_module'/>

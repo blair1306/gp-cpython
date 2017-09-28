@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/longobject.h' l='86' type='void * PyLong_AsVoidPtr(PyObject * )'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='508' u='c' c='CDataType_from_address'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='657' u='c' c='CDataType_in_dll'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3349' u='c' c='PyCFuncPtr_FromDll'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3475' u='c' c='PyCFuncPtr_new'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1212' u='c' c='_parse_voidp'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1562' u='c' c='converter'/>
+<use f='codebrowser/Modules/_struct.c' l='749' u='c' c='np_void_p'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4083' u='c' c='tracemalloc_track'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4114' u='c' c='tracemalloc_untrack'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4136' u='c' c='tracemalloc_get_traceback'/>
+<def f='codebrowser/Objects/longobject.c' l='1036' ll='1063' type='void * PyLong_AsVoidPtr(PyObject * vv)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1034'>/* Get a C pointer from an int object. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1848' u='c' c='pack_single'/>

@@ -1,0 +1,4 @@
+<dec f='include/readline/readline.h' l='790' type='int'/>
+<use f='codebrowser/Modules/readline.c' l='1052' u='w' c='flex_complete'/>
+<doc f='include/readline/readline.h' l='788'>/* Character appended to completed words when at the end of the line.  The
+   default is a space.  Nothing is added if this is &apos;\0&apos;. */</doc>

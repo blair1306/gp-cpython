@@ -1,0 +1,12 @@
+<dec f='codebrowser/Include/pyerrors.h' l='192' type='PyObject *'/>
+<def f='codebrowser/Objects/exceptions.c' l='2164' type='PyObject *'/>
+<use f='codebrowser/Objects/exceptions.c' l='2172' u='r' c='PyUnicodeTranslateError_Create'/>
+<use f='codebrowser/Objects/exceptions.c' l='2181' u='r' c='_PyUnicodeTranslateError_Create'/>
+<use f='codebrowser/Objects/exceptions.c' l='2536' macro='1' u='r'/>
+<use f='codebrowser/Objects/exceptions.c' l='2613' macro='1' u='r'/>
+<use f='codebrowser/Python/codecs.c' l='693' u='r' c='PyCodec_IgnoreErrors'/>
+<use f='codebrowser/Python/codecs.c' l='693' u='r' c='PyCodec_IgnoreErrors'/>
+<use f='codebrowser/Python/codecs.c' l='735' u='r' c='PyCodec_ReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='735' u='r' c='PyCodec_ReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='904' u='r' c='PyCodec_BackslashReplaceErrors'/>
+<use f='codebrowser/Python/codecs.c' l='904' u='r' c='PyCodec_BackslashReplaceErrors'/>

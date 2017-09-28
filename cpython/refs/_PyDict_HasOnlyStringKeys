@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/dictobject.h' l='116' type='int _PyDict_HasOnlyStringKeys(PyObject * mp)'/>
+<def f='codebrowser/Objects/dictobject.c' l='862' ll='875' type='int _PyDict_HasOnlyStringKeys(PyObject * dict)'/>
+<use f='codebrowser/Python/getargs.c' l='1585' u='c' c='PyArg_ValidateKeywordArguments'/>

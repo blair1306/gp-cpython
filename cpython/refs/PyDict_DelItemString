@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/dictobject.h' l='166' type='int PyDict_DelItemString(PyObject * dp, const char * key)'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='71' u='c' c='Example_setattr'/>
+<def f='codebrowser/Objects/dictobject.c' l='3223' ll='3234' type='int PyDict_DelItemString(PyObject * v, const char * key)'/>
+<use f='codebrowser/Python/pythonrun.c' l='409' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/sysmodule.c' l='90' u='c' c='PySys_SetObject'/>
+<use f='codebrowser/Python/sysmodule.c' l='2022' u='c' c='_PySys_BeginInit'/>
+<use f='codebrowser/Python/sysmodule.c' l='2113' u='c' c='_PySys_EndInit'/>

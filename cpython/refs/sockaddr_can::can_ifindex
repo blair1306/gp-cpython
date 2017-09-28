@@ -1,0 +1,6 @@
+<dec f='include/linux/can.h' l='171' type='int'/>
+<offset>32</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1370' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1371' u='r' c='makesockaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1924' u='w' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1969' u='w' c='getsockaddrarg'/>

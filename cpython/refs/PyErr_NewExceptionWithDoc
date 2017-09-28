@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/pyerrors.h' l='329' type='PyObject * PyErr_NewExceptionWithDoc(const char * name, const char * doc, PyObject * base, PyObject * dict)'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1502' u='c' c='PyInit__lzma'/>
+<use f='codebrowser/Modules/_ssl.c' l='5200' u='c' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_ssl.c' l='5203' u='c' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_ssl.c' l='5206' u='c' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_ssl.c' l='5209' u='c' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_ssl.c' l='5212' u='c' c='PyInit__ssl'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2840' u='c' c='make_exception_with_doc'/>
+<def f='codebrowser/Python/errors.c' l='886' ll='916' type='PyObject * PyErr_NewExceptionWithDoc(const char * name, const char * doc, PyObject * base, PyObject * dict)'/>
+<doc f='codebrowser/Python/errors.c' l='885'>/* Create an exception with docstring */</doc>

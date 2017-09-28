@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='363' type='int utimensat(int __fd, const char * __path, const struct timespec * __times, int __flags)'/>
+<doc f='include/x86_64-linux-gnu/sys/stat.h' l='361'>/* Set file access and modification times relative to directory file
+   descriptor.  */</doc>
+<use f='codebrowser/Modules/posixmodule.c' l='4500' u='c' c='utime_dir_fd'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4548' u='c' c='utime_nofollow_symlinks'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4564' u='c' c='utime_default'/>

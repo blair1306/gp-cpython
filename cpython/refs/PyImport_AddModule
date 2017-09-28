@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/import.h' l='46' type='PyObject * PyImport_AddModule(const char * name)'/>
+<def f='codebrowser/Python/import.c' l='684' ll='694' type='PyObject * PyImport_AddModule(const char * name)'/>
+<use f='codebrowser/Python/import.c' l='1063' u='c' c='_imp_create_builtin'/>
+<use f='codebrowser/Python/pylifecycle.c' l='275' u='c' c='initimport'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1330' u='c' c='initmain'/>
+<use f='codebrowser/Python/pythonrun.c' l='349' u='c' c='PyRun_SimpleFileExFlags'/>
+<use f='codebrowser/Python/pythonrun.c' l='419' u='c' c='PyRun_SimpleStringFlags'/>

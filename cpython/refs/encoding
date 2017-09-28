@@ -1,0 +1,18 @@
+<def f='codebrowser/Modules/expat/xmltok.h' l='139' ll='180'/>
+<size>144</size>
+<mbr r='encoding::scanners' o='0' t='SCANNER [4]'/>
+<mbr r='encoding::literalScanners' o='256' t='SCANNER [2]'/>
+<mbr r='encoding::sameName' o='384' t='int (*)(const ENCODING *, const char *, const char *)'/>
+<mbr r='encoding::nameMatchesAscii' o='448' t='int (*)(const ENCODING *, const char *, const char *, const char *)'/>
+<mbr r='encoding::nameLength' o='512' t='int (*)(const ENCODING *, const char *)'/>
+<mbr r='encoding::skipS' o='576' t='const char *(*)(const ENCODING *, const char *)'/>
+<mbr r='encoding::getAtts' o='640' t='int (*)(const ENCODING *, const char *, int, ATTRIBUTE *)'/>
+<mbr r='encoding::charRefNumber' o='704' t='int (*)(const ENCODING *, const char *)'/>
+<mbr r='encoding::predefinedEntityName' o='768' t='int (*)(const ENCODING *, const char *, const char *)'/>
+<mbr r='encoding::updatePosition' o='832' t='void (*)(const ENCODING *, const char *, const char *, POSITION *)'/>
+<mbr r='encoding::isPublicId' o='896' t='int (*)(const ENCODING *, const char *, const char *, const char **)'/>
+<mbr r='encoding::utf8Convert' o='960' t='enum XML_Convert_Result (*)(const ENCODING *, const char **, const char *, char **, const char *)'/>
+<mbr r='encoding::utf16Convert' o='1024' t='enum XML_Convert_Result (*)(const ENCODING *, const char **, const char *, unsigned short **, const unsigned short *)'/>
+<mbr r='encoding::minBytesPerChar' o='1088' t='int'/>
+<mbr r='encoding::isUtf8' o='1120' t='char'/>
+<mbr r='encoding::isUtf16' o='1128' t='char'/>

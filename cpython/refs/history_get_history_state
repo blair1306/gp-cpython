@@ -1,0 +1,3 @@
+<dec f='include/readline/history.h' l='75' type='HISTORY_STATE * history_get_history_state()'/>
+<use f='codebrowser/Modules/readline.c' l='675' u='c' c='_py_get_history_length'/>
+<doc f='include/readline/history.h' l='74'>/* Return the current HISTORY_STATE of the history. */</doc>

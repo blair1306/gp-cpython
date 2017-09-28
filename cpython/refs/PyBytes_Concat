@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/bytesobject.h' l='61' type='void PyBytes_Concat(PyObject ** , PyObject * )'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='1573' u='c' c='_bufferedreader_read_all'/>
+<use f='codebrowser/Modules/_io/textio.c' l='1585' u='c' c='textiowrapper_read_chunk'/>
+<def f='codebrowser/Objects/bytesobject.c' l='2880' ll='2928' type='void PyBytes_Concat(PyObject ** pv, PyObject * w)'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2933' u='c' c='PyBytes_ConcatAndDel'/>

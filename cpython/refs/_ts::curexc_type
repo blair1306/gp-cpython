@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/pystate.h' l='133' type='PyObject *'/>
+<offset>640</offset>
+<use f='codebrowser/Objects/dictobject.c' l='1268' u='r' c='PyDict_GetItem'/>
+<use f='codebrowser/Python/errors.c' l='42' u='r' c='PyErr_Restore'/>
+<use f='codebrowser/Python/errors.c' l='46' u='w' c='PyErr_Restore'/>
+<use f='codebrowser/Python/errors.c' l='165' u='r' c='PyErr_Occurred'/>
+<use f='codebrowser/Python/errors.c' l='317' u='r' c='PyErr_Fetch'/>
+<use f='codebrowser/Python/errors.c' l='321' u='w' c='PyErr_Fetch'/>
+<use f='codebrowser/Python/pystate.c' l='265' u='w' c='new_threadstate'/>
+<use f='codebrowser/Python/pystate.c' l='454' u='r' c='PyThreadState_Clear'/>
+<use f='codebrowser/Python/pystate.c' l='454' u='w' c='PyThreadState_Clear'/>

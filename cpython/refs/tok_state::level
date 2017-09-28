@@ -1,0 +1,9 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='40' type='int'/>
+<offset>3936</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='40'>/* () [] {} Parentheses nesting level */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='137' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1414' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1476' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1596' u='r' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1884' u='w' c='tok_get'/>
+<use f='codebrowser/Parser/tokenizer.c' l='1889' u='w' c='tok_get'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='542' type='void mpd_qrem_near(mpd_t * r, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4115' u='c' c='dec_mpd_qrem_near'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5061' u='c' c='ctx_mpd_qrem_near'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6938' ll='7029' type='void mpd_qrem_near(mpd_t * r, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>

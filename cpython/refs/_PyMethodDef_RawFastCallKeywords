@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/methodobject.h' l='108' type='PyObject * _PyMethodDef_RawFastCallKeywords(PyMethodDef * method, PyObject * self, PyObject ** args, Py_ssize_t nargs, PyObject * kwnames)'/>
+<def f='codebrowser/Objects/call.c' l='587' ll='713' type='PyObject * _PyMethodDef_RawFastCallKeywords(PyMethodDef * method, PyObject * self, PyObject ** args, Py_ssize_t nargs, PyObject * kwnames)'/>
+<use f='codebrowser/Objects/call.c' l='725' u='c' c='_PyCFunction_FastCallKeywords'/>
+<use f='codebrowser/Objects/descrobject.c' l='287' u='c' c='_PyMethodDescr_FastCallKeywords'/>

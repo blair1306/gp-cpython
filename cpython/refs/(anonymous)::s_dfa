@@ -1,0 +1,6 @@
+<dec f='codebrowser/Parser/parser.h' l='14' type='dfa *'/>
+<offset>64</offset>
+<doc f='codebrowser/Parser/parser.h' l='14'>/* Current DFA */</doc>
+<use f='codebrowser/Parser/parser.c' l='46' u='w' c='s_push'/>
+<use f='codebrowser/Parser/parser.c' l='243' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='296' u='r' c='PyParser_AddToken'/>

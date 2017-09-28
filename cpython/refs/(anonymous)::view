@@ -1,0 +1,47 @@
+<dec f='codebrowser/Include/memoryobject.h' l='63' type='Py_buffer'/>
+<offset>576</offset>
+<doc f='codebrowser/Include/memoryobject.h' l='63'>/* private copy of the exporter&apos;s view */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='542' macro='1' u='a'/>
+<use f='codebrowser/Objects/memoryobject.c' l='587' u='a' c='init_flags'/>
+<use f='codebrowser/Objects/memoryobject.c' l='631' u='m' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='632' u='m' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='633' u='m' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='634' u='m' c='memory_alloc'/>
+<use f='codebrowser/Objects/memoryobject.c' l='669' u='a' c='mbuf_add_view'/>
+<use f='codebrowser/Objects/memoryobject.c' l='703' u='a' c='mbuf_add_incomplete_view'/>
+<use f='codebrowser/Objects/memoryobject.c' l='783' u='a' c='PyMemoryView_FromObject'/>
+<use f='codebrowser/Objects/memoryobject.c' l='861' u='a' c='memory_from_contiguous_copy'/>
+<use f='codebrowser/Objects/memoryobject.c' l='921' u='a' c='PyMemoryView_GetContiguous'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1176' u='a' c='cast_to_1D'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1278' u='a' c='cast_to_ND'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1314' u='a' c='zero_in_shape'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1361' u='m' c='memory_cast'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1375' u='m' c='memory_cast'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1383' u='a' c='memory_cast'/>
+<use f='codebrowser/Objects/memoryobject.c' l='1407' u='a' c='memory_getbuf'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2082' u='a' c='memory_tolist'/>
+<use f='codebrowser/Objects/memoryobject.c' l='193' u='a' c='memory_tobytes'/>
+<use f='codebrowser/Objects/memoryobject.c' l='193' u='a' c='memory_hex'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2232' u='a' c='memory_item'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2261' u='a' c='memory_item_multi'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2357' u='a' c='memory_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2393' u='a' c='memory_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2397' u='a' c='memory_subscript'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2418' u='a' c='memory_ass_sub'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2521' u='m' c='memory_length'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2521' u='m' c='memory_length'/>
+<use f='codebrowser/Objects/memoryobject.c' l='193' u='a' c='memory_richcompare'/>
+<use f='codebrowser/Objects/memoryobject.c' l='193' u='a' c='memory_richcompare'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2831' u='a' c='memory_hash'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2908' u='a' c='memory_obj_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2922' u='m' c='memory_nbytes_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2929' u='m' c='memory_format_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2936' u='m' c='memory_itemsize_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2943' u='m' c='memory_shape_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2943' u='m' c='memory_shape_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2950' u='m' c='memory_strides_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2950' u='m' c='memory_strides_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2957' u='m' c='memory_suboffsets_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2957' u='m' c='memory_suboffsets_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2964' u='m' c='memory_readonly_get'/>
+<use f='codebrowser/Objects/memoryobject.c' l='2971' u='m' c='memory_ndim_get'/>

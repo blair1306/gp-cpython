@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/pystrtod.h' l='22' type='PyObject * _Py_string_to_number_with_underscores(const char * str, Py_ssize_t len, const char * what, PyObject * obj, void * arg, PyObject *(*)(const char *, Py_ssize_t, void *) innerfunc)'/>
+<use f='codebrowser/Objects/complexobject.c' l='929' u='c' c='complex_subtype_from_string'/>
+<use f='codebrowser/Objects/floatobject.c' l='210' u='c' c='PyFloat_FromString'/>
+<def f='codebrowser/Python/pystrtod.c' l='384' ll='437' type='PyObject * _Py_string_to_number_with_underscores(const char * s, Py_ssize_t orig_len, const char * what, PyObject * obj, void * arg, PyObject *(*)(const char *, Py_ssize_t, void *) innerfunc)'/>
+<doc f='codebrowser/Python/pystrtod.c' l='373'>/* Remove underscores that follow the underscore placement rule from
+   the string and then call the `innerfunc` function on the result.
+   It should return a new object or NULL on exception.
+
+   `what` is used for the error message emitted when underscores are detected
+   that don&apos;t follow the rule. `arg` is an opaque pointer passed to the inner
+   function.
+
+   This is used to implement underscore-agnostic conversion for floats
+   and complex numbers.
+*/</doc>

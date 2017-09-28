@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/funcobject.h' l='25' type='PyObject *'/>
+<offset>384</offset>
+<doc f='codebrowser/Include/funcobject.h' l='25'>/* NULL or a tuple */</doc>
+<use f='codebrowser/Objects/call.c' l='303' macro='1' u='r'/>
+<use f='codebrowser/Objects/call.c' l='390' macro='1' u='r'/>
+<use f='codebrowser/Objects/funcobject.c' l='32' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='111' u='r' c='PyFunction_GetDefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='130' u='r' c='PyFunction_SetDefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='130' u='w' c='PyFunction_SetDefaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='324' u='r' c='func_get_defaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='327' u='r' c='func_get_defaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='328' u='r' c='func_get_defaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='344' u='r' c='func_set_defaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='344' u='w' c='func_set_defaults'/>
+<use f='codebrowser/Objects/funcobject.c' l='514' u='w' c='func_new_impl'/>
+<use f='codebrowser/Objects/funcobject.c' l='534' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='557' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='557' u='r' c='func_traverse'/>
+<use f='codebrowser/Python/ceval.c' l='3449' u='w' c='_PyEval_EvalFrameDefault'/>

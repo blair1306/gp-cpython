@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/ucnhash.h' l='27' type='int (*)(PyObject *, const char *, int, Py_UCS4 *, int)'/>
+<offset>128</offset>
+<doc f='codebrowser/Include/ucnhash.h' l='25'>/* Get character code for a given name.  Same error handling
+       as for getname. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='6076' u='r' c='_PyUnicode_DecodeUnicodeEscape'/>

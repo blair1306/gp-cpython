@@ -1,0 +1,11 @@
+<dec f='codebrowser/Include/longintrepr.h' l='93' type='PyObject * _PyLong_Copy(PyLongObject * src)'/>
+<doc f='codebrowser/Include/longintrepr.h' l='92'>/* Return a copy of src. */</doc>
+<use f='codebrowser/Objects/abstract.c' l='1345' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='1357' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/abstract.c' l='1373' u='c' c='PyNumber_Long'/>
+<def f='codebrowser/Objects/longobject.c' l='217' ll='238' type='PyObject * _PyLong_Copy(PyLongObject * src)'/>
+<use f='codebrowser/Objects/longobject.c' l='4109' u='c' c='long_pow'/>
+<use f='codebrowser/Objects/longobject.c' l='4259' u='c' c='long_neg'/>
+<use f='codebrowser/Objects/longobject.c' l='4588' u='c' c='long_long'/>
+<use f='codebrowser/Objects/longobject.c' l='4639' u='c' c='_PyLong_GCD'/>
+<use f='codebrowser/Objects/longobject.c' l='4905' u='c' c='int___getnewargs___impl'/>

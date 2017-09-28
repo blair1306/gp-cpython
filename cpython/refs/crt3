@@ -1,0 +1,30 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/crt.h' l='41' type='void crt3(mpd_uint_t * x1, mpd_uint_t * x2, mpd_uint_t * x3, mpd_size_t nmemb)'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='131' ll='177' type='void crt3(mpd_uint_t * x1, mpd_uint_t * x2, mpd_uint_t * x3, mpd_size_t rsize)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/crt.c' l='104'>/*
+ * CRT with carry: x1, x2, x3 contain numbers modulo p1, p2, p3. For each
+ * triple of members of the arrays, find the unique z modulo p1*p2*p3, with
+ * zmax = p1*p2*p3 - 1.
+ *
+ * In each iteration of the loop, split z into result[i] = z % MPD_RADIX
+ * and carry = z / MPD_RADIX. Let N be the size of carry[] and cmax the
+ * maximum carry.
+ *
+ * Limits for the 32-bit build:
+ *
+ *   N    = 2**96
+ *   cmax = 7711435591312380274
+ *
+ * Limits for the 64 bit build:
+ *
+ *   N    = 2**192
+ *   cmax = 627710135393475385904124401220046371710
+ *
+ * The following statements hold for both versions:
+ *
+ *   1) cmax + zmax &lt; N, so the addition does not overflow.
+ *
+ *   2) (cmax + zmax) / MPD_RADIX == cmax.
+ *
+ *   3) If c &lt;= cmax, then c_next = (c + zmax) / MPD_RADIX &lt;= cmax.
+ */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5550' u='c' c='_mpd_fntmul'/>

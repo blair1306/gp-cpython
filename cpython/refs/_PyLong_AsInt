@@ -1,0 +1,25 @@
+<dec f='codebrowser/Include/longobject.h' l='30' type='int _PyLong_AsInt(PyObject * )'/>
+<use f='codebrowser/Modules/_csv.c' l='217' u='c' c='_set_int'/>
+<use f='codebrowser/Modules/_ctypes/stgdict.c' l='362' u='c' c='PyCStructUnionType_update_stgdict'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='262' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='406' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/_io/textio.c' l='893' u='c' c='_io_TextIOWrapper___init___impl'/>
+<use f='codebrowser/Modules/faulthandler.c' l='163' u='c' c='faulthandler_get_fileno'/>
+<use f='codebrowser/Modules/parsermodule.c' l='855' u='c' c='build_node_children'/>
+<use f='codebrowser/Modules/parsermodule.c' l='905' u='c' c='build_node_children'/>
+<use f='codebrowser/Modules/posixmodule.c' l='9507' u='c' c='conv_confname'/>
+<use f='codebrowser/Modules/readline.c' l='876' u='c' c='on_hook'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4255' u='c' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4265' u='c' c='sock_sendmsg_afalg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='4382' u='c' c='sock_shutdown'/>
+<use f='codebrowser/Objects/bytesobject.c' l='781' u='c' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/fileobject.c' l='183' u='c' c='PyObject_AsFileDescriptor'/>
+<use f='codebrowser/Objects/fileobject.c' l='193' u='c' c='PyObject_AsFileDescriptor'/>
+<def f='codebrowser/Objects/longobject.c' l='498' ll='511' type='int _PyLong_AsInt(PyObject * obj)'/>
+<doc f='codebrowser/Objects/longobject.c' l='495'>/* Get a C int from an int object or any object that has an __int__
+   method.  Return -1 and set an error if overflow occurs. */</doc>
+<use f='codebrowser/Objects/unicodeobject.c' l='14585' u='c' c='unicode_format_arg_parse'/>
+<use f='codebrowser/Python/Python-ast.c' l='823' u='c' c='obj2ast_int'/>
+<use f='codebrowser/Python/ceval.c' l='5009' u='c' c='import_name'/>
+<use f='codebrowser/Python/pythonrun.c' l='469' u='c' c='parse_syntax_error'/>
+<use f='codebrowser/Python/pythonrun.c' l='482' u='c' c='parse_syntax_error'/>

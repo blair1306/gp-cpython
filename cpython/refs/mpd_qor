@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='479' type='void mpd_qor(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4330' u='c' c='dec_mpd_qor'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5376' u='c' c='ctx_mpd_qor'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2766' ll='2856' type='void mpd_qor(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2765'>/* Logical Or */</doc>

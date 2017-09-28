@@ -1,0 +1,14 @@
+<def f='codebrowser/Python/pyarena.c' l='45' ll='73'/>
+<size>64</size>
+<doc f='codebrowser/Python/pyarena.c' l='40'>/* The arena manages two kinds of memory, blocks of raw memory
+   and a list of PyObject* pointers.  PyObjects are decrefed
+   when the arena is freed.
+*/</doc>
+<mbr r='_arena::a_head' o='0' t='block *'/>
+<mbr r='_arena::a_cur' o='64' t='block *'/>
+<mbr r='_arena::a_objects' o='128' t='PyObject *'/>
+<mbr r='_arena::total_allocs' o='192' t='size_t'/>
+<mbr r='_arena::total_size' o='256' t='size_t'/>
+<mbr r='_arena::total_blocks' o='320' t='size_t'/>
+<mbr r='_arena::total_block_size' o='384' t='size_t'/>
+<mbr r='_arena::total_big_blocks' o='448' t='size_t'/>

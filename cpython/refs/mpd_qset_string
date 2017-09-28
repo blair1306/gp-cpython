@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='425' type='void mpd_qset_string(mpd_t * dec, const char * s, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1970' u='c' c='PyDecType_FromCString'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1996' u='c' c='PyDecType_FromCStringExact'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='424'>/* assignment from a string */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/io.c' l='198' ll='327' type='void mpd_qset_string(mpd_t * dec, const char * s, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/io.c' l='197'>/* convert a character string to a decimal */</doc>

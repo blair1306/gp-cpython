@@ -1,0 +1,10 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='57' type='int'/>
+<offset>7392</offset>
+<doc f='codebrowser/Parser/tokenizer.h' l='57'>/* whether &apos;coding:...&apos; has been read  */</doc>
+<use f='codebrowser/Parser/tokenizer.c' l='144' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='302' u='w' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='315' u='w' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='321' u='w' c='check_coding_spec'/>
+<use f='codebrowser/Parser/tokenizer.c' l='616' u='r' c='decoding_fgets'/>
+<use f='codebrowser/Parser/tokenizer.c' l='790' u='r' c='decode_str'/>
+<use f='codebrowser/Parser/tokenizer.c' l='843' u='w' c='PyTokenizer_FromUTF8'/>

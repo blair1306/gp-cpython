@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1277' type='PyObject * PyUnicode_DecodeUTF7Stateful(const char * string, Py_ssize_t length, const char * errors, Py_ssize_t * consumed)'/>
+<use f='codebrowser/Modules/_codecsmodule.c' l='299' u='c' c='_codecs_utf_7_decode_impl'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4537' u='c' c='PyUnicode_DecodeUTF7'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='4547' ll='4737' type='PyObject * PyUnicode_DecodeUTF7Stateful(const char * s, Py_ssize_t size, const char * errors, Py_ssize_t * consumed)'/>
+<doc f='codebrowser/Objects/unicodeobject.c' l='4540'>/* The decoder.  The only state we preserve is our read position,
+ * i.e. how many characters we have consumed.  So if we end in the
+ * middle of a shift sequence we have to back off the read position
+ * and the output to the beginning of the sequence, otherwise we lose
+ * all the shift state (seen bits, number of bits seen, high
+ * surrogate). */</doc>

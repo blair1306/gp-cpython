@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/epoll.h' l='89' type='uint32_t'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1392' u='w' c='pyepoll_internal_ctl'/>
+<use f='codebrowser/Modules/selectmodule.c' l='1584' u='r' c='pyepoll_poll'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/sys/epoll.h' l='89'>/* Epoll events */</doc>

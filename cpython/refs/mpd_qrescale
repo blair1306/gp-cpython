@@ -1,0 +1,13 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='516' type='void mpd_qrescale(mpd_t * result, const mpd_t * a, mpd_ssize_t exp, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1316' u='c' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1325' u='c' c='mpd_qformat_spec'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6719' u='c' c='mpd_qpowmod'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7087' ll='7097' type='void mpd_qrescale(mpd_t * result, const mpd_t * a, mpd_ssize_t exp, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7079'>/*
+ * Rescale a number so that it has exponent &apos;exp&apos;. Does not regard context
+ * precision, emax, emin, but uses the rounding mode. Special numbers are
+ * quietly copied. Restrictions:
+ *
+ *     MPD_MIN_ETINY &lt;= exp &lt;= MPD_MAX_EMAX+1
+ *     result-&gt;digits &lt;= MPD_MAX_PREC+1
+ */</doc>

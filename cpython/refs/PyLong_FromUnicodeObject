@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/longobject.h' l='98' type='PyObject * PyLong_FromUnicodeObject(PyObject * u, int base)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1704' u='c' c='parse_sys_xoptions'/>
+<use f='codebrowser/Objects/abstract.c' l='1382' u='c' c='PyNumber_Long'/>
+<use f='codebrowser/Objects/longobject.c' l='2497' u='c' c='PyLong_FromUnicode'/>
+<def f='codebrowser/Objects/longobject.c' l='2502' ll='2532' type='PyObject * PyLong_FromUnicodeObject(PyObject * u, int base)'/>
+<use f='codebrowser/Objects/longobject.c' l='4849' u='c' c='long_new_impl'/>

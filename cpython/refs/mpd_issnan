@@ -1,0 +1,14 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='733' type='int mpd_issnan(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3587' u='c' c='PyDec_AsFloat'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4126' u='c' c='dec_mpd_issnan'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4401' u='c' c='dec_richcompare'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4402' u='c' c='dec_richcompare'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4535' u='c' c='_dec_hash'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5178' u='c' c='ctx_mpd_issnan'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='312' ll='316' macro='1' type='int mpd_issnan(const mpd_t * dec)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1542' u='c' c='mpd_qcheck_nan'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1562' u='c' c='mpd_qcheck_nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1566' u='c' c='mpd_qcheck_nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1591' u='c' c='mpd_qcheck_3nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1595' u='c' c='mpd_qcheck_3nans'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1599' u='c' c='mpd_qcheck_3nans'/>

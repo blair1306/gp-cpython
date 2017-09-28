@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/symtable.h' l='56' type='unsigned int'/>
+<offset>711</offset>
+<doc f='codebrowser/Include/symtable.h' l='56'>/* for class scopes, true if a
+                                             closure over __class__
+                                             should be created */</doc>
+<use f='codebrowser/Python/compile.c' l='561' u='r' c='compiler_enter_scope'/>
+<use f='codebrowser/Python/compile.c' l='1936' u='r' c='compiler_class'/>
+<use f='codebrowser/Python/symtable.c' l='74' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='590' u='w' c='drop_class_free'/>

@@ -1,0 +1,14 @@
+<dec f='codebrowser/Parser/tokenizer.h' l='63' type='PyObject *'/>
+<offset>7680</offset>
+<use f='codebrowser/Parser/tokenizer.c' l='151' u='w' c='tok_new'/>
+<use f='codebrowser/Parser/tokenizer.c' l='440' u='r' c='fp_readl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='441' u='r' c='fp_readl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='466' u='r' c='fp_readl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='469' u='w' c='fp_readl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='471' u='r' c='fp_readl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='476' u='w' c='fp_readl'/>
+<use f='codebrowser/Parser/tokenizer.c' l='654' u='r' c='decoding_feof'/>
+<use f='codebrowser/Parser/tokenizer.c' l='661' u='w' c='decoding_feof'/>
+<use f='codebrowser/Parser/tokenizer.c' l='803' u='r' c='decode_str'/>
+<use f='codebrowser/Parser/tokenizer.c' l='804' u='w' c='decode_str'/>
+<use f='codebrowser/Parser/tokenizer.c' l='900' u='r' c='PyTokenizer_Free'/>

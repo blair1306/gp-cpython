@@ -1,0 +1,6 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='544' type='void mpd_qpow(mpd_t * result, const mpd_t * base, const mpd_t * exp, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='2322' u='c' c='PyDecType_FromFloatExact'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4075' u='c' c='nm_mpd_qpow'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5142' u='c' c='ctx_mpd_qpow'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6537' ll='6629' type='void mpd_qpow(mpd_t * result, const mpd_t * base, const mpd_t * exp, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6536'>/* The power function: base**exp */</doc>

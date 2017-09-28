@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_ssl.c' l='253' type='5'/>
+<use f='codebrowser/Modules/_ssl.c' l='575' u='r' c='PySSL_SetError'/>
+<use f='codebrowser/Modules/_ssl.c' l='580' u='r' c='PySSL_SetError'/>
+<use f='codebrowser/Modules/_ssl.c' l='5250' u='r' c='PyInit__ssl'/>
+<doc f='codebrowser/Modules/_ssl.c' l='253'>/* look at error stack/return value/errno */</doc>

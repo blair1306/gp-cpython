@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/symtable.h' l='48' type='unsigned int'/>
+<offset>705</offset>
+<doc f='codebrowser/Include/symtable.h' l='48'>/* true if a child block has free vars,
+                                     including free refs to globals */</doc>
+<use f='codebrowser/Python/symtable.c' l='70' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='818' u='r' c='analyze_block'/>
+<use f='codebrowser/Python/symtable.c' l='819' u='w' c='analyze_block'/>

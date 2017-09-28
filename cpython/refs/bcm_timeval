@@ -1,0 +1,4 @@
+<def f='include/linux/can/bcm.h' l='50' ll='53'/>
+<size>16</size>
+<mbr r='bcm_timeval::tv_sec' o='0' t='long'/>
+<mbr r='bcm_timeval::tv_usec' o='64' t='long'/>

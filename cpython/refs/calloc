@@ -1,0 +1,4 @@
+<dec f='include/stdlib.h' l='468' type='void * calloc(size_t __nmemb, size_t __size)'/>
+<doc f='include/stdlib.h' l='467'>/* Allocate NMEMB elements of SIZE bytes each, all initialized to 0.  */</doc>
+<use f='codebrowser/Modules/_decimal/libmpdec/memory.c' l='48'/>
+<use f='codebrowser/Objects/obmalloc.c' l='87' u='c' c='_PyMem_RawCalloc'/>

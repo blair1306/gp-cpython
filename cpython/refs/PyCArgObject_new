@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/_ctypes/ctypes.h' l='316' type='PyCArgObject * PyCArgObject_new()'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='404' u='c' c='StructUnionType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='945' u='c' c='PyCPointerType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1375' u='c' c='PyCArrayType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1577' u='c' c='c_wchar_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1641' u='c' c='c_char_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1710' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1728' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1745' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1786' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1804' u='c' c='c_void_p_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='1919' u='c' c='PyCSimpleType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2147' u='c' c='PyCSimpleType_from_param'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2346' u='c' c='PyCFuncPtrType_paramfunc'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='3556' u='c' c='_byref'/>
+<def f='codebrowser/Modules/_ctypes/callproc.c' l='430' ll='442' type='PyCArgObject * PyCArgObject_new()'/>
+<use f='codebrowser/Modules/_ctypes/callproc.c' l='1533' u='c' c='byref'/>
+<doc f='codebrowser/Modules/_ctypes/callproc.c' l='428'>/**************************************************************/</doc>

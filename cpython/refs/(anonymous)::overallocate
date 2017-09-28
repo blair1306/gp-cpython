@@ -1,0 +1,43 @@
+<dec f='codebrowser/Include/bytesobject.h' l='160' type='int'/>
+<dec f='codebrowser/Include/unicodeobject.h' l='904' type='unsigned char'/>
+<offset>416</offset>
+<doc f='codebrowser/Include/bytesobject.h' l='158'>/* If non-zero, overallocate the buffer (default: 0).
+       This flag must be zero if use_bytearray is non-zero. */</doc>
+<doc f='codebrowser/Include/unicodeobject.h' l='903'>/* If non-zero, overallocate the buffer (default: 0). */</doc>
+<use f='codebrowser/Modules/_pickle.c' l='2124' u='w' c='raw_unicode_escape'/>
+<use f='codebrowser/Modules/binascii.c' l='825' u='w' c='binascii_rledecode_hqx_impl'/>
+<use f='codebrowser/Objects/bytesobject.c' l='202' u='w' c='PyBytes_FromFormatV'/>
+<use f='codebrowser/Objects/bytesobject.c' l='614' u='w' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='822' u='w' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1049' u='r' c='_PyBytes_FormatEx'/>
+<use f='codebrowser/Objects/bytesobject.c' l='1137' u='w' c='_PyBytes_DecodeEscape'/>
+<use f='codebrowser/Objects/bytesobject.c' l='2713' u='w' c='_PyBytes_FromIterator'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3228' u='r' c='_PyBytesWriter_CheckConsistency'/>
+<use f='codebrowser/Objects/bytesobject.c' l='3252' u='r' c='_PyBytesWriter_Resize'/>
+<use f='codebrowser/Objects/dictobject.c' l='1894' u='w' c='dict_repr'/>
+<use f='codebrowser/Objects/dictobject.c' l='1942' u='w' c='dict_repr'/>
+<use f='codebrowser/Objects/listobject.c' l='356' u='w' c='list_repr'/>
+<use f='codebrowser/Objects/listobject.c' l='385' u='w' c='list_repr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='288' u='w' c='tuplerepr'/>
+<use f='codebrowser/Objects/tupleobject.c' l='324' u='w' c='tuplerepr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2669' u='w' c='unicode_fromformat_arg'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2891' u='w' c='PyUnicode_FromFormatV'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2922' u='w' c='PyUnicode_FromFormatV'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4431' u='w' c='unicode_decode_call_errorhandler_writer'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='326' u='w' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='423' u='r' c='ucs2lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='326' u='w' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/stringlib/codecs.h' l='423' u='r' c='ucs4lib_utf8_encoder'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6768' u='w' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6867' u='r' c='unicode_encode_ucs1'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='7971' u='w' c='charmap_decode_mapping'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13554' u='r' c='_PyUnicodeWriter_PrepareInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13567' u='r' c='_PyUnicodeWriter_PrepareInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13660' u='r' c='_PyUnicodeWriter_WriteStr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13722' u='r' c='_PyUnicodeWriter_WriteASCIIString'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='880' u='w' c='do_markup'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='888' u='w' c='do_markup'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='917' u='w' c='build_string'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14654' u='w' c='unicode_format_arg_format'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14972' u='w' c='PyUnicode_Format'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15001' u='w' c='PyUnicode_Format'/>

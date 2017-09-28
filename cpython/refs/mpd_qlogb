@@ -1,0 +1,5 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='478' type='void mpd_qlogb(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='4220' u='c' c='dec_mpd_qlogb'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5276' u='c' c='ctx_mpd_qlogb'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2746' ll='2763' type='void mpd_qlogb(mpd_t * result, const mpd_t * a, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2745'>/* Exponent of the magnitude of the most significant digit of the operand. */</doc>

@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/sysmodule.h' l='34' type='PyObject * PySys_GetXOptions()'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1750' u='c' c='_PyTraceMalloc_Init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1281' u='c' c='faulthandler_env_options'/>
+<use f='codebrowser/Objects/object.c' l='36' u='c' c='_PyDebug_PrintTotalRefs'/>
+<def f='codebrowser/Python/sysmodule.c' l='1572' ll='1576' type='PyObject * PySys_GetXOptions()'/>

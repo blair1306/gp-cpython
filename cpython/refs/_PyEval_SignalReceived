@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/ceval.h' l='57' type='void _PyEval_SignalReceived()'/>
+<use f='codebrowser/Modules/signalmodule.c' l='250' u='c' c='trip_signal'/>
+<def f='codebrowser/Python/ceval.c' l='333' ll='340' type='void _PyEval_SignalReceived()'/>
+<doc f='codebrowser/Python/ceval.c' l='309'>/* Mechanism whereby asynchronously executing callbacks (e.g. UNIX
+   signal handlers or Mac I/O completion routines) can schedule calls
+   to a function to be called synchronously.
+   The synchronous function is called with one void* argument.
+   It should return 0 for success or -1 for failure -- failure should
+   be accompanied by an exception.
+
+   If registry succeeds, the registry function returns 0; if it fails
+   (e.g. due to too many pending calls) it returns -1 (without setting
+   an exception condition).
+
+   Note that because registry may occur from within signal handlers,
+   or other asynchronous events, calling malloc() is unsafe!
+
+#ifdef WITH_THREAD
+   Any thread can schedule pending calls, but only the main thread
+   will execute them.
+   There is no facility to schedule calls to a particular thread, but
+   that should be easy to change, should that ever be required.  In
+   that case, the static variables here should go into the python
+   threadstate.
+#endif
+*/</doc>

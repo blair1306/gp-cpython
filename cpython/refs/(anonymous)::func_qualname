@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/funcobject.h' l='34' type='PyObject *'/>
+<offset>960</offset>
+<doc f='codebrowser/Include/funcobject.h' l='34'>/* The qualified name */</doc>
+<use f='codebrowser/Objects/call.c' l='364' u='r' c='_PyFunction_FastCallDict'/>
+<use f='codebrowser/Objects/call.c' l='422' u='r' c='_PyFunction_FastCallKeywords'/>
+<use f='codebrowser/Objects/funcobject.c' l='59' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='61' u='w' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='62' u='r' c='PyFunction_NewWithQualName'/>
+<use f='codebrowser/Objects/funcobject.c' l='302' u='r' c='func_get_qualname'/>
+<use f='codebrowser/Objects/funcobject.c' l='303' u='r' c='func_get_qualname'/>
+<use f='codebrowser/Objects/funcobject.c' l='317' u='r' c='func_set_qualname'/>
+<use f='codebrowser/Objects/funcobject.c' l='317' u='w' c='func_set_qualname'/>
+<use f='codebrowser/Objects/funcobject.c' l='540' u='r' c='func_dealloc'/>
+<use f='codebrowser/Objects/funcobject.c' l='548' u='r' c='func_repr'/>
+<use f='codebrowser/Objects/funcobject.c' l='564' u='r' c='func_traverse'/>
+<use f='codebrowser/Objects/funcobject.c' l='564' u='r' c='func_traverse'/>

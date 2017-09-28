@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/symtable.h' l='42' type='PyObject *'/>
+<offset>448</offset>
+<doc f='codebrowser/Include/symtable.h' l='42'>/* list of function parameters */</doc>
+<use f='codebrowser/Python/compile.c' l='555' u='r' c='compiler_enter_scope'/>
+<use f='codebrowser/Python/symtable.c' l='50' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='77' u='w' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='80' u='r' c='ste_new'/>
+<use f='codebrowser/Python/symtable.c' l='108' u='r' c='ste_dealloc'/>
+<use f='codebrowser/Python/symtable.c' l='1012' u='r' c='symtable_add_def'/>

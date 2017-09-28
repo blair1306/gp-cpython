@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/moduleobject.h' l='80' type='struct PyModuleDef_Slot *'/>
+<offset>704</offset>
+<use f='codebrowser/Objects/moduleobject.c' l='175' u='r' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='260' u='r' c='PyModule_FromDefAndSpec2TraceRefs'/>
+<use f='codebrowser/Objects/moduleobject.c' l='376' u='r' c='PyModule_ExecDef'/>
+<use f='codebrowser/Objects/moduleobject.c' l='380' u='r' c='PyModule_ExecDef'/>
+<use f='codebrowser/Python/pystate.c' l='330' u='r' c='PyState_FindModule'/>
+<use f='codebrowser/Python/pystate.c' l='351' u='r' c='_PyState_AddModule'/>
+<use f='codebrowser/Python/pystate.c' l='396' u='r' c='PyState_RemoveModule'/>

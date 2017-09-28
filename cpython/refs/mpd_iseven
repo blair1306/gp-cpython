@@ -1,0 +1,4 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='747' type='int mpd_iseven(const mpd_t * dec)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='746'>/* even decimal, only defined for integers */</doc>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1010' ll='1014' type='int mpd_iseven(const mpd_t * dec)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1009'>/* Even: Undefined for non-integers! */</doc>

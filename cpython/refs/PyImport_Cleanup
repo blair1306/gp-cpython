@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/import.h' l='78' type='void PyImport_Cleanup()'/>
+<def f='codebrowser/Python/import.c' l='333' ll='475' type='void PyImport_Cleanup()'/>
+<doc f='codebrowser/Python/import.c' l='331'>/* Un-initialize things, as good as we can */</doc>
+<use f='codebrowser/Python/pylifecycle.c' l='987' u='c' c='Py_FinalizeEx'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1273' u='c' c='Py_EndInterpreter'/>

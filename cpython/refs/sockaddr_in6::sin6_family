@@ -1,0 +1,5 @@
+<dec f='include/netinet/in.h' l='256' macro='1' type='sa_family_t'/>
+<offset>0</offset>
+<use f='codebrowser/Modules/socketmodule.c' l='1049' u='w' c='setipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1669' u='w' c='getsockaddrarg'/>
+<use f='codebrowser/Modules/socketmodule.c' l='5091' u='w' c='gethost_common'/>

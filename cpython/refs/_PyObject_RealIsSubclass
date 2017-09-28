@@ -1,0 +1,26 @@
+<dec f='codebrowser/Include/abstract.h' l='1089' type='int _PyObject_RealIsSubclass(PyObject * derived, PyObject * cls)'/>
+<def f='codebrowser/Objects/abstract.c' l='2483' ll='2487' type='int _PyObject_RealIsSubclass(PyObject * derived, PyObject * cls)'/>
+<use f='codebrowser/Objects/descrobject.c' l='236' u='c' c='methoddescr_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='275' u='c' c='_PyMethodDescr_FastCallKeywords'/>
+<use f='codebrowser/Objects/descrobject.c' l='359' u='c' c='wrapperdescr_call'/>
+<use f='codebrowser/Objects/descrobject.c' l='1241' u='c' c='PyWrapper_New'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/exceptions.c' l='2441' u='c' c='_PyExc_Init'/>
+<use f='codebrowser/Objects/typeobject.c' l='857' u='c' c='type___subclasscheck___impl'/>

@@ -1,0 +1,16 @@
+<dec f='codebrowser/Include/Python-ast.h' l='415' type='asdl_seq *'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='2514' u='w' c='_Py_arguments'/>
+<use f='codebrowser/Python/Python-ast.c' l='3829' u='r' c='ast2obj_arguments'/>
+<use f='codebrowser/Python/ast.c' l='110' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/ast.c' l='122' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/ast.c' l='122' u='r' c='validate_arguments'/>
+<use f='codebrowser/Python/compile.c' l='1710' u='r' c='compiler_visit_annotations'/>
+<use f='codebrowser/Python/compile.c' l='1847' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='1847' u='r' c='compiler_function'/>
+<use f='codebrowser/Python/compile.c' l='2179' u='r' c='compiler_lambda'/>
+<use f='codebrowser/Python/compile.c' l='2179' u='r' c='compiler_lambda'/>
+<use f='codebrowser/Python/symtable.c' l='1575' u='r' c='symtable_visit_annotations'/>
+<use f='codebrowser/Python/symtable.c' l='1575' u='r' c='symtable_visit_annotations'/>
+<use f='codebrowser/Python/symtable.c' l='1594' u='r' c='symtable_visit_arguments'/>
+<use f='codebrowser/Python/symtable.c' l='1594' u='r' c='symtable_visit_arguments'/>

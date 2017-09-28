@@ -1,0 +1,22 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='106' type='double ldexp(double __x, int __exponent)'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='642' u='c' c='c_log'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='643' u='c' c='c_log'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='827' u='c' c='cmath_sqrt_impl'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='828' u='c' c='cmath_sqrt_impl'/>
+<use f='codebrowser/Modules/cmathmodule.c' l='828' u='c' c='cmath_sqrt_impl'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1833' u='c' c='math_ldexp_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1229' u='c' c='float_hex_impl'/>
+<use f='codebrowser/Objects/floatobject.c' l='1453' u='c' c='float_fromhex'/>
+<use f='codebrowser/Objects/floatobject.c' l='1481' u='c' c='float_fromhex'/>
+<use f='codebrowser/Objects/floatobject.c' l='1487' u='c' c='float_fromhex'/>
+<use f='codebrowser/Objects/floatobject.c' l='2108' u='c' c='_PyFloat_Pack2'/>
+<use f='codebrowser/Objects/floatobject.c' l='2197' u='c' c='_PyFloat_Pack4'/>
+<use f='codebrowser/Objects/floatobject.c' l='2302' u='c' c='_PyFloat_Pack8'/>
+<use f='codebrowser/Objects/floatobject.c' l='2452' u='c' c='_PyFloat_Unpack2'/>
+<use f='codebrowser/Objects/floatobject.c' l='2509' u='c' c='_PyFloat_Unpack4'/>
+<use f='codebrowser/Objects/floatobject.c' l='2604' u='c' c='_PyFloat_Unpack8'/>
+<use f='codebrowser/Objects/longobject.c' l='368' u='c' c='PyLong_FromDouble'/>
+<use f='codebrowser/Objects/longobject.c' l='373' u='c' c='PyLong_FromDouble'/>
+<use f='codebrowser/Objects/longobject.c' l='2885' u='c' c='PyLong_AsDouble'/>
+<use f='codebrowser/Objects/longobject.c' l='3990' u='c' c='long_true_divide'/>
+<use f='codebrowser/Objects/longobject.c' l='3992' u='c' c='long_true_divide'/>

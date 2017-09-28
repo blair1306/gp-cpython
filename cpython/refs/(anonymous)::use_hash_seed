@@ -1,0 +1,5 @@
+<dec f='codebrowser/Include/pystate.h' l='29' type='int'/>
+<offset>32</offset>
+<use f='codebrowser/Python/bootstrap_hash.c' l='605' u='r' c='_Py_HashRandomization_Init'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='614' u='w' c='_Py_HashRandomization_Init'/>
+<use f='codebrowser/Python/pylifecycle.c' l='608' u='r' c='_Py_InitializeCore'/>

@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/marshal.h' l='19' type='PyObject * PyMarshal_ReadObjectFromFile(FILE * )'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3860' u='c' c='pymarshal_read_object_from_file'/>
+<use f='codebrowser/Python/marshal.c' l='1553' u='c' c='PyMarshal_ReadLastObjectFromFile'/>
+<def f='codebrowser/Python/marshal.c' l='1558' ll='1577' type='PyObject * PyMarshal_ReadObjectFromFile(FILE * fp)'/>

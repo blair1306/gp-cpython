@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/genobject.h' l='32' macro='1' type='struct _frame *'/>
+<offset>256</offset>
+<use f='codebrowser/Objects/genobject.c' l='21' u='r' c='gen_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='21' u='r' c='gen_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='35' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='35' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='66' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='111' u='r' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='112' u='r' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='113' u='r' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='113' u='w' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='125' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='293' u='r' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='294' u='w' c='gen_send_ex'/>
+<use f='codebrowser/Objects/genobject.c' l='352' u='r' c='_PyGen_yf'/>
+<use f='codebrowser/Objects/genobject.c' l='469' u='r' c='_gen_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='473' u='r' c='_gen_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='474' u='r' c='_gen_throw'/>
+<use f='codebrowser/Objects/genobject.c' l='806' u='w' c='gen_new_with_qualname'/>
+<use f='codebrowser/Objects/genobject.c' l='842' u='r' c='PyGen_NeedsFinalizing'/>
+<use f='codebrowser/Objects/genobject.c' l='1857' u='r' c='async_gen_athrow_send'/>

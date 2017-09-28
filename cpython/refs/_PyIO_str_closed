@@ -1,0 +1,10 @@
+<dec f='codebrowser/Modules/_io/_iomodule.h' l='158' type='PyObject *'/>
+<def f='codebrowser/Modules/_io/_iomodule.c' l='30' type='PyObject *'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='735' macro='1' u='r'/>
+<use f='codebrowser/Modules/_io/_iomodule.c' l='735' macro='1' u='w'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='481' u='r' c='buffered_closed'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='493' u='r' c='buffered_closed_get'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='2273' u='r' c='bufferedrwpair_closed_get'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='163' u='r' c='iobase_closed'/>
+<use f='codebrowser/Modules/_io/iobase.c' l='240' u='r' c='iobase_finalize'/>
+<use f='codebrowser/Modules/_io/textio.c' l='2818' u='r' c='textiowrapper_closed_get'/>

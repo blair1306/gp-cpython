@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1265' type='PyObject * PyUnicode_BuildEncodingMap(PyObject * string)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1263'>/* Build an encoding map. */</doc>
+<use f='codebrowser/Modules/_codecsmodule.c' l='972' u='c' c='_codecs_charmap_build_impl'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='8117' ll='8225' type='PyObject * PyUnicode_BuildEncodingMap(PyObject * string)'/>

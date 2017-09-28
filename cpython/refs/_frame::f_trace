@@ -1,0 +1,20 @@
+<dec f='codebrowser/Include/frameobject.h' l='29' type='PyObject *'/>
+<offset>768</offset>
+<doc f='codebrowser/Include/frameobject.h' l='29'>/* Trace function */</doc>
+<use f='codebrowser/Objects/frameobject.c' l='33' u='r' c='PyFrame_GetLineNumber'/>
+<use f='codebrowser/Objects/frameobject.c' l='96' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Objects/frameobject.c' l='331' u='r' c='frame_gettrace'/>
+<use f='codebrowser/Objects/frameobject.c' l='350' u='r' c='frame_settrace'/>
+<use f='codebrowser/Objects/frameobject.c' l='350' u='w' c='frame_settrace'/>
+<use f='codebrowser/Objects/frameobject.c' l='437' u='r' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='437' u='w' c='frame_dealloc'/>
+<use f='codebrowser/Objects/frameobject.c' l='468' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='468' u='r' c='frame_traverse'/>
+<use f='codebrowser/Objects/frameobject.c' l='505' u='r' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='505' u='w' c='frame_tp_clear'/>
+<use f='codebrowser/Objects/frameobject.c' l='697' u='w' c='_PyFrame_New_NoTrack'/>
+<use f='codebrowser/Python/sysmodule.c' l='430' u='r' c='trace_trampoline'/>
+<use f='codebrowser/Python/sysmodule.c' l='436' u='r' c='trace_trampoline'/>
+<use f='codebrowser/Python/sysmodule.c' l='436' u='w' c='trace_trampoline'/>
+<use f='codebrowser/Python/sysmodule.c' l='440' u='r' c='trace_trampoline'/>
+<use f='codebrowser/Python/sysmodule.c' l='440' u='w' c='trace_trampoline'/>

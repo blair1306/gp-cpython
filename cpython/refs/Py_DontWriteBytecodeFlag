@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pydebug.h' l='21' type='int'/>
+<use f='codebrowser/Modules/main.c' l='536' u='w' c='apply_command_line_and_environment'/>
+<def f='codebrowser/Python/pylifecycle.c' l='92' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='595' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='595' u='r' c='_Py_InitializeCore'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='92'>/* Suppress writing bytecode files (*.pyc) */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='1729' u='r' c='make_flags'/>
+<use f='codebrowser/Python/sysmodule.c' l='2122' u='r' c='_PySys_EndInit'/>

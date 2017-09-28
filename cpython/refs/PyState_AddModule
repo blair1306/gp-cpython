@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='204' type='int PyState_AddModule(PyObject * , struct PyModuleDef * )'/>
+<doc f='codebrowser/Include/pystate.h' l='203'>/* New in 3.3 */</doc>
+<use f='codebrowser/Modules/_testmultiphase.c' l='142' u='c' c='call_state_registration_func'/>
+<def f='codebrowser/Python/pystate.c' l='370' ll='389' type='int PyState_AddModule(PyObject * module, struct PyModuleDef * def)'/>

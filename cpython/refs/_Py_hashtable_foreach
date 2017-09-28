@@ -1,0 +1,11 @@
+<dec f='codebrowser/Modules/hashtable.h' l='143' type='int _Py_hashtable_foreach(_Py_hashtable_t * ht, _Py_hashtable_foreach_func func, void * arg)'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='567' u='c' c='tracemalloc_use_domain'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='976' u='c' c='tracemalloc_clear_traces'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='979' u='c' c='tracemalloc_clear_traces'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1408' u='c' c='_tracemalloc__get_traces_impl'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1421' u='c' c='_tracemalloc__get_traces_impl'/>
+<doc f='codebrowser/Modules/hashtable.h' l='140'>/* Call func() on each entry of the hashtable.
+   Iteration stops if func() result is non-zero, in this case it&apos;s the result
+   of the call. Otherwise, the function returns 0. */</doc>
+<def f='codebrowser/Modules/hashtable.c' l='393' ll='409' type='int _Py_hashtable_foreach(_Py_hashtable_t * ht, _Py_hashtable_foreach_func func, void * arg)'/>
+<use f='codebrowser/Python/marshal.c' l='607' u='c' c='w_clear_refs'/>

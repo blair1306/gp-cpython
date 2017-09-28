@@ -1,0 +1,17 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='487' type='mpd_uint_t mpd_qshiftr_inplace(mpd_t * result, mpd_ssize_t n)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1675' u='c' c='_mpd_apply_round'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1822' u='c' c='_mpd_check_exp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1869' u='c' c='_mpd_check_round'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2489' ll='2517' type='mpd_uint_t mpd_qshiftr_inplace(mpd_t * result, mpd_ssize_t n)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3029' u='c' c='mpd_qshiftn'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3080' u='c' c='mpd_qshift'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3760' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6897' u='c' c='mpd_qreduce'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7649' u='c' c='_mpd_qinvroot'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7762' u='c' c='mpd_qsqrt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7800' u='c' c='mpd_qsqrt'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2484'>/*
+ * Inplace shift of the coefficient to the right, no check for specials.
+ * Returns the rounding indicator for mpd_rnd_incr().
+ * The function cannot fail.
+ */</doc>

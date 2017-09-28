@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/import.h' l='75' type='PyObject * PyImport_GetImporter(PyObject * path)'/>
+<use f='codebrowser/Modules/main.c' l='240' u='c' c='AsImportPathEntry'/>
+<def f='codebrowser/Python/import.c' l='1008' ll='1020' macro='1' type='PyObject * PyImport_GetImporter(PyObject * path)'/>

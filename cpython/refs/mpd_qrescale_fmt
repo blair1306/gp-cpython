@@ -1,0 +1,12 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='517' type='void mpd_qrescale_fmt(mpd_t * result, const mpd_t * a, mpd_ssize_t exp, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1220' u='c' c='_mpd_round'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/io.c' l='1222' u='c' c='_mpd_round'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7107' ll='7117' type='void mpd_qrescale_fmt(mpd_t * result, const mpd_t * a, mpd_ssize_t exp, const mpd_context_t * ctx, uint32_t * status)'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7099'>/*
+ * Same as mpd_qrescale, but with relaxed restrictions. The result of this
+ * function should only be used for formatting a number and never as input
+ * for other operations.
+ *
+ *     MPD_MIN_ETINY-MPD_MAX_PREC &lt;= exp &lt;= MPD_MAX_EMAX+1
+ *     result-&gt;digits &lt;= MPD_MAX_PREC+1
+ */</doc>

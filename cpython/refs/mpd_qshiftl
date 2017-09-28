@@ -1,0 +1,30 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='485' type='int mpd_qshiftl(mpd_t * result, const mpd_t * a, mpd_ssize_t n, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='1792' u='c' c='_mpd_check_exp'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2399' ll='2424' type='int mpd_qshiftl(mpd_t * result, const mpd_t * a, mpd_ssize_t n, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2914' u='c' c='mpd_qrotate'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3021' u='c' c='mpd_qshiftn'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3072' u='c' c='mpd_qshift'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3298' u='c' c='_mpd_qaddsub'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3693' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3701' u='c' c='_mpd_qdiv'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3807' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3836' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3844' u='c' c='_mpd_qdivmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4116' u='c' c='_mpd_zeropad'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6262' u='c' c='_qcheck_pow_one_inf'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6314' u='c' c='_qcheck_pow_one'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6620' u='c' c='mpd_qpow'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6738' u='c' c='mpd_qpowmod'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6831' u='c' c='mpd_qquantize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7055' u='c' c='_mpd_qrescale'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7745' u='c' c='mpd_qsqrt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7756' u='c' c='mpd_qsqrt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7768' u='c' c='mpd_qsqrt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7803' u='c' c='mpd_qsqrt'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8160' u='c' c='mpd_qexport_u16'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='8237' u='c' c='mpd_qexport_u32'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='2394'>/*
+ * Shift the coefficient of the operand to the left, no check for specials.
+ * Both operands may be the same pointer. If the result length has to be
+ * increased, mpd_qresize() might fail with MPD_Malloc_error.
+ */</doc>

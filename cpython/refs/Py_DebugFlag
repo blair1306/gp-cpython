@@ -1,0 +1,40 @@
+<dec f='codebrowser/Include/pydebug.h' l='10' type='int'/>
+<use f='codebrowser/Modules/main.c' l='531' u='w' c='apply_command_line_and_environment'/>
+<dec f='codebrowser/Parser/firstsets.c' l='8' type='int'/>
+<use f='codebrowser/Parser/firstsets.c' l='19' u='r' c='_Py_addfirstsets'/>
+<use f='codebrowser/Parser/firstsets.c' l='43' u='r' c='calcfirstset'/>
+<use f='codebrowser/Parser/firstsets.c' l='103' u='r' c='calcfirstset'/>
+<dec f='codebrowser/Parser/grammar.c' l='12' type='int'/>
+<use f='codebrowser/Parser/grammar.c' l='122' u='r' c='_Py_addlabel'/>
+<use f='codebrowser/Parser/grammar.c' l='172' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='178' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='191' u='r' c='translabel'/>
+<use f='codebrowser/Parser/grammar.c' l='211' u='r' c='translabel'/>
+<dec f='codebrowser/Parser/parser.c' l='18' type='int'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='classify'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='classify'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='classify'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='19' u='r' c='PyParser_AddToken'/>
+<use f='codebrowser/Parser/parser.c' l='388' u='r' c='_Py_printtree'/>
+<dec f='codebrowser/Parser/pgen.c' l='13' type='int'/>
+<use f='codebrowser/Parser/pgen.c' l='166' u='r' c='metacompile'/>
+<use f='codebrowser/Parser/pgen.c' l='489' u='r' c='makedfa'/>
+<use f='codebrowser/Parser/pgen.c' l='495' u='r' c='makedfa'/>
+<use f='codebrowser/Parser/pgen.c' l='571' u='r' c='renamestates'/>
+<use f='codebrowser/Parser/pgen.c' l='664' u='r' c='maketables'/>
+<def f='codebrowser/Python/pylifecycle.c' l='81' type='int'/>
+<use f='codebrowser/Python/pylifecycle.c' l='589' u='w' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='589' u='r' c='_Py_InitializeCore'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='80'>/* XXX (ncoghlan): move those declarations to pylifecycle.h? */</doc>
+<doc f='codebrowser/Python/pylifecycle.c' l='81'>/* Needed by parser.c */</doc>
+<use f='codebrowser/Python/sysmodule.c' l='1725' u='r' c='make_flags'/>

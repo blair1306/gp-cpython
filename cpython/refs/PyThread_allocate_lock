@@ -1,0 +1,31 @@
+<dec f='codebrowser/Include/pythread.h' l='29' type='PyThread_type_lock PyThread_allocate_lock()'/>
+<use f='codebrowser/Modules/_blake2/blake2b_impl.c' l='297' u='c' c='_blake2b_blake2b_update'/>
+<use f='codebrowser/Modules/_blake2/blake2s_impl.c' l='297' u='c' c='_blake2s_blake2s_update'/>
+<use f='codebrowser/Modules/_hashopenssl.c' l='272' u='c' c='EVP_update'/>
+<use f='codebrowser/Modules/_io/bufferedio.c' l='759' u='c' c='_buffered_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='761' u='c' c='Compressor_init'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='1184' u='c' c='_lzma_LZMADecompressor___init___impl'/>
+<use f='codebrowser/Modules/_sha3/sha3module.c' l='378' u='c' c='_sha3_sha3_224_update'/>
+<use f='codebrowser/Modules/_ssl.c' l='5090' u='c' c='_setup_ssl_threads'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2270' u='c' c='test_thread_state'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3653' u='c' c='call_in_temporary_c_thread'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='3654' u='c' c='call_in_temporary_c_thread'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='454' u='c' c='rlock_new'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='543' u='c' c='newlockobject'/>
+<use f='codebrowser/Modules/_tracemalloc.c' l='1012' u='c' c='tracemalloc_init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1009' u='c' c='faulthandler_fatal_error_c_thread'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1328' u='c' c='_PyFaulthandler_Init'/>
+<use f='codebrowser/Modules/faulthandler.c' l='1329' u='c' c='_PyFaulthandler_Init'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='116' u='c' c='newcompobject'/>
+<use f='codebrowser/Parser/myreadline.c' l='324' u='c' c='PyOS_Readline'/>
+<use f='codebrowser/Python/ceval.c' l='183' u='c' c='PyEval_InitThreads'/>
+<use f='codebrowser/Python/ceval.c' l='251' u='c' c='PyEval_ReInitThreads'/>
+<use f='codebrowser/Python/ceval.c' l='410' u='c' c='Py_MakePendingCalls'/>
+<use f='codebrowser/Python/import.c' l='160' u='c' c='_PyImport_AcquireLock'/>
+<use f='codebrowser/Python/import.c' l='206' u='c' c='_PyImport_ReInitLock'/>
+<use f='codebrowser/Python/pystate.c' l='42' u='c' c='PyInterpreterState_New'/>
+<use f='codebrowser/Python/pystate.c' l='42' u='c' c='_PyGILState_Reinit'/>
+<def f='codebrowser/Python/thread_pthread.h' l='277' ll='301' type='PyThread_type_lock PyThread_allocate_lock()'/>
+<doc f='codebrowser/Python/thread_pthread.h' l='273'>/*
+ * Lock support.
+ */</doc>

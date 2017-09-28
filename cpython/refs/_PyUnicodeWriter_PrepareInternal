@@ -1,0 +1,38 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='934' type='int _PyUnicodeWriter_PrepareInternal(_PyUnicodeWriter * writer, Py_ssize_t length, Py_UCS4 maxchar)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='931'>/* Don&apos;t call this function directly, use the _PyUnicodeWriter_Prepare() macro
+   instead. */</doc>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='167' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='168' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='169' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_hk.c' l='170' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_iso2022.c' l='531' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='311' macro='1' u='c'/>
+<use f='codebrowser/Modules/cjkcodecs/_codecs_jp.c' l='698' macro='1' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='1665' macro='1' u='c'/>
+<use f='codebrowser/Objects/longobject.c' l='1836' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2547' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='2731' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4432' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='4996' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5287' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5615' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='5924' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6107' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6305' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6386' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='6951' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='7828' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8026' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='8954' macro='1' u='c'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='13531' ll='13606' type='int _PyUnicodeWriter_PrepareInternal(_PyUnicodeWriter * writer, Py_ssize_t length, Py_UCS4 maxchar)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13627' u='c' c='_PyUnicodeWriter_PrepareKindInternal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13634' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13669' u='c' c='_PyUnicodeWriter_WriteStr'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13704' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13736' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13780' macro='1' u='c'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='14833' macro='1' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='821' macro='1' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='994' macro='1' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1139' macro='1' u='c'/>
+<use f='codebrowser/Python/formatter_unicode.c' l='1341' macro='1' u='c'/>

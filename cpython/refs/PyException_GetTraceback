@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/pyerrors.h' l='120' type='PyObject * PyException_GetTraceback(PyObject * )'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1081' u='c' c='FutureIter_throw'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2759' u='c' c='exception_print'/>
+<def f='codebrowser/Objects/exceptions.c' l='303' ll='308' type='PyObject * PyException_GetTraceback(PyObject * self)'/>
+<use f='codebrowser/Objects/genobject.c' l='520' u='c' c='_gen_throw'/>
+<use f='codebrowser/Python/errors.c' l='127' u='c' c='PyErr_SetObject'/>
+<use f='codebrowser/Python/pythonrun.c' l='698' u='c' c='print_exception'/>
+<use f='codebrowser/Python/pythonrun.c' l='862' u='c' c='PyErr_Display'/>

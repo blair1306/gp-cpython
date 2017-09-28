@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/longobject.h' l='89' type='PyObject * PyLong_FromUnsignedLongLong(unsigned long long )'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='968' u='c' c='Q_get'/>
+<use f='codebrowser/Modules/_ctypes/cfield.c' l='978' u='c' c='Q_get_sw'/>
+<use f='codebrowser/Modules/_lzmamodule.c' l='400' u='c' c='spec_add_field'/>
+<use f='codebrowser/Modules/_struct.c' l='474' u='c' c='nu_ulonglong'/>
+<use f='codebrowser/Modules/_struct.c' l='835' u='c' c='bu_ulonglong'/>
+<use f='codebrowser/Modules/_struct.c' l='1056' u='c' c='lu_ulonglong'/>
+<use f='codebrowser/Modules/testcapi_long.h' l='44' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1170' u='c' c='getargs_K'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4155' u='c' c='dict_get_version'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4920' u='c' c='PyInit__testcapi'/>
+<use f='codebrowser/Modules/arraymodule.c' l='455' u='c' c='QQ_getitem'/>
+<use f='codebrowser/Modules/posixmodule.c' l='2025' u='c' c='_pystat_fromstructstat'/>
+<use f='codebrowser/Modules/posixmodule.c' l='11631' u='c' c='os_DirEntry_inode_impl'/>
+<def f='codebrowser/Objects/longobject.c' l='1117' ll='1141' type='PyObject * PyLong_FromUnsignedLongLong(unsigned long long ival)'/>
+<doc f='codebrowser/Objects/longobject.c' l='1115'>/* Create a new int object from a C unsigned long long int. */</doc>
+<use f='codebrowser/Objects/memoryobject.c' l='1707' u='c' c='unpack_single'/>
+<use f='codebrowser/Python/modsupport.c' l='334' u='c' c='do_mkvalue'/>
+<use f='codebrowser/Python/structmember.c' l='81' u='c' c='PyMember_GetOne'/>

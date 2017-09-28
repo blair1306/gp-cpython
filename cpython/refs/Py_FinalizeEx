@@ -1,0 +1,19 @@
+<dec f='codebrowser/Include/pylifecycle.h' l='37' type='int Py_FinalizeEx()'/>
+<use f='codebrowser/Modules/main.c' l='921' u='c' c='Py_Main'/>
+<use f='codebrowser/Python/frozenmain.c' l='102' u='c' c='Py_FrozenMain'/>
+<def f='codebrowser/Python/pylifecycle.c' l='925' ll='1119' type='int Py_FinalizeEx()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1124' u='c' c='Py_Finalize'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1929' u='c' c='Py_Exit'/>
+<doc f='codebrowser/Python/pylifecycle.c' l='911'>/* Undo the effect of Py_Initialize().
+
+   Beware: if multiple interpreter and/or thread states exist, these
+   are not wiped out; only the current thread and interpreter state
+   are deleted.  But since everything else is deleted, those other
+   interpreter and thread states should no longer be used.
+
+   (XXX We should do better, e.g. wipe out all interpreters and
+   threads.)
+
+   Locking: as above.
+
+*/</doc>

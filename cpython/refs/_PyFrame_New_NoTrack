@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/frameobject.h' l='66' type='PyFrameObject * _PyFrame_New_NoTrack(PyThreadState * , PyCodeObject * , PyObject * , PyObject * )'/>
+<doc f='codebrowser/Include/frameobject.h' l='65'>/* only internal use */</doc>
+<use f='codebrowser/Objects/call.c' l='271' u='c' c='function_code_fastcall'/>
+<def f='codebrowser/Objects/frameobject.c' l='610' ll='733' type='PyFrameObject * _PyFrame_New_NoTrack(PyThreadState * tstate, PyCodeObject * code, PyObject * globals, PyObject * locals)'/>
+<use f='codebrowser/Objects/frameobject.c' l='739' u='c' c='PyFrame_New'/>
+<use f='codebrowser/Python/ceval.c' l='3936' u='c' c='_PyEval_EvalCodeWithName'/>

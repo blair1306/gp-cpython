@@ -1,0 +1,21 @@
+<def f='include/linux/can/bcm.h' l='66' ll='74'/>
+<size>56</size>
+<doc f='include/linux/can/bcm.h' l='55'>/**
+ * struct bcm_msg_head - head of messages to/from the broadcast manager
+ * @opcode:    opcode, see enum below.
+ * @flags:     special flags, see below.
+ * @count:     number of frames to send before changing interval.
+ * @ival1:     interval for the first @count frames.
+ * @ival2:     interval for the following frames.
+ * @can_id:    CAN ID of frames to be sent or received.
+ * @nframes:   number of frames appended to the message head.
+ * @frames:    array of CAN frames.
+ */</doc>
+<mbr r='bcm_msg_head::opcode' o='0' t='__u32'/>
+<mbr r='bcm_msg_head::flags' o='32' t='__u32'/>
+<mbr r='bcm_msg_head::count' o='64' t='__u32'/>
+<mbr r='bcm_msg_head::ival1' o='128' t='struct bcm_timeval'/>
+<mbr r='bcm_msg_head::ival2' o='256' t='struct bcm_timeval'/>
+<mbr r='bcm_msg_head::can_id' o='384' t='canid_t'/>
+<mbr r='bcm_msg_head::nframes' o='416' t='__u32'/>
+<mbr r='bcm_msg_head::frames' o='448' t='struct can_frame [0]'/>

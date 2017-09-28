@@ -1,0 +1,18 @@
+<dec f='codebrowser/Modules/expat/xmlparse.c' l='531' type='char *'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='w' c='parserInit'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_Parse'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='w' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_ParseBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='w' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='w' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='w' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetBuffer'/>
+<use f='codebrowser/Modules/expat/xmlparse.c' l='686' u='r' c='PyExpat_XML_GetInputContext'/>
+<offset>448</offset>
+<doc f='codebrowser/Modules/expat/xmlparse.c' l='530'>/* past last character to be parsed */</doc>

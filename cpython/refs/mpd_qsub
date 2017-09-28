@@ -1,0 +1,16 @@
+<dec f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.h' l='524' type='void mpd_qsub(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='3985' u='c' c='nm_mpd_qsub'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5062' u='c' c='ctx_mpd_qsub'/>
+<def f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3420' ll='3434' type='void mpd_qsub(mpd_t * result, const mpd_t * a, const mpd_t * b, const mpd_context_t * ctx, uint32_t * status)'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3443' u='c' c='_mpd_qsub_exact'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3488' u='c' c='mpd_qsub_ssize'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3502' u='c' c='mpd_qsub_uint'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4395' u='c' c='mpd_qexp'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4579' u='c' c='mpd_qln10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4797' u='c' c='_mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='4929' u='c' c='mpd_qln'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='5078' u='c' c='mpd_qlog10'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6016' u='c' c='mpd_qnext_minus'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='6406' u='c' c='_lower_bound_zeta'/>
+<use f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='7638' u='c' c='_mpd_qinvroot'/>
+<doc f='codebrowser/Modules/_decimal/libmpdec/mpdecimal.c' l='3419'>/* Subtract b from a. */</doc>

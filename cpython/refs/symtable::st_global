@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/symtable.h' l='26' type='PyObject *'/>
+<offset>320</offset>
+<doc f='codebrowser/Include/symtable.h' l='26'>/* borrowed ref to st_top-&gt;ste_symbols */</doc>
+<use f='codebrowser/Python/symtable.c' l='954' u='w' c='symtable_enter_block'/>
+<use f='codebrowser/Python/symtable.c' l='1018' u='r' c='symtable_add_def'/>
+<use f='codebrowser/Python/symtable.c' l='1024' u='r' c='symtable_add_def'/>

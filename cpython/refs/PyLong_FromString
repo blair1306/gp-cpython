@@ -1,0 +1,29 @@
+<dec f='codebrowser/Include/longobject.h' l='95' type='PyObject * PyLong_FromString(const char * , char ** , int )'/>
+<use f='codebrowser/Modules/_json.c' l='1038' u='c' c='_match_number_unicode'/>
+<use f='codebrowser/Modules/_pickle.c' l='4617' u='c' c='load_int'/>
+<use f='codebrowser/Modules/_pickle.c' l='4771' u='c' c='load_long'/>
+<use f='codebrowser/Modules/_pickle.c' l='5568' u='c' c='load_get'/>
+<use f='codebrowser/Modules/_pickle.c' l='5736' u='c' c='load_put'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='470' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='514' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='557' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='572' u='c' c='test_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='634' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='678' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='721' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='736' u='c' c='test_long_long_and_overflow'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1186' u='c' c='test_k_code'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='1205' u='c' c='test_k_code'/>
+<def f='codebrowser/Objects/longobject.c' l='2117' ll='2464' type='PyObject * PyLong_FromString(const char * str, char ** pend, int base)'/>
+<use f='codebrowser/Objects/longobject.c' l='2477' u='c' c='_PyLong_FromBytes'/>
+<use f='codebrowser/Objects/longobject.c' l='2520' u='c' c='PyLong_FromUnicodeObject'/>
+<doc f='codebrowser/Objects/longobject.c' l='2109'>/* Parses an int from a bytestring. Leading and trailing whitespace will be
+ * ignored.
+ *
+ * If successful, a PyLong object will be returned and &apos;pend&apos; will be pointing
+ * to the first unused byte unless it&apos;s NULL.
+ *
+ * If unsuccessful, NULL will be returned.
+ */</doc>
+<use f='codebrowser/Python/ast.c' l='4087' u='c' c='parsenumber_raw'/>
+<use f='codebrowser/Python/ast.c' l='4094' u='c' c='parsenumber_raw'/>

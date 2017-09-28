@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/dictobject.h' l='173' type='PyObject * _PyDict_LoadGlobal(PyDictObject * , PyDictObject * , PyObject * )'/>
+<def f='codebrowser/Objects/dictobject.c' l='1359' ll='1386' type='PyObject * _PyDict_LoadGlobal(PyDictObject * globals, PyDictObject * builtins, PyObject * key)'/>
+<doc f='codebrowser/Objects/dictobject.c' l='1352'>/* Fast version of global value lookup (LOAD_GLOBAL).
+ * Lookup in globals, then builtins.
+ *
+ * Raise an exception and return NULL if an error occurred (ex: computing the
+ * key hash failed, key comparison failed, ...). Return NULL if the key doesn&apos;t
+ * exist. Return the value if the key exists.
+ */</doc>
+<use f='codebrowser/Python/ceval.c' l='2334' u='c' c='_PyEval_EvalFrameDefault'/>

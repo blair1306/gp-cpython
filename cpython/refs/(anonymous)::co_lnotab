@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/code.h' l='43' type='PyObject *'/>
+<offset>1024</offset>
+<doc f='codebrowser/Include/code.h' l='43'>/* string (encoding addr&lt;-&gt;lineno mapping) See
+				   Objects/lnotab_notes.txt for details. */</doc>
+<use f='codebrowser/Objects/codeobject.c' l='205' u='w' c='PyCode_New'/>
+<use f='codebrowser/Objects/codeobject.c' l='441' u='r' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='763' u='r' c='PyCode_Addr2Line'/>
+<use f='codebrowser/Objects/codeobject.c' l='764' u='r' c='PyCode_Addr2Line'/>
+<use f='codebrowser/Objects/codeobject.c' l='786' u='r' c='_PyCode_CheckLineNumber'/>
+<use f='codebrowser/Objects/codeobject.c' l='786' u='r' c='_PyCode_CheckLineNumber'/>
+<use f='codebrowser/Objects/codeobject.c' l='787' u='r' c='_PyCode_CheckLineNumber'/>
+<use f='codebrowser/Objects/codeobject.c' l='787' u='r' c='_PyCode_CheckLineNumber'/>
+<use f='codebrowser/Objects/frameobject.c' l='132' u='r' c='frame_setlineno'/>
+<use f='codebrowser/Python/marshal.c' l='556' u='r' c='w_complex_object'/>

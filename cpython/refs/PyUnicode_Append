@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='1885' type='void PyUnicode_Append(PyObject ** pleft, PyObject * right)'/>
+<doc f='codebrowser/Include/unicodeobject.h' l='1882'>/* Concat two strings and put the result in *pleft
+   (sets *pleft to NULL on error) */</doc>
+<use f='codebrowser/Modules/cjkcodecs/multibytecodec.c' l='774' u='c' c='encoder_encode_stateful'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='11344' ll='11423' type='void PyUnicode_Append(PyObject ** p_left, PyObject * right)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11428' u='c' c='PyUnicode_AppendAndDel'/>
+<use f='codebrowser/Python/ceval.c' l='5275' u='c' c='unicode_concatenate'/>
+<use f='codebrowser/Python/compile.c' l='728' u='c' c='compiler_set_qualname'/>

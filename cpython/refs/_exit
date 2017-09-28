@@ -1,0 +1,5 @@
+<dec f='include/unistd.h' l='606' type='void _exit(int __status)'/>
+<doc f='include/unistd.h' l='605'>/* Terminate program execution with the low-order 8 bits of STATUS.  */</doc>
+<use f='codebrowser/Modules/_posixsubprocess.c' l='696' u='c' c='subprocess_fork_exec'/>
+<use f='codebrowser/Modules/faulthandler.c' l='573' u='c' c='faulthandler_thread'/>
+<use f='codebrowser/Modules/posixmodule.c' l='4808' u='c' c='os__exit_impl'/>

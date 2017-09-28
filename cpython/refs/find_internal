@@ -1,0 +1,5 @@
+<def f='codebrowser/Objects/bytes_methods.c' l='468' ll='526' macro='1' type='Py_ssize_t find_internal(const char * str, Py_ssize_t len, const char * function_name, PyObject * args, int dir)'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='540' u='c' c='_Py_bytes_find'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='558' u='c' c='_Py_bytes_index'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='581' u='c' c='_Py_bytes_rfind'/>
+<use f='codebrowser/Objects/bytes_methods.c' l='599' u='c' c='_Py_bytes_rindex'/>

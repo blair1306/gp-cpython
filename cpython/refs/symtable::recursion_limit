@@ -1,0 +1,6 @@
+<dec f='codebrowser/Include/symtable.h' l='34' type='int'/>
+<offset>608</offset>
+<doc f='codebrowser/Include/symtable.h' l='34'>/* recursion limit */</doc>
+<use f='codebrowser/Python/symtable.c' l='267' u='w' c='PySymtable_BuildObject'/>
+<use f='codebrowser/Python/symtable.c' l='1130' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1389' u='r' c='symtable_visit_expr'/>

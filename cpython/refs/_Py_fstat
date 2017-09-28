@@ -1,0 +1,21 @@
+<dec f='codebrowser/Include/fileutils.h' l='44' type='int _Py_fstat(int fd, struct stat * status)'/>
+<use f='codebrowser/Modules/mmapmodule.c' l='433' u='c' c='mmap_size_method'/>
+<use f='codebrowser/Modules/signalmodule.c' l='633' u='c' c='signal_set_wakeup_fd'/>
+<use f='codebrowser/Python/bootstrap_hash.c' l='336' u='c' c='dev_urandom'/>
+<use f='codebrowser/Python/dynload_shlib.c' l='77' u='c' c='_PyImport_FindSharedFuncptr'/>
+<def f='codebrowser/Python/fileutils.c' l='678' ll='700' type='int _Py_fstat(int fd, struct stat * status)'/>
+<doc f='codebrowser/Python/fileutils.c' l='663'>/* Return information about a file.
+
+   On POSIX, use fstat().
+
+   On Windows, use GetFileType() and GetFileInformationByHandle() which support
+   files larger than 2 GB.  fstat() may fail with EOVERFLOW on files larger
+   than 2 GB because the file size type is a signed 32-bit integer: see issue
+   #23152.
+
+   Raise an exception and return -1 on error. On Windows, set the last Windows
+   error on error. On POSIX, set errno on error. Fill status and return 0 on
+   success.
+
+   Release the GIL to call GetFileType() and GetFileInformationByHandle(), or
+   to call fstat(). The caller must hold the GIL. */</doc>

@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/codecs.h' l='158' type='PyObject * PyCodec_Encoder(const char * encoding)'/>
+<doc f='codebrowser/Include/codecs.h' l='156'>/* Get an encoder function for the given encoding. */</doc>
+<def f='codebrowser/Python/codecs.c' l='354' ll='357' type='PyObject * PyCodec_Encoder(const char * encoding)'/>
+<use f='codebrowser/Python/codecs.c' l='504' u='c' c='PyCodec_Encode'/>
+<doc f='codebrowser/Python/codecs.c' l='348'>/* Convenience APIs to query the Codec registry.
+
+   All APIs return a codec object with incremented refcount.
+
+ */</doc>

@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/resource.h' l='54' type='int getrlimit(__rlimit_resource_t __resource, struct rlimit * __rlimits)'/>
+<dec f='include/x86_64-linux-gnu/sys/resource.h' l='61' type='int getrlimit64(__rlimit_resource_t __resource, struct rlimit64 * __rlimits)'/>
+<use f='codebrowser/Modules/faulthandler.c' l='914' u='c' c='faulthandler_suppress_crash_report'/>
+<use f='codebrowser/Modules/resource.c' l='202' u='c' c='resource_getrlimit_impl'/>

@@ -1,0 +1,6 @@
+<dec f='include/fcntl.h' l='159' type='int open(const char * __file, int __oflag)'/>
+<dec f='include/fcntl.h' l='166' type='int open64(const char * __file, int __oflag)'/>
+<use f='codebrowser/Modules/_io/fileio.c' l='379' u='c' c='_io_FileIO___init___impl'/>
+<use f='codebrowser/Modules/posixmodule.c' l='7722' u='c' c='os_open_impl'/>
+<use f='codebrowser/Python/fileutils.c' l='962' u='c' c='_Py_open_impl'/>
+<use f='codebrowser/Python/fileutils.c' l='974' u='c' c='_Py_open_impl'/>

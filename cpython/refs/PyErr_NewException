@@ -1,0 +1,33 @@
+<dec f='codebrowser/Include/pyerrors.h' l='327' type='PyObject * PyErr_NewException(const char * name, PyObject * base, PyObject * dict)'/>
+<doc f='codebrowser/Include/pyerrors.h' l='326'>/* Function to create a new exception */</doc>
+<use f='codebrowser/Modules/_csv.c' l='1685' u='c' c='PyInit__csv'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='5575' u='c' c='PyInit__ctypes'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='518' u='c' c='PyInit__curses_panel'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='3326' u='c' c='PyInit__curses'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5756' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5796' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='5828' u='c' c='PyInit__decimal'/>
+<use f='codebrowser/Modules/_elementtree.c' l='4020' u='c' c='PyInit__elementtree'/>
+<use f='codebrowser/Modules/_localemodule.c' l='660' u='c' c='PyInit__locale'/>
+<use f='codebrowser/Modules/_pickle.c' l='7343' u='c' c='PyInit__pickle'/>
+<use f='codebrowser/Modules/_pickle.c' l='7347' u='c' c='PyInit__pickle'/>
+<use f='codebrowser/Modules/_pickle.c' l='7351' u='c' c='PyInit__pickle'/>
+<use f='codebrowser/Modules/_struct.c' l='2353' u='c' c='PyInit__struct'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4930' u='c' c='PyInit__testcapi'/>
+<use f='codebrowser/Modules/_testmultiphase.c' l='196' u='c' c='execfunc'/>
+<use f='codebrowser/Modules/audioop.c' l='1917' u='c' c='PyInit_audioop'/>
+<use f='codebrowser/Modules/binascii.c' l='1586' u='c' c='PyInit_binascii'/>
+<use f='codebrowser/Modules/binascii.c' l='1588' u='c' c='PyInit_binascii'/>
+<use f='codebrowser/Modules/nismodule.c' l='464' u='c' c='PyInit_nis'/>
+<use f='codebrowser/Modules/ossaudiodev.c' l='1126' u='c' c='PyInit_ossaudiodev'/>
+<use f='codebrowser/Modules/parsermodule.c' l='1174' u='c' c='PyInit_parser'/>
+<use f='codebrowser/Modules/pyexpat.c' l='1670' u='c' c='PyInit_pyexpat'/>
+<use f='codebrowser/Modules/signalmodule.c' l='1461' u='c' c='PyInit__signal'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6505' u='c' c='PyInit__socket'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6511' u='c' c='PyInit__socket'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6517' u='c' c='PyInit__socket'/>
+<use f='codebrowser/Modules/termios.c' l='956' u='c' c='PyInit_termios'/>
+<use f='codebrowser/Modules/zipimport.c' l='1572' u='c' c='PyInit_zipimport'/>
+<use f='codebrowser/Modules/zlibmodule.c' l='1370' u='c' c='PyInit_zlib'/>
+<def f='codebrowser/Python/errors.c' l='834' ll='882' type='PyObject * PyErr_NewException(const char * name, PyObject * base, PyObject * dict)'/>
+<use f='codebrowser/Python/errors.c' l='912' u='c' c='PyErr_NewExceptionWithDoc'/>

@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/structmember.h' l='20' type='int'/>
+<offset>64</offset>
+<use f='codebrowser/Objects/structseq.c' l='368' u='w' c='PyStructSequence_InitType2'/>
+<use f='codebrowser/Objects/typeobject.c' l='1001' u='r' c='traverse_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='1060' u='r' c='clear_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='2669' u='w' c='type_new'/>
+<use f='codebrowser/Python/structmember.c' l='14' u='r' c='PyMember_GetOne'/>
+<use f='codebrowser/Python/structmember.c' l='113' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='120' u='r' c='PyMember_SetOne'/>
+<use f='codebrowser/Python/structmember.c' l='126' u='r' c='PyMember_SetOne'/>

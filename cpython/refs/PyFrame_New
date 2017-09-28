@@ -1,0 +1,3 @@
+<dec f='codebrowser/Include/frameobject.h' l='62' type='PyFrameObject * PyFrame_New(PyThreadState * , PyCodeObject * , PyObject * , PyObject * )'/>
+<def f='codebrowser/Objects/frameobject.c' l='735' ll='743' type='PyFrameObject * PyFrame_New(PyThreadState * tstate, PyCodeObject * code, PyObject * globals, PyObject * locals)'/>
+<use f='codebrowser/Python/traceback.c' l='168' u='c' c='_PyTraceback_Add'/>

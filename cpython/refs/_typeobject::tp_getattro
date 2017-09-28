@@ -1,0 +1,15 @@
+<dec f='codebrowser/Include/object.h' l='372' type='getattrofunc'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1129' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1228' u='w'/>
+<use f='codebrowser/Modules/_asynciomodule.c' l='1298' u='w'/>
+<offset>1280</offset>
+<use f='codebrowser/Objects/object.c' l='890' u='r' c='PyObject_GetAttr'/>
+<use f='codebrowser/Objects/object.c' l='891' u='r' c='PyObject_GetAttr'/>
+<use f='codebrowser/Objects/object.c' l='946' u='r' c='PyObject_SetAttr'/>
+<use f='codebrowser/Objects/object.c' l='1051' u='r' c='_PyObject_GetMethod'/>
+<use f='codebrowser/Objects/typeobject.c' l='2706' u='r' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='2707' u='w' c='type_new'/>
+<use f='codebrowser/Objects/typeobject.c' l='4928' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4930' u='w' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='4930' u='r' c='inherit_slots'/>
+<use f='codebrowser/Objects/typeobject.c' l='6318' u='w' c='slot_tp_getattr_hook'/>

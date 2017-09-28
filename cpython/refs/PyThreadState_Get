@@ -1,0 +1,60 @@
+<dec f='codebrowser/Include/pystate.h' l='232' type='PyThreadState * PyThreadState_Get()'/>
+<doc f='codebrowser/Include/pystate.h' l='229'>/* Return the current thread state. The global interpreter lock must be held.
+ * When the current thread state is NULL, this issues a fatal error (so that
+ * the caller needn&apos;t check for NULL). */</doc>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2161' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2166' macro='1' u='c'/>
+<use f='codebrowser/Modules/_ctypes/_ctypes.c' l='2166' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1622' macro='1' u='c'/>
+<use f='codebrowser/Modules/_decimal/_decimal.c' l='1638' macro='1' u='c'/>
+<use f='codebrowser/Modules/_elementtree.c' l='632' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1082' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1086' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1086' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1090' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1094' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1094' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1474' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1477' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1477' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1481' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1484' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1484' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1512' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1518' macro='1' u='c'/>
+<use f='codebrowser/Modules/_json.c' l='1518' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2603' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2606' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2606' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2612' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2617' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2617' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2862' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2865' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2865' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2876' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2881' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='2881' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='3773' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='3966' macro='1' u='c'/>
+<use f='codebrowser/Modules/_pickle.c' l='3966' macro='1' u='c'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2964' u='c' c='crash_no_current_thread'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='2981' u='c' c='run_in_subinterp'/>
+<use f='codebrowser/Modules/_testcapimodule.c' l='4006' macro='1' u='c'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='782' u='c' c='local_clear'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='1202' u='c' c='thread__set_sentinel'/>
+<use f='codebrowser/Modules/posixmodule.c' l='435' u='c' c='PyOS_BeforeFork'/>
+<use f='codebrowser/Modules/posixmodule.c' l='446' u='c' c='PyOS_AfterFork_Parent'/>
+<use f='codebrowser/Modules/posixmodule.c' l='462' u='c' c='PyOS_AfterFork_Child'/>
+<use f='codebrowser/Modules/posixmodule.c' l='5383' u='c' c='os_register_at_fork_impl'/>
+<use f='codebrowser/Objects/codeobject.c' l='419' u='c' c='code_dealloc'/>
+<use f='codebrowser/Objects/codeobject.c' l='855' u='c' c='_PyCode_SetExtra'/>
+<use f='codebrowser/Objects/moduleobject.c' l='166' u='c' c='PyModule_Create2TraceRefs'/>
+<use f='codebrowser/Programs/_testembed.c' l='28' u='c' c='print_subinterp'/>
+<use f='codebrowser/Programs/_testembed.c' l='52' u='c' c='test_repeated_init_and_subinterpreters'/>
+<use f='codebrowser/Python/_warnings.c' l='648' u='c' c='setup_context'/>
+<use f='codebrowser/Python/ceval.c' l='5326' u='c' c='_PyEval_RequestCodeExtraIndex'/>
+<use f='codebrowser/Python/import.c' l='46' u='c' c='_PyImport_Init'/>
+<use f='codebrowser/Python/import.c' l='484' u='c' c='PyImport_GetMagicNumber'/>
+<def f='codebrowser/Python/pystate.c' l='572' ll='580' type='PyThreadState * PyThreadState_Get()'/>
+<use f='codebrowser/Python/traceback.c' l='168' u='c' c='_PyTraceback_Add'/>

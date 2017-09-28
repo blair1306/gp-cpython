@@ -1,0 +1,14 @@
+<dec f='codebrowser/Include/Python-ast.h' l='218' type='27'/>
+<use f='codebrowser/Python/Python-ast.c' l='2345' u='r' c='_Py_Starred'/>
+<use f='codebrowser/Python/Python-ast.c' l='3454' c='ast2obj_expr'/>
+<use f='codebrowser/Python/ast.c' l='194' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='335' c='validate_expr'/>
+<use f='codebrowser/Python/ast.c' l='1017' c='set_context'/>
+<use f='codebrowser/Python/ast.c' l='1934' u='r' c='ast_for_itercomp'/>
+<use f='codebrowser/Python/compile.c' l='3235' u='r' c='starunpack_helper'/>
+<use f='codebrowser/Python/compile.c' l='3269' u='r' c='assignment_helper'/>
+<use f='codebrowser/Python/compile.c' l='3279' u='r' c='assignment_helper'/>
+<use f='codebrowser/Python/compile.c' l='3474' u='r' c='maybe_optimize_method_call'/>
+<use f='codebrowser/Python/compile.c' l='3615' u='r' c='compiler_call_helper'/>
+<use f='codebrowser/Python/compile.c' l='4498' c='compiler_visit_expr'/>
+<use f='codebrowser/Python/symtable.c' l='1496' c='symtable_visit_expr'/>

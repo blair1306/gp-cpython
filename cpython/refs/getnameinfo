@@ -1,0 +1,7 @@
+<dec f='include/netdb.h' l='677' type='int getnameinfo(const struct sockaddr *restrict __sa, socklen_t __salen, char *restrict __host, socklen_t __hostlen, char *restrict __serv, socklen_t __servlen, int __flags)'/>
+<use f='codebrowser/Modules/socketmodule.c' l='1120' u='c' c='makeipaddr'/>
+<use f='codebrowser/Modules/socketmodule.c' l='6087' u='c' c='socket_getnameinfo'/>
+<doc f='include/netdb.h' l='673'>/* Translate a socket address to a location and service name.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>

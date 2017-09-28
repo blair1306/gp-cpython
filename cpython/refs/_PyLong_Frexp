@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/longobject.h' l='81' type='double _PyLong_Frexp(PyLongObject * a, Py_ssize_t * e)'/>
+<use f='codebrowser/Modules/mathmodule.c' l='1909' u='c' c='loghelper'/>
+<def f='codebrowser/Objects/longobject.c' l='2745' ll='2853' type='double _PyLong_Frexp(PyLongObject * a, Py_ssize_t * e)'/>
+<use f='codebrowser/Objects/longobject.c' l='2879' u='c' c='PyLong_AsDouble'/>

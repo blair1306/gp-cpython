@@ -1,0 +1,8 @@
+<def f='codebrowser/Include/py_curses.h' l='107' type='const char [30]'/>
+<use f='codebrowser/Modules/_curses_panel.c' l='427' u='r' c='PyCurses_new_panel'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1045' u='r' c='PyCursesWindow_DerWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='1855' u='r' c='PyCursesWindow_SubWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2317' u='r' c='PyCurses_GetWin'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2410' u='r' c='PyCurses_InitScr'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2693' u='r' c='PyCurses_NewPad'/>
+<use f='codebrowser/Modules/_cursesmodule.c' l='2725' u='r' c='PyCurses_NewWindow'/>

@@ -1,0 +1,30 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='287' type='unsigned int'/>
+<offset>0</offset>
+<doc f='codebrowser/Include/unicodeobject.h' l='279'>/*
+           SSTATE_NOT_INTERNED (0)
+           SSTATE_INTERNED_MORTAL (1)
+           SSTATE_INTERNED_IMMORTAL (2)
+
+           If interned != SSTATE_NOT_INTERNED, the two references from the
+           dictionary to this object are *not* counted in ob_refcnt.
+         */</doc>
+<use f='codebrowser/Objects/typeobject.c' l='3137' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='7051' macro='1' u='r'/>
+<use f='codebrowser/Objects/typeobject.c' l='7077' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='412' u='r' c='_PyUnicode_CheckConsistency'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1110' u='w' c='_PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1310' u='w' c='PyUnicode_New'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1671' u='r' c='_PyUnicode_Ready'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1783' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='1838' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='11151' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15092' u='w' c='unicode_subtype_new'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15295' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15319' u='w' c='PyUnicode_InternInPlace'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15326' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15327' u='w' c='PyUnicode_InternImmortal'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15372' macro='1' u='r'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='15387' u='w' c='_Py_ReleaseInternedUnicodeStrings'/>
+<use f='codebrowser/Python/marshal.c' l='442' macro='1' u='r'/>
+<use f='codebrowser/Python/marshal.c' l='450' macro='1' u='r'/>
+<use f='codebrowser/Python/marshal.c' l='466' macro='1' u='r'/>

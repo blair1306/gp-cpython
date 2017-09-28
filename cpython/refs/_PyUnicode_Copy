@@ -1,0 +1,8 @@
+<dec f='codebrowser/Include/unicodeobject.h' l='611' type='PyObject * _PyUnicode_Copy(PyObject * unicode)'/>
+<use f='codebrowser/Objects/codeobject.c' l='311' u='c' c='validate_and_copy_tuple'/>
+<use f='codebrowser/Objects/typeobject.c' l='3132' u='c' c='type_setattro'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='585' u='c' c='unicode_result_unchanged'/>
+<def f='codebrowser/Objects/unicodeobject.c' l='2369' ll='2392' type='PyObject * _PyUnicode_Copy(PyObject * unicode)'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='3055' u='c' c='PyUnicode_FromObject'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='9603' u='c' c='fixup'/>
+<use f='codebrowser/Objects/unicodeobject.c' l='13908' u='c' c='unicode_getnewargs'/>

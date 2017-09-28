@@ -1,0 +1,7 @@
+<dec f='codebrowser/Include/pythread.h' l='17' type='2'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='72' u='r' c='acquire_timed'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='77' u='r' c='acquire_timed'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='92' u='r' c='acquire_timed'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='152' u='r' c='lock_PyThread_acquire_lock'/>
+<use f='codebrowser/Modules/_threadmodule.c' l='319' u='r' c='rlock_acquire'/>
+<use f='codebrowser/Python/thread_pthread.h' l='377' u='r' c='PyThread_acquire_lock_timed'/>

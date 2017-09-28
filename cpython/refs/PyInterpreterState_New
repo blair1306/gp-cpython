@@ -1,0 +1,4 @@
+<dec f='codebrowser/Include/pystate.h' l='192' type='PyInterpreterState * PyInterpreterState_New()'/>
+<use f='codebrowser/Python/pylifecycle.c' l='614' u='c' c='_Py_InitializeCore'/>
+<use f='codebrowser/Python/pylifecycle.c' l='1156' u='c' c='Py_NewInterpreter'/>
+<def f='codebrowser/Python/pystate.c' l='88' ll='147' type='PyInterpreterState * PyInterpreterState_New()'/>

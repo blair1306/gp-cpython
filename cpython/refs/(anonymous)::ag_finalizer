@@ -1,0 +1,9 @@
+<dec f='codebrowser/Include/genobject.h' l='70' type='PyObject *'/>
+<offset>640</offset>
+<use f='codebrowser/Objects/genobject.c' l='41' u='r' c='_PyGen_Finalize'/>
+<use f='codebrowser/Objects/genobject.c' l='109' u='r' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='109' u='w' c='gen_dealloc'/>
+<use f='codebrowser/Objects/genobject.c' l='1303' u='r' c='async_gen_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='1303' u='r' c='async_gen_traverse'/>
+<use f='codebrowser/Objects/genobject.c' l='1334' u='w' c='async_gen_init_hooks'/>
+<use f='codebrowser/Objects/genobject.c' l='1497' u='w' c='PyAsyncGen_New'/>

@@ -1,0 +1,23 @@
+<dec f='codebrowser/Include/Python-ast.h' l='158' type='asdl_seq *'/>
+<dec f='codebrowser/Include/Python-ast.h' l='163' type='asdl_seq *'/>
+<offset>0</offset>
+<use f='codebrowser/Python/Python-ast.c' l='1573' u='w' c='_Py_With'/>
+<use f='codebrowser/Python/Python-ast.c' l='1589' u='w' c='_Py_AsyncWith'/>
+<use f='codebrowser/Python/Python-ast.c' l='2931' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/Python-ast.c' l='2945' u='r' c='ast2obj_stmt'/>
+<use f='codebrowser/Python/ast.c' l='435' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='437' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='437' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='438' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='445' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='447' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='447' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/ast.c' l='448' u='r' c='validate_stmt'/>
+<use f='codebrowser/Python/compile.c' l='4192' u='r' c='compiler_async_with'/>
+<use f='codebrowser/Python/compile.c' l='4226' u='r' c='compiler_async_with'/>
+<use f='codebrowser/Python/compile.c' l='4226' u='r' c='compiler_async_with'/>
+<use f='codebrowser/Python/compile.c' l='4286' u='r' c='compiler_with'/>
+<use f='codebrowser/Python/compile.c' l='4314' u='r' c='compiler_with'/>
+<use f='codebrowser/Python/compile.c' l='4314' u='r' c='compiler_with'/>
+<use f='codebrowser/Python/symtable.c' l='1345' u='r' c='symtable_visit_stmt'/>
+<use f='codebrowser/Python/symtable.c' l='1372' u='r' c='symtable_visit_stmt'/>

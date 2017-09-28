@@ -1,0 +1,10 @@
+<def f='codebrowser/Objects/stringlib/unicode_format.h' l='60' ll='66' macro='1' type='PyObject * SubString_new_object(SubString * str)'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='75' u='c' c='SubString_new_object_or_empty'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='148' u='c' c='getattr'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='181' u='c' c='getitem_str'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='412' u='c' c='get_field_object'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1018' u='c' c='formatteriter_next'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1022' u='c' c='formatteriter_next'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1030' u='c' c='formatteriter_next'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1180' u='c' c='fieldnameiter_next'/>
+<use f='codebrowser/Objects/stringlib/unicode_format.h' l='1275' u='c' c='formatter_field_name_split'/>

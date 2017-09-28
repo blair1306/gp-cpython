@@ -1,0 +1,10 @@
+<dec f='codebrowser/Include/setobject.h' l='87' type='int PySet_Discard(PyObject * set, PyObject * key)'/>
+<def f='codebrowser/Objects/setobject.c' l='2317' ll='2325' type='int PySet_Discard(PyObject * set, PyObject * key)'/>
+<use f='codebrowser/Objects/setobject.c' l='2438' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2449' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2451' u='c' c='test_c_api'/>
+<use f='codebrowser/Objects/setobject.c' l='2497' u='c' c='test_c_api'/>
+<use f='codebrowser/Python/symtable.c' l='479' u='c' c='analyze_name'/>
+<use f='codebrowser/Python/symtable.c' l='510' u='c' c='analyze_name'/>
+<use f='codebrowser/Python/symtable.c' l='571' u='c' c='analyze_cells'/>
+<use f='codebrowser/Python/symtable.c' l='586' u='c' c='drop_class_free'/>
